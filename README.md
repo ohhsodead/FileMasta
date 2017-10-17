@@ -20,7 +20,7 @@ If you've got any comments, queries or suggestions for the app please just open 
 ## Screenshots
 ![Search Movies](https://dl.dropbox.com/s/ozx2m5f4av1rl4l/OpenPlex%20-%20Search%20Movies.png?dl=0)
 
-![Search Movies](https://dl.dropbox.com/s/ozx2m5f4av1rl4l/OpenPlex%20-%20Search%20Movies.png?dl=0)
+![Search Results](https://dl.dropbox.com/s/vjpwxu6hfwz9r99/OpenPlex%20-%20Search%20Results.png?dl=0)
 
 ## Legal Side of Things...
 All of the free movies found on this app are hosted on third-party servers that are freely available to watch online for all internet users. Any legal issues regarding the free online movies on this website should be taken up with the actual file hosts themselves, as we're not affiliated with them.
