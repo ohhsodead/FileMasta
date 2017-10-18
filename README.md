@@ -11,7 +11,7 @@
 
 ## What is OpenPlex?
 
-Just a small app still in early development. Basically allowing users to search the database filled with movies and tv shows from accross the web.
+Just a small app still in early development. Basically allowing users to search the database filled with movies and tv shows from across the web.
 
 The database will eventually become open source so others can contribute and upload their own submission.
 
