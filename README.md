@@ -11,7 +11,7 @@
 
 
 ## What is OpenPlex?
-Just a small app still in early development. Basically allowing users to search the database filled with movies and tv shows from across the web.
+Just a small app still in early development. Basically allowing users to search the database filled with movies and tv shows from around the web.
 
 The database will eventually become open source so others can contribute and upload their own submission.
 
@@ -24,10 +24,12 @@ The app is a .NET 4.6.2 application using WinForm framework written in C#.
 Windows 7+ is supported (Windows 7, 8, 8.1, 10)
 
 ## Installation
-Download installer [here](https://github.com/invu/openplex/releases/download/v1.0.0.0/OpenPlexInstaller.zip)
+Download installer [here](https://github.com/invu/openplex/releases/download/v0.1.0.1/OpenPlexInstaller.exe)
 
 ## Screenshots
-![Search Movies](https://dl.dropbox.com/s/ozx2m5f4av1rl4l/OpenPlex%20-%20Search%20Movies.png?dl=0)
+![Search Movies/TV Shows](https://dl.dropbox.com/s/ozx2m5f4av1rl4l/OpenPlex%20-%20Search%20Movies.png?dl=0)
+![Search Results](https://dl.dropbox.com/s/vjpwxu6hfwz9r99/OpenPlex%20-%20Search%20Results.png?dl=0)
+![Download MoviesTV/Shows](https://dl.dropbox.com/s/aa9sgx51qw19gm0/OpenPlex%20-%20Downloads.png?dl=0)
 
 ## Legal Side of Things...
 All of the free movies found on this app are hosted on third-party servers that are freely available to watch online for all internet users. Any legal issues regarding the free online movies on this website should be taken up with the actual file hosts themselves, as we're not affiliated with them.
