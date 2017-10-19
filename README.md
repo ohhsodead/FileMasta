@@ -29,6 +29,7 @@ Download installer [here](https://github.com/invu/openplex/releases/download/v0.
 ## Screenshots
 ![Search Movies/TV Shows](https://dl.dropbox.com/s/ozx2m5f4av1rl4l/OpenPlex%20-%20Search%20Movies.png?dl=0)
 ![Search Results](https://dl.dropbox.com/s/vjpwxu6hfwz9r99/OpenPlex%20-%20Search%20Results.png?dl=0)
+![Movie Details](https://dl.dropbox.com/s/ys1w6z9gbfkysbr/OpenPlex%20-%20Movie%20Details.png?dl=0)
 ![Download MoviesTV/Shows](https://dl.dropbox.com/s/aa9sgx51qw19gm0/OpenPlex%20-%20Downloads.png?dl=0)
 
 ## Legal Side of Things...
