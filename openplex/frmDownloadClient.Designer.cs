@@ -57,7 +57,7 @@
             this.Name = "frmDownloadClient";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "OpenPlex - Download Client";
+            this.Text = "OpenPlex - Downloads";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmDownloadClient_FormClosing);
             this.Load += new System.EventHandler(this.frmDownloadClient_Load);
             this.ResumeLayout(false);

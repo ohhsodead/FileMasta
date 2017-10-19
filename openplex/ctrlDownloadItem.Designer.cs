@@ -38,13 +38,15 @@
             // 
             // lblFileName
             // 
-            this.lblFileName.AutoSize = true;
+            this.lblFileName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblFileName.AutoEllipsis = true;
             this.lblFileName.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblFileName.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.lblFileName.ForeColor = System.Drawing.Color.White;
             this.lblFileName.Location = new System.Drawing.Point(9, 6);
             this.lblFileName.Name = "lblFileName";
-            this.lblFileName.Size = new System.Drawing.Size(66, 17);
+            this.lblFileName.Size = new System.Drawing.Size(432, 17);
             this.lblFileName.TabIndex = 0;
             this.lblFileName.Text = "File Name";
             this.lblFileName.Click += new System.EventHandler(this.lblFileName_Click);
@@ -117,7 +119,6 @@
             this.Size = new System.Drawing.Size(450, 82);
             this.Load += new System.EventHandler(this.ctrlDownloadItem_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
