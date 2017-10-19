@@ -7,7 +7,7 @@
     <ProjectGuid>{75A2CFC6-B0B1-42A6-B1F7-66B3C68A06CA}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>openplex</RootNamespace>
+    <RootNamespace>OpenPlex</RootNamespace>
     <AssemblyName>OpenPlex</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -33,6 +33,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>openplex-logo.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="CButtonLib">
       <HintPath>..\..\..\- Plugins\CButton\CButton\bin\Debug\CButtonLib.dll</HintPath>
@@ -55,6 +58,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ctrlDownloadItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrlDownloadItem.Designer.cs">
+      <DependentUpon>ctrlDownloadItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAbout.Designer.cs">
+      <DependentUpon>frmAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDownloadClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDownloadClient.Designer.cs">
+      <DependentUpon>frmDownloadClient.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmOpenPlex.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,6 +84,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ctrlDownloadItem.resx">
+      <DependentUpon>ctrlDownloadItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAbout.resx">
+      <DependentUpon>frmAbout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDownloadClient.resx">
+      <DependentUpon>frmDownloadClient.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmOpenPlex.resx">
       <DependentUpon>frmOpenPlex.cs</DependentUpon>
     </EmbeddedResource>
@@ -91,6 +121,14 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\SearchIconH.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconSettings.png" />
+    <None Include="Resources\iconAbout.png" />
+    <None Include="Resources\openplex-text.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="openplex-logo.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

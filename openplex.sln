@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "openplex", "openplex\openplex.csproj", "{75A2CFC6-B0B1-42A6-B1F7-66B3C68A06CA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenPlex", "openplex\OpenPlex.csproj", "{75A2CFC6-B0B1-42A6-B1F7-66B3C68A06CA}"
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "CButtonLib", "..\..\- Plugins\CButton\CButton\CButtonLib.vbproj", "{24116FE6-8501-45F0-ADD0-67FFFB037BAF}"
 EndProject
