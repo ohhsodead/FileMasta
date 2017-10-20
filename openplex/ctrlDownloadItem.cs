@@ -24,21 +24,18 @@ namespace OpenPlex
             
         }
 
+        WebClient wc = new WebClient();
+
         public void doDownloadFile(string url)
         {
-            using (WebClient wc = new WebClient())
-            {
-                wc.DownloadFileCompleted += new AsyncCompletedEventHandler(downloadCompleted);
-                wc.DownloadProgressChanged += new DownloadProgressChangedEventHandler(downloadProgressChanged);
-                wc.DownloadFileAsync(new Uri(url), frmOpenPlex.pathDownloads + Path.GetFileName(url));
-                lblFileName.Text = Path.GetFileName(url);
-                progressBar1.Style = ProgressBarStyle.Marquee;
-            }
+            wc.DownloadFileCompleted += new AsyncCompletedEventHandler(downloadCompleted);
+            wc.DownloadProgressChanged += new DownloadProgressChangedEventHandler(downloadProgressChanged);
+            wc.DownloadFileAsync(new Uri(url), frmOpenPlex.pathDownloads + Path.GetFileName(url));
+            lblFileName.Text = Path.GetFileName(url);
         }
 
         private void downloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
         {
-            progressBar1.Style = ProgressBarStyle.Blocks;
 
             double Value = Convert.ToDouble(e.TotalBytesToReceive);
 
@@ -49,9 +46,9 @@ namespace OpenPlex
 
         private void downloadCompleted(object sender, AsyncCompletedEventArgs e)
         {
-            if (e.Cancelled == true) { lblPercentage.Text = "Download Cancelled"; progressBar1.Style = ProgressBarStyle.Blocks; progressBar1.Value = 100; }
-            else if (e.Error != null) { lblPercentage.Text = "Download Failed - " + e.Error.Message; progressBar1.Style = ProgressBarStyle.Blocks; progressBar1.Value = 100; }
-            else lblPercentage.Text = "Download Complete";
+            if (e.Cancelled == true) { lblPercentage.Text = "Download Cancelled"; lblCancel.Text = "Close"; }
+            else if (e.Error != null) { lblPercentage.Text = "Download Failed - " + e.Error.Message; lblCancel.Text = "Close"; }
+            else { lblPercentage.Text = "Download Complete"; lblCancel.Text = "Close"; }
         }
 
         public static string ToFileSize(double value)
@@ -113,6 +110,14 @@ namespace OpenPlex
         private void lblFileName_Click(object sender, EventArgs e)
         {
             openFile(frmOpenPlex.pathDownloads + lblFileName.Text);
+        }
+
+        private void lblCancel_Click(object sender, EventArgs e)
+        {
+            wc.CancelAsync();
+            wc.Dispose();
+            Hide();
+            Dispose();
         }
     }
 }

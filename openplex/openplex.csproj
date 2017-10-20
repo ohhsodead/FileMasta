@@ -34,7 +34,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>openplex-logo.ico</ApplicationIcon>
+    <ApplicationIcon>openplex_logo.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CButtonLib">
@@ -46,7 +46,10 @@
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http.WebRequest" />
     <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -64,12 +67,6 @@
     <Compile Include="ctrlDownloadItem.Designer.cs">
       <DependentUpon>ctrlDownloadItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAbout.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmAbout.Designer.cs">
-      <DependentUpon>frmAbout.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmDownloadClient.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,16 +79,21 @@
     <Compile Include="frmOpenPlex.Designer.cs">
       <DependentUpon>frmOpenPlex.cs</DependentUpon>
     </Compile>
+    <Compile Include="ImdbEntity.cs" />
+    <Compile Include="PopcornTimeEntity.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="ProgressBarEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="ctrlDownloadItem.resx">
       <DependentUpon>ctrlDownloadItem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAbout.resx">
-      <DependentUpon>frmAbout.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmDownloadClient.resx">
       <DependentUpon>frmDownloadClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOpenPlex.en.resx">
+      <DependentUpon>frmOpenPlex.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmOpenPlex.resx">
       <DependentUpon>frmOpenPlex.cs</DependentUpon>
@@ -128,7 +130,17 @@
     <None Include="Resources\openplex-text.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="openplex-logo.ico" />
+    <Content Include="openplex_logo.ico" />
+    <None Include="Resources\iconStop.png" />
+    <None Include="Resources\iconPlay.png" />
+    <None Include="Resources\iconPause.png" />
+    <None Include="Resources\PosterDefault.png" />
+    <None Include="Resources\PosterGlow.png" />
+    <None Include="Resources\iconCLoseL.png" />
+    <None Include="Resources\iconCLoseH.png" />
+    <None Include="Resources\PopupCloseH.png" />
+    <None Include="Resources\PopupCloseL.png" />
+    <None Include="Resources\Dark Sky Night.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

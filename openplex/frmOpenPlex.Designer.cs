@@ -30,9 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOpenPlex));
             this.tab = new System.Windows.Forms.TabControl();
             this.tabHome = new System.Windows.Forms.TabPage();
@@ -49,22 +48,79 @@
             this.btnSearch = new CButtonLib.CButton();
             this.bgSearchBox = new CButtonLib.CButton();
             this.tabSearchResults = new System.Windows.Forms.TabPage();
-            this.btnBack = new CButtonLib.CButton();
-            this.btnDownloadSelected = new CButtonLib.CButton();
+            this.panelSearchHeaders = new System.Windows.Forms.FlowLayoutPanel();
+            this.lblHeaderResults = new System.Windows.Forms.Label();
+            this.lblHeaderResultsText = new System.Windows.Forms.Label();
             this.dataGrid = new System.Windows.Forms.DataGridView();
-            this.headerFileName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.columnFileName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contextFileName = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.OpenWithToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.WMPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.VLCToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.VLCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.copyToClipboardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.imgCloseSearchResults = new System.Windows.Forms.PictureBox();
+            this.tabMovieDetails = new System.Windows.Forms.TabPage();
+            this.imgCloseMovieDetails = new System.Windows.Forms.PictureBox();
+            this.imgMovieInfoPoster = new System.Windows.Forms.PictureBox();
+            this.panelMovieItems = new System.Windows.Forms.FlowLayoutPanel();
+            this.movieInfoTitle = new System.Windows.Forms.Label();
+            this.panelMovieSubItems = new System.Windows.Forms.FlowLayoutPanel();
+            this.movieInfoGenre = new System.Windows.Forms.Label();
+            this.movieInfoSplitter1 = new System.Windows.Forms.Label();
+            this.movieInfoIMDbRating = new System.Windows.Forms.Label();
+            this.movieInfoSplitter2 = new System.Windows.Forms.Label();
+            this.movieInfoRuntime = new System.Windows.Forms.Label();
+            this.movieInfoSplitter3 = new System.Windows.Forms.Label();
+            this.movieInfoReleaseDate = new System.Windows.Forms.Label();
+            this.movieInfoDescription = new System.Windows.Forms.Label();
+            this.btnMoviePlay = new CButtonLib.CButton();
+            this.btnMovieDownload = new CButtonLib.CButton();
+            this.btnMovieTrailer = new CButtonLib.CButton();
+            this.movieInfoPopcornFanartURL = new System.Windows.Forms.Label();
+            this.movieInfoPopcornTrailerURL = new System.Windows.Forms.Label();
+            this.movieInfoIMDbId = new System.Windows.Forms.Label();
+            this.movieInfoFileURL = new System.Windows.Forms.Label();
+            this.imgMoviePosterBackground = new System.Windows.Forms.PictureBox();
+            this.tabAbout = new System.Windows.Forms.TabPage();
+            this.lblAboutVersion = new System.Windows.Forms.Label();
+            this.lblAboutReportIssue = new System.Windows.Forms.Label();
+            this.lblAboutSubText = new System.Windows.Forms.Label();
+            this.lblAboutText = new System.Windows.Forms.Label();
+            this.imgCloseAbout = new System.Windows.Forms.PictureBox();
+            this.imgHeaderAbout = new System.Windows.Forms.PictureBox();
+            this.tabSettings = new System.Windows.Forms.TabPage();
+            this.txtSettingsDataDirectory = new System.Windows.Forms.TextBox();
+            this.chckSettingsAlwaysOnTop = new System.Windows.Forms.CheckBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.chckSettingsClearData = new System.Windows.Forms.CheckBox();
+            this.lblSettingsClearData = new System.Windows.Forms.Label();
+            this.lblSettingsDataDirectory = new System.Windows.Forms.Label();
+            this.cmboSettingsLanguage = new System.Windows.Forms.ComboBox();
+            this.lblSettingsLanguage = new System.Windows.Forms.Label();
+            this.lblSettingsHeader = new System.Windows.Forms.Label();
+            this.btnSettingsSave = new CButtonLib.CButton();
+            this.imgCloseSettings = new System.Windows.Forms.PictureBox();
             this.tab.SuspendLayout();
             this.tabHome.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgAbout)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgSettings)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgOpenPlex)).BeginInit();
             this.tabSearchResults.SuspendLayout();
+            this.panelSearchHeaders.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).BeginInit();
-            this.contextMenuStrip1.SuspendLayout();
+            this.contextFileName.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgCloseSearchResults)).BeginInit();
+            this.tabMovieDetails.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgCloseMovieDetails)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgMovieInfoPoster)).BeginInit();
+            this.panelMovieItems.SuspendLayout();
+            this.panelMovieSubItems.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgMoviePosterBackground)).BeginInit();
+            this.tabAbout.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgCloseAbout)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgHeaderAbout)).BeginInit();
+            this.tabSettings.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgCloseSettings)).BeginInit();
             this.SuspendLayout();
             // 
             // tab
@@ -74,15 +130,19 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tab.Controls.Add(this.tabHome);
             this.tab.Controls.Add(this.tabSearchResults);
+            this.tab.Controls.Add(this.tabMovieDetails);
+            this.tab.Controls.Add(this.tabAbout);
+            this.tab.Controls.Add(this.tabSettings);
             this.tab.Location = new System.Drawing.Point(-4, -22);
             this.tab.Name = "tab";
             this.tab.SelectedIndex = 0;
-            this.tab.Size = new System.Drawing.Size(959, 535);
+            this.tab.Size = new System.Drawing.Size(959, 544);
             this.tab.TabIndex = 0;
             this.tab.TabStop = false;
             // 
             // tabHome
             // 
+            this.tabHome.AllowDrop = true;
             this.tabHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
             this.tabHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tabHome.Controls.Add(this.txtSearchBox);
@@ -97,12 +157,13 @@
             this.tabHome.Controls.Add(this.imgOpenPlex);
             this.tabHome.Controls.Add(this.btnSearch);
             this.tabHome.Controls.Add(this.bgSearchBox);
+            this.tabHome.ForeColor = System.Drawing.Color.White;
             this.tabHome.Location = new System.Drawing.Point(4, 22);
             this.tabHome.Name = "tabHome";
             this.tabHome.Padding = new System.Windows.Forms.Padding(3);
-            this.tabHome.Size = new System.Drawing.Size(951, 509);
+            this.tabHome.Size = new System.Drawing.Size(951, 518);
             this.tabHome.TabIndex = 0;
-            this.tabHome.Text = "Home";
+            this.tabHome.DragDrop += new System.Windows.Forms.DragEventHandler(this.tabHome_DragDrop);
             // 
             // txtSearchBox
             // 
@@ -111,14 +172,14 @@
             this.txtSearchBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSearchBox.Font = new System.Drawing.Font("Segoe UI", 14F);
             this.txtSearchBox.ForeColor = System.Drawing.Color.White;
-            this.txtSearchBox.Location = new System.Drawing.Point(100, 215);
+            this.txtSearchBox.Location = new System.Drawing.Point(100, 220);
             this.txtSearchBox.Name = "txtSearchBox";
             this.txtSearchBox.Size = new System.Drawing.Size(700, 25);
             this.txtSearchBox.TabIndex = 0;
-            this.txtSearchBox.WaterMark = "Find movies, enter tags, insert url link...";
-            this.txtSearchBox.WaterMarkActiveForeColor = System.Drawing.Color.Silver;
+            this.txtSearchBox.WaterMark = "Search movies, add some tags, insert a link or drag and drop a file...";
+            this.txtSearchBox.WaterMarkActiveForeColor = System.Drawing.Color.White;
             this.txtSearchBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 14F);
-            this.txtSearchBox.WaterMarkForeColor = System.Drawing.Color.LightGray;
+            this.txtSearchBox.WaterMarkForeColor = System.Drawing.Color.Silver;
             // 
             // btnTag5
             // 
@@ -138,7 +199,7 @@
             this.btnTag5.FillType = CButtonLib.CButton.eFillType.Solid;
             this.btnTag5.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.btnTag5.ImageIndex = 0;
-            this.btnTag5.Location = new System.Drawing.Point(431, 274);
+            this.btnTag5.Location = new System.Drawing.Point(431, 279);
             this.btnTag5.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.btnTag5.Name = "btnTag5";
             this.btnTag5.ShowFocus = CButtonLib.CButton.eFocus.None;
@@ -168,7 +229,7 @@
             this.btnTag4.FillType = CButtonLib.CButton.eFillType.Solid;
             this.btnTag4.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.btnTag4.ImageIndex = 0;
-            this.btnTag4.Location = new System.Drawing.Point(365, 274);
+            this.btnTag4.Location = new System.Drawing.Point(365, 279);
             this.btnTag4.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.btnTag4.Name = "btnTag4";
             this.btnTag4.ShowFocus = CButtonLib.CButton.eFocus.None;
@@ -198,7 +259,7 @@
             this.btnTag3.FillType = CButtonLib.CButton.eFillType.Solid;
             this.btnTag3.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.btnTag3.ImageIndex = 0;
-            this.btnTag3.Location = new System.Drawing.Point(312, 274);
+            this.btnTag3.Location = new System.Drawing.Point(312, 279);
             this.btnTag3.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.btnTag3.Name = "btnTag3";
             this.btnTag3.ShowFocus = CButtonLib.CButton.eFocus.None;
@@ -228,7 +289,7 @@
             this.btnTag2.FillType = CButtonLib.CButton.eFillType.Solid;
             this.btnTag2.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.btnTag2.ImageIndex = 0;
-            this.btnTag2.Location = new System.Drawing.Point(238, 274);
+            this.btnTag2.Location = new System.Drawing.Point(238, 279);
             this.btnTag2.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.btnTag2.Name = "btnTag2";
             this.btnTag2.ShowFocus = CButtonLib.CButton.eFocus.None;
@@ -258,7 +319,7 @@
             this.btnTag1.FillType = CButtonLib.CButton.eFillType.Solid;
             this.btnTag1.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.btnTag1.ImageIndex = 0;
-            this.btnTag1.Location = new System.Drawing.Point(172, 274);
+            this.btnTag1.Location = new System.Drawing.Point(172, 279);
             this.btnTag1.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.btnTag1.Name = "btnTag1";
             this.btnTag1.ShowFocus = CButtonLib.CButton.eFocus.None;
@@ -277,7 +338,7 @@
             this.lblAddTags.BackColor = System.Drawing.Color.Transparent;
             this.lblAddTags.Font = new System.Drawing.Font("Segoe UI Semibold", 9.25F);
             this.lblAddTags.ForeColor = System.Drawing.Color.Silver;
-            this.lblAddTags.Location = new System.Drawing.Point(88, 280);
+            this.lblAddTags.Location = new System.Drawing.Point(88, 285);
             this.lblAddTags.Name = "lblAddTags";
             this.lblAddTags.Size = new System.Drawing.Size(70, 17);
             this.lblAddTags.TabIndex = 1;
@@ -309,6 +370,7 @@
             this.imgSettings.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imgSettings.TabIndex = 3;
             this.imgSettings.TabStop = false;
+            this.imgSettings.Click += new System.EventHandler(this.imgSettings_Click);
             // 
             // imgOpenPlex
             // 
@@ -326,21 +388,20 @@
             // 
             this.btnSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnSearch.BackColor = System.Drawing.Color.Transparent;
-            this.btnSearch.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(143)))), ((int)(((byte)(209)))));
-            this.btnSearch.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(143)))), ((int)(((byte)(209)))));
+            this.btnSearch.ColorFillSolid = System.Drawing.Color.SteelBlue;
             this.btnSearch.Corners.LowerRight = 2;
             this.btnSearch.Corners.UpperRight = 2;
             this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSearch.DesignerSelected = false;
-            this.btnSearch.DimFactorClick = -15;
-            this.btnSearch.DimFactorHover = -15;
+            this.btnSearch.DimFactorClick = 0;
+            this.btnSearch.DimFactorHover = 0;
             this.btnSearch.FillType = CButtonLib.CButton.eFillType.Solid;
             this.btnSearch.FocalPoints.CenterPtX = 0F;
             this.btnSearch.FocalPoints.CenterPtY = 0F;
             this.btnSearch.Image = global::OpenPlex.Properties.Resources.SearchIconH;
             this.btnSearch.ImageIndex = 0;
             this.btnSearch.ImageSize = new System.Drawing.Size(21, 21);
-            this.btnSearch.Location = new System.Drawing.Point(811, 204);
+            this.btnSearch.Location = new System.Drawing.Point(811, 209);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.ShowFocus = CButtonLib.CButton.eFocus.None;
             this.btnSearch.Size = new System.Drawing.Size(48, 48);
@@ -365,7 +426,7 @@
             this.bgSearchBox.DimFactorHover = 0;
             this.bgSearchBox.FillType = CButtonLib.CButton.eFillType.Solid;
             this.bgSearchBox.ImageIndex = 0;
-            this.bgSearchBox.Location = new System.Drawing.Point(91, 204);
+            this.bgSearchBox.Location = new System.Drawing.Point(91, 209);
             this.bgSearchBox.Name = "bgSearchBox";
             this.bgSearchBox.ShowFocus = CButtonLib.CButton.eFocus.None;
             this.bgSearchBox.Size = new System.Drawing.Size(768, 48);
@@ -376,137 +437,138 @@
             // tabSearchResults
             // 
             this.tabSearchResults.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
-            this.tabSearchResults.Controls.Add(this.btnBack);
-            this.tabSearchResults.Controls.Add(this.btnDownloadSelected);
+            this.tabSearchResults.Controls.Add(this.panelSearchHeaders);
             this.tabSearchResults.Controls.Add(this.dataGrid);
+            this.tabSearchResults.Controls.Add(this.imgCloseSearchResults);
+            this.tabSearchResults.ForeColor = System.Drawing.Color.White;
             this.tabSearchResults.Location = new System.Drawing.Point(4, 22);
             this.tabSearchResults.Name = "tabSearchResults";
             this.tabSearchResults.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
-            this.tabSearchResults.Size = new System.Drawing.Size(951, 509);
+            this.tabSearchResults.Size = new System.Drawing.Size(951, 518);
             this.tabSearchResults.TabIndex = 1;
-            this.tabSearchResults.Text = "tabPage2";
             // 
-            // btnBack
+            // panelSearchHeaders
             // 
-            this.btnBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnBack.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(136)))), ((int)(((byte)(168)))));
-            this.btnBack.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(136)))), ((int)(((byte)(168)))));
-            this.btnBack.Corners.All = 1;
-            this.btnBack.Corners.LowerLeft = 1;
-            this.btnBack.Corners.LowerRight = 1;
-            this.btnBack.Corners.UpperLeft = 1;
-            this.btnBack.Corners.UpperRight = 1;
-            this.btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBack.DesignerSelected = false;
-            this.btnBack.DimFactorClick = 0;
-            this.btnBack.DimFactorHover = 0;
-            this.btnBack.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.btnBack.Font = new System.Drawing.Font("Segoe UI Semibold", 10.75F);
-            this.btnBack.ImageIndex = 0;
-            this.btnBack.Location = new System.Drawing.Point(6, 478);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.btnBack.Size = new System.Drawing.Size(50, 25);
-            this.btnBack.TabIndex = 3;
-            this.btnBack.Text = "Back";
-            this.btnBack.TextShadowShow = false;
-            this.btnBack.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnBack_ClickButtonArea);
+            this.panelSearchHeaders.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelSearchHeaders.Controls.Add(this.lblHeaderResults);
+            this.panelSearchHeaders.Controls.Add(this.lblHeaderResultsText);
+            this.panelSearchHeaders.Location = new System.Drawing.Point(0, 0);
+            this.panelSearchHeaders.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
+            this.panelSearchHeaders.Name = "panelSearchHeaders";
+            this.panelSearchHeaders.Padding = new System.Windows.Forms.Padding(5, 3, 0, 0);
+            this.panelSearchHeaders.Size = new System.Drawing.Size(908, 39);
+            this.panelSearchHeaders.TabIndex = 4;
             // 
-            // btnDownloadSelected
+            // lblHeaderResults
             // 
-            this.btnDownloadSelected.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnDownloadSelected.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(136)))), ((int)(((byte)(168)))));
-            this.btnDownloadSelected.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(136)))), ((int)(((byte)(168)))));
-            this.btnDownloadSelected.Corners.All = 1;
-            this.btnDownloadSelected.Corners.LowerLeft = 1;
-            this.btnDownloadSelected.Corners.LowerRight = 1;
-            this.btnDownloadSelected.Corners.UpperLeft = 1;
-            this.btnDownloadSelected.Corners.UpperRight = 1;
-            this.btnDownloadSelected.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDownloadSelected.DesignerSelected = false;
-            this.btnDownloadSelected.DimFactorClick = 0;
-            this.btnDownloadSelected.DimFactorHover = 0;
-            this.btnDownloadSelected.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.btnDownloadSelected.Font = new System.Drawing.Font("Segoe UI Semibold", 10.75F);
-            this.btnDownloadSelected.ImageIndex = 0;
-            this.btnDownloadSelected.Location = new System.Drawing.Point(62, 478);
-            this.btnDownloadSelected.Name = "btnDownloadSelected";
-            this.btnDownloadSelected.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.btnDownloadSelected.Size = new System.Drawing.Size(111, 25);
-            this.btnDownloadSelected.TabIndex = 2;
-            this.btnDownloadSelected.Text = "Download File";
-            this.btnDownloadSelected.TextShadowShow = false;
-            this.btnDownloadSelected.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnDownloadSelected_ClickButtonArea);
+            this.lblHeaderResults.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblHeaderResults.AutoSize = true;
+            this.lblHeaderResults.BackColor = System.Drawing.Color.Transparent;
+            this.lblHeaderResults.Font = new System.Drawing.Font("Segoe UI Semibold", 15F);
+            this.lblHeaderResults.Location = new System.Drawing.Point(5, 3);
+            this.lblHeaderResults.Margin = new System.Windows.Forms.Padding(0, 0, 0, 8);
+            this.lblHeaderResults.Name = "lblHeaderResults";
+            this.lblHeaderResults.Size = new System.Drawing.Size(189, 28);
+            this.lblHeaderResults.TabIndex = 3;
+            this.lblHeaderResults.Text = "Showing results for";
+            // 
+            // lblHeaderResultsText
+            // 
+            this.lblHeaderResultsText.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblHeaderResultsText.AutoSize = true;
+            this.lblHeaderResultsText.BackColor = System.Drawing.Color.Transparent;
+            this.lblHeaderResultsText.Font = new System.Drawing.Font("Segoe UI Semibold", 15F);
+            this.lblHeaderResultsText.ForeColor = System.Drawing.Color.LightGray;
+            this.lblHeaderResultsText.Location = new System.Drawing.Point(194, 3);
+            this.lblHeaderResultsText.Margin = new System.Windows.Forms.Padding(0, 0, 0, 8);
+            this.lblHeaderResultsText.Name = "lblHeaderResultsText";
+            this.lblHeaderResultsText.Size = new System.Drawing.Size(49, 28);
+            this.lblHeaderResultsText.TabIndex = 4;
+            this.lblHeaderResultsText.Text = "Text";
             // 
             // dataGrid
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(24)))), ((int)(((byte)(35)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGrid.AllowUserToAddRows = false;
+            this.dataGrid.AllowUserToDeleteRows = false;
+            this.dataGrid.AllowUserToResizeColumns = false;
+            this.dataGrid.AllowUserToResizeRows = false;
             this.dataGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
             this.dataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGrid.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(32)))), ((int)(((byte)(45)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(32)))), ((int)(((byte)(45)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(6, 4, 0, 4);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.headerFileName});
-            this.dataGrid.ContextMenuStrip = this.contextMenuStrip1;
+            this.columnFileName});
+            this.dataGrid.ContextMenuStrip = this.contextFileName;
+            this.dataGrid.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dataGrid.EnableHeadersVisualStyles = false;
             this.dataGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
-            this.dataGrid.Location = new System.Drawing.Point(0, 0);
-            this.dataGrid.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
+            this.dataGrid.Location = new System.Drawing.Point(0, 39);
+            this.dataGrid.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.dataGrid.MultiSelect = false;
             this.dataGrid.Name = "dataGrid";
-            this.dataGrid.RowHeadersWidth = 20;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(73)))), ((int)(((byte)(95)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(56)))), ((int)(((byte)(72)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGrid.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGrid.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(73)))), ((int)(((byte)(95)))));
-            this.dataGrid.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGrid.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.White;
-            this.dataGrid.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(56)))), ((int)(((byte)(72)))));
+            this.dataGrid.ReadOnly = true;
+            this.dataGrid.RowHeadersVisible = false;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGrid.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGrid.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
+            this.dataGrid.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.dataGrid.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Silver;
+            this.dataGrid.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
+            this.dataGrid.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
             this.dataGrid.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGrid.RowTemplate.Height = 26;
-            this.dataGrid.Size = new System.Drawing.Size(951, 470);
-            this.dataGrid.TabIndex = 0;
+            this.dataGrid.RowTemplate.Height = 30;
+            this.dataGrid.ShowEditingIcon = false;
+            this.dataGrid.Size = new System.Drawing.Size(951, 479);
+            this.dataGrid.TabIndex = 2;
+            this.dataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGrid_CellContentClick);
             // 
-            // headerFileName
+            // columnFileName
             // 
-            this.headerFileName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.headerFileName.DefaultCellStyle = dataGridViewCellStyle3;
-            this.headerFileName.HeaderText = "File Name";
-            this.headerFileName.Name = "headerFileName";
+            this.columnFileName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.columnFileName.DefaultCellStyle = dataGridViewCellStyle2;
+            this.columnFileName.HeaderText = "File Name";
+            this.columnFileName.Name = "columnFileName";
+            this.columnFileName.ReadOnly = true;
             // 
-            // contextMenuStrip1
+            // contextFileName
             // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.OpenWithToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(139, 26);
+            this.contextFileName.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.OpenWithToolStripMenuItem,
+            this.copyToClipboardToolStripMenuItem});
+            this.contextFileName.Name = "contextMenuStrip1";
+            this.contextFileName.ShowImageMargin = false;
+            this.contextFileName.ShowItemToolTips = false;
+            this.contextFileName.Size = new System.Drawing.Size(147, 48);
             // 
             // OpenWithToolStripMenuItem
             // 
             this.OpenWithToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.WMPToolStripMenuItem,
-            this.VLCToolStripMenuItem1});
+            this.VLCToolStripMenuItem});
             this.OpenWithToolStripMenuItem.Name = "OpenWithToolStripMenuItem";
-            this.OpenWithToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.OpenWithToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.OpenWithToolStripMenuItem.Text = "Open with...";
             // 
             // WMPToolStripMenuItem
@@ -516,26 +578,679 @@
             this.WMPToolStripMenuItem.Text = "WMP";
             this.WMPToolStripMenuItem.Click += new System.EventHandler(this.wMPToolStripMenuItem_Click);
             // 
-            // VLCToolStripMenuItem1
+            // VLCToolStripMenuItem
             // 
-            this.VLCToolStripMenuItem1.Name = "VLCToolStripMenuItem1";
-            this.VLCToolStripMenuItem1.Size = new System.Drawing.Size(103, 22);
-            this.VLCToolStripMenuItem1.Text = "VLC";
-            this.VLCToolStripMenuItem1.Click += new System.EventHandler(this.VLCToolStripMenuItem1_Click);
+            this.VLCToolStripMenuItem.Name = "VLCToolStripMenuItem";
+            this.VLCToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
+            this.VLCToolStripMenuItem.Text = "VLC";
+            this.VLCToolStripMenuItem.Click += new System.EventHandler(this.VLCToolStripMenuItem1_Click);
+            // 
+            // copyToClipboardToolStripMenuItem
+            // 
+            this.copyToClipboardToolStripMenuItem.Name = "copyToClipboardToolStripMenuItem";
+            this.copyToClipboardToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.copyToClipboardToolStripMenuItem.Text = "Copy to Clipboard";
+            this.copyToClipboardToolStripMenuItem.Click += new System.EventHandler(this.copyToClipboardToolStripMenuItem_Click);
+            // 
+            // imgCloseSearchResults
+            // 
+            this.imgCloseSearchResults.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.imgCloseSearchResults.BackColor = System.Drawing.Color.Transparent;
+            this.imgCloseSearchResults.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imgCloseSearchResults.Image = global::OpenPlex.Properties.Resources.iconCLoseL;
+            this.imgCloseSearchResults.Location = new System.Drawing.Point(915, 10);
+            this.imgCloseSearchResults.Name = "imgCloseSearchResults";
+            this.imgCloseSearchResults.Size = new System.Drawing.Size(24, 24);
+            this.imgCloseSearchResults.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgCloseSearchResults.TabIndex = 5;
+            this.imgCloseSearchResults.TabStop = false;
+            this.imgCloseSearchResults.Click += new System.EventHandler(this.imgCloseSearchResults_Click);
+            // 
+            // tabMovieDetails
+            // 
+            this.tabMovieDetails.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
+            this.tabMovieDetails.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabMovieDetails.Controls.Add(this.imgCloseMovieDetails);
+            this.tabMovieDetails.Controls.Add(this.imgMovieInfoPoster);
+            this.tabMovieDetails.Controls.Add(this.panelMovieItems);
+            this.tabMovieDetails.Controls.Add(this.imgMoviePosterBackground);
+            this.tabMovieDetails.ForeColor = System.Drawing.Color.White;
+            this.tabMovieDetails.Location = new System.Drawing.Point(4, 22);
+            this.tabMovieDetails.Name = "tabMovieDetails";
+            this.tabMovieDetails.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.tabMovieDetails.Size = new System.Drawing.Size(951, 518);
+            this.tabMovieDetails.TabIndex = 3;
+            // 
+            // imgCloseMovieDetails
+            // 
+            this.imgCloseMovieDetails.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.imgCloseMovieDetails.BackColor = System.Drawing.Color.Transparent;
+            this.imgCloseMovieDetails.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imgCloseMovieDetails.Image = global::OpenPlex.Properties.Resources.iconCLoseL;
+            this.imgCloseMovieDetails.Location = new System.Drawing.Point(900, 25);
+            this.imgCloseMovieDetails.Name = "imgCloseMovieDetails";
+            this.imgCloseMovieDetails.Size = new System.Drawing.Size(24, 24);
+            this.imgCloseMovieDetails.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgCloseMovieDetails.TabIndex = 7;
+            this.imgCloseMovieDetails.TabStop = false;
+            this.imgCloseMovieDetails.Click += new System.EventHandler(this.imgCloseMovieDetails_Click);
+            // 
+            // imgMovieInfoPoster
+            // 
+            this.imgMovieInfoPoster.BackColor = System.Drawing.Color.Transparent;
+            this.imgMovieInfoPoster.Location = new System.Drawing.Point(31, 26);
+            this.imgMovieInfoPoster.Name = "imgMovieInfoPoster";
+            this.imgMovieInfoPoster.Size = new System.Drawing.Size(162, 246);
+            this.imgMovieInfoPoster.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgMovieInfoPoster.TabIndex = 0;
+            this.imgMovieInfoPoster.TabStop = false;
+            // 
+            // panelMovieItems
+            // 
+            this.panelMovieItems.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelMovieItems.BackColor = System.Drawing.Color.Transparent;
+            this.panelMovieItems.Controls.Add(this.movieInfoTitle);
+            this.panelMovieItems.Controls.Add(this.panelMovieSubItems);
+            this.panelMovieItems.Controls.Add(this.movieInfoDescription);
+            this.panelMovieItems.Controls.Add(this.btnMoviePlay);
+            this.panelMovieItems.Controls.Add(this.btnMovieDownload);
+            this.panelMovieItems.Controls.Add(this.btnMovieTrailer);
+            this.panelMovieItems.Controls.Add(this.movieInfoPopcornFanartURL);
+            this.panelMovieItems.Controls.Add(this.movieInfoPopcornTrailerURL);
+            this.panelMovieItems.Controls.Add(this.movieInfoIMDbId);
+            this.panelMovieItems.Controls.Add(this.movieInfoFileURL);
+            this.panelMovieItems.Location = new System.Drawing.Point(214, 26);
+            this.panelMovieItems.Name = "panelMovieItems";
+            this.panelMovieItems.Size = new System.Drawing.Size(668, 465);
+            this.panelMovieItems.TabIndex = 6;
+            // 
+            // movieInfoTitle
+            // 
+            this.movieInfoTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.movieInfoTitle.BackColor = System.Drawing.Color.Transparent;
+            this.movieInfoTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 20F);
+            this.movieInfoTitle.Location = new System.Drawing.Point(0, 0);
+            this.movieInfoTitle.Margin = new System.Windows.Forms.Padding(0, 0, 3, 8);
+            this.movieInfoTitle.Name = "movieInfoTitle";
+            this.movieInfoTitle.Size = new System.Drawing.Size(668, 41);
+            this.movieInfoTitle.TabIndex = 1;
+            this.movieInfoTitle.Text = "Title";
+            // 
+            // panelMovieSubItems
+            // 
+            this.panelMovieSubItems.AutoSize = true;
+            this.panelMovieSubItems.BackColor = System.Drawing.Color.Transparent;
+            this.panelMovieSubItems.Controls.Add(this.movieInfoGenre);
+            this.panelMovieSubItems.Controls.Add(this.movieInfoSplitter1);
+            this.panelMovieSubItems.Controls.Add(this.movieInfoIMDbRating);
+            this.panelMovieSubItems.Controls.Add(this.movieInfoSplitter2);
+            this.panelMovieSubItems.Controls.Add(this.movieInfoRuntime);
+            this.panelMovieSubItems.Controls.Add(this.movieInfoSplitter3);
+            this.panelMovieSubItems.Controls.Add(this.movieInfoReleaseDate);
+            this.panelMovieItems.SetFlowBreak(this.panelMovieSubItems, true);
+            this.panelMovieSubItems.Location = new System.Drawing.Point(5, 49);
+            this.panelMovieSubItems.Margin = new System.Windows.Forms.Padding(5, 0, 0, 15);
+            this.panelMovieSubItems.Name = "panelMovieSubItems";
+            this.panelMovieSubItems.Size = new System.Drawing.Size(285, 20);
+            this.panelMovieSubItems.TabIndex = 2;
+            this.panelMovieSubItems.WrapContents = false;
+            // 
+            // movieInfoGenre
+            // 
+            this.movieInfoGenre.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.movieInfoGenre.AutoSize = true;
+            this.movieInfoGenre.BackColor = System.Drawing.Color.Transparent;
+            this.movieInfoGenre.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.movieInfoGenre.Location = new System.Drawing.Point(0, 0);
+            this.movieInfoGenre.Margin = new System.Windows.Forms.Padding(0);
+            this.movieInfoGenre.Name = "movieInfoGenre";
+            this.movieInfoGenre.Size = new System.Drawing.Size(48, 20);
+            this.movieInfoGenre.TabIndex = 3;
+            this.movieInfoGenre.Text = "Genre";
+            // 
+            // movieInfoSplitter1
+            // 
+            this.movieInfoSplitter1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.movieInfoSplitter1.AutoSize = true;
+            this.movieInfoSplitter1.BackColor = System.Drawing.Color.Transparent;
+            this.movieInfoSplitter1.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.movieInfoSplitter1.Location = new System.Drawing.Point(48, 0);
+            this.movieInfoSplitter1.Margin = new System.Windows.Forms.Padding(0);
+            this.movieInfoSplitter1.Name = "movieInfoSplitter1";
+            this.movieInfoSplitter1.Size = new System.Drawing.Size(15, 20);
+            this.movieInfoSplitter1.TabIndex = 4;
+            this.movieInfoSplitter1.Text = "•";
+            // 
+            // movieInfoIMDbRating
+            // 
+            this.movieInfoIMDbRating.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.movieInfoIMDbRating.AutoSize = true;
+            this.movieInfoIMDbRating.BackColor = System.Drawing.Color.Transparent;
+            this.movieInfoIMDbRating.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.movieInfoIMDbRating.Location = new System.Drawing.Point(63, 0);
+            this.movieInfoIMDbRating.Margin = new System.Windows.Forms.Padding(0);
+            this.movieInfoIMDbRating.Name = "movieInfoIMDbRating";
+            this.movieInfoIMDbRating.Size = new System.Drawing.Size(50, 20);
+            this.movieInfoIMDbRating.TabIndex = 5;
+            this.movieInfoIMDbRating.Text = "0.0/10";
+            // 
+            // movieInfoSplitter2
+            // 
+            this.movieInfoSplitter2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.movieInfoSplitter2.AutoSize = true;
+            this.movieInfoSplitter2.BackColor = System.Drawing.Color.Transparent;
+            this.movieInfoSplitter2.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.movieInfoSplitter2.Location = new System.Drawing.Point(113, 0);
+            this.movieInfoSplitter2.Margin = new System.Windows.Forms.Padding(0);
+            this.movieInfoSplitter2.Name = "movieInfoSplitter2";
+            this.movieInfoSplitter2.Size = new System.Drawing.Size(15, 20);
+            this.movieInfoSplitter2.TabIndex = 10;
+            this.movieInfoSplitter2.Text = "•";
+            // 
+            // movieInfoRuntime
+            // 
+            this.movieInfoRuntime.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.movieInfoRuntime.AutoSize = true;
+            this.movieInfoRuntime.BackColor = System.Drawing.Color.Transparent;
+            this.movieInfoRuntime.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.movieInfoRuntime.Location = new System.Drawing.Point(128, 0);
+            this.movieInfoRuntime.Margin = new System.Windows.Forms.Padding(0);
+            this.movieInfoRuntime.Name = "movieInfoRuntime";
+            this.movieInfoRuntime.Size = new System.Drawing.Size(46, 20);
+            this.movieInfoRuntime.TabIndex = 11;
+            this.movieInfoRuntime.Text = "0 min";
+            // 
+            // movieInfoSplitter3
+            // 
+            this.movieInfoSplitter3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.movieInfoSplitter3.AutoSize = true;
+            this.movieInfoSplitter3.BackColor = System.Drawing.Color.Transparent;
+            this.movieInfoSplitter3.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.movieInfoSplitter3.Location = new System.Drawing.Point(174, 0);
+            this.movieInfoSplitter3.Margin = new System.Windows.Forms.Padding(0);
+            this.movieInfoSplitter3.Name = "movieInfoSplitter3";
+            this.movieInfoSplitter3.Size = new System.Drawing.Size(15, 20);
+            this.movieInfoSplitter3.TabIndex = 12;
+            this.movieInfoSplitter3.Text = "•";
+            // 
+            // movieInfoReleaseDate
+            // 
+            this.movieInfoReleaseDate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.movieInfoReleaseDate.AutoSize = true;
+            this.movieInfoReleaseDate.BackColor = System.Drawing.Color.Transparent;
+            this.movieInfoReleaseDate.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.movieInfoReleaseDate.Location = new System.Drawing.Point(189, 0);
+            this.movieInfoReleaseDate.Margin = new System.Windows.Forms.Padding(0);
+            this.movieInfoReleaseDate.Name = "movieInfoReleaseDate";
+            this.movieInfoReleaseDate.Size = new System.Drawing.Size(96, 20);
+            this.movieInfoReleaseDate.TabIndex = 13;
+            this.movieInfoReleaseDate.Text = "Release Date";
+            // 
+            // movieInfoDescription
+            // 
+            this.movieInfoDescription.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.movieInfoDescription.AutoSize = true;
+            this.movieInfoDescription.BackColor = System.Drawing.Color.Transparent;
+            this.panelMovieItems.SetFlowBreak(this.movieInfoDescription, true);
+            this.movieInfoDescription.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.movieInfoDescription.Location = new System.Drawing.Point(5, 88);
+            this.movieInfoDescription.Margin = new System.Windows.Forms.Padding(5, 0, 0, 20);
+            this.movieInfoDescription.Name = "movieInfoDescription";
+            this.movieInfoDescription.Size = new System.Drawing.Size(33, 19);
+            this.movieInfoDescription.TabIndex = 3;
+            this.movieInfoDescription.Text = "Plot";
+            // 
+            // btnMoviePlay
+            // 
+            this.btnMoviePlay.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(139)))), ((int)(((byte)(202)))));
+            this.btnMoviePlay.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(139)))), ((int)(((byte)(202)))));
+            this.btnMoviePlay.ContextMenuStrip = this.contextFileName;
+            this.btnMoviePlay.Corners.All = 2;
+            this.btnMoviePlay.Corners.LowerLeft = 2;
+            this.btnMoviePlay.Corners.LowerRight = 2;
+            this.btnMoviePlay.Corners.UpperLeft = 2;
+            this.btnMoviePlay.Corners.UpperRight = 2;
+            this.btnMoviePlay.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMoviePlay.DesignerSelected = false;
+            this.btnMoviePlay.DimFactorClick = 0;
+            this.btnMoviePlay.DimFactorHover = 0;
+            this.btnMoviePlay.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.btnMoviePlay.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.btnMoviePlay.ImageIndex = 0;
+            this.btnMoviePlay.Location = new System.Drawing.Point(9, 127);
+            this.btnMoviePlay.Margin = new System.Windows.Forms.Padding(9, 0, 3, 3);
+            this.btnMoviePlay.Name = "btnMoviePlay";
+            this.btnMoviePlay.ShowFocus = CButtonLib.CButton.eFocus.None;
+            this.btnMoviePlay.Size = new System.Drawing.Size(44, 25);
+            this.btnMoviePlay.TabIndex = 4;
+            this.btnMoviePlay.Text = "Play";
+            this.btnMoviePlay.TextShadowShow = false;
+            this.btnMoviePlay.Click += new System.EventHandler(this.btnMoviePlay_Click);
+            // 
+            // btnMovieDownload
+            // 
+            this.btnMovieDownload.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(185)))), ((int)(((byte)(93)))));
+            this.btnMovieDownload.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(185)))), ((int)(((byte)(93)))));
+            this.btnMovieDownload.Corners.All = 2;
+            this.btnMovieDownload.Corners.LowerLeft = 2;
+            this.btnMovieDownload.Corners.LowerRight = 2;
+            this.btnMovieDownload.Corners.UpperLeft = 2;
+            this.btnMovieDownload.Corners.UpperRight = 2;
+            this.btnMovieDownload.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMovieDownload.DesignerSelected = false;
+            this.btnMovieDownload.DimFactorClick = 0;
+            this.btnMovieDownload.DimFactorHover = 0;
+            this.btnMovieDownload.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.btnMovieDownload.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.btnMovieDownload.ImageIndex = 0;
+            this.btnMovieDownload.Location = new System.Drawing.Point(59, 127);
+            this.btnMovieDownload.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
+            this.btnMovieDownload.Name = "btnMovieDownload";
+            this.btnMovieDownload.ShowFocus = CButtonLib.CButton.eFocus.None;
+            this.btnMovieDownload.Size = new System.Drawing.Size(80, 25);
+            this.btnMovieDownload.TabIndex = 5;
+            this.btnMovieDownload.Text = "Download";
+            this.btnMovieDownload.TextShadowShow = false;
+            this.btnMovieDownload.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnMovieDownload_ClickButtonArea);
+            // 
+            // btnMovieTrailer
+            // 
+            this.btnMovieTrailer.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(83)))), ((int)(((byte)(79)))));
+            this.btnMovieTrailer.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(83)))), ((int)(((byte)(79)))));
+            this.btnMovieTrailer.Corners.All = 2;
+            this.btnMovieTrailer.Corners.LowerLeft = 2;
+            this.btnMovieTrailer.Corners.LowerRight = 2;
+            this.btnMovieTrailer.Corners.UpperLeft = 2;
+            this.btnMovieTrailer.Corners.UpperRight = 2;
+            this.btnMovieTrailer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMovieTrailer.DesignerSelected = false;
+            this.btnMovieTrailer.DimFactorClick = 0;
+            this.btnMovieTrailer.DimFactorHover = 0;
+            this.btnMovieTrailer.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.panelMovieItems.SetFlowBreak(this.btnMovieTrailer, true);
+            this.btnMovieTrailer.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.btnMovieTrailer.ImageIndex = 0;
+            this.btnMovieTrailer.Location = new System.Drawing.Point(145, 127);
+            this.btnMovieTrailer.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
+            this.btnMovieTrailer.Name = "btnMovieTrailer";
+            this.btnMovieTrailer.ShowFocus = CButtonLib.CButton.eFocus.None;
+            this.btnMovieTrailer.Size = new System.Drawing.Size(58, 25);
+            this.btnMovieTrailer.TabIndex = 9;
+            this.btnMovieTrailer.Text = "Trailer";
+            this.btnMovieTrailer.TextShadowShow = false;
+            this.btnMovieTrailer.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnMovieTrailer_ClickButtonArea);
+            // 
+            // movieInfoPopcornFanartURL
+            // 
+            this.movieInfoPopcornFanartURL.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.movieInfoPopcornFanartURL.AutoSize = true;
+            this.movieInfoPopcornFanartURL.BackColor = System.Drawing.Color.Transparent;
+            this.movieInfoPopcornFanartURL.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.movieInfoPopcornFanartURL.Location = new System.Drawing.Point(5, 155);
+            this.movieInfoPopcornFanartURL.Margin = new System.Windows.Forms.Padding(5, 0, 0, 20);
+            this.movieInfoPopcornFanartURL.Name = "movieInfoPopcornFanartURL";
+            this.movieInfoPopcornFanartURL.Size = new System.Drawing.Size(77, 19);
+            this.movieInfoPopcornFanartURL.TabIndex = 8;
+            this.movieInfoPopcornFanartURL.Text = "Fanart URL";
+            this.movieInfoPopcornFanartURL.Visible = false;
+            // 
+            // movieInfoPopcornTrailerURL
+            // 
+            this.movieInfoPopcornTrailerURL.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.movieInfoPopcornTrailerURL.AutoSize = true;
+            this.movieInfoPopcornTrailerURL.BackColor = System.Drawing.Color.Transparent;
+            this.movieInfoPopcornTrailerURL.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.movieInfoPopcornTrailerURL.Location = new System.Drawing.Point(87, 155);
+            this.movieInfoPopcornTrailerURL.Margin = new System.Windows.Forms.Padding(5, 0, 0, 20);
+            this.movieInfoPopcornTrailerURL.Name = "movieInfoPopcornTrailerURL";
+            this.movieInfoPopcornTrailerURL.Size = new System.Drawing.Size(74, 19);
+            this.movieInfoPopcornTrailerURL.TabIndex = 7;
+            this.movieInfoPopcornTrailerURL.Text = "Trailer URL";
+            this.movieInfoPopcornTrailerURL.Visible = false;
+            // 
+            // movieInfoIMDbId
+            // 
+            this.movieInfoIMDbId.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.movieInfoIMDbId.AutoSize = true;
+            this.movieInfoIMDbId.BackColor = System.Drawing.Color.Transparent;
+            this.movieInfoIMDbId.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.movieInfoIMDbId.Location = new System.Drawing.Point(166, 155);
+            this.movieInfoIMDbId.Margin = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.movieInfoIMDbId.Name = "movieInfoIMDbId";
+            this.movieInfoIMDbId.Size = new System.Drawing.Size(65, 20);
+            this.movieInfoIMDbId.TabIndex = 6;
+            this.movieInfoIMDbId.Text = "IMDb ID";
+            this.movieInfoIMDbId.Visible = false;
+            // 
+            // movieInfoFileURL
+            // 
+            this.movieInfoFileURL.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.movieInfoFileURL.AutoSize = true;
+            this.movieInfoFileURL.BackColor = System.Drawing.Color.Transparent;
+            this.movieInfoFileURL.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.movieInfoFileURL.Location = new System.Drawing.Point(236, 155);
+            this.movieInfoFileURL.Margin = new System.Windows.Forms.Padding(5, 0, 0, 20);
+            this.movieInfoFileURL.Name = "movieInfoFileURL";
+            this.movieInfoFileURL.Size = new System.Drawing.Size(58, 19);
+            this.movieInfoFileURL.TabIndex = 6;
+            this.movieInfoFileURL.Text = "File URL";
+            this.movieInfoFileURL.Visible = false;
+            // 
+            // imgMoviePosterBackground
+            // 
+            this.imgMoviePosterBackground.BackColor = System.Drawing.Color.Transparent;
+            this.imgMoviePosterBackground.Image = global::OpenPlex.Properties.Resources.PosterGlow;
+            this.imgMoviePosterBackground.Location = new System.Drawing.Point(20, 13);
+            this.imgMoviePosterBackground.Name = "imgMoviePosterBackground";
+            this.imgMoviePosterBackground.Size = new System.Drawing.Size(185, 269);
+            this.imgMoviePosterBackground.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgMoviePosterBackground.TabIndex = 8;
+            this.imgMoviePosterBackground.TabStop = false;
+            // 
+            // tabAbout
+            // 
+            this.tabAbout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
+            this.tabAbout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabAbout.Controls.Add(this.lblAboutVersion);
+            this.tabAbout.Controls.Add(this.lblAboutReportIssue);
+            this.tabAbout.Controls.Add(this.lblAboutSubText);
+            this.tabAbout.Controls.Add(this.lblAboutText);
+            this.tabAbout.Controls.Add(this.imgCloseAbout);
+            this.tabAbout.Controls.Add(this.imgHeaderAbout);
+            this.tabAbout.ForeColor = System.Drawing.Color.White;
+            this.tabAbout.Location = new System.Drawing.Point(4, 22);
+            this.tabAbout.Name = "tabAbout";
+            this.tabAbout.Size = new System.Drawing.Size(951, 518);
+            this.tabAbout.TabIndex = 2;
+            // 
+            // lblAboutVersion
+            // 
+            this.lblAboutVersion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblAboutVersion.BackColor = System.Drawing.Color.Transparent;
+            this.lblAboutVersion.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.lblAboutVersion.Location = new System.Drawing.Point(871, 496);
+            this.lblAboutVersion.Margin = new System.Windows.Forms.Padding(3, 0, 3, 5);
+            this.lblAboutVersion.Name = "lblAboutVersion";
+            this.lblAboutVersion.Size = new System.Drawing.Size(74, 15);
+            this.lblAboutVersion.TabIndex = 12;
+            this.lblAboutVersion.Text = "version";
+            this.lblAboutVersion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblAboutReportIssue
+            // 
+            this.lblAboutReportIssue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblAboutReportIssue.AutoSize = true;
+            this.lblAboutReportIssue.BackColor = System.Drawing.Color.Transparent;
+            this.lblAboutReportIssue.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblAboutReportIssue.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.lblAboutReportIssue.Location = new System.Drawing.Point(6, 496);
+            this.lblAboutReportIssue.Margin = new System.Windows.Forms.Padding(3, 0, 3, 5);
+            this.lblAboutReportIssue.Name = "lblAboutReportIssue";
+            this.lblAboutReportIssue.Size = new System.Drawing.Size(87, 15);
+            this.lblAboutReportIssue.TabIndex = 11;
+            this.lblAboutReportIssue.Text = "Report an issue";
+            this.lblAboutReportIssue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblAboutReportIssue.Click += new System.EventHandler(this.lblAboutReportIssue_Click);
+            // 
+            // lblAboutSubText
+            // 
+            this.lblAboutSubText.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.lblAboutSubText.AutoSize = true;
+            this.lblAboutSubText.BackColor = System.Drawing.Color.Transparent;
+            this.lblAboutSubText.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.lblAboutSubText.Location = new System.Drawing.Point(358, 484);
+            this.lblAboutSubText.Margin = new System.Windows.Forms.Padding(3, 0, 3, 5);
+            this.lblAboutSubText.Name = "lblAboutSubText";
+            this.lblAboutSubText.Size = new System.Drawing.Size(234, 20);
+            this.lblAboutSubText.TabIndex = 10;
+            this.lblAboutSubText.Text = "Made with ❤ by a bunch of geeks";
+            this.lblAboutSubText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblAboutText
+            // 
+            this.lblAboutText.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblAboutText.BackColor = System.Drawing.Color.Transparent;
+            this.lblAboutText.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
+            this.lblAboutText.Location = new System.Drawing.Point(104, 178);
+            this.lblAboutText.Name = "lblAboutText";
+            this.lblAboutText.Size = new System.Drawing.Size(743, 201);
+            this.lblAboutText.TabIndex = 0;
+            this.lblAboutText.Text = resources.GetString("lblAboutText.Text");
+            this.lblAboutText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // imgCloseAbout
+            // 
+            this.imgCloseAbout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.imgCloseAbout.BackColor = System.Drawing.Color.Transparent;
+            this.imgCloseAbout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imgCloseAbout.Image = global::OpenPlex.Properties.Resources.iconCLoseL;
+            this.imgCloseAbout.Location = new System.Drawing.Point(900, 25);
+            this.imgCloseAbout.Name = "imgCloseAbout";
+            this.imgCloseAbout.Size = new System.Drawing.Size(24, 24);
+            this.imgCloseAbout.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgCloseAbout.TabIndex = 6;
+            this.imgCloseAbout.TabStop = false;
+            this.imgCloseAbout.Click += new System.EventHandler(this.imgCloseAbout_Click);
+            // 
+            // imgHeaderAbout
+            // 
+            this.imgHeaderAbout.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.imgHeaderAbout.BackColor = System.Drawing.Color.Transparent;
+            this.imgHeaderAbout.Image = global::OpenPlex.Properties.Resources.openplex_text;
+            this.imgHeaderAbout.Location = new System.Drawing.Point(373, 21);
+            this.imgHeaderAbout.Name = "imgHeaderAbout";
+            this.imgHeaderAbout.Size = new System.Drawing.Size(204, 30);
+            this.imgHeaderAbout.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgHeaderAbout.TabIndex = 5;
+            this.imgHeaderAbout.TabStop = false;
+            // 
+            // tabSettings
+            // 
+            this.tabSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
+            this.tabSettings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabSettings.Controls.Add(this.txtSettingsDataDirectory);
+            this.tabSettings.Controls.Add(this.chckSettingsAlwaysOnTop);
+            this.tabSettings.Controls.Add(this.label1);
+            this.tabSettings.Controls.Add(this.chckSettingsClearData);
+            this.tabSettings.Controls.Add(this.lblSettingsClearData);
+            this.tabSettings.Controls.Add(this.lblSettingsDataDirectory);
+            this.tabSettings.Controls.Add(this.cmboSettingsLanguage);
+            this.tabSettings.Controls.Add(this.lblSettingsLanguage);
+            this.tabSettings.Controls.Add(this.lblSettingsHeader);
+            this.tabSettings.Controls.Add(this.btnSettingsSave);
+            this.tabSettings.Controls.Add(this.imgCloseSettings);
+            this.tabSettings.ForeColor = System.Drawing.Color.White;
+            this.tabSettings.Location = new System.Drawing.Point(4, 22);
+            this.tabSettings.Name = "tabSettings";
+            this.tabSettings.Size = new System.Drawing.Size(951, 518);
+            this.tabSettings.TabIndex = 4;
+            // 
+            // txtSettingsDataDirectory
+            // 
+            this.txtSettingsDataDirectory.Cursor = System.Windows.Forms.Cursors.No;
+            this.txtSettingsDataDirectory.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txtSettingsDataDirectory.Location = new System.Drawing.Point(240, 150);
+            this.txtSettingsDataDirectory.Margin = new System.Windows.Forms.Padding(150, 10, 3, 10);
+            this.txtSettingsDataDirectory.Name = "txtSettingsDataDirectory";
+            this.txtSettingsDataDirectory.ReadOnly = true;
+            this.txtSettingsDataDirectory.Size = new System.Drawing.Size(362, 25);
+            this.txtSettingsDataDirectory.TabIndex = 5;
+            this.txtSettingsDataDirectory.Click += new System.EventHandler(this.txtSettingsDataDirectory_Click);
+            // 
+            // chckSettingsAlwaysOnTop
+            // 
+            this.chckSettingsAlwaysOnTop.AutoSize = true;
+            this.chckSettingsAlwaysOnTop.BackColor = System.Drawing.Color.Transparent;
+            this.chckSettingsAlwaysOnTop.Location = new System.Drawing.Point(240, 116);
+            this.chckSettingsAlwaysOnTop.Margin = new System.Windows.Forms.Padding(150, 10, 3, 10);
+            this.chckSettingsAlwaysOnTop.Name = "chckSettingsAlwaysOnTop";
+            this.chckSettingsAlwaysOnTop.Size = new System.Drawing.Size(15, 14);
+            this.chckSettingsAlwaysOnTop.TabIndex = 3;
+            this.chckSettingsAlwaysOnTop.UseVisualStyleBackColor = false;
+            this.chckSettingsAlwaysOnTop.CheckedChanged += new System.EventHandler(this.chckSettingsAlwaysOnTop_CheckedChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.label1.Location = new System.Drawing.Point(15, 118);
+            this.label1.Margin = new System.Windows.Forms.Padding(3, 15, 3, 15);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(99, 19);
+            this.label1.TabIndex = 103;
+            this.label1.Text = "Always on top:";
+            // 
+            // chckSettingsClearData
+            // 
+            this.chckSettingsClearData.AutoSize = true;
+            this.chckSettingsClearData.BackColor = System.Drawing.Color.Transparent;
+            this.chckSettingsClearData.Location = new System.Drawing.Point(240, 194);
+            this.chckSettingsClearData.Margin = new System.Windows.Forms.Padding(150, 10, 3, 10);
+            this.chckSettingsClearData.Name = "chckSettingsClearData";
+            this.chckSettingsClearData.Size = new System.Drawing.Size(15, 14);
+            this.chckSettingsClearData.TabIndex = 5;
+            this.chckSettingsClearData.UseVisualStyleBackColor = false;
+            this.chckSettingsClearData.CheckedChanged += new System.EventHandler(this.chckSettingsClearData_CheckedChanged);
+            // 
+            // lblSettingsClearData
+            // 
+            this.lblSettingsClearData.AutoSize = true;
+            this.lblSettingsClearData.BackColor = System.Drawing.Color.Transparent;
+            this.lblSettingsClearData.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.lblSettingsClearData.Location = new System.Drawing.Point(15, 194);
+            this.lblSettingsClearData.Margin = new System.Windows.Forms.Padding(3, 15, 3, 15);
+            this.lblSettingsClearData.Name = "lblSettingsClearData";
+            this.lblSettingsClearData.Size = new System.Drawing.Size(128, 19);
+            this.lblSettingsClearData.TabIndex = 101;
+            this.lblSettingsClearData.Text = "Clear data on close:";
+            // 
+            // lblSettingsDataDirectory
+            // 
+            this.lblSettingsDataDirectory.AutoSize = true;
+            this.lblSettingsDataDirectory.BackColor = System.Drawing.Color.Transparent;
+            this.lblSettingsDataDirectory.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.lblSettingsDataDirectory.Location = new System.Drawing.Point(15, 153);
+            this.lblSettingsDataDirectory.Margin = new System.Windows.Forms.Padding(3, 15, 3, 15);
+            this.lblSettingsDataDirectory.Name = "lblSettingsDataDirectory";
+            this.lblSettingsDataDirectory.Size = new System.Drawing.Size(129, 19);
+            this.lblSettingsDataDirectory.TabIndex = 14;
+            this.lblSettingsDataDirectory.Text = "Database Directory:";
+            // 
+            // cmboSettingsLanguage
+            // 
+            this.cmboSettingsLanguage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmboSettingsLanguage.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cmboSettingsLanguage.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cmboSettingsLanguage.FormattingEnabled = true;
+            this.cmboSettingsLanguage.Items.AddRange(new object[] {
+            "English"});
+            this.cmboSettingsLanguage.Location = new System.Drawing.Point(240, 71);
+            this.cmboSettingsLanguage.Margin = new System.Windows.Forms.Padding(150, 10, 3, 10);
+            this.cmboSettingsLanguage.Name = "cmboSettingsLanguage";
+            this.cmboSettingsLanguage.Size = new System.Drawing.Size(362, 25);
+            this.cmboSettingsLanguage.TabIndex = 0;
+            this.cmboSettingsLanguage.SelectedIndexChanged += new System.EventHandler(this.cmboSettingsLanguage_SelectedIndexChanged);
+            // 
+            // lblSettingsLanguage
+            // 
+            this.lblSettingsLanguage.AutoSize = true;
+            this.lblSettingsLanguage.BackColor = System.Drawing.Color.Transparent;
+            this.lblSettingsLanguage.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.lblSettingsLanguage.Location = new System.Drawing.Point(15, 74);
+            this.lblSettingsLanguage.Margin = new System.Windows.Forms.Padding(3, 15, 3, 15);
+            this.lblSettingsLanguage.Name = "lblSettingsLanguage";
+            this.lblSettingsLanguage.Size = new System.Drawing.Size(72, 19);
+            this.lblSettingsLanguage.TabIndex = 11;
+            this.lblSettingsLanguage.Text = "Language:";
+            // 
+            // lblSettingsHeader
+            // 
+            this.lblSettingsHeader.AutoSize = true;
+            this.lblSettingsHeader.BackColor = System.Drawing.Color.Transparent;
+            this.lblSettingsHeader.Font = new System.Drawing.Font("Segoe UI Semibold", 18F);
+            this.lblSettingsHeader.Location = new System.Drawing.Point(13, 20);
+            this.lblSettingsHeader.Name = "lblSettingsHeader";
+            this.lblSettingsHeader.Size = new System.Drawing.Size(103, 32);
+            this.lblSettingsHeader.TabIndex = 10;
+            this.lblSettingsHeader.Text = "Settings";
+            // 
+            // btnSettingsSave
+            // 
+            this.btnSettingsSave.BackColor = System.Drawing.Color.Transparent;
+            this.btnSettingsSave.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(139)))), ((int)(((byte)(202)))));
+            this.btnSettingsSave.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(139)))), ((int)(((byte)(202)))));
+            this.btnSettingsSave.Corners.All = 2;
+            this.btnSettingsSave.Corners.LowerLeft = 2;
+            this.btnSettingsSave.Corners.LowerRight = 2;
+            this.btnSettingsSave.Corners.UpperLeft = 2;
+            this.btnSettingsSave.Corners.UpperRight = 2;
+            this.btnSettingsSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSettingsSave.DesignerSelected = false;
+            this.btnSettingsSave.DimFactorClick = 0;
+            this.btnSettingsSave.DimFactorHover = 0;
+            this.btnSettingsSave.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.btnSettingsSave.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.btnSettingsSave.ImageIndex = 0;
+            this.btnSettingsSave.Location = new System.Drawing.Point(18, 476);
+            this.btnSettingsSave.Margin = new System.Windows.Forms.Padding(9, 0, 3, 3);
+            this.btnSettingsSave.Name = "btnSettingsSave";
+            this.btnSettingsSave.ShowFocus = CButtonLib.CButton.eFocus.None;
+            this.btnSettingsSave.Size = new System.Drawing.Size(105, 30);
+            this.btnSettingsSave.TabIndex = 98;
+            this.btnSettingsSave.Text = "Save Settings";
+            this.btnSettingsSave.TextShadowShow = false;
+            this.btnSettingsSave.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnSettingsSave_ClickButtonArea);
+            // 
+            // imgCloseSettings
+            // 
+            this.imgCloseSettings.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.imgCloseSettings.BackColor = System.Drawing.Color.Transparent;
+            this.imgCloseSettings.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imgCloseSettings.Image = global::OpenPlex.Properties.Resources.iconCLoseL;
+            this.imgCloseSettings.Location = new System.Drawing.Point(900, 25);
+            this.imgCloseSettings.Name = "imgCloseSettings";
+            this.imgCloseSettings.Size = new System.Drawing.Size(24, 24);
+            this.imgCloseSettings.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgCloseSettings.TabIndex = 7;
+            this.imgCloseSettings.TabStop = false;
+            this.imgCloseSettings.Click += new System.EventHandler(this.imgCloseSettings_Click);
             // 
             // frmOpenPlex
             // 
+            this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(951, 509);
+            this.ClientSize = new System.Drawing.Size(951, 518);
             this.Controls.Add(this.tab);
-            this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DoubleBuffered = true;
+            this.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "frmOpenPlex";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "OpenPlex";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmOpenPlex_FormClosing);
             this.Load += new System.EventHandler(this.frmOpenPlex_Load);
+            this.SizeChanged += new System.EventHandler(this.frmOpenPlex_SizeChanged);
             this.tab.ResumeLayout(false);
             this.tabHome.ResumeLayout(false);
             this.tabHome.PerformLayout();
@@ -543,8 +1258,26 @@
             ((System.ComponentModel.ISupportInitialize)(this.imgSettings)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgOpenPlex)).EndInit();
             this.tabSearchResults.ResumeLayout(false);
+            this.panelSearchHeaders.ResumeLayout(false);
+            this.panelSearchHeaders.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).EndInit();
-            this.contextMenuStrip1.ResumeLayout(false);
+            this.contextFileName.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.imgCloseSearchResults)).EndInit();
+            this.tabMovieDetails.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.imgCloseMovieDetails)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgMovieInfoPoster)).EndInit();
+            this.panelMovieItems.ResumeLayout(false);
+            this.panelMovieItems.PerformLayout();
+            this.panelMovieSubItems.ResumeLayout(false);
+            this.panelMovieSubItems.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgMoviePosterBackground)).EndInit();
+            this.tabAbout.ResumeLayout(false);
+            this.tabAbout.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgCloseAbout)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgHeaderAbout)).EndInit();
+            this.tabSettings.ResumeLayout(false);
+            this.tabSettings.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgCloseSettings)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -552,28 +1285,72 @@
         #endregion
 
         private System.Windows.Forms.TabControl tab;
-        private System.Windows.Forms.TabPage tabHome;
         private System.Windows.Forms.TabPage tabSearchResults;
         private CButtonLib.CButton btnSearch;
         private CButtonLib.CButton bgSearchBox;
-        private System.Windows.Forms.DataGridView dataGrid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn headerFileName;
         private System.Windows.Forms.PictureBox imgOpenPlex;
         private System.Windows.Forms.PictureBox imgSettings;
         private System.Windows.Forms.PictureBox imgAbout;
-        private CButtonLib.CButton btnDownloadSelected;
-        private CButtonLib.CButton btnBack;
         private CButtonLib.CButton btnTag1;
         private System.Windows.Forms.Label lblAddTags;
         private CButtonLib.CButton btnTag4;
         private CButtonLib.CButton btnTag3;
         private CButtonLib.CButton btnTag2;
         private CButtonLib.CButton btnTag5;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem OpenWithToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem WMPToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem VLCToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem VLCToolStripMenuItem;
         private ChreneLib.Controls.TextBoxes.CTextBox txtSearchBox;
+        public System.Windows.Forms.TabPage tabHome;
+        private System.Windows.Forms.DataGridView dataGrid;
+        private System.Windows.Forms.TabPage tabAbout;
+        private System.Windows.Forms.PictureBox imgCloseAbout;
+        private System.Windows.Forms.PictureBox imgHeaderAbout;
+        private System.Windows.Forms.Label lblAboutText;
+        private System.Windows.Forms.Label lblAboutSubText;
+        private System.Windows.Forms.Label lblAboutVersion;
+        private System.Windows.Forms.Label lblAboutReportIssue;
+        private System.Windows.Forms.TabPage tabMovieDetails;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnFileName;
+        private System.Windows.Forms.FlowLayoutPanel panelMovieSubItems;
+        private System.Windows.Forms.Label movieInfoGenre;
+        private System.Windows.Forms.Label movieInfoSplitter1;
+        private System.Windows.Forms.Label movieInfoIMDbRating;
+        private System.Windows.Forms.Label movieInfoTitle;
+        private System.Windows.Forms.PictureBox imgMovieInfoPoster;
+        private System.Windows.Forms.FlowLayoutPanel panelMovieItems;
+        private System.Windows.Forms.Label movieInfoDescription;
+        private CButtonLib.CButton btnMoviePlay;
+        private CButtonLib.CButton btnMovieDownload;
+        private System.Windows.Forms.PictureBox imgCloseMovieDetails;
+        private System.Windows.Forms.Label movieInfoIMDbId;
+        private System.Windows.Forms.PictureBox imgMoviePosterBackground;
+        private System.Windows.Forms.Label movieInfoFileURL;
+        private System.Windows.Forms.FlowLayoutPanel panelSearchHeaders;
+        private System.Windows.Forms.Label lblHeaderResults;
+        private System.Windows.Forms.Label lblHeaderResultsText;
+        private System.Windows.Forms.Label movieInfoPopcornTrailerURL;
+        private System.Windows.Forms.Label movieInfoPopcornFanartURL;
+        private CButtonLib.CButton btnMovieTrailer;
+        private System.Windows.Forms.Label movieInfoSplitter2;
+        private System.Windows.Forms.Label movieInfoRuntime;
+        private System.Windows.Forms.Label movieInfoSplitter3;
+        private System.Windows.Forms.Label movieInfoReleaseDate;
+        private System.Windows.Forms.PictureBox imgCloseSearchResults;
+        private System.Windows.Forms.ToolStripMenuItem copyToClipboardToolStripMenuItem;
+        private System.Windows.Forms.TabPage tabSettings;
+        private System.Windows.Forms.PictureBox imgCloseSettings;
+        private CButtonLib.CButton btnSettingsSave;
+        private System.Windows.Forms.Label lblSettingsDataDirectory;
+        private System.Windows.Forms.ComboBox cmboSettingsLanguage;
+        private System.Windows.Forms.Label lblSettingsLanguage;
+        private System.Windows.Forms.Label lblSettingsHeader;
+        private System.Windows.Forms.CheckBox chckSettingsClearData;
+        private System.Windows.Forms.Label lblSettingsClearData;
+        private System.Windows.Forms.CheckBox chckSettingsAlwaysOnTop;
+        private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.ContextMenuStrip contextFileName;
+        private System.Windows.Forms.TextBox txtSettingsDataDirectory;
     }
 }
 
