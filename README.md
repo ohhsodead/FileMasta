@@ -11,11 +11,11 @@
 
 
 ## What is OpenPlex?
-Just a small app still in early development. Basically allowing users to search the database filled with movies and tv shows from around the web.
+OpenPlex allows you to search for Movies/TV shows available to watch online for free by providing you with trusted files from all around the web. But we don't use torrents, just raw media files playable anywhere.
 
-The database will eventually become open source so others can contribute and upload their own submission.
+A database run by a community of movie lovers who are constantly uploading the links of the newly released movies as well as top classics, and of course we're open to suggestions.
 
-If you've got any comments, queries or suggestions for the app please just open an issue, I want to know what you've got to say!
+If you've got any comments, queries or suggestions for the app please just open an issue - we want to know what you've got to say!
 
 ## Framework & Backend
 The app is a .NET 4.6.2 application using WinForm framework written in C#. 
@@ -29,7 +29,9 @@ Download installer [here](https://github.com/invu/openplex/releases/download/v0.
 ## Screenshots
 ![Search Movies/TV Shows](https://dl.dropbox.com/s/ozx2m5f4av1rl4l/OpenPlex%20-%20Search%20Movies.png?dl=0)
 ![Search Results](https://dl.dropbox.com/s/vjpwxu6hfwz9r99/OpenPlex%20-%20Search%20Results.png?dl=0)
+![Movie Details](https://dl.dropbox.com/s/ys1w6z9gbfkysbr/OpenPlex%20-%20Movie%20Details.png?dl=0)
 ![Download MoviesTV/Shows](https://dl.dropbox.com/s/aa9sgx51qw19gm0/OpenPlex%20-%20Downloads.png?dl=0)
+![About Tab](https://dl.dropbox.com/s/zlx484ekgrljqo9/OpenPlex%20-%20About.png?dl=0)
 
 ## Legal Side of Things...
 All of the free movies found on this app are hosted on third-party servers that are freely available to watch online for all internet users. Any legal issues regarding the free online movies on this website should be taken up with the actual file hosts themselves, as we're not affiliated with them.
