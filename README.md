@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="https://dl.dropbox.com/s/5ijrr4uesqf8xtn/openplex-logo.png?dl=0" height="128" width="128" alt="Logo" />
+  <img src="/openplex-logo.png" height="128" width="128" alt="Logo" />
   <br />
   OpenPlex
 </h1>
