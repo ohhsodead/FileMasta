@@ -9,7 +9,6 @@
 <div align="center">
 </div>
 
-
 ## What is OpenPlex?
 OpenPlex allows you to search for Movies/TV shows available to watch online for free by providing you with trusted files from all around the web. But we don't use torrents, just raw media files playable anywhere.
 
@@ -31,10 +30,13 @@ Download installer [here](https://github.com/invu/openplex/releases/download/v0.
 ![Search Results](https://dl.dropbox.com/s/vjpwxu6hfwz9r99/OpenPlex%20-%20Search%20Results.png?dl=0)
 ![Movie Details](https://dl.dropbox.com/s/ys1w6z9gbfkysbr/OpenPlex%20-%20Movie%20Details.png?dl=0)
 ![Download MoviesTV/Shows](https://dl.dropbox.com/s/aa9sgx51qw19gm0/OpenPlex%20-%20Downloads.png?dl=0)
-![About Tab](https://dl.dropbox.com/s/zlx484ekgrljqo9/OpenPlex%20-%20About.png?dl=0)
+![About OpenPlex](https://dl.dropbox.com/s/zlx484ekgrljqo9/OpenPlex%20-%20About.png?dl=0)
+
+## Contribute to the Database
+Got some direct media URLs lying around? Submit them to our hosting database! Take a look at the database [here](https://github.com/invu/openplex-app/openplex-db.txt), it's pretty simple. Oh, and you can follow [this](https://help.github.com/articles/editing-files-in-another-user-s-repository/) tutorial from GitHub if you're stuck.
 
 ## Legal Side of Things...
-All of the free movies found on this app are hosted on third-party servers that are freely available to watch online for all internet users. Any legal issues regarding the free online movies on this website should be taken up with the actual file hosts themselves, as we're not affiliated with them.
+All of the free movies/tv shows found on this app are hosted on third-party servers that are freely available to watch online for all internet users. Any legal issues regarding the free online links on this app should be taken up with the actual file hosts themselves, as we're not affiliated with them.
 
 ## License
 If you distribute a copy or make a fork of the project, you have to credit this project as source.
