@@ -24,7 +24,7 @@ The app is a .NET 4.6.2 application using WinForm framework written in C#.
 Windows 7+ is supported (Windows 7, 8, 8.1, 10)
 
 ## Installation
-Download installer [here](https://github.com/invu/openplex/releases/download/v0.1.0.1/OpenPlexInstaller.exe)
+Download installer [here](https://github.com/invu/openplex/releases/download/v0.1.0.2/OpenPlexInstaller.exe)
 
 ## Screenshots
 ![Search Movies/TV Shows](https://dl.dropbox.com/s/ozx2m5f4av1rl4l/OpenPlex%20-%20Search%20Movies.png?dl=0)
