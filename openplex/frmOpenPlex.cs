@@ -481,8 +481,8 @@ namespace OpenPlex
 
         private void txtSettingsDataDirectory_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openFileDialog1 = new OpenFileDialog();
-            if (openFileDialog1.ShowDialog() == DialogResult.OK) { txtSettingsDataDirectory.Text = openFileDialog1.FileName; Properties.Settings.Default.settingsPathDataDirectory = openFileDialog1.FileName; }
+            FolderBrowserDialog folderBrowserDialog1 = new FolderBrowserDialog();
+            if (folderBrowserDialog1.ShowDialog() == DialogResult.OK) { txtSettingsDataDirectory.Text = folderBrowserDialog1.SelectedPath; Properties.Settings.Default.settingsPathDataDirectory = folderBrowserDialog1.SelectedPath; }
         }
 
         private void chckSettingsClearData_CheckedChanged(object sender, EventArgs e)
