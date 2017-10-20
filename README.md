@@ -17,7 +17,7 @@ A database run by a community of movie lovers who are constantly uploading the l
 If you've got any comments, queries or suggestions for the app please just open an issue - we want to know what you've got to say!
 
 ## How does it work?
-It communicates with its own [API](https://github.com/invu/openplex-app/openplex-db.txt) to query movies and tv shows from the community driven database. The app includes a easy-to-use download client, supporting all files and asynchronous downloads.
+It communicates with its own [API](https://github.com/invu/openplex-app/blob/master/openplex-db.txt) to query movies and tv shows from the community driven database. The app includes a easy-to-use download client, supporting all files and asynchronous downloads.
 
 ## Contribute
 Got some direct media URLs lying around? Submit them to our [core movie database](https://github.com/invu/openplex-app/blob/master/openplex-db.txt)! It's pretty simple. Oh, and you can follow [this](https://help.github.com/articles/editing-files-in-another-user-s-repository/) tutorial from GitHub if you're stuck.
