@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="https://dl.dropbox.com/s/5ijrr4uesqf8xtn/openplex-logo.png?dl=0" height="128" width="128" alt="Logo" />
+  <img src="/Assets/openplex-logo.png" height="128" width="128" alt="Logo" />
   <br />
   OpenPlex
 </h1>
@@ -9,32 +9,39 @@
 <div align="center">
 </div>
 
-
 ## What is OpenPlex?
-OpenPlex allows you to search for Movies/TV shows available to watch online for free by providing you with trusted files from all around the web. But we don't use torrents, just raw media files playable anywhere.
+OpenPlex allows you to search for Movies/TV shows available to watch online for free by providing you with trusted files from all around the web. But we don't use torrents, just raw media files playable anywhere. Created by a few friends who wanted to come up with something different.
 
 A database run by a community of movie lovers who are constantly uploading the links of the newly released movies as well as top classics, and of course we're open to suggestions.
 
 If you've got any comments, queries or suggestions for the app please just open an issue - we want to know what you've got to say!
 
+## How does it work?
+It communicates with its own [API](https://github.com/invu/openplex-app/blob/master/Assets/openplex-db.txt) to query movies and tv shows from the community driven database. The app includes an easy-to-use download client, supporting all files and asynchronous downloads.
+
+## Contribute
+Got some direct media URLs lying around? Submit them to our [core movie database](https://github.com/invu/openplex-app/blob/master/Assets/openplex-db.txt)! It's pretty simple. Oh, and you can follow [this](https://help.github.com/articles/editing-files-in-another-user-s-repository/) tutorial from GitHub if you're stuck.
+
+We're also hosting our [background database](https://github.com/invu/openplex-app/blob/master/Assets/openplex-backgrounds-db.txt) so you can add some awesome backgrounds to be displayed in the app!
+
 ## Framework & Backend
-The app is a .NET 4.6.2 application using WinForm framework written in C#. 
+The app is using .NET 4.6.2 WinForms Framework written in C#.
 
 ## Supported Platforms
 Windows 7+ is supported (Windows 7, 8, 8.1, 10)
 
 ## Installation
-Download installer [here](https://github.com/invu/openplex/releases/download/v0.1.0.1/OpenPlexInstaller.exe)
+Download installer [here](https://github.com/invu/openplex/releases/download/v0.1.0.2/OpenPlexInstaller.exe)
 
 ## Screenshots
-![Search Movies/TV Shows](https://dl.dropbox.com/s/ozx2m5f4av1rl4l/OpenPlex%20-%20Search%20Movies.png?dl=0)
-![Search Results](https://dl.dropbox.com/s/vjpwxu6hfwz9r99/OpenPlex%20-%20Search%20Results.png?dl=0)
-![Movie Details](https://dl.dropbox.com/s/ys1w6z9gbfkysbr/OpenPlex%20-%20Movie%20Details.png?dl=0)
-![Download MoviesTV/Shows](https://dl.dropbox.com/s/aa9sgx51qw19gm0/OpenPlex%20-%20Downloads.png?dl=0)
-![About Tab](https://dl.dropbox.com/s/zlx484ekgrljqo9/OpenPlex%20-%20About.png?dl=0)
+<img src="/Screenshots/OpenPlex - Search Movies.png" />
+<img src="/Screenshots/OpenPlex - Search Results.png" />
+<img src="/Screenshots/OpenPlex - Movie Details.png" />
+<img src="/Screenshots/OpenPlex - Downloads.png" />
+<img src="/Screenshots/OpenPlex - About.png" />
 
 ## Legal Side of Things...
-All of the free movies found on this app are hosted on third-party servers that are freely available to watch online for all internet users. Any legal issues regarding the free online movies on this website should be taken up with the actual file hosts themselves, as we're not affiliated with them.
+All of the free movies/tv shows found on this app are hosted on third-party servers that are freely available to watch online for all internet users. Any legal issues regarding the free online links on this app should be taken up with the actual file hosts themselves, as we're not affiliated with them.
 
 ## License
 If you distribute a copy or make a fork of the project, you have to credit this project as source.
