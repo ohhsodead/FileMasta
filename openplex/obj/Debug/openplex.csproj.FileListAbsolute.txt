@@ -1,0 +1,16 @@
+C:\Users\imAsh\AppData\Local\Temporary Projects\openplex\bin\Debug\openplex.exe.config
+C:\Users\imAsh\Documents\Visual Studio 2015\Projects\openplex\openplex\bin\Debug\OpenPlex.exe.config
+C:\Users\imAsh\Documents\Visual Studio 2015\Projects\openplex\openplex\bin\Debug\OpenPlex.exe
+C:\Users\imAsh\Documents\Visual Studio 2015\Projects\openplex\openplex\bin\Debug\OpenPlex.pdb
+C:\Users\imAsh\Documents\Visual Studio 2015\Projects\openplex\openplex\bin\Debug\CButtonLib.dll
+C:\Users\imAsh\Documents\Visual Studio 2015\Projects\openplex\openplex\bin\Debug\ChreneLib.dll
+C:\Users\imAsh\Documents\Visual Studio 2015\Projects\openplex\openplex\obj\Debug\openplex.csprojResolveAssemblyReference.cache
+C:\Users\imAsh\Documents\Visual Studio 2015\Projects\openplex\openplex\obj\Debug\OpenPlex.ctrlDownloadItem.resources
+C:\Users\imAsh\Documents\Visual Studio 2015\Projects\openplex\openplex\obj\Debug\OpenPlex.frmDownloadClient.resources
+C:\Users\imAsh\Documents\Visual Studio 2015\Projects\openplex\openplex\obj\Debug\OpenPlex.frmOpenPlex.resources
+C:\Users\imAsh\Documents\Visual Studio 2015\Projects\openplex\openplex\obj\Debug\OpenPlex.Properties.Resources.resources
+C:\Users\imAsh\Documents\Visual Studio 2015\Projects\openplex\openplex\obj\Debug\openplex.csproj.GenerateResource.Cache
+C:\Users\imAsh\Documents\Visual Studio 2015\Projects\openplex\openplex\obj\Debug\OpenPlex.exe
+C:\Users\imAsh\Documents\Visual Studio 2015\Projects\openplex\openplex\obj\Debug\OpenPlex.pdb
+C:\Users\imAsh\Documents\Visual Studio 2015\Projects\openplex\openplex\bin\Debug\CButtonLib.pdb
+C:\Users\imAsh\Documents\Visual Studio 2015\Projects\openplex\openplex\bin\Debug\CButtonLib.xml
