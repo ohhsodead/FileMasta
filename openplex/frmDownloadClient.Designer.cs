@@ -44,6 +44,7 @@
             this.panelDownloadItems.Size = new System.Drawing.Size(642, 337);
             this.panelDownloadItems.TabIndex = 0;
             this.panelDownloadItems.WrapContents = false;
+            this.panelDownloadItems.Scroll += new System.Windows.Forms.ScrollEventHandler(this.panelDownloadItems_Scroll);
             this.panelDownloadItems.SizeChanged += new System.EventHandler(this.panelDownloadItems_SizeChanged);
             this.panelDownloadItems.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.panelDownloadItems_ControlAdded);
             this.panelDownloadItems.ControlRemoved += new System.Windows.Forms.ControlEventHandler(this.panelDownloadItems_ControlRemoved);

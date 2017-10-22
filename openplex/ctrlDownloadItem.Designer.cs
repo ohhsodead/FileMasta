@@ -124,7 +124,7 @@
             this.progressBar1.ProgressColor = System.Drawing.Color.SteelBlue;
             this.progressBar1.RoundedCorners = false;
             this.progressBar1.ShowText = true;
-            this.progressBar1.Size = new System.Drawing.Size(432, 17);
+            this.progressBar1.Size = new System.Drawing.Size(432, 16);
             // 
             // ctrlDownloadItem
             // 

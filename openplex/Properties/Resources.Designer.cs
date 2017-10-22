@@ -133,6 +133,16 @@ namespace OpenPlex.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap iconSpinner {
+            get {
+                object obj = ResourceManager.GetObject("iconSpinner", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap iconStop {
             get {
                 object obj = ResourceManager.GetObject("iconStop", resourceCulture);

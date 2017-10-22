@@ -29,8 +29,9 @@ namespace OpenPlex
 
         protected override void OnPaint(PaintEventArgs e) { }
 
-        public static string linkBackground = "https://dl.dropbox.com/s/oxndc32ce358u0h/openplex-background.txt?dl=0";
-        public static string linkDatabase = "https://dl.dropbox.com/s/b9e4y30bwaxehpt/openplex-db.txt?dl=0";
+        public static string linkBackground = "https://raw.githubusercontent.com/invu/openplex-app/master/Assets/openplex-backgrounds-db.txt";
+        public static string linkDatabase = "https://raw.githubusercontent.com/invu/openplex-app/master/Assets/openplex-db.txt";
+        public static string linkLatestVersion = "https://raw.githubusercontent.com/invu/openplex-app/master/Assets/openplex-version.txt";
         public static string pathTempFolder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\OpenPlex\";
         public static string pathDownloads = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\OpenPlex\Downloads\";
 
@@ -105,6 +106,8 @@ namespace OpenPlex
 
         private void frmOpenPlex_Load(object sender, EventArgs e)
         {
+            checkForUpdate();
+
             frmClient = new frmDownloadClient();
 
             VLCToolStripMenuItem.Visible = File.Exists(pathVLC);
@@ -131,18 +134,46 @@ namespace OpenPlex
             }
 
             tabAbout.BackgroundImage = ChangeOpacity(Properties.Resources.Dark_Sky_Night, 0.2F);
-            tabSettings.BackgroundImage = ChangeOpacity(Properties.Resources.Dark_Sky_Night, 0.2F);
 
             lblAboutVersion.Text = "v" + Application.ProductVersion;
 
-            loadSettings();
+        }
+
+        Version newVersion;
+
+        public void checkForUpdate()
+        {
+            WebClient client = new WebClient();
+            Stream stream = client.OpenRead(linkLatestVersion);
+            StreamReader reader = new StreamReader(stream);
+            newVersion = new Version(reader.ReadLine());
+            Version curVersion = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
+
+            if (curVersion.CompareTo(newVersion) < 0) //wtf
+            {
+                MessageBox.Show("There's a new version for OpenPlex ready to be installed  (" + newVersion + ")", "Update Available");
+                try
+                {
+                    Process.Start(Application.StartupPath + @"\OpenPlex Updater.exe");
+                    Application.Exit();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error");
+                }
+            }
         }
 
         public void getMovieDetails(string webFile)
         {
-            string[] movieName = getMovieAndYear(Path.GetFileName(webFile));
+            string url = "";
 
-            string url = "http://omdbapi.com/?apikey=c933e052&t=" + movieName[0] + "&y=" + movieName[1] + "&plot=full";
+            string[] movieName = getMovieAndYear(Path.GetFileName(webFile));
+            string[] tvshowName = getTVShowName(Path.GetFileName(webFile));
+
+            if (!(movieName == null)) { url = "http://omdbapi.com/?apikey=c933e052&t=" + movieName[0] + "&y=" + movieName[1] + "&plot=full"; }
+            else if (!(tvshowName == null)) { url = "http://omdbapi.com/?apikey=c933e052&t=" + tvshowName[0] + "&Season=" + tvshowName[1] + "&Episode=" + tvshowName[2]; }
+
             using (WebClient wc = new WebClient())
             {
                 var json = wc.DownloadString(url);
@@ -151,7 +182,7 @@ namespace OpenPlex
                 obj = oJS.Deserialize<ImdbEntity>(json);
                 if (obj.Response == "True")
                 {
-                    movieInfoTitle.Text = obj.Title;
+                    movieInfoTitle.Text = obj.Title.Replace("&", "&&");
                     movieInfoRuntime.Text = obj.Runtime;
                     movieInfoGenre.Text = obj.Genre;
                     movieInfoDescription.Text = obj.Plot;
@@ -181,7 +212,7 @@ namespace OpenPlex
                     movieInfoRuntime.Text = "";
                     movieInfoGenre.Text = "";
                     movieInfoDescription.Text = "";
-                    //movieInfoDirector.Text = "";
+                    //movieInfoDirector.Text = obj.Director;
                     //movieInfoActors.Text = obj.Actors;
                     imgMovieInfoPoster.Image = ChangeOpacity(Properties.Resources.PosterDefault, 0.4F);
                     movieInfoReleaseDate.Text = "";
@@ -225,6 +256,24 @@ namespace OpenPlex
             }
         }
 
+        public void getTVShowDetails()
+        {
+
+        }
+
+        public string[] getTVShowName(string input)
+        {
+            string Standard = @"^((?<series_name>.+?)[. _-]+)?s(?<season_num>\d+)[. _-]*e(?<ep_num>\d+)(([. _-]*e|-)(?<extra_ep_num>(?!(1080|720)[pi])\d+))*[. _-]*((?<extra_info>.+?)((?<![. _-])-(?<release_group>[^-]+))?)?$";
+            var regexStandard = new Regex(Standard, RegexOptions.IgnoreCase);
+            Match episode = regexStandard.Match(input);
+            var Showname = episode.Groups["series_name"].Value;
+            var Season = episode.Groups["season_num"].Value;
+            var Episode = episode.Groups["ep_num"].Value;
+
+            string[] tvshow = { Showname, Season, Episode };
+            return tvshow;
+        }
+
         private void btnSearch_ClickButtonArea(object Sender, MouseEventArgs e)
         {
             if (!(txtSearchBox.Text == "")) { searchDatabase(txtSearchBox.Text); }
@@ -239,9 +288,9 @@ namespace OpenPlex
                 if (File.Exists(pathTempFolder + @"\openplex-db.txt"))
                 {
                     string[] readDb = File.ReadAllLines(pathTempFolder + @"\openplex-db.txt");
-                    string[] keyWords = text.ToLower().Replace(" ", "").Split(',');
+                    string[] keyWords = Regex.Split(txtSearchBox.Text, @"\s+");
 
-                    foreach (string file in readDb) { if (ContainsAll(file, keyWords) == true) { dataGrid.Rows.Add(file.Replace("%20", " ")); } }
+                    foreach (string file in readDb) { if (GetWords(txtSearchBox.Text.ToLower()).Any(x => Path.GetFileName(file.ToLower()).Contains(x))) { dataGrid.Rows.Add(file.Replace("%20", " ")); } }
 
                     lblHeaderResultsText.Text = string.Join(" ", keyWords);;
                     tab.SelectedTab = tabSearchResults;
@@ -251,10 +300,32 @@ namespace OpenPlex
             catch { MessageBox.Show("Unable to search database. Please try again in a moment."); }
         }
 
+        static string[] GetWords(string input)
+        {
+            MatchCollection matches = Regex.Matches(input, @"\b[\w']*\b");
+
+            var words = from m in matches.Cast<Match>()
+                        where !string.IsNullOrEmpty(m.Value)
+                        select TrimSuffix(m.Value);
+
+            return words.ToArray();
+        }
+
+        static string TrimSuffix(string word)
+        {
+            int apostropheLocation = word.IndexOf('\'');
+            if (apostropheLocation != -1)
+            {
+                word = word.Substring(0, apostropheLocation);
+            }
+
+            return word;
+        }
+
         public string[] getMovieAndYear(string input)
         {
             string pattern = @"(?'title'.*)\.(?'year'[^\.]+)\.(?'pixelsize'[^\.]+)\.(?'format'[^\.]+)\.(?'formatsize'[^\.]+)\.(?'filename'[^\.]+)\.(?'extension'[^\.]+)";
-            Match match = Regex.Match(input, pattern, RegexOptions.RightToLeft);
+            Match match = Regex.Match(input, pattern, RegexOptions.IgnoreCase);
             string extension = match.Groups["extension"].Value;
             string fileName = match.Groups["filename"].Value;
             string formatSize = match.Groups["formatsize"].Value;
@@ -292,9 +363,7 @@ namespace OpenPlex
         private void btnTag4_Click(object sender, EventArgs e)
         {
             CButtonLib.CButton ctrlTag = sender as CButtonLib.CButton;
-            if (txtSearchBox.Text == "") txtSearchBox.Text += ctrlTag.Text + ", ";
-            else if (txtSearchBox.Text.EndsWith(", ")) { txtSearchBox.Text += ctrlTag.Text + ", "; }
-            else { txtSearchBox.Text += ", " + ctrlTag.Text + ", "; }
+            txtSearchBox.Text += ctrlTag.Text;
         }
 
         private void wMPToolStripMenuItem_Click(object sender, EventArgs e)
@@ -320,11 +389,6 @@ namespace OpenPlex
                 VLC.Start();
             }
             catch (Exception ex) { MessageBox.Show(this, ex.Message, "Error"); }
-        }
-
-        private void imgSettings_Click(object sender, EventArgs e)
-        {
-            tab.SelectedTab = tabSettings;
         }
 
         private void imgCloseAbout_Click(object sender, EventArgs e)
@@ -409,85 +473,6 @@ namespace OpenPlex
                 MessageBox.Show(this, "URL Copied!", "Success");
             }
             catch (Exception ex) { MessageBox.Show(this, ex.Message, "Error"); }
-        }
-
-        private void imgCloseSettings_Click(object sender, EventArgs e)
-        {
-            tab.SelectedTab = tabHome;
-        }
-
-        public void loadSettings()
-        {
-            // Language
-            cmboSettingsLanguage.Items.Add(Application.CurrentCulture.DisplayName);
-
-            System.Globalization.CultureInfo[] supportedLanguages = System.Globalization.CultureInfo.GetCultures(System.Globalization.CultureTypes.AllCultures);
-            foreach (var language in supportedLanguages) { cmboSettingsLanguage.Items.Add(language); }
-
-            // Always on top
-            Properties.Settings.Default.settingsAlwaysOnTop = chckSettingsAlwaysOnTop.Checked;
-
-            // Database directory
-            if (Properties.Settings.Default.settingsPathDataDirectory == "") { txtSettingsDataDirectory.Text = pathTempFolder; }
-            else { txtSettingsDataDirectory.Text = Properties.Settings.Default.settingsPathDataDirectory; }
-
-            // Clear data on close
-            Properties.Settings.Default.settingsClearDataOnClose = chckSettingsClearData.Checked;
-        }
-
-        private void btnSettingsSave_ClickButtonArea(object Sender, MouseEventArgs e)
-        {
-            Properties.Settings.Default.Save();
-        }
-
-        private void cmboSettingsLanguage_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                ChangeLanguage(cmboSettingsLanguage.GetItemText(cmboSettingsLanguage));
-            }
-            catch { MessageBox.Show("Unable to change language"); }
-        }
-
-        private static void ChangeLanguage(string lang)
-        {
-            foreach (Form frm in Application.OpenForms)
-            {
-                localizeForm(frm);
-            }
-        }
-
-        private static void localizeForm(Form frm)
-        {
-            var manager = new ComponentResourceManager(frm.GetType());
-            manager.ApplyResources(frm, "$this");
-            applyResources(manager, frm.Controls);
-        }
-
-        private static void applyResources(ComponentResourceManager manager, Control.ControlCollection ctls)
-        {
-            foreach (Control ctl in ctls)
-            {
-                manager.ApplyResources(ctl, ctl.Name);
-                applyResources(manager, ctl.Controls);
-            }
-        }
-
-        private void chckSettingsAlwaysOnTop_CheckedChanged(object sender, EventArgs e)
-        {
-            TopMost = chckSettingsAlwaysOnTop.Checked;
-            Properties.Settings.Default.settingsAlwaysOnTop = chckSettingsAlwaysOnTop.Checked;
-        }
-
-        private void txtSettingsDataDirectory_Click(object sender, EventArgs e)
-        {
-            FolderBrowserDialog folderBrowserDialog1 = new FolderBrowserDialog();
-            if (folderBrowserDialog1.ShowDialog() == DialogResult.OK) { txtSettingsDataDirectory.Text = folderBrowserDialog1.SelectedPath; Properties.Settings.Default.settingsPathDataDirectory = folderBrowserDialog1.SelectedPath; }
-        }
-
-        private void chckSettingsClearData_CheckedChanged(object sender, EventArgs e)
-        {
-            Properties.Settings.Default.settingsClearDataOnClose = chckSettingsClearData.Checked;
         }
 
         private void frmOpenPlex_FormClosing(object sender, FormClosingEventArgs e)

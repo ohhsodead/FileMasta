@@ -133,6 +133,9 @@
   <data name="openplex-text" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\openplex-text.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="iconStop" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconStop.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="iconCLoseH" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconCLoseH.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -142,16 +145,16 @@
   <data name="iconAbout" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconAbout.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iconCLoseL" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconCLoseL.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="iconPause" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconPause.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="iconCLoseL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconCLoseL.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="iconPlay" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconPlay.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iconStop" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconStop.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="iconSpinner" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconSpinner.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

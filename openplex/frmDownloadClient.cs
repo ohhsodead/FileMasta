@@ -79,5 +79,10 @@ namespace OpenPlex
             }
             panelDownloadItems.ResumeLayout();
         }
+
+        private void panelDownloadItems_Scroll(object sender, ScrollEventArgs e)
+        {
+            panelDownloadItems.Refresh();
+        }
     }
 }
