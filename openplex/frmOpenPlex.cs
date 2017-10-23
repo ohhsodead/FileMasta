@@ -106,8 +106,6 @@ namespace OpenPlex
 
         private void frmOpenPlex_Load(object sender, EventArgs e)
         {
-            checkForUpdate();
-
             frmClient = new frmDownloadClient();
 
             VLCToolStripMenuItem.Visible = File.Exists(pathVLC);
@@ -137,31 +135,6 @@ namespace OpenPlex
 
             lblAboutVersion.Text = "v" + Application.ProductVersion;
 
-        }
-
-        Version newVersion;
-
-        public void checkForUpdate()
-        {
-            WebClient client = new WebClient();
-            Stream stream = client.OpenRead(linkLatestVersion);
-            StreamReader reader = new StreamReader(stream);
-            newVersion = new Version(reader.ReadLine());
-            Version curVersion = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
-
-            if (curVersion.CompareTo(newVersion) < 0)
-            {
-                MessageBox.Show("There's a new version for OpenPlex ready to be installed  (" + newVersion + ")", "Update Available");
-                try
-                {
-                    Process.Start(Application.StartupPath + @"\OpenPlex Updater.exe");
-                    Application.Exit();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "Error");
-                }
-            }
         }
 
         public void getFileDetails(string webFile)
