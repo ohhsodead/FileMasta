@@ -29,6 +29,7 @@ namespace OpenPlex
         public string TomatoesScore { get; set; }
         public string TomatoesLink { get; set; }
         public string Metascore { get; set; }
+        public string seriesID { get; set; }
         public string Type { get; set; }
         public string Response { get; set; }
     }

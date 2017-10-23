@@ -149,7 +149,7 @@ namespace OpenPlex
             newVersion = new Version(reader.ReadLine());
             Version curVersion = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
 
-            if (curVersion.CompareTo(newVersion) < 0) //wtf
+            if (curVersion.CompareTo(newVersion) < 0)
             {
                 MessageBox.Show("There's a new version for OpenPlex ready to be installed  (" + newVersion + ")", "Update Available");
                 try
@@ -198,6 +198,7 @@ namespace OpenPlex
 
                     movieInfoIMDbRating.Text = obj.imdbRating + "/10";
                     movieInfoIMDbId.Text = obj.imdbID;
+                    movieInfoSeriesId.Text = obj.seriesID;
 
                     //movieInfoMetascore.Text = obj.Metascore;
 
@@ -205,6 +206,7 @@ namespace OpenPlex
 
                     panelMovieSubItems.Visible = true;
                     movieInfoDescription.Visible = true;
+
                 }
                 else
                 {
@@ -224,6 +226,7 @@ namespace OpenPlex
 
                     movieInfoIMDbRating.Text = "";
                     movieInfoIMDbId.Text = "";
+                    movieInfoSeriesId.Text = "";
 
                     //movieInfoMetascore.Text = obj.Metascore;
 
@@ -256,11 +259,6 @@ namespace OpenPlex
             }
         }
 
-        public void getTVShowDetails()
-        {
-
-        }
-
         public string[] getTVShowName(string input)
         {
             string Standard = @"^((?<series_name>.+?)[. _-]+)?s(?<season_num>\d+)[. _-]*e(?<ep_num>\d+)(([. _-]*e|-)(?<extra_ep_num>(?!(1080|720)[pi])\d+))*[. _-]*((?<extra_info>.+?)((?<![. _-])-(?<release_group>[^-]+))?)?$";
@@ -289,8 +287,14 @@ namespace OpenPlex
                 {
                     string[] readDb = File.ReadAllLines(pathTempFolder + @"\openplex-db.txt");
                     string[] keyWords = Regex.Split(txtSearchBox.Text, @"\s+");
-
-                    foreach (string file in readDb) { if (GetWords(txtSearchBox.Text.ToLower()).Any(x => Path.GetFileName(file.ToLower()).Contains(x))) { dataGrid.Rows.Add(file.Replace("%20", " ")); } }
+                    
+                    foreach (string file in readDb)
+                    {
+                        if (GetWords(txtSearchBox.Text.ToLower()).Any(x => Path.GetFileName(file.ToLower()).Contains(x)))
+                        {
+                            dataGrid.Rows.Add(new Uri(file).Host.Replace("www.", ""), Path.GetFileName(file), file.Replace("%20", " "));
+                        }
+                    }
 
                     lblHeaderResultsText.Text = string.Join(" ", keyWords);;
                     tab.SelectedTab = tabSearchResults;
@@ -363,14 +367,19 @@ namespace OpenPlex
         private void btnTag4_Click(object sender, EventArgs e)
         {
             CButtonLib.CButton ctrlTag = sender as CButtonLib.CButton;
-            txtSearchBox.Text += ctrlTag.Text;
+            if (txtSearchBox.Text == "") { txtSearchBox.Text += ctrlTag.Text + " "; }
+            else if (txtSearchBox.Text.EndsWith(" ") == true) { txtSearchBox.Text += ctrlTag.Text + " "; }
+            else { txtSearchBox.Text += ctrlTag.Text; }
+            txtSearchBox.Focus();
+            txtSearchBox.SelectionStart = txtSearchBox.Text.Count();
+            txtSearchBox.SelectionLength = 0;
         }
 
         private void wMPToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
             {
-                string value = dataGrid.CurrentRow.Cells[0].Value.ToString();
+                string value = dataGrid.CurrentRow.Cells[2].Value.ToString();
 
                 Process.Start("wmplayer.exe", value);
             }
@@ -381,7 +390,7 @@ namespace OpenPlex
         {
             try
             {
-                string value = dataGrid.CurrentRow.Cells[0].Value.ToString();
+                string value = dataGrid.CurrentRow.Cells[2].Value.ToString();
 
                 Process VLC = new Process();
                 VLC.StartInfo.FileName = pathVLC;
@@ -403,7 +412,7 @@ namespace OpenPlex
 
         private void dataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            getMovieDetails(dataGrid.CurrentRow.Cells[0].Value.ToString());
+            getMovieDetails(dataGrid.CurrentRow.Cells[2].Value.ToString());
             tab.SelectedTab = tabMovieDetails;
         }
 
@@ -468,9 +477,9 @@ namespace OpenPlex
         {
             try
             {
-                string value = dataGrid.CurrentRow.Cells[0].Value.ToString();
+                string value = dataGrid.CurrentRow.Cells[2].Value.ToString();
                 Clipboard.SetText(value);
-                MessageBox.Show(this, "URL Copied!", "Success");
+                MessageBox.Show(this, "URL Copied to Clipboard!", "Success");
             }
             catch (Exception ex) { MessageBox.Show(this, ex.Message, "Error"); }
         }
