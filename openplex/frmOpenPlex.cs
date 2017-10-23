@@ -164,7 +164,7 @@ namespace OpenPlex
             }
         }
 
-        public void getMovieDetails(string webFile)
+        public void getFileDetails(string webFile)
         {
             string url = "";
 
@@ -182,80 +182,80 @@ namespace OpenPlex
                 obj = oJS.Deserialize<ImdbEntity>(json);
                 if (obj.Response == "True")
                 {
-                    movieInfoTitle.Text = obj.Title.Replace("&", "&&");
-                    movieInfoRuntime.Text = obj.Runtime;
-                    movieInfoGenre.Text = obj.Genre;
-                    movieInfoDescription.Text = obj.Plot;
+                    fileInfoTitle.Text = obj.Title.Replace("&", "&&");
+                    fileInfoRuntime.Text = obj.Runtime;
+                    fileInfoGenre.Text = obj.Genre;
+                    fileInfoDescription.Text = obj.Plot;
                     //movieInfoDirector.Text = obj.Director;
                     //movieInfoActors.Text = obj.Actors;
-                    imgMovieInfoPoster.Image = LoadPicture(obj.Poster);
-                    movieInfoReleaseDate.Text = obj.Released;
+                    imgFileInfoPoster.Image = LoadPicture(obj.Poster);
+                    fileInfoReleaseDate.Text = obj.Released;
                     //movieInfoCountry.Text = obj.Country;
                     //movieInfoLanguage.Text = obj.Language;
                     //movieInfoProduction.Text = obj.Production;
                     //movieInfoBoxOffice.Text = obj.BoxOffice;
                     //movieInfoAwards.Text = obj.Awards;
 
-                    movieInfoIMDbRating.Text = obj.imdbRating + "/10";
-                    movieInfoIMDbId.Text = obj.imdbID;
-                    movieInfoSeriesId.Text = obj.seriesID;
+                    fileInfoIMDbRating.Text = obj.imdbRating + "/10";
+                    fileInfoIMDbId.Text = obj.imdbID;
+                    fileInfoSeriesId.Text = obj.seriesID;
 
                     //movieInfoMetascore.Text = obj.Metascore;
 
-                    movieInfoFileURL.Text = webFile;
+                    fileInfoURL.Text = webFile;
 
-                    panelMovieSubItems.Visible = true;
-                    movieInfoDescription.Visible = true;
+                    panelFileSubItems.Visible = true;
+                    fileInfoDescription.Visible = true;
 
                 }
                 else
                 {
-                    movieInfoTitle.Text = Path.GetFileName(webFile);
-                    movieInfoRuntime.Text = "";
-                    movieInfoGenre.Text = "";
-                    movieInfoDescription.Text = "";
+                    fileInfoTitle.Text = Path.GetFileName(webFile).Replace("%20", " ");
+                    fileInfoRuntime.Text = "";
+                    fileInfoGenre.Text = "";
+                    fileInfoDescription.Text = "";
                     //movieInfoDirector.Text = obj.Director;
                     //movieInfoActors.Text = obj.Actors;
-                    imgMovieInfoPoster.Image = ChangeOpacity(Properties.Resources.PosterDefault, 0.4F);
-                    movieInfoReleaseDate.Text = "";
+                    imgFileInfoPoster.Image = ChangeOpacity(Properties.Resources.PosterDefault, 0.4F);
+                    fileInfoReleaseDate.Text = "";
                     //movieInfoCountry.Text = obj.Country;
                     //movieInfoLanguage.Text = obj.Language;
                     //movieInfoProduction.Text = obj.Production;
                     //movieInfoBoxOffice.Text = obj.BoxOffice;
                     //movieInfoAwards.Text = obj.Awards;
 
-                    movieInfoIMDbRating.Text = "";
-                    movieInfoIMDbId.Text = "";
-                    movieInfoSeriesId.Text = "";
+                    fileInfoIMDbRating.Text = "";
+                    fileInfoIMDbId.Text = "";
+                    fileInfoSeriesId.Text = "";
 
                     //movieInfoMetascore.Text = obj.Metascore;
 
-                    movieInfoFileURL.Text = webFile;
+                    fileInfoURL.Text = webFile;
 
-                    panelMovieSubItems.Visible = false;
-                    movieInfoDescription.Visible = false;
+                    panelFileSubItems.Visible = false;
+                    fileInfoDescription.Visible = false;
                 }
             }
 
             try
             {
                 //Details from Popcorn Time API for Background (fanart/trailer)
-                var jsonPopcornTime = client.DownloadString("https://tv-v2.api-fetch.website/movie/" + movieInfoIMDbId.Text);
+                var jsonPopcornTime = client.DownloadString("https://tv-v2.api-fetch.website/movie/" + fileInfoIMDbId.Text);
                 JavaScriptSerializer oJSPopcornTime = new JavaScriptSerializer();
                 PopcornTimeEntity objPopcornTime = new PopcornTimeEntity();
                 objPopcornTime = oJSPopcornTime.Deserialize<PopcornTimeEntity>(jsonPopcornTime);
 
-                tabMovieDetails.BackgroundImage = ChangeOpacity(LoadPicture(objPopcornTime.images.fanart), 0.2F);
-                movieInfoPopcornFanartURL.Text = objPopcornTime.images.fanart;
-                movieInfoPopcornTrailerURL.Text = objPopcornTime.trailer;
-                btnMovieTrailer.Visible = true;
+                tabFileDetails.BackgroundImage = ChangeOpacity(LoadPicture(objPopcornTime.images.fanart), 0.2F);
+                fileInfoPopcornFanartURL.Text = objPopcornTime.images.fanart;
+                fileInfoPopcornTrailerURL.Text = objPopcornTime.trailer;
+                btnFileTrailer.Visible = true;
             }
             catch
             {
-                tabMovieDetails.BackgroundImage = ChangeOpacity(Properties.Resources.Dark_Sky_Night, 0.4F);
-                movieInfoPopcornFanartURL.Text = "";
-                movieInfoPopcornTrailerURL.Text = "";
-                btnMovieTrailer.Visible = false;
+                tabFileDetails.BackgroundImage = ChangeOpacity(Properties.Resources.Dark_Sky_Night, 0.4F);
+                fileInfoPopcornFanartURL.Text = "";
+                fileInfoPopcornTrailerURL.Text = "";
+                btnFileTrailer.Visible = false;
             }
         }
 
@@ -292,7 +292,7 @@ namespace OpenPlex
                     {
                         if (GetWords(txtSearchBox.Text.ToLower()).Any(x => Path.GetFileName(file.ToLower()).Contains(x)))
                         {
-                            dataGrid.Rows.Add(new Uri(file).Host.Replace("www.", ""), Path.GetFileName(file), file.Replace("%20", " "));
+                            dataGrid.Rows.Add(new Uri(file).Host.Replace("www.", ""), Path.GetFileName(file).Replace("%20", " "), file);
                         }
                     }
 
@@ -410,46 +410,40 @@ namespace OpenPlex
             Process.Start("https://github.com/invu/openplex-app/issues/new");
         }
 
-        private void dataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            getMovieDetails(dataGrid.CurrentRow.Cells[2].Value.ToString());
-            tab.SelectedTab = tabMovieDetails;
-        }
-
-        private void imgCloseMovieDetails_Click(object sender, EventArgs e)
+        private void imgCloseFileDetails_Click(object sender, EventArgs e)
         {
             tab.SelectedTab = tabSearchResults;
         }
 
         private frmDownloadClient frmClient;
 
-        private void btnMovieDownload_ClickButtonArea(object Sender, MouseEventArgs e)
+        private void btnFileDownload_ClickButtonArea(object Sender, MouseEventArgs e)
         {
             if (!frmClient.Visible)
             {
                 frmClient.Show();
-                frmClient.doDownloadFile(movieInfoFileURL.Text);
+                frmClient.doDownloadFile(fileInfoURL.Text);
             }
             else
             {
-                frmClient.doDownloadFile(movieInfoFileURL.Text);
+                frmClient.doDownloadFile(fileInfoURL.Text);
                 frmClient.Focus();
             }
         }
 
-        private void btnMoviePlay_Click(object sender, EventArgs e)
+        private void btnFilePlay_ClickButtonArea(object sender, MouseEventArgs e)
         {
-            contextFileName.Show(btnMoviePlay, btnMoviePlay.PointToClient(Cursor.Position));
+            contextFileName.Show(btnFilePlay, btnFilePlay.PointToClient(Cursor.Position));
         }
 
-        private void btnMovieTrailer_ClickButtonArea(object Sender, MouseEventArgs e)
+        private void btnFileTrailer_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            Process.Start(movieInfoPopcornTrailerURL.Text);
+            Process.Start(fileInfoPopcornTrailerURL.Text);
         }
 
         private void frmOpenPlex_SizeChanged(object sender, EventArgs e)
         {
-            panelMovieSubItems.Size = new Size(panelMovieItems.Width, panelMovieSubItems.Height);
+            panelFileSubItems.Size = new Size(panelFileItems.Width, panelFileSubItems.Height);
         }
 
         private void tabHome_DragDrop(object sender, DragEventArgs e)
@@ -488,6 +482,22 @@ namespace OpenPlex
         {
             try { if (Properties.Settings.Default.settingsClearDataOnClose == true) { Directory.Delete(pathTempFolder, true); } }
             catch (Exception ex) { MessageBox.Show(this, ex.Message, "Error"); }
+        }
+
+        private void dataGrid_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
+        {
+            e.PaintParts &= ~DataGridViewPaintParts.Focus;
+        }
+
+        private void dataGrid_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            getFileDetails(dataGrid.CurrentRow.Cells[2].Value.ToString());
+            tab.SelectedTab = tabFileDetails;
+        }
+
+        private void btnFileReportBroken_Click(object sender, EventArgs e)
+        {
+            Process.Start("https://github.com/invu/openplex-app/issues/new?title=Broken File&body=Host: " + new Uri(fileInfoURL.Text).Host + "%0A" + "File Name: " + Path.GetFileName(fileInfoURL.Text));
         }
     }
 }

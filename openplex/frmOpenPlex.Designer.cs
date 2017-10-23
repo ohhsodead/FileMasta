@@ -62,36 +62,37 @@
             this.VLCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.copyToClipboardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.imgCloseSearchResults = new System.Windows.Forms.PictureBox();
-            this.tabMovieDetails = new System.Windows.Forms.TabPage();
-            this.imgCloseMovieDetails = new System.Windows.Forms.PictureBox();
-            this.imgMovieInfoPoster = new System.Windows.Forms.PictureBox();
-            this.panelMovieItems = new System.Windows.Forms.FlowLayoutPanel();
-            this.movieInfoTitle = new System.Windows.Forms.Label();
-            this.panelMovieSubItems = new System.Windows.Forms.FlowLayoutPanel();
-            this.movieInfoGenre = new System.Windows.Forms.Label();
+            this.tabFileDetails = new System.Windows.Forms.TabPage();
+            this.imgCloseFileDetails = new System.Windows.Forms.PictureBox();
+            this.imgFileInfoPoster = new System.Windows.Forms.PictureBox();
+            this.panelFileItems = new System.Windows.Forms.FlowLayoutPanel();
+            this.fileInfoTitle = new System.Windows.Forms.Label();
+            this.panelFileSubItems = new System.Windows.Forms.FlowLayoutPanel();
+            this.fileInfoGenre = new System.Windows.Forms.Label();
             this.movieInfoSplitter1 = new System.Windows.Forms.Label();
-            this.movieInfoIMDbRating = new System.Windows.Forms.Label();
+            this.fileInfoIMDbRating = new System.Windows.Forms.Label();
             this.movieInfoSplitter2 = new System.Windows.Forms.Label();
-            this.movieInfoRuntime = new System.Windows.Forms.Label();
+            this.fileInfoRuntime = new System.Windows.Forms.Label();
             this.movieInfoSplitter3 = new System.Windows.Forms.Label();
-            this.movieInfoReleaseDate = new System.Windows.Forms.Label();
-            this.movieInfoDescription = new System.Windows.Forms.Label();
-            this.btnMoviePlay = new CButtonLib.CButton();
-            this.btnMovieDownload = new CButtonLib.CButton();
-            this.btnMovieTrailer = new CButtonLib.CButton();
-            this.movieInfoIMDbId = new System.Windows.Forms.Label();
-            this.movieInfoSeriesId = new System.Windows.Forms.Label();
-            this.movieInfoPopcornFanartURL = new System.Windows.Forms.Label();
-            this.movieInfoPopcornTrailerURL = new System.Windows.Forms.Label();
-            this.movieInfoFileURL = new System.Windows.Forms.Label();
+            this.fileInfoReleaseDate = new System.Windows.Forms.Label();
+            this.fileInfoDescription = new System.Windows.Forms.Label();
+            this.btnFilePlay = new CButtonLib.CButton();
+            this.btnFileDownload = new CButtonLib.CButton();
+            this.btnFileTrailer = new CButtonLib.CButton();
+            this.fileInfoIMDbId = new System.Windows.Forms.Label();
+            this.fileInfoSeriesId = new System.Windows.Forms.Label();
+            this.fileInfoPopcornFanartURL = new System.Windows.Forms.Label();
+            this.fileInfoPopcornTrailerURL = new System.Windows.Forms.Label();
+            this.fileInfoURL = new System.Windows.Forms.Label();
             this.imgMoviePosterBackground = new System.Windows.Forms.PictureBox();
             this.tabAbout = new System.Windows.Forms.TabPage();
             this.lblAboutVersion = new System.Windows.Forms.Label();
-            this.lblAboutReportIssue = new System.Windows.Forms.Label();
+            this.btnAboutReportIssue = new System.Windows.Forms.Label();
             this.lblAboutSubText = new System.Windows.Forms.Label();
             this.lblAboutText = new System.Windows.Forms.Label();
             this.imgCloseAbout = new System.Windows.Forms.PictureBox();
             this.imgHeaderAbout = new System.Windows.Forms.PictureBox();
+            this.btnFileReportBroken = new System.Windows.Forms.Label();
             this.tab.SuspendLayout();
             this.tabHome.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgAbout)).BeginInit();
@@ -101,11 +102,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).BeginInit();
             this.contextFileName.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgCloseSearchResults)).BeginInit();
-            this.tabMovieDetails.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgCloseMovieDetails)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgMovieInfoPoster)).BeginInit();
-            this.panelMovieItems.SuspendLayout();
-            this.panelMovieSubItems.SuspendLayout();
+            this.tabFileDetails.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgCloseFileDetails)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgFileInfoPoster)).BeginInit();
+            this.panelFileItems.SuspendLayout();
+            this.panelFileSubItems.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgMoviePosterBackground)).BeginInit();
             this.tabAbout.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgCloseAbout)).BeginInit();
@@ -119,7 +120,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tab.Controls.Add(this.tabHome);
             this.tab.Controls.Add(this.tabSearchResults);
-            this.tab.Controls.Add(this.tabMovieDetails);
+            this.tab.Controls.Add(this.tabFileDetails);
             this.tab.Controls.Add(this.tabAbout);
             this.tab.Location = new System.Drawing.Point(-4, -22);
             this.tab.Name = "tab";
@@ -500,6 +501,7 @@
             this.dataGrid.Name = "dataGrid";
             this.dataGrid.ReadOnly = true;
             this.dataGrid.RowHeadersVisible = false;
+            this.dataGrid.RowHeadersWidth = 40;
             dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
             dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Silver;
@@ -517,7 +519,8 @@
             this.dataGrid.ShowEditingIcon = false;
             this.dataGrid.Size = new System.Drawing.Size(951, 479);
             this.dataGrid.TabIndex = 2;
-            this.dataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGrid_CellContentClick);
+            this.dataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGrid_CellClick);
+            this.dataGrid.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dataGrid_RowPrePaint);
             // 
             // columnHost
             // 
@@ -602,113 +605,114 @@
             this.imgCloseSearchResults.TabStop = false;
             this.imgCloseSearchResults.Click += new System.EventHandler(this.imgCloseSearchResults_Click);
             // 
-            // tabMovieDetails
+            // tabFileDetails
             // 
-            this.tabMovieDetails.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
-            this.tabMovieDetails.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.tabMovieDetails.Controls.Add(this.imgCloseMovieDetails);
-            this.tabMovieDetails.Controls.Add(this.imgMovieInfoPoster);
-            this.tabMovieDetails.Controls.Add(this.panelMovieItems);
-            this.tabMovieDetails.Controls.Add(this.imgMoviePosterBackground);
-            this.tabMovieDetails.ForeColor = System.Drawing.Color.White;
-            this.tabMovieDetails.Location = new System.Drawing.Point(4, 22);
-            this.tabMovieDetails.Name = "tabMovieDetails";
-            this.tabMovieDetails.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tabMovieDetails.Size = new System.Drawing.Size(951, 518);
-            this.tabMovieDetails.TabIndex = 3;
+            this.tabFileDetails.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
+            this.tabFileDetails.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabFileDetails.Controls.Add(this.btnFileReportBroken);
+            this.tabFileDetails.Controls.Add(this.imgCloseFileDetails);
+            this.tabFileDetails.Controls.Add(this.imgFileInfoPoster);
+            this.tabFileDetails.Controls.Add(this.panelFileItems);
+            this.tabFileDetails.Controls.Add(this.imgMoviePosterBackground);
+            this.tabFileDetails.ForeColor = System.Drawing.Color.White;
+            this.tabFileDetails.Location = new System.Drawing.Point(4, 22);
+            this.tabFileDetails.Name = "tabFileDetails";
+            this.tabFileDetails.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.tabFileDetails.Size = new System.Drawing.Size(951, 518);
+            this.tabFileDetails.TabIndex = 3;
             // 
-            // imgCloseMovieDetails
+            // imgCloseFileDetails
             // 
-            this.imgCloseMovieDetails.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.imgCloseMovieDetails.BackColor = System.Drawing.Color.Transparent;
-            this.imgCloseMovieDetails.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgCloseMovieDetails.Image = global::OpenPlex.Properties.Resources.iconCLoseL;
-            this.imgCloseMovieDetails.Location = new System.Drawing.Point(900, 25);
-            this.imgCloseMovieDetails.Name = "imgCloseMovieDetails";
-            this.imgCloseMovieDetails.Size = new System.Drawing.Size(24, 24);
-            this.imgCloseMovieDetails.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.imgCloseMovieDetails.TabIndex = 7;
-            this.imgCloseMovieDetails.TabStop = false;
-            this.imgCloseMovieDetails.Click += new System.EventHandler(this.imgCloseMovieDetails_Click);
+            this.imgCloseFileDetails.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.imgCloseFileDetails.BackColor = System.Drawing.Color.Transparent;
+            this.imgCloseFileDetails.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imgCloseFileDetails.Image = global::OpenPlex.Properties.Resources.iconCLoseL;
+            this.imgCloseFileDetails.Location = new System.Drawing.Point(900, 25);
+            this.imgCloseFileDetails.Name = "imgCloseFileDetails";
+            this.imgCloseFileDetails.Size = new System.Drawing.Size(24, 24);
+            this.imgCloseFileDetails.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgCloseFileDetails.TabIndex = 7;
+            this.imgCloseFileDetails.TabStop = false;
+            this.imgCloseFileDetails.Click += new System.EventHandler(this.imgCloseFileDetails_Click);
             // 
-            // imgMovieInfoPoster
+            // imgFileInfoPoster
             // 
-            this.imgMovieInfoPoster.BackColor = System.Drawing.Color.Transparent;
-            this.imgMovieInfoPoster.Location = new System.Drawing.Point(31, 26);
-            this.imgMovieInfoPoster.Name = "imgMovieInfoPoster";
-            this.imgMovieInfoPoster.Size = new System.Drawing.Size(162, 246);
-            this.imgMovieInfoPoster.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.imgMovieInfoPoster.TabIndex = 0;
-            this.imgMovieInfoPoster.TabStop = false;
+            this.imgFileInfoPoster.BackColor = System.Drawing.Color.Transparent;
+            this.imgFileInfoPoster.Location = new System.Drawing.Point(31, 26);
+            this.imgFileInfoPoster.Name = "imgFileInfoPoster";
+            this.imgFileInfoPoster.Size = new System.Drawing.Size(162, 246);
+            this.imgFileInfoPoster.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgFileInfoPoster.TabIndex = 0;
+            this.imgFileInfoPoster.TabStop = false;
             // 
-            // panelMovieItems
+            // panelFileItems
             // 
-            this.panelMovieItems.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.panelFileItems.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelMovieItems.BackColor = System.Drawing.Color.Transparent;
-            this.panelMovieItems.Controls.Add(this.movieInfoTitle);
-            this.panelMovieItems.Controls.Add(this.panelMovieSubItems);
-            this.panelMovieItems.Controls.Add(this.movieInfoDescription);
-            this.panelMovieItems.Controls.Add(this.btnMoviePlay);
-            this.panelMovieItems.Controls.Add(this.btnMovieDownload);
-            this.panelMovieItems.Controls.Add(this.btnMovieTrailer);
-            this.panelMovieItems.Controls.Add(this.movieInfoIMDbId);
-            this.panelMovieItems.Controls.Add(this.movieInfoSeriesId);
-            this.panelMovieItems.Controls.Add(this.movieInfoPopcornFanartURL);
-            this.panelMovieItems.Controls.Add(this.movieInfoPopcornTrailerURL);
-            this.panelMovieItems.Controls.Add(this.movieInfoFileURL);
-            this.panelMovieItems.Location = new System.Drawing.Point(214, 26);
-            this.panelMovieItems.Name = "panelMovieItems";
-            this.panelMovieItems.Size = new System.Drawing.Size(668, 465);
-            this.panelMovieItems.TabIndex = 6;
+            this.panelFileItems.BackColor = System.Drawing.Color.Transparent;
+            this.panelFileItems.Controls.Add(this.fileInfoTitle);
+            this.panelFileItems.Controls.Add(this.panelFileSubItems);
+            this.panelFileItems.Controls.Add(this.fileInfoDescription);
+            this.panelFileItems.Controls.Add(this.btnFilePlay);
+            this.panelFileItems.Controls.Add(this.btnFileDownload);
+            this.panelFileItems.Controls.Add(this.btnFileTrailer);
+            this.panelFileItems.Controls.Add(this.fileInfoIMDbId);
+            this.panelFileItems.Controls.Add(this.fileInfoSeriesId);
+            this.panelFileItems.Controls.Add(this.fileInfoPopcornFanartURL);
+            this.panelFileItems.Controls.Add(this.fileInfoPopcornTrailerURL);
+            this.panelFileItems.Controls.Add(this.fileInfoURL);
+            this.panelFileItems.Location = new System.Drawing.Point(214, 26);
+            this.panelFileItems.Name = "panelFileItems";
+            this.panelFileItems.Size = new System.Drawing.Size(668, 465);
+            this.panelFileItems.TabIndex = 6;
             // 
-            // movieInfoTitle
+            // fileInfoTitle
             // 
-            this.movieInfoTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.fileInfoTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.movieInfoTitle.AutoEllipsis = true;
-            this.movieInfoTitle.BackColor = System.Drawing.Color.Transparent;
-            this.movieInfoTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 20F);
-            this.movieInfoTitle.Location = new System.Drawing.Point(0, 0);
-            this.movieInfoTitle.Margin = new System.Windows.Forms.Padding(0, 0, 3, 8);
-            this.movieInfoTitle.Name = "movieInfoTitle";
-            this.movieInfoTitle.Size = new System.Drawing.Size(668, 41);
-            this.movieInfoTitle.TabIndex = 1;
-            this.movieInfoTitle.Text = "Title";
+            this.fileInfoTitle.AutoEllipsis = true;
+            this.fileInfoTitle.BackColor = System.Drawing.Color.Transparent;
+            this.fileInfoTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 20F);
+            this.fileInfoTitle.Location = new System.Drawing.Point(0, 0);
+            this.fileInfoTitle.Margin = new System.Windows.Forms.Padding(0, 0, 3, 8);
+            this.fileInfoTitle.Name = "fileInfoTitle";
+            this.fileInfoTitle.Size = new System.Drawing.Size(668, 41);
+            this.fileInfoTitle.TabIndex = 1;
+            this.fileInfoTitle.Text = "Title";
             // 
-            // panelMovieSubItems
+            // panelFileSubItems
             // 
-            this.panelMovieSubItems.AutoSize = true;
-            this.panelMovieSubItems.BackColor = System.Drawing.Color.Transparent;
-            this.panelMovieSubItems.Controls.Add(this.movieInfoGenre);
-            this.panelMovieSubItems.Controls.Add(this.movieInfoSplitter1);
-            this.panelMovieSubItems.Controls.Add(this.movieInfoIMDbRating);
-            this.panelMovieSubItems.Controls.Add(this.movieInfoSplitter2);
-            this.panelMovieSubItems.Controls.Add(this.movieInfoRuntime);
-            this.panelMovieSubItems.Controls.Add(this.movieInfoSplitter3);
-            this.panelMovieSubItems.Controls.Add(this.movieInfoReleaseDate);
-            this.panelMovieItems.SetFlowBreak(this.panelMovieSubItems, true);
-            this.panelMovieSubItems.Location = new System.Drawing.Point(5, 49);
-            this.panelMovieSubItems.Margin = new System.Windows.Forms.Padding(5, 0, 0, 15);
-            this.panelMovieSubItems.Name = "panelMovieSubItems";
-            this.panelMovieSubItems.Size = new System.Drawing.Size(285, 20);
-            this.panelMovieSubItems.TabIndex = 2;
-            this.panelMovieSubItems.WrapContents = false;
+            this.panelFileSubItems.AutoSize = true;
+            this.panelFileSubItems.BackColor = System.Drawing.Color.Transparent;
+            this.panelFileSubItems.Controls.Add(this.fileInfoGenre);
+            this.panelFileSubItems.Controls.Add(this.movieInfoSplitter1);
+            this.panelFileSubItems.Controls.Add(this.fileInfoIMDbRating);
+            this.panelFileSubItems.Controls.Add(this.movieInfoSplitter2);
+            this.panelFileSubItems.Controls.Add(this.fileInfoRuntime);
+            this.panelFileSubItems.Controls.Add(this.movieInfoSplitter3);
+            this.panelFileSubItems.Controls.Add(this.fileInfoReleaseDate);
+            this.panelFileItems.SetFlowBreak(this.panelFileSubItems, true);
+            this.panelFileSubItems.Location = new System.Drawing.Point(5, 49);
+            this.panelFileSubItems.Margin = new System.Windows.Forms.Padding(5, 0, 0, 15);
+            this.panelFileSubItems.Name = "panelFileSubItems";
+            this.panelFileSubItems.Size = new System.Drawing.Size(285, 20);
+            this.panelFileSubItems.TabIndex = 2;
+            this.panelFileSubItems.WrapContents = false;
             // 
-            // movieInfoGenre
+            // fileInfoGenre
             // 
-            this.movieInfoGenre.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.fileInfoGenre.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.movieInfoGenre.AutoSize = true;
-            this.movieInfoGenre.BackColor = System.Drawing.Color.Transparent;
-            this.movieInfoGenre.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.movieInfoGenre.Location = new System.Drawing.Point(0, 0);
-            this.movieInfoGenre.Margin = new System.Windows.Forms.Padding(0);
-            this.movieInfoGenre.Name = "movieInfoGenre";
-            this.movieInfoGenre.Size = new System.Drawing.Size(48, 20);
-            this.movieInfoGenre.TabIndex = 3;
-            this.movieInfoGenre.Text = "Genre";
+            this.fileInfoGenre.AutoSize = true;
+            this.fileInfoGenre.BackColor = System.Drawing.Color.Transparent;
+            this.fileInfoGenre.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.fileInfoGenre.Location = new System.Drawing.Point(0, 0);
+            this.fileInfoGenre.Margin = new System.Windows.Forms.Padding(0);
+            this.fileInfoGenre.Name = "fileInfoGenre";
+            this.fileInfoGenre.Size = new System.Drawing.Size(48, 20);
+            this.fileInfoGenre.TabIndex = 3;
+            this.fileInfoGenre.Text = "Genre";
             // 
             // movieInfoSplitter1
             // 
@@ -724,19 +728,19 @@
             this.movieInfoSplitter1.TabIndex = 4;
             this.movieInfoSplitter1.Text = "•";
             // 
-            // movieInfoIMDbRating
+            // fileInfoIMDbRating
             // 
-            this.movieInfoIMDbRating.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.fileInfoIMDbRating.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.movieInfoIMDbRating.AutoSize = true;
-            this.movieInfoIMDbRating.BackColor = System.Drawing.Color.Transparent;
-            this.movieInfoIMDbRating.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.movieInfoIMDbRating.Location = new System.Drawing.Point(63, 0);
-            this.movieInfoIMDbRating.Margin = new System.Windows.Forms.Padding(0);
-            this.movieInfoIMDbRating.Name = "movieInfoIMDbRating";
-            this.movieInfoIMDbRating.Size = new System.Drawing.Size(50, 20);
-            this.movieInfoIMDbRating.TabIndex = 5;
-            this.movieInfoIMDbRating.Text = "0.0/10";
+            this.fileInfoIMDbRating.AutoSize = true;
+            this.fileInfoIMDbRating.BackColor = System.Drawing.Color.Transparent;
+            this.fileInfoIMDbRating.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.fileInfoIMDbRating.Location = new System.Drawing.Point(63, 0);
+            this.fileInfoIMDbRating.Margin = new System.Windows.Forms.Padding(0);
+            this.fileInfoIMDbRating.Name = "fileInfoIMDbRating";
+            this.fileInfoIMDbRating.Size = new System.Drawing.Size(50, 20);
+            this.fileInfoIMDbRating.TabIndex = 5;
+            this.fileInfoIMDbRating.Text = "0.0/10";
             // 
             // movieInfoSplitter2
             // 
@@ -752,19 +756,19 @@
             this.movieInfoSplitter2.TabIndex = 10;
             this.movieInfoSplitter2.Text = "•";
             // 
-            // movieInfoRuntime
+            // fileInfoRuntime
             // 
-            this.movieInfoRuntime.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.fileInfoRuntime.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.movieInfoRuntime.AutoSize = true;
-            this.movieInfoRuntime.BackColor = System.Drawing.Color.Transparent;
-            this.movieInfoRuntime.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.movieInfoRuntime.Location = new System.Drawing.Point(128, 0);
-            this.movieInfoRuntime.Margin = new System.Windows.Forms.Padding(0);
-            this.movieInfoRuntime.Name = "movieInfoRuntime";
-            this.movieInfoRuntime.Size = new System.Drawing.Size(46, 20);
-            this.movieInfoRuntime.TabIndex = 11;
-            this.movieInfoRuntime.Text = "0 min";
+            this.fileInfoRuntime.AutoSize = true;
+            this.fileInfoRuntime.BackColor = System.Drawing.Color.Transparent;
+            this.fileInfoRuntime.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.fileInfoRuntime.Location = new System.Drawing.Point(128, 0);
+            this.fileInfoRuntime.Margin = new System.Windows.Forms.Padding(0);
+            this.fileInfoRuntime.Name = "fileInfoRuntime";
+            this.fileInfoRuntime.Size = new System.Drawing.Size(46, 20);
+            this.fileInfoRuntime.TabIndex = 11;
+            this.fileInfoRuntime.Text = "0 min";
             // 
             // movieInfoSplitter3
             // 
@@ -780,189 +784,189 @@
             this.movieInfoSplitter3.TabIndex = 12;
             this.movieInfoSplitter3.Text = "•";
             // 
-            // movieInfoReleaseDate
+            // fileInfoReleaseDate
             // 
-            this.movieInfoReleaseDate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.fileInfoReleaseDate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.movieInfoReleaseDate.AutoSize = true;
-            this.movieInfoReleaseDate.BackColor = System.Drawing.Color.Transparent;
-            this.movieInfoReleaseDate.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.movieInfoReleaseDate.Location = new System.Drawing.Point(189, 0);
-            this.movieInfoReleaseDate.Margin = new System.Windows.Forms.Padding(0);
-            this.movieInfoReleaseDate.Name = "movieInfoReleaseDate";
-            this.movieInfoReleaseDate.Size = new System.Drawing.Size(96, 20);
-            this.movieInfoReleaseDate.TabIndex = 13;
-            this.movieInfoReleaseDate.Text = "Release Date";
+            this.fileInfoReleaseDate.AutoSize = true;
+            this.fileInfoReleaseDate.BackColor = System.Drawing.Color.Transparent;
+            this.fileInfoReleaseDate.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.fileInfoReleaseDate.Location = new System.Drawing.Point(189, 0);
+            this.fileInfoReleaseDate.Margin = new System.Windows.Forms.Padding(0);
+            this.fileInfoReleaseDate.Name = "fileInfoReleaseDate";
+            this.fileInfoReleaseDate.Size = new System.Drawing.Size(96, 20);
+            this.fileInfoReleaseDate.TabIndex = 13;
+            this.fileInfoReleaseDate.Text = "Release Date";
             // 
-            // movieInfoDescription
+            // fileInfoDescription
             // 
-            this.movieInfoDescription.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.fileInfoDescription.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.movieInfoDescription.AutoSize = true;
-            this.movieInfoDescription.BackColor = System.Drawing.Color.Transparent;
-            this.panelMovieItems.SetFlowBreak(this.movieInfoDescription, true);
-            this.movieInfoDescription.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.movieInfoDescription.Location = new System.Drawing.Point(5, 88);
-            this.movieInfoDescription.Margin = new System.Windows.Forms.Padding(5, 0, 0, 20);
-            this.movieInfoDescription.Name = "movieInfoDescription";
-            this.movieInfoDescription.Size = new System.Drawing.Size(33, 19);
-            this.movieInfoDescription.TabIndex = 3;
-            this.movieInfoDescription.Text = "Plot";
+            this.fileInfoDescription.AutoSize = true;
+            this.fileInfoDescription.BackColor = System.Drawing.Color.Transparent;
+            this.panelFileItems.SetFlowBreak(this.fileInfoDescription, true);
+            this.fileInfoDescription.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.fileInfoDescription.Location = new System.Drawing.Point(5, 88);
+            this.fileInfoDescription.Margin = new System.Windows.Forms.Padding(5, 0, 0, 20);
+            this.fileInfoDescription.Name = "fileInfoDescription";
+            this.fileInfoDescription.Size = new System.Drawing.Size(33, 19);
+            this.fileInfoDescription.TabIndex = 3;
+            this.fileInfoDescription.Text = "Plot";
             // 
-            // btnMoviePlay
+            // btnFilePlay
             // 
-            this.btnMoviePlay.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(139)))), ((int)(((byte)(202)))));
-            this.btnMoviePlay.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(139)))), ((int)(((byte)(202)))));
-            this.btnMoviePlay.ContextMenuStrip = this.contextFileName;
-            this.btnMoviePlay.Corners.All = 2;
-            this.btnMoviePlay.Corners.LowerLeft = 2;
-            this.btnMoviePlay.Corners.LowerRight = 2;
-            this.btnMoviePlay.Corners.UpperLeft = 2;
-            this.btnMoviePlay.Corners.UpperRight = 2;
-            this.btnMoviePlay.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMoviePlay.DesignerSelected = false;
-            this.btnMoviePlay.DimFactorClick = 0;
-            this.btnMoviePlay.DimFactorHover = 0;
-            this.btnMoviePlay.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.btnMoviePlay.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.btnMoviePlay.ImageIndex = 0;
-            this.btnMoviePlay.Location = new System.Drawing.Point(9, 127);
-            this.btnMoviePlay.Margin = new System.Windows.Forms.Padding(9, 0, 3, 3);
-            this.btnMoviePlay.Name = "btnMoviePlay";
-            this.btnMoviePlay.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.btnMoviePlay.Size = new System.Drawing.Size(44, 25);
-            this.btnMoviePlay.TabIndex = 4;
-            this.btnMoviePlay.Text = "Play";
-            this.btnMoviePlay.TextShadowShow = false;
-            this.btnMoviePlay.Click += new System.EventHandler(this.btnMoviePlay_Click);
+            this.btnFilePlay.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(139)))), ((int)(((byte)(202)))));
+            this.btnFilePlay.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(139)))), ((int)(((byte)(202)))));
+            this.btnFilePlay.ContextMenuStrip = this.contextFileName;
+            this.btnFilePlay.Corners.All = 2;
+            this.btnFilePlay.Corners.LowerLeft = 2;
+            this.btnFilePlay.Corners.LowerRight = 2;
+            this.btnFilePlay.Corners.UpperLeft = 2;
+            this.btnFilePlay.Corners.UpperRight = 2;
+            this.btnFilePlay.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFilePlay.DesignerSelected = false;
+            this.btnFilePlay.DimFactorClick = 0;
+            this.btnFilePlay.DimFactorHover = 0;
+            this.btnFilePlay.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.btnFilePlay.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.btnFilePlay.ImageIndex = 0;
+            this.btnFilePlay.Location = new System.Drawing.Point(9, 127);
+            this.btnFilePlay.Margin = new System.Windows.Forms.Padding(9, 0, 3, 3);
+            this.btnFilePlay.Name = "btnFilePlay";
+            this.btnFilePlay.ShowFocus = CButtonLib.CButton.eFocus.None;
+            this.btnFilePlay.Size = new System.Drawing.Size(44, 25);
+            this.btnFilePlay.TabIndex = 4;
+            this.btnFilePlay.Text = "Play";
+            this.btnFilePlay.TextShadowShow = false;
+            this.btnFilePlay.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnFilePlay_ClickButtonArea);
             // 
-            // btnMovieDownload
+            // btnFileDownload
             // 
-            this.btnMovieDownload.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(185)))), ((int)(((byte)(93)))));
-            this.btnMovieDownload.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(185)))), ((int)(((byte)(93)))));
-            this.btnMovieDownload.Corners.All = 2;
-            this.btnMovieDownload.Corners.LowerLeft = 2;
-            this.btnMovieDownload.Corners.LowerRight = 2;
-            this.btnMovieDownload.Corners.UpperLeft = 2;
-            this.btnMovieDownload.Corners.UpperRight = 2;
-            this.btnMovieDownload.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMovieDownload.DesignerSelected = false;
-            this.btnMovieDownload.DimFactorClick = 0;
-            this.btnMovieDownload.DimFactorHover = 0;
-            this.btnMovieDownload.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.btnMovieDownload.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.btnMovieDownload.ImageIndex = 0;
-            this.btnMovieDownload.Location = new System.Drawing.Point(59, 127);
-            this.btnMovieDownload.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.btnMovieDownload.Name = "btnMovieDownload";
-            this.btnMovieDownload.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.btnMovieDownload.Size = new System.Drawing.Size(80, 25);
-            this.btnMovieDownload.TabIndex = 5;
-            this.btnMovieDownload.Text = "Download";
-            this.btnMovieDownload.TextShadowShow = false;
-            this.btnMovieDownload.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnMovieDownload_ClickButtonArea);
+            this.btnFileDownload.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(185)))), ((int)(((byte)(93)))));
+            this.btnFileDownload.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(185)))), ((int)(((byte)(93)))));
+            this.btnFileDownload.Corners.All = 2;
+            this.btnFileDownload.Corners.LowerLeft = 2;
+            this.btnFileDownload.Corners.LowerRight = 2;
+            this.btnFileDownload.Corners.UpperLeft = 2;
+            this.btnFileDownload.Corners.UpperRight = 2;
+            this.btnFileDownload.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFileDownload.DesignerSelected = false;
+            this.btnFileDownload.DimFactorClick = 0;
+            this.btnFileDownload.DimFactorHover = 0;
+            this.btnFileDownload.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.btnFileDownload.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.btnFileDownload.ImageIndex = 0;
+            this.btnFileDownload.Location = new System.Drawing.Point(59, 127);
+            this.btnFileDownload.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
+            this.btnFileDownload.Name = "btnFileDownload";
+            this.btnFileDownload.ShowFocus = CButtonLib.CButton.eFocus.None;
+            this.btnFileDownload.Size = new System.Drawing.Size(80, 25);
+            this.btnFileDownload.TabIndex = 5;
+            this.btnFileDownload.Text = "Download";
+            this.btnFileDownload.TextShadowShow = false;
+            this.btnFileDownload.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnFileDownload_ClickButtonArea);
             // 
-            // btnMovieTrailer
+            // btnFileTrailer
             // 
-            this.btnMovieTrailer.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(83)))), ((int)(((byte)(79)))));
-            this.btnMovieTrailer.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(83)))), ((int)(((byte)(79)))));
-            this.btnMovieTrailer.Corners.All = 2;
-            this.btnMovieTrailer.Corners.LowerLeft = 2;
-            this.btnMovieTrailer.Corners.LowerRight = 2;
-            this.btnMovieTrailer.Corners.UpperLeft = 2;
-            this.btnMovieTrailer.Corners.UpperRight = 2;
-            this.btnMovieTrailer.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMovieTrailer.DesignerSelected = false;
-            this.btnMovieTrailer.DimFactorClick = 0;
-            this.btnMovieTrailer.DimFactorHover = 0;
-            this.btnMovieTrailer.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.panelMovieItems.SetFlowBreak(this.btnMovieTrailer, true);
-            this.btnMovieTrailer.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.btnMovieTrailer.ImageIndex = 0;
-            this.btnMovieTrailer.Location = new System.Drawing.Point(145, 127);
-            this.btnMovieTrailer.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.btnMovieTrailer.Name = "btnMovieTrailer";
-            this.btnMovieTrailer.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.btnMovieTrailer.Size = new System.Drawing.Size(58, 25);
-            this.btnMovieTrailer.TabIndex = 9;
-            this.btnMovieTrailer.Text = "Trailer";
-            this.btnMovieTrailer.TextShadowShow = false;
-            this.btnMovieTrailer.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnMovieTrailer_ClickButtonArea);
+            this.btnFileTrailer.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(83)))), ((int)(((byte)(79)))));
+            this.btnFileTrailer.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(83)))), ((int)(((byte)(79)))));
+            this.btnFileTrailer.Corners.All = 2;
+            this.btnFileTrailer.Corners.LowerLeft = 2;
+            this.btnFileTrailer.Corners.LowerRight = 2;
+            this.btnFileTrailer.Corners.UpperLeft = 2;
+            this.btnFileTrailer.Corners.UpperRight = 2;
+            this.btnFileTrailer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFileTrailer.DesignerSelected = false;
+            this.btnFileTrailer.DimFactorClick = 0;
+            this.btnFileTrailer.DimFactorHover = 0;
+            this.btnFileTrailer.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.panelFileItems.SetFlowBreak(this.btnFileTrailer, true);
+            this.btnFileTrailer.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.btnFileTrailer.ImageIndex = 0;
+            this.btnFileTrailer.Location = new System.Drawing.Point(145, 127);
+            this.btnFileTrailer.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
+            this.btnFileTrailer.Name = "btnFileTrailer";
+            this.btnFileTrailer.ShowFocus = CButtonLib.CButton.eFocus.None;
+            this.btnFileTrailer.Size = new System.Drawing.Size(58, 25);
+            this.btnFileTrailer.TabIndex = 9;
+            this.btnFileTrailer.Text = "Trailer";
+            this.btnFileTrailer.TextShadowShow = false;
+            this.btnFileTrailer.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnFileTrailer_ClickButtonArea);
             // 
-            // movieInfoIMDbId
+            // fileInfoIMDbId
             // 
-            this.movieInfoIMDbId.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.fileInfoIMDbId.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.movieInfoIMDbId.AutoSize = true;
-            this.movieInfoIMDbId.BackColor = System.Drawing.Color.Transparent;
-            this.movieInfoIMDbId.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.movieInfoIMDbId.Location = new System.Drawing.Point(5, 155);
-            this.movieInfoIMDbId.Margin = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.movieInfoIMDbId.Name = "movieInfoIMDbId";
-            this.movieInfoIMDbId.Size = new System.Drawing.Size(65, 20);
-            this.movieInfoIMDbId.TabIndex = 6;
-            this.movieInfoIMDbId.Text = "IMDb ID";
-            this.movieInfoIMDbId.Visible = false;
+            this.fileInfoIMDbId.AutoSize = true;
+            this.fileInfoIMDbId.BackColor = System.Drawing.Color.Transparent;
+            this.fileInfoIMDbId.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.fileInfoIMDbId.Location = new System.Drawing.Point(5, 155);
+            this.fileInfoIMDbId.Margin = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.fileInfoIMDbId.Name = "fileInfoIMDbId";
+            this.fileInfoIMDbId.Size = new System.Drawing.Size(65, 20);
+            this.fileInfoIMDbId.TabIndex = 6;
+            this.fileInfoIMDbId.Text = "IMDb ID";
+            this.fileInfoIMDbId.Visible = false;
             // 
-            // movieInfoSeriesId
+            // fileInfoSeriesId
             // 
-            this.movieInfoSeriesId.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.fileInfoSeriesId.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.movieInfoSeriesId.AutoSize = true;
-            this.movieInfoSeriesId.BackColor = System.Drawing.Color.Transparent;
-            this.movieInfoSeriesId.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.movieInfoSeriesId.Location = new System.Drawing.Point(75, 155);
-            this.movieInfoSeriesId.Margin = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.movieInfoSeriesId.Name = "movieInfoSeriesId";
-            this.movieInfoSeriesId.Size = new System.Drawing.Size(67, 20);
-            this.movieInfoSeriesId.TabIndex = 10;
-            this.movieInfoSeriesId.Text = "Series ID";
-            this.movieInfoSeriesId.Visible = false;
+            this.fileInfoSeriesId.AutoSize = true;
+            this.fileInfoSeriesId.BackColor = System.Drawing.Color.Transparent;
+            this.fileInfoSeriesId.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.fileInfoSeriesId.Location = new System.Drawing.Point(75, 155);
+            this.fileInfoSeriesId.Margin = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.fileInfoSeriesId.Name = "fileInfoSeriesId";
+            this.fileInfoSeriesId.Size = new System.Drawing.Size(67, 20);
+            this.fileInfoSeriesId.TabIndex = 10;
+            this.fileInfoSeriesId.Text = "Series ID";
+            this.fileInfoSeriesId.Visible = false;
             // 
-            // movieInfoPopcornFanartURL
+            // fileInfoPopcornFanartURL
             // 
-            this.movieInfoPopcornFanartURL.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.fileInfoPopcornFanartURL.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.movieInfoPopcornFanartURL.AutoSize = true;
-            this.movieInfoPopcornFanartURL.BackColor = System.Drawing.Color.Transparent;
-            this.movieInfoPopcornFanartURL.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.movieInfoPopcornFanartURL.Location = new System.Drawing.Point(147, 155);
-            this.movieInfoPopcornFanartURL.Margin = new System.Windows.Forms.Padding(5, 0, 0, 20);
-            this.movieInfoPopcornFanartURL.Name = "movieInfoPopcornFanartURL";
-            this.movieInfoPopcornFanartURL.Size = new System.Drawing.Size(77, 19);
-            this.movieInfoPopcornFanartURL.TabIndex = 8;
-            this.movieInfoPopcornFanartURL.Text = "Fanart URL";
-            this.movieInfoPopcornFanartURL.Visible = false;
+            this.fileInfoPopcornFanartURL.AutoSize = true;
+            this.fileInfoPopcornFanartURL.BackColor = System.Drawing.Color.Transparent;
+            this.fileInfoPopcornFanartURL.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.fileInfoPopcornFanartURL.Location = new System.Drawing.Point(147, 155);
+            this.fileInfoPopcornFanartURL.Margin = new System.Windows.Forms.Padding(5, 0, 0, 20);
+            this.fileInfoPopcornFanartURL.Name = "fileInfoPopcornFanartURL";
+            this.fileInfoPopcornFanartURL.Size = new System.Drawing.Size(77, 19);
+            this.fileInfoPopcornFanartURL.TabIndex = 8;
+            this.fileInfoPopcornFanartURL.Text = "Fanart URL";
+            this.fileInfoPopcornFanartURL.Visible = false;
             // 
-            // movieInfoPopcornTrailerURL
+            // fileInfoPopcornTrailerURL
             // 
-            this.movieInfoPopcornTrailerURL.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.fileInfoPopcornTrailerURL.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.movieInfoPopcornTrailerURL.AutoSize = true;
-            this.movieInfoPopcornTrailerURL.BackColor = System.Drawing.Color.Transparent;
-            this.movieInfoPopcornTrailerURL.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.movieInfoPopcornTrailerURL.Location = new System.Drawing.Point(229, 155);
-            this.movieInfoPopcornTrailerURL.Margin = new System.Windows.Forms.Padding(5, 0, 0, 20);
-            this.movieInfoPopcornTrailerURL.Name = "movieInfoPopcornTrailerURL";
-            this.movieInfoPopcornTrailerURL.Size = new System.Drawing.Size(74, 19);
-            this.movieInfoPopcornTrailerURL.TabIndex = 7;
-            this.movieInfoPopcornTrailerURL.Text = "Trailer URL";
-            this.movieInfoPopcornTrailerURL.Visible = false;
+            this.fileInfoPopcornTrailerURL.AutoSize = true;
+            this.fileInfoPopcornTrailerURL.BackColor = System.Drawing.Color.Transparent;
+            this.fileInfoPopcornTrailerURL.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.fileInfoPopcornTrailerURL.Location = new System.Drawing.Point(229, 155);
+            this.fileInfoPopcornTrailerURL.Margin = new System.Windows.Forms.Padding(5, 0, 0, 20);
+            this.fileInfoPopcornTrailerURL.Name = "fileInfoPopcornTrailerURL";
+            this.fileInfoPopcornTrailerURL.Size = new System.Drawing.Size(74, 19);
+            this.fileInfoPopcornTrailerURL.TabIndex = 7;
+            this.fileInfoPopcornTrailerURL.Text = "Trailer URL";
+            this.fileInfoPopcornTrailerURL.Visible = false;
             // 
-            // movieInfoFileURL
+            // fileInfoURL
             // 
-            this.movieInfoFileURL.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.fileInfoURL.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.movieInfoFileURL.AutoSize = true;
-            this.movieInfoFileURL.BackColor = System.Drawing.Color.Transparent;
-            this.movieInfoFileURL.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.movieInfoFileURL.Location = new System.Drawing.Point(308, 155);
-            this.movieInfoFileURL.Margin = new System.Windows.Forms.Padding(5, 0, 0, 20);
-            this.movieInfoFileURL.Name = "movieInfoFileURL";
-            this.movieInfoFileURL.Size = new System.Drawing.Size(58, 19);
-            this.movieInfoFileURL.TabIndex = 6;
-            this.movieInfoFileURL.Text = "File URL";
-            this.movieInfoFileURL.Visible = false;
+            this.fileInfoURL.AutoSize = true;
+            this.fileInfoURL.BackColor = System.Drawing.Color.Transparent;
+            this.fileInfoURL.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.fileInfoURL.Location = new System.Drawing.Point(308, 155);
+            this.fileInfoURL.Margin = new System.Windows.Forms.Padding(5, 0, 0, 20);
+            this.fileInfoURL.Name = "fileInfoURL";
+            this.fileInfoURL.Size = new System.Drawing.Size(58, 19);
+            this.fileInfoURL.TabIndex = 6;
+            this.fileInfoURL.Text = "File URL";
+            this.fileInfoURL.Visible = false;
             // 
             // imgMoviePosterBackground
             // 
@@ -980,7 +984,7 @@
             this.tabAbout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
             this.tabAbout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tabAbout.Controls.Add(this.lblAboutVersion);
-            this.tabAbout.Controls.Add(this.lblAboutReportIssue);
+            this.tabAbout.Controls.Add(this.btnAboutReportIssue);
             this.tabAbout.Controls.Add(this.lblAboutSubText);
             this.tabAbout.Controls.Add(this.lblAboutText);
             this.tabAbout.Controls.Add(this.imgCloseAbout);
@@ -1004,21 +1008,21 @@
             this.lblAboutVersion.Text = "version";
             this.lblAboutVersion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // lblAboutReportIssue
+            // btnAboutReportIssue
             // 
-            this.lblAboutReportIssue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblAboutReportIssue.AutoSize = true;
-            this.lblAboutReportIssue.BackColor = System.Drawing.Color.Transparent;
-            this.lblAboutReportIssue.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblAboutReportIssue.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblAboutReportIssue.Location = new System.Drawing.Point(6, 496);
-            this.lblAboutReportIssue.Margin = new System.Windows.Forms.Padding(3, 0, 3, 5);
-            this.lblAboutReportIssue.Name = "lblAboutReportIssue";
-            this.lblAboutReportIssue.Size = new System.Drawing.Size(87, 15);
-            this.lblAboutReportIssue.TabIndex = 11;
-            this.lblAboutReportIssue.Text = "Report an issue";
-            this.lblAboutReportIssue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblAboutReportIssue.Click += new System.EventHandler(this.lblAboutReportIssue_Click);
+            this.btnAboutReportIssue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnAboutReportIssue.AutoSize = true;
+            this.btnAboutReportIssue.BackColor = System.Drawing.Color.Transparent;
+            this.btnAboutReportIssue.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAboutReportIssue.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnAboutReportIssue.Location = new System.Drawing.Point(6, 496);
+            this.btnAboutReportIssue.Margin = new System.Windows.Forms.Padding(3, 0, 3, 5);
+            this.btnAboutReportIssue.Name = "btnAboutReportIssue";
+            this.btnAboutReportIssue.Size = new System.Drawing.Size(87, 15);
+            this.btnAboutReportIssue.TabIndex = 11;
+            this.btnAboutReportIssue.Text = "Report an issue";
+            this.btnAboutReportIssue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnAboutReportIssue.Click += new System.EventHandler(this.lblAboutReportIssue_Click);
             // 
             // lblAboutSubText
             // 
@@ -1074,6 +1078,21 @@
             this.imgHeaderAbout.TabIndex = 5;
             this.imgHeaderAbout.TabStop = false;
             // 
+            // btnFileReportBroken
+            // 
+            this.btnFileReportBroken.AutoSize = true;
+            this.btnFileReportBroken.BackColor = System.Drawing.Color.Transparent;
+            this.btnFileReportBroken.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFileReportBroken.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnFileReportBroken.Location = new System.Drawing.Point(28, 281);
+            this.btnFileReportBroken.Margin = new System.Windows.Forms.Padding(3, 0, 3, 5);
+            this.btnFileReportBroken.Name = "btnFileReportBroken";
+            this.btnFileReportBroken.Size = new System.Drawing.Size(82, 15);
+            this.btnFileReportBroken.TabIndex = 12;
+            this.btnFileReportBroken.Text = "Report broken";
+            this.btnFileReportBroken.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnFileReportBroken.Click += new System.EventHandler(this.btnFileReportBroken_Click);
+            // 
             // frmOpenPlex
             // 
             this.AllowDrop = true;
@@ -1103,13 +1122,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).EndInit();
             this.contextFileName.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.imgCloseSearchResults)).EndInit();
-            this.tabMovieDetails.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.imgCloseMovieDetails)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgMovieInfoPoster)).EndInit();
-            this.panelMovieItems.ResumeLayout(false);
-            this.panelMovieItems.PerformLayout();
-            this.panelMovieSubItems.ResumeLayout(false);
-            this.panelMovieSubItems.PerformLayout();
+            this.tabFileDetails.ResumeLayout(false);
+            this.tabFileDetails.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgCloseFileDetails)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgFileInfoPoster)).EndInit();
+            this.panelFileItems.ResumeLayout(false);
+            this.panelFileItems.PerformLayout();
+            this.panelFileSubItems.ResumeLayout(false);
+            this.panelFileSubItems.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgMoviePosterBackground)).EndInit();
             this.tabAbout.ResumeLayout(false);
             this.tabAbout.PerformLayout();
@@ -1145,39 +1165,40 @@
         private System.Windows.Forms.Label lblAboutText;
         private System.Windows.Forms.Label lblAboutSubText;
         private System.Windows.Forms.Label lblAboutVersion;
-        private System.Windows.Forms.Label lblAboutReportIssue;
-        private System.Windows.Forms.TabPage tabMovieDetails;
-        private System.Windows.Forms.FlowLayoutPanel panelMovieSubItems;
-        private System.Windows.Forms.Label movieInfoGenre;
+        private System.Windows.Forms.Label btnAboutReportIssue;
+        private System.Windows.Forms.TabPage tabFileDetails;
+        private System.Windows.Forms.FlowLayoutPanel panelFileSubItems;
+        private System.Windows.Forms.Label fileInfoGenre;
         private System.Windows.Forms.Label movieInfoSplitter1;
-        private System.Windows.Forms.Label movieInfoIMDbRating;
-        private System.Windows.Forms.Label movieInfoTitle;
-        private System.Windows.Forms.PictureBox imgMovieInfoPoster;
-        private System.Windows.Forms.FlowLayoutPanel panelMovieItems;
-        private System.Windows.Forms.Label movieInfoDescription;
-        private CButtonLib.CButton btnMoviePlay;
-        private CButtonLib.CButton btnMovieDownload;
-        private System.Windows.Forms.PictureBox imgCloseMovieDetails;
-        private System.Windows.Forms.Label movieInfoIMDbId;
+        private System.Windows.Forms.Label fileInfoIMDbRating;
+        private System.Windows.Forms.Label fileInfoTitle;
+        private System.Windows.Forms.PictureBox imgFileInfoPoster;
+        private System.Windows.Forms.FlowLayoutPanel panelFileItems;
+        private System.Windows.Forms.Label fileInfoDescription;
+        private CButtonLib.CButton btnFilePlay;
+        private CButtonLib.CButton btnFileDownload;
+        private System.Windows.Forms.PictureBox imgCloseFileDetails;
+        private System.Windows.Forms.Label fileInfoIMDbId;
         private System.Windows.Forms.PictureBox imgMoviePosterBackground;
-        private System.Windows.Forms.Label movieInfoFileURL;
+        private System.Windows.Forms.Label fileInfoURL;
         private System.Windows.Forms.FlowLayoutPanel panelSearchHeaders;
         private System.Windows.Forms.Label lblHeaderResults;
         private System.Windows.Forms.Label lblHeaderResultsText;
-        private System.Windows.Forms.Label movieInfoPopcornTrailerURL;
-        private System.Windows.Forms.Label movieInfoPopcornFanartURL;
-        private CButtonLib.CButton btnMovieTrailer;
+        private System.Windows.Forms.Label fileInfoPopcornTrailerURL;
+        private System.Windows.Forms.Label fileInfoPopcornFanartURL;
+        private CButtonLib.CButton btnFileTrailer;
         private System.Windows.Forms.Label movieInfoSplitter2;
-        private System.Windows.Forms.Label movieInfoRuntime;
+        private System.Windows.Forms.Label fileInfoRuntime;
         private System.Windows.Forms.Label movieInfoSplitter3;
-        private System.Windows.Forms.Label movieInfoReleaseDate;
+        private System.Windows.Forms.Label fileInfoReleaseDate;
         private System.Windows.Forms.PictureBox imgCloseSearchResults;
         private System.Windows.Forms.ToolStripMenuItem copyToClipboardToolStripMenuItem;
         public System.Windows.Forms.ContextMenuStrip contextFileName;
-        private System.Windows.Forms.Label movieInfoSeriesId;
+        private System.Windows.Forms.Label fileInfoSeriesId;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnHost;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnFileName;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnURL;
+        private System.Windows.Forms.Label btnFileReportBroken;
     }
 }
 
