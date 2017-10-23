@@ -31,7 +31,7 @@ The app is using .NET 4.6.2 WinForms Framework written in C#.
 Windows 7+ is supported (Windows 7, 8, 8.1, 10)
 
 ## Installation
-Download installer [here](https://github.com/invu/openplex/releases/download/v0.1.0.3/OpenPlexInstaller.exe)
+Download installer [here](https://github.com/invu/openplex/releases/download/v0.1.0.4/OpenPlexInstaller.exe)
 
 ## Screenshots
 <img src="/Screenshots/OpenPlex - Home.png" />
