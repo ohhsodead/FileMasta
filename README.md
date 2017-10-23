@@ -34,7 +34,7 @@ Windows 7+ is supported (Windows 7, 8, 8.1, 10)
 Download installer [here](https://github.com/invu/openplex/releases/download/v0.1.0.3/OpenPlexInstaller.exe)
 
 ## Screenshots
-<img src="/Screenshots/OpenPlex - Search Movies.png" />
+<img src="/Screenshots/OpenPlex - Home.png" />
 <img src="/Screenshots/OpenPlex - Search Results.png" />
 <img src="/Screenshots/OpenPlex - Movie Details.png" />
 <img src="/Screenshots/OpenPlex - Downloads.png" />
