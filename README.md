@@ -14,10 +14,10 @@ OpenPlex allows you to search for Movies/TV Shows available to watch online for 
 
 A database run by a community of movie lovers who are constantly uploading the links of the newly released movies as well as top classics, and of course we're open to suggestions.
 
-If you've got any comments, queries or suggestions for the app please just open an issue - we want to know what you've got to say!
+If you've got any comments, queries or suggestions then simply open an issue - we want to know what you've got to say!
 
 ## How does it work?
-It communicates with its own [API](https://github.com/invu/openplex-app/blob/master/Assets/openplex-movies-db.txt) to query movies and tv shows from the community driven database. Also including the [OMDb API](https://omdbapi.com) and [Popcorn Time Official API](https://popcorntime.sh). Capability of opening files in both Windows Media Player and VLC Player (if installed).
+It communicates with its own community driven [database](https://github.com/invu/openplex-app/blob/master/Assets/openplex-movies-db.txt) to query files. Also including metadata collecting from both [OMDb API](https://omdbapi.com) and [Popcorn Time Official API](https://popcorntime.sh). Capability of opening files in both Windows Media Player and VLC Player (if installed) and support for downloading multiple files asynchronously.
 
 ## Contribute
 Got some direct media URLs lying around? Submit them to our [core movie database](https://github.com/invu/openplex-app/blob/master/Assets/openplex-movies-db.txt)! It's pretty simple. Oh, and you can follow [this](https://help.github.com/articles/editing-files-in-another-user-s-repository/) tutorial from GitHub if you're stuck.
@@ -38,7 +38,7 @@ Download installer [here](https://github.com/invu/openplex-app/releases/download
 <img src="/Screenshots/OpenPlex - Downloads.png" />
 <img src="/Screenshots/OpenPlex - About.png" />
 
-## Legal Side of Things...
+## Legal Side of Things.
 All of the free movies/tv shows found on this app are hosted on third-party servers that are freely available to watch online for all internet users. Any legal issues regarding the free online links on this app should be taken up with the actual file hosts themselves, as we're not affiliated with them.
 
 ## License
