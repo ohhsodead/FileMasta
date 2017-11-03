@@ -41,3 +41,4 @@ C:\Users\imAsh\Documents\Visual Studio 2015\Projects\OpenPlex 2.0\openplex\obj\R
 C:\Users\imAsh\Documents\Visual Studio 2015\Projects\OpenPlex 2.0\openplex\obj\Release\en\OpenPlex.resources.dll
 C:\Users\imAsh\Documents\Visual Studio 2015\Projects\OpenPlex 2.0\openplex\obj\Release\OpenPlex.exe
 C:\Users\imAsh\Documents\Visual Studio 2015\Projects\OpenPlex 2.0\openplex\obj\Release\OpenPlex.pdb
+C:\Users\imAsh\Documents\Visual Studio 2015\Projects\OpenPlex 2.0\openplex\obj\Release\OpenPlex.csprojResolveAssemblyReference.cache

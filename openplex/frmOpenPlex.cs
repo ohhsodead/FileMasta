@@ -216,8 +216,6 @@ namespace OpenPlex
             {
                 dataGrid.Rows.Add(new Uri(file).Host.Replace("www.", ""), Path.GetFileName(file).Replace("%20", " "), file);
             }
-            MessageBox.Show("hi");
-
         }
 
         void worker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
