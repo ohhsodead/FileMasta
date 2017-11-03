@@ -10,19 +10,17 @@
 </div>
 
 ## What is OpenPlex?
-OpenPlex allows you to search for Movies/TV shows available to watch online for free by providing you with trusted files from all around the web. But we don't use torrents, just raw media files playable anywhere. Created by a few friends who wanted to come up with something different.
+OpenPlex allows you to search for Movies/TV Shows available to watch online for free by providing you with trusted files from all around the web. But we don't use torrents, just raw media files playable anywhere. Created by a few friends who wanted to come up with something different.
 
 A database run by a community of movie lovers who are constantly uploading the links of the newly released movies as well as top classics, and of course we're open to suggestions.
 
 If you've got any comments, queries or suggestions for the app please just open an issue - we want to know what you've got to say!
 
 ## How does it work?
-It communicates with its own [API](https://github.com/invu/openplex-app/blob/master/Assets/openplex-db.txt) to query movies and tv shows from the community driven database. The app includes an easy-to-use download client, supporting all files and asynchronous downloads.
+It communicates with its own [API](https://github.com/invu/openplex-app/blob/master/Assets/openplex-movies-db.txt) to query movies and tv shows from the community driven database. Also including the [OMDb API](https://omdbapi.com) and [Popcorn Time Official API](https://popcorntime.sh). Capability of opening files in both Windows Media Player and VLC Player (if installed).
 
 ## Contribute
-Got some direct media URLs lying around? Submit them to our [core movie database](https://github.com/invu/openplex-app/blob/master/Assets/openplex-db.txt)! It's pretty simple. Oh, and you can follow [this](https://help.github.com/articles/editing-files-in-another-user-s-repository/) tutorial from GitHub if you're stuck.
-
-We're also hosting our [background database](https://github.com/invu/openplex-app/blob/master/Assets/openplex-backgrounds-db.txt) so you can add some awesome backgrounds to be displayed in the app!
+Got some direct media URLs lying around? Submit them to our [core movie database](https://github.com/invu/openplex-app/blob/master/Assets/openplex-movies-db.txt)! It's pretty simple. Oh, and you can follow [this](https://help.github.com/articles/editing-files-in-another-user-s-repository/) tutorial from GitHub if you're stuck.
 
 ## Framework & Backend
 The app is using .NET 4.6.2 WinForms Framework written in C#.
@@ -31,11 +29,11 @@ The app is using .NET 4.6.2 WinForms Framework written in C#.
 Windows 7+ is supported (Windows 7, 8, 8.1, 10)
 
 ## Installation
-Download installer [here](https://github.com/invu/openplex-app/releases/download/0.1.0.4/OpenPlexInstaller.exe)
+Download installer [here](https://github.com/invu/openplex-app/releases/download/0.2.0.0/OpenPlexInstaller.exe)
 
 ## Screenshots
-<img src="/Screenshots/OpenPlex - Home.png" />
-<img src="/Screenshots/OpenPlex - Search Results.png" />
+<img src="/Screenshots/OpenPlex - Movies.png" />
+<img src="/Screenshots/OpenPlex - Files.png" />
 <img src="/Screenshots/OpenPlex - Movie Details.png" />
 <img src="/Screenshots/OpenPlex - Downloads.png" />
 <img src="/Screenshots/OpenPlex - About.png" />
