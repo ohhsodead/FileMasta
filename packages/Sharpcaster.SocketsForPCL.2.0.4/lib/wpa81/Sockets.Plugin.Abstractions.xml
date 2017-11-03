@@ -1,0 +1,373 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Sockets.Plugin.Abstractions</name>
+    </assembly>
+    <members>
+        <member name="M:Sockets.Plugin.Abstractions.TcpSocketClientExtensions.GetStream(Sockets.Plugin.Abstractions.ITcpSocketClient)">
+            <summary>
+             Wraps <see cref="P:Sockets.Plugin.Abstractions.ITcpSocketClient.ReadStream"/> and <see cref="P:Sockets.Plugin.Abstractions.ITcpSocketClient.WriteStream"/> into
+             a single <see cref="T:System.IO.Stream"/>. This is primarily intended for migrations from existing code
+             that uses <see cref="!:System.Net.TcpClient.GetStream"/>.
+            </summary>
+            <param name="client">
+             The instance of <see cref="T:Sockets.Plugin.Abstractions.ITcpSocketClient"/>
+            </param>
+            <returns>
+             A single stream that wraps <see cref="P:Sockets.Plugin.Abstractions.ITcpSocketClient.ReadStream"/> and
+             <see cref="P:Sockets.Plugin.Abstractions.ITcpSocketClient.WriteStream"/>.
+            </returns>
+        </member>
+        <member name="T:Sockets.Plugin.Abstractions.ICommsInterface">
+            <summary>
+            Provides a summary of an available network interface on the device.
+            </summary>
+        </member>
+        <member name="P:Sockets.Plugin.Abstractions.ICommsInterface.NativeInterfaceId">
+            <summary>
+            The interface identifier provided by the underlying platform.
+            </summary>
+        </member>
+        <member name="P:Sockets.Plugin.Abstractions.ICommsInterface.Name">
+            <summary>
+            The interface name, as provided by the underlying platform.
+            </summary>
+        </member>
+        <member name="P:Sockets.Plugin.Abstractions.ICommsInterface.IpAddress">
+            <summary>
+            The IPv4 Address of the interface, if connected. 
+            </summary>
+        </member>
+        <member name="P:Sockets.Plugin.Abstractions.ICommsInterface.GatewayAddress">
+            <summary>
+            The IPv4 address of the gateway, if available.
+            </summary>
+        </member>
+        <member name="P:Sockets.Plugin.Abstractions.ICommsInterface.BroadcastAddress">
+            <summary>
+            The IPv4 broadcast address for the interface, if available.
+            </summary>
+        </member>
+        <member name="P:Sockets.Plugin.Abstractions.ICommsInterface.ConnectionStatus">
+            <summary>
+            The connection status of the interface, if available
+            </summary>
+        </member>
+        <member name="P:Sockets.Plugin.Abstractions.ICommsInterface.IsUsable">
+            <summary>
+            Indicates whether the interface has a network address and can be used for 
+            sending/receiving data.
+            </summary>
+        </member>
+        <member name="P:Sockets.Plugin.Abstractions.ICommsInterface.IsLoopback">
+            <summary>
+            Indicates whether the interface is the loopback interface
+            </summary>
+        </member>
+        <member name="T:Sockets.Plugin.Abstractions.IUdpSocketMulticastClient">
+            <summary>
+                Sends and recieves data in a udp multicast group.
+                Join a udp multicast address using <code>JoinMulticastGroupAsync</code>, then send data using
+                <code>SendMulticastAsync</code>.
+            </summary>
+        </member>
+        <member name="M:Sockets.Plugin.Abstractions.IUdpSocketMulticastClient.JoinMulticastGroupAsync(System.String,System.Int32,Sockets.Plugin.Abstractions.ICommsInterface)">
+            <summary>
+                Joins the multicast group at the specified endpoint.
+            </summary>
+            <param name="multicastAddress">The address for the multicast group.</param>
+            <param name="port">The port for the multicast group.</param>        
+            <param name="multicastOn">The <code>CommsInterface</code> to multicast on. If unspecified, all interfaces will be bound.</param>
+        </member>
+        <member name="M:Sockets.Plugin.Abstractions.IUdpSocketMulticastClient.DisconnectAsync">
+            <summary>
+                Removes the <code>UdpSocketMulticastClient</code> from a joined multicast group.
+            </summary>
+        </member>
+        <member name="M:Sockets.Plugin.Abstractions.IUdpSocketMulticastClient.SendMulticastAsync(System.Byte[])">
+            <summary>
+                Sends the specified data to the multicast group, previously set using <code>JoinMulticastGroupAsync</code>.
+                If a group has not been set, calls will have no effect.
+            </summary>
+            <param name="data">A byte array of data to be sent.</param>
+        </member>
+        <member name="M:Sockets.Plugin.Abstractions.IUdpSocketMulticastClient.SendMulticastAsync(System.Byte[],System.Int32)">
+            <summary>
+                Sends the specified data to the multicast group, previously set using <code>JoinMulticastGroupAsync</code>.
+                If a group has not been set, calls will have no effect.
+            </summary>
+            <param name="data">A byte array of data to send.</param>
+            <param name="length">The number of bytes from <c>data</c> to send.</param>
+        </member>
+        <member name="P:Sockets.Plugin.Abstractions.IUdpSocketMulticastClient.TTL">
+            <summary>
+                Gets or sets the Time To Live value for the <code>UdpSocketMulticastClient</code>.
+                Must be called before joining a multicast group. 
+            </summary>
+        </member>
+        <member name="E:Sockets.Plugin.Abstractions.IUdpSocketMulticastClient.MessageReceived">
+            <summary>
+                Fired when a udp datagram has been received.
+            </summary>
+        </member>
+        <member name="T:Sockets.Plugin.Abstractions.ITcpSocketClient">
+            <summary>
+                Sends and receives data over a TCP socket. Establish a connection with a listening TCP socket using
+                <code>ConnectAsync</code>.
+                Use the <code>WriteStream</code> and <code>ReadStream</code> properties for sending and receiving data
+                respectively.
+            </summary>
+        </member>
+        <member name="M:Sockets.Plugin.Abstractions.ITcpSocketClient.ConnectAsync(System.String,System.Int32,System.Boolean,System.Threading.CancellationToken,System.Boolean)">
+            <summary>
+                Establishes a TCP connection with the endpoint at the specified address/port pair.
+            </summary>
+            <param name="address">The address of the endpoint to connect to.</param>
+            <param name="port">The port of the endpoint to connect to.</param>
+            <param name="secure">Is this socket secure?</param>
+            <param name="cancellationToken">The cancellation token to cancel the operation.</param>
+            <param name="ignoreSSLErrors">True to ignore SSL errors.</param>
+        </member>
+        <member name="M:Sockets.Plugin.Abstractions.ITcpSocketClient.ConnectAsync(System.String,System.String,System.Boolean,System.Threading.CancellationToken,System.Boolean)">
+            <summary>
+                Establishes a TCP connection with the endpoint at the specified address/port pair.
+            </summary>
+            <param name="address">The address of the endpoint to connect to.</param>
+            <param name="service">The service of the endpoint to connect to.</param>
+            <param name="secure">True to enable TLS on the socket.</param>
+            <param name="cancellationToken">The cancellation token to cancel the operation.</param>
+            <param name="ignoreSSLErrors">True to ignore SSL errors.</param>
+        </member>
+        <member name="M:Sockets.Plugin.Abstractions.ITcpSocketClient.DisconnectAsync">
+            <summary>
+                Disconnects from an endpoint previously connected to using <code>ConnectAsync</code>.
+                Should not be called on a <code>TcpSocketClient</code> that is not already connected.
+            </summary>
+        </member>
+        <member name="M:Sockets.Plugin.Abstractions.ITcpSocketClient.GetConnectedInterfaceAsync">
+            <summary>
+            Gets the interface the connection is using.
+            </summary>
+            <returns>The <see cref="T:Sockets.Plugin.Abstractions.ICommsInterface"/> which represents the interface the connection is using.</returns>
+        </member>
+        <member name="P:Sockets.Plugin.Abstractions.ITcpSocketClient.ReadStream">
+            <summary>
+                A stream that can be used for receiving data from the remote endpoint.
+            </summary>
+        </member>
+        <member name="P:Sockets.Plugin.Abstractions.ITcpSocketClient.WriteStream">
+            <summary>
+                A stream that can be used for sending data to the remote endpoint.
+            </summary>
+        </member>
+        <member name="P:Sockets.Plugin.Abstractions.ITcpSocketClient.RemoteAddress">
+            <summary>
+                The address of the remote endpoint to which the <code>TcpSocketClient</code> is currently connected.
+            </summary>
+        </member>
+        <member name="P:Sockets.Plugin.Abstractions.ITcpSocketClient.RemotePort">
+            <summary>
+                The port of the remote endpoint to which the <code>TcpSocketClient</code> is currently connected.
+            </summary>
+        </member>
+        <member name="T:Sockets.Plugin.Abstractions.ITcpSocketListener">
+            <summary>
+                Binds to a port and listens for TCP connections.
+                Use <code>StartListeningAsync</code> to bind to a local port, then handle <code>ConnectionReceived</code> events as
+                clients connect.
+            </summary>
+        </member>
+        <member name="M:Sockets.Plugin.Abstractions.ITcpSocketListener.StartListeningAsync(System.Int32,Sockets.Plugin.Abstractions.ICommsInterface)">
+            <summary>
+                Binds the <code>TcpSocketListener</code> to the specified port on all endpoints and listens for TCP connections.
+            </summary>
+            <param name="port">The port to listen on.</param>
+            <param name="listenOn">The <code>CommsInterface</code> to listen on. If unspecified, all interfaces will be bound.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Sockets.Plugin.Abstractions.ITcpSocketListener.StopListeningAsync">
+            <summary>
+                Stops the <code>TcpSocketListener</code> from listening for new TCP connections.
+                This does not disconnect existing connections.
+            </summary>
+        </member>
+        <member name="P:Sockets.Plugin.Abstractions.ITcpSocketListener.LocalPort">
+            <summary>
+                The port to which the TcpSocketListener is currently bound
+            </summary>
+        </member>
+        <member name="E:Sockets.Plugin.Abstractions.ITcpSocketListener.ConnectionReceived">
+            <summary>
+                Fired when a new TCP connection has been received.
+                Use the <code>SocketClient</code> property of the <code>TcpSocketListenerConnectEventArgs</code>
+                to get a <code>TcpSocketClient</code> representing the connection for sending and receiving data.
+            </summary>
+        </member>
+        <member name="T:Sockets.Plugin.Abstractions.IUdpSocketClient">
+            <summary>
+                Sends UDP data to arbitrary endpoints.
+                If data is to be sent to a single endpoint only, use <code>ConnectAsync</code> to specify a default endpoint to
+                which data will be sent,
+                and send data with <code>SendAsync</code>.
+            </summary>
+        </member>
+        <member name="M:Sockets.Plugin.Abstractions.IUdpSocketClient.ConnectAsync(System.String,System.Int32)">
+            <summary>
+                Sets the endpoint at the specified address/port pair as the 'default' target of sent data.
+                After calling <code>ConnectAsync</code>, use <code>SendAsync</code> to send data to the default target.
+            </summary>
+            <param name="address">The remote address for the default target.</param>
+            <param name="port">The remote port for the default target.</param>
+        </member>
+        <member name="M:Sockets.Plugin.Abstractions.IUdpSocketClient.DisconnectAsync">
+            <summary>
+                Unsets the 'default' target of sent data.
+                After calling <code>DisconnectAsync</code>, calls to <code>SendAsync</code> will have no effect.
+            </summary>
+        </member>
+        <member name="M:Sockets.Plugin.Abstractions.IUdpSocketClient.SendAsync(System.Byte[])">
+            <summary>
+                Sends the specified data to the 'default' target of the <code>UdpSocketClient</code>, previously set using
+                <code>ConnectAsync</code>.
+                If the 'default' target has not been set, calls will have no effect.
+            </summary>
+            <param name="data">A byte array of data to be sent.</param>
+        </member>
+        <member name="M:Sockets.Plugin.Abstractions.IUdpSocketClient.SendAsync(System.Byte[],System.Int32)">
+            <summary>
+                Sends the specified data to the 'default' target of the <code>UdpSocketClient</code>, previously set using
+                <code>ConnectAsync</code>.
+                If the 'default' target has not been set, calls will have no effect.
+            </summary>
+            <param name="data">A byte array of data to be sent.</param>
+            <param name="length">The number of bytes from <c>data</c> to send.</param>
+        </member>
+        <member name="M:Sockets.Plugin.Abstractions.IUdpSocketClient.SendToAsync(System.Byte[],System.String,System.Int32)">
+            <summary>
+                Sends the specified data to the endpoint at the specified address/port pair.
+            </summary>
+            <param name="data">A byte array of data to send.</param>
+            <param name="address">The remote address to which the data should be sent.</param>
+            <param name="port">The remote port to which the data should be sent.</param>
+        </member>
+        <member name="M:Sockets.Plugin.Abstractions.IUdpSocketClient.SendToAsync(System.Byte[],System.Int32,System.String,System.Int32)">
+            <summary>
+                Sends the specified data to the endpoint at the specified address/port pair.
+            </summary>
+            <param name="data">A byte array of data to send.</param>
+            <param name="length">The number of bytes from <c>data</c> to send.</param>
+            <param name="address">The remote address to which the data should be sent.</param>
+            <param name="port">The remote port to which the data should be sent.</param>
+        </member>
+        <member name="E:Sockets.Plugin.Abstractions.IUdpSocketClient.MessageReceived">
+            <summary>
+                Fired when a UDP datagram has been received.
+            </summary>
+        </member>
+        <member name="T:Sockets.Plugin.Abstractions.IUdpSocketReceiver">
+            <summary>
+                Listens on a port for UDP traffic and can send UDP data to arbitrary endpoints.
+            </summary>
+        </member>
+        <member name="M:Sockets.Plugin.Abstractions.IUdpSocketReceiver.StartListeningAsync(System.Int32,Sockets.Plugin.Abstractions.ICommsInterface)">
+            <summary>
+                Binds the <code>UdpSocketReceiver</code> to the specified port on all endpoints and listens for UDP traffic.
+            </summary>
+            <param name="port">The port to listen on.</param>
+            <param name="listenOn">The <code>CommsInterface</code> to listen on. If unspecified, all interfaces will be bound.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Sockets.Plugin.Abstractions.IUdpSocketReceiver.StopListeningAsync">
+            <summary>
+                Unbinds a bound <code>UdpSocketReceiver</code>. Should not be called if the <code>UdpSocketReceiver</code> has not
+                yet been unbound.
+            </summary>
+        </member>
+        <member name="M:Sockets.Plugin.Abstractions.IUdpSocketReceiver.SendToAsync(System.Byte[],System.String,System.Int32)">
+            <summary>
+                Sends the specified data to the endpoint at the specified address/port pair.
+            </summary>
+            <param name="data">A byte array of data to send.</param>
+            <param name="address">The remote address to which the data should be sent.</param>
+            <param name="port">The remote port to which the data should be sent.</param>
+        </member>
+        <member name="M:Sockets.Plugin.Abstractions.IUdpSocketReceiver.SendToAsync(System.Byte[],System.Int32,System.String,System.Int32)">
+            <summary>
+                Sends the specified data to the endpoint at the specified address/port pair.
+            </summary>
+            <param name="data">A byte array of data to send.</param>
+            <param name="length">The number of bytes from <c>data</c> to send.</param>
+            <param name="address">The remote address to which the data should be sent.</param>
+            <param name="port">The remote port to which the data should be sent.</param>
+        </member>
+        <member name="E:Sockets.Plugin.Abstractions.IUdpSocketReceiver.MessageReceived">
+            <summary>
+                Fired when a UDP datagram has been received.
+            </summary>
+        </member>
+        <member name="T:Sockets.Plugin.Abstractions.CommsInterfaceStatus">
+            <summary>
+            The connection state of an interface.
+            </summary>
+        </member>
+        <member name="F:Sockets.Plugin.Abstractions.CommsInterfaceStatus.Unknown">
+            <summary>
+            The state of the interface can not be determined.
+            </summary>
+        </member>
+        <member name="F:Sockets.Plugin.Abstractions.CommsInterfaceStatus.Connected">
+            <summary>
+            The interface is connected. 
+            </summary>
+        </member>
+        <member name="F:Sockets.Plugin.Abstractions.CommsInterfaceStatus.Disconnected">
+            <summary>
+            The interface is disconnected.
+            </summary>
+        </member>
+        <member name="T:Sockets.Plugin.Abstractions.TcpSocketListenerConnectEventArgs">
+            <summary>
+                Fired when a TcpSocketListener receives a new connection.
+            </summary>
+        </member>
+        <member name="P:Sockets.Plugin.Abstractions.TcpSocketListenerConnectEventArgs.SocketClient">
+            <summary>
+                A <code>TcpSocketClient</code> representing the newly connected client.
+            </summary>
+        </member>
+        <member name="M:Sockets.Plugin.Abstractions.TcpSocketListenerConnectEventArgs.#ctor(Sockets.Plugin.Abstractions.ITcpSocketClient)">
+            <summary>
+                Constructor for <code>TcpSocketListenerConnectEventArgs.</code>
+            </summary>
+            <param name="socketClient">A <code>TcpSocketClient</code> representing the newly connected client.</param>
+        </member>
+        <member name="T:Sockets.Plugin.Abstractions.UdpSocketMessageReceivedEventArgs">
+            <summary>
+                Fires when a udp listener or udp multicast client receives a udp datagram.
+            </summary>
+        </member>
+        <member name="M:Sockets.Plugin.Abstractions.UdpSocketMessageReceivedEventArgs.#ctor(System.String,System.String,System.Byte[])">
+            <summary>
+                Constructor for the <code>UdpSocketMessageReceivedEventArgs.</code>
+            </summary>
+            <param name="remoteAddress">Remote address of the received datagram.</param>
+            <param name="remotePort">Remote port of the received datagram.</param>
+            <param name="byteData">Datagram contents.</param>
+        </member>
+        <member name="P:Sockets.Plugin.Abstractions.UdpSocketMessageReceivedEventArgs.RemoteAddress">
+            <summary>
+                Remote address of the received datagram.
+            </summary>
+        </member>
+        <member name="P:Sockets.Plugin.Abstractions.UdpSocketMessageReceivedEventArgs.RemotePort">
+            <summary>
+                Remote port of the received datagram.
+            </summary>
+        </member>
+        <member name="P:Sockets.Plugin.Abstractions.UdpSocketMessageReceivedEventArgs.ByteData">
+            <summary>
+                Datagram contents.
+            </summary>
+        </member>
+    </members>
+</doc>

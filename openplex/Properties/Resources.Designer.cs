@@ -83,6 +83,16 @@ namespace OpenPlex.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap iconArrowDown {
+            get {
+                object obj = ResourceManager.GetObject("iconArrowDown", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap iconCLoseH {
             get {
                 object obj = ResourceManager.GetObject("iconCLoseH", resourceCulture);
@@ -96,6 +106,36 @@ namespace OpenPlex.Properties {
         internal static System.Drawing.Bitmap iconCLoseL {
             get {
                 object obj = ResourceManager.GetObject("iconCLoseL", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconFiles {
+            get {
+                object obj = ResourceManager.GetObject("iconFiles", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconIMDb {
+            get {
+                object obj = ResourceManager.GetObject("iconIMDb", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconMovies {
+            get {
+                object obj = ResourceManager.GetObject("iconMovies", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -136,6 +176,26 @@ namespace OpenPlex.Properties {
         internal static System.Drawing.Bitmap iconStop {
             get {
                 object obj = ResourceManager.GetObject("iconStop", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconWatchLater {
+            get {
+                object obj = ResourceManager.GetObject("iconWatchLater", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap openplex_logo {
+            get {
+                object obj = ResourceManager.GetObject("openplex-logo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

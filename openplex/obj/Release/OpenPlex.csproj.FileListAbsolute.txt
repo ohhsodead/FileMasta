@@ -4,8 +4,10 @@ C:\Users\imAsh\Documents\Visual Studio 2015\Projects\openplex\openplex\bin\Relea
 C:\Users\imAsh\Documents\Visual Studio 2015\Projects\openplex\openplex\bin\Release\en\OpenPlex.resources.dll
 C:\Users\imAsh\Documents\Visual Studio 2015\Projects\openplex\openplex\bin\Release\CButtonLib.dll
 C:\Users\imAsh\Documents\Visual Studio 2015\Projects\openplex\openplex\bin\Release\ChreneLib.dll
+C:\Users\imAsh\Documents\Visual Studio 2015\Projects\openplex\openplex\bin\Release\Newtonsoft.Json.dll
 C:\Users\imAsh\Documents\Visual Studio 2015\Projects\openplex\openplex\bin\Release\CButtonLib.pdb
 C:\Users\imAsh\Documents\Visual Studio 2015\Projects\openplex\openplex\bin\Release\CButtonLib.xml
+C:\Users\imAsh\Documents\Visual Studio 2015\Projects\openplex\openplex\bin\Release\Newtonsoft.Json.xml
 C:\Users\imAsh\Documents\Visual Studio 2015\Projects\openplex\openplex\obj\Release\OpenPlex.ctrlDownloadItem.resources
 C:\Users\imAsh\Documents\Visual Studio 2015\Projects\openplex\openplex\obj\Release\OpenPlex.frmDownloadClient.resources
 C:\Users\imAsh\Documents\Visual Studio 2015\Projects\openplex\openplex\obj\Release\OpenPlex.frmOpenPlex.resources
@@ -16,3 +18,26 @@ C:\Users\imAsh\Documents\Visual Studio 2015\Projects\openplex\openplex\obj\Relea
 C:\Users\imAsh\Documents\Visual Studio 2015\Projects\openplex\openplex\obj\Release\OpenPlex.exe
 C:\Users\imAsh\Documents\Visual Studio 2015\Projects\openplex\openplex\obj\Release\OpenPlex.pdb
 C:\Users\imAsh\Documents\Visual Studio 2015\Projects\openplex\openplex\obj\Release\OpenPlex.csprojResolveAssemblyReference.cache
+C:\Users\imAsh\Documents\Visual Studio 2015\Projects\OpenPlex 2.0\openplex\bin\Release\OpenPlex.exe.config
+C:\Users\imAsh\Documents\Visual Studio 2015\Projects\OpenPlex 2.0\openplex\bin\Release\OpenPlex.exe
+C:\Users\imAsh\Documents\Visual Studio 2015\Projects\OpenPlex 2.0\openplex\bin\Release\OpenPlex.pdb
+C:\Users\imAsh\Documents\Visual Studio 2015\Projects\OpenPlex 2.0\openplex\bin\Release\en\OpenPlex.resources.dll
+C:\Users\imAsh\Documents\Visual Studio 2015\Projects\OpenPlex 2.0\openplex\bin\Release\CButtonLib.dll
+C:\Users\imAsh\Documents\Visual Studio 2015\Projects\OpenPlex 2.0\openplex\bin\Release\ChreneLib.dll
+C:\Users\imAsh\Documents\Visual Studio 2015\Projects\OpenPlex 2.0\openplex\bin\Release\Newtonsoft.Json.dll
+C:\Users\imAsh\Documents\Visual Studio 2015\Projects\OpenPlex 2.0\openplex\bin\Release\CButtonLib.pdb
+C:\Users\imAsh\Documents\Visual Studio 2015\Projects\OpenPlex 2.0\openplex\bin\Release\CButtonLib.xml
+C:\Users\imAsh\Documents\Visual Studio 2015\Projects\OpenPlex 2.0\openplex\bin\Release\Newtonsoft.Json.xml
+C:\Users\imAsh\Documents\Visual Studio 2015\Projects\OpenPlex 2.0\openplex\obj\Release\OpenPlex.ctrlDetails.resources
+C:\Users\imAsh\Documents\Visual Studio 2015\Projects\OpenPlex 2.0\openplex\obj\Release\OpenPlex.ctrlDownloadItem.resources
+C:\Users\imAsh\Documents\Visual Studio 2015\Projects\OpenPlex 2.0\openplex\obj\Release\OpenPlex.ctrlMoviesPoster.resources
+C:\Users\imAsh\Documents\Visual Studio 2015\Projects\OpenPlex 2.0\openplex\obj\Release\OpenPlex.ctrlSplashScreen.resources
+C:\Users\imAsh\Documents\Visual Studio 2015\Projects\OpenPlex 2.0\openplex\obj\Release\OpenPlex.ctrlStreamInfo.resources
+C:\Users\imAsh\Documents\Visual Studio 2015\Projects\OpenPlex 2.0\openplex\obj\Release\OpenPlex.frmDownloadClient.resources
+C:\Users\imAsh\Documents\Visual Studio 2015\Projects\OpenPlex 2.0\openplex\obj\Release\OpenPlex.frmOpenPlex.resources
+C:\Users\imAsh\Documents\Visual Studio 2015\Projects\OpenPlex 2.0\openplex\obj\Release\OpenPlex.Properties.Resources.resources
+C:\Users\imAsh\Documents\Visual Studio 2015\Projects\OpenPlex 2.0\openplex\obj\Release\OpenPlex.frmOpenPlex.en.resources
+C:\Users\imAsh\Documents\Visual Studio 2015\Projects\OpenPlex 2.0\openplex\obj\Release\OpenPlex.csproj.GenerateResource.Cache
+C:\Users\imAsh\Documents\Visual Studio 2015\Projects\OpenPlex 2.0\openplex\obj\Release\en\OpenPlex.resources.dll
+C:\Users\imAsh\Documents\Visual Studio 2015\Projects\OpenPlex 2.0\openplex\obj\Release\OpenPlex.exe
+C:\Users\imAsh\Documents\Visual Studio 2015\Projects\OpenPlex 2.0\openplex\obj\Release\OpenPlex.pdb

@@ -83,7 +83,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.splitter.BorderColor = System.Drawing.Color.Silver;
             this.splitter.ColorFillSolid = System.Drawing.Color.Silver;
-            this.splitter.DesignerSelected = false;
+            this.splitter.DesignerSelected = true;
             this.splitter.DimFactorClick = 0;
             this.splitter.DimFactorHover = 0;
             this.splitter.FillType = CButtonLib.CButton.eFillType.Solid;
@@ -119,12 +119,12 @@
             this.progressBar1.BorderColor = System.Drawing.Color.Gray;
             this.progressBar1.GradiantPosition = ProgressBarEx.ProgressBarEx.GradiantArea.None;
             this.progressBar1.Image = null;
-            this.progressBar1.Location = new System.Drawing.Point(9, 32);
+            this.progressBar1.Location = new System.Drawing.Point(9, 33);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.ProgressColor = System.Drawing.Color.SteelBlue;
             this.progressBar1.RoundedCorners = false;
             this.progressBar1.ShowText = true;
-            this.progressBar1.Size = new System.Drawing.Size(432, 16);
+            this.progressBar1.Size = new System.Drawing.Size(432, 14);
             // 
             // ctrlDownloadItem
             // 

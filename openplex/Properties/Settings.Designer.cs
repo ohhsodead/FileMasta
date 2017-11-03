@@ -22,53 +22,5 @@ namespace OpenPlex.Properties {
                 return defaultInstance;
             }
         }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool settingsAlwaysOnTop {
-            get {
-                return ((bool)(this["settingsAlwaysOnTop"]));
-            }
-            set {
-                this["settingsAlwaysOnTop"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string settingsPathDataDirectory {
-            get {
-                return ((string)(this["settingsPathDataDirectory"]));
-            }
-            set {
-                this["settingsPathDataDirectory"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool settingsClearDataOnClose {
-            get {
-                return ((bool)(this["settingsClearDataOnClose"]));
-            }
-            set {
-                this["settingsClearDataOnClose"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("English")]
-        public string settingsLanguage {
-            get {
-                return ((string)(this["settingsLanguage"]));
-            }
-            set {
-                this["settingsLanguage"] = value;
-            }
-        }
     }
 }

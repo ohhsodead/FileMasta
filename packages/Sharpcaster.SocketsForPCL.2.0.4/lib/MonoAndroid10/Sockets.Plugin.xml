@@ -1,0 +1,501 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Sockets.Plugin</name>
+    </assembly>
+    <members>
+        <member name="T:Sockets.Plugin.CommsInterface">
+            <summary>
+            Provides a summary of an available network interface on the device.
+            </summary>
+        </member>
+        <member name="P:Sockets.Plugin.CommsInterface.NativeInterfaceId">
+            <summary>
+            The interface identifier provided by the underlying platform.
+            </summary>
+        </member>
+        <member name="P:Sockets.Plugin.CommsInterface.Name">
+            <summary>
+            The interface name, as provided by the underlying platform.
+            </summary>
+        </member>
+        <member name="P:Sockets.Plugin.CommsInterface.IpAddress">
+            <summary>
+            The IPv4 Address of the interface, if connected. 
+            </summary>
+        </member>
+        <member name="P:Sockets.Plugin.CommsInterface.GatewayAddress">
+            <summary>
+            The IPv4 address of the gateway, if available.
+            </summary>
+        </member>
+        <member name="P:Sockets.Plugin.CommsInterface.BroadcastAddress">
+            <summary>
+            The IPv4 broadcast address for the interface, if available.
+            </summary>
+        </member>
+        <member name="P:Sockets.Plugin.CommsInterface.ConnectionStatus">
+            <summary>
+            The connection status of the interface, if available
+            </summary>
+        </member>
+        <member name="P:Sockets.Plugin.CommsInterface.IsUsable">
+            <summary>
+            Indicates whether the interface has a network address and can be used for 
+            sending/receiving data.
+            </summary>
+        </member>
+        <member name="P:Sockets.Plugin.CommsInterface.IsLoopback">
+            <summary>
+            Indicates whether the interface is the loopback interface
+            </summary>
+        </member>
+        <member name="F:Sockets.Plugin.CommsInterface.NativeInterface">
+            <summary>
+            The native NetworkInterface this CommsInterface represents.
+            </summary>
+        </member>
+        <member name="F:Sockets.Plugin.CommsInterface.NativeIpAddress">
+            <summary>
+            The Native IpAddress this CommsInterface represents.
+            </summary>
+        </member>
+        <member name="M:Sockets.Plugin.CommsInterface.EndPoint(System.Int32)">
+            <summary>
+            Returns an IPEndpoint object that can be used to bind the network interface to specified port. 
+            </summary>
+            <param name="port"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sockets.Plugin.CommsInterface.GetAllInterfacesAsync">
+            <summary>
+            Retrieves information on the IPv4 network interfaces available.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Sockets.Plugin.CommsInterface.GetSubnetMask(System.Net.NetworkInformation.UnicastIPAddressInformation)">
+            <summary>
+            UnicastIPAddressInformation.IPv4Mask is not implemented in Xamarin. This method sits in a partial class definition
+            on each native platform and retrieves the netmask in whatever way it can be done for each platform. 
+            </summary>
+            <param name="ip"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Sockets.Plugin.NetworkExtensions">
+            <summary>
+            Helper methods required for the conversion of platform-specific network items to the abstracted versions. 
+            </summary>
+        </member>
+        <member name="M:Sockets.Plugin.NetworkExtensions.ToCommsInterfaceSummary(System.Net.NetworkInformation.NetworkInterface)">
+            <summary>
+            Returns a <code>CommsInterface</code> wrapper from a platform native <code>NetworkInterface</code>. 
+            </summary>
+            <param name="nativeInterface"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sockets.Plugin.NetworkExtensions.ToCommsInterfaceStatus(System.Net.NetworkInformation.OperationalStatus)">
+            <summary>
+            Converts an <code>OperationalStatus</code> value to the abstracted <code>CommsInterfaceStatus</code>. 
+            </summary>
+            <param name="nativeStatus"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sockets.Plugin.NetworkExtensions.GetBroadcastAddress(System.Net.IPAddress,System.Net.IPAddress)">
+            <summary>
+            Determines the broadcast address for a given IPAddress
+            Adapted from http://blogs.msdn.com/b/knom/archive/2008/12/31/ip-address-calculations-with-c-subnetmasks-networks.aspx
+            </summary>
+            <param name="address"></param>
+            <param name="subnetMask"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Sockets.Plugin.TcpSocketClient">
+            <summary>
+                Sends and receives data over a TCP socket. Establish a connection with a listening TCP socket using
+                <code>ConnectAsync</code>.
+                Use the <code>WriteStream</code> and <code>ReadStream</code> properties for sending and receiving data
+                respectively.
+            </summary>
+        </member>
+        <member name="M:Sockets.Plugin.TcpSocketClient.#ctor">
+            <summary>
+                Default constructor for <code>TcpSocketClient</code>.
+            </summary>
+        </member>
+        <member name="M:Sockets.Plugin.TcpSocketClient.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Sockets.Plugin.TcpSocketClient"/> class.
+            </summary>
+            <param name="bufferSize">Size of the buffer for the write stream.</param>
+        </member>
+        <member name="M:Sockets.Plugin.TcpSocketClient.ConnectAsync(System.String,System.Int32,System.Boolean,System.Threading.CancellationToken,System.Boolean)">
+            <summary>
+                Establishes a TCP connection with the endpoint at the specified address/port pair.
+            </summary>
+            <param name="address">The address of the endpoint to connect to.</param>
+            <param name="port">The port of the endpoint to connect to.</param>
+            <param name="secure">True to enable TLS on the socket.</param>
+            <param name="cancellationToken">The cancellation token to cancel the operation.</param>
+            <param name="ignoreSSLErrors">True to ignore SSL errors.</param>
+        </member>
+        <member name="M:Sockets.Plugin.TcpSocketClient.ConnectAsync(System.String,System.String,System.Boolean,System.Threading.CancellationToken,System.Boolean)">
+            <summary>
+                Establishes a TCP connection with the endpoint at the specified address/port pair.
+            </summary>
+            <param name="address">The address of the endpoint to connect to.</param>
+            <param name="service">The service name of the endpoint to connect to.</param>
+            <param name="secure">True to enable TLS on the socket.</param>
+            <param name="cancellationToken">The cancellation token to cancel the operation.</param>
+            <param name="ignoreSSLErrors">True to ignore SSL errors.</param>
+        </member>
+        <member name="M:Sockets.Plugin.TcpSocketClient.DisconnectAsync">
+            <summary>
+                Disconnects from an endpoint previously connected to using <code>ConnectAsync</code>.
+                Should not be called on a <code>TcpSocketClient</code> that is not already connected.
+            </summary>
+        </member>
+        <member name="M:Sockets.Plugin.TcpSocketClient.GetConnectedInterfaceAsync">
+            <summary>
+            Gets the interface the connection is using.
+            </summary>
+            <returns>The <see cref="T:Sockets.Plugin.Abstractions.ICommsInterface"/> which represents the interface the connection is using.</returns>
+        </member>
+        <member name="P:Sockets.Plugin.TcpSocketClient.ReadStream">
+            <summary>
+                A stream that can be used for receiving data from the remote endpoint.
+            </summary>
+        </member>
+        <member name="P:Sockets.Plugin.TcpSocketClient.WriteStream">
+            <summary>
+                A stream that can be used for sending data to the remote endpoint.
+            </summary>
+        </member>
+        <member name="P:Sockets.Plugin.TcpSocketClient.RemoteAddress">
+            <summary>
+                The address of the remote endpoint to which the <code>TcpSocketClient</code> is currently connected.
+            </summary>
+        </member>
+        <member name="P:Sockets.Plugin.TcpSocketClient.RemotePort">
+            <summary>
+                The port of the remote endpoint to which the <code>TcpSocketClient</code> is currently connected.
+            </summary>
+        </member>
+        <member name="M:Sockets.Plugin.TcpSocketClient.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="M:Sockets.Plugin.TcpSocketClient.Finalize">
+            <summary>
+            Allows an object to try to free resources and perform other cleanup operations before it is reclaimed by garbage collection.
+            </summary>
+        </member>
+        <member name="P:Sockets.Plugin.TcpSocketClient.Socket">
+            <summary>
+            Exposes the backing socket.
+            </summary>
+        </member>
+        <member name="P:Sockets.Plugin.TcpSocketClient.Sockets#Plugin#Abstractions#IExposeBackingSocket#Socket">
+            <summary>
+            Exposes the backing socket. 
+            </summary>
+        </member>
+        <member name="T:Sockets.Plugin.TcpSocketListener">
+            <summary>
+                Binds to a port and listens for TCP connections.
+                Use <code>StartListeningAsync</code> to bind to a local port, then handle <code>ConnectionReceived</code> events as
+                clients connect.
+            </summary>
+        </member>
+        <member name="E:Sockets.Plugin.TcpSocketListener.ConnectionReceived">
+            <summary>
+                Fired when a new TCP connection has been received.
+                Use the <code>SocketClient</code> property of the <code>TcpSocketListenerConnectEventArgs</code>
+                to get a <code>TcpSocketClient</code> representing the connection for sending and receiving data.
+            </summary>
+        </member>
+        <member name="M:Sockets.Plugin.TcpSocketListener.StartListeningAsync(System.Int32,Sockets.Plugin.Abstractions.ICommsInterface)">
+            <summary>
+                Binds the <code>TcpSocketListener</code> to the specified port on all endpoints and listens for TCP connections.
+            </summary>
+            <param name="port">The port to listen on. If '0', selection is delegated to the operating system.</param>
+            <param name="listenOn">The <code>CommsInterface</code> to listen on. If unspecified, all interfaces will be bound.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Sockets.Plugin.TcpSocketListener.StopListeningAsync">
+            <summary>
+                Stops the <code>TcpSocketListener</code> from listening for new TCP connections.
+                This does not disconnect existing connections.
+            </summary>
+        </member>
+        <member name="P:Sockets.Plugin.TcpSocketListener.LocalPort">
+            <summary>
+                The port to which the TcpSocketListener is currently bound
+            </summary>
+        </member>
+        <member name="M:Sockets.Plugin.TcpSocketListener.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="M:Sockets.Plugin.TcpSocketListener.Finalize">
+            <summary>
+            Allows an object to try to free resources and perform other cleanup operations before it is reclaimed by garbage collection.
+            </summary>
+        </member>
+        <member name="T:Sockets.Plugin.UdpSocketBase">
+            <summary>
+                Base class for .NET UDP socket wrapper.
+            </summary>
+        </member>
+        <member name="F:Sockets.Plugin.UdpSocketBase._backingUdpClient">
+            <summary>
+                Native socket field around which UdpSocketBase wraps.
+            </summary>
+        </member>
+        <member name="E:Sockets.Plugin.UdpSocketBase.MessageReceived">
+            <summary>
+                Fired when a UDP datagram has been received.
+            </summary>
+        </member>
+        <member name="M:Sockets.Plugin.UdpSocketBase.SendAsync(System.Byte[])">
+            <summary>
+                Sends the specified data to the 'default' target of the underlying DatagramSocket.
+                There may be no 'default' target. depending on the state of the object.
+            </summary>
+            <param name="data">A byte array of data to be sent.</param>
+        </member>
+        <member name="M:Sockets.Plugin.UdpSocketBase.SendAsync(System.Byte[],System.Int32)">
+            <summary>
+                Sends the specified data to the 'default' target of the underlying DatagramSocket.
+                There may be no 'default' target. depending on the state of the object.
+            </summary>
+            <param name="data">A byte array of data to be sent.</param>
+            <param name="length">The number of bytes from <c>data</c> to send.</param>
+        </member>
+        <member name="M:Sockets.Plugin.UdpSocketBase.SendToAsync(System.Byte[],System.String,System.Int32)">
+            <summary>
+                Sends the specified data to the endpoint at the specified address/port pair.
+            </summary>
+            <param name="data">A byte array of data to send.</param>
+            <param name="address">The remote address to which the data should be sent.</param>
+            <param name="port">The remote port to which the data should be sent.</param>
+        </member>
+        <member name="M:Sockets.Plugin.UdpSocketBase.SendToAsync(System.Byte[],System.Int32,System.String,System.Int32)">
+            <summary>
+                Sends the specified data to the endpoint at the specified address/port pair.
+            </summary>
+            <param name="data">A byte array of data to send.</param>
+            <param name="length">The number of bytes from <c>data</c> to send.</param>
+            <param name="address">The remote address to which the data should be sent.</param>
+            <param name="port">The remote port to which the data should be sent.</param>
+        </member>
+        <member name="M:Sockets.Plugin.UdpSocketBase.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="M:Sockets.Plugin.UdpSocketBase.Finalize">
+            <summary>
+            Allows an object to try to free resources and perform other cleanup operations before it is reclaimed by garbage collection.
+            </summary>
+        </member>
+        <member name="T:Sockets.Plugin.UdpSocketClient">
+            <summary>
+                Sends UDP data to arbitrary endpoints.
+                If data is to be sent to a single endpoint only, use <code>ConnectAsync</code> to specify a default endpoint to
+                which data will be sent,
+                and send data with <code>SendAsync</code>.
+            </summary>
+        </member>
+        <member name="M:Sockets.Plugin.UdpSocketClient.#ctor">
+            <summary>
+                Default constructor for <code>UdpSocketClient.</code>
+            </summary>
+        </member>
+        <member name="M:Sockets.Plugin.UdpSocketClient.ConnectAsync(System.String,System.Int32)">
+            <summary>
+                Sets the endpoint at the specified address/port pair as the 'default' target of sent data.
+                After calling <code>ConnectAsync</code>, use <code>SendAsync</code> to send data to the default target.
+            </summary>
+            <param name="address">The remote address for the default target.</param>
+            <param name="port">The remote port for the default target.</param>
+        </member>
+        <member name="M:Sockets.Plugin.UdpSocketClient.DisconnectAsync">
+            <summary>
+                Unsets the 'default' target of sent data.
+                After calling <code>DisconnectAsync</code>, calls to <code>SendAsync</code> will have no effect.
+            </summary>
+        </member>
+        <member name="M:Sockets.Plugin.UdpSocketClient.SendAsync(System.Byte[])">
+            <summary>
+                Sends the specified data to the 'default' target of the <code>UdpSocketClient</code>, previously set using
+                <code>ConnectAsync</code>.
+                If the 'default' target has not been set, calls will have no effect.
+            </summary>
+            <param name="data">A byte array of data to be sent.</param>
+        </member>
+        <member name="M:Sockets.Plugin.UdpSocketClient.SendAsync(System.Byte[],System.Int32)">
+            <summary>
+                Sends the specified data to the 'default' target of the underlying DatagramSocket.
+                There may be no 'default' target. depending on the state of the object.
+            </summary>
+            <param name="data">A byte array of data to be sent.</param>
+            <param name="length">The number of bytes from <c>data</c> to send.</param>
+        </member>
+        <member name="M:Sockets.Plugin.UdpSocketClient.SendToAsync(System.Byte[],System.String,System.Int32)">
+            <summary>
+                Sends the specified data to the endpoint at the specified address/port pair.
+            </summary>
+            <param name="data">A byte array of data to send.</param>
+            <param name="address">The remote address to which the data should be sent.</param>
+            <param name="port">The remote port to which the data should be sent.</param>
+        </member>
+        <member name="M:Sockets.Plugin.UdpSocketClient.SendToAsync(System.Byte[],System.Int32,System.String,System.Int32)">
+            <summary>
+                Sends the specified data to the endpoint at the specified address/port pair.
+            </summary>
+            <param name="data">A byte array of data to send.</param>
+            <param name="length">The number of bytes from <c>data</c> to send.</param>
+            <param name="address">The remote address to which the data should be sent.</param>
+            <param name="port">The remote port to which the data should be sent.</param>
+        </member>
+        <member name="M:Sockets.Plugin.UdpSocketClient.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="T:Sockets.Plugin.UdpSocketMulticastClient">
+            <summary>
+                Sends and recieves data in a UDP multicast group.
+                Join a UDP multicast address using <code>JoinMulticastGroupAsync</code>, then send data using
+                <code>SendMulticastAsync</code>.
+            </summary>
+        </member>
+        <member name="M:Sockets.Plugin.UdpSocketMulticastClient.JoinMulticastGroupAsync(System.String,System.Int32,Sockets.Plugin.Abstractions.ICommsInterface)">
+            <summary>
+                Joins the multicast group at the specified endpoint.
+            </summary>
+            <param name="multicastAddress">The address for the multicast group.</param>
+            <param name="port">The port for the multicast group.</param>
+            <param name="multicastOn">The <code>CommsInterface</code> to multicast on. If unspecified, all interfaces will be bound.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Sockets.Plugin.UdpSocketMulticastClient.DisconnectAsync">
+            <summary>
+                Removes the <code>UdpSocketMulticastClient</code> from a joined multicast group.
+            </summary>
+        </member>
+        <member name="P:Sockets.Plugin.UdpSocketMulticastClient.TTL">
+            <summary>
+                Gets or sets the Time To Live value for the <code>UdpSocketMulticastClient</code>.
+                Must be called before joining a multicast group. 
+            </summary>
+        </member>
+        <member name="M:Sockets.Plugin.UdpSocketMulticastClient.SendMulticastAsync(System.Byte[])">
+            <summary>
+                Sends the specified data to the multicast group, previously set using <code>JoinMulticastGroupAsync</code>.
+                If a group has not been set, calls will have no effect.
+            </summary>
+            <param name="data">A byte array of data to be sent.</param>
+        </member>
+        <member name="M:Sockets.Plugin.UdpSocketMulticastClient.SendMulticastAsync(System.Byte[],System.Int32)">
+            <summary>
+                Sends the specified data to the multicast group, previously set using <code>JoinMulticastGroupAsync</code>.
+                If a group has not been set, calls will have no effect.
+            </summary>
+            <param name="data">A byte array of data to send.</param>
+            <param name="length">The number of bytes from <c>data</c> to send.</param>
+        </member>
+        <member name="M:Sockets.Plugin.UdpSocketMulticastClient.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="T:Sockets.Plugin.UdpSocketReceiver">
+            <summary>
+                Listens on a port for UDP traffic and can send UDP data to arbitrary endpoints.
+            </summary>
+        </member>
+        <member name="M:Sockets.Plugin.UdpSocketReceiver.StartListeningAsync(System.Int32,Sockets.Plugin.Abstractions.ICommsInterface)">
+            <summary>
+                Binds the <code>UdpSocketServer</code> to the specified port on all endpoints and listens for UDP traffic.
+            </summary>
+            <param name="port">The port to listen on. If '0', selection is delegated to the operating system.</param>        
+            <param name="listenOn">The <code>CommsInterface</code> to listen on. If unspecified, all interfaces will be bound.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Sockets.Plugin.UdpSocketReceiver.StopListeningAsync">
+            <summary>
+                Unbinds a bound <code>UdpSocketServer</code>. Should not be called if the <code>UdpSocketServer</code> has not yet
+                been unbound.
+            </summary>
+        </member>
+        <member name="M:Sockets.Plugin.UdpSocketReceiver.SendToAsync(System.Byte[],System.String,System.Int32)">
+            <summary>
+                Sends the specified data to the endpoint at the specified address/port pair.
+            </summary>
+            <param name="data">A byte array of data to send.</param>
+            <param name="address">The remote address to which the data should be sent.</param>
+            <param name="port">The remote port to which the data should be sent.</param>
+        </member>
+        <member name="M:Sockets.Plugin.UdpSocketReceiver.SendToAsync(System.Byte[],System.Int32,System.String,System.Int32)">
+            <summary>
+                Sends the specified data to the endpoint at the specified address/port pair.
+            </summary>
+            <param name="data">A byte array of data to send.</param>
+            <param name="length">The number of bytes from <c>data</c> to send.</param>
+            <param name="address">The remote address to which the data should be sent.</param>
+            <param name="port">The remote port to which the data should be sent.</param>
+        </member>
+        <member name="M:Sockets.Plugin.UdpSocketReceiver.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="T:Sockets.Plugin.AndroidNetworkExtensions">
+            <summary>
+            Helper methods required for the conversion of platform-specific network items to the abstracted versions. 
+            </summary>
+        </member>
+        <member name="M:Sockets.Plugin.AndroidNetworkExtensions.GetEnumerable``1(Java.Util.IEnumeration)">
+            <summary>
+            Allows a Java.Util.IEnumeration to be enumerated as an IEnumerable.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="enumeration"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sockets.Plugin.AndroidNetworkExtensions.GetSubnetAddress(System.String,System.Int32)">
+            <summary>
+            Calculates the subnet address for an ip address given its prefix link.
+            Returns the ip as a string in dotted quad notation.
+            </summary>
+            <param name="ipAddress"></param>
+            <param name="prefixLength"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sockets.Plugin.AndroidNetworkExtensions.ToBytes(System.Boolean[])">
+            <summary>
+            Converts an array of bools to an array of bytes, 8 bits per byte.
+            Expects most significant bit first. 
+            </summary>
+            <param name="bits"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sockets.Plugin.AndroidNetworkExtensions.GetAddressBytes(System.String)">
+            <summary>
+            Converts dotted quad representation of an ip address into a byte array. 
+            </summary>
+            <param name="ipAddress"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sockets.Plugin.AndroidNetworkExtensions.ToDottedQuadNotation(System.Byte[])">
+            <summary>
+            Converts a byte array into dotted quad representation.
+            </summary>
+            <param name="bytes"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

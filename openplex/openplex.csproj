@@ -44,6 +44,10 @@
       <HintPath>..\..\..\- Plugins\ChreneLib_DLL\ChreneLib.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Net.Http.WebRequest" />
@@ -61,11 +65,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ctrlDetails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrlDetails.Designer.cs">
+      <DependentUpon>ctrlDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="ctrlDownloadItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="ctrlDownloadItem.Designer.cs">
       <DependentUpon>ctrlDownloadItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrlMoviesPoster.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrlMoviesPoster.Designer.cs">
+      <DependentUpon>ctrlMoviesPoster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrlSplashScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrlSplashScreen.Designer.cs">
+      <DependentUpon>ctrlSplashScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrlStreamInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrlStreamInfo.Designer.cs">
+      <DependentUpon>ctrlStreamInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="frmDownloadClient.cs">
       <SubType>Form</SubType>
@@ -79,15 +107,28 @@
     <Compile Include="frmOpenPlex.Designer.cs">
       <DependentUpon>frmOpenPlex.cs</DependentUpon>
     </Compile>
-    <Compile Include="ImdbEntity.cs" />
+    <Compile Include="OMDbEntity.cs" />
+    <Compile Include="KnownFolder.cs" />
     <Compile Include="PopcornTimeEntity.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="ProgressBarEx.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ctrlDetails.resx">
+      <DependentUpon>ctrlDetails.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ctrlDownloadItem.resx">
       <DependentUpon>ctrlDownloadItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrlMoviesPoster.resx">
+      <DependentUpon>ctrlMoviesPoster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrlSplashScreen.resx">
+      <DependentUpon>ctrlSplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrlStreamInfo.resx">
+      <DependentUpon>ctrlStreamInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDownloadClient.resx">
       <DependentUpon>frmDownloadClient.cs</DependentUpon>
@@ -108,6 +149,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -131,6 +173,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="openplex_logo.ico" />
+    <None Include="Resources\openplex-logo.png" />
+    <None Include="Resources\iconArrowDown.png" />
+    <None Include="Resources\IMDb.png" />
+    <None Include="Resources\iconFiles.png" />
+    <None Include="Resources\iconMovies.png" />
+    <None Include="Resources\iconWatchLater.png" />
     <None Include="Resources\iconStop.png" />
     <None Include="Resources\iconPlay.png" />
     <None Include="Resources\iconPause.png" />
