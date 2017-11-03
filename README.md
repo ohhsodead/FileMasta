@@ -10,7 +10,7 @@
 </div>
 
 ## What is OpenPlex?
-OpenPlex allows you to search for Movies/TV Shows available to watch online for free by providing you with trusted files from all around the web. But we don't use torrents, just raw media files hosted accross the web playable almost anywhere anywhere. Created by a few friends who wanted to come up with something different.
+OpenPlex allows you to search for Movies/TV Shows available to watch online for free by providing you with trusted files from all around the web. But we don't use torrents, just raw media files hosted across the web playable almost anywhere anywhere. Created by a few friends who wanted to come up with something different.
 
 A database run by a community of movie lovers who are constantly uploading the links of the newly released movies as well as top classics, and of course we're open to suggestions.
 
