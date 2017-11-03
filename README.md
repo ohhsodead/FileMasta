@@ -10,17 +10,26 @@
 </div>
 
 ## What is OpenPlex?
-OpenPlex allows you to search for Movies/TV Shows available to watch online for free by providing you with trusted files from all around the web. But we don't use torrents, just raw media files playable anywhere. Created by a few friends who wanted to come up with something different.
+OpenPlex allows you to search for Movies/TV Shows available to watch online for free by providing you with trusted files from all around the web. But we don't use torrents, just raw media files hosted accross the web playable almost anywhere anywhere. Created by a few friends who wanted to come up with something different.
 
 A database run by a community of movie lovers who are constantly uploading the links of the newly released movies as well as top classics, and of course we're open to suggestions.
 
 If you've got any comments, queries or suggestions then simply open an issue - we want to know what you've got to say!
 
+## Some features available
+- Simple interface, asynchronous tasks and threads for the best performance
+- Huge database of files, over a thousand
+- Search movies, files, people, years or filter by genre
+- Support for opening files in external players (Windows Media Player & VLC)
+- Download files directly to your computer, or even burn somewhere ;-)
+- Local cache updating every 12 hours
+- Collects metadata from OMDb & Popcorn Time
+
 ## How does it work?
-It communicates with its own community driven [database](https://github.com/invu/openplex-app/blob/master/Assets/openplex-movies-db.txt) to query files. Also including metadata collecting from both [OMDb API](https://omdbapi.com) and [Popcorn Time Official API](https://popcorntime.sh). Capability of opening files in both Windows Media Player and VLC Player (if installed) and support for downloading multiple files asynchronously.
+It communicates with its own community driven [database](https://github.com/invu/openplex-app/blob/master/Assets/openplex-movies-db.txt) to query files. Also including metadata collecting from both [OMDb API](https://omdbapi.com) and [Popcorn Time Official API](https://popcorntime.sh). Capability of opening files in both Windows Media Player and VLC Player (if installed) (support for others coming soon) and downloading multiple files asynchronously.
 
 ## Contribute
-Got some direct media URLs lying around? Submit them to our [core movie database](https://github.com/invu/openplex-app/blob/master/Assets/openplex-movies-db.txt)! It's pretty simple. Oh, and you can follow [this](https://help.github.com/articles/editing-files-in-another-user-s-repository/) tutorial from GitHub if you're stuck.
+Our [core movie database](https://github.com/invu/openplex-app/blob/master/Assets/openplex-movies-db.txt) is completely open source, which means anyone can submit links. It's not got the best structure at the moment but we're working to improve the feasibility so that it's a lot more easier to contribute towards. Just give us time. Oh, and you can follow [this](https://help.github.com/articles/editing-files-in-another-user-s-repository/) tutorial from GitHub if you're stuck.
 
 ## Framework & Backend
 The app is using .NET 4.6.2 WinForms Framework written in C#.
