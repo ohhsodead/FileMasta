@@ -32,8 +32,9 @@
             this.infoFileHost = new System.Windows.Forms.Label();
             this.infoFileName = new System.Windows.Forms.Label();
             this.panelFileInfo = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnDownload = new CButtonLib.CButton();
             this.btnPlay = new CButtonLib.CButton();
+            this.btnDownload = new CButtonLib.CButton();
+            this.btnReportBroken = new CButtonLib.CButton();
             this.contextFileName = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.OpenWithToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.WMPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,7 +50,7 @@
             this.infoFileHost.Cursor = System.Windows.Forms.Cursors.Hand;
             this.infoFileHost.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.infoFileHost.Location = new System.Drawing.Point(2, 3);
-            this.infoFileHost.Margin = new System.Windows.Forms.Padding(0);
+            this.infoFileHost.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
             this.infoFileHost.Name = "infoFileHost";
             this.infoFileHost.Size = new System.Drawing.Size(74, 17);
             this.infoFileHost.TabIndex = 0;
@@ -62,7 +63,7 @@
             this.infoFileName.Cursor = System.Windows.Forms.Cursors.Hand;
             this.infoFileName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.infoFileName.Location = new System.Drawing.Point(76, 3);
-            this.infoFileName.Margin = new System.Windows.Forms.Padding(0);
+            this.infoFileName.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
             this.infoFileName.Name = "infoFileName";
             this.infoFileName.Size = new System.Drawing.Size(66, 17);
             this.infoFileName.TabIndex = 1;
@@ -77,36 +78,10 @@
             this.panelFileInfo.Controls.Add(this.infoFileName);
             this.panelFileInfo.Location = new System.Drawing.Point(0, 0);
             this.panelFileInfo.Name = "panelFileInfo";
-            this.panelFileInfo.Padding = new System.Windows.Forms.Padding(2, 3, 0, 0);
-            this.panelFileInfo.Size = new System.Drawing.Size(336, 25);
+            this.panelFileInfo.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
+            this.panelFileInfo.Size = new System.Drawing.Size(223, 25);
             this.panelFileInfo.TabIndex = 3;
             this.panelFileInfo.WrapContents = false;
-            // 
-            // btnDownload
-            // 
-            this.btnDownload.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnDownload.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(185)))), ((int)(((byte)(93)))));
-            this.btnDownload.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(185)))), ((int)(((byte)(93)))));
-            this.btnDownload.Corners.All = 1;
-            this.btnDownload.Corners.LowerLeft = 1;
-            this.btnDownload.Corners.LowerRight = 1;
-            this.btnDownload.Corners.UpperLeft = 1;
-            this.btnDownload.Corners.UpperRight = 1;
-            this.btnDownload.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDownload.DesignerSelected = false;
-            this.btnDownload.DimFactorClick = 0;
-            this.btnDownload.DimFactorHover = 0;
-            this.btnDownload.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.btnDownload.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
-            this.btnDownload.ImageIndex = 0;
-            this.btnDownload.Location = new System.Drawing.Point(395, 1);
-            this.btnDownload.Name = "btnDownload";
-            this.btnDownload.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.btnDownload.Size = new System.Drawing.Size(80, 23);
-            this.btnDownload.TabIndex = 4;
-            this.btnDownload.Text = "Download";
-            this.btnDownload.TextShadowShow = false;
-            this.btnDownload.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnDownload_ClickButtonArea);
             // 
             // btnPlay
             // 
@@ -125,7 +100,8 @@
             this.btnPlay.FillType = CButtonLib.CButton.eFillType.Solid;
             this.btnPlay.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
             this.btnPlay.ImageIndex = 0;
-            this.btnPlay.Location = new System.Drawing.Point(342, 1);
+            this.btnPlay.Location = new System.Drawing.Point(229, 1);
+            this.btnPlay.Margin = new System.Windows.Forms.Padding(3, 1, 3, 0);
             this.btnPlay.Name = "btnPlay";
             this.btnPlay.ShowFocus = CButtonLib.CButton.eFocus.None;
             this.btnPlay.Size = new System.Drawing.Size(47, 23);
@@ -133,6 +109,61 @@
             this.btnPlay.Text = "Play";
             this.btnPlay.TextShadowShow = false;
             this.btnPlay.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnPlay_ClickButtonArea);
+            // 
+            // btnDownload
+            // 
+            this.btnDownload.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnDownload.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(185)))), ((int)(((byte)(93)))));
+            this.btnDownload.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(185)))), ((int)(((byte)(93)))));
+            this.btnDownload.Corners.All = 1;
+            this.btnDownload.Corners.LowerLeft = 1;
+            this.btnDownload.Corners.LowerRight = 1;
+            this.btnDownload.Corners.UpperLeft = 1;
+            this.btnDownload.Corners.UpperRight = 1;
+            this.btnDownload.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDownload.DesignerSelected = false;
+            this.btnDownload.DimFactorClick = 0;
+            this.btnDownload.DimFactorHover = 0;
+            this.btnDownload.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.btnDownload.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
+            this.btnDownload.ImageIndex = 0;
+            this.btnDownload.Location = new System.Drawing.Point(282, 1);
+            this.btnDownload.Margin = new System.Windows.Forms.Padding(3, 1, 3, 0);
+            this.btnDownload.Name = "btnDownload";
+            this.btnDownload.ShowFocus = CButtonLib.CButton.eFocus.None;
+            this.btnDownload.Size = new System.Drawing.Size(80, 23);
+            this.btnDownload.TabIndex = 4;
+            this.btnDownload.Text = "Download";
+            this.btnDownload.TextShadowShow = false;
+            this.btnDownload.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnDownload_ClickButtonArea);
+            // 
+            // btnReportBroken
+            // 
+            this.btnReportBroken.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnReportBroken.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(83)))), ((int)(((byte)(79)))));
+            this.btnReportBroken.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(83)))), ((int)(((byte)(79)))));
+            this.btnReportBroken.Corners.All = 1;
+            this.btnReportBroken.Corners.LowerLeft = 1;
+            this.btnReportBroken.Corners.LowerRight = 1;
+            this.btnReportBroken.Corners.UpperLeft = 1;
+            this.btnReportBroken.Corners.UpperRight = 1;
+            this.btnReportBroken.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReportBroken.DesignerSelected = false;
+            this.btnReportBroken.DimFactorClick = 0;
+            this.btnReportBroken.DimFactorHover = 0;
+            this.btnReportBroken.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.btnReportBroken.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
+            this.btnReportBroken.ImageIndex = 0;
+            this.btnReportBroken.Location = new System.Drawing.Point(368, 1);
+            this.btnReportBroken.Margin = new System.Windows.Forms.Padding(3, 1, 3, 0);
+            this.btnReportBroken.Name = "btnReportBroken";
+            this.btnReportBroken.ShowFocus = CButtonLib.CButton.eFocus.None;
+            this.btnReportBroken.Size = new System.Drawing.Size(108, 23);
+            this.btnReportBroken.TabIndex = 6;
+            this.btnReportBroken.Text = "Report Broken";
+            this.btnReportBroken.TextMargin = new System.Windows.Forms.Padding(1, 2, 2, 2);
+            this.btnReportBroken.TextShadowShow = false;
+            this.btnReportBroken.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnReportBroken_ClickButtonArea);
             // 
             // contextFileName
             // 
@@ -155,14 +186,14 @@
             // WMPToolStripMenuItem
             // 
             this.WMPToolStripMenuItem.Name = "WMPToolStripMenuItem";
-            this.WMPToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.WMPToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.WMPToolStripMenuItem.Text = "WMP";
             this.WMPToolStripMenuItem.Click += new System.EventHandler(this.WMPToolStripMenuItem_Click);
             // 
             // VLCToolStripMenuItem
             // 
             this.VLCToolStripMenuItem.Name = "VLCToolStripMenuItem";
-            this.VLCToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.VLCToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.VLCToolStripMenuItem.Text = "VLC";
             this.VLCToolStripMenuItem.Click += new System.EventHandler(this.VLCToolStripMenuItem_Click);
             // 
@@ -171,9 +202,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.Controls.Add(this.btnPlay);
-            this.Controls.Add(this.btnDownload);
             this.Controls.Add(this.panelFileInfo);
+            this.Controls.Add(this.btnPlay);
+            this.Controls.Add(this.btnReportBroken);
+            this.Controls.Add(this.btnDownload);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.White;
             this.Name = "ctrlStreamInfo";
@@ -198,5 +230,6 @@
         private System.Windows.Forms.ToolStripMenuItem OpenWithToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem WMPToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem VLCToolStripMenuItem;
+        private CButtonLib.CButton btnReportBroken;
     }
 }

@@ -25,7 +25,13 @@ namespace OpenPlex
         private void ctrlMovieDetails_Load(object sender, EventArgs e)
         {
             if (infoFanartUrl == "") { BackColor = Color.Transparent; }
-            panelSubHeaders.Size = new Size(panelDetails.Size.Width, panelSubHeaders.Size.Height);           
+            panelSubHeaders.Size = new Size(panelDetails.Size.Width, panelSubHeaders.Size.Height);
+            panelStreams.Size = new Size(panelDetails.Size.Width, panelStreams.Size.Height);
+
+            foreach (Control ctrl in panelStreams.Controls)
+            {
+                ctrl.Size = new Size(panelDetails.Size.Width - 5, ctrl.Size.Height);
+            }
         }
 
         private void appClose_Click(object sender, EventArgs e)
@@ -37,6 +43,16 @@ namespace OpenPlex
         private void imgIMDb_Click(object sender, EventArgs e)
         {
             Process.Start("www.imdb.com/title/" + infoImdbId);
+        }
+
+        private void ctrlDetails_SizeChanged(object sender, EventArgs e)
+        {
+            panelStreams.Size = new Size(panelDetails.Size.Width, panelStreams.Size.Height);
+
+            foreach (Control ctrl in panelStreams.Controls)
+            {
+                ctrl.Size = new Size(panelDetails.Size.Width - 5, ctrl.Size.Height);
+            }
         }
     }
 }

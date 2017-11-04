@@ -39,7 +39,7 @@
             this.labelLoading.AutoSize = true;
             this.labelLoading.BackColor = System.Drawing.Color.Transparent;
             this.labelLoading.Font = new System.Drawing.Font("Segoe UI Semibold", 15.25F);
-            this.labelLoading.Location = new System.Drawing.Point(261, 286);
+            this.labelLoading.Location = new System.Drawing.Point(261, 290);
             this.labelLoading.Name = "labelLoading";
             this.labelLoading.Size = new System.Drawing.Size(206, 30);
             this.labelLoading.TabIndex = 0;
@@ -50,7 +50,7 @@
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::OpenPlex.Properties.Resources.openplex_logo;
-            this.pictureBox1.Location = new System.Drawing.Point(262, 80);
+            this.pictureBox1.Location = new System.Drawing.Point(262, 73);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(205, 205);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

@@ -33,7 +33,6 @@ C:\Users\imAsh\Documents\Visual Studio 2015\Projects\OpenPlex 2.0\openplex\obj\R
 C:\Users\imAsh\Documents\Visual Studio 2015\Projects\OpenPlex 2.0\openplex\obj\Release\OpenPlex.ctrlMoviesPoster.resources
 C:\Users\imAsh\Documents\Visual Studio 2015\Projects\OpenPlex 2.0\openplex\obj\Release\OpenPlex.ctrlSplashScreen.resources
 C:\Users\imAsh\Documents\Visual Studio 2015\Projects\OpenPlex 2.0\openplex\obj\Release\OpenPlex.ctrlStreamInfo.resources
-C:\Users\imAsh\Documents\Visual Studio 2015\Projects\OpenPlex 2.0\openplex\obj\Release\OpenPlex.frmDownloadClient.resources
 C:\Users\imAsh\Documents\Visual Studio 2015\Projects\OpenPlex 2.0\openplex\obj\Release\OpenPlex.frmOpenPlex.resources
 C:\Users\imAsh\Documents\Visual Studio 2015\Projects\OpenPlex 2.0\openplex\obj\Release\OpenPlex.Properties.Resources.resources
 C:\Users\imAsh\Documents\Visual Studio 2015\Projects\OpenPlex 2.0\openplex\obj\Release\OpenPlex.frmOpenPlex.en.resources

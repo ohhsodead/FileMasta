@@ -22,12 +22,19 @@ namespace OpenPlex
         {
             InitializeComponent();
             form = this;
+            frmSplash = new ctrlSplashScreen();
+
+            Controls.Add(frmSplash);
+            frmSplash.Dock = DockStyle.Fill;
+            frmSplash.Location = new Point(0, 0);
+            frmSplash.ClientSize = ClientSize;
+            frmSplash.BringToFront();
+            frmSplash.Show();
         }
 
         private BackgroundWorker worker;
 
         public static frmOpenPlex form = null;
-        public frmDownloadClient frmClient;
         public ctrlSplashScreen frmSplash;
         protected override void OnPaint(PaintEventArgs e) { }
 
@@ -108,18 +115,9 @@ namespace OpenPlex
 
         private void frmOpenPlex_Load(object sender, EventArgs e)
         {
-            frmSplash = new ctrlSplashScreen();
-
-            Controls.Add(frmSplash);
-            frmSplash.Dock = DockStyle.Fill;
-            frmSplash.Location = new Point(0, 0);
-            frmSplash.ClientSize = ClientSize;
-            frmSplash.BringToFront();
-            frmSplash.Show();
 
             checkForUpdate();
 
-            frmClient = new frmDownloadClient();
             currentTab = tabMovies;
 
             Directory.CreateDirectory(pathRoot);
@@ -139,6 +137,8 @@ namespace OpenPlex
 
         void worker_DoWork(object sender, DoWorkEventArgs e)
         {
+            //frmSplash.labelLoading.Text = "Initializing database...";
+
             if (File.Exists(pathData + "openplex-movies-db.txt"))
             {
                 if (IsBelowThreshold(pathData + "openplex-movies-db.txt", 12) == true) // if movies db older than 12 hours then write db
@@ -220,6 +220,7 @@ namespace OpenPlex
 
         void worker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
+            //frmSplash.labelLoading.Text = "Loading some movies...";
             loadMovies(32);
             Controls.Remove(frmSplash);
         }
@@ -527,6 +528,11 @@ namespace OpenPlex
             tab.SelectedTab = tabFiles;
         }
 
+        private void imgDownloads_Click(object sender, EventArgs e)
+        {
+            tab.SelectedTab = tabDownloads;
+        }
+
         private void tab_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (tab.SelectedTab == tabMovies)
@@ -535,6 +541,7 @@ namespace OpenPlex
                 titleLineMovies.Visible = true;
                 titleLineFiles.Visible = false;
                 titleLineAbout.Visible = false;
+                titleLineDownloads.Visible = false;
             }
             else if(tab.SelectedTab == tabFiles)
             {
@@ -542,6 +549,15 @@ namespace OpenPlex
                 titleLineMovies.Visible = false;
                 titleLineFiles.Visible = true;
                 titleLineAbout.Visible = false;
+                titleLineDownloads.Visible = false;
+            }
+            else if (tab.SelectedTab == tabDownloads)
+            {
+                currentTab = tabFiles;
+                titleLineMovies.Visible = false;
+                titleLineFiles.Visible = false;
+                titleLineAbout.Visible = false;
+                titleLineDownloads.Visible = true;
             }
             else if (tab.SelectedTab == tabAbout)
             {
@@ -549,6 +565,7 @@ namespace OpenPlex
                 titleLineMovies.Visible = false;
                 titleLineFiles.Visible = false;
                 titleLineAbout.Visible = true;
+                titleLineDownloads.Visible = false;
             }
         }
 
@@ -575,6 +592,7 @@ namespace OpenPlex
             tab.SelectedTab = tabAbout;
         }
 
+        // Filter Movies by Genre
         private void btnMoviesGenre_ClickButtonArea(object Sender, MouseEventArgs e)
         {
             cmboBoxMoviesGenre.DroppedDown = true;
@@ -594,6 +612,26 @@ namespace OpenPlex
             panelMovies.Controls.Clear();
             countedMovies = 0;
             loadMovies(32);
+        }
+
+        // Downloads 
+        public void doDownloadFile(string url)
+        {
+            ctrlDownloadItem ctrlItem = new ctrlDownloadItem();
+            ctrlItem.lblPercentage.Text = "Connecting...";
+            ctrlItem.Width = panelDownloadItems.ClientSize.Width - 7;
+            panelDownloadItems.Controls.Add(ctrlItem);
+            ctrlItem.doDownloadFile(url);
+        }
+
+        private void panelDownloadItems_ControlAdded(object sender, ControlEventArgs e)
+        {
+            if (panelDownloadItems.Controls.Count == 0) { lblNoDownloads.Visible = true; } else { lblNoDownloads.Visible = false; }
+        }
+
+        private void panelDownloadItems_ControlRemoved(object sender, ControlEventArgs e)
+        {
+            if (panelDownloadItems.Controls.Count == 0) { lblNoDownloads.Visible = true; } else { lblNoDownloads.Visible = false; }
         }
     }
 }

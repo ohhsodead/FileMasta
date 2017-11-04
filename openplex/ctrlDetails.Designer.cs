@@ -51,10 +51,10 @@
             this.lineUserReviews = new CButtonLib.CButton();
             this.lblHeaderUserReviews = new System.Windows.Forms.Label();
             this.lineSplitter = new CButtonLib.CButton();
+            this.panelStreams = new System.Windows.Forms.FlowLayoutPanel();
             this.imgPoster = new System.Windows.Forms.PictureBox();
             this.appClose = new System.Windows.Forms.PictureBox();
             this.imgPosterBG = new System.Windows.Forms.PictureBox();
-            this.panelStreams = new System.Windows.Forms.FlowLayoutPanel();
             this.panelDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgIMDb)).BeginInit();
             this.panelSubHeaders.SuspendLayout();
@@ -165,7 +165,7 @@
             this.infoTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 18F);
             this.infoTitle.ForeColor = System.Drawing.Color.White;
             this.infoTitle.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.infoTitle.Location = new System.Drawing.Point(199, 25);
+            this.infoTitle.Location = new System.Drawing.Point(199, 23);
             this.infoTitle.Margin = new System.Windows.Forms.Padding(0);
             this.infoTitle.Name = "infoTitle";
             this.infoTitle.Size = new System.Drawing.Size(136, 32);
@@ -224,7 +224,7 @@
             this.panelDetails.Controls.Add(this.infoCast);
             this.panelDetails.Controls.Add(this.panelSubHeaders);
             this.panelDetails.Controls.Add(this.panelStreams);
-            this.panelDetails.Location = new System.Drawing.Point(199, 62);
+            this.panelDetails.Location = new System.Drawing.Point(199, 60);
             this.panelDetails.Name = "panelDetails";
             this.panelDetails.Size = new System.Drawing.Size(693, 440);
             this.panelDetails.TabIndex = 100036;
@@ -413,6 +413,20 @@
             this.lineSplitter.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.lineSplitter.TextShadowShow = false;
             // 
+            // panelStreams
+            // 
+            this.panelStreams.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelStreams.BackColor = System.Drawing.Color.Transparent;
+            this.panelDetails.SetFlowBreak(this.panelStreams, true);
+            this.panelStreams.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.panelStreams.Location = new System.Drawing.Point(0, 182);
+            this.panelStreams.Margin = new System.Windows.Forms.Padding(0);
+            this.panelStreams.Name = "panelStreams";
+            this.panelStreams.Size = new System.Drawing.Size(693, 258);
+            this.panelStreams.TabIndex = 0;
+            this.panelStreams.WrapContents = false;
+            // 
             // imgPoster
             // 
             this.imgPoster.BackColor = System.Drawing.Color.Transparent;
@@ -431,7 +445,7 @@
             this.appClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.appClose.Image = global::OpenPlex.Properties.Resources.iconCLoseH;
             this.appClose.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.appClose.Location = new System.Drawing.Point(909, 29);
+            this.appClose.Location = new System.Drawing.Point(909, 27);
             this.appClose.Name = "appClose";
             this.appClose.Size = new System.Drawing.Size(28, 28);
             this.appClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -452,19 +466,6 @@
             this.imgPosterBG.TabIndex = 100043;
             this.imgPosterBG.TabStop = false;
             // 
-            // panelStreams
-            // 
-            this.panelStreams.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelStreams.BackColor = System.Drawing.Color.Transparent;
-            this.panelStreams.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.panelStreams.Location = new System.Drawing.Point(0, 182);
-            this.panelStreams.Margin = new System.Windows.Forms.Padding(0);
-            this.panelStreams.Name = "panelStreams";
-            this.panelStreams.Size = new System.Drawing.Size(693, 258);
-            this.panelStreams.TabIndex = 100045;
-            this.panelStreams.WrapContents = false;
-            // 
             // ctrlDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -481,6 +482,7 @@
             this.Name = "ctrlDetails";
             this.Size = new System.Drawing.Size(967, 533);
             this.Load += new System.EventHandler(this.ctrlMovieDetails_Load);
+            this.SizeChanged += new System.EventHandler(this.ctrlDetails_SizeChanged);
             this.panelDetails.ResumeLayout(false);
             this.panelDetails.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgIMDb)).EndInit();

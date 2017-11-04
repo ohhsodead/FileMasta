@@ -95,12 +95,6 @@
     <Compile Include="ctrlStreamInfo.Designer.cs">
       <DependentUpon>ctrlStreamInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmDownloadClient.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmDownloadClient.Designer.cs">
-      <DependentUpon>frmDownloadClient.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmOpenPlex.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,9 +123,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ctrlStreamInfo.resx">
       <DependentUpon>ctrlStreamInfo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmDownloadClient.resx">
-      <DependentUpon>frmDownloadClient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmOpenPlex.en.resx">
       <DependentUpon>frmOpenPlex.cs</DependentUpon>
@@ -173,6 +164,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="openplex_logo.ico" />
+    <None Include="Resources\iconDownloads.png" />
     <None Include="Resources\openplex-logo.png" />
     <None Include="Resources\iconArrowDown.png" />
     <None Include="Resources\IMDb.png" />

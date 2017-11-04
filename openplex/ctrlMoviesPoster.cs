@@ -73,7 +73,7 @@ namespace OpenPlex
                 ctrlStreamInfo ctrlInfo = new ctrlStreamInfo();
                 ctrlInfo.infoFileURL = movieLink;
                 ctrlInfo.infoFileHost.Text = new Uri(movieLink).Host;
-                ctrlInfo.infoFileName.Text = Path.GetFileName(movieLink);
+                ctrlInfo.infoFileName.Text = Path.GetFileName(movieLink).Replace("%20", "");
                 MovieDetails.panelStreams.Controls.Add(ctrlInfo);
             }
 

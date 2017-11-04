@@ -19,8 +19,6 @@ namespace OpenPlex
         {
             BackColor = Color.Transparent;
             VLCToolStripMenuItem.Visible = File.Exists(frmOpenPlex.pathVLC);
-
-            ClientSize = new Size(Parent.ClientSize.Width - 120, ClientSize.Height);
         }
 
         private void btnPlay_ClickButtonArea(object Sender, MouseEventArgs e)
@@ -30,16 +28,8 @@ namespace OpenPlex
 
         private void btnDownload_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            if (!frmOpenPlex.form.frmClient.Visible)
-            {
-                frmOpenPlex.form.frmClient.Show();
-                frmOpenPlex.form.frmClient.doDownloadFile(infoFileURL);
-            }
-            else
-            {
-                frmOpenPlex.form.frmClient.doDownloadFile(infoFileURL);
-                frmOpenPlex.form.frmClient.Focus();
-            }
+            frmOpenPlex.form.Show();
+            frmOpenPlex.form.doDownloadFile(infoFileURL);
         }
 
         private void WMPToolStripMenuItem_Click(object sender, EventArgs e)
@@ -61,6 +51,19 @@ namespace OpenPlex
                 VLC.Start();
             }
             catch (Exception ex) { MessageBox.Show(this, ex.Message, "Error"); }
+        }
+
+        private void btnReportBroken_ClickButtonArea(object Sender, MouseEventArgs e)
+        {
+            openBrokenFileIssue(infoFileURL);
+        }
+
+        public void openBrokenFileIssue(string webFile)
+        {
+            Process.Start("https://github.com/invu/openplex-app/issues/new?title=" + "Found Broken File" +
+                "&body=" +
+                "Host: " + new Uri(webFile).Host.Replace("www.", "") + "%0A" +
+                "File Name: " + Path.GetFileName(webFile).Replace("%20", ""));
         }
     }
 }
