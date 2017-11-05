@@ -51,4 +51,4 @@ Download installer [here](https://github.com/invu/openplex-app/releases/download
 All of the free movies/tv shows found on this app are hosted on third-party servers that are freely available to watch online for all internet users. Any legal issues regarding the free online links on this app should be taken up with the actual file hosts themselves, as we're not affiliated with them.
 
 ## Comments
-Flixtor is a new application and is not a segment of Popcorn Time.
+OpenPlex is a new application and is not a segment of Popcorn Time.
