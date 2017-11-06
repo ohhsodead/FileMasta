@@ -32,7 +32,7 @@
             this.infoFileHost = new System.Windows.Forms.Label();
             this.infoFileName = new System.Windows.Forms.Label();
             this.panelFileInfo = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnPlay = new CButtonLib.CButton();
+            this.btnWatchNow = new CButtonLib.CButton();
             this.btnDownload = new CButtonLib.CButton();
             this.btnReportBroken = new CButtonLib.CButton();
             this.contextFileName = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -74,45 +74,48 @@
             this.panelFileInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelFileInfo.BackColor = System.Drawing.Color.Transparent;
             this.panelFileInfo.Controls.Add(this.infoFileHost);
             this.panelFileInfo.Controls.Add(this.infoFileName);
             this.panelFileInfo.Location = new System.Drawing.Point(0, 0);
             this.panelFileInfo.Name = "panelFileInfo";
             this.panelFileInfo.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
-            this.panelFileInfo.Size = new System.Drawing.Size(223, 25);
+            this.panelFileInfo.Size = new System.Drawing.Size(178, 25);
             this.panelFileInfo.TabIndex = 3;
             this.panelFileInfo.WrapContents = false;
             // 
-            // btnPlay
+            // btnWatchNow
             // 
-            this.btnPlay.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnPlay.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(139)))), ((int)(((byte)(202)))));
-            this.btnPlay.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(139)))), ((int)(((byte)(202)))));
-            this.btnPlay.Corners.All = 1;
-            this.btnPlay.Corners.LowerLeft = 1;
-            this.btnPlay.Corners.LowerRight = 1;
-            this.btnPlay.Corners.UpperLeft = 1;
-            this.btnPlay.Corners.UpperRight = 1;
-            this.btnPlay.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPlay.DesignerSelected = false;
-            this.btnPlay.DimFactorClick = 0;
-            this.btnPlay.DimFactorHover = 0;
-            this.btnPlay.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.btnPlay.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
-            this.btnPlay.ImageIndex = 0;
-            this.btnPlay.Location = new System.Drawing.Point(229, 1);
-            this.btnPlay.Margin = new System.Windows.Forms.Padding(3, 1, 3, 0);
-            this.btnPlay.Name = "btnPlay";
-            this.btnPlay.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.btnPlay.Size = new System.Drawing.Size(47, 23);
-            this.btnPlay.TabIndex = 5;
-            this.btnPlay.Text = "Play";
-            this.btnPlay.TextShadowShow = false;
-            this.btnPlay.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnPlay_ClickButtonArea);
+            this.btnWatchNow.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnWatchNow.BackColor = System.Drawing.Color.Transparent;
+            this.btnWatchNow.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(139)))), ((int)(((byte)(202)))));
+            this.btnWatchNow.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(139)))), ((int)(((byte)(202)))));
+            this.btnWatchNow.Corners.All = 1;
+            this.btnWatchNow.Corners.LowerLeft = 1;
+            this.btnWatchNow.Corners.LowerRight = 1;
+            this.btnWatchNow.Corners.UpperLeft = 1;
+            this.btnWatchNow.Corners.UpperRight = 1;
+            this.btnWatchNow.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnWatchNow.DesignerSelected = true;
+            this.btnWatchNow.DimFactorClick = 0;
+            this.btnWatchNow.DimFactorHover = 0;
+            this.btnWatchNow.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.btnWatchNow.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
+            this.btnWatchNow.ImageIndex = 0;
+            this.btnWatchNow.Location = new System.Drawing.Point(184, 1);
+            this.btnWatchNow.Margin = new System.Windows.Forms.Padding(3, 1, 3, 0);
+            this.btnWatchNow.Name = "btnWatchNow";
+            this.btnWatchNow.ShowFocus = CButtonLib.CButton.eFocus.None;
+            this.btnWatchNow.Size = new System.Drawing.Size(92, 23);
+            this.btnWatchNow.TabIndex = 5;
+            this.btnWatchNow.Text = "Watch Now";
+            this.btnWatchNow.TextShadowShow = false;
+            this.btnWatchNow.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnPlay_ClickButtonArea);
             // 
             // btnDownload
             // 
             this.btnDownload.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnDownload.BackColor = System.Drawing.Color.Transparent;
             this.btnDownload.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(185)))), ((int)(((byte)(93)))));
             this.btnDownload.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(185)))), ((int)(((byte)(93)))));
             this.btnDownload.Corners.All = 1;
@@ -140,6 +143,7 @@
             // btnReportBroken
             // 
             this.btnReportBroken.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnReportBroken.BackColor = System.Drawing.Color.Transparent;
             this.btnReportBroken.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(83)))), ((int)(((byte)(79)))));
             this.btnReportBroken.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(83)))), ((int)(((byte)(79)))));
             this.btnReportBroken.Corners.All = 1;
@@ -203,7 +207,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.Controls.Add(this.panelFileInfo);
-            this.Controls.Add(this.btnPlay);
+            this.Controls.Add(this.btnWatchNow);
             this.Controls.Add(this.btnReportBroken);
             this.Controls.Add(this.btnDownload);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -225,7 +229,7 @@
         public System.Windows.Forms.Label infoFileName;
         private System.Windows.Forms.FlowLayoutPanel panelFileInfo;
         private CButtonLib.CButton btnDownload;
-        private CButtonLib.CButton btnPlay;
+        private CButtonLib.CButton btnWatchNow;
         public System.Windows.Forms.ContextMenuStrip contextFileName;
         private System.Windows.Forms.ToolStripMenuItem OpenWithToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem WMPToolStripMenuItem;

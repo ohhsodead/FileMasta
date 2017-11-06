@@ -115,7 +115,6 @@ namespace OpenPlex
 
         private void frmOpenPlex_Load(object sender, EventArgs e)
         {
-
             checkForUpdate();
 
             currentTab = tabMovies;
@@ -124,7 +123,7 @@ namespace OpenPlex
             Directory.CreateDirectory(pathData);
             Directory.CreateDirectory(pathDownloads);
 
-            tabAbout.BackgroundImage = ChangeOpacity(Properties.Resources.Dark_Sky_Night, 0.2F);
+            tabAbout.BackgroundImage = ChangeOpacity(Properties.Resources.background_original, 0.2F);
 
             lblAboutVersion.Text = "v" + Application.ProductVersion;
 
@@ -212,10 +211,13 @@ namespace OpenPlex
                     dataFiles.Add(movie1);
                 }
             }
+
             foreach (string file in dataFiles.Take(100))
             {
                 dataGrid.Rows.Add(new Uri(file).Host.Replace("www.", ""), Path.GetFileName(file).Replace("%20", " "), file);
             }
+
+            dataTVShows = File.ReadAllLines(pathData + "openplex-tv-shows-db.json");
         }
 
         void worker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
@@ -229,7 +231,7 @@ namespace OpenPlex
 
         public static string[] dataMovies;
         public static string[] dataMoviesJson;
-        public static string[] dataCollections;
+        public static string[] dataTVShows;
         public static List<string> dataFiles = new List<string>();
         
         int countedMovies = 0;
@@ -310,7 +312,7 @@ namespace OpenPlex
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Unable to run installer." + Environment.NewLine + Environment.NewLine + ex.Message, "OpenPlex - Error");
+                    MessageBox.Show("Unable to run installer." + Environment.NewLine + Environment.NewLine + ex.Message, "OpenPlex - Update Error");
                 }
             }
         }
@@ -348,11 +350,11 @@ namespace OpenPlex
                         MovieDetails.infoRatingIMDb.Text = data.ImdbRating;
                         MovieDetails.infoImdbId = data.ImdbID;
 
-                        try { MovieDetails.imgPoster.Image = ChangeOpacity(LoadPicture(data.Poster), 1); } catch { MovieDetails.imgPoster.Image = ChangeOpacity(Properties.Resources.PosterDefault, 0.5F); }
+                        try { MovieDetails.imgPoster.Image = ChangeOpacity(LoadPicture(data.Poster), 1); } catch { MovieDetails.imgPoster.Image = ChangeOpacity(Properties.Resources.default_poster, 0.5F); }
                     }
                     else
                     {
-                        MovieDetails.infoTitle.Text = new Uri(webFile).Host;
+                        MovieDetails.infoTitle.Text = Path.GetFileName(new Uri(webFile).LocalPath);
                         MovieDetails.infoYear.Visible = false;
                         MovieDetails.infoGenre.Visible = false;
                         MovieDetails.infoSynopsis.Visible = false;
@@ -372,7 +374,7 @@ namespace OpenPlex
                         MovieDetails.lblSubCast.Visible = false;
 
 
-                        MovieDetails.imgPoster.Image = ChangeOpacity(Properties.Resources.PosterDefault, 0.5F);
+                        MovieDetails.imgPoster.Image = ChangeOpacity(Properties.Resources.default_poster, 0.5F);
                     }
                 }
             }
@@ -384,14 +386,14 @@ namespace OpenPlex
                 var data = PopcornTimeEntity.FromJson(jsonPopcornTime);
 
                 try { tabBlank.BackgroundImage = ChangeOpacity(LoadPicture(data.Images.Fanart), 0.2F); }
-                catch { tabBlank.BackgroundImage = ChangeOpacity(Properties.Resources.Dark_Sky_Night, 0.2F); }
+                catch { tabBlank.BackgroundImage = ChangeOpacity(Properties.Resources.background_original, 0.2F); }
                 MovieDetails.infoFanartUrl = data.Images.Fanart;
                 MovieDetails.infoTrailerUrl = data.Trailer;
                 //MovieDetails.btnFileTrailer.Visible = true;
             }
             catch
             {
-                tabBlank.BackgroundImage = ChangeOpacity(Properties.Resources.Dark_Sky_Night, 0.4F);
+                tabBlank.BackgroundImage = ChangeOpacity(Properties.Resources.background_original, 0.4F);
                 MovieDetails.infoFanartUrl = "";
                 MovieDetails.infoTrailerUrl = "";
                 //MovieDetails.btnFileTrailer.Visible = false;
@@ -400,8 +402,7 @@ namespace OpenPlex
             ctrlStreamInfo ctrlInfo = new ctrlStreamInfo();
             ctrlInfo.infoFileURL = webFile;
             ctrlInfo.infoFileHost.Text = new Uri(webFile).Host;
-            ctrlInfo.infoFileName.Text = Path.GetFileName(webFile);
-            ctrlInfo.infoFileName.Dock = DockStyle.Top;
+            ctrlInfo.infoFileName.Text = Path.GetFileName(new Uri(webFile).LocalPath);
             MovieDetails.panelStreams.Controls.Add(ctrlInfo);
             MovieDetails.Dock = DockStyle.Fill;
             tabBlank.Controls.Clear();
@@ -619,19 +620,19 @@ namespace OpenPlex
         {
             ctrlDownloadItem ctrlItem = new ctrlDownloadItem();
             ctrlItem.lblPercentage.Text = "Connecting...";
-            ctrlItem.Width = panelDownloadItems.ClientSize.Width - 7;
-            panelDownloadItems.Controls.Add(ctrlItem);
+            ctrlItem.Width = panelDownloads.ClientSize.Width - 7;
+            panelDownloads.Controls.Add(ctrlItem);
             ctrlItem.doDownloadFile(url);
         }
 
         private void panelDownloadItems_ControlAdded(object sender, ControlEventArgs e)
         {
-            if (panelDownloadItems.Controls.Count == 0) { lblNoDownloads.Visible = true; } else { lblNoDownloads.Visible = false; }
+            if (panelDownloads.Controls.Count == 0) { lblNoDownloads.Visible = true; } else { lblNoDownloads.Visible = false; }
         }
 
         private void panelDownloadItems_ControlRemoved(object sender, ControlEventArgs e)
         {
-            if (panelDownloadItems.Controls.Count == 0) { lblNoDownloads.Visible = true; } else { lblNoDownloads.Visible = false; }
+            if (panelDownloads.Controls.Count == 0) { lblNoDownloads.Visible = true; } else { lblNoDownloads.Visible = false; }
         }
     }
 }

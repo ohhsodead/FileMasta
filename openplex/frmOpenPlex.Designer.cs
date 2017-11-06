@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOpenPlex));
             this.tab = new System.Windows.Forms.TabControl();
             this.tabMovies = new System.Windows.Forms.TabPage();
@@ -41,7 +41,7 @@
             this.txtMoviesSearchBox = new ChreneLib.Controls.TextBoxes.CTextBox();
             this.btnSearchMovies = new CButtonLib.CButton();
             this.bgMoviesSearchBox = new CButtonLib.CButton();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.panelMovieFilters = new System.Windows.Forms.FlowLayoutPanel();
             this.panelMoviesGenre = new System.Windows.Forms.Panel();
             this.btnMoviesGenre = new CButtonLib.CButton();
             this.cmboBoxMoviesGenre = new System.Windows.Forms.ComboBox();
@@ -55,7 +55,7 @@
             this.btnSearchFiles = new CButtonLib.CButton();
             this.tabDownloads = new System.Windows.Forms.TabPage();
             this.lblNoDownloads = new System.Windows.Forms.Label();
-            this.panelDownloadItems = new System.Windows.Forms.FlowLayoutPanel();
+            this.panelDownloads = new System.Windows.Forms.FlowLayoutPanel();
             this.tabBlank = new System.Windows.Forms.TabPage();
             this.tabAbout = new System.Windows.Forms.TabPage();
             this.lblAboutVersion = new System.Windows.Forms.Label();
@@ -79,7 +79,7 @@
             this.titleMovies = new System.Windows.Forms.Label();
             this.tab.SuspendLayout();
             this.tabMovies.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
+            this.panelMovieFilters.SuspendLayout();
             this.panelMoviesGenre.SuspendLayout();
             this.tabFiles.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).BeginInit();
@@ -121,7 +121,7 @@
             this.tabMovies.Controls.Add(this.txtMoviesSearchBox);
             this.tabMovies.Controls.Add(this.btnSearchMovies);
             this.tabMovies.Controls.Add(this.bgMoviesSearchBox);
-            this.tabMovies.Controls.Add(this.flowLayoutPanel1);
+            this.tabMovies.Controls.Add(this.panelMovieFilters);
             this.tabMovies.ForeColor = System.Drawing.Color.White;
             this.tabMovies.Location = new System.Drawing.Point(4, 22);
             this.tabMovies.Name = "tabMovies";
@@ -171,9 +171,9 @@
             this.btnSearchMovies.FillType = CButtonLib.CButton.eFillType.Solid;
             this.btnSearchMovies.FocalPoints.CenterPtX = 0F;
             this.btnSearchMovies.FocalPoints.CenterPtY = 0F;
-            this.btnSearchMovies.Image = global::OpenPlex.Properties.Resources.SearchIconH;
+            this.btnSearchMovies.Image = global::OpenPlex.Properties.Resources.magnify;
             this.btnSearchMovies.ImageIndex = 0;
-            this.btnSearchMovies.ImageSize = new System.Drawing.Size(17, 17);
+            this.btnSearchMovies.ImageSize = new System.Drawing.Size(22, 22);
             this.btnSearchMovies.Location = new System.Drawing.Point(429, 13);
             this.btnSearchMovies.Name = "btnSearchMovies";
             this.btnSearchMovies.ShowFocus = CButtonLib.CButton.eFocus.None;
@@ -206,15 +206,15 @@
             this.bgMoviesSearchBox.TabStop = false;
             this.bgMoviesSearchBox.Text = "";
             // 
-            // flowLayoutPanel1
+            // panelMovieFilters
             // 
-            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.panelMovieFilters.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.flowLayoutPanel1.Controls.Add(this.panelMoviesGenre);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(472, 13);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(368, 36);
-            this.flowLayoutPanel1.TabIndex = 2;
+            this.panelMovieFilters.Controls.Add(this.panelMoviesGenre);
+            this.panelMovieFilters.Location = new System.Drawing.Point(474, 13);
+            this.panelMovieFilters.Name = "panelMovieFilters";
+            this.panelMovieFilters.Size = new System.Drawing.Size(366, 36);
+            this.panelMovieFilters.TabIndex = 2;
             // 
             // panelMoviesGenre
             // 
@@ -248,14 +248,14 @@
             this.btnMoviesGenre.Location = new System.Drawing.Point(0, 0);
             this.btnMoviesGenre.Name = "btnMoviesGenre";
             this.btnMoviesGenre.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.btnMoviesGenre.SideImage = global::OpenPlex.Properties.Resources.iconArrowDown;
+            this.btnMoviesGenre.SideImage = global::OpenPlex.Properties.Resources.chevron_down;
             this.btnMoviesGenre.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnMoviesGenre.SideImageSize = new System.Drawing.Size(17, 10);
+            this.btnMoviesGenre.SideImageSize = new System.Drawing.Size(19, 19);
             this.btnMoviesGenre.Size = new System.Drawing.Size(109, 36);
             this.btnMoviesGenre.TabIndex = 2;
             this.btnMoviesGenre.Text = "Genre : Any";
-            this.btnMoviesGenre.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMoviesGenre.TextMargin = new System.Windows.Forms.Padding(8, 3, 2, 2);
+            this.btnMoviesGenre.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnMoviesGenre.TextMargin = new System.Windows.Forms.Padding(10, 3, 2, 2);
             this.btnMoviesGenre.TextShadowShow = false;
             this.btnMoviesGenre.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnMoviesGenre_ClickButtonArea);
             // 
@@ -294,10 +294,10 @@
             // tabFiles
             // 
             this.tabFiles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
+            this.tabFiles.Controls.Add(this.btnSearchFiles);
             this.tabFiles.Controls.Add(this.txtFilesSearchBox);
             this.tabFiles.Controls.Add(this.dataGrid);
             this.tabFiles.Controls.Add(this.bgFilesSearchBox);
-            this.tabFiles.Controls.Add(this.btnSearchFiles);
             this.tabFiles.ForeColor = System.Drawing.Color.White;
             this.tabFiles.Location = new System.Drawing.Point(4, 22);
             this.tabFiles.Name = "tabFiles";
@@ -334,15 +334,15 @@
             this.dataGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGrid.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             this.dataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
-            dataGridViewCellStyle21.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            dataGridViewCellStyle21.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle21.Padding = new System.Windows.Forms.Padding(6, 4, 0, 4);
-            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
-            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(6, 4, 0, 4);
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.columnHost,
@@ -358,12 +358,12 @@
             this.dataGrid.ReadOnly = true;
             this.dataGrid.RowHeadersVisible = false;
             this.dataGrid.RowHeadersWidth = 40;
-            dataGridViewCellStyle25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
-            dataGridViewCellStyle25.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            dataGridViewCellStyle25.ForeColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
-            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGrid.RowsDefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGrid.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dataGrid.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
             this.dataGrid.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.dataGrid.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Silver;
@@ -381,8 +381,8 @@
             // columnHost
             // 
             this.columnHost.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridViewCellStyle22.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.columnHost.DefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.columnHost.DefaultCellStyle = dataGridViewCellStyle7;
             this.columnHost.HeaderText = "Host";
             this.columnHost.Name = "columnHost";
             this.columnHost.ReadOnly = true;
@@ -391,16 +391,16 @@
             // columnFileName
             // 
             this.columnFileName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.columnFileName.DefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.columnFileName.DefaultCellStyle = dataGridViewCellStyle8;
             this.columnFileName.HeaderText = "File Name";
             this.columnFileName.Name = "columnFileName";
             this.columnFileName.ReadOnly = true;
             // 
             // columnURL
             // 
-            dataGridViewCellStyle24.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.columnURL.DefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.columnURL.DefaultCellStyle = dataGridViewCellStyle9;
             this.columnURL.HeaderText = "URL";
             this.columnURL.Name = "columnURL";
             this.columnURL.ReadOnly = true;
@@ -444,9 +444,9 @@
             this.btnSearchFiles.FillType = CButtonLib.CButton.eFillType.Solid;
             this.btnSearchFiles.FocalPoints.CenterPtX = 0F;
             this.btnSearchFiles.FocalPoints.CenterPtY = 0F;
-            this.btnSearchFiles.Image = global::OpenPlex.Properties.Resources.SearchIconH;
+            this.btnSearchFiles.Image = global::OpenPlex.Properties.Resources.magnify;
             this.btnSearchFiles.ImageIndex = 0;
-            this.btnSearchFiles.ImageSize = new System.Drawing.Size(17, 17);
+            this.btnSearchFiles.ImageSize = new System.Drawing.Size(22, 22);
             this.btnSearchFiles.Location = new System.Drawing.Point(429, 13);
             this.btnSearchFiles.Name = "btnSearchFiles";
             this.btnSearchFiles.ShowFocus = CButtonLib.CButton.eFocus.None;
@@ -459,7 +459,7 @@
             // 
             this.tabDownloads.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
             this.tabDownloads.Controls.Add(this.lblNoDownloads);
-            this.tabDownloads.Controls.Add(this.panelDownloadItems);
+            this.tabDownloads.Controls.Add(this.panelDownloads);
             this.tabDownloads.ForeColor = System.Drawing.Color.White;
             this.tabDownloads.Location = new System.Drawing.Point(4, 22);
             this.tabDownloads.Name = "tabDownloads";
@@ -479,19 +479,19 @@
             this.lblNoDownloads.TabIndex = 4;
             this.lblNoDownloads.Text = "No Downloads...";
             // 
-            // panelDownloadItems
+            // panelDownloads
             // 
-            this.panelDownloadItems.AutoScroll = true;
-            this.panelDownloadItems.BackColor = System.Drawing.Color.Transparent;
-            this.panelDownloadItems.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDownloadItems.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.panelDownloadItems.Location = new System.Drawing.Point(0, 0);
-            this.panelDownloadItems.Name = "panelDownloadItems";
-            this.panelDownloadItems.Size = new System.Drawing.Size(852, 518);
-            this.panelDownloadItems.TabIndex = 2;
-            this.panelDownloadItems.WrapContents = false;
-            this.panelDownloadItems.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.panelDownloadItems_ControlAdded);
-            this.panelDownloadItems.ControlRemoved += new System.Windows.Forms.ControlEventHandler(this.panelDownloadItems_ControlRemoved);
+            this.panelDownloads.AutoScroll = true;
+            this.panelDownloads.BackColor = System.Drawing.Color.Transparent;
+            this.panelDownloads.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelDownloads.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.panelDownloads.Location = new System.Drawing.Point(0, 0);
+            this.panelDownloads.Name = "panelDownloads";
+            this.panelDownloads.Size = new System.Drawing.Size(852, 518);
+            this.panelDownloads.TabIndex = 2;
+            this.panelDownloads.WrapContents = false;
+            this.panelDownloads.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.panelDownloadItems_ControlAdded);
+            this.panelDownloads.ControlRemoved += new System.Windows.Forms.ControlEventHandler(this.panelDownloadItems_ControlRemoved);
             // 
             // tabBlank
             // 
@@ -582,10 +582,11 @@
             this.imgCloseAbout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.imgCloseAbout.BackColor = System.Drawing.Color.Transparent;
             this.imgCloseAbout.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgCloseAbout.Image = global::OpenPlex.Properties.Resources.iconCLoseL;
-            this.imgCloseAbout.Location = new System.Drawing.Point(804, 25);
+            this.imgCloseAbout.Image = global::OpenPlex.Properties.Resources.close;
+            this.imgCloseAbout.Location = new System.Drawing.Point(795, 25);
+            this.imgCloseAbout.Margin = new System.Windows.Forms.Padding(3, 25, 25, 3);
             this.imgCloseAbout.Name = "imgCloseAbout";
-            this.imgCloseAbout.Size = new System.Drawing.Size(24, 24);
+            this.imgCloseAbout.Size = new System.Drawing.Size(32, 32);
             this.imgCloseAbout.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imgCloseAbout.TabIndex = 6;
             this.imgCloseAbout.TabStop = false;
@@ -630,10 +631,10 @@
             // 
             this.imgDownloads.BackColor = System.Drawing.Color.Transparent;
             this.imgDownloads.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgDownloads.Image = global::OpenPlex.Properties.Resources.iconDownloads;
+            this.imgDownloads.Image = global::OpenPlex.Properties.Resources.download;
             this.imgDownloads.Location = new System.Drawing.Point(17, 102);
             this.imgDownloads.Name = "imgDownloads";
-            this.imgDownloads.Size = new System.Drawing.Size(20, 20);
+            this.imgDownloads.Size = new System.Drawing.Size(22, 22);
             this.imgDownloads.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imgDownloads.TabIndex = 11;
             this.imgDownloads.TabStop = false;
@@ -650,10 +651,10 @@
             this.titleLineDownloads.DimFactorHover = 0;
             this.titleLineDownloads.FillType = CButtonLib.CButton.eFillType.Solid;
             this.titleLineDownloads.ImageIndex = 0;
-            this.titleLineDownloads.Location = new System.Drawing.Point(162, 102);
+            this.titleLineDownloads.Location = new System.Drawing.Point(162, 101);
             this.titleLineDownloads.Name = "titleLineDownloads";
             this.titleLineDownloads.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.titleLineDownloads.Size = new System.Drawing.Size(2, 24);
+            this.titleLineDownloads.Size = new System.Drawing.Size(2, 28);
             this.titleLineDownloads.TabIndex = 10;
             this.titleLineDownloads.TabStop = false;
             this.titleLineDownloads.Text = "";
@@ -666,7 +667,7 @@
             this.titleDownloads.Cursor = System.Windows.Forms.Cursors.Hand;
             this.titleDownloads.Font = new System.Drawing.Font("Segoe UI", 10.75F);
             this.titleDownloads.ForeColor = System.Drawing.Color.White;
-            this.titleDownloads.Location = new System.Drawing.Point(41, 102);
+            this.titleDownloads.Location = new System.Drawing.Point(42, 103);
             this.titleDownloads.Margin = new System.Windows.Forms.Padding(3, 8, 3, 8);
             this.titleDownloads.Name = "titleDownloads";
             this.titleDownloads.Size = new System.Drawing.Size(84, 20);
@@ -678,10 +679,10 @@
             // 
             this.imgAbout.BackColor = System.Drawing.Color.Transparent;
             this.imgAbout.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgAbout.Image = global::OpenPlex.Properties.Resources.iconAbout;
-            this.imgAbout.Location = new System.Drawing.Point(18, 245);
+            this.imgAbout.Image = global::OpenPlex.Properties.Resources.information;
+            this.imgAbout.Location = new System.Drawing.Point(17, 245);
             this.imgAbout.Name = "imgAbout";
-            this.imgAbout.Size = new System.Drawing.Size(20, 20);
+            this.imgAbout.Size = new System.Drawing.Size(22, 22);
             this.imgAbout.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imgAbout.TabIndex = 8;
             this.imgAbout.TabStop = false;
@@ -698,10 +699,10 @@
             this.titleLineAbout.DimFactorHover = 0;
             this.titleLineAbout.FillType = CButtonLib.CButton.eFillType.Solid;
             this.titleLineAbout.ImageIndex = 0;
-            this.titleLineAbout.Location = new System.Drawing.Point(162, 245);
+            this.titleLineAbout.Location = new System.Drawing.Point(162, 244);
             this.titleLineAbout.Name = "titleLineAbout";
             this.titleLineAbout.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.titleLineAbout.Size = new System.Drawing.Size(2, 24);
+            this.titleLineAbout.Size = new System.Drawing.Size(2, 28);
             this.titleLineAbout.TabIndex = 7;
             this.titleLineAbout.TabStop = false;
             this.titleLineAbout.Text = "";
@@ -714,7 +715,7 @@
             this.titleAbout.Cursor = System.Windows.Forms.Cursors.Hand;
             this.titleAbout.Font = new System.Drawing.Font("Segoe UI", 10.75F);
             this.titleAbout.ForeColor = System.Drawing.Color.White;
-            this.titleAbout.Location = new System.Drawing.Point(41, 245);
+            this.titleAbout.Location = new System.Drawing.Point(42, 246);
             this.titleAbout.Margin = new System.Windows.Forms.Padding(3, 8, 3, 8);
             this.titleAbout.Name = "titleAbout";
             this.titleAbout.Size = new System.Drawing.Size(50, 20);
@@ -726,10 +727,10 @@
             // 
             this.imgFiles.BackColor = System.Drawing.Color.Transparent;
             this.imgFiles.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgFiles.Image = global::OpenPlex.Properties.Resources.iconFiles;
-            this.imgFiles.Location = new System.Drawing.Point(18, 63);
+            this.imgFiles.Image = global::OpenPlex.Properties.Resources.buffer;
+            this.imgFiles.Location = new System.Drawing.Point(17, 63);
             this.imgFiles.Name = "imgFiles";
-            this.imgFiles.Size = new System.Drawing.Size(20, 20);
+            this.imgFiles.Size = new System.Drawing.Size(22, 22);
             this.imgFiles.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imgFiles.TabIndex = 5;
             this.imgFiles.TabStop = false;
@@ -739,10 +740,10 @@
             // 
             this.imgMovies.BackColor = System.Drawing.Color.Transparent;
             this.imgMovies.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgMovies.Image = global::OpenPlex.Properties.Resources.iconMovies;
-            this.imgMovies.Location = new System.Drawing.Point(18, 23);
+            this.imgMovies.Image = global::OpenPlex.Properties.Resources.filmstrip;
+            this.imgMovies.Location = new System.Drawing.Point(17, 23);
             this.imgMovies.Name = "imgMovies";
-            this.imgMovies.Size = new System.Drawing.Size(20, 20);
+            this.imgMovies.Size = new System.Drawing.Size(22, 22);
             this.imgMovies.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imgMovies.TabIndex = 4;
             this.imgMovies.TabStop = false;
@@ -759,10 +760,10 @@
             this.titleLineFiles.DimFactorHover = 0;
             this.titleLineFiles.FillType = CButtonLib.CButton.eFillType.Solid;
             this.titleLineFiles.ImageIndex = 0;
-            this.titleLineFiles.Location = new System.Drawing.Point(162, 63);
+            this.titleLineFiles.Location = new System.Drawing.Point(162, 62);
             this.titleLineFiles.Name = "titleLineFiles";
             this.titleLineFiles.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.titleLineFiles.Size = new System.Drawing.Size(2, 24);
+            this.titleLineFiles.Size = new System.Drawing.Size(2, 28);
             this.titleLineFiles.TabIndex = 3;
             this.titleLineFiles.TabStop = false;
             this.titleLineFiles.Text = "";
@@ -779,10 +780,10 @@
             this.titleLineMovies.DimFactorHover = 0;
             this.titleLineMovies.FillType = CButtonLib.CButton.eFillType.Solid;
             this.titleLineMovies.ImageIndex = 0;
-            this.titleLineMovies.Location = new System.Drawing.Point(162, 23);
+            this.titleLineMovies.Location = new System.Drawing.Point(162, 22);
             this.titleLineMovies.Name = "titleLineMovies";
             this.titleLineMovies.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.titleLineMovies.Size = new System.Drawing.Size(2, 24);
+            this.titleLineMovies.Size = new System.Drawing.Size(2, 28);
             this.titleLineMovies.TabIndex = 2;
             this.titleLineMovies.TabStop = false;
             this.titleLineMovies.Text = "";
@@ -794,7 +795,7 @@
             this.titleFiles.Cursor = System.Windows.Forms.Cursors.Hand;
             this.titleFiles.Font = new System.Drawing.Font("Segoe UI", 10.75F);
             this.titleFiles.ForeColor = System.Drawing.Color.White;
-            this.titleFiles.Location = new System.Drawing.Point(41, 63);
+            this.titleFiles.Location = new System.Drawing.Point(42, 63);
             this.titleFiles.Margin = new System.Windows.Forms.Padding(3, 8, 3, 8);
             this.titleFiles.Name = "titleFiles";
             this.titleFiles.Size = new System.Drawing.Size(38, 20);
@@ -809,7 +810,7 @@
             this.titleMovies.Cursor = System.Windows.Forms.Cursors.Hand;
             this.titleMovies.Font = new System.Drawing.Font("Segoe UI", 10.75F);
             this.titleMovies.ForeColor = System.Drawing.Color.White;
-            this.titleMovies.Location = new System.Drawing.Point(41, 23);
+            this.titleMovies.Location = new System.Drawing.Point(42, 24);
             this.titleMovies.Margin = new System.Windows.Forms.Padding(3, 8, 3, 8);
             this.titleMovies.Name = "titleMovies";
             this.titleMovies.Size = new System.Drawing.Size(56, 20);
@@ -838,7 +839,7 @@
             this.tab.ResumeLayout(false);
             this.tabMovies.ResumeLayout(false);
             this.tabMovies.PerformLayout();
-            this.flowLayoutPanel1.ResumeLayout(false);
+            this.panelMovieFilters.ResumeLayout(false);
             this.panelMoviesGenre.ResumeLayout(false);
             this.tabFiles.ResumeLayout(false);
             this.tabFiles.PerformLayout();
@@ -895,13 +896,13 @@
         private System.Windows.Forms.Panel panelMoviesGenre;
         private CButtonLib.CButton btnMoviesGenre;
         private System.Windows.Forms.ComboBox cmboBoxMoviesGenre;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel panelMovieFilters;
         private System.Windows.Forms.PictureBox imgDownloads;
         private CButtonLib.CButton titleLineDownloads;
         private System.Windows.Forms.Label titleDownloads;
         private System.Windows.Forms.TabPage tabDownloads;
         private System.Windows.Forms.Label lblNoDownloads;
-        private System.Windows.Forms.FlowLayoutPanel panelDownloadItems;
+        private System.Windows.Forms.FlowLayoutPanel panelDownloads;
     }
 }
 

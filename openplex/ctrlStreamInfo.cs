@@ -23,7 +23,7 @@ namespace OpenPlex
 
         private void btnPlay_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            contextFileName.Show(btnPlay, btnPlay.PointToClient(Cursor.Position));
+            contextFileName.Show(btnWatchNow, btnWatchNow.PointToClient(Cursor.Position));
         }
 
         private void btnDownload_ClickButtonArea(object Sender, MouseEventArgs e)
@@ -63,7 +63,8 @@ namespace OpenPlex
             Process.Start("https://github.com/invu/openplex-app/issues/new?title=" + "Found Broken File" +
                 "&body=" +
                 "Host: " + new Uri(webFile).Host.Replace("www.", "") + "%0A" +
-                "File Name: " + Path.GetFileName(webFile).Replace("%20", ""));
+                "File Name: " + new Uri(webFile).LocalPath);
+            //"File Name: " + Path.GetFileName(webFile).Replace("%20", " "));
         }
     }
 }

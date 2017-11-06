@@ -66,14 +66,14 @@ namespace OpenPlex
             }
             catch { }
 
-            if (infoImagePoster == "") { MovieDetails.imgPoster.Image = frmOpenPlex.ChangeOpacity(Properties.Resources.PosterDefault, 1); }
+            if (infoImagePoster == "") { MovieDetails.imgPoster.Image = frmOpenPlex.ChangeOpacity(Properties.Resources.default_poster, 1); }
 
             foreach (string movieLink in infoMovieLinks)
             {
                 ctrlStreamInfo ctrlInfo = new ctrlStreamInfo();
                 ctrlInfo.infoFileURL = movieLink;
                 ctrlInfo.infoFileHost.Text = new Uri(movieLink).Host;
-                ctrlInfo.infoFileName.Text = Path.GetFileName(movieLink).Replace("%20", "");
+                ctrlInfo.infoFileName.Text = Path.GetFileName(new Uri(movieLink).LocalPath);
                 MovieDetails.panelStreams.Controls.Add(ctrlInfo);
             }
 

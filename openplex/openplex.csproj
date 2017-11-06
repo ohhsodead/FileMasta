@@ -164,6 +164,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="openplex_logo.ico" />
+    <None Include="Resources\background-original.jpg" />
+    <None Include="Resources\magnify.png" />
+    <None Include="Resources\chevron-down.png" />
+    <None Include="Resources\close.png" />
+    <None Include="Resources\information.png" />
+    <None Include="Resources\download.png" />
+    <None Include="Resources\buffer.png" />
+    <None Include="Resources\filmstrip.png" />
     <None Include="Resources\iconDownloads.png" />
     <None Include="Resources\openplex-logo.png" />
     <None Include="Resources\iconArrowDown.png" />

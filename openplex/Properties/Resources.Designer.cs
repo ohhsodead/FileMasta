@@ -63,9 +63,9 @@ namespace OpenPlex.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Dark_Sky_Night {
+        internal static System.Drawing.Bitmap background_original {
             get {
-                object obj = ResourceManager.GetObject("Dark_Sky_Night", resourceCulture);
+                object obj = ResourceManager.GetObject("background_original", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace OpenPlex.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap iconAbout {
+        internal static System.Drawing.Bitmap buffer {
             get {
-                object obj = ResourceManager.GetObject("iconAbout", resourceCulture);
+                object obj = ResourceManager.GetObject("buffer", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +83,9 @@ namespace OpenPlex.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap iconArrowDown {
+        internal static System.Drawing.Bitmap chevron_down {
             get {
-                object obj = ResourceManager.GetObject("iconArrowDown", resourceCulture);
+                object obj = ResourceManager.GetObject("chevron_down", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +93,9 @@ namespace OpenPlex.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap iconCLoseH {
+        internal static System.Drawing.Bitmap close {
             get {
-                object obj = ResourceManager.GetObject("iconCLoseH", resourceCulture);
+                object obj = ResourceManager.GetObject("close", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,9 +103,9 @@ namespace OpenPlex.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap iconCLoseL {
+        internal static System.Drawing.Bitmap default_poster {
             get {
-                object obj = ResourceManager.GetObject("iconCLoseL", resourceCulture);
+                object obj = ResourceManager.GetObject("default-poster", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +113,9 @@ namespace OpenPlex.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap iconDownloads {
+        internal static System.Drawing.Bitmap download {
             get {
-                object obj = ResourceManager.GetObject("iconDownloads", resourceCulture);
+                object obj = ResourceManager.GetObject("download", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,9 +123,9 @@ namespace OpenPlex.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap iconFiles {
+        internal static System.Drawing.Bitmap filmstrip {
             get {
-                object obj = ResourceManager.GetObject("iconFiles", resourceCulture);
+                object obj = ResourceManager.GetObject("filmstrip", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,9 +133,9 @@ namespace OpenPlex.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap iconIMDb {
+        internal static System.Drawing.Bitmap glow_poster {
             get {
-                object obj = ResourceManager.GetObject("iconIMDb", resourceCulture);
+                object obj = ResourceManager.GetObject("glow-poster", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -143,9 +143,9 @@ namespace OpenPlex.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap iconMovies {
+        internal static System.Drawing.Bitmap imdb_icon {
             get {
-                object obj = ResourceManager.GetObject("iconMovies", resourceCulture);
+                object obj = ResourceManager.GetObject("imdb-icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -153,9 +153,9 @@ namespace OpenPlex.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap iconPause {
+        internal static System.Drawing.Bitmap information {
             get {
-                object obj = ResourceManager.GetObject("iconPause", resourceCulture);
+                object obj = ResourceManager.GetObject("information", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -163,39 +163,9 @@ namespace OpenPlex.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap iconPlay {
+        internal static System.Drawing.Bitmap magnify {
             get {
-                object obj = ResourceManager.GetObject("iconPlay", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap iconSettings {
-            get {
-                object obj = ResourceManager.GetObject("iconSettings", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap iconStop {
-            get {
-                object obj = ResourceManager.GetObject("iconStop", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap iconWatchLater {
-            get {
-                object obj = ResourceManager.GetObject("iconWatchLater", resourceCulture);
+                object obj = ResourceManager.GetObject("magnify", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -216,36 +186,6 @@ namespace OpenPlex.Properties {
         internal static System.Drawing.Bitmap openplex_text {
             get {
                 object obj = ResourceManager.GetObject("openplex-text", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap PosterDefault {
-            get {
-                object obj = ResourceManager.GetObject("PosterDefault", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap PosterGlow {
-            get {
-                object obj = ResourceManager.GetObject("PosterGlow", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap SearchIconH {
-            get {
-                object obj = ResourceManager.GetObject("SearchIconH", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

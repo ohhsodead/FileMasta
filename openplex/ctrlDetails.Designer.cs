@@ -288,7 +288,7 @@
             // imgIMDb
             // 
             this.imgIMDb.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgIMDb.Image = global::OpenPlex.Properties.Resources.iconIMDb;
+            this.imgIMDb.Image = global::OpenPlex.Properties.Resources.imdb_icon;
             this.imgIMDb.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.imgIMDb.Location = new System.Drawing.Point(264, 4);
             this.imgIMDb.Margin = new System.Windows.Forms.Padding(4, 4, 4, 20);
@@ -443,11 +443,12 @@
             this.appClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.appClose.BackColor = System.Drawing.Color.Transparent;
             this.appClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.appClose.Image = global::OpenPlex.Properties.Resources.iconCLoseH;
+            this.appClose.Image = global::OpenPlex.Properties.Resources.close;
             this.appClose.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.appClose.Location = new System.Drawing.Point(909, 27);
+            this.appClose.Location = new System.Drawing.Point(910, 25);
+            this.appClose.Margin = new System.Windows.Forms.Padding(3, 25, 25, 3);
             this.appClose.Name = "appClose";
-            this.appClose.Size = new System.Drawing.Size(28, 28);
+            this.appClose.Size = new System.Drawing.Size(32, 32);
             this.appClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.appClose.TabIndex = 100026;
             this.appClose.TabStop = false;
@@ -457,7 +458,7 @@
             // 
             this.imgPosterBG.BackColor = System.Drawing.Color.Transparent;
             this.imgPosterBG.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.imgPosterBG.Image = global::OpenPlex.Properties.Resources.PosterGlow;
+            this.imgPosterBG.Image = global::OpenPlex.Properties.Resources.glow_poster;
             this.imgPosterBG.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.imgPosterBG.Location = new System.Drawing.Point(16, 16);
             this.imgPosterBG.Name = "imgPosterBG";
