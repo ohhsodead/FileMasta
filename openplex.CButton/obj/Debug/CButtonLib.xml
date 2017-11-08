@@ -1,0 +1,190 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+CButtonLib
+</name>
+</assembly>
+<members>
+<member name="T:CButtonLib.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:CButtonLib.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:CButtonLib.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="T:CButtonLib.CButton">
+ <summary>
+ Custom Button Control with Gradient Colors and Extra Image (VB.NET)
+ </summary>
+ <remarks>v3.5</remarks>
+</member>
+<member name="P:CButtonLib.CButton.Shape">
+ <summary>
+ The Shape of the Button as eShape choices (Ellipse, Rectangle, and Triangles)
+ </summary>
+</member>
+<member name="P:CButtonLib.CButton.DimFactorHover">
+ <summary>
+ Get or Set how much to dim the color on mouse rollover. Positive to Lighten and negative to Darken
+ </summary>
+</member>
+<member name="P:CButtonLib.CButton.DimFactorClick">
+ <summary>
+ Get or Set how much to dim the color on mouse down. Positive to Lighten and negative to Darken
+ </summary>
+</member>
+<member name="P:CButtonLib.CButton.BorderColor">
+ <summary>
+ Get or Set the Border color
+ </summary>
+</member>
+<member name="P:CButtonLib.CButton.BorderShow">
+ <summary>
+ Get or Set whether to show the Border
+ </summary>
+</member>
+<member name="P:CButtonLib.CButton.ShowFocus">
+ <summary>
+ Get or Set the Focus queue
+ </summary>
+</member>
+<member name="P:CButtonLib.CButton.FillType">
+ <summary>
+ The eFillType Fill Type to apply to the CButton
+ </summary>
+</member>
+<member name="P:CButtonLib.CButton.FillTypeLinear">
+ <summary>
+ The Linear Blend type
+ </summary>
+</member>
+<member name="P:CButtonLib.CButton.ColorFillSolid">
+ <summary>
+ The Solid Color to fill the CButton
+ </summary>
+</member>
+<member name="P:CButtonLib.CButton.ColorFillBlend">
+ <summary>
+ The ColorBlend used to fill the CButton
+ </summary>
+</member>
+<member name="P:CButtonLib.CButton.Text">
+ <summary>
+ Get or Set the Button Text
+ </summary>
+</member>
+<member name="P:CButtonLib.CButton.TextSmoothingMode">
+ <summary>
+ Get or Set the TextrenderingHint fot the button text
+ </summary>
+</member>
+<member name="P:CButtonLib.CButton.TextAlign">
+ <summary>
+ Get or Set the alignment for the text
+ </summary>
+</member>
+<member name="P:CButtonLib.CButton.TextMargin">
+ <summary>
+ Get or Set the margion between the text and the button edge
+ </summary>
+</member>
+<member name="P:CButtonLib.CButton.TextImageRelation">
+ <summary>
+ Get or Set the Relationship of the Text to the Image
+ </summary>
+</member>
+<member name="P:CButtonLib.CButton.TextShadowShow">
+ <summary>
+ Get or Set if the Text has a shadow
+ </summary>
+</member>
+<member name="P:CButtonLib.CButton.TextShadow">
+ <summary>
+ Get or Set the color of the Shadow Text
+ </summary>
+</member>
+<member name="P:CButtonLib.CButton.Image">
+ <summary>
+ Get or Set the small Image next to text
+ </summary>
+</member>
+<member name="P:CButtonLib.CButton.ImageAlign">
+ <summary>
+ Get or Set the placement of the Image
+ </summary>
+</member>
+<member name="P:CButtonLib.CButton.ImageSize">
+ <summary>
+ Get or Set the Size of the Image
+ </summary>
+</member>
+<member name="P:CButtonLib.CButton.Imagelist">
+ <summary>
+ Get or Set the ImageList control
+ </summary>
+</member>
+<member name="P:CButtonLib.CButton.ImageIndex">
+ <summary>
+ Get or Set the ImageList control
+ </summary>
+</member>
+<member name="P:CButtonLib.CButton.SideImage">
+ <summary>
+ Get or Set the Side Image
+ </summary>
+</member>
+<member name="P:CButtonLib.CButton.SideImageSize">
+ <summary>
+ Get or Set the Size of the Side Image
+ </summary>
+</member>
+<member name="P:CButtonLib.CButton.SideImageIsClickable">
+ <summary>
+ Get or Set if the Side Image raises its own click event
+ </summary>
+</member>
+<member name="P:CButtonLib.CButton.SideImageBehindText">
+ <summary>
+ Get or Set if the Side Image is in front or behind the Text
+ </summary>
+</member>
+<member name="P:CButtonLib.CButton.SideImageAlign">
+ <summary>
+ Get or Set the Side Image Alignment
+ </summary>
+</member>
+<member name="P:CButtonLib.CButton.FocalPoints">
+ <summary>
+ The CenterPoint and FocusScales for the ColorBlend
+ </summary>
+</member>
+<member name="P:CButtonLib.CButton.UseMnemonic">
+ <summary>
+ If true, the first character proceeded by an ampersand will be used as the button's mnemonic key.
+ </summary>
+</member>
+<member name="M:CButtonLib.CButton.DimTheColor(System.Drawing.Color,System.Int32)">
+ <summary>
+ This function takes the given color and Lightens or Darkens it by the given value 
+ </summary>
+ <param name="DimColor">Base Color object to be changed</param>
+ <param name="DimDegree">Positive value to darken and negative value to lighten DimColor</param>
+</member>
+<member name="M:CButtonLib.CButton.GrayTheColor(System.Drawing.Color)">
+ <summary>
+ This function takes the given color and returns its gray equivilant
+ </summary>
+ <param name="GrayColor">Color object to be grayed</param>
+</member>
+</members>
+</doc>
