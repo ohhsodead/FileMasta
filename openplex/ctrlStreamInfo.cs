@@ -1,8 +1,8 @@
 ﻿using System;
-using System.Drawing;
-using System.Windows.Forms;
 using System.Diagnostics;
+using System.Drawing;
 using System.IO;
+using System.Windows.Forms;
 
 namespace OpenPlex
 {
@@ -19,6 +19,7 @@ namespace OpenPlex
         {
             BackColor = Color.Transparent;
             VLCToolStripMenuItem.Visible = File.Exists(frmOpenPlex.pathVLC);
+            MPCToolStripMenuItem.Visible = File.Exists(frmOpenPlex.pathMPCCodec64) || File.Exists(frmOpenPlex.pathMPC64) || File.Exists(frmOpenPlex.pathMPC86);
         }
 
         private void btnPlay_ClickButtonArea(object Sender, MouseEventArgs e)
@@ -53,6 +54,23 @@ namespace OpenPlex
             catch (Exception ex) { MessageBox.Show(this, ex.Message, "Error"); }
         }
 
+        private void MPCToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Process MPC = new Process();
+                if (File.Exists(frmOpenPlex.pathMPCCodec64))
+                    MPC.StartInfo.FileName = frmOpenPlex.pathMPCCodec64;
+                else if (File.Exists(frmOpenPlex.pathMPC64))
+                    MPC.StartInfo.FileName = frmOpenPlex.pathMPC64;
+                else
+                    MPC.StartInfo.FileName = frmOpenPlex.pathMPC86;
+                MPC.StartInfo.Arguments = (infoFileURL);
+                MPC.Start();
+            }
+            catch (Exception ex) { MessageBox.Show(this, ex.Message, "Error"); }
+        }
+
         private void btnReportBroken_ClickButtonArea(object Sender, MouseEventArgs e)
         {
             openBrokenFileIssue(infoFileURL);
@@ -64,7 +82,7 @@ namespace OpenPlex
                 "&body=" +
                 "Host: " + new Uri(webFile).Host.Replace("www.", "") + "%0A" +
                 "File Name: " + new Uri(webFile).LocalPath);
-            //"File Name: " + Path.GetFileName(webFile).Replace("%20", " "));
         }
+
     }
 }

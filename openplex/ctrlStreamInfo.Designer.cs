@@ -39,6 +39,7 @@
             this.OpenWithToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.WMPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.VLCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MPCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelFileInfo.SuspendLayout();
             this.contextFileName.SuspendLayout();
             this.SuspendLayout();
@@ -96,7 +97,7 @@
             this.btnWatchNow.Corners.UpperLeft = 1;
             this.btnWatchNow.Corners.UpperRight = 1;
             this.btnWatchNow.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnWatchNow.DesignerSelected = true;
+            this.btnWatchNow.DesignerSelected = false;
             this.btnWatchNow.DimFactorClick = 0;
             this.btnWatchNow.DimFactorHover = 0;
             this.btnWatchNow.FillType = CButtonLib.CButton.eFillType.Solid;
@@ -182,7 +183,8 @@
             // 
             this.OpenWithToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.WMPToolStripMenuItem,
-            this.VLCToolStripMenuItem});
+            this.VLCToolStripMenuItem,
+            this.MPCToolStripMenuItem});
             this.OpenWithToolStripMenuItem.Name = "OpenWithToolStripMenuItem";
             this.OpenWithToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
             this.OpenWithToolStripMenuItem.Text = "Open with...";
@@ -190,16 +192,22 @@
             // WMPToolStripMenuItem
             // 
             this.WMPToolStripMenuItem.Name = "WMPToolStripMenuItem";
-            this.WMPToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
+            this.WMPToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.WMPToolStripMenuItem.Text = "WMP";
             this.WMPToolStripMenuItem.Click += new System.EventHandler(this.WMPToolStripMenuItem_Click);
             // 
             // VLCToolStripMenuItem
             // 
             this.VLCToolStripMenuItem.Name = "VLCToolStripMenuItem";
-            this.VLCToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
+            this.VLCToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.VLCToolStripMenuItem.Text = "VLC";
             this.VLCToolStripMenuItem.Click += new System.EventHandler(this.VLCToolStripMenuItem_Click);
+            // 
+            // MPCToolStripMenuItem
+            // 
+            this.MPCToolStripMenuItem.Name = "MPCToolStripMenuItem";
+            this.MPCToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.MPCToolStripMenuItem.Text = "MPC";
             // 
             // ctrlStreamInfo
             // 
@@ -235,5 +243,6 @@
         private System.Windows.Forms.ToolStripMenuItem WMPToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem VLCToolStripMenuItem;
         private CButtonLib.CButton btnReportBroken;
+        private System.Windows.Forms.ToolStripMenuItem MPCToolStripMenuItem;
     }
 }
