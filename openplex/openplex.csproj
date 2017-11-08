@@ -69,6 +69,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BackGroundWorker.cs" />
     <Compile Include="ctrlDetails.cs">
       <SubType>UserControl</SubType>
     </Compile>
