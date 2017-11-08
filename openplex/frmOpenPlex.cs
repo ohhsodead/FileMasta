@@ -1,18 +1,17 @@
-﻿using System;
+﻿using OMDbAPI;
+using PopcornTimeAPI;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Net;
-using System.Windows.Forms;
-using System.Drawing.Imaging;
-using System.Diagnostics;
 using System.Text.RegularExpressions;
-using Newtonsoft.Json.Linq;
-using PopcornTimeAPI;
-using OMDbAPI;
-using System.ComponentModel;
+using System.Windows.Forms;
 
 namespace OpenPlex
 {
@@ -103,7 +102,7 @@ namespace OpenPlex
             ImageAttributes imgAttribute = new ImageAttributes();
             imgAttribute.SetColorMatrix(colormatrix, ColorMatrixFlag.Default, ColorAdjustType.Bitmap);
             graphics.DrawImage(img, new Rectangle(0, 0, bmp.Width, bmp.Height), 0, 0, img.Width, img.Height, GraphicsUnit.Pixel, imgAttribute);
-            graphics.Dispose(); 
+            graphics.Dispose();
             return bmp;
         }
 
@@ -112,6 +111,9 @@ namespace OpenPlex
         public static List<string> listMovieBackgrounds = new List<string>();
 
         public static string pathVLC = @"C:\Program Files (x86)\VideoLAN\VLC\vlc.exe";
+        public static string pathMPCCodec64 = @"C:\Program Files(x86)\K-Lite Codec Pack\MPC-HC64\mpc-hc64.exe";
+        public static string pathMPC64 = @"C:\Program Files\MPC-HC\mpc-hc64.exe";
+        public static string pathMPC86 = @"C:\Program Files (x86)\MPC-HC\mpc-hc.exe";
 
         private void frmOpenPlex_Load(object sender, EventArgs e)
         {
@@ -233,7 +235,7 @@ namespace OpenPlex
         public static string[] dataMoviesJson;
         public static string[] dataTVShows;
         public static List<string> dataFiles = new List<string>();
-        
+
         int countedMovies = 0;
         string selectedGenre = "";
 
@@ -290,7 +292,7 @@ namespace OpenPlex
 
             tab.SelectedTab = tabMovies;
         }
-        
+
         public void checkForUpdate()
         {
             Version newVersion = null;
@@ -496,7 +498,7 @@ namespace OpenPlex
         {
             return new FileInfo(filename).LastAccessTime < DateTime.Now.AddHours(-hours);
         }
-        
+
         private void imgCloseAbout_Click(object sender, EventArgs e)
         {
             tab.SelectedTab = currentTab;
@@ -544,7 +546,7 @@ namespace OpenPlex
                 titleLineAbout.Visible = false;
                 titleLineDownloads.Visible = false;
             }
-            else if(tab.SelectedTab == tabFiles)
+            else if (tab.SelectedTab == tabFiles)
             {
                 currentTab = tabFiles;
                 titleLineMovies.Visible = false;
