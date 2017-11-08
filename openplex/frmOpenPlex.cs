@@ -1,17 +1,17 @@
-﻿using OMDbAPI;
-using PopcornTimeAPI;
+﻿using PopcornTimeAPI;
+using OMDbAPI;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Diagnostics;
 using System.Drawing;
-using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Net;
-using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using System.Drawing.Imaging;
+using System.Diagnostics;
+using System.Text.RegularExpressions;
+using System.ComponentModel;
 
 namespace OpenPlex
 {
@@ -102,7 +102,7 @@ namespace OpenPlex
             ImageAttributes imgAttribute = new ImageAttributes();
             imgAttribute.SetColorMatrix(colormatrix, ColorMatrixFlag.Default, ColorAdjustType.Bitmap);
             graphics.DrawImage(img, new Rectangle(0, 0, bmp.Width, bmp.Height), 0, 0, img.Width, img.Height, GraphicsUnit.Pixel, imgAttribute);
-            graphics.Dispose();
+            graphics.Dispose(); 
             return bmp;
         }
 
@@ -239,7 +239,7 @@ namespace OpenPlex
             string htmlSource = GetWebText(webDirectory);
             var patternFileName = new Regex("<a [^>]*href=(?:'(?<href>.*?)')|(?:\"(?<href>.*?)\")");
             var urls = patternFileName.Matches(htmlSource).OfType<Match>().Select(m => m.Groups["href"].Value).ToList();
-            foreach (var file in urls)
+            foreach(var file in urls)
             {
                 if (fileTypes.Contains(Path.GetExtension(file)) == true)
                 {
@@ -249,7 +249,7 @@ namespace OpenPlex
 
             return dataFiles;
         }
-
+        
         public static string[] dataMovies;
         public static string[] dataMoviesJson;
         public static List<string> dataFiles = new List<string>();
@@ -292,7 +292,7 @@ namespace OpenPlex
 
                             try
                             {
-                                string jsonData = client.DownloadString("https://tvv2.apifetch.website/movie/" + data.ImdbID);
+                                string jsonData = client.DownloadString("https://tv-v2.apifetch.website/movie/" + data.ImdbID);
                                 var jsonDataPT = PopcornTimeEntity.FromJson(jsonData);
                                 ctrlPoster.infoImageFanart = jsonDataPT.Images.Fanart;
                             }
@@ -313,25 +313,25 @@ namespace OpenPlex
             for (int i = 0; i < loadCount; i++)
             {
                 BackGroundWorker.RunWorkAsync<object[]>(() => FetchMovieData(), (movie) =>
-                {
-                    if (movie.Length <= 0)
-                        return;
-                    else if ((ctrlMoviesPoster)movie[0] == null)
-                        return;
+               {
+                   if (movie.Length <= 0)
+                       return;
+                   else if ((ctrlMoviesPoster)movie[0] == null)
+                       return;
 
-                    ctrlMoviesPoster ctrlPoster = (ctrlMoviesPoster)movie[0];
-                    string ImdbID = (string)movie[1];
+                   ctrlMoviesPoster ctrlPoster = (ctrlMoviesPoster)movie[0];
+                   string ImdbID = (string)movie[1];
 
-                    ctrlPoster.Show();
-                    ctrlPoster.Name = ImdbID;
-                    panelMovies.Controls.Add(ctrlPoster);
+                   ctrlPoster.Show();
+                   ctrlPoster.Name = ImdbID;
+                   panelMovies.Controls.Add(ctrlPoster);
 
-                });
+               });
             }
 
             tab.SelectedTab = tabMovies;
         }
-
+        
         public void checkForUpdate()
         {
             Version newVersion = null;
@@ -537,7 +537,7 @@ namespace OpenPlex
         {
             return new FileInfo(filename).LastAccessTime < DateTime.Now.AddHours(-hours);
         }
-
+        
         private void imgCloseAbout_Click(object sender, EventArgs e)
         {
             tab.SelectedTab = currentTab;
@@ -585,7 +585,7 @@ namespace OpenPlex
                 titleLineAbout.Visible = false;
                 titleLineDownloads.Visible = false;
             }
-            else if (tab.SelectedTab == tabFiles)
+            else if(tab.SelectedTab == tabFiles)
             {
                 currentTab = tabFiles;
                 titleLineMovies.Visible = false;
