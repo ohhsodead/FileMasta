@@ -1,17 +1,17 @@
-﻿using PopcornTimeAPI;
-using OMDbAPI;
+﻿using OMDbAPI;
+using PopcornTimeAPI;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Net;
-using System.Windows.Forms;
-using System.Drawing.Imaging;
-using System.Diagnostics;
 using System.Text.RegularExpressions;
-using System.ComponentModel;
+using System.Windows.Forms;
 
 namespace OpenPlex
 {
@@ -102,7 +102,7 @@ namespace OpenPlex
             ImageAttributes imgAttribute = new ImageAttributes();
             imgAttribute.SetColorMatrix(colormatrix, ColorMatrixFlag.Default, ColorAdjustType.Bitmap);
             graphics.DrawImage(img, new Rectangle(0, 0, bmp.Width, bmp.Height), 0, 0, img.Width, img.Height, GraphicsUnit.Pixel, imgAttribute);
-            graphics.Dispose(); 
+            graphics.Dispose();
             return bmp;
         }
 
@@ -239,7 +239,7 @@ namespace OpenPlex
             string htmlSource = GetWebText(webDirectory);
             var patternFileName = new Regex("<a [^>]*href=(?:'(?<href>.*?)')|(?:\"(?<href>.*?)\")");
             var urls = patternFileName.Matches(htmlSource).OfType<Match>().Select(m => m.Groups["href"].Value).ToList();
-            foreach(var file in urls)
+            foreach (var file in urls)
             {
                 if (fileTypes.Contains(Path.GetExtension(file)) == true)
                 {
@@ -249,7 +249,7 @@ namespace OpenPlex
 
             return dataFiles;
         }
-        
+
         public static string[] dataMovies;
         public static string[] dataMoviesJson;
         public static List<string> dataFiles = new List<string>();
@@ -257,20 +257,20 @@ namespace OpenPlex
         int countedMovies = 0;
         string selectedGenre = "";
 
-        public void loadMovies(int loadCount)
+        private object MovieLock = new object();
+        private object[] FetchMovieData()
         {
-            int loadedCount = 0;
-
-            foreach (string movie in dataMoviesJson.Reverse().Skip(countedMovies))
+            lock (MovieLock)
             {
-                if (loadedCount < loadCount)
+                foreach (string movie in dataMoviesJson.Reverse().Skip(countedMovies))
                 {
-                    if (string.IsNullOrEmpty(movie) == false)
+                    if (!string.IsNullOrEmpty(movie))
                     {
                         var data = OMDbEntity.FromJson(movie);
 
                         if (data.Title.ToLower().Contains(txtMoviesSearchBox.Text.ToLower()) | data.Actors.ToLower().Contains(txtMoviesSearchBox.Text.ToLower()) | data.Year == txtMoviesSearchBox.Text && data.Genre.ToLower().Contains(selectedGenre.ToLower()))
                         {
+                            countedMovies += 1;
                             ctrlMoviesPoster ctrlPoster = new ctrlMoviesPoster();
                             ctrlPoster.infoTitle.Text = data.Title;
                             ctrlPoster.infoYear.Text = data.Year;
@@ -292,25 +292,46 @@ namespace OpenPlex
 
                             try
                             {
-                                string jsonData = client.DownloadString("https://tv-v2.api-fetch.website/movie/" + data.ImdbID);
+                                string jsonData = client.DownloadString("https://tvv2.apifetch.website/movie/" + data.ImdbID);
                                 var jsonDataPT = PopcornTimeEntity.FromJson(jsonData);
                                 ctrlPoster.infoImageFanart = jsonDataPT.Images.Fanart;
                             }
                             catch { }
 
-                            ctrlPoster.Show();
-                            ctrlPoster.Name = data.ImdbID;
-                            panelMovies.Controls.Add(ctrlPoster);
-                            loadedCount += 1;
+                            return new object[] { ctrlPoster, data.ImdbID };
                         }
-                        countedMovies += 1;
+                        return new object[0];
                     }
+                    return new object[0];
                 }
+                return new object[0];
+            }
+        }
+
+        public void loadMovies(int loadCount)
+        {
+            for (int i = 0; i < loadCount; i++)
+            {
+                BackGroundWorker.RunWorkAsync<object[]>(() => FetchMovieData(), (movie) =>
+                {
+                    if (movie.Length <= 0)
+                        return;
+                    else if ((ctrlMoviesPoster)movie[0] == null)
+                        return;
+
+                    ctrlMoviesPoster ctrlPoster = (ctrlMoviesPoster)movie[0];
+                    string ImdbID = (string)movie[1];
+
+                    ctrlPoster.Show();
+                    ctrlPoster.Name = ImdbID;
+                    panelMovies.Controls.Add(ctrlPoster);
+
+                });
             }
 
             tab.SelectedTab = tabMovies;
         }
-        
+
         public void checkForUpdate()
         {
             Version newVersion = null;
@@ -516,7 +537,7 @@ namespace OpenPlex
         {
             return new FileInfo(filename).LastAccessTime < DateTime.Now.AddHours(-hours);
         }
-        
+
         private void imgCloseAbout_Click(object sender, EventArgs e)
         {
             tab.SelectedTab = currentTab;
@@ -564,7 +585,7 @@ namespace OpenPlex
                 titleLineAbout.Visible = false;
                 titleLineDownloads.Visible = false;
             }
-            else if(tab.SelectedTab == tabFiles)
+            else if (tab.SelectedTab == tabFiles)
             {
                 currentTab = tabFiles;
                 titleLineMovies.Visible = false;
