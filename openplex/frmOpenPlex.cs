@@ -239,55 +239,71 @@ namespace OpenPlex
         int countedMovies = 0;
         string selectedGenre = "";
 
-        public void loadMovies(int loadCount)
+        private object[] FetchMovieData()
         {
-            int loadedCount = 0;
-
             foreach (string movie in dataMoviesJson.Reverse().Skip(countedMovies))
             {
-                if (loadedCount < loadCount)
+                if (string.IsNullOrEmpty(movie) == false)
                 {
-                    if (string.IsNullOrEmpty(movie) == false)
+                    var data = OMDbEntity.FromJson(movie);
+
+                    if (data.Title.ToLower().Contains(txtMoviesSearchBox.Text.ToLower()) | data.Actors.ToLower().Contains(txtMoviesSearchBox.Text.ToLower()) | data.Year == txtMoviesSearchBox.Text && data.Genre.ToLower().Contains(selectedGenre.ToLower()))
                     {
-                        var data = OMDbEntity.FromJson(movie);
 
-                        if (data.Title.ToLower().Contains(txtMoviesSearchBox.Text.ToLower()) | data.Actors.ToLower().Contains(txtMoviesSearchBox.Text.ToLower()) | data.Year == txtMoviesSearchBox.Text && data.Genre.ToLower().Contains(selectedGenre.ToLower()))
+                        ctrlMoviesPoster ctrlPoster = new ctrlMoviesPoster();
+                        ctrlPoster.infoTitle.Text = data.Title;
+                        ctrlPoster.infoYear.Text = data.Year;
+
+                        ctrlPoster.infoGenres = data.Genre;
+                        ctrlPoster.infoSynopsis = data.Plot;
+                        ctrlPoster.infoRuntime = data.Runtime;
+                        ctrlPoster.infoRated = data.Rated;
+                        ctrlPoster.infoDirector = data.Director;
+                        ctrlPoster.infoCast = data.Actors;
+
+                        ctrlPoster.infoImdbRating = data.ImdbRating;
+                        ctrlPoster.infoImdbId = data.ImdbID;
+
+                        ctrlPoster.infoPoster.BackgroundImage = LoadPicture(data.Poster);
+                        ctrlPoster.infoImagePoster = data.Poster;
+
+                        ctrlPoster.infoMovieLinks = data.Sources;
+
+                        try
                         {
-                            ctrlMoviesPoster ctrlPoster = new ctrlMoviesPoster();
-                            ctrlPoster.infoTitle.Text = data.Title;
-                            ctrlPoster.infoYear.Text = data.Year;
-
-                            ctrlPoster.infoGenres = data.Genre;
-                            ctrlPoster.infoSynopsis = data.Plot;
-                            ctrlPoster.infoRuntime = data.Runtime;
-                            ctrlPoster.infoRated = data.Rated;
-                            ctrlPoster.infoDirector = data.Director;
-                            ctrlPoster.infoCast = data.Actors;
-
-                            ctrlPoster.infoImdbRating = data.ImdbRating;
-                            ctrlPoster.infoImdbId = data.ImdbID;
-
-                            ctrlPoster.infoPoster.BackgroundImage = LoadPicture(data.Poster);
-                            ctrlPoster.infoImagePoster = data.Poster;
-
-                            ctrlPoster.infoMovieLinks = data.Sources;
-
-                            try
-                            {
-                                string jsonData = client.DownloadString("https://tv-v2.api-fetch.website/movie/" + data.ImdbID);
-                                var jsonDataPT = PopcornTimeEntity.FromJson(jsonData);
-                                ctrlPoster.infoImageFanart = jsonDataPT.Images.Fanart;
-                            }
-                            catch { }
-
-                            ctrlPoster.Show();
-                            ctrlPoster.Name = data.ImdbID;
-                            panelMovies.Controls.Add(ctrlPoster);
-                            loadedCount += 1;
+                            string jsonData = client.DownloadString("https://tv-v2.api-fetch.website/movie/" + data.ImdbID);
+                            var jsonDataPT = PopcornTimeEntity.FromJson(jsonData);
+                            ctrlPoster.infoImageFanart = jsonDataPT.Images.Fanart;
                         }
-                        countedMovies += 1;
+                        catch { }
+
+                        return new object[] { ctrlPoster, data.ImdbID };
                     }
+                    return new object[0];
                 }
+                return new object[0];
+            }
+            return new object[0];
+        }
+
+        public void loadMovies(int loadCount)
+        {
+            for (int i = 0; i < loadCount; i++)
+            {
+                object[] data = new object[2];
+                ctrlMoviesPoster ctrlPoster = new ctrlMoviesPoster();
+                string ImdbID = "";
+
+                BackGroundWorker.RunWorkAsync<object[]>(() => FetchMovieData(), (movie) => data = movie);
+
+                ctrlPoster = (ctrlMoviesPoster)data[0];
+                ImdbID = (string)data[1];
+
+
+                ctrlPoster.Show();
+                ctrlPoster.Name = ImdbID;
+                panelMovies.Controls.Add(ctrlPoster);
+                countedMovies += 1;
             }
 
             tab.SelectedTab = tabMovies;
