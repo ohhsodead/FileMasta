@@ -123,7 +123,7 @@ namespace OpenPlex
             Directory.CreateDirectory(pathData);
             Directory.CreateDirectory(pathDownloads);
 
-            tabAbout.BackgroundImage = ChangeOpacity(Properties.Resources.background_original, 0.2F);
+            tabAbout.BackgroundImage = ChangeOpacity(Properties.Resources.background_original, 0.5F);
 
             lblAboutVersion.Text = "v" + Application.ProductVersion;
 
@@ -202,17 +202,17 @@ namespace OpenPlex
             dataMoviesJson = File.ReadAllLines(pathData + "openplex-movies-db.json");
 
             foreach (string movie in dataMovies)
-                            {
+            {
                 string[] movieCredentials = movie.Split('~');
-                                foreach (string movie1 in movieCredentials[2].Split('*'))
-                                   {
+                foreach (string movie1 in movieCredentials[2].Split('*'))
+                {
                     dataFiles.Add(movie1);
-                                    }
-                            }
+                }
+            }
 
             foreach (string file in dataFiles.Take(100))
             {
-                dataGrid.Rows.Add(new Uri(file).Host.Replace("www.", ""), Path.GetFileName(file).Replace("%20", " "), file);
+                dataGrid.Rows.Add(Path.GetFileNameWithoutExtension(new Uri(file).LocalPath), Path.GetExtension(file).Replace(".", "").ToUpper(), new Uri(file).Host.Replace("www.", ""), file);
             }
         }
 
@@ -459,7 +459,7 @@ namespace OpenPlex
                 {
                     if (GetWords(txtFilesSearchBox.Text.ToLower()).Any(x => Path.GetFileNameWithoutExtension(file.ToLower()).Contains(x)))
                     {
-                        dataGrid.Rows.Add(Path.GetFileNameWithoutExtension(file.Replace("%20", " ")), new Uri(file.Replace("www.", "")).Host, file);
+                        dataGrid.Rows.Add(Path.GetFileNameWithoutExtension(new Uri(file).LocalPath), Path.GetExtension(file).Replace(".", "").ToUpper(), new Uri(file).Host.Replace("www.", ""), file);
                     }
                 }
 
@@ -534,7 +534,7 @@ namespace OpenPlex
 
         private void dataGrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            showFileDetails(dataGrid.CurrentRow.Cells[2].Value.ToString());
+            showFileDetails(dataGrid.CurrentRow.Cells[3].Value.ToString());
         }
 
         public TabPage currentTab;
