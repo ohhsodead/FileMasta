@@ -532,7 +532,7 @@ namespace OpenPlex
             e.PaintParts &= ~DataGridViewPaintParts.Focus;
         }
 
-        private void dataGrid_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             showFileDetails(dataGrid.CurrentRow.Cells[3].Value.ToString());
         }
