@@ -136,20 +136,47 @@ namespace OpenPlex
 
         void worker_DoWork(object sender, DoWorkEventArgs e)
         {
-            if (File.Exists(pathData + "openplex-movies-db.txt"))
+            try
             {
-                if (IsBelowThreshold(pathData + "openplex-movies-db.txt", 12) == true) // if movies db older than 12 hours then write db
+                if (File.Exists(pathData + "openplex-movies-db.txt"))
                 {
-                    client.DownloadFile(new Uri(linkMovies), pathData + "openplex-movies-db.txt");
+                    if (IsBelowThreshold(pathData + "openplex-movies-db.txt", 12) == true) // if movies db older than 12 hours then write db
+                    {
+                        client.DownloadFile(new Uri(linkMovies), pathData + "openplex-movies-db.txt");
+                    }
                 }
-            }
-            else { client.DownloadFile(new Uri(linkMovies), pathData + "openplex-movies-db.txt"); }
+                else { client.DownloadFile(new Uri(linkMovies), pathData + "openplex-movies-db.txt"); }
 
-            dataMovies = File.ReadAllLines(pathData + "openplex-movies-db.txt");
+                dataMovies = File.ReadAllLines(pathData + "openplex-movies-db.txt");
 
-            if (File.Exists(pathData + "openplex-movies-db.json")) // if json db exists
-            {
-                if (IsBelowThreshold(pathData + "openplex-movies-db.json", 12) == true) // if movies json db older than 12 hours then write json db
+                if (File.Exists(pathData + "openplex-movies-db.json")) // if json db exists
+                {
+                    if (IsBelowThreshold(pathData + "openplex-movies-db.json", 12) == true) // if movies json db older than 12 hours then write json db
+                    {
+                        if (File.Exists(pathData + "openplex-movies-db.json")) { File.Delete(pathData + "openplex-movies-db.json"); }
+                        using (StreamWriter sw = File.CreateText(pathData + "openplex-movies-db.json"))
+                        {
+                            foreach (string movie in dataMovies)
+                            {
+                                try
+                                {
+                                    string[] movieCredentials = movie.Split('~');
+                                    var jsonOMDb = client.DownloadString("http://omdbapi.com/?apikey=c933e052&t=" + movieCredentials[0] + "&y=" + movieCredentials[1] + "&plot=short");
+                                    var data = OMDbEntity.FromJson(jsonOMDb);
+                                    if (data.Response == "True")
+                                    {
+                                        data.Sources = movieCredentials[2].Split('*');
+                                        sw.WriteLine(data.ToJson());
+                                    }
+                                }
+                                catch { }
+                            }
+                            sw.Close();
+                            sw.Dispose();
+                        }
+                    }
+                }
+                else // if json db doesn't exist
                 {
                     if (File.Exists(pathData + "openplex-movies-db.json")) { File.Delete(pathData + "openplex-movies-db.json"); }
                     using (StreamWriter sw = File.CreateText(pathData + "openplex-movies-db.json"))
@@ -173,52 +200,29 @@ namespace OpenPlex
                         sw.Dispose();
                     }
                 }
-            }
-            else // if json db doesn't exist
-            {
-                if (File.Exists(pathData + "openplex-movies-db.json")) { File.Delete(pathData + "openplex-movies-db.json"); }
-                using (StreamWriter sw = File.CreateText(pathData + "openplex-movies-db.json"))
+
+                dataMoviesJson = File.ReadAllLines(pathData + "openplex-movies-db.json");
+
+                foreach (string movie in dataMovies)
                 {
-                    foreach (string movie in dataMovies)
+                    string[] movieCredentials = movie.Split('~');
+                    foreach (string movie1 in movieCredentials[2].Split('*'))
                     {
-                        try
-                        {
-                            string[] movieCredentials = movie.Split('~');
-                            var jsonOMDb = client.DownloadString("http://omdbapi.com/?apikey=c933e052&t=" + movieCredentials[0] + "&y=" + movieCredentials[1] + "&plot=short");
-                            var data = OMDbEntity.FromJson(jsonOMDb);
-                            if (data.Response == "True")
-                            {
-                                data.Sources = movieCredentials[2].Split('*');
-                                sw.WriteLine(data.ToJson());
-                            }
-                        }
-                        catch { }
+                        dataFiles.Add(movie1);
                     }
-                    sw.Close();
-                    sw.Dispose();
                 }
-            }
 
-            dataMoviesJson = File.ReadAllLines(pathData + "openplex-movies-db.json");
-
-            foreach (string movie in dataMovies)
-            {
-                string[] movieCredentials = movie.Split('~');
-                foreach (string movie1 in movieCredentials[2].Split('*'))
+                foreach (string file in dataFiles.Take(100))
                 {
-                    dataFiles.Add(movie1);
+                    dataGrid.Rows.Add(Path.GetFileNameWithoutExtension(new Uri(file).LocalPath), Path.GetExtension(file).Replace(".", "").ToUpper(), new Uri(file).Host.Replace("www.", ""), file);
                 }
             }
-
-            foreach (string file in dataFiles.Take(100))
-            {
-                dataGrid.Rows.Add(Path.GetFileNameWithoutExtension(new Uri(file).LocalPath), Path.GetExtension(file).Replace(".", "").ToUpper(), new Uri(file).Host.Replace("www.", ""), file);
-            }
+            catch (Exception ex) { MessageBox.Show("Unable to load movies.\n\n" + ex.Message); }
         }
 
         void worker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            loadMovies(38);
+            loadMovies(52);
             Controls.Remove(frmSplash);
         }
 
@@ -242,7 +246,6 @@ namespace OpenPlex
 
                         if (data.Title.ToLower().Contains(txtMoviesSearchBox.Text.ToLower()) | data.Actors.ToLower().Contains(txtMoviesSearchBox.Text.ToLower()) | data.Year == txtMoviesSearchBox.Text && data.Genre.ToLower().Contains(selectedGenre.ToLower()))
                         {
-                            countedMovies += 1;
                             ctrlMoviesPoster ctrlPoster = new ctrlMoviesPoster();
                             ctrlPoster.infoTitle.Text = data.Title;
                             ctrlPoster.infoYear.Text = data.Year;
@@ -264,13 +267,16 @@ namespace OpenPlex
 
                             try
                             {
-                                string jsonData = client.DownloadString("https://tvv2.apifetch.website/movie/" + data.ImdbID);
+                                string jsonData = client.DownloadString("https://tv-v2.api-fetch.website/movie/" + data.ImdbID);
                                 var jsonDataPT = PopcornTimeEntity.FromJson(jsonData);
                                 ctrlPoster.infoImageFanart = jsonDataPT.Images.Fanart;
+                                ctrlPoster.infoTrailer = jsonDataPT.Trailer;
                             }
                             catch { }
 
-                            return new object[] { ctrlPoster, data.ImdbID };
+                            countedMovies += 1;
+
+                            return new object[] { ctrlPoster, data.ImdbID, };
                         }
                         return new object[0];
                     }
@@ -296,8 +302,8 @@ namespace OpenPlex
 
                     ctrlPoster.Show();
                     ctrlPoster.Name = ImdbID;
-                    panelMovies.Controls.Add(ctrlPoster);
 
+                    panelMovies.Controls.Add(ctrlPoster);
                 });
             }
 
@@ -591,7 +597,7 @@ namespace OpenPlex
             VScrollProperties vs = panelMovies.VerticalScroll;
             if (e.NewValue == vs.Maximum - vs.LargeChange + 1)
             {
-                loadMovies(38);
+                loadMovies(52);
             }
         }
 
@@ -599,7 +605,7 @@ namespace OpenPlex
         {
             panelMovies.Controls.Clear();
             countedMovies = 0;
-            loadMovies(38);
+            loadMovies(52);
         }
 
         private void imgAbout_Click(object sender, EventArgs e)
@@ -626,7 +632,7 @@ namespace OpenPlex
 
             panelMovies.Controls.Clear();
             countedMovies = 0;
-            loadMovies(38);
+            loadMovies(52);
         }
 
         // Downloads 

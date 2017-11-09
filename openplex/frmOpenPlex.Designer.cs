@@ -154,6 +154,7 @@
             this.txtMoviesSearchBox.Name = "txtMoviesSearchBox";
             this.txtMoviesSearchBox.Size = new System.Drawing.Size(399, 20);
             this.txtMoviesSearchBox.TabIndex = 0;
+            this.txtMoviesSearchBox.Visible = false;
             this.txtMoviesSearchBox.WaterMark = "Search movie title, people, years...";
             this.txtMoviesSearchBox.WaterMarkActiveForeColor = System.Drawing.Color.Black;
             this.txtMoviesSearchBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 10.75F);
@@ -181,6 +182,7 @@
             this.btnSearchMovies.Size = new System.Drawing.Size(36, 36);
             this.btnSearchMovies.TabIndex = 1;
             this.btnSearchMovies.Text = "";
+            this.btnSearchMovies.Visible = false;
             this.btnSearchMovies.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnSearchMovies_ClickButtonArea);
             // 
             // bgMoviesSearchBox
@@ -206,6 +208,7 @@
             this.bgMoviesSearchBox.TabIndex = 0;
             this.bgMoviesSearchBox.TabStop = false;
             this.bgMoviesSearchBox.Text = "";
+            this.bgMoviesSearchBox.Visible = false;
             // 
             // panelMovieFilters
             // 
@@ -216,6 +219,7 @@
             this.panelMovieFilters.Name = "panelMovieFilters";
             this.panelMovieFilters.Size = new System.Drawing.Size(366, 36);
             this.panelMovieFilters.TabIndex = 2;
+            this.panelMovieFilters.Visible = false;
             // 
             // panelMoviesGenre
             // 
