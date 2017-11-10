@@ -20,13 +20,13 @@ If you've got any comments, queries or suggestions then simply open an issue - w
 - Simple interface, asynchronous tasks and threads for the best performance
 - Huge database of files, over a thousand
 - Search movies, files, people, years or filter by genre
-- Support for streaming files in external players (Windows Media Player & VLC)
+- Support for streaming files in external players (Windows Media Player, MPC & VLC)
 - Download files to your computer
 - Local cache updating every 12 hours
 - Collects metadata from OMDb & Popcorn Time
 
 ## How does it work?
-It communicates with its own community driven [database](https://github.com/invu/openplex-app/blob/master/Assets/openplex-movies-db.txt) to query files. Also including metadata collecting from both [OMDb API](https://omdbapi.com) and [Popcorn Time Official API](https://popcorntime.sh). Capability of opening files in both Windows Media Player and VLC Player (if installed) (support for others coming soon) and downloading multiple files asynchronously.
+It communicates with its own community driven [database](https://github.com/invu/openplex-app/blob/master/Assets/openplex-movies-db.txt) to query files. Also including metadata collecting from both [OMDb API](https://omdbapi.com) and [Popcorn Time Official API](https://popcorntime.sh). Capability of opening files in both WMP, MPC & VLC Player (if installed) (support for others coming soon) and downloading multiple files asynchronously.
 
 ## Contribute
 Our [core movie database](https://github.com/invu/openplex-app/blob/master/Assets/openplex-movies-db.txt) is completely open source, which means anyone can submit links. It's not got the best structure at the moment but we're working to improve the feasibility so that it's a lot more easier to contribute towards. Just give us time. Oh, and you can follow [this](https://help.github.com/articles/editing-files-in-another-user-s-repository/) tutorial from GitHub if you're stuck.
@@ -38,7 +38,7 @@ The application is using .NET 4.6.2 WinForms Framework written in C#.
 Windows 7+ is supported (Windows 7, 8, 8.1, 10)
 
 ## Installation
-Download installer [here](https://github.com/invu/openplex-app/releases/download/0.2.0.0/OpenPlexInstaller.exe)
+Download installer [here](https://github.com/invu/openplex-app/releases/download/0.2.0.3/OpenPlexInstaller.exe)
 
 ## Screenshots
 <img src="/Screenshots/OpenPlex - Movies.png" />
