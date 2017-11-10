@@ -149,9 +149,37 @@ namespace OpenPlex
 
                 dataMovies = File.ReadAllLines(pathData + "openplex-movies-db.txt");
 
-                if (File.Exists(pathData + "openplex-movies-db.json")) // if json db exists
+
+                try
                 {
-                    if (IsBelowThreshold(pathData + "openplex-movies-db.json", 12) == true) // if movies json db older than 12 hours then write json db
+                    if (File.Exists(pathData + "openplex-movies-db.json")) // if json db exists
+                    {
+                        if (IsBelowThreshold(pathData + "openplex-movies-db.json", 12) == true) // if movies json db older than 12 hours then write json db
+                        {
+                            if (File.Exists(pathData + "openplex-movies-db.json")) { File.Delete(pathData + "openplex-movies-db.json"); }
+                            using (StreamWriter sw = File.CreateText(pathData + "openplex-movies-db.json"))
+                            {
+                                foreach (string movie in dataMovies)
+                                {
+                                    try
+                                    {
+                                        string[] movieCredentials = movie.Split('~');
+                                        var jsonOMDb = client.DownloadString("http://omdbapi.com/?apikey=c933e052&t=" + movieCredentials[0] + "&y=" + movieCredentials[1] + "&plot=short");
+                                        var data = OMDbEntity.FromJson(jsonOMDb);
+                                        if (data.Response == "True")
+                                        {
+                                            data.Sources = movieCredentials[2].Split('*');
+                                            sw.WriteLine(data.ToJson());
+                                        }
+                                    }
+                                    catch { }
+                                }
+                                sw.Close();
+                                sw.Dispose();
+                            }
+                        }
+                    }
+                    else // if json db doesn't exist
                     {
                         if (File.Exists(pathData + "openplex-movies-db.json")) { File.Delete(pathData + "openplex-movies-db.json"); }
                         using (StreamWriter sw = File.CreateText(pathData + "openplex-movies-db.json"))
@@ -176,30 +204,8 @@ namespace OpenPlex
                         }
                     }
                 }
-                else // if json db doesn't exist
-                {
-                    if (File.Exists(pathData + "openplex-movies-db.json")) { File.Delete(pathData + "openplex-movies-db.json"); }
-                    using (StreamWriter sw = File.CreateText(pathData + "openplex-movies-db.json"))
-                    {
-                        foreach (string movie in dataMovies)
-                        {
-                            try
-                            {
-                                string[] movieCredentials = movie.Split('~');
-                                var jsonOMDb = client.DownloadString("http://omdbapi.com/?apikey=c933e052&t=" + movieCredentials[0] + "&y=" + movieCredentials[1] + "&plot=short");
-                                var data = OMDbEntity.FromJson(jsonOMDb);
-                                if (data.Response == "True")
-                                {
-                                    data.Sources = movieCredentials[2].Split('*');
-                                    sw.WriteLine(data.ToJson());
-                                }
-                            }
-                            catch { }
-                        }
-                        sw.Close();
-                        sw.Dispose();
-                    }
-                }
+                catch (Exception ex) { MessageBox.Show("Unable to convert Json database. The app will be restarted.\n\n" + ex.Message); Directory.Delete(pathRoot, true); Application.Restart(); }
+
 
                 dataMoviesJson = File.ReadAllLines(pathData + "openplex-movies-db.json");
 
@@ -244,42 +250,47 @@ namespace OpenPlex
                 {
                     if (string.IsNullOrEmpty(movie) == false)
                     {
-                        var data = OMDbEntity.FromJson(movie);
-
-                        if (data.Title.ToLower().Contains(txtMoviesSearchBox.Text.ToLower()) | data.Actors.ToLower().Contains(txtMoviesSearchBox.Text.ToLower()) | data.Year == txtMoviesSearchBox.Text && data.Genre.ToLower().Contains(selectedGenre.ToLower()))
+                        try
                         {
-                            ctrlMoviesPoster ctrlPoster = new ctrlMoviesPoster();
-                            ctrlPoster.infoTitle.Text = data.Title;
-                            ctrlPoster.infoYear.Text = data.Year;
+                            var data = OMDbEntity.FromJson(movie);
 
-                            ctrlPoster.infoGenres = data.Genre;
-                            ctrlPoster.infoSynopsis = data.Plot;
-                            ctrlPoster.infoRuntime = data.Runtime;
-                            ctrlPoster.infoRated = data.Rated;
-                            ctrlPoster.infoDirector = data.Director;
-                            ctrlPoster.infoCast = data.Actors;
-
-                            ctrlPoster.infoImdbRating = data.ImdbRating;
-                            ctrlPoster.infoImdbId = data.ImdbID;
-
-                            ctrlPoster.infoPoster.BackgroundImage = LoadPicture(data.Poster);
-                            ctrlPoster.infoImagePoster = data.Poster;
-                            ctrlPoster.Name = data.ImdbID;
-                            ctrlPoster.infoMovieLinks = data.Sources;
-
-                            try
+                            if (data.Title.ToLower().Contains(txtMoviesSearchBox.Text.ToLower()) | data.Actors.ToLower().Contains(txtMoviesSearchBox.Text.ToLower()) | data.Year == txtMoviesSearchBox.Text && data.Genre.ToLower().Contains(selectedGenre.ToLower()))
                             {
-                                string jsonData = client.DownloadString("https://tv-v2.api-fetch.website/movie/" + data.ImdbID);
-                                var jsonDataPT = PopcornTimeEntity.FromJson(jsonData);
-                                ctrlPoster.infoImageFanart = jsonDataPT.Images.Fanart;
-                            }
-                            catch { }
+                                ctrlMoviesPoster ctrlPoster = new ctrlMoviesPoster();
+                                ctrlPoster.infoTitle.Text = data.Title;
+                                ctrlPoster.infoYear.Text = data.Year;
 
-                            ctrlPoster.Show();
-                            MoviesPosters.Add(ctrlPoster);
-                            loadedCount += 1;
+                                ctrlPoster.infoGenres = data.Genre;
+                                ctrlPoster.infoSynopsis = data.Plot;
+                                ctrlPoster.infoRuntime = data.Runtime;
+                                ctrlPoster.infoRated = data.Rated;
+                                ctrlPoster.infoDirector = data.Director;
+                                ctrlPoster.infoCast = data.Actors;
+
+                                ctrlPoster.infoImdbRating = data.ImdbRating;
+                                ctrlPoster.infoImdbId = data.ImdbID;
+
+                                ctrlPoster.infoPoster.BackgroundImage = LoadPicture(data.Poster);
+                                ctrlPoster.infoImagePoster = data.Poster;
+                                ctrlPoster.Name = data.ImdbID;
+                                ctrlPoster.infoMovieLinks = data.Sources;
+
+                                try
+                                {
+                                    string jsonData = client.DownloadString("https://tv-v2.api-fetch.website/movie/" + data.ImdbID);
+                                    var jsonDataPT = PopcornTimeEntity.FromJson(jsonData);
+                                    ctrlPoster.infoImageFanart = jsonDataPT.Images.Fanart;
+                                }
+                                catch { }
+
+                                ctrlPoster.Show();
+                                MoviesPosters.Add(ctrlPoster);
+                                loadedCount += 1;
+                            }
+                            countedMovies += 1;
                         }
-                        countedMovies += 1;
+                        catch (Exception ex) { MessageBox.Show("Unable to read Json database. The app will be restarted.\n\n" + ex.Message); Directory.Delete(pathRoot, true); Application.Restart(); }
+
                     }
                 }
             }
@@ -299,10 +310,14 @@ namespace OpenPlex
                  }
                  else
                  {
-                     foreach (ctrlMoviesPoster item in data)
+                     try
                      {
-                         panelMovies.Controls.Add(item);
+                         foreach (ctrlMoviesPoster item in data)
+                         {
+                             panelMovies.Controls.Add(item);
+                         }
                      }
+                     catch { }
                      tab.SelectedTab = tabMovies;
                  }
              });
