@@ -233,14 +233,16 @@ namespace OpenPlex
         int countedMovies = 0;
         string selectedGenre = "";
 
-        private object MovieLock = new object();
-        private object[] FetchMovieData()
+        List<ctrlMoviesPoster> MoviesPosters = new List<ctrlMoviesPoster>();
+        public List<ctrlMoviesPoster> LoadMovies(int loadCount)
         {
-            lock (MovieLock)
+            int loadedCount = 0;
+
+            foreach (string movie in dataMoviesJson.Reverse().Skip(countedMovies))
             {
-                foreach (string movie in dataMoviesJson.Reverse().Skip(countedMovies))
+                if (loadedCount < loadCount)
                 {
-                    if (!string.IsNullOrEmpty(movie))
+                    if (string.IsNullOrEmpty(movie) == false)
                     {
                         var data = OMDbEntity.FromJson(movie);
 
@@ -262,7 +264,7 @@ namespace OpenPlex
 
                             ctrlPoster.infoPoster.BackgroundImage = LoadPicture(data.Poster);
                             ctrlPoster.infoImagePoster = data.Poster;
-
+                            ctrlPoster.Name = data.ImdbID;
                             ctrlPoster.infoMovieLinks = data.Sources;
 
                             try
@@ -270,44 +272,40 @@ namespace OpenPlex
                                 string jsonData = client.DownloadString("https://tv-v2.api-fetch.website/movie/" + data.ImdbID);
                                 var jsonDataPT = PopcornTimeEntity.FromJson(jsonData);
                                 ctrlPoster.infoImageFanart = jsonDataPT.Images.Fanart;
-                                ctrlPoster.infoTrailer = jsonDataPT.Trailer;
                             }
                             catch { }
 
-                            countedMovies += 1;
-
-                            return new object[] { ctrlPoster, data.ImdbID, };
+                            ctrlPoster.Show();
+                            MoviesPosters.Add(ctrlPoster);
+                            loadedCount += 1;
                         }
-                        return new object[0];
+                        countedMovies += 1;
                     }
-                    return new object[0];
                 }
-                return new object[0];
             }
+            return MoviesPosters;
         }
 
-        public void loadMovies(int loadCount)
+        delegate void loadMoviesCallBack(int count);
+        public void loadMovies(int count)
         {
-            for (int i = 0; i < loadCount; i++)
-            {
-                BackGroundWorker.RunWorkAsync<object[]>(() => FetchMovieData(), (movie) =>
-                {
-                    if (movie.Length <= 0)
-                        return;
-                    else if ((ctrlMoviesPoster)movie[0] == null)
-                        return;
-
-                    ctrlMoviesPoster ctrlPoster = (ctrlMoviesPoster)movie[0];
-                    string ImdbID = (string)movie[1];
-
-                    ctrlPoster.Show();
-                    ctrlPoster.Name = ImdbID;
-
-                    panelMovies.Controls.Add(ctrlPoster);
-                });
-            }
-
-            tab.SelectedTab = tabMovies;
+            MoviesPosters = new List<ctrlMoviesPoster>();
+            BackGroundWorker.RunWorkAsync<List<ctrlMoviesPoster>>(() => LoadMovies(count), (data) =>
+             {
+                 if (panelMovies.InvokeRequired)
+                 {
+                     loadMoviesCallBack b = new loadMoviesCallBack(loadMovies);
+                     Invoke(b, new object[] { count });
+                 }
+                 else
+                 {
+                     foreach (ctrlMoviesPoster item in data)
+                     {
+                         panelMovies.Controls.Add(item);
+                     }
+                     tab.SelectedTab = tabMovies;
+                 }
+             });
         }
 
 
