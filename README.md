@@ -8,7 +8,6 @@
 
 <div align="center">
 </div>
-[![GitQ](https://gitq.com/badge.svg)](https://gitq.com/invu/openplex-app)
 
 ## What is OpenPlex?
 OpenPlex allows you to search for Movies/TV Shows available to watch online for free by providing you with trusted files from all around the web. But that's not all - we don't use torrents. Only direct raw media files hosted across the web, playable almost anywhere. Created by a few friends who wanted to come up with something different.
