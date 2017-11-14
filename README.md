@@ -5,7 +5,7 @@
 </h1>
 
 <h3 align="center">Search for Movies/TV shows available to watch for free</h3>
-
+[![GitQ](https://gitq.com/badge.svg)](https://gitq.com/invu/openplex-app)
 <div align="center">
 </div>
 
