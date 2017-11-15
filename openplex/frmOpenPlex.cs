@@ -102,7 +102,7 @@ namespace OpenPlex
             ImageAttributes imgAttribute = new ImageAttributes();
             imgAttribute.SetColorMatrix(colormatrix, ColorMatrixFlag.Default, ColorAdjustType.Bitmap);
             graphics.DrawImage(img, new Rectangle(0, 0, bmp.Width, bmp.Height), 0, 0, img.Width, img.Height, GraphicsUnit.Pixel, imgAttribute);
-            graphics.Dispose(); 
+            graphics.Dispose();
             return bmp;
         }
 
@@ -148,6 +148,18 @@ namespace OpenPlex
                 else { client.DownloadFile(new Uri(linkMovies), pathData + "openplex-movies-db.txt"); }
 
                 dataMovies = File.ReadAllLines(pathData + "openplex-movies-db.txt");
+
+                dataDirectories = File.ReadAllLines(pathData + "openplex-directories.txt");
+
+                try
+                {
+                    foreach (string directoryUrl in dataDirectories)
+                    {
+                        var findFiles = getFilesInWebPath(directoryUrl);
+                        dataFoundFiles.AddRange(findFiles);
+                    }
+                }
+                catch { }
 
                 if (File.Exists(pathData + "openplex-movies-db.json")) // if json db exists
                 {
@@ -203,16 +215,7 @@ namespace OpenPlex
 
                 dataMoviesJson = File.ReadAllLines(pathData + "openplex-movies-db.json");
 
-                foreach (string movie in dataMovies)
-                {
-                    string[] movieCredentials = movie.Split('~');
-                    foreach (string movie1 in movieCredentials[2].Split('*'))
-                    {
-                        dataFiles.Add(movie1);
-                    }
-                }
-
-                foreach (string file in dataFiles.Take(100))
+                foreach (string file in dataFoundFiles.Take(100))
                 {
                     dataGrid.Rows.Add(Path.GetFileNameWithoutExtension(new Uri(file).LocalPath), Path.GetExtension(file).Replace(".", "").ToUpper(), new Uri(file).Host.Replace("www.", ""), file);
                 }
@@ -225,6 +228,56 @@ namespace OpenPlex
             loadMovies(52);
             Controls.Remove(frmSplash);
         }
+
+        public static string GetDirectoryListingRegexForUrl(string Url)
+        {
+            if (Url.Equals(Url))
+            {
+                return "<a href=\".*\">(?<name>.*)</a>";
+            }
+            throw new NotSupportedException();
+        }
+
+        public List<string> getFilesInWebPath(string pathUrl)
+        {
+            try
+            {
+                List<string> foundFiles = new List<string>();
+
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(pathUrl);
+                using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
+                {
+                    using (StreamReader reader = new StreamReader(response.GetResponseStream()))
+                    {
+                        string html = reader.ReadToEnd();
+                        Regex regex = new Regex(GetDirectoryListingRegexForUrl(pathUrl));
+                        MatchCollection matches = regex.Matches(html);
+                        if (matches.Count > 0)
+                        {
+                            foreach (Match match in matches)
+                            {
+                                if (match.Success)
+                                {
+                                    Uri uriAddress2 = new Uri(pathUrl + match.Groups["name"].Value);
+                                    var hasExtension = Path.HasExtension(uriAddress2.AbsolutePath);
+
+                                    if (hasExtension == true)
+                                    {
+                                        foundFiles.Add(uriAddress2.AbsoluteUri);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                return foundFiles;
+            }
+            catch { return null; }
+        }
+
+        public static string[] dataDirectories;
+        public static List<string> dataFoundFiles = new List<string>();
 
         public static string[] dataMovies;
         public static string[] dataMoviesJson;
@@ -457,7 +510,7 @@ namespace OpenPlex
                 dataGrid.Rows.Clear();
                 string[] keyWords = Regex.Split(txtFilesSearchBox.Text, @"\s+");
 
-                foreach (string file in dataFiles)
+                foreach (string file in dataFoundFiles)
                 {
                     if (GetWords(txtFilesSearchBox.Text.ToLower()).Any(x => Path.GetFileNameWithoutExtension(file.ToLower()).Contains(x)))
                     {
@@ -518,7 +571,7 @@ namespace OpenPlex
         {
             return new FileInfo(filename).LastAccessTime < DateTime.Now.AddHours(-hours);
         }
-        
+
         private void imgCloseAbout_Click(object sender, EventArgs e)
         {
             tab.SelectedTab = currentTab;
@@ -566,7 +619,7 @@ namespace OpenPlex
                 titleLineAbout.Visible = false;
                 titleLineDownloads.Visible = false;
             }
-            else if(tab.SelectedTab == tabFiles)
+            else if (tab.SelectedTab == tabFiles)
             {
                 currentTab = tabFiles;
                 titleLineMovies.Visible = false;
@@ -655,6 +708,51 @@ namespace OpenPlex
         private void panelDownloadItems_ControlRemoved(object sender, ControlEventArgs e)
         {
             if (panelDownloads.Controls.Count == 0) { lblNoDownloads.Visible = true; } else { lblNoDownloads.Visible = false; }
+        }
+
+
+        // Get files from FTP (As seen on https://stackoverflow.com/a/31526932)
+
+        public class FileName : IComparable<FileName>
+        {
+            public string fName { get; set; }
+            public int CompareTo(FileName other)
+            {
+                return fName.CompareTo(other.fName);
+            }
+        }
+
+        public static void getFileList(string sourceURI, string sourceUser, string sourcePass, List<FileName> sourceFileList)
+        {
+            string line = "";
+            FtpWebRequest sourceRequest;
+            sourceRequest = (FtpWebRequest)WebRequest.Create(sourceURI);
+            //sourceRequest.Credentials = new NetworkCredential(sourceUser, sourcePass);
+            sourceRequest.UseDefaultCredentials = true;
+            sourceRequest.Method = WebRequestMethods.Ftp.ListDirectory;
+            sourceRequest.UseBinary = true;
+            sourceRequest.KeepAlive = false;
+            sourceRequest.Timeout = -1;
+            sourceRequest.UsePassive = true;
+            FtpWebResponse sourceRespone = (FtpWebResponse)sourceRequest.GetResponse();
+
+            //Creates a list(fileList) of the file names
+            using (Stream responseStream = sourceRespone.GetResponseStream())
+            {
+                using (StreamReader reader = new StreamReader(responseStream))
+                {
+                    line = reader.ReadLine();
+                    while (line != null)
+                    {
+                        var fileName = new FileName
+                        {
+                            fName = line
+                        };
+                        sourceFileList.Add(fileName);
+                        line = reader.ReadLine();
+                    }
+                }
+            }
         }
     }
 }
