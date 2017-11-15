@@ -87,6 +87,12 @@
     <Compile Include="ctrlMoviesPoster.Designer.cs">
       <DependentUpon>ctrlMoviesPoster.cs</DependentUpon>
     </Compile>
+    <Compile Include="ctrlSpinner.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrlSpinner.Designer.cs">
+      <DependentUpon>ctrlSpinner.cs</DependentUpon>
+    </Compile>
     <Compile Include="ctrlSplashScreen.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -121,6 +127,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ctrlMoviesPoster.resx">
       <DependentUpon>ctrlMoviesPoster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrlSpinner.resx">
+      <DependentUpon>ctrlSpinner.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ctrlSplashScreen.resx">
       <DependentUpon>ctrlSplashScreen.cs</DependentUpon>
@@ -168,6 +177,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="openplex_logo.ico" />
+    <None Include="Resources\spinner.GIF" />
     <None Include="Resources\background-original.jpg" />
     <None Include="Resources\magnify.png" />
     <None Include="Resources\chevron-down.png" />
@@ -193,12 +203,6 @@
     <None Include="Resources\PopupCloseH.png" />
     <None Include="Resources\PopupCloseL.png" />
     <None Include="Resources\Dark Sky Night.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\UnhandledExceptions\UnhandledExceptions.csproj">
-      <Project>{8c34bf91-cce3-47fa-aa32-4b2bb1a6f17a}</Project>
-      <Name>UnhandledExceptions</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
