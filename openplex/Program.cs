@@ -1,8 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Diagnostics;
 using System.Windows.Forms;
+using UnhandledExceptions;
 
 namespace OpenPlex
 {
@@ -13,6 +12,21 @@ namespace OpenPlex
         /// </summary>
         [STAThread]
         static void Main()
+        {
+            if (Debugger.IsAttached)
+            {
+                Run();
+                return;
+            }
+
+            Application.SetUnhandledExceptionMode(UnhandledExceptionMode.CatchException);
+            Application.ThreadException += ExceptionsEvents.ApplicationThreadException;
+            AppDomain.CurrentDomain.UnhandledException += ExceptionsEvents.CurrentDomainUnhandledException;
+
+            Run();
+        }
+
+        static void Run()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

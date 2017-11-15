@@ -14,3 +14,26 @@ C:\Users\imAsh\Documents\Visual Studio 2015\Projects\openplex\openplex\obj\Debug
 C:\Users\imAsh\Documents\Visual Studio 2015\Projects\openplex\openplex\obj\Debug\OpenPlex.pdb
 C:\Users\imAsh\Documents\Visual Studio 2015\Projects\openplex\openplex\bin\Debug\CButtonLib.pdb
 C:\Users\imAsh\Documents\Visual Studio 2015\Projects\openplex\openplex\bin\Debug\CButtonLib.xml
+C:\Users\BadrAzizi\Documents\Visual Studio 2015\Projects\GitHub Repo\openplex-app\openplex\bin\Debug\OpenPlex.exe.config
+C:\Users\BadrAzizi\Documents\Visual Studio 2015\Projects\GitHub Repo\openplex-app\openplex\obj\Debug\OpenPlex.exe
+C:\Users\BadrAzizi\Documents\Visual Studio 2015\Projects\GitHub Repo\openplex-app\openplex\obj\Debug\OpenPlex.pdb
+C:\Users\BadrAzizi\Documents\Visual Studio 2015\Projects\GitHub Repo\openplex-app\openplex\bin\Debug\OpenPlex.exe
+C:\Users\BadrAzizi\Documents\Visual Studio 2015\Projects\GitHub Repo\openplex-app\openplex\bin\Debug\OpenPlex.pdb
+C:\Users\BadrAzizi\Documents\Visual Studio 2015\Projects\GitHub Repo\openplex-app\openplex\bin\Debug\en\OpenPlex.resources.dll
+C:\Users\BadrAzizi\Documents\Visual Studio 2015\Projects\GitHub Repo\openplex-app\openplex\bin\Debug\Newtonsoft.Json.dll
+C:\Users\BadrAzizi\Documents\Visual Studio 2015\Projects\GitHub Repo\openplex-app\openplex\bin\Debug\UnhandledExceptions.dll
+C:\Users\BadrAzizi\Documents\Visual Studio 2015\Projects\GitHub Repo\openplex-app\openplex\bin\Debug\Octokit.dll
+C:\Users\BadrAzizi\Documents\Visual Studio 2015\Projects\GitHub Repo\openplex-app\openplex\bin\Debug\UnhandledExceptions.pdb
+C:\Users\BadrAzizi\Documents\Visual Studio 2015\Projects\GitHub Repo\openplex-app\openplex\bin\Debug\Newtonsoft.Json.xml
+C:\Users\BadrAzizi\Documents\Visual Studio 2015\Projects\GitHub Repo\openplex-app\openplex\bin\Debug\Octokit.xml
+C:\Users\BadrAzizi\Documents\Visual Studio 2015\Projects\GitHub Repo\openplex-app\openplex\obj\Debug\OpenPlex.csprojResolveAssemblyReference.cache
+C:\Users\BadrAzizi\Documents\Visual Studio 2015\Projects\GitHub Repo\openplex-app\openplex\obj\Debug\OpenPlex.ctrlDetails.resources
+C:\Users\BadrAzizi\Documents\Visual Studio 2015\Projects\GitHub Repo\openplex-app\openplex\obj\Debug\OpenPlex.ctrlDownloadItem.resources
+C:\Users\BadrAzizi\Documents\Visual Studio 2015\Projects\GitHub Repo\openplex-app\openplex\obj\Debug\OpenPlex.ctrlMoviesPoster.resources
+C:\Users\BadrAzizi\Documents\Visual Studio 2015\Projects\GitHub Repo\openplex-app\openplex\obj\Debug\OpenPlex.ctrlSplashScreen.resources
+C:\Users\BadrAzizi\Documents\Visual Studio 2015\Projects\GitHub Repo\openplex-app\openplex\obj\Debug\OpenPlex.ctrlStreamInfo.resources
+C:\Users\BadrAzizi\Documents\Visual Studio 2015\Projects\GitHub Repo\openplex-app\openplex\obj\Debug\OpenPlex.frmOpenPlex.resources
+C:\Users\BadrAzizi\Documents\Visual Studio 2015\Projects\GitHub Repo\openplex-app\openplex\obj\Debug\OpenPlex.Properties.Resources.resources
+C:\Users\BadrAzizi\Documents\Visual Studio 2015\Projects\GitHub Repo\openplex-app\openplex\obj\Debug\OpenPlex.frmOpenPlex.en.resources
+C:\Users\BadrAzizi\Documents\Visual Studio 2015\Projects\GitHub Repo\openplex-app\openplex\obj\Debug\OpenPlex.csproj.GenerateResource.Cache
+C:\Users\BadrAzizi\Documents\Visual Studio 2015\Projects\GitHub Repo\openplex-app\openplex\obj\Debug\en\OpenPlex.resources.dll
