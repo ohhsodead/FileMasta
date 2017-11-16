@@ -23,7 +23,6 @@ namespace OpenPlex
             InitializeComponent();
             form = this;
             frmSplash = new ctrlSplashScreen();
-            frmSpinner = new ctrlSpinner();
 
             Controls.Add(frmSplash);
             frmSplash.Dock = DockStyle.Fill;
@@ -31,24 +30,16 @@ namespace OpenPlex
             frmSplash.ClientSize = ClientSize;
             frmSplash.BringToFront();
             frmSplash.Show();
-
-            Controls.Add(frmSpinner);
-            frmSpinner.Dock = DockStyle.Fill;
-            frmSpinner.Location = new Point(0, 0);
-            frmSpinner.ClientSize = ClientSize;
-            frmSpinner.BringToFront();
-            frmSpinner.Hide();
         }
 
         private BackgroundWorker worker;
 
         public static frmOpenPlex form = null;
         public ctrlSplashScreen frmSplash;
-        public ctrlSpinner frmSpinner;
         protected override void OnPaint(PaintEventArgs e) { }
 
-        public static string linkFiles = "https://raw.githubusercontent.com/invu/openplex-app/master/Assets/openplex-files.txt";
-        public static string linkMovies = "https://raw.githubusercontent.com/invu/openplex-app/master/Assets/openplex-movies-db.txt";
+        public static string linkFiles = "https://raw.githubusercontent.com/invu/openplex-app/master/assets/open-files.txt";
+        public static string linkMovies = "https://raw.githubusercontent.com/invu/openplex-app/master/assets/open-movies-db.txt";
         public static string linkLatestVersion = "https://raw.githubusercontent.com/invu/openplex-app/master/Assets/openplex-version.txt";
         public static string pathInstallerFileName = "OpenPlexInstaller.exe";
         public static string pathDownloadInstaller = KnownFolders.GetPath(KnownFolder.Downloads) + @"\" + pathInstallerFileName;

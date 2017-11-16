@@ -53,7 +53,6 @@ C:\Users\imAsh\Documents\Visual Studio 2015\Projects\OpenPlex\openplex\bin\Relea
 C:\Users\imAsh\Documents\Visual Studio 2015\Projects\OpenPlex\openplex\obj\Release\OpenPlex.ctrlDetails.resources
 C:\Users\imAsh\Documents\Visual Studio 2015\Projects\OpenPlex\openplex\obj\Release\OpenPlex.ctrlDownloadItem.resources
 C:\Users\imAsh\Documents\Visual Studio 2015\Projects\OpenPlex\openplex\obj\Release\OpenPlex.ctrlMoviesPoster.resources
-C:\Users\imAsh\Documents\Visual Studio 2015\Projects\OpenPlex\openplex\obj\Release\OpenPlex.ctrlSpinner.resources
 C:\Users\imAsh\Documents\Visual Studio 2015\Projects\OpenPlex\openplex\obj\Release\OpenPlex.ctrlSplashScreen.resources
 C:\Users\imAsh\Documents\Visual Studio 2015\Projects\OpenPlex\openplex\obj\Release\OpenPlex.ctrlStreamInfo.resources
 C:\Users\imAsh\Documents\Visual Studio 2015\Projects\OpenPlex\openplex\obj\Release\OpenPlex.frmOpenPlex.resources
@@ -76,3 +75,4 @@ C:\Users\imAsh\Documents\Visual Studio 2015\Projects\OpenPlex\openplex\bin\Relea
 C:\Users\imAsh\Documents\Visual Studio 2015\Projects\OpenPlex\openplex\obj\Release\en\OpenPlex.resources.dll
 C:\Users\imAsh\Documents\Visual Studio 2015\Projects\OpenPlex\openplex\obj\Release\OpenPlex.exe
 C:\Users\imAsh\Documents\Visual Studio 2015\Projects\OpenPlex\openplex\obj\Release\OpenPlex.pdb
+C:\Users\imAsh\Documents\Visual Studio 2015\Projects\OpenPlex\openplex\obj\Release\OpenPlex.csprojResolveAssemblyReference.cache

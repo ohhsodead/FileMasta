@@ -87,12 +87,6 @@
     <Compile Include="ctrlMoviesPoster.Designer.cs">
       <DependentUpon>ctrlMoviesPoster.cs</DependentUpon>
     </Compile>
-    <Compile Include="ctrlSpinner.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ctrlSpinner.Designer.cs">
-      <DependentUpon>ctrlSpinner.cs</DependentUpon>
-    </Compile>
     <Compile Include="ctrlSplashScreen.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -128,9 +122,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ctrlMoviesPoster.resx">
       <DependentUpon>ctrlMoviesPoster.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ctrlSpinner.resx">
-      <DependentUpon>ctrlSpinner.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ctrlSplashScreen.resx">
       <DependentUpon>ctrlSplashScreen.cs</DependentUpon>
