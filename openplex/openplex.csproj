@@ -129,9 +129,6 @@
     <EmbeddedResource Include="ctrlStreamInfo.resx">
       <DependentUpon>ctrlStreamInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmOpenPlex.en.resx">
-      <DependentUpon>frmOpenPlex.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmOpenPlex.resx">
       <DependentUpon>frmOpenPlex.cs</DependentUpon>
     </EmbeddedResource>
@@ -160,13 +157,11 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\SearchIconH.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\openplex-text.png" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="openplex_logo.ico" />
+    <Content Include="Resources\spinner.GIF" />
     <None Include="Resources\background-original.jpg" />
     <None Include="Resources\magnify.png" />
     <None Include="Resources\chevron-down.png" />

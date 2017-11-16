@@ -38,9 +38,11 @@ namespace OpenPlex
         public ctrlSplashScreen frmSplash;
         protected override void OnPaint(PaintEventArgs e) { }
 
-        public static string linkFiles = "https://raw.githubusercontent.com/invu/openplex-app/master/assets/open-files.txt";
-        public static string linkMovies = "https://raw.githubusercontent.com/invu/openplex-app/master/assets/open-movies-db.txt";
-        public static string linkLatestVersion = "https://raw.githubusercontent.com/invu/openplex-app/master/Assets/openplex-version.txt";
+        public static string linkFilesMovies = "https://raw.githubusercontent.com/invu/openplex-app/master/assets/open-movies-files.json";
+        public static string linkFilesSeries = "https://raw.githubusercontent.com/invu/openplex-app/master/assets/open-series-files.json";
+        public static string linkFilesAnime = "https://raw.githubusercontent.com/invu/openplex-app/master/assets/open-anime-files.json";
+        public static string linkMovies = "https://raw.githubusercontent.com/invu/openplex-app/master/assets/open-movies.txt";
+        public static string linkLatestVersion = "https://raw.githubusercontent.com/invu/openplex-app/master/assets/openplex-version.txt";
         public static string pathInstallerFileName = "OpenPlexInstaller.exe";
         public static string pathDownloadInstaller = KnownFolders.GetPath(KnownFolder.Downloads) + @"\" + pathInstallerFileName;
         public static string pathRoot = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\OpenPlex\";
@@ -140,38 +142,68 @@ namespace OpenPlex
         {
             try
             {
-                if (File.Exists(pathData + "openplex-movies-db.txt"))
+                if (File.Exists(pathData + "open-movies.txt"))
                 {
                     if (IsBelowThreshold(pathData + "openplex-movies-db.txt", 12) == true) // if movies db older than 12 hours then write db
                     {
-                        client.DownloadFile(new Uri(linkMovies), pathData + "openplex-movies-db.txt");
+                        client.DownloadFile(new Uri(linkMovies), pathData + "open-movies.txt");
                     }
                 }
-                else { client.DownloadFile(new Uri(linkMovies), pathData + "openplex-movies-db.txt"); }
+                else { client.DownloadFile(new Uri(linkMovies), pathData + "open-movies.txt"); }
 
-                dataMovies = File.ReadAllLines(pathData + "openplex-movies-db.txt");
+                dataMovies = File.ReadAllLines(pathData + "open-movies.txt");
                 //
 
+
                 //
-                if (File.Exists(pathData + "openplex-files.json"))
+                if (File.Exists(pathData + "open-movies-files.json"))
                 {
-                    if (IsBelowThreshold(pathData + "openplex-files.json", 12) == true) // if movies db older than 12 hours then write db
+                    if (IsBelowThreshold(pathData + "open-movies-files.json", 12) == true) // if movies db older than 12 hours then write db
                     {
-                        client.DownloadFile(new Uri(linkFiles), pathData + "openplex-files.json");
+                        client.DownloadFile(new Uri(linkFilesMovies), pathData + "open-movies-files.json");
                     }
                 }
-                else { client.DownloadFile(new Uri(linkFiles), pathData + "openplex-files.json"); }
+                else { client.DownloadFile(new Uri(linkFilesMovies), pathData + "open-movies-files.json"); }
 
-                dataFiles = File.ReadAllLines(pathData + "openplex-files.json");
+                dataFilesMovies = File.ReadAllLines(pathData + "open-movies-files.json");
                 //
 
+
                 //
-                if (File.Exists(pathData + "openplex-movies-db.json")) // if json db exists
+                if (File.Exists(pathData + "open-series-files.json"))
                 {
-                    if (IsBelowThreshold(pathData + "openplex-movies-db.json", 12) == true) // if movies json db older than 12 hours then write json db
+                    if (IsBelowThreshold(pathData + "open-series-files.json", 12) == true) // if series db older than 12 hours then write db
                     {
-                        if (File.Exists(pathData + "openplex-movies-db.json")) { File.Delete(pathData + "openplex-movies-db.json"); }
-                        using (StreamWriter sw = File.CreateText(pathData + "openplex-movies-db.json"))
+                        client.DownloadFile(new Uri(linkFilesSeries), pathData + "open-series-files.json");
+                    }
+                }
+                else { client.DownloadFile(new Uri(linkFilesSeries), pathData + "open-series-files.json"); }
+
+                dataFilesSeries = File.ReadAllLines(pathData + "open-series-files.json");
+                //
+
+
+                //
+                if (File.Exists(pathData + "open-anime-files.json"))
+                {
+                    if (IsBelowThreshold(pathData + "open-anime-files.json", 12) == true) // if anime db older than 12 hours then write db
+                    {
+                        client.DownloadFile(new Uri(linkFilesAnime), pathData + "open-anime-files.json");
+                    }
+                }
+                else { client.DownloadFile(new Uri(linkFilesAnime), pathData + "open-anime-files.json"); }
+
+                dataFilesAnime = File.ReadAllLines(pathData + "open-anime-files.json");
+                //
+
+
+                //
+                if (File.Exists(pathData + "open-movies.json")) // if json db exists
+                {
+                    if (IsBelowThreshold(pathData + "open-movies.json", 12) == true) // if movies json db older than 12 hours then write json db
+                    {
+                        File.Delete(pathData + "open-movies.json");
+                        using (StreamWriter sw = File.CreateText(pathData + "open-movies.json"))
                         {
                             foreach (string movie in dataMovies)
                             {
@@ -195,8 +227,7 @@ namespace OpenPlex
                 }
                 else // if json db doesn't exist
                 {
-                    if (File.Exists(pathData + "openplex-movies-db.json")) { File.Delete(pathData + "openplex-movies-db.json"); }
-                    using (StreamWriter sw = File.CreateText(pathData + "openplex-movies-db.json"))
+                    using (StreamWriter sw = File.CreateText(pathData + "open-movies.json"))
                     {
                         foreach (string movie in dataMovies)
                         {
@@ -218,10 +249,10 @@ namespace OpenPlex
                     }
                 }
 
-                dataMoviesJson = File.ReadAllLines(pathData + "openplex-movies-db.json");
+                dataMoviesJson = File.ReadAllLines(pathData + "open-movies.json");
                 //
 
-                foreach (string file in dataFiles.Take(10000))
+                foreach (string file in dataFilesMovies.Take(1000))
                 {
                     var data = DatabaseFiles.FromJson(file);
                     dataGrid.Rows.Add(data.Title, data.Type, data.Host, data.URL);
@@ -283,7 +314,9 @@ namespace OpenPlex
             catch { return null; }
         }
 
-        public static string[] dataFiles;
+        public static string[] dataFilesAnime;
+        public static string[] dataFilesSeries;
+        public static string[] dataFilesMovies;
         public static string[] dataMovies;
         public static string[] dataMoviesJson;
 
@@ -350,7 +383,7 @@ namespace OpenPlex
         delegate void loadMoviesCallBack(int count);
         public void loadMovies(int count)
         {
-
+            spinnerGIF.Visible = true;
             BackGroundWorker.RunWorkAsync<List<ctrlMoviesPoster>>(() => LoadMovies(count), (data) =>
             {
                 if (panelMovies.InvokeRequired)
@@ -364,6 +397,8 @@ namespace OpenPlex
                     {
                         panelMovies.Controls.Add(item);
                     }
+
+                    spinnerGIF.Visible = false;
                     tab.SelectedTab = tabMovies;
                 }
             });
@@ -502,24 +537,37 @@ namespace OpenPlex
             return tvshow;
         }
 
+        string selectedFiles = "Movies";
+
         private void btnSearchFiles_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            if (!(txtFilesSearchBox.Text == "")) { searchDatabase(txtFilesSearchBox.Text); } else { foreach (string file in dataFiles) { var data = DatabaseFiles.FromJson(file); dataGrid.Rows.Add(data.Title, data.Type, data.Host, data.URL); } }
+            if (selectedFiles == "Series")
+            {
+                if (!(txtFilesSearchBox.Text == "")) { searchDatabase(txtFilesSearchBox.Text, dataFilesSeries); } else { foreach (string file in dataFilesSeries) { var data = DatabaseFiles.FromJson(file); dataGrid.Rows.Add(data.Title, data.Type, data.Host, data.URL); } }
+            }
+            else if (selectedFiles == "Movies")
+            {
+                if (!(txtFilesSearchBox.Text == "")) { searchDatabase(txtFilesSearchBox.Text, dataFilesMovies); } else { foreach (string file in dataFilesMovies) { var data = DatabaseFiles.FromJson(file); dataGrid.Rows.Add(data.Title, data.Type, data.Host, data.URL); } }
+            }
+            else if (selectedFiles == "Anime")
+            {
+                if (!(txtFilesSearchBox.Text == "")) { searchDatabase(txtFilesSearchBox.Text, dataFilesAnime); } else { foreach (string file in dataFilesAnime) { var data = DatabaseFiles.FromJson(file); dataGrid.Rows.Add(data.Title, data.Type, data.Host, data.URL); } }
+            }
         }
 
-        public void searchDatabase(string text)
+        public void searchDatabase(string text, string[] data)
         {
             try
             {
                 dataGrid.Rows.Clear();
                 string[] keyWords = Regex.Split(txtFilesSearchBox.Text, @"\s+");
 
-                foreach (string file in dataFiles)
+                foreach (string file in data)
                 {
-                    var data = DatabaseFiles.FromJson(file);
-                    if (GetWords(txtFilesSearchBox.Text.ToLower()).Any(x => data.URL.Contains(x)))
+                    var dataJson = DatabaseFiles.FromJson(file);
+                    if (GetWords(txtFilesSearchBox.Text.ToLower()).Any(x => dataJson.URL.Contains(x)))
                     {
-                        dataGrid.Rows.Add(data.Title, data.Type, data.Host, data.URL);
+                        dataGrid.Rows.Add(dataJson.Title, dataJson.Type, dataJson.Host, dataJson.URL);
                     }
                 }
 
@@ -758,6 +806,51 @@ namespace OpenPlex
                     }
                 }
             }
+        }
+
+        private void titleFilesMovies_ClickButtonArea(object Sender, MouseEventArgs e)
+        {
+            selectedFiles = "Movies";
+
+            titleFilesMovies.ColorFillSolid = Color.FromArgb(27, 27, 27);
+            titleFilesMovies.BorderColor = Color.FromArgb(27, 27, 27);
+            titleFilesSeries.ColorFillSolid = Color.Transparent;
+            titleFilesSeries.BorderColor = Color.Transparent;
+            titleFilesAnime.ColorFillSolid = Color.Transparent;
+            titleFilesAnime.BorderColor = Color.Transparent;
+
+            dataGrid.Rows.Clear();
+            foreach (string file in dataFilesMovies) { var data = DatabaseFiles.FromJson(file); dataGrid.Rows.Add(data.Title, data.Type, data.Host, data.URL); }
+        }
+
+        private void titleFilesAnime_ClickButtonArea(object Sender, MouseEventArgs e)
+        {
+            selectedFiles = "Anime";
+
+            titleFilesMovies.ColorFillSolid = Color.Transparent;
+            titleFilesMovies.BorderColor = Color.Transparent;
+            titleFilesSeries.ColorFillSolid = Color.Transparent;
+            titleFilesSeries.BorderColor = Color.Transparent;
+            titleFilesAnime.ColorFillSolid = Color.FromArgb(27, 27, 27);
+            titleFilesAnime.BorderColor = Color.FromArgb(27, 27, 27);
+
+            dataGrid.Rows.Clear();
+            foreach (string file in dataFilesAnime) { var data = DatabaseFiles.FromJson(file); dataGrid.Rows.Add(data.Title, data.Type, data.Host, data.URL); }
+        }
+
+        private void titleFilesSeries_ClickButtonArea(object Sender, MouseEventArgs e)
+        {
+            selectedFiles = "Series";
+
+            titleFilesMovies.ColorFillSolid = Color.Transparent;
+            titleFilesMovies.BorderColor = Color.Transparent;
+            titleFilesSeries.ColorFillSolid = Color.FromArgb(27, 27, 27);
+            titleFilesSeries.BorderColor = Color.FromArgb(27, 27, 27);
+            titleFilesAnime.ColorFillSolid = Color.Transparent;
+            titleFilesAnime.BorderColor = Color.Transparent;
+
+            dataGrid.Rows.Clear();
+            foreach (string file in dataFilesSeries) { var data = DatabaseFiles.FromJson(file); dataGrid.Rows.Add(data.Title, data.Type, data.Host, data.URL); }
         }
     }
 }
