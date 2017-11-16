@@ -105,6 +105,7 @@
     <Compile Include="ctrlStreamInfo.Designer.cs">
       <DependentUpon>ctrlStreamInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="DatabaseFiles.cs" />
     <Compile Include="frmOpenPlex.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -203,6 +204,12 @@
     <None Include="Resources\PopupCloseH.png" />
     <None Include="Resources\PopupCloseL.png" />
     <None Include="Resources\Dark Sky Night.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UnhandledExceptions\UnhandledExceptions.csproj">
+      <Project>{8c34bf91-cce3-47fa-aa32-4b2bb1a6f17a}</Project>
+      <Name>UnhandledExceptions</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,5 +1,6 @@
 ﻿using PopcornTimeAPI;
 using OMDbAPI;
+using DatabaseFilesAPI;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -46,6 +47,7 @@ namespace OpenPlex
         public ctrlSpinner frmSpinner;
         protected override void OnPaint(PaintEventArgs e) { }
 
+        public static string linkFiles = "https://raw.githubusercontent.com/invu/openplex-app/master/Assets/openplex-files.txt";
         public static string linkMovies = "https://raw.githubusercontent.com/invu/openplex-app/master/Assets/openplex-movies-db.txt";
         public static string linkLatestVersion = "https://raw.githubusercontent.com/invu/openplex-app/master/Assets/openplex-version.txt";
         public static string pathInstallerFileName = "OpenPlexInstaller.exe";
@@ -157,19 +159,22 @@ namespace OpenPlex
                 else { client.DownloadFile(new Uri(linkMovies), pathData + "openplex-movies-db.txt"); }
 
                 dataMovies = File.ReadAllLines(pathData + "openplex-movies-db.txt");
+                //
 
-                dataDirectories = File.ReadAllLines(pathData + "openplex-directories.txt");
-
-                try
+                //
+                if (File.Exists(pathData + "openplex-files.json"))
                 {
-                    foreach (string directoryUrl in dataDirectories)
+                    if (IsBelowThreshold(pathData + "openplex-files.json", 12) == true) // if movies db older than 12 hours then write db
                     {
-                        var findFiles = getFilesInWebPath(directoryUrl);
-                        dataFoundFiles.AddRange(findFiles);
+                        client.DownloadFile(new Uri(linkFiles), pathData + "openplex-files.json");
                     }
                 }
-                catch { }
+                else { client.DownloadFile(new Uri(linkFiles), pathData + "openplex-files.json"); }
 
+                dataFiles = File.ReadAllLines(pathData + "openplex-files.json");
+                //
+
+                //
                 if (File.Exists(pathData + "openplex-movies-db.json")) // if json db exists
                 {
                     if (IsBelowThreshold(pathData + "openplex-movies-db.json", 12) == true) // if movies json db older than 12 hours then write json db
@@ -223,10 +228,12 @@ namespace OpenPlex
                 }
 
                 dataMoviesJson = File.ReadAllLines(pathData + "openplex-movies-db.json");
+                //
 
-                foreach (string file in dataFoundFiles.Take(100))
+                foreach (string file in dataFiles.Take(10000))
                 {
-                    dataGrid.Rows.Add(Path.GetFileNameWithoutExtension(new Uri(file).LocalPath), Path.GetExtension(file).Replace(".", "").ToUpper(), new Uri(file).Host.Replace("www.", ""), file);
+                    var data = DatabaseFiles.FromJson(file);
+                    dataGrid.Rows.Add(data.Title, data.Type, data.Host, data.URL);
                 }
             }
             catch (Exception ex) { MessageBox.Show("Unable to load movies.\n\n" + ex.Message); }
@@ -285,12 +292,9 @@ namespace OpenPlex
             catch { return null; }
         }
 
-        public static string[] dataDirectories;
-        public static List<string> dataFoundFiles = new List<string>();
-
+        public static string[] dataFiles;
         public static string[] dataMovies;
         public static string[] dataMoviesJson;
-        public static List<string> dataFiles = new List<string>();
 
         int countedMovies = 0;
         string selectedGenre = "";
@@ -519,11 +523,12 @@ namespace OpenPlex
                 dataGrid.Rows.Clear();
                 string[] keyWords = Regex.Split(txtFilesSearchBox.Text, @"\s+");
 
-                foreach (string file in dataFoundFiles)
+                foreach (string file in dataFiles)
                 {
-                    if (GetWords(txtFilesSearchBox.Text.ToLower()).Any(x => Path.GetFileNameWithoutExtension(file.ToLower()).Contains(x)))
+                    var data = DatabaseFiles.FromJson(file);
+                    if (GetWords(txtFilesSearchBox.Text.ToLower()).Any(x => data.URL.Contains(x)))
                     {
-                        dataGrid.Rows.Add(Path.GetFileNameWithoutExtension(new Uri(file).LocalPath), Path.GetExtension(file).Replace(".", "").ToUpper(), new Uri(file).Host.Replace("www.", ""), file);
+                        dataGrid.Rows.Add(data.Title, data.Type, data.Host, data.URL);
                     }
                 }
 
