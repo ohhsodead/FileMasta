@@ -513,7 +513,7 @@ namespace OpenPlex
 
         private void btnSearchFiles_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            if (!(txtFilesSearchBox.Text == "")) { searchDatabase(txtFilesSearchBox.Text); }
+            if (!(txtFilesSearchBox.Text == "")) { searchDatabase(txtFilesSearchBox.Text); } else { foreach (string file in dataFiles) { var data = DatabaseFiles.FromJson(file); dataGrid.Rows.Add(data.Title, data.Type, data.Host, data.URL); } }
         }
 
         public void searchDatabase(string text)
