@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="/assets/openplex-logo.png" height="128" width="128" alt="Logo" />
+  <img src="/images/openplex-logo.png" height="128" width="128" alt="Logo" />
   <br />
   OpenPlex
 </h1>
@@ -41,11 +41,11 @@ Windows 7+ is supported (Windows 7, 8, 8.1, 10)
 Download installer [here](https://github.com/invu/openplex-app/releases/download/0.2.0.3/OpenPlexInstaller.exe)
 
 ## Screenshots
-<img src="/Screenshots/OpenPlex - Movies.png" />
-<img src="/Screenshots/OpenPlex - Files.png" />
-<img src="/Screenshots/OpenPlex - Movie Details.png" />
-<img src="/Screenshots/OpenPlex - Downloads.png" />
-<img src="/Screenshots/OpenPlex - About.png" />
+<img src="/screenshots/OpenPlex - Movies.png" />
+<img src="/screenshots/OpenPlex - Files.png" />
+<img src="/screenshots/OpenPlex - Movie Details.png" />
+<img src="/screenshots/OpenPlex - Downloads.png" />
+<img src="/screenshots/OpenPlex - About.png" />
 
 ## Legal Side of Things
 All of the free movies/tv shows found on this app are hosted on third-party servers that are freely available to watch online for all internet users. Any legal issues regarding the free online links on this app should be taken up with the actual file hosts themselves, as we're not affiliated with them.
