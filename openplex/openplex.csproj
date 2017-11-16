@@ -172,13 +172,10 @@
     <None Include="Resources\SearchIconH.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\iconSettings.png" />
-    <None Include="Resources\iconAbout.png" />
     <None Include="Resources\openplex-text.png" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="openplex_logo.ico" />
-    <None Include="Resources\spinner.GIF" />
     <None Include="Resources\background-original.jpg" />
     <None Include="Resources\magnify.png" />
     <None Include="Resources\chevron-down.png" />
@@ -187,23 +184,10 @@
     <None Include="Resources\download.png" />
     <None Include="Resources\buffer.png" />
     <None Include="Resources\filmstrip.png" />
-    <None Include="Resources\iconDownloads.png" />
     <None Include="Resources\openplex-logo.png" />
-    <None Include="Resources\iconArrowDown.png" />
     <None Include="Resources\IMDb.png" />
-    <None Include="Resources\iconFiles.png" />
-    <None Include="Resources\iconMovies.png" />
-    <None Include="Resources\iconWatchLater.png" />
-    <None Include="Resources\iconStop.png" />
-    <None Include="Resources\iconPlay.png" />
-    <None Include="Resources\iconPause.png" />
     <None Include="Resources\PosterDefault.png" />
     <None Include="Resources\PosterGlow.png" />
-    <None Include="Resources\iconCLoseL.png" />
-    <None Include="Resources\iconCLoseH.png" />
-    <None Include="Resources\PopupCloseH.png" />
-    <None Include="Resources\PopupCloseL.png" />
-    <None Include="Resources\Dark Sky Night.jpg" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\UnhandledExceptions\UnhandledExceptions.csproj">
