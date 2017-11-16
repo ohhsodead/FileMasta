@@ -24,10 +24,10 @@ If you've got any comments, queries or suggestions then simply open an issue - w
 - Collects metadata from OMDb & Popcorn Time
 
 ## How does it work?
-It communicates with the [open database](https://github.com/invu/openplex-app/blob/master/assets/open-movies.txt) to collect the latest movies available for streaming, along with some supported streams. We also use our custom built command-line application to query some of the open directories, returning almost over 10,000 files! Also includes movie metadata collecting from both [Open Movie Database API](https://omdbapi.com) and [Popcorn Time API](https://popcorntime.sh). Other features include opening files in both WMP, MPC & VLC Player and downloading multiple files asynchronously. 
+It communicates with the [open database](https://github.com/invu/openplex-app/blob/master/assets/open-movies.txt) to collect the latest movies available for streaming, along with some supported streams. We also use our custom built command-line application to query some of the [public open directories](https://github.com/invu/openplex-app/blob/master/assets/open-directories.txt), returning almost over 10,000 files! Also includes movie metadata collecting from both [Open Movie Database API](https://omdbapi.com) and [Popcorn Time API](https://popcorntime.sh). Other features include opening files in both WMP, MPC & VLC Player and downloading multiple files asynchronously. 
 
 ## Contribute
-Our [core movie database](https://github.com/invu/openplex-app/blob/master/assets/open-movies-db.txt) is completely open source, so anyone can submit streams they come across. It hasn't got the best structure at the moment but we're working to improve the feasibility of contributing towards. Just give us some time. Oh, and for now you can follow [this](https://help.github.com/articles/editing-files-in-another-user-s-repository/) tutorial from GitHub if you're stuck.
+Our [core movie database](https://github.com/invu/openplex-app/blob/master/assets/open-movies.txt) is completely open source, so anyone can submit streams they come across. It hasn't got the best structure at the moment but we're working to improve the feasibility of contributing towards. Just give us some time. Oh, and for now you can follow [this](https://help.github.com/articles/editing-files-in-another-user-s-repository/) tutorial from GitHub if you're stuck.
 
 ## Framework & Backend
 The application is using .NET 4.6.2 WinForms Framework written in C#.
