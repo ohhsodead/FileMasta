@@ -9,8 +9,8 @@
 <div align="center">
 </div>
 
-## What is OpenPlex?
-OpenPlex allows you to search for movies, series, anime, subtitles and torrents available hosted all over the Internet in public open directories. We've gathered all the appropriate files out there so you don't have to. Created by a few friends who wanted to come up with something different.
+## What is OpenTheatre?
+OpenTheatre allows you to search for movies, series, anime, subtitles and torrents available hosted all over the Internet in public open directories. We've gathered all the appropriate files out there so you don't have to. Created by a few friends who wanted to come up with something different.
 
 If you've got any comments, queries or suggestions then simply open an issue - we want to know what you've got to say!
 
@@ -24,10 +24,10 @@ If you've got any comments, queries or suggestions then simply open an issue - w
 - Collects metadata from OMDb & Popcorn Time
 
 ## How does it work?
-It communicates with the [open database](https://github.com/invu/openplex-app/blob/master/assets/open-movies.txt) to collect the latest movies available for streaming, along with some supported streams. We also use our custom built command-line application to query some of the [public open movies directories](https://github.com/invu/openplex-app/blob/master/assets/open-movies-directories.txt), returning almost over 10,000 files just for movies! All of our other databases (series, anime, etc.) are hosted [here](https://github.com/invu/openplex-app/blob/master/assets/). Also includes movie metadata collecting from both [Open Movie Database API](https://omdbapi.com) and [Popcorn Time API](https://popcorntime.sh). Other features include opening files in both WMP, MPC & VLC Player and downloading multiple files asynchronously. 
+It communicates with the [open database](https://github.com/invu/opentheatre-app/blob/master/assets/open-movies.txt) to collect the latest movies available for streaming, along with some supported streams. We also use our custom built command-line application to query some of the [public open movies directories](https://github.com/invu/opentheatre-app/blob/master/assets/open-movies-directories.txt), returning over 18,000 certified files! All of our other databases (series, anime, etc.) are hosted [here](https://github.com/invu/opentheatre-app/blob/master/assets/). Also includes movie metadata collecting from both [Open Movie Database API](https://omdbapi.com) and [Popcorn Time API](https://popcorntime.sh). Other features include opening files in both WMP, MPC & VLC Player and downloading multiple files asynchronously. 
 
 ## Latest Build
-OpenPlex 2.0.4
+OpenTheatre 2.0.4
 
 ## Framework & Backend
 The application is using .NET 4.6.2 WinForms Framework written in C#.
@@ -36,7 +36,7 @@ The application is using .NET 4.6.2 WinForms Framework written in C#.
 Windows 7 and above (Windows 7, 8, 8.1, 10)
 
 ## Installation
-Download installer [here](https://github.com/invu/openplex-app/releases/download/0.2.0.4/OpenPlexInstaller.exe)
+Download installer [here](https://github.com/invu/opentheatre-app/releases/download/0.2.0.4/OpenPlexInstaller.exe)
 
 ## Screenshots
 <img src="/screenshots/movies.png" />
