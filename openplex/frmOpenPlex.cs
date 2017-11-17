@@ -38,9 +38,11 @@ namespace OpenPlex
         public ctrlSplashScreen frmSplash;
         protected override void OnPaint(PaintEventArgs e) { }
 
-        public static string linkFilesMovies = "https://raw.githubusercontent.com/invu/openplex-app/master/assets/open-movies-files.json";
-        public static string linkFilesSeries = "https://raw.githubusercontent.com/invu/openplex-app/master/assets/open-series-files.json";
-        public static string linkFilesAnime = "https://raw.githubusercontent.com/invu/openplex-app/master/assets/open-anime-files.json";
+        public static string linkFilesMovies = "https://dl.dropbox.com/s/jtac1zhsdhy6931/open-movies-files.json?dl=0";
+        public static string linkFilesSeries = "https://dl.dropbox.com/s/2ze0xayim0cgk70/open-series-files.json?dl=0";
+        public static string linkFilesAnime = "https://dl.dropbox.com/s/e5lhyejb56cwo9k/open-anime-files.json?dl=0";
+        public static string linkFilesSubtitles = "https://dl.dropbox.com/s/ckkxsogprgviyto/open-subtitles-files.json?dl=0";
+        public static string linkFilesTorrents = "https://dl.dropbox.com/s/nkzzyk4vr6k4rlr/open-torrents-files.json?dl=0"; 
         public static string linkMovies = "https://raw.githubusercontent.com/invu/openplex-app/master/assets/open-movies.txt";
         public static string linkLatestVersion = "https://raw.githubusercontent.com/invu/openplex-app/master/assets/openplex-version.txt";
         public static string pathInstallerFileName = "OpenPlexInstaller.exe";
@@ -198,6 +200,32 @@ namespace OpenPlex
 
 
                 //
+                if (File.Exists(pathData + "open-subtitles-files.json"))
+                {
+                    if (IsBelowThreshold(pathData + "open-subtitles-files.json", 12) == true) // if anime db older than 12 hours then write db
+                    {
+                        client.DownloadFile(new Uri(linkFilesSubtitles), pathData + "open-subtitles-files.json");
+                    }
+                }
+                else { client.DownloadFile(new Uri(linkFilesSubtitles), pathData + "open-subtitles-files.json"); }
+
+                dataFilesSubtitles = File.ReadAllLines(pathData + "open-subtitles-files.json");
+                //
+
+                //
+                if (File.Exists(pathData + "open-torrents-files.json"))
+                {
+                    if (IsBelowThreshold(pathData + "open-torrents-files.json", 12) == true) // if anime db older than 12 hours then write db
+                    {
+                        client.DownloadFile(new Uri(linkFilesTorrents), pathData + "open-torrents-files.json");
+                    }
+                }
+                else { client.DownloadFile(new Uri(linkFilesTorrents), pathData + "open-torrents-files.json"); }
+
+                dataFilesTorrents = File.ReadAllLines(pathData + "open-torrents-files.json");
+                //
+
+                //
                 if (File.Exists(pathData + "open-movies.json")) // if json db exists
                 {
                     if (IsBelowThreshold(pathData + "open-movies.json", 12) == true) // if movies json db older than 12 hours then write json db
@@ -252,7 +280,7 @@ namespace OpenPlex
                 dataMoviesJson = File.ReadAllLines(pathData + "open-movies.json");
                 //
 
-                foreach (string file in dataFilesMovies.Take(1000))
+                foreach (string file in dataFilesMovies.Take(10000))
                 {
                     var data = DatabaseFiles.FromJson(file);
                     dataGrid.Rows.Add(data.Title, data.Type, data.Host, data.URL);
@@ -267,53 +295,8 @@ namespace OpenPlex
             Controls.Remove(frmSplash);
         }
 
-        public static string GetDirectoryListingRegexForUrl(string Url)
-        {
-            if (Url.Equals(Url))
-            {
-                return "<a href=\".*\">(?<name>.*)</a>";
-            }
-            throw new NotSupportedException();
-        }
-
-        public List<string> getFilesInWebPath(string pathUrl)
-        {
-            try
-            {
-                List<string> foundFiles = new List<string>();
-
-                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(pathUrl);
-                using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
-                {
-                    using (StreamReader reader = new StreamReader(response.GetResponseStream()))
-                    {
-                        string html = reader.ReadToEnd();
-                        Regex regex = new Regex(GetDirectoryListingRegexForUrl(pathUrl));
-                        MatchCollection matches = regex.Matches(html);
-                        if (matches.Count > 0)
-                        {
-                            foreach (Match match in matches)
-                            {
-                                if (match.Success)
-                                {
-                                    Uri uriAddress2 = new Uri(pathUrl + match.Groups["name"].Value);
-                                    var hasExtension = Path.HasExtension(uriAddress2.AbsolutePath);
-
-                                    if (hasExtension == true)
-                                    {
-                                        foundFiles.Add(uriAddress2.AbsoluteUri);
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-
-                return foundFiles;
-            }
-            catch { return null; }
-        }
-
+        public static string[] dataFilesTorrents;
+        public static string[] dataFilesSubtitles;
         public static string[] dataFilesAnime;
         public static string[] dataFilesSeries;
         public static string[] dataFilesMovies;
@@ -383,7 +366,7 @@ namespace OpenPlex
         delegate void loadMoviesCallBack(int count);
         public void loadMovies(int count)
         {
-            spinnerGIF.Visible = true;
+            imgSpinnerGIF.Visible = true;
             BackGroundWorker.RunWorkAsync<List<ctrlMoviesPoster>>(() => LoadMovies(count), (data) =>
             {
                 if (panelMovies.InvokeRequired)
@@ -398,7 +381,7 @@ namespace OpenPlex
                         panelMovies.Controls.Add(item);
                     }
 
-                    spinnerGIF.Visible = false;
+                    imgSpinnerGIF.Visible = false;
                     tab.SelectedTab = tabMovies;
                 }
             });
@@ -543,19 +526,27 @@ namespace OpenPlex
         {
             if (selectedFiles == "Series")
             {
-                if (!(txtFilesSearchBox.Text == "")) { searchDatabase(txtFilesSearchBox.Text, dataFilesSeries); } else { foreach (string file in dataFilesSeries) { var data = DatabaseFiles.FromJson(file); dataGrid.Rows.Add(data.Title, data.Type, data.Host, data.URL); } }
+                if (!(txtFilesSearchBox.Text == "")) { searchDatabase(dataFilesSeries); } else { foreach (string file in dataFilesSeries) { var data = DatabaseFiles.FromJson(file); dataGrid.Rows.Add(data.Title, data.Type, data.Host, data.URL); } }
             }
             else if (selectedFiles == "Movies")
             {
-                if (!(txtFilesSearchBox.Text == "")) { searchDatabase(txtFilesSearchBox.Text, dataFilesMovies); } else { foreach (string file in dataFilesMovies) { var data = DatabaseFiles.FromJson(file); dataGrid.Rows.Add(data.Title, data.Type, data.Host, data.URL); } }
+                if (!(txtFilesSearchBox.Text == "")) { searchDatabase(dataFilesMovies); } else { foreach (string file in dataFilesMovies) { var data = DatabaseFiles.FromJson(file); dataGrid.Rows.Add(data.Title, data.Type, data.Host, data.URL); } }
             }
             else if (selectedFiles == "Anime")
             {
-                if (!(txtFilesSearchBox.Text == "")) { searchDatabase(txtFilesSearchBox.Text, dataFilesAnime); } else { foreach (string file in dataFilesAnime) { var data = DatabaseFiles.FromJson(file); dataGrid.Rows.Add(data.Title, data.Type, data.Host, data.URL); } }
+                if (!(txtFilesSearchBox.Text == "")) { searchDatabase(dataFilesAnime); } else { foreach (string file in dataFilesAnime) { var data = DatabaseFiles.FromJson(file); dataGrid.Rows.Add(data.Title, data.Type, data.Host, data.URL); } }
+            }
+            else if (selectedFiles == "Subtitles")
+            {
+                if (!(txtFilesSearchBox.Text == "")) { searchDatabase(dataFilesSubtitles); } else { foreach (string file in dataFilesSubtitles) { var data = DatabaseFiles.FromJson(file); dataGrid.Rows.Add(data.Title, data.Type, data.Host, data.URL); } }
+            }
+            else if (selectedFiles == "Torrents")
+            {
+                if (!(txtFilesSearchBox.Text == "")) { searchDatabase(dataFilesTorrents); } else { foreach (string file in dataFilesTorrents) { var data = DatabaseFiles.FromJson(file); dataGrid.Rows.Add(data.Title, data.Type, data.Host, data.URL); } }
             }
         }
 
-        public void searchDatabase(string text, string[] data)
+        public void searchDatabase(string[] data)
         {
             try
             {
@@ -565,7 +556,7 @@ namespace OpenPlex
                 foreach (string file in data)
                 {
                     var dataJson = DatabaseFiles.FromJson(file);
-                    if (GetWords(txtFilesSearchBox.Text.ToLower()).Any(x => dataJson.URL.Contains(x)))
+                    if (GetWords(txtFilesSearchBox.Text.ToLower()).Any(x => dataJson.URL.ToLower().Contains(x)))
                     {
                         dataGrid.Rows.Add(dataJson.Title, dataJson.Type, dataJson.Host, dataJson.URL);
                     }
@@ -645,6 +636,7 @@ namespace OpenPlex
             showFileDetails(dataGrid.CurrentRow.Cells[3].Value.ToString());
         }
 
+        // Core Tabs
         public TabPage currentTab;
 
         private void imgMovies_Click(object sender, EventArgs e)
@@ -763,51 +755,7 @@ namespace OpenPlex
             if (panelDownloads.Controls.Count == 0) { lblNoDownloads.Visible = true; } else { lblNoDownloads.Visible = false; }
         }
 
-
-        // Get files from FTP (As seen on https://stackoverflow.com/a/31526932)
-
-        public class FileName : IComparable<FileName>
-        {
-            public string fName { get; set; }
-            public int CompareTo(FileName other)
-            {
-                return fName.CompareTo(other.fName);
-            }
-        }
-
-        public static void getFileList(string sourceURI, string sourceUser, string sourcePass, List<FileName> sourceFileList)
-        {
-            string line = "";
-            FtpWebRequest sourceRequest;
-            sourceRequest = (FtpWebRequest)WebRequest.Create(sourceURI);
-            //sourceRequest.Credentials = new NetworkCredential(sourceUser, sourcePass);
-            sourceRequest.UseDefaultCredentials = true;
-            sourceRequest.Method = WebRequestMethods.Ftp.ListDirectory;
-            sourceRequest.UseBinary = true;
-            sourceRequest.KeepAlive = false;
-            sourceRequest.Timeout = -1;
-            sourceRequest.UsePassive = true;
-            FtpWebResponse sourceRespone = (FtpWebResponse)sourceRequest.GetResponse();
-
-            //Creates a list(fileList) of the file names
-            using (Stream responseStream = sourceRespone.GetResponseStream())
-            {
-                using (StreamReader reader = new StreamReader(responseStream))
-                {
-                    line = reader.ReadLine();
-                    while (line != null)
-                    {
-                        var fileName = new FileName
-                        {
-                            fName = line
-                        };
-                        sourceFileList.Add(fileName);
-                        line = reader.ReadLine();
-                    }
-                }
-            }
-        }
-
+        // Files Titles
         private void titleFilesMovies_ClickButtonArea(object Sender, MouseEventArgs e)
         {
             selectedFiles = "Movies";
@@ -818,6 +766,10 @@ namespace OpenPlex
             titleFilesSeries.BorderColor = Color.Transparent;
             titleFilesAnime.ColorFillSolid = Color.Transparent;
             titleFilesAnime.BorderColor = Color.Transparent;
+            titleFilesSubtitles.ColorFillSolid = Color.Transparent;
+            titleFilesSubtitles.BorderColor = Color.Transparent;
+            titleFilesTorrents.ColorFillSolid = Color.Transparent;
+            titleFilesTorrents.BorderColor = Color.Transparent;
 
             dataGrid.Rows.Clear();
             foreach (string file in dataFilesMovies) { var data = DatabaseFiles.FromJson(file); dataGrid.Rows.Add(data.Title, data.Type, data.Host, data.URL); }
@@ -833,6 +785,10 @@ namespace OpenPlex
             titleFilesSeries.BorderColor = Color.Transparent;
             titleFilesAnime.ColorFillSolid = Color.FromArgb(27, 27, 27);
             titleFilesAnime.BorderColor = Color.FromArgb(27, 27, 27);
+            titleFilesSubtitles.ColorFillSolid = Color.Transparent;
+            titleFilesSubtitles.BorderColor = Color.Transparent;
+            titleFilesTorrents.ColorFillSolid = Color.Transparent;
+            titleFilesTorrents.BorderColor = Color.Transparent;
 
             dataGrid.Rows.Clear();
             foreach (string file in dataFilesAnime) { var data = DatabaseFiles.FromJson(file); dataGrid.Rows.Add(data.Title, data.Type, data.Host, data.URL); }
@@ -848,9 +804,52 @@ namespace OpenPlex
             titleFilesSeries.BorderColor = Color.FromArgb(27, 27, 27);
             titleFilesAnime.ColorFillSolid = Color.Transparent;
             titleFilesAnime.BorderColor = Color.Transparent;
+            titleFilesSubtitles.ColorFillSolid = Color.Transparent;
+            titleFilesSubtitles.BorderColor = Color.Transparent;
+            titleFilesTorrents.ColorFillSolid = Color.Transparent;
+            titleFilesTorrents.BorderColor = Color.Transparent;
 
             dataGrid.Rows.Clear();
             foreach (string file in dataFilesSeries) { var data = DatabaseFiles.FromJson(file); dataGrid.Rows.Add(data.Title, data.Type, data.Host, data.URL); }
+        }
+
+        private void titleFilesTorrents_ClickButtonArea(object Sender, MouseEventArgs e)
+        {
+            selectedFiles = "Torrents";
+
+            titleFilesMovies.ColorFillSolid = Color.Transparent;
+            titleFilesMovies.BorderColor = Color.Transparent;
+            titleFilesSeries.ColorFillSolid = Color.Transparent;
+            titleFilesSeries.BorderColor = Color.Transparent;
+            titleFilesAnime.ColorFillSolid = Color.Transparent;
+            titleFilesAnime.BorderColor = Color.Transparent;
+            titleFilesSubtitles.ColorFillSolid = Color.Transparent;
+            titleFilesSubtitles.BorderColor = Color.Transparent;
+            titleFilesTorrents.ColorFillSolid = Color.FromArgb(27, 27, 27);
+            titleFilesTorrents.BorderColor = Color.FromArgb(27, 27, 27);
+
+            dataGrid.Rows.Clear();
+            foreach (string file in dataFilesTorrents) { var data = DatabaseFiles.FromJson(file); dataGrid.Rows.Add(data.Title, data.Type, data.Host, data.URL); }
+        }
+
+        private void titleFilesSubtitles_ClickButtonArea(object Sender, MouseEventArgs e)
+        {
+            selectedFiles = "Subtitles";
+
+            titleFilesMovies.ColorFillSolid = Color.Transparent;
+            titleFilesMovies.BorderColor = Color.Transparent;
+            titleFilesSeries.ColorFillSolid = Color.Transparent;
+            titleFilesSeries.BorderColor = Color.Transparent;
+            titleFilesAnime.ColorFillSolid = Color.Transparent;
+            titleFilesAnime.BorderColor = Color.Transparent;
+            titleFilesSubtitles.ColorFillSolid = Color.FromArgb(27, 27, 27);
+            titleFilesSubtitles.BorderColor = Color.FromArgb(27, 27, 27);
+            titleFilesTorrents.ColorFillSolid = Color.Transparent;
+            titleFilesTorrents.BorderColor = Color.Transparent;
+
+            dataGrid.Rows.Clear();
+            foreach (string file in dataFilesSubtitles) { var data = DatabaseFiles.FromJson(file); dataGrid.Rows.Add(data.Title, data.Type, data.Host, data.URL); }
+
         }
     }
 }
