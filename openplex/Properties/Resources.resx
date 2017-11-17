@@ -121,11 +121,8 @@
   <data name="default-poster" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PosterDefault.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="openplex-logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="opentheatre-logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\openplex-logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="openplex-text" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\openplex-text.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="background_original" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\background-original.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -159,5 +156,8 @@
   </data>
   <data name="spinner" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\spinner.GIF;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="opentheatre_text" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\opentheatre-text.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -1,4 +1,4 @@
-﻿namespace OpenPlex
+﻿namespace OpenTheatre
 {
     partial class ctrlDetails
     {
@@ -288,7 +288,7 @@
             // imgIMDb
             // 
             this.imgIMDb.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgIMDb.Image = global::OpenPlex.Properties.Resources.imdb_icon;
+            this.imgIMDb.Image = global::OpenTheatre.Properties.Resources.imdb_icon;
             this.imgIMDb.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.imgIMDb.Location = new System.Drawing.Point(264, 4);
             this.imgIMDb.Margin = new System.Windows.Forms.Padding(4, 4, 4, 20);
@@ -443,7 +443,7 @@
             this.appClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.appClose.BackColor = System.Drawing.Color.Transparent;
             this.appClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.appClose.Image = global::OpenPlex.Properties.Resources.close;
+            this.appClose.Image = global::OpenTheatre.Properties.Resources.close;
             this.appClose.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.appClose.Location = new System.Drawing.Point(910, 25);
             this.appClose.Margin = new System.Windows.Forms.Padding(3, 25, 25, 3);
@@ -458,7 +458,7 @@
             // 
             this.imgPosterBG.BackColor = System.Drawing.Color.Transparent;
             this.imgPosterBG.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.imgPosterBG.Image = global::OpenPlex.Properties.Resources.glow_poster;
+            this.imgPosterBG.Image = global::OpenTheatre.Properties.Resources.glow_poster;
             this.imgPosterBG.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.imgPosterBG.Location = new System.Drawing.Point(16, 16);
             this.imgPosterBG.Name = "imgPosterBG";

@@ -73,3 +73,4 @@ C:\Users\imAsh\Documents\Visual Studio 2015\Projects\OpenPlex\openplex\obj\Relea
 C:\Users\imAsh\Documents\Visual Studio 2015\Projects\OpenPlex\openplex\obj\Release\OpenPlex.csproj.GenerateResource.Cache
 C:\Users\imAsh\Documents\Visual Studio 2015\Projects\OpenPlex\openplex\obj\Release\OpenPlex.exe
 C:\Users\imAsh\Documents\Visual Studio 2015\Projects\OpenPlex\openplex\obj\Release\OpenPlex.pdb
+C:\Users\imAsh\Documents\Visual Studio 2015\Projects\OpenPlex\openplex\bin\Release\OpenTheatre.exe.config

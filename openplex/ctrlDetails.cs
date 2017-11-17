@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
 
-namespace OpenPlex
+namespace OpenTheatre
 {
     public partial class ctrlDetails : UserControl
     {
@@ -36,7 +36,7 @@ namespace OpenPlex
 
         private void appClose_Click(object sender, EventArgs e)
         {
-            frmOpenPlex.form.tab.SelectedTab = frmOpenPlex.form.currentTab;
+            frmOpenTheatre.form.tab.SelectedTab = frmOpenTheatre.form.currentTab;
             Parent.Controls.Clear();
         }
 

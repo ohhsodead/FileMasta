@@ -3,7 +3,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.IO;
 
-namespace OpenPlex
+namespace OpenTheatre
 {
 
     public partial class ctrlMoviesPoster : UserControl
@@ -34,7 +34,7 @@ namespace OpenPlex
 
         private void InfoPoster_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            frmOpenPlex.form.tabBlank.Controls.Clear();
+            frmOpenTheatre.form.tabBlank.Controls.Clear();
 
             ctrlDetails MovieDetails = new ctrlDetails();
 
@@ -51,12 +51,12 @@ namespace OpenPlex
 
             try
             {
-                MovieDetails.imgPoster.Image = frmOpenPlex.ChangeOpacity(frmOpenPlex.LoadPicture(infoImagePoster), 1);
-                MovieDetails.BackgroundImage = frmOpenPlex.ChangeOpacity(frmOpenPlex.LoadPicture(infoImageFanart), 0.2F);
+                MovieDetails.imgPoster.Image = frmOpenTheatre.ChangeOpacity(frmOpenTheatre.LoadPicture(infoImagePoster), 1);
+                MovieDetails.BackgroundImage = frmOpenTheatre.ChangeOpacity(frmOpenTheatre.LoadPicture(infoImageFanart), 0.2F);
             }
             catch { }
 
-            if (infoImagePoster == "") { MovieDetails.imgPoster.Image = frmOpenPlex.ChangeOpacity(Properties.Resources.default_poster, 1); }
+            if (infoImagePoster == "") { MovieDetails.imgPoster.Image = frmOpenTheatre.ChangeOpacity(Properties.Resources.default_poster, 1); }
 
             foreach (string movieLink in infoMovieLinks)
             {
@@ -68,9 +68,9 @@ namespace OpenPlex
             }
 
             MovieDetails.Dock = DockStyle.Fill;
-            frmOpenPlex.form.tabBlank.Controls.Clear();
-            frmOpenPlex.form.tabBlank.Controls.Add(MovieDetails);
-            frmOpenPlex.form.tab.SelectedTab = frmOpenPlex.form.tabBlank;
+            frmOpenTheatre.form.tabBlank.Controls.Clear();
+            frmOpenTheatre.form.tabBlank.Controls.Add(MovieDetails);
+            frmOpenTheatre.form.tab.SelectedTab = frmOpenTheatre.form.tabBlank;
         }
 
         private void InfoPoster_MouseEnter(object sender, EventArgs e)
@@ -85,11 +85,11 @@ namespace OpenPlex
                 infoPoster2.Image = new Bitmap(infoPoster.BackgroundImage);
                 infoPoster.BorderShow = true;
                 infoPoster.BackgroundImage.Dispose();
-                infoPoster.BackgroundImage = frmOpenPlex.ChangeOpacity(infoPoster2.Image, 0.4F);
+                infoPoster.BackgroundImage = frmOpenTheatre.ChangeOpacity(infoPoster2.Image, 0.4F);
                 Update();
             }
             catch
-            { //InfoPoster.BackgroundImage = frmOpenPlex.ChangeOpacity(Properties.Resources.defaultPoster, 0.4F); 
+            { //InfoPoster.BackgroundImage = frmOpenTheatre.ChangeOpacity(Properties.Resources.defaultPoster, 0.4F); 
             }
         }
 
@@ -99,10 +99,10 @@ namespace OpenPlex
             {
                 infoPoster.BackgroundImage.Dispose();
                 infoPoster.BorderShow = false;
-                infoPoster.BackgroundImage = frmOpenPlex.ChangeOpacity(infoPoster2.Image, 1);
+                infoPoster.BackgroundImage = frmOpenTheatre.ChangeOpacity(infoPoster2.Image, 1);
             }
             catch
-            { //InfoPoster.BackgroundImage = frmOpenPlex.ChangeOpacity(Properties.Resources.defaultPoster, 1);
+            { //InfoPoster.BackgroundImage = frmOpenTheatre.ChangeOpacity(Properties.Resources.defaultPoster, 1);
             }
         }
 

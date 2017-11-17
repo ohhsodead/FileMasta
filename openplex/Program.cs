@@ -3,7 +3,7 @@ using System.Diagnostics;
 using System.Windows.Forms;
 using UnhandledExceptions;
 
-namespace OpenPlex
+namespace OpenTheatre
 {
     static class Program
     {
@@ -30,7 +30,7 @@ namespace OpenPlex
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmOpenPlex());
+            Application.Run(new frmOpenTheatre());
         }
     }
 }

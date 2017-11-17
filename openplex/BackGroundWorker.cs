@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 
-namespace OpenPlex
+namespace OpenTheatre
 {
     public static class BackGroundWorker
     {

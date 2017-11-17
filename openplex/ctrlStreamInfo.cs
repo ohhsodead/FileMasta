@@ -4,7 +4,7 @@ using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
-namespace OpenPlex
+namespace OpenTheatre
 {
     public partial class ctrlStreamInfo : UserControl
     {
@@ -18,8 +18,8 @@ namespace OpenPlex
         private void ctrlStreamInfo_Load(object sender, EventArgs e)
         {
             BackColor = Color.Transparent;
-            VLCToolStripMenuItem.Visible = File.Exists(frmOpenPlex.pathVLC);
-            MPCToolStripMenuItem.Visible = File.Exists(frmOpenPlex.pathMPCCodec64) || File.Exists(frmOpenPlex.pathMPC64) || File.Exists(frmOpenPlex.pathMPC86);
+            VLCToolStripMenuItem.Visible = File.Exists(frmOpenTheatre.pathVLC);
+            MPCToolStripMenuItem.Visible = File.Exists(frmOpenTheatre.pathMPCCodec64) || File.Exists(frmOpenTheatre.pathMPC64) || File.Exists(frmOpenTheatre.pathMPC86);
         }
 
         private void btnPlay_ClickButtonArea(object Sender, MouseEventArgs e)
@@ -29,8 +29,8 @@ namespace OpenPlex
 
         private void btnDownload_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            frmOpenPlex.form.Show();
-            frmOpenPlex.form.doDownloadFile(infoFileURL);
+            frmOpenTheatre.form.Show();
+            frmOpenTheatre.form.doDownloadFile(infoFileURL);
         }
 
         private void WMPToolStripMenuItem_Click(object sender, EventArgs e)
@@ -47,7 +47,7 @@ namespace OpenPlex
             try
             {
                 Process VLC = new Process();
-                VLC.StartInfo.FileName = frmOpenPlex.pathVLC;
+                VLC.StartInfo.FileName = frmOpenTheatre.pathVLC;
                 VLC.StartInfo.Arguments = ("-vvv " + infoFileURL);
                 VLC.Start();
             }
@@ -59,12 +59,12 @@ namespace OpenPlex
             try
             {
                 Process MPC = new Process();
-                if (File.Exists(frmOpenPlex.pathMPCCodec64))
-                    MPC.StartInfo.FileName = frmOpenPlex.pathMPCCodec64;
-                else if (File.Exists(frmOpenPlex.pathMPC64))
-                    MPC.StartInfo.FileName = frmOpenPlex.pathMPC64;
+                if (File.Exists(frmOpenTheatre.pathMPCCodec64))
+                    MPC.StartInfo.FileName = frmOpenTheatre.pathMPCCodec64;
+                else if (File.Exists(frmOpenTheatre.pathMPC64))
+                    MPC.StartInfo.FileName = frmOpenTheatre.pathMPC64;
                 else
-                    MPC.StartInfo.FileName = frmOpenPlex.pathMPC86;
+                    MPC.StartInfo.FileName = frmOpenTheatre.pathMPC86;
                 MPC.StartInfo.Arguments = (infoFileURL);
                 MPC.Start();
             }
@@ -78,7 +78,7 @@ namespace OpenPlex
 
         public void openBrokenFileIssue(string webFile)
         {
-            Process.Start("https://github.com/invu/openplex-app/issues/new?title=" + "Found Broken File" +
+            Process.Start("https://github.com/invu/OpenTheatre-app/issues/new?title=" + "Found Broken File" +
                 "&body=" +
                 "Host: " + new Uri(webFile).Host.Replace("www.", "") + "%0A" +
                 "File Name: " + new Uri(webFile).LocalPath);

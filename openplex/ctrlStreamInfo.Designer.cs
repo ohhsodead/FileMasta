@@ -1,4 +1,4 @@
-﻿namespace OpenPlex
+﻿namespace OpenTheatre
 {
     partial class ctrlStreamInfo
     {

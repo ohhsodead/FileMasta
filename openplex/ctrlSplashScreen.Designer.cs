@@ -1,4 +1,4 @@
-﻿namespace OpenPlex
+﻿namespace OpenTheatre
 {
     partial class ctrlSplashScreen
     {
@@ -49,7 +49,7 @@
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::OpenPlex.Properties.Resources.openplex_logo;
+            this.pictureBox1.Image = global::OpenTheatre.Properties.Resources.opentheatre_logo;
             this.pictureBox1.Location = new System.Drawing.Point(262, 73);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(205, 205);

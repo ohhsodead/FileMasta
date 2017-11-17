@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace OpenPlex.Properties {
+namespace OpenTheatre.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

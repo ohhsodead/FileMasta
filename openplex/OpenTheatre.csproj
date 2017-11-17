@@ -7,8 +7,8 @@
     <ProjectGuid>{75A2CFC6-B0B1-42A6-B1F7-66B3C68A06CA}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>OpenPlex</RootNamespace>
-    <AssemblyName>OpenPlex</AssemblyName>
+    <RootNamespace>OpenTheatre</RootNamespace>
+    <AssemblyName>OpenTheatre</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -100,11 +100,11 @@
       <DependentUpon>ctrlStreamInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="DatabaseFiles.cs" />
-    <Compile Include="frmOpenPlex.cs">
+    <Compile Include="frmOpenTheatre.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmOpenPlex.Designer.cs">
-      <DependentUpon>frmOpenPlex.cs</DependentUpon>
+    <Compile Include="frmOpenTheatre.Designer.cs">
+      <DependentUpon>frmOpenTheatre.cs</DependentUpon>
     </Compile>
     <Compile Include="OMDbEntity.cs" />
     <Compile Include="KnownFolder.cs" />
@@ -129,8 +129,8 @@
     <EmbeddedResource Include="ctrlStreamInfo.resx">
       <DependentUpon>ctrlStreamInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmOpenPlex.resx">
-      <DependentUpon>frmOpenPlex.cs</DependentUpon>
+    <EmbeddedResource Include="frmOpenTheatre.resx">
+      <DependentUpon>frmOpenTheatre.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -161,6 +161,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="openplex_logo.ico" />
+    <None Include="Resources\opentheatre-text.png" />
     <Content Include="Resources\spinner.GIF" />
     <None Include="Resources\background-original.jpg" />
     <None Include="Resources\magnify.png" />

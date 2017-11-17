@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using System.Net;
 using System.IO;
 
-namespace OpenPlex
+namespace OpenTheatre
 {
     public partial class ctrlDownloadItem : UserControl
     {
@@ -30,7 +30,7 @@ namespace OpenPlex
         {
             wc.DownloadFileCompleted += new AsyncCompletedEventHandler(downloadCompleted);
             wc.DownloadProgressChanged += new DownloadProgressChangedEventHandler(downloadProgressChanged);
-            wc.DownloadFileAsync(new Uri(url), frmOpenPlex.pathDownloads + Path.GetFileName(url));
+            wc.DownloadFileAsync(new Uri(url), frmOpenTheatre.pathDownloads + Path.GetFileName(url));
             lblFileName.Text = Path.GetFileName(url);
         }
 
@@ -109,7 +109,7 @@ namespace OpenPlex
 
         private void lblFileName_Click(object sender, EventArgs e)
         {
-            openFile(frmOpenPlex.pathDownloads + lblFileName.Text);
+            openFile(frmOpenTheatre.pathDownloads + lblFileName.Text);
         }
 
         private void lblCancel_Click(object sender, EventArgs e)

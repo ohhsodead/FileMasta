@@ -14,11 +14,11 @@ using System.Diagnostics;
 using System.Text.RegularExpressions;
 using System.ComponentModel;
 
-namespace OpenPlex
+namespace OpenTheatre
 {
-    public partial class frmOpenPlex : Form
+    public partial class frmOpenTheatre : Form
     {
-        public frmOpenPlex()
+        public frmOpenTheatre()
         {
             InitializeComponent();
             form = this;
@@ -34,7 +34,7 @@ namespace OpenPlex
 
         private BackgroundWorker worker;
 
-        public static frmOpenPlex form = null;
+        public static frmOpenTheatre form = null;
         public ctrlSplashScreen frmSplash;
         protected override void OnPaint(PaintEventArgs e) { }
 
@@ -43,17 +43,17 @@ namespace OpenPlex
         public static string linkFilesAnime = "https://dl.dropbox.com/s/e5lhyejb56cwo9k/open-anime-files.json?dl=0";
         public static string linkFilesSubtitles = "https://dl.dropbox.com/s/ckkxsogprgviyto/open-subtitles-files.json?dl=0";
         public static string linkFilesTorrents = "https://dl.dropbox.com/s/nkzzyk4vr6k4rlr/open-torrents-files.json?dl=0"; 
-        public static string linkMovies = "https://raw.githubusercontent.com/invu/openplex-app/master/assets/open-movies.txt";
-        public static string linkLatestVersion = "https://raw.githubusercontent.com/invu/openplex-app/master/assets/openplex-version.txt";
-        public static string pathInstallerFileName = "OpenPlexInstaller.exe";
+        public static string linkMovies = "https://dl.dropbox.com/s/ionv8bszlgvf1xc/open-movies.json?dl=0";
+        public static string linkLatestVersion = "https://raw.githubusercontent.com/invu/opentheatre-app/master/assets/opentheatre-version.txt";
+        public static string pathInstallerFileName = "OpenTheatreInstaller.exe";
         public static string pathDownloadInstaller = KnownFolders.GetPath(KnownFolder.Downloads) + @"\" + pathInstallerFileName;
-        public static string pathRoot = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\OpenPlex\";
-        public static string pathData = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\OpenPlex\Data\";
-        public static string pathDownloads = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\OpenPlex\Downloads\";
+        public static string pathRoot = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\OpenTheatre\";
+        public static string pathData = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\OpenTheatre\Data\";
+        public static string pathDownloads = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\OpenTheatre\Downloads\";
 
         public static string getLatestInstaller(Version newVersion)
         {
-            return "https://github.com/invu/openplex-app/releases/download/" + newVersion.ToString() + "/" + pathInstallerFileName;
+            return "https://github.com/invu/opentheatre-app/releases/download/" + newVersion.ToString() + "/" + pathInstallerFileName;
         }
 
         public static Bitmap LoadPicture(string url)
@@ -119,7 +119,7 @@ namespace OpenPlex
         public static string pathMPC64 = @"C:\Program Files\MPC-HC\mpc-hc64.exe";
         public static string pathMPC86 = @"C:\Program Files (x86)\MPC-HC\mpc-hc.exe";
 
-        private void frmOpenPlex_Load(object sender, EventArgs e)
+        private void frmOpenTheatre_Load(object sender, EventArgs e)
         {
             checkForUpdate();
 
@@ -144,16 +144,17 @@ namespace OpenPlex
         {
             try
             {
-                if (File.Exists(pathData + "open-movies.txt"))
+                //
+                if (File.Exists(pathData + "open-movies.json"))
                 {
-                    if (IsBelowThreshold(pathData + "openplex-movies-db.txt", 12) == true) // if movies db older than 12 hours then write db
+                    if (IsBelowThreshold(pathData + "open-movies.json", 12) == true) // if anime db older than 12 hours then write db
                     {
-                        client.DownloadFile(new Uri(linkMovies), pathData + "open-movies.txt");
+                        client.DownloadFile(new Uri(linkMovies), pathData + "open-movies.json");
                     }
                 }
-                else { client.DownloadFile(new Uri(linkMovies), pathData + "open-movies.txt"); }
+                else { client.DownloadFile(new Uri(linkMovies), pathData + "open-movies.json"); }
 
-                dataMovies = File.ReadAllLines(pathData + "open-movies.txt");
+                dataMoviesJson = File.ReadAllLines(pathData + "open-movies.json");
                 //
 
 
@@ -212,6 +213,7 @@ namespace OpenPlex
                 dataFilesSubtitles = File.ReadAllLines(pathData + "open-subtitles-files.json");
                 //
 
+
                 //
                 if (File.Exists(pathData + "open-torrents-files.json"))
                 {
@@ -225,60 +227,6 @@ namespace OpenPlex
                 dataFilesTorrents = File.ReadAllLines(pathData + "open-torrents-files.json");
                 //
 
-                //
-                if (File.Exists(pathData + "open-movies.json")) // if json db exists
-                {
-                    if (IsBelowThreshold(pathData + "open-movies.json", 12) == true) // if movies json db older than 12 hours then write json db
-                    {
-                        File.Delete(pathData + "open-movies.json");
-                        using (StreamWriter sw = File.CreateText(pathData + "open-movies.json"))
-                        {
-                            foreach (string movie in dataMovies)
-                            {
-                                try
-                                {
-                                    string[] movieCredentials = movie.Split('~');
-                                    var jsonOMDb = client.DownloadString("http://omdbapi.com/?apikey=c933e052&t=" + movieCredentials[0] + "&y=" + movieCredentials[1] + "&plot=short");
-                                    var data = OMDbEntity.FromJson(jsonOMDb);
-                                    if (data.Response == "True")
-                                    {
-                                        data.Sources = movieCredentials[2].Split('*');
-                                        sw.WriteLine(data.ToJson());
-                                    }
-                                }
-                                catch { }
-                            }
-                            sw.Close();
-                            sw.Dispose();
-                        }
-                    }
-                }
-                else // if json db doesn't exist
-                {
-                    using (StreamWriter sw = File.CreateText(pathData + "open-movies.json"))
-                    {
-                        foreach (string movie in dataMovies)
-                        {
-                            try
-                            {
-                                string[] movieCredentials = movie.Split('~');
-                                var jsonOMDb = client.DownloadString("http://omdbapi.com/?apikey=c933e052&t=" + movieCredentials[0] + "&y=" + movieCredentials[1] + "&plot=short");
-                                var data = OMDbEntity.FromJson(jsonOMDb);
-                                if (data.Response == "True")
-                                {
-                                    data.Sources = movieCredentials[2].Split('*');
-                                    sw.WriteLine(data.ToJson());
-                                }
-                            }
-                            catch { }
-                        }
-                        sw.Close();
-                        sw.Dispose();
-                    }
-                }
-
-                dataMoviesJson = File.ReadAllLines(pathData + "open-movies.json");
-                //
 
                 foreach (string file in dataFilesMovies.Take(10000))
                 {
@@ -399,7 +347,7 @@ namespace OpenPlex
 
             if (curVersion.CompareTo(newVersion) < 0)
             {
-                MessageBox.Show("There is a new update available ready to be installed.", "OpenPlex - Update Available");
+                MessageBox.Show("There is a new update available ready to be installed.", "OpenTheatre - Update Available");
 
                 try
                 {
@@ -409,7 +357,7 @@ namespace OpenPlex
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Unable to run installer." + Environment.NewLine + Environment.NewLine + ex.Message, "OpenPlex - Update Error");
+                    MessageBox.Show("Unable to run installer." + Environment.NewLine + Environment.NewLine + ex.Message, "OpenTheatre - Update Error");
                 }
             }
         }
@@ -521,7 +469,7 @@ namespace OpenPlex
         }
 
         string selectedFiles = "Movies";
-
+        
         private void btnSearchFiles_ClickButtonArea(object Sender, MouseEventArgs e)
         {
             if (selectedFiles == "Series")
@@ -623,7 +571,7 @@ namespace OpenPlex
 
         private void lblAboutReportIssue_Click(object sender, EventArgs e)
         {
-            Process.Start("https://github.com/invu/openplex-app/issues/new");
+            Process.Start("https://github.com/invu/OpenTheatre-app/issues/new");
         }
 
         private void dataGrid_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)

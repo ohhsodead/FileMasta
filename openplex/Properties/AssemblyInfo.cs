@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("OpenPlex")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("OpenTheatre")]
+[assembly: AssemblyDescription("Search movies, series, anime, subtitles and torrents from open directories")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("NV")]
-[assembly: AssemblyProduct("OpenPlex")]
+[assembly: AssemblyProduct("OpenTheatre")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

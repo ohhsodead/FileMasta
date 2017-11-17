@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace OpenPlex.Properties {
+namespace OpenTheatre.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace OpenPlex.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("OpenPlex.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("OpenTheatre.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -173,9 +173,9 @@ namespace OpenPlex.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap openplex_logo {
+        internal static System.Drawing.Bitmap opentheatre_logo {
             get {
-                object obj = ResourceManager.GetObject("openplex-logo", resourceCulture);
+                object obj = ResourceManager.GetObject("opentheatre-logo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -183,9 +183,9 @@ namespace OpenPlex.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap openplex_text {
+        internal static System.Drawing.Bitmap opentheatre_text {
             get {
-                object obj = ResourceManager.GetObject("openplex-text", resourceCulture);
+                object obj = ResourceManager.GetObject("opentheatre_text", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
