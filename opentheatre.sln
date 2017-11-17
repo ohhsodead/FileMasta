@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenTheatre", "openplex\OpenTheatre.csproj", "{75A2CFC6-B0B1-42A6-B1F7-66B3C68A06CA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenTheatre", "opentheatre\OpenTheatre.csproj", "{75A2CFC6-B0B1-42A6-B1F7-66B3C68A06CA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnhandledExceptions", "UnhandledExceptions\UnhandledExceptions.csproj", "{8C34BF91-CCE3-47FA-AA32-4B2BB1A6F17A}"
 EndProject
