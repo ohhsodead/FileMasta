@@ -1,7 +1,7 @@
 <h1 align="center">
-  <img src="/images/openplex-logo.png" height="128" width="128" alt="Logo" />
+  <img src="/images/opentheatre-logo.png" height="128" width="128" alt="Logo" />
   <br />
-  OpenPlex
+  OpenTheatre
 </h1>
 
 <h3 align="center">Search movies, series, anime, subtitles and torrents from open directories</h3>
