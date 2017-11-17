@@ -253,6 +253,7 @@ namespace OpenTheatre
 
         int countedMovies = 0;
         string selectedGenre = "";
+        string selectedYear = "";
 
         object loadMoviesLock = new object();
         public List<ctrlMoviesPoster> LoadMovies(int loadCount)
@@ -270,7 +271,7 @@ namespace OpenTheatre
                         {
                             var data = OMDbEntity.FromJson(movie);
 
-                            if (data.Title.ToLower().Contains(txtMoviesSearchBox.Text.ToLower()) | data.Actors.ToLower().Contains(txtMoviesSearchBox.Text.ToLower()) | data.Year == txtMoviesSearchBox.Text && data.Genre.ToLower().Contains(selectedGenre.ToLower()))
+                            if (data.Title.ToLower().Contains(txtMoviesSearchBox.Text.ToLower()) | data.Actors.ToLower().Contains(txtMoviesSearchBox.Text.ToLower()) && data.Year.Contains(selectedYear) && data.Genre.ToLower().Contains(selectedGenre.ToLower()))
                             {
                                 ctrlMoviesPoster ctrlPoster = new ctrlMoviesPoster();
                                 ctrlPoster.infoTitle.Text = data.Title;
@@ -677,6 +678,28 @@ namespace OpenTheatre
             Refresh();
             if (cmboBoxMoviesGenre.SelectedIndex == 0) { selectedGenre = ""; }
             else { selectedGenre = cmboBoxMoviesGenre.SelectedItem.ToString(); }
+
+            panelMovies.Controls.Clear();
+            countedMovies = 0;
+            loadMovies(52);
+        }
+
+        // Filter Movies by Year        
+        private void btnMoviesYear_ClickButtonArea(object Sender, MouseEventArgs e)
+        {
+            cmboBoxMoviesYear.DroppedDown = true;
+        }
+
+        private void cmboBoxMoviesYear_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            btnMoviesYear.Text = "Year : " + cmboBoxMoviesYear.SelectedItem.ToString();
+
+            Font myFont = new Font(btnMoviesYear.Font.FontFamily, this.btnMoviesYear.Font.Size);
+            SizeF mySize = btnMoviesYear.CreateGraphics().MeasureString(btnMoviesYear.Text, myFont);
+            panelMoviesYear.Width = (((int)(Math.Round(mySize.Width, 0))) + 26);
+            Refresh();
+            if (cmboBoxMoviesYear.SelectedIndex == 0) { selectedYear = ""; }
+            else { selectedYear = cmboBoxMoviesYear.SelectedItem.ToString(); }
 
             panelMovies.Controls.Clear();
             countedMovies = 0;
