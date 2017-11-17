@@ -15,13 +15,13 @@ OpenTheatre allows you to search for movies, series, anime, subtitles and torren
 If you've got any comments, queries or suggestions then simply open an issue - we want to know what you've got to say!
 
 ## Some features available
-• Simple interface, background tasks and threads for the best performance
-• Supporting hundreds of open directories, looking for movies, series, anime, subtitles and torrents
-• Search movies, files, people, years or filter by genre
-• Support for streaming files in external players (Windows Media Player, MPC & VLC)
-• Simple download client for direct downloads
-• Local cache updating every 12 hours
-• Collects metadata from OMDb & Popcorn Time
+- Simple interface, background tasks and threads for the best performance
+- Supporting hundreds of open directories, looking for movies, series, anime, subtitles and torrents
+- Search movies, files, people, years or filter by genre
+- Support for streaming files in external players (Windows Media Player, MPC & VLC)
+- Simple download client for direct downloads
+- Local cache updating every 12 hours
+- Collects metadata from OMDb & Popcorn Time
 
 ## How does it work?
 It communicates with the open database to collect the latest movies available for streaming, along with some supported streams. We also use our custom built command-line application to query some of the public open movies directories , returning over 18,000 certified files! All of our other databases (series, anime, etc.) are hosted here . Also includes movie metadata collecting from both Open Movie Database API and Popcorn Time API . Other features include opening files in both WMP, MPC & VLC Player and downloading multiple files asynchronously.
