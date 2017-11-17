@@ -36,7 +36,7 @@ The application is using .NET 4.6.2 WinForms Framework written in C#.
 Windows 7 and above (Windows 7, 8, 8.1, 10)
 
 ## Installation
-Download installer [here](https://github.com/invu/opentheatre-app/releases/download/0.2.0.4/OpenPlexInstaller.exe)
+Download installer [here](https://github.com/invu/opentheatre-app/releases/download/0.2.0.4/OpenTheatreInstaller.exe)
 
 ## Screenshots
 <img src="/screenshots/movies.png" />
