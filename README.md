@@ -49,4 +49,4 @@ Download installer [here](https://github.com/invu/opentheatre-app/releases/downl
 All of the free files found on this app are hosted on third-party servers that are freely available for all internet users. Any legal issues regarding the free online links on this app should be taken up with the actual file hosts themselves, as we're not affiliated with them.
 
 ## Comments
-OpenPlex is a new application and is not a segment of Popcorn Time or any other similar apps.
+OpenTheatre is a new application and is not a segment of Popcorn Time or any other similar apps.
