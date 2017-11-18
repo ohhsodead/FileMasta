@@ -10,9 +10,7 @@
 <br />
 
 ## What is OpenTheatre?
-OpenTheatre allows you to search for movies, series, anime, subtitles and torrents available hosted all over the Internet in public open directories. We've gathered all the appropriate files out there so you don't have to. Created by a few friends who wanted to come up with something different.
-
-If you've got any comments, queries or suggestions then simply open an issue - we want to know what you've got to say!
+OpenTheatre allows you to search for movies, series, anime, subtitles and torrents files available hosted all over the Internet found in open directories. We've gathered all the appropriate files out there so you don't have to. Created by a few friends who wanted to come up with something different.
 
 ## Some features available
 - Simple interface, background tasks and threads for the best performance
@@ -32,7 +30,7 @@ OpenTheatre 2.0.4
 ## Framework & Backend
 The application is using .NET 4.6.2 WinForms Framework written in C#.
 
-##Supported Platforms
+## Supported Platforms
 Windows 7 and above (Windows 7, 8, 8.1, 10)
 
 ## Installation
