@@ -675,12 +675,9 @@
     <value>True</value>
   </metadata>
   <data name="lblAboutText.Text" xml:space="preserve">
-    <value>OpenPlex allows you to search for Movies/TV shows available to watch online for free by providing you with trusted files from all around the web. But we don't use torrents, just raw media files playable anywhere.
+    <value>OpenTheatre allows you to search for movies, series, anime, subtitles and torrents available hosted all over the Internet in public open directories. We've gathered all the appropriate files out there so you don't have to. Created by a few friends who wanted to come up with something different.
 
-A database run by a community of movie lovers who are constantly uploading the links of the newly released movies as well as top classics, and of course we're open to suggestions.
-
-If you've got any comments, queries or suggestions for the app please just open an issue - we want to know what you've got to say!
-
+If you've got any comments, queries or suggestions then simply open an issue - we want to know what you've got to say!
 
 </value>
   </data>

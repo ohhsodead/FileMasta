@@ -39,6 +39,9 @@
   <PropertyGroup>
     <SignAssembly>false</SignAssembly>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>OpenTheatre.Program</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="CButtonLib">
       <HintPath>..\..\..\- Plugins\CButton\CButton\bin\Debug\CButtonLib.dll</HintPath>

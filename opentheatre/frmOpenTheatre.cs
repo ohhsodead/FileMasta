@@ -298,7 +298,7 @@ namespace OpenTheatre
                                     var jsonDataPT = PopcornTimeEntity.FromJson(jsonData);
                                     ctrlPoster.infoImageFanart = jsonDataPT.Images.Fanart;
                                 }
-                                catch { }
+                                catch { ctrlPoster.infoImageFanart = ""; }
 
                                 ctrlPoster.Show();
                                 MoviesPosters.Add(ctrlPoster);
