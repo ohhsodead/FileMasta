@@ -9,11 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net;
 using System.IO;
+using System.Diagnostics;
 
 namespace OpenTheatre
 {
     public partial class ctrlDownloadItem : UserControl
     {
+        public Size defaultSize = new Size(frmOpenTheatre.form.panelDownloads.ClientSize.Width - 7, 82), dropSize = new Size(frmOpenTheatre.form.panelDownloads.ClientSize.Width - 7, 118);
+
         public ctrlDownloadItem()
         {
             InitializeComponent();
@@ -25,27 +28,35 @@ namespace OpenTheatre
         }
 
         WebClient wc = new WebClient();
+        Stopwatch sw = new Stopwatch();
 
         public void doDownloadFile(string url)
         {
             wc.DownloadFileCompleted += new AsyncCompletedEventHandler(downloadCompleted);
             wc.DownloadProgressChanged += new DownloadProgressChangedEventHandler(downloadProgressChanged);
-            wc.DownloadFileAsync(new Uri(url), frmOpenTheatre.pathDownloads + Path.GetFileName(url));
-            lblFileName.Text = Path.GetFileName(url);
+            wc.DownloadFileAsync(new Uri(url), frmOpenTheatre.pathDownloads + Path.GetFileName(new Uri(url).LocalPath));
+            lblFileName.Text = Path.GetFileName(new Uri(url).LocalPath);
+            sw.Start();
         }
 
         private void downloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
         {
+            lblSpeed.Text = "Speed: " + string.Format("{0} kb/s", (e.BytesReceived / 1024d / sw.Elapsed.TotalSeconds).ToString("0.00"));
+
+            lblDownloaded.Text = "Downloaded: " + string.Format("{0} MB's / {1} MB's",
+       (e.BytesReceived / 1024d / 1024d).ToString("0.00"),
+       (e.TotalBytesToReceive / 1024d / 1024d).ToString("0.00"));
 
             double Value = Convert.ToDouble(e.TotalBytesToReceive);
 
             progressBar1.Value = e.ProgressPercentage;
             lblPercentage.Text = "Downloading - " + progressBar1.Value + "%";
-            lblSize.Text = "Size: " + ToFileSize(Value).ToString();
+            lblSize.Text = "Size: " + ToFileSize(Value);
         }
 
         private void downloadCompleted(object sender, AsyncCompletedEventArgs e)
         {
+            sw.Reset();
             if (e.Cancelled == true) { lblPercentage.Text = "Download Cancelled"; lblCancel.Text = "Close"; }
             else if (e.Error != null) { lblPercentage.Text = "Download Failed - " + e.Error.Message; lblCancel.Text = "Close"; }
             else { lblPercentage.Text = "Download Complete"; lblCancel.Text = "Close"; }
@@ -110,6 +121,11 @@ namespace OpenTheatre
         private void lblFileName_Click(object sender, EventArgs e)
         {
             openFile(frmOpenTheatre.pathDownloads + lblFileName.Text);
+        }
+
+        private void imgDropDown_Click(object sender, EventArgs e)
+        {
+            if (Size == defaultSize) { Size = dropSize; lblSpeed.Visible = true; lblDownloaded.Visible = true; } else { Size = defaultSize; lblSpeed.Visible = false; lblDownloaded.Visible = false; }
         }
 
         private void lblCancel_Click(object sender, EventArgs e)

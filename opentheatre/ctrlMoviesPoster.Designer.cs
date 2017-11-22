@@ -136,7 +136,7 @@
             this.imageBackgroundEffect.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.imageBackgroundEffect.Image = global::OpenTheatre.Properties.Resources.glow_poster;
+            this.imageBackgroundEffect.Image = global::OpenTheatre.Properties.Resources.poster_glow;
             this.imageBackgroundEffect.Location = new System.Drawing.Point(-1, -2);
             this.imageBackgroundEffect.Name = "imageBackgroundEffect";
             this.imageBackgroundEffect.Size = new System.Drawing.Size(158, 225);

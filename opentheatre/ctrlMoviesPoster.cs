@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Utilities;
+using System;
 using System.Drawing;
 using System.Windows.Forms;
 using System.IO;
@@ -53,13 +54,13 @@ namespace OpenTheatre
 
                 try
                 {
-                    MovieDetails.imgPoster.Image = frmOpenTheatre.ChangeOpacity(frmOpenTheatre.LoadPicture(infoImagePoster), 1);
-                    MovieDetails.BackgroundImage = frmOpenTheatre.ChangeOpacity(frmOpenTheatre.LoadPicture(infoImageFanart), 0.2F);
+                    MovieDetails.imgPoster.Image = UtilityTools.ChangeOpacity(frmOpenTheatre.LoadPicture(infoImagePoster), 1);
+                    MovieDetails.BackgroundImage = UtilityTools.ChangeOpacity(frmOpenTheatre.LoadPicture(infoImageFanart), 0.2F);
                 }
                 catch { }
 
-                if (infoImagePoster == "") { MovieDetails.imgPoster.Image = frmOpenTheatre.ChangeOpacity(Properties.Resources.default_poster, 1); }
-                if (infoImageFanart == "") { MovieDetails.BackgroundImage = frmOpenTheatre.ChangeOpacity(Properties.Resources.background_original, 0.5F); }
+                if (infoImagePoster == "") { MovieDetails.imgPoster.Image = UtilityTools.ChangeOpacity(Properties.Resources.poster_default, 1); }
+                if (infoImageFanart == "") { MovieDetails.BackgroundImage = UtilityTools.ChangeOpacity(Properties.Resources.background_original, 0.5F); }
 
                 foreach (string movieLink in infoMovieLinks)
                 {
@@ -90,7 +91,7 @@ namespace OpenTheatre
                 infoPoster2.Image = new Bitmap(infoPoster.BackgroundImage);
                 infoPoster.BorderShow = true;
                 infoPoster.BackgroundImage.Dispose();
-                infoPoster.BackgroundImage = frmOpenTheatre.ChangeOpacity(infoPoster2.Image, 0.4F);
+                infoPoster.BackgroundImage = UtilityTools.ChangeOpacity(infoPoster2.Image, 0.4F);
                 Update();
             }
             catch
@@ -104,7 +105,7 @@ namespace OpenTheatre
             {
                 infoPoster.BackgroundImage.Dispose();
                 infoPoster.BorderShow = false;
-                infoPoster.BackgroundImage = frmOpenTheatre.ChangeOpacity(infoPoster2.Image, 1);
+                infoPoster.BackgroundImage = UtilityTools.ChangeOpacity(infoPoster2.Image, 1);
             }
             catch
             { //InfoPoster.BackgroundImage = frmOpenTheatre.ChangeOpacity(Properties.Resources.defaultPoster, 1);

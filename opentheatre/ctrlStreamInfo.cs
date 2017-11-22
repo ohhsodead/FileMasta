@@ -84,5 +84,12 @@ namespace OpenTheatre
                 "File Name: " + new Uri(webFile).LocalPath);
         }
 
+        private void imgAddToBookmarks_Click(object sender, EventArgs e)
+        {
+            if (!(Properties.Settings.Default.Bookmarks.Contains(infoFileURL)))
+            {
+                Properties.Settings.Default.Bookmarks.Add(infoFileURL);
+            }
+        }
     }
 }

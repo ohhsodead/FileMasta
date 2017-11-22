@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ctrlDetails));
             this.infoYear = new System.Windows.Forms.Label();
             this.infoGenre = new System.Windows.Forms.Label();
             this.lblSubDirector = new System.Windows.Forms.Label();
@@ -159,7 +160,6 @@
             // infoTitle
             // 
             this.infoTitle.AutoEllipsis = true;
-            this.infoTitle.AutoSize = true;
             this.infoTitle.BackColor = System.Drawing.Color.Transparent;
             this.infoTitle.Cursor = System.Windows.Forms.Cursors.Default;
             this.infoTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 18F);
@@ -168,7 +168,7 @@
             this.infoTitle.Location = new System.Drawing.Point(199, 23);
             this.infoTitle.Margin = new System.Windows.Forms.Padding(0);
             this.infoTitle.Name = "infoTitle";
-            this.infoTitle.Size = new System.Drawing.Size(136, 32);
+            this.infoTitle.Size = new System.Drawing.Size(693, 32);
             this.infoTitle.TabIndex = 46;
             this.infoTitle.Text = "Movie Title";
             // 
@@ -288,7 +288,7 @@
             // imgIMDb
             // 
             this.imgIMDb.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgIMDb.Image = global::OpenTheatre.Properties.Resources.imdb_icon;
+            this.imgIMDb.Image = global::OpenTheatre.Properties.Resources.imdb;
             this.imgIMDb.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.imgIMDb.Location = new System.Drawing.Point(264, 4);
             this.imgIMDb.Margin = new System.Windows.Forms.Padding(4, 4, 4, 20);
@@ -458,7 +458,7 @@
             // 
             this.imgPosterBG.BackColor = System.Drawing.Color.Transparent;
             this.imgPosterBG.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.imgPosterBG.Image = global::OpenTheatre.Properties.Resources.glow_poster;
+            this.imgPosterBG.Image = ((System.Drawing.Image)(resources.GetObject("imgPosterBG.Image")));
             this.imgPosterBG.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.imgPosterBG.Location = new System.Drawing.Point(16, 16);
             this.imgPosterBG.Name = "imgPosterBG";
@@ -493,7 +493,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.appClose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgPosterBG)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

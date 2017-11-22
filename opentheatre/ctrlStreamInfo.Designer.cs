@@ -40,8 +40,10 @@
             this.WMPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.VLCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MPCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.imgAddToBookmarks = new System.Windows.Forms.PictureBox();
             this.panelFileInfo.SuspendLayout();
             this.contextFileName.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgAddToBookmarks)).BeginInit();
             this.SuspendLayout();
             // 
             // infoFileHost
@@ -78,10 +80,10 @@
             this.panelFileInfo.BackColor = System.Drawing.Color.Transparent;
             this.panelFileInfo.Controls.Add(this.infoFileHost);
             this.panelFileInfo.Controls.Add(this.infoFileName);
-            this.panelFileInfo.Location = new System.Drawing.Point(0, 0);
+            this.panelFileInfo.Location = new System.Drawing.Point(23, 0);
             this.panelFileInfo.Name = "panelFileInfo";
             this.panelFileInfo.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
-            this.panelFileInfo.Size = new System.Drawing.Size(178, 25);
+            this.panelFileInfo.Size = new System.Drawing.Size(156, 25);
             this.panelFileInfo.TabIndex = 3;
             this.panelFileInfo.WrapContents = false;
             // 
@@ -192,32 +194,48 @@
             // WMPToolStripMenuItem
             // 
             this.WMPToolStripMenuItem.Name = "WMPToolStripMenuItem";
-            this.WMPToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.WMPToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.WMPToolStripMenuItem.Text = "WMP";
             this.WMPToolStripMenuItem.Click += new System.EventHandler(this.WMPToolStripMenuItem_Click);
             // 
             // VLCToolStripMenuItem
             // 
             this.VLCToolStripMenuItem.Name = "VLCToolStripMenuItem";
-            this.VLCToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.VLCToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.VLCToolStripMenuItem.Text = "VLC";
             this.VLCToolStripMenuItem.Click += new System.EventHandler(this.VLCToolStripMenuItem_Click);
             // 
             // MPCToolStripMenuItem
             // 
             this.MPCToolStripMenuItem.Name = "MPCToolStripMenuItem";
-            this.MPCToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.MPCToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.MPCToolStripMenuItem.Text = "MPC";
+            // 
+            // imgAddToBookmarks
+            // 
+            this.imgAddToBookmarks.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.imgAddToBookmarks.BackColor = System.Drawing.Color.Transparent;
+            this.imgAddToBookmarks.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imgAddToBookmarks.Image = global::OpenTheatre.Properties.Resources.bookmark_plus;
+            this.imgAddToBookmarks.Location = new System.Drawing.Point(1, 1);
+            this.imgAddToBookmarks.Name = "imgAddToBookmarks";
+            this.imgAddToBookmarks.Size = new System.Drawing.Size(23, 23);
+            this.imgAddToBookmarks.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgAddToBookmarks.TabIndex = 14;
+            this.imgAddToBookmarks.TabStop = false;
+            this.imgAddToBookmarks.Click += new System.EventHandler(this.imgAddToBookmarks_Click);
             // 
             // ctrlStreamInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
+            this.Controls.Add(this.imgAddToBookmarks);
             this.Controls.Add(this.panelFileInfo);
             this.Controls.Add(this.btnWatchNow);
             this.Controls.Add(this.btnReportBroken);
             this.Controls.Add(this.btnDownload);
+            this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.White;
             this.Name = "ctrlStreamInfo";
@@ -227,6 +245,7 @@
             this.panelFileInfo.ResumeLayout(false);
             this.panelFileInfo.PerformLayout();
             this.contextFileName.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.imgAddToBookmarks)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -244,5 +263,6 @@
         private System.Windows.Forms.ToolStripMenuItem VLCToolStripMenuItem;
         private CButtonLib.CButton btnReportBroken;
         private System.Windows.Forms.ToolStripMenuItem MPCToolStripMenuItem;
+        private System.Windows.Forms.PictureBox imgAddToBookmarks;
     }
 }

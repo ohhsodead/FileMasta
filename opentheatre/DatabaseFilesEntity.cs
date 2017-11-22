@@ -2,7 +2,7 @@
 {
     using Newtonsoft.Json;
 
-    public partial class DatabaseFiles
+    public partial class DatabaseFilesEntity
     {
         [JsonProperty("URL")]
         public string URL { get; set; }
@@ -17,14 +17,14 @@
         public string Title { get; set; }
     }
 
-    public partial class DatabaseFiles
+    public partial class DatabaseFilesEntity
     {
-        public static DatabaseFiles FromJson(string json) => JsonConvert.DeserializeObject<DatabaseFiles>(json, Converter.Settings);
+        public static DatabaseFilesEntity FromJson(string json) => JsonConvert.DeserializeObject<DatabaseFilesEntity>(json, Converter.Settings);
     }
 
     public static class Serialize
     {
-        public static string ToJson(this DatabaseFiles self) => JsonConvert.SerializeObject(self, Converter.Settings);
+        public static string ToJson(this DatabaseFilesEntity self) => JsonConvert.SerializeObject(self, Converter.Settings);
     }
 
     public class Converter
