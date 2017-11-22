@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="/opentheatre/Resources/openplex-logo.png" height="128" width="128" alt="Logo" />
+  <img src="/opentheatre/Resources/opentheatre-logo.png" height="128" width="128" alt="Logo" />
   <br />
   OpenTheatre
 </h1>
@@ -42,6 +42,9 @@ Download installer [here](https://github.com/invu/opentheatre-app/releases/downl
 
 ### Files
 ![Movie Page](https://raw.githubusercontent.com/invu/opentheatre-app/master/screenshots/files.png)
+
+### Bookmarks
+![Bookmarks](https://raw.githubusercontent.com/invu/opentheatre-app/master/screenshots/bookmarks.png)
 
 ### Movie Details
 ![Show Page](https://raw.githubusercontent.com/invu/opentheatre-app/master/screenshots/movie%20details.png)
