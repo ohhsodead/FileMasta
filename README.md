@@ -16,7 +16,7 @@ OpenTheatre allows you to search for movies, series, anime, subtitles and torren
 - Simple interface, background tasks and threads for the best performance
 - Supporting hundreds of open directories, looking for movies, series, anime, subtitles and torrents
 - Search movies, files, people, years or filter by genre
-- Support for streaming files in external players (Windows Media Player, MPC & VLC)
+- Support for streaming files in external players (WMP, MPC & VLC)
 - Simple download client for direct downloads
 - Local cache updating every 12 hours
 - Collects metadata from OMDb & Popcorn Time
@@ -34,7 +34,7 @@ The application is using .NET 4.6.2 WinForms Framework written in C#.
 Windows 7 and above (Windows 7, 8, 8.1, 10)
 
 ## Installation
-Download installer [here](https://github.com/invu/opentheatre-app/releases/download/0.2.0.4/OpenTheatreInstaller.exe)
+Download installer [here](https://github.com/invu/opentheatre-app/releases/download/0.2.0.5/OpenTheatreInstaller.exe)
 
 ## Screenshots
 ### Movies
