@@ -1,4 +1,5 @@
 ﻿using DatabaseFilesAPI;
+using OMDbAPI;
 using OpenTheatre;
 using System;
 using System.Collections.Generic;
@@ -43,6 +44,11 @@ namespace Utilities
             {
                 var data = DatabaseFilesEntity.FromJson(file);
                 if (data.URL == fileUrl) { return "Torrents"; }
+            }
+            foreach (string file in frmOpenTheatre.dataMovies)
+            {
+                var data = OMDbEntity.FromJson(file);
+                if (data.Sources.Contains(fileUrl)) { return "Movies"; }
             }
 
             return "null";

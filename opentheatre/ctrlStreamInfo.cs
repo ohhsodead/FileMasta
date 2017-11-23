@@ -20,6 +20,7 @@ namespace OpenTheatre
             BackColor = Color.Transparent;
             VLCToolStripMenuItem.Visible = File.Exists(frmOpenTheatre.pathVLC);
             MPCToolStripMenuItem.Visible = File.Exists(frmOpenTheatre.pathMPCCodec64) || File.Exists(frmOpenTheatre.pathMPC64) || File.Exists(frmOpenTheatre.pathMPC86);
+            if (Properties.Settings.Default.Bookmarks.Contains(infoFileURL)) { imgAddToBookmarks.Image = Properties.Resources.bookmark_remove; } else { imgAddToBookmarks.Image = Properties.Resources.bookmark_plus; }
         }
 
         private void btnPlay_ClickButtonArea(object Sender, MouseEventArgs e)
@@ -86,10 +87,11 @@ namespace OpenTheatre
 
         private void imgAddToBookmarks_Click(object sender, EventArgs e)
         {
-            if (!(Properties.Settings.Default.Bookmarks.Contains(infoFileURL)))
+            if (Properties.Settings.Default.Bookmarks.Contains(infoFileURL))
             {
-                Properties.Settings.Default.Bookmarks.Add(infoFileURL);
+                Properties.Settings.Default.Bookmarks.Remove(infoFileURL); imgAddToBookmarks.Image = Properties.Resources.bookmark_plus;
             }
+            else { Properties.Settings.Default.Bookmarks.Add(infoFileURL); imgAddToBookmarks.Image = Properties.Resources.bookmark_remove; }
         }
     }
 }

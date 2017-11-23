@@ -100,10 +100,17 @@ namespace OpenTheatre
         public static string pathMPCCodec64 = @"C:\Program Files(x86)\K-Lite Codec Pack\MPC-HC64\mpc-hc64.exe";
         public static string pathMPC64 = @"C:\Program Files\MPC-HC\mpc-hc64.exe";
         public static string pathMPC86 = @"C:\Program Files (x86)\MPC-HC\mpc-hc.exe";
+        
+        private void frmOpenTheatre_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Properties.Settings.Default.Save();
+            if (Properties.Settings.Default.clearDataOnClose == true) { Directory.Delete(pathRoot); }
+        }
 
         private void frmOpenTheatre_Load(object sender, EventArgs e)
         {
             UtilityTools.checkForUpdate();
+            loadSettings();
 
             currentTab = tabMovies;
 
@@ -235,91 +242,6 @@ namespace OpenTheatre
 
         public static string[] dataFilesTorrents, dataFilesSubtitles, dataFilesAnime, dataFilesSeries, dataFilesMovies, dataMovies, dataBookmarks;
         
-        // Load/Show Movies
-        int countedMovies = 0;
-        string selectedGenre = "", selectedYear = "";
-
-        object loadMoviesLock = new object();
-        public List<ctrlMoviesPoster> LoadMovies(int loadCount)
-        {
-            lock (loadMoviesLock)
-            {
-                List<ctrlMoviesPoster> MoviesPosters = new List<ctrlMoviesPoster>();
-                int loadedCount = 0;
-
-                foreach (string movie in dataMovies.Reverse().Skip(countedMovies))
-                {
-                    if (loadedCount < loadCount)
-                    {
-                        if (string.IsNullOrEmpty(movie) == false)
-                        {
-                            var data = OMDbEntity.FromJson(movie);
-                            
-                            if (data.Title.ToLower().Contains(txtMoviesSearchBox.Text.ToLower()) | data.Actors.ToLower().Contains(txtMoviesSearchBox.Text.ToLower()) && data.Year.Contains(selectedYear) && data.Genre.ToLower().Contains(selectedGenre.ToLower()))
-                            {
-                                ctrlMoviesPoster ctrlPoster = new ctrlMoviesPoster();
-                                ctrlPoster.infoTitle.Text = data.Title;
-                                ctrlPoster.infoYear.Text = data.Year;
-
-                                ctrlPoster.infoGenres = data.Genre;
-                                ctrlPoster.infoSynopsis = data.Plot;
-                                ctrlPoster.infoRuntime = data.Runtime;
-                                ctrlPoster.infoRated = data.Rated;
-                                ctrlPoster.infoDirector = data.Director;
-                                ctrlPoster.infoCast = data.Actors;
-
-                                ctrlPoster.infoImdbRating = data.ImdbRating;
-                                ctrlPoster.infoImdbId = data.ImdbID;
-
-                                ctrlPoster.infoPoster.BackgroundImage = LoadPicture(data.Poster);
-                                ctrlPoster.infoImagePoster = data.Poster;
-                                ctrlPoster.Name = data.ImdbID;
-                                ctrlPoster.infoMovieLinks = data.Sources;
-
-                                try
-                                {
-                                    string jsonData = client.DownloadString("https://tv-v2.api-fetch.website/movie/" + data.ImdbID);
-                                    var jsonDataPT = PopcornTimeEntity.FromJson(jsonData);
-                                    ctrlPoster.infoImageFanart = jsonDataPT.Images.Fanart;
-                                }
-                                catch { ctrlPoster.infoImageFanart = ""; }
-
-                                ctrlPoster.Show();
-                                MoviesPosters.Add(ctrlPoster);
-                                loadedCount += 1;
-                            }
-                            countedMovies += 1;
-                        }
-                    }
-                }
-                return MoviesPosters;
-            }
-        }
-
-        delegate void loadMoviesCallBack(int count);
-        public void loadMovies(int count)
-        {
-            imgSpinnerGIF.Visible = true;
-            BackGroundWorker.RunWorkAsync<List<ctrlMoviesPoster>>(() => LoadMovies(count), (data) =>
-            {
-                if (panelMovies.InvokeRequired)
-                {
-                    loadMoviesCallBack b = new loadMoviesCallBack(loadMovies);
-                    Invoke(b, new object[] { count });
-                }
-                else
-                {
-                    foreach (ctrlMoviesPoster item in data)
-                    {
-                        panelMovies.Controls.Add(item);
-                    }
-
-                    imgSpinnerGIF.Visible = false;
-                    tab.SelectedTab = tabMovies;
-                }
-            });
-        }
-
 
         // Core Tabs
         public TabPage currentTab;
@@ -343,7 +265,14 @@ namespace OpenTheatre
         {
             tab.SelectedTab = tabBookmarks;
         }
-        
+
+        private void imgSettings_Click(object sender, EventArgs e)
+        {
+            loadSettings();
+
+            tab.SelectedTab = tabSettings;
+        }
+
         private void imgAbout_Click(object sender, EventArgs e)
         {
             tab.SelectedTab = tabAbout;
@@ -410,14 +339,93 @@ namespace OpenTheatre
                 loadMovies(52);
             }
         }
+        //
 
-        private void btnSearchMovies_ClickButtonArea(object Sender, MouseEventArgs e)
+        // Movies
+        int countedMovies = 0;
+        string selectedGenre = "", selectedYear = "";
+
+        object loadMoviesLock = new object();
+        public List<ctrlMoviesPoster> LoadMovies(int loadCount)
         {
-            panelMovies.Controls.Clear();
-            countedMovies = 0;
-            loadMovies(52);
+            lock (loadMoviesLock)
+            {
+                List<ctrlMoviesPoster> MoviesPosters = new List<ctrlMoviesPoster>();
+                int loadedCount = 0;
+
+                foreach (string movie in dataMovies.Reverse().Skip(countedMovies))
+                {
+                    if (loadedCount < loadCount)
+                    {
+                        if (string.IsNullOrEmpty(movie) == false)
+                        {
+                            var data = OMDbEntity.FromJson(movie);
+
+                            if (data.Title.ToLower().Contains(txtMoviesSearchBox.Text.ToLower()) | data.Actors.ToLower().Contains(txtMoviesSearchBox.Text.ToLower()) && data.Year.Contains(selectedYear) && data.Genre.ToLower().Contains(selectedGenre.ToLower()))
+                            {
+                                ctrlMoviesPoster ctrlPoster = new ctrlMoviesPoster();
+                                ctrlPoster.infoTitle.Text = data.Title;
+                                ctrlPoster.infoYear.Text = data.Year;
+
+                                ctrlPoster.infoGenres = data.Genre;
+                                ctrlPoster.infoSynopsis = data.Plot;
+                                ctrlPoster.infoRuntime = data.Runtime;
+                                ctrlPoster.infoRated = data.Rated;
+                                ctrlPoster.infoDirector = data.Director;
+                                ctrlPoster.infoCast = data.Actors;
+
+                                ctrlPoster.infoImdbRating = data.ImdbRating;
+                                ctrlPoster.infoImdbId = data.ImdbID;
+
+                                ctrlPoster.infoPoster.BackgroundImage = LoadPicture(data.Poster);
+                                ctrlPoster.infoImagePoster = data.Poster;
+                                ctrlPoster.Name = data.ImdbID;
+                                ctrlPoster.infoMovieLinks = data.Sources;
+
+                                try
+                                {
+                                    string jsonData = client.DownloadString("https://tv-v2.api-fetch.website/movie/" + data.ImdbID);
+                                    var jsonDataPT = PopcornTimeEntity.FromJson(jsonData);
+                                    ctrlPoster.infoImageFanart = jsonDataPT.Images.Fanart;
+                                }
+                                catch { ctrlPoster.infoImageFanart = ""; }
+
+                                ctrlPoster.Show();
+                                MoviesPosters.Add(ctrlPoster);
+                                loadedCount += 1;
+                            }
+                            countedMovies += 1;
+                        }
+                    }
+                }
+                return MoviesPosters;
+            }
         }
 
+        delegate void loadMoviesCallBack(int count);
+        public void loadMovies(int count)
+        {
+            imgSpinnerGIF.Visible = true;
+            BackGroundWorker.RunWorkAsync<List<ctrlMoviesPoster>>(() => LoadMovies(count), (data) =>
+            {
+                if (panelMovies.InvokeRequired)
+                {
+                    loadMoviesCallBack b = new loadMoviesCallBack(loadMovies);
+                    Invoke(b, new object[] { count });
+                }
+                else
+                {
+                    foreach (ctrlMoviesPoster item in data)
+                    {
+                        panelMovies.Controls.Add(item);
+                    }
+
+                    imgSpinnerGIF.Visible = false;
+                    tab.SelectedTab = tabMovies;
+                }
+            });
+        }
+        
         // Search Movies by Text
         private void txtMoviesSearchBox_Enter(object sender, EventArgs e)
         {
@@ -432,6 +440,13 @@ namespace OpenTheatre
         private void bgMoviesSearchBox_ClickButtonArea(object Sender, MouseEventArgs e)
         {
             txtMoviesSearchBox.Focus();
+        }
+
+        private void btnSearchMovies_ClickButtonArea(object Sender, MouseEventArgs e)
+        {
+            panelMovies.Controls.Clear();
+            countedMovies = 0;
+            loadMovies(52);
         }
 
         // Filter Movies by Genre
@@ -477,7 +492,7 @@ namespace OpenTheatre
             countedMovies = 0;
             loadMovies(52);
         }
-
+        //
 
         // Files (& Sub Tabs)
         string selectedFilesFileType = "", selectedFilesHost = "", selectedFilesQuality = "", selectedFiles = "Movies"; // Files Filter Preferences
@@ -747,11 +762,6 @@ namespace OpenTheatre
             ActiveForm.AcceptButton = btnSearchFiles;
         }
 
-        private void frmOpenTheatre_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Properties.Settings.Default.Save();
-        }
-
         private void txtFilesSearchBox_Leave(object sender, EventArgs e)
         {
             ActiveForm.AcceptButton = null; //
@@ -771,7 +781,7 @@ namespace OpenTheatre
             SizeF mySize = btnFilesSort.CreateGraphics().MeasureString(btnFilesSort.Text, myFont);
             panelFilesSort.Width = (((int)(Math.Round(mySize.Width, 0))) + 26);
             Refresh();
-            if (cmboBoxFilesSort.SelectedIndex == 0) { cmboBoxFilesHost.DropDownWidth = DropDownWidth(cmboBoxFilesHost); showSelectedFiles(); }
+            if (cmboBoxFilesSort.SelectedIndex == 0) { cmboBoxFilesSort.DropDownWidth = DropDownWidth(cmboBoxFilesSort); showSelectedFiles(); }
             else if (cmboBoxFilesSort.SelectedIndex == 1) { dataGridFiles.Sort(dataGridFiles.Columns[0], ListSortDirection.Ascending); }
             else if (cmboBoxFilesSort.SelectedIndex == 2) { dataGridFiles.Sort(dataGridFiles.Columns[0], ListSortDirection.Descending); }
         }
@@ -890,7 +900,7 @@ namespace OpenTheatre
                 searchFiles(dataFilesTorrents);
             }
         }
-
+        //
 
         // Bookmarks
         string selectedBookmarksType = "";
@@ -958,7 +968,7 @@ namespace OpenTheatre
             SizeF mySize = btnBookmarksSort.CreateGraphics().MeasureString(btnBookmarksSort.Text, myFont);
             panelBookmarksSort.Width = (((int)(Math.Round(mySize.Width, 0))) + 26);
             Refresh();
-            if (cmboBoxBookmarksSort.SelectedIndex == 0) { searchBookmarks(); }
+            if (cmboBoxBookmarksSort.SelectedIndex == 0) { cmboBoxBookmarksSort.DropDownWidth = DropDownWidth(cmboBoxBookmarksSort); searchBookmarks(); }
             else if (cmboBoxBookmarksSort.SelectedIndex == 1) { dataGridBookmarks.Sort(dataGridBookmarks.Columns[1], ListSortDirection.Ascending); }
             else if (cmboBoxBookmarksSort.SelectedIndex == 2) { dataGridBookmarks.Sort(dataGridBookmarks.Columns[1], ListSortDirection.Descending); }
         }
@@ -980,9 +990,9 @@ namespace OpenTheatre
             if (cmboBoxBookmarksType.SelectedIndex == 0) { selectedBookmarksType = ""; searchBookmarks(); }
             else { selectedBookmarksType = cmboBoxBookmarksType.SelectedItem.ToString(); searchBookmarks(); }
         }
+        //
 
-
-        // Downloads 
+        // Downloads tab
         public void doDownloadFile(string url)
         {
             ctrlDownloadItem ctrlItem = new ctrlDownloadItem();
@@ -1001,7 +1011,7 @@ namespace OpenTheatre
         {
             if (panelDownloads.Controls.Count == 0) { lblNoDownloads.Visible = true; } else { lblNoDownloads.Visible = false; }
         }
-
+        //
 
         // About tab
         private void imgCloseAbout_Click(object sender, EventArgs e)
@@ -1014,5 +1024,56 @@ namespace OpenTheatre
             Process.Start("https://github.com/invu/OpenTheatre-app/issues/new");
         }
 
+
+        // Settings tab
+        public void loadSettings()
+        {
+            chkSettingsClearData.Checked = Properties.Settings.Default.clearDataOnClose;
+            chkSettingsCustomConnection.Checked = Properties.Settings.Default.connectionCustom;
+            txtBoxSettingsConnectionHost.Text = Properties.Settings.Default.connectionHost;
+            txtBoxSettingsConnectionPort.Text = Convert.ToString(Properties.Settings.Default.connectionPort);
+            txtBoxSettingsConnectionUsername.Text = Properties.Settings.Default.connectionUsername;
+            txtBoxSettingsConnectionPassword.Text = Properties.Settings.Default.connectionPassword;
+        }
+
+        private void chkSettingsClearData_CheckedChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.clearDataOnClose = chkSettingsClearData.Checked;
+        }
+        
+        private void chkSettingsCustomConnection_CheckedChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.connectionCustom = chkSettingsCustomConnection.Checked;
+
+            lblSettingsConnectionHost.Enabled = chkSettingsCustomConnection.Checked;
+            lblSettingsConnectionPort.Enabled = chkSettingsCustomConnection.Checked;
+            lblSettingsConnectionUsername.Enabled = chkSettingsCustomConnection.Checked;
+            lblSettingsConnectionPassword.Enabled = chkSettingsCustomConnection.Checked;
+
+            txtBoxSettingsConnectionHost.Enabled = chkSettingsCustomConnection.Checked;
+            txtBoxSettingsConnectionPort.Enabled = chkSettingsCustomConnection.Checked;
+            txtBoxSettingsConnectionUsername.Enabled = chkSettingsCustomConnection.Checked;
+            txtBoxSettingsConnectionPassword.Enabled = chkSettingsCustomConnection.Checked;
+
+            bgSettingsConnectionHost.Enabled = chkSettingsCustomConnection.Checked;
+            bgSettingsConnectionPort.Enabled = chkSettingsCustomConnection.Checked;
+            bgSettingsConnectionUsername.Enabled = chkSettingsCustomConnection.Checked;
+            bgSettingsConnectionPassword.Enabled = chkSettingsCustomConnection.Checked;
+        }
+
+        private void btnSettingsSave_ClickButtonArea(object Sender, MouseEventArgs e)
+        {
+            Properties.Settings.Default.connectionHost = txtBoxSettingsConnectionHost.Text;
+            Properties.Settings.Default.connectionPort = txtBoxSettingsConnectionPort.Text;
+            Properties.Settings.Default.connectionUsername = txtBoxSettingsConnectionUsername.Text;
+            Properties.Settings.Default.connectionPassword = txtBoxSettingsConnectionPassword.Text;
+            Properties.Settings.Default.Save();
+        }
+
+        private void btnSettingsRestoreDefault_ClickButtonArea(object Sender, MouseEventArgs e)
+        {
+            Properties.Settings.Default.connectionCustom = false;
+            Properties.Settings.Default.clearDataOnClose = false;
+        }
     }
 }

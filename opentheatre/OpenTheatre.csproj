@@ -163,7 +163,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="openplex_logo.ico" />
+    <None Include="Resources\settings.png" />
     <None Include="Resources\bookmark-plus.png" />
+    <None Include="Resources\bookmark-remove.png" />
     <None Include="Resources\web.png" />
     <None Include="Resources\spinner.GIF" />
     <None Include="Resources\background-original.jpg" />

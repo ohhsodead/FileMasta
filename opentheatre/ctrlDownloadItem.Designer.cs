@@ -51,7 +51,7 @@
             this.lblFileName.ForeColor = System.Drawing.Color.White;
             this.lblFileName.Location = new System.Drawing.Point(9, 6);
             this.lblFileName.Name = "lblFileName";
-            this.lblFileName.Size = new System.Drawing.Size(408, 18);
+            this.lblFileName.Size = new System.Drawing.Size(408, 21);
             this.lblFileName.TabIndex = 0;
             this.lblFileName.Text = "File Name";
             this.lblFileName.Click += new System.EventHandler(this.lblFileName_Click);
@@ -164,7 +164,7 @@
             this.imgDropDown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.imgDropDown.Cursor = System.Windows.Forms.Cursors.Hand;
             this.imgDropDown.Image = global::OpenTheatre.Properties.Resources.chevron_down_white;
-            this.imgDropDown.Location = new System.Drawing.Point(419, 4);
+            this.imgDropDown.Location = new System.Drawing.Point(419, 5);
             this.imgDropDown.Name = "imgDropDown";
             this.imgDropDown.Size = new System.Drawing.Size(22, 22);
             this.imgDropDown.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

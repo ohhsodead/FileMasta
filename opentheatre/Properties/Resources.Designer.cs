@@ -85,7 +85,17 @@ namespace OpenTheatre.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap bookmark_plus {
             get {
-                object obj = ResourceManager.GetObject("bookmark-plus", resourceCulture);
+                object obj = ResourceManager.GetObject("bookmark_plus", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bookmark_remove {
+            get {
+                object obj = ResourceManager.GetObject("bookmark_remove", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -216,6 +226,16 @@ namespace OpenTheatre.Properties {
         internal static System.Drawing.Bitmap poster_glow {
             get {
                 object obj = ResourceManager.GetObject("poster_glow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap settings {
+            get {
+                object obj = ResourceManager.GetObject("settings", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

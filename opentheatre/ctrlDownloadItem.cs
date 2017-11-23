@@ -27,31 +27,31 @@ namespace OpenTheatre
             
         }
 
-        WebClient wc = new WebClient();
         Stopwatch sw = new Stopwatch();
+        WebClient wc = new WebClient();
 
         public void doDownloadFile(string url)
         {
+            if (Properties.Settings.Default.connectionCustom == true) { if (Properties.Settings.Default.connectionHost != null && Properties.Settings.Default.connectionPort != null) { wc.Proxy = new WebProxy(Properties.Settings.Default.connectionHost, Convert.ToInt32(Properties.Settings.Default.connectionPort)); wc.Proxy.Credentials = new NetworkCredential(Properties.Settings.Default.connectionUsername, Properties.Settings.Default.connectionPassword); wc.UseDefaultCredentials = false; } }
+            else { wc.Proxy = WebProxy.GetDefaultProxy(); wc.Proxy.Credentials = CredentialCache.DefaultCredentials; wc.UseDefaultCredentials = true; }
             wc.DownloadFileCompleted += new AsyncCompletedEventHandler(downloadCompleted);
             wc.DownloadProgressChanged += new DownloadProgressChangedEventHandler(downloadProgressChanged);
-            wc.DownloadFileAsync(new Uri(url), frmOpenTheatre.pathDownloads + Path.GetFileName(new Uri(url).LocalPath));
+            wc  .DownloadFileAsync(new Uri(url), frmOpenTheatre.pathDownloads + Path.GetFileName(new Uri(url).LocalPath));
             lblFileName.Text = Path.GetFileName(new Uri(url).LocalPath);
             sw.Start();
         }
 
         private void downloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
         {
-            lblSpeed.Text = "Speed: " + string.Format("{0} kb/s", (e.BytesReceived / 1024d / sw.Elapsed.TotalSeconds).ToString("0.00"));
-
-            lblDownloaded.Text = "Downloaded: " + string.Format("{0} MB's / {1} MB's",
-       (e.BytesReceived / 1024d / 1024d).ToString("0.00"),
-       (e.TotalBytesToReceive / 1024d / 1024d).ToString("0.00"));
-
-            double Value = Convert.ToDouble(e.TotalBytesToReceive);
+            double totalReceivedValue = Convert.ToDouble(e.TotalBytesToReceive);
+            double receivedValue = Convert.ToDouble(e.BytesReceived);
 
             progressBar1.Value = e.ProgressPercentage;
             lblPercentage.Text = "Downloading - " + progressBar1.Value + "%";
-            lblSize.Text = "Size: " + ToFileSize(Value);
+
+            lblSpeed.Text = "Speed: " + string.Format("{0}/s", ToFileSize((e.BytesReceived / 1024d / sw.Elapsed.TotalSeconds)));
+            lblDownloaded.Text = "Downloaded: " + ToFileSize(receivedValue);
+            lblSize.Text = "Size: " + ToFileSize(totalReceivedValue);
         }
 
         private void downloadCompleted(object sender, AsyncCompletedEventArgs e)

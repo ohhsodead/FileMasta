@@ -118,67 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btnFilesSort.SideImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAsUlEQVRoQ+3UQQrCMBSE4dzJhb2ZG0G7
-        9LKiJ9A36IMQQrEpxhf8PxiQLtKZSpsAAAAA4B8dLfvXz010hs7qarY8LHfLpAuNdparRWdddKGHs0U3
-        9LSOyMt7dPbXHSz5TZW1I2rllZOliy0jfl7etYwIU96tGRGuvPtkRNjybmlE+PKu/Lwqt3fK610+ly1q
-        /0SZcE++tDQifHlXGzFMeZePGK6808sa9oUFAAAAMLKUnk38dukayXH7AAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="btnFilesFormat.SideImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAsUlEQVRoQ+3UQQrCMBSE4dzJhb2ZG0G7
-        9LKiJ9A36IMQQrEpxhf8PxiQLtKZSpsAAAAA4B8dLfvXz010hs7qarY8LHfLpAuNdparRWdddKGHs0U3
-        9LSOyMt7dPbXHSz5TZW1I2rllZOliy0jfl7etYwIU96tGRGuvPtkRNjybmlE+PKu/Lwqt3fK610+ly1q
-        /0SZcE++tDQifHlXGzFMeZePGK6808sa9oUFAAAAMLKUnk38dukayXH7AAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="btnFilesHost.SideImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAsUlEQVRoQ+3UQQrCMBSE4dzJhb2ZG0G7
-        9LKiJ9A36IMQQrEpxhf8PxiQLtKZSpsAAAAA4B8dLfvXz010hs7qarY8LHfLpAuNdparRWdddKGHs0U3
-        9LSOyMt7dPbXHSz5TZW1I2rllZOliy0jfl7etYwIU96tGRGuvPtkRNjybmlE+PKu/Lwqt3fK610+ly1q
-        /0SZcE++tDQifHlXGzFMeZePGK6808sa9oUFAAAAMLKUnk38dukayXH7AAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="btnFilesQuality.SideImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAsUlEQVRoQ+3UQQrCMBSE4dzJhb2ZG0G7
-        9LKiJ9A36IMQQrEpxhf8PxiQLtKZSpsAAAAA4B8dLfvXz010hs7qarY8LHfLpAuNdparRWdddKGHs0U3
-        9LSOyMt7dPbXHSz5TZW1I2rllZOliy0jfl7etYwIU96tGRGuvPtkRNjybmlE+PKu/Lwqt3fK610+ly1q
-        /0SZcE++tDQifHlXGzFMeZePGK6808sa9oUFAAAAMLKUnk38dukayXH7AAAAAElFTkSuQmCC
-</value>
-  </data>
-  <metadata name="columnFilesFileName.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="columnFilesFormat.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="columnFilesHost.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="columnFilesURL.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="btnSearchFiles.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAdFJREFUaEPt
-        mDFuwzAMRb1kylDkAllzgYw9Tu6QsRm7ZQl6mAw9R86RdHf/h34Eh7Vrx5ZUq9ADCBgmRVISZUmuCoVC
-        IU/qut5A9pAz5AL5kvCZ76jbyHw+IKkt5BMyFNq+qvnfgSQWkA9mNJITZCF3aUHgFeSZUe+CPlZymwYE
-        5Mh3Jc9a30G4HpYSPvMddW3QV7qZQLC2suFC7a1r2sjWcpJJXBCIC9bCEXyRSS+0VRvLVibxQBAbmKM5
-        OPk7aMM1ZGfiLHUcEIC1bBn9OUTbttmMt0/AOTeiJpNHjD6cK89eqvDAuQ22k2o09OFceeKVEZzbmp08
-        3fThXHkuUoUHzm8uhmcp1Wjow7ny3KQKD5xfXQxPiA7wk9rkKlV44Dz7Esp+EWf/GQ29kfFcZIl74UGA
-        tqPE08dhtlHbJnGPEgRBQhzmuu4SaW5pCMSblIWjOeU4fZRJfBAs9IWGrOU+DQgY6kppOShEfBCMM9FW
-        TkM5Qtbu8YF0nSAIyIX9W3lYaOvXi3v1g7SdIAjKWm/+2OLhr/fHFt4dIG2k78RYkKzd5e+8y2T+INnS
-        iVmAZEsnZgGS/bedeJM6D5BwsxN5JX8HiXOzy2djKxQKhVypqm8CaU6ZJ44nlwAAAABJRU5ErkJggg==
-</value>
-  </data>
   <data name="imgSpinnerGIF.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         R0lGODlhgACAAMYAAExKTKSmpHx6fNTS1JSSlLy+vGRiZOzq7ISGhGxubLSytJyenNze3MzKzPT29IyC
@@ -754,6 +693,67 @@
         /0SZcE++tDQifHlXGzFMeZePGK6808sa9oUFAAAAMLKUnk38dukayXH7AAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="btnFilesSort.SideImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAsUlEQVRoQ+3UQQrCMBSE4dzJhb2ZG0G7
+        9LKiJ9A36IMQQrEpxhf8PxiQLtKZSpsAAAAA4B8dLfvXz010hs7qarY8LHfLpAuNdparRWdddKGHs0U3
+        9LSOyMt7dPbXHSz5TZW1I2rllZOliy0jfl7etYwIU96tGRGuvPtkRNjybmlE+PKu/Lwqt3fK610+ly1q
+        /0SZcE++tDQifHlXGzFMeZePGK6808sa9oUFAAAAMLKUnk38dukayXH7AAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="btnFilesFormat.SideImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAsUlEQVRoQ+3UQQrCMBSE4dzJhb2ZG0G7
+        9LKiJ9A36IMQQrEpxhf8PxiQLtKZSpsAAAAA4B8dLfvXz010hs7qarY8LHfLpAuNdparRWdddKGHs0U3
+        9LSOyMt7dPbXHSz5TZW1I2rllZOliy0jfl7etYwIU96tGRGuvPtkRNjybmlE+PKu/Lwqt3fK610+ly1q
+        /0SZcE++tDQifHlXGzFMeZePGK6808sa9oUFAAAAMLKUnk38dukayXH7AAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="btnFilesHost.SideImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAsUlEQVRoQ+3UQQrCMBSE4dzJhb2ZG0G7
+        9LKiJ9A36IMQQrEpxhf8PxiQLtKZSpsAAAAA4B8dLfvXz010hs7qarY8LHfLpAuNdparRWdddKGHs0U3
+        9LSOyMt7dPbXHSz5TZW1I2rllZOliy0jfl7etYwIU96tGRGuvPtkRNjybmlE+PKu/Lwqt3fK610+ly1q
+        /0SZcE++tDQifHlXGzFMeZePGK6808sa9oUFAAAAMLKUnk38dukayXH7AAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="btnFilesQuality.SideImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAsUlEQVRoQ+3UQQrCMBSE4dzJhb2ZG0G7
+        9LKiJ9A36IMQQrEpxhf8PxiQLtKZSpsAAAAA4B8dLfvXz010hs7qarY8LHfLpAuNdparRWdddKGHs0U3
+        9LSOyMt7dPbXHSz5TZW1I2rllZOliy0jfl7etYwIU96tGRGuvPtkRNjybmlE+PKu/Lwqt3fK610+ly1q
+        /0SZcE++tDQifHlXGzFMeZePGK6808sa9oUFAAAAMLKUnk38dukayXH7AAAAAElFTkSuQmCC
+</value>
+  </data>
+  <metadata name="columnFilesFileName.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="columnFilesFormat.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="columnFilesHost.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="columnFilesURL.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="btnSearchFiles.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAdFJREFUaEPt
+        mDFuwzAMRb1kylDkAllzgYw9Tu6QsRm7ZQl6mAw9R86RdHf/h34Eh7Vrx5ZUq9ADCBgmRVISZUmuCoVC
+        IU/qut5A9pAz5AL5kvCZ76jbyHw+IKkt5BMyFNq+qvnfgSQWkA9mNJITZCF3aUHgFeSZUe+CPlZymwYE
+        5Mh3Jc9a30G4HpYSPvMddW3QV7qZQLC2suFC7a1r2sjWcpJJXBCIC9bCEXyRSS+0VRvLVibxQBAbmKM5
+        OPk7aMM1ZGfiLHUcEIC1bBn9OUTbttmMt0/AOTeiJpNHjD6cK89eqvDAuQ22k2o09OFceeKVEZzbmp08
+        3fThXHkuUoUHzm8uhmcp1Wjow7ny3KQKD5xfXQxPiA7wk9rkKlV44Dz7Esp+EWf/GQ29kfFcZIl74UGA
+        tqPE08dhtlHbJnGPEgRBQhzmuu4SaW5pCMSblIWjOeU4fZRJfBAs9IWGrOU+DQgY6kppOShEfBCMM9FW
+        TkM5Qtbu8YF0nSAIyIX9W3lYaOvXi3v1g7SdIAjKWm/+2OLhr/fHFt4dIG2k78RYkKzd5e+8y2T+INnS
+        iVmAZEsnZgGS/bedeJM6D5BwsxN5JX8HiXOzy2djKxQKhVypqm8CaU6ZJ44nlwAAAABJRU5ErkJggg==
+</value>
+  </data>
   <data name="btnBookmarksSort.SideImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
@@ -772,19 +772,6 @@
         /0SZcE++tDQifHlXGzFMeZePGK6808sa9oUFAAAAMLKUnk38dukayXH7AAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="btnSearchBookmarks.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAdFJREFUaEPt
-        mDFuwzAMRb1kylDkAllzgYw9Tu6QsRm7ZQl6mAw9R86RdHf/h34Eh7Vrx5ZUq9ADCBgmRVISZUmuCoVC
-        IU/qut5A9pAz5AL5kvCZ76jbyHw+IKkt5BMyFNq+qvnfgSQWkA9mNJITZCF3aUHgFeSZUe+CPlZymwYE
-        5Mh3Jc9a30G4HpYSPvMddW3QV7qZQLC2suFC7a1r2sjWcpJJXBCIC9bCEXyRSS+0VRvLVibxQBAbmKM5
-        OPk7aMM1ZGfiLHUcEIC1bBn9OUTbttmMt0/AOTeiJpNHjD6cK89eqvDAuQ22k2o09OFceeKVEZzbmp08
-        3fThXHkuUoUHzm8uhmcp1Wjow7ny3KQKD5xfXQxPiA7wk9rkKlV44Dz7Esp+EWf/GQ29kfFcZIl74UGA
-        tqPE08dhtlHbJnGPEgRBQhzmuu4SaW5pCMSblIWjOeU4fZRJfBAs9IWGrOU+DQgY6kppOShEfBCMM9FW
-        TkM5Qtbu8YF0nSAIyIX9W3lYaOvXi3v1g7SdIAjKWm/+2OLhr/fHFt4dIG2k78RYkKzd5e+8y2T+INnS
-        iVmAZEsnZgGS/bedeJM6D5BwsxN5JX8HiXOzy2djKxQKhVypqm8CaU6ZJ44nlwAAAABJRU5ErkJggg==
-</value>
-  </data>
   <metadata name="columnBookmarksType.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -800,6 +787,19 @@
   <metadata name="columnBookmarksURL.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="btnSearchBookmarks.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAdFJREFUaEPt
+        mDFuwzAMRb1kylDkAllzgYw9Tu6QsRm7ZQl6mAw9R86RdHf/h34Eh7Vrx5ZUq9ADCBgmRVISZUmuCoVC
+        IU/qut5A9pAz5AL5kvCZ76jbyHw+IKkt5BMyFNq+qvnfgSQWkA9mNJITZCF3aUHgFeSZUe+CPlZymwYE
+        5Mh3Jc9a30G4HpYSPvMddW3QV7qZQLC2suFC7a1r2sjWcpJJXBCIC9bCEXyRSS+0VRvLVibxQBAbmKM5
+        OPk7aMM1ZGfiLHUcEIC1bBn9OUTbttmMt0/AOTeiJpNHjD6cK89eqvDAuQ22k2o09OFceeKVEZzbmp08
+        3fThXHkuUoUHzm8uhmcp1Wjow7ny3KQKD5xfXQxPiA7wk9rkKlV44Dz7Esp+EWf/GQ29kfFcZIl74UGA
+        tqPE08dhtlHbJnGPEgRBQhzmuu4SaW5pCMSblIWjOeU4fZRJfBAs9IWGrOU+DQgY6kppOShEfBCMM9FW
+        TkM5Qtbu8YF0nSAIyIX9W3lYaOvXi3v1g7SdIAjKWm/+2OLhr/fHFt4dIG2k78RYkKzd5e+8y2T+INnS
+        iVmAZEsnZgGS/bedeJM6D5BwsxN5JX8HiXOzy2djKxQKhVypqm8CaU6ZJ44nlwAAAABJRU5ErkJggg==
+</value>
+  </data>
   <data name="lblAboutText.Text" xml:space="preserve">
     <value>OpenTheatre allows you to search for movies, series, anime, subtitles and torrents available hosted all over the Internet in public open directories. We've gathered all the appropriate files out there so you don't have to. Created by a few friends who wanted to come up with something different.
 
