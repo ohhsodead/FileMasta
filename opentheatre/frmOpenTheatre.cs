@@ -44,14 +44,15 @@ namespace OpenTheatre
         public static string linkFilesSeries = "https://dl.dropbox.com/s/2ze0xayim0cgk70/open-series-files.json?dl=0";
         public static string linkFilesAnime = "https://dl.dropbox.com/s/e5lhyejb56cwo9k/open-anime-files.json?dl=0";
         public static string linkFilesSubtitles = "https://dl.dropbox.com/s/ckkxsogprgviyto/open-subtitles-files.json?dl=0";
-        public static string linkFilesTorrents = "https://dl.dropbox.com/s/nkzzyk4vr6k4rlr/open-torrents-files.json?dl=0"; 
+        public static string linkFilesTorrents = "https://dl.dropbox.com/s/nkzzyk4vr6k4rlr/open-torrents-files.json?dl=0";
+        public static string linkFilesArchives = "https://dl.dropbox.com/s/el93946do0og2gg/open-archives-files.json?dl=0";
         public static string linkMovies = "https://dl.dropbox.com/s/ionv8bszlgvf1xc/open-movies.json?dl=0";
         public static string linkLatestVersion = "https://raw.githubusercontent.com/invu/opentheatre-app/master/assets/opentheatre-version.txt";
         public static string pathInstallerFileName = "OpenTheatreInstaller.exe";
         public static string pathDownloadInstaller = KnownFolders.GetPath(KnownFolder.Downloads) + @"\" + pathInstallerFileName;
         public static string pathRoot = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\OpenTheatre\";
         public static string pathData = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\OpenTheatre\Data\";
-        public static string pathDownloads = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\OpenTheatre\Downloads\";
+        public static string pathDownloadsDefault = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\OpenTheatre\Downloads\";
 
         public static string getLatestInstaller(Version newVersion)
         {
@@ -104,21 +105,22 @@ namespace OpenTheatre
         private void frmOpenTheatre_FormClosing(object sender, FormClosingEventArgs e)
         {
             Properties.Settings.Default.Save();
-            if (Properties.Settings.Default.clearDataOnClose == true) { Directory.Delete(pathRoot); }
+            if (e.CloseReason == CloseReason.UserClosing) { if (Properties.Settings.Default.clearDataOnClose == true) { Directory.Delete(pathData, true); } }
         }
 
         private void frmOpenTheatre_Load(object sender, EventArgs e)
         {
             UtilityTools.checkForUpdate();
+            if (Properties.Settings.Default.downloadsDirectory == null) { Properties.Settings.Default.downloadsDirectory = pathDownloadsDefault; Directory.CreateDirectory(pathDownloadsDefault); }
             loadSettings();
 
             currentTab = tabMovies;
 
             Directory.CreateDirectory(pathRoot);
             Directory.CreateDirectory(pathData);
-            Directory.CreateDirectory(pathDownloads);
 
             tabAbout.BackgroundImage = UtilityTools.ChangeOpacity(Properties.Resources.background_original, 0.5F);
+            tabSettings.BackgroundImage = UtilityTools.ChangeOpacity(Properties.Resources.background_original, 0.5F);
 
             lblAboutVersion.Text = "v" + Application.ProductVersion;
 
@@ -136,7 +138,7 @@ namespace OpenTheatre
                 //
                 if (File.Exists(pathData + "open-movies.json"))
                 {
-                    if (UtilityTools.IsBelowThreshold(pathData + "open-movies.json", 12) == true) // if movie posters db older than 12 hours then write db
+                    if (UtilityTools.IsAboveThreshold(pathData + "open-movies.json", 12) == true) // if movie posters db older than 12 hours then write db
                     {
                         client.DownloadFile(new Uri(linkMovies), pathData + "open-movies.json");
                     }
@@ -150,7 +152,7 @@ namespace OpenTheatre
                 //
                 if (File.Exists(pathData + "open-movies-files.json"))
                 {
-                    if (UtilityTools.IsBelowThreshold(pathData + "open-movies-files.json", 12) == true) // if movies db older than 12 hours then write db
+                    if (UtilityTools.IsAboveThreshold(pathData + "open-movies-files.json", 12) == true) // if movies db older than 12 hours then write db
                     {
                         client.DownloadFile(new Uri(linkFilesMovies), pathData + "open-movies-files.json");
                     }
@@ -164,7 +166,7 @@ namespace OpenTheatre
                 //
                 if (File.Exists(pathData + "open-series-files.json"))
                 {
-                    if (UtilityTools.IsBelowThreshold(pathData + "open-series-files.json", 12) == true) // if series db older than 12 hours then write db
+                    if (UtilityTools.IsAboveThreshold(pathData + "open-series-files.json", 12) == true) // if series db older than 12 hours then write db
                     {
                         client.DownloadFile(new Uri(linkFilesSeries), pathData + "open-series-files.json");
                     }
@@ -178,7 +180,7 @@ namespace OpenTheatre
                 //
                 if (File.Exists(pathData + "open-anime-files.json"))
                 {
-                    if (UtilityTools.IsBelowThreshold(pathData + "open-anime-files.json", 12) == true) // if anime db older than 12 hours then write db
+                    if (UtilityTools.IsAboveThreshold(pathData + "open-anime-files.json", 12) == true) // if anime db older than 12 hours then write db
                     {
                         client.DownloadFile(new Uri(linkFilesAnime), pathData + "open-anime-files.json");
                     }
@@ -192,7 +194,7 @@ namespace OpenTheatre
                 //
                 if (File.Exists(pathData + "open-subtitles-files.json"))
                 {
-                    if (UtilityTools.IsBelowThreshold(pathData + "open-subtitles-files.json", 12) == true) // if subtitles db older than 12 hours then write db
+                    if (UtilityTools.IsAboveThreshold(pathData + "open-subtitles-files.json", 12) == true) // if subtitles db older than 12 hours then write db
                     {
                         client.DownloadFile(new Uri(linkFilesSubtitles), pathData + "open-subtitles-files.json");
                     }
@@ -206,7 +208,7 @@ namespace OpenTheatre
                 //
                 if (File.Exists(pathData + "open-torrents-files.json"))
                 {
-                    if (UtilityTools.IsBelowThreshold(pathData + "open-torrents-files.json", 12) == true) // if torrents db older than 12 hours then write db
+                    if (UtilityTools.IsAboveThreshold(pathData + "open-torrents-files.json", 12) == true) // if torrents db older than 12 hours then write db
                     {
                         client.DownloadFile(new Uri(linkFilesTorrents), pathData + "open-torrents-files.json");
                     }
@@ -215,7 +217,21 @@ namespace OpenTheatre
 
                 dataFilesTorrents = File.ReadAllLines(pathData + "open-torrents-files.json");
                 //
-                
+
+
+                //
+                if (File.Exists(pathData + "open-archives-files.json"))
+                {
+                    if (UtilityTools.IsAboveThreshold(pathData + "open-archives-files.json", 12) == true) // if archives db older than 12 hours then write db
+                    {
+                        client.DownloadFile(new Uri(linkFilesArchives), pathData + "open-archives-files.json");
+                    }
+                }
+                else { client.DownloadFile(new Uri(linkFilesArchives), pathData + "open-archives-files.json"); }
+
+                dataFilesArchives = File.ReadAllLines(pathData + "open-archives-files.json");
+                //
+
                 foreach (string file in dataFilesMovies)
                 {
                     var data = DatabaseFilesEntity.FromJson(file);
@@ -240,7 +256,7 @@ namespace OpenTheatre
             Controls.Remove(frmSplash);
         }
 
-        public static string[] dataFilesTorrents, dataFilesSubtitles, dataFilesAnime, dataFilesSeries, dataFilesMovies, dataMovies, dataBookmarks;
+        public static string[] dataFilesArchives, dataFilesTorrents, dataFilesSubtitles, dataFilesAnime, dataFilesSeries, dataFilesMovies, dataMovies, dataBookmarks;
         
 
         // Core Tabs
@@ -287,6 +303,7 @@ namespace OpenTheatre
                 titleLineFiles.Visible = false;
                 titleLineDownloads.Visible = false;
                 titleLineBookmarks.Visible = false;
+                titleLineSettings.Visible = false;
                 titleLineAbout.Visible = false;
             }
             else if (tab.SelectedTab == tabFiles)
@@ -296,15 +313,7 @@ namespace OpenTheatre
                 titleLineFiles.Visible = true;
                 titleLineDownloads.Visible = false;
                 titleLineBookmarks.Visible = false;
-                titleLineAbout.Visible = false;
-            }
-            else if (tab.SelectedTab == tabDownloads)
-            {
-                currentTab = tabFiles;
-                titleLineMovies.Visible = false;
-                titleLineFiles.Visible = false;
-                titleLineDownloads.Visible = true;
-                titleLineBookmarks.Visible = false;
+                titleLineSettings.Visible = false;
                 titleLineAbout.Visible = false;
             }
             else if (tab.SelectedTab == tabBookmarks)
@@ -314,17 +323,38 @@ namespace OpenTheatre
                 titleLineFiles.Visible = false;
                 titleLineDownloads.Visible = false;
                 titleLineBookmarks.Visible = true;
+                titleLineSettings.Visible = false;
                 titleLineAbout.Visible = false;
 
                 searchBookmarks();
             }
-            else if (tab.SelectedTab == tabAbout)
+            else if (tab.SelectedTab == tabDownloads)
             {
-                currentTab = tabFiles;
+                currentTab = tabDownloads;
+                titleLineMovies.Visible = false;
+                titleLineFiles.Visible = false;
+                titleLineDownloads.Visible = true;
+                titleLineBookmarks.Visible = false;
+                titleLineSettings.Visible = false;
+                titleLineAbout.Visible = false;
+            }
+            else if (tab.SelectedTab == tabSettings)
+            {
+                currentTab = tabSettings ;
                 titleLineMovies.Visible = false;
                 titleLineFiles.Visible = false;
                 titleLineDownloads.Visible = false;
                 titleLineBookmarks.Visible = false;
+                titleLineSettings.Visible = true;
+                titleLineAbout.Visible = false;
+            }
+            else if (tab.SelectedTab == tabAbout)
+            {
+                titleLineMovies.Visible = false;
+                titleLineFiles.Visible = false;
+                titleLineDownloads.Visible = false;
+                titleLineBookmarks.Visible = false;
+                titleLineSettings.Visible = false;
                 titleLineAbout.Visible = true;
             }
         }
@@ -501,8 +531,8 @@ namespace OpenTheatre
         {
             selectedFiles = "Movies";
 
-            titleFilesMovies.ColorFillSolid = Color.FromArgb(27, 27, 27);
-            titleFilesMovies.BorderColor = Color.FromArgb(27, 27, 27);
+            titleFilesMovies.ColorFillSolid = Color.FromArgb(42, 42, 42);
+            titleFilesMovies.BorderColor = Color.FromArgb(42, 42, 42);
             titleFilesSeries.ColorFillSolid = Color.Transparent;
             titleFilesSeries.BorderColor = Color.Transparent;
             titleFilesAnime.ColorFillSolid = Color.Transparent;
@@ -511,6 +541,8 @@ namespace OpenTheatre
             titleFilesSubtitles.BorderColor = Color.Transparent;
             titleFilesTorrents.ColorFillSolid = Color.Transparent;
             titleFilesTorrents.BorderColor = Color.Transparent;
+            titleFilesArchives.ColorFillSolid = Color.Transparent;
+            titleFilesArchives.BorderColor = Color.Transparent;
 
             searchFiles(dataFilesMovies);
         }
@@ -523,12 +555,14 @@ namespace OpenTheatre
             titleFilesMovies.BorderColor = Color.Transparent;
             titleFilesSeries.ColorFillSolid = Color.Transparent;
             titleFilesSeries.BorderColor = Color.Transparent;
-            titleFilesAnime.ColorFillSolid = Color.FromArgb(27, 27, 27);
-            titleFilesAnime.BorderColor = Color.FromArgb(27, 27, 27);
+            titleFilesAnime.ColorFillSolid = Color.FromArgb(42, 42, 42);
+            titleFilesAnime.BorderColor = Color.FromArgb(42, 42, 42);
             titleFilesSubtitles.ColorFillSolid = Color.Transparent;
             titleFilesSubtitles.BorderColor = Color.Transparent;
             titleFilesTorrents.ColorFillSolid = Color.Transparent;
             titleFilesTorrents.BorderColor = Color.Transparent;
+            titleFilesArchives.ColorFillSolid = Color.Transparent;
+            titleFilesArchives.BorderColor = Color.Transparent;
 
             searchFiles(dataFilesAnime);
         }
@@ -539,14 +573,16 @@ namespace OpenTheatre
 
             titleFilesMovies.ColorFillSolid = Color.Transparent;
             titleFilesMovies.BorderColor = Color.Transparent;
-            titleFilesSeries.ColorFillSolid = Color.FromArgb(27, 27, 27);
-            titleFilesSeries.BorderColor = Color.FromArgb(27, 27, 27);
+            titleFilesSeries.ColorFillSolid = Color.FromArgb(42, 42, 42);
+            titleFilesSeries.BorderColor = Color.FromArgb(42, 42, 42);
             titleFilesAnime.ColorFillSolid = Color.Transparent;
             titleFilesAnime.BorderColor = Color.Transparent;
             titleFilesSubtitles.ColorFillSolid = Color.Transparent;
             titleFilesSubtitles.BorderColor = Color.Transparent;
             titleFilesTorrents.ColorFillSolid = Color.Transparent;
             titleFilesTorrents.BorderColor = Color.Transparent;
+            titleFilesArchives.ColorFillSolid = Color.Transparent;
+            titleFilesArchives.BorderColor = Color.Transparent;
 
             searchFiles(dataFilesSeries);
         }
@@ -563,8 +599,10 @@ namespace OpenTheatre
             titleFilesAnime.BorderColor = Color.Transparent;
             titleFilesSubtitles.ColorFillSolid = Color.Transparent;
             titleFilesSubtitles.BorderColor = Color.Transparent;
-            titleFilesTorrents.ColorFillSolid = Color.FromArgb(27, 27, 27);
-            titleFilesTorrents.BorderColor = Color.FromArgb(27, 27, 27);
+            titleFilesTorrents.ColorFillSolid = Color.FromArgb(42, 42, 42);
+            titleFilesTorrents.BorderColor = Color.FromArgb(42, 42, 42);
+            titleFilesArchives.ColorFillSolid = Color.Transparent;
+            titleFilesArchives.BorderColor = Color.Transparent;
 
             searchFiles(dataFilesTorrents);
         }
@@ -579,12 +617,35 @@ namespace OpenTheatre
             titleFilesSeries.BorderColor = Color.Transparent;
             titleFilesAnime.ColorFillSolid = Color.Transparent;
             titleFilesAnime.BorderColor = Color.Transparent;
-            titleFilesSubtitles.ColorFillSolid = Color.FromArgb(27, 27, 27);
-            titleFilesSubtitles.BorderColor = Color.FromArgb(27, 27, 27);
+            titleFilesSubtitles.ColorFillSolid = Color.FromArgb(42, 42, 42);
+            titleFilesSubtitles.BorderColor = Color.FromArgb(42, 42, 42);
             titleFilesTorrents.ColorFillSolid = Color.Transparent;
             titleFilesTorrents.BorderColor = Color.Transparent;
+            titleFilesArchives.ColorFillSolid = Color.Transparent;
+            titleFilesArchives.BorderColor = Color.Transparent;
 
             searchFiles(dataFilesSubtitles);
+        }
+
+
+        private void titleFilesArchives_ClickButtonArea(object Sender, MouseEventArgs e)
+        {
+            selectedFiles = "Archives";
+
+            titleFilesMovies.ColorFillSolid = Color.Transparent;
+            titleFilesMovies.BorderColor = Color.Transparent;
+            titleFilesSeries.ColorFillSolid = Color.Transparent;
+            titleFilesSeries.BorderColor = Color.Transparent;
+            titleFilesAnime.ColorFillSolid = Color.Transparent;
+            titleFilesAnime.BorderColor = Color.Transparent;
+            titleFilesSubtitles.ColorFillSolid = Color.Transparent;
+            titleFilesSubtitles.BorderColor = Color.Transparent;
+            titleFilesTorrents.ColorFillSolid = Color.Transparent;
+            titleFilesTorrents.BorderColor = Color.Transparent;
+            titleFilesArchives.ColorFillSolid = Color.FromArgb(42, 42, 42);
+            titleFilesArchives.BorderColor = Color.FromArgb(42, 42, 42);
+
+            searchFiles(dataFilesArchives);
         }
 
         private void dataGridFiles_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
@@ -618,6 +679,10 @@ namespace OpenTheatre
             else if (selectedFiles == "Torrents")
             {
                 searchFiles(dataFilesTorrents);
+            }
+            else if (selectedFiles == "Archives")
+            {
+                searchFiles(dataFilesArchives);
             }
         }
 
@@ -742,9 +807,9 @@ namespace OpenTheatre
             }
 
             ctrlStreamInfo ctrlInfo = new ctrlStreamInfo();
-            ctrlInfo.infoFileURL = webFile;
+            ctrlInfo.infoFileURL = new Uri(webFile).AbsoluteUri;
             ctrlInfo.infoFileHost.Text = new Uri(webFile).Host;
-            ctrlInfo.infoFileName.Text = Path.GetFileName(new Uri(webFile).LocalPath);
+            ctrlInfo.infoFileName.Text = Path.GetFileNameWithoutExtension(new Uri(webFile).LocalPath);
             MovieDetails.panelStreams.Controls.Add(ctrlInfo);
             MovieDetails.Dock = DockStyle.Fill;
             tabBlank.Controls.Clear();
@@ -838,26 +903,7 @@ namespace OpenTheatre
             if (cmboBoxFilesHost.SelectedIndex == 0) { selectedFilesHost = ""; }
             else { selectedFilesHost = cmboBoxFilesHost.SelectedItem.ToString(); }
 
-            if (selectedFiles == "Series")
-            {
-                searchFiles(dataFilesSeries);
-            }
-            else if (selectedFiles == "Movies")
-            {
-                searchFiles(dataFilesMovies);
-            }
-            else if (selectedFiles == "Anime")
-            {
-                searchFiles(dataFilesAnime);
-            }
-            else if (selectedFiles == "Subtitles")
-            {
-                searchFiles(dataFilesSubtitles);
-            }
-            else if (selectedFiles == "Torrents")
-            {
-                searchFiles(dataFilesTorrents);
-            }
+            showSelectedFiles();
 
             cmboBoxFilesHost.DropDownWidth = DropDownWidth(cmboBoxFilesHost);
         }
@@ -879,26 +925,7 @@ namespace OpenTheatre
             if (cmboBoxFilesQuality.SelectedIndex == 0) { selectedFilesQuality = ""; }
             else { selectedFilesQuality = cmboBoxFilesQuality.SelectedItem.ToString(); }
 
-            if (selectedFiles == "Series")
-            {
-                searchFiles(dataFilesSeries);
-            }
-            else if (selectedFiles == "Movies")
-            {
-                searchFiles(dataFilesMovies);
-            }
-            else if (selectedFiles == "Anime")
-            {
-                searchFiles(dataFilesAnime);
-            }
-            else if (selectedFiles == "Subtitles")
-            {
-                searchFiles(dataFilesSubtitles);
-            }
-            else if (selectedFiles == "Torrents")
-            {
-                searchFiles(dataFilesTorrents);
-            }
+            showSelectedFiles();
         }
         //
 
@@ -913,7 +940,7 @@ namespace OpenTheatre
         public void addToBookmarks(string fileUrl)
         {
             DatabaseFilesEntity data = new DatabaseFilesEntity();
-            data.Title = Path.GetFileName(new Uri(fileUrl).LocalPath);
+            data.Title = Path.GetFileNameWithoutExtension(new Uri(fileUrl).LocalPath);
             data.URL = new Uri(fileUrl).AbsoluteUri;
             data.Host = new Uri(fileUrl).Host;
             data.Type = Path.GetExtension(fileUrl).Replace(".", "").ToUpper();
@@ -1013,6 +1040,13 @@ namespace OpenTheatre
         }
         //
 
+        // History tab
+        private void imgHistory_Click(object sender, EventArgs e)
+        {
+            tab.SelectedTab = tabHistory;
+        }
+        //
+
         // About tab
         private void imgCloseAbout_Click(object sender, EventArgs e)
         {
@@ -1021,26 +1055,51 @@ namespace OpenTheatre
 
         private void lblAboutReportIssue_Click(object sender, EventArgs e)
         {
-            Process.Start("https://github.com/invu/OpenTheatre-app/issues/new");
+            Process.Start("https://github.com/invu/opentheatre-app/issues/new");
         }
-
+        //
 
         // Settings tab
         public void loadSettings()
         {
             chkSettingsClearData.Checked = Properties.Settings.Default.clearDataOnClose;
             chkSettingsCustomConnection.Checked = Properties.Settings.Default.connectionCustom;
+
+            txtBoxSettingsDownloadsDirectory.WaterMark = Properties.Settings.Default.downloadsDirectory;
+            txtBoxSettingsDownloadsDirectory.Text = Properties.Settings.Default.downloadsDirectory;
+
             txtBoxSettingsConnectionHost.Text = Properties.Settings.Default.connectionHost;
             txtBoxSettingsConnectionPort.Text = Convert.ToString(Properties.Settings.Default.connectionPort);
             txtBoxSettingsConnectionUsername.Text = Properties.Settings.Default.connectionUsername;
             txtBoxSettingsConnectionPassword.Text = Properties.Settings.Default.connectionPassword;
+
+            lblSettingsConnectionHost.Enabled = Properties.Settings.Default.connectionCustom;
+            lblSettingsConnectionPort.Enabled = Properties.Settings.Default.connectionCustom;
+            lblSettingsConnectionUsername.Enabled = Properties.Settings.Default.connectionCustom;
+            lblSettingsConnectionPassword.Enabled = Properties.Settings.Default.connectionCustom;
+
+            txtBoxSettingsConnectionHost.Enabled = Properties.Settings.Default.connectionCustom;
+            txtBoxSettingsConnectionPort.Enabled = Properties.Settings.Default.connectionCustom;
+            txtBoxSettingsConnectionUsername.Enabled = Properties.Settings.Default.connectionCustom;
+            txtBoxSettingsConnectionPassword.Enabled = Properties.Settings.Default.connectionCustom;
+
+            bgSettingsConnectionHost.Enabled = Properties.Settings.Default.connectionCustom;
+            bgSettingsConnectionPort.Enabled = Properties.Settings.Default.connectionCustom;
+            bgSettingsConnectionUsername.Enabled = Properties.Settings.Default.connectionCustom;
+            bgSettingsConnectionPassword.Enabled = Properties.Settings.Default.connectionCustom;
         }
 
         private void chkSettingsClearData_CheckedChanged(object sender, EventArgs e)
         {
             Properties.Settings.Default.clearDataOnClose = chkSettingsClearData.Checked;
         }
-        
+
+        private void imgSettingsDownloadsDirectory_Click(object sender, EventArgs e)
+        {
+            var a = new FolderBrowserDialog();
+            if (a.ShowDialog() == DialogResult.OK) { Properties.Settings.Default.downloadsDirectory = a.SelectedPath + @"\"; txtBoxSettingsDownloadsDirectory.WaterMark = Properties.Settings.Default.downloadsDirectory; txtBoxSettingsDownloadsDirectory.Text = Properties.Settings.Default.downloadsDirectory; }
+        }
+
         private void chkSettingsCustomConnection_CheckedChanged(object sender, EventArgs e)
         {
             Properties.Settings.Default.connectionCustom = chkSettingsCustomConnection.Checked;

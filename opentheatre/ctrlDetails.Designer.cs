@@ -45,21 +45,25 @@
             this.infoSplitter1 = new System.Windows.Forms.Label();
             this.infoSplitter2 = new System.Windows.Forms.Label();
             this.infoSplitter3 = new System.Windows.Forms.Label();
-            this.imgIMDb = new System.Windows.Forms.PictureBox();
             this.infoSplitter4 = new System.Windows.Forms.Label();
             this.infoRatingIMDb = new System.Windows.Forms.Label();
             this.panelSubHeaders = new System.Windows.Forms.Panel();
+            this.infoFileHost = new System.Windows.Forms.Label();
+            this.infoFileName = new System.Windows.Forms.Label();
             this.lineUserReviews = new CButtonLib.CButton();
+            this.infoFileAddedDate = new System.Windows.Forms.Label();
             this.lblHeaderUserReviews = new System.Windows.Forms.Label();
+            this.infoFileSize = new System.Windows.Forms.Label();
             this.lineSplitter = new CButtonLib.CButton();
             this.panelStreams = new System.Windows.Forms.FlowLayoutPanel();
             this.imgPoster = new System.Windows.Forms.PictureBox();
+            this.imgIMDb = new System.Windows.Forms.PictureBox();
             this.appClose = new System.Windows.Forms.PictureBox();
             this.imgPosterBG = new System.Windows.Forms.PictureBox();
             this.panelDetails.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgIMDb)).BeginInit();
             this.panelSubHeaders.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgPoster)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgIMDb)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.appClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgPosterBG)).BeginInit();
             this.SuspendLayout();
@@ -285,20 +289,6 @@
             this.infoSplitter3.TabIndex = 1074;
             this.infoSplitter3.Text = "•";
             // 
-            // imgIMDb
-            // 
-            this.imgIMDb.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgIMDb.Image = global::OpenTheatre.Properties.Resources.imdb;
-            this.imgIMDb.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.imgIMDb.Location = new System.Drawing.Point(264, 4);
-            this.imgIMDb.Margin = new System.Windows.Forms.Padding(4, 4, 4, 20);
-            this.imgIMDb.Name = "imgIMDb";
-            this.imgIMDb.Size = new System.Drawing.Size(44, 18);
-            this.imgIMDb.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.imgIMDb.TabIndex = 100041;
-            this.imgIMDb.TabStop = false;
-            this.imgIMDb.Click += new System.EventHandler(this.imgIMDb_Click);
-            // 
             // infoSplitter4
             // 
             this.infoSplitter4.AutoSize = true;
@@ -332,15 +322,47 @@
             this.panelSubHeaders.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelSubHeaders.BackColor = System.Drawing.Color.Transparent;
+            this.panelSubHeaders.Controls.Add(this.infoFileHost);
+            this.panelSubHeaders.Controls.Add(this.infoFileName);
             this.panelSubHeaders.Controls.Add(this.lineUserReviews);
+            this.panelSubHeaders.Controls.Add(this.infoFileAddedDate);
             this.panelSubHeaders.Controls.Add(this.lblHeaderUserReviews);
+            this.panelSubHeaders.Controls.Add(this.infoFileSize);
             this.panelSubHeaders.Controls.Add(this.lineSplitter);
             this.panelDetails.SetFlowBreak(this.panelSubHeaders, true);
             this.panelSubHeaders.Location = new System.Drawing.Point(3, 152);
             this.panelSubHeaders.Margin = new System.Windows.Forms.Padding(3, 20, 0, 0);
             this.panelSubHeaders.Name = "panelSubHeaders";
-            this.panelSubHeaders.Size = new System.Drawing.Size(690, 30);
+            this.panelSubHeaders.Size = new System.Drawing.Size(690, 52);
             this.panelSubHeaders.TabIndex = 100042;
+            // 
+            // infoFileHost
+            // 
+            this.infoFileHost.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.infoFileHost.AutoEllipsis = true;
+            this.infoFileHost.AutoSize = true;
+            this.infoFileHost.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.infoFileHost.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.infoFileHost.Location = new System.Drawing.Point(27, 31);
+            this.infoFileHost.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
+            this.infoFileHost.Name = "infoFileHost";
+            this.infoFileHost.Size = new System.Drawing.Size(74, 17);
+            this.infoFileHost.TabIndex = 0;
+            this.infoFileHost.Text = "Host Name";
+            // 
+            // infoFileName
+            // 
+            this.infoFileName.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.infoFileName.AutoEllipsis = true;
+            this.infoFileName.AutoSize = true;
+            this.infoFileName.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.infoFileName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.infoFileName.Location = new System.Drawing.Point(160, 31);
+            this.infoFileName.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
+            this.infoFileName.Name = "infoFileName";
+            this.infoFileName.Size = new System.Drawing.Size(66, 17);
+            this.infoFileName.TabIndex = 1;
+            this.infoFileName.Text = "File Name";
             // 
             // lineUserReviews
             // 
@@ -369,6 +391,20 @@
             this.lineUserReviews.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.lineUserReviews.TextShadowShow = false;
             // 
+            // infoFileAddedDate
+            // 
+            this.infoFileAddedDate.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.infoFileAddedDate.AutoEllipsis = true;
+            this.infoFileAddedDate.AutoSize = true;
+            this.infoFileAddedDate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.infoFileAddedDate.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.infoFileAddedDate.Location = new System.Drawing.Point(510, 31);
+            this.infoFileAddedDate.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
+            this.infoFileAddedDate.Name = "infoFileAddedDate";
+            this.infoFileAddedDate.Size = new System.Drawing.Size(77, 17);
+            this.infoFileAddedDate.TabIndex = 5;
+            this.infoFileAddedDate.Text = "Added date";
+            // 
             // lblHeaderUserReviews
             // 
             this.lblHeaderUserReviews.AutoSize = true;
@@ -383,6 +419,20 @@
             this.lblHeaderUserReviews.Size = new System.Drawing.Size(165, 21);
             this.lblHeaderUserReviews.TabIndex = 1100;
             this.lblHeaderUserReviews.Text = "AVAILABLE STREAMS";
+            // 
+            // infoFileSize
+            // 
+            this.infoFileSize.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.infoFileSize.AutoEllipsis = true;
+            this.infoFileSize.AutoSize = true;
+            this.infoFileSize.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.infoFileSize.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.infoFileSize.Location = new System.Drawing.Point(443, 31);
+            this.infoFileSize.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
+            this.infoFileSize.Name = "infoFileSize";
+            this.infoFileSize.Size = new System.Drawing.Size(31, 17);
+            this.infoFileSize.TabIndex = 4;
+            this.infoFileSize.Text = "Size";
             // 
             // lineSplitter
             // 
@@ -415,15 +465,15 @@
             // 
             // panelStreams
             // 
-            this.panelStreams.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.panelStreams.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelStreams.BackColor = System.Drawing.Color.Transparent;
             this.panelDetails.SetFlowBreak(this.panelStreams, true);
             this.panelStreams.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.panelStreams.Location = new System.Drawing.Point(0, 182);
+            this.panelStreams.Location = new System.Drawing.Point(0, 204);
             this.panelStreams.Margin = new System.Windows.Forms.Padding(0);
             this.panelStreams.Name = "panelStreams";
-            this.panelStreams.Size = new System.Drawing.Size(693, 258);
+            this.panelStreams.Size = new System.Drawing.Size(693, 236);
             this.panelStreams.TabIndex = 0;
             this.panelStreams.WrapContents = false;
             // 
@@ -437,6 +487,20 @@
             this.imgPoster.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imgPoster.TabIndex = 100040;
             this.imgPoster.TabStop = false;
+            // 
+            // imgIMDb
+            // 
+            this.imgIMDb.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imgIMDb.Image = global::OpenTheatre.Properties.Resources.imdb;
+            this.imgIMDb.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.imgIMDb.Location = new System.Drawing.Point(264, 4);
+            this.imgIMDb.Margin = new System.Windows.Forms.Padding(4, 4, 4, 20);
+            this.imgIMDb.Name = "imgIMDb";
+            this.imgIMDb.Size = new System.Drawing.Size(44, 18);
+            this.imgIMDb.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgIMDb.TabIndex = 100041;
+            this.imgIMDb.TabStop = false;
+            this.imgIMDb.Click += new System.EventHandler(this.imgIMDb_Click);
             // 
             // appClose
             // 
@@ -478,6 +542,7 @@
             this.Controls.Add(this.panelDetails);
             this.Controls.Add(this.appClose);
             this.Controls.Add(this.imgPosterBG);
+            this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.White;
             this.Name = "ctrlDetails";
@@ -486,10 +551,10 @@
             this.SizeChanged += new System.EventHandler(this.ctrlDetails_SizeChanged);
             this.panelDetails.ResumeLayout(false);
             this.panelDetails.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgIMDb)).EndInit();
             this.panelSubHeaders.ResumeLayout(false);
             this.panelSubHeaders.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgPoster)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgIMDb)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.appClose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgPosterBG)).EndInit();
             this.ResumeLayout(false);
@@ -524,5 +589,9 @@
         internal System.Windows.Forms.Label lblHeaderUserReviews;
         public CButtonLib.CButton lineSplitter;
         public System.Windows.Forms.FlowLayoutPanel panelStreams;
+        public System.Windows.Forms.Label infoFileHost;
+        public System.Windows.Forms.Label infoFileName;
+        public System.Windows.Forms.Label infoFileAddedDate;
+        public System.Windows.Forms.Label infoFileSize;
     }
 }

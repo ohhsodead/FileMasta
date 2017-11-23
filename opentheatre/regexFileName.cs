@@ -17,6 +17,7 @@ namespace regexFileName
             var Showname = episode.Groups["series_name"].Value;
             var Season = episode.Groups["season_num"].Value;
             var Episode = episode.Groups["ep_num"].Value;
+            Showname = Showname.Replace(".", " ");
 
             string[] tvshow = { Showname, Season, Episode };
             return tvshow;

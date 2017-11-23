@@ -25,12 +25,12 @@ namespace OpenTheatre
         private void ctrlMovieDetails_Load(object sender, EventArgs e)
         {
             if (infoFanartUrl == "") { BackColor = Color.Transparent; }
-            panelSubHeaders.Size = new Size(panelDetails.Size.Width, panelSubHeaders.Size.Height);
-            panelStreams.Size = new Size(panelDetails.Size.Width, panelStreams.Size.Height);
+            panelSubHeaders.Size = new Size(panelDetails.ClientSize.Width, panelSubHeaders.ClientSize.Height);
+            panelStreams.Size = new Size(panelDetails.ClientSize.Width, panelStreams.ClientSize.Height);
 
             foreach (Control ctrl in panelStreams.Controls)
             {
-                ctrl.Size = new Size(panelDetails.Size.Width - 5, ctrl.Size.Height);
+                ctrl.Size = new Size(panelDetails.ClientSize.Width - 5, ctrl.Size.Height);
             }
         }
 
@@ -47,11 +47,11 @@ namespace OpenTheatre
 
         private void ctrlDetails_SizeChanged(object sender, EventArgs e)
         {
-            panelStreams.Size = new Size(panelDetails.Size.Width, panelStreams.Size.Height);
+            panelStreams.Size = new Size(panelDetails.ClientSize.Width, panelStreams.ClientSize.Height);
 
             foreach (Control ctrl in panelStreams.Controls)
             {
-                ctrl.Size = new Size(panelDetails.Size.Width - 5, ctrl.Size.Height);
+                ctrl.Size = new Size(panelDetails.ClientSize.Width - 5, ctrl.ClientSize.Height);
             }
         }
     }

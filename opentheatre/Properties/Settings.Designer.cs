@@ -107,5 +107,17 @@ namespace OpenTheatre.Properties {
                 this["clearDataOnClose"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string downloadsDirectory {
+            get {
+                return ((string)(this["downloadsDirectory"]));
+            }
+            set {
+                this["downloadsDirectory"] = value;
+            }
+        }
     }
 }

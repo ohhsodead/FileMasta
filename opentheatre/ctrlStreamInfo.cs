@@ -2,7 +2,9 @@
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
+using System.Net;
 using System.Windows.Forms;
+using Utilities;
 
 namespace OpenTheatre
 {
@@ -21,17 +23,29 @@ namespace OpenTheatre
             VLCToolStripMenuItem.Visible = File.Exists(frmOpenTheatre.pathVLC);
             MPCToolStripMenuItem.Visible = File.Exists(frmOpenTheatre.pathMPCCodec64) || File.Exists(frmOpenTheatre.pathMPC64) || File.Exists(frmOpenTheatre.pathMPC86);
             if (Properties.Settings.Default.Bookmarks.Contains(infoFileURL)) { imgAddToBookmarks.Image = Properties.Resources.bookmark_remove; } else { imgAddToBookmarks.Image = Properties.Resources.bookmark_plus; }
-        }
 
-        private void btnPlay_ClickButtonArea(object Sender, MouseEventArgs e)
-        {
-            contextFileName.Show(btnWatchNow, btnWatchNow.PointToClient(Cursor.Position));
-        }
+            try
+            {
+                WebRequest req = WebRequest.Create(infoFileURL);
+                req.Method = "HEAD";
+                req.Timeout = 1500;
+                using (HttpWebResponse fileResponse = (HttpWebResponse)req.GetResponse())
+                {
+                    DateTime fileModifiedTime = fileResponse.LastModified;
+                    if (fileModifiedTime != null)
+                    {
+                        infoFileDateAdded.Text = UtilityTools.getTimeAgo(fileModifiedTime);
+                    }
+                    else { infoFileDateAdded.Text = "n/a"; }
 
-        private void btnDownload_ClickButtonArea(object Sender, MouseEventArgs e)
-        {
-            frmOpenTheatre.form.Show();
-            frmOpenTheatre.form.doDownloadFile(infoFileURL);
+                    int ContentLength;
+                    if (int.TryParse(fileResponse.Headers.Get("Content-Length"), out ContentLength))
+                    {
+                        infoFileSize.Text = UtilityTools.ToFileSize(Convert.ToDouble(ContentLength));
+                    } else { infoFileSize.Text = "n/a"; }
+                }
+            }
+            catch { infoFileSize.Text = "n/a"; infoFileDateAdded.Text = "n/a"; }
         }
 
         private void WMPToolStripMenuItem_Click(object sender, EventArgs e)
@@ -72,19 +86,6 @@ namespace OpenTheatre
             catch (Exception ex) { MessageBox.Show(this, ex.Message, "Error"); }
         }
 
-        private void btnReportBroken_ClickButtonArea(object Sender, MouseEventArgs e)
-        {
-            openBrokenFileIssue(infoFileURL);
-        }
-
-        public void openBrokenFileIssue(string webFile)
-        {
-            Process.Start("https://github.com/invu/OpenTheatre-app/issues/new?title=" + "Found Broken File" +
-                "&body=" +
-                "Host: " + new Uri(webFile).Host.Replace("www.", "") + "%0A" +
-                "File Name: " + new Uri(webFile).LocalPath);
-        }
-
         private void imgAddToBookmarks_Click(object sender, EventArgs e)
         {
             if (Properties.Settings.Default.Bookmarks.Contains(infoFileURL))
@@ -92,6 +93,31 @@ namespace OpenTheatre
                 Properties.Settings.Default.Bookmarks.Remove(infoFileURL); imgAddToBookmarks.Image = Properties.Resources.bookmark_plus;
             }
             else { Properties.Settings.Default.Bookmarks.Add(infoFileURL); imgAddToBookmarks.Image = Properties.Resources.bookmark_remove; }
+        }
+
+        private void imgWatch_Click(object sender, EventArgs e)
+        {
+            contextFileName.Show(imgWatch, imgWatch.PointToClient(Cursor.Position));
+        }
+
+        private void imgReportBroken_Click(object sender, EventArgs e)
+        {
+            UtilityTools.openBrokenFileIssue(infoFileURL);
+        }
+
+        private void imgDownload_Click(object sender, EventArgs e)
+        {
+            frmOpenTheatre.form.Show();
+            frmOpenTheatre.form.doDownloadFile(infoFileURL);
+        }
+
+        private void VLC2ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var a = new frmVLCPlayer();
+            a.Text = new Uri(infoFileURL).AbsoluteUri;
+            a.axVLCPlugin21.playlist.add(infoFileURL);
+            a.axVLCPlugin21.playlist.play();
+            a.Show();
         }
     }
 }

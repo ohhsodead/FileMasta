@@ -109,6 +109,12 @@
     <Compile Include="frmOpenTheatre.Designer.cs">
       <DependentUpon>frmOpenTheatre.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmVLCPlayer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVLCPlayer.Designer.cs">
+      <DependentUpon>frmVLCPlayer.cs</DependentUpon>
+    </Compile>
     <Compile Include="OMDbEntity.cs" />
     <Compile Include="KnownFolder.cs" />
     <Compile Include="PopcornTimeEntity.cs" />
@@ -137,6 +143,9 @@
     <EmbeddedResource Include="frmOpenTheatre.resx">
       <DependentUpon>frmOpenTheatre.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmVLCPlayer.resx">
+      <DependentUpon>frmVLCPlayer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
@@ -163,10 +172,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="openplex_logo.ico" />
+    <None Include="Resources\folder-open.png" />
+    <None Include="Resources\alert-octagon.png" />
+    <None Include="Resources\play-circle.png" />
+    <None Include="Resources\cloud-download.png" />
+    <None Include="Resources\web.png" />
+    <None Include="Resources\magnify.png" />
+    <None Include="Resources\history.png" />
     <None Include="Resources\settings.png" />
     <None Include="Resources\bookmark-plus.png" />
     <None Include="Resources\bookmark-remove.png" />
-    <None Include="Resources\web.png" />
     <None Include="Resources\spinner.GIF" />
     <None Include="Resources\background-original.jpg" />
     <None Include="Resources\bookmark.png" />
@@ -178,7 +193,6 @@
     <None Include="Resources\filmstrip.png" />
     <None Include="Resources\imdb.png" />
     <None Include="Resources\information.png" />
-    <None Include="Resources\magnify.png" />
     <None Include="Resources\opentheatre-logo.png" />
     <None Include="Resources\opentheatre-text.png" />
     <None Include="Resources\poster-default.png" />
@@ -189,6 +203,25 @@
       <Project>{8c34bf91-cce3-47fa-aa32-4b2bb1a6f17a}</Project>
       <Name>UnhandledExceptions</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxAXVLC">
+      <Guid>{DF2BBE39-40A8-433B-A279-073F48DA94B6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="AXVLC">
+      <Guid>{DF2BBE39-40A8-433B-A279-073F48DA94B6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

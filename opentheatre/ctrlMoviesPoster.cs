@@ -3,6 +3,8 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 using System.IO;
+using regexFileName;
+using DatabaseFilesAPI;
 
 namespace OpenTheatre
 {
@@ -67,7 +69,7 @@ namespace OpenTheatre
                     ctrlStreamInfo ctrlInfo = new ctrlStreamInfo();
                     ctrlInfo.infoFileURL = movieLink;
                     ctrlInfo.infoFileHost.Text = new Uri(movieLink).Host;
-                    ctrlInfo.infoFileName.Text = Path.GetFileName(new Uri(movieLink).LocalPath);
+                    ctrlInfo.infoFileName.Text = Path.GetFileNameWithoutExtension(new Uri(movieLink).LocalPath);
                     MovieDetails.panelStreams.Controls.Add(ctrlInfo);
                 }
 
@@ -95,7 +97,8 @@ namespace OpenTheatre
                 Update();
             }
             catch
-            { //InfoPoster.BackgroundImage = frmOpenTheatre.ChangeOpacity(Properties.Resources.defaultPoster, 0.4F); 
+            {
+                infoPoster.BackgroundImage = UtilityTools.ChangeOpacity(Properties.Resources.poster_default, 0.4F); 
             }
         }
 
@@ -108,7 +111,8 @@ namespace OpenTheatre
                 infoPoster.BackgroundImage = UtilityTools.ChangeOpacity(infoPoster2.Image, 1);
             }
             catch
-            { //InfoPoster.BackgroundImage = frmOpenTheatre.ChangeOpacity(Properties.Resources.defaultPoster, 1);
+            {
+                infoPoster.BackgroundImage = UtilityTools.ChangeOpacity(Properties.Resources.poster_default, 1);
             }
         }
 
