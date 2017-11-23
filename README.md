@@ -10,22 +10,23 @@
 <br />
 
 ## What is OpenTheatre?
-OpenTheatre allows you to search for movies, series, anime, subtitles and torrents files available hosted all over the Internet found in open directories. We've gathered all the appropriate files out there so you don't have to. Created by a few friends who wanted to come up with something different.
+OpenTheatre is a search engine that indexes open web directories to scrape movies, series, anime, subtitles and torrents files from all around the Internet.  
 
 ## Some features available
-- Simple interface, background tasks and threads for the best performance
-- Supporting hundreds of open directories, looking for movies, series, anime, subtitles and torrents
-- Search movies, files, people, years or filter by genre
-- Support for streaming files in external players (WMP, MPC & VLC)
-- Simple download client for direct downloads
-- Local cache updating every 12 hours
-- Collects metadata from OMDb & Popcorn Time
+- Simple interface and background threads for the best performance
+- Web crawler returning over 50,000 movies, series, anime, subtitles and torrents
+- Search movies by people, years and genre
+- Filter files by format, host and sort alphabetically
+- Support for external players (Currently includes WMP, MPC & VLC. Open for requests!)
+- Simple client for direct downloads
+- Collects metadata from OMDb API & Popcorn Time API
+- Local database updating every 12 hours
 
 ## How does it work?
-It communicates with the open database to collect the latest movies available for streaming, along with some supported streams. We also use our custom built command-line application to query some of the public open movies directories , returning over 18,000 certified files! All of our other databases (series, anime, etc.) are hosted here . Also includes movie metadata collecting from both Open Movie Database API and Popcorn Time API . Other features include opening files in both WMP, MPC & VLC Player and downloading multiple files asynchronously.
+It communicates with the open database to collect the latest movies available for streaming, along with some supported streams. We also use our own custom built command-line application to query the public open movies directories to find the best possible files out there.
 
 ## Latest Build
-OpenTheatre 2.0.4
+OpenTheatre 2.0.5
 
 ## Framework & Backend
 The application is using .NET 4.6.2 WinForms Framework written in C#.
