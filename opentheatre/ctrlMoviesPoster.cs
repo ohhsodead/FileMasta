@@ -67,8 +67,8 @@ namespace OpenTheatre
                 foreach (string movieLink in infoMovieLinks)
                 {
                     ctrlStreamInfo ctrlInfo = new ctrlStreamInfo();
-                    ctrlInfo.infoFileURL = movieLink;
-                    ctrlInfo.infoFileHost.Text = new Uri(movieLink).Host;
+                    ctrlInfo.infoFileURL = new Uri(movieLink).AbsoluteUri;
+                    ctrlInfo.infoFileHost.Text = new Uri(movieLink).Host.Replace("www.", "");
                     ctrlInfo.infoFileName.Text = Path.GetFileNameWithoutExtension(new Uri(movieLink).LocalPath);
                     MovieDetails.panelStreams.Controls.Add(ctrlInfo);
                 }

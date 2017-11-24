@@ -34,18 +34,20 @@
             this.infoFileName = new System.Windows.Forms.Label();
             this.contextFileName = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.OpenWithToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.VLC2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.WMPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.VLCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MPCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.infoFileSize = new System.Windows.Forms.Label();
+            this.infoFileDateAdded = new System.Windows.Forms.Label();
+            this.imgCopyURL = new System.Windows.Forms.PictureBox();
             this.imgReportBroken = new System.Windows.Forms.PictureBox();
             this.imgWatch = new System.Windows.Forms.PictureBox();
             this.imgDownload = new System.Windows.Forms.PictureBox();
             this.imgAddToBookmarks = new System.Windows.Forms.PictureBox();
-            this.infoFileSize = new System.Windows.Forms.Label();
-            this.infoFileDateAdded = new System.Windows.Forms.Label();
-            this.VLC2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextFileName.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgCopyURL)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgReportBroken)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgWatch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgDownload)).BeginInit();
@@ -74,7 +76,7 @@
             this.infoFileName.Location = new System.Drawing.Point(160, 3);
             this.infoFileName.Margin = new System.Windows.Forms.Padding(0, 3, 3, 0);
             this.infoFileName.Name = "infoFileName";
-            this.infoFileName.Size = new System.Drawing.Size(237, 17);
+            this.infoFileName.Size = new System.Drawing.Size(218, 17);
             this.infoFileName.TabIndex = 1;
             this.infoFileName.Text = "File Name";
             // 
@@ -98,25 +100,73 @@
             this.OpenWithToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
             this.OpenWithToolStripMenuItem.Text = "Open with...";
             // 
+            // VLC2ToolStripMenuItem
+            // 
+            this.VLC2ToolStripMenuItem.Name = "VLC2ToolStripMenuItem";
+            this.VLC2ToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.VLC2ToolStripMenuItem.Text = "VLC (Built-in)";
+            this.VLC2ToolStripMenuItem.Click += new System.EventHandler(this.VLC2ToolStripMenuItem_Click);
+            // 
             // WMPToolStripMenuItem
             // 
             this.WMPToolStripMenuItem.Name = "WMPToolStripMenuItem";
-            this.WMPToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.WMPToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.WMPToolStripMenuItem.Text = "WMP";
             this.WMPToolStripMenuItem.Click += new System.EventHandler(this.WMPToolStripMenuItem_Click);
             // 
             // VLCToolStripMenuItem
             // 
             this.VLCToolStripMenuItem.Name = "VLCToolStripMenuItem";
-            this.VLCToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.VLCToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.VLCToolStripMenuItem.Text = "VLC";
             this.VLCToolStripMenuItem.Click += new System.EventHandler(this.VLCToolStripMenuItem_Click);
             // 
             // MPCToolStripMenuItem
             // 
             this.MPCToolStripMenuItem.Name = "MPCToolStripMenuItem";
-            this.MPCToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.MPCToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.MPCToolStripMenuItem.Text = "MPC";
+            // 
+            // infoFileSize
+            // 
+            this.infoFileSize.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.infoFileSize.AutoEllipsis = true;
+            this.infoFileSize.Cursor = System.Windows.Forms.Cursors.Default;
+            this.infoFileSize.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.infoFileSize.Location = new System.Drawing.Point(381, 3);
+            this.infoFileSize.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
+            this.infoFileSize.Name = "infoFileSize";
+            this.infoFileSize.Size = new System.Drawing.Size(70, 17);
+            this.infoFileSize.TabIndex = 2;
+            this.infoFileSize.Text = "Size";
+            // 
+            // infoFileDateAdded
+            // 
+            this.infoFileDateAdded.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.infoFileDateAdded.AutoEllipsis = true;
+            this.infoFileDateAdded.Cursor = System.Windows.Forms.Cursors.Default;
+            this.infoFileDateAdded.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.infoFileDateAdded.Location = new System.Drawing.Point(451, 3);
+            this.infoFileDateAdded.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
+            this.infoFileDateAdded.Name = "infoFileDateAdded";
+            this.infoFileDateAdded.Size = new System.Drawing.Size(86, 17);
+            this.infoFileDateAdded.TabIndex = 3;
+            this.infoFileDateAdded.Text = "Time ago";
+            // 
+            // imgCopyURL
+            // 
+            this.imgCopyURL.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.imgCopyURL.BackColor = System.Drawing.Color.Transparent;
+            this.imgCopyURL.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imgCopyURL.Image = global::OpenTheatre.Properties.Resources.link_variant;
+            this.imgCopyURL.Location = new System.Drawing.Point(629, 1);
+            this.imgCopyURL.Name = "imgCopyURL";
+            this.imgCopyURL.Size = new System.Drawing.Size(23, 23);
+            this.imgCopyURL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgCopyURL.TabIndex = 18;
+            this.imgCopyURL.TabStop = false;
+            this.toolTip1.SetToolTip(this.imgCopyURL, "Copy URL");
+            this.imgCopyURL.Click += new System.EventHandler(this.imgCopyURL_Click);
             // 
             // imgReportBroken
             // 
@@ -124,7 +174,7 @@
             this.imgReportBroken.BackColor = System.Drawing.Color.Transparent;
             this.imgReportBroken.Cursor = System.Windows.Forms.Cursors.Hand;
             this.imgReportBroken.Image = global::OpenTheatre.Properties.Resources.alert_octagon;
-            this.imgReportBroken.Location = new System.Drawing.Point(629, 1);
+            this.imgReportBroken.Location = new System.Drawing.Point(600, 1);
             this.imgReportBroken.Name = "imgReportBroken";
             this.imgReportBroken.Size = new System.Drawing.Size(23, 23);
             this.imgReportBroken.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -139,7 +189,7 @@
             this.imgWatch.BackColor = System.Drawing.Color.Transparent;
             this.imgWatch.Cursor = System.Windows.Forms.Cursors.Hand;
             this.imgWatch.Image = global::OpenTheatre.Properties.Resources.play_circle;
-            this.imgWatch.Location = new System.Drawing.Point(600, 1);
+            this.imgWatch.Location = new System.Drawing.Point(571, 1);
             this.imgWatch.Name = "imgWatch";
             this.imgWatch.Size = new System.Drawing.Size(23, 23);
             this.imgWatch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -154,7 +204,7 @@
             this.imgDownload.BackColor = System.Drawing.Color.Transparent;
             this.imgDownload.Cursor = System.Windows.Forms.Cursors.Hand;
             this.imgDownload.Image = global::OpenTheatre.Properties.Resources.cloud_download;
-            this.imgDownload.Location = new System.Drawing.Point(569, 1);
+            this.imgDownload.Location = new System.Drawing.Point(540, 1);
             this.imgDownload.Name = "imgDownload";
             this.imgDownload.Size = new System.Drawing.Size(23, 23);
             this.imgDownload.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -178,44 +228,12 @@
             this.toolTip1.SetToolTip(this.imgAddToBookmarks, "Add to Bookmarks");
             this.imgAddToBookmarks.Click += new System.EventHandler(this.imgAddToBookmarks_Click);
             // 
-            // infoFileSize
-            // 
-            this.infoFileSize.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.infoFileSize.AutoEllipsis = true;
-            this.infoFileSize.Cursor = System.Windows.Forms.Cursors.Default;
-            this.infoFileSize.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.infoFileSize.Location = new System.Drawing.Point(400, 3);
-            this.infoFileSize.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
-            this.infoFileSize.Name = "infoFileSize";
-            this.infoFileSize.Size = new System.Drawing.Size(70, 17);
-            this.infoFileSize.TabIndex = 2;
-            this.infoFileSize.Text = "Size";
-            // 
-            // infoFileDateAdded
-            // 
-            this.infoFileDateAdded.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.infoFileDateAdded.AutoEllipsis = true;
-            this.infoFileDateAdded.Cursor = System.Windows.Forms.Cursors.Default;
-            this.infoFileDateAdded.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.infoFileDateAdded.Location = new System.Drawing.Point(470, 3);
-            this.infoFileDateAdded.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
-            this.infoFileDateAdded.Name = "infoFileDateAdded";
-            this.infoFileDateAdded.Size = new System.Drawing.Size(86, 17);
-            this.infoFileDateAdded.TabIndex = 3;
-            this.infoFileDateAdded.Text = "Time ago";
-            // 
-            // VLC2ToolStripMenuItem
-            // 
-            this.VLC2ToolStripMenuItem.Name = "VLC2ToolStripMenuItem";
-            this.VLC2ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.VLC2ToolStripMenuItem.Text = "VLC (Built-in)";
-            this.VLC2ToolStripMenuItem.Click += new System.EventHandler(this.VLC2ToolStripMenuItem_Click);
-            // 
             // ctrlStreamInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
+            this.Controls.Add(this.imgCopyURL);
             this.Controls.Add(this.infoFileName);
             this.Controls.Add(this.infoFileHost);
             this.Controls.Add(this.imgReportBroken);
@@ -232,6 +250,7 @@
             this.Size = new System.Drawing.Size(653, 25);
             this.Load += new System.EventHandler(this.ctrlStreamInfo_Load);
             this.contextFileName.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.imgCopyURL)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgReportBroken)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgWatch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgDownload)).EndInit();
@@ -257,5 +276,6 @@
         public System.Windows.Forms.Label infoFileSize;
         public System.Windows.Forms.Label infoFileDateAdded;
         private System.Windows.Forms.ToolStripMenuItem VLC2ToolStripMenuItem;
+        private System.Windows.Forms.PictureBox imgCopyURL;
     }
 }

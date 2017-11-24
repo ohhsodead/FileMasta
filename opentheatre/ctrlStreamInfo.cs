@@ -119,5 +119,11 @@ namespace OpenTheatre
             a.axVLCPlugin21.playlist.play();
             a.Show();
         }
+
+        private void imgCopyURL_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(infoFileURL);
+            MessageBox.Show("Successfully copied URL!");
+        }
     }
 }

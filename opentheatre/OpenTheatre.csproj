@@ -172,6 +172,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="openplex_logo.ico" />
+    <None Include="Resources\link-variant.png" />
+    <None Include="Resources\bookmark.png" />
+    <None Include="Resources\menu-down.png" />
+    <None Include="Resources\pause-circle.png" />
+    <None Include="Resources\close-circle.png" />
     <None Include="Resources\folder-open.png" />
     <None Include="Resources\alert-octagon.png" />
     <None Include="Resources\play-circle.png" />
@@ -184,7 +189,6 @@
     <None Include="Resources\bookmark-remove.png" />
     <None Include="Resources\spinner.GIF" />
     <None Include="Resources\background-original.jpg" />
-    <None Include="Resources\bookmark.png" />
     <None Include="Resources\buffer.png" />
     <None Include="Resources\chevron-down.png" />
     <None Include="Resources\chevron-down-white.png" />

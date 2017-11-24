@@ -808,7 +808,7 @@ namespace OpenTheatre
 
             ctrlStreamInfo ctrlInfo = new ctrlStreamInfo();
             ctrlInfo.infoFileURL = new Uri(webFile).AbsoluteUri;
-            ctrlInfo.infoFileHost.Text = new Uri(webFile).Host;
+            ctrlInfo.infoFileHost.Text = new Uri(webFile).Host.Replace("www.", "");
             ctrlInfo.infoFileName.Text = Path.GetFileNameWithoutExtension(new Uri(webFile).LocalPath);
             MovieDetails.panelStreams.Controls.Add(ctrlInfo);
             MovieDetails.Dock = DockStyle.Fill;
@@ -1023,7 +1023,7 @@ namespace OpenTheatre
         public void doDownloadFile(string url)
         {
             ctrlDownloadItem ctrlItem = new ctrlDownloadItem();
-            ctrlItem.lblPercentage.Text = "Connecting...";
+            ctrlItem.lblStatus.Text = "Connecting...";
             ctrlItem.Width = panelDownloads.ClientSize.Width - 7;
             panelDownloads.Controls.Add(ctrlItem);
             ctrlItem.doDownloadFile(url);

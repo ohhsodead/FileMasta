@@ -49,7 +49,7 @@ namespace OpenTheatre
             double receivedValue = Convert.ToDouble(e.BytesReceived);
 
             progressBar1.Value = e.ProgressPercentage;
-            lblPercentage.Text = "Downloading - " + progressBar1.Value + "%";
+            lblStatus.Text = "Downloading - " + progressBar1.Value + "%";
 
             lblSpeed.Text = "Speed: " + string.Format("{0}/s", UtilityTools.ToFileSize((e.BytesReceived / 1024d / sw.Elapsed.TotalSeconds)));
             lblDownloaded.Text = "Downloaded: " + UtilityTools.ToFileSize(receivedValue);
@@ -59,9 +59,9 @@ namespace OpenTheatre
         private void downloadCompleted(object sender, AsyncCompletedEventArgs e)
         {
             sw.Reset();
-            if (e.Cancelled == true) { lblPercentage.Text = "Download Cancelled"; lblCancel.Text = "Close"; }
-            else if (e.Error != null) { lblPercentage.Text = "Download Failed - " + e.Error.Message; lblCancel.Text = "Close"; }
-            else { lblPercentage.Text = "Download Complete"; lblCancel.Text = "Close"; }
+            if (e.Cancelled == true) { lblStatus.Text = "Download Cancelled"; lblCancel.Text = "Close"; }
+            else if (e.Error != null) { lblStatus.Text = "Download Failed - " + e.Error.Message; lblCancel.Text = "Close"; }
+            else { lblStatus.Text = "Download Complete"; lblCancel.Text = "Close"; }
         }
 
         private void lblFileName_Click(object sender, EventArgs e)
