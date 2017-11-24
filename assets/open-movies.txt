@@ -88,7 +88,7 @@ The Business~2005~https://lh3.googleusercontent.com/_40we9sn8ICStj9H2xL11TcTgWgq
 Borstal~2017~http://www.opticalmediazone.com/ftpdata/Movies/English%20Movies/Borstal.2017.HDRip.XviD.AC3-EVO.avi
 Before I Fall~2017~http://dl.smovies.ir/film/khareji/Before.I.Fall.2017.HDCAM.DiRG.(Smovies.Ir).mp4
 The Atticus Institute~2015~http://site1.thenetheads.info/jetstore1/March-2015/Movies/29/The.Atticus.Institute.2015.1080p.BluRay.x264.YIFY.mp4
-Sinister 2~2015~http://45.114.180.220/ftp/HDD1/Movie/English/S/Sinister%202%20(2015).mkv
+Sinister 2~2015~http://45.114.180.220/ftp/HDD1/Movie/English/S/Sinister%202%20(2015).mkv*http://media.bia4music.com/movie/2015/film/12/Sinister.2.2015.720p.BluRay.mkv*http://dl.tehmovies.org/94/9/Sinister.2.2015.1080p.5.1CH.Tehmovies.ir.mkv*http://dl.tehmovies.org/94/9/Sinister.2.2015.720p.Tehmovies.ir.mkv*http://dl.tehmovies.org/94/9/Sinister.2.2015.720p.WEB-DL.Tehmovies.ir.mkv
 Harry Potter and the Goblet of Fire~2005~http://223.29.212.2/data/disk2/Shuvo/Harry%20Porter%20Sequence/4/Harry%20Potter%20And%20The%20Goblet%20Of%20Fire%20(2005)%20%5b1080p%5d%20BluRay.mp4
 The Green Mile~1999~http://alphamediazone.com/data/disk2/English%20Movies/The.Green.Mile.1999.720p.BrRip.x264.YIFY.mp4
 Air~2015~http://sv.dl-pars.in/Ali/Air.2015.720p.WEB-DL.Ozlem%28ParsFilm%29.mp4
@@ -125,8 +125,8 @@ Rush Hour 3~2007~http://178.162.214.232/vod/movies/english/Rush.Hour.3.2007.marr
 Curious George 3~2015~http://filmjogot.com/files/movies1/animation_movie/Curious%20George%203%20Back%20to%20the%20Jungle.20151459612771.mp4
 Skiptrace~2016~http://time-tu-v2.com/movies/boxoffice.fr/2016/Skiptrace.2016.avi
 The Danish Girl~2015~http://fs.evonetbd.com/Media/Movies/English%20Movies/2015/The%20Danish%20Girl%20(2015)/The.Danish.Girl.2015.720p.WEB_Evolutionnet.info.mkv
-The Boss Baby~2017~http://home.crafters-island.com/movies/movies/The.Boss.Baby.2017.HDCAM.XviD-MrGrey/The.Boss.Baby.2017.HDCAM.XviD-MrGrey.avi*http://alphamediazone.com/data/disk2/Animated%20Movie/The%20Boss%20Baby%20%5b2017%5d.mp4*http://alphamediazone.com/data/disk2/English%20Movies/2017/The.Boss.Baby.2017.1080p.BluRay.H264.AAC-RARBG/The.Boss.Baby.2017.1080p.BluRay.H264.AAC-RARBG.mp4*http://fs.evonetbd.com/Media/Movies/English%20Movies/2017/The%20Boss%20Baby%20(2017)/The.Boss.Baby.2017.1080p.WEB-DL.AC3.6CH.Evonetbd.com.mkv
-The Purge: Election Year~2016~http://dl2.mihanpix.com/Film/2016/The.Purge.Election.Year.2016.720p.BluRay.x264.ShAaNiG.mkv
+The Boss Baby~2017~http://103.67.198.6/uploaded-videos/The%20Boss%20Baby.mkv*http://media.bia4music.com/movie/2017/Film/4/The.Boss.Baby.2017.HDCAM.mkv*http://media.bia4music.com/movie/2017/Film/6/The.Boss.Baby.2017.720p.WEB-DL.Dubble.Farsi.mkv*http://dl.dlfile.pro/6/Movie%20HD/The.Boss.Baby.2017-.720p.MkvCage.mkv*http://dl.tehmovies.org/94/96/4/The.Boss.Baby.2017.720p.MkvCage.Tehmovies_me.mkv
+The Purge: Election Year~2016~http://dl2.mihanpix.com/Film/2016/The.Purge.Election.Year.2016.720p.BluRay.x264.ShAaNiG.mkv*http://dl2.nicedownload.org/ndl/film/khareji/95/7/The.Purge.Election.Year.2016.720p.WEBRip.mkv
 A Room to Die For~2017~http://fs.evonetbd.com/Media/Movies/English%20Movies/2017/A%20Room%20to%20Die%20For.2017.avi
 Resident Evil: The Final Chapter~2016~https://kepners.arges.feralhosting.com/_h5ai/links/deluge_data/Resident.Evil.The.Final.Chapter.2017.1080p.WEB-DL.H264.AC3-EVO/Resident.Evil.The.Final.Chapter.2017.1080p.WEB-DL.H264.AC3-EVO.mkv*http://time-tu-v2.com/movies/boxoffice.fr/Resident.Evil.The.Final.Chapter.2016.mkv
 Ribbit~2014~http://dl8.freeupload.ir/aban/Ribbit.2014.720p.WEB-DL%20TehMovieS.Com.mkv
@@ -136,12 +136,12 @@ The Departed~2006~http://alphamediazone.com/data/disk2/Oscar%20Winner%20Movie/Th
 The Lion King~1994~http://alphamediazone.com/data/disk2/Animated%20Movie/WALT%20DISNEYS%20%5BTHE%20LION%20KING%5D%5BDVDRIP%5D%5BENG%5D-KIDZCORNER%20&J.T.R/LK.avi
 The Assassin~2015~http://dl.avadl.com/DL4/Film/The%20Assassin%20%282015%29%20720p%20BrRip_AVADL.CoM.mkv
 Citizenfour~2014~https://kepners.arges.feralhosting.com/_h5ai/links/deluge_data/Citizenfour.2014.720p.WEB-DL.AAC2.0.H264-FGT/Citizenfour.2014.720p.WEB-DL.AAC2.0.H264-FGT.mkv
-Pulp Fiction~1994~http://alphamediazone.com/data/disk2/English%20Movies/Pulp.Fiction.1994.720p.BrRip.x264.YIFY.mp4
+Pulp Fiction~1994~http://alphamediazone.com/data/disk2/English%20Movies/Pulp.Fiction.1994.720p.BrRip.x264.YIFY.mp4*http://www.alphamediazone.com/data/Movies2/English%20Movies/1900-1999/Pulp.Fiction.1994.720p.BrRip.x264.YIFY.mp4*http://media.bia4music.com/movie/2016/1/Pulp%20Fiction%201994%20720p%20.mp4
 The Longest Ride~2015~http://45.114.180.220/ftp/HDD1/Movie/English/T/The%20Longest%20Ride%20(2015).mkv
-Ex Machina~2014~http://fs.evonetbd.com/Media/Movies/English%20Movies/2015/Ex%20Machina%20(2015)/Ex%20Machina%202015%20DVDRIP_Evolutionnet.info.mkv
+Ex Machina~2014~http://fs.evonetbd.com/Media/Movies/English%20Movies/2015/Ex%20Machina%20(2015)/Ex%20Machina%202015%20DVDRIP_Evolutionnet.info.mkv*http://www.alphamediazone.com/data/Movies2/English%20Movies/2015/Ex.Machina.2015.720p.BRRip.x264-RLSM.mkv*http://www.alphamediazone.com/data/Movies2/English%20Movies/2015/Ex.Machina.2015.1080p.BluRay.x264.YIFY.mp4*http://dl3.vaiomusic.org/Movie/Ex%20Machina%202015%20-%201080p%20(vaiomusic).mkv*http://dl.tehmovies.org/94/2/Ex.Machina.2015.DVDrip.TehMovies.com.mkv
 Harry Potter and the Deathly Hallows Part 2~2011~http://223.29.212.2/data/disk2/Shuvo/Harry%20Porter%20Sequence/8/Harry%20Potter%20And%20The%20Deathly%20Hallows%20Part%202%20(2011)%20%5b1080p%5d%20BluRay.mp4
 Minions~2015~http://45.114.180.220/ftp/HDD1/Movie/English/M/Minions%202015.avi
-War for the Planet of the Apes~2017~http://severedamage.net/Downloads/Movies/War.For.The.Planet.Of.The.Apes.2017.HC.HDRip.XViD.AC3-juggs.avi
+War for the Planet of the Apes~2017~http://www.alphamediazone.com/data/Movies2/English%20Movies/2017/War%20for%20the%20Planet%20of%20the%20Apes%202017%20Hindi%20CAMRip%20-AlphaMediaZone.Com.mkv*http://pub.keikogi.ru/video/War_for_the_Planet_of_the_Apes_3D_BDRip_1080p.mkv*http://pub.keikogi.ru/video/War_for_the_Planet_of_the_Apes_BDRip_1080p.mkv*http://dl.dlfile.pro/6/Movie%20HD/War.for.the.Planet.of.the.Apes.2017.HDCAM.mkv*http://media.bia4music.com/movie/2017/Film/10/War%20For%20Planet%20Of%20The%20Apes%202017.720p.Farsi.mkv
 Star Wars: Episode II - Attack of the Clones~2002~http://www.thehugheshome.com/media/movies/Star%20Wars%20Episode%20II%20-%20Attack%20of%20the%20Clones%20(2002)/Star%20Wars%20Episode%20II%20-%20Attack%20of%20the%20Clones%20(2002).mp4
 Residue~2017~http://server1.timepassbd.com/ftpdata1/Movies/Hollywood/2017/Residue%202017%20720p%20HD.mp4
 Tri~2016~http://s1.bia2m.biz/Movies/Archive/2016/Azar95/Tri.2016.720p.WEB-DL.MkvCage%20(Bia2Movies).mkv
@@ -199,7 +199,7 @@ The Lego Movie~2014~http://www.riskinit.org/Public/Kids%20Stuff/The.Lego.Movie.2
 Oblivion~2013~http://37.187.122.229/download/download/Films/Oblivion.2013.MULTi.TRUEFRENCH.720p.HDLight.x264-BSD.mkv
 Ghost in the Shell~2017~http://alphamediazone.com/data/disk2/English%20Movies/2017/Ghost.in.the.Shell.2017.1080p.BluRay.H264.AAC-RARBG/Ghost.in.the.Shell.2017.1080p.BluRay.H264.AAC-RARBG.mp4
 Fantasia~1940~http://www.riskinit.org/Public/Kids%20Stuff/Disney%20Collection%201937-2008/1940%20-%20Fantasia.avi
-Spider-Man: Homecoming~2017~http://www.zamunda-net.com/wp-content/uploads/2016/09/spider-man-homecoming-2017.mp4*http://103.67.198.6/uploaded-videos/Spider%20Man_%20Homecoming%20(2017).mp4*http://fs.evonetbd.com/Media/Movies/English%20Movies/2017/Spider-Man%20Homecoming%20(2017)/spider%20man%20homecoming.mkv*http://www.opticalmediazone.com/ftpdata/Movies/English%20Movies/Spider-Man%20Homecoming%202017%20New%20720p%20TS%20x264%20TiTAN.mkv*http://severedamage.net/Downloads/Movies/Spider-Man.Homecoming.2017.720p.HDRip.x264.AAC-N.O.K.mp4*http://alphamediazone.com/data/index2.php?dir=Movies2/English%20Movies/2017/Spider-Man%20Homecoming%20%282017%29%20%5B1080p%5D%20%5BYTS.AG%5D/&file=Spider-Man.Homecoming.2017.1080p.BluRay.x264-%5BYTS.AG%5D.mp4
+Spider-Man: Homecoming~2017~http://www.zamunda-net.com/wp-content/uploads/2016/09/spider-man-homecoming-2017.mp4*http://103.67.198.6/uploaded-videos/Spider%20Man_%20Homecoming%20(2017).mp4*http://fs.evonetbd.com/Media/Movies/English%20Movies/2017/Spider-Man%20Homecoming%20(2017)/spider%20man%20homecoming.mkv*http://www.opticalmediazone.com/ftpdata/Movies/English%20Movies/Spider-Man%20Homecoming%202017%20New%20720p%20TS%20x264%20TiTAN.mkv*http://severedamage.net/Downloads/Movies/Spider-Man.Homecoming.2017.720p.HDRip.x264.AAC-N.O.K.mp4*http://alphamediazone.com/data/index2.php?dir=Movies2/English%20Movies/2017/Spider-Man%20Homecoming%20%282017%29%20%5B1080p%5D%20%5BYTS.AG%5D/&file=Spider-Man.Homecoming.2017.1080p.BluRay.x264-%5BYTS.AG%5D.mp4*http://pub.keikogi.ru/video/Spider-Man_Homecoming_WEB-DL_1080p.mkv*http://media.bia4music.com/movie/2017/Film/9/Spider_Man_Homecoming_2017_720p.mkv*http://dl.dlfile.pro/6/Movie%20HD/Spider.Man.Homecoming.2017.1080p.MkvCage.mkv
 Trespass Against Us~2016~http://www.thehugheshome.com/media/movies/Trespass%20Against%20Us%20(2017)/Trespass%20Against%20Us%20(2017).mp4
 Ant-Man~2015~http://223.29.212.2/data/disk2/English%20Movies/Ant.Man.2015.720p.HDRip.x264.AAC-ETRG.mp4*http://37.187.122.229/download/download/Films/Ant-Man.2015.MULTi.TRUEFRENCH.720p.HDLight.x264-BSD.mkv*http://jhinter.ddns.net/Media/Movie/%eb%a7%88%eb%b8%94%20-%20%ec%96%b4%eb%b2%a4%ec%a0%b8%ec%8a%a4%20%ec%8b%9c%eb%a6%ac%ec%a6%88%20(Marvel%20-%20Avengers%20Series)/%5b12%5d%20%ec%95%a4%ed%8a%b8%eb%a7%a8%20(Ant-Man,%202015)/Ant-Man.2015.720p.BRRip.X264.AC3-EVO.mkv
 Paths of Glory~1957~http://dlirhd.video/Film2/1957/Paths%20of%20Glory/Paths%20of%20Glory.1957.720p%20BluRay.www.IRHD.in.mp4
@@ -288,7 +288,7 @@ Dirty Grandpa~2016~http://122.3.252.180/Dirty.Grandpa.2016.1080p.WEBRip.AC3.x264
 Misconduct~2016~http://media.bia4music.com/movie/2016/2/Misconduct.2016.720p.WEB-DL.800MB.MkvCage.mkv
 Breakdown~2016~http://dl.hastidownload.biz/2/Breakdown.2016.DVDrip.Ganool.mkv
 Rings~2017~http://home.crafters-island.com/movies/movies/Rings%202017%20HD-TS%20x264-CPG/Rings%202017%20HD-TS%20x264-CPG.mkv*http://alphamediazone.com/data/disk2/English%20Movies/2017/Rings%c2%a0(2017)%201080pFull-AlphaMediaZone.com.mp4
-God of War~2017~http://severedamage.net/Downloads/Movies/God.Of.War.2017.720p.BRRip.MkvCage.mkv
+God of War~2017~http://severedamage.net/Downloads/Movies/God.Of.War.2017.720p.BRRip.MkvCage.mkv*http://dl.dlfile.pro/6/Movie%20HD/God.Of.War.2017.BluRay.720p.Ganool.mkv
 Dark City~1998~http://theratliffs.org/vids_new/movies/scifi/Dark%20City%20(1998)%20%5B1080p%5D%20%5BYTS.AG%5D/Dark.City.1998.1080p.BluRay.x264-%5bYTS.AG%5d.mp4
 Sweet Home~2015~http://45.114.180.220/ftp/HDD1/Movie/English/S/Sweet%20Home%20(2015)%20720p.mkv
 City of God~2002~http://www.ya0db9.com/media/nas/City.of.God.2002.BluRay.720p.DTS.x264-CHD/City.of.God.2002.BluRay.720p.DTS.x264-CHD.mkv
@@ -303,7 +303,7 @@ Galaxy of Horrors~2017~http://server1.timepassbd.com/ftpdata1/Movies/Hollywood/2
 The Great Dictator~1940~http://ghp.papnet.eu/FILME/KINOFILME/The%20Great%20Dictator%20-%201940.mp4
 The Thinning~2016~http://storm.pulsedmedia.com/media/bb4/new/The.Thinning.2016.720.WEB-DL.MovizLand.com.mp4
 The Circle~2017~http://alphamediazone.com/data/disk2/English%20Movies/2017/The.Circle.2017.1080p.BluRay.H264.AAC-RARBG/The.Circle.2017.1080p.BluRay.H264.AAC-RARBG.mp4
-Annabelle: Creation~2017~http://server1.timepassbd.com/ftpdata1/Movies/Hollywood/2017/Annabelle%20Creation%202017%201080p%20HC%20HDRip-x264.mkv
+Annabelle: Creation~2017~http://server1.timepassbd.com/ftpdata1/Movies/Hollywood/2017/Annabelle%20Creation%202017%201080p%20HC%20HDRip-x264.mkv*http://www.alphamediazone.com/data/Movies2/English%20Movies/2017/Annabelle%20Creation%202017%20HC%201080p%20WEBRip%201.4%20GB%20-%20iExTV.mp4*http://dl.tehmovies.org/94/96/7/Annabelle.Creation.2017.720p.MkvCage.Tehmovies.mkv*http://dl.dlfile.pro/6/Movie%20HD/Annabelle.Creation.2017.HC.720p.HDrip.MkvCage.mkv*http://media.bia4music.com/movie/2017/Film/9/Annabelle_Creation.mp4
 The Space Between Us~2017~http://alphamediazone.com/data/disk2/English%20Movies/2017/The%20Space%20Between%20Us%20(2017)%20720p%20WEB%20DL.mkv
 The Snow Queen 3~2016~http://103.63.159.38/data/Animation/The%20Snow%20Queen%203.2016.HDRip.XviD.AC3-EVO.avi
 Legend~2015~http://45.114.180.220/ftp/HDD1/Movie/English/L/Legend%20(2015)720p.mkv
@@ -415,7 +415,7 @@ The Perfect Weapon~2016~http://time-tu-v2.com/movies/boxoffice.fr/The.Perfect.We
 Monkey Up~2016~http://time-tu-v2.com/movies/boxoffice.fr/2016/Monkey.Up.2016.mkv
 Passengers~2016~http://home.crafters-island.com/movies/movies/Passengers%20(2016)/Passengers.mkv*http://time-tu-v2.com/movies/boxoffice.fr/Passengers.2016.mkv
 Pixies~2015~http://dl2.my98music.com/Data/Film/12.94/Pixies%202015%20BluRay%20720p%20%5bFilmia%5d.mkv
-Spider-Man~2002~http://dl2.moviefarsi.com/film/2015-2/Spider-Man.2002.1080p_MovieFarsi.mp4
+Spider-Man~2002~http://dl2.moviefarsi.com/film/2015-2/Spider-Man.2002.1080p_MovieFarsi.mp4*http://dl3.vaiomusic.org/Movie/Spider%20Man%202002%20-%20720p%20(media.vaiomusic).mkv*http://dl.marzfun.ir/ali/Film/Dooble/1395/04/05/Spider-Man.2002.720p.Farsi.Dubbed%20(MarzFun.ir).mkv
 Stratton~2017~http://time-tu-v2.com/movies/boxoffice.fr/Stratton.2017.avi
 Pete's Dragon~2016~http://dl1.uploadplus.net/dl2/2016/Petes.Dragon.2016/Petes.Dragon.2016.BluRay.720p.Ganool.mkv
 Kill Command~2016~http://adilpro.info/Movies/Kill.Command.2016.720p.BluRay.x264-%5bYTS.AG%5d.mp4
@@ -460,7 +460,7 @@ Love of My Life~2017~http://www.thehugheshome.com/media/movies/Love%20of%20My%20
 The Emoji Movie~2017~http://severedamage.net/Downloads/Movies/The%20Emoji%20Movie%202017.HC.HDRip.XviD.AC3-EVO.avi
 Bokeh~2017~http://alphamediazone.com/data/disk2/English%20Movies/Bokeh%20(2017)%20720p%20WEB%20DL.mkv
 Old 37~2015~http://dl.avadl.com/DL4/Film/Old%2037%20%282015%29%20720p%20WEB-DL_AVADL.CoM.mkv
-Transformers: The Last Knight~2017~http://www.time-tu-v2.com/movies/boxoffice.fr/Transformers.The.Last.Knight.2017.avi*http://fs.evonetbd.com/Media/Movies/English%20Movies/2017/Transformers%20The%20Last%20Knight%20(2017)/Transformers%20The%20Last%20Knight%202017%20Evonetbd.com.avi*http://server1.timepassbd.com/ftpdata1/Movies/Hollywood/2017/Transformers%20The%20Last%20Knight%202017%20HC%201080p%20HD.mp4
+Transformers: The Last Knight~2017~http://www.time-tu-v2.com/movies/boxoffice.fr/Transformers.The.Last.Knight.2017.avi*http://fs.evonetbd.com/Media/Movies/English%20Movies/2017/Transformers%20The%20Last%20Knight%20(2017)/Transformers%20The%20Last%20Knight%202017%20Evonetbd.com.avi*http://server1.timepassbd.com/ftpdata1/Movies/Hollywood/2017/Transformers%20The%20Last%20Knight%202017%20HC%201080p%20HD.mp4*http://pub.keikogi.ru/video/Transformers_The_Last_Knight_3D_BDRip_1080p.mkv*http://dl.dlfile.pro/6/Movie%20HD/Transformers.The.Last.Knight.2017.HDTS.mkv*http://dl.dlfile.pro/6/Movie%20HD/Transformers.The.Last.Knight.2017.720p.MkvCage.mkv
 Condemned~2015~http://45.114.180.220/ftp/HDD1/Movie/English/C/Condemned%202015%20720p.mkv
 Dark Places~2015~http://122.3.252.180/Dark%20Places%20(2015)%20%5b1080p%5d/Dark.Places.2015.1080p.BluRay.x264.YIFY.mp4
 The Pack~2015~http://dl.avadl.com/DL4/Film/The%20Pack%20%282015%29%20720p%20WEB-DL_AVADL.CoM.mkv
@@ -499,7 +499,7 @@ Stasis~2017~http://www.time-tu-v2.com/movies/boxoffice.fr/Stasis.2017.avi
 Back In The Day~2016~http://time-tu-v2.com/movies/boxoffice.fr/Back.In.The.Day.2016.avi
 The Age of Shadows~2016~http://s1.bia2m.biz/Movies/Archive/2016/Azar95/The.Age.of.Shadows.2016.720p.HDrip.(Bia2Movies).mkv
 The Good Dinosaur~2015~http://www.film4eg.net/momn/The%20Good%20Dinosaur%202015-1.mp4
-Suicide Squad~2016~http://nas.sayon.tv/publist/VOL1/files/drama/Suicide.Squad.2016.HDTS.700MB.ShAaNiG.mkv*http://hd-dreambox.com/Ondemand/Suicide%20Squad.mp4
+Suicide Squad~2016~http://nas.sayon.tv/publist/VOL1/files/drama/Suicide.Squad.2016.HDTS.700MB.ShAaNiG.mkv*http://hd-dreambox.com/Ondemand/Suicide%20Squad.mp4*http://www.alphamediazone.com/data/Movies2/English%20Movies/2016/Suicide.Squad_.2016.720p.BluRay.x264-YTS.AG_.mp4*http://103.67.198.6/uploaded-videos/Suicide%20Squad%20[2016].mp4
 One Under the Sun~2017~http://103.63.159.38/data/ENGLISH%202017/One.Under.The.Sun.2017.HDRip.XviD.AC3-iFT.avi
 Beautiful Prison~2016~http://www.opticalmediazone.com/ftpdata/Movies/English%20Movies/Beautiful.Prison.2016.HDRip.XviD.AC3-EVO.avi
 Notting Hill~1999~http://fs.evonetbd.com/Media/Movies/%20Romantic%20Movie/Notting%20Hill%201999%201080p%20BluRay%20x264.EbP%20(Proper)%20Zaki.romantic.mkv
@@ -556,8 +556,8 @@ Arrival~2016~http://64.179.152.253/media/Movies/Arrival%20(2016).mkv
 Surf's Up 2: WaveMania~2017~http://server1.timepassbd.com/ftpdata1/Movies/Hollywood/2017/Surf's%20Up%202%20WaveMania%202017%20720p%20WEBRip%20600%20MB%20-%20iExTV.mp4
 Clash of the Titans~2010~http://site1.thenetheads.info/jetstore1/07.02.2014/Clash.of.the.Titans.2010.1080p.3D.HSBS.x264%20Dual%20Audio%5bEng+Hind%5d.mkv
 The Wolverine~2013~http://site1.thenetheads.info/jetstore1/07.02.2014/The.Wolverine.3D.2013.1080p.BluRay.Half-SBS.DTS-ES.x264-PublicHD.mkv
-Despicable Me 3~2017~http://portal.ekniazi.com/Despicable%20Me%203%202017%20720p%20WEBRip%20650%20MB%20-%20iExTV/Despicable%20Me%203%202017%20720p%20WEBRip%20650%20MB%20-%20iExTV.mp4*http://fs.evonetbd.com/Media/Movies/English%20Movies/2017/Despicable.Me.3.2017.1080p.WEBRip.x264.AAC2.0-SHITBOX/Despicable.Me.3.2017.1080p.WEBRip.x264.AAC2.0-SHITBOX.mkv
-Resident Evil: Extinction~2007~http://www.riskinit.org/Public/Movies/Resident%20Evil%20Extinction%202007%20BRRip%20720p%20H264-3Li.mp4
+Despicable Me 3~2017~http://portal.ekniazi.com/Despicable%20Me%203%202017%20720p%20WEBRip%20650%20MB%20-%20iExTV/Despicable%20Me%203%202017%20720p%20WEBRip%20650%20MB%20-%20iExTV.mp4*http://fs.evonetbd.com/Media/Movies/English%20Movies/2017/Despicable.Me.3.2017.1080p.WEBRip.x264.AAC2.0-SHITBOX/Despicable.Me.3.2017.1080p.WEBRip.x264.AAC2.0-SHITBOX.mkv*http://dl.dlfile.pro/6/Movie%20HD/Despicable.Me.3.2017.TS.MkvCage.mkv*http://media.bia4music.com/movie/2017/Film/7/Despicable.Me.3.2017.HDTS.mkv*http://pub.keikogi.ru/video/Despicable_Me_3_3D_BDRip_1080p.mkv*http://seed.degravel.fr/Despicable.Me.3.2017.MULTi.1080p.HDRiP.MD.x264.mkv
+Resident Evil: Extinction~2007~http://www.riskinit.org/Public/Movies/Resident%20Evil%20Extinction%202007%20BRRip%20720p%20H264-3Li.mp4*http://dl3.vaiomusic.org/Animation/Resident%20Evil%202007%20-720p%20-%20vaiomusic.mkv
 Better Criminal~2016~http://dl.smovies.ir/film/khareji/Better.Criminal.2016.720p.Hdrip.SHERIF.(Smovies.Ir).mp4
 Last Knights~2015~http://45.114.180.220/ftp/HDD1/Movie/English/L/Last%20Knights%20(2015).mkv
 Tangled~2010~http://www.riskinit.org/Public/Kids%20Stuff/Tangled.2010.Bluray.720p.DTS.x264-CHD.mkv
@@ -590,13 +590,13 @@ Nerdland~2016~http://fs.evonetbd.com/Media/Movies/English%20Movies/2016/Nerdland
 Allegiant~2016~http://dl.hastidownload.biz/2/Allegiant.2016.1080p.6CH.ShAaNiG.mkv
 Skiptrace~2016~http://storm.pulsedmedia.com/media/bb4/new/Skiptrace.2016.1080p.BluRay.MovizLand.Com.mp4
 Cider with Rosie~2015~http://dl5.nightsdl.com/Masih/Film/2015/Cider%20with%20Rosie%202015%20720p-[Nightsdl.Com].mkv
-Now You See Me 2~2016~http://portal.ekniazi.com/Now.You.See.Me.2.2016.720p.BluRay.H264.AAC-RARBG/Now.You.See.Me.2.2016.720p.BluRay.H264.AAC-RARBG.mp4
+Now You See Me 2~2016~http://portal.ekniazi.com/Now.You.See.Me.2.2016.720p.BluRay.H264.AAC-RARBG/Now.You.See.Me.2.2016.720p.BluRay.H264.AAC-RARBG.mp4*http://www.alphamediazone.com/data/Movies2/English%20Movies/2016/Now%20You%20See%20Me%202%20(2016)%20[1080p]%20BluRay.mp4*http://103.67.198.6/uploaded-videos/Watch%20Now%20You%20See%20Me%202%20For%20Free%20On%20123Movies.to.MP4*http://dl3.vaiomusic.org/Movie/Now%20You%20See%20Me%202%202016%20-%20720p(vaiomusic).mkv
 Pinocchio~1940~http://www.riskinit.org/Public/Kids%20Stuff/Disney%20Collection%201937-2008/1940%20-%20Pinocchio.avi
 Filth City~2017~http://server1.timepassbd.com/ftpdata1/Movies/Hollywood/2017/Filth.City.2017.720p.BRRip.x264.AAC.mp4
 Good Kill~2014~http://45.114.180.220/ftp/HDD1/Movie/English/G/Good%20Kill%20(2014)720p%20BLu-Ray%20x264%20808MB%20%5bDoriDro.Com%5d.mp4
 Lion~2017~http://www.thehugheshome.com/media/movies/Lion%20(2017)/Lion%20(2017).mp4
-Frozen~2013~http://www.riskinit.org/Public/Kids%20Stuff/Frozen%202013%20DVDScr%20XViD%20AC3-FiNGERBLaST/Frozen%202013%20DVDScr%20XViD%20AC3-FiNGERBLaST.avi
-The Dark Tower~2017~http://server1.timepassbd.com/ftpdata1/Movies/Hollywood/2017/The%20Dark%20Tower%202017%20720p_timepassbd.com.mkv
+Frozen~2013~http://www.riskinit.org/Public/Kids%20Stuff/Frozen%202013%20DVDScr%20XViD%20AC3-FiNGERBLaST/Frozen%202013%20DVDScr%20XViD%20AC3-FiNGERBLaST.avi*http://dl.dlfile.pro/2/Frozen.2013.1080p.5.1CH.Ganool.mkv*http://dl.dlfile.pro/2/Frozen.2013.BRrip.720p.Ganool.mkv*
+The Dark Tower~2017~http://server1.timepassbd.com/ftpdata1/Movies/Hollywood/2017/The%20Dark%20Tower%202017%20720p_timepassbd.com.mkv*http://www.alphamediazone.com/data/Movies2/English%20Movies/2017/The.Dark.Tower.2017.1080p.BluRay.x264.DTS-SHITBOX.mkv*http://media.bia4music.com/movie/2017/Film/10/The_Dark_Tower_2017_720p.mkv*http://dl.dlfile.pro/6/Movie%20HD/The.Dark.Tower.2017.720p.x265.mkv*http://pub.keikogi.ru/video/Dark_Tower_BDRip_1080p.mkv*http://103.67.198.6/uploaded-videos/The%20Dark%20Tower%20-%20TimePassBD.mp4
 Uncaged~2016~http://dl5.nightsdl.com/Masih/Film/2016/Uncaged.2016.720p.WEB-DL.Ganool-[Nightsdl.com].mp4
 Traffic~2016~http://dl.hastidownload.biz/2/Traffic.2016.1080p.5.1CH.Ganool.mkv
 Joy~2015~http://www.movie-inn.com/content/joy.mp4
@@ -664,10 +664,10 @@ Rufus 2~2017~http://fs.evonetbd.com/Media/Movies/English%20Movies/2017/Rufus.2.2
 The Brothers Grimsby~2016~http://s1.bia2m.biz/Movies/Archive/2016/Khordad95/The.Brothers.Grimsby.2016.1080p.6CH.ShAaNiG%20(Bia2Movies).mkv
 True Story~2015~http://dl.avadl.com/New2/Film/True%20Story%20%282015%29%20720p%20BrRip%20x265_AVADL.CoM.mkv
 Unnatural~2015~http://178.162.214.232/vod/movies/english/Unnatural.2015.avi
-Captain America: Civil War~2016~http://gprehash.me/video/Captain.America.Civil.War.mp4
+Captain America: Civil War~2016~http://gprehash.me/video/Captain.America.Civil.War.mp4*http://www.alphamediazone.com/data/Movies2/English%20Movies/2016/Captain.America.Civil_.War_.2016.720p.BluRay.x264.YTS_.PE_-1.mp4*http://dl2.nicedownload.org/ndl/film/khareji/95/6/Captain.America.Civil.War.2016.720p.BluRay.mkv*http://kangaroo.fr/download/video/new/[%20www.CpasBien.cm%20]%20Captain.America.Civil.War.2016.FRENCH.720p.BluRay.x264-LOST.mkv*http://media.bia4music.com/movie/2015/film/12/Captain.America.Civil.War.2016.mp4
 WALL-E~2008~http://s1.bia2m.biz/Movies/250%20Top%20Movies/WALL-E%20(2008)%20720p%20(Bia2Movies).mkv
 The Girl with All the Gifts~2016~http://1.myfilmia1.ir/Film/11.95/The%20Girl%20With%20All%20The%20Gifts%202016%20BluRay%20720p%20%5bmyFilmia%5d.mkv*http://103.66.178.220/ftp/HDD1/Movie/English/T/The%20Girl%20with%20All%20the%20Gifts%20(2016).mkv
 Rememory~2017~http://server1.timepassbd.com/ftpdata1/Movies/Hollywood/2017/Rememory%20(2017)%201080p%20HD%20x265.mkv*http://fs.evonetbd.com/Media/Movies/English%20Movies/2017/Rememory.2017.1080p.WEBRip.x264.AAC2.0-FGT/Rememory.2017.1080p.WEBRip.x264.AAC2.0-FGT.mkv
 Railroad Tigers~2016~http://dl.smovies.ir/film/khareji/Railroad.Tigers.2016.BluRay.1080p.Ganool.(Smovies.Ir).mkv
-Baby Driver~2017~http://www.opticalmediazone.com/ftpdata/Movies/English%20Movies/Baby%20Driver%202017%20HDCAM%20x264%20HQMic-CPG.mp4*http://fs.evonetbd.com/Media/Movies/English%20Movies/2017/Baby.Driver%20(2017)/Baby.Driver.2017.HDCAM.x264.WTF.mkv*http://portal.ekniazi.com/Baby.Driver.2017.7220p.WEB-DL.900MB.MkvCage.mkv*http://www.time-tu-v2.com/movies/boxoffice.fr/%5b%20Torrent9.tv%20%5d%20Baby.Driver.2017.FRENCH.HDRip.XviD-GZR.avi
+Baby Driver~2017~http://www.alphamediazone.com/data/Movies2/English%20Movies/2017/Baby%20Driver%202017%20AlphaMediaZone.Com.mp4*http://pub.keikogi.ru/video/Baby_Driver_BDRip_1080p.mkv*http://dl.dlfile.pro/6/Movie%20HD/Baby.Driver.2017.1080p.YIFY.mp4*http://dl.dlfile.pro/6/Movie%20HD/Baby.Driver.2017.720p.x265.MkvCage.mkv*http://dl.tehmovies.org/94/96/5/Baby.Driver.2017.TS.MkvCage.Tehmovies_me.mkv*http://dl.tehmovies.org/94/96/7/Baby.Driver.2017.1080p.Tehmovies_top.mkv
 Risen~2016~http://filmjogot.com/files/movies1/english_movie/Risen.20161461214592.mkv
