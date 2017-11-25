@@ -56,6 +56,9 @@ Download installer [here](https://github.com/invu/opentheatre-app/releases/downl
 ### About
 ![Show Page](https://raw.githubusercontent.com/invu/opentheatre-app/master/screenshots/about.png)
 
+## Iconography
+Thanks to [Material Design Icons](https://materialdesignicons.com/) for their beatiful icons.
+
 ## Legal Side of Things
 All of the free files found on this app are hosted on third-party servers that are freely available for all internet users. Any legal issues regarding the free online links on this app should be taken up with the actual file hosts themselves, as we're not affiliated with them.
 
