@@ -164,4 +164,7 @@ http://dl.tehmovies.org/94/9/
 http://dl.tehmovies.org/94/95/
 http://dl.tehmovies.org/94/asia/
 http://dl.tehmovies.org/94/irani/
-http://dl.tehmovies.org/94/series/
+http://58.84.32.62/ftp/HDD1/English%20Movies/
+http://58.84.32.62/ftp/HDD1/English%20Movies/2017/
+http://58.84.32.62/ftp/HDD1/Animation%20Movies/
+http://58.84.32.62/ftp/HDD1/Animation%20Movies/2017
