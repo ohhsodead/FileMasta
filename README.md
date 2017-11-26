@@ -10,14 +10,14 @@
 <br />
 
 ## What is OpenTheatre?
-OpenTheatre is a search engine that indexes open web directories to scrape movies, series, anime, subtitles and torrents files from all around the Internet.  
+OpenTheatre is a search engine designed to index open web directories hosted all round the web to scrape movies, series, anime, subtitles and torrents. 
 
 ## Some features available
 - Simple interface and background threads for the best performance
 - Web crawler returning over 50,000 movies, series, anime, subtitles and torrents
 - Search movies by people, years and genre
 - Filter files by format, host and sort alphabetically
-- Support for external players (Currently includes WMP, MPC & VLC. Open for requests!)
+- Support for external players (Currently includes WMP, MPC & VLC - Open for requests)
 - Simple client for direct downloads
 - Collects metadata from OMDb API & Popcorn Time API
 - Local database updating every 12 hours
@@ -35,7 +35,7 @@ The application is using .NET 4.6.2 WinForms Framework written in C#.
 Windows 7 and above (Windows 7, 8, 8.1, 10)
 
 ## Installation
-Download installer [here](https://github.com/invu/opentheatre-app/releases/download/0.2.0.5/OpenTheatreInstaller.exe)
+Download the latest installer [here](https://github.com/invu/opentheatre-app/releases/download/0.2.0.5/OpenTheatreInstaller.exe)
 
 ## Screenshots
 ### Movies
@@ -53,14 +53,8 @@ Download installer [here](https://github.com/invu/opentheatre-app/releases/downl
 ### Downloads
 ![Show Page](https://raw.githubusercontent.com/invu/opentheatre-app/master/screenshots/downloads.png)
 
-### About
-![Show Page](https://raw.githubusercontent.com/invu/opentheatre-app/master/screenshots/about.png)
-
 ## Iconography
-Thanks to [Material Design Icons](https://materialdesignicons.com/) for their beatiful icons.
-
-## Legal Side of Things
-All of the free files found on this app are hosted on third-party servers that are freely available for all internet users. Any legal issues regarding the free online links on this app should be taken up with the actual file hosts themselves, as we're not affiliated with them.
+Thanks to [Material Design Icons (powered by Google)](https://materialdesignicons.com/) for their beatiful icons.
 
 ## Comments
 OpenTheatre is a new application and is not a segment of Popcorn Time or any other similar apps.
