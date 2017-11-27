@@ -1,6 +1,7 @@
 ﻿using DatabaseFilesAPI;
 using OMDbAPI;
 using OpenTheatre;
+using OpenTheatre.Properties;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -69,6 +70,72 @@ namespace Utilities
             return "null";
         }
 
+        // compare file bytes
+        public static bool isFileSizeIdentical(string fileURLSize, string fileURL)
+        {
+            if (File.Exists(Settings.Default.downloadsDirectory + Path.GetFileName(new Uri(fileURL).LocalPath)) && fileURLSize == ToFileSize(Convert.ToDouble(new FileInfo(Settings.Default.downloadsDirectory + Path.GetFileName(new Uri(fileURL).LocalPath)).Length))) { return true; }
+            // Checks for exact file name of a subtitle file that matches the one being loaded (e.g. Media File Name: 'Jigsaw.2017.mp4' > Subtitle File Name: 'Jigsaw.2017.srt' will be loaded)
+            else { return false; }
+        }
+
+        // if user has file subtitles in their downloads direcotry
+        public static bool isExistingSubtitlesFile(string fileURL)
+        {
+            if (File.Exists(Settings.Default.downloadsDirectory + Path.GetFileNameWithoutExtension(new Uri(fileURL).LocalPath) + ".srt")) {
+            return true; }
+            else return false;
+        }
+
+        // if file exists and check date added
+        public static bool doUpdateDataFile(string pathData)
+        {
+            if (File.Exists(pathData))
+            {
+                if (IsAboveThreshold(pathData, 12) == true) // if db older than 12 hours
+                {
+                    return true;
+                } else return false;
+            }
+            else { return true; }
+        }
+
+        // load picturebox from web resource
+        public static Bitmap LoadPicture(string url)
+        {
+            HttpWebRequest wreq;
+            HttpWebResponse wresp;
+            Stream mystream;
+            Bitmap bmp;
+
+            bmp = null;
+            mystream = null;
+            wresp = null;
+            try
+            {
+                wreq = (HttpWebRequest)WebRequest.Create(url);
+                wreq.AllowWriteStreamBuffering = true;
+
+                wresp = (HttpWebResponse)wreq.GetResponse();
+
+                if ((mystream = wresp.GetResponseStream()) != null)
+                    bmp = new Bitmap(mystream);
+            }
+            catch
+            {
+                // Do nothing... 
+            }
+            finally
+            {
+                if (mystream != null)
+                    mystream.Close();
+
+                if (wresp != null)
+                    wresp.Close();
+            }
+
+            return (bmp);
+        }
+
         // return file size with suffix
         public static string ToFileSize(double value)
         {
@@ -133,7 +200,7 @@ namespace Utilities
             return values.All(x => source.ToLower().Contains(x));
         }
 
-        // if file above hours
+        // if file date below hours
         public static bool IsAboveThreshold(string filename, int hours)
         {
             return new FileInfo(filename).LastAccessTime < DateTime.Now.AddHours(-hours);

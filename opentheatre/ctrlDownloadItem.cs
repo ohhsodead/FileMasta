@@ -16,31 +16,33 @@ namespace OpenTheatre
 {
     public partial class ctrlDownloadItem : UserControl
     {
-        public Size defaultSize = new Size(frmOpenTheatre.form.panelDownloads.ClientSize.Width - 7, 82), dropSize = new Size(frmOpenTheatre.form.panelDownloads.ClientSize.Width - 7, 118);
-
         public ctrlDownloadItem()
         {
             InitializeComponent();
         }
 
+        string infoFileURL;
+
         private void ctrlDownloadItem_Load(object sender, EventArgs e)
         {
-            
+            BackColor = Parent.BackColor;
+            progressBar1.BorderColor = BackColor;
         }
 
         Stopwatch sw = new Stopwatch();
         WebClient wc = new WebClient();
+        DateTime startTime = new DateTime();
 
         public void doDownloadFile(string url)
         {
-            if (!Directory.Exists(Properties.Settings.Default.downloadsDirectory)) { MessageBox.Show("Specified download directory doesn't exist"); return; }
+            if (!Directory.Exists(Properties.Settings.Default.downloadsDirectory)) { MessageBox.Show("Specified download directory doesn't exist. Please alter this in your settings."); return; }
             if (Properties.Settings.Default.connectionCustom == true) { if (Properties.Settings.Default.connectionHost != null && Properties.Settings.Default.connectionPort != null) { wc.Proxy = new WebProxy(Properties.Settings.Default.connectionHost, Convert.ToInt32(Properties.Settings.Default.connectionPort)); wc.Proxy.Credentials = new NetworkCredential(Properties.Settings.Default.connectionUsername, Properties.Settings.Default.connectionPassword); wc.UseDefaultCredentials = false; } }
             else { wc.Proxy = WebProxy.GetDefaultProxy(); wc.Proxy.Credentials = CredentialCache.DefaultCredentials; wc.UseDefaultCredentials = true; }
             wc.DownloadFileCompleted += new AsyncCompletedEventHandler(downloadCompleted);
             wc.DownloadProgressChanged += new DownloadProgressChangedEventHandler(downloadProgressChanged);
-            wc  .DownloadFileAsync(new Uri(url), Properties.Settings.Default.downloadsDirectory + Path.GetFileName(new Uri(url).LocalPath));
-            lblFileName.Text = Path.GetFileName(new Uri(url).LocalPath);
-            sw.Start();
+            wc.DownloadFileAsync(new Uri(url), Properties.Settings.Default.downloadsDirectory + Path.GetFileName(new Uri(url).LocalPath)); sw.Start(); startTime = DateTime.Now;
+            infoFileURL = url;
+            infoFileName.Text = Path.GetFileName(new Uri(url).LocalPath);
         }
 
         private void downloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
@@ -49,32 +51,38 @@ namespace OpenTheatre
             double receivedValue = Convert.ToDouble(e.BytesReceived);
 
             progressBar1.Value = e.ProgressPercentage;
-            lblStatus.Text = "Downloading - " + progressBar1.Value + "%";
+            infoStatus.Text = "Downloading";
+            infoPercentage.Text = e.ProgressPercentage + "%";
+            
+            // Get remaining time 
+            var elapsedTime = (DateTime.Now - startTime).TotalSeconds;
+            var allTimeFordownloading = (elapsedTime * e.TotalBytesToReceive / e.BytesReceived);
+            var remainingTime = allTimeFordownloading - elapsedTime;
+            TimeSpan time = TimeSpan.FromSeconds(remainingTime);
+            infoEstimatedTime.Text = string.Format("{0} Minutes {1} Seconds", time.Minutes, time.Seconds);
 
-            lblSpeed.Text = "Speed: " + string.Format("{0}/s", UtilityTools.ToFileSize((e.BytesReceived / 1024d / sw.Elapsed.TotalSeconds)));
-            lblDownloaded.Text = "Downloaded: " + UtilityTools.ToFileSize(receivedValue);
-            lblSize.Text = "Size: " + UtilityTools.ToFileSize(totalReceivedValue);
+            infoDownloadedOutOfSize.Text = string.Format("{0}/{1}",  UtilityTools.ToFileSize(receivedValue), UtilityTools.ToFileSize(totalReceivedValue));
+            infoSpeed.Text = string.Format("{0}/s ↓", UtilityTools.ToFileSize((e.BytesReceived / 1024d / sw.Elapsed.TotalSeconds)));
+
+            Refresh();
         }
 
         private void downloadCompleted(object sender, AsyncCompletedEventArgs e)
         {
             sw.Reset();
-            if (e.Cancelled == true) { lblStatus.Text = "Download Cancelled"; lblCancel.Text = "Close"; }
-            else if (e.Error != null) { lblStatus.Text = "Download Failed - " + e.Error.Message; lblCancel.Text = "Close"; }
-            else { lblStatus.Text = "Download Complete"; lblCancel.Text = "Close"; }
+            if (e.Cancelled == true) { infoStatus.Text = "Cancelled"; imgCancel.Image = Properties.Resources.check; progressBar1.ProgressColor = Color.Gray; panelDetails.ForeColor = Color.Gray; }
+            else if (e.Error != null) { infoStatus.Text = "Error (" + e.Error.Message + ")"; ; imgCancel.Image = Properties.Resources.check; progressBar1.ProgressColor = Color.Red; infoStatus.ForeColor = Color.Red; }
+            else { infoStatus.Text = "Complete"; imgCancel.Image = Properties.Resources.check; }
+
+            frmOpenTheatre.currentDownloads.Remove(infoFileURL);
         }
 
         private void lblFileName_Click(object sender, EventArgs e)
         {
-            UtilityTools.openFile(Properties.Settings.Default.downloadsDirectory + lblFileName.Text);
+            UtilityTools.openFile(Properties.Settings.Default.downloadsDirectory + infoFileName.Text);
         }
 
-        private void imgDropDown_Click(object sender, EventArgs e)
-        {
-            if (Size == defaultSize) { Size = dropSize; lblSpeed.Visible = true; lblDownloaded.Visible = true; } else { Size = defaultSize; lblSpeed.Visible = false; lblDownloaded.Visible = false; }
-        }
-
-        private void lblCancel_Click(object sender, EventArgs e)
+        private void imgCancel_Click(object sender, EventArgs e)
         {
             wc.CancelAsync();
             wc.Dispose();

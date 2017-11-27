@@ -123,6 +123,11 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="regexFileName.cs" />
     <Compile Include="Utilities.cs" />
     <EmbeddedResource Include="ctrlDetails.resx">
@@ -156,11 +161,6 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -172,32 +172,35 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="openplex_logo.ico" />
-    <None Include="Resources\link-variant.png" />
-    <None Include="Resources\bookmark.png" />
-    <None Include="Resources\menu-down.png" />
-    <None Include="Resources\pause-circle.png" />
+    <None Include="Resources\check.png" />
     <None Include="Resources\close-circle.png" />
+    <None Include="Resources\search.png" />
     <None Include="Resources\folder-open.png" />
-    <None Include="Resources\alert-octagon.png" />
-    <None Include="Resources\play-circle.png" />
-    <None Include="Resources\cloud-download.png" />
-    <None Include="Resources\web.png" />
-    <None Include="Resources\magnify.png" />
-    <None Include="Resources\history.png" />
-    <None Include="Resources\settings.png" />
-    <None Include="Resources\bookmark-plus.png" />
+    <None Include="Resources\clipboard-check.png" />
+    <None Include="Resources\clipboard-arrow-left.png" />
     <None Include="Resources\bookmark-remove.png" />
-    <None Include="Resources\spinner.GIF" />
-    <None Include="Resources\background-original.jpg" />
-    <None Include="Resources\buffer.png" />
-    <None Include="Resources\chevron-down.png" />
-    <None Include="Resources\chevron-down-white.png" />
-    <None Include="Resources\close.png" />
-    <None Include="Resources\download.png" />
-    <None Include="Resources\filmstrip.png" />
-    <None Include="Resources\imdb.png" />
-    <None Include="Resources\information.png" />
+    <None Include="Resources\bookmark.png" />
+    <None Include="Resources\keyboard_arrow_down.png" />
     <None Include="Resources\opentheatre-logo.png" />
+    <None Include="Resources\settings.png" />
+    <None Include="Resources\report.png" />
+    <None Include="Resources\play_circle.png" />
+    <None Include="Resources\local_movies.png" />
+    <None Include="Resources\info.png" />
+    <None Include="Resources\folder.png" />
+    <None Include="Resources\file_download.png" />
+    <None Include="Resources\cloud_download.png" />
+    <None Include="Resources\cloud_done.png" />
+    <None Include="Resources\close.png" />
+    <None Include="Resources\arrow_drop_down_white.png" />
+    <None Include="Resources\arrow_drop_down_black.png" />
+    <None Include="Resources\windows.png" />
+    <None Include="Resources\vlc.png" />
+    <None Include="Resources\dots-horizontal.png" />
+    <None Include="Resources\cloud-sync.png" />
+    <None Include="Resources\bookmark-plus.png" />
+    <None Include="Resources\background-original.jpg" />
+    <None Include="Resources\imdb.png" />
     <None Include="Resources\opentheatre-text.png" />
     <None Include="Resources\poster-default.png" />
     <None Include="Resources\poster-glow.png" />

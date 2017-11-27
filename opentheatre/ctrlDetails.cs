@@ -18,19 +18,20 @@ namespace OpenTheatre
             InitializeComponent();
         }
 
-        public string infoImdbId;
-        public string infoFanartUrl;
-        public string infoTrailerUrl;
+        public string infoImdbId = "";
+        public string infoFanartUrl = "";
+        public string infoTrailerUrl = "";
 
         private void ctrlMovieDetails_Load(object sender, EventArgs e)
         {
             if (infoFanartUrl == "") { BackColor = Color.Transparent; }
-            panelSubHeaders.Size = new Size(panelDetails.ClientSize.Width, panelSubHeaders.ClientSize.Height);
-            panelStreams.Size = new Size(panelDetails.ClientSize.Width, panelStreams.ClientSize.Height);
+            if (infoTrailerUrl == "") { btnWatchTrailer.Visible = false; } 
+            panelSubHeaders.Size = new Size(panelDetails.Size.Width, panelSubHeaders.Size.Height);
+            panelStreams.Size = new Size(panelDetails.Size.Width, panelStreams.Size.Height);
 
             foreach (Control ctrl in panelStreams.Controls)
             {
-                ctrl.Size = new Size(panelDetails.ClientSize.Width - 5, ctrl.Size.Height);
+                ctrl.Size = new Size(panelStreams.Size.Width - 5, ctrl.Size.Height);
             }
         }
 
@@ -47,12 +48,21 @@ namespace OpenTheatre
 
         private void ctrlDetails_SizeChanged(object sender, EventArgs e)
         {
-            panelStreams.Size = new Size(panelDetails.ClientSize.Width, panelStreams.ClientSize.Height);
+            panelStreams.Size = new Size(panelDetails.Size.Width, panelStreams.Size.Height);
 
             foreach (Control ctrl in panelStreams.Controls)
             {
-                ctrl.Size = new Size(panelDetails.ClientSize.Width - 5, ctrl.ClientSize.Height);
+                ctrl.Size = new Size(panelStreams.Size.Width - 5, ctrl.Size.Height);
             }
+        }
+
+        private void btnWatchTrailer_ClickButtonArea(object Sender, MouseEventArgs e)
+        {
+            var a = new frmVLCPlayer();
+            a.Text = "Trailer: " + infoTitle.Text + " (" + infoYear.Text + ")";
+            a.axVLCPlugin21.playlist.add(infoTrailerUrl);
+            a.axVLCPlugin21.playlist.play();
+            a.Show();
         }
     }
 }

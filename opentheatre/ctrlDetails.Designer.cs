@@ -45,9 +45,11 @@
             this.infoSplitter1 = new System.Windows.Forms.Label();
             this.infoSplitter2 = new System.Windows.Forms.Label();
             this.infoSplitter3 = new System.Windows.Forms.Label();
+            this.imgIMDb = new System.Windows.Forms.PictureBox();
             this.infoSplitter4 = new System.Windows.Forms.Label();
             this.infoRatingIMDb = new System.Windows.Forms.Label();
             this.panelSubHeaders = new System.Windows.Forms.Panel();
+            this.imgAddToBookmarks = new System.Windows.Forms.PictureBox();
             this.infoFileHost = new System.Windows.Forms.Label();
             this.infoFileName = new System.Windows.Forms.Label();
             this.lineUserReviews = new CButtonLib.CButton();
@@ -56,16 +58,15 @@
             this.infoFileSize = new System.Windows.Forms.Label();
             this.lineSplitter = new CButtonLib.CButton();
             this.panelStreams = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnWatchTrailer = new CButtonLib.CButton();
             this.imgPoster = new System.Windows.Forms.PictureBox();
-            this.imgIMDb = new System.Windows.Forms.PictureBox();
-            this.imgAddToBookmarks = new System.Windows.Forms.PictureBox();
             this.appClose = new System.Windows.Forms.PictureBox();
             this.imgPosterBG = new System.Windows.Forms.PictureBox();
             this.panelDetails.SuspendLayout();
-            this.panelSubHeaders.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgPoster)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgIMDb)).BeginInit();
+            this.panelSubHeaders.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgAddToBookmarks)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgPoster)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.appClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgPosterBG)).BeginInit();
             this.SuspendLayout();
@@ -165,6 +166,8 @@
             // 
             // infoTitle
             // 
+            this.infoTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.infoTitle.AutoEllipsis = true;
             this.infoTitle.BackColor = System.Drawing.Color.Transparent;
             this.infoTitle.Cursor = System.Windows.Forms.Cursors.Default;
@@ -291,6 +294,20 @@
             this.infoSplitter3.TabIndex = 1074;
             this.infoSplitter3.Text = "•";
             // 
+            // imgIMDb
+            // 
+            this.imgIMDb.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imgIMDb.Image = global::OpenTheatre.Properties.Resources.imdb;
+            this.imgIMDb.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.imgIMDb.Location = new System.Drawing.Point(264, 4);
+            this.imgIMDb.Margin = new System.Windows.Forms.Padding(4, 4, 4, 20);
+            this.imgIMDb.Name = "imgIMDb";
+            this.imgIMDb.Size = new System.Drawing.Size(44, 18);
+            this.imgIMDb.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgIMDb.TabIndex = 100041;
+            this.imgIMDb.TabStop = false;
+            this.imgIMDb.Click += new System.EventHandler(this.imgIMDb_Click);
+            // 
             // infoSplitter4
             // 
             this.infoSplitter4.AutoSize = true;
@@ -336,8 +353,21 @@
             this.panelSubHeaders.Location = new System.Drawing.Point(3, 152);
             this.panelSubHeaders.Margin = new System.Windows.Forms.Padding(3, 20, 0, 0);
             this.panelSubHeaders.Name = "panelSubHeaders";
-            this.panelSubHeaders.Size = new System.Drawing.Size(690, 52);
+            this.panelSubHeaders.Size = new System.Drawing.Size(690, 54);
             this.panelSubHeaders.TabIndex = 100042;
+            // 
+            // imgAddToBookmarks
+            // 
+            this.imgAddToBookmarks.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.imgAddToBookmarks.BackColor = System.Drawing.Color.Transparent;
+            this.imgAddToBookmarks.Cursor = System.Windows.Forms.Cursors.Default;
+            this.imgAddToBookmarks.Image = global::OpenTheatre.Properties.Resources.bookmark;
+            this.imgAddToBookmarks.Location = new System.Drawing.Point(1, 31);
+            this.imgAddToBookmarks.Name = "imgAddToBookmarks";
+            this.imgAddToBookmarks.Size = new System.Drawing.Size(23, 23);
+            this.imgAddToBookmarks.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgAddToBookmarks.TabIndex = 1103;
+            this.imgAddToBookmarks.TabStop = false;
             // 
             // infoFileHost
             // 
@@ -346,7 +376,7 @@
             this.infoFileHost.AutoSize = true;
             this.infoFileHost.Cursor = System.Windows.Forms.Cursors.Default;
             this.infoFileHost.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.infoFileHost.Location = new System.Drawing.Point(27, 31);
+            this.infoFileHost.Location = new System.Drawing.Point(27, 33);
             this.infoFileHost.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
             this.infoFileHost.Name = "infoFileHost";
             this.infoFileHost.Size = new System.Drawing.Size(35, 17);
@@ -360,7 +390,7 @@
             this.infoFileName.AutoSize = true;
             this.infoFileName.Cursor = System.Windows.Forms.Cursors.Default;
             this.infoFileName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.infoFileName.Location = new System.Drawing.Point(160, 31);
+            this.infoFileName.Location = new System.Drawing.Point(160, 33);
             this.infoFileName.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
             this.infoFileName.Name = "infoFileName";
             this.infoFileName.Size = new System.Drawing.Size(43, 17);
@@ -388,7 +418,7 @@
             this.lineUserReviews.ShowFocus = CButtonLib.CButton.eFocus.None;
             this.lineUserReviews.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.lineUserReviews.SideImageSize = new System.Drawing.Size(36, 36);
-            this.lineUserReviews.Size = new System.Drawing.Size(154, 2);
+            this.lineUserReviews.Size = new System.Drawing.Size(37, 2);
             this.lineUserReviews.TabIndex = 1102;
             this.lineUserReviews.Text = "";
             this.lineUserReviews.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -401,7 +431,7 @@
             this.infoFileAddedDate.AutoSize = true;
             this.infoFileAddedDate.Cursor = System.Windows.Forms.Cursors.Default;
             this.infoFileAddedDate.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.infoFileAddedDate.Location = new System.Drawing.Point(483, 31);
+            this.infoFileAddedDate.Location = new System.Drawing.Point(483, 33);
             this.infoFileAddedDate.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
             this.infoFileAddedDate.Name = "infoFileAddedDate";
             this.infoFileAddedDate.Size = new System.Drawing.Size(77, 17);
@@ -419,9 +449,9 @@
             this.lblHeaderUserReviews.Location = new System.Drawing.Point(0, 0);
             this.lblHeaderUserReviews.Margin = new System.Windows.Forms.Padding(0);
             this.lblHeaderUserReviews.Name = "lblHeaderUserReviews";
-            this.lblHeaderUserReviews.Size = new System.Drawing.Size(165, 21);
+            this.lblHeaderUserReviews.Size = new System.Drawing.Size(48, 21);
             this.lblHeaderUserReviews.TabIndex = 1100;
-            this.lblHeaderUserReviews.Text = "AVAILABLE STREAMS";
+            this.lblHeaderUserReviews.Text = "FILES";
             // 
             // infoFileSize
             // 
@@ -430,7 +460,7 @@
             this.infoFileSize.AutoSize = true;
             this.infoFileSize.Cursor = System.Windows.Forms.Cursors.Default;
             this.infoFileSize.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.infoFileSize.Location = new System.Drawing.Point(412, 31);
+            this.infoFileSize.Location = new System.Drawing.Point(412, 33);
             this.infoFileSize.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
             this.infoFileSize.Name = "infoFileSize";
             this.infoFileSize.Size = new System.Drawing.Size(31, 17);
@@ -473,12 +503,43 @@
             this.panelStreams.BackColor = System.Drawing.Color.Transparent;
             this.panelDetails.SetFlowBreak(this.panelStreams, true);
             this.panelStreams.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.panelStreams.Location = new System.Drawing.Point(0, 204);
-            this.panelStreams.Margin = new System.Windows.Forms.Padding(0);
+            this.panelStreams.Location = new System.Drawing.Point(0, 208);
+            this.panelStreams.Margin = new System.Windows.Forms.Padding(0, 2, 0, 0);
             this.panelStreams.Name = "panelStreams";
             this.panelStreams.Size = new System.Drawing.Size(693, 236);
             this.panelStreams.TabIndex = 0;
             this.panelStreams.WrapContents = false;
+            // 
+            // btnWatchTrailer
+            // 
+            this.btnWatchTrailer.BackColor = System.Drawing.Color.Transparent;
+            this.btnWatchTrailer.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.btnWatchTrailer.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.btnWatchTrailer.Corners.All = 2;
+            this.btnWatchTrailer.Corners.LowerLeft = 2;
+            this.btnWatchTrailer.Corners.LowerRight = 2;
+            this.btnWatchTrailer.Corners.UpperLeft = 2;
+            this.btnWatchTrailer.Corners.UpperRight = 2;
+            this.btnWatchTrailer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnWatchTrailer.DesignerSelected = false;
+            this.btnWatchTrailer.DimFactorClick = 0;
+            this.btnWatchTrailer.DimFactorHover = 0;
+            this.btnWatchTrailer.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.btnWatchTrailer.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.btnWatchTrailer.ForeColor = System.Drawing.Color.Black;
+            this.btnWatchTrailer.ImageIndex = 0;
+            this.btnWatchTrailer.Location = new System.Drawing.Point(26, 284);
+            this.btnWatchTrailer.Name = "btnWatchTrailer";
+            this.btnWatchTrailer.ShowFocus = CButtonLib.CButton.eFocus.None;
+            this.btnWatchTrailer.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnWatchTrailer.SideImageSize = new System.Drawing.Size(21, 21);
+            this.btnWatchTrailer.Size = new System.Drawing.Size(159, 28);
+            this.btnWatchTrailer.TabIndex = 100044;
+            this.btnWatchTrailer.Text = "Watch Trailer";
+            this.btnWatchTrailer.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnWatchTrailer.TextMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
+            this.btnWatchTrailer.TextShadowShow = false;
+            this.btnWatchTrailer.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnWatchTrailer_ClickButtonArea);
             // 
             // imgPoster
             // 
@@ -490,33 +551,6 @@
             this.imgPoster.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imgPoster.TabIndex = 100040;
             this.imgPoster.TabStop = false;
-            // 
-            // imgIMDb
-            // 
-            this.imgIMDb.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgIMDb.Image = global::OpenTheatre.Properties.Resources.imdb;
-            this.imgIMDb.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.imgIMDb.Location = new System.Drawing.Point(264, 4);
-            this.imgIMDb.Margin = new System.Windows.Forms.Padding(4, 4, 4, 20);
-            this.imgIMDb.Name = "imgIMDb";
-            this.imgIMDb.Size = new System.Drawing.Size(44, 18);
-            this.imgIMDb.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.imgIMDb.TabIndex = 100041;
-            this.imgIMDb.TabStop = false;
-            this.imgIMDb.Click += new System.EventHandler(this.imgIMDb_Click);
-            // 
-            // imgAddToBookmarks
-            // 
-            this.imgAddToBookmarks.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.imgAddToBookmarks.BackColor = System.Drawing.Color.Transparent;
-            this.imgAddToBookmarks.Cursor = System.Windows.Forms.Cursors.Default;
-            this.imgAddToBookmarks.Image = global::OpenTheatre.Properties.Resources.bookmark;
-            this.imgAddToBookmarks.Location = new System.Drawing.Point(1, 29);
-            this.imgAddToBookmarks.Name = "imgAddToBookmarks";
-            this.imgAddToBookmarks.Size = new System.Drawing.Size(23, 23);
-            this.imgAddToBookmarks.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.imgAddToBookmarks.TabIndex = 1103;
-            this.imgAddToBookmarks.TabStop = false;
             // 
             // appClose
             // 
@@ -553,6 +587,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(32)))), ((int)(((byte)(45)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(this.btnWatchTrailer);
             this.Controls.Add(this.infoTitle);
             this.Controls.Add(this.imgPoster);
             this.Controls.Add(this.panelDetails);
@@ -567,11 +602,11 @@
             this.SizeChanged += new System.EventHandler(this.ctrlDetails_SizeChanged);
             this.panelDetails.ResumeLayout(false);
             this.panelDetails.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgIMDb)).EndInit();
             this.panelSubHeaders.ResumeLayout(false);
             this.panelSubHeaders.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgPoster)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgIMDb)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgAddToBookmarks)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgPoster)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.appClose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgPosterBG)).EndInit();
             this.ResumeLayout(false);
@@ -611,5 +646,6 @@
         public System.Windows.Forms.Label infoFileAddedDate;
         public System.Windows.Forms.Label infoFileSize;
         private System.Windows.Forms.PictureBox imgAddToBookmarks;
+        public CButtonLib.CButton btnWatchTrailer;
     }
 }

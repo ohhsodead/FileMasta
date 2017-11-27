@@ -29,58 +29,51 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.lblFileName = new System.Windows.Forms.Label();
-            this.lblStatus = new System.Windows.Forms.Label();
-            this.lblSize = new System.Windows.Forms.Label();
+            this.infoFileName = new System.Windows.Forms.Label();
+            this.infoStatus = new System.Windows.Forms.Label();
             this.splitter = new CButtonLib.CButton();
-            this.lblSpeed = new System.Windows.Forms.Label();
-            this.lblDownloaded = new System.Windows.Forms.Label();
+            this.infoSpeed = new System.Windows.Forms.Label();
+            this.infoDownloadedOutOfSize = new System.Windows.Forms.Label();
+            this.panelDetails = new System.Windows.Forms.FlowLayoutPanel();
+            this.splitter0 = new System.Windows.Forms.Label();
+            this.infoPercentage = new System.Windows.Forms.Label();
+            this.splitter1 = new System.Windows.Forms.Label();
+            this.infoEstimatedTime = new System.Windows.Forms.Label();
+            this.splitter3 = new System.Windows.Forms.Label();
+            this.timerEstimatedTimer = new System.Windows.Forms.Timer(this.components);
             this.progressBar1 = new ProgressBarEx.ProgressBarEx();
-            this.imgDropDown = new System.Windows.Forms.PictureBox();
-            this.lblCancel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.imgDropDown)).BeginInit();
+            this.imgCancel = new System.Windows.Forms.PictureBox();
+            this.panelDetails.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgCancel)).BeginInit();
             this.SuspendLayout();
             // 
-            // lblFileName
+            // infoFileName
             // 
-            this.lblFileName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.infoFileName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblFileName.AutoEllipsis = true;
-            this.lblFileName.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblFileName.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFileName.ForeColor = System.Drawing.Color.White;
-            this.lblFileName.Location = new System.Drawing.Point(12, 6);
-            this.lblFileName.Name = "lblFileName";
-            this.lblFileName.Size = new System.Drawing.Size(405, 21);
-            this.lblFileName.TabIndex = 0;
-            this.lblFileName.Text = "File Name";
-            this.lblFileName.Click += new System.EventHandler(this.lblFileName_Click);
+            this.infoFileName.AutoEllipsis = true;
+            this.infoFileName.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.infoFileName.Font = new System.Drawing.Font("Segoe UI Semibold", 12F);
+            this.infoFileName.ForeColor = System.Drawing.Color.White;
+            this.infoFileName.Location = new System.Drawing.Point(42, 12);
+            this.infoFileName.Name = "infoFileName";
+            this.infoFileName.Size = new System.Drawing.Size(399, 22);
+            this.infoFileName.TabIndex = 0;
+            this.infoFileName.Text = "File Name";
+            this.infoFileName.Click += new System.EventHandler(this.lblFileName_Click);
             // 
-            // lblStatus
+            // infoStatus
             // 
-            this.lblStatus.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblStatus.AutoEllipsis = true;
-            this.lblStatus.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStatus.ForeColor = System.Drawing.Color.White;
-            this.lblStatus.Location = new System.Drawing.Point(62, 57);
-            this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(290, 17);
-            this.lblStatus.TabIndex = 2;
-            this.lblStatus.Text = "Connecting...";
-            // 
-            // lblSize
-            // 
-            this.lblSize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblSize.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSize.ForeColor = System.Drawing.Color.White;
-            this.lblSize.Location = new System.Drawing.Point(356, 57);
-            this.lblSize.Margin = new System.Windows.Forms.Padding(3);
-            this.lblSize.Name = "lblSize";
-            this.lblSize.Size = new System.Drawing.Size(85, 17);
-            this.lblSize.TabIndex = 3;
-            this.lblSize.Text = "Size: n/a";
-            this.lblSize.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.infoStatus.AutoEllipsis = true;
+            this.infoStatus.AutoSize = true;
+            this.infoStatus.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
+            this.infoStatus.Location = new System.Drawing.Point(0, 0);
+            this.infoStatus.Margin = new System.Windows.Forms.Padding(0);
+            this.infoStatus.Name = "infoStatus";
+            this.infoStatus.Size = new System.Drawing.Size(77, 17);
+            this.infoStatus.TabIndex = 2;
+            this.infoStatus.Text = "Connecting";
+            this.infoStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // splitter
             // 
@@ -93,123 +86,183 @@
             this.splitter.DimFactorHover = 0;
             this.splitter.FillType = CButtonLib.CButton.eFillType.Solid;
             this.splitter.ImageIndex = 0;
-            this.splitter.Location = new System.Drawing.Point(0, 81);
+            this.splitter.Location = new System.Drawing.Point(0, 105);
             this.splitter.Name = "splitter";
             this.splitter.ShowFocus = CButtonLib.CButton.eFocus.None;
             this.splitter.Size = new System.Drawing.Size(450, 1);
             this.splitter.TabIndex = 4;
             this.splitter.Text = "cButton1";
             // 
-            // lblSpeed
+            // infoSpeed
             // 
-            this.lblSpeed.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.infoSpeed.AutoSize = true;
+            this.infoSpeed.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
+            this.infoSpeed.Location = new System.Drawing.Point(45, 21);
+            this.infoSpeed.Margin = new System.Windows.Forms.Padding(0, 4, 0, 0);
+            this.infoSpeed.Name = "infoSpeed";
+            this.infoSpeed.Size = new System.Drawing.Size(28, 17);
+            this.infoSpeed.TabIndex = 8;
+            this.infoSpeed.Text = "n/a";
+            this.infoSpeed.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // infoDownloadedOutOfSize
+            // 
+            this.infoDownloadedOutOfSize.AutoSize = true;
+            this.infoDownloadedOutOfSize.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
+            this.infoDownloadedOutOfSize.Location = new System.Drawing.Point(0, 21);
+            this.infoDownloadedOutOfSize.Margin = new System.Windows.Forms.Padding(0, 4, 0, 0);
+            this.infoDownloadedOutOfSize.Name = "infoDownloadedOutOfSize";
+            this.infoDownloadedOutOfSize.Size = new System.Drawing.Size(28, 17);
+            this.infoDownloadedOutOfSize.TabIndex = 9;
+            this.infoDownloadedOutOfSize.Text = "n/a";
+            this.infoDownloadedOutOfSize.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // panelDetails
+            // 
+            this.panelDetails.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblSpeed.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSpeed.ForeColor = System.Drawing.Color.White;
-            this.lblSpeed.Location = new System.Drawing.Point(9, 40);
-            this.lblSpeed.Margin = new System.Windows.Forms.Padding(3);
-            this.lblSpeed.Name = "lblSpeed";
-            this.lblSpeed.Size = new System.Drawing.Size(432, 17);
-            this.lblSpeed.TabIndex = 8;
-            this.lblSpeed.Text = "Speed: n/a";
-            this.lblSpeed.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.lblSpeed.Visible = false;
+            this.panelDetails.Controls.Add(this.infoStatus);
+            this.panelDetails.Controls.Add(this.splitter0);
+            this.panelDetails.Controls.Add(this.infoPercentage);
+            this.panelDetails.Controls.Add(this.splitter1);
+            this.panelDetails.Controls.Add(this.infoEstimatedTime);
+            this.panelDetails.Controls.Add(this.infoDownloadedOutOfSize);
+            this.panelDetails.Controls.Add(this.splitter3);
+            this.panelDetails.Controls.Add(this.infoSpeed);
+            this.panelDetails.Location = new System.Drawing.Point(13, 52);
+            this.panelDetails.Name = "panelDetails";
+            this.panelDetails.Size = new System.Drawing.Size(428, 44);
+            this.panelDetails.TabIndex = 16;
             // 
-            // lblDownloaded
+            // splitter0
             // 
-            this.lblDownloaded.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblDownloaded.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDownloaded.ForeColor = System.Drawing.Color.White;
-            this.lblDownloaded.Location = new System.Drawing.Point(9, 59);
-            this.lblDownloaded.Margin = new System.Windows.Forms.Padding(3);
-            this.lblDownloaded.Name = "lblDownloaded";
-            this.lblDownloaded.Size = new System.Drawing.Size(432, 17);
-            this.lblDownloaded.TabIndex = 9;
-            this.lblDownloaded.Text = "Downloaded: n/a";
-            this.lblDownloaded.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.lblDownloaded.Visible = false;
+            this.splitter0.AutoSize = true;
+            this.splitter0.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.splitter0.Location = new System.Drawing.Point(80, 2);
+            this.splitter0.Margin = new System.Windows.Forms.Padding(3, 2, 3, 0);
+            this.splitter0.Name = "splitter0";
+            this.splitter0.Size = new System.Drawing.Size(11, 13);
+            this.splitter0.TabIndex = 18;
+            this.splitter0.Text = "•";
+            this.splitter0.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // infoPercentage
+            // 
+            this.infoPercentage.AutoEllipsis = true;
+            this.infoPercentage.AutoSize = true;
+            this.infoPercentage.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
+            this.infoPercentage.Location = new System.Drawing.Point(94, 0);
+            this.infoPercentage.Margin = new System.Windows.Forms.Padding(0);
+            this.infoPercentage.Name = "infoPercentage";
+            this.infoPercentage.Size = new System.Drawing.Size(26, 17);
+            this.infoPercentage.TabIndex = 17;
+            this.infoPercentage.Text = "0%";
+            this.infoPercentage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // splitter1
+            // 
+            this.splitter1.AutoSize = true;
+            this.splitter1.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.splitter1.Location = new System.Drawing.Point(123, 2);
+            this.splitter1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 0);
+            this.splitter1.Name = "splitter1";
+            this.splitter1.Size = new System.Drawing.Size(11, 13);
+            this.splitter1.TabIndex = 19;
+            this.splitter1.Text = "•";
+            this.splitter1.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // infoEstimatedTime
+            // 
+            this.infoEstimatedTime.AutoEllipsis = true;
+            this.infoEstimatedTime.AutoSize = true;
+            this.panelDetails.SetFlowBreak(this.infoEstimatedTime, true);
+            this.infoEstimatedTime.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
+            this.infoEstimatedTime.Location = new System.Drawing.Point(137, 0);
+            this.infoEstimatedTime.Margin = new System.Windows.Forms.Padding(0);
+            this.infoEstimatedTime.Name = "infoEstimatedTime";
+            this.infoEstimatedTime.Size = new System.Drawing.Size(68, 17);
+            this.infoEstimatedTime.TabIndex = 17;
+            this.infoEstimatedTime.Text = "0 minutes";
+            this.infoEstimatedTime.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // splitter3
+            // 
+            this.splitter3.AutoSize = true;
+            this.splitter3.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.splitter3.Location = new System.Drawing.Point(31, 23);
+            this.splitter3.Margin = new System.Windows.Forms.Padding(3, 6, 3, 0);
+            this.splitter3.Name = "splitter3";
+            this.splitter3.Size = new System.Drawing.Size(11, 13);
+            this.splitter3.TabIndex = 21;
+            this.splitter3.Text = "•";
+            this.splitter3.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // progressBar1
             // 
             this.progressBar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.progressBar1.BackColor = System.Drawing.Color.Transparent;
-            this.progressBar1.BorderColor = System.Drawing.Color.Gray;
+            this.progressBar1.BackgroundColor = System.Drawing.Color.White;
+            this.progressBar1.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.progressBar1.GradiantColor = System.Drawing.Color.DodgerBlue;
             this.progressBar1.GradiantPosition = ProgressBarEx.ProgressBarEx.GradiantArea.None;
             this.progressBar1.Image = null;
-            this.progressBar1.Location = new System.Drawing.Point(9, 33);
+            this.progressBar1.Location = new System.Drawing.Point(16, 41);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.ProgressColor = System.Drawing.Color.SteelBlue;
             this.progressBar1.RoundedCorners = false;
-            this.progressBar1.ShowText = true;
-            this.progressBar1.Size = new System.Drawing.Size(432, 16);
+            this.progressBar1.Size = new System.Drawing.Size(425, 6);
             // 
-            // imgDropDown
+            // imgCancel
             // 
-            this.imgDropDown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.imgDropDown.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgDropDown.Image = global::OpenTheatre.Properties.Resources.chevron_down_white;
-            this.imgDropDown.Location = new System.Drawing.Point(419, 5);
-            this.imgDropDown.Name = "imgDropDown";
-            this.imgDropDown.Size = new System.Drawing.Size(22, 22);
-            this.imgDropDown.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.imgDropDown.TabIndex = 7;
-            this.imgDropDown.TabStop = false;
-            this.imgDropDown.Click += new System.EventHandler(this.imgDropDown_Click);
-            // 
-            // lblCancel
-            // 
-            this.lblCancel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblCancel.AutoEllipsis = true;
-            this.lblCancel.AutoSize = true;
-            this.lblCancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblCancel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCancel.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.lblCancel.Location = new System.Drawing.Point(13, 57);
-            this.lblCancel.Name = "lblCancel";
-            this.lblCancel.Size = new System.Drawing.Size(43, 15);
-            this.lblCancel.TabIndex = 13;
-            this.lblCancel.Text = "Cancel";
-            this.lblCancel.Click += new System.EventHandler(this.lblCancel_Click);
+            this.imgCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imgCancel.Image = global::OpenTheatre.Properties.Resources.close_circle;
+            this.imgCancel.Location = new System.Drawing.Point(16, 13);
+            this.imgCancel.Name = "imgCancel";
+            this.imgCancel.Size = new System.Drawing.Size(20, 20);
+            this.imgCancel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgCancel.TabIndex = 15;
+            this.imgCancel.TabStop = false;
+            this.imgCancel.Click += new System.EventHandler(this.imgCancel_Click);
             // 
             // ctrlDownloadItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
-            this.Controls.Add(this.lblCancel);
-            this.Controls.Add(this.imgDropDown);
+            this.Controls.Add(this.imgCancel);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.splitter);
-            this.Controls.Add(this.lblSize);
-            this.Controls.Add(this.lblStatus);
-            this.Controls.Add(this.lblFileName);
-            this.Controls.Add(this.lblDownloaded);
-            this.Controls.Add(this.lblSpeed);
+            this.Controls.Add(this.infoFileName);
+            this.Controls.Add(this.panelDetails);
             this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.Color.White;
             this.Name = "ctrlDownloadItem";
             this.Padding = new System.Windows.Forms.Padding(6);
-            this.Size = new System.Drawing.Size(450, 82);
+            this.Size = new System.Drawing.Size(450, 106);
             this.Load += new System.EventHandler(this.ctrlDownloadItem_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.imgDropDown)).EndInit();
+            this.panelDetails.ResumeLayout(false);
+            this.panelDetails.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgCancel)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label lblFileName;
-        private System.Windows.Forms.Label lblSize;
-        public System.Windows.Forms.Label lblStatus;
+        private System.Windows.Forms.Label infoFileName;
+        public System.Windows.Forms.Label infoStatus;
         private CButtonLib.CButton splitter;
         private ProgressBarEx.ProgressBarEx progressBar1;
-        private System.Windows.Forms.PictureBox imgDropDown;
-        private System.Windows.Forms.Label lblSpeed;
-        private System.Windows.Forms.Label lblDownloaded;
-        public System.Windows.Forms.Label lblCancel;
+        private System.Windows.Forms.Label infoSpeed;
+        private System.Windows.Forms.Label infoDownloadedOutOfSize;
+        private System.Windows.Forms.PictureBox imgCancel;
+        private System.Windows.Forms.FlowLayoutPanel panelDetails;
+        private System.Windows.Forms.Label splitter1;
+        private System.Windows.Forms.Label infoPercentage;
+        private System.Windows.Forms.Label splitter0;
+        private System.Windows.Forms.Timer timerEstimatedTimer;
+        private System.Windows.Forms.Label infoEstimatedTime;
+        private System.Windows.Forms.Label splitter3;
     }
 }

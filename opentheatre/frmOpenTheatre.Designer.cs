@@ -844,10 +844,10 @@
             // tabBookmarks
             // 
             this.tabBookmarks.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
+            this.tabBookmarks.Controls.Add(this.btnSearchBookmarks);
             this.tabBookmarks.Controls.Add(this.panelBookmarksFilters);
             this.tabBookmarks.Controls.Add(this.txtBookmarksSearchBox);
             this.tabBookmarks.Controls.Add(this.dataGridBookmarks);
-            this.tabBookmarks.Controls.Add(this.btnSearchBookmarks);
             this.tabBookmarks.Controls.Add(this.bgBookmarksSearchBox);
             this.tabBookmarks.ForeColor = System.Drawing.Color.White;
             this.tabBookmarks.Location = new System.Drawing.Point(4, 22);
@@ -1054,7 +1054,7 @@
             this.bgBookmarksSearchBox.Corners.UpperLeft = 2;
             this.bgBookmarksSearchBox.Corners.UpperRight = 2;
             this.bgBookmarksSearchBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bgBookmarksSearchBox.DesignerSelected = true;
+            this.bgBookmarksSearchBox.DesignerSelected = false;
             this.bgBookmarksSearchBox.DimFactorClick = 0;
             this.bgBookmarksSearchBox.DimFactorHover = 0;
             this.bgBookmarksSearchBox.FillType = CButtonLib.CButton.eFillType.Solid;
@@ -1946,7 +1946,7 @@
             // 
             this.imgDownloads.BackColor = System.Drawing.Color.Transparent;
             this.imgDownloads.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgDownloads.Image = global::OpenTheatre.Properties.Resources.download;
+            this.imgDownloads.Image = global::OpenTheatre.Properties.Resources.file_download;
             this.imgDownloads.Location = new System.Drawing.Point(17, 140);
             this.imgDownloads.Name = "imgDownloads";
             this.imgDownloads.Size = new System.Drawing.Size(22, 22);
@@ -1959,7 +1959,7 @@
             // 
             this.imgAbout.BackColor = System.Drawing.Color.Transparent;
             this.imgAbout.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgAbout.Image = global::OpenTheatre.Properties.Resources.information;
+            this.imgAbout.Image = global::OpenTheatre.Properties.Resources.info;
             this.imgAbout.Location = new System.Drawing.Point(17, 272);
             this.imgAbout.Name = "imgAbout";
             this.imgAbout.Size = new System.Drawing.Size(22, 22);
@@ -1972,7 +1972,7 @@
             // 
             this.imgFiles.BackColor = System.Drawing.Color.Transparent;
             this.imgFiles.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgFiles.Image = global::OpenTheatre.Properties.Resources.web;
+            this.imgFiles.Image = global::OpenTheatre.Properties.Resources.folder;
             this.imgFiles.Location = new System.Drawing.Point(17, 63);
             this.imgFiles.Name = "imgFiles";
             this.imgFiles.Size = new System.Drawing.Size(22, 22);
@@ -1985,7 +1985,7 @@
             // 
             this.imgMovies.BackColor = System.Drawing.Color.Transparent;
             this.imgMovies.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgMovies.Image = global::OpenTheatre.Properties.Resources.filmstrip;
+            this.imgMovies.Image = global::OpenTheatre.Properties.Resources.local_movies;
             this.imgMovies.Location = new System.Drawing.Point(17, 23);
             this.imgMovies.Name = "imgMovies";
             this.imgMovies.Size = new System.Drawing.Size(22, 22);
@@ -2021,7 +2021,7 @@
             this.btnSearchMovies.FillType = CButtonLib.CButton.eFillType.Solid;
             this.btnSearchMovies.FocalPoints.CenterPtX = 0F;
             this.btnSearchMovies.FocalPoints.CenterPtY = 0F;
-            this.btnSearchMovies.Image = global::OpenTheatre.Properties.Resources.magnify;
+            this.btnSearchMovies.Image = global::OpenTheatre.Properties.Resources.search;
             this.btnSearchMovies.ImageIndex = 0;
             this.btnSearchMovies.ImageSize = new System.Drawing.Size(22, 22);
             this.btnSearchMovies.Location = new System.Drawing.Point(376, 13);
@@ -2056,7 +2056,7 @@
             this.btnMoviesGenre.ShowFocus = CButtonLib.CButton.eFocus.None;
             this.btnMoviesGenre.SideImage = ((System.Drawing.Image)(resources.GetObject("btnMoviesGenre.SideImage")));
             this.btnMoviesGenre.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnMoviesGenre.SideImageSize = new System.Drawing.Size(21, 21);
+            this.btnMoviesGenre.SideImageSize = new System.Drawing.Size(20, 20);
             this.btnMoviesGenre.Size = new System.Drawing.Size(109, 36);
             this.btnMoviesGenre.TabIndex = 2;
             this.btnMoviesGenre.Text = "Genre : Any";
@@ -2089,7 +2089,7 @@
             this.btnMoviesYear.ShowFocus = CButtonLib.CButton.eFocus.None;
             this.btnMoviesYear.SideImage = ((System.Drawing.Image)(resources.GetObject("btnMoviesYear.SideImage")));
             this.btnMoviesYear.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnMoviesYear.SideImageSize = new System.Drawing.Size(21, 21);
+            this.btnMoviesYear.SideImageSize = new System.Drawing.Size(20, 20);
             this.btnMoviesYear.Size = new System.Drawing.Size(98, 36);
             this.btnMoviesYear.TabIndex = 3;
             this.btnMoviesYear.Text = "Year : Any";
@@ -2122,7 +2122,7 @@
             this.btnFilesSort.ShowFocus = CButtonLib.CButton.eFocus.None;
             this.btnFilesSort.SideImage = ((System.Drawing.Image)(resources.GetObject("btnFilesSort.SideImage")));
             this.btnFilesSort.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnFilesSort.SideImageSize = new System.Drawing.Size(21, 21);
+            this.btnFilesSort.SideImageSize = new System.Drawing.Size(20, 20);
             this.btnFilesSort.Size = new System.Drawing.Size(95, 36);
             this.btnFilesSort.TabIndex = 2;
             this.btnFilesSort.Text = "Sort : Any";
@@ -2155,7 +2155,7 @@
             this.btnFilesFormat.ShowFocus = CButtonLib.CButton.eFocus.None;
             this.btnFilesFormat.SideImage = ((System.Drawing.Image)(resources.GetObject("btnFilesFormat.SideImage")));
             this.btnFilesFormat.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnFilesFormat.SideImageSize = new System.Drawing.Size(21, 21);
+            this.btnFilesFormat.SideImageSize = new System.Drawing.Size(20, 20);
             this.btnFilesFormat.Size = new System.Drawing.Size(115, 36);
             this.btnFilesFormat.TabIndex = 3;
             this.btnFilesFormat.Text = "Format : Any";
@@ -2188,7 +2188,7 @@
             this.btnFilesHost.ShowFocus = CButtonLib.CButton.eFocus.None;
             this.btnFilesHost.SideImage = ((System.Drawing.Image)(resources.GetObject("btnFilesHost.SideImage")));
             this.btnFilesHost.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnFilesHost.SideImageSize = new System.Drawing.Size(21, 21);
+            this.btnFilesHost.SideImageSize = new System.Drawing.Size(20, 20);
             this.btnFilesHost.Size = new System.Drawing.Size(100, 36);
             this.btnFilesHost.TabIndex = 4;
             this.btnFilesHost.Text = "Host : Any";
@@ -2219,7 +2219,7 @@
             this.btnFilesQuality.Location = new System.Drawing.Point(0, 0);
             this.btnFilesQuality.Name = "btnFilesQuality";
             this.btnFilesQuality.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.btnFilesQuality.SideImage = ((System.Drawing.Image)(resources.GetObject("btnFilesQuality.SideImage")));
+            this.btnFilesQuality.SideImage = global::OpenTheatre.Properties.Resources.arrow_drop_down_black;
             this.btnFilesQuality.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnFilesQuality.SideImageSize = new System.Drawing.Size(20, 20);
             this.btnFilesQuality.Size = new System.Drawing.Size(115, 36);
@@ -2244,7 +2244,7 @@
             this.btnSearchFiles.FillType = CButtonLib.CButton.eFillType.Solid;
             this.btnSearchFiles.FocalPoints.CenterPtX = 0F;
             this.btnSearchFiles.FocalPoints.CenterPtY = 0F;
-            this.btnSearchFiles.Image = global::OpenTheatre.Properties.Resources.magnify;
+            this.btnSearchFiles.Image = global::OpenTheatre.Properties.Resources.search;
             this.btnSearchFiles.ImageIndex = 0;
             this.btnSearchFiles.ImageSize = new System.Drawing.Size(22, 22);
             this.btnSearchFiles.Location = new System.Drawing.Point(376, 13);
@@ -2279,7 +2279,7 @@
             this.btnBookmarksSort.ShowFocus = CButtonLib.CButton.eFocus.None;
             this.btnBookmarksSort.SideImage = ((System.Drawing.Image)(resources.GetObject("btnBookmarksSort.SideImage")));
             this.btnBookmarksSort.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnBookmarksSort.SideImageSize = new System.Drawing.Size(21, 21);
+            this.btnBookmarksSort.SideImageSize = new System.Drawing.Size(20, 20);
             this.btnBookmarksSort.Size = new System.Drawing.Size(168, 36);
             this.btnBookmarksSort.TabIndex = 2;
             this.btnBookmarksSort.Text = "Sort : Recently Added";
@@ -2312,7 +2312,7 @@
             this.btnBookmarksType.ShowFocus = CButtonLib.CButton.eFocus.None;
             this.btnBookmarksType.SideImage = ((System.Drawing.Image)(resources.GetObject("btnBookmarksType.SideImage")));
             this.btnBookmarksType.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnBookmarksType.SideImageSize = new System.Drawing.Size(21, 21);
+            this.btnBookmarksType.SideImageSize = new System.Drawing.Size(20, 20);
             this.btnBookmarksType.Size = new System.Drawing.Size(98, 36);
             this.btnBookmarksType.TabIndex = 3;
             this.btnBookmarksType.Text = "Type : Any";
@@ -2336,7 +2336,7 @@
             this.btnSearchBookmarks.FocalPoints.CenterPtX = 0F;
             this.btnSearchBookmarks.FocalPoints.CenterPtY = 0F;
             this.btnSearchBookmarks.ForeColor = System.Drawing.Color.Black;
-            this.btnSearchBookmarks.Image = global::OpenTheatre.Properties.Resources.magnify;
+            this.btnSearchBookmarks.Image = global::OpenTheatre.Properties.Resources.search;
             this.btnSearchBookmarks.ImageIndex = 0;
             this.btnSearchBookmarks.ImageSize = new System.Drawing.Size(22, 22);
             this.btnSearchBookmarks.Location = new System.Drawing.Point(376, 13);
@@ -2351,7 +2351,7 @@
             // 
             this.imgSettingsDownloadsDirectory.BackColor = System.Drawing.Color.Transparent;
             this.imgSettingsDownloadsDirectory.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgSettingsDownloadsDirectory.Image = global::OpenTheatre.Properties.Resources.folder_open;
+            this.imgSettingsDownloadsDirectory.Image = global::OpenTheatre.Properties.Resources.folder;
             this.imgSettingsDownloadsDirectory.Location = new System.Drawing.Point(579, 153);
             this.imgSettingsDownloadsDirectory.Name = "imgSettingsDownloadsDirectory";
             this.imgSettingsDownloadsDirectory.Size = new System.Drawing.Size(25, 25);

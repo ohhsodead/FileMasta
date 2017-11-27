@@ -16,13 +16,17 @@ namespace OpenTheatre
         }
 
         public string infoFileURL;
+        public string infoFileSubtitles;
 
         private void ctrlStreamInfo_Load(object sender, EventArgs e)
         {
             BackColor = Color.Transparent;
+
             VLCToolStripMenuItem.Visible = File.Exists(frmOpenTheatre.pathVLC);
             MPCToolStripMenuItem.Visible = File.Exists(frmOpenTheatre.pathMPCCodec64) || File.Exists(frmOpenTheatre.pathMPC64) || File.Exists(frmOpenTheatre.pathMPC86);
-            if (Properties.Settings.Default.Bookmarks.Contains(infoFileURL)) { imgAddToBookmarks.Image = Properties.Resources.bookmark_remove; } else { imgAddToBookmarks.Image = Properties.Resources.bookmark_plus; }
+
+            if (Properties.Settings.Default.dataBookmarks.Contains(infoFileURL)) { imgAddToBookmarks.Image = Properties.Resources.bookmark_remove; } else { imgAddToBookmarks.Image = Properties.Resources.bookmark_plus; }
+            if (frmOpenTheatre.currentDownloads.Contains(infoFileURL)) { imgDownload.Image = Properties.Resources.cloud_sync; } 
 
             try
             {
@@ -46,6 +50,18 @@ namespace OpenTheatre
                 }
             }
             catch { infoFileSize.Text = "n/a"; infoFileDateAdded.Text = "n/a"; }
+
+            // Compares the two file sizes; must have the same file name
+            if (UtilityTools.isFileSizeIdentical(infoFileSize.Text, infoFileURL) == true) { imgDownload.Image = Properties.Resources.cloud_done; }
+
+            // Checks for exact file name of a subtitle file that matches the one being loaded (e.g. Media File Name: 'Jigsaw.2017.mp4' > Subtitle File Name: 'Jigsaw.2017.srt' will be loaded)
+            if (infoFileSubtitles == null)
+            {
+                if (UtilityTools.isExistingSubtitlesFile(infoFileURL) == true)
+                {
+                    infoFileSubtitles = Properties.Settings.Default.downloadsDirectory + Path.GetFileNameWithoutExtension(infoFileURL) + ".srt";
+                }
+            }
         }
 
         private void WMPToolStripMenuItem_Click(object sender, EventArgs e)
@@ -61,9 +77,10 @@ namespace OpenTheatre
         {
             try
             {
+                // Open source file in VLC with subtitles
                 Process VLC = new Process();
                 VLC.StartInfo.FileName = frmOpenTheatre.pathVLC;
-                VLC.StartInfo.Arguments = ("-vvv " + infoFileURL);
+                VLC.StartInfo.Arguments = ("-vvv " + infoFileURL + " --sub-file=" + infoFileSubtitles);
                 VLC.Start();
             }
             catch (Exception ex) { MessageBox.Show(this, ex.Message, "Error"); }
@@ -88,11 +105,11 @@ namespace OpenTheatre
 
         private void imgAddToBookmarks_Click(object sender, EventArgs e)
         {
-            if (Properties.Settings.Default.Bookmarks.Contains(infoFileURL))
+            if (Properties.Settings.Default.dataBookmarks.Contains(infoFileURL))
             {
-                Properties.Settings.Default.Bookmarks.Remove(infoFileURL); imgAddToBookmarks.Image = Properties.Resources.bookmark_plus;
+                Properties.Settings.Default.dataBookmarks.Remove(infoFileURL); imgAddToBookmarks.Image = Properties.Resources.bookmark_plus;
             }
-            else { Properties.Settings.Default.Bookmarks.Add(infoFileURL); imgAddToBookmarks.Image = Properties.Resources.bookmark_remove; }
+            else { Properties.Settings.Default.dataBookmarks.Add(infoFileURL); imgAddToBookmarks.Image = Properties.Resources.bookmark_remove; }
         }
 
         private void imgWatch_Click(object sender, EventArgs e)
@@ -107,14 +124,13 @@ namespace OpenTheatre
 
         private void imgDownload_Click(object sender, EventArgs e)
         {
-            frmOpenTheatre.form.Show();
-            frmOpenTheatre.form.doDownloadFile(infoFileURL);
+            if (!frmOpenTheatre.currentDownloads.Contains(infoFileURL)) { imgDownload.Image = Properties.Resources.cloud_sync; frmOpenTheatre.form.doDownloadFile(infoFileURL); frmOpenTheatre.currentDownloads.Add(infoFileURL); }
         }
 
         private void VLC2ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var a = new frmVLCPlayer();
-            a.Text = new Uri(infoFileURL).AbsoluteUri;
+            a.Text = new Uri(infoFileURL).LocalPath;
             a.axVLCPlugin21.playlist.add(infoFileURL);
             a.axVLCPlugin21.playlist.play();
             a.Show();
@@ -123,7 +139,12 @@ namespace OpenTheatre
         private void imgCopyURL_Click(object sender, EventArgs e)
         {
             Clipboard.SetText(infoFileURL);
-            MessageBox.Show("Successfully copied URL!");
+            imgCopyURL.Image = Properties.Resources.clipboard_check;
+        }
+
+        private void timerUpdateInfo_Tick(object sender, EventArgs e)
+        {
+            if (File.Exists(Properties.Settings.Default.downloadsDirectory + Path.GetFileName(new Uri(infoFileURL).LocalPath)) && infoFileSize.Text == UtilityTools.ToFileSize(Convert.ToDouble(new FileInfo(Properties.Settings.Default.downloadsDirectory + Path.GetFileName(new Uri(infoFileURL).LocalPath)).Length))) { imgDownload.Image = Properties.Resources.cloud_done; }
         }
     }
 }

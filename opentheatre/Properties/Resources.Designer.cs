@@ -63,9 +63,19 @@ namespace OpenTheatre.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap alert_octagon {
+        internal static System.Drawing.Bitmap arrow_drop_down_black {
             get {
-                object obj = ResourceManager.GetObject("alert-octagon", resourceCulture);
+                object obj = ResourceManager.GetObject("arrow_drop_down_black", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap arrow_drop_down_white {
+            get {
+                object obj = ResourceManager.GetObject("arrow_drop_down_white", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +123,9 @@ namespace OpenTheatre.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap buffer {
+        internal static System.Drawing.Bitmap check {
             get {
-                object obj = ResourceManager.GetObject("buffer", resourceCulture);
+                object obj = ResourceManager.GetObject("check", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,9 +133,9 @@ namespace OpenTheatre.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap chevron_down {
+        internal static System.Drawing.Bitmap clipboard_arrow_left {
             get {
-                object obj = ResourceManager.GetObject("chevron_down", resourceCulture);
+                object obj = ResourceManager.GetObject("clipboard_arrow_left", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,9 +143,9 @@ namespace OpenTheatre.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap chevron_down_white {
+        internal static System.Drawing.Bitmap clipboard_check {
             get {
-                object obj = ResourceManager.GetObject("chevron_down_white", resourceCulture);
+                object obj = ResourceManager.GetObject("clipboard_check", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -163,6 +173,16 @@ namespace OpenTheatre.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cloud_done {
+            get {
+                object obj = ResourceManager.GetObject("cloud_done", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cloud_download {
             get {
                 object obj = ResourceManager.GetObject("cloud_download", resourceCulture);
@@ -173,9 +193,9 @@ namespace OpenTheatre.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap download {
+        internal static System.Drawing.Bitmap cloud_sync {
             get {
-                object obj = ResourceManager.GetObject("download", resourceCulture);
+                object obj = ResourceManager.GetObject("cloud_sync", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -183,9 +203,29 @@ namespace OpenTheatre.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap filmstrip {
+        internal static System.Drawing.Bitmap dots_horizontal {
             get {
-                object obj = ResourceManager.GetObject("filmstrip", resourceCulture);
+                object obj = ResourceManager.GetObject("dots_horizontal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap file_download {
+            get {
+                object obj = ResourceManager.GetObject("file_download", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap folder {
+            get {
+                object obj = ResourceManager.GetObject("folder", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -195,17 +235,7 @@ namespace OpenTheatre.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap folder_open {
             get {
-                object obj = ResourceManager.GetObject("folder-open", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap history {
-            get {
-                object obj = ResourceManager.GetObject("history", resourceCulture);
+                object obj = ResourceManager.GetObject("folder_open", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -223,9 +253,9 @@ namespace OpenTheatre.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap information {
+        internal static System.Drawing.Bitmap info {
             get {
-                object obj = ResourceManager.GetObject("information", resourceCulture);
+                object obj = ResourceManager.GetObject("info", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -233,9 +263,9 @@ namespace OpenTheatre.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap link_variant {
+        internal static System.Drawing.Bitmap keyboard_arrow_down {
             get {
-                object obj = ResourceManager.GetObject("link-variant", resourceCulture);
+                object obj = ResourceManager.GetObject("keyboard_arrow_down", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -243,19 +273,9 @@ namespace OpenTheatre.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap magnify {
+        internal static System.Drawing.Bitmap local_movies {
             get {
-                object obj = ResourceManager.GetObject("magnify", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap menu_down {
-            get {
-                object obj = ResourceManager.GetObject("menu-down", resourceCulture);
+                object obj = ResourceManager.GetObject("local_movies", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -276,16 +296,6 @@ namespace OpenTheatre.Properties {
         internal static System.Drawing.Bitmap opentheatre_text {
             get {
                 object obj = ResourceManager.GetObject("opentheatre_text", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap pause_circle {
-            get {
-                object obj = ResourceManager.GetObject("pause-circle", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -323,6 +333,26 @@ namespace OpenTheatre.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap report {
+            get {
+                object obj = ResourceManager.GetObject("report", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap search {
+            get {
+                object obj = ResourceManager.GetObject("search", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap settings {
             get {
                 object obj = ResourceManager.GetObject("settings", resourceCulture);
@@ -333,9 +363,9 @@ namespace OpenTheatre.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap spinner {
+        internal static System.Drawing.Bitmap vlc {
             get {
-                object obj = ResourceManager.GetObject("spinner", resourceCulture);
+                object obj = ResourceManager.GetObject("vlc", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -343,9 +373,9 @@ namespace OpenTheatre.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap web {
+        internal static System.Drawing.Bitmap windows {
             get {
-                object obj = ResourceManager.GetObject("web", resourceCulture);
+                object obj = ResourceManager.GetObject("windows", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

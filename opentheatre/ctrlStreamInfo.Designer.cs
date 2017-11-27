@@ -34,18 +34,19 @@
             this.infoFileName = new System.Windows.Forms.Label();
             this.contextFileName = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.OpenWithToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.VLC2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.WMPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.VLCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.MPCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.infoFileSize = new System.Windows.Forms.Label();
             this.infoFileDateAdded = new System.Windows.Forms.Label();
+            this.timerUpdateInfo = new System.Windows.Forms.Timer(this.components);
             this.imgCopyURL = new System.Windows.Forms.PictureBox();
             this.imgReportBroken = new System.Windows.Forms.PictureBox();
             this.imgWatch = new System.Windows.Forms.PictureBox();
             this.imgDownload = new System.Windows.Forms.PictureBox();
             this.imgAddToBookmarks = new System.Windows.Forms.PictureBox();
+            this.VLC2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.WMPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.VLCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MPCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextFileName.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgCopyURL)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgReportBroken)).BeginInit();
@@ -100,33 +101,6 @@
             this.OpenWithToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
             this.OpenWithToolStripMenuItem.Text = "Open with...";
             // 
-            // VLC2ToolStripMenuItem
-            // 
-            this.VLC2ToolStripMenuItem.Name = "VLC2ToolStripMenuItem";
-            this.VLC2ToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
-            this.VLC2ToolStripMenuItem.Text = "VLC (Built-in)";
-            this.VLC2ToolStripMenuItem.Click += new System.EventHandler(this.VLC2ToolStripMenuItem_Click);
-            // 
-            // WMPToolStripMenuItem
-            // 
-            this.WMPToolStripMenuItem.Name = "WMPToolStripMenuItem";
-            this.WMPToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
-            this.WMPToolStripMenuItem.Text = "WMP";
-            this.WMPToolStripMenuItem.Click += new System.EventHandler(this.WMPToolStripMenuItem_Click);
-            // 
-            // VLCToolStripMenuItem
-            // 
-            this.VLCToolStripMenuItem.Name = "VLCToolStripMenuItem";
-            this.VLCToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
-            this.VLCToolStripMenuItem.Text = "VLC";
-            this.VLCToolStripMenuItem.Click += new System.EventHandler(this.VLCToolStripMenuItem_Click);
-            // 
-            // MPCToolStripMenuItem
-            // 
-            this.MPCToolStripMenuItem.Name = "MPCToolStripMenuItem";
-            this.MPCToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
-            this.MPCToolStripMenuItem.Text = "MPC";
-            // 
             // infoFileSize
             // 
             this.infoFileSize.Anchor = System.Windows.Forms.AnchorStyles.Right;
@@ -153,12 +127,18 @@
             this.infoFileDateAdded.TabIndex = 3;
             this.infoFileDateAdded.Text = "Time ago";
             // 
+            // timerUpdateInfo
+            // 
+            this.timerUpdateInfo.Enabled = true;
+            this.timerUpdateInfo.Interval = 10000;
+            this.timerUpdateInfo.Tick += new System.EventHandler(this.timerUpdateInfo_Tick);
+            // 
             // imgCopyURL
             // 
             this.imgCopyURL.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.imgCopyURL.BackColor = System.Drawing.Color.Transparent;
             this.imgCopyURL.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgCopyURL.Image = global::OpenTheatre.Properties.Resources.link_variant;
+            this.imgCopyURL.Image = global::OpenTheatre.Properties.Resources.clipboard_arrow_left;
             this.imgCopyURL.Location = new System.Drawing.Point(629, 1);
             this.imgCopyURL.Name = "imgCopyURL";
             this.imgCopyURL.Size = new System.Drawing.Size(23, 23);
@@ -173,7 +153,7 @@
             this.imgReportBroken.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.imgReportBroken.BackColor = System.Drawing.Color.Transparent;
             this.imgReportBroken.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgReportBroken.Image = global::OpenTheatre.Properties.Resources.alert_octagon;
+            this.imgReportBroken.Image = global::OpenTheatre.Properties.Resources.report;
             this.imgReportBroken.Location = new System.Drawing.Point(600, 1);
             this.imgReportBroken.Name = "imgReportBroken";
             this.imgReportBroken.Size = new System.Drawing.Size(23, 23);
@@ -228,6 +208,41 @@
             this.toolTip1.SetToolTip(this.imgAddToBookmarks, "Add to Bookmarks");
             this.imgAddToBookmarks.Click += new System.EventHandler(this.imgAddToBookmarks_Click);
             // 
+            // VLC2ToolStripMenuItem
+            // 
+            this.VLC2ToolStripMenuItem.Image = global::OpenTheatre.Properties.Resources.vlc;
+            this.VLC2ToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Transparent;
+            this.VLC2ToolStripMenuItem.Name = "VLC2ToolStripMenuItem";
+            this.VLC2ToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.VLC2ToolStripMenuItem.Text = "VLC (Built-in)";
+            this.VLC2ToolStripMenuItem.Click += new System.EventHandler(this.VLC2ToolStripMenuItem_Click);
+            // 
+            // WMPToolStripMenuItem
+            // 
+            this.WMPToolStripMenuItem.Image = global::OpenTheatre.Properties.Resources.windows;
+            this.WMPToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Transparent;
+            this.WMPToolStripMenuItem.Name = "WMPToolStripMenuItem";
+            this.WMPToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.WMPToolStripMenuItem.Text = "WMP";
+            this.WMPToolStripMenuItem.Click += new System.EventHandler(this.WMPToolStripMenuItem_Click);
+            // 
+            // VLCToolStripMenuItem
+            // 
+            this.VLCToolStripMenuItem.Image = global::OpenTheatre.Properties.Resources.vlc;
+            this.VLCToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Transparent;
+            this.VLCToolStripMenuItem.Name = "VLCToolStripMenuItem";
+            this.VLCToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.VLCToolStripMenuItem.Text = "VLC";
+            this.VLCToolStripMenuItem.Click += new System.EventHandler(this.VLCToolStripMenuItem_Click);
+            // 
+            // MPCToolStripMenuItem
+            // 
+            this.MPCToolStripMenuItem.Image = global::OpenTheatre.Properties.Resources.dots_horizontal;
+            this.MPCToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Transparent;
+            this.MPCToolStripMenuItem.Name = "MPCToolStripMenuItem";
+            this.MPCToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.MPCToolStripMenuItem.Text = "MPC";
+            // 
             // ctrlStreamInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -277,5 +292,6 @@
         public System.Windows.Forms.Label infoFileDateAdded;
         private System.Windows.Forms.ToolStripMenuItem VLC2ToolStripMenuItem;
         private System.Windows.Forms.PictureBox imgCopyURL;
+        private System.Windows.Forms.Timer timerUpdateInfo;
     }
 }

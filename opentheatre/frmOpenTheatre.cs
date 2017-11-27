@@ -34,83 +34,49 @@ namespace OpenTheatre
             frmSplash.Show();
         }
 
-        private BackgroundWorker worker;
+        private BackgroundWorker worker; // startup background thread
+
+        // Media player directories
+        public static string pathVLC = @"C:\Program Files (x86)\VideoLAN\VLC\vlc.exe";
+        public static string pathMPCCodec64 = @"C:\Program Files(x86)\K-Lite Codec Pack\MPC-HC64\mpc-hc64.exe";
+        public static string pathMPC64 = @"C:\Program Files\MPC-HC\mpc-hc64.exe";
+        public static string pathMPC86 = @"C:\Program Files (x86)\MPC-HC\mpc-hc.exe";
 
         public static frmOpenTheatre form = null;
         public ctrlSplashScreen frmSplash;
         protected override void OnPaint(PaintEventArgs e) { }
 
+        // Exported database files
+        public static string linkMovies = "https://dl.dropbox.com/s/ionv8bszlgvf1xc/open-movies.json?dl=0"; // posters
         public static string linkFilesMovies = "https://dl.dropbox.com/s/jtac1zhsdhy6931/open-movies-files.json?dl=0";
         public static string linkFilesSeries = "https://dl.dropbox.com/s/2ze0xayim0cgk70/open-series-files.json?dl=0";
         public static string linkFilesAnime = "https://dl.dropbox.com/s/e5lhyejb56cwo9k/open-anime-files.json?dl=0";
         public static string linkFilesSubtitles = "https://dl.dropbox.com/s/ckkxsogprgviyto/open-subtitles-files.json?dl=0";
         public static string linkFilesTorrents = "https://dl.dropbox.com/s/nkzzyk4vr6k4rlr/open-torrents-files.json?dl=0";
         public static string linkFilesArchives = "https://dl.dropbox.com/s/el93946do0og2gg/open-archives-files.json?dl=0";
-        public static string linkMovies = "https://dl.dropbox.com/s/ionv8bszlgvf1xc/open-movies.json?dl=0";
+
+        // Updates
         public static string linkLatestVersion = "https://raw.githubusercontent.com/invu/opentheatre-app/master/assets/opentheatre-version.txt";
         public static string pathInstallerFileName = "OpenTheatreInstaller.exe";
         public static string pathDownloadInstaller = KnownFolders.GetPath(KnownFolder.Downloads) + @"\" + pathInstallerFileName;
+        public static string getLatestInstaller(Version newVersion) { return "https://github.com/invu/opentheatre-app/releases/download/" + newVersion.ToString() + "/" + pathInstallerFileName; }
+
+        // Data/Downloads directories
         public static string pathRoot = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\OpenTheatre\";
         public static string pathData = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\OpenTheatre\Data\";
         public static string pathDownloadsDefault = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\OpenTheatre\Downloads\";
-
-        public static string getLatestInstaller(Version newVersion)
-        {
-            return "https://github.com/invu/opentheatre-app/releases/download/" + newVersion.ToString() + "/" + pathInstallerFileName;
-        }
-
-        public static Bitmap LoadPicture(string url)
-        {
-            HttpWebRequest wreq;
-            HttpWebResponse wresp;
-            Stream mystream;
-            Bitmap bmp;
-
-            bmp = null;
-            mystream = null;
-            wresp = null;
-            try
-            {
-                wreq = (HttpWebRequest)WebRequest.Create(url);
-                wreq.AllowWriteStreamBuffering = true;
-
-                wresp = (HttpWebResponse)wreq.GetResponse();
-
-                if ((mystream = wresp.GetResponseStream()) != null)
-                    bmp = new Bitmap(mystream);
-            }
-            catch
-            {
-                // Do nothing... 
-            }
-            finally
-            {
-                if (mystream != null)
-                    mystream.Close();
-
-                if (wresp != null)
-                    wresp.Close();
-            }
-
-            return (bmp);
-        }
-
-        WebClient client = new WebClient();
-
-        public static string pathVLC = @"C:\Program Files (x86)\VideoLAN\VLC\vlc.exe";
-        public static string pathMPCCodec64 = @"C:\Program Files(x86)\K-Lite Codec Pack\MPC-HC64\mpc-hc64.exe";
-        public static string pathMPC64 = @"C:\Program Files\MPC-HC\mpc-hc64.exe";
-        public static string pathMPC86 = @"C:\Program Files (x86)\MPC-HC\mpc-hc.exe";
+        
+        WebClient client = new WebClient(); // public reusable web client
         
         private void frmOpenTheatre_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Properties.Settings.Default.Save();
-            if (e.CloseReason == CloseReason.UserClosing) { if (Properties.Settings.Default.clearDataOnClose == true) { Directory.Delete(pathData, true); } }
+            if (e.CloseReason == CloseReason.UserClosing) { Properties.Settings.Default.Save(); if (Properties.Settings.Default.clearDataOnClose == true) { Directory.Delete(pathData, true); } }
         }
 
         private void frmOpenTheatre_Load(object sender, EventArgs e)
         {
             UtilityTools.checkForUpdate();
+
             if (Properties.Settings.Default.downloadsDirectory == null) { Properties.Settings.Default.downloadsDirectory = pathDownloadsDefault; Directory.CreateDirectory(pathDownloadsDefault); }
             loadSettings();
 
@@ -133,130 +99,90 @@ namespace OpenTheatre
 
         void worker_DoWork(object sender, DoWorkEventArgs e)
         {
+            string errorFile = "null";
+
             try
             {
                 //
-                if (File.Exists(pathData + "open-movies.json"))
+                if (UtilityTools.doUpdateDataFile(pathData + "open-movies.json") == true)
                 {
-                    if (UtilityTools.IsAboveThreshold(pathData + "open-movies.json", 12) == true) // if movie posters db older than 12 hours then write db
-                    {
-                        client.DownloadFile(new Uri(linkMovies), pathData + "open-movies.json");
-                    }
+                    client.DownloadFile(new Uri(linkMovies), pathData + "open-movies.json");
                 }
-                else { client.DownloadFile(new Uri(linkMovies), pathData + "open-movies.json"); }
 
                 dataMovies = File.ReadAllLines(pathData + "open-movies.json");
                 //
 
 
                 //
-                if (File.Exists(pathData + "open-movies-files.json"))
+                if (UtilityTools.doUpdateDataFile(pathData + "open-movies-files.json") == true)
                 {
-                    if (UtilityTools.IsAboveThreshold(pathData + "open-movies-files.json", 12) == true) // if movies db older than 12 hours then write db
-                    {
-                        client.DownloadFile(new Uri(linkFilesMovies), pathData + "open-movies-files.json");
-                    }
+                    client.DownloadFile(new Uri(linkFilesMovies), pathData + "open-movies-files.json");
                 }
-                else { client.DownloadFile(new Uri(linkFilesMovies), pathData + "open-movies-files.json"); }
 
                 dataFilesMovies = File.ReadAllLines(pathData + "open-movies-files.json");
                 //
 
 
                 //
-                if (File.Exists(pathData + "open-series-files.json"))
+                if (UtilityTools.doUpdateDataFile(pathData + "open-series-files.json") == true)
                 {
-                    if (UtilityTools.IsAboveThreshold(pathData + "open-series-files.json", 12) == true) // if series db older than 12 hours then write db
-                    {
-                        client.DownloadFile(new Uri(linkFilesSeries), pathData + "open-series-files.json");
-                    }
+                    client.DownloadFile(new Uri(linkFilesSeries), pathData + "open-series-files.json");
                 }
-                else { client.DownloadFile(new Uri(linkFilesSeries), pathData + "open-series-files.json"); }
 
                 dataFilesSeries = File.ReadAllLines(pathData + "open-series-files.json");
                 //
 
 
                 //
-                if (File.Exists(pathData + "open-anime-files.json"))
+                if (UtilityTools.doUpdateDataFile(pathData + "open-anime-files.json") == true)
                 {
-                    if (UtilityTools.IsAboveThreshold(pathData + "open-anime-files.json", 12) == true) // if anime db older than 12 hours then write db
-                    {
-                        client.DownloadFile(new Uri(linkFilesAnime), pathData + "open-anime-files.json");
-                    }
+                    client.DownloadFile(new Uri(linkFilesAnime), pathData + "open-anime-files.json");
                 }
-                else { client.DownloadFile(new Uri(linkFilesAnime), pathData + "open-anime-files.json"); }
 
                 dataFilesAnime = File.ReadAllLines(pathData + "open-anime-files.json");
                 //
 
 
                 //
-                if (File.Exists(pathData + "open-subtitles-files.json"))
+                if (UtilityTools.doUpdateDataFile(pathData + "open-subtitles-files.json") == true)
                 {
-                    if (UtilityTools.IsAboveThreshold(pathData + "open-subtitles-files.json", 12) == true) // if subtitles db older than 12 hours then write db
-                    {
-                        client.DownloadFile(new Uri(linkFilesSubtitles), pathData + "open-subtitles-files.json");
-                    }
+                    client.DownloadFile(new Uri(linkFilesSubtitles), pathData + "open-subtitles-files.json");
                 }
-                else { client.DownloadFile(new Uri(linkFilesSubtitles), pathData + "open-subtitles-files.json"); }
 
                 dataFilesSubtitles = File.ReadAllLines(pathData + "open-subtitles-files.json");
                 //
 
 
                 //
-                if (File.Exists(pathData + "open-torrents-files.json"))
+                if (UtilityTools.doUpdateDataFile(pathData + "open-torrents-files.json") == true)
                 {
-                    if (UtilityTools.IsAboveThreshold(pathData + "open-torrents-files.json", 12) == true) // if torrents db older than 12 hours then write db
-                    {
-                        client.DownloadFile(new Uri(linkFilesTorrents), pathData + "open-torrents-files.json");
-                    }
+                    client.DownloadFile(new Uri(linkFilesTorrents), pathData + "open-torrents-files.json");
                 }
-                else { client.DownloadFile(new Uri(linkFilesTorrents), pathData + "open-torrents-files.json"); }
 
                 dataFilesTorrents = File.ReadAllLines(pathData + "open-torrents-files.json");
                 //
 
 
                 //
-                if (File.Exists(pathData + "open-archives-files.json"))
+                if (UtilityTools.doUpdateDataFile(pathData + "open-archives-files.json") == true)
                 {
-                    if (UtilityTools.IsAboveThreshold(pathData + "open-archives-files.json", 12) == true) // if archives db older than 12 hours then write db
-                    {
-                        client.DownloadFile(new Uri(linkFilesArchives), pathData + "open-archives-files.json");
-                    }
+                    client.DownloadFile(new Uri(linkFilesArchives), pathData + "open-archives-files.json");
                 }
-                else { client.DownloadFile(new Uri(linkFilesArchives), pathData + "open-archives-files.json"); }
 
                 dataFilesArchives = File.ReadAllLines(pathData + "open-archives-files.json");
                 //
-
-                foreach (string file in dataFilesMovies)
-                {
-                    var data = DatabaseFilesEntity.FromJson(file);
-                    dataGridFiles.Rows.Add(data.Title, data.Type, data.Host, data.URL);
-                    if (!(cmboBoxFilesFormat.Items.Contains(data.Type))) { cmboBoxFilesFormat.Items.Add(data.Type); }
-                    if (!(cmboBoxFilesHost.Items.Contains(data.Host))) { cmboBoxFilesHost.Items.Add(data.Host); }
-                }
-
-                cmboBoxFilesHost.DropDownWidth = DropDownWidth(cmboBoxFilesHost);
-
-                foreach (string fileUrl in Properties.Settings.Default.Bookmarks)
-                {
-                    dataGridBookmarks.Rows.Add(UtilityTools.getContainingListOfURL(fileUrl), Path.GetFileName(new Uri(fileUrl).LocalPath), Path.GetExtension(fileUrl).Replace(".", "").ToUpper(), new Uri(fileUrl).Host, new Uri(fileUrl).AbsoluteUri);
-                }
             }
-            catch (Exception ex) { MessageBox.Show("Unable to load movies.\n\n" + ex.Message); }
+            catch (Exception ex) { MessageBox.Show("We're unable to load database at this time. If this issue persists please open an issue on our GitHub page. (" + errorFile +")\n\n" + ex.Message); }
         }
 
         void worker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
+            searchFiles(dataFilesMovies);
             loadMovies(52);
             Controls.Remove(frmSplash);
         }
 
-        public static string[] dataFilesArchives, dataFilesTorrents, dataFilesSubtitles, dataFilesAnime, dataFilesSeries, dataFilesMovies, dataMovies, dataBookmarks;
+        public static string[] dataFilesArchives, dataFilesTorrents, dataFilesSubtitles, dataFilesAnime, dataFilesSeries, dataFilesMovies, dataMovies;
         
 
         // Core Tabs
@@ -397,6 +323,8 @@ namespace OpenTheatre
                                 ctrlPoster.infoTitle.Text = data.Title;
                                 ctrlPoster.infoYear.Text = data.Year;
 
+                                ctrlPoster.infoPoster.BackgroundImage = UtilityTools.LoadPicture(data.Poster);
+
                                 ctrlPoster.infoGenres = data.Genre;
                                 ctrlPoster.infoSynopsis = data.Plot;
                                 ctrlPoster.infoRuntime = data.Runtime;
@@ -406,8 +334,7 @@ namespace OpenTheatre
 
                                 ctrlPoster.infoImdbRating = data.ImdbRating;
                                 ctrlPoster.infoImdbId = data.ImdbID;
-
-                                ctrlPoster.infoPoster.BackgroundImage = LoadPicture(data.Poster);
+                            
                                 ctrlPoster.infoImagePoster = data.Poster;
                                 ctrlPoster.Name = data.ImdbID;
                                 ctrlPoster.infoMovieLinks = data.Sources;
@@ -417,8 +344,9 @@ namespace OpenTheatre
                                     string jsonData = client.DownloadString("https://tv-v2.api-fetch.website/movie/" + data.ImdbID);
                                     var jsonDataPT = PopcornTimeEntity.FromJson(jsonData);
                                     ctrlPoster.infoImageFanart = jsonDataPT.Images.Fanart;
+                                    ctrlPoster.infoTrailer = jsonDataPT.Trailer;
                                 }
-                                catch { ctrlPoster.infoImageFanart = ""; }
+                                catch { ctrlPoster.infoImageFanart = ""; ctrlPoster.infoTrailer = ""; }
 
                                 ctrlPoster.Show();
                                 MoviesPosters.Add(ctrlPoster);
@@ -693,6 +621,8 @@ namespace OpenTheatre
 
         public void searchFiles(string[] data)
         {
+            string errorFile = "null";
+
             try
             {
                 cmboBoxFilesSort.SelectedIndex = 0;
@@ -705,6 +635,7 @@ namespace OpenTheatre
 
                 foreach (string file in data)
                 {
+                    errorFile = file;
                     var dataJson = DatabaseFilesEntity.FromJson(file);
 
                     if (UtilityTools.ContainsAll(dataJson.URL.ToLower(), UtilityTools.GetWords(txtFilesSearchBox.Text.ToLower())) && dataJson.URL.Contains(selectedFilesQuality) && dataJson.Type.Contains(selectedFilesFileType) && dataJson.Host.Contains(selectedFilesHost))
@@ -714,10 +645,8 @@ namespace OpenTheatre
                         if (!(cmboBoxFilesHost.Items.Contains(dataJson.Host))) { cmboBoxFilesHost.Items.Add(dataJson.Host); }
                     }
                 }
-
-                tab.SelectedTab = tabFiles;
             }
-            catch { MessageBox.Show("Unable to search database. Please try again in a moment."); }
+            catch (Exception ex) { MessageBox.Show("Unable to search database. Please try again in a moment. (" + errorFile +")\n\n" + ex.Message); }
         }
 
         public void showFileDetails(string webFile)
@@ -755,7 +684,7 @@ namespace OpenTheatre
                             MovieDetails.infoRatingIMDb.Text = data.ImdbRating;
                             MovieDetails.infoImdbId = data.ImdbID;
 
-                            try { MovieDetails.imgPoster.Image = UtilityTools.ChangeOpacity(LoadPicture(data.Poster), 1); } catch { MovieDetails.imgPoster.Image = UtilityTools.ChangeOpacity(Properties.Resources.poster_default, 0.5F); }
+                            try { MovieDetails.imgPoster.Image = UtilityTools.ChangeOpacity(UtilityTools.LoadPicture(data.Poster), 1); } catch { MovieDetails.imgPoster.Image = UtilityTools.ChangeOpacity(Properties.Resources.poster_default, 0.5F); }
                         }
                         else
                         {
@@ -792,18 +721,16 @@ namespace OpenTheatre
                 var jsonPopcornTime = client.DownloadString("https://tv-v2.api-fetch.website/movie/" + MovieDetails.infoImdbId);
                 var data = PopcornTimeEntity.FromJson(jsonPopcornTime);
 
-                try { tabBlank.BackgroundImage = UtilityTools.ChangeOpacity(LoadPicture(data.Images.Fanart), 0.2F); }
+                try { tabBlank.BackgroundImage = UtilityTools.ChangeOpacity(UtilityTools.LoadPicture(data.Images.Fanart), 0.2F); }
                 catch { tabBlank.BackgroundImage = UtilityTools.ChangeOpacity(Properties.Resources.background_original, 0.2F); }
                 MovieDetails.infoFanartUrl = data.Images.Fanart;
                 MovieDetails.infoTrailerUrl = data.Trailer;
-                //MovieDetails.btnFileTrailer.Visible = true;
             }
             catch
             {
                 tabBlank.BackgroundImage = UtilityTools.ChangeOpacity(Properties.Resources.background_original, 0.4F);
                 MovieDetails.infoFanartUrl = "";
                 MovieDetails.infoTrailerUrl = "";
-                //MovieDetails.btnFileTrailer.Visible = false;
             }
 
             ctrlStreamInfo ctrlInfo = new ctrlStreamInfo();
@@ -937,27 +864,22 @@ namespace OpenTheatre
             showFileDetails(dataGridBookmarks.CurrentRow.Cells[4].Value.ToString());
         }
 
-        public void addToBookmarks(string fileUrl)
-        {
-            DatabaseFilesEntity data = new DatabaseFilesEntity();
-            data.Title = Path.GetFileNameWithoutExtension(new Uri(fileUrl).LocalPath);
-            data.URL = new Uri(fileUrl).AbsoluteUri;
-            data.Host = new Uri(fileUrl).Host;
-            data.Type = Path.GetExtension(fileUrl).Replace(".", "").ToUpper();
-        }
-
         public void searchBookmarks()
         {
-            dataGridBookmarks.Rows.Clear();
-
-            foreach (string fileUrl in Properties.Settings.Default.Bookmarks)
+            try
             {
-                var url = new Uri(fileUrl);
-                if (UtilityTools.ContainsAll(fileUrl.ToLower(), UtilityTools.GetWords(txtBookmarksSearchBox.Text.ToLower())) && UtilityTools.getContainingListOfURL(fileUrl).Contains(selectedBookmarksType))
+                dataGridBookmarks.Rows.Clear();
+
+                foreach (string fileUrl in Properties.Settings.Default.dataBookmarks)
                 {
-                    dataGridBookmarks.Rows.Add(UtilityTools.getContainingListOfURL(fileUrl), Path.GetFileName(new Uri(fileUrl).LocalPath), Path.GetExtension(fileUrl).Replace(".", "").ToUpper(), new Uri(fileUrl).Host, new Uri(fileUrl).AbsoluteUri);
+                    var url = new Uri(fileUrl);
+                    if (UtilityTools.ContainsAll(fileUrl.ToLower(), UtilityTools.GetWords(txtBookmarksSearchBox.Text.ToLower())) && UtilityTools.getContainingListOfURL(fileUrl).Contains(selectedBookmarksType))
+                    {
+                        dataGridBookmarks.Rows.Add(UtilityTools.getContainingListOfURL(fileUrl), Path.GetFileName(new Uri(fileUrl).LocalPath), Path.GetExtension(fileUrl).Replace(".", "").ToUpper(), new Uri(fileUrl).Host, new Uri(fileUrl).AbsoluteUri);
+                    }
                 }
             }
+            catch (Exception ex) { MessageBox.Show("There was a problem searching for your bookmarks.\n\n" + ex.Message); }
         }
 
         // Search Bookmarks by Text
@@ -1020,10 +942,12 @@ namespace OpenTheatre
         //
 
         // Downloads tab
+        public static List<string> currentDownloads = new List<string>();
+
         public void doDownloadFile(string url)
         {
             ctrlDownloadItem ctrlItem = new ctrlDownloadItem();
-            ctrlItem.lblStatus.Text = "Connecting...";
+            ctrlItem.infoStatus.Text = "Connecting...";
             ctrlItem.Width = panelDownloads.ClientSize.Width - 7;
             panelDownloads.Controls.Add(ctrlItem);
             ctrlItem.doDownloadFile(url);
@@ -1037,13 +961,6 @@ namespace OpenTheatre
         private void panelDownloadItems_ControlRemoved(object sender, ControlEventArgs e)
         {
             if (panelDownloads.Controls.Count == 0) { lblNoDownloads.Visible = true; } else { lblNoDownloads.Visible = false; }
-        }
-        //
-
-        // History tab
-        private void imgHistory_Click(object sender, EventArgs e)
-        {
-            tab.SelectedTab = tabHistory;
         }
         //
 
@@ -1062,6 +979,7 @@ namespace OpenTheatre
         // Settings tab
         public void loadSettings()
         {
+            // UI
             chkSettingsClearData.Checked = Properties.Settings.Default.clearDataOnClose;
             chkSettingsCustomConnection.Checked = Properties.Settings.Default.connectionCustom;
 
@@ -1073,6 +991,7 @@ namespace OpenTheatre
             txtBoxSettingsConnectionUsername.Text = Properties.Settings.Default.connectionUsername;
             txtBoxSettingsConnectionPassword.Text = Properties.Settings.Default.connectionPassword;
 
+            // Enable/Disable Connection Settings
             lblSettingsConnectionHost.Enabled = Properties.Settings.Default.connectionCustom;
             lblSettingsConnectionPort.Enabled = Properties.Settings.Default.connectionCustom;
             lblSettingsConnectionUsername.Enabled = Properties.Settings.Default.connectionCustom;
@@ -1131,8 +1050,15 @@ namespace OpenTheatre
 
         private void btnSettingsRestoreDefault_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            Properties.Settings.Default.connectionCustom = false;
             Properties.Settings.Default.clearDataOnClose = false;
+            Properties.Settings.Default.connectionCustom = false;
+            Properties.Settings.Default.connectionHost = "";
+            Properties.Settings.Default.connectionPort = "";
+            Properties.Settings.Default.connectionUsername = "";
+            Properties.Settings.Default.connectionPassword = "";
+            Properties.Settings.Default.downloadsDirectory = pathDownloadsDefault;
+
+            loadSettings();
         }
     }
 }
