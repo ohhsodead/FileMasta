@@ -84,6 +84,8 @@ namespace OpenTheatre
 
         private void imgCancel_Click(object sender, EventArgs e)
         {
+            frmOpenTheatre.currentDownloads.Remove(infoFileURL);
+
             wc.CancelAsync();
             wc.Dispose();
             Hide();
