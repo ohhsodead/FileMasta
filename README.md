@@ -10,7 +10,7 @@
 <br />
 
 ## What is OpenTheatre?
-It communicates with its own [API](https://dropbox.com/sh/bqb14ty282xm9xi/AACeniqYjhq2auw3KU3oNW2Fa?dl=0) written entirely using our custom built command-line web crawler designed to scrape information from trusted files, updated every day. The public web resources used are available on our [open assets database](https://github.com/invu/opentheatre-app/tree/master/assets), where anyone can contribute their open directories. OpenTheatre works to query movies, series, anime, subtitles, torrents and archives from all around the web to provide you with the ultimate streaming experience. Our team is fairly new so we're just getting started, please give us time. 
+It communicates with its own [API](https://dropbox.com/sh/bqb14ty282xm9xi/AACeniqYjhq2auw3KU3oNW2Fa?dl=0) written entirely using our custom built command-line web crawler designed to scrape information from trusted files, updated every day. The public web resources used are available on our [open assets database](https://github.com/invu/opentheatre-app/tree/master/assets), where anyone can contribute their open directories. OpenTheatre works to query movies, series, anime, subtitles, torrents and archives from all around the web to provide you with the ultimate streaming experience.
 
 ## Some features available
 - Simple interface and background threads for the best performance
@@ -25,7 +25,7 @@ It communicates with its own [API](https://dropbox.com/sh/bqb14ty282xm9xi/AACeni
 - Local cache updating every 12 hours
 
 ## Latest build
-OpenTheatre 2.0.5
+OpenTheatre 2.0.6
 
 ## Framework & Backend
 The application is using .NET 4.6.2 WinForms Framework written in C#
@@ -34,7 +34,7 @@ The application is using .NET 4.6.2 WinForms Framework written in C#
 Windows 7 and above (Windows 7, 8, 8.1, 10)
 
 ## Installation
-Download the latest installer [here](https://github.com/invu/opentheatre-app/releases/download/0.2.0.5/OpenTheatreInstaller.exe)
+Download the latest installer [here](https://github.com/invu/opentheatre-app/releases/download/0.2.0.6/OpenTheatreInstaller.exe)
 
 ## Screenshots
 ### Movies
