@@ -947,7 +947,7 @@ namespace OpenTheatre
         public void doDownloadFile(string url)
         {
             ctrlDownloadItem ctrlItem = new ctrlDownloadItem();
-            ctrlItem.infoStatus.Text = "Connecting...";
+            ctrlItem.infoStatus.Text = "Connecting";
             ctrlItem.Width = panelDownloads.ClientSize.Width - 7;
             panelDownloads.Controls.Add(ctrlItem);
             ctrlItem.doDownloadFile(url);
