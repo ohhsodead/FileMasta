@@ -25,7 +25,7 @@ It communicates with its own [API](https://dropbox.com/sh/bqb14ty282xm9xi/AACeni
 - Local cache updating every 12 hours
 
 ## Latest build
-OpenTheatre 2.0.5
+OpenTheatre 2.0.6
 
 ## Framework & Backend
 The application is using .NET 4.6.2 WinForms Framework written in C#
