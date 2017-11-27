@@ -124,7 +124,7 @@ namespace OpenTheatre
 
         private void imgDownload_Click(object sender, EventArgs e)
         {
-            if (!frmOpenTheatre.currentDownloads.Contains(infoFileURL)) { imgDownload.Image = Properties.Resources.cloud_sync; frmOpenTheatre.form.doDownloadFile(infoFileURL); frmOpenTheatre.currentDownloads.Add(infoFileURL); }
+            if (!frmOpenTheatre.currentDownloads.Contains(infoFileURL)) { imgDownload.Image = Properties.Resources.cloud_sync; frmOpenTheatre.form.doDownloadFile(infoFileURL); }
         }
 
         private void VLC2ToolStripMenuItem_Click(object sender, EventArgs e)

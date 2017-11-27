@@ -172,6 +172,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="openplex_logo.ico" />
+    <None Include="Resources\refresh.png" />
+    <None Include="Resources\close_small.png" />
     <None Include="Resources\check.png" />
     <None Include="Resources\close-circle.png" />
     <None Include="Resources\search.png" />

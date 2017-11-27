@@ -77,7 +77,7 @@ namespace OpenTheatre
         {
             UtilityTools.checkForUpdate();
 
-            if (Properties.Settings.Default.downloadsDirectory == null) { Properties.Settings.Default.downloadsDirectory = pathDownloadsDefault; Directory.CreateDirectory(pathDownloadsDefault); }
+            if (Properties.Settings.Default.downloadsDirectory == "") { Properties.Settings.Default.downloadsDirectory = pathDownloadsDefault; Directory.CreateDirectory(pathDownloadsDefault); }
             loadSettings();
 
             currentTab = tabMovies;
@@ -944,13 +944,15 @@ namespace OpenTheatre
         // Downloads tab
         public static List<string> currentDownloads = new List<string>();
 
-        public void doDownloadFile(string url)
+        public void doDownloadFile(string fileURL)
         {
             ctrlDownloadItem ctrlItem = new ctrlDownloadItem();
+            ctrlItem.progressBar1.BorderColor = tabDownloads.BackColor;
             ctrlItem.infoStatus.Text = "Connecting";
             ctrlItem.Width = panelDownloads.ClientSize.Width - 7;
             panelDownloads.Controls.Add(ctrlItem);
-            ctrlItem.doDownloadFile(url);
+            ctrlItem.doDownloadFile(fileURL);
+            currentDownloads.Add(fileURL);
         }
 
         private void panelDownloadItems_ControlAdded(object sender, ControlEventArgs e)

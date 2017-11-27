@@ -41,10 +41,10 @@
             this.infoEstimatedTime = new System.Windows.Forms.Label();
             this.splitter3 = new System.Windows.Forms.Label();
             this.timerEstimatedTimer = new System.Windows.Forms.Timer(this.components);
+            this.imgClose = new System.Windows.Forms.PictureBox();
             this.progressBar1 = new ProgressBarEx.ProgressBarEx();
-            this.imgCancel = new System.Windows.Forms.PictureBox();
             this.panelDetails.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgCancel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgClose)).BeginInit();
             this.SuspendLayout();
             // 
             // infoFileName
@@ -55,9 +55,9 @@
             this.infoFileName.Cursor = System.Windows.Forms.Cursors.Hand;
             this.infoFileName.Font = new System.Drawing.Font("Segoe UI Semibold", 12F);
             this.infoFileName.ForeColor = System.Drawing.Color.White;
-            this.infoFileName.Location = new System.Drawing.Point(42, 12);
+            this.infoFileName.Location = new System.Drawing.Point(13, 12);
             this.infoFileName.Name = "infoFileName";
-            this.infoFileName.Size = new System.Drawing.Size(399, 22);
+            this.infoFileName.Size = new System.Drawing.Size(424, 22);
             this.infoFileName.TabIndex = 0;
             this.infoFileName.Text = "File Name";
             this.infoFileName.Click += new System.EventHandler(this.lblFileName_Click);
@@ -132,7 +132,7 @@
             this.panelDetails.Controls.Add(this.infoSpeed);
             this.panelDetails.Location = new System.Drawing.Point(13, 52);
             this.panelDetails.Name = "panelDetails";
-            this.panelDetails.Size = new System.Drawing.Size(428, 44);
+            this.panelDetails.Size = new System.Drawing.Size(424, 44);
             this.panelDetails.TabIndex = 16;
             // 
             // splitter0
@@ -198,39 +198,41 @@
             this.splitter3.Text = "•";
             this.splitter3.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
+            // imgClose
+            // 
+            this.imgClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.imgClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imgClose.Image = global::OpenTheatre.Properties.Resources.close_small;
+            this.imgClose.Location = new System.Drawing.Point(415, 14);
+            this.imgClose.Name = "imgClose";
+            this.imgClose.Size = new System.Drawing.Size(20, 20);
+            this.imgClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgClose.TabIndex = 15;
+            this.imgClose.TabStop = false;
+            this.imgClose.Click += new System.EventHandler(this.imgCancel_Click);
+            // 
             // progressBar1
             // 
             this.progressBar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.progressBar1.BackColor = System.Drawing.Color.Transparent;
             this.progressBar1.BackgroundColor = System.Drawing.Color.White;
-            this.progressBar1.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.progressBar1.GradiantColor = System.Drawing.Color.DodgerBlue;
+            this.progressBar1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(135)))), ((int)(((byte)(189)))));
+            this.progressBar1.GradiantColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(135)))), ((int)(((byte)(189)))));
             this.progressBar1.GradiantPosition = ProgressBarEx.ProgressBarEx.GradiantArea.None;
             this.progressBar1.Image = null;
-            this.progressBar1.Location = new System.Drawing.Point(16, 41);
+            this.progressBar1.Location = new System.Drawing.Point(16, 39);
             this.progressBar1.Name = "progressBar1";
+            this.progressBar1.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(135)))), ((int)(((byte)(189)))));
             this.progressBar1.RoundedCorners = false;
-            this.progressBar1.Size = new System.Drawing.Size(425, 6);
-            // 
-            // imgCancel
-            // 
-            this.imgCancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgCancel.Image = global::OpenTheatre.Properties.Resources.close_circle;
-            this.imgCancel.Location = new System.Drawing.Point(16, 13);
-            this.imgCancel.Name = "imgCancel";
-            this.imgCancel.Size = new System.Drawing.Size(20, 20);
-            this.imgCancel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.imgCancel.TabIndex = 15;
-            this.imgCancel.TabStop = false;
-            this.imgCancel.Click += new System.EventHandler(this.imgCancel_Click);
+            this.progressBar1.Size = new System.Drawing.Size(419, 9);
             // 
             // ctrlDownloadItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
-            this.Controls.Add(this.imgCancel);
+            this.Controls.Add(this.imgClose);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.splitter);
             this.Controls.Add(this.infoFileName);
@@ -243,7 +245,7 @@
             this.Load += new System.EventHandler(this.ctrlDownloadItem_Load);
             this.panelDetails.ResumeLayout(false);
             this.panelDetails.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgCancel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgClose)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -253,10 +255,9 @@
         private System.Windows.Forms.Label infoFileName;
         public System.Windows.Forms.Label infoStatus;
         private CButtonLib.CButton splitter;
-        private ProgressBarEx.ProgressBarEx progressBar1;
         private System.Windows.Forms.Label infoSpeed;
         private System.Windows.Forms.Label infoDownloadedOutOfSize;
-        private System.Windows.Forms.PictureBox imgCancel;
+        private System.Windows.Forms.PictureBox imgClose;
         private System.Windows.Forms.FlowLayoutPanel panelDetails;
         private System.Windows.Forms.Label splitter1;
         private System.Windows.Forms.Label infoPercentage;
@@ -264,5 +265,6 @@
         private System.Windows.Forms.Timer timerEstimatedTimer;
         private System.Windows.Forms.Label infoEstimatedTime;
         private System.Windows.Forms.Label splitter3;
+        public ProgressBarEx.ProgressBarEx progressBar1;
     }
 }

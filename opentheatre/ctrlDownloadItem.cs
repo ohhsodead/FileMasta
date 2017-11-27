@@ -25,8 +25,7 @@ namespace OpenTheatre
 
         private void ctrlDownloadItem_Load(object sender, EventArgs e)
         {
-            BackColor = Parent.BackColor;
-            progressBar1.BorderColor = BackColor;
+
         }
 
         Stopwatch sw = new Stopwatch();
@@ -67,12 +66,13 @@ namespace OpenTheatre
             Refresh();
         }
 
+        public bool doRefreshDownload = false;
+
         private void downloadCompleted(object sender, AsyncCompletedEventArgs e)
         {
             sw.Reset();
-            if (e.Cancelled == true) { infoStatus.Text = "Cancelled"; imgCancel.Image = Properties.Resources.check; progressBar1.ProgressColor = Color.Gray; panelDetails.ForeColor = Color.Gray; }
-            else if (e.Error != null) { infoStatus.Text = "Error (" + e.Error.Message + ")"; ; imgCancel.Image = Properties.Resources.check; progressBar1.ProgressColor = Color.Red; infoStatus.ForeColor = Color.Red; }
-            else { infoStatus.Text = "Complete"; imgCancel.Image = Properties.Resources.check; }
+            if (e.Error != null) { infoStatus.Text = "Error (" + e.Error.Message + ")"; doRefreshDownload = true; imgClose.Image = Properties.Resources.refresh; progressBar1.BackColor = Color.Red; infoStatus.ForeColor = Color.Red; }
+            else { infoStatus.Text = "Complete"; imgClose.Image = Properties.Resources.check; }
 
             frmOpenTheatre.currentDownloads.Remove(infoFileURL);
         }
@@ -85,6 +85,11 @@ namespace OpenTheatre
         private void imgCancel_Click(object sender, EventArgs e)
         {
             frmOpenTheatre.currentDownloads.Remove(infoFileURL);
+
+            if (doRefreshDownload == true)
+            {
+                frmOpenTheatre.form.doDownloadFile(infoFileURL);
+            }
 
             wc.CancelAsync();
             wc.Dispose();
