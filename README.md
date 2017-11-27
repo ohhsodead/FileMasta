@@ -14,7 +14,7 @@ It communicates with its own [API](https://dropbox.com/sh/bqb14ty282xm9xi/AACeni
 
 ## Some features available
 - Simple interface and background threads for the best performance
-- Web crawler returning over 50,000 movies, series, anime, subtitles and torrents
+- Web crawler returning over 50,000 movies, series, anime, subtitles, torrents and archives
 - Search movies by people, years and genre
 - Bookmark files to be viewed later, and
 - Filter files by format, host and sort alphabetically
