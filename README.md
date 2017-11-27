@@ -4,38 +4,37 @@
   OpenTheatre
 </h1>
 
-<h3 align="center">Search movies, series, anime, subtitles and torrents from open directories</h3>
+<h3 align="center">Search movies, series, anime, subtitles, torrents and archives from open directories</h3>
 <div align="center">
 </div>
 <br />
 
 ## What is OpenTheatre?
-OpenTheatre is a search engine that indexes open web directories to scrape movies, series, anime, subtitles and torrents files from all around the Internet.  
+It communicates with its own [API](https://dropbox.com/sh/bqb14ty282xm9xi/AACeniqYjhq2auw3KU3oNW2Fa?dl=0) written entirely using our custom built command-line web crawler designed to scrape information from trusted files, updated every day. The public web resources used are available on our [open assets database](https://github.com/invu/opentheatre-app/tree/master/assets), where anyone can contribute their open directories. OpenTheatre works to query movies, series, anime, subtitles, torrents and archives from all around the web to provide you with the ultimate streaming experience. Our team is fairly new so we're just getting started, please give us time. 
 
 ## Some features available
 - Simple interface and background threads for the best performance
 - Web crawler returning over 50,000 movies, series, anime, subtitles and torrents
 - Search movies by people, years and genre
+- Bookmark files to be viewed later, and
 - Filter files by format, host and sort alphabetically
-- Support for external players (Currently includes WMP, MPC & VLC. Open for requests!)
-- Simple client for direct downloads
+- Includes an interal VLC media player 
+- Support for external players (Currently includes WMP, MPC & VLC - Open for requests)
+- Simple built-in download client
 - Collects metadata from OMDb API & Popcorn Time API
-- Local database updating every 12 hours
+- Local cache updating every 12 hours
 
-## How does it work?
-It communicates with the open database to collect the latest movies available for streaming, along with some supported streams. We also use our own custom built command-line application to query the public open movies directories to find the best possible files out there.
-
-## Latest Build
+## Latest build
 OpenTheatre 2.0.5
 
 ## Framework & Backend
-The application is using .NET 4.6.2 WinForms Framework written in C#.
+The application is using .NET 4.6.2 WinForms Framework written in C#
 
-## Supported Platforms
+## Supported platforms
 Windows 7 and above (Windows 7, 8, 8.1, 10)
 
 ## Installation
-Download installer [here](https://github.com/invu/opentheatre-app/releases/download/0.2.0.5/OpenTheatreInstaller.exe)
+Download the latest installer [here](https://github.com/invu/opentheatre-app/releases/download/0.2.0.5/OpenTheatreInstaller.exe)
 
 ## Screenshots
 ### Movies
@@ -53,11 +52,13 @@ Download installer [here](https://github.com/invu/opentheatre-app/releases/downl
 ### Downloads
 ![Show Page](https://raw.githubusercontent.com/invu/opentheatre-app/master/screenshots/downloads.png)
 
-### About
-![Show Page](https://raw.githubusercontent.com/invu/opentheatre-app/master/screenshots/about.png)
-
-## Legal Side of Things
-All of the free files found on this app are hosted on third-party servers that are freely available for all internet users. Any legal issues regarding the free online links on this app should be taken up with the actual file hosts themselves, as we're not affiliated with them.
+## Where credit's due
+- [Material Design Icons (Powered by Google)](https://materialdesignicons.com/)
+- [Open Movie Database API](https://omdbapi.com)
+- [Popcorn Time API](https://popcorntime.sh/)
+- [Json.NET (Newtonsoft)](https://www.newtonsoft.com/json)
+- [VLC Media Player](https://www.videolan.org/vlc/)
+- [Octokit.NET](https://github.com/octokit/octokit.net)
 
 ## Comments
 OpenTheatre is a new application and is not a segment of Popcorn Time or any other similar apps.
