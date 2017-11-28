@@ -18,7 +18,7 @@ It communicates with its own [API](https://dropbox.com/sh/bqb14ty282xm9xi/AACeni
 - Search movies by people, years and genre
 - Bookmark files to be viewed later, and
 - Filter files by format, host and sort alphabetically
-- Includes an interal VLC media player 
+- Includes an internal VLC media player 
 - Support for external players (Currently includes WMP, MPC & VLC - Open for requests)
 - Simple built-in download client
 - Collects metadata from OMDb API & Popcorn Time API
