@@ -16,7 +16,7 @@ It communicates with its own [API](https://dropbox.com/sh/bqb14ty282xm9xi/AACeni
 - Simple interface and background threads for the best performance
 - Web crawler returning over 50,000 movies, series, anime, subtitles, torrents and archives
 - Search movies by people, years and genre
-- Bookmark files to be viewed later, and
+- Bookmark files to be viewed later
 - Filter files by format, host and sort alphabetically
 - Includes an internal VLC media player 
 - Support for external players (Currently includes WMP, MPC & VLC - Open for requests)
