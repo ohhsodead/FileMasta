@@ -34,12 +34,12 @@ namespace Utilities
             foreach (string file in frmOpenTheatre.dataFilesMovies)
             {
                 var data = DatabaseFilesEntity.FromJson(file);
-                if (data.URL == fileUrl) { return "Movies"; }
+                if (data.URL == fileUrl) { return "Movie"; }
             }
             foreach (string file in frmOpenTheatre.dataFilesSeries)
             {
                 var data = DatabaseFilesEntity.FromJson(file);
-                if (data.URL == fileUrl) { return "Series"; }
+                if (data.URL == fileUrl) { return "Episode"; }
             }
             foreach (string file in frmOpenTheatre.dataFilesAnime)
             {
@@ -49,22 +49,22 @@ namespace Utilities
             foreach (string file in frmOpenTheatre.dataFilesSubtitles)
             {
                 var data = DatabaseFilesEntity.FromJson(file);
-                if (data.URL == fileUrl) { return "Subtitles"; }
+                if (data.URL == fileUrl) { return "Subtitle"; }
             }
             foreach (string file in frmOpenTheatre.dataFilesTorrents)
             {
                 var data = DatabaseFilesEntity.FromJson(file);
-                if (data.URL == fileUrl) { return "Torrents"; }
+                if (data.URL == fileUrl) { return "Torrent"; }
             }
             foreach (string file in frmOpenTheatre.dataFilesArchives)
             {
                 var data = DatabaseFilesEntity.FromJson(file);
-                if (data.URL == fileUrl) { return "Archives"; }
+                if (data.URL == fileUrl) { return "Archive"; }
             }
             foreach (string file in frmOpenTheatre.dataMovies)
             {
                 var data = OMDbEntity.FromJson(file);
-                if (data.Sources.Contains(fileUrl)) { return "Movies"; }
+                if (data.Sources.Contains(fileUrl)) { return "Movie"; }
             }
 
             return "null";

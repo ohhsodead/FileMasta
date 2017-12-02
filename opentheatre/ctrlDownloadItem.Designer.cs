@@ -35,6 +35,7 @@
             this.infoSpeed = new System.Windows.Forms.Label();
             this.infoDownloadedOutOfSize = new System.Windows.Forms.Label();
             this.panelDetails = new System.Windows.Forms.FlowLayoutPanel();
+            this.imgStatus = new System.Windows.Forms.PictureBox();
             this.splitter0 = new System.Windows.Forms.Label();
             this.infoPercentage = new System.Windows.Forms.Label();
             this.splitter1 = new System.Windows.Forms.Label();
@@ -44,6 +45,7 @@
             this.imgClose = new System.Windows.Forms.PictureBox();
             this.progressBar1 = new ProgressBarEx.ProgressBarEx();
             this.panelDetails.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgStatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgClose)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,13 +55,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.infoFileName.AutoEllipsis = true;
             this.infoFileName.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.infoFileName.Font = new System.Drawing.Font("Segoe UI Semibold", 12F);
+            this.infoFileName.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F);
             this.infoFileName.ForeColor = System.Drawing.Color.White;
-            this.infoFileName.Location = new System.Drawing.Point(13, 12);
+            this.infoFileName.Location = new System.Drawing.Point(13, 13);
             this.infoFileName.Name = "infoFileName";
-            this.infoFileName.Size = new System.Drawing.Size(424, 22);
+            this.infoFileName.Size = new System.Drawing.Size(396, 22);
             this.infoFileName.TabIndex = 0;
             this.infoFileName.Text = "File Name";
+            this.infoFileName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.infoFileName.Click += new System.EventHandler(this.lblFileName_Click);
             // 
             // infoStatus
@@ -67,7 +70,7 @@
             this.infoStatus.AutoEllipsis = true;
             this.infoStatus.AutoSize = true;
             this.infoStatus.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
-            this.infoStatus.Location = new System.Drawing.Point(0, 0);
+            this.infoStatus.Location = new System.Drawing.Point(20, 0);
             this.infoStatus.Margin = new System.Windows.Forms.Padding(0);
             this.infoStatus.Name = "infoStatus";
             this.infoStatus.Size = new System.Drawing.Size(77, 17);
@@ -97,7 +100,7 @@
             // 
             this.infoSpeed.AutoSize = true;
             this.infoSpeed.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
-            this.infoSpeed.Location = new System.Drawing.Point(45, 21);
+            this.infoSpeed.Location = new System.Drawing.Point(45, 24);
             this.infoSpeed.Margin = new System.Windows.Forms.Padding(0, 4, 0, 0);
             this.infoSpeed.Name = "infoSpeed";
             this.infoSpeed.Size = new System.Drawing.Size(28, 17);
@@ -109,7 +112,7 @@
             // 
             this.infoDownloadedOutOfSize.AutoSize = true;
             this.infoDownloadedOutOfSize.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
-            this.infoDownloadedOutOfSize.Location = new System.Drawing.Point(0, 21);
+            this.infoDownloadedOutOfSize.Location = new System.Drawing.Point(0, 24);
             this.infoDownloadedOutOfSize.Margin = new System.Windows.Forms.Padding(0, 4, 0, 0);
             this.infoDownloadedOutOfSize.Name = "infoDownloadedOutOfSize";
             this.infoDownloadedOutOfSize.Size = new System.Drawing.Size(28, 17);
@@ -122,6 +125,7 @@
             this.panelDetails.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelDetails.Controls.Add(this.imgStatus);
             this.panelDetails.Controls.Add(this.infoStatus);
             this.panelDetails.Controls.Add(this.splitter0);
             this.panelDetails.Controls.Add(this.infoPercentage);
@@ -135,11 +139,26 @@
             this.panelDetails.Size = new System.Drawing.Size(424, 44);
             this.panelDetails.TabIndex = 16;
             // 
+            // imgStatus
+            // 
+            this.imgStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.imgStatus.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imgStatus.Image = global::OpenTheatre.Properties.Resources.check;
+            this.imgStatus.Location = new System.Drawing.Point(0, 0);
+            this.imgStatus.Margin = new System.Windows.Forms.Padding(0);
+            this.imgStatus.Name = "imgStatus";
+            this.imgStatus.Size = new System.Drawing.Size(20, 20);
+            this.imgStatus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgStatus.TabIndex = 22;
+            this.imgStatus.TabStop = false;
+            this.imgStatus.Visible = false;
+            this.imgStatus.Click += new System.EventHandler(this.imgStatus_Click);
+            // 
             // splitter0
             // 
             this.splitter0.AutoSize = true;
             this.splitter0.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.splitter0.Location = new System.Drawing.Point(80, 2);
+            this.splitter0.Location = new System.Drawing.Point(100, 2);
             this.splitter0.Margin = new System.Windows.Forms.Padding(3, 2, 3, 0);
             this.splitter0.Name = "splitter0";
             this.splitter0.Size = new System.Drawing.Size(11, 13);
@@ -152,7 +171,7 @@
             this.infoPercentage.AutoEllipsis = true;
             this.infoPercentage.AutoSize = true;
             this.infoPercentage.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
-            this.infoPercentage.Location = new System.Drawing.Point(94, 0);
+            this.infoPercentage.Location = new System.Drawing.Point(114, 0);
             this.infoPercentage.Margin = new System.Windows.Forms.Padding(0);
             this.infoPercentage.Name = "infoPercentage";
             this.infoPercentage.Size = new System.Drawing.Size(26, 17);
@@ -164,7 +183,7 @@
             // 
             this.splitter1.AutoSize = true;
             this.splitter1.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.splitter1.Location = new System.Drawing.Point(123, 2);
+            this.splitter1.Location = new System.Drawing.Point(143, 2);
             this.splitter1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 0);
             this.splitter1.Name = "splitter1";
             this.splitter1.Size = new System.Drawing.Size(11, 13);
@@ -178,7 +197,7 @@
             this.infoEstimatedTime.AutoSize = true;
             this.panelDetails.SetFlowBreak(this.infoEstimatedTime, true);
             this.infoEstimatedTime.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
-            this.infoEstimatedTime.Location = new System.Drawing.Point(137, 0);
+            this.infoEstimatedTime.Location = new System.Drawing.Point(157, 0);
             this.infoEstimatedTime.Margin = new System.Windows.Forms.Padding(0);
             this.infoEstimatedTime.Name = "infoEstimatedTime";
             this.infoEstimatedTime.Size = new System.Drawing.Size(68, 17);
@@ -190,7 +209,7 @@
             // 
             this.splitter3.AutoSize = true;
             this.splitter3.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.splitter3.Location = new System.Drawing.Point(31, 23);
+            this.splitter3.Location = new System.Drawing.Point(31, 26);
             this.splitter3.Margin = new System.Windows.Forms.Padding(3, 6, 3, 0);
             this.splitter3.Name = "splitter3";
             this.splitter3.Size = new System.Drawing.Size(11, 13);
@@ -245,6 +264,7 @@
             this.Load += new System.EventHandler(this.ctrlDownloadItem_Load);
             this.panelDetails.ResumeLayout(false);
             this.panelDetails.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgStatus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgClose)).EndInit();
             this.ResumeLayout(false);
 
@@ -266,5 +286,6 @@
         private System.Windows.Forms.Label infoEstimatedTime;
         private System.Windows.Forms.Label splitter3;
         public ProgressBarEx.ProgressBarEx progressBar1;
+        private System.Windows.Forms.PictureBox imgStatus;
     }
 }

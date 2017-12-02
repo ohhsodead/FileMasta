@@ -363,7 +363,7 @@ namespace OpenTheatre
         delegate void loadMoviesCallBack(int count);
         public void loadMovies(int count)
         {
-            imgSpinnerGIF.Visible = true;
+            imgSpinner.Visible = true;
             BackGroundWorker.RunWorkAsync<List<ctrlMoviesPoster>>(() => LoadMovies(count), (data) =>
             {
                 if (panelMovies.InvokeRequired)
@@ -378,7 +378,7 @@ namespace OpenTheatre
                         panelMovies.Controls.Add(item);
                     }
 
-                    imgSpinnerGIF.Visible = false;
+                    imgSpinner.Visible = false;
                     tab.SelectedTab = tabMovies;
                 }
             });
@@ -451,6 +451,68 @@ namespace OpenTheatre
             loadMovies(52);
         }
         //
+
+        // Random Movie Button (I'm Feeling Lucky)
+        private void btnMoviesRandom_ClickButtonArea(object Sender, MouseEventArgs e)
+        {
+            var data = OMDbEntity.FromJson(UtilityTools.Random(dataMovies));
+
+            ctrlDetails MovieDetails = new ctrlDetails();
+
+            MovieDetails.infoTitle.Text = data.Title;
+            MovieDetails.infoYear.Text = data.Year;
+            MovieDetails.infoGenre.Text = data.Genre;
+            MovieDetails.infoSynopsis.Text = data.Plot;
+            MovieDetails.infoRuntime.Text = data.Runtime;
+            MovieDetails.infoRated.Text = data.Rated;
+            MovieDetails.infoDirector.Text = data.Director;
+            MovieDetails.infoCast.Text = data.Actors;
+            MovieDetails.infoRatingIMDb.Text = data.ImdbRating;
+            MovieDetails.infoImdbId = data.ImdbID;
+
+            try
+            {
+                MovieDetails.imgPoster.Image = UtilityTools.ChangeOpacity(UtilityTools.LoadPicture(data.Poster), 1);
+            }
+            catch { }
+
+            if (data.Poster == "") { MovieDetails.imgPoster.Image = UtilityTools.ChangeOpacity(Properties.Resources.poster_default, 1); }
+
+            try
+            {
+                // Details from Popcorn Time API for Background (fanart/trailer)
+                var jsonPopcornTime = client.DownloadString("https://tv-v2.api-fetch.website/movie/" + MovieDetails.infoImdbId);
+                var dataPT = PopcornTimeEntity.FromJson(jsonPopcornTime);
+
+                try { MovieDetails.BackgroundImage = UtilityTools.ChangeOpacity(UtilityTools.LoadPicture(dataPT.Images.Fanart), 0.2F); }
+                catch { MovieDetails.BackgroundImage = UtilityTools.ChangeOpacity(Properties.Resources.background_original, 0.2F); }
+                MovieDetails.infoFanartUrl = dataPT.Images.Fanart;
+                MovieDetails.infoTrailerUrl = dataPT.Trailer;
+            }
+            catch
+            {
+                MovieDetails.infoFanartUrl = "";
+                MovieDetails.infoTrailerUrl = "";
+            }
+
+            if (MovieDetails.infoFanartUrl == "") { MovieDetails.BackgroundImage = UtilityTools.ChangeOpacity(Properties.Resources.background_original, 0.5F); }
+            if (MovieDetails.infoTrailerUrl == "") { MovieDetails.btnWatchTrailer.Visible = false; }
+
+            foreach (string movieLink in data.Sources)
+            {
+                ctrlStreamInfo ctrlInfo = new ctrlStreamInfo();
+                ctrlInfo.infoFileURL = new Uri(movieLink).AbsoluteUri;
+                ctrlInfo.infoFileHost.Text = new Uri(movieLink).Host.Replace("www.", "");
+                ctrlInfo.infoFileName.Text = Path.GetFileNameWithoutExtension(new Uri(movieLink).LocalPath);
+                MovieDetails.panelStreams.Controls.Add(ctrlInfo);
+            }
+
+            MovieDetails.Dock = DockStyle.Fill;
+            tabBlank.Controls.Clear();
+            tabBlank.Controls.Add(MovieDetails);
+            imgSpinner.Visible = false;
+            tab.SelectedTab = tabBlank;
+        }
 
         // Files (& Sub Tabs)
         string selectedFilesFileType = "", selectedFilesHost = "", selectedFilesQuality = "", selectedFiles = "Movies"; // Files Filter Preferences
@@ -651,6 +713,8 @@ namespace OpenTheatre
 
         public void showFileDetails(string webFile)
         {
+            imgSpinner.Visible = true;
+
             ctrlDetails MovieDetails = new ctrlDetails();
 
             string omdbUrl = null;
@@ -721,26 +785,31 @@ namespace OpenTheatre
                 var jsonPopcornTime = client.DownloadString("https://tv-v2.api-fetch.website/movie/" + MovieDetails.infoImdbId);
                 var data = PopcornTimeEntity.FromJson(jsonPopcornTime);
 
-                try { tabBlank.BackgroundImage = UtilityTools.ChangeOpacity(UtilityTools.LoadPicture(data.Images.Fanart), 0.2F); }
-                catch { tabBlank.BackgroundImage = UtilityTools.ChangeOpacity(Properties.Resources.background_original, 0.2F); }
+                try { MovieDetails.BackgroundImage = UtilityTools.ChangeOpacity(UtilityTools.LoadPicture(data.Images.Fanart), 0.2F); }
+                catch { MovieDetails.BackgroundImage = UtilityTools.ChangeOpacity(Properties.Resources.background_original, 0.2F); }
                 MovieDetails.infoFanartUrl = data.Images.Fanart;
                 MovieDetails.infoTrailerUrl = data.Trailer;
             }
             catch
             {
-                tabBlank.BackgroundImage = UtilityTools.ChangeOpacity(Properties.Resources.background_original, 0.4F);
                 MovieDetails.infoFanartUrl = "";
                 MovieDetails.infoTrailerUrl = "";
             }
+
+            if (MovieDetails.infoFanartUrl == "") { MovieDetails.BackgroundImage = UtilityTools.ChangeOpacity(Properties.Resources.background_original, 0.5F); }
+            if (MovieDetails.infoTrailerUrl == "") { MovieDetails.btnWatchTrailer.Visible = false; }
 
             ctrlStreamInfo ctrlInfo = new ctrlStreamInfo();
             ctrlInfo.infoFileURL = new Uri(webFile).AbsoluteUri;
             ctrlInfo.infoFileHost.Text = new Uri(webFile).Host.Replace("www.", "");
             ctrlInfo.infoFileName.Text = Path.GetFileNameWithoutExtension(new Uri(webFile).LocalPath);
             MovieDetails.panelStreams.Controls.Add(ctrlInfo);
+
             MovieDetails.Dock = DockStyle.Fill;
+
             tabBlank.Controls.Clear();
             tabBlank.Controls.Add(MovieDetails);
+            imgSpinner.Visible = false;
             tab.SelectedTab = tabBlank;
         }
 
@@ -954,7 +1023,7 @@ namespace OpenTheatre
             ctrlItem.doDownloadFile(fileURL);
             currentDownloads.Add(fileURL);
         }
-
+        
         private void panelDownloadItems_ControlAdded(object sender, ControlEventArgs e)
         {
             if (panelDownloads.Controls.Count == 0) { lblNoDownloads.Visible = true; } else { lblNoDownloads.Visible = false; }

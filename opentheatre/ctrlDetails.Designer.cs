@@ -45,28 +45,28 @@
             this.infoSplitter1 = new System.Windows.Forms.Label();
             this.infoSplitter2 = new System.Windows.Forms.Label();
             this.infoSplitter3 = new System.Windows.Forms.Label();
-            this.imgIMDb = new System.Windows.Forms.PictureBox();
             this.infoSplitter4 = new System.Windows.Forms.Label();
             this.infoRatingIMDb = new System.Windows.Forms.Label();
             this.panelSubHeaders = new System.Windows.Forms.Panel();
-            this.imgAddToBookmarks = new System.Windows.Forms.PictureBox();
             this.infoFileHost = new System.Windows.Forms.Label();
             this.infoFileName = new System.Windows.Forms.Label();
             this.lineUserReviews = new CButtonLib.CButton();
-            this.infoFileAddedDate = new System.Windows.Forms.Label();
+            this.infoFileAge = new System.Windows.Forms.Label();
             this.lblHeaderUserReviews = new System.Windows.Forms.Label();
             this.infoFileSize = new System.Windows.Forms.Label();
             this.lineSplitter = new CButtonLib.CButton();
             this.panelStreams = new System.Windows.Forms.FlowLayoutPanel();
             this.btnWatchTrailer = new CButtonLib.CButton();
             this.imgPoster = new System.Windows.Forms.PictureBox();
+            this.imgIMDb = new System.Windows.Forms.PictureBox();
+            this.imgAddToBookmarks = new System.Windows.Forms.PictureBox();
             this.appClose = new System.Windows.Forms.PictureBox();
             this.imgPosterBG = new System.Windows.Forms.PictureBox();
             this.panelDetails.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgIMDb)).BeginInit();
             this.panelSubHeaders.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgAddToBookmarks)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgPoster)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgIMDb)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgAddToBookmarks)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.appClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgPosterBG)).BeginInit();
             this.SuspendLayout();
@@ -294,20 +294,6 @@
             this.infoSplitter3.TabIndex = 1074;
             this.infoSplitter3.Text = "•";
             // 
-            // imgIMDb
-            // 
-            this.imgIMDb.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgIMDb.Image = global::OpenTheatre.Properties.Resources.imdb;
-            this.imgIMDb.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.imgIMDb.Location = new System.Drawing.Point(264, 4);
-            this.imgIMDb.Margin = new System.Windows.Forms.Padding(4, 4, 4, 20);
-            this.imgIMDb.Name = "imgIMDb";
-            this.imgIMDb.Size = new System.Drawing.Size(44, 18);
-            this.imgIMDb.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.imgIMDb.TabIndex = 100041;
-            this.imgIMDb.TabStop = false;
-            this.imgIMDb.Click += new System.EventHandler(this.imgIMDb_Click);
-            // 
             // infoSplitter4
             // 
             this.infoSplitter4.AutoSize = true;
@@ -345,7 +331,7 @@
             this.panelSubHeaders.Controls.Add(this.infoFileHost);
             this.panelSubHeaders.Controls.Add(this.infoFileName);
             this.panelSubHeaders.Controls.Add(this.lineUserReviews);
-            this.panelSubHeaders.Controls.Add(this.infoFileAddedDate);
+            this.panelSubHeaders.Controls.Add(this.infoFileAge);
             this.panelSubHeaders.Controls.Add(this.lblHeaderUserReviews);
             this.panelSubHeaders.Controls.Add(this.infoFileSize);
             this.panelSubHeaders.Controls.Add(this.lineSplitter);
@@ -355,19 +341,6 @@
             this.panelSubHeaders.Name = "panelSubHeaders";
             this.panelSubHeaders.Size = new System.Drawing.Size(690, 54);
             this.panelSubHeaders.TabIndex = 100042;
-            // 
-            // imgAddToBookmarks
-            // 
-            this.imgAddToBookmarks.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.imgAddToBookmarks.BackColor = System.Drawing.Color.Transparent;
-            this.imgAddToBookmarks.Cursor = System.Windows.Forms.Cursors.Default;
-            this.imgAddToBookmarks.Image = global::OpenTheatre.Properties.Resources.bookmark;
-            this.imgAddToBookmarks.Location = new System.Drawing.Point(1, 31);
-            this.imgAddToBookmarks.Name = "imgAddToBookmarks";
-            this.imgAddToBookmarks.Size = new System.Drawing.Size(23, 23);
-            this.imgAddToBookmarks.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.imgAddToBookmarks.TabIndex = 1103;
-            this.imgAddToBookmarks.TabStop = false;
             // 
             // infoFileHost
             // 
@@ -424,19 +397,19 @@
             this.lineUserReviews.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.lineUserReviews.TextShadowShow = false;
             // 
-            // infoFileAddedDate
+            // infoFileAge
             // 
-            this.infoFileAddedDate.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.infoFileAddedDate.AutoEllipsis = true;
-            this.infoFileAddedDate.AutoSize = true;
-            this.infoFileAddedDate.Cursor = System.Windows.Forms.Cursors.Default;
-            this.infoFileAddedDate.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.infoFileAddedDate.Location = new System.Drawing.Point(483, 33);
-            this.infoFileAddedDate.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
-            this.infoFileAddedDate.Name = "infoFileAddedDate";
-            this.infoFileAddedDate.Size = new System.Drawing.Size(77, 17);
-            this.infoFileAddedDate.TabIndex = 5;
-            this.infoFileAddedDate.Text = "Added date";
+            this.infoFileAge.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.infoFileAge.AutoEllipsis = true;
+            this.infoFileAge.AutoSize = true;
+            this.infoFileAge.Cursor = System.Windows.Forms.Cursors.Default;
+            this.infoFileAge.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.infoFileAge.Location = new System.Drawing.Point(454, 33);
+            this.infoFileAge.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
+            this.infoFileAge.Name = "infoFileAge";
+            this.infoFileAge.Size = new System.Drawing.Size(31, 17);
+            this.infoFileAge.TabIndex = 5;
+            this.infoFileAge.Text = "Age";
             // 
             // lblHeaderUserReviews
             // 
@@ -460,7 +433,7 @@
             this.infoFileSize.AutoSize = true;
             this.infoFileSize.Cursor = System.Windows.Forms.Cursors.Default;
             this.infoFileSize.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.infoFileSize.Location = new System.Drawing.Point(412, 33);
+            this.infoFileSize.Location = new System.Drawing.Point(383, 33);
             this.infoFileSize.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
             this.infoFileSize.Name = "infoFileSize";
             this.infoFileSize.Size = new System.Drawing.Size(31, 17);
@@ -552,6 +525,33 @@
             this.imgPoster.TabIndex = 100040;
             this.imgPoster.TabStop = false;
             // 
+            // imgIMDb
+            // 
+            this.imgIMDb.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imgIMDb.Image = global::OpenTheatre.Properties.Resources.imdb;
+            this.imgIMDb.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.imgIMDb.Location = new System.Drawing.Point(264, 4);
+            this.imgIMDb.Margin = new System.Windows.Forms.Padding(4, 4, 4, 20);
+            this.imgIMDb.Name = "imgIMDb";
+            this.imgIMDb.Size = new System.Drawing.Size(44, 18);
+            this.imgIMDb.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgIMDb.TabIndex = 100041;
+            this.imgIMDb.TabStop = false;
+            this.imgIMDb.Click += new System.EventHandler(this.imgIMDb_Click);
+            // 
+            // imgAddToBookmarks
+            // 
+            this.imgAddToBookmarks.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.imgAddToBookmarks.BackColor = System.Drawing.Color.Transparent;
+            this.imgAddToBookmarks.Cursor = System.Windows.Forms.Cursors.Default;
+            this.imgAddToBookmarks.Image = global::OpenTheatre.Properties.Resources.bookmark;
+            this.imgAddToBookmarks.Location = new System.Drawing.Point(1, 31);
+            this.imgAddToBookmarks.Name = "imgAddToBookmarks";
+            this.imgAddToBookmarks.Size = new System.Drawing.Size(23, 23);
+            this.imgAddToBookmarks.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgAddToBookmarks.TabIndex = 1103;
+            this.imgAddToBookmarks.TabStop = false;
+            // 
             // appClose
             // 
             this.appClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -602,11 +602,11 @@
             this.SizeChanged += new System.EventHandler(this.ctrlDetails_SizeChanged);
             this.panelDetails.ResumeLayout(false);
             this.panelDetails.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgIMDb)).EndInit();
             this.panelSubHeaders.ResumeLayout(false);
             this.panelSubHeaders.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgAddToBookmarks)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgPoster)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgIMDb)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgAddToBookmarks)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.appClose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgPosterBG)).EndInit();
             this.ResumeLayout(false);
@@ -643,7 +643,7 @@
         public System.Windows.Forms.FlowLayoutPanel panelStreams;
         public System.Windows.Forms.Label infoFileHost;
         public System.Windows.Forms.Label infoFileName;
-        public System.Windows.Forms.Label infoFileAddedDate;
+        public System.Windows.Forms.Label infoFileAge;
         public System.Windows.Forms.Label infoFileSize;
         private System.Windows.Forms.PictureBox imgAddToBookmarks;
         public CButtonLib.CButton btnWatchTrailer;

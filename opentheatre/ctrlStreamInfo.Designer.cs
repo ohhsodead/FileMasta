@@ -34,20 +34,22 @@
             this.infoFileName = new System.Windows.Forms.Label();
             this.contextFileName = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.OpenWithToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.VLC2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.WMPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.VLCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MPCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.infoFileSize = new System.Windows.Forms.Label();
-            this.infoFileDateAdded = new System.Windows.Forms.Label();
-            this.timerUpdateInfo = new System.Windows.Forms.Timer(this.components);
+            this.imgShare = new System.Windows.Forms.PictureBox();
             this.imgCopyURL = new System.Windows.Forms.PictureBox();
             this.imgReportBroken = new System.Windows.Forms.PictureBox();
             this.imgWatch = new System.Windows.Forms.PictureBox();
             this.imgDownload = new System.Windows.Forms.PictureBox();
             this.imgAddToBookmarks = new System.Windows.Forms.PictureBox();
-            this.VLC2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.WMPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.VLCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.MPCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.infoFileSize = new System.Windows.Forms.Label();
+            this.infoFileAge = new System.Windows.Forms.Label();
+            this.timerUpdateInfo = new System.Windows.Forms.Timer(this.components);
             this.contextFileName.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgShare)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgCopyURL)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgReportBroken)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgWatch)).BeginInit();
@@ -77,7 +79,7 @@
             this.infoFileName.Location = new System.Drawing.Point(160, 3);
             this.infoFileName.Margin = new System.Windows.Forms.Padding(0, 3, 3, 0);
             this.infoFileName.Name = "infoFileName";
-            this.infoFileName.Size = new System.Drawing.Size(218, 17);
+            this.infoFileName.Size = new System.Drawing.Size(189, 17);
             this.infoFileName.TabIndex = 1;
             this.infoFileName.Text = "File Name";
             // 
@@ -100,113 +102,6 @@
             this.OpenWithToolStripMenuItem.Name = "OpenWithToolStripMenuItem";
             this.OpenWithToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
             this.OpenWithToolStripMenuItem.Text = "Open with...";
-            // 
-            // infoFileSize
-            // 
-            this.infoFileSize.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.infoFileSize.AutoEllipsis = true;
-            this.infoFileSize.Cursor = System.Windows.Forms.Cursors.Default;
-            this.infoFileSize.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.infoFileSize.Location = new System.Drawing.Point(381, 3);
-            this.infoFileSize.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
-            this.infoFileSize.Name = "infoFileSize";
-            this.infoFileSize.Size = new System.Drawing.Size(70, 17);
-            this.infoFileSize.TabIndex = 2;
-            this.infoFileSize.Text = "Size";
-            // 
-            // infoFileDateAdded
-            // 
-            this.infoFileDateAdded.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.infoFileDateAdded.AutoEllipsis = true;
-            this.infoFileDateAdded.Cursor = System.Windows.Forms.Cursors.Default;
-            this.infoFileDateAdded.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.infoFileDateAdded.Location = new System.Drawing.Point(451, 3);
-            this.infoFileDateAdded.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
-            this.infoFileDateAdded.Name = "infoFileDateAdded";
-            this.infoFileDateAdded.Size = new System.Drawing.Size(86, 17);
-            this.infoFileDateAdded.TabIndex = 3;
-            this.infoFileDateAdded.Text = "Time ago";
-            // 
-            // timerUpdateInfo
-            // 
-            this.timerUpdateInfo.Enabled = true;
-            this.timerUpdateInfo.Interval = 10000;
-            this.timerUpdateInfo.Tick += new System.EventHandler(this.timerUpdateInfo_Tick);
-            // 
-            // imgCopyURL
-            // 
-            this.imgCopyURL.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.imgCopyURL.BackColor = System.Drawing.Color.Transparent;
-            this.imgCopyURL.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgCopyURL.Image = global::OpenTheatre.Properties.Resources.clipboard_arrow_left;
-            this.imgCopyURL.Location = new System.Drawing.Point(629, 1);
-            this.imgCopyURL.Name = "imgCopyURL";
-            this.imgCopyURL.Size = new System.Drawing.Size(23, 23);
-            this.imgCopyURL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.imgCopyURL.TabIndex = 18;
-            this.imgCopyURL.TabStop = false;
-            this.toolTip1.SetToolTip(this.imgCopyURL, "Copy URL");
-            this.imgCopyURL.Click += new System.EventHandler(this.imgCopyURL_Click);
-            // 
-            // imgReportBroken
-            // 
-            this.imgReportBroken.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.imgReportBroken.BackColor = System.Drawing.Color.Transparent;
-            this.imgReportBroken.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgReportBroken.Image = global::OpenTheatre.Properties.Resources.report;
-            this.imgReportBroken.Location = new System.Drawing.Point(600, 1);
-            this.imgReportBroken.Name = "imgReportBroken";
-            this.imgReportBroken.Size = new System.Drawing.Size(23, 23);
-            this.imgReportBroken.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.imgReportBroken.TabIndex = 17;
-            this.imgReportBroken.TabStop = false;
-            this.toolTip1.SetToolTip(this.imgReportBroken, "Report Broken");
-            this.imgReportBroken.Click += new System.EventHandler(this.imgReportBroken_Click);
-            // 
-            // imgWatch
-            // 
-            this.imgWatch.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.imgWatch.BackColor = System.Drawing.Color.Transparent;
-            this.imgWatch.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgWatch.Image = global::OpenTheatre.Properties.Resources.play_circle;
-            this.imgWatch.Location = new System.Drawing.Point(571, 1);
-            this.imgWatch.Name = "imgWatch";
-            this.imgWatch.Size = new System.Drawing.Size(23, 23);
-            this.imgWatch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.imgWatch.TabIndex = 16;
-            this.imgWatch.TabStop = false;
-            this.toolTip1.SetToolTip(this.imgWatch, "Watch Now");
-            this.imgWatch.Click += new System.EventHandler(this.imgWatch_Click);
-            // 
-            // imgDownload
-            // 
-            this.imgDownload.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.imgDownload.BackColor = System.Drawing.Color.Transparent;
-            this.imgDownload.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgDownload.Image = global::OpenTheatre.Properties.Resources.cloud_download;
-            this.imgDownload.Location = new System.Drawing.Point(540, 1);
-            this.imgDownload.Name = "imgDownload";
-            this.imgDownload.Size = new System.Drawing.Size(23, 23);
-            this.imgDownload.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.imgDownload.TabIndex = 15;
-            this.imgDownload.TabStop = false;
-            this.toolTip1.SetToolTip(this.imgDownload, "Download Now");
-            this.imgDownload.Click += new System.EventHandler(this.imgDownload_Click);
-            // 
-            // imgAddToBookmarks
-            // 
-            this.imgAddToBookmarks.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.imgAddToBookmarks.BackColor = System.Drawing.Color.Transparent;
-            this.imgAddToBookmarks.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgAddToBookmarks.Image = ((System.Drawing.Image)(resources.GetObject("imgAddToBookmarks.Image")));
-            this.imgAddToBookmarks.Location = new System.Drawing.Point(1, 1);
-            this.imgAddToBookmarks.Name = "imgAddToBookmarks";
-            this.imgAddToBookmarks.Size = new System.Drawing.Size(23, 23);
-            this.imgAddToBookmarks.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.imgAddToBookmarks.TabIndex = 14;
-            this.imgAddToBookmarks.TabStop = false;
-            this.toolTip1.SetToolTip(this.imgAddToBookmarks, "Add to Bookmarks");
-            this.imgAddToBookmarks.Click += new System.EventHandler(this.imgAddToBookmarks_Click);
             // 
             // VLC2ToolStripMenuItem
             // 
@@ -243,16 +138,139 @@
             this.MPCToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.MPCToolStripMenuItem.Text = "MPC";
             // 
+            // imgShare
+            // 
+            this.imgShare.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.imgShare.BackColor = System.Drawing.Color.Transparent;
+            this.imgShare.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imgShare.Image = global::OpenTheatre.Properties.Resources.share_variant;
+            this.imgShare.Location = new System.Drawing.Point(629, 1);
+            this.imgShare.Name = "imgShare";
+            this.imgShare.Size = new System.Drawing.Size(23, 23);
+            this.imgShare.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgShare.TabIndex = 19;
+            this.imgShare.TabStop = false;
+            this.toolTip1.SetToolTip(this.imgShare, "Share File");
+            this.imgShare.Click += new System.EventHandler(this.imgShare_Click);
+            // 
+            // imgCopyURL
+            // 
+            this.imgCopyURL.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.imgCopyURL.BackColor = System.Drawing.Color.Transparent;
+            this.imgCopyURL.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imgCopyURL.Image = global::OpenTheatre.Properties.Resources.clipboard_arrow_left;
+            this.imgCopyURL.Location = new System.Drawing.Point(600, 1);
+            this.imgCopyURL.Name = "imgCopyURL";
+            this.imgCopyURL.Size = new System.Drawing.Size(23, 23);
+            this.imgCopyURL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgCopyURL.TabIndex = 18;
+            this.imgCopyURL.TabStop = false;
+            this.toolTip1.SetToolTip(this.imgCopyURL, "Copy URL");
+            this.imgCopyURL.Click += new System.EventHandler(this.imgCopyURL_Click);
+            // 
+            // imgReportBroken
+            // 
+            this.imgReportBroken.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.imgReportBroken.BackColor = System.Drawing.Color.Transparent;
+            this.imgReportBroken.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imgReportBroken.Image = global::OpenTheatre.Properties.Resources.report;
+            this.imgReportBroken.Location = new System.Drawing.Point(571, 1);
+            this.imgReportBroken.Name = "imgReportBroken";
+            this.imgReportBroken.Size = new System.Drawing.Size(23, 23);
+            this.imgReportBroken.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgReportBroken.TabIndex = 17;
+            this.imgReportBroken.TabStop = false;
+            this.toolTip1.SetToolTip(this.imgReportBroken, "Report Broken");
+            this.imgReportBroken.Click += new System.EventHandler(this.imgReportBroken_Click);
+            // 
+            // imgWatch
+            // 
+            this.imgWatch.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.imgWatch.BackColor = System.Drawing.Color.Transparent;
+            this.imgWatch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imgWatch.Image = global::OpenTheatre.Properties.Resources.play_circle;
+            this.imgWatch.Location = new System.Drawing.Point(542, 1);
+            this.imgWatch.Name = "imgWatch";
+            this.imgWatch.Size = new System.Drawing.Size(23, 23);
+            this.imgWatch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgWatch.TabIndex = 16;
+            this.imgWatch.TabStop = false;
+            this.toolTip1.SetToolTip(this.imgWatch, "Watch Now");
+            this.imgWatch.Click += new System.EventHandler(this.imgWatch_Click);
+            // 
+            // imgDownload
+            // 
+            this.imgDownload.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.imgDownload.BackColor = System.Drawing.Color.Transparent;
+            this.imgDownload.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imgDownload.Image = global::OpenTheatre.Properties.Resources.cloud_download;
+            this.imgDownload.Location = new System.Drawing.Point(511, 1);
+            this.imgDownload.Name = "imgDownload";
+            this.imgDownload.Size = new System.Drawing.Size(23, 23);
+            this.imgDownload.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgDownload.TabIndex = 15;
+            this.imgDownload.TabStop = false;
+            this.toolTip1.SetToolTip(this.imgDownload, "Download Now");
+            this.imgDownload.Click += new System.EventHandler(this.imgDownload_Click);
+            // 
+            // imgAddToBookmarks
+            // 
+            this.imgAddToBookmarks.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.imgAddToBookmarks.BackColor = System.Drawing.Color.Transparent;
+            this.imgAddToBookmarks.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imgAddToBookmarks.Image = ((System.Drawing.Image)(resources.GetObject("imgAddToBookmarks.Image")));
+            this.imgAddToBookmarks.Location = new System.Drawing.Point(1, 1);
+            this.imgAddToBookmarks.Name = "imgAddToBookmarks";
+            this.imgAddToBookmarks.Size = new System.Drawing.Size(23, 23);
+            this.imgAddToBookmarks.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgAddToBookmarks.TabIndex = 14;
+            this.imgAddToBookmarks.TabStop = false;
+            this.toolTip1.SetToolTip(this.imgAddToBookmarks, "Add to Bookmarks");
+            this.imgAddToBookmarks.Click += new System.EventHandler(this.imgAddToBookmarks_Click);
+            // 
+            // infoFileSize
+            // 
+            this.infoFileSize.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.infoFileSize.AutoEllipsis = true;
+            this.infoFileSize.Cursor = System.Windows.Forms.Cursors.Default;
+            this.infoFileSize.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.infoFileSize.Location = new System.Drawing.Point(352, 3);
+            this.infoFileSize.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
+            this.infoFileSize.Name = "infoFileSize";
+            this.infoFileSize.Size = new System.Drawing.Size(70, 17);
+            this.infoFileSize.TabIndex = 2;
+            this.infoFileSize.Text = "Size";
+            // 
+            // infoFileAge
+            // 
+            this.infoFileAge.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.infoFileAge.AutoEllipsis = true;
+            this.infoFileAge.Cursor = System.Windows.Forms.Cursors.Default;
+            this.infoFileAge.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.infoFileAge.Location = new System.Drawing.Point(422, 3);
+            this.infoFileAge.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
+            this.infoFileAge.Name = "infoFileAge";
+            this.infoFileAge.Size = new System.Drawing.Size(86, 17);
+            this.infoFileAge.TabIndex = 3;
+            this.infoFileAge.Text = "Age";
+            // 
+            // timerUpdateInfo
+            // 
+            this.timerUpdateInfo.Enabled = true;
+            this.timerUpdateInfo.Interval = 10000;
+            this.timerUpdateInfo.Tick += new System.EventHandler(this.timerUpdateInfo_Tick);
+            // 
             // ctrlStreamInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
+            this.Controls.Add(this.imgShare);
             this.Controls.Add(this.imgCopyURL);
             this.Controls.Add(this.infoFileName);
             this.Controls.Add(this.infoFileHost);
             this.Controls.Add(this.imgReportBroken);
-            this.Controls.Add(this.infoFileDateAdded);
+            this.Controls.Add(this.infoFileAge);
             this.Controls.Add(this.infoFileSize);
             this.Controls.Add(this.imgWatch);
             this.Controls.Add(this.imgDownload);
@@ -265,6 +283,7 @@
             this.Size = new System.Drawing.Size(653, 25);
             this.Load += new System.EventHandler(this.ctrlStreamInfo_Load);
             this.contextFileName.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.imgShare)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgCopyURL)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgReportBroken)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgWatch)).EndInit();
@@ -289,9 +308,10 @@
         private System.Windows.Forms.PictureBox imgReportBroken;
         private System.Windows.Forms.ToolTip toolTip1;
         public System.Windows.Forms.Label infoFileSize;
-        public System.Windows.Forms.Label infoFileDateAdded;
+        public System.Windows.Forms.Label infoFileAge;
         private System.Windows.Forms.ToolStripMenuItem VLC2ToolStripMenuItem;
         private System.Windows.Forms.PictureBox imgCopyURL;
         private System.Windows.Forms.Timer timerUpdateInfo;
+        private System.Windows.Forms.PictureBox imgShare;
     }
 }

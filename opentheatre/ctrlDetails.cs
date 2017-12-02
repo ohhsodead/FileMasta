@@ -58,11 +58,7 @@ namespace OpenTheatre
 
         private void btnWatchTrailer_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            var a = new frmVLCPlayer();
-            a.Text = "Trailer: " + infoTitle.Text + " (" + infoYear.Text + ")";
-            a.axVLCPlugin21.playlist.add(infoTrailerUrl);
-            a.axVLCPlugin21.playlist.play();
-            a.Show();
+            Process.Start(infoTrailerUrl);
         }
     }
 }

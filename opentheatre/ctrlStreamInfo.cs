@@ -38,9 +38,9 @@ namespace OpenTheatre
                     DateTime fileModifiedTime = fileResponse.LastModified;
                     if (fileModifiedTime != null)
                     {
-                        infoFileDateAdded.Text = UtilityTools.getTimeAgo(fileModifiedTime);
+                        infoFileAge.Text = UtilityTools.getTimeAgo(fileModifiedTime);
                     }
-                    else { infoFileDateAdded.Text = "n/a"; }
+                    else { infoFileAge.Text = "n/a"; }
 
                     int ContentLength;
                     if (int.TryParse(fileResponse.Headers.Get("Content-Length"), out ContentLength))
@@ -49,7 +49,7 @@ namespace OpenTheatre
                     } else { infoFileSize.Text = "n/a"; }
                 }
             }
-            catch { infoFileSize.Text = "n/a"; infoFileDateAdded.Text = "n/a"; }
+            catch { infoFileSize.Text = "n/a"; infoFileAge.Text = "n/a"; }
 
             // Compares the two file sizes; must have the same file name
             if (UtilityTools.isFileSizeIdentical(infoFileSize.Text, infoFileURL) == true) { imgDownload.Image = Properties.Resources.cloud_done; }
@@ -145,6 +145,13 @@ namespace OpenTheatre
         private void timerUpdateInfo_Tick(object sender, EventArgs e)
         {
             if (File.Exists(Properties.Settings.Default.downloadsDirectory + Path.GetFileName(new Uri(infoFileURL).LocalPath)) && infoFileSize.Text == UtilityTools.ToFileSize(Convert.ToDouble(new FileInfo(Properties.Settings.Default.downloadsDirectory + Path.GetFileName(new Uri(infoFileURL).LocalPath)).Length))) { imgDownload.Image = Properties.Resources.cloud_done; }
+        }
+
+        private void imgShare_Click(object sender, EventArgs e)
+        {
+            var a = new frmShareFile();
+            a.infoFileURL = infoFileURL;
+            a.ShowDialog(this);
         }
     }
 }
