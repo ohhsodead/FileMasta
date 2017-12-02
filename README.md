@@ -25,7 +25,7 @@ It communicates with its own [API](https://dropbox.com/sh/bqb14ty282xm9xi/AACeni
 - Local cache updating every 12 hours
 
 ## Latest build
-OpenTheatre 2.0.6
+OpenTheatre 2.7.0
 
 ## Framework & Backend
 The application is using .NET 4.6.2 WinForms Framework written in C#
@@ -34,7 +34,7 @@ The application is using .NET 4.6.2 WinForms Framework written in C#
 Windows 7 and above (Windows 7, 8, 8.1, 10)
 
 ## Installation
-Download the latest installer [here](https://github.com/invu/opentheatre-app/releases/download/0.2.0.6/OpenTheatreInstaller.exe)
+Download the latest installer [here](https://github.com/invu/opentheatre-app/releases/download/0.2.7.0/OpenTheatreInstaller.exe)
 
 ## Screenshots
 ### Movies
