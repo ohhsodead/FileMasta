@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOpenTheatre));
             this.tab = new System.Windows.Forms.TabControl();
             this.tabMovies = new System.Windows.Forms.TabPage();
@@ -138,6 +138,7 @@
             this.titleLineMovies = new CButtonLib.CButton();
             this.titleFiles = new System.Windows.Forms.Label();
             this.titleMovies = new System.Windows.Forms.Label();
+            this.titleFilesLocal = new CButtonLib.CButton();
             this.imgSpinner = new System.Windows.Forms.PictureBox();
             this.imgSettings = new System.Windows.Forms.PictureBox();
             this.imgBookmarks = new System.Windows.Forms.PictureBox();
@@ -291,9 +292,9 @@
             // 
             this.panelMovieFilters.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelMovieFilters.Controls.Add(this.panelMoviesRandom);
             this.panelMovieFilters.Controls.Add(this.panelMoviesGenre);
             this.panelMovieFilters.Controls.Add(this.panelMoviesYear);
-            this.panelMovieFilters.Controls.Add(this.panelMoviesRandom);
             this.panelMovieFilters.Location = new System.Drawing.Point(419, 13);
             this.panelMovieFilters.Margin = new System.Windows.Forms.Padding(4, 3, 3, 3);
             this.panelMovieFilters.Name = "panelMovieFilters";
@@ -304,7 +305,7 @@
             // 
             this.panelMoviesGenre.Controls.Add(this.btnMoviesGenre);
             this.panelMoviesGenre.Controls.Add(this.cmboBoxMoviesGenre);
-            this.panelMoviesGenre.Location = new System.Drawing.Point(0, 0);
+            this.panelMoviesGenre.Location = new System.Drawing.Point(138, 0);
             this.panelMoviesGenre.Margin = new System.Windows.Forms.Padding(0, 0, 7, 0);
             this.panelMoviesGenre.Name = "panelMoviesGenre";
             this.panelMoviesGenre.Size = new System.Drawing.Size(109, 36);
@@ -346,7 +347,7 @@
             // 
             this.panelMoviesYear.Controls.Add(this.btnMoviesYear);
             this.panelMoviesYear.Controls.Add(this.cmboBoxMoviesYear);
-            this.panelMoviesYear.Location = new System.Drawing.Point(116, 0);
+            this.panelMoviesYear.Location = new System.Drawing.Point(254, 0);
             this.panelMoviesYear.Margin = new System.Windows.Forms.Padding(0, 0, 7, 0);
             this.panelMoviesYear.Name = "panelMoviesYear";
             this.panelMoviesYear.Size = new System.Drawing.Size(98, 36);
@@ -396,7 +397,7 @@
             // panelMoviesRandom
             // 
             this.panelMoviesRandom.Controls.Add(this.btnMoviesRandom);
-            this.panelMoviesRandom.Location = new System.Drawing.Point(221, 0);
+            this.panelMoviesRandom.Location = new System.Drawing.Point(0, 0);
             this.panelMoviesRandom.Margin = new System.Windows.Forms.Padding(0, 0, 7, 0);
             this.panelMoviesRandom.Name = "panelMoviesRandom";
             this.panelMoviesRandom.Size = new System.Drawing.Size(131, 36);
@@ -446,8 +447,9 @@
             this.tabFiles.Controls.Add(this.titleFilesSubtitles);
             this.tabFiles.Controls.Add(this.titleFilesTorrents);
             this.tabFiles.Controls.Add(this.titleFilesArchives);
-            this.tabFiles.Controls.Add(this.bgFilesSearchBox);
             this.tabFiles.Controls.Add(this.btnSearchFiles);
+            this.tabFiles.Controls.Add(this.bgFilesSearchBox);
+            this.tabFiles.Controls.Add(this.titleFilesLocal);
             this.tabFiles.ForeColor = System.Drawing.Color.White;
             this.tabFiles.Location = new System.Drawing.Point(4, 22);
             this.tabFiles.Name = "tabFiles";
@@ -627,15 +629,15 @@
             this.dataGridFiles.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridFiles.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             this.dataGridFiles.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
-            dataGridViewCellStyle21.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            dataGridViewCellStyle21.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle21.Padding = new System.Windows.Forms.Padding(10, 4, 0, 4);
-            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
-            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridFiles.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(10, 4, 0, 4);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridFiles.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridFiles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridFiles.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.columnFilesFileName,
@@ -652,12 +654,12 @@
             this.dataGridFiles.ReadOnly = true;
             this.dataGridFiles.RowHeadersVisible = false;
             this.dataGridFiles.RowHeadersWidth = 40;
-            dataGridViewCellStyle25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
-            dataGridViewCellStyle25.Font = new System.Drawing.Font("Segoe UI", 10.25F);
-            dataGridViewCellStyle25.ForeColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
-            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGridFiles.RowsDefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10.25F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridFiles.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridFiles.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
             this.dataGridFiles.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 10.25F);
             this.dataGridFiles.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Silver;
@@ -675,8 +677,8 @@
             // columnFilesFileName
             // 
             this.columnFilesFileName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle22.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.columnFilesFileName.DefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.columnFilesFileName.DefaultCellStyle = dataGridViewCellStyle2;
             this.columnFilesFileName.HeaderText = "File Name";
             this.columnFilesFileName.Name = "columnFilesFileName";
             this.columnFilesFileName.ReadOnly = true;
@@ -692,8 +694,8 @@
             // columnFilesHost
             // 
             this.columnFilesHost.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.columnFilesHost.DefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.columnFilesHost.DefaultCellStyle = dataGridViewCellStyle3;
             this.columnFilesHost.HeaderText = "Host";
             this.columnFilesHost.Name = "columnFilesHost";
             this.columnFilesHost.ReadOnly = true;
@@ -701,8 +703,8 @@
             // 
             // columnFilesURL
             // 
-            dataGridViewCellStyle24.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.columnFilesURL.DefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.columnFilesURL.DefaultCellStyle = dataGridViewCellStyle4;
             this.columnFilesURL.HeaderText = "URL";
             this.columnFilesURL.Name = "columnFilesURL";
             this.columnFilesURL.ReadOnly = true;
@@ -997,15 +999,15 @@
             this.dataGridBookmarks.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridBookmarks.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             this.dataGridBookmarks.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
-            dataGridViewCellStyle26.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            dataGridViewCellStyle26.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle26.Padding = new System.Windows.Forms.Padding(10, 4, 0, 4);
-            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
-            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridBookmarks.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(10, 4, 0, 4);
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridBookmarks.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridBookmarks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridBookmarks.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.columnBookmarksType,
@@ -1023,12 +1025,12 @@
             this.dataGridBookmarks.ReadOnly = true;
             this.dataGridBookmarks.RowHeadersVisible = false;
             this.dataGridBookmarks.RowHeadersWidth = 40;
-            dataGridViewCellStyle30.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
-            dataGridViewCellStyle30.Font = new System.Drawing.Font("Segoe UI", 10.25F);
-            dataGridViewCellStyle30.ForeColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
-            dataGridViewCellStyle30.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGridBookmarks.RowsDefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 10.25F);
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridBookmarks.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridBookmarks.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
             this.dataGridBookmarks.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 10.25F);
             this.dataGridBookmarks.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Silver;
@@ -1053,8 +1055,8 @@
             // columnBookmarksFileName
             // 
             this.columnBookmarksFileName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle27.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.columnBookmarksFileName.DefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.columnBookmarksFileName.DefaultCellStyle = dataGridViewCellStyle7;
             this.columnBookmarksFileName.HeaderText = "File Name";
             this.columnBookmarksFileName.Name = "columnBookmarksFileName";
             this.columnBookmarksFileName.ReadOnly = true;
@@ -1070,8 +1072,8 @@
             // columnBookmarksHost
             // 
             this.columnBookmarksHost.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle28.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.columnBookmarksHost.DefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.columnBookmarksHost.DefaultCellStyle = dataGridViewCellStyle8;
             this.columnBookmarksHost.HeaderText = "Host";
             this.columnBookmarksHost.Name = "columnBookmarksHost";
             this.columnBookmarksHost.ReadOnly = true;
@@ -1079,8 +1081,8 @@
             // 
             // columnBookmarksURL
             // 
-            dataGridViewCellStyle29.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.columnBookmarksURL.DefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.columnBookmarksURL.DefaultCellStyle = dataGridViewCellStyle9;
             this.columnBookmarksURL.HeaderText = "URL";
             this.columnBookmarksURL.Name = "columnBookmarksURL";
             this.columnBookmarksURL.ReadOnly = true;
@@ -1960,11 +1962,37 @@
             this.titleMovies.Text = "Movies";
             this.titleMovies.Click += new System.EventHandler(this.imgMovies_Click);
             // 
+            // titleFilesLocal
+            // 
+            this.titleFilesLocal.BackColor = System.Drawing.Color.Transparent;
+            this.titleFilesLocal.BorderColor = System.Drawing.Color.Transparent;
+            this.titleFilesLocal.ColorFillSolid = System.Drawing.Color.Transparent;
+            this.titleFilesLocal.Corners.UpperLeft = 2;
+            this.titleFilesLocal.Corners.UpperRight = 2;
+            this.titleFilesLocal.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.titleFilesLocal.DesignerSelected = false;
+            this.titleFilesLocal.DimFactorClick = 0;
+            this.titleFilesLocal.DimFactorHover = 0;
+            this.titleFilesLocal.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.titleFilesLocal.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titleFilesLocal.ImageIndex = 0;
+            this.titleFilesLocal.Location = new System.Drawing.Point(417, 63);
+            this.titleFilesLocal.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
+            this.titleFilesLocal.Name = "titleFilesLocal";
+            this.titleFilesLocal.ShowFocus = CButtonLib.CButton.eFocus.Dim;
+            this.titleFilesLocal.Size = new System.Drawing.Size(56, 27);
+            this.titleFilesLocal.TabIndex = 11;
+            this.titleFilesLocal.TabStop = false;
+            this.titleFilesLocal.Text = "Local";
+            this.titleFilesLocal.TextShadowShow = false;
+            this.titleFilesLocal.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.titleFilesLocal_ClickButtonArea);
+            // 
             // imgSpinner
             // 
             this.imgSpinner.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.imgSpinner.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
             this.imgSpinner.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imgSpinner.Image = global::OpenTheatre.Properties.Resources.loading;
             this.imgSpinner.Location = new System.Drawing.Point(514, 249);
             this.imgSpinner.Name = "imgSpinner";
             this.imgSpinner.Size = new System.Drawing.Size(20, 20);
@@ -1976,6 +2004,7 @@
             // 
             this.imgSettings.BackColor = System.Drawing.Color.Transparent;
             this.imgSettings.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imgSettings.Image = global::OpenTheatre.Properties.Resources.settings;
             this.imgSettings.Location = new System.Drawing.Point(17, 233);
             this.imgSettings.Name = "imgSettings";
             this.imgSettings.Size = new System.Drawing.Size(22, 22);
@@ -1988,6 +2017,7 @@
             // 
             this.imgBookmarks.BackColor = System.Drawing.Color.Transparent;
             this.imgBookmarks.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imgBookmarks.Image = global::OpenTheatre.Properties.Resources.bookmark;
             this.imgBookmarks.Location = new System.Drawing.Point(17, 101);
             this.imgBookmarks.Name = "imgBookmarks";
             this.imgBookmarks.Size = new System.Drawing.Size(22, 22);
@@ -2000,6 +2030,7 @@
             // 
             this.imgDownloads.BackColor = System.Drawing.Color.Transparent;
             this.imgDownloads.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imgDownloads.Image = global::OpenTheatre.Properties.Resources.file_download;
             this.imgDownloads.Location = new System.Drawing.Point(17, 140);
             this.imgDownloads.Name = "imgDownloads";
             this.imgDownloads.Size = new System.Drawing.Size(22, 22);
@@ -2012,6 +2043,7 @@
             // 
             this.imgAbout.BackColor = System.Drawing.Color.Transparent;
             this.imgAbout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imgAbout.Image = global::OpenTheatre.Properties.Resources.info;
             this.imgAbout.Location = new System.Drawing.Point(17, 272);
             this.imgAbout.Name = "imgAbout";
             this.imgAbout.Size = new System.Drawing.Size(22, 22);
@@ -2024,6 +2056,7 @@
             // 
             this.imgFiles.BackColor = System.Drawing.Color.Transparent;
             this.imgFiles.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imgFiles.Image = global::OpenTheatre.Properties.Resources.folder;
             this.imgFiles.Location = new System.Drawing.Point(17, 63);
             this.imgFiles.Name = "imgFiles";
             this.imgFiles.Size = new System.Drawing.Size(22, 22);
@@ -2036,6 +2069,7 @@
             // 
             this.imgMovies.BackColor = System.Drawing.Color.Transparent;
             this.imgMovies.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imgMovies.Image = global::OpenTheatre.Properties.Resources.local_movies;
             this.imgMovies.Location = new System.Drawing.Point(17, 23);
             this.imgMovies.Name = "imgMovies";
             this.imgMovies.Size = new System.Drawing.Size(22, 22);
@@ -2389,6 +2423,7 @@
             // 
             this.imgSettingsDownloadsDirectory.BackColor = System.Drawing.Color.Transparent;
             this.imgSettingsDownloadsDirectory.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imgSettingsDownloadsDirectory.Image = global::OpenTheatre.Properties.Resources.folder_open;
             this.imgSettingsDownloadsDirectory.Location = new System.Drawing.Point(579, 154);
             this.imgSettingsDownloadsDirectory.Name = "imgSettingsDownloadsDirectory";
             this.imgSettingsDownloadsDirectory.Size = new System.Drawing.Size(22, 22);
@@ -2608,6 +2643,7 @@
         public System.Windows.Forms.PictureBox imgSpinner;
         private System.Windows.Forms.Panel panelMoviesRandom;
         private CButtonLib.CButton btnMoviesRandom;
+        private CButtonLib.CButton titleFilesLocal;
     }
 }
 

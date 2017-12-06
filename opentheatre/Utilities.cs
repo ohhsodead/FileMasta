@@ -28,6 +28,27 @@ namespace Utilities
                 "File Name: " + new Uri(webFile).LocalPath);
         }
 
+        // compare local and online files (used for updating database)
+        public static bool doUpdateFile(string dbFile)
+        {
+            try
+            {
+                WebRequest req = WebRequest.Create(dbFile);
+                req.Method = "HEAD";
+                req.Timeout = 1500;
+                using (HttpWebResponse fileResponse = (HttpWebResponse)req.GetResponse())
+                {
+                    int ContentLength;
+                    if (int.TryParse(fileResponse.Headers.Get("Content-Length"), out ContentLength))
+                    {
+                        infoFileSize.Text = UtilityTools.ToFileSize(Convert.ToDouble(ContentLength));
+                    }
+                    else { infoFileSize.Text = "n/a"; }
+                }
+            }
+            catch { return true; }
+        }
+
         // return list that contains file
         public static string getContainingListOfURL(string fileUrl)
         {
@@ -293,6 +314,19 @@ namespace Utilities
                 int years = Convert.ToInt32(Math.Floor((double)ts.Days / 365));
                 return years <= 1 ? "1 year" : years + " years";
             }
+        }
+
+        // check for internet connection
+        public static bool checkForInternetConnection()
+        {
+            try
+            {
+                using (var client = new WebClient())
+                using (var stream = client.OpenRead("https://google.com"))
+                {
+                    return true;
+                }
+            } catch { return false; }
         }
 
         // check app for updates, installs installer if available

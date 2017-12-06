@@ -70,13 +70,11 @@ namespace OpenTheatre
         
         private void frmOpenTheatre_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (e.CloseReason == CloseReason.UserClosing) { Properties.Settings.Default.Save(); if (Properties.Settings.Default.clearDataOnClose == true) { Directory.Delete(pathData, true); } }
+            if (e.CloseReason == CloseReason.UserClosing) { Properties.Settings.Default.Save(); if (Properties.Settings.Default.clearDataOnClose == true) { if (Directory.Exists(pathData)) { Directory.Delete(pathData, true); } } }
         }
 
         private void frmOpenTheatre_Load(object sender, EventArgs e)
         {
-            UtilityTools.checkForUpdate();
-
             if (Properties.Settings.Default.downloadsDirectory == "") { Properties.Settings.Default.downloadsDirectory = pathDownloadsDefault; Directory.CreateDirectory(pathDownloadsDefault); }
             loadSettings();
 
@@ -90,17 +88,23 @@ namespace OpenTheatre
 
             lblAboutVersion.Text = "v" + Application.ProductVersion;
 
-            worker = new BackgroundWorker();
-            worker.DoWork += worker_DoWork;
-            worker.RunWorkerCompleted += worker_RunWorkerCompleted;
-            worker.RunWorkerAsync();
-        }
+            if (UtilityTools.checkForInternetConnection() == true)
+            {
+                UtilityTools.checkForUpdate();
 
+                worker = new BackgroundWorker();
+                worker.DoWork += worker_DoWork;
+                worker.RunWorkerCompleted += worker_RunWorkerCompleted;
+                worker.RunWorkerAsync();
+            }
+            else
+            {
+                showStatusTab("No Internet connection found. You need to be connected to the Internet to use OpenTheatre. Please check your connection or try again.");
+            }
+        }
 
         void worker_DoWork(object sender, DoWorkEventArgs e)
         {
-            string errorFile = "null";
-
             try
             {
                 //
@@ -171,8 +175,11 @@ namespace OpenTheatre
 
                 dataFilesArchives = File.ReadAllLines(pathData + "open-archives-files.json");
                 //
+
+                // Get Local Files
+                loadLocalFiles();
             }
-            catch (Exception ex) { MessageBox.Show("We're unable to load database at this time. If this issue persists please open an issue on our GitHub page. (" + errorFile +")\n\n" + ex.Message); }
+            catch (Exception ex) { showStatusTab("Failed to connect to server. If this issue persists please open an issue on our GitHub page.\n\n" + ex.Message); Directory.Delete(pathData, true); }
         }
 
         void worker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
@@ -182,8 +189,26 @@ namespace OpenTheatre
             Controls.Remove(frmSplash);
         }
 
+        public void showStatusTab(string errorText)
+        {
+            // throws error with  control on Movies tab (WIP)
+            imgSpinner.Visible = false;
+            ctrlStatus a = new ctrlStatus();
+            a.BackColor = tabMovies.BackColor;
+            a.BackgroundImage = UtilityTools.ChangeOpacity(Properties.Resources.background_original, 0.5F);
+            a.titleStatus.Text = errorText;
+            a.Dock = DockStyle.Fill;
+            a.Show();
+            tabMovies.Controls.Clear();
+            tabMovies.Padding = new Padding(0, 0, 0, 0);
+            tabMovies.Controls.Add(a);
+            Controls.Remove(frmSplash);
+        }
+
+        // Data, Movies, Files... & Everything else
+
         public static string[] dataFilesArchives, dataFilesTorrents, dataFilesSubtitles, dataFilesAnime, dataFilesSeries, dataFilesMovies, dataMovies;
-        
+        public static List<string> dataFilesLocal = new List<string>();
 
         // Core Tabs
         public TabPage currentTab;
@@ -455,6 +480,8 @@ namespace OpenTheatre
         // Random Movie Button (I'm Feeling Lucky)
         private void btnMoviesRandom_ClickButtonArea(object Sender, MouseEventArgs e)
         {
+            imgSpinner.Visible = true;
+
             var data = OMDbEntity.FromJson(UtilityTools.Random(dataMovies));
 
             ctrlDetails MovieDetails = new ctrlDetails();
@@ -514,8 +541,24 @@ namespace OpenTheatre
             tab.SelectedTab = tabBlank;
         }
 
-        // Files (& Sub Tabs)
+
+        // Files
         string selectedFilesFileType = "", selectedFilesHost = "", selectedFilesQuality = "", selectedFiles = "Movies"; // Files Filter Preferences
+
+        private void loadLocalFiles()
+        {
+            dataFilesLocal.Clear();
+
+            foreach (string fileName in Directory.GetFiles(Properties.Settings.Default.downloadsDirectory))
+            {
+                var data = new DatabaseFilesEntity();
+                data.Title = Path.GetFileNameWithoutExtension(fileName);
+                data.Host = "local";
+                data.Type = Path.GetExtension(fileName).Replace(".", "").ToUpper();
+                data.URL = fileName;
+                dataFilesLocal.Add(data.ToJson());
+            }
+        }
 
         private void titleFilesMovies_ClickButtonArea(object Sender, MouseEventArgs e)
         {
@@ -533,6 +576,8 @@ namespace OpenTheatre
             titleFilesTorrents.BorderColor = Color.Transparent;
             titleFilesArchives.ColorFillSolid = Color.Transparent;
             titleFilesArchives.BorderColor = Color.Transparent;
+            titleFilesLocal.ColorFillSolid = Color.Transparent;
+            titleFilesLocal.BorderColor = Color.Transparent;
 
             searchFiles(dataFilesMovies);
         }
@@ -553,6 +598,8 @@ namespace OpenTheatre
             titleFilesTorrents.BorderColor = Color.Transparent;
             titleFilesArchives.ColorFillSolid = Color.Transparent;
             titleFilesArchives.BorderColor = Color.Transparent;
+            titleFilesLocal.ColorFillSolid = Color.Transparent;
+            titleFilesLocal.BorderColor = Color.Transparent;
 
             searchFiles(dataFilesAnime);
         }
@@ -573,6 +620,8 @@ namespace OpenTheatre
             titleFilesTorrents.BorderColor = Color.Transparent;
             titleFilesArchives.ColorFillSolid = Color.Transparent;
             titleFilesArchives.BorderColor = Color.Transparent;
+            titleFilesLocal.ColorFillSolid = Color.Transparent;
+            titleFilesLocal.BorderColor = Color.Transparent;
 
             searchFiles(dataFilesSeries);
         }
@@ -593,6 +642,8 @@ namespace OpenTheatre
             titleFilesTorrents.BorderColor = Color.FromArgb(42, 42, 42);
             titleFilesArchives.ColorFillSolid = Color.Transparent;
             titleFilesArchives.BorderColor = Color.Transparent;
+            titleFilesLocal.ColorFillSolid = Color.Transparent;
+            titleFilesLocal.BorderColor = Color.Transparent;
 
             searchFiles(dataFilesTorrents);
         }
@@ -613,6 +664,8 @@ namespace OpenTheatre
             titleFilesTorrents.BorderColor = Color.Transparent;
             titleFilesArchives.ColorFillSolid = Color.Transparent;
             titleFilesArchives.BorderColor = Color.Transparent;
+            titleFilesLocal.ColorFillSolid = Color.Transparent;
+            titleFilesLocal.BorderColor = Color.Transparent;
 
             searchFiles(dataFilesSubtitles);
         }
@@ -634,8 +687,33 @@ namespace OpenTheatre
             titleFilesTorrents.BorderColor = Color.Transparent;
             titleFilesArchives.ColorFillSolid = Color.FromArgb(42, 42, 42);
             titleFilesArchives.BorderColor = Color.FromArgb(42, 42, 42);
+            titleFilesLocal.ColorFillSolid = Color.Transparent;
+            titleFilesLocal.BorderColor = Color.Transparent;
 
             searchFiles(dataFilesArchives);
+        }
+
+        private void titleFilesLocal_ClickButtonArea(object Sender, MouseEventArgs e)
+        {
+            selectedFiles = "Local";
+
+            titleFilesMovies.ColorFillSolid = Color.Transparent;
+            titleFilesMovies.BorderColor = Color.Transparent;
+            titleFilesSeries.ColorFillSolid = Color.Transparent;
+            titleFilesSeries.BorderColor = Color.Transparent;
+            titleFilesAnime.ColorFillSolid = Color.Transparent;
+            titleFilesAnime.BorderColor = Color.Transparent;
+            titleFilesSubtitles.ColorFillSolid = Color.Transparent;
+            titleFilesSubtitles.BorderColor = Color.Transparent;
+            titleFilesTorrents.ColorFillSolid = Color.Transparent;
+            titleFilesTorrents.BorderColor = Color.Transparent;
+            titleFilesArchives.ColorFillSolid = Color.Transparent;
+            titleFilesArchives.BorderColor = Color.Transparent;
+            titleFilesLocal.ColorFillSolid = Color.FromArgb(42, 42, 42);
+            titleFilesLocal.BorderColor = Color.FromArgb(42, 42, 42);
+
+            loadLocalFiles();
+            searchFiles(dataFilesLocal.ToArray());
         }
 
         private void dataGridFiles_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
@@ -645,7 +723,8 @@ namespace OpenTheatre
 
         private void dataGridFiles_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            showFileDetails(dataGridFiles.CurrentRow.Cells[3].Value.ToString());
+            if (dataGridFiles.CurrentRow.Cells[2].Value.ToString() == "local") { showFileDetails(dataGridFiles.CurrentRow.Cells[3].Value.ToString(), true); }
+            else { showFileDetails(dataGridFiles.CurrentRow.Cells[3].Value.ToString(), false); }
         }
 
         public void showSelectedFiles()
@@ -683,6 +762,8 @@ namespace OpenTheatre
 
         public void searchFiles(string[] data)
         {
+            imgSpinner.Visible = true;
+
             string errorFile = "null";
 
             try
@@ -708,10 +789,12 @@ namespace OpenTheatre
                     }
                 }
             }
-            catch (Exception ex) { MessageBox.Show("Unable to search database. Please try again in a moment. (" + errorFile +")\n\n" + ex.Message); }
+            catch (Exception ex) { showStatusTab("Error loading data, try again later...\n\n" + ex.Message); }
+
+            imgSpinner.Visible = false;
         }
 
-        public void showFileDetails(string webFile)
+        public void showFileDetails(string webFile, bool isLocal)
         {
             imgSpinner.Visible = true;
 
@@ -800,9 +883,10 @@ namespace OpenTheatre
             if (MovieDetails.infoTrailerUrl == "") { MovieDetails.btnWatchTrailer.Visible = false; }
 
             ctrlStreamInfo ctrlInfo = new ctrlStreamInfo();
-            ctrlInfo.infoFileURL = new Uri(webFile).AbsoluteUri;
+            ctrlInfo.infoFileURL = webFile;
             ctrlInfo.infoFileHost.Text = new Uri(webFile).Host.Replace("www.", "");
             ctrlInfo.infoFileName.Text = Path.GetFileNameWithoutExtension(new Uri(webFile).LocalPath);
+            ctrlInfo.isLocal = isLocal;
             MovieDetails.panelStreams.Controls.Add(ctrlInfo);
 
             MovieDetails.Dock = DockStyle.Fill;
@@ -836,6 +920,8 @@ namespace OpenTheatre
 
         private void cmboBoxFilesSort_SelectedIndexChanged(object sender, EventArgs e)
         {
+            imgSpinner.Visible = true;
+
             btnFilesSort.Text = "Sort : " + cmboBoxFilesSort.SelectedItem.ToString();
 
             Font myFont = new Font(btnFilesSort.Font.FontFamily, this.btnFilesSort.Font.Size);
@@ -845,6 +931,8 @@ namespace OpenTheatre
             if (cmboBoxFilesSort.SelectedIndex == 0) { cmboBoxFilesSort.DropDownWidth = DropDownWidth(cmboBoxFilesSort); showSelectedFiles(); }
             else if (cmboBoxFilesSort.SelectedIndex == 1) { dataGridFiles.Sort(dataGridFiles.Columns[0], ListSortDirection.Ascending); }
             else if (cmboBoxFilesSort.SelectedIndex == 2) { dataGridFiles.Sort(dataGridFiles.Columns[0], ListSortDirection.Descending); }
+
+            imgSpinner.Visible = false;
         }
 
         // Filter Files by File Format
@@ -930,11 +1018,14 @@ namespace OpenTheatre
         
         private void dataGridBookmarks_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            showFileDetails(dataGridBookmarks.CurrentRow.Cells[4].Value.ToString());
+            if (dataGridFiles.CurrentRow.Cells[3].Value.ToString() == "local") showFileDetails(dataGridFiles.CurrentRow.Cells[4].Value.ToString(), true);
+            else showFileDetails(dataGridFiles.CurrentRow.Cells[4].Value.ToString(), false);
         }
 
         public void searchBookmarks()
         {
+            imgSpinner.Visible = true;
+
             try
             {
                 dataGridBookmarks.Rows.Clear();
@@ -949,6 +1040,8 @@ namespace OpenTheatre
                 }
             }
             catch (Exception ex) { MessageBox.Show("There was a problem searching for your bookmarks.\n\n" + ex.Message); }
+
+            imgSpinner.Visible = false;
         }
 
         // Search Bookmarks by Text
@@ -980,6 +1073,8 @@ namespace OpenTheatre
 
         private void cmboBoxBookmarksSort_SelectedIndexChanged(object sender, EventArgs e)
         {
+            imgSpinner.Visible = true;
+
             btnBookmarksSort.Text = "Sort : " + cmboBoxBookmarksSort.SelectedItem.ToString();
 
             Font myFont = new Font(btnBookmarksSort.Font.FontFamily, this.btnBookmarksSort.Font.Size);
@@ -989,6 +1084,8 @@ namespace OpenTheatre
             if (cmboBoxBookmarksSort.SelectedIndex == 0) { cmboBoxBookmarksSort.DropDownWidth = DropDownWidth(cmboBoxBookmarksSort); searchBookmarks(); }
             else if (cmboBoxBookmarksSort.SelectedIndex == 1) { dataGridBookmarks.Sort(dataGridBookmarks.Columns[1], ListSortDirection.Ascending); }
             else if (cmboBoxBookmarksSort.SelectedIndex == 2) { dataGridBookmarks.Sort(dataGridBookmarks.Columns[1], ListSortDirection.Descending); }
+
+            imgSpinner.Visible = false;
         }
 
         // Filter Bookmarks by Type
@@ -999,6 +1096,8 @@ namespace OpenTheatre
 
         private void cmboBoxBookmarksType_SelectedIndexChanged(object sender, EventArgs e)
         {
+            imgSpinner.Visible = true;
+
             btnBookmarksType.Text = "Type : " + cmboBoxBookmarksType.SelectedItem.ToString();
 
             Font myFont = new Font(btnBookmarksType.Font.FontFamily, this.btnBookmarksType.Font.Size);
@@ -1007,6 +1106,8 @@ namespace OpenTheatre
             Refresh();
             if (cmboBoxBookmarksType.SelectedIndex == 0) { selectedBookmarksType = ""; searchBookmarks(); }
             else { selectedBookmarksType = cmboBoxBookmarksType.SelectedItem.ToString(); searchBookmarks(); }
+
+            imgSpinner.Visible = false;
         }
         //
 
@@ -1023,7 +1124,7 @@ namespace OpenTheatre
             ctrlItem.doDownloadFile(fileURL);
             currentDownloads.Add(fileURL);
         }
-        
+
         private void panelDownloadItems_ControlAdded(object sender, ControlEventArgs e)
         {
             if (panelDownloads.Controls.Count == 0) { lblNoDownloads.Visible = true; } else { lblNoDownloads.Visible = false; }

@@ -96,6 +96,12 @@
     <Compile Include="ctrlSplashScreen.Designer.cs">
       <DependentUpon>ctrlSplashScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="ctrlStatus.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrlStatus.Designer.cs">
+      <DependentUpon>ctrlStatus.cs</DependentUpon>
+    </Compile>
     <Compile Include="ctrlStreamInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -147,6 +153,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ctrlSplashScreen.resx">
       <DependentUpon>ctrlSplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrlStatus.resx">
+      <DependentUpon>ctrlStatus.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ctrlStreamInfo.resx">
       <DependentUpon>ctrlStreamInfo.cs</DependentUpon>

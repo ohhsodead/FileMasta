@@ -15,8 +15,11 @@ namespace OpenTheatre
             InitializeComponent();
         }
 
+        public bool isLocal;
         public string infoFileURL;
         public string infoFileSubtitles;
+
+        public object IO { get; private set; }
 
         private void ctrlStreamInfo_Load(object sender, EventArgs e)
         {
@@ -28,28 +31,33 @@ namespace OpenTheatre
             if (Properties.Settings.Default.dataBookmarks.Contains(infoFileURL)) { imgAddToBookmarks.Image = Properties.Resources.bookmark_remove; } else { imgAddToBookmarks.Image = Properties.Resources.bookmark_plus; }
             if (frmOpenTheatre.currentDownloads.Contains(infoFileURL)) { imgDownload.Image = Properties.Resources.cloud_sync; } 
 
-            try
+            if (isLocal == false)
             {
-                WebRequest req = WebRequest.Create(infoFileURL);
-                req.Method = "HEAD";
-                req.Timeout = 1500;
-                using (HttpWebResponse fileResponse = (HttpWebResponse)req.GetResponse())
+                try
                 {
-                    DateTime fileModifiedTime = fileResponse.LastModified;
-                    if (fileModifiedTime != null)
+                    WebRequest req = WebRequest.Create(infoFileURL);
+                    req.Method = "HEAD";
+                    req.Timeout = 1500;
+                    using (HttpWebResponse fileResponse = (HttpWebResponse)req.GetResponse())
                     {
-                        infoFileAge.Text = UtilityTools.getTimeAgo(fileModifiedTime);
-                    }
-                    else { infoFileAge.Text = "n/a"; }
+                        DateTime fileModifiedTime = fileResponse.LastModified;
+                        if (fileModifiedTime != null)
+                        {
+                            infoFileAge.Text = UtilityTools.getTimeAgo(fileModifiedTime);
+                        }
+                        else { infoFileAge.Text = "n/a"; }
 
-                    int ContentLength;
-                    if (int.TryParse(fileResponse.Headers.Get("Content-Length"), out ContentLength))
-                    {
-                        infoFileSize.Text = UtilityTools.ToFileSize(Convert.ToDouble(ContentLength));
-                    } else { infoFileSize.Text = "n/a"; }
+                        int ContentLength;
+                        if (int.TryParse(fileResponse.Headers.Get("Content-Length"), out ContentLength))
+                        {
+                            infoFileSize.Text = UtilityTools.ToFileSize(Convert.ToDouble(ContentLength));
+                        }
+                        else { infoFileSize.Text = "n/a"; }
+                    }
                 }
+                catch { infoFileSize.Text = "n/a"; infoFileAge.Text = "n/a"; }
             }
-            catch { infoFileSize.Text = "n/a"; infoFileAge.Text = "n/a"; }
+            else { infoFileSize.Text = UtilityTools.ToFileSize(new FileInfo(infoFileURL).Length);infoFileAge.Text = UtilityTools.getTimeAgo(File.GetLastWriteTime(infoFileURL)); imgDownload.Visible = false; imgReportBroken.Visible = false; imgShare.Visible = false; imgCopyURL.Visible = false; }
 
             // Compares the two file sizes; must have the same file name
             if (UtilityTools.isFileSizeIdentical(infoFileSize.Text, infoFileURL) == true) { imgDownload.Image = Properties.Resources.cloud_done; }
