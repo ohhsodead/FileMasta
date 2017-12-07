@@ -167,4 +167,6 @@ http://dl.tehmovies.org/94/irani/
 http://58.84.32.62/ftp/HDD1/English%20Movies/
 http://58.84.32.62/ftp/HDD1/English%20Movies/2017/
 http://58.84.32.62/ftp/HDD1/Animation%20Movies/
-http://58.84.32.62/ftp/HDD1/Animation%20Movies/2017
+http://58.84.32.62/ftp/HDD1/Animation%20Movies/2017/
+http://58.84.32.62/ftp/HDD2/English%20Movies/
+http://58.84.32.62/ftp/HDD2/English%20Movies/2017/
