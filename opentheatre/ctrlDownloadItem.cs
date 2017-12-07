@@ -85,7 +85,6 @@ namespace OpenTheatre
         private void imgCancel_Click(object sender, EventArgs e)
         {
             wc.CancelAsync();
-            wc.Dispose();
             Hide();
             Dispose();
         }
@@ -100,7 +99,6 @@ namespace OpenTheatre
             }
 
             wc.CancelAsync();
-            wc.Dispose();
             Hide();
             Dispose();
         }

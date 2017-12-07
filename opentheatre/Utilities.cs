@@ -29,22 +29,27 @@ namespace Utilities
         }
 
         // compare local and online files (used for updating database)
-        public static bool doUpdateFile(string dbFile)
+        public static bool doUpdateFile(string webFile, string fileName)
         {
             try
             {
-                WebRequest req = WebRequest.Create(dbFile);
-                req.Method = "HEAD";
-                req.Timeout = 1500;
-                using (HttpWebResponse fileResponse = (HttpWebResponse)req.GetResponse())
+                if (File.Exists(frmOpenTheatre.pathData + fileName) == true)
                 {
-                    int ContentLength;
-                    if (int.TryParse(fileResponse.Headers.Get("Content-Length"), out ContentLength))
+                    WebRequest req = WebRequest.Create(webFile);
+                    req.Method = "HEAD";
+                    //req.Timeout = 1250;
+                    using (HttpWebResponse fileResponse = (HttpWebResponse)req.GetResponse())
                     {
-                        infoFileSize.Text = UtilityTools.ToFileSize(Convert.ToDouble(ContentLength));
+                        int ContentLength;
+                        if (int.TryParse(fileResponse.Headers.Get("Content-Length"), out ContentLength))
+                        {
+                            if (new FileInfo(frmOpenTheatre.pathData + fileName).Length == ContentLength) { return false; }
+                            else { return true; }
+                        }
+                        else { return true; }
                     }
-                    else { infoFileSize.Text = "n/a"; }
                 }
+                else { return true; }
             }
             catch { return true; }
         }
@@ -52,6 +57,11 @@ namespace Utilities
         // return list that contains file
         public static string getContainingListOfURL(string fileUrl)
         {
+            foreach (string file in frmOpenTheatre.dataMovies)
+            {
+                var data = OMDbEntity.FromJson(file);
+                if (data.Sources.Contains(fileUrl)) { return "Movie"; }
+            }
             foreach (string file in frmOpenTheatre.dataFilesMovies)
             {
                 var data = DatabaseFilesEntity.FromJson(file);
@@ -82,10 +92,10 @@ namespace Utilities
                 var data = DatabaseFilesEntity.FromJson(file);
                 if (data.URL == fileUrl) { return "Archive"; }
             }
-            foreach (string file in frmOpenTheatre.dataMovies)
+            foreach (string file in frmOpenTheatre.dataFilesLocal)
             {
-                var data = OMDbEntity.FromJson(file);
-                if (data.Sources.Contains(fileUrl)) { return "Movie"; }
+                var data = DatabaseFilesEntity.FromJson(file);
+                if (data.URL == fileUrl) { return "Local"; }
             }
 
             return "null";
@@ -95,29 +105,16 @@ namespace Utilities
         public static bool isFileSizeIdentical(string fileURLSize, string fileURL)
         {
             if (File.Exists(Settings.Default.downloadsDirectory + Path.GetFileName(new Uri(fileURL).LocalPath)) && fileURLSize == ToFileSize(Convert.ToDouble(new FileInfo(Settings.Default.downloadsDirectory + Path.GetFileName(new Uri(fileURL).LocalPath)).Length))) { return true; }
-            // Checks for exact file name of a subtitle file that matches the one being loaded (e.g. Media File Name: 'Jigsaw.2017.mp4' > Subtitle File Name: 'Jigsaw.2017.srt' will be loaded)
             else { return false; }
         }
 
         // if user has file subtitles in their downloads direcotry
         public static bool isExistingSubtitlesFile(string fileURL)
         {
+            // Checks for exact file name of a subtitle file that matches the one being loaded (e.g. File Name: 'Jigsaw.2017.mp4' > Subtitle File Name: 'Jigsaw.2017.srt' will be loaded)
             if (File.Exists(Settings.Default.downloadsDirectory + Path.GetFileNameWithoutExtension(new Uri(fileURL).LocalPath) + ".srt")) {
             return true; }
             else return false;
-        }
-
-        // if file exists and check date added
-        public static bool doUpdateDataFile(string pathData)
-        {
-            if (File.Exists(pathData))
-            {
-                if (IsAboveThreshold(pathData, 12) == true) // if db older than 12 hours
-                {
-                    return true;
-                } else return false;
-            }
-            else { return true; }
         }
 
         // load picturebox from web resource
@@ -329,7 +326,7 @@ namespace Utilities
             } catch { return false; }
         }
 
-        // check app for updates, installs installer if available
+        // check for updates, installs installer to downloads folder if available
         public static void checkForUpdate()
         {
             Version newVersion = null;
@@ -341,7 +338,7 @@ namespace Utilities
 
             if (curVersion.CompareTo(newVersion) < 0)
             {
-                MessageBox.Show("There is a new update available ready to be installed.", "OpenTheatre - Update Available");
+                MessageBox.Show("OpenTheatre " + newVersion.ToString() + " is ready to be installed.", "OpenTheatre - Update Available");
 
                 try
                 {
@@ -351,7 +348,7 @@ namespace Utilities
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Unable to run installer." + Environment.NewLine + Environment.NewLine + ex.Message, "OpenTheatre - Update Error");
+                    MessageBox.Show("Automatic update failed. You can download the latest version avaialable on our GitHub page.\n\n" + ex.Message, "OpenTheatre - Update Error");
                 }
             }
         }

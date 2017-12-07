@@ -35,20 +35,21 @@
             // 
             // titleStatus
             // 
-            this.titleStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.titleStatus.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.titleStatus.BackColor = System.Drawing.Color.Transparent;
             this.titleStatus.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
             this.titleStatus.ForeColor = System.Drawing.Color.Silver;
-            this.titleStatus.Location = new System.Drawing.Point(60, 18);
+            this.titleStatus.Location = new System.Drawing.Point(60, 0);
             this.titleStatus.Name = "titleStatus";
-            this.titleStatus.Size = new System.Drawing.Size(341, 137);
+            this.titleStatus.Size = new System.Drawing.Size(341, 155);
             this.titleStatus.TabIndex = 0;
             this.titleStatus.Text = "Unable to connect to the the Internet";
             this.titleStatus.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // btnRestartApp
             // 
-            this.btnRestartApp.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnRestartApp.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnRestartApp.BackColor = System.Drawing.Color.Transparent;
             this.btnRestartApp.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(139)))), ((int)(((byte)(202)))));
             this.btnRestartApp.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(139)))), ((int)(((byte)(202)))));

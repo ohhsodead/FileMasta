@@ -51,7 +51,6 @@
             this.Controls.Add(this.axVLCPlugin21);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmVLCPlayer";
-            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "File Name";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
