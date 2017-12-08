@@ -40,7 +40,6 @@ namespace OpenTheatre
         {
             try
             {
-                frmOpenTheatre.form.imgSpinner.Visible = true;
                 frmOpenTheatre.form.tabBlank.Controls.Clear();
 
                 ctrlDetails MovieDetails = new ctrlDetails();
@@ -81,7 +80,6 @@ namespace OpenTheatre
                 MovieDetails.Dock = DockStyle.Fill;
                 frmOpenTheatre.form.tabBlank.Controls.Clear();
                 frmOpenTheatre.form.tabBlank.Controls.Add(MovieDetails);
-                frmOpenTheatre.form.imgSpinner.Visible = false;
                 frmOpenTheatre.form.tab.SelectedTab = frmOpenTheatre.form.tabBlank;
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }

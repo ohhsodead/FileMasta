@@ -15,6 +15,10 @@ using System.Drawing.Imaging;
 using System.Diagnostics;
 using System.Text.RegularExpressions;
 using System.ComponentModel;
+using System.Globalization;
+using System.Threading;
+using System.Resources;
+using System.Reflection;
 
 namespace OpenTheatre
 {
@@ -22,6 +26,8 @@ namespace OpenTheatre
     {
         public frmOpenTheatre()
         {
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Properties.Settings.Default.userLanguage);
+
             InitializeComponent();
             form = this;
             frmSplash = new ctrlSplashScreen();
@@ -33,6 +39,8 @@ namespace OpenTheatre
             frmSplash.BringToFront();
             frmSplash.Show();
         }
+
+        public static ResourceManager rm = new ResourceManager("OpenTheatre.Languages.misc-" + Properties.Settings.Default.userLanguage, Assembly.GetExecutingAssembly());
 
         private BackgroundWorker worker; // startup background thread
 
@@ -65,9 +73,9 @@ namespace OpenTheatre
         public static string pathRoot = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\OpenTheatre\";
         public static string pathData = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\OpenTheatre\Data\";
         public static string pathDownloadsDefault = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\OpenTheatre\Downloads\";
-        
+
         WebClient client = new WebClient(); // public reusable web client
-        
+
         private void frmOpenTheatre_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (e.CloseReason == CloseReason.UserClosing || e.CloseReason == CloseReason.ApplicationExitCall) { Properties.Settings.Default.Save(); if (Properties.Settings.Default.clearDataOnClose == true) { if (Directory.Exists(pathData)) { Directory.Delete(pathData, true); } } }
@@ -99,7 +107,7 @@ namespace OpenTheatre
             }
             else
             {
-                showStatusTab("No Internet connection found. You need to be connected to the Internet to use OpenTheatre. Please check your connection or try again.");
+                showStatusTab(rm.GetString("errorNoInternetConnection"));
             }
         }
 
@@ -179,12 +187,12 @@ namespace OpenTheatre
                 // Get Local Files
                 loadLocalFiles();
             }
-            catch (Exception ex) { showStatusTab("Failed to connect to server. If this issue persists please open an issue on our GitHub page.\n\n" + ex.Message); Directory.Delete(pathData, true); }
+            catch (Exception ex) { showStatusTab(rm.GetString("errorConnectToServer") + "\n\n" + ex.Message); Directory.Delete(pathData, true); }
         }
 
         void worker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            searchFiles(dataFilesMovies);
+            showFiles();
             loadMovies(52);
             Controls.Remove(frmSplash);
         }
@@ -292,7 +300,7 @@ namespace OpenTheatre
             }
             else if (tab.SelectedTab == tabSettings)
             {
-                currentTab = tabSettings ;
+                currentTab = tabSettings;
                 titleLineMovies.Visible = false;
                 titleLineFiles.Visible = false;
                 titleLineDownloads.Visible = false;
@@ -360,7 +368,7 @@ namespace OpenTheatre
 
                                 ctrlPoster.infoImdbRating = data.ImdbRating;
                                 ctrlPoster.infoImdbId = data.ImdbID;
-                            
+
                                 ctrlPoster.infoImagePoster = data.Poster;
                                 ctrlPoster.Name = data.ImdbID;
                                 ctrlPoster.infoMovieLinks = data.Sources;
@@ -409,7 +417,7 @@ namespace OpenTheatre
                 }
             });
         }
-        
+
         // Search Movies by Text
         private void txtMoviesSearchBox_Enter(object sender, EventArgs e)
         {
@@ -441,7 +449,8 @@ namespace OpenTheatre
 
         private void cmboBoxMoviesGenre_SelectedIndexChanged(object sender, EventArgs e)
         {
-            btnMoviesGenre.Text = "Genre : " + cmboBoxMoviesGenre.SelectedItem.ToString();
+            var startText = btnMoviesGenre.Text.Split(':');
+            btnMoviesGenre.Text = startText[0] + ": " + cmboBoxMoviesGenre.SelectedItem.ToString();
 
             Font myFont = new Font(btnMoviesGenre.Font.FontFamily, this.btnMoviesGenre.Font.Size);
             SizeF mySize = btnMoviesGenre.CreateGraphics().MeasureString(btnMoviesGenre.Text, myFont);
@@ -463,7 +472,8 @@ namespace OpenTheatre
 
         private void cmboBoxMoviesYear_SelectedIndexChanged(object sender, EventArgs e)
         {
-            btnMoviesYear.Text = "Year : " + cmboBoxMoviesYear.SelectedItem.ToString();
+            var startText = btnMoviesYear.Text.Split(':');
+            btnMoviesYear.Text = startText[0] + ": " + cmboBoxMoviesYear.SelectedItem.ToString();
 
             Font myFont = new Font(btnMoviesYear.Font.FontFamily, this.btnMoviesYear.Font.Size);
             SizeF mySize = btnMoviesYear.CreateGraphics().MeasureString(btnMoviesYear.Text, myFont);
@@ -563,6 +573,7 @@ namespace OpenTheatre
 
         private void titleFilesMovies_ClickButtonArea(object Sender, MouseEventArgs e)
         {
+            imgSpinner.Visible = true;
             selectedFiles = "Movies";
 
             titleFilesMovies.ColorFillSolid = Color.FromArgb(42, 42, 42);
@@ -580,12 +591,13 @@ namespace OpenTheatre
             titleFilesLocal.ColorFillSolid = Color.Transparent;
             titleFilesLocal.BorderColor = Color.Transparent;
 
-            showSelectedFiles();
+            showFiles();
+            imgSpinner.Visible = false;
         }
 
         private void titleFilesAnime_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            selectedFiles = "Anime";
+            imgSpinner.Visible = true; selectedFiles = "Anime";
 
             titleFilesMovies.ColorFillSolid = Color.Transparent;
             titleFilesMovies.BorderColor = Color.Transparent;
@@ -602,12 +614,13 @@ namespace OpenTheatre
             titleFilesLocal.ColorFillSolid = Color.Transparent;
             titleFilesLocal.BorderColor = Color.Transparent;
 
-            showSelectedFiles();
+            showFiles(); imgSpinner.Visible = false;
+
         }
 
         private void titleFilesSeries_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            selectedFiles = "Series";
+            imgSpinner.Visible = true; selectedFiles = "Series";
 
             titleFilesMovies.ColorFillSolid = Color.Transparent;
             titleFilesMovies.BorderColor = Color.Transparent;
@@ -624,12 +637,12 @@ namespace OpenTheatre
             titleFilesLocal.ColorFillSolid = Color.Transparent;
             titleFilesLocal.BorderColor = Color.Transparent;
 
-            showSelectedFiles();
+            showFiles(); imgSpinner.Visible = false;
         }
 
         private void titleFilesTorrents_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            selectedFiles = "Torrents";
+            imgSpinner.Visible = true; selectedFiles = "Torrents";
 
             titleFilesMovies.ColorFillSolid = Color.Transparent;
             titleFilesMovies.BorderColor = Color.Transparent;
@@ -646,12 +659,12 @@ namespace OpenTheatre
             titleFilesLocal.ColorFillSolid = Color.Transparent;
             titleFilesLocal.BorderColor = Color.Transparent;
 
-            showSelectedFiles();
+            showFiles(); imgSpinner.Visible = false;
         }
 
         private void titleFilesSubtitles_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            selectedFiles = "Subtitles";
+            imgSpinner.Visible = true; selectedFiles = "Subtitles";
 
             titleFilesMovies.ColorFillSolid = Color.Transparent;
             titleFilesMovies.BorderColor = Color.Transparent;
@@ -668,12 +681,12 @@ namespace OpenTheatre
             titleFilesLocal.ColorFillSolid = Color.Transparent;
             titleFilesLocal.BorderColor = Color.Transparent;
 
-            showSelectedFiles();
+            showFiles(); imgSpinner.Visible = false;
         }
 
         private void titleFilesArchives_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            selectedFiles = "Archives";
+            imgSpinner.Visible = true; selectedFiles = "Archives";
 
             titleFilesMovies.ColorFillSolid = Color.Transparent;
             titleFilesMovies.BorderColor = Color.Transparent;
@@ -690,12 +703,12 @@ namespace OpenTheatre
             titleFilesLocal.ColorFillSolid = Color.Transparent;
             titleFilesLocal.BorderColor = Color.Transparent;
 
-            showSelectedFiles();
+            showFiles(); imgSpinner.Visible = false;
         }
 
         private void titleFilesLocal_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            selectedFiles = "Local";
+            imgSpinner.Visible = true; selectedFiles = "Local";
 
             titleFilesMovies.ColorFillSolid = Color.Transparent;
             titleFilesMovies.BorderColor = Color.Transparent;
@@ -713,7 +726,7 @@ namespace OpenTheatre
             titleFilesLocal.BorderColor = Color.FromArgb(42, 42, 42);
 
             loadLocalFiles();
-            showSelectedFiles();
+            showFiles(); imgSpinner.Visible = false;
         }
 
         private void dataGridFiles_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
@@ -733,56 +746,89 @@ namespace OpenTheatre
 
         private void dataGridFiles_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dataGridFiles.CurrentRow.Cells[2].Value.ToString() == "Local") { showFileDetails(dataGridFiles.CurrentRow.Cells[3].Value.ToString(), true); }
+            if (dataGridFiles.CurrentRow.Cells[2].Value.ToString() == rm.GetString("local")) { showFileDetails(dataGridFiles.CurrentRow.Cells[3].Value.ToString(), true); }
             else { showFileDetails(dataGridFiles.CurrentRow.Cells[3].Value.ToString(), false); }
         }
 
-        public void showSelectedFiles()
+        public void showFiles()
         {
-            if (selectedFiles == "Series")
+            try
             {
-                searchFiles(dataFilesSeries);
+                if (selectedFiles == "Movies")
+                {
+                    showSelectedFiles(dataFilesMovies);
+                }
+                else if (selectedFiles == "Series")
+                {
+                    showSelectedFiles(dataFilesSeries);
+                }
+                else if (selectedFiles == "Anime")
+                {
+                    showSelectedFiles(dataFilesAnime);
+                }
+                else if (selectedFiles == "Subtitles")
+                {
+                    showSelectedFiles(dataFilesSubtitles);
+                }
+                else if (selectedFiles == "Torrents")
+                {
+                    showSelectedFiles(dataFilesTorrents);
+                }
+                else if (selectedFiles == "Archives")
+                {
+                    showSelectedFiles(dataFilesArchives);
+                }
+                else if (selectedFiles == "Local")
+                {
+                    showSelectedFiles(dataFilesLocal.ToArray());
+                }
             }
-            else if (selectedFiles == "Movies")
+            catch (Exception ex) { MessageBox.Show(rm.GetString("errorSearch") + "\n\n" + ex.Message); }
+        }
+        
+        delegate void loadFilesCallBack(string[] files);
+        public void showSelectedFiles(string[] files)
+        {
+            try
             {
-                searchFiles(dataFilesMovies);
+                BackGroundWorker.RunWorkAsync<List<string>>(() => searchFiles(files), (data) =>
+                {
+                    if (tabFiles.InvokeRequired)
+                    {
+                        loadFilesCallBack b = new loadFilesCallBack(showSelectedFiles);
+                        Invoke(b, new object[] { files });
+                    }
+                    else
+                    {
+                        cmboBoxFilesSort.SelectedIndex = 0; dataGridFiles.Rows.Clear();
+                        cmboBoxFilesHost.Items.Clear(); cmboBoxFilesHost.Items.Add("Any");
+                        cmboBoxFilesFormat.Items.Clear(); cmboBoxFilesFormat.Items.Add("Any");
+
+                        foreach (string jsonData in data)
+                        {
+                            var dataJson = DatabaseFilesEntity.FromJson(jsonData);
+
+                            dataGridFiles.Rows.Add(dataJson.Title, dataJson.Type, dataJson.Host, dataJson.URL);
+                            if (!(cmboBoxFilesFormat.Items.Contains(dataJson.Type))) { cmboBoxFilesFormat.Items.Add(dataJson.Type); }
+                            if (!(cmboBoxFilesHost.Items.Contains(dataJson.Host))) { cmboBoxFilesHost.Items.Add(dataJson.Host); }
+                        }
+                    }
+                });
             }
-            else if (selectedFiles == "Anime")
-            {
-                searchFiles(dataFilesAnime);
-            }
-            else if (selectedFiles == "Subtitles")
-            {
-                searchFiles(dataFilesSubtitles);
-            }
-            else if (selectedFiles == "Torrents")
-            {
-                searchFiles(dataFilesTorrents);
-            }
-            else if (selectedFiles == "Archives")
-            {
-                searchFiles(dataFilesArchives);
-            }
-            else if (selectedFiles == "Local")
-            {
-                searchFiles(dataFilesLocal.ToArray());
-            }
+            catch (Exception ex) { MessageBox.Show(rm.GetString("errorSearch") + "\n\n" + ex.Message); }
         }
 
         private void btnSearchFiles_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            showSelectedFiles();
+            showFiles();
         }
 
-        public void searchFiles(string[] data)
+        object loadFilesLock = new object();
+        public List<string> searchFiles(string[] data)
         {
-            imgSpinner.Visible = true;
-
-            try
+            lock (loadFilesLock)
             {
-                cmboBoxFilesSort.SelectedIndex = 0; dataGridFiles.Rows.Clear();
-                cmboBoxFilesHost.Items.Clear(); cmboBoxFilesHost.Items.Add("Any");
-                cmboBoxFilesFormat.Items.Clear(); cmboBoxFilesFormat.Items.Add("Any");
+                List<string> urls = new List<string>();
 
                 foreach (string file in data)
                 {
@@ -790,15 +836,12 @@ namespace OpenTheatre
 
                     if (UtilityTools.ContainsAll(dataJson.Title.ToLower(), UtilityTools.GetWords(txtFilesSearchBox.Text.ToLower())) && dataJson.Title.Contains(selectedFilesQuality) && dataJson.Type.Contains(selectedFilesFileType) && dataJson.Host.Contains(selectedFilesHost))
                     {
-                        dataGridFiles.Rows.Add(dataJson.Title, dataJson.Type, dataJson.Host, dataJson.URL);
-                        if (!(cmboBoxFilesFormat.Items.Contains(dataJson.Type))) { cmboBoxFilesFormat.Items.Add(dataJson.Type); }
-                        if (!(cmboBoxFilesHost.Items.Contains(dataJson.Host))) { cmboBoxFilesHost.Items.Add(dataJson.Host); }
+                        urls.Add(dataJson.ToJson());
                     }
-                }
-            }
-            catch (Exception ex) { MessageBox.Show("Error searching files, try again later...\n\n" + ex.Message); }
 
-            imgSpinner.Visible = false;
+                }
+                return urls;
+            }
         }
 
         public void showFileDetails(string webFile, bool isLocal)
@@ -927,19 +970,16 @@ namespace OpenTheatre
 
         private void cmboBoxFilesSort_SelectedIndexChanged(object sender, EventArgs e)
         {
-            imgSpinner.Visible = true;
-
-            btnFilesSort.Text = "Sort : " + cmboBoxFilesSort.SelectedItem.ToString();
+            var startText = btnFilesSort.Text.Split(':');
+            btnFilesSort.Text = startText[0] + ": " + cmboBoxFilesSort.SelectedItem.ToString();
 
             Font myFont = new Font(btnFilesSort.Font.FontFamily, this.btnFilesSort.Font.Size);
             SizeF mySize = btnFilesSort.CreateGraphics().MeasureString(btnFilesSort.Text, myFont);
             panelFilesSort.Width = (((int)(Math.Round(mySize.Width, 0))) + 26);
-            Refresh();
-            if (cmboBoxFilesSort.SelectedIndex == 0) { cmboBoxFilesSort.DropDownWidth = DropDownWidth(cmboBoxFilesSort); showSelectedFiles(); }
+
+            if (cmboBoxFilesSort.SelectedIndex == 0) { cmboBoxFilesSort.DropDownWidth = DropDownWidth(cmboBoxFilesSort); showFiles(); }
             else if (cmboBoxFilesSort.SelectedIndex == 1) { dataGridFiles.Sort(dataGridFiles.Columns[0], ListSortDirection.Ascending); }
             else if (cmboBoxFilesSort.SelectedIndex == 2) { dataGridFiles.Sort(dataGridFiles.Columns[0], ListSortDirection.Descending); }
-
-            imgSpinner.Visible = false;
         }
 
         // Filter Files by File Format
@@ -964,7 +1004,8 @@ namespace OpenTheatre
 
         private void cmboBoxFilesFileFormat_SelectedIndexChanged(object sender, EventArgs e)
         {
-            btnFilesFormat.Text = "Format : " + cmboBoxFilesFormat.SelectedItem.ToString();
+            var startText = btnFilesFormat.Text.Split(':');
+            btnFilesFormat.Text = startText[0] + ": " + cmboBoxFilesFormat.SelectedItem.ToString();
 
             Font myFont = new Font(btnFilesFormat.Font.FontFamily, this.btnFilesFormat.Font.Size);
             SizeF mySize = btnFilesFormat.CreateGraphics().MeasureString(btnFilesFormat.Text, myFont);
@@ -974,7 +1015,7 @@ namespace OpenTheatre
             if (cmboBoxFilesFormat.SelectedIndex == 0) { selectedFilesFileType = ""; }
             else { selectedFilesFileType = cmboBoxFilesFormat.SelectedItem.ToString(); }
 
-            showSelectedFiles();
+            showFiles();
         }
 
         // Filter Files by Host
@@ -985,7 +1026,8 @@ namespace OpenTheatre
 
         private void cmboBoxFilesHost_SelectedIndexChanged(object sender, EventArgs e)
         {
-            btnFilesHost.Text = "Host : " + cmboBoxFilesHost.SelectedItem.ToString();
+            var startText = btnFilesHost.Text.Split(':');
+            btnFilesHost.Text = startText[0] + ": " + cmboBoxFilesHost.SelectedItem.ToString();
 
             Font myFont = new Font(btnFilesHost.Font.FontFamily, this.btnFilesHost.Font.Size);
             SizeF mySize = btnFilesHost.CreateGraphics().MeasureString(btnFilesHost.Text, myFont);
@@ -994,7 +1036,7 @@ namespace OpenTheatre
             if (cmboBoxFilesHost.SelectedIndex == 0) { selectedFilesHost = ""; }
             else { selectedFilesHost = cmboBoxFilesHost.SelectedItem.ToString(); }
 
-            showSelectedFiles();
+            showFiles();
 
             cmboBoxFilesHost.DropDownWidth = DropDownWidth(cmboBoxFilesHost);
         }
@@ -1007,7 +1049,8 @@ namespace OpenTheatre
 
         private void cmboBoxFilesQuality_SelectedIndexChanged(object sender, EventArgs e)
         {
-            btnFilesQuality.Text = "Quality : " + cmboBoxFilesQuality.SelectedItem.ToString();
+            var startText = btnFilesQuality.Text.Split(':');
+            btnFilesQuality.Text = startText[0] + ": " + cmboBoxFilesQuality.SelectedItem.ToString();
 
             Font myFont = new Font(btnFilesQuality.Font.FontFamily, this.btnFilesQuality.Font.Size);
             SizeF mySize = btnFilesQuality.CreateGraphics().MeasureString(btnFilesQuality.Text, myFont);
@@ -1016,7 +1059,7 @@ namespace OpenTheatre
             if (cmboBoxFilesQuality.SelectedIndex == 0) { selectedFilesQuality = ""; }
             else { selectedFilesQuality = cmboBoxFilesQuality.SelectedItem.ToString(); }
 
-            showSelectedFiles();
+            showFiles();
         }
         //
 
@@ -1044,12 +1087,12 @@ namespace OpenTheatre
                     if (UtilityTools.ContainsAll(Path.GetFileNameWithoutExtension(new Uri(fileUrl).LocalPath), UtilityTools.GetWords(txtBookmarksSearchBox.Text.ToLower())) && UtilityTools.getContainingListOfURL(fileUrl).Contains(selectedBookmarksType))
                     {
                         string formattedHost;
-                        if (new Uri(fileUrl).Host == "") { formattedHost = "Local"; } else { formattedHost = new Uri(fileUrl).Host.Replace("www.", ""); }
+                        if (new Uri(fileUrl).Host == "") { formattedHost = rm.GetString("local"); } else { formattedHost = new Uri(fileUrl).Host.Replace("www.", ""); }
                         dataGridBookmarks.Rows.Add(UtilityTools.getContainingListOfURL(fileUrl), Path.GetFileNameWithoutExtension(new Uri(fileUrl).LocalPath), Path.GetExtension(fileUrl).Replace(".", "").ToUpper(), formattedHost, fileUrl);
                     }
                 }
             }
-            catch (Exception ex) { MessageBox.Show("There was a problem searching for your bookmarks.\n\n" + ex.Message); }
+            catch (Exception ex) { MessageBox.Show(rm.GetString("errorSearch") + "\n\n" + ex.Message); }
 
             imgSpinner.Visible = false;
         }
@@ -1095,7 +1138,8 @@ namespace OpenTheatre
         {
             imgSpinner.Visible = true;
 
-            btnBookmarksSort.Text = "Sort : " + cmboBoxBookmarksSort.SelectedItem.ToString();
+            var startText = btnBookmarksSort.Text.Split(':');
+            btnBookmarksSort.Text = startText[0] + ": " + cmboBoxBookmarksSort.SelectedItem.ToString();
 
             Font myFont = new Font(btnBookmarksSort.Font.FontFamily, this.btnBookmarksSort.Font.Size);
             SizeF mySize = btnBookmarksSort.CreateGraphics().MeasureString(btnBookmarksSort.Text, myFont);
@@ -1118,7 +1162,8 @@ namespace OpenTheatre
         {
             imgSpinner.Visible = true;
 
-            btnBookmarksType.Text = "Type : " + cmboBoxBookmarksType.SelectedItem.ToString();
+            var startText = btnBookmarksType.Text.Split(':');
+            btnBookmarksType.Text = startText[0] + ": " + cmboBoxBookmarksType.SelectedItem.ToString();
 
             Font myFont = new Font(btnBookmarksType.Font.FontFamily, this.btnBookmarksType.Font.Size);
             SizeF mySize = btnBookmarksType.CreateGraphics().MeasureString(btnBookmarksType.Text, myFont);
@@ -1138,7 +1183,7 @@ namespace OpenTheatre
         {
             ctrlDownloadItem ctrlItem = new ctrlDownloadItem();
             ctrlItem.progressBar1.BorderColor = tabDownloads.BackColor;
-            ctrlItem.infoStatus.Text = "Connecting";
+            ctrlItem.infoStatus.Text = rm.GetString("connecting");
             ctrlItem.Width = panelDownloads.ClientSize.Width - 7;
             panelDownloads.Controls.Add(ctrlItem);
             ctrlItem.doDownloadFile(fileURL);
@@ -1172,6 +1217,8 @@ namespace OpenTheatre
         public void loadSettings()
         {
             // UI
+            btnSettingsGeneralLanguage.Text = Properties.Settings.Default.userLanguage;
+
             chkSettingsClearData.Checked = Properties.Settings.Default.clearDataOnClose;
             chkSettingsCustomConnection.Checked = Properties.Settings.Default.connectionCustom;
 
@@ -1200,20 +1247,39 @@ namespace OpenTheatre
             bgSettingsConnectionPassword.Enabled = Properties.Settings.Default.connectionCustom;
         }
 
-        private void chkSettingsClearData_CheckedChanged(object sender, EventArgs e)
+        private void btnSettingsGeneralLanguage_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            Properties.Settings.Default.clearDataOnClose = chkSettingsClearData.Checked;
+            cmboboxGeneralSettingsLanguage.DroppedDown = true;
+        }
+
+        private void cmboboxGeneralSettingsLanguage_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            btnSettingsGeneralLanguage.Text = cmboboxGeneralSettingsLanguage.SelectedItem.ToString();
+
+            Properties.Settings.Default.userLanguage = cmboboxGeneralSettingsLanguage.SelectedItem.ToString();
+            Properties.Settings.Default.Save();
+
+            if (MessageBox.Show(rm.GetString("restartRequiredLanguage"), rm.GetString("titleRestartRequired"), MessageBoxButtons.YesNo) == DialogResult.Yes) { Application.Restart(); }
+        }
+
+        private void ChangeLanguage(string lang)
+        {
+            foreach (Control c in Controls)
+            {
+                ComponentResourceManager resources = new ComponentResourceManager(typeof(frmOpenTheatre));
+                resources.ApplyResources(c, c.Name, new CultureInfo(lang));
+            }
         }
 
         private void imgSettingsDownloadsDirectory_Click(object sender, EventArgs e)
         {
             var a = new FolderBrowserDialog();
-            if (a.ShowDialog() == DialogResult.OK) { Properties.Settings.Default.downloadsDirectory = a.SelectedPath + @"\"; txtBoxSettingsDownloadsDirectory.WaterMark = Properties.Settings.Default.downloadsDirectory; txtBoxSettingsDownloadsDirectory.Text = Properties.Settings.Default.downloadsDirectory; }
+            if (a.ShowDialog() == DialogResult.OK) { txtBoxSettingsDownloadsDirectory.WaterMark = a.SelectedPath + @"\"; txtBoxSettingsDownloadsDirectory.Text = a.SelectedPath + @"\"; }
         }
 
         private void chkSettingsCustomConnection_CheckedChanged(object sender, EventArgs e)
         {
-            Properties.Settings.Default.connectionCustom = chkSettingsCustomConnection.Checked;
+            // Set UI
 
             lblSettingsConnectionHost.Enabled = chkSettingsCustomConnection.Checked;
             lblSettingsConnectionPort.Enabled = chkSettingsCustomConnection.Checked;
@@ -1233,6 +1299,10 @@ namespace OpenTheatre
 
         private void btnSettingsSave_ClickButtonArea(object Sender, MouseEventArgs e)
         {
+            Properties.Settings.Default.userLanguage = cmboboxGeneralSettingsLanguage.SelectedItem.ToString();
+            Properties.Settings.Default.clearDataOnClose = chkSettingsClearData.Checked;
+            Properties.Settings.Default.downloadsDirectory = txtBoxSettingsDownloadsDirectory.Text;
+            Properties.Settings.Default.connectionCustom = chkSettingsCustomConnection.Checked;
             Properties.Settings.Default.connectionHost = txtBoxSettingsConnectionHost.Text;
             Properties.Settings.Default.connectionPort = txtBoxSettingsConnectionPort.Text;
             Properties.Settings.Default.connectionUsername = txtBoxSettingsConnectionUsername.Text;

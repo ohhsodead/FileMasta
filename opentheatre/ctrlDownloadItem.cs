@@ -34,12 +34,12 @@ namespace OpenTheatre
 
         public void doDownloadFile(string url)
         {
-            if (!Directory.Exists(Properties.Settings.Default.downloadsDirectory)) { MessageBox.Show("Specified download directory doesn't exist. Please alter this in your settings."); return; }
+            if (!Directory.Exists(Properties.Settings.Default.downloadsDirectory)) { MessageBox.Show(frmOpenTheatre.rm.GetString("noDownloadDirectory")); return; }
             if (Properties.Settings.Default.connectionCustom == true) { if (Properties.Settings.Default.connectionHost != null && Properties.Settings.Default.connectionPort != null) { wc.Proxy = new WebProxy(Properties.Settings.Default.connectionHost, Convert.ToInt32(Properties.Settings.Default.connectionPort)); wc.Proxy.Credentials = new NetworkCredential(Properties.Settings.Default.connectionUsername, Properties.Settings.Default.connectionPassword); wc.UseDefaultCredentials = false; } }
             else { wc.Proxy = WebProxy.GetDefaultProxy(); wc.Proxy.Credentials = CredentialCache.DefaultCredentials; wc.UseDefaultCredentials = true; }
             wc.DownloadFileCompleted += new AsyncCompletedEventHandler(downloadCompleted);
             wc.DownloadProgressChanged += new DownloadProgressChangedEventHandler(downloadProgressChanged);
-            wc.DownloadFileAsync(new Uri(url), Properties.Settings.Default.downloadsDirectory + Path.GetFileName(new Uri(url).LocalPath)); sw.Start(); startTime = DateTime.Now;
+            wc.DownloadFileAsync(new Uri(url), Properties.Settings.Default.downloadsDirectory + Path.GetFileNameWithoutExtension(new Uri(url).LocalPath) + @"\" + Path.GetFileName(new Uri(url).LocalPath)); sw.Start(); startTime = DateTime.Now;
             infoFileURL = url;
             infoFileName.Text = Path.GetFileName(new Uri(url).LocalPath);
         }
@@ -71,8 +71,8 @@ namespace OpenTheatre
         private void downloadCompleted(object sender, AsyncCompletedEventArgs e)
         {
             sw.Reset();
-            if (e.Error != null) { infoStatus.Text = "Error (" + e.Error.Message + ")"; doRefreshDownload = true; imgStatus.Image = Properties.Resources.refresh; imgStatus.Visible = true; progressBar1.BackColor = Color.Red; infoStatus.ForeColor = Color.Red; }
-            else { infoStatus.Text = "Complete"; imgStatus.Image = Properties.Resources.check; imgStatus.Visible = true; }
+            if (e.Error != null) { infoStatus.Text = frmOpenTheatre.rm.GetString("error") + " (" + e.Error.Message + ")"; doRefreshDownload = true; imgStatus.Image = Properties.Resources.refresh; imgStatus.Visible = true; progressBar1.BackColor = Color.Red; infoStatus.ForeColor = Color.Red; }
+            else { infoStatus.Text = frmOpenTheatre.rm.GetString("complete"); imgStatus.Image = Properties.Resources.check; imgStatus.Visible = true; }
 
             frmOpenTheatre.currentDownloads.Remove(infoFileURL);
         }
