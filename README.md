@@ -10,19 +10,20 @@
 <br />
 
 ## What is OpenTheatre?
-It communicates with its own [API](https://dropbox.com/sh/bqb14ty282xm9xi/AACeniqYjhq2auw3KU3oNW2Fa?dl=0) written entirely using our custom built command-line web crawler designed to scrape information from trusted files, updated every day. The public web resources used are available on our [open assets database](https://github.com/invu/opentheatre-app/tree/master/assets), where anyone can contribute their open directories. OpenTheatre works to query movies, series, anime, subtitles, torrents and archives from all around the web to provide you with the ultimate streaming experience.
+OpenTheatre is a program which allows users to search for Movies, TV Series, Anime, Subtitles, Torrents and Archives. The program communicates with its own [API](https://dropbox.com/sh/bqb14ty282xm9xi/AACeniqYjhq2auw3KU3oNW2Fa?dl=0) written entirely using our custom built command-line web crawler designed to scrape information from trusted files which are updated every day. The public web resources used are available on our [open assets database](https://github.com/invu/opentheatre-app/tree/master/assets), where anyone can contribute their open directories. OpenTheatre works to query movies, series, anime, subtitles, torrents and archives from all around the web to provide you with the ultimate streaming experience.
 
 ## Some features available
 - Simple interface and background threads for the best performance
-- Web crawler returning over 50,000 movies, series, anime, subtitles, torrents and archives
-- Search movies by people, years and genre
-- Bookmark files to be viewed later
+- Multilingual support (en, es, fr) - contributions are welcome!
+- Discover over 50,000 movies, series, anime, subtitles, torrents and archives
+- Search movies by name, actor, year and genre
+- Store files in your Bookmarks for later use
 - Filter files by format, host and sort alphabetically
 - Includes an internal VLC media player 
-- Support for external players (Currently includes WMP, MPC & VLC - Open for requests)
-- Simple built-in download client
+- Support for external players (Currently includes WMP, MPC & VLC)
+- Built-in download client
 - Collects metadata from OMDb API & Popcorn Time API
-- Local cache updating every 12 hours
+- Automatic local cache updates
 
 ## Latest build
 OpenTheatre 2.7.0
