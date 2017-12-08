@@ -14,7 +14,7 @@ It communicates with its own [API](https://dropbox.com/sh/bqb14ty282xm9xi/AACeni
 
 ## Some features available
 - Simple interface and background threads for the best performance
-- Multiple language support (en, es, fr)
+- Multilingual support (en, es, fr) - contributions are welcome!
 - Discover over 50,000 movies, series, anime, subtitles, torrents and archives
 - Search movies by people, years and genre
 - Store files in your Bookmarks for later
