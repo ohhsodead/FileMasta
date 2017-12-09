@@ -50,7 +50,7 @@ namespace UnhandledExceptions
             try
             {
                 var client = new GitHubClient(new ProductHeaderValue("opentheatre"));
-                var tokenAuth = new Credentials("454cc72d6bf68bed5ff1e03d2dcdd779113f7d0c"); // see this link to create a personal access token -- https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/ --
+                var tokenAuth = new Credentials(Environment.GetEnvironmentVariable("ae2e80439b419078200df862ea9687bc792b8756")); // see this link to create a personal access token -- https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/ --
                 client.Credentials = tokenAuth;
                 var createIssue = new NewIssue(BugTitleBox.Text);
                 createIssue.Body = BugDetailBox.Text;
