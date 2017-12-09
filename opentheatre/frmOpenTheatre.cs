@@ -30,6 +30,7 @@ namespace OpenTheatre
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Properties.Settings.Default.userLanguage);
 
             InitializeComponent();
+
             form = this;
             frmSplash = new ctrlSplashScreen();
 
