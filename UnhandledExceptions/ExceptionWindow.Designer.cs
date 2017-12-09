@@ -121,10 +121,10 @@
         #endregion
 
         private System.Windows.Forms.Label BugTitleTxt;
-        private System.Windows.Forms.TextBox BugTitleBox;
         private System.Windows.Forms.Label BugDetailTxt;
-        private System.Windows.Forms.RichTextBox BugDetailBox;
         private System.Windows.Forms.Button ReportBtn;
         private System.Windows.Forms.LinkLabel GithubIssuesLink;
+        public System.Windows.Forms.TextBox BugTitleBox;
+        public System.Windows.Forms.RichTextBox BugDetailBox;
     }
 }

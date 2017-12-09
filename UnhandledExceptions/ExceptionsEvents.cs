@@ -38,7 +38,7 @@ namespace UnhandledExceptions
     public static class ExceptionsEvents
     {
 
-        static Task<StackFrame> RunLoop(StackTrace ST)
+        public static Task<StackFrame> RunLoop(StackTrace ST)
         {
             StackTrace st = ST;
             StackFrame frame = st.GetFrame(4);
