@@ -23,14 +23,12 @@ namespace Utilities
         // open new broken source issue template
         public static void openBrokenFileIssue(string webFile)
         {
-            ExceptionWindow ExWindow = new ExceptionWindow("Broken File Report",
-                "Type: " + getContainingListOfURL(webFile) + 
+            Process.Start("https://github.com/isaacs/github/issues/new?title=" + "Broken File Report" + "&body=" +
+                "Type: " + getContainingListOfURL(webFile) +
                 "\nHost: " + new Uri(webFile).Host.Replace("www.", "") +
                 "\nName: " + new Uri(webFile).LocalPath +
                 "\n ----------------------- \n" +
-                "*Before creating an issue for a web file, ensure that you're able to access the same website (file host) from your web browser, as sometimes web files are unable to be accessed due to permissions or firewalls. Please explain your problem with the file, be clear and not vague.",
-                "https://github.com/invu/opentheatre/issues/");
-            ExWindow.ShowDialog();
+                "Before creating an issue for a web file, ensure that you're able to access the same website (file host) from your web browser, as sometimes web files are unable to be accessed due to permissions or firewalls. Please explain your problem with the file, be clear and not vague.");
         }
 
         // compare local and online files (used for updating database)

@@ -47,22 +47,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ExceptionsEvents.cs" />
-    <Compile Include="ExceptionWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ExceptionWindow.Designer.cs">
-      <DependentUpon>ExceptionWindow.cs</DependentUpon>
-    </Compile>
     <Compile Include="Logger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="ExceptionWindow.resx">
-      <DependentUpon>ExceptionWindow.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

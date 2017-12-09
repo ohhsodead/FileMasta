@@ -1191,8 +1191,7 @@ namespace OpenTheatre
 
         private void lblAboutReportIssue_Click(object sender, EventArgs e)
         {
-            ExceptionWindow ExWindow = new ExceptionWindow();
-            ExWindow.ShowDialog();
+            Process.Start("https://github.com/invu/opentheatre/issues/new");
         }
         //
 

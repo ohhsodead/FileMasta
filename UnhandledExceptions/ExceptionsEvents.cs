@@ -65,17 +65,14 @@ namespace UnhandledExceptions
 
             Logger.log("ERROR Message: " + e.Exception.Message + " -File Name: " + Path.GetFileName(fileName) + " -Method Name: " + methodName + " -Line: " + line + " -Column: " + col);
 
-            ExceptionWindow ExWindow = new ExceptionWindow(e.Exception.Message,
+            Process.Start("https://github.com/invu/opentheatre/issues/new?title=" + "[Error] " + e.Exception.Message + "&body=" +
                 "Version: " + Application.ProductVersion +
-                "\nFile Name: " + Path.GetFileName(fileName) +
-                "\nMethod Name: " + methodName +
-                "\nLine: " + line +
-                "\nColumn: " + col +
-                "\n ----------------------- \n" +
-                e.Exception
-                , "https://github.com/invu/opentheatre/issues/");
-            ExWindow.ShowDialog();
-
+                "%0AFile Name: " + Path.GetFileName(fileName) +
+                "%0AMethod Name: " + methodName +
+                "%0ALine: " + line +
+                "%0AColumn: " + col +
+                "%0A ----------------------- %0A" +
+                e.Exception);
         }
 
         public static async void CurrentDomainUnhandledException(object sender, UnhandledExceptionEventArgs e)
@@ -90,17 +87,14 @@ namespace UnhandledExceptions
 
             Logger.log("ERROR Message: " + ((Exception)e.ExceptionObject).Message + " -File Name: " + Path.GetFileName(fileName) + " -Method Name: " + methodName + " -Line: " + line + " -Column: " + col);
 
-            ExceptionWindow ExWindow = new ExceptionWindow(((Exception)e.ExceptionObject).Message,
+            Process.Start("https://github.com/invu/opentheatre/issues/new?title=" + "[Error] " + e.Exception.Message + "&body=" +
                 "Version: " + Application.ProductVersion +
-                "\nFile Name: " + Path.GetFileName(fileName) +
-                "\nMethod Name: " + methodName +
-                "\nLine: " + line +
-                "\nColumn: " + col +
-                "\n ----------------------- \n" +
-                (Exception)e.ExceptionObject
-                , "https://github.com/invu/opentheatre/issues/");
-            ExWindow.ShowDialog();
+                "%0AFile Name: " + Path.GetFileName(fileName) +
+                "%0AMethod Name: " + methodName +
+                "%0ALine: " + line +
+                "%0AColumn: " + col +
+                "%0A ----------------------- %0A" +
+                (Exception)e.ExceptionObject);
         }
-
     }
 }
