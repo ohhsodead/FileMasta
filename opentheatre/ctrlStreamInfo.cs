@@ -5,6 +5,7 @@ using System.IO;
 using System.Net;
 using System.Windows.Forms;
 using Utilities;
+using UnhandledExceptions;
 
 namespace OpenTheatre
 {
@@ -72,41 +73,29 @@ namespace OpenTheatre
 
         private void WMPToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            try
-            {
-                Process.Start("wmplayer.exe", infoFileURL);
-            }
-            catch (Exception ex) { MessageBox.Show(this, ex.Message, "Error"); }
+            Process.Start("wmplayer.exe", infoFileURL);
         }
 
         private void VLCToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            try
-            {
-                // Open source file in VLC with subtitles
-                Process VLC = new Process();
-                VLC.StartInfo.FileName = frmOpenTheatre.pathVLC;
-                VLC.StartInfo.Arguments = ("-vvv " + infoFileURL + " --sub-file=" + infoFileSubtitles);
-                VLC.Start();
-            }
-            catch (Exception ex) { MessageBox.Show(this, ex.Message, "Error"); }
+            // Open source file in VLC with subtitles
+            Process VLC = new Process();
+            VLC.StartInfo.FileName = frmOpenTheatre.pathVLC;
+            VLC.StartInfo.Arguments = ("-vvv " + infoFileURL + " --sub-file=" + infoFileSubtitles);
+            VLC.Start();
         }
 
         private void MPCToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            try
-            {
-                Process MPC = new Process();
-                if (File.Exists(frmOpenTheatre.pathMPCCodec64))
-                    MPC.StartInfo.FileName = frmOpenTheatre.pathMPCCodec64;
-                else if (File.Exists(frmOpenTheatre.pathMPC64))
-                    MPC.StartInfo.FileName = frmOpenTheatre.pathMPC64;
-                else
-                    MPC.StartInfo.FileName = frmOpenTheatre.pathMPC86;
-                MPC.StartInfo.Arguments = (infoFileURL);
-                MPC.Start();
-            }
-            catch (Exception ex) { MessageBox.Show(this, ex.Message, "Error"); }
+            Process MPC = new Process();
+            if (File.Exists(frmOpenTheatre.pathMPCCodec64))
+                MPC.StartInfo.FileName = frmOpenTheatre.pathMPCCodec64;
+            else if (File.Exists(frmOpenTheatre.pathMPC64))
+                MPC.StartInfo.FileName = frmOpenTheatre.pathMPC64;
+            else
+                MPC.StartInfo.FileName = frmOpenTheatre.pathMPC86;
+            MPC.StartInfo.Arguments = (infoFileURL);
+            MPC.Start();
         }
 
         private void imgAddToBookmarks_Click(object sender, EventArgs e)

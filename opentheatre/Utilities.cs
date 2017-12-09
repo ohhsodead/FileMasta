@@ -14,6 +14,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UnhandledExceptions;
 
 namespace Utilities
 {
@@ -340,16 +341,9 @@ namespace Utilities
             {
                 MessageBox.Show("OpenTheatre " + newVersion.ToString() + " is ready to be installed.", "OpenTheatre - Update Available");
 
-                try
-                {
-                    client.DownloadFile(frmOpenTheatre.getLatestInstaller(newVersion), frmOpenTheatre.pathDownloadInstaller);
-                    Process.Start(frmOpenTheatre.pathDownloadInstaller);
-                    Application.Exit();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Automatic update failed. You can download the latest version avaialable on our GitHub page.\n\n" + ex.Message, "OpenTheatre - Update Error");
-                }
+                client.DownloadFile(frmOpenTheatre.getLatestInstaller(newVersion), frmOpenTheatre.pathDownloadInstaller);
+                Process.Start(frmOpenTheatre.pathDownloadInstaller);
+                Application.Exit();
             }
         }
     }

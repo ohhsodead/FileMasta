@@ -2,7 +2,7 @@
 /*  ExceptionWindow.cs                                                   */
 /*************************************************************************/
 /*                       This file is part of:                           */
-/*                             OpenPlex                                  */
+/*                            openTheare                                 */
 /*************************************************************************/
 /* Copyright (c) 2017-2017 Badr Azizi.                                   */
 /*                                                                       */
@@ -47,12 +47,12 @@ namespace UnhandledExceptions
 
         private async void ReportBtnClick(object sender, EventArgs e)
         {
-            var client = new GitHubClient(new ProductHeaderValue("openplex-app"));
-            var tokenAuth = new Credentials(""); // see this link to create a personal access token -- https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/ --
+            var client = new GitHubClient(new ProductHeaderValue("opentheatre"));
+            var tokenAuth = new Credentials("dce073078f29054ee61df5298cce72c7ac777b75"); // see this link to create a personal access token -- https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/ --
             client.Credentials = tokenAuth;
             var createIssue = new NewIssue(BugTitleBox.Text);
             createIssue.Body = BugDetailBox.Text;
-            Issue issue = await client.Issue.Create("invu", "openplex-app", createIssue);
+            Issue issue = await client.Issue.Create("invu", "opentheatre", createIssue);
             if (issue.Number > 0)
                 if (!string.IsNullOrEmpty(GithubLink) || !string.IsNullOrWhiteSpace(GithubLink))
                     MessageBox.Show("Thank you for reporting this bug\nYou can follow this bug in\n" + GithubLink + issue.Number);

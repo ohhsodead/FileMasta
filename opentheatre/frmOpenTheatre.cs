@@ -19,6 +19,7 @@ using System.Globalization;
 using System.Threading;
 using System.Resources;
 using System.Reflection;
+using UnhandledExceptions;
 
 namespace OpenTheatre
 {
@@ -187,7 +188,7 @@ namespace OpenTheatre
                 // Get Local Files
                 loadLocalFiles();
             }
-            catch (Exception ex) { showStatusTab(rm.GetString("errorConnectToServer") + "\n\n" + ex.Message); Directory.Delete(pathData, true); }
+            catch (Exception ex) { showStatusTab(rm.GetString("errorConnectToServer") + "\n\n" + ex.Message); Directory.Delete(pathData, true); Logger.log(ex.Message); }
         }
 
         void worker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
@@ -508,11 +509,7 @@ namespace OpenTheatre
             MovieDetails.infoRatingIMDb.Text = data.ImdbRating;
             MovieDetails.infoImdbId = data.ImdbID;
 
-            try
-            {
-                MovieDetails.imgPoster.Image = UtilityTools.ChangeOpacity(UtilityTools.LoadPicture(data.Poster), 1);
-            }
-            catch { }
+            MovieDetails.imgPoster.Image = UtilityTools.ChangeOpacity(UtilityTools.LoadPicture(data.Poster), 1);
 
             if (data.Poster == "") { MovieDetails.imgPoster.Image = UtilityTools.ChangeOpacity(Properties.Resources.poster_default, 1); }
 
@@ -752,70 +749,62 @@ namespace OpenTheatre
 
         public void showFiles()
         {
-            try
+            if (selectedFiles == "Movies")
             {
-                if (selectedFiles == "Movies")
-                {
-                    showSelectedFiles(dataFilesMovies);
-                }
-                else if (selectedFiles == "Series")
-                {
-                    showSelectedFiles(dataFilesSeries);
-                }
-                else if (selectedFiles == "Anime")
-                {
-                    showSelectedFiles(dataFilesAnime);
-                }
-                else if (selectedFiles == "Subtitles")
-                {
-                    showSelectedFiles(dataFilesSubtitles);
-                }
-                else if (selectedFiles == "Torrents")
-                {
-                    showSelectedFiles(dataFilesTorrents);
-                }
-                else if (selectedFiles == "Archives")
-                {
-                    showSelectedFiles(dataFilesArchives);
-                }
-                else if (selectedFiles == "Local")
-                {
-                    showSelectedFiles(dataFilesLocal.ToArray());
-                }
+                showSelectedFiles(dataFilesMovies);
             }
-            catch (Exception ex) { MessageBox.Show(rm.GetString("errorSearch") + "\n\n" + ex.Message); }
+            else if (selectedFiles == "Series")
+            {
+                showSelectedFiles(dataFilesSeries);
+            }
+            else if (selectedFiles == "Anime")
+            {
+                showSelectedFiles(dataFilesAnime);
+            }
+            else if (selectedFiles == "Subtitles")
+            {
+                showSelectedFiles(dataFilesSubtitles);
+            }
+            else if (selectedFiles == "Torrents")
+            {
+                showSelectedFiles(dataFilesTorrents);
+            }
+            else if (selectedFiles == "Archives")
+            {
+                showSelectedFiles(dataFilesArchives);
+            }
+            else if (selectedFiles == "Local")
+            {
+                showSelectedFiles(dataFilesLocal.ToArray());
+            }
         }
         
         delegate void loadFilesCallBack(string[] files);
         public void showSelectedFiles(string[] files)
         {
-            try
+            BackGroundWorker.RunWorkAsync<List<string>>(() => searchFiles(files), (data) =>
             {
-                BackGroundWorker.RunWorkAsync<List<string>>(() => searchFiles(files), (data) =>
+                if (tabFiles.InvokeRequired)
                 {
-                    if (tabFiles.InvokeRequired)
-                    {
-                        loadFilesCallBack b = new loadFilesCallBack(showSelectedFiles);
-                        Invoke(b, new object[] { files });
-                    }
-                    else
-                    {
-                        cmboBoxFilesSort.SelectedIndex = 0; dataGridFiles.Rows.Clear();
-                        cmboBoxFilesHost.Items.Clear(); cmboBoxFilesHost.Items.Add("Any");
-                        cmboBoxFilesFormat.Items.Clear(); cmboBoxFilesFormat.Items.Add("Any");
+                    loadFilesCallBack b = new loadFilesCallBack(showSelectedFiles);
+                    Invoke(b, new object[] { files });
+                }
+                else
+                {
+                    cmboBoxFilesSort.SelectedIndex = 0; dataGridFiles.Rows.Clear();
+                    cmboBoxFilesHost.Items.Clear(); cmboBoxFilesHost.Items.Add("Any");
+                    cmboBoxFilesFormat.Items.Clear(); cmboBoxFilesFormat.Items.Add("Any");
 
-                        foreach (string jsonData in data)
-                        {
-                            var dataJson = DatabaseFilesEntity.FromJson(jsonData);
+                    foreach (string jsonData in data)
+                    {
+                        var dataJson = DatabaseFilesEntity.FromJson(jsonData);
 
-                            dataGridFiles.Rows.Add(dataJson.Title, dataJson.Type, dataJson.Host, dataJson.URL);
-                            if (!(cmboBoxFilesFormat.Items.Contains(dataJson.Type))) { cmboBoxFilesFormat.Items.Add(dataJson.Type); }
-                            if (!(cmboBoxFilesHost.Items.Contains(dataJson.Host))) { cmboBoxFilesHost.Items.Add(dataJson.Host); }
-                        }
+                        dataGridFiles.Rows.Add(dataJson.Title, dataJson.Type, dataJson.Host, dataJson.URL);
+                        if (!(cmboBoxFilesFormat.Items.Contains(dataJson.Type))) { cmboBoxFilesFormat.Items.Add(dataJson.Type); }
+                        if (!(cmboBoxFilesHost.Items.Contains(dataJson.Host))) { cmboBoxFilesHost.Items.Add(dataJson.Host); }
                     }
-                });
-            }
-            catch (Exception ex) { MessageBox.Show(rm.GetString("errorSearch") + "\n\n" + ex.Message); }
+                }
+            });
         }
 
         private void btnSearchFiles_ClickButtonArea(object Sender, MouseEventArgs e)
@@ -860,56 +849,52 @@ namespace OpenTheatre
 
             if (omdbUrl != null)
             {
-                try
+                using (WebClient wc = new WebClient())
                 {
-                    using (WebClient wc = new WebClient())
+                    var JsonOMDbAPI = wc.DownloadString(omdbUrl);
+                    var data = OMDbEntity.FromJson(JsonOMDbAPI);
+
+                    if (data.Response == "True")
                     {
-                        var JsonOMDbAPI = wc.DownloadString(omdbUrl);
-                        var data = OMDbEntity.FromJson(JsonOMDbAPI);
 
-                        if (data.Response == "True")
-                        {
+                        MovieDetails.infoTitle.Text = data.Title;
+                        MovieDetails.infoYear.Text = data.Year;
+                        MovieDetails.infoGenre.Text = data.Genre;
+                        MovieDetails.infoSynopsis.Text = data.Plot;
+                        MovieDetails.infoRuntime.Text = data.Runtime;
+                        MovieDetails.infoRated.Text = data.Rated;
+                        MovieDetails.infoDirector.Text = data.Director;
+                        MovieDetails.infoCast.Text = data.Actors;
+                        MovieDetails.infoRatingIMDb.Text = data.ImdbRating;
+                        MovieDetails.infoImdbId = data.ImdbID;
 
-                            MovieDetails.infoTitle.Text = data.Title;
-                            MovieDetails.infoYear.Text = data.Year;
-                            MovieDetails.infoGenre.Text = data.Genre;
-                            MovieDetails.infoSynopsis.Text = data.Plot;
-                            MovieDetails.infoRuntime.Text = data.Runtime;
-                            MovieDetails.infoRated.Text = data.Rated;
-                            MovieDetails.infoDirector.Text = data.Director;
-                            MovieDetails.infoCast.Text = data.Actors;
-                            MovieDetails.infoRatingIMDb.Text = data.ImdbRating;
-                            MovieDetails.infoImdbId = data.ImdbID;
+                        try { MovieDetails.imgPoster.Image = UtilityTools.ChangeOpacity(UtilityTools.LoadPicture(data.Poster), 1); } catch { MovieDetails.imgPoster.Image = UtilityTools.ChangeOpacity(Properties.Resources.poster_default, 0.5F); }
+                    }
+                    else
+                    {
+                        MovieDetails.infoTitle.Text = Path.GetFileNameWithoutExtension(new Uri(webFile).LocalPath);
+                        MovieDetails.infoYear.Visible = false;
+                        MovieDetails.infoGenre.Visible = false;
+                        MovieDetails.infoSynopsis.Visible = false;
+                        MovieDetails.infoRuntime.Visible = false;
+                        MovieDetails.infoRated.Visible = false;
+                        MovieDetails.infoDirector.Visible = false;
+                        MovieDetails.infoCast.Visible = false;
+                        MovieDetails.infoRatingIMDb.Visible = false;
 
-                            try { MovieDetails.imgPoster.Image = UtilityTools.ChangeOpacity(UtilityTools.LoadPicture(data.Poster), 1); } catch { MovieDetails.imgPoster.Image = UtilityTools.ChangeOpacity(Properties.Resources.poster_default, 0.5F); }
-                        }
-                        else
-                        {
-                            MovieDetails.infoTitle.Text = Path.GetFileNameWithoutExtension(new Uri(webFile).LocalPath);
-                            MovieDetails.infoYear.Visible = false;
-                            MovieDetails.infoGenre.Visible = false;
-                            MovieDetails.infoSynopsis.Visible = false;
-                            MovieDetails.infoRuntime.Visible = false;
-                            MovieDetails.infoRated.Visible = false;
-                            MovieDetails.infoDirector.Visible = false;
-                            MovieDetails.infoCast.Visible = false;
-                            MovieDetails.infoRatingIMDb.Visible = false;
-
-                            MovieDetails.infoSplitter0.Visible = false;
-                            MovieDetails.infoSplitter1.Visible = false;
-                            MovieDetails.infoSplitter2.Visible = false;
-                            MovieDetails.infoSplitter3.Visible = false;
-                            MovieDetails.infoSplitter4.Visible = false;
-                            MovieDetails.imgIMDb.Visible = false;
-                            MovieDetails.lblSubDirector.Visible = false;
-                            MovieDetails.lblSubCast.Visible = false;
+                        MovieDetails.infoSplitter0.Visible = false;
+                        MovieDetails.infoSplitter1.Visible = false;
+                        MovieDetails.infoSplitter2.Visible = false;
+                        MovieDetails.infoSplitter3.Visible = false;
+                        MovieDetails.infoSplitter4.Visible = false;
+                        MovieDetails.imgIMDb.Visible = false;
+                        MovieDetails.lblSubDirector.Visible = false;
+                        MovieDetails.lblSubCast.Visible = false;
 
 
-                            MovieDetails.imgPoster.Image = UtilityTools.ChangeOpacity(Properties.Resources.poster_default, 0.5F);
-                        }
+                        MovieDetails.imgPoster.Image = UtilityTools.ChangeOpacity(Properties.Resources.poster_default, 0.5F);
                     }
                 }
-                catch (Exception ex) { }
             }
 
             try
@@ -1076,23 +1061,19 @@ namespace OpenTheatre
         {
             imgSpinner.Visible = true;
 
-            try
-            {
-                cmboBoxBookmarksSort.SelectedIndex = 0;
-                dataGridBookmarks.Rows.Clear();
+            cmboBoxBookmarksSort.SelectedIndex = 0;
+            dataGridBookmarks.Rows.Clear();
 
-                foreach (string fileUrl in Properties.Settings.Default.dataBookmarks)
+            foreach (string fileUrl in Properties.Settings.Default.dataBookmarks)
+            {
+                var url = new Uri(fileUrl);
+                if (UtilityTools.ContainsAll(Path.GetFileNameWithoutExtension(new Uri(fileUrl).LocalPath), UtilityTools.GetWords(txtBookmarksSearchBox.Text.ToLower())) && UtilityTools.getContainingListOfURL(fileUrl).Contains(selectedBookmarksType))
                 {
-                    var url = new Uri(fileUrl);
-                    if (UtilityTools.ContainsAll(Path.GetFileNameWithoutExtension(new Uri(fileUrl).LocalPath), UtilityTools.GetWords(txtBookmarksSearchBox.Text.ToLower())) && UtilityTools.getContainingListOfURL(fileUrl).Contains(selectedBookmarksType))
-                    {
-                        string formattedHost;
-                        if (new Uri(fileUrl).Host == "") { formattedHost = rm.GetString("local"); } else { formattedHost = new Uri(fileUrl).Host.Replace("www.", ""); }
-                        dataGridBookmarks.Rows.Add(UtilityTools.getContainingListOfURL(fileUrl), Path.GetFileNameWithoutExtension(new Uri(fileUrl).LocalPath), Path.GetExtension(fileUrl).Replace(".", "").ToUpper(), formattedHost, fileUrl);
-                    }
+                    string formattedHost;
+                    if (new Uri(fileUrl).Host == "") { formattedHost = rm.GetString("local"); } else { formattedHost = new Uri(fileUrl).Host.Replace("www.", ""); }
+                    dataGridBookmarks.Rows.Add(UtilityTools.getContainingListOfURL(fileUrl), Path.GetFileNameWithoutExtension(new Uri(fileUrl).LocalPath), Path.GetExtension(fileUrl).Replace(".", "").ToUpper(), formattedHost, fileUrl);
                 }
             }
-            catch (Exception ex) { MessageBox.Show(rm.GetString("errorSearch") + "\n\n" + ex.Message); }
 
             imgSpinner.Visible = false;
         }
@@ -1209,7 +1190,8 @@ namespace OpenTheatre
 
         private void lblAboutReportIssue_Click(object sender, EventArgs e)
         {
-            Process.Start("https://github.com/invu/opentheatre-app/issues/new");
+            ExceptionWindow ExWindow = new ExceptionWindow();
+            ExWindow.ShowDialog();
         }
         //
 

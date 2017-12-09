@@ -2,7 +2,7 @@
 /*  ExceptionsEvents.cs                                                  */
 /*************************************************************************/
 /*                       This file is part of:                           */
-/*                             OpenPlex                                  */
+/*                            OpenTheatre                                */
 /*************************************************************************/
 /* Copyright (c) 2017-2017 Badr Azizi.                                   */
 /*                                                                       */
@@ -73,7 +73,7 @@ namespace UnhandledExceptions
                 "\nColumn: " + col +
                 "\n ----------------------- \n" +
                 e.Exception
-                , "https://github.com/invu/openplex-app/issues/");
+                , "https://github.com/invu/opentheatre/issues/");
             ExWindow.ShowDialog();
 
         }
@@ -98,7 +98,7 @@ namespace UnhandledExceptions
                 "\nColumn: " + col +
                 "\n ----------------------- \n" +
                 (Exception)e.ExceptionObject
-                , "https://github.com/invu/openplex-app/issues/");
+                , "https://github.com/invu/opentheatre/issues/");
             ExWindow.ShowDialog();
         }
 

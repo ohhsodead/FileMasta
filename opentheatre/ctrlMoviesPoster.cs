@@ -38,51 +38,47 @@ namespace OpenTheatre
 
         private void InfoPoster_ClickButtonArea(object Sender, MouseEventArgs e)
         {
+            frmOpenTheatre.form.tabBlank.Controls.Clear();
+
+            ctrlDetails MovieDetails = new ctrlDetails();
+
+            MovieDetails.infoTitle.Text = infoTitle.Text;
+            MovieDetails.infoYear.Text = infoYear.Text;
+            MovieDetails.infoGenre.Text = infoGenres;
+            MovieDetails.infoSynopsis.Text = infoSynopsis;
+            MovieDetails.infoRuntime.Text = infoRuntime;
+            MovieDetails.infoRated.Text = infoRated;
+            MovieDetails.infoDirector.Text = infoDirector;
+            MovieDetails.infoCast.Text = infoCast;
+            MovieDetails.infoRatingIMDb.Text = infoImdbRating;
+            MovieDetails.infoImdbId = infoImdbId;
+            MovieDetails.infoTrailerUrl = infoTrailer;
+
+
             try
             {
-                frmOpenTheatre.form.tabBlank.Controls.Clear();
-
-                ctrlDetails MovieDetails = new ctrlDetails();
-
-                MovieDetails.infoTitle.Text = infoTitle.Text;
-                MovieDetails.infoYear.Text = infoYear.Text;
-                MovieDetails.infoGenre.Text = infoGenres;
-                MovieDetails.infoSynopsis.Text = infoSynopsis;
-                MovieDetails.infoRuntime.Text = infoRuntime;
-                MovieDetails.infoRated.Text = infoRated;
-                MovieDetails.infoDirector.Text = infoDirector;
-                MovieDetails.infoCast.Text = infoCast;
-                MovieDetails.infoRatingIMDb.Text = infoImdbRating;
-                MovieDetails.infoImdbId = infoImdbId;
-                MovieDetails.infoTrailerUrl = infoTrailer;
-
-
-                try
-                {
-                    MovieDetails.imgPoster.Image = UtilityTools.ChangeOpacity(UtilityTools.LoadPicture(infoImagePoster), 1);
-                    MovieDetails.BackgroundImage = UtilityTools.ChangeOpacity(UtilityTools.LoadPicture(infoImageFanart), 0.2F);
-                }
-                catch { }
-
-                if (infoImagePoster == "") { MovieDetails.imgPoster.Image = UtilityTools.ChangeOpacity(Properties.Resources.poster_default, 1); }
-                if (infoImageFanart == "") { MovieDetails.BackgroundImage = UtilityTools.ChangeOpacity(Properties.Resources.background_original, 0.5F); }
-                if (infoTrailer == "") { MovieDetails.btnWatchTrailer.Visible = false; }
-
-                foreach (string movieLink in infoMovieLinks)
-                {
-                    ctrlStreamInfo ctrlInfo = new ctrlStreamInfo();
-                    ctrlInfo.infoFileURL = new Uri(movieLink).AbsoluteUri;
-                    ctrlInfo.infoFileHost.Text = new Uri(movieLink).Host.Replace("www.", "");
-                    ctrlInfo.infoFileName.Text = Path.GetFileNameWithoutExtension(new Uri(movieLink).LocalPath);
-                    MovieDetails.panelStreams.Controls.Add(ctrlInfo);
-                }
-
-                MovieDetails.Dock = DockStyle.Fill;
-                frmOpenTheatre.form.tabBlank.Controls.Clear();
-                frmOpenTheatre.form.tabBlank.Controls.Add(MovieDetails);
-                frmOpenTheatre.form.tab.SelectedTab = frmOpenTheatre.form.tabBlank;
+                MovieDetails.imgPoster.Image = UtilityTools.ChangeOpacity(UtilityTools.LoadPicture(infoImagePoster), 1);
+                MovieDetails.BackgroundImage = UtilityTools.ChangeOpacity(UtilityTools.LoadPicture(infoImageFanart), 0.2F);
             }
-            catch (Exception ex) { MessageBox.Show(ex.Message); }
+            catch { }
+
+            if (infoImagePoster == "") { MovieDetails.imgPoster.Image = UtilityTools.ChangeOpacity(Properties.Resources.poster_default, 1); }
+            if (infoImageFanart == "") { MovieDetails.BackgroundImage = UtilityTools.ChangeOpacity(Properties.Resources.background_original, 0.5F); }
+            if (infoTrailer == "") { MovieDetails.btnWatchTrailer.Visible = false; }
+
+            foreach (string movieLink in infoMovieLinks)
+            {
+                ctrlStreamInfo ctrlInfo = new ctrlStreamInfo();
+                ctrlInfo.infoFileURL = new Uri(movieLink).AbsoluteUri;
+                ctrlInfo.infoFileHost.Text = new Uri(movieLink).Host.Replace("www.", "");
+                ctrlInfo.infoFileName.Text = Path.GetFileNameWithoutExtension(new Uri(movieLink).LocalPath);
+                MovieDetails.panelStreams.Controls.Add(ctrlInfo);
+            }
+
+            MovieDetails.Dock = DockStyle.Fill;
+            frmOpenTheatre.form.tabBlank.Controls.Clear();
+            frmOpenTheatre.form.tabBlank.Controls.Add(MovieDetails);
+            frmOpenTheatre.form.tab.SelectedTab = frmOpenTheatre.form.tabBlank;
         }
 
         private void InfoPoster_MouseEnter(object sender, EventArgs e)
