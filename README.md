@@ -22,6 +22,7 @@ OpenTheatre is a program which allows users to search for Movies, TV Series, Ani
 - Includes an internal VLC media player 
 - Support for external players (Currently includes WMP, MPC & VLC)
 - Built-in download client
+- Integration with GitHub for exception handling
 - Collects metadata from OMDb API & Popcorn Time API
 - Automatic local cache updates
 
