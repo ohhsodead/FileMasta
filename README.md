@@ -58,6 +58,7 @@ Download the latest installer [here](https://github.com/invu/opentheatre-app/rel
 - [Material Design Icons (Powered by Google)](https://materialdesignicons.com/)
 - [Open Movie Database API](https://omdbapi.com)
 - [Popcorn Time API](https://popcorntime.sh/)
+- [YTS.AG (.am) API](https://yts.am/)
 - [Json.NET (Newtonsoft)](https://www.newtonsoft.com/json)
 - [VLC Media Player](https://www.videolan.org/vlc/)
 - [Octokit.NET](https://github.com/octokit/octokit.net)
