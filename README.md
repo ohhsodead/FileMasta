@@ -14,7 +14,7 @@ OpenTheatre is a program which allows users to search for Movies, TV Series, Ani
 
 ## Some features available
 - Simple interface and background threads for the best performance
-- Multilingual support (en, es, fr) - contributions are welcome!
+- Multilingual support (en, es, fr, de) - contributions are welcome!
 - Discover over 50,000 movies, series, anime, subtitles, torrents and archives
 - Search movies by name, actor, year and genre
 - Store files in your Bookmarks for later use
