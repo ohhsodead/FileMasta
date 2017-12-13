@@ -40,19 +40,19 @@ Download the latest installer [here](https://github.com/invu/opentheatre-app/rel
 
 ## Screenshots
 ### Movies
-![Home Page](https://raw.githubusercontent.com/invu/opentheatre-app/master/screenshots/movies.png)
+![Movies](https://raw.githubusercontent.com/invu/opentheatre-app/master/screenshots/movies.png)
 
 ### Files
-![Movie Page](https://raw.githubusercontent.com/invu/opentheatre-app/master/screenshots/files.png)
+![Files](https://raw.githubusercontent.com/invu/opentheatre-app/master/screenshots/files.png)
 
 ### Bookmarks
 ![Bookmarks](https://raw.githubusercontent.com/invu/opentheatre-app/master/screenshots/bookmarks.png)
 
 ### Movie Details
-![Show Page](https://raw.githubusercontent.com/invu/opentheatre-app/master/screenshots/movie%20details.png)
+![Movie Details](https://raw.githubusercontent.com/invu/opentheatre-app/master/screenshots/movie%20details.png)
 
 ### Downloads
-![Show Page](https://raw.githubusercontent.com/invu/opentheatre-app/master/screenshots/downloads.png)
+![Downloads](https://raw.githubusercontent.com/invu/opentheatre-app/master/screenshots/downloads.png)
 
 ## Where credit's due
 - [Material Design Icons (Powered by Google)](https://materialdesignicons.com/)
@@ -60,8 +60,7 @@ Download the latest installer [here](https://github.com/invu/opentheatre-app/rel
 - [Popcorn Time API](https://popcorntime.sh/)
 - [YTS.AG (.am) API](https://yts.am/)
 - [Json.NET (Newtonsoft)](https://www.newtonsoft.com/json)
-- [VLC Media Player](https://www.videolan.org/vlc/)
-- [Octokit.NET](https://github.com/octokit/octokit.net)
+- [VLC Player](https://www.videolan.org/vlc/)
 
 ## Comments
 OpenTheatre is a new application and is not a segment of Popcorn Time or any other similar apps.
