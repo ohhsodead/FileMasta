@@ -27,7 +27,7 @@ OpenTheatre is a program which allows users to search for Movies, TV Series, Ani
 - Automatic local cache updates
 
 ## Latest build
-OpenTheatre 2.7.0
+OpenTheatre 2.8.1
 
 ## Framework & Backend
 The application is using .NET 4.6.2 WinForms Framework written in C#
@@ -36,31 +36,31 @@ The application is using .NET 4.6.2 WinForms Framework written in C#
 Windows 7 and above (Windows 7, 8, 8.1, 10)
 
 ## Installation
-Download the latest installer [here](https://github.com/invu/opentheatre-app/releases/download/0.2.7.0/OpenTheatreInstaller.exe)
+Download the latest installer [here](https://github.com/invu/opentheatre-app/releases/download/0.2.8.1/OpenTheatreInstaller.exe)
 
 ## Screenshots
 ### Movies
-![Home Page](https://raw.githubusercontent.com/invu/opentheatre-app/master/screenshots/movies.png)
+![Movies](https://raw.githubusercontent.com/invu/opentheatre-app/master/screenshots/movies.png)
 
 ### Files
-![Movie Page](https://raw.githubusercontent.com/invu/opentheatre-app/master/screenshots/files.png)
+![Files](https://raw.githubusercontent.com/invu/opentheatre-app/master/screenshots/files.png)
 
 ### Bookmarks
 ![Bookmarks](https://raw.githubusercontent.com/invu/opentheatre-app/master/screenshots/bookmarks.png)
 
 ### Movie Details
-![Show Page](https://raw.githubusercontent.com/invu/opentheatre-app/master/screenshots/movie%20details.png)
+![Movie Details](https://raw.githubusercontent.com/invu/opentheatre-app/master/screenshots/movie%20details.png)
 
 ### Downloads
-![Show Page](https://raw.githubusercontent.com/invu/opentheatre-app/master/screenshots/downloads.png)
+![Downloads](https://raw.githubusercontent.com/invu/opentheatre-app/master/screenshots/downloads.png)
 
 ## Where credit's due
 - [Material Design Icons (Powered by Google)](https://materialdesignicons.com/)
 - [Open Movie Database API](https://omdbapi.com)
 - [Popcorn Time API](https://popcorntime.sh/)
+- [YTS.AG (.am) API](https://yts.am/)
 - [Json.NET (Newtonsoft)](https://www.newtonsoft.com/json)
-- [VLC Media Player](https://www.videolan.org/vlc/)
-- [Octokit.NET](https://github.com/octokit/octokit.net)
+- [VLC Player](https://www.videolan.org/vlc/)
 
 ## Comments
 OpenTheatre is a new application and is not a segment of Popcorn Time or any other similar apps.
