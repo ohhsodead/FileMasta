@@ -72,7 +72,11 @@ namespace OpenTheatre
         private void downloadCompleted(object sender, AsyncCompletedEventArgs e)
         {
             sw.Reset();
-            if (e.Error != null) { infoStatus.Text = frmOpenTheatre.rm.GetString("error") + " (" + e.Error.Message + ")"; doRefreshDownload = true; imgStatus.Image = Properties.Resources.refresh; imgStatus.Visible = true; progressBar1.BackColor = Color.Red; infoStatus.ForeColor = Color.Red; }
+            if (e.Error != null)
+            {
+                infoStatus.Text = frmOpenTheatre.rm.GetString("error") + " (" + e.Error.Message + ")"; doRefreshDownload = true; imgStatus.Image = Properties.Resources.refresh; imgStatus.Visible = true; progressBar1.BackColor = Color.Red; infoStatus.ForeColor = Color.Red;
+                Logger.log("FILE DOWNLOAD ERROR Message: " + e.Error.Message + " -File Name: " + infoFileName.Text + " -Host: " + new Uri(infoFileURL).Host);
+            }
             else { infoStatus.Text = frmOpenTheatre.rm.GetString("complete"); imgStatus.Image = Properties.Resources.check; imgStatus.Visible = true; }
 
             frmOpenTheatre.currentDownloads.Remove(infoFileURL);

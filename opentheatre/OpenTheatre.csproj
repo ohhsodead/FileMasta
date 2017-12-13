@@ -34,7 +34,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>openplex_logo.ico</ApplicationIcon>
+    <ApplicationIcon>opentheatre_logo.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>false</SignAssembly>
@@ -108,7 +108,7 @@
     <Compile Include="ctrlStreamInfo.Designer.cs">
       <DependentUpon>ctrlStreamInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="DatabaseFilesEntity.cs" />
+    <Compile Include="DataJson\DatabaseFilesEntity.cs" />
     <Compile Include="frmOpenTheatre.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +127,11 @@
     <Compile Include="frmVLCPlayer.Designer.cs">
       <DependentUpon>frmVLCPlayer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Languages\misc-de.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>misc-de.resx</DependentUpon>
+    </Compile>
     <Compile Include="Languages\misc-en.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -142,11 +147,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>misc-fr.resx</DependentUpon>
     </Compile>
-    <Compile Include="OMDbEntity.cs" />
-    <Compile Include="KnownFolder.cs" />
-    <Compile Include="PopcornTimeEntity.cs" />
+    <Compile Include="DataJson\OMDbEntity.cs" />
+    <Compile Include="Utilities\KnownFolder.cs" />
     <Compile Include="Program.cs" />
-    <Compile Include="ProgressBarEx.cs">
+    <Compile Include="CControls\ProgressBarEx.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -155,8 +159,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="regexFileName.cs" />
-    <Compile Include="Utilities.cs" />
+    <Compile Include="Utilities\regexFileName.cs" />
+    <Compile Include="Utilities\Utilities.cs" />
+    <EmbeddedResource Include="ctrlDetails.de.resx">
+      <DependentUpon>ctrlDetails.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ctrlDetails.es.resx">
       <DependentUpon>ctrlDetails.cs</DependentUpon>
     </EmbeddedResource>
@@ -171,6 +178,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ctrlMoviesPoster.resx">
       <DependentUpon>ctrlMoviesPoster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrlSplashScreen.de.resx">
+      <DependentUpon>ctrlSplashScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ctrlSplashScreen.es.resx">
       <DependentUpon>ctrlSplashScreen.cs</DependentUpon>
@@ -187,6 +197,9 @@
     <EmbeddedResource Include="ctrlStreamInfo.resx">
       <DependentUpon>ctrlStreamInfo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmOpenTheatre.de.resx">
+      <DependentUpon>frmOpenTheatre.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmOpenTheatre.es.resx">
       <DependentUpon>frmOpenTheatre.cs</DependentUpon>
     </EmbeddedResource>
@@ -201,6 +214,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmVLCPlayer.resx">
       <DependentUpon>frmVLCPlayer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\misc-de.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>misc-de.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Languages\misc-en.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -234,7 +251,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="openplex_logo.ico" />
+    <Content Include="opentheatre_logo.ico" />
+    <None Include="Resources\magnet.png" />
     <None Include="Resources\google-plus.png" />
     <None Include="Resources\share-variant.png" />
     <None Include="Resources\email.png" />
@@ -279,12 +297,6 @@
     <None Include="Resources\poster-glow.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\UnhandledExceptions\UnhandledExceptions.csproj">
-      <Project>{8c34bf91-cce3-47fa-aa32-4b2bb1a6f17a}</Project>
-      <Name>UnhandledExceptions</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <COMReference Include="AxAXVLC">
       <Guid>{DF2BBE39-40A8-433B-A279-073F48DA94B6}</Guid>
       <VersionMajor>1</VersionMajor>
@@ -302,6 +314,12 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\UnhandledExceptions\UnhandledExceptions.csproj">
+      <Project>{8c34bf91-cce3-47fa-aa32-4b2bb1a6f17a}</Project>
+      <Name>UnhandledExceptions</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -23,11 +23,11 @@ namespace Utilities
         // open new broken source issue template
         public static void openBrokenFileIssue(string webFile)
         {
-            Process.Start("https://github.com/isaacs/github/issues/new?title=" + "Broken File Report" + "&body=" +
-                "Type: " + getContainingListOfURL(webFile) +
-                "\nHost: " + new Uri(webFile).Host.Replace("www.", "") +
-                "\nName: " + new Uri(webFile).LocalPath +
-                "\n ----------------------- \n" +
+            Process.Start("https://github.com/invu/opentheatre/issues/new?title=" + "Broken File Report" + "&body=" +
+                "Type: " + getContainingListOfURL(webFile) + "%0A" +
+                "Host: " + new Uri(webFile).Host.Replace("www.", "") + "%0A" +
+                "Name: " + new Uri(webFile).LocalPath + "%0A" +
+                "----------------------- %0A" +
                 "Before creating an issue for a web file, ensure that you're able to access the same website (file host) from your web browser, as sometimes web files are unable to be accessed due to permissions or firewalls. Please explain your problem with the file, be clear and not vague.");
         }
 

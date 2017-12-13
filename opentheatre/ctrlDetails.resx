@@ -125,24 +125,27 @@
   <data name="lblSubCast.Size" type="System.Drawing.Size, System.Drawing">
     <value>41, 20</value>
   </data>
-  <data name="&gt;&gt;infoSplitter1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="panelTitleTorrents.Size" type="System.Drawing.Size, System.Drawing">
+    <value>690, 28</value>
+  </data>
+  <data name="cButton1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 16, 0, 3</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="infoGenre.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
   <data name="infoFileAge.Location" type="System.Drawing.Point, System.Drawing">
-    <value>454, 33</value>
+    <value>456, 33</value>
   </data>
   <data name="&gt;&gt;lineUserReviews.Parent" xml:space="preserve">
-    <value>panelSubHeaders</value>
+    <value>panelTitleFiles</value>
   </data>
   <data name="&gt;&gt;panelDetails.Parent" xml:space="preserve">
     <value>$this</value>
-  </data>
-  <data name="&gt;&gt;panelStreams.Parent" xml:space="preserve">
-    <value>panelDetails</value>
   </data>
   <data name="lblSubCast.Text" xml:space="preserve">
     <value>Cast:</value>
@@ -211,17 +214,26 @@
   <data name="lineSplitter.Size" type="System.Drawing.Size, System.Drawing">
     <value>681, 2</value>
   </data>
-  <data name="panelStreams.WrapContents" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="&gt;&gt;panelTitleFiles.Name" xml:space="preserve">
+    <value>panelTitleFiles</value>
+  </data>
+  <data name="infoYear.Text" xml:space="preserve">
+    <value>Year</value>
   </data>
   <data name="imgAddToBookmarks.Location" type="System.Drawing.Point, System.Drawing">
     <value>1, 31</value>
   </data>
-  <data name="&gt;&gt;infoSplitter0.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="cButton1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="infoTitle.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
   </data>
   <data name="infoFileHost.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 3, 0, 0</value>
+  </data>
+  <data name="panelTitleTorrents.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 0, 0</value>
   </data>
   <data name="infoSplitter2.Size" type="System.Drawing.Size, System.Drawing">
     <value>15, 17</value>
@@ -230,13 +242,13 @@
     <value>infoRuntime</value>
   </data>
   <data name="&gt;&gt;imgAddToBookmarks.Parent" xml:space="preserve">
-    <value>panelSubHeaders</value>
+    <value>panelTitleFiles</value>
   </data>
   <data name="panelDetails.TabIndex" type="System.Int32, mscorlib">
     <value>100036</value>
   </data>
   <data name="&gt;&gt;infoFileHost.Parent" xml:space="preserve">
-    <value>panelSubHeaders</value>
+    <value>panelTitleFiles</value>
   </data>
   <data name="infoGenre.Location" type="System.Drawing.Point, System.Drawing">
     <value>55, 2</value>
@@ -250,8 +262,8 @@
   <data name="&gt;&gt;infoSplitter4.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="lblHeaderUserReviews.TabIndex" type="System.Int32, mscorlib">
-    <value>1100</value>
+  <data name="cButton1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 24</value>
   </data>
   <data name="infoSplitter4.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 0, 0, 0</value>
@@ -259,11 +271,8 @@
   <data name="infoGenre.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 10.75pt</value>
   </data>
-  <data name="panelStreams.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 208</value>
-  </data>
-  <data name="panelStreams.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left, Right</value>
+  <data name="lblSubDirector.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 86</value>
   </data>
   <data name="infoYear.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 2, 0, 20</value>
@@ -273,6 +282,9 @@
   </data>
   <data name="&gt;&gt;infoRatingIMDb.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cButton2.Text" xml:space="preserve">
+    <value />
   </data>
   <data name="&gt;&gt;infoSynopsis.Name" xml:space="preserve">
     <value>infoSynopsis</value>
@@ -292,8 +304,11 @@
   <data name="imgIMDb.Location" type="System.Drawing.Point, System.Drawing">
     <value>264, 4</value>
   </data>
-  <data name="panelSubHeaders.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 20, 0, 0</value>
+  <data name="&gt;&gt;lblHeaderUserReviews.Parent" xml:space="preserve">
+    <value>panelTitleFiles</value>
+  </data>
+  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
+    <value>panelTitleTorrents</value>
   </data>
   <data name="infoFileSize.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 3, 0, 0</value>
@@ -307,11 +322,8 @@
   <data name="&gt;&gt;imgIMDb.Type" xml:space="preserve">
     <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;infoRatingIMDb.Name" xml:space="preserve">
-    <value>infoRatingIMDb</value>
-  </data>
-  <data name="appClose.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="&gt;&gt;cButton2.Parent" xml:space="preserve">
+    <value>panelTitleTorrents</value>
   </data>
   <data name="&gt;&gt;imgPosterBG.ZOrder" xml:space="preserve">
     <value>5</value>
@@ -322,8 +334,23 @@
   <data name="infoFileAge.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Right</value>
   </data>
+  <data name="panelTitleTorrents.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 240</value>
+  </data>
+  <data name="panelTitleFiles.TabIndex" type="System.Int32, mscorlib">
+    <value>100042</value>
+  </data>
+  <data name="panelTitleFiles.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 152</value>
+  </data>
+  <data name="infoYear.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="&gt;&gt;imgPoster.Name" xml:space="preserve">
     <value>imgPoster</value>
+  </data>
+  <data name="&gt;&gt;cButton1.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;infoSplitter0.Parent" xml:space="preserve">
     <value>panelDetails</value>
@@ -343,14 +370,14 @@
   <data name="infoFileName.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9.75pt</value>
   </data>
+  <data name="&gt;&gt;panelTorrents.Parent" xml:space="preserve">
+    <value>panelDetails</value>
+  </data>
   <data name="lineSplitter.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 24</value>
   </data>
-  <data name="infoSplitter4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 4, 0, 0</value>
-  </data>
-  <data name="&gt;&gt;lblHeaderUserReviews.ZOrder" xml:space="preserve">
-    <value>5</value>
+  <data name="&gt;&gt;appClose.Name" xml:space="preserve">
+    <value>appClose</value>
   </data>
   <data name="&gt;&gt;infoFileHost.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -358,8 +385,8 @@
   <data name="imgIMDb.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>StretchImage</value>
   </data>
-  <data name="btnWatchTrailer.Text" xml:space="preserve">
-    <value>Watch Trailer</value>
+  <data name="panelTorrents.TabIndex" type="System.Int32, mscorlib">
+    <value>100043</value>
   </data>
   <data name="infoYear.Size" type="System.Drawing.Size, System.Drawing">
     <value>37, 20</value>
@@ -385,14 +412,8 @@
   <data name="&gt;&gt;appClose.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="appClose.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>StretchImage</value>
-  </data>
   <data name="infoCast.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 6, 0, 0</value>
-  </data>
-  <data name="panelSubHeaders.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
   </data>
   <data name="lblSubDirector.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 12, 0, 0</value>
@@ -412,8 +433,14 @@
   <data name="infoSplitter2.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9.75pt</value>
   </data>
+  <data name="&gt;&gt;btnWatchTrailer.Name" xml:space="preserve">
+    <value>btnWatchTrailer</value>
+  </data>
   <data name="lblHeaderUserReviews.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
+  </data>
+  <data name="panelTorrents.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 2, 0, 0</value>
   </data>
   <data name="&gt;&gt;imgPoster.Type" xml:space="preserve">
     <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -431,16 +458,22 @@
     <value>0</value>
   </data>
   <data name="&gt;&gt;infoFileSize.Parent" xml:space="preserve">
-    <value>panelSubHeaders</value>
+    <value>panelTitleFiles</value>
   </data>
   <data name="&gt;&gt;infoFileName.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;panelStreams.Name" xml:space="preserve">
-    <value>panelStreams</value>
+  <data name="infoRated.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 10.75pt</value>
   </data>
-  <data name="lblHeaderUserReviews.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 12pt</value>
+  <data name="panelTitleFiles.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 20, 0, 0</value>
+  </data>
+  <data name="lblHeaderUserReviews.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="btnWatchTrailer.Size" type="System.Drawing.Size, System.Drawing">
+    <value>159, 28</value>
   </data>
   <data name="infoSplitter1.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9.75pt</value>
@@ -454,11 +487,17 @@
   <data name="infoFileName.Location" type="System.Drawing.Point, System.Drawing">
     <value>160, 33</value>
   </data>
-  <data name="&gt;&gt;panelStreams.ZOrder" xml:space="preserve">
-    <value>17</value>
+  <data name="btnWatchTrailer.Text" xml:space="preserve">
+    <value>Watch Trailer</value>
   </data>
   <data name="&gt;&gt;imgPosterBG.Type" xml:space="preserve">
     <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>88, 21</value>
+  </data>
+  <data name="&gt;&gt;cButton2.Name" xml:space="preserve">
+    <value>cButton2</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.UserControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -466,8 +505,11 @@
   <data name="infoFileHost.Size" type="System.Drawing.Size, System.Drawing">
     <value>35, 17</value>
   </data>
-  <data name="infoYear.Text" xml:space="preserve">
-    <value>Year</value>
+  <data name="label4.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 12pt</value>
+  </data>
+  <data name="panelTorrents.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="infoSynopsis.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 42</value>
@@ -478,14 +520,26 @@
   <data name="&gt;&gt;infoSynopsis.ZOrder" xml:space="preserve">
     <value>11</value>
   </data>
+  <data name="infoTitle.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="panelTorrents.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 270</value>
+  </data>
   <data name="imgAddToBookmarks.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Left</value>
+  </data>
+  <data name="appClose.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="infoSplitter0.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9.75pt</value>
   </data>
-  <data name="&gt;&gt;infoSplitter3.Name" xml:space="preserve">
-    <value>infoSplitter3</value>
+  <data name="lblSubDirector.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 10.75pt</value>
+  </data>
+  <data name="panelTorrents.FlowDirection" type="System.Windows.Forms.FlowDirection, System.Windows.Forms">
+    <value>TopDown</value>
   </data>
   <data name="&gt;&gt;infoCast.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -499,8 +553,8 @@
   <data name="infoSynopsis.TabIndex" type="System.Int32, mscorlib">
     <value>1060</value>
   </data>
-  <data name="lineSplitter.TabIndex" type="System.Int32, mscorlib">
-    <value>1096</value>
+  <data name="panelTitleFiles.Size" type="System.Drawing.Size, System.Drawing">
+    <value>690, 54</value>
   </data>
   <data name="infoCast.Text" xml:space="preserve">
     <value>Cast</value>
@@ -508,11 +562,14 @@
   <data name="&gt;&gt;infoCast.Name" xml:space="preserve">
     <value>infoCast</value>
   </data>
-  <data name="infoSplitter0.TabIndex" type="System.Int32, mscorlib">
-    <value>1061</value>
+  <data name="&gt;&gt;panelTitleTorrents.Parent" xml:space="preserve">
+    <value>panelDetails</value>
   </data>
   <data name="infoRated.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
+  </data>
+  <data name="infoSynopsis.Size" type="System.Drawing.Size, System.Drawing">
+    <value>66, 20</value>
   </data>
   <data name="&gt;&gt;lblSubCast.ZOrder" xml:space="preserve">
     <value>14</value>
@@ -523,8 +580,17 @@
   <data name="&gt;&gt;infoDirector.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="cButton2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 13.25pt</value>
+  </data>
   <data name="lineSplitter.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 16, 3, 3</value>
+  </data>
+  <data name="cButton1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 13.25pt</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>TORRENTS</value>
   </data>
   <data name="&gt;&gt;imgIMDb.Parent" xml:space="preserve">
     <value>panelDetails</value>
@@ -535,6 +601,9 @@
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 8.25pt</value>
   </data>
+  <data name="imgIMDb.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="&gt;&gt;panelDetails.Name" xml:space="preserve">
     <value>panelDetails</value>
   </data>
@@ -544,8 +613,11 @@
   <data name="infoFileName.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="imgIMDb.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="label4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="infoSplitter4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 4, 0, 0</value>
   </data>
   <data name="&gt;&gt;infoTitle.Name" xml:space="preserve">
     <value>infoTitle</value>
@@ -553,8 +625,14 @@
   <data name="infoFileSize.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Right</value>
   </data>
+  <data name="panelTorrents.WrapContents" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="infoFileName.Size" type="System.Drawing.Size, System.Drawing">
     <value>43, 17</value>
+  </data>
+  <data name="&gt;&gt;cButton1.Name" xml:space="preserve">
+    <value>cButton1</value>
   </data>
   <data name="infoRuntime.Size" type="System.Drawing.Size, System.Drawing">
     <value>64, 20</value>
@@ -562,8 +640,8 @@
   <data name="lineSplitter.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Semibold, 13.25pt</value>
   </data>
-  <data name="&gt;&gt;imgPoster.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="&gt;&gt;panelTorrents.ZOrder" xml:space="preserve">
+    <value>19</value>
   </data>
   <data name="infoFileAge.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 3, 0, 0</value>
@@ -580,8 +658,11 @@
   <data name="infoYear.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 2</value>
   </data>
-  <data name="lblHeaderUserReviews.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
+  <data name="lblHeaderUserReviews.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 12pt</value>
+  </data>
+  <data name="infoFileAge.Size" type="System.Drawing.Size, System.Drawing">
+    <value>31, 17</value>
   </data>
   <data name="infoFileAge.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -589,17 +670,23 @@
   <data name="infoSplitter3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 4, 0, 0</value>
   </data>
-  <data name="&gt;&gt;infoFileName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="infoTitle.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 18pt</value>
   </data>
   <data name="infoRatingIMDb.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="btnWatchTrailer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>159, 28</value>
+  <data name="&gt;&gt;panelTorrents.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="infoTitle.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
+  <data name="panelFiles.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="cButton1.TabIndex" type="System.Int32, mscorlib">
+    <value>1102</value>
+  </data>
+  <data name="&gt;&gt;infoFileName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;imgAddToBookmarks.Name" xml:space="preserve">
     <value>imgAddToBookmarks</value>
@@ -610,6 +697,9 @@
   <data name="infoSplitter0.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="cButton1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>77, 2</value>
+  </data>
   <data name="infoSynopsis.Text" xml:space="preserve">
     <value>Synopsis</value>
   </data>
@@ -619,11 +709,8 @@
   <data name="&gt;&gt;infoSplitter1.Parent" xml:space="preserve">
     <value>panelDetails</value>
   </data>
-  <data name="&gt;&gt;infoFileSize.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;imgAddToBookmarks.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;infoGenre.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="&gt;&gt;lineUserReviews.Name" xml:space="preserve">
     <value>lineUserReviews</value>
@@ -640,11 +727,17 @@
   <data name="infoDirector.Text" xml:space="preserve">
     <value>Director</value>
   </data>
+  <data name="&gt;&gt;infoSplitter3.Name" xml:space="preserve">
+    <value>infoSplitter3</value>
+  </data>
   <data name="lblHeaderUserReviews.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="lineUserReviews.Text" xml:space="preserve">
     <value />
+  </data>
+  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="&gt;&gt;panelDetails.Type" xml:space="preserve">
     <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -655,11 +748,11 @@
   <data name="infoSplitter1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 4, 0, 0</value>
   </data>
+  <data name="&gt;&gt;panelFiles.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="lblSubCast.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Semibold, 10.75pt</value>
-  </data>
-  <data name="&gt;&gt;panelSubHeaders.ZOrder" xml:space="preserve">
-    <value>16</value>
   </data>
   <data name="imgPoster.Location" type="System.Drawing.Point, System.Drawing">
     <value>26, 29</value>
@@ -669,6 +762,9 @@
   </data>
   <data name="infoSplitter3.Location" type="System.Drawing.Point, System.Drawing">
     <value>245, 4</value>
+  </data>
+  <data name="label4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="&gt;&gt;lblSubCast.Parent" xml:space="preserve">
     <value>panelDetails</value>
@@ -691,9 +787,6 @@
   <data name="infoRuntime.Location" type="System.Drawing.Point, System.Drawing">
     <value>181, 2</value>
   </data>
-  <data name="&gt;&gt;infoGenre.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="lblSubDirector.Text" xml:space="preserve">
     <value>Director:</value>
   </data>
@@ -711,6 +804,9 @@
   </data>
   <data name="infoSplitter3.Size" type="System.Drawing.Size, System.Drawing">
     <value>15, 17</value>
+  </data>
+  <data name="panelFiles.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="&gt;&gt;infoFileHost.Name" xml:space="preserve">
     <value>infoFileHost</value>
@@ -748,9 +844,6 @@
   <data name="appClose.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 25, 25, 3</value>
   </data>
-  <data name="panelStreams.FlowDirection" type="System.Windows.Forms.FlowDirection, System.Windows.Forms">
-    <value>TopDown</value>
-  </data>
   <data name="infoRuntime.Text" xml:space="preserve">
     <value>Runtime</value>
   </data>
@@ -758,7 +851,7 @@
     <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="infoFileSize.Location" type="System.Drawing.Point, System.Drawing">
-    <value>384, 33</value>
+    <value>386, 33</value>
   </data>
   <data name="&gt;&gt;infoYear.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -808,8 +901,8 @@
   <data name="btnWatchTrailer.TabIndex" type="System.Int32, mscorlib">
     <value>100044</value>
   </data>
-  <data name="infoYear.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="&gt;&gt;panelDetails.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="&gt;&gt;infoSynopsis.Parent" xml:space="preserve">
     <value>panelDetails</value>
@@ -820,17 +913,11 @@
   <data name="&gt;&gt;infoSplitter4.Name" xml:space="preserve">
     <value>infoSplitter4</value>
   </data>
-  <data name="&gt;&gt;infoSplitter2.Name" xml:space="preserve">
-    <value>infoSplitter2</value>
-  </data>
   <data name="infoRatingIMDb.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 2, 0, 20</value>
   </data>
   <data name="infoSplitter1.Location" type="System.Drawing.Point, System.Drawing">
     <value>103, 4</value>
-  </data>
-  <data name="imgPosterBG.TabIndex" type="System.Int32, mscorlib">
-    <value>100043</value>
   </data>
   <data name="infoRuntime.TabIndex" type="System.Int32, mscorlib">
     <value>1071</value>
@@ -850,23 +937,23 @@
   <data name="&gt;&gt;infoYear.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;panelDetails.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;panelSubHeaders.Parent" xml:space="preserve">
-    <value>panelDetails</value>
-  </data>
   <data name="infoSplitter0.Size" type="System.Drawing.Size, System.Drawing">
     <value>15, 17</value>
   </data>
   <data name="&gt;&gt;infoDirector.ZOrder" xml:space="preserve">
     <value>13</value>
   </data>
+  <data name="infoRatingIMDb.TabIndex" type="System.Int32, mscorlib">
+    <value>1073</value>
+  </data>
+  <data name="&gt;&gt;panelTitleFiles.Parent" xml:space="preserve">
+    <value>panelDetails</value>
+  </data>
   <data name="&gt;&gt;infoSplitter4.Parent" xml:space="preserve">
     <value>panelDetails</value>
   </data>
-  <data name="&gt;&gt;panelSubHeaders.Name" xml:space="preserve">
-    <value>panelSubHeaders</value>
+  <data name="&gt;&gt;infoSplitter2.Name" xml:space="preserve">
+    <value>infoSplitter2</value>
   </data>
   <data name="infoRuntime.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -880,8 +967,11 @@
   <data name="&gt;&gt;infoFileSize.Name" xml:space="preserve">
     <value>infoFileSize</value>
   </data>
-  <data name="infoRated.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 10.75pt</value>
+  <data name="&gt;&gt;panelTitleFiles.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="infoSplitter0.Location" type="System.Drawing.Point, System.Drawing">
+    <value>40, 4</value>
   </data>
   <data name="imgPosterBG.Size" type="System.Drawing.Size, System.Drawing">
     <value>180, 268</value>
@@ -889,10 +979,10 @@
   <data name="&gt;&gt;infoRated.Parent" xml:space="preserve">
     <value>panelDetails</value>
   </data>
-  <data name="infoFileName.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="panelFiles.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 2, 0, 0</value>
   </data>
-  <data name="&gt;&gt;infoTitle.ZOrder" xml:space="preserve">
+  <data name="infoFileName.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="&gt;&gt;infoTitle.Type" xml:space="preserve">
@@ -913,11 +1003,17 @@
   <data name="imgIMDb.TabIndex" type="System.Int32, mscorlib">
     <value>100041</value>
   </data>
-  <data name="infoTitle.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="cButton2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>681, 2</value>
+  </data>
+  <data name="cButton2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 24</value>
   </data>
   <data name="infoRatingIMDb.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 10.75pt</value>
+  </data>
+  <data name="panelTorrents.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 0</value>
   </data>
   <data name="&gt;&gt;infoGenre.Parent" xml:space="preserve">
     <value>panelDetails</value>
@@ -934,20 +1030,20 @@
   <data name="infoSynopsis.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="panelSubHeaders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>690, 54</value>
+  <data name="&gt;&gt;panelFiles.Name" xml:space="preserve">
+    <value>panelFiles</value>
+  </data>
+  <data name="&gt;&gt;panelTitleTorrents.ZOrder" xml:space="preserve">
+    <value>18</value>
   </data>
   <data name="&gt;&gt;infoSplitter3.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;imgPosterBG.Name" xml:space="preserve">
-    <value>imgPosterBG</value>
+  <data name="&gt;&gt;cButton1.Parent" xml:space="preserve">
+    <value>panelTitleTorrents</value>
   </data>
   <data name="&gt;&gt;infoRatingIMDb.Parent" xml:space="preserve">
     <value>panelDetails</value>
-  </data>
-  <data name="panelStreams.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 2, 0, 0</value>
   </data>
   <data name="lblSubCast.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -964,8 +1060,11 @@
   <data name="imgPosterBG.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="imgIMDb.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 20</value>
+  <data name="&gt;&gt;panelTitleTorrents.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="panelFiles.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="infoRatingIMDb.Size" type="System.Drawing.Size, System.Drawing">
     <value>93, 20</value>
@@ -979,14 +1078,11 @@
   <data name="infoSplitter1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 0, 0, 0</value>
   </data>
-  <data name="infoFileAge.Size" type="System.Drawing.Size, System.Drawing">
-    <value>31, 17</value>
+  <data name="lineSplitter.TabIndex" type="System.Int32, mscorlib">
+    <value>1096</value>
   </data>
   <data name="&gt;&gt;infoFileAge.Name" xml:space="preserve">
     <value>infoFileAge</value>
-  </data>
-  <data name="&gt;&gt;panelStreams.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="infoSplitter2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -994,23 +1090,29 @@
   <data name="imgPoster.Size" type="System.Drawing.Size, System.Drawing">
     <value>159, 244</value>
   </data>
-  <data name="infoFileAge.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="infoSplitter0.TabIndex" type="System.Int32, mscorlib">
+    <value>1061</value>
+  </data>
+  <data name="appClose.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>StretchImage</value>
   </data>
   <data name="infoYear.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 10.75pt</value>
   </data>
   <data name="&gt;&gt;lineSplitter.Parent" xml:space="preserve">
-    <value>panelSubHeaders</value>
+    <value>panelTitleFiles</value>
   </data>
   <data name="imgPoster.TabIndex" type="System.Int32, mscorlib">
     <value>100040</value>
   </data>
-  <data name="infoSynopsis.Size" type="System.Drawing.Size, System.Drawing">
-    <value>66, 20</value>
+  <data name="&gt;&gt;infoSplitter1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="infoRatingIMDb.TabIndex" type="System.Int32, mscorlib">
-    <value>1073</value>
+  <data name="&gt;&gt;lblHeaderUserReviews.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;panelFiles.Parent" xml:space="preserve">
+    <value>panelDetails</value>
   </data>
   <data name="imgPosterBG.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 16</value>
@@ -1018,8 +1120,8 @@
   <data name="lblHeaderUserReviews.Text" xml:space="preserve">
     <value>FILES</value>
   </data>
-  <data name="infoTitle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>199, 23</value>
+  <data name="imgPosterBG.TabIndex" type="System.Int32, mscorlib">
+    <value>100043</value>
   </data>
   <data name="&gt;&gt;lblSubDirector.Name" xml:space="preserve">
     <value>lblSubDirector</value>
@@ -1028,22 +1130,22 @@
     <value>NoControl</value>
   </data>
   <data name="&gt;&gt;infoFileName.Parent" xml:space="preserve">
-    <value>panelSubHeaders</value>
+    <value>panelTitleFiles</value>
   </data>
   <data name="imgAddToBookmarks.TabIndex" type="System.Int32, mscorlib">
     <value>1103</value>
   </data>
-  <data name="&gt;&gt;panelSubHeaders.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;infoSplitter0.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="lblHeaderUserReviews.Size" type="System.Drawing.Size, System.Drawing">
     <value>48, 21</value>
   </data>
+  <data name="&gt;&gt;imgAddToBookmarks.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="infoFileAge.Text" xml:space="preserve">
     <value>Age</value>
-  </data>
-  <data name="panelStreams.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
   </data>
   <data name="infoRated.TabIndex" type="System.Int32, mscorlib">
     <value>1070</value>
@@ -1054,20 +1156,32 @@
   <data name="infoFileSize.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="&gt;&gt;btnWatchTrailer.Name" xml:space="preserve">
-    <value>btnWatchTrailer</value>
+  <data name="panelTitleTorrents.TabIndex" type="System.Int32, mscorlib">
+    <value>100044</value>
+  </data>
+  <data name="&gt;&gt;imgPosterBG.Name" xml:space="preserve">
+    <value>imgPosterBG</value>
+  </data>
+  <data name="panelTitleFiles.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
   </data>
   <data name="infoFileHost.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9.75pt</value>
   </data>
-  <data name="panelSubHeaders.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 152</value>
-  </data>
-  <data name="&gt;&gt;appClose.Name" xml:space="preserve">
-    <value>appClose</value>
+  <data name="&gt;&gt;infoFileSize.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;infoDirector.Name" xml:space="preserve">
     <value>infoDirector</value>
+  </data>
+  <data name="panelFiles.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="&gt;&gt;panelFiles.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="infoFileAge.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="infoDirector.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 12, 0, 0</value>
@@ -1081,8 +1195,17 @@
   <data name="imgAddToBookmarks.Size" type="System.Drawing.Size, System.Drawing">
     <value>23, 23</value>
   </data>
+  <data name="panelTorrents.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
   <data name="&gt;&gt;infoCast.Parent" xml:space="preserve">
     <value>panelDetails</value>
+  </data>
+  <data name="panelFiles.FlowDirection" type="System.Windows.Forms.FlowDirection, System.Windows.Forms">
+    <value>TopDown</value>
+  </data>
+  <data name="&gt;&gt;label4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="infoRated.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 2, 0, 20</value>
@@ -1096,6 +1219,9 @@
   <data name="appClose.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
+  <data name="&gt;&gt;cButton2.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="infoTitle.Text" xml:space="preserve">
     <value>Movie Title</value>
   </data>
@@ -1103,7 +1229,7 @@
     <value>True</value>
   </data>
   <data name="&gt;&gt;infoFileAge.Parent" xml:space="preserve">
-    <value>panelSubHeaders</value>
+    <value>panelTitleFiles</value>
   </data>
   <data name="infoRatingIMDb.Text" xml:space="preserve">
     <value>IMDb Rating</value>
@@ -1123,6 +1249,12 @@
   <data name="&gt;&gt;infoSplitter2.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
+  <data name="cButton2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="panelTitleTorrents.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
   <data name="infoGenre.Size" type="System.Drawing.Size, System.Drawing">
     <value>48, 20</value>
   </data>
@@ -1141,17 +1273,23 @@
   <data name="&gt;&gt;btnWatchTrailer.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="panelStreams.Size" type="System.Drawing.Size, System.Drawing">
-    <value>693, 232</value>
+  <data name="&gt;&gt;infoRatingIMDb.Name" xml:space="preserve">
+    <value>infoRatingIMDb</value>
   </data>
   <data name="&gt;&gt;infoTitle.Parent" xml:space="preserve">
     <value>$this</value>
+  </data>
+  <data name="panelFiles.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 208</value>
   </data>
   <data name="&gt;&gt;lblSubDirector.Parent" xml:space="preserve">
     <value>panelDetails</value>
   </data>
   <data name="appClose.TabIndex" type="System.Int32, mscorlib">
     <value>100026</value>
+  </data>
+  <data name="&gt;&gt;label4.Name" xml:space="preserve">
+    <value>label4</value>
   </data>
   <data name="infoSplitter4.Text" xml:space="preserve">
     <value>•</value>
@@ -1174,14 +1312,23 @@
   <data name="btnWatchTrailer.Location" type="System.Drawing.Point, System.Drawing">
     <value>26, 284</value>
   </data>
-  <data name="lblSubDirector.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 10.75pt</value>
+  <data name="infoTitle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>199, 23</value>
   </data>
-  <data name="infoSplitter0.Location" type="System.Drawing.Point, System.Drawing">
-    <value>40, 4</value>
+  <data name="imgIMDb.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 20</value>
+  </data>
+  <data name="&gt;&gt;panelTitleTorrents.Name" xml:space="preserve">
+    <value>panelTitleTorrents</value>
+  </data>
+  <data name="&gt;&gt;panelTorrents.Name" xml:space="preserve">
+    <value>panelTorrents</value>
   </data>
   <data name="infoSplitter3.Text" xml:space="preserve">
     <value>•</value>
+  </data>
+  <data name="cButton2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>10, 16, 3, 3</value>
   </data>
   <data name="infoSplitter4.Location" type="System.Drawing.Point, System.Drawing">
     <value>312, 4</value>
@@ -1192,14 +1339,17 @@
   <data name="&gt;&gt;lineSplitter.Name" xml:space="preserve">
     <value>lineSplitter</value>
   </data>
+  <data name="cButton2.TabIndex" type="System.Int32, mscorlib">
+    <value>1096</value>
+  </data>
   <data name="&gt;&gt;lblSubCast.Name" xml:space="preserve">
     <value>lblSubCast</value>
   </data>
   <data name="&gt;&gt;infoSplitter4.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
-  <data name="infoTitle.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 18pt</value>
+  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
   </data>
   <data name="infoDirector.TabIndex" type="System.Int32, mscorlib">
     <value>1049</value>
@@ -1207,14 +1357,17 @@
   <data name="lineSplitter.Text" xml:space="preserve">
     <value />
   </data>
-  <data name="lblSubDirector.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 86</value>
-  </data>
   <data name="infoFileHost.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="infoDirector.Location" type="System.Drawing.Point, System.Drawing">
     <value>73, 86</value>
+  </data>
+  <data name="label4.TabIndex" type="System.Int32, mscorlib">
+    <value>1100</value>
+  </data>
+  <data name="&gt;&gt;cButton1.Type" xml:space="preserve">
+    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="infoFileName.Text" xml:space="preserve">
     <value>Name</value>
@@ -1231,8 +1384,8 @@
   <data name="infoSplitter2.TabIndex" type="System.Int32, mscorlib">
     <value>1072</value>
   </data>
-  <data name="panelSubHeaders.TabIndex" type="System.Int32, mscorlib">
-    <value>100042</value>
+  <data name="&gt;&gt;infoTitle.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="&gt;&gt;infoCast.ZOrder" xml:space="preserve">
     <value>15</value>
@@ -1243,8 +1396,11 @@
   <data name="infoSplitter2.Text" xml:space="preserve">
     <value>•</value>
   </data>
-  <data name="&gt;&gt;lblHeaderUserReviews.Parent" xml:space="preserve">
-    <value>panelSubHeaders</value>
+  <data name="panelFiles.WrapContents" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;imgPoster.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="&gt;&gt;infoFileAge.ZOrder" xml:space="preserve">
     <value>4</value>
@@ -1276,16 +1432,28 @@
   <data name="&gt;&gt;lblSubDirector.ZOrder" xml:space="preserve">
     <value>12</value>
   </data>
+  <data name="&gt;&gt;cButton2.Type" xml:space="preserve">
+    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="lblHeaderUserReviews.TabIndex" type="System.Int32, mscorlib">
+    <value>1100</value>
+  </data>
   <data name="&gt;&gt;lblSubDirector.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="infoSplitter1.Text" xml:space="preserve">
     <value>•</value>
   </data>
+  <data name="&gt;&gt;panelTitleFiles.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
   <data name="&gt;&gt;lineSplitter.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
+  </metadata>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>de</value>
   </metadata>
 </root>

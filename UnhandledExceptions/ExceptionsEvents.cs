@@ -87,7 +87,7 @@ namespace UnhandledExceptions
 
             Logger.log("ERROR Message: " + ((Exception)e.ExceptionObject).Message + " -File Name: " + Path.GetFileName(fileName) + " -Method Name: " + methodName + " -Line: " + line + " -Column: " + col);
 
-            Process.Start("https://github.com/invu/opentheatre/issues/new?title=" + "[Error] " + e.Exception.Message + "&body=" +
+            Process.Start("https://github.com/invu/opentheatre/issues/new?title=" + "[Error] " + ((Exception)e.ExceptionObject).Message + "&body=" +
                 "Version: " + Application.ProductVersion +
                 "%0AFile Name: " + Path.GetFileName(fileName) +
                 "%0AMethod Name: " + methodName +

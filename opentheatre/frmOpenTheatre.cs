@@ -1,5 +1,4 @@
-﻿using PopcornTimeAPI;
-using OMDbAPI;
+﻿using OMDbAPI;
 using DatabaseFilesAPI;
 using regexFileName;
 using Utilities;
@@ -189,7 +188,7 @@ namespace OpenTheatre
                 // Get Local Files
                 loadLocalFiles();
             }
-            catch (Exception ex) { showStatusTab(rm.GetString("errorConnectToServer") + "\n\n" + ex.Message); Directory.Delete(pathData, true); Logger.log(ex.Message); }
+            catch (Exception ex) { showStatusTab(rm.GetString("errorConnectToServer") + "\n\n" + ex.Message); Directory.Delete(pathData, true); }
         }
 
         void worker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
@@ -353,7 +352,7 @@ namespace OpenTheatre
                         {
                             var data = OMDbEntity.FromJson(movie);
 
-                            if (data.Title.ToLower().Contains(txtMoviesSearchBox.Text.ToLower()) | data.Actors.ToLower().Contains(txtMoviesSearchBox.Text.ToLower()) && data.Year.Contains(selectedYear) && data.Genre.ToLower().Contains(selectedGenre.ToLower()))
+                            if (data.ImdbID.ToLower() == txtMoviesSearchBox.Text.ToLower() | data.Title.ToLower().Contains(txtMoviesSearchBox.Text.ToLower()) | data.Actors.ToLower().Contains(txtMoviesSearchBox.Text.ToLower()) && data.Year.Contains(selectedYear) && data.Genre.ToLower().Contains(selectedGenre.ToLower()))
                             {
                                 ctrlMoviesPoster ctrlPoster = new ctrlMoviesPoster();
                                 ctrlPoster.infoTitle.Text = data.Title;
@@ -373,16 +372,13 @@ namespace OpenTheatre
 
                                 ctrlPoster.infoImagePoster = data.Poster;
                                 ctrlPoster.Name = data.ImdbID;
-                                ctrlPoster.infoMovieLinks = data.Sources;
+                                ctrlPoster.infoMovieFiles = data.Sources;
+                                ctrlPoster.infoMovieTorrent480p = data.torrent480p;
+                                ctrlPoster.infoMovieTorrent720p = data.torrent720p;
+                                ctrlPoster.infoMovieTorrent1080p = data.torrent1080p;
 
-                                try
-                                {
-                                    string jsonData = client.DownloadString("https://tv-v2.api-fetch.website/movie/" + data.ImdbID);
-                                    var jsonDataPT = PopcornTimeEntity.FromJson(jsonData);
-                                    ctrlPoster.infoImageFanart = jsonDataPT.Images.Fanart;
-                                    ctrlPoster.infoTrailer = jsonDataPT.Trailer;
-                                }
-                                catch { ctrlPoster.infoImageFanart = ""; ctrlPoster.infoTrailer = ""; }
+                                ctrlPoster.infoTrailer = data.trailerUrl;
+                                ctrlPoster.infoImageFanart = data.imageFanart;
 
                                 ctrlPoster.Show();
                                 MoviesPosters.Add(ctrlPoster);
@@ -421,14 +417,14 @@ namespace OpenTheatre
         }
 
         // Search Movies by Text
-        private void txtMoviesSearchBox_Enter(object sender, EventArgs e)
+        private void txtMoviesSearchBox_KeyDown(object sender, KeyEventArgs e)
         {
-            ActiveForm.AcceptButton = btnSearchMovies;
-        }
-
-        private void txtMoviesSearchBox_Leave(object sender, EventArgs e)
-        {
-            ActiveForm.AcceptButton = null;
+            if (e.KeyCode == Keys.Enter)
+            {
+                panelMovies.Controls.Clear();
+                countedMovies = 0;
+                loadMovies(52);
+            }
         }
 
         private void bgMoviesSearchBox_ClickButtonArea(object Sender, MouseEventArgs e)
@@ -514,22 +510,8 @@ namespace OpenTheatre
 
             if (data.Poster == "") { MovieDetails.imgPoster.Image = UtilityTools.ChangeOpacity(Properties.Resources.poster_default, 1); }
 
-            try
-            {
-                // Details from Popcorn Time API for Background (fanart/trailer)
-                var jsonPopcornTime = client.DownloadString("https://tv-v2.api-fetch.website/movie/" + MovieDetails.infoImdbId);
-                var dataPT = PopcornTimeEntity.FromJson(jsonPopcornTime);
-
-                try { MovieDetails.BackgroundImage = UtilityTools.ChangeOpacity(UtilityTools.LoadPicture(dataPT.Images.Fanart), 0.2F); }
-                catch { MovieDetails.BackgroundImage = UtilityTools.ChangeOpacity(Properties.Resources.background_original, 0.2F); }
-                MovieDetails.infoFanartUrl = dataPT.Images.Fanart;
-                MovieDetails.infoTrailerUrl = dataPT.Trailer;
-            }
-            catch
-            {
-                MovieDetails.infoFanartUrl = "";
-                MovieDetails.infoTrailerUrl = "";
-            }
+            MovieDetails.infoFanartUrl = data.imageFanart;
+            MovieDetails.infoTrailerUrl = data.trailerUrl;
 
             if (MovieDetails.infoFanartUrl == "") { MovieDetails.BackgroundImage = UtilityTools.ChangeOpacity(Properties.Resources.background_original, 0.5F); }
             if (MovieDetails.infoTrailerUrl == "") { MovieDetails.btnWatchTrailer.Visible = false; }
@@ -540,7 +522,43 @@ namespace OpenTheatre
                 ctrlInfo.infoFileURL = new Uri(movieLink).AbsoluteUri;
                 ctrlInfo.infoFileHost.Text = new Uri(movieLink).Host.Replace("www.", "");
                 ctrlInfo.infoFileName.Text = Path.GetFileNameWithoutExtension(new Uri(movieLink).LocalPath);
-                MovieDetails.panelStreams.Controls.Add(ctrlInfo);
+                MovieDetails.panelFiles.Controls.Add(ctrlInfo);
+            }
+
+            //  Magnet : magnet:?xt=urn:btih:TORRENT_HASH&dn=Url+Encoded+Movie+Name&tr=http://track.one:1234/announce&tr=udp://track.two:80
+            string trackers = "&tr=" + "udp://open.demonii.com:1337/announce" + " &tr=" + "udp://tracker.openbittorrent.com:80" + "&tr=" + "udp://tracker.coppersurfer.tk:6969" + "&tr=" + "udp://glotorrents.pw:6969/announce" + "&tr=" + "udp://tracker.opentrackr.org:1337/announce" + "&tr=" + "udp://torrent.gresille.org:80/announce" + "&tr=" + "udp://p4p.arenabg.com:1337" + "&tr=" + "udp://tracker.leechers-paradise.org:6969";
+
+            if (data.torrent480p != "")
+            {
+                ctrlStreamInfo ctrlInfo = new ctrlStreamInfo();
+                ctrlInfo.isTorrent = true;
+                ctrlInfo.infoFileURL = new Uri(data.torrent480p).AbsoluteUri;
+                ctrlInfo.infoFileHost.Text = new Uri(data.torrent480p).Host.Replace("www.", "");
+                ctrlInfo.infoFileName.Text = data.Title + " (" + data.Year + ") [" + "480p" + "] [" + "YTS.AG" + "]";
+                ctrlInfo.infoMagnet = "magnet:?xt=urn:btih:" + Path.GetFileName(data.torrent480p) + "&dn=" + data.Title.Replace(" ", "+") + "%28" + data.Year + "%29+%5B" + "720p" + "%5D+%5B" + "YTS.AG" + "%5D" + trackers;
+                MovieDetails.panelTorrents.Controls.Add(ctrlInfo);
+            }
+
+            if (data.torrent720p != "")
+            {
+                ctrlStreamInfo ctrlInfo = new ctrlStreamInfo();
+                ctrlInfo.isTorrent = true;
+                ctrlInfo.infoFileURL = new Uri(data.torrent720p).AbsoluteUri;
+                ctrlInfo.infoFileHost.Text = new Uri(data.torrent720p).Host.Replace("www.", "");
+                ctrlInfo.infoFileName.Text = data.Title + " (" + data.Year + ") [" + "720p" + "] [" + "YTS.AG" + "]";
+                ctrlInfo.infoMagnet = "magnet:?xt=urn:btih:" + Path.GetFileName(data.torrent720p) + "&dn=" + data.Title.Replace(" ", "+") + "%28" + data.Year + "%29+%5B" + "720p" + "%5D+%5B" + "YTS.AG" + "%5D" + trackers;
+                MovieDetails.panelTorrents.Controls.Add(ctrlInfo);
+            }
+
+            if (data.torrent1080p != "")
+            {
+                ctrlStreamInfo ctrlInfo = new ctrlStreamInfo();
+                ctrlInfo.isTorrent = true;
+                ctrlInfo.infoFileURL = new Uri(data.torrent1080p).AbsoluteUri;
+                ctrlInfo.infoFileHost.Text = new Uri(data.torrent1080p).Host.Replace("www.", "");
+                ctrlInfo.infoFileName.Text = data.Title + " (" + data.Year + ") [" + "1080p" + "] [" + "YTS.AG" + "]";
+                ctrlInfo.infoMagnet = "magnet:?xt=urn:btih:" + Path.GetFileName(data.torrent1080p) + "&dn=" + data.Title.Replace(" ", "+") + "%28" + data.Year + "%29+%5B" + "720p" + "%5D+%5B" + "YTS.AG" + "%5D" + trackers;
+                MovieDetails.panelTorrents.Controls.Add(ctrlInfo);
             }
 
             MovieDetails.Dock = DockStyle.Fill;
@@ -783,6 +801,7 @@ namespace OpenTheatre
         delegate void loadFilesCallBack(string[] files);
         public void showSelectedFiles(string[] files)
         {
+
             BackGroundWorker.RunWorkAsync<List<string>>(() => searchFiles(files), (data) =>
             {
                 if (tabFiles.InvokeRequired)
@@ -804,6 +823,8 @@ namespace OpenTheatre
                         if (!(cmboBoxFilesFormat.Items.Contains(dataJson.Type))) { cmboBoxFilesFormat.Items.Add(dataJson.Type); }
                         if (!(cmboBoxFilesHost.Items.Contains(dataJson.Host))) { cmboBoxFilesHost.Items.Add(dataJson.Host); }
                     }
+
+                    cmboBoxFilesHost.DropDownWidth = DropDownWidth(cmboBoxFilesHost);
                 }
             });
         }
@@ -869,6 +890,9 @@ namespace OpenTheatre
                         MovieDetails.infoRatingIMDb.Text = data.ImdbRating;
                         MovieDetails.infoImdbId = data.ImdbID;
 
+                        MovieDetails.infoFanartUrl = data.imageFanart;
+                        MovieDetails.infoTrailerUrl = data.trailerUrl;
+
                         try { MovieDetails.imgPoster.Image = UtilityTools.ChangeOpacity(UtilityTools.LoadPicture(data.Poster), 1); } catch { MovieDetails.imgPoster.Image = UtilityTools.ChangeOpacity(Properties.Resources.poster_default, 0.5F); }
                     }
                     else
@@ -898,23 +922,6 @@ namespace OpenTheatre
                 }
             }
 
-            try
-            {
-                // Details from Popcorn Time API for Background (fanart/trailer)
-                var jsonPopcornTime = client.DownloadString("https://tv-v2.api-fetch.website/movie/" + MovieDetails.infoImdbId);
-                var data = PopcornTimeEntity.FromJson(jsonPopcornTime);
-
-                try { MovieDetails.BackgroundImage = UtilityTools.ChangeOpacity(UtilityTools.LoadPicture(data.Images.Fanart), 0.2F); }
-                catch { MovieDetails.BackgroundImage = UtilityTools.ChangeOpacity(Properties.Resources.background_original, 0.2F); }
-                MovieDetails.infoFanartUrl = data.Images.Fanart;
-                MovieDetails.infoTrailerUrl = data.Trailer;
-            }
-            catch
-            {
-                MovieDetails.infoFanartUrl = "";
-                MovieDetails.infoTrailerUrl = "";
-            }
-
             if (MovieDetails.infoFanartUrl == "") { MovieDetails.BackgroundImage = UtilityTools.ChangeOpacity(Properties.Resources.background_original, 0.5F); }
             if (MovieDetails.infoTrailerUrl == "") { MovieDetails.btnWatchTrailer.Visible = false; }
 
@@ -923,7 +930,9 @@ namespace OpenTheatre
             ctrlInfo.infoFileHost.Text = new Uri(webFile).Host.Replace("www.", "");
             ctrlInfo.infoFileName.Text = Path.GetFileNameWithoutExtension(new Uri(webFile).LocalPath);
             ctrlInfo.isLocal = isLocal;
-            MovieDetails.panelStreams.Controls.Add(ctrlInfo);
+            MovieDetails.panelFiles.Controls.Add(ctrlInfo);
+            MovieDetails.panelTitleTorrents.Visible = false;
+            MovieDetails.panelTorrents.Visible = false;
 
             MovieDetails.Dock = DockStyle.Fill;
 
@@ -938,14 +947,12 @@ namespace OpenTheatre
             txtFilesSearchBox.Focus();
         }
 
-        private void txtFilesSearchBox_Enter(object sender, EventArgs e)
+        private void txtFilesSearchBox_KeyDown(object sender, KeyEventArgs e)
         {
-            ActiveForm.AcceptButton = btnSearchFiles;
-        }
-
-        private void txtFilesSearchBox_Leave(object sender, EventArgs e)
-        {
-            ActiveForm.AcceptButton = null; //
+            if (e.KeyCode == Keys.Enter)
+            {
+                showFiles();
+            }
         }
 
         // Sort Files 
@@ -958,10 +965,6 @@ namespace OpenTheatre
         {
             var startText = btnFilesSort.Text.Split(':');
             btnFilesSort.Text = startText[0] + ": " + cmboBoxFilesSort.SelectedItem.ToString();
-
-            Font myFont = new Font(btnFilesSort.Font.FontFamily, this.btnFilesSort.Font.Size);
-            SizeF mySize = btnFilesSort.CreateGraphics().MeasureString(btnFilesSort.Text, myFont);
-            panelFilesSort.Width = (((int)(Math.Round(mySize.Width, 0))) + 26);
 
             if (cmboBoxFilesSort.SelectedIndex == 0) { cmboBoxFilesSort.DropDownWidth = DropDownWidth(cmboBoxFilesSort); showFiles(); }
             else if (cmboBoxFilesSort.SelectedIndex == 1) { dataGridFiles.Sort(dataGridFiles.Columns[0], ListSortDirection.Ascending); }
@@ -980,7 +983,7 @@ namespace OpenTheatre
                     maxWidth = temp;
                 }
             }
-            return maxWidth - 10;
+            return maxWidth;
         }
 
         private void btnFilesFileType_ClickButtonArea(object Sender, MouseEventArgs e)
@@ -1094,15 +1097,13 @@ namespace OpenTheatre
         {
             searchBookmarks();
         }
-        
-        private void txtBookmarksSearchBox_Enter(object sender, EventArgs e)
-        {
-            ActiveForm.AcceptButton = btnSearchBookmarks;
-        }
 
-        private void txtBookmarksSearchBox_Leave(object sender, EventArgs e)
+        private void txtBookmarksSearchBox_KeyDown(object sender, KeyEventArgs e)
         {
-            ActiveForm.AcceptButton = null;
+            if (e.KeyCode == Keys.Enter)
+            {
+                searchBookmarks();
+            }
         }
 
         private void bgBookmarksSearchBox_ClickButtonArea(object Sender, MouseEventArgs e)
@@ -1231,14 +1232,14 @@ namespace OpenTheatre
 
         private void btnSettingsGeneralLanguage_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            cmboboxGeneralSettingsLanguage.DroppedDown = true;
+            cmboboxSettingsLanguage.DroppedDown = true;
         }
 
         private void cmboboxGeneralSettingsLanguage_SelectedIndexChanged(object sender, EventArgs e)
         {
-            btnSettingsGeneralLanguage.Text = cmboboxGeneralSettingsLanguage.SelectedItem.ToString();
+            btnSettingsGeneralLanguage.Text = cmboboxSettingsLanguage.SelectedItem.ToString();
 
-            Properties.Settings.Default.userLanguage = cmboboxGeneralSettingsLanguage.SelectedItem.ToString();
+            Properties.Settings.Default.userLanguage = cmboboxSettingsLanguage.SelectedItem.ToString();
             Properties.Settings.Default.Save();
 
             if (MessageBox.Show(rm.GetString("restartRequiredLanguage"), rm.GetString("titleRestartRequired"), MessageBoxButtons.YesNo) == DialogResult.Yes) { Application.Restart(); }
@@ -1281,7 +1282,7 @@ namespace OpenTheatre
 
         private void btnSettingsSave_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            Properties.Settings.Default.userLanguage = cmboboxGeneralSettingsLanguage.SelectedItem.ToString();
+            Properties.Settings.Default.userLanguage = cmboboxSettingsLanguage.SelectedItem.ToString();
             Properties.Settings.Default.clearDataOnClose = chkSettingsClearData.Checked;
             Properties.Settings.Default.downloadsDirectory = txtBoxSettingsDownloadsDirectory.Text;
             Properties.Settings.Default.connectionCustom = chkSettingsCustomConnection.Checked;

@@ -81,6 +81,23 @@
 
         [JsonProperty("imdbVotes")]
         public string ImdbVotes { get; set; }
+
+        // Popcorn Time
+        [JsonProperty("imageFanart")]
+        public string imageFanart { get; set; }
+
+        [JsonProperty("trailerUrl")]
+        public string trailerUrl { get; set; }
+
+        // YIFY
+        [JsonProperty("torrent480p")]
+        public string torrent480p { get; set; }
+
+        [JsonProperty("torrent720p")]
+        public string torrent720p { get; set; }
+
+        [JsonProperty("torrent1080p")]
+        public string torrent1080p { get; set; }
     }
 
     public partial class Rating
