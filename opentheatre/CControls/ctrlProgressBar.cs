@@ -13,10 +13,10 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 
-namespace ProgressBarEx
+namespace ctrlProgressBar
 {
     [ToolboxBitmap("PBEX.bmp")]
-    public class ProgressBarEx : Control
+    public class ctrlProgressBar : Control
     {
         private Blend bBlend = new Blend();
         private int _Minimum = 0;
@@ -61,7 +61,7 @@ namespace ProgressBarEx
             Vertical = 1
         }
 
-        public ProgressBarEx()
+        public ctrlProgressBar()
         {
             this.SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.SupportsTransparentBackColor, true);
             base.TabStop = false;

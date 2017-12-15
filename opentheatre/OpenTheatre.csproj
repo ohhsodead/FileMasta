@@ -34,7 +34,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>opentheatre_logo.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\opentheatre_logo.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>false</SignAssembly>
@@ -71,60 +71,60 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BackGroundWorker.cs" />
-    <Compile Include="ctrlDetails.cs">
+    <Compile Include="Utilities\BackGroundWorker.cs" />
+    <Compile Include="CControls\ctrlDetails.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ctrlDetails.Designer.cs">
+    <Compile Include="CControls\ctrlDetails.Designer.cs">
       <DependentUpon>ctrlDetails.cs</DependentUpon>
     </Compile>
-    <Compile Include="ctrlDownloadItem.cs">
+    <Compile Include="CControls\ctrlDownloadItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ctrlDownloadItem.Designer.cs">
+    <Compile Include="CControls\ctrlDownloadItem.Designer.cs">
       <DependentUpon>ctrlDownloadItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="ctrlMoviesPoster.cs">
+    <Compile Include="CControls\ctrlMoviesPoster.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ctrlMoviesPoster.Designer.cs">
+    <Compile Include="CControls\ctrlMoviesPoster.Designer.cs">
       <DependentUpon>ctrlMoviesPoster.cs</DependentUpon>
     </Compile>
-    <Compile Include="ctrlSplashScreen.cs">
+    <Compile Include="CControls\ctrlSplashScreen.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ctrlSplashScreen.Designer.cs">
+    <Compile Include="CControls\ctrlSplashScreen.Designer.cs">
       <DependentUpon>ctrlSplashScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="ctrlStatus.cs">
+    <Compile Include="CControls\ctrlStatus.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ctrlStatus.Designer.cs">
+    <Compile Include="CControls\ctrlStatus.Designer.cs">
       <DependentUpon>ctrlStatus.cs</DependentUpon>
     </Compile>
-    <Compile Include="ctrlStreamInfo.cs">
+    <Compile Include="CControls\ctrlStreamInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ctrlStreamInfo.Designer.cs">
+    <Compile Include="CControls\ctrlStreamInfo.Designer.cs">
       <DependentUpon>ctrlStreamInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="DataJson\DatabaseFilesEntity.cs" />
-    <Compile Include="frmOpenTheatre.cs">
+    <Compile Include="Forms\frmOpenTheatre.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmOpenTheatre.Designer.cs">
+    <Compile Include="Forms\frmOpenTheatre.Designer.cs">
       <DependentUpon>frmOpenTheatre.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmShareFile.cs">
+    <Compile Include="Forms\frmShareFile.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmShareFile.Designer.cs">
+    <Compile Include="Forms\frmShareFile.Designer.cs">
       <DependentUpon>frmShareFile.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmVLCPlayer.cs">
+    <Compile Include="Forms\frmVLCPlayer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmVLCPlayer.Designer.cs">
+    <Compile Include="Forms\frmVLCPlayer.Designer.cs">
       <DependentUpon>frmVLCPlayer.cs</DependentUpon>
     </Compile>
     <Compile Include="Languages\misc-de.Designer.cs">
@@ -150,7 +150,7 @@
     <Compile Include="DataJson\OMDbEntity.cs" />
     <Compile Include="Utilities\KnownFolder.cs" />
     <Compile Include="Program.cs" />
-    <Compile Include="CControls\ProgressBarEx.cs">
+    <Compile Include="CControls\ctrlProgressBar.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -161,58 +161,58 @@
     </Compile>
     <Compile Include="Utilities\regexFileName.cs" />
     <Compile Include="Utilities\Utilities.cs" />
-    <EmbeddedResource Include="ctrlDetails.de.resx">
+    <EmbeddedResource Include="CControls\ctrlDetails.de.resx">
       <DependentUpon>ctrlDetails.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ctrlDetails.es.resx">
+    <EmbeddedResource Include="CControls\ctrlDetails.es.resx">
       <DependentUpon>ctrlDetails.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ctrlDetails.fr.resx">
+    <EmbeddedResource Include="CControls\ctrlDetails.fr.resx">
       <DependentUpon>ctrlDetails.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ctrlDetails.resx">
+    <EmbeddedResource Include="CControls\ctrlDetails.resx">
       <DependentUpon>ctrlDetails.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ctrlDownloadItem.resx">
+    <EmbeddedResource Include="CControls\ctrlDownloadItem.resx">
       <DependentUpon>ctrlDownloadItem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ctrlMoviesPoster.resx">
+    <EmbeddedResource Include="CControls\ctrlMoviesPoster.resx">
       <DependentUpon>ctrlMoviesPoster.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ctrlSplashScreen.de.resx">
+    <EmbeddedResource Include="CControls\ctrlSplashScreen.de.resx">
       <DependentUpon>ctrlSplashScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ctrlSplashScreen.es.resx">
+    <EmbeddedResource Include="CControls\ctrlSplashScreen.es.resx">
       <DependentUpon>ctrlSplashScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ctrlSplashScreen.fr.resx">
+    <EmbeddedResource Include="CControls\ctrlSplashScreen.fr.resx">
       <DependentUpon>ctrlSplashScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ctrlSplashScreen.resx">
+    <EmbeddedResource Include="CControls\ctrlSplashScreen.resx">
       <DependentUpon>ctrlSplashScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ctrlStatus.resx">
+    <EmbeddedResource Include="CControls\ctrlStatus.resx">
       <DependentUpon>ctrlStatus.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ctrlStreamInfo.resx">
+    <EmbeddedResource Include="CControls\ctrlStreamInfo.resx">
       <DependentUpon>ctrlStreamInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmOpenTheatre.de.resx">
+    <EmbeddedResource Include="Forms\frmOpenTheatre.de.resx">
       <DependentUpon>frmOpenTheatre.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmOpenTheatre.es.resx">
+    <EmbeddedResource Include="Forms\frmOpenTheatre.es.resx">
       <DependentUpon>frmOpenTheatre.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmOpenTheatre.fr.resx">
+    <EmbeddedResource Include="Forms\frmOpenTheatre.fr.resx">
       <DependentUpon>frmOpenTheatre.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmOpenTheatre.resx">
+    <EmbeddedResource Include="Forms\frmOpenTheatre.resx">
       <DependentUpon>frmOpenTheatre.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmShareFile.resx">
+    <EmbeddedResource Include="Forms\frmShareFile.resx">
       <DependentUpon>frmShareFile.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmVLCPlayer.resx">
+    <EmbeddedResource Include="Forms\frmVLCPlayer.resx">
       <DependentUpon>frmVLCPlayer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Languages\misc-de.resx">
@@ -251,7 +251,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="opentheatre_logo.ico" />
+    <Content Include="Resources\opentheatre_logo.ico" />
+    <None Include="Resources\search-white.png" />
     <None Include="Resources\magnet.png" />
     <None Include="Resources\google-plus.png" />
     <None Include="Resources\share-variant.png" />

@@ -45,11 +45,9 @@
             this.infoSplitter1 = new System.Windows.Forms.Label();
             this.infoSplitter2 = new System.Windows.Forms.Label();
             this.infoSplitter3 = new System.Windows.Forms.Label();
-            this.imgIMDb = new System.Windows.Forms.PictureBox();
             this.infoSplitter4 = new System.Windows.Forms.Label();
             this.infoRatingIMDb = new System.Windows.Forms.Label();
             this.panelTitleFiles = new System.Windows.Forms.Panel();
-            this.imgAddToBookmarks = new System.Windows.Forms.PictureBox();
             this.infoFileHost = new System.Windows.Forms.Label();
             this.infoFileName = new System.Windows.Forms.Label();
             this.lineUserReviews = new CButtonLib.CButton();
@@ -65,14 +63,19 @@
             this.panelTorrents = new System.Windows.Forms.FlowLayoutPanel();
             this.btnWatchTrailer = new CButtonLib.CButton();
             this.imgPoster = new System.Windows.Forms.PictureBox();
+            this.imgIMDb = new System.Windows.Forms.PictureBox();
+            this.imgSearchForMore = new System.Windows.Forms.PictureBox();
+            this.imgAddToBookmarks = new System.Windows.Forms.PictureBox();
             this.appClose = new System.Windows.Forms.PictureBox();
             this.imgPosterBG = new System.Windows.Forms.PictureBox();
+            this.lblSearchForMore = new System.Windows.Forms.Label();
             this.panelDetails.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgIMDb)).BeginInit();
             this.panelTitleFiles.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgAddToBookmarks)).BeginInit();
             this.panelTitleTorrents.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgPoster)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgIMDb)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgSearchForMore)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgAddToBookmarks)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.appClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgPosterBG)).BeginInit();
             this.SuspendLayout();
@@ -193,15 +196,6 @@
             this.infoSplitter3.ForeColor = System.Drawing.Color.White;
             this.infoSplitter3.Name = "infoSplitter3";
             // 
-            // imgIMDb
-            // 
-            resources.ApplyResources(this.imgIMDb, "imgIMDb");
-            this.imgIMDb.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgIMDb.Image = global::OpenTheatre.Properties.Resources.imdb;
-            this.imgIMDb.Name = "imgIMDb";
-            this.imgIMDb.TabStop = false;
-            this.imgIMDb.Click += new System.EventHandler(this.imgIMDb_Click);
-            // 
             // infoSplitter4
             // 
             resources.ApplyResources(this.infoSplitter4, "infoSplitter4");
@@ -219,6 +213,8 @@
             // 
             resources.ApplyResources(this.panelTitleFiles, "panelTitleFiles");
             this.panelTitleFiles.BackColor = System.Drawing.Color.Transparent;
+            this.panelTitleFiles.Controls.Add(this.imgSearchForMore);
+            this.panelTitleFiles.Controls.Add(this.lblSearchForMore);
             this.panelTitleFiles.Controls.Add(this.imgAddToBookmarks);
             this.panelTitleFiles.Controls.Add(this.infoFileHost);
             this.panelTitleFiles.Controls.Add(this.infoFileName);
@@ -229,15 +225,6 @@
             this.panelTitleFiles.Controls.Add(this.lineSplitter);
             this.panelDetails.SetFlowBreak(this.panelTitleFiles, true);
             this.panelTitleFiles.Name = "panelTitleFiles";
-            // 
-            // imgAddToBookmarks
-            // 
-            resources.ApplyResources(this.imgAddToBookmarks, "imgAddToBookmarks");
-            this.imgAddToBookmarks.BackColor = System.Drawing.Color.Transparent;
-            this.imgAddToBookmarks.Cursor = System.Windows.Forms.Cursors.Default;
-            this.imgAddToBookmarks.Image = global::OpenTheatre.Properties.Resources.bookmark;
-            this.imgAddToBookmarks.Name = "imgAddToBookmarks";
-            this.imgAddToBookmarks.TabStop = false;
             // 
             // infoFileHost
             // 
@@ -255,7 +242,6 @@
             // 
             // lineUserReviews
             // 
-            resources.ApplyResources(this.lineUserReviews, "lineUserReviews");
             this.lineUserReviews.BackColor = System.Drawing.Color.Transparent;
             this.lineUserReviews.BorderColor = System.Drawing.Color.White;
             this.lineUserReviews.ColorFillSolid = System.Drawing.Color.White;
@@ -264,6 +250,7 @@
             this.lineUserReviews.DimFactorClick = 0;
             this.lineUserReviews.DimFactorHover = 0;
             this.lineUserReviews.FillType = CButtonLib.CButton.eFillType.Solid;
+            resources.ApplyResources(this.lineUserReviews, "lineUserReviews");
             this.lineUserReviews.ForeColor = System.Drawing.Color.Transparent;
             this.lineUserReviews.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.lineUserReviews.ImageIndex = 0;
@@ -338,7 +325,6 @@
             // 
             // cButton1
             // 
-            resources.ApplyResources(this.cButton1, "cButton1");
             this.cButton1.BackColor = System.Drawing.Color.Transparent;
             this.cButton1.BorderColor = System.Drawing.Color.White;
             this.cButton1.ColorFillSolid = System.Drawing.Color.White;
@@ -347,6 +333,7 @@
             this.cButton1.DimFactorClick = 0;
             this.cButton1.DimFactorHover = 0;
             this.cButton1.FillType = CButtonLib.CButton.eFillType.Solid;
+            resources.ApplyResources(this.cButton1, "cButton1");
             this.cButton1.ForeColor = System.Drawing.Color.Transparent;
             this.cButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.cButton1.ImageIndex = 0;
@@ -397,7 +384,6 @@
             // 
             // btnWatchTrailer
             // 
-            resources.ApplyResources(this.btnWatchTrailer, "btnWatchTrailer");
             this.btnWatchTrailer.BackColor = System.Drawing.Color.Transparent;
             this.btnWatchTrailer.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.btnWatchTrailer.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
@@ -411,6 +397,7 @@
             this.btnWatchTrailer.DimFactorClick = 0;
             this.btnWatchTrailer.DimFactorHover = 0;
             this.btnWatchTrailer.FillType = CButtonLib.CButton.eFillType.Solid;
+            resources.ApplyResources(this.btnWatchTrailer, "btnWatchTrailer");
             this.btnWatchTrailer.ForeColor = System.Drawing.Color.Black;
             this.btnWatchTrailer.ImageIndex = 0;
             this.btnWatchTrailer.Name = "btnWatchTrailer";
@@ -424,10 +411,38 @@
             // 
             // imgPoster
             // 
-            resources.ApplyResources(this.imgPoster, "imgPoster");
             this.imgPoster.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.imgPoster, "imgPoster");
             this.imgPoster.Name = "imgPoster";
             this.imgPoster.TabStop = false;
+            // 
+            // imgIMDb
+            // 
+            this.imgIMDb.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imgIMDb.Image = global::OpenTheatre.Properties.Resources.imdb;
+            resources.ApplyResources(this.imgIMDb, "imgIMDb");
+            this.imgIMDb.Name = "imgIMDb";
+            this.imgIMDb.TabStop = false;
+            this.imgIMDb.Click += new System.EventHandler(this.imgIMDb_Click);
+            // 
+            // imgSearchForMore
+            // 
+            resources.ApplyResources(this.imgSearchForMore, "imgSearchForMore");
+            this.imgSearchForMore.BackColor = System.Drawing.Color.Transparent;
+            this.imgSearchForMore.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imgSearchForMore.Image = global::OpenTheatre.Properties.Resources.search_white;
+            this.imgSearchForMore.Name = "imgSearchForMore";
+            this.imgSearchForMore.TabStop = false;
+            this.imgSearchForMore.Click += new System.EventHandler(this.imgSearchForMore_Click);
+            // 
+            // imgAddToBookmarks
+            // 
+            resources.ApplyResources(this.imgAddToBookmarks, "imgAddToBookmarks");
+            this.imgAddToBookmarks.BackColor = System.Drawing.Color.Transparent;
+            this.imgAddToBookmarks.Cursor = System.Windows.Forms.Cursors.Default;
+            this.imgAddToBookmarks.Image = global::OpenTheatre.Properties.Resources.bookmark;
+            this.imgAddToBookmarks.Name = "imgAddToBookmarks";
+            this.imgAddToBookmarks.TabStop = false;
             // 
             // appClose
             // 
@@ -441,10 +456,18 @@
             // 
             // imgPosterBG
             // 
-            resources.ApplyResources(this.imgPosterBG, "imgPosterBG");
             this.imgPosterBG.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.imgPosterBG, "imgPosterBG");
             this.imgPosterBG.Name = "imgPosterBG";
             this.imgPosterBG.TabStop = false;
+            // 
+            // lblSearchForMore
+            // 
+            resources.ApplyResources(this.lblSearchForMore, "lblSearchForMore");
+            this.lblSearchForMore.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblSearchForMore.ForeColor = System.Drawing.Color.White;
+            this.lblSearchForMore.Name = "lblSearchForMore";
+            this.lblSearchForMore.Click += new System.EventHandler(this.imgSearchForMore_Click);
             // 
             // ctrlDetails
             // 
@@ -464,13 +487,14 @@
             this.SizeChanged += new System.EventHandler(this.ctrlDetails_SizeChanged);
             this.panelDetails.ResumeLayout(false);
             this.panelDetails.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgIMDb)).EndInit();
             this.panelTitleFiles.ResumeLayout(false);
             this.panelTitleFiles.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgAddToBookmarks)).EndInit();
             this.panelTitleTorrents.ResumeLayout(false);
             this.panelTitleTorrents.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgPoster)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgIMDb)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgSearchForMore)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgAddToBookmarks)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.appClose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgPosterBG)).EndInit();
             this.ResumeLayout(false);
@@ -516,5 +540,7 @@
         internal System.Windows.Forms.Label label4;
         public CButtonLib.CButton cButton2;
         public System.Windows.Forms.FlowLayoutPanel panelTorrents;
+        private System.Windows.Forms.PictureBox imgSearchForMore;
+        internal System.Windows.Forms.Label lblSearchForMore;
     }
 }

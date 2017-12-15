@@ -98,6 +98,13 @@
 
         [JsonProperty("torrent1080p")]
         public string torrent1080p { get; set; }
+
+        // Popcorn Time
+        [JsonProperty("PTTorrent720p")]
+        public string PTTorrent720p { get; set; }
+
+        [JsonProperty("PTTorrent1080p")]
+        public string PTTorrent1080p { get; set; }
     }
 
     public partial class Rating

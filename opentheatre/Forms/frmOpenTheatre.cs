@@ -373,6 +373,7 @@ namespace OpenTheatre
                                 ctrlPoster.infoImagePoster = data.Poster;
                                 ctrlPoster.Name = data.ImdbID;
                                 ctrlPoster.infoMovieFiles = data.Sources;
+
                                 ctrlPoster.infoMovieTorrent480p = data.torrent480p;
                                 ctrlPoster.infoMovieTorrent720p = data.torrent720p;
                                 ctrlPoster.infoMovieTorrent1080p = data.torrent1080p;
@@ -506,59 +507,31 @@ namespace OpenTheatre
             MovieDetails.infoRatingIMDb.Text = data.ImdbRating;
             MovieDetails.infoImdbId = data.ImdbID;
 
-            MovieDetails.imgPoster.Image = UtilityTools.ChangeOpacity(UtilityTools.LoadPicture(data.Poster), 1);
 
             if (data.Poster == "") { MovieDetails.imgPoster.Image = UtilityTools.ChangeOpacity(Properties.Resources.poster_default, 1); }
+            else { MovieDetails.imgPoster.Image = UtilityTools.ChangeOpacity(UtilityTools.LoadPicture(data.Poster), 1); }
 
             MovieDetails.infoFanartUrl = data.imageFanart;
             MovieDetails.infoTrailerUrl = data.trailerUrl;
 
-            if (MovieDetails.infoFanartUrl == "") { MovieDetails.BackgroundImage = UtilityTools.ChangeOpacity(Properties.Resources.background_original, 0.5F); }
-            if (MovieDetails.infoTrailerUrl == "") { MovieDetails.btnWatchTrailer.Visible = false; }
-
             foreach (string movieLink in data.Sources)
             {
-                ctrlStreamInfo ctrlInfo = new ctrlStreamInfo();
-                ctrlInfo.infoFileURL = new Uri(movieLink).AbsoluteUri;
-                ctrlInfo.infoFileHost.Text = new Uri(movieLink).Host.Replace("www.", "");
-                ctrlInfo.infoFileName.Text = Path.GetFileNameWithoutExtension(new Uri(movieLink).LocalPath);
-                MovieDetails.panelFiles.Controls.Add(ctrlInfo);
+                MovieDetails.addStream(movieLink, false, false, MovieDetails.panelFiles);
             }
 
-            //  Magnet : magnet:?xt=urn:btih:TORRENT_HASH&dn=Url+Encoded+Movie+Name&tr=http://track.one:1234/announce&tr=udp://track.two:80
-            string trackers = "&tr=" + "udp://open.demonii.com:1337/announce" + " &tr=" + "udp://tracker.openbittorrent.com:80" + "&tr=" + "udp://tracker.coppersurfer.tk:6969" + "&tr=" + "udp://glotorrents.pw:6969/announce" + "&tr=" + "udp://tracker.opentrackr.org:1337/announce" + "&tr=" + "udp://torrent.gresille.org:80/announce" + "&tr=" + "udp://p4p.arenabg.com:1337" + "&tr=" + "udp://tracker.leechers-paradise.org:6969";
-
-            if (data.torrent480p != "")
+            if (data.torrent480p != null && data.torrent480p != "")
             {
-                ctrlStreamInfo ctrlInfo = new ctrlStreamInfo();
-                ctrlInfo.isTorrent = true;
-                ctrlInfo.infoFileURL = new Uri(data.torrent480p).AbsoluteUri;
-                ctrlInfo.infoFileHost.Text = new Uri(data.torrent480p).Host.Replace("www.", "");
-                ctrlInfo.infoFileName.Text = data.Title + " (" + data.Year + ") [" + "480p" + "] [" + "YTS.AG" + "]";
-                ctrlInfo.infoMagnet = "magnet:?xt=urn:btih:" + Path.GetFileName(data.torrent480p) + "&dn=" + data.Title.Replace(" ", "+") + "%28" + data.Year + "%29+%5B" + "720p" + "%5D+%5B" + "YTS.AG" + "%5D" + trackers;
-                MovieDetails.panelTorrents.Controls.Add(ctrlInfo);
+                MovieDetails.addStream(data.torrent480p, false, true, MovieDetails.panelTorrents);
             }
 
-            if (data.torrent720p != "")
+            if (data.torrent720p != null && data.torrent720p != "")
             {
-                ctrlStreamInfo ctrlInfo = new ctrlStreamInfo();
-                ctrlInfo.isTorrent = true;
-                ctrlInfo.infoFileURL = new Uri(data.torrent720p).AbsoluteUri;
-                ctrlInfo.infoFileHost.Text = new Uri(data.torrent720p).Host.Replace("www.", "");
-                ctrlInfo.infoFileName.Text = data.Title + " (" + data.Year + ") [" + "720p" + "] [" + "YTS.AG" + "]";
-                ctrlInfo.infoMagnet = "magnet:?xt=urn:btih:" + Path.GetFileName(data.torrent720p) + "&dn=" + data.Title.Replace(" ", "+") + "%28" + data.Year + "%29+%5B" + "720p" + "%5D+%5B" + "YTS.AG" + "%5D" + trackers;
-                MovieDetails.panelTorrents.Controls.Add(ctrlInfo);
+                MovieDetails.addStream(data.torrent720p, false, true, MovieDetails.panelTorrents);
             }
 
-            if (data.torrent1080p != "")
+            if (data.torrent1080p != null && data.torrent1080p != "")
             {
-                ctrlStreamInfo ctrlInfo = new ctrlStreamInfo();
-                ctrlInfo.isTorrent = true;
-                ctrlInfo.infoFileURL = new Uri(data.torrent1080p).AbsoluteUri;
-                ctrlInfo.infoFileHost.Text = new Uri(data.torrent1080p).Host.Replace("www.", "");
-                ctrlInfo.infoFileName.Text = data.Title + " (" + data.Year + ") [" + "1080p" + "] [" + "YTS.AG" + "]";
-                ctrlInfo.infoMagnet = "magnet:?xt=urn:btih:" + Path.GetFileName(data.torrent1080p) + "&dn=" + data.Title.Replace(" ", "+") + "%28" + data.Year + "%29+%5B" + "720p" + "%5D+%5B" + "YTS.AG" + "%5D" + trackers;
-                MovieDetails.panelTorrents.Controls.Add(ctrlInfo);
+                MovieDetails.addStream(data.torrent1080p, false, true, MovieDetails.panelTorrents);
             }
 
             MovieDetails.Dock = DockStyle.Fill;
@@ -570,7 +543,7 @@ namespace OpenTheatre
 
 
         // Files
-        string selectedFilesFileType = "", selectedFilesHost = "", selectedFilesQuality = "", selectedFiles = "Movies"; // Files Filter Preferences
+        public string selectedFilesFileType = "", selectedFilesHost = "", selectedFilesQuality = "", selectedFiles = "Movies"; // Files Filter Preferences
 
         private void loadLocalFiles()
         {
@@ -580,7 +553,7 @@ namespace OpenTheatre
             {
                 var data = new DatabaseFilesEntity();
                 data.Title = Path.GetFileNameWithoutExtension(fileName);
-                data.Host = "Local";
+                data.Host = rm.GetString("local");
                 data.Type = Path.GetExtension(fileName).Replace(".", "").ToUpper();
                 data.URL = fileName;
                 dataFilesLocal.Add(data.ToJson());
@@ -861,78 +834,97 @@ namespace OpenTheatre
 
             ctrlDetails MovieDetails = new ctrlDetails();
 
-            string omdbUrl = null;
-
             string[] movieName = fileNames.getMovieAndYear(Path.GetFileNameWithoutExtension(webFile));
-            string[] tvshowName = fileNames.getTVShowName(Path.GetFileNameWithoutExtension(webFile));
 
-            if (!(movieName == null)) { omdbUrl = "http://omdbapi.com/?apikey=c933e052&t=" + movieName[0] + "&y=" + movieName[1] + "&plot=full"; }
-            else if (!(tvshowName == null)) { omdbUrl = "http://omdbapi.com/?apikey=c933e052&t=" + tvshowName[0] + "&Season=" + tvshowName[1] + "&Episode=" + tvshowName[2]; }
-
-            if (omdbUrl != null)
+            foreach (string movie in dataMovies)
             {
-                using (WebClient wc = new WebClient())
+                if (string.IsNullOrEmpty(movie) == false)
                 {
-                    var JsonOMDbAPI = wc.DownloadString(omdbUrl);
-                    var data = OMDbEntity.FromJson(JsonOMDbAPI);
+                    var data = OMDbEntity.FromJson(movie);
 
-                    if (data.Response == "True")
+                    if (data.Title == movieName[0] && data.Year == movieName[1])
                     {
-
                         MovieDetails.infoTitle.Text = data.Title;
                         MovieDetails.infoYear.Text = data.Year;
+
+                        try
+                        {
+                            MovieDetails.imgPoster.Image = UtilityTools.ChangeOpacity(UtilityTools.LoadPicture(data.Poster), 1);
+                            MovieDetails.BackgroundImage = UtilityTools.ChangeOpacity(UtilityTools.LoadPicture(data.imageFanart), 0.2F);
+                        }
+                        catch { }
+
+                        foreach (string movieLink in data.Sources)
+                        {
+                            MovieDetails.addStream(movieLink, false, false, MovieDetails.panelFiles);
+                        }
+
+                        if (data.torrent480p != null && data.torrent480p != "")
+                        {
+                            MovieDetails.addStream(data.torrent480p, false, true, MovieDetails.panelTorrents, "480p");
+                        }
+
+                        if (data.torrent720p != null && data.torrent720p != "")
+                        {
+                            MovieDetails.addStream(data.torrent720p, false, true, MovieDetails.panelTorrents, "720p");
+                        }
+
+                        if (data.torrent1080p != null && data.torrent1080p != "")
+                        {
+                            MovieDetails.addStream(data.torrent1080p, false, true, MovieDetails.panelTorrents, "1080p");
+                        }
+
                         MovieDetails.infoGenre.Text = data.Genre;
                         MovieDetails.infoSynopsis.Text = data.Plot;
                         MovieDetails.infoRuntime.Text = data.Runtime;
                         MovieDetails.infoRated.Text = data.Rated;
                         MovieDetails.infoDirector.Text = data.Director;
                         MovieDetails.infoCast.Text = data.Actors;
+
                         MovieDetails.infoRatingIMDb.Text = data.ImdbRating;
                         MovieDetails.infoImdbId = data.ImdbID;
 
-                        MovieDetails.infoFanartUrl = data.imageFanart;
+                        MovieDetails.infoImagePoster = data.Poster;
+
                         MovieDetails.infoTrailerUrl = data.trailerUrl;
-
-                        try { MovieDetails.imgPoster.Image = UtilityTools.ChangeOpacity(UtilityTools.LoadPicture(data.Poster), 1); } catch { MovieDetails.imgPoster.Image = UtilityTools.ChangeOpacity(Properties.Resources.poster_default, 0.5F); }
-                    }
-                    else
-                    {
-                        MovieDetails.infoTitle.Text = Path.GetFileNameWithoutExtension(new Uri(webFile).LocalPath);
-                        MovieDetails.infoYear.Visible = false;
-                        MovieDetails.infoGenre.Visible = false;
-                        MovieDetails.infoSynopsis.Visible = false;
-                        MovieDetails.infoRuntime.Visible = false;
-                        MovieDetails.infoRated.Visible = false;
-                        MovieDetails.infoDirector.Visible = false;
-                        MovieDetails.infoCast.Visible = false;
-                        MovieDetails.infoRatingIMDb.Visible = false;
-
-                        MovieDetails.infoSplitter0.Visible = false;
-                        MovieDetails.infoSplitter1.Visible = false;
-                        MovieDetails.infoSplitter2.Visible = false;
-                        MovieDetails.infoSplitter3.Visible = false;
-                        MovieDetails.infoSplitter4.Visible = false;
-                        MovieDetails.imgIMDb.Visible = false;
-                        MovieDetails.lblSubDirector.Visible = false;
-                        MovieDetails.lblSubCast.Visible = false;
-
-
-                        MovieDetails.imgPoster.Image = UtilityTools.ChangeOpacity(Properties.Resources.poster_default, 0.5F);
+                        MovieDetails.infoFanartUrl = data.imageFanart;
+                        MovieDetails.infoImagePoster = data.Poster;
                     }
                 }
             }
 
-            if (MovieDetails.infoFanartUrl == "") { MovieDetails.BackgroundImage = UtilityTools.ChangeOpacity(Properties.Resources.background_original, 0.5F); }
-            if (MovieDetails.infoTrailerUrl == "") { MovieDetails.btnWatchTrailer.Visible = false; }
+            if (MovieDetails.infoTitle.Text == "Movie Title" && MovieDetails.infoYear.Text == "Year")
+            {
+                MovieDetails.infoTitle.Text = Path.GetFileNameWithoutExtension(webFile);
+                MovieDetails.infoYear.Visible = false;
 
-            ctrlStreamInfo ctrlInfo = new ctrlStreamInfo();
-            ctrlInfo.infoFileURL = webFile;
-            ctrlInfo.infoFileHost.Text = new Uri(webFile).Host.Replace("www.", "");
-            ctrlInfo.infoFileName.Text = Path.GetFileNameWithoutExtension(new Uri(webFile).LocalPath);
-            ctrlInfo.isLocal = isLocal;
-            MovieDetails.panelFiles.Controls.Add(ctrlInfo);
-            MovieDetails.panelTitleTorrents.Visible = false;
-            MovieDetails.panelTorrents.Visible = false;
+                MovieDetails.infoGenre.Visible = false;
+                MovieDetails.infoSynopsis.Visible = false;
+                MovieDetails.infoRuntime.Visible = false;
+                MovieDetails.infoRated.Visible = false;
+                MovieDetails.infoDirector.Visible = false;
+                MovieDetails.infoCast.Visible = false;
+
+                MovieDetails.infoRatingIMDb.Visible = false;
+                MovieDetails.infoImdbId = "";
+
+                MovieDetails.infoImagePoster = "";
+
+                MovieDetails.infoTrailerUrl = "";
+                MovieDetails.infoFanartUrl = "";
+                MovieDetails.infoImagePoster = "";
+
+                MovieDetails.infoSplitter0.Visible = false;
+                MovieDetails.infoSplitter1.Visible = false;
+                MovieDetails.infoSplitter2.Visible = false;
+                MovieDetails.infoSplitter3.Visible = false;
+                MovieDetails.infoSplitter4.Visible = false;
+                MovieDetails.lblSubCast.Visible = false;
+                MovieDetails.lblSubDirector.Visible = false;
+                MovieDetails.imgIMDb.Visible = false;
+            }
+
+            MovieDetails.addStream(webFile, isLocal, false, MovieDetails.panelFiles);
 
             MovieDetails.Dock = DockStyle.Fill;
 
@@ -1057,7 +1049,7 @@ namespace OpenTheatre
         
         private void dataGridBookmarks_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dataGridBookmarks.CurrentRow.Cells[3].Value.ToString() == "Local") showFileDetails(dataGridBookmarks.CurrentRow.Cells[4].Value.ToString(), true);
+            if (dataGridBookmarks.CurrentRow.Cells[3].Value.ToString() == rm.GetString("local")) showFileDetails(dataGridBookmarks.CurrentRow.Cells[4].Value.ToString(), true);
             else showFileDetails(dataGridBookmarks.CurrentRow.Cells[4].Value.ToString(), false);
         }
 

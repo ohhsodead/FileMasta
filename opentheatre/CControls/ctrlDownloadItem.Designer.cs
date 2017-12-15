@@ -43,7 +43,7 @@
             this.splitter3 = new System.Windows.Forms.Label();
             this.timerEstimatedTimer = new System.Windows.Forms.Timer(this.components);
             this.imgClose = new System.Windows.Forms.PictureBox();
-            this.progressBar1 = new ProgressBarEx.ProgressBarEx();
+            this.progressBar1 = new ctrlProgressBar.ctrlProgressBar();
             this.panelDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgStatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgClose)).BeginInit();
@@ -238,7 +238,7 @@
             this.progressBar1.BackgroundColor = System.Drawing.Color.White;
             this.progressBar1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(135)))), ((int)(((byte)(189)))));
             this.progressBar1.GradiantColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(135)))), ((int)(((byte)(189)))));
-            this.progressBar1.GradiantPosition = ProgressBarEx.ProgressBarEx.GradiantArea.None;
+            this.progressBar1.GradiantPosition = ctrlProgressBar.ctrlProgressBar.GradiantArea.None;
             this.progressBar1.Image = null;
             this.progressBar1.Location = new System.Drawing.Point(16, 39);
             this.progressBar1.Name = "progressBar1";
@@ -285,7 +285,7 @@
         private System.Windows.Forms.Timer timerEstimatedTimer;
         private System.Windows.Forms.Label infoEstimatedTime;
         private System.Windows.Forms.Label splitter3;
-        public ProgressBarEx.ProgressBarEx progressBar1;
+        public ctrlProgressBar.ctrlProgressBar progressBar1;
         private System.Windows.Forms.PictureBox imgStatus;
     }
 }

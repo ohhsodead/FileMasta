@@ -102,8 +102,8 @@
             this.columnBookmarksFormat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnBookmarksHost = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnBookmarksURL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bgBookmarksSearchBox = new CButtonLib.CButton();
             this.btnSearchBookmarks = new CButtonLib.CButton();
+            this.bgBookmarksSearchBox = new CButtonLib.CButton();
             this.tabDownloads = new System.Windows.Forms.TabPage();
             this.lblNoDownloads = new System.Windows.Forms.Label();
             this.panelDownloads = new System.Windows.Forms.FlowLayoutPanel();
@@ -361,7 +361,7 @@
             this.btnMoviesGenre.ShowFocus = CButtonLib.CButton.eFocus.None;
             this.btnMoviesGenre.SideImage = ((System.Drawing.Image)(resources.GetObject("btnMoviesGenre.SideImage")));
             this.btnMoviesGenre.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnMoviesGenre.SideImageSize = new System.Drawing.Size(20, 20);
+            this.btnMoviesGenre.SideImageSize = new System.Drawing.Size(21, 21);
             this.btnMoviesGenre.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnMoviesGenre.TextMargin = new System.Windows.Forms.Padding(10, 3, 2, 2);
             this.btnMoviesGenre.TextShadowShow = false;
@@ -424,7 +424,7 @@
             this.btnMoviesYear.ShowFocus = CButtonLib.CButton.eFocus.None;
             this.btnMoviesYear.SideImage = ((System.Drawing.Image)(resources.GetObject("btnMoviesYear.SideImage")));
             this.btnMoviesYear.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnMoviesYear.SideImageSize = new System.Drawing.Size(20, 20);
+            this.btnMoviesYear.SideImageSize = new System.Drawing.Size(21, 21);
             this.btnMoviesYear.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnMoviesYear.TextMargin = new System.Windows.Forms.Padding(10, 3, 2, 2);
             this.btnMoviesYear.TextShadowShow = false;
@@ -534,7 +534,7 @@
             this.btnFilesSort.ShowFocus = CButtonLib.CButton.eFocus.None;
             this.btnFilesSort.SideImage = ((System.Drawing.Image)(resources.GetObject("btnFilesSort.SideImage")));
             this.btnFilesSort.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnFilesSort.SideImageSize = new System.Drawing.Size(20, 20);
+            this.btnFilesSort.SideImageSize = new System.Drawing.Size(21, 21);
             this.btnFilesSort.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnFilesSort.TextMargin = new System.Windows.Forms.Padding(10, 3, 2, 2);
             this.btnFilesSort.TextShadowShow = false;
@@ -581,7 +581,7 @@
             this.btnFilesFormat.ShowFocus = CButtonLib.CButton.eFocus.None;
             this.btnFilesFormat.SideImage = ((System.Drawing.Image)(resources.GetObject("btnFilesFormat.SideImage")));
             this.btnFilesFormat.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnFilesFormat.SideImageSize = new System.Drawing.Size(20, 20);
+            this.btnFilesFormat.SideImageSize = new System.Drawing.Size(21, 21);
             this.btnFilesFormat.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnFilesFormat.TextMargin = new System.Windows.Forms.Padding(10, 3, 2, 2);
             this.btnFilesFormat.TextShadowShow = false;
@@ -630,7 +630,7 @@
             this.btnFilesHost.ShowFocus = CButtonLib.CButton.eFocus.None;
             this.btnFilesHost.SideImage = ((System.Drawing.Image)(resources.GetObject("btnFilesHost.SideImage")));
             this.btnFilesHost.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnFilesHost.SideImageSize = new System.Drawing.Size(20, 20);
+            this.btnFilesHost.SideImageSize = new System.Drawing.Size(21, 21);
             this.btnFilesHost.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnFilesHost.TextMargin = new System.Windows.Forms.Padding(10, 3, 2, 2);
             this.btnFilesHost.TextShadowShow = false;
@@ -675,7 +675,7 @@
             this.btnFilesQuality.ShowFocus = CButtonLib.CButton.eFocus.None;
             this.btnFilesQuality.SideImage = ((System.Drawing.Image)(resources.GetObject("btnFilesQuality.SideImage")));
             this.btnFilesQuality.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnFilesQuality.SideImageSize = new System.Drawing.Size(20, 20);
+            this.btnFilesQuality.SideImageSize = new System.Drawing.Size(21, 21);
             this.btnFilesQuality.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnFilesQuality.TextMargin = new System.Windows.Forms.Padding(10, 3, 2, 2);
             this.btnFilesQuality.TextShadowShow = false;
@@ -1002,8 +1002,8 @@
             this.tabBookmarks.Controls.Add(this.panelBookmarksFilters);
             this.tabBookmarks.Controls.Add(this.txtBookmarksSearchBox);
             this.tabBookmarks.Controls.Add(this.dataGridBookmarks);
-            this.tabBookmarks.Controls.Add(this.bgBookmarksSearchBox);
             this.tabBookmarks.Controls.Add(this.btnSearchBookmarks);
+            this.tabBookmarks.Controls.Add(this.bgBookmarksSearchBox);
             this.tabBookmarks.ForeColor = System.Drawing.Color.White;
             resources.ApplyResources(this.tabBookmarks, "tabBookmarks");
             this.tabBookmarks.Name = "tabBookmarks";
@@ -1052,7 +1052,7 @@
             this.btnBookmarksSort.ShowFocus = CButtonLib.CButton.eFocus.None;
             this.btnBookmarksSort.SideImage = ((System.Drawing.Image)(resources.GetObject("btnBookmarksSort.SideImage")));
             this.btnBookmarksSort.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnBookmarksSort.SideImageSize = new System.Drawing.Size(20, 20);
+            this.btnBookmarksSort.SideImageSize = new System.Drawing.Size(21, 21);
             this.btnBookmarksSort.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnBookmarksSort.TextMargin = new System.Windows.Forms.Padding(10, 3, 2, 2);
             this.btnBookmarksSort.TextShadowShow = false;
@@ -1099,7 +1099,7 @@
             this.btnBookmarksType.ShowFocus = CButtonLib.CButton.eFocus.None;
             this.btnBookmarksType.SideImage = ((System.Drawing.Image)(resources.GetObject("btnBookmarksType.SideImage")));
             this.btnBookmarksType.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnBookmarksType.SideImageSize = new System.Drawing.Size(20, 20);
+            this.btnBookmarksType.SideImageSize = new System.Drawing.Size(21, 21);
             this.btnBookmarksType.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnBookmarksType.TextMargin = new System.Windows.Forms.Padding(10, 3, 2, 2);
             this.btnBookmarksType.TextShadowShow = false;
@@ -1229,28 +1229,6 @@
             this.columnBookmarksURL.Name = "columnBookmarksURL";
             this.columnBookmarksURL.ReadOnly = true;
             // 
-            // bgBookmarksSearchBox
-            // 
-            this.bgBookmarksSearchBox.BackColor = System.Drawing.Color.Transparent;
-            this.bgBookmarksSearchBox.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(111)))), ((int)(((byte)(131)))));
-            this.bgBookmarksSearchBox.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(111)))), ((int)(((byte)(131)))));
-            this.bgBookmarksSearchBox.Corners.All = 2;
-            this.bgBookmarksSearchBox.Corners.LowerLeft = 2;
-            this.bgBookmarksSearchBox.Corners.LowerRight = 2;
-            this.bgBookmarksSearchBox.Corners.UpperLeft = 2;
-            this.bgBookmarksSearchBox.Corners.UpperRight = 2;
-            this.bgBookmarksSearchBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bgBookmarksSearchBox.DesignerSelected = false;
-            this.bgBookmarksSearchBox.DimFactorClick = 0;
-            this.bgBookmarksSearchBox.DimFactorHover = 0;
-            this.bgBookmarksSearchBox.FillType = CButtonLib.CButton.eFillType.Solid;
-            resources.ApplyResources(this.bgBookmarksSearchBox, "bgBookmarksSearchBox");
-            this.bgBookmarksSearchBox.ImageIndex = 0;
-            this.bgBookmarksSearchBox.Name = "bgBookmarksSearchBox";
-            this.bgBookmarksSearchBox.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.bgBookmarksSearchBox.TabStop = false;
-            this.bgBookmarksSearchBox.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.bgBookmarksSearchBox_ClickButtonArea);
-            // 
             // btnSearchBookmarks
             // 
             this.btnSearchBookmarks.BackColor = System.Drawing.Color.Transparent;
@@ -1273,6 +1251,28 @@
             this.btnSearchBookmarks.Name = "btnSearchBookmarks";
             this.btnSearchBookmarks.ShowFocus = CButtonLib.CButton.eFocus.None;
             this.btnSearchBookmarks.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnSearchBookmarks_ClickButtonArea);
+            // 
+            // bgBookmarksSearchBox
+            // 
+            this.bgBookmarksSearchBox.BackColor = System.Drawing.Color.Transparent;
+            this.bgBookmarksSearchBox.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(111)))), ((int)(((byte)(131)))));
+            this.bgBookmarksSearchBox.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(111)))), ((int)(((byte)(131)))));
+            this.bgBookmarksSearchBox.Corners.All = 2;
+            this.bgBookmarksSearchBox.Corners.LowerLeft = 2;
+            this.bgBookmarksSearchBox.Corners.LowerRight = 2;
+            this.bgBookmarksSearchBox.Corners.UpperLeft = 2;
+            this.bgBookmarksSearchBox.Corners.UpperRight = 2;
+            this.bgBookmarksSearchBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.bgBookmarksSearchBox.DesignerSelected = false;
+            this.bgBookmarksSearchBox.DimFactorClick = 0;
+            this.bgBookmarksSearchBox.DimFactorHover = 0;
+            this.bgBookmarksSearchBox.FillType = CButtonLib.CButton.eFillType.Solid;
+            resources.ApplyResources(this.bgBookmarksSearchBox, "bgBookmarksSearchBox");
+            this.bgBookmarksSearchBox.ImageIndex = 0;
+            this.bgBookmarksSearchBox.Name = "bgBookmarksSearchBox";
+            this.bgBookmarksSearchBox.ShowFocus = CButtonLib.CButton.eFocus.None;
+            this.bgBookmarksSearchBox.TabStop = false;
+            this.bgBookmarksSearchBox.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.bgBookmarksSearchBox_ClickButtonArea);
             // 
             // tabDownloads
             // 
@@ -1366,9 +1366,9 @@
             this.btnSettingsGeneralLanguage.ImageIndex = 0;
             this.btnSettingsGeneralLanguage.Name = "btnSettingsGeneralLanguage";
             this.btnSettingsGeneralLanguage.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.btnSettingsGeneralLanguage.SideImage = ((System.Drawing.Image)(resources.GetObject("btnSettingsGeneralLanguage.SideImage")));
+            this.btnSettingsGeneralLanguage.SideImage = global::OpenTheatre.Properties.Resources.arrow_drop_down_black;
             this.btnSettingsGeneralLanguage.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSettingsGeneralLanguage.SideImageSize = new System.Drawing.Size(22, 22);
+            this.btnSettingsGeneralLanguage.SideImageSize = new System.Drawing.Size(21, 21);
             this.btnSettingsGeneralLanguage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSettingsGeneralLanguage.TextMargin = new System.Windows.Forms.Padding(6, 3, 2, 2);
             this.btnSettingsGeneralLanguage.TextShadowShow = false;
@@ -2063,7 +2063,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.TabPage tabFiles;
         private System.Windows.Forms.DataGridView dataGridFiles;
         private System.Windows.Forms.TabPage tabAbout;
         private System.Windows.Forms.PictureBox imgCloseAbout;
@@ -2073,7 +2072,6 @@
         private System.Windows.Forms.Label lblAboutVersion;
         private System.Windows.Forms.Label btnAboutReportIssue;
         public System.Windows.Forms.TabPage tabMovies;
-        private ChreneLib.Controls.TextBoxes.CTextBox txtMoviesSearchBox;
         private CButtonLib.CButton btnSearchMovies;
         private CButtonLib.CButton bgMoviesSearchBox;
         private System.Windows.Forms.Panel panelTitles;
@@ -2086,7 +2084,6 @@
         private System.Windows.Forms.FlowLayoutPanel panelMovies;
         public System.Windows.Forms.TabControl tab;
         public System.Windows.Forms.TabPage tabBlank;
-        private ChreneLib.Controls.TextBoxes.CTextBox txtFilesSearchBox;
         private CButtonLib.CButton btnSearchFiles;
         private CButtonLib.CButton bgFilesSearchBox;
         private System.Windows.Forms.PictureBox imgAbout;
@@ -2188,6 +2185,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn columnFilesFormat;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnFilesHost;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnFilesURL;
+        public ChreneLib.Controls.TextBoxes.CTextBox txtMoviesSearchBox;
+        public System.Windows.Forms.TabPage tabFiles;
+        public ChreneLib.Controls.TextBoxes.CTextBox txtFilesSearchBox;
     }
 }
 
