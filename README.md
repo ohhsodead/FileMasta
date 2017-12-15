@@ -14,7 +14,7 @@ OpenTheatre is a program which allows users to search for Movies, TV Series, Ani
 
 ## Some features available
 - Simple interface and background threads for the best performance
-- Multilingual support (en, es, fr) - contributions are welcome!
+- Multilingual support (en, es, fr, de) - contributions are welcome!
 - Discover over 50,000 movies, series, anime, subtitles, torrents and archives
 - Search movies by name, actor, year and genre
 - Store files in your Bookmarks for later use
@@ -27,7 +27,7 @@ OpenTheatre is a program which allows users to search for Movies, TV Series, Ani
 - Automatic local cache updates
 
 ## Latest build
-OpenTheatre 2.8.1
+OpenTheatre 2.8.2
 
 ## Framework & Backend
 The application is using .NET 4.6.2 WinForms Framework written in C#
@@ -36,7 +36,7 @@ The application is using .NET 4.6.2 WinForms Framework written in C#
 Windows 7 and above (Windows 7, 8, 8.1, 10)
 
 ## Installation
-Download the latest installer [here](https://github.com/invu/opentheatre-app/releases/download/0.2.8.1/OpenTheatreInstaller.exe)
+Download the latest installer [here](https://github.com/invu/opentheatre-app/releases/download/0.2.8.2/OpenTheatreInstaller.exe)
 
 ## Screenshots
 ### Movies
