@@ -29,20 +29,44 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmShareFile));
+            this.titleShareFile = new System.Windows.Forms.Label();
+            this.imgClose = new System.Windows.Forms.PictureBox();
             this.imgGooglePlus = new System.Windows.Forms.PictureBox();
             this.imgEmail = new System.Windows.Forms.PictureBox();
             this.imgReddit = new System.Windows.Forms.PictureBox();
             this.imgTwitter = new System.Windows.Forms.PictureBox();
             this.imgFacebook = new System.Windows.Forms.PictureBox();
-            this.titleShareFile = new System.Windows.Forms.Label();
-            this.imgClose = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.imgClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgGooglePlus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgEmail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgReddit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgTwitter)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgFacebook)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgClose)).BeginInit();
             this.SuspendLayout();
+            // 
+            // titleShareFile
+            // 
+            this.titleShareFile.AutoSize = true;
+            this.titleShareFile.BackColor = System.Drawing.Color.Transparent;
+            this.titleShareFile.Font = new System.Drawing.Font("Segoe UI Semibold", 10.5F, System.Drawing.FontStyle.Bold);
+            this.titleShareFile.Location = new System.Drawing.Point(4, 8);
+            this.titleShareFile.Name = "titleShareFile";
+            this.titleShareFile.Size = new System.Drawing.Size(70, 19);
+            this.titleShareFile.TabIndex = 0;
+            this.titleShareFile.Text = "Share File";
+            // 
+            // imgClose
+            // 
+            this.imgClose.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.imgClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imgClose.Image = global::OpenTheatre.Properties.Resources.close_small;
+            this.imgClose.Location = new System.Drawing.Point(160, 9);
+            this.imgClose.Name = "imgClose";
+            this.imgClose.Size = new System.Drawing.Size(20, 20);
+            this.imgClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgClose.TabIndex = 7;
+            this.imgClose.TabStop = false;
+            this.imgClose.Click += new System.EventHandler(this.imgClose_Click);
             // 
             // imgGooglePlus
             // 
@@ -109,30 +133,6 @@
             this.imgFacebook.TabStop = false;
             this.imgFacebook.Click += new System.EventHandler(this.imgFacebook_Click);
             // 
-            // titleShareFile
-            // 
-            this.titleShareFile.AutoSize = true;
-            this.titleShareFile.BackColor = System.Drawing.Color.Transparent;
-            this.titleShareFile.Font = new System.Drawing.Font("Segoe UI Semibold", 10.5F, System.Drawing.FontStyle.Bold);
-            this.titleShareFile.Location = new System.Drawing.Point(4, 8);
-            this.titleShareFile.Name = "titleShareFile";
-            this.titleShareFile.Size = new System.Drawing.Size(70, 19);
-            this.titleShareFile.TabIndex = 0;
-            this.titleShareFile.Text = "Share File";
-            // 
-            // imgClose
-            // 
-            this.imgClose.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.imgClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgClose.Image = global::OpenTheatre.Properties.Resources.close_small;
-            this.imgClose.Location = new System.Drawing.Point(160, 9);
-            this.imgClose.Name = "imgClose";
-            this.imgClose.Size = new System.Drawing.Size(20, 20);
-            this.imgClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.imgClose.TabIndex = 7;
-            this.imgClose.TabStop = false;
-            this.imgClose.Click += new System.EventHandler(this.imgClose_Click);
-            // 
             // frmShareFile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -158,12 +158,12 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Share File";
+            ((System.ComponentModel.ISupportInitialize)(this.imgClose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgGooglePlus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgEmail)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgReddit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgTwitter)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgFacebook)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgClose)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

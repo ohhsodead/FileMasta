@@ -681,16 +681,16 @@
     <value>True</value>
   </data>
   <data name="emptyDataFiles.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 12.75pt, style=Bold</value>
+    <value>Segoe UI Semibold, 10.25pt, style=Bold</value>
   </data>
   <data name="emptyDataFiles.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="emptyDataFiles.Location" type="System.Drawing.Point, System.Drawing">
-    <value>365, 180</value>
+    <value>377, 180</value>
   </data>
   <data name="emptyDataFiles.Size" type="System.Drawing.Size, System.Drawing">
-    <value>138, 23</value>
+    <value>114, 19</value>
   </data>
   <data name="emptyDataFiles.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -727,9 +727,10 @@
   </data>
   <data name="btnFilesSort.SideImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAF9JREFUaEPt
-        z0sKgDAQRMEc3ZurWTS4UPETSAJVMNvhdQEAAABeW/ZbG1391UWLEd3i48+I7vHxZcQw8fFmxHDx8WTE
-        sPFxN2L4+DgbMU18HEdMFx81fNp4AAAArpWyAccxY6cp/GORAAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAABfSURBVGhD7c9LCoAwEETBHN2bq1k0uFDxE0gCVTDb4XUBAAAAXlv2Wxtd/dVFixHd4uPPiO7x
+        8WXEMPHxZsRw8fFkxLDxcTdi+Pg4GzFNfBxHTBcfNXzaeAAAAK6VsgHHMWOnKfxjkQAAAABJRU5ErkJg
+        gg==
 </value>
   </data>
   <data name="btnFilesSort.Size" type="System.Drawing.Size, System.Drawing">
@@ -824,9 +825,10 @@
   </data>
   <data name="btnFilesFormat.SideImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAF9JREFUaEPt
-        z0sKgDAQRMEc3ZurWTS4UPETSAJVMNvhdQEAAABeW/ZbG1391UWLEd3i48+I7vHxZcQw8fFmxHDx8WTE
-        sPFxN2L4+DgbMU18HEdMFx81fNp4AAAArpWyAccxY6cp/GORAAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAABfSURBVGhD7c9LCoAwEETBHN2bq1k0uFDxE0gCVTDb4XUBAAAAXlv2Wxtd/dVFixHd4uPPiO7x
+        8WXEMPHxZsRw8fFkxLDxcTdi+Pg4GzFNfBxHTBcfNXzaeAAAAK6VsgHHMWOnKfxjkQAAAABJRU5ErkJg
+        gg==
 </value>
   </data>
   <data name="btnFilesFormat.Size" type="System.Drawing.Size, System.Drawing">
@@ -927,9 +929,10 @@
   </data>
   <data name="btnFilesHost.SideImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAF9JREFUaEPt
-        z0sKgDAQRMEc3ZurWTS4UPETSAJVMNvhdQEAAABeW/ZbG1391UWLEd3i48+I7vHxZcQw8fFmxHDx8WTE
-        sPFxN2L4+DgbMU18HEdMFx81fNp4AAAArpWyAccxY6cp/GORAAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAABfSURBVGhD7c9LCoAwEETBHN2bq1k0uFDxE0gCVTDb4XUBAAAAXlv2Wxtd/dVFixHd4uPPiO7x
+        8WXEMPHxZsRw8fFkxLDxcTdi+Pg4GzFNfBxHTBcfNXzaeAAAAK6VsgHHMWOnKfxjkQAAAABJRU5ErkJg
+        gg==
 </value>
   </data>
   <data name="btnFilesHost.Size" type="System.Drawing.Size, System.Drawing">
@@ -1015,13 +1018,6 @@
   </data>
   <data name="btnFilesQuality.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
-  </data>
-  <data name="btnFilesQuality.SideImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAF9JREFUaEPt
-        z0sKgDAQRMEc3ZurWTS4UPETSAJVMNvhdQEAAABeW/ZbG1391UWLEd3i48+I7vHxZcQw8fFmxHDx8WTE
-        sPFxN2L4+DgbMU18HEdMFx81fNp4AAAArpWyAccxY6cp/GORAAAAAElFTkSuQmCC
-</value>
   </data>
   <data name="btnFilesQuality.Size" type="System.Drawing.Size, System.Drawing">
     <value>115, 36</value>
@@ -1464,6 +1460,33 @@
   <data name="&gt;&gt;titleFilesLocal.ZOrder" xml:space="preserve">
     <value>11</value>
   </data>
+  <data name="bgFilesSearchBox.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 8.25pt</value>
+  </data>
+  <data name="bgFilesSearchBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 13</value>
+  </data>
+  <data name="bgFilesSearchBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>399, 36</value>
+  </data>
+  <data name="bgFilesSearchBox.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="bgFilesSearchBox.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;bgFilesSearchBox.Name" xml:space="preserve">
+    <value>bgFilesSearchBox</value>
+  </data>
+  <data name="&gt;&gt;bgFilesSearchBox.Type" xml:space="preserve">
+    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;bgFilesSearchBox.Parent" xml:space="preserve">
+    <value>tabFiles</value>
+  </data>
+  <data name="&gt;&gt;bgFilesSearchBox.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
   <data name="btnSearchFiles.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 8.25pt</value>
   </data>
@@ -1504,33 +1527,6 @@
     <value>tabFiles</value>
   </data>
   <data name="&gt;&gt;btnSearchFiles.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="bgFilesSearchBox.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 8.25pt</value>
-  </data>
-  <data name="bgFilesSearchBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 13</value>
-  </data>
-  <data name="bgFilesSearchBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>399, 36</value>
-  </data>
-  <data name="bgFilesSearchBox.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="bgFilesSearchBox.Text" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;bgFilesSearchBox.Name" xml:space="preserve">
-    <value>bgFilesSearchBox</value>
-  </data>
-  <data name="&gt;&gt;bgFilesSearchBox.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;bgFilesSearchBox.Parent" xml:space="preserve">
-    <value>tabFiles</value>
-  </data>
-  <data name="&gt;&gt;bgFilesSearchBox.ZOrder" xml:space="preserve">
     <value>13</value>
   </data>
   <data name="tabFiles.Location" type="System.Drawing.Point, System.Drawing">
@@ -1557,6 +1553,48 @@
   <data name="&gt;&gt;tabFiles.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="btnSearchBookmarks.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 8.25pt</value>
+  </data>
+  <data name="btnSearchBookmarks.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAitJREFUaEPt
+        l0tqFUEUQN9ERY0DHWeiZhqDAxERElyHottI/CXqFpwobkMU0ZjgD+dBcAHqGlRQzwEfXIpq0m1TFQv6
+        wIGQ5NWt231f1b2ziYmJiWY5jw9wB7/hj7/682u8jyv433EF3+Hvnr7FNTxwjuETzG2yj4/xKB4Ip/Aj
+        5jY2xA94Eqvik89t/hc+xat4Gg/hYTyD1/AZpp9Rk6j6JnJls4cXcD8u4idMP/8Iq+AXNg3+Eo9jXxZw
+        G9N1VrE47zEG9ckP2fwck0jfxBssiud8DGjN9ymbLi5hXE/PYTG8pGIwv7BjeY5xzXtYDG/YGMzTZizX
+        Ma75CothSxCDeVSO5SzGNb9gMexrYjDP+bEcwbjmdyxGmoCX1FjSBH5iMdIS8oYdyxLGNb9iMWyJYzDb
+        g7HcwLimMYphPx+D2duM5QXGNbewGA4jMZja2/wrlzFdbxmL4jASA9oO2BYM5QR+xrjWLhbHSSoGVRuz
+        IUm4+fRStC3xjVTBSSoGV9+Evc1+uMn0yetDrIbDh0NIugm1t7E98Ib1jFePSk+b9As71/tlEaviGNiV
+        xBDTy3ETq+GbcJKKG+irNW/Z+OTTv93FqjhJOYykG+nS0yZ+YXP/cwer4zBiP29LbFdpY2ZvY3vgDesl
+        lRtY/H0uidvYDNZ+80lY+7kkbmEzWPu5JG5iM1g2uSQ2sBm6kljHZrD2m0/C2m86AbH2m938HDfe7OYn
+        JiYmmmE2+wO+LVNfbsoz1QAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="btnSearchBookmarks.Location" type="System.Drawing.Point, System.Drawing">
+    <value>376, 13</value>
+  </data>
+  <data name="btnSearchBookmarks.Size" type="System.Drawing.Size, System.Drawing">
+    <value>36, 36</value>
+  </data>
+  <data name="btnSearchBookmarks.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="btnSearchBookmarks.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;btnSearchBookmarks.Name" xml:space="preserve">
+    <value>btnSearchBookmarks</value>
+  </data>
+  <data name="&gt;&gt;btnSearchBookmarks.Type" xml:space="preserve">
+    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;btnSearchBookmarks.Parent" xml:space="preserve">
+    <value>tabBookmarks</value>
+  </data>
+  <data name="&gt;&gt;btnSearchBookmarks.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="emptyDataBookmarks.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top</value>
   </data>
@@ -1564,16 +1602,16 @@
     <value>True</value>
   </data>
   <data name="emptyDataBookmarks.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 12.75pt, style=Bold</value>
+    <value>Segoe UI Semibold, 10.25pt, style=Bold</value>
   </data>
   <data name="emptyDataBookmarks.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="emptyDataBookmarks.Location" type="System.Drawing.Point, System.Drawing">
-    <value>365, 144</value>
+    <value>377, 144</value>
   </data>
   <data name="emptyDataBookmarks.Size" type="System.Drawing.Size, System.Drawing">
-    <value>138, 23</value>
+    <value>114, 19</value>
   </data>
   <data name="emptyDataBookmarks.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1594,7 +1632,7 @@
     <value>tabBookmarks</value>
   </data>
   <data name="&gt;&gt;emptyDataBookmarks.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="panelBookmarksFilters.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -1610,9 +1648,10 @@
   </data>
   <data name="btnBookmarksSort.SideImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAF9JREFUaEPt
-        z0sKgDAQRMEc3ZurWTS4UPETSAJVMNvhdQEAAABeW/ZbG1391UWLEd3i48+I7vHxZcQw8fFmxHDx8WTE
-        sPFxN2L4+DgbMU18HEdMFx81fNp4AAAArpWyAccxY6cp/GORAAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAABfSURBVGhD7c9LCoAwEETBHN2bq1k0uFDxE0gCVTDb4XUBAAAAXlv2Wxtd/dVFixHd4uPPiO7x
+        8WXEMPHxZsRw8fFkxLDxcTdi+Pg4GzFNfBxHTBcfNXzaeAAAAK6VsgHHMWOnKfxjkQAAAABJRU5ErkJg
+        gg==
 </value>
   </data>
   <data name="btnBookmarksSort.Size" type="System.Drawing.Size, System.Drawing">
@@ -1707,9 +1746,10 @@
   </data>
   <data name="btnBookmarksType.SideImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAF9JREFUaEPt
-        z0sKgDAQRMEc3ZurWTS4UPETSAJVMNvhdQEAAABeW/ZbG1391UWLEd3i48+I7vHxZcQw8fFmxHDx8WTE
-        sPFxN2L4+DgbMU18HEdMFx81fNp4AAAArpWyAccxY6cp/GORAAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAABfSURBVGhD7c9LCoAwEETBHN2bq1k0uFDxE0gCVTDb4XUBAAAAXlv2Wxtd/dVFixHd4uPPiO7x
+        8WXEMPHxZsRw8fFkxLDxcTdi+Pg4GzFNfBxHTBcfNXzaeAAAAK6VsgHHMWOnKfxjkQAAAABJRU5ErkJg
+        gg==
 </value>
   </data>
   <data name="btnBookmarksType.Size" type="System.Drawing.Size, System.Drawing">
@@ -1830,7 +1870,7 @@
     <value>tabBookmarks</value>
   </data>
   <data name="&gt;&gt;panelBookmarksFilters.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="txtBookmarksSearchBox.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 10.75pt</value>
@@ -1854,7 +1894,7 @@
     <value>tabBookmarks</value>
   </data>
   <data name="&gt;&gt;txtBookmarksSearchBox.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="dataGridBookmarks.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -1929,48 +1969,6 @@
     <value>tabBookmarks</value>
   </data>
   <data name="&gt;&gt;dataGridBookmarks.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="btnSearchBookmarks.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 8.25pt</value>
-  </data>
-  <data name="btnSearchBookmarks.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAitJREFUaEPt
-        l0tqFUEUQN9ERY0DHWeiZhqDAxERElyHottI/CXqFpwobkMU0ZjgD+dBcAHqGlRQzwEfXIpq0m1TFQv6
-        wIGQ5NWt231f1b2ziYmJiWY5jw9wB7/hj7/682u8jyv433EF3+Hvnr7FNTxwjuETzG2yj4/xKB4Ip/Aj
-        5jY2xA94Eqvik89t/hc+xat4Gg/hYTyD1/AZpp9Rk6j6JnJls4cXcD8u4idMP/8Iq+AXNg3+Eo9jXxZw
-        G9N1VrE47zEG9ckP2fwck0jfxBssiud8DGjN9ymbLi5hXE/PYTG8pGIwv7BjeY5xzXtYDG/YGMzTZizX
-        Ma75CothSxCDeVSO5SzGNb9gMexrYjDP+bEcwbjmdyxGmoCX1FjSBH5iMdIS8oYdyxLGNb9iMWyJYzDb
-        g7HcwLimMYphPx+D2duM5QXGNbewGA4jMZja2/wrlzFdbxmL4jASA9oO2BYM5QR+xrjWLhbHSSoGVRuz
-        IUm4+fRStC3xjVTBSSoGV9+Evc1+uMn0yetDrIbDh0NIugm1t7E98Ib1jFePSk+b9As71/tlEaviGNiV
-        xBDTy3ETq+GbcJKKG+irNW/Z+OTTv93FqjhJOYykG+nS0yZ+YXP/cwer4zBiP29LbFdpY2ZvY3vgDesl
-        lRtY/H0uidvYDNZ+80lY+7kkbmEzWPu5JG5iM1g2uSQ2sBm6kljHZrD2m0/C2m86AbH2m938HDfe7OYn
-        JiYmmmE2+wO+LVNfbsoz1QAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="btnSearchBookmarks.Location" type="System.Drawing.Point, System.Drawing">
-    <value>376, 13</value>
-  </data>
-  <data name="btnSearchBookmarks.Size" type="System.Drawing.Size, System.Drawing">
-    <value>36, 36</value>
-  </data>
-  <data name="btnSearchBookmarks.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="btnSearchBookmarks.Text" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;btnSearchBookmarks.Name" xml:space="preserve">
-    <value>btnSearchBookmarks</value>
-  </data>
-  <data name="&gt;&gt;btnSearchBookmarks.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;btnSearchBookmarks.Parent" xml:space="preserve">
-    <value>tabBookmarks</value>
-  </data>
-  <data name="&gt;&gt;btnSearchBookmarks.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
   <data name="bgBookmarksSearchBox.Font" type="System.Drawing.Font, System.Drawing">

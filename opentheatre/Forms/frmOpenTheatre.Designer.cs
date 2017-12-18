@@ -84,9 +84,10 @@
             this.titleFilesTorrents = new CButtonLib.CButton();
             this.titleFilesArchives = new CButtonLib.CButton();
             this.titleFilesLocal = new CButtonLib.CButton();
-            this.btnSearchFiles = new CButtonLib.CButton();
             this.bgFilesSearchBox = new CButtonLib.CButton();
+            this.btnSearchFiles = new CButtonLib.CButton();
             this.tabBookmarks = new System.Windows.Forms.TabPage();
+            this.btnSearchBookmarks = new CButtonLib.CButton();
             this.emptyDataBookmarks = new System.Windows.Forms.Label();
             this.panelBookmarksFilters = new System.Windows.Forms.FlowLayoutPanel();
             this.panelBookmarksSort = new System.Windows.Forms.Panel();
@@ -102,7 +103,6 @@
             this.columnBookmarksFormat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnBookmarksHost = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnBookmarksURL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnSearchBookmarks = new CButtonLib.CButton();
             this.bgBookmarksSearchBox = new CButtonLib.CButton();
             this.tabDownloads = new System.Windows.Forms.TabPage();
             this.lblNoDownloads = new System.Windows.Forms.Label();
@@ -482,8 +482,8 @@
             this.tabFiles.Controls.Add(this.titleFilesTorrents);
             this.tabFiles.Controls.Add(this.titleFilesArchives);
             this.tabFiles.Controls.Add(this.titleFilesLocal);
-            this.tabFiles.Controls.Add(this.btnSearchFiles);
             this.tabFiles.Controls.Add(this.bgFilesSearchBox);
+            this.tabFiles.Controls.Add(this.btnSearchFiles);
             this.tabFiles.ForeColor = System.Drawing.Color.White;
             resources.ApplyResources(this.tabFiles, "tabFiles");
             this.tabFiles.Name = "tabFiles";
@@ -673,7 +673,7 @@
             this.btnFilesQuality.ImageIndex = 0;
             this.btnFilesQuality.Name = "btnFilesQuality";
             this.btnFilesQuality.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.btnFilesQuality.SideImage = ((System.Drawing.Image)(resources.GetObject("btnFilesQuality.SideImage")));
+            this.btnFilesQuality.SideImage = global::OpenTheatre.Properties.Resources.arrow_drop_down_black;
             this.btnFilesQuality.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnFilesQuality.SideImageSize = new System.Drawing.Size(21, 21);
             this.btnFilesQuality.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -951,28 +951,6 @@
             this.titleFilesLocal.TextShadowShow = false;
             this.titleFilesLocal.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.titleFilesLocal_ClickButtonArea);
             // 
-            // btnSearchFiles
-            // 
-            this.btnSearchFiles.BackColor = System.Drawing.Color.Transparent;
-            this.btnSearchFiles.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.btnSearchFiles.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.btnSearchFiles.Corners.LowerRight = 2;
-            this.btnSearchFiles.Corners.UpperRight = 2;
-            this.btnSearchFiles.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSearchFiles.DesignerSelected = false;
-            this.btnSearchFiles.DimFactorClick = 0;
-            this.btnSearchFiles.DimFactorHover = 0;
-            this.btnSearchFiles.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.btnSearchFiles.FocalPoints.CenterPtX = 0F;
-            this.btnSearchFiles.FocalPoints.CenterPtY = 0F;
-            resources.ApplyResources(this.btnSearchFiles, "btnSearchFiles");
-            this.btnSearchFiles.Image = ((System.Drawing.Image)(resources.GetObject("btnSearchFiles.Image")));
-            this.btnSearchFiles.ImageIndex = 0;
-            this.btnSearchFiles.ImageSize = new System.Drawing.Size(22, 22);
-            this.btnSearchFiles.Name = "btnSearchFiles";
-            this.btnSearchFiles.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.btnSearchFiles.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnSearchFiles_ClickButtonArea);
-            // 
             // bgFilesSearchBox
             // 
             this.bgFilesSearchBox.BackColor = System.Drawing.Color.Transparent;
@@ -995,18 +973,63 @@
             this.bgFilesSearchBox.TabStop = false;
             this.bgFilesSearchBox.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.bgFilesSearchBox_ClickButtonArea);
             // 
+            // btnSearchFiles
+            // 
+            this.btnSearchFiles.BackColor = System.Drawing.Color.Transparent;
+            this.btnSearchFiles.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.btnSearchFiles.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.btnSearchFiles.Corners.LowerRight = 2;
+            this.btnSearchFiles.Corners.UpperRight = 2;
+            this.btnSearchFiles.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSearchFiles.DesignerSelected = false;
+            this.btnSearchFiles.DimFactorClick = 0;
+            this.btnSearchFiles.DimFactorHover = 0;
+            this.btnSearchFiles.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.btnSearchFiles.FocalPoints.CenterPtX = 0F;
+            this.btnSearchFiles.FocalPoints.CenterPtY = 0F;
+            resources.ApplyResources(this.btnSearchFiles, "btnSearchFiles");
+            this.btnSearchFiles.Image = ((System.Drawing.Image)(resources.GetObject("btnSearchFiles.Image")));
+            this.btnSearchFiles.ImageIndex = 0;
+            this.btnSearchFiles.ImageSize = new System.Drawing.Size(22, 22);
+            this.btnSearchFiles.Name = "btnSearchFiles";
+            this.btnSearchFiles.ShowFocus = CButtonLib.CButton.eFocus.None;
+            this.btnSearchFiles.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnSearchFiles_ClickButtonArea);
+            // 
             // tabBookmarks
             // 
             this.tabBookmarks.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
+            this.tabBookmarks.Controls.Add(this.btnSearchBookmarks);
             this.tabBookmarks.Controls.Add(this.emptyDataBookmarks);
             this.tabBookmarks.Controls.Add(this.panelBookmarksFilters);
             this.tabBookmarks.Controls.Add(this.txtBookmarksSearchBox);
             this.tabBookmarks.Controls.Add(this.dataGridBookmarks);
-            this.tabBookmarks.Controls.Add(this.btnSearchBookmarks);
             this.tabBookmarks.Controls.Add(this.bgBookmarksSearchBox);
             this.tabBookmarks.ForeColor = System.Drawing.Color.White;
             resources.ApplyResources(this.tabBookmarks, "tabBookmarks");
             this.tabBookmarks.Name = "tabBookmarks";
+            // 
+            // btnSearchBookmarks
+            // 
+            this.btnSearchBookmarks.BackColor = System.Drawing.Color.Transparent;
+            this.btnSearchBookmarks.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.btnSearchBookmarks.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.btnSearchBookmarks.Corners.LowerRight = 2;
+            this.btnSearchBookmarks.Corners.UpperRight = 2;
+            this.btnSearchBookmarks.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSearchBookmarks.DesignerSelected = false;
+            this.btnSearchBookmarks.DimFactorClick = 0;
+            this.btnSearchBookmarks.DimFactorHover = 0;
+            this.btnSearchBookmarks.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.btnSearchBookmarks.FocalPoints.CenterPtX = 0F;
+            this.btnSearchBookmarks.FocalPoints.CenterPtY = 0F;
+            resources.ApplyResources(this.btnSearchBookmarks, "btnSearchBookmarks");
+            this.btnSearchBookmarks.ForeColor = System.Drawing.Color.Black;
+            this.btnSearchBookmarks.Image = ((System.Drawing.Image)(resources.GetObject("btnSearchBookmarks.Image")));
+            this.btnSearchBookmarks.ImageIndex = 0;
+            this.btnSearchBookmarks.ImageSize = new System.Drawing.Size(22, 22);
+            this.btnSearchBookmarks.Name = "btnSearchBookmarks";
+            this.btnSearchBookmarks.ShowFocus = CButtonLib.CButton.eFocus.None;
+            this.btnSearchBookmarks.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnSearchBookmarks_ClickButtonArea);
             // 
             // emptyDataBookmarks
             // 
@@ -1228,29 +1251,6 @@
             resources.ApplyResources(this.columnBookmarksURL, "columnBookmarksURL");
             this.columnBookmarksURL.Name = "columnBookmarksURL";
             this.columnBookmarksURL.ReadOnly = true;
-            // 
-            // btnSearchBookmarks
-            // 
-            this.btnSearchBookmarks.BackColor = System.Drawing.Color.Transparent;
-            this.btnSearchBookmarks.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.btnSearchBookmarks.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.btnSearchBookmarks.Corners.LowerRight = 2;
-            this.btnSearchBookmarks.Corners.UpperRight = 2;
-            this.btnSearchBookmarks.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSearchBookmarks.DesignerSelected = false;
-            this.btnSearchBookmarks.DimFactorClick = 0;
-            this.btnSearchBookmarks.DimFactorHover = 0;
-            this.btnSearchBookmarks.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.btnSearchBookmarks.FocalPoints.CenterPtX = 0F;
-            this.btnSearchBookmarks.FocalPoints.CenterPtY = 0F;
-            resources.ApplyResources(this.btnSearchBookmarks, "btnSearchBookmarks");
-            this.btnSearchBookmarks.ForeColor = System.Drawing.Color.Black;
-            this.btnSearchBookmarks.Image = ((System.Drawing.Image)(resources.GetObject("btnSearchBookmarks.Image")));
-            this.btnSearchBookmarks.ImageIndex = 0;
-            this.btnSearchBookmarks.ImageSize = new System.Drawing.Size(22, 22);
-            this.btnSearchBookmarks.Name = "btnSearchBookmarks";
-            this.btnSearchBookmarks.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.btnSearchBookmarks.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnSearchBookmarks_ClickButtonArea);
             // 
             // bgBookmarksSearchBox
             // 

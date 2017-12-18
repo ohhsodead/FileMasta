@@ -66,7 +66,7 @@
             this.infoFileHost.AutoEllipsis = true;
             this.infoFileHost.Cursor = System.Windows.Forms.Cursors.Default;
             this.infoFileHost.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.infoFileHost.Location = new System.Drawing.Point(27, 3);
+            this.infoFileHost.Location = new System.Drawing.Point(27, 2);
             this.infoFileHost.Margin = new System.Windows.Forms.Padding(0, 3, 3, 0);
             this.infoFileHost.Name = "infoFileHost";
             this.infoFileHost.Size = new System.Drawing.Size(130, 17);
@@ -79,7 +79,7 @@
             this.infoFileName.AutoEllipsis = true;
             this.infoFileName.Cursor = System.Windows.Forms.Cursors.Default;
             this.infoFileName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.infoFileName.Location = new System.Drawing.Point(160, 3);
+            this.infoFileName.Location = new System.Drawing.Point(160, 2);
             this.infoFileName.Margin = new System.Windows.Forms.Padding(0, 3, 3, 0);
             this.infoFileName.Name = "infoFileName";
             this.infoFileName.Size = new System.Drawing.Size(189, 17);
@@ -139,10 +139,10 @@
             this.imgShare.BackColor = System.Drawing.Color.Transparent;
             this.imgShare.Cursor = System.Windows.Forms.Cursors.Hand;
             this.imgShare.Image = global::OpenTheatre.Properties.Resources.share_variant;
-            this.imgShare.Location = new System.Drawing.Point(116, 0);
-            this.imgShare.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
+            this.imgShare.Location = new System.Drawing.Point(118, 0);
+            this.imgShare.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.imgShare.Name = "imgShare";
-            this.imgShare.Size = new System.Drawing.Size(23, 23);
+            this.imgShare.Size = new System.Drawing.Size(21, 21);
             this.imgShare.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imgShare.TabIndex = 19;
             this.imgShare.TabStop = false;
@@ -155,10 +155,10 @@
             this.imgCopyURL.BackColor = System.Drawing.Color.Transparent;
             this.imgCopyURL.Cursor = System.Windows.Forms.Cursors.Hand;
             this.imgCopyURL.Image = global::OpenTheatre.Properties.Resources.clipboard_arrow_left;
-            this.imgCopyURL.Location = new System.Drawing.Point(90, 0);
+            this.imgCopyURL.Location = new System.Drawing.Point(91, 0);
             this.imgCopyURL.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.imgCopyURL.Name = "imgCopyURL";
-            this.imgCopyURL.Size = new System.Drawing.Size(23, 23);
+            this.imgCopyURL.Size = new System.Drawing.Size(21, 21);
             this.imgCopyURL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imgCopyURL.TabIndex = 18;
             this.imgCopyURL.TabStop = false;
@@ -171,10 +171,10 @@
             this.imgReportBroken.BackColor = System.Drawing.Color.Transparent;
             this.imgReportBroken.Cursor = System.Windows.Forms.Cursors.Hand;
             this.imgReportBroken.Image = global::OpenTheatre.Properties.Resources.report;
-            this.imgReportBroken.Location = new System.Drawing.Point(61, 0);
+            this.imgReportBroken.Location = new System.Drawing.Point(64, 0);
             this.imgReportBroken.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.imgReportBroken.Name = "imgReportBroken";
-            this.imgReportBroken.Size = new System.Drawing.Size(23, 23);
+            this.imgReportBroken.Size = new System.Drawing.Size(21, 21);
             this.imgReportBroken.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imgReportBroken.TabIndex = 17;
             this.imgReportBroken.TabStop = false;
@@ -187,10 +187,10 @@
             this.imgWatch.BackColor = System.Drawing.Color.Transparent;
             this.imgWatch.Cursor = System.Windows.Forms.Cursors.Hand;
             this.imgWatch.Image = global::OpenTheatre.Properties.Resources.play_circle;
-            this.imgWatch.Location = new System.Drawing.Point(32, 0);
+            this.imgWatch.Location = new System.Drawing.Point(37, 0);
             this.imgWatch.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.imgWatch.Name = "imgWatch";
-            this.imgWatch.Size = new System.Drawing.Size(23, 23);
+            this.imgWatch.Size = new System.Drawing.Size(21, 21);
             this.imgWatch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imgWatch.TabIndex = 16;
             this.imgWatch.TabStop = false;
@@ -203,10 +203,10 @@
             this.imgMagnet.BackColor = System.Drawing.Color.Transparent;
             this.imgMagnet.Cursor = System.Windows.Forms.Cursors.Hand;
             this.imgMagnet.Image = global::OpenTheatre.Properties.Resources.magnet;
-            this.imgMagnet.Location = new System.Drawing.Point(118, 25);
+            this.imgMagnet.Location = new System.Drawing.Point(120, 23);
             this.imgMagnet.Margin = new System.Windows.Forms.Padding(3, 2, 5, 0);
             this.imgMagnet.Name = "imgMagnet";
-            this.imgMagnet.Size = new System.Drawing.Size(19, 19);
+            this.imgMagnet.Size = new System.Drawing.Size(17, 17);
             this.imgMagnet.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imgMagnet.TabIndex = 20;
             this.imgMagnet.TabStop = false;
@@ -220,10 +220,10 @@
             this.imgDownload.BackColor = System.Drawing.Color.Transparent;
             this.imgDownload.Cursor = System.Windows.Forms.Cursors.Hand;
             this.imgDownload.Image = global::OpenTheatre.Properties.Resources.cloud_download;
-            this.imgDownload.Location = new System.Drawing.Point(3, 0);
+            this.imgDownload.Location = new System.Drawing.Point(10, 0);
             this.imgDownload.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.imgDownload.Name = "imgDownload";
-            this.imgDownload.Size = new System.Drawing.Size(23, 23);
+            this.imgDownload.Size = new System.Drawing.Size(21, 21);
             this.imgDownload.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imgDownload.TabIndex = 15;
             this.imgDownload.TabStop = false;
@@ -236,7 +236,7 @@
             this.imgAddToBookmarks.BackColor = System.Drawing.Color.Transparent;
             this.imgAddToBookmarks.Cursor = System.Windows.Forms.Cursors.Hand;
             this.imgAddToBookmarks.Image = ((System.Drawing.Image)(resources.GetObject("imgAddToBookmarks.Image")));
-            this.imgAddToBookmarks.Location = new System.Drawing.Point(1, 1);
+            this.imgAddToBookmarks.Location = new System.Drawing.Point(1, 0);
             this.imgAddToBookmarks.Name = "imgAddToBookmarks";
             this.imgAddToBookmarks.Size = new System.Drawing.Size(23, 23);
             this.imgAddToBookmarks.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -251,7 +251,7 @@
             this.infoFileSize.AutoEllipsis = true;
             this.infoFileSize.Cursor = System.Windows.Forms.Cursors.Default;
             this.infoFileSize.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.infoFileSize.Location = new System.Drawing.Point(352, 3);
+            this.infoFileSize.Location = new System.Drawing.Point(352, 2);
             this.infoFileSize.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
             this.infoFileSize.Name = "infoFileSize";
             this.infoFileSize.Size = new System.Drawing.Size(70, 17);
@@ -264,7 +264,7 @@
             this.infoFileAge.AutoEllipsis = true;
             this.infoFileAge.Cursor = System.Windows.Forms.Cursors.Default;
             this.infoFileAge.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.infoFileAge.Location = new System.Drawing.Point(422, 3);
+            this.infoFileAge.Location = new System.Drawing.Point(422, 2);
             this.infoFileAge.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
             this.infoFileAge.Name = "infoFileAge";
             this.infoFileAge.Size = new System.Drawing.Size(86, 17);
@@ -287,9 +287,9 @@
             this.panelControls.Controls.Add(this.imgDownload);
             this.panelControls.Controls.Add(this.imgMagnet);
             this.panelControls.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.panelControls.Location = new System.Drawing.Point(511, 1);
+            this.panelControls.Location = new System.Drawing.Point(511, 0);
             this.panelControls.Name = "panelControls";
-            this.panelControls.Size = new System.Drawing.Size(142, 23);
+            this.panelControls.Size = new System.Drawing.Size(142, 21);
             this.panelControls.TabIndex = 0;
             // 
             // ctrlStreamInfo
@@ -308,7 +308,7 @@
             this.ForeColor = System.Drawing.Color.White;
             this.Name = "ctrlStreamInfo";
             this.Padding = new System.Windows.Forms.Padding(12);
-            this.Size = new System.Drawing.Size(653, 25);
+            this.Size = new System.Drawing.Size(653, 22);
             this.Load += new System.EventHandler(this.ctrlStreamInfo_Load);
             this.contextFileName.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.imgShare)).EndInit();

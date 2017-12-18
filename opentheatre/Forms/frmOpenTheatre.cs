@@ -1174,6 +1174,7 @@ namespace OpenTheatre
         {
             if (panelDownloads.Controls.Count == 0) { lblNoDownloads.Visible = true; } else { lblNoDownloads.Visible = false; }
         }
+
         //
 
         // About tab

@@ -251,6 +251,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\facebook-messenger.png" />
     <Content Include="Resources\opentheatre_logo.ico" />
     <None Include="Resources\search-white.png" />
     <None Include="Resources\magnet.png" />
