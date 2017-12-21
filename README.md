@@ -62,5 +62,8 @@ Download the latest installer [here](https://github.com/invu/opentheatre-app/rel
 - [Json.NET (Newtonsoft)](https://www.newtonsoft.com/json)
 - [VLC Player](https://www.videolan.org/vlc/)
 
+## Contributing
+Our resources are completely open source, you find all of the necessary sources that our web-crawler scans [here](https://github.com/invu/opentheatre/assets/). If you would like to add an open web directory, simply edit the appropriate *e.g. open-movies-directories.txt*, add your source to the list and click save. This will create a pull request which I will review and submit if correct. The next daily scan will update the found files or you can just create an issue with the details of the web directory and we'll put it up as soon as.
+
 ## Comments
 OpenTheatre is a new application and is not a segment of Popcorn Time or any other similar apps.
