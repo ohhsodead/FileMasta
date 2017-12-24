@@ -65,5 +65,8 @@ Download the latest installer [here](https://github.com/invu/opentheatre-app/rel
 ## Contributing
 Our resources are completely open source, you find all of the necessary sources that our web-crawler scans [here](https://github.com/invu/opentheatre/assets/). If you would like to add an open web directory, simply edit the appropriate *e.g. open-movies-directories.txt*, add your source to the list and click save. This will create a pull request which I will review and submit if correct. The next daily scan will update the found files or you can just create an issue with the details of the web directory and we'll put it up as soon as.
 
+## References
+When you've forked the project, you may notice a few errors relating to the references used for the app. As they're not included by default, I've decided to add them here to fix building issues and for anyone else whom be interested.
+
 ## Comments
 OpenTheatre is a new application and is not a segment of Popcorn Time or any other similar apps.
