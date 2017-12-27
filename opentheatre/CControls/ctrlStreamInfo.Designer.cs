@@ -329,20 +329,20 @@
         public System.Windows.Forms.Label infoFileName;
         public System.Windows.Forms.ContextMenuStrip contextFileName;
         private System.Windows.Forms.PictureBox imgAddToBookmarks;
-        private System.Windows.Forms.PictureBox imgDownload;
-        private System.Windows.Forms.PictureBox imgWatch;
-        private System.Windows.Forms.PictureBox imgReportBroken;
         private System.Windows.Forms.ToolTip toolTip1;
         public System.Windows.Forms.Label infoFileSize;
         public System.Windows.Forms.Label infoFileAge;
-        private System.Windows.Forms.PictureBox imgCopyURL;
         private System.Windows.Forms.Timer timerUpdateInfo;
-        private System.Windows.Forms.PictureBox imgShare;
         private System.Windows.Forms.FlowLayoutPanel panelControls;
         private System.Windows.Forms.ToolStripMenuItem VLC2ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem WMPToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem VLCToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem MPCToolStripMenuItem;
-        private System.Windows.Forms.PictureBox imgMagnet;
+        public System.Windows.Forms.PictureBox imgDownload;
+        public System.Windows.Forms.PictureBox imgWatch;
+        public System.Windows.Forms.PictureBox imgReportBroken;
+        public System.Windows.Forms.PictureBox imgCopyURL;
+        public System.Windows.Forms.PictureBox imgShare;
+        public System.Windows.Forms.PictureBox imgMagnet;
     }
 }

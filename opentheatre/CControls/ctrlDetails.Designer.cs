@@ -56,13 +56,13 @@
             this.infoFileName = new System.Windows.Forms.Label();
             this.lineUserReviews = new CButtonLib.CButton();
             this.infoFileAge = new System.Windows.Forms.Label();
-            this.lblHeaderUserReviews = new System.Windows.Forms.Label();
+            this.lblHeaderFiles = new System.Windows.Forms.Label();
             this.infoFileSize = new System.Windows.Forms.Label();
             this.lineSplitter = new CButtonLib.CButton();
             this.panelFiles = new System.Windows.Forms.FlowLayoutPanel();
             this.panelTitleTorrents = new System.Windows.Forms.Panel();
             this.cButton1 = new CButtonLib.CButton();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblHeaderTorrents = new System.Windows.Forms.Label();
             this.cButton2 = new CButtonLib.CButton();
             this.panelTorrents = new System.Windows.Forms.FlowLayoutPanel();
             this.btnWatchTrailer = new CButtonLib.CButton();
@@ -229,7 +229,7 @@
             this.panelTitleFiles.Controls.Add(this.infoFileName);
             this.panelTitleFiles.Controls.Add(this.lineUserReviews);
             this.panelTitleFiles.Controls.Add(this.infoFileAge);
-            this.panelTitleFiles.Controls.Add(this.lblHeaderUserReviews);
+            this.panelTitleFiles.Controls.Add(this.lblHeaderFiles);
             this.panelTitleFiles.Controls.Add(this.infoFileSize);
             this.panelTitleFiles.Controls.Add(this.lineSplitter);
             this.panelDetails.SetFlowBreak(this.panelTitleFiles, true);
@@ -305,13 +305,13 @@
             this.infoFileAge.Cursor = System.Windows.Forms.Cursors.Default;
             this.infoFileAge.Name = "infoFileAge";
             // 
-            // lblHeaderUserReviews
+            // lblHeaderFiles
             // 
-            resources.ApplyResources(this.lblHeaderUserReviews, "lblHeaderUserReviews");
-            this.lblHeaderUserReviews.BackColor = System.Drawing.Color.Transparent;
-            this.lblHeaderUserReviews.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblHeaderUserReviews.ForeColor = System.Drawing.Color.White;
-            this.lblHeaderUserReviews.Name = "lblHeaderUserReviews";
+            resources.ApplyResources(this.lblHeaderFiles, "lblHeaderFiles");
+            this.lblHeaderFiles.BackColor = System.Drawing.Color.Transparent;
+            this.lblHeaderFiles.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblHeaderFiles.ForeColor = System.Drawing.Color.White;
+            this.lblHeaderFiles.Name = "lblHeaderFiles";
             // 
             // infoFileSize
             // 
@@ -354,7 +354,7 @@
             resources.ApplyResources(this.panelTitleTorrents, "panelTitleTorrents");
             this.panelTitleTorrents.BackColor = System.Drawing.Color.Transparent;
             this.panelTitleTorrents.Controls.Add(this.cButton1);
-            this.panelTitleTorrents.Controls.Add(this.label4);
+            this.panelTitleTorrents.Controls.Add(this.lblHeaderTorrents);
             this.panelTitleTorrents.Controls.Add(this.cButton2);
             this.panelDetails.SetFlowBreak(this.panelTitleTorrents, true);
             this.panelTitleTorrents.Name = "panelTitleTorrents";
@@ -381,13 +381,13 @@
             this.cButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.cButton1.TextShadowShow = false;
             // 
-            // label4
+            // lblHeaderTorrents
             // 
-            resources.ApplyResources(this.label4, "label4");
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Name = "label4";
+            resources.ApplyResources(this.lblHeaderTorrents, "lblHeaderTorrents");
+            this.lblHeaderTorrents.BackColor = System.Drawing.Color.Transparent;
+            this.lblHeaderTorrents.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblHeaderTorrents.ForeColor = System.Drawing.Color.White;
+            this.lblHeaderTorrents.Name = "lblHeaderTorrents";
             // 
             // cButton2
             // 
@@ -526,7 +526,7 @@
         internal System.Windows.Forms.PictureBox imgIMDb;
         internal System.Windows.Forms.Panel panelTitleFiles;
         public CButtonLib.CButton lineUserReviews;
-        internal System.Windows.Forms.Label lblHeaderUserReviews;
+        internal System.Windows.Forms.Label lblHeaderFiles;
         public CButtonLib.CButton lineSplitter;
         public System.Windows.Forms.FlowLayoutPanel panelFiles;
         public System.Windows.Forms.Label infoFileHost;
@@ -537,7 +537,7 @@
         public CButtonLib.CButton btnWatchTrailer;
         internal System.Windows.Forms.Panel panelTitleTorrents;
         public CButtonLib.CButton cButton1;
-        internal System.Windows.Forms.Label label4;
+        internal System.Windows.Forms.Label lblHeaderTorrents;
         public CButtonLib.CButton cButton2;
         public System.Windows.Forms.FlowLayoutPanel panelTorrents;
         private System.Windows.Forms.PictureBox imgSearchForMore;

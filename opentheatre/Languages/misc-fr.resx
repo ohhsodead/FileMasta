@@ -144,7 +144,25 @@
   <data name="restartRequiredLanguage" xml:space="preserve">
     <value>Vous devrez redémarrer pour que les modifications de langue prennent effet. Voulez-vous continuer?</value>
   </data>
+  <data name="titleAbout" xml:space="preserve">
+    <value>Sur</value>
+  </data>
+  <data name="titleBookmarks" xml:space="preserve">
+    <value>Signets</value>
+  </data>
+  <data name="titleDownloads" xml:space="preserve">
+    <value>Téléchargements</value>
+  </data>
+  <data name="titleFiles" xml:space="preserve">
+    <value>Des dossiers</value>
+  </data>
+  <data name="titleMovies" xml:space="preserve">
+    <value>Films</value>
+  </data>
   <data name="titleRestartRequired" xml:space="preserve">
     <value>Redémarrage requis</value>
+  </data>
+  <data name="titleSettings" xml:space="preserve">
+    <value>Paramètres</value>
   </data>
 </root>

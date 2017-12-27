@@ -1,6 +1,6 @@
 ﻿namespace OpenTheatre
 {
-    partial class ctrlMoviesPoster
+    partial class ctrlPoster
     {
         /// <summary> 
         /// Required designer variable.
@@ -144,7 +144,7 @@
             this.imageBackgroundEffect.TabIndex = 75;
             this.imageBackgroundEffect.TabStop = false;
             // 
-            // ctrlMoviesPoster
+            // ctrlPoster
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -157,7 +157,7 @@
             this.Controls.Add(this.imageBackgroundEffect);
             this.DoubleBuffered = true;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 3, 0);
-            this.Name = "ctrlMoviesPoster";
+            this.Name = "ctrlPoster";
             this.Size = new System.Drawing.Size(156, 267);
             this.Load += new System.EventHandler(this.ctrlPosterTitle_Load);
             ((System.ComponentModel.ISupportInitialize)(this.imageBackgroundEffect)).EndInit();

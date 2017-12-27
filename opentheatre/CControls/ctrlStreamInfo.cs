@@ -35,6 +35,7 @@ namespace OpenTheatre
 
             if (isTorrent == true)
             {
+                imgReportBroken.Visible = false;
                 imgWatch.Visible = false;
                 imgMagnet.Visible = true;
             }
@@ -154,7 +155,17 @@ namespace OpenTheatre
 
         private void timerUpdateInfo_Tick(object sender, EventArgs e)
         {
-            if (File.Exists(Properties.Settings.Default.downloadsDirectory + Path.GetFileName(new Uri(infoFileURL).LocalPath)) && infoFileSize.Text == UtilityTools.ToFileSize(Convert.ToDouble(new FileInfo(Properties.Settings.Default.downloadsDirectory + Path.GetFileName(new Uri(infoFileURL).LocalPath)).Length))) { imgDownload.Image = Properties.Resources.cloud_done; }
+            // Checks for local file, and get/compare file size
+            if (infoFileURL != null)
+            {
+                if (File.Exists(Properties.Settings.Default.downloadsDirectory + Path.GetFileName(new Uri(infoFileURL).LocalPath)))
+                {
+                    if (infoFileSize.Text == UtilityTools.ToFileSize(Convert.ToDouble(new FileInfo(Properties.Settings.Default.downloadsDirectory + Path.GetFileName(new Uri(infoFileURL).LocalPath)).Length)))
+                    {
+                        imgDownload.Image = Properties.Resources.cloud_done;
+                    }
+                }
+            }
         }
 
         private void imgShare_Click(object sender, EventArgs e)

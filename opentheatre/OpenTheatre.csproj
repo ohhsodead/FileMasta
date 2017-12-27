@@ -45,9 +45,11 @@
   <ItemGroup>
     <Reference Include="CButtonLib">
       <HintPath>..\..\..\- Plugins\CButton\CButton\bin\Debug\CButtonLib.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="ChreneLib">
       <HintPath>..\..\..\- Plugins\ChreneLib_DLL\ChreneLib.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
@@ -84,11 +86,11 @@
     <Compile Include="CControls\ctrlDownloadItem.Designer.cs">
       <DependentUpon>ctrlDownloadItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="CControls\ctrlMoviesPoster.cs">
+    <Compile Include="CControls\ctrlPoster.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="CControls\ctrlMoviesPoster.Designer.cs">
-      <DependentUpon>ctrlMoviesPoster.cs</DependentUpon>
+    <Compile Include="CControls\ctrlPoster.Designer.cs">
+      <DependentUpon>ctrlPoster.cs</DependentUpon>
     </Compile>
     <Compile Include="CControls\ctrlSplashScreen.cs">
       <SubType>UserControl</SubType>
@@ -176,8 +178,8 @@
     <EmbeddedResource Include="CControls\ctrlDownloadItem.resx">
       <DependentUpon>ctrlDownloadItem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CControls\ctrlMoviesPoster.resx">
-      <DependentUpon>ctrlMoviesPoster.cs</DependentUpon>
+    <EmbeddedResource Include="CControls\ctrlPoster.resx">
+      <DependentUpon>ctrlPoster.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CControls\ctrlSplashScreen.de.resx">
       <DependentUpon>ctrlSplashScreen.cs</DependentUpon>

@@ -1,6 +1,7 @@
 ﻿namespace OMDbAPI
 {
     using Newtonsoft.Json;
+    using System.Collections.Generic;
 
     public partial class OMDbEntity
     {
@@ -82,29 +83,29 @@
         [JsonProperty("imdbVotes")]
         public string ImdbVotes { get; set; }
 
-        // Popcorn Time
+        // Popcorn Time Metadeta
         [JsonProperty("imageFanart")]
         public string imageFanart { get; set; }
 
         [JsonProperty("trailerUrl")]
         public string trailerUrl { get; set; }
 
-        // YIFY
-        [JsonProperty("torrent480p")]
-        public string torrent480p { get; set; }
+        // YIFY torrents
+        [JsonProperty("YifyTorrent480p")]
+        public string YifyTorrent480p { get; set; }
 
-        [JsonProperty("torrent720p")]
-        public string torrent720p { get; set; }
+        [JsonProperty("YifyTorrent720p")]
+        public string YifyTorrent720p { get; set; }
 
-        [JsonProperty("torrent1080p")]
-        public string torrent1080p { get; set; }
+        [JsonProperty("YifyTorrent1080p")]
+        public string YifyTorrent1080p { get; set; }
 
-        // Popcorn Time
-        [JsonProperty("PTTorrent720p")]
-        public string PTTorrent720p { get; set; }
+        // Popcorn Time torrents
+        [JsonProperty("PopcornTorrent720p")]
+        public string PopcornTorrent720p { get; set; }
 
-        [JsonProperty("PTTorrent1080p")]
-        public string PTTorrent1080p { get; set; }
+        [JsonProperty("PopcornTorrent1080p")]
+        public string PopcornTorrent1080p { get; set; }
     }
 
     public partial class Rating

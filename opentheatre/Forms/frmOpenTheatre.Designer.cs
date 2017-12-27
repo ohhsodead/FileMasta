@@ -84,8 +84,8 @@
             this.titleFilesTorrents = new CButtonLib.CButton();
             this.titleFilesArchives = new CButtonLib.CButton();
             this.titleFilesLocal = new CButtonLib.CButton();
-            this.bgFilesSearchBox = new CButtonLib.CButton();
             this.btnSearchFiles = new CButtonLib.CButton();
+            this.bgFilesSearchBox = new CButtonLib.CButton();
             this.tabBookmarks = new System.Windows.Forms.TabPage();
             this.btnSearchBookmarks = new CButtonLib.CButton();
             this.emptyDataBookmarks = new System.Windows.Forms.Label();
@@ -482,8 +482,8 @@
             this.tabFiles.Controls.Add(this.titleFilesTorrents);
             this.tabFiles.Controls.Add(this.titleFilesArchives);
             this.tabFiles.Controls.Add(this.titleFilesLocal);
-            this.tabFiles.Controls.Add(this.bgFilesSearchBox);
             this.tabFiles.Controls.Add(this.btnSearchFiles);
+            this.tabFiles.Controls.Add(this.bgFilesSearchBox);
             this.tabFiles.ForeColor = System.Drawing.Color.White;
             resources.ApplyResources(this.tabFiles, "tabFiles");
             this.tabFiles.Name = "tabFiles";
@@ -951,28 +951,6 @@
             this.titleFilesLocal.TextShadowShow = false;
             this.titleFilesLocal.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.titleFilesLocal_ClickButtonArea);
             // 
-            // bgFilesSearchBox
-            // 
-            this.bgFilesSearchBox.BackColor = System.Drawing.Color.Transparent;
-            this.bgFilesSearchBox.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(111)))), ((int)(((byte)(131)))));
-            this.bgFilesSearchBox.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(111)))), ((int)(((byte)(131)))));
-            this.bgFilesSearchBox.Corners.All = 2;
-            this.bgFilesSearchBox.Corners.LowerLeft = 2;
-            this.bgFilesSearchBox.Corners.LowerRight = 2;
-            this.bgFilesSearchBox.Corners.UpperLeft = 2;
-            this.bgFilesSearchBox.Corners.UpperRight = 2;
-            this.bgFilesSearchBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bgFilesSearchBox.DesignerSelected = false;
-            this.bgFilesSearchBox.DimFactorClick = 0;
-            this.bgFilesSearchBox.DimFactorHover = 0;
-            this.bgFilesSearchBox.FillType = CButtonLib.CButton.eFillType.Solid;
-            resources.ApplyResources(this.bgFilesSearchBox, "bgFilesSearchBox");
-            this.bgFilesSearchBox.ImageIndex = 0;
-            this.bgFilesSearchBox.Name = "bgFilesSearchBox";
-            this.bgFilesSearchBox.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.bgFilesSearchBox.TabStop = false;
-            this.bgFilesSearchBox.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.bgFilesSearchBox_ClickButtonArea);
-            // 
             // btnSearchFiles
             // 
             this.btnSearchFiles.BackColor = System.Drawing.Color.Transparent;
@@ -994,6 +972,28 @@
             this.btnSearchFiles.Name = "btnSearchFiles";
             this.btnSearchFiles.ShowFocus = CButtonLib.CButton.eFocus.None;
             this.btnSearchFiles.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnSearchFiles_ClickButtonArea);
+            // 
+            // bgFilesSearchBox
+            // 
+            this.bgFilesSearchBox.BackColor = System.Drawing.Color.Transparent;
+            this.bgFilesSearchBox.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(111)))), ((int)(((byte)(131)))));
+            this.bgFilesSearchBox.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(111)))), ((int)(((byte)(131)))));
+            this.bgFilesSearchBox.Corners.All = 2;
+            this.bgFilesSearchBox.Corners.LowerLeft = 2;
+            this.bgFilesSearchBox.Corners.LowerRight = 2;
+            this.bgFilesSearchBox.Corners.UpperLeft = 2;
+            this.bgFilesSearchBox.Corners.UpperRight = 2;
+            this.bgFilesSearchBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.bgFilesSearchBox.DesignerSelected = false;
+            this.bgFilesSearchBox.DimFactorClick = 0;
+            this.bgFilesSearchBox.DimFactorHover = 0;
+            this.bgFilesSearchBox.FillType = CButtonLib.CButton.eFillType.Solid;
+            resources.ApplyResources(this.bgFilesSearchBox, "bgFilesSearchBox");
+            this.bgFilesSearchBox.ImageIndex = 0;
+            this.bgFilesSearchBox.Name = "bgFilesSearchBox";
+            this.bgFilesSearchBox.ShowFocus = CButtonLib.CButton.eFocus.None;
+            this.bgFilesSearchBox.TabStop = false;
+            this.bgFilesSearchBox.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.bgFilesSearchBox_ClickButtonArea);
             // 
             // tabBookmarks
             // 
@@ -2018,6 +2018,9 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmOpenTheatre_FormClosing);
             this.Load += new System.EventHandler(this.frmOpenTheatre_Load);
+            this.SizeChanged += new System.EventHandler(this.frmOpenTheatre_SizeChanged);
+            this.DragDrop += new System.Windows.Forms.DragEventHandler(this.frmOpenTheatre_DragDrop);
+            this.DragEnter += new System.Windows.Forms.DragEventHandler(this.frmOpenTheatre_DragEnter);
             this.tab.ResumeLayout(false);
             this.tabMovies.ResumeLayout(false);
             this.tabMovies.PerformLayout();

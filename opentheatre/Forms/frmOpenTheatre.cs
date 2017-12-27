@@ -82,6 +82,24 @@ namespace OpenTheatre
             if (e.CloseReason == CloseReason.UserClosing || e.CloseReason == CloseReason.ApplicationExitCall) { Properties.Settings.Default.Save(); if (Properties.Settings.Default.clearDataOnClose == true) { if (Directory.Exists(pathData)) { Directory.Delete(pathData, true); } } }
         }
 
+        // Drag and Drop local files
+        private void frmOpenTheatre_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop)) e.Effect = DragDropEffects.Copy;
+        }
+
+        private void frmOpenTheatre_DragDrop(object sender, DragEventArgs e)
+        {
+            string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+            foreach (string file in files) showFileDetails(file, true);
+        }
+
+        private void frmOpenTheatre_SizeChanged(object sender, EventArgs e)
+        {
+            Refresh();
+            panelMovies.Refresh();
+        }
+
         private void frmOpenTheatre_Load(object sender, EventArgs e)
         {
             if (Properties.Settings.Default.downloadsDirectory == "") { Properties.Settings.Default.downloadsDirectory = pathDownloadsDefault; Directory.CreateDirectory(pathDownloadsDefault); }
@@ -117,9 +135,9 @@ namespace OpenTheatre
             try
             {
                 //
-                if (UtilityTools.doUpdateFile(linkMovies, "open-movies.json") == true)
+                if (UtilityTools.doUpdateFile(linkMovies, "open-movies.json"))
                 {
-                    client.DownloadFile(new Uri(linkMovies), pathData + "open-movies.json");
+                    //client.DownloadFile(new Uri(linkMovies), pathData + "open-movies.json");
                 }
 
                 dataMovies = File.ReadAllLines(pathData + "open-movies.json");
@@ -127,7 +145,7 @@ namespace OpenTheatre
 
 
                 //
-                if (UtilityTools.doUpdateFile(linkFilesMovies, "open-movies-files.json") == true)
+                if (UtilityTools.doUpdateFile(linkFilesMovies, "open-movies-files.json"))
                 {
                     client.DownloadFile(new Uri(linkFilesMovies), pathData + "open-movies-files.json");
                 }
@@ -137,7 +155,7 @@ namespace OpenTheatre
 
 
                 //
-                if (UtilityTools.doUpdateFile(linkFilesSeries, "open-series-files.json") == true)
+                if (UtilityTools.doUpdateFile(linkFilesSeries, "open-series-files.json"))
                 {
                     client.DownloadFile(new Uri(linkFilesSeries), pathData + "open-series-files.json");
                 }
@@ -147,7 +165,7 @@ namespace OpenTheatre
 
 
                 //
-                if (UtilityTools.doUpdateFile(linkFilesAnime, "open-anime-files.json") == true)
+                if (UtilityTools.doUpdateFile(linkFilesAnime, "open-anime-files.json"))
                 {
                     client.DownloadFile(new Uri(linkFilesAnime), pathData + "open-anime-files.json");
                 }
@@ -157,7 +175,7 @@ namespace OpenTheatre
 
 
                 //
-                if (UtilityTools.doUpdateFile(linkFilesSubtitles, "open-subtitles-files.json") == true)
+                if (UtilityTools.doUpdateFile(linkFilesSubtitles, "open-subtitles-files.json"))
                 {
                     client.DownloadFile(new Uri(linkFilesSubtitles), pathData + "open-subtitles-files.json");
                 }
@@ -167,7 +185,7 @@ namespace OpenTheatre
 
 
                 //
-                if (UtilityTools.doUpdateFile(linkFilesTorrents, "open-torrents-files.json") == true)
+                if (UtilityTools.doUpdateFile(linkFilesTorrents, "open-torrents-files.json"))
                 {
                     client.DownloadFile(new Uri(linkFilesTorrents), pathData + "open-torrents-files.json");
                 }
@@ -177,7 +195,7 @@ namespace OpenTheatre
 
 
                 //
-                if (UtilityTools.doUpdateFile(linkFilesArchives, "open-archives-files.json") == true)
+                if (UtilityTools.doUpdateFile(linkFilesArchives, "open-archives-files.json"))
                 {
                     client.DownloadFile(new Uri(linkFilesArchives), pathData + "open-archives-files.json");
                 }
@@ -278,7 +296,7 @@ namespace OpenTheatre
             }
             else if (tab.SelectedTab == tabBookmarks)
             {
-                if (currentTab != tabBookmarks) { searchBookmarks(); }
+                if (currentTab != tabBookmarks) { showBookmarks(); }
 
                 currentTab = tabBookmarks;
 
@@ -337,11 +355,11 @@ namespace OpenTheatre
         string selectedGenre = "", selectedYear = "";
 
         object loadMoviesLock = new object();
-        public List<ctrlMoviesPoster> LoadMovies(int loadCount)
+        public List<ctrlPoster> LoadMovies(int loadCount)
         {
             lock (loadMoviesLock)
             {
-                List<ctrlMoviesPoster> MoviesPosters = new List<ctrlMoviesPoster>();
+                List<ctrlPoster> MoviesPosters = new List<ctrlPoster>();
                 int loadedCount = 0;
 
                 foreach (string movie in dataMovies.Reverse().Skip(countedMovies))
@@ -354,7 +372,7 @@ namespace OpenTheatre
 
                             if (data.ImdbID.ToLower() == txtMoviesSearchBox.Text.ToLower() | data.Title.ToLower().Contains(txtMoviesSearchBox.Text.ToLower()) | data.Actors.ToLower().Contains(txtMoviesSearchBox.Text.ToLower()) && data.Year.Contains(selectedYear) && data.Genre.ToLower().Contains(selectedGenre.ToLower()))
                             {
-                                ctrlMoviesPoster ctrlPoster = new ctrlMoviesPoster();
+                                ctrlPoster ctrlPoster = new ctrlPoster();
                                 ctrlPoster.infoTitle.Text = data.Title;
                                 ctrlPoster.infoYear.Text = data.Year;
 
@@ -374,9 +392,12 @@ namespace OpenTheatre
                                 ctrlPoster.Name = data.ImdbID;
                                 ctrlPoster.infoMovieFiles = data.Sources;
 
-                                ctrlPoster.infoMovieTorrent480p = data.torrent480p;
-                                ctrlPoster.infoMovieTorrent720p = data.torrent720p;
-                                ctrlPoster.infoMovieTorrent1080p = data.torrent1080p;
+                                ctrlPoster.infoYifyTorrent480p = data.YifyTorrent480p;
+                                ctrlPoster.infoYifyTorrent720p = data.YifyTorrent720p;
+                                ctrlPoster.infoYifyTorrent1080p = data.YifyTorrent1080p;
+
+                                ctrlPoster.infoPopcornTorrent720p = data.PopcornTorrent720p;
+                                ctrlPoster.infoPopcornTorrent1080p = data.PopcornTorrent1080p;
 
                                 ctrlPoster.infoTrailer = data.trailerUrl;
                                 ctrlPoster.infoImageFanart = data.imageFanart;
@@ -397,7 +418,7 @@ namespace OpenTheatre
         public void loadMovies(int count)
         {
             imgSpinner.Visible = true;
-            BackGroundWorker.RunWorkAsync<List<ctrlMoviesPoster>>(() => LoadMovies(count), (data) =>
+            BackGroundWorker.RunWorkAsync<List<ctrlPoster>>(() => LoadMovies(count), (data) =>
             {
                 if (panelMovies.InvokeRequired)
                 {
@@ -406,13 +427,13 @@ namespace OpenTheatre
                 }
                 else
                 {
-                    foreach (ctrlMoviesPoster item in data)
+                    foreach (ctrlPoster item in data)
                     {
                         panelMovies.Controls.Add(item);
                     }
 
-                    imgSpinner.Visible = false;
                     tab.SelectedTab = tabMovies;
+                    imgSpinner.Visible = false;
                 }
             });
         }
@@ -492,6 +513,8 @@ namespace OpenTheatre
         {
             imgSpinner.Visible = true;
 
+            Thread.Sleep(100);
+
             var data = OMDbEntity.FromJson(UtilityTools.Random(dataMovies));
 
             ctrlDetails MovieDetails = new ctrlDetails();
@@ -506,33 +529,37 @@ namespace OpenTheatre
             MovieDetails.infoCast.Text = data.Actors;
             MovieDetails.infoRatingIMDb.Text = data.ImdbRating;
             MovieDetails.infoImdbId = data.ImdbID;
-
-
-            if (data.Poster == "") { MovieDetails.imgPoster.Image = UtilityTools.ChangeOpacity(Properties.Resources.poster_default, 1); }
-            else { MovieDetails.imgPoster.Image = UtilityTools.ChangeOpacity(UtilityTools.LoadPicture(data.Poster), 1); }
-
+            MovieDetails.infoImagePoster = data.Poster;
             MovieDetails.infoFanartUrl = data.imageFanart;
             MovieDetails.infoTrailerUrl = data.trailerUrl;
+
+            try
+            {
+                MovieDetails.imgPoster.Image = UtilityTools.ChangeOpacity(UtilityTools.LoadPicture(data.Poster), 1);
+                MovieDetails.BackgroundImage = UtilityTools.ChangeOpacity(UtilityTools.LoadPicture(data.imageFanart), 0.2F);
+            }
+            catch { }
 
             foreach (string movieLink in data.Sources)
             {
                 MovieDetails.addStream(movieLink, false, false, MovieDetails.panelFiles);
             }
 
-            if (data.torrent480p != null && data.torrent480p != "")
+            if (data.YifyTorrent480p != null && data.YifyTorrent480p != "")
             {
-                MovieDetails.addStream(data.torrent480p, false, true, MovieDetails.panelTorrents);
+                MovieDetails.addStream(data.YifyTorrent480p, false, true, MovieDetails.panelTorrents, "480p");
             }
 
-            if (data.torrent720p != null && data.torrent720p != "")
+            if (data.YifyTorrent720p != null && data.YifyTorrent720p != "")
             {
-                MovieDetails.addStream(data.torrent720p, false, true, MovieDetails.panelTorrents);
+                MovieDetails.addStream(data.YifyTorrent720p, false, true, MovieDetails.panelTorrents, "720p");
             }
 
-            if (data.torrent1080p != null && data.torrent1080p != "")
+            if (data.YifyTorrent1080p != null && data.YifyTorrent1080p != "")
             {
-                MovieDetails.addStream(data.torrent1080p, false, true, MovieDetails.panelTorrents);
+                MovieDetails.addStream(data.YifyTorrent1080p, false, true, MovieDetails.panelTorrents, "1080p");
             }
+
 
             MovieDetails.Dock = DockStyle.Fill;
             tabBlank.Controls.Clear();
@@ -603,7 +630,7 @@ namespace OpenTheatre
             titleFilesLocal.ColorFillSolid = Color.Transparent;
             titleFilesLocal.BorderColor = Color.Transparent;
 
-            showFiles(); imgSpinner.Visible = false;
+            showFiles();
 
         }
 
@@ -626,7 +653,7 @@ namespace OpenTheatre
             titleFilesLocal.ColorFillSolid = Color.Transparent;
             titleFilesLocal.BorderColor = Color.Transparent;
 
-            showFiles(); imgSpinner.Visible = false;
+            showFiles();
         }
 
         private void titleFilesTorrents_ClickButtonArea(object Sender, MouseEventArgs e)
@@ -648,7 +675,7 @@ namespace OpenTheatre
             titleFilesLocal.ColorFillSolid = Color.Transparent;
             titleFilesLocal.BorderColor = Color.Transparent;
 
-            showFiles(); imgSpinner.Visible = false;
+            showFiles();
         }
 
         private void titleFilesSubtitles_ClickButtonArea(object Sender, MouseEventArgs e)
@@ -670,7 +697,7 @@ namespace OpenTheatre
             titleFilesLocal.ColorFillSolid = Color.Transparent;
             titleFilesLocal.BorderColor = Color.Transparent;
 
-            showFiles(); imgSpinner.Visible = false;
+            showFiles();
         }
 
         private void titleFilesArchives_ClickButtonArea(object Sender, MouseEventArgs e)
@@ -692,7 +719,7 @@ namespace OpenTheatre
             titleFilesLocal.ColorFillSolid = Color.Transparent;
             titleFilesLocal.BorderColor = Color.Transparent;
 
-            showFiles(); imgSpinner.Visible = false;
+            showFiles();
         }
 
         private void titleFilesLocal_ClickButtonArea(object Sender, MouseEventArgs e)
@@ -715,7 +742,7 @@ namespace OpenTheatre
             titleFilesLocal.BorderColor = Color.FromArgb(42, 42, 42);
 
             loadLocalFiles();
-            showFiles(); imgSpinner.Visible = false;
+            showFiles();
         }
 
         private void dataGridFiles_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
@@ -741,6 +768,8 @@ namespace OpenTheatre
 
         public void showFiles()
         {
+            imgSpinner.Visible = true;
+
             if (selectedFiles == "Movies")
             {
                 showSelectedFiles(dataFilesMovies);
@@ -770,11 +799,10 @@ namespace OpenTheatre
                 showSelectedFiles(dataFilesLocal.ToArray());
             }
         }
-        
+
         delegate void loadFilesCallBack(string[] files);
         public void showSelectedFiles(string[] files)
         {
-
             BackGroundWorker.RunWorkAsync<List<string>>(() => searchFiles(files), (data) =>
             {
                 if (tabFiles.InvokeRequired)
@@ -798,6 +826,7 @@ namespace OpenTheatre
                     }
 
                     cmboBoxFilesHost.DropDownWidth = DropDownWidth(cmboBoxFilesHost);
+                    imgSpinner.Visible = false;
                 }
             });
         }
@@ -859,19 +888,19 @@ namespace OpenTheatre
                             MovieDetails.addStream(movieLink, false, false, MovieDetails.panelFiles);
                         }
 
-                        if (data.torrent480p != null && data.torrent480p != "")
+                        if (data.YifyTorrent480p != null && data.YifyTorrent480p != "")
                         {
-                            MovieDetails.addStream(data.torrent480p, false, true, MovieDetails.panelTorrents, "480p");
+                            MovieDetails.addStream(data.YifyTorrent480p, false, true, MovieDetails.panelTorrents, "480p");
                         }
 
-                        if (data.torrent720p != null && data.torrent720p != "")
+                        if (data.YifyTorrent720p != null && data.YifyTorrent720p != "")
                         {
-                            MovieDetails.addStream(data.torrent720p, false, true, MovieDetails.panelTorrents, "720p");
+                            MovieDetails.addStream(data.YifyTorrent720p, false, true, MovieDetails.panelTorrents, "720p");
                         }
 
-                        if (data.torrent1080p != null && data.torrent1080p != "")
+                        if (data.YifyTorrent1080p != null && data.YifyTorrent1080p != "")
                         {
-                            MovieDetails.addStream(data.torrent1080p, false, true, MovieDetails.panelTorrents, "1080p");
+                            MovieDetails.addStream(data.YifyTorrent1080p, false, true, MovieDetails.panelTorrents, "1080p");
                         }
 
                         MovieDetails.infoGenre.Text = data.Genre;
@@ -1053,26 +1082,51 @@ namespace OpenTheatre
             else showFileDetails(dataGridBookmarks.CurrentRow.Cells[4].Value.ToString(), false);
         }
 
-        public void searchBookmarks()
+        delegate void loadBookmarksCallBack();
+        public void showBookmarks()
         {
-            imgSpinner.Visible = true;
-
-            cmboBoxBookmarksSort.SelectedIndex = 0;
-            dataGridBookmarks.Rows.Clear();
-
-            foreach (string fileUrl in Properties.Settings.Default.dataBookmarks)
+            BackGroundWorker.RunWorkAsync<List<string>>(() => searchBookmarks(), (data) =>
             {
-                var url = new Uri(fileUrl);
-                if (UtilityTools.ContainsAll(Path.GetFileNameWithoutExtension(new Uri(fileUrl).LocalPath), UtilityTools.GetWords(txtBookmarksSearchBox.Text.ToLower())) && UtilityTools.getContainingListOfURL(fileUrl).Contains(selectedBookmarksType))
+                if (tabBookmarks.InvokeRequired)
                 {
-                    string formattedHost;
-                    if (new Uri(fileUrl).Host == "") { formattedHost = rm.GetString("local"); } else { formattedHost = new Uri(fileUrl).Host.Replace("www.", ""); }
-                    dataGridBookmarks.Rows.Add(UtilityTools.getContainingListOfURL(fileUrl), Path.GetFileNameWithoutExtension(new Uri(fileUrl).LocalPath), Path.GetExtension(fileUrl).Replace(".", "").ToUpper(), formattedHost, fileUrl);
+                    loadBookmarksCallBack b = new loadBookmarksCallBack(showBookmarks);
+                    Invoke(b, new object[] { });
                 }
-            }
+                else
+                {
+                    cmboBoxBookmarksSort.SelectedIndex = 0;
+                    dataGridBookmarks.Rows.Clear();
 
-            imgSpinner.Visible = false;
+                    foreach (string fileUrl in data)
+                    {
+                        string formattedHost;
+                        if (new Uri(fileUrl).Host == "") { formattedHost = rm.GetString("local"); } else { formattedHost = new Uri(fileUrl).Host.Replace("www.", ""); }
+                        dataGridBookmarks.Rows.Add(UtilityTools.getContainingListOfURL(fileUrl), Path.GetFileNameWithoutExtension(new Uri(fileUrl).LocalPath), Path.GetExtension(fileUrl).Replace(".", "").ToUpper(), formattedHost, fileUrl);
+                    }
+
+                    imgSpinner.Visible = false;
+                }
+            });
         }
+
+        object loadBookmarksLock = new object();
+        public List<string> searchBookmarks()
+        {
+            lock (loadBookmarksLock)
+            {
+                List<string> urls = new List<string>();
+
+                foreach (string fileUrl in Properties.Settings.Default.dataBookmarks)
+                {
+                    var url = new Uri(fileUrl);
+                    if (UtilityTools.ContainsAll(Path.GetFileNameWithoutExtension(new Uri(fileUrl).LocalPath), UtilityTools.GetWords(txtBookmarksSearchBox.Text.ToLower())) && UtilityTools.getContainingListOfURL(fileUrl).Contains(selectedBookmarksType))
+                    {
+                        urls.Add(fileUrl);
+                    }
+                }
+                return urls;
+            }
+        }                
 
         private void dataGridBookmarks_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
@@ -1087,14 +1141,14 @@ namespace OpenTheatre
         // Search Bookmarks by Text
         private void btnSearchBookmarks_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            searchBookmarks();
+            showBookmarks();
         }
 
         private void txtBookmarksSearchBox_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                searchBookmarks();
+                showBookmarks();
             }
         }
 
@@ -1120,7 +1174,7 @@ namespace OpenTheatre
             SizeF mySize = btnBookmarksSort.CreateGraphics().MeasureString(btnBookmarksSort.Text, myFont);
             panelBookmarksSort.Width = (((int)(Math.Round(mySize.Width, 0))) + 26);
             Refresh();
-            if (cmboBoxBookmarksSort.SelectedIndex == 0) { cmboBoxBookmarksSort.DropDownWidth = DropDownWidth(cmboBoxBookmarksSort); searchBookmarks(); }
+            if (cmboBoxBookmarksSort.SelectedIndex == 0) { cmboBoxBookmarksSort.DropDownWidth = DropDownWidth(cmboBoxBookmarksSort); showBookmarks(); }
             else if (cmboBoxBookmarksSort.SelectedIndex == 1) { dataGridBookmarks.Sort(dataGridBookmarks.Columns[1], ListSortDirection.Ascending); }
             else if (cmboBoxBookmarksSort.SelectedIndex == 2) { dataGridBookmarks.Sort(dataGridBookmarks.Columns[1], ListSortDirection.Descending); }
 
@@ -1144,8 +1198,8 @@ namespace OpenTheatre
             SizeF mySize = btnBookmarksType.CreateGraphics().MeasureString(btnBookmarksType.Text, myFont);
             panelBookmarksType.Width = (((int)(Math.Round(mySize.Width, 0))) + 26);
             Refresh();
-            if (cmboBoxBookmarksType.SelectedIndex == 0) { selectedBookmarksType = ""; searchBookmarks(); }
-            else { selectedBookmarksType = cmboBoxBookmarksType.SelectedItem.ToString(); searchBookmarks(); }
+            if (cmboBoxBookmarksType.SelectedIndex == 0) { selectedBookmarksType = ""; showBookmarks(); }
+            else { selectedBookmarksType = cmboBoxBookmarksType.SelectedItem.ToString(); showBookmarks(); }
 
             imgSpinner.Visible = false;
         }
@@ -1167,12 +1221,12 @@ namespace OpenTheatre
 
         private void panelDownloadItems_ControlAdded(object sender, ControlEventArgs e)
         {
-            if (panelDownloads.Controls.Count == 0) { lblNoDownloads.Visible = true; } else { lblNoDownloads.Visible = false; }
+            if (panelDownloads.Controls.Count == 0) { lblNoDownloads.Visible = true; titleDownloads.Text = rm.GetString("titleDownloads"); } else { lblNoDownloads.Visible = false; titleDownloads.Text = rm.GetString("titleDownloads") + " (" + panelDownloads.Controls.Count.ToString() + ")"; }
         }
 
         private void panelDownloadItems_ControlRemoved(object sender, ControlEventArgs e)
         {
-            if (panelDownloads.Controls.Count == 0) { lblNoDownloads.Visible = true; } else { lblNoDownloads.Visible = false; }
+            if (panelDownloads.Controls.Count == 0) { lblNoDownloads.Visible = true; titleDownloads.Text = rm.GetString("titleDownloads"); } else { lblNoDownloads.Visible = false; titleDownloads.Text = rm.GetString("titleDownloads") + " (" + panelDownloads.Controls.Count.ToString() + ")"; }
         }
 
         //
@@ -1236,15 +1290,6 @@ namespace OpenTheatre
             Properties.Settings.Default.Save();
 
             if (MessageBox.Show(rm.GetString("restartRequiredLanguage"), rm.GetString("titleRestartRequired"), MessageBoxButtons.YesNo) == DialogResult.Yes) { Application.Restart(); }
-        }
-
-        private void ChangeLanguage(string lang)
-        {
-            foreach (Control c in Controls)
-            {
-                ComponentResourceManager resources = new ComponentResourceManager(typeof(frmOpenTheatre));
-                resources.ApplyResources(c, c.Name, new CultureInfo(lang));
-            }
         }
 
         private void imgSettingsDownloadsDirectory_Click(object sender, EventArgs e)

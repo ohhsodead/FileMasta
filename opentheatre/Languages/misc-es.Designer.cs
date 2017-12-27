@@ -142,11 +142,65 @@ namespace OpenTheatre.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Acerca de.
+        /// </summary>
+        internal static string titleAbout {
+            get {
+                return ResourceManager.GetString("titleAbout", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Marcadores.
+        /// </summary>
+        internal static string titleBookmarks {
+            get {
+                return ResourceManager.GetString("titleBookmarks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Descargas.
+        /// </summary>
+        internal static string titleDownloads {
+            get {
+                return ResourceManager.GetString("titleDownloads", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Archivos.
+        /// </summary>
+        internal static string titleFiles {
+            get {
+                return ResourceManager.GetString("titleFiles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Películas.
+        /// </summary>
+        internal static string titleMovies {
+            get {
+                return ResourceManager.GetString("titleMovies", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Reinicio requerido.
         /// </summary>
         internal static string titleRestartRequired {
             get {
                 return ResourceManager.GetString("titleRestartRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Configuraciones.
+        /// </summary>
+        internal static string titleSettings {
+            get {
+                return ResourceManager.GetString("titleSettings", resourceCulture);
             }
         }
     }

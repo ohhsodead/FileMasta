@@ -91,7 +91,7 @@ namespace OpenTheatre
             Parent.Controls.Clear();
         }
 
-        public void addStream(string URL, bool isLocal, bool isTorrent, Panel toPanel, string quality = "")
+        public void addStream(string URL, bool isLocal, bool isTorrent, Panel toPanel, string torrentName = "", string quality = "")
         {
             if (isLocal == false && isTorrent == false)
             {
@@ -112,19 +112,33 @@ namespace OpenTheatre
             }
             else if (isLocal == false && isTorrent == true)
             {
-                ctrlStreamInfo ctrlInfo = new ctrlStreamInfo();
+                if (torrentName == "YIFY")
+                {
+                    ctrlStreamInfo ctrlInfo = new ctrlStreamInfo();
 
-                //  Trackers : Public trackers for Magnets
-                string trackers = "&tr=" + "udp://open.demonii.com:1337/announce" + " &tr=" + "udp://tracker.openbittorrent.com:80" + "&tr=" + "udp://tracker.coppersurfer.tk:6969" + "&tr=" + "udp://glotorrents.pw:6969/announce" + "&tr=" + "udp://tracker.opentrackr.org:1337/announce" + "&tr=" + "udp://torrent.gresille.org:80/announce" + "&tr=" + "udp://p4p.arenabg.com:1337" + "&tr=" + "udp://tracker.leechers-paradise.org:6969";
+                    //  Trackers : Public trackers for Magnets
+                    string trackers = "&tr=" + "udp://open.demonii.com:1337/announce" + " &tr=" + "udp://tracker.openbittorrent.com:80" + "&tr=" + "udp://tracker.coppersurfer.tk:6969" + "&tr=" + "udp://glotorrents.pw:6969/announce" + "&tr=" + "udp://tracker.opentrackr.org:1337/announce" + "&tr=" + "udp://torrent.gresille.org:80/announce" + "&tr=" + "udp://p4p.arenabg.com:1337" + "&tr=" + "udp://tracker.leechers-paradise.org:6969";
 
-                //  Magnet : magnet:?xt=urn:btih:TORRENT_HASH&dn=Url+Encoded+Movie+Name&tr=http://track.one:1234/announce&tr=udp://track.two:80
-                ctrlInfo.infoMagnet = "magnet:?xt=urn:btih:" + Path.GetFileName(URL) + "&dn=" + infoTitle.Text.Replace(" ", "+") + "%28" + infoYear.Text + "%29+%5B" + "720p" + "%5D+%5B" + "YTS.AG" + "%5D" + trackers;
-                
-                ctrlInfo.isTorrent = true;
-                ctrlInfo.infoFileURL = new Uri(URL).AbsoluteUri;
-                ctrlInfo.infoFileHost.Text = new Uri(URL).Host.Replace("www.", "");
-                ctrlInfo.infoFileName.Text = infoTitle.Text + " (" + infoYear.Text + ") [" + quality + "] [" + "YTS.AG" + "].torrent";
-                toPanel.Controls.Add(ctrlInfo);
+                    //  Magnet : magnet:?xt=urn:btih:TORRENT_HASH&dn=Url+Encoded+Movie+Name&tr=http://track.one:1234/announce&tr=udp://track.two:80
+                    ctrlInfo.infoMagnet = "magnet:?xt=urn:btih:" + Path.GetFileName(URL) + "&dn=" + infoTitle.Text.Replace(" ", "+") + "%28" + infoYear.Text + "%29+%5B" + "720p" + "%5D+%5B" + "YTS.AG" + "%5D" + trackers;
+
+                    ctrlInfo.isTorrent = true;
+                    ctrlInfo.infoFileURL = new Uri(URL).AbsoluteUri;
+                    ctrlInfo.infoFileHost.Text = "YIFY";
+                    ctrlInfo.infoFileName.Text = infoTitle.Text + " (" + infoYear.Text + ") [" + quality + "] [" + "YIFY" + "].torrent";
+                    toPanel.Controls.Add(ctrlInfo);
+                }
+                else if (torrentName == "POPCORN")
+                {
+                    ctrlStreamInfo ctrlInfo = new ctrlStreamInfo();
+                    ctrlInfo.imgDownload.Visible = false;
+                    ctrlInfo.infoMagnet = URL;
+                    ctrlInfo.isTorrent = true;
+                    ctrlInfo.infoFileURL = new Uri(URL).AbsoluteUri;
+                    ctrlInfo.infoFileHost.Text = "Popcorn Time";
+                    ctrlInfo.infoFileName.Text = infoTitle.Text + " (" + infoYear.Text + ") [" + quality + "] [" + "POPCORN TIME" + "].torrent";
+                    toPanel.Controls.Add(ctrlInfo);
+                }
             }
         }
     }
