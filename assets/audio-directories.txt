@@ -1,5 +1,4 @@
 http://audio.turntablelab.com/realfiles/0-9/
-http://audio.turntablelab.com/realfiles/45%20king%20aux%20video.MOV
 http://audio.turntablelab.com/realfiles/a/
 http://audio.turntablelab.com/realfiles/b/
 http://audio.turntablelab.com/realfiles/c/
@@ -19,7 +18,6 @@ http://audio.turntablelab.com/realfiles/p/
 http://audio.turntablelab.com/realfiles/q/
 http://audio.turntablelab.com/realfiles/r/
 http://audio.turntablelab.com/realfiles/s/
-http://audio.turntablelab.com/realfiles/sharonjones-whenisawyourface.mp3
 http://audio.turntablelab.com/realfiles/snoop/
 http://audio.turntablelab.com/realfiles/t/
 http://audio.turntablelab.com/realfiles/ttlradio/
