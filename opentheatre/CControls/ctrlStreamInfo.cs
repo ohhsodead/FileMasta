@@ -54,17 +54,17 @@ namespace OpenTheatre
                         {
                             infoFileAge.Text = UtilityTools.getTimeAgo(fileModifiedTime);
                         }
-                        else { infoFileAge.Text = "n/a"; }
+                        else { infoFileAge.Text = "-"; }
 
                         int ContentLength;
                         if (int.TryParse(fileResponse.Headers.Get("Content-Length"), out ContentLength))
                         {
                             infoFileSize.Text = UtilityTools.ToFileSize(Convert.ToDouble(ContentLength));
                         }
-                        else { infoFileSize.Text = "n/a"; }
+                        else { infoFileSize.Text = "-"; }
                     }
                 }
-                catch { infoFileSize.Text = "n/a"; infoFileAge.Text = "n/a"; }
+                catch { infoFileSize.Text = "-"; infoFileAge.Text = "-"; }
             }
             else { infoFileHost.Text = frmOpenTheatre.rm.GetString("local"); infoFileSize.Text = UtilityTools.ToFileSize(new FileInfo(infoFileURL).Length); infoFileAge.Text = UtilityTools.getTimeAgo(File.GetLastWriteTime(infoFileURL)); imgDownload.Visible = false; imgReportBroken.Visible = false; imgShare.Visible = false; imgCopyURL.Visible = false; }
 

@@ -137,7 +137,7 @@ namespace OpenTheatre
                 //
                 if (UtilityTools.doUpdateFile(linkMovies, "open-movies.json"))
                 {
-                    //client.DownloadFile(new Uri(linkMovies), pathData + "open-movies.json");
+                    client.DownloadFile(new Uri(linkMovies), pathData + "open-movies.json");
                 }
 
                 dataMovies = File.ReadAllLines(pathData + "open-movies.json");
@@ -1300,8 +1300,8 @@ namespace OpenTheatre
 
         private void chkSettingsCustomConnection_CheckedChanged(object sender, EventArgs e)
         {
-            // Set UI
-
+            //* UI *\\
+            Thread.Sleep(500);
             lblSettingsConnectionHost.Enabled = chkSettingsCustomConnection.Checked;
             lblSettingsConnectionPort.Enabled = chkSettingsCustomConnection.Checked;
             lblSettingsConnectionUsername.Enabled = chkSettingsCustomConnection.Checked;
@@ -1316,11 +1316,13 @@ namespace OpenTheatre
             bgSettingsConnectionPort.Enabled = chkSettingsCustomConnection.Checked;
             bgSettingsConnectionUsername.Enabled = chkSettingsCustomConnection.Checked;
             bgSettingsConnectionPassword.Enabled = chkSettingsCustomConnection.Checked;
+            Thread.Sleep(500);
         }
 
-        private void btnSettingsSave_ClickButtonArea(object Sender, MouseEventArgs e)
+        private void btnSettingsSave_ClickButtonArea(object sender, MouseEventArgs e)
         {
-            Properties.Settings.Default.userLanguage = cmboboxSettingsLanguage.SelectedItem.ToString();
+            Thread.Sleep(500);
+            Properties.Settings.Default.userLanguage = cmboboxSettingsLanguage.GetItemText(cmboboxSettingsLanguage.SelectedItem);
             Properties.Settings.Default.clearDataOnClose = chkSettingsClearData.Checked;
             Properties.Settings.Default.downloadsDirectory = txtBoxSettingsDownloadsDirectory.Text;
             Properties.Settings.Default.connectionCustom = chkSettingsCustomConnection.Checked;
@@ -1328,11 +1330,14 @@ namespace OpenTheatre
             Properties.Settings.Default.connectionPort = txtBoxSettingsConnectionPort.Text;
             Properties.Settings.Default.connectionUsername = txtBoxSettingsConnectionUsername.Text;
             Properties.Settings.Default.connectionPassword = txtBoxSettingsConnectionPassword.Text;
+            Thread.Sleep(500);
             Properties.Settings.Default.Save();
+            Thread.Sleep(500);
         }
-
+        
         private void btnSettingsRestoreDefault_ClickButtonArea(object Sender, MouseEventArgs e)
         {
+            Thread.Sleep(500);
             Properties.Settings.Default.clearDataOnClose = false;
             Properties.Settings.Default.connectionCustom = false;
             Properties.Settings.Default.connectionHost = "";
@@ -1340,8 +1345,9 @@ namespace OpenTheatre
             Properties.Settings.Default.connectionUsername = "";
             Properties.Settings.Default.connectionPassword = "";
             Properties.Settings.Default.downloadsDirectory = pathDownloadsDefault;
-
+            Thread.Sleep(500);
             loadSettings();
+            Thread.Sleep(500);
         }
     }
 }

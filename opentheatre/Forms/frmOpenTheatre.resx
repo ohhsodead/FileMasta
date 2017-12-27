@@ -1016,6 +1016,13 @@
   <data name="btnFilesQuality.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
+  <data name="btnFilesQuality.SideImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAF9JREFUaEPt
+        z0sKgDAQRMEc3ZurWTS4UPETSAJVMNvhdQEAAABeW/ZbG1391UWLEd3i48+I7vHxZcQw8fFmxHDx8WTE
+        sPFxN2L4+DgbMU18HEdMFx81fNp4AAAArpWyAccxY6cp/GORAAAAAElFTkSuQmCC
+</value>
+  </data>
   <data name="btnFilesQuality.Size" type="System.Drawing.Size, System.Drawing">
     <value>115, 36</value>
   </data>
@@ -1127,36 +1134,6 @@
   <data name="&gt;&gt;panelFileFilters.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="titleFilesSplitter.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="titleFilesSplitter.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 8.25pt</value>
-  </data>
-  <data name="titleFilesSplitter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 89</value>
-  </data>
-  <data name="titleFilesSplitter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>842, 1</value>
-  </data>
-  <data name="titleFilesSplitter.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="titleFilesSplitter.Text" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;titleFilesSplitter.Name" xml:space="preserve">
-    <value>titleFilesSplitter</value>
-  </data>
-  <data name="&gt;&gt;titleFilesSplitter.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;titleFilesSplitter.Parent" xml:space="preserve">
-    <value>tabFiles</value>
-  </data>
-  <data name="&gt;&gt;titleFilesSplitter.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="txtFilesSearchBox.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 10.75pt</value>
   </data>
@@ -1179,7 +1156,7 @@
     <value>tabFiles</value>
   </data>
   <data name="&gt;&gt;txtFilesSearchBox.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="dataGridFiles.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -1245,6 +1222,36 @@
     <value>tabFiles</value>
   </data>
   <data name="&gt;&gt;dataGridFiles.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="titleFilesSplitter.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="titleFilesSplitter.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 8.25pt</value>
+  </data>
+  <data name="titleFilesSplitter.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 89</value>
+  </data>
+  <data name="titleFilesSplitter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>842, 1</value>
+  </data>
+  <data name="titleFilesSplitter.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="titleFilesSplitter.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;titleFilesSplitter.Name" xml:space="preserve">
+    <value>titleFilesSplitter</value>
+  </data>
+  <data name="&gt;&gt;titleFilesSplitter.Type" xml:space="preserve">
+    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;titleFilesSplitter.Parent" xml:space="preserve">
+    <value>tabFiles</value>
+  </data>
+  <data name="&gt;&gt;titleFilesSplitter.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
   <data name="titleFilesMovies.Font" type="System.Drawing.Font, System.Drawing">
@@ -2329,36 +2336,6 @@
   <data name="&gt;&gt;txtBoxSettingsDownloadsDirectory.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="bgSettingsDownloadsDirectory.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 8.25pt</value>
-  </data>
-  <data name="bgSettingsDownloadsDirectory.Location" type="System.Drawing.Point, System.Drawing">
-    <value>238, 191</value>
-  </data>
-  <data name="bgSettingsDownloadsDirectory.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 5, 3, 5</value>
-  </data>
-  <data name="bgSettingsDownloadsDirectory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>335, 31</value>
-  </data>
-  <data name="bgSettingsDownloadsDirectory.TabIndex" type="System.Int32, mscorlib">
-    <value>39</value>
-  </data>
-  <data name="bgSettingsDownloadsDirectory.Text" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;bgSettingsDownloadsDirectory.Name" xml:space="preserve">
-    <value>bgSettingsDownloadsDirectory</value>
-  </data>
-  <data name="&gt;&gt;bgSettingsDownloadsDirectory.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;bgSettingsDownloadsDirectory.Parent" xml:space="preserve">
-    <value>tabSettings</value>
-  </data>
-  <data name="&gt;&gt;bgSettingsDownloadsDirectory.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
   <data name="lblSettingsDownloadsDirectory.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -2393,7 +2370,7 @@
     <value>tabSettings</value>
   </data>
   <data name="&gt;&gt;lblSettingsDownloadsDirectory.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="lblSettingsConnectionCustom.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2429,7 +2406,7 @@
     <value>tabSettings</value>
   </data>
   <data name="&gt;&gt;lblSettingsConnectionCustom.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>5</value>
   </data>
   <data name="chkSettingsCustomConnection.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2459,67 +2436,7 @@
     <value>tabSettings</value>
   </data>
   <data name="&gt;&gt;chkSettingsCustomConnection.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="btnSettingsSave.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9.75pt</value>
-  </data>
-  <data name="btnSettingsSave.Location" type="System.Drawing.Point, System.Drawing">
-    <value>147, 514</value>
-  </data>
-  <data name="btnSettingsSave.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 1, 3, 0</value>
-  </data>
-  <data name="btnSettingsSave.Size" type="System.Drawing.Size, System.Drawing">
-    <value>106, 30</value>
-  </data>
-  <data name="btnSettingsSave.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="btnSettingsSave.Text" xml:space="preserve">
-    <value>Save settings</value>
-  </data>
-  <data name="&gt;&gt;btnSettingsSave.Name" xml:space="preserve">
-    <value>btnSettingsSave</value>
-  </data>
-  <data name="&gt;&gt;btnSettingsSave.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;btnSettingsSave.Parent" xml:space="preserve">
-    <value>tabSettings</value>
-  </data>
-  <data name="&gt;&gt;btnSettingsSave.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="btnSettingsRestoreDefault.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9.75pt</value>
-  </data>
-  <data name="btnSettingsRestoreDefault.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 514</value>
-  </data>
-  <data name="btnSettingsRestoreDefault.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 1, 3, 0</value>
-  </data>
-  <data name="btnSettingsRestoreDefault.Size" type="System.Drawing.Size, System.Drawing">
-    <value>124, 30</value>
-  </data>
-  <data name="btnSettingsRestoreDefault.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="btnSettingsRestoreDefault.Text" xml:space="preserve">
-    <value>Restore defaults</value>
-  </data>
-  <data name="&gt;&gt;btnSettingsRestoreDefault.Name" xml:space="preserve">
-    <value>btnSettingsRestoreDefault</value>
-  </data>
-  <data name="&gt;&gt;btnSettingsRestoreDefault.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;btnSettingsRestoreDefault.Parent" xml:space="preserve">
-    <value>tabSettings</value>
-  </data>
-  <data name="&gt;&gt;btnSettingsRestoreDefault.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>6</value>
   </data>
   <data name="titleSettingsGeneral.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2555,7 +2472,7 @@
     <value>tabSettings</value>
   </data>
   <data name="&gt;&gt;titleSettingsGeneral.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>7</value>
   </data>
   <data name="lblSettingsGeneralClearDataOnClose.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2591,7 +2508,7 @@
     <value>tabSettings</value>
   </data>
   <data name="&gt;&gt;lblSettingsGeneralClearDataOnClose.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>8</value>
   </data>
   <data name="chkSettingsClearData.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2621,7 +2538,7 @@
     <value>tabSettings</value>
   </data>
   <data name="&gt;&gt;chkSettingsClearData.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>9</value>
   </data>
   <data name="txtBoxSettingsConnectionPassword.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -2648,40 +2565,7 @@
     <value>tabSettings</value>
   </data>
   <data name="&gt;&gt;txtBoxSettingsConnectionPassword.ZOrder" xml:space="preserve">
-    <value>13</value>
-  </data>
-  <data name="bgSettingsConnectionPassword.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="bgSettingsConnectionPassword.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 8.25pt</value>
-  </data>
-  <data name="bgSettingsConnectionPassword.Location" type="System.Drawing.Point, System.Drawing">
-    <value>238, 452</value>
-  </data>
-  <data name="bgSettingsConnectionPassword.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 5, 3, 5</value>
-  </data>
-  <data name="bgSettingsConnectionPassword.Size" type="System.Drawing.Size, System.Drawing">
-    <value>335, 31</value>
-  </data>
-  <data name="bgSettingsConnectionPassword.TabIndex" type="System.Int32, mscorlib">
-    <value>29</value>
-  </data>
-  <data name="bgSettingsConnectionPassword.Text" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;bgSettingsConnectionPassword.Name" xml:space="preserve">
-    <value>bgSettingsConnectionPassword</value>
-  </data>
-  <data name="&gt;&gt;bgSettingsConnectionPassword.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;bgSettingsConnectionPassword.Parent" xml:space="preserve">
-    <value>tabSettings</value>
-  </data>
-  <data name="&gt;&gt;bgSettingsConnectionPassword.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>10</value>
   </data>
   <data name="lblSettingsConnectionPassword.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2720,7 +2604,7 @@
     <value>tabSettings</value>
   </data>
   <data name="&gt;&gt;lblSettingsConnectionPassword.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>11</value>
   </data>
   <data name="txtBoxSettingsConnectionUsername.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -2747,40 +2631,7 @@
     <value>tabSettings</value>
   </data>
   <data name="&gt;&gt;txtBoxSettingsConnectionUsername.ZOrder" xml:space="preserve">
-    <value>16</value>
-  </data>
-  <data name="bgSettingsConnectionUsername.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="bgSettingsConnectionUsername.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 8.25pt</value>
-  </data>
-  <data name="bgSettingsConnectionUsername.Location" type="System.Drawing.Point, System.Drawing">
-    <value>238, 411</value>
-  </data>
-  <data name="bgSettingsConnectionUsername.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 5, 3, 5</value>
-  </data>
-  <data name="bgSettingsConnectionUsername.Size" type="System.Drawing.Size, System.Drawing">
-    <value>335, 31</value>
-  </data>
-  <data name="bgSettingsConnectionUsername.TabIndex" type="System.Int32, mscorlib">
-    <value>26</value>
-  </data>
-  <data name="bgSettingsConnectionUsername.Text" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;bgSettingsConnectionUsername.Name" xml:space="preserve">
-    <value>bgSettingsConnectionUsername</value>
-  </data>
-  <data name="&gt;&gt;bgSettingsConnectionUsername.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;bgSettingsConnectionUsername.Parent" xml:space="preserve">
-    <value>tabSettings</value>
-  </data>
-  <data name="&gt;&gt;bgSettingsConnectionUsername.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>12</value>
   </data>
   <data name="lblSettingsConnectionUsername.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2819,7 +2670,7 @@
     <value>tabSettings</value>
   </data>
   <data name="&gt;&gt;lblSettingsConnectionUsername.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>13</value>
   </data>
   <data name="txtBoxSettingsConnectionPort.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -2846,40 +2697,7 @@
     <value>tabSettings</value>
   </data>
   <data name="&gt;&gt;txtBoxSettingsConnectionPort.ZOrder" xml:space="preserve">
-    <value>19</value>
-  </data>
-  <data name="bgSettingsConnectionPort.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="bgSettingsConnectionPort.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 8.25pt</value>
-  </data>
-  <data name="bgSettingsConnectionPort.Location" type="System.Drawing.Point, System.Drawing">
-    <value>238, 370</value>
-  </data>
-  <data name="bgSettingsConnectionPort.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 5, 3, 5</value>
-  </data>
-  <data name="bgSettingsConnectionPort.Size" type="System.Drawing.Size, System.Drawing">
-    <value>335, 31</value>
-  </data>
-  <data name="bgSettingsConnectionPort.TabIndex" type="System.Int32, mscorlib">
-    <value>23</value>
-  </data>
-  <data name="bgSettingsConnectionPort.Text" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;bgSettingsConnectionPort.Name" xml:space="preserve">
-    <value>bgSettingsConnectionPort</value>
-  </data>
-  <data name="&gt;&gt;bgSettingsConnectionPort.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;bgSettingsConnectionPort.Parent" xml:space="preserve">
-    <value>tabSettings</value>
-  </data>
-  <data name="&gt;&gt;bgSettingsConnectionPort.ZOrder" xml:space="preserve">
-    <value>20</value>
+    <value>14</value>
   </data>
   <data name="lblSettingsConnectionPort.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2918,7 +2736,7 @@
     <value>tabSettings</value>
   </data>
   <data name="&gt;&gt;lblSettingsConnectionPort.ZOrder" xml:space="preserve">
-    <value>21</value>
+    <value>15</value>
   </data>
   <data name="txtBoxSettingsConnectionHost.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -2945,40 +2763,7 @@
     <value>tabSettings</value>
   </data>
   <data name="&gt;&gt;txtBoxSettingsConnectionHost.ZOrder" xml:space="preserve">
-    <value>22</value>
-  </data>
-  <data name="bgSettingsConnectionHost.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="bgSettingsConnectionHost.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 8.25pt</value>
-  </data>
-  <data name="bgSettingsConnectionHost.Location" type="System.Drawing.Point, System.Drawing">
-    <value>238, 329</value>
-  </data>
-  <data name="bgSettingsConnectionHost.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 5, 3, 5</value>
-  </data>
-  <data name="bgSettingsConnectionHost.Size" type="System.Drawing.Size, System.Drawing">
-    <value>335, 31</value>
-  </data>
-  <data name="bgSettingsConnectionHost.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
-  </data>
-  <data name="bgSettingsConnectionHost.Text" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;bgSettingsConnectionHost.Name" xml:space="preserve">
-    <value>bgSettingsConnectionHost</value>
-  </data>
-  <data name="&gt;&gt;bgSettingsConnectionHost.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;bgSettingsConnectionHost.Parent" xml:space="preserve">
-    <value>tabSettings</value>
-  </data>
-  <data name="&gt;&gt;bgSettingsConnectionHost.ZOrder" xml:space="preserve">
-    <value>23</value>
+    <value>16</value>
   </data>
   <data name="lblSettingsConnectionHost.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3017,7 +2802,7 @@
     <value>tabSettings</value>
   </data>
   <data name="&gt;&gt;lblSettingsConnectionHost.ZOrder" xml:space="preserve">
-    <value>24</value>
+    <value>17</value>
   </data>
   <data name="titleSettingsConnection.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3053,7 +2838,7 @@
     <value>tabSettings</value>
   </data>
   <data name="&gt;&gt;titleSettingsConnection.ZOrder" xml:space="preserve">
-    <value>25</value>
+    <value>18</value>
   </data>
   <data name="imgSettingsDownloadsDirectory.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -3093,6 +2878,228 @@
     <value>tabSettings</value>
   </data>
   <data name="&gt;&gt;imgSettingsDownloadsDirectory.ZOrder" xml:space="preserve">
+    <value>19</value>
+  </data>
+  <data name="bgSettingsDownloadsDirectory.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 8.25pt</value>
+  </data>
+  <data name="bgSettingsDownloadsDirectory.Location" type="System.Drawing.Point, System.Drawing">
+    <value>238, 191</value>
+  </data>
+  <data name="bgSettingsDownloadsDirectory.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 5, 3, 5</value>
+  </data>
+  <data name="bgSettingsDownloadsDirectory.Size" type="System.Drawing.Size, System.Drawing">
+    <value>335, 31</value>
+  </data>
+  <data name="bgSettingsDownloadsDirectory.TabIndex" type="System.Int32, mscorlib">
+    <value>39</value>
+  </data>
+  <data name="bgSettingsDownloadsDirectory.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;bgSettingsDownloadsDirectory.Name" xml:space="preserve">
+    <value>bgSettingsDownloadsDirectory</value>
+  </data>
+  <data name="&gt;&gt;bgSettingsDownloadsDirectory.Type" xml:space="preserve">
+    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;bgSettingsDownloadsDirectory.Parent" xml:space="preserve">
+    <value>tabSettings</value>
+  </data>
+  <data name="&gt;&gt;bgSettingsDownloadsDirectory.ZOrder" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="btnSettingsSave.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9.75pt</value>
+  </data>
+  <data name="btnSettingsSave.Location" type="System.Drawing.Point, System.Drawing">
+    <value>147, 514</value>
+  </data>
+  <data name="btnSettingsSave.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 1, 3, 0</value>
+  </data>
+  <data name="btnSettingsSave.Size" type="System.Drawing.Size, System.Drawing">
+    <value>106, 30</value>
+  </data>
+  <data name="btnSettingsSave.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="btnSettingsSave.Text" xml:space="preserve">
+    <value>Save settings</value>
+  </data>
+  <data name="&gt;&gt;btnSettingsSave.Name" xml:space="preserve">
+    <value>btnSettingsSave</value>
+  </data>
+  <data name="&gt;&gt;btnSettingsSave.Type" xml:space="preserve">
+    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;btnSettingsSave.Parent" xml:space="preserve">
+    <value>tabSettings</value>
+  </data>
+  <data name="&gt;&gt;btnSettingsSave.ZOrder" xml:space="preserve">
+    <value>21</value>
+  </data>
+  <data name="btnSettingsRestoreDefault.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9.75pt</value>
+  </data>
+  <data name="btnSettingsRestoreDefault.Location" type="System.Drawing.Point, System.Drawing">
+    <value>17, 514</value>
+  </data>
+  <data name="btnSettingsRestoreDefault.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 1, 3, 0</value>
+  </data>
+  <data name="btnSettingsRestoreDefault.Size" type="System.Drawing.Size, System.Drawing">
+    <value>124, 30</value>
+  </data>
+  <data name="btnSettingsRestoreDefault.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="btnSettingsRestoreDefault.Text" xml:space="preserve">
+    <value>Restore defaults</value>
+  </data>
+  <data name="&gt;&gt;btnSettingsRestoreDefault.Name" xml:space="preserve">
+    <value>btnSettingsRestoreDefault</value>
+  </data>
+  <data name="&gt;&gt;btnSettingsRestoreDefault.Type" xml:space="preserve">
+    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;btnSettingsRestoreDefault.Parent" xml:space="preserve">
+    <value>tabSettings</value>
+  </data>
+  <data name="&gt;&gt;btnSettingsRestoreDefault.ZOrder" xml:space="preserve">
+    <value>22</value>
+  </data>
+  <data name="bgSettingsConnectionPassword.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="bgSettingsConnectionPassword.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 8.25pt</value>
+  </data>
+  <data name="bgSettingsConnectionPassword.Location" type="System.Drawing.Point, System.Drawing">
+    <value>238, 452</value>
+  </data>
+  <data name="bgSettingsConnectionPassword.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 5, 3, 5</value>
+  </data>
+  <data name="bgSettingsConnectionPassword.Size" type="System.Drawing.Size, System.Drawing">
+    <value>335, 31</value>
+  </data>
+  <data name="bgSettingsConnectionPassword.TabIndex" type="System.Int32, mscorlib">
+    <value>29</value>
+  </data>
+  <data name="bgSettingsConnectionPassword.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;bgSettingsConnectionPassword.Name" xml:space="preserve">
+    <value>bgSettingsConnectionPassword</value>
+  </data>
+  <data name="&gt;&gt;bgSettingsConnectionPassword.Type" xml:space="preserve">
+    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;bgSettingsConnectionPassword.Parent" xml:space="preserve">
+    <value>tabSettings</value>
+  </data>
+  <data name="&gt;&gt;bgSettingsConnectionPassword.ZOrder" xml:space="preserve">
+    <value>23</value>
+  </data>
+  <data name="bgSettingsConnectionUsername.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="bgSettingsConnectionUsername.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 8.25pt</value>
+  </data>
+  <data name="bgSettingsConnectionUsername.Location" type="System.Drawing.Point, System.Drawing">
+    <value>238, 411</value>
+  </data>
+  <data name="bgSettingsConnectionUsername.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 5, 3, 5</value>
+  </data>
+  <data name="bgSettingsConnectionUsername.Size" type="System.Drawing.Size, System.Drawing">
+    <value>335, 31</value>
+  </data>
+  <data name="bgSettingsConnectionUsername.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
+  </data>
+  <data name="bgSettingsConnectionUsername.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;bgSettingsConnectionUsername.Name" xml:space="preserve">
+    <value>bgSettingsConnectionUsername</value>
+  </data>
+  <data name="&gt;&gt;bgSettingsConnectionUsername.Type" xml:space="preserve">
+    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;bgSettingsConnectionUsername.Parent" xml:space="preserve">
+    <value>tabSettings</value>
+  </data>
+  <data name="&gt;&gt;bgSettingsConnectionUsername.ZOrder" xml:space="preserve">
+    <value>24</value>
+  </data>
+  <data name="bgSettingsConnectionPort.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="bgSettingsConnectionPort.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 8.25pt</value>
+  </data>
+  <data name="bgSettingsConnectionPort.Location" type="System.Drawing.Point, System.Drawing">
+    <value>238, 370</value>
+  </data>
+  <data name="bgSettingsConnectionPort.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 5, 3, 5</value>
+  </data>
+  <data name="bgSettingsConnectionPort.Size" type="System.Drawing.Size, System.Drawing">
+    <value>335, 31</value>
+  </data>
+  <data name="bgSettingsConnectionPort.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="bgSettingsConnectionPort.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;bgSettingsConnectionPort.Name" xml:space="preserve">
+    <value>bgSettingsConnectionPort</value>
+  </data>
+  <data name="&gt;&gt;bgSettingsConnectionPort.Type" xml:space="preserve">
+    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;bgSettingsConnectionPort.Parent" xml:space="preserve">
+    <value>tabSettings</value>
+  </data>
+  <data name="&gt;&gt;bgSettingsConnectionPort.ZOrder" xml:space="preserve">
+    <value>25</value>
+  </data>
+  <data name="bgSettingsConnectionHost.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="bgSettingsConnectionHost.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 8.25pt</value>
+  </data>
+  <data name="bgSettingsConnectionHost.Location" type="System.Drawing.Point, System.Drawing">
+    <value>238, 329</value>
+  </data>
+  <data name="bgSettingsConnectionHost.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 5, 3, 5</value>
+  </data>
+  <data name="bgSettingsConnectionHost.Size" type="System.Drawing.Size, System.Drawing">
+    <value>335, 31</value>
+  </data>
+  <data name="bgSettingsConnectionHost.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="bgSettingsConnectionHost.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;bgSettingsConnectionHost.Name" xml:space="preserve">
+    <value>bgSettingsConnectionHost</value>
+  </data>
+  <data name="&gt;&gt;bgSettingsConnectionHost.Type" xml:space="preserve">
+    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;bgSettingsConnectionHost.Parent" xml:space="preserve">
+    <value>tabSettings</value>
+  </data>
+  <data name="&gt;&gt;bgSettingsConnectionHost.ZOrder" xml:space="preserve">
     <value>26</value>
   </data>
   <data name="tabSettings.Location" type="System.Drawing.Point, System.Drawing">

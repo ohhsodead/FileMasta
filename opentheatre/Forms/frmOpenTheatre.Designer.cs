@@ -70,13 +70,13 @@
             this.panelFilesQuality = new System.Windows.Forms.Panel();
             this.btnFilesQuality = new CButtonLib.CButton();
             this.cmboBoxFilesQuality = new System.Windows.Forms.ComboBox();
-            this.titleFilesSplitter = new CButtonLib.CButton();
             this.txtFilesSearchBox = new ChreneLib.Controls.TextBoxes.CTextBox();
             this.dataGridFiles = new System.Windows.Forms.DataGridView();
             this.columnFilesFileName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnFilesFormat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnFilesHost = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnFilesURL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.titleFilesSplitter = new CButtonLib.CButton();
             this.titleFilesMovies = new CButtonLib.CButton();
             this.titleFilesAnime = new CButtonLib.CButton();
             this.titleFilesSeries = new CButtonLib.CButton();
@@ -115,29 +115,29 @@
             this.lblSettingsGeneralLanguage = new System.Windows.Forms.Label();
             this.titleSettingsDownloads = new System.Windows.Forms.Label();
             this.txtBoxSettingsDownloadsDirectory = new ChreneLib.Controls.TextBoxes.CTextBox();
-            this.bgSettingsDownloadsDirectory = new CButtonLib.CButton();
             this.lblSettingsDownloadsDirectory = new System.Windows.Forms.Label();
             this.lblSettingsConnectionCustom = new System.Windows.Forms.Label();
             this.chkSettingsCustomConnection = new System.Windows.Forms.CheckBox();
-            this.btnSettingsSave = new CButtonLib.CButton();
-            this.btnSettingsRestoreDefault = new CButtonLib.CButton();
             this.titleSettingsGeneral = new System.Windows.Forms.Label();
             this.lblSettingsGeneralClearDataOnClose = new System.Windows.Forms.Label();
             this.chkSettingsClearData = new System.Windows.Forms.CheckBox();
             this.txtBoxSettingsConnectionPassword = new ChreneLib.Controls.TextBoxes.CTextBox();
-            this.bgSettingsConnectionPassword = new CButtonLib.CButton();
             this.lblSettingsConnectionPassword = new System.Windows.Forms.Label();
             this.txtBoxSettingsConnectionUsername = new ChreneLib.Controls.TextBoxes.CTextBox();
-            this.bgSettingsConnectionUsername = new CButtonLib.CButton();
             this.lblSettingsConnectionUsername = new System.Windows.Forms.Label();
             this.txtBoxSettingsConnectionPort = new ChreneLib.Controls.TextBoxes.CTextBox();
-            this.bgSettingsConnectionPort = new CButtonLib.CButton();
             this.lblSettingsConnectionPort = new System.Windows.Forms.Label();
             this.txtBoxSettingsConnectionHost = new ChreneLib.Controls.TextBoxes.CTextBox();
-            this.bgSettingsConnectionHost = new CButtonLib.CButton();
             this.lblSettingsConnectionHost = new System.Windows.Forms.Label();
             this.titleSettingsConnection = new System.Windows.Forms.Label();
             this.imgSettingsDownloadsDirectory = new System.Windows.Forms.PictureBox();
+            this.bgSettingsDownloadsDirectory = new CButtonLib.CButton();
+            this.btnSettingsSave = new CButtonLib.CButton();
+            this.btnSettingsRestoreDefault = new CButtonLib.CButton();
+            this.bgSettingsConnectionPassword = new CButtonLib.CButton();
+            this.bgSettingsConnectionUsername = new CButtonLib.CButton();
+            this.bgSettingsConnectionPort = new CButtonLib.CButton();
+            this.bgSettingsConnectionHost = new CButtonLib.CButton();
             this.tabAbout = new System.Windows.Forms.TabPage();
             this.lblAboutVersion = new System.Windows.Forms.Label();
             this.btnAboutReportIssue = new System.Windows.Forms.Label();
@@ -472,9 +472,9 @@
             this.tabFiles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
             this.tabFiles.Controls.Add(this.emptyDataFiles);
             this.tabFiles.Controls.Add(this.panelFileFilters);
-            this.tabFiles.Controls.Add(this.titleFilesSplitter);
             this.tabFiles.Controls.Add(this.txtFilesSearchBox);
             this.tabFiles.Controls.Add(this.dataGridFiles);
+            this.tabFiles.Controls.Add(this.titleFilesSplitter);
             this.tabFiles.Controls.Add(this.titleFilesMovies);
             this.tabFiles.Controls.Add(this.titleFilesAnime);
             this.tabFiles.Controls.Add(this.titleFilesSeries);
@@ -673,7 +673,7 @@
             this.btnFilesQuality.ImageIndex = 0;
             this.btnFilesQuality.Name = "btnFilesQuality";
             this.btnFilesQuality.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.btnFilesQuality.SideImage = global::OpenTheatre.Properties.Resources.arrow_drop_down_black;
+            this.btnFilesQuality.SideImage = ((System.Drawing.Image)(resources.GetObject("btnFilesQuality.SideImage")));
             this.btnFilesQuality.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnFilesQuality.SideImageSize = new System.Drawing.Size(21, 21);
             this.btnFilesQuality.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -694,22 +694,6 @@
             this.cmboBoxFilesQuality.Name = "cmboBoxFilesQuality";
             this.cmboBoxFilesQuality.TabStop = false;
             this.cmboBoxFilesQuality.SelectedIndexChanged += new System.EventHandler(this.cmboBoxFilesQuality_SelectedIndexChanged);
-            // 
-            // titleFilesSplitter
-            // 
-            resources.ApplyResources(this.titleFilesSplitter, "titleFilesSplitter");
-            this.titleFilesSplitter.BackColor = System.Drawing.Color.Transparent;
-            this.titleFilesSplitter.BorderColor = System.Drawing.Color.Silver;
-            this.titleFilesSplitter.ColorFillSolid = System.Drawing.Color.Silver;
-            this.titleFilesSplitter.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.titleFilesSplitter.DesignerSelected = false;
-            this.titleFilesSplitter.DimFactorClick = 0;
-            this.titleFilesSplitter.DimFactorHover = 0;
-            this.titleFilesSplitter.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.titleFilesSplitter.ImageIndex = 0;
-            this.titleFilesSplitter.Name = "titleFilesSplitter";
-            this.titleFilesSplitter.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.titleFilesSplitter.TabStop = false;
             // 
             // txtFilesSearchBox
             // 
@@ -810,6 +794,22 @@
             resources.ApplyResources(this.columnFilesURL, "columnFilesURL");
             this.columnFilesURL.Name = "columnFilesURL";
             this.columnFilesURL.ReadOnly = true;
+            // 
+            // titleFilesSplitter
+            // 
+            resources.ApplyResources(this.titleFilesSplitter, "titleFilesSplitter");
+            this.titleFilesSplitter.BackColor = System.Drawing.Color.Transparent;
+            this.titleFilesSplitter.BorderColor = System.Drawing.Color.Silver;
+            this.titleFilesSplitter.ColorFillSolid = System.Drawing.Color.Silver;
+            this.titleFilesSplitter.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.titleFilesSplitter.DesignerSelected = false;
+            this.titleFilesSplitter.DimFactorClick = 0;
+            this.titleFilesSplitter.DimFactorHover = 0;
+            this.titleFilesSplitter.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.titleFilesSplitter.ImageIndex = 0;
+            this.titleFilesSplitter.Name = "titleFilesSplitter";
+            this.titleFilesSplitter.ShowFocus = CButtonLib.CButton.eFocus.None;
+            this.titleFilesSplitter.TabStop = false;
             // 
             // titleFilesMovies
             // 
@@ -1313,29 +1313,29 @@
             this.tabSettings.Controls.Add(this.lblSettingsGeneralLanguage);
             this.tabSettings.Controls.Add(this.titleSettingsDownloads);
             this.tabSettings.Controls.Add(this.txtBoxSettingsDownloadsDirectory);
-            this.tabSettings.Controls.Add(this.bgSettingsDownloadsDirectory);
             this.tabSettings.Controls.Add(this.lblSettingsDownloadsDirectory);
             this.tabSettings.Controls.Add(this.lblSettingsConnectionCustom);
             this.tabSettings.Controls.Add(this.chkSettingsCustomConnection);
-            this.tabSettings.Controls.Add(this.btnSettingsSave);
-            this.tabSettings.Controls.Add(this.btnSettingsRestoreDefault);
             this.tabSettings.Controls.Add(this.titleSettingsGeneral);
             this.tabSettings.Controls.Add(this.lblSettingsGeneralClearDataOnClose);
             this.tabSettings.Controls.Add(this.chkSettingsClearData);
             this.tabSettings.Controls.Add(this.txtBoxSettingsConnectionPassword);
-            this.tabSettings.Controls.Add(this.bgSettingsConnectionPassword);
             this.tabSettings.Controls.Add(this.lblSettingsConnectionPassword);
             this.tabSettings.Controls.Add(this.txtBoxSettingsConnectionUsername);
-            this.tabSettings.Controls.Add(this.bgSettingsConnectionUsername);
             this.tabSettings.Controls.Add(this.lblSettingsConnectionUsername);
             this.tabSettings.Controls.Add(this.txtBoxSettingsConnectionPort);
-            this.tabSettings.Controls.Add(this.bgSettingsConnectionPort);
             this.tabSettings.Controls.Add(this.lblSettingsConnectionPort);
             this.tabSettings.Controls.Add(this.txtBoxSettingsConnectionHost);
-            this.tabSettings.Controls.Add(this.bgSettingsConnectionHost);
             this.tabSettings.Controls.Add(this.lblSettingsConnectionHost);
             this.tabSettings.Controls.Add(this.titleSettingsConnection);
             this.tabSettings.Controls.Add(this.imgSettingsDownloadsDirectory);
+            this.tabSettings.Controls.Add(this.bgSettingsDownloadsDirectory);
+            this.tabSettings.Controls.Add(this.btnSettingsSave);
+            this.tabSettings.Controls.Add(this.btnSettingsRestoreDefault);
+            this.tabSettings.Controls.Add(this.bgSettingsConnectionPassword);
+            this.tabSettings.Controls.Add(this.bgSettingsConnectionUsername);
+            this.tabSettings.Controls.Add(this.bgSettingsConnectionPort);
+            this.tabSettings.Controls.Add(this.bgSettingsConnectionHost);
             this.tabSettings.ForeColor = System.Drawing.Color.White;
             this.tabSettings.Name = "tabSettings";
             // 
@@ -1417,27 +1417,6 @@
             this.txtBoxSettingsDownloadsDirectory.WaterMarkFont = new System.Drawing.Font("Segoe UI", 10.75F);
             this.txtBoxSettingsDownloadsDirectory.WaterMarkForeColor = System.Drawing.SystemColors.WindowFrame;
             // 
-            // bgSettingsDownloadsDirectory
-            // 
-            this.bgSettingsDownloadsDirectory.BackColor = System.Drawing.Color.Transparent;
-            this.bgSettingsDownloadsDirectory.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.bgSettingsDownloadsDirectory.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.bgSettingsDownloadsDirectory.Corners.All = 2;
-            this.bgSettingsDownloadsDirectory.Corners.LowerLeft = 2;
-            this.bgSettingsDownloadsDirectory.Corners.LowerRight = 2;
-            this.bgSettingsDownloadsDirectory.Corners.UpperLeft = 2;
-            this.bgSettingsDownloadsDirectory.Corners.UpperRight = 2;
-            this.bgSettingsDownloadsDirectory.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bgSettingsDownloadsDirectory.DesignerSelected = false;
-            this.bgSettingsDownloadsDirectory.DimFactorClick = 0;
-            this.bgSettingsDownloadsDirectory.DimFactorHover = 0;
-            this.bgSettingsDownloadsDirectory.FillType = CButtonLib.CButton.eFillType.Solid;
-            resources.ApplyResources(this.bgSettingsDownloadsDirectory, "bgSettingsDownloadsDirectory");
-            this.bgSettingsDownloadsDirectory.ImageIndex = 0;
-            this.bgSettingsDownloadsDirectory.Name = "bgSettingsDownloadsDirectory";
-            this.bgSettingsDownloadsDirectory.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.bgSettingsDownloadsDirectory.TabStop = false;
-            // 
             // lblSettingsDownloadsDirectory
             // 
             resources.ApplyResources(this.lblSettingsDownloadsDirectory, "lblSettingsDownloadsDirectory");
@@ -1461,50 +1440,6 @@
             this.chkSettingsCustomConnection.Name = "chkSettingsCustomConnection";
             this.chkSettingsCustomConnection.UseVisualStyleBackColor = false;
             this.chkSettingsCustomConnection.CheckedChanged += new System.EventHandler(this.chkSettingsCustomConnection_CheckedChanged);
-            // 
-            // btnSettingsSave
-            // 
-            this.btnSettingsSave.BackColor = System.Drawing.Color.Transparent;
-            this.btnSettingsSave.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(139)))), ((int)(((byte)(202)))));
-            this.btnSettingsSave.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(139)))), ((int)(((byte)(202)))));
-            this.btnSettingsSave.Corners.All = 2;
-            this.btnSettingsSave.Corners.LowerLeft = 2;
-            this.btnSettingsSave.Corners.LowerRight = 2;
-            this.btnSettingsSave.Corners.UpperLeft = 2;
-            this.btnSettingsSave.Corners.UpperRight = 2;
-            this.btnSettingsSave.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSettingsSave.DesignerSelected = false;
-            this.btnSettingsSave.DimFactorClick = 0;
-            this.btnSettingsSave.DimFactorHover = 0;
-            this.btnSettingsSave.FillType = CButtonLib.CButton.eFillType.Solid;
-            resources.ApplyResources(this.btnSettingsSave, "btnSettingsSave");
-            this.btnSettingsSave.ImageIndex = 0;
-            this.btnSettingsSave.Name = "btnSettingsSave";
-            this.btnSettingsSave.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.btnSettingsSave.TextShadowShow = false;
-            this.btnSettingsSave.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnSettingsSave_ClickButtonArea);
-            // 
-            // btnSettingsRestoreDefault
-            // 
-            this.btnSettingsRestoreDefault.BackColor = System.Drawing.Color.Transparent;
-            this.btnSettingsRestoreDefault.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(139)))), ((int)(((byte)(202)))));
-            this.btnSettingsRestoreDefault.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(139)))), ((int)(((byte)(202)))));
-            this.btnSettingsRestoreDefault.Corners.All = 2;
-            this.btnSettingsRestoreDefault.Corners.LowerLeft = 2;
-            this.btnSettingsRestoreDefault.Corners.LowerRight = 2;
-            this.btnSettingsRestoreDefault.Corners.UpperLeft = 2;
-            this.btnSettingsRestoreDefault.Corners.UpperRight = 2;
-            this.btnSettingsRestoreDefault.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSettingsRestoreDefault.DesignerSelected = false;
-            this.btnSettingsRestoreDefault.DimFactorClick = 0;
-            this.btnSettingsRestoreDefault.DimFactorHover = 0;
-            this.btnSettingsRestoreDefault.FillType = CButtonLib.CButton.eFillType.Solid;
-            resources.ApplyResources(this.btnSettingsRestoreDefault, "btnSettingsRestoreDefault");
-            this.btnSettingsRestoreDefault.ImageIndex = 0;
-            this.btnSettingsRestoreDefault.Name = "btnSettingsRestoreDefault";
-            this.btnSettingsRestoreDefault.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.btnSettingsRestoreDefault.TextShadowShow = false;
-            this.btnSettingsRestoreDefault.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnSettingsRestoreDefault_ClickButtonArea);
             // 
             // titleSettingsGeneral
             // 
@@ -1541,27 +1476,6 @@
             this.txtBoxSettingsConnectionPassword.WaterMarkFont = new System.Drawing.Font("Segoe UI", 10.75F);
             this.txtBoxSettingsConnectionPassword.WaterMarkForeColor = System.Drawing.SystemColors.WindowFrame;
             // 
-            // bgSettingsConnectionPassword
-            // 
-            this.bgSettingsConnectionPassword.BackColor = System.Drawing.Color.Transparent;
-            this.bgSettingsConnectionPassword.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.bgSettingsConnectionPassword.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.bgSettingsConnectionPassword.Corners.All = 2;
-            this.bgSettingsConnectionPassword.Corners.LowerLeft = 2;
-            this.bgSettingsConnectionPassword.Corners.LowerRight = 2;
-            this.bgSettingsConnectionPassword.Corners.UpperLeft = 2;
-            this.bgSettingsConnectionPassword.Corners.UpperRight = 2;
-            this.bgSettingsConnectionPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bgSettingsConnectionPassword.DesignerSelected = false;
-            this.bgSettingsConnectionPassword.DimFactorClick = 0;
-            this.bgSettingsConnectionPassword.DimFactorHover = 0;
-            resources.ApplyResources(this.bgSettingsConnectionPassword, "bgSettingsConnectionPassword");
-            this.bgSettingsConnectionPassword.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.bgSettingsConnectionPassword.ImageIndex = 0;
-            this.bgSettingsConnectionPassword.Name = "bgSettingsConnectionPassword";
-            this.bgSettingsConnectionPassword.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.bgSettingsConnectionPassword.TabStop = false;
-            // 
             // lblSettingsConnectionPassword
             // 
             resources.ApplyResources(this.lblSettingsConnectionPassword, "lblSettingsConnectionPassword");
@@ -1581,27 +1495,6 @@
             this.txtBoxSettingsConnectionUsername.WaterMarkActiveForeColor = System.Drawing.Color.Black;
             this.txtBoxSettingsConnectionUsername.WaterMarkFont = new System.Drawing.Font("Segoe UI", 10.75F);
             this.txtBoxSettingsConnectionUsername.WaterMarkForeColor = System.Drawing.SystemColors.WindowFrame;
-            // 
-            // bgSettingsConnectionUsername
-            // 
-            this.bgSettingsConnectionUsername.BackColor = System.Drawing.Color.Transparent;
-            this.bgSettingsConnectionUsername.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.bgSettingsConnectionUsername.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.bgSettingsConnectionUsername.Corners.All = 2;
-            this.bgSettingsConnectionUsername.Corners.LowerLeft = 2;
-            this.bgSettingsConnectionUsername.Corners.LowerRight = 2;
-            this.bgSettingsConnectionUsername.Corners.UpperLeft = 2;
-            this.bgSettingsConnectionUsername.Corners.UpperRight = 2;
-            this.bgSettingsConnectionUsername.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bgSettingsConnectionUsername.DesignerSelected = false;
-            this.bgSettingsConnectionUsername.DimFactorClick = 0;
-            this.bgSettingsConnectionUsername.DimFactorHover = 0;
-            resources.ApplyResources(this.bgSettingsConnectionUsername, "bgSettingsConnectionUsername");
-            this.bgSettingsConnectionUsername.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.bgSettingsConnectionUsername.ImageIndex = 0;
-            this.bgSettingsConnectionUsername.Name = "bgSettingsConnectionUsername";
-            this.bgSettingsConnectionUsername.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.bgSettingsConnectionUsername.TabStop = false;
             // 
             // lblSettingsConnectionUsername
             // 
@@ -1623,27 +1516,6 @@
             this.txtBoxSettingsConnectionPort.WaterMarkFont = new System.Drawing.Font("Segoe UI", 10.75F);
             this.txtBoxSettingsConnectionPort.WaterMarkForeColor = System.Drawing.SystemColors.WindowFrame;
             // 
-            // bgSettingsConnectionPort
-            // 
-            this.bgSettingsConnectionPort.BackColor = System.Drawing.Color.Transparent;
-            this.bgSettingsConnectionPort.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.bgSettingsConnectionPort.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.bgSettingsConnectionPort.Corners.All = 2;
-            this.bgSettingsConnectionPort.Corners.LowerLeft = 2;
-            this.bgSettingsConnectionPort.Corners.LowerRight = 2;
-            this.bgSettingsConnectionPort.Corners.UpperLeft = 2;
-            this.bgSettingsConnectionPort.Corners.UpperRight = 2;
-            this.bgSettingsConnectionPort.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bgSettingsConnectionPort.DesignerSelected = false;
-            this.bgSettingsConnectionPort.DimFactorClick = 0;
-            this.bgSettingsConnectionPort.DimFactorHover = 0;
-            resources.ApplyResources(this.bgSettingsConnectionPort, "bgSettingsConnectionPort");
-            this.bgSettingsConnectionPort.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.bgSettingsConnectionPort.ImageIndex = 0;
-            this.bgSettingsConnectionPort.Name = "bgSettingsConnectionPort";
-            this.bgSettingsConnectionPort.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.bgSettingsConnectionPort.TabStop = false;
-            // 
             // lblSettingsConnectionPort
             // 
             resources.ApplyResources(this.lblSettingsConnectionPort, "lblSettingsConnectionPort");
@@ -1663,27 +1535,6 @@
             this.txtBoxSettingsConnectionHost.WaterMarkActiveForeColor = System.Drawing.Color.Black;
             this.txtBoxSettingsConnectionHost.WaterMarkFont = new System.Drawing.Font("Segoe UI", 10.75F);
             this.txtBoxSettingsConnectionHost.WaterMarkForeColor = System.Drawing.SystemColors.WindowFrame;
-            // 
-            // bgSettingsConnectionHost
-            // 
-            this.bgSettingsConnectionHost.BackColor = System.Drawing.Color.Transparent;
-            this.bgSettingsConnectionHost.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.bgSettingsConnectionHost.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.bgSettingsConnectionHost.Corners.All = 2;
-            this.bgSettingsConnectionHost.Corners.LowerLeft = 2;
-            this.bgSettingsConnectionHost.Corners.LowerRight = 2;
-            this.bgSettingsConnectionHost.Corners.UpperLeft = 2;
-            this.bgSettingsConnectionHost.Corners.UpperRight = 2;
-            this.bgSettingsConnectionHost.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bgSettingsConnectionHost.DesignerSelected = false;
-            this.bgSettingsConnectionHost.DimFactorClick = 0;
-            this.bgSettingsConnectionHost.DimFactorHover = 0;
-            resources.ApplyResources(this.bgSettingsConnectionHost, "bgSettingsConnectionHost");
-            this.bgSettingsConnectionHost.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.bgSettingsConnectionHost.ImageIndex = 0;
-            this.bgSettingsConnectionHost.Name = "bgSettingsConnectionHost";
-            this.bgSettingsConnectionHost.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.bgSettingsConnectionHost.TabStop = false;
             // 
             // lblSettingsConnectionHost
             // 
@@ -1709,6 +1560,155 @@
             this.imgSettingsDownloadsDirectory.Name = "imgSettingsDownloadsDirectory";
             this.imgSettingsDownloadsDirectory.TabStop = false;
             this.imgSettingsDownloadsDirectory.Click += new System.EventHandler(this.imgSettingsDownloadsDirectory_Click);
+            // 
+            // bgSettingsDownloadsDirectory
+            // 
+            this.bgSettingsDownloadsDirectory.BackColor = System.Drawing.Color.Transparent;
+            this.bgSettingsDownloadsDirectory.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.bgSettingsDownloadsDirectory.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.bgSettingsDownloadsDirectory.Corners.All = 2;
+            this.bgSettingsDownloadsDirectory.Corners.LowerLeft = 2;
+            this.bgSettingsDownloadsDirectory.Corners.LowerRight = 2;
+            this.bgSettingsDownloadsDirectory.Corners.UpperLeft = 2;
+            this.bgSettingsDownloadsDirectory.Corners.UpperRight = 2;
+            this.bgSettingsDownloadsDirectory.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.bgSettingsDownloadsDirectory.DesignerSelected = false;
+            this.bgSettingsDownloadsDirectory.DimFactorClick = 0;
+            this.bgSettingsDownloadsDirectory.DimFactorHover = 0;
+            this.bgSettingsDownloadsDirectory.FillType = CButtonLib.CButton.eFillType.Solid;
+            resources.ApplyResources(this.bgSettingsDownloadsDirectory, "bgSettingsDownloadsDirectory");
+            this.bgSettingsDownloadsDirectory.ImageIndex = 0;
+            this.bgSettingsDownloadsDirectory.Name = "bgSettingsDownloadsDirectory";
+            this.bgSettingsDownloadsDirectory.ShowFocus = CButtonLib.CButton.eFocus.None;
+            this.bgSettingsDownloadsDirectory.TabStop = false;
+            // 
+            // btnSettingsSave
+            // 
+            this.btnSettingsSave.BackColor = System.Drawing.Color.Transparent;
+            this.btnSettingsSave.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(139)))), ((int)(((byte)(202)))));
+            this.btnSettingsSave.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(139)))), ((int)(((byte)(202)))));
+            this.btnSettingsSave.Corners.All = 2;
+            this.btnSettingsSave.Corners.LowerLeft = 2;
+            this.btnSettingsSave.Corners.LowerRight = 2;
+            this.btnSettingsSave.Corners.UpperLeft = 2;
+            this.btnSettingsSave.Corners.UpperRight = 2;
+            this.btnSettingsSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSettingsSave.DesignerSelected = true;
+            this.btnSettingsSave.DimFactorClick = 0;
+            this.btnSettingsSave.DimFactorHover = 0;
+            this.btnSettingsSave.FillType = CButtonLib.CButton.eFillType.Solid;
+            resources.ApplyResources(this.btnSettingsSave, "btnSettingsSave");
+            this.btnSettingsSave.ImageIndex = 0;
+            this.btnSettingsSave.Name = "btnSettingsSave";
+            this.btnSettingsSave.ShowFocus = CButtonLib.CButton.eFocus.None;
+            this.btnSettingsSave.TextShadowShow = false;
+            this.btnSettingsSave.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnSettingsSave_ClickButtonArea);
+            // 
+            // btnSettingsRestoreDefault
+            // 
+            this.btnSettingsRestoreDefault.BackColor = System.Drawing.Color.Transparent;
+            this.btnSettingsRestoreDefault.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(139)))), ((int)(((byte)(202)))));
+            this.btnSettingsRestoreDefault.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(139)))), ((int)(((byte)(202)))));
+            this.btnSettingsRestoreDefault.Corners.All = 2;
+            this.btnSettingsRestoreDefault.Corners.LowerLeft = 2;
+            this.btnSettingsRestoreDefault.Corners.LowerRight = 2;
+            this.btnSettingsRestoreDefault.Corners.UpperLeft = 2;
+            this.btnSettingsRestoreDefault.Corners.UpperRight = 2;
+            this.btnSettingsRestoreDefault.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSettingsRestoreDefault.DesignerSelected = false;
+            this.btnSettingsRestoreDefault.DimFactorClick = 0;
+            this.btnSettingsRestoreDefault.DimFactorHover = 0;
+            this.btnSettingsRestoreDefault.FillType = CButtonLib.CButton.eFillType.Solid;
+            resources.ApplyResources(this.btnSettingsRestoreDefault, "btnSettingsRestoreDefault");
+            this.btnSettingsRestoreDefault.ImageIndex = 0;
+            this.btnSettingsRestoreDefault.Name = "btnSettingsRestoreDefault";
+            this.btnSettingsRestoreDefault.ShowFocus = CButtonLib.CButton.eFocus.None;
+            this.btnSettingsRestoreDefault.TextShadowShow = false;
+            this.btnSettingsRestoreDefault.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnSettingsRestoreDefault_ClickButtonArea);
+            // 
+            // bgSettingsConnectionPassword
+            // 
+            this.bgSettingsConnectionPassword.BackColor = System.Drawing.Color.Transparent;
+            this.bgSettingsConnectionPassword.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.bgSettingsConnectionPassword.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.bgSettingsConnectionPassword.Corners.All = 2;
+            this.bgSettingsConnectionPassword.Corners.LowerLeft = 2;
+            this.bgSettingsConnectionPassword.Corners.LowerRight = 2;
+            this.bgSettingsConnectionPassword.Corners.UpperLeft = 2;
+            this.bgSettingsConnectionPassword.Corners.UpperRight = 2;
+            this.bgSettingsConnectionPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.bgSettingsConnectionPassword.DesignerSelected = false;
+            this.bgSettingsConnectionPassword.DimFactorClick = 0;
+            this.bgSettingsConnectionPassword.DimFactorHover = 0;
+            resources.ApplyResources(this.bgSettingsConnectionPassword, "bgSettingsConnectionPassword");
+            this.bgSettingsConnectionPassword.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.bgSettingsConnectionPassword.ImageIndex = 0;
+            this.bgSettingsConnectionPassword.Name = "bgSettingsConnectionPassword";
+            this.bgSettingsConnectionPassword.ShowFocus = CButtonLib.CButton.eFocus.None;
+            this.bgSettingsConnectionPassword.TabStop = false;
+            // 
+            // bgSettingsConnectionUsername
+            // 
+            this.bgSettingsConnectionUsername.BackColor = System.Drawing.Color.Transparent;
+            this.bgSettingsConnectionUsername.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.bgSettingsConnectionUsername.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.bgSettingsConnectionUsername.Corners.All = 2;
+            this.bgSettingsConnectionUsername.Corners.LowerLeft = 2;
+            this.bgSettingsConnectionUsername.Corners.LowerRight = 2;
+            this.bgSettingsConnectionUsername.Corners.UpperLeft = 2;
+            this.bgSettingsConnectionUsername.Corners.UpperRight = 2;
+            this.bgSettingsConnectionUsername.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.bgSettingsConnectionUsername.DesignerSelected = false;
+            this.bgSettingsConnectionUsername.DimFactorClick = 0;
+            this.bgSettingsConnectionUsername.DimFactorHover = 0;
+            resources.ApplyResources(this.bgSettingsConnectionUsername, "bgSettingsConnectionUsername");
+            this.bgSettingsConnectionUsername.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.bgSettingsConnectionUsername.ImageIndex = 0;
+            this.bgSettingsConnectionUsername.Name = "bgSettingsConnectionUsername";
+            this.bgSettingsConnectionUsername.ShowFocus = CButtonLib.CButton.eFocus.None;
+            this.bgSettingsConnectionUsername.TabStop = false;
+            // 
+            // bgSettingsConnectionPort
+            // 
+            this.bgSettingsConnectionPort.BackColor = System.Drawing.Color.Transparent;
+            this.bgSettingsConnectionPort.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.bgSettingsConnectionPort.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.bgSettingsConnectionPort.Corners.All = 2;
+            this.bgSettingsConnectionPort.Corners.LowerLeft = 2;
+            this.bgSettingsConnectionPort.Corners.LowerRight = 2;
+            this.bgSettingsConnectionPort.Corners.UpperLeft = 2;
+            this.bgSettingsConnectionPort.Corners.UpperRight = 2;
+            this.bgSettingsConnectionPort.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.bgSettingsConnectionPort.DesignerSelected = false;
+            this.bgSettingsConnectionPort.DimFactorClick = 0;
+            this.bgSettingsConnectionPort.DimFactorHover = 0;
+            resources.ApplyResources(this.bgSettingsConnectionPort, "bgSettingsConnectionPort");
+            this.bgSettingsConnectionPort.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.bgSettingsConnectionPort.ImageIndex = 0;
+            this.bgSettingsConnectionPort.Name = "bgSettingsConnectionPort";
+            this.bgSettingsConnectionPort.ShowFocus = CButtonLib.CButton.eFocus.None;
+            this.bgSettingsConnectionPort.TabStop = false;
+            // 
+            // bgSettingsConnectionHost
+            // 
+            this.bgSettingsConnectionHost.BackColor = System.Drawing.Color.Transparent;
+            this.bgSettingsConnectionHost.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.bgSettingsConnectionHost.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.bgSettingsConnectionHost.Corners.All = 2;
+            this.bgSettingsConnectionHost.Corners.LowerLeft = 2;
+            this.bgSettingsConnectionHost.Corners.LowerRight = 2;
+            this.bgSettingsConnectionHost.Corners.UpperLeft = 2;
+            this.bgSettingsConnectionHost.Corners.UpperRight = 2;
+            this.bgSettingsConnectionHost.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.bgSettingsConnectionHost.DesignerSelected = false;
+            this.bgSettingsConnectionHost.DimFactorClick = 0;
+            this.bgSettingsConnectionHost.DimFactorHover = 0;
+            resources.ApplyResources(this.bgSettingsConnectionHost, "bgSettingsConnectionHost");
+            this.bgSettingsConnectionHost.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.bgSettingsConnectionHost.ImageIndex = 0;
+            this.bgSettingsConnectionHost.Name = "bgSettingsConnectionHost";
+            this.bgSettingsConnectionHost.ShowFocus = CButtonLib.CButton.eFocus.None;
+            this.bgSettingsConnectionHost.TabStop = false;
             // 
             // tabAbout
             // 
