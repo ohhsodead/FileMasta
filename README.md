@@ -36,7 +36,7 @@ The application is using .NET 4.6.2 WinForms Framework written in C#
 Windows 7 and above (Windows 7, 8, 8.1, 10)
 
 ## Installation
-Download the latest installer [here](https://github.com/invu/opentheatre-app/releases/download/0.2.8.2/OpenTheatreInstaller.exe)
+Download the latest installer [here](https://github.com/invu/opentheatre-app/releases/download/0.2.9.1/OpenTheatreInstaller.exe)
 
 ## Screenshots
 ### Movies
