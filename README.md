@@ -27,7 +27,7 @@ OpenTheatre is a program which allows users to search for Movies, TV Series, Ani
 - Automatic local cache updates
 
 ## Latest build
-OpenTheatre 2.9.0
+OpenTheatre 2.9.1
 
 ## Framework & Backend
 The application is using .NET 4.6.2 WinForms Framework written in C#
