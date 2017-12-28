@@ -242,7 +242,6 @@
             resources.ApplyResources(this.txtMoviesSearchBox, "txtMoviesSearchBox");
             this.txtMoviesSearchBox.ForeColor = System.Drawing.Color.White;
             this.txtMoviesSearchBox.Name = "txtMoviesSearchBox";
-            this.txtMoviesSearchBox.WaterMark = "Search for movies, people or imdb id...";
             this.txtMoviesSearchBox.WaterMarkActiveForeColor = System.Drawing.Color.White;
             this.txtMoviesSearchBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 10.75F);
             this.txtMoviesSearchBox.WaterMarkForeColor = System.Drawing.Color.Silver;
@@ -702,7 +701,6 @@
             resources.ApplyResources(this.txtFilesSearchBox, "txtFilesSearchBox");
             this.txtFilesSearchBox.ForeColor = System.Drawing.Color.White;
             this.txtFilesSearchBox.Name = "txtFilesSearchBox";
-            this.txtFilesSearchBox.WaterMark = "Search for file names, add tags, insert a link ...";
             this.txtFilesSearchBox.WaterMarkActiveForeColor = System.Drawing.Color.White;
             this.txtFilesSearchBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 10.75F);
             this.txtFilesSearchBox.WaterMarkForeColor = System.Drawing.Color.Silver;
@@ -1152,7 +1150,6 @@
             resources.ApplyResources(this.txtBookmarksSearchBox, "txtBookmarksSearchBox");
             this.txtBookmarksSearchBox.ForeColor = System.Drawing.Color.White;
             this.txtBookmarksSearchBox.Name = "txtBookmarksSearchBox";
-            this.txtBookmarksSearchBox.WaterMark = "Search for file names...";
             this.txtBookmarksSearchBox.WaterMarkActiveForeColor = System.Drawing.Color.White;
             this.txtBookmarksSearchBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 10.75F);
             this.txtBookmarksSearchBox.WaterMarkForeColor = System.Drawing.Color.Silver;

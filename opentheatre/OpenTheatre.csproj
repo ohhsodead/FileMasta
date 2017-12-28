@@ -59,16 +59,16 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CButtonLib">
-      <HintPath>..\..\..\- Plugins\CButton\CButton\bin\Debug\CButtonLib.dll</HintPath>
+      <HintPath>..\references\CButtonLib.dll</HintPath>
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="ChreneLib">
-      <HintPath>..\..\..\- Plugins\ChreneLib_DLL\ChreneLib.dll</HintPath>
+      <HintPath>..\references\ChreneLib.dll</HintPath>
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\references\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -316,7 +316,7 @@
     <None Include="Resources\poster-glow.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\UnhandledExceptions\UnhandledExceptions.csproj">
+    <ProjectReference Include="..\UnhandledExceptions\UnhandledExceptions.csproj">
       <Project>{8c34bf91-cce3-47fa-aa32-4b2bb1a6f17a}</Project>
       <Name>UnhandledExceptions</Name>
     </ProjectReference>

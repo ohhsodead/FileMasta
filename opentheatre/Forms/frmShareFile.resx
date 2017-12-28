@@ -874,4 +874,7 @@
         rkJggg==
 </value>
   </data>
+  <data name="titleShareFile.Text" xml:space="preserve">
+    <value>Share File</value>
+  </data>
 </root>

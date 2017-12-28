@@ -155,7 +155,7 @@
   <data name="lblHeaderUserReviews.Size" type="System.Drawing.Size, System.Drawing">
     <value>89, 21</value>
   </data>
-  <data name="lblHeaderUserReviews.Text" xml:space="preserve">
+  <data name="lblHeaderFiles.Text" xml:space="preserve">
     <value>ARCHIVOS</value>
   </data>
   <data name="infoFileSize.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">

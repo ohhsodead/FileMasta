@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ctrlStatus));
             this.components = new System.ComponentModel.Container();
             this.titleStatus = new System.Windows.Forms.Label();
             this.btnRestartApp = new CButtonLib.CButton();
@@ -35,6 +36,7 @@
             // 
             // titleStatus
             // 
+            resources.ApplyResources(this.titleStatus, "titleStatus");
             this.titleStatus.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.titleStatus.BackColor = System.Drawing.Color.Transparent;
@@ -44,11 +46,11 @@
             this.titleStatus.Name = "titleStatus";
             this.titleStatus.Size = new System.Drawing.Size(341, 155);
             this.titleStatus.TabIndex = 0;
-            this.titleStatus.Text = "Unable to connect to the the Internet";
             this.titleStatus.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // btnRestartApp
             // 
+            resources.ApplyResources(this.btnRestartApp, "btnRestartApp");
             this.btnRestartApp.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnRestartApp.BackColor = System.Drawing.Color.Transparent;
             this.btnRestartApp.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(139)))), ((int)(((byte)(202)))));
@@ -71,12 +73,12 @@
             this.btnRestartApp.ShowFocus = CButtonLib.CButton.eFocus.None;
             this.btnRestartApp.Size = new System.Drawing.Size(98, 34);
             this.btnRestartApp.TabIndex = 9;
-            this.btnRestartApp.Text = "Restart";
             this.btnRestartApp.TextShadowShow = false;
             this.btnRestartApp.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnRestartApp_ClickButtonArea);
             // 
             // ctrlStatus
             // 
+            resources.ApplyResources(this, "$this");
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));

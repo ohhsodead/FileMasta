@@ -151,7 +151,7 @@
   <data name="lblHeaderUserReviews.Size" type="System.Drawing.Size, System.Drawing">
     <value>73, 21</value>
   </data>
-  <data name="lblHeaderUserReviews.Text" xml:space="preserve">
+  <data name="lblHeaderFiles.Text" xml:space="preserve">
     <value>DATEIEN</value>
   </data>
   <data name="infoFileSize.Size" type="System.Drawing.Size, System.Drawing">

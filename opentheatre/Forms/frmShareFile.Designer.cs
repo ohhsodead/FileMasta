@@ -46,6 +46,7 @@
             // 
             // titleShareFile
             // 
+            resources.ApplyResources(this.titleShareFile, "titleShareFile");
             this.titleShareFile.AutoSize = true;
             this.titleShareFile.BackColor = System.Drawing.Color.Transparent;
             this.titleShareFile.Font = new System.Drawing.Font("Segoe UI Semibold", 10.5F, System.Drawing.FontStyle.Bold);
@@ -53,7 +54,6 @@
             this.titleShareFile.Name = "titleShareFile";
             this.titleShareFile.Size = new System.Drawing.Size(70, 19);
             this.titleShareFile.TabIndex = 0;
-            this.titleShareFile.Text = "Share File";
             // 
             // imgClose
             // 
@@ -135,6 +135,7 @@
             // 
             // frmShareFile
             // 
+            resources.ApplyResources(this, "$this");
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(20)))), ((int)(((byte)(27)))));
@@ -157,7 +158,6 @@
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Share File";
             ((System.ComponentModel.ISupportInitialize)(this.imgClose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgGooglePlus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgEmail)).EndInit();

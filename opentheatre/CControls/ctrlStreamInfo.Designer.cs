@@ -99,38 +99,38 @@
             // 
             // VLC2ToolStripMenuItem
             // 
+            resources.ApplyResources(this.VLC2ToolStripMenuItem, "VLC2ToolStripMenuItem");
             this.VLC2ToolStripMenuItem.Image = global::OpenTheatre.Properties.Resources.vlc;
             this.VLC2ToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Transparent;
             this.VLC2ToolStripMenuItem.Name = "VLC2ToolStripMenuItem";
             this.VLC2ToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
-            this.VLC2ToolStripMenuItem.Text = "VLC (Built-in)";
             this.VLC2ToolStripMenuItem.Click += new System.EventHandler(this.VLC2ToolStripMenuItem_Click);
             // 
             // WMPToolStripMenuItem
             // 
+            resources.ApplyResources(this.WMPToolStripMenuItem, "WMPToolStripMenuItem");
             this.WMPToolStripMenuItem.Image = global::OpenTheatre.Properties.Resources.windows;
             this.WMPToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Transparent;
             this.WMPToolStripMenuItem.Name = "WMPToolStripMenuItem";
             this.WMPToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
-            this.WMPToolStripMenuItem.Text = "WMP";
             this.WMPToolStripMenuItem.Click += new System.EventHandler(this.WMPToolStripMenuItem_Click);
             // 
             // VLCToolStripMenuItem
             // 
+            resources.ApplyResources(this.VLCToolStripMenuItem, "VLCToolStripMenuItem");
             this.VLCToolStripMenuItem.Image = global::OpenTheatre.Properties.Resources.vlc;
             this.VLCToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Transparent;
             this.VLCToolStripMenuItem.Name = "VLCToolStripMenuItem";
             this.VLCToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
-            this.VLCToolStripMenuItem.Text = "VLC";
             this.VLCToolStripMenuItem.Click += new System.EventHandler(this.VLCToolStripMenuItem_Click);
             // 
             // MPCToolStripMenuItem
             // 
+            resources.ApplyResources(this.MPCToolStripMenuItem, "MPCToolStripMenuItem");
             this.MPCToolStripMenuItem.Image = global::OpenTheatre.Properties.Resources.dots_horizontal;
             this.MPCToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Transparent;
             this.MPCToolStripMenuItem.Name = "MPCToolStripMenuItem";
             this.MPCToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
-            this.MPCToolStripMenuItem.Text = "MPC";
             this.MPCToolStripMenuItem.Click += new System.EventHandler(this.MPCToolStripMenuItem_Click);
             // 
             // imgShare
@@ -146,7 +146,7 @@
             this.imgShare.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imgShare.TabIndex = 19;
             this.imgShare.TabStop = false;
-            this.toolTip1.SetToolTip(this.imgShare, "Share File");
+            this.toolTip1.SetToolTip(this.imgShare, resources.GetString("imgShare.ToolTip"));
             this.imgShare.Click += new System.EventHandler(this.imgShare_Click);
             // 
             // imgCopyURL
@@ -162,7 +162,7 @@
             this.imgCopyURL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imgCopyURL.TabIndex = 18;
             this.imgCopyURL.TabStop = false;
-            this.toolTip1.SetToolTip(this.imgCopyURL, "Copy URL");
+            this.toolTip1.SetToolTip(this.imgCopyURL, resources.GetString("imgCopyURL.ToolTip"));
             this.imgCopyURL.Click += new System.EventHandler(this.imgCopyURL_Click);
             // 
             // imgReportBroken
@@ -178,7 +178,7 @@
             this.imgReportBroken.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imgReportBroken.TabIndex = 17;
             this.imgReportBroken.TabStop = false;
-            this.toolTip1.SetToolTip(this.imgReportBroken, "Report Broken");
+            this.toolTip1.SetToolTip(this.imgReportBroken, resources.GetString("imgReportBroken.ToolTip"));
             this.imgReportBroken.Click += new System.EventHandler(this.imgReportBroken_Click);
             // 
             // imgWatch
@@ -194,7 +194,7 @@
             this.imgWatch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imgWatch.TabIndex = 16;
             this.imgWatch.TabStop = false;
-            this.toolTip1.SetToolTip(this.imgWatch, "Watch Now");
+            this.toolTip1.SetToolTip(this.imgWatch, resources.GetString("imgWatch.ToolTip"));
             this.imgWatch.Click += new System.EventHandler(this.imgWatch_Click);
             // 
             // imgMagnet
@@ -210,7 +210,7 @@
             this.imgMagnet.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imgMagnet.TabIndex = 20;
             this.imgMagnet.TabStop = false;
-            this.toolTip1.SetToolTip(this.imgMagnet, "Open Magnet");
+            this.toolTip1.SetToolTip(this.imgMagnet, resources.GetString("imgMagnet.ToolTip"));
             this.imgMagnet.Visible = false;
             this.imgMagnet.Click += new System.EventHandler(this.imgMagnet_Click);
             // 
@@ -227,7 +227,7 @@
             this.imgDownload.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imgDownload.TabIndex = 15;
             this.imgDownload.TabStop = false;
-            this.toolTip1.SetToolTip(this.imgDownload, "Download Now");
+            this.toolTip1.SetToolTip(this.imgDownload, resources.GetString("imgDownload.ToolTip"));
             this.imgDownload.Click += new System.EventHandler(this.imgDownload_Click);
             // 
             // imgAddToBookmarks
@@ -242,7 +242,7 @@
             this.imgAddToBookmarks.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imgAddToBookmarks.TabIndex = 14;
             this.imgAddToBookmarks.TabStop = false;
-            this.toolTip1.SetToolTip(this.imgAddToBookmarks, "Add to Bookmarks");
+            this.toolTip1.SetToolTip(this.imgAddToBookmarks, resources.GetString("imgAddToBookmarks.ToolTip"));
             this.imgAddToBookmarks.Click += new System.EventHandler(this.imgAddToBookmarks_Click);
             // 
             // infoFileSize
@@ -294,6 +294,7 @@
             // 
             // ctrlStreamInfo
             // 
+            resources.ApplyResources(this, "$this");
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;

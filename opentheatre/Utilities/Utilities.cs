@@ -60,45 +60,47 @@ namespace Utilities
         // return list that contains file
         public static string getContainingListOfURL(string fileUrl)
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOpenTheatre));
+
             foreach (string file in frmOpenTheatre.dataMovies)
             {
                 var data = OMDbEntity.FromJson(file);
-                if (data.Sources.Contains(fileUrl)) { return "Movie"; }
+                if (data.Sources.Contains(fileUrl)) { return resources.GetString("cmboBoxBookmarksType.Items1"); }
             }
             foreach (string file in frmOpenTheatre.dataFilesMovies)
             {
                 var data = DatabaseFilesEntity.FromJson(file);
-                if (data.URL == fileUrl) { return "Movie"; }
+                if (data.URL == fileUrl) { return resources.GetString("cmboBoxBookmarksType.Items1"); }
             }
             foreach (string file in frmOpenTheatre.dataFilesSeries)
             {
                 var data = DatabaseFilesEntity.FromJson(file);
-                if (data.URL == fileUrl) { return "Episode"; }
+                if (data.URL == fileUrl) { return resources.GetString("cmboBoxBookmarksType.Items2"); }
             }
             foreach (string file in frmOpenTheatre.dataFilesAnime)
             {
                 var data = DatabaseFilesEntity.FromJson(file);
-                if (data.URL == fileUrl) { return "Anime"; }
+                if (data.URL == fileUrl) { return resources.GetString("cmboBoxBookmarksType.Items3"); }
             }
             foreach (string file in frmOpenTheatre.dataFilesSubtitles)
             {
                 var data = DatabaseFilesEntity.FromJson(file);
-                if (data.URL == fileUrl) { return "Subtitle"; }
+                if (data.URL == fileUrl) { return resources.GetString("cmboBoxBookmarksType.Items4"); }
             }
             foreach (string file in frmOpenTheatre.dataFilesTorrents)
             {
                 var data = DatabaseFilesEntity.FromJson(file);
-                if (data.URL == fileUrl) { return "Torrent"; }
+                if (data.URL == fileUrl) { return resources.GetString("cmboBoxBookmarksType.Items5"); }
             }
             foreach (string file in frmOpenTheatre.dataFilesArchives)
             {
                 var data = DatabaseFilesEntity.FromJson(file);
-                if (data.URL == fileUrl) { return "Archive"; }
+                if (data.URL == fileUrl) { return resources.GetString("cmboBoxBookmarksType.Items6"); }
             }
             foreach (string file in frmOpenTheatre.dataFilesLocal)
             {
                 var data = DatabaseFilesEntity.FromJson(file);
-                if (data.URL == fileUrl) { return "Local"; }
+                if (data.URL == fileUrl) { return resources.GetString("cmboBoxBookmarksType.Items7"); }
             }
 
             return "null";

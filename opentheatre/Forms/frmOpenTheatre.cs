@@ -65,7 +65,7 @@ namespace OpenTheatre
         public static string linkFilesArchives = "https://dl.dropbox.com/s/el93946do0og2gg/open-archives-files.json?dl=0";
 
         // Updates
-        public static string linkLatestVersion = "https://raw.githubusercontent.com/invu/opentheatre-app/master/assets/opentheatre-version.txt";
+        public static string linkLatestVersion = "https://raw.githubusercontent.com/invu/opentheatre-app/master/assets/latest-version.txt";
         public static string pathInstallerFileName = "OpenTheatreInstaller.exe";
         public static string pathDownloadInstaller = KnownFolders.GetPath(KnownFolder.Downloads) + @"\" + pathInstallerFileName;
         public static string getLatestInstaller(Version newVersion) { return "https://github.com/invu/opentheatre-app/releases/download/" + newVersion.ToString() + "/" + pathInstallerFileName; }
@@ -812,9 +812,10 @@ namespace OpenTheatre
                 }
                 else
                 {
+                    ComponentResourceManager resources = new ComponentResourceManager(typeof(frmOpenTheatre));
                     cmboBoxFilesSort.SelectedIndex = 0; dataGridFiles.Rows.Clear();
-                    cmboBoxFilesHost.Items.Clear(); cmboBoxFilesHost.Items.Add("Any");
-                    cmboBoxFilesFormat.Items.Clear(); cmboBoxFilesFormat.Items.Add("Any");
+                    cmboBoxFilesHost.Items.Clear(); cmboBoxFilesHost.Items.Add(resources.GetString("cmboBoxFilesHost.Items"));
+                    cmboBoxFilesFormat.Items.Clear(); cmboBoxFilesFormat.Items.Add(resources.GetString("cmboBoxFilesFormat.Items"));
 
                     foreach (string jsonData in data)
                     {

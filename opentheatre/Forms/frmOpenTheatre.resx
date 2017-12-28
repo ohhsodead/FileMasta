@@ -1161,33 +1161,33 @@
   <data name="dataGridFiles.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
-  <metadata name="columnFilesFileName.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <data name="columnFilesFileName.UserAddedColumn" type="System.Boolean, mscorlib">
     <value>True</value>
-  </metadata>
+  </data>
   <data name="columnFilesFileName.HeaderText" xml:space="preserve">
     <value>File Name</value>
   </data>
-  <metadata name="columnFilesFormat.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <data name="columnFilesFormat.UserAddedColumn" type="System.Boolean, mscorlib">
     <value>True</value>
-  </metadata>
+  </data>
   <data name="columnFilesFormat.HeaderText" xml:space="preserve">
     <value>Format</value>
   </data>
   <data name="columnFilesFormat.Width" type="System.Int32, mscorlib">
     <value>76</value>
   </data>
-  <metadata name="columnFilesHost.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <data name="columnFilesHost.UserAddedColumn" type="System.Boolean, mscorlib">
     <value>True</value>
-  </metadata>
+  </data>
   <data name="columnFilesHost.HeaderText" xml:space="preserve">
     <value>Host</value>
   </data>
   <data name="columnFilesHost.Width" type="System.Int32, mscorlib">
     <value>64</value>
   </data>
-  <metadata name="columnFilesURL.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <data name="columnFilesURL.UserAddedColumn" type="System.Boolean, mscorlib">
     <value>True</value>
-  </metadata>
+  </data>
   <data name="columnFilesURL.HeaderText" xml:space="preserve">
     <value>URL</value>
   </data>
@@ -1901,42 +1901,42 @@
   <data name="dataGridBookmarks.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
-  <metadata name="columnBookmarksType.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <data name="columnBookmarksType.UserAddedColumn" type="System.Boolean, mscorlib">
     <value>True</value>
-  </metadata>
+  </data>
   <data name="columnBookmarksType.HeaderText" xml:space="preserve">
     <value>Type</value>
   </data>
   <data name="columnBookmarksType.Width" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
-  <metadata name="columnBookmarksFileName.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <data name="columnBookmarksFileName.UserAddedColumn" type="System.Boolean, mscorlib">
     <value>True</value>
-  </metadata>
+  </data>
   <data name="columnBookmarksFileName.HeaderText" xml:space="preserve">
     <value>File Name</value>
   </data>
-  <metadata name="columnBookmarksFormat.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <data name="columnBookmarksFormat.UserAddedColumn" type="System.Boolean, mscorlib">
     <value>True</value>
-  </metadata>
+  </data>
   <data name="columnBookmarksFormat.HeaderText" xml:space="preserve">
     <value>Format</value>
   </data>
   <data name="columnBookmarksFormat.Width" type="System.Int32, mscorlib">
     <value>76</value>
   </data>
-  <metadata name="columnBookmarksHost.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <data name="columnBookmarksHost.UserAddedColumn" type="System.Boolean, mscorlib">
     <value>True</value>
-  </metadata>
+  </data>
   <data name="columnBookmarksHost.HeaderText" xml:space="preserve">
     <value>Host</value>
   </data>
   <data name="columnBookmarksHost.Width" type="System.Int32, mscorlib">
     <value>64</value>
   </data>
-  <metadata name="columnBookmarksURL.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <data name="columnBookmarksURL.UserAddedColumn" type="System.Boolean, mscorlib">
     <value>True</value>
-  </metadata>
+  </data>
   <data name="columnBookmarksURL.HeaderText" xml:space="preserve">
     <value>URL</value>
   </data>
@@ -6789,12 +6789,12 @@ If you've got any comments, queries or suggestions then simply open an issue - w
   <data name="&gt;&gt;imgSpinner.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <data name="$this.Localizable" type="System.Boolean, mscorlib">
     <value>True</value>
-  </metadata>
-  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  </data>
+  <data name="$this.TrayHeight" type="System.Int32, mscorlib">
     <value>25</value>
-  </metadata>
+  </data>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
@@ -7628,5 +7628,14 @@ If you've got any comments, queries or suggestions then simply open an issue - w
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="txtBookmarksSearchBox.WaterMark" xml:space="preserve">
+    <value>Search for file names...</value>
+  </data>
+  <data name="txtFilesSearchBox.WaterMark" xml:space="preserve">
+    <value>Search for file names, add tags, insert a link...</value>
+  </data>
+  <data name="txtMoviesSearchBox.WaterMark" xml:space="preserve">
+    <value>Search for movies, people or IMDb id...</value>
   </data>
 </root>

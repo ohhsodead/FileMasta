@@ -117,13 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="contextFileName.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>160, 17</value>
-  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="contextFileName.TrayLocation" type="System.Drawing.Point, System.Drawing">
+    <value>17, 17</value>
+  </data>
+  <data name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing">
+    <value>160, 17</value>
+  </data>
   <data name="imgAddToBookmarks.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
@@ -137,10 +137,44 @@
         0yf3lkxGScqHjQAAAABJRU5ErkJggg==
 </value>
   </data>
-  <metadata name="timerUpdateInfo.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <data name="timerUpdateInfo.TrayLocation" type="System.Drawing.Point, System.Drawing">
     <value>257, 19</value>
-  </metadata>
-  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="$this.TrayHeight" type="System.Int32, mscorlib">
     <value>25</value>
-  </metadata>
+  </data>
+  <data name="imgAddToBookmarks.ToolTip" xml:space="preserve">
+    <value>Add to Bookmarks</value>
+  </data>
+  <data name="imgCopyURL.ToolTip" xml:space="preserve">
+    <value>Copy URL</value>
+  </data>
+  <data name="imgDownload.ToolTip" xml:space="preserve">
+    <value>Download Now</value>
+  </data>
+  <data name="imgMagnet.ToolTip" xml:space="preserve">
+    <value>Open Magnet</value>
+  </data>
+  <data name="imgReportBroken.ToolTip" xml:space="preserve">
+    <value>Report Broken</value>
+  </data>
+  <data name="imgShare.ToolTip" xml:space="preserve">
+    <value>Share File</value>
+  </data>
+  <data name="imgWatch.ToolTip" xml:space="preserve">
+    <value>Watch Now</value>
+  </data>
+  <data name="MPCToolStripMenuItem.Text" xml:space="preserve">
+    <value>MPC</value>
+  </data>
+  <data name="VLC2ToolStripMenuItem.Text" xml:space="preserve">
+    <value>VLC (Built-in)</value>
+  </data>
+  <data name="VLCToolStripMenuItem.Text" xml:space="preserve">
+    <value>VLC</value>
+  </data>
+  <data name="WMPToolStripMenuItem.Text" xml:space="preserve">
+    <value>WMP</value>
+  </data>
 </root>
