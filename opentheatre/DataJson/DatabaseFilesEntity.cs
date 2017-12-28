@@ -9,6 +9,12 @@
 
         [JsonProperty("Type")]
         public string Type { get; set; }
+        
+        [JsonProperty("Size")]
+        public string Size { get; set; }
+
+        [JsonProperty("DateAdded")]
+        public string DateAdded { get; set; }
 
         [JsonProperty("Host")]
         public string Host { get; set; }

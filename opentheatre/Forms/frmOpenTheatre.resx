@@ -1161,12 +1161,6 @@
   <data name="dataGridFiles.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
-  <metadata name="columnFilesFileName.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="columnFilesFileName.HeaderText" xml:space="preserve">
-    <value>File Name</value>
-  </data>
   <metadata name="columnFilesFormat.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -1175,6 +1169,30 @@
   </data>
   <data name="columnFilesFormat.Width" type="System.Int32, mscorlib">
     <value>76</value>
+  </data>
+  <metadata name="columnFilesFileName.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="columnFilesFileName.HeaderText" xml:space="preserve">
+    <value>File Name</value>
+  </data>
+  <metadata name="columnFilesSize.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="columnFilesSize.HeaderText" xml:space="preserve">
+    <value>Size</value>
+  </data>
+  <data name="columnFilesSize.Width" type="System.Int32, mscorlib">
+    <value>60</value>
+  </data>
+  <metadata name="columnFilesDateAdded.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="columnFilesDateAdded.HeaderText" xml:space="preserve">
+    <value>Date Added</value>
+  </data>
+  <data name="columnFilesDateAdded.Width" type="System.Int32, mscorlib">
+    <value>101</value>
   </data>
   <metadata name="columnFilesHost.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -7569,30 +7587,6 @@ If you've got any comments, queries or suggestions then simply open an issue - w
   <data name="$this.Text" xml:space="preserve">
     <value>OpenTheatre</value>
   </data>
-  <data name="&gt;&gt;columnFilesFileName.Name" xml:space="preserve">
-    <value>columnFilesFileName</value>
-  </data>
-  <data name="&gt;&gt;columnFilesFileName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;columnFilesFormat.Name" xml:space="preserve">
-    <value>columnFilesFormat</value>
-  </data>
-  <data name="&gt;&gt;columnFilesFormat.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;columnFilesHost.Name" xml:space="preserve">
-    <value>columnFilesHost</value>
-  </data>
-  <data name="&gt;&gt;columnFilesHost.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;columnFilesURL.Name" xml:space="preserve">
-    <value>columnFilesURL</value>
-  </data>
-  <data name="&gt;&gt;columnFilesURL.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;columnBookmarksType.Name" xml:space="preserve">
     <value>columnBookmarksType</value>
   </data>
@@ -7621,6 +7615,42 @@ If you've got any comments, queries or suggestions then simply open an issue - w
     <value>columnBookmarksURL</value>
   </data>
   <data name="&gt;&gt;columnBookmarksURL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;columnFilesFormat.Name" xml:space="preserve">
+    <value>columnFilesFormat</value>
+  </data>
+  <data name="&gt;&gt;columnFilesFormat.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;columnFilesFileName.Name" xml:space="preserve">
+    <value>columnFilesFileName</value>
+  </data>
+  <data name="&gt;&gt;columnFilesFileName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;columnFilesSize.Name" xml:space="preserve">
+    <value>columnFilesSize</value>
+  </data>
+  <data name="&gt;&gt;columnFilesSize.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;columnFilesDateAdded.Name" xml:space="preserve">
+    <value>columnFilesDateAdded</value>
+  </data>
+  <data name="&gt;&gt;columnFilesDateAdded.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;columnFilesHost.Name" xml:space="preserve">
+    <value>columnFilesHost</value>
+  </data>
+  <data name="&gt;&gt;columnFilesHost.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;columnFilesURL.Name" xml:space="preserve">
+    <value>columnFilesURL</value>
+  </data>
+  <data name="&gt;&gt;columnFilesURL.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

@@ -82,18 +82,6 @@ namespace OpenTheatre
             if (e.CloseReason == CloseReason.UserClosing || e.CloseReason == CloseReason.ApplicationExitCall) { Properties.Settings.Default.Save(); if (Properties.Settings.Default.clearDataOnClose == true) { if (Directory.Exists(pathData)) { Directory.Delete(pathData, true); } } }
         }
 
-        // Drag and Drop local files
-        private void frmOpenTheatre_DragEnter(object sender, DragEventArgs e)
-        {
-            if (e.Data.GetDataPresent(DataFormats.FileDrop)) e.Effect = DragDropEffects.Copy;
-        }
-
-        private void frmOpenTheatre_DragDrop(object sender, DragEventArgs e)
-        {
-            string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
-            foreach (string file in files) showFileDetails(file, true);
-        }
-
         private void frmOpenTheatre_SizeChanged(object sender, EventArgs e)
         {
             Refresh();
@@ -753,8 +741,8 @@ namespace OpenTheatre
 
         private void dataGridFiles_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dataGridFiles.CurrentRow.Cells[2].Value.ToString() == rm.GetString("local")) { showFileDetails(dataGridFiles.CurrentRow.Cells[3].Value.ToString(), true); }
-            else { showFileDetails(dataGridFiles.CurrentRow.Cells[3].Value.ToString(), false); }
+            if (selectedFiles == "Local") { showFileDetails(dataGridFiles.CurrentRow.Cells[3].Value.ToString(), true, dataGridFiles.CurrentRow.Cells[2].Value.ToString(), dataGridFiles.CurrentRow.Cells[3].Value.ToString()); }
+            else { showFileDetails(dataGridFiles.CurrentRow.Cells[5].Value.ToString(), false, dataGridFiles.CurrentRow.Cells[2].Value.ToString(), dataGridFiles.CurrentRow.Cells[3].Value.ToString()); }
         }
 
         public void showFiles()
@@ -814,7 +802,7 @@ namespace OpenTheatre
                     {
                         var dataJson = DatabaseFilesEntity.FromJson(jsonData);
 
-                        dataGridFiles.Rows.Add(dataJson.Title, dataJson.Type, dataJson.Host, dataJson.URL);
+                        dataGridFiles.Rows.Add(dataJson.Type, dataJson.Title, dataJson.Size, dataJson.DateAdded, dataJson.Host, dataJson.URL);
                         if (!(cmboBoxFilesFormat.Items.Contains(dataJson.Type))) { cmboBoxFilesFormat.Items.Add(dataJson.Type); }
                         if (!(cmboBoxFilesHost.Items.Contains(dataJson.Host))) { cmboBoxFilesHost.Items.Add(dataJson.Host); }
                     }
@@ -851,7 +839,7 @@ namespace OpenTheatre
             }
         }
 
-        public void showFileDetails(string webFile, bool isLocal)
+        public void showFileDetails(string webFile, bool isLocal, string fileSize = "", string fileDateAdded = "")
         {
             imgSpinner.Visible = true;
 
@@ -947,7 +935,7 @@ namespace OpenTheatre
                 MovieDetails.imgIMDb.Visible = false;
             }
 
-            MovieDetails.addStream(webFile, isLocal, false, MovieDetails.panelFiles);
+            MovieDetails.addStream(webFile, isLocal, false, MovieDetails.panelFiles, fileSize, fileDateAdded);
 
             MovieDetails.Dock = DockStyle.Fill;
 

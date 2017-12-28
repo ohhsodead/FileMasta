@@ -39,34 +39,8 @@ namespace OpenTheatre
                 imgWatch.Visible = false;
                 imgMagnet.Visible = true;
             }
-
-            if (isLocal == false)
-            {
-                try
-                {
-                    WebRequest req = WebRequest.Create(infoFileURL);
-                    req.Method = "HEAD";
-                    req.Timeout = 1500;
-                    using (HttpWebResponse fileResponse = (HttpWebResponse)req.GetResponse())
-                    {
-                        DateTime fileModifiedTime = fileResponse.LastModified;
-                        if (fileModifiedTime != null)
-                        {
-                            infoFileAge.Text = UtilityTools.getTimeAgo(fileModifiedTime);
-                        }
-                        else { infoFileAge.Text = "-"; }
-
-                        int ContentLength;
-                        if (int.TryParse(fileResponse.Headers.Get("Content-Length"), out ContentLength))
-                        {
-                            infoFileSize.Text = UtilityTools.ToFileSize(Convert.ToDouble(ContentLength));
-                        }
-                        else { infoFileSize.Text = "-"; }
-                    }
-                }
-                catch { infoFileSize.Text = "-"; infoFileAge.Text = "-"; }
-            }
-            else { infoFileHost.Text = frmOpenTheatre.rm.GetString("local"); infoFileSize.Text = UtilityTools.ToFileSize(new FileInfo(infoFileURL).Length); infoFileAge.Text = UtilityTools.getTimeAgo(File.GetLastWriteTime(infoFileURL)); imgDownload.Visible = false; imgReportBroken.Visible = false; imgShare.Visible = false; imgCopyURL.Visible = false; }
+            else if (isLocal == true)
+            { infoFileHost.Text = frmOpenTheatre.rm.GetString("local"); infoFileSize.Text = UtilityTools.ToFileSize(new FileInfo(infoFileURL).Length); infoFileAge.Text = UtilityTools.getTimeAgo(File.GetLastWriteTime(infoFileURL)); imgDownload.Visible = false; imgReportBroken.Visible = false; imgShare.Visible = false; imgCopyURL.Visible = false; }
 
             // Checks for exact file name of a subtitle file that matches the one being loaded (e.g. Media File Name: 'Jigsaw.2017.mp4' > Subtitle File Name: 'Jigsaw.2017.srt' will be loaded)
             if (infoFileSubtitles == null)

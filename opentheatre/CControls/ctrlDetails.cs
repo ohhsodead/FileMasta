@@ -91,13 +91,15 @@ namespace OpenTheatre
             Parent.Controls.Clear();
         }
 
-        public void addStream(string URL, bool isLocal, bool isTorrent, Panel toPanel, string torrentName = "", string quality = "")
+        public void addStream(string URL, bool isLocal, bool isTorrent, Panel toPanel, string fileSize = "", string fileAge = "", string torrentName = "", string quality = "")
         {
             if (isLocal == false && isTorrent == false)
             {
                 ctrlStreamInfo ctrlInfo = new ctrlStreamInfo();
                 ctrlInfo.infoFileURL = new Uri(URL).AbsoluteUri;
                 ctrlInfo.infoFileHost.Text = new Uri(URL).Host.Replace("www.", "");
+                ctrlInfo.infoFileSize.Text = fileSize;
+                ctrlInfo.infoFileAge.Text = fileAge;
                 ctrlInfo.infoFileName.Text = Path.GetFileName(new Uri(URL).LocalPath);
                 toPanel.Controls.Add(ctrlInfo);
             }
@@ -106,6 +108,8 @@ namespace OpenTheatre
                 ctrlStreamInfo ctrlInfo = new ctrlStreamInfo();
                 ctrlInfo.infoFileURL = URL;
                 ctrlInfo.infoFileHost.Text = new Uri(URL).Host.Replace("www.", "");
+                ctrlInfo.infoFileSize.Text = fileSize;
+                ctrlInfo.infoFileAge.Text = fileAge;
                 ctrlInfo.infoFileName.Text = Path.GetFileName(new Uri(URL).LocalPath);
                 ctrlInfo.isLocal = isLocal;
                 toPanel.Controls.Add(ctrlInfo);
@@ -125,6 +129,8 @@ namespace OpenTheatre
                     ctrlInfo.isTorrent = true;
                     ctrlInfo.infoFileURL = new Uri(URL).AbsoluteUri;
                     ctrlInfo.infoFileHost.Text = "YIFY";
+                    ctrlInfo.infoFileSize.Text = fileSize;
+                    ctrlInfo.infoFileAge.Text = fileAge;
                     ctrlInfo.infoFileName.Text = infoTitle.Text + " (" + infoYear.Text + ") [" + quality + "] [" + "YIFY" + "].torrent";
                     toPanel.Controls.Add(ctrlInfo);
                 }
@@ -136,6 +142,8 @@ namespace OpenTheatre
                     ctrlInfo.isTorrent = true;
                     ctrlInfo.infoFileURL = new Uri(URL).AbsoluteUri;
                     ctrlInfo.infoFileHost.Text = "Popcorn Time";
+                    ctrlInfo.infoFileSize.Text = fileSize;
+                    ctrlInfo.infoFileAge.Text = fileAge;
                     ctrlInfo.infoFileName.Text = infoTitle.Text + " (" + infoYear.Text + ") [" + quality + "] [" + "POPCORN TIME" + "].torrent";
                     toPanel.Controls.Add(ctrlInfo);
                 }
