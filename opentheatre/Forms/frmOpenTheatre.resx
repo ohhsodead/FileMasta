@@ -7638,4 +7638,7 @@ If you've got any comments, queries or suggestions then simply open an issue - w
   <data name="txtMoviesSearchBox.WaterMark" xml:space="preserve">
     <value>Search for movies, people or IMDb id...</value>
   </data>
+  <data name="cmboboxSettingsLanguage.Items4" xml:space="preserve">
+    <value>cz</value>
+  </data>
 </root>

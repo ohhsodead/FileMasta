@@ -1380,7 +1380,8 @@
             resources.GetString("cmboboxSettingsLanguage.Items"),
             resources.GetString("cmboboxSettingsLanguage.Items1"),
             resources.GetString("cmboboxSettingsLanguage.Items2"),
-            resources.GetString("cmboboxSettingsLanguage.Items3")});
+            resources.GetString("cmboboxSettingsLanguage.Items3"),
+            resources.GetString("cmboboxSettingsLanguage.Items4")});
             this.cmboboxSettingsLanguage.Name = "cmboboxSettingsLanguage";
             this.cmboboxSettingsLanguage.TabStop = false;
             this.cmboboxSettingsLanguage.SelectedIndexChanged += new System.EventHandler(this.cmboboxGeneralSettingsLanguage_SelectedIndexChanged);
