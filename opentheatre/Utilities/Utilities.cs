@@ -65,20 +65,20 @@ namespace Utilities
                 var data = OMDbEntity.FromJson(file);
                 if (data.Sources.Contains(fileUrl)) { return "Movie"; }
             }
-            foreach (string file in frmOpenTheatre.dataFilesMovies)
+            foreach (string file in frmOpenTheatre.dataFilesVideo)
             {
                 var data = DatabaseFilesEntity.FromJson(file);
-                if (data.URL == fileUrl) { return "Movie"; }
+                if (data.URL == fileUrl) { return "Video"; }
             }
-            foreach (string file in frmOpenTheatre.dataFilesSeries)
+            foreach (string file in frmOpenTheatre.dataFilesAudio)
             {
                 var data = DatabaseFilesEntity.FromJson(file);
-                if (data.URL == fileUrl) { return "Episode"; }
+                if (data.URL == fileUrl) { return "Audio"; }
             }
-            foreach (string file in frmOpenTheatre.dataFilesAnime)
+            foreach (string file in frmOpenTheatre.dataFilesEbooks)
             {
                 var data = DatabaseFilesEntity.FromJson(file);
-                if (data.URL == fileUrl) { return "Anime"; }
+                if (data.URL == fileUrl) { return "Ebook"; }
             }
             foreach (string file in frmOpenTheatre.dataFilesSubtitles)
             {

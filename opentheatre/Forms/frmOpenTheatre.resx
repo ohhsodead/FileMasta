@@ -1254,101 +1254,101 @@
   <data name="&gt;&gt;titleFilesSplitter.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="titleFilesMovies.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="titleFilesVideo.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9.75pt</value>
   </data>
-  <data name="titleFilesMovies.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="titleFilesVideo.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 63</value>
   </data>
-  <data name="titleFilesMovies.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="titleFilesVideo.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 3, 0, 3</value>
   </data>
-  <data name="titleFilesMovies.Size" type="System.Drawing.Size, System.Drawing">
-    <value>68, 27</value>
+  <data name="titleFilesVideo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>62, 27</value>
   </data>
-  <data name="titleFilesMovies.TabIndex" type="System.Int32, mscorlib">
+  <data name="titleFilesVideo.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="titleFilesMovies.Text" xml:space="preserve">
-    <value>Movies</value>
+  <data name="titleFilesVideo.Text" xml:space="preserve">
+    <value>Video</value>
   </data>
-  <data name="&gt;&gt;titleFilesMovies.Name" xml:space="preserve">
-    <value>titleFilesMovies</value>
+  <data name="&gt;&gt;titleFilesVideo.Name" xml:space="preserve">
+    <value>titleFilesVideo</value>
   </data>
-  <data name="&gt;&gt;titleFilesMovies.Type" xml:space="preserve">
+  <data name="&gt;&gt;titleFilesVideo.Type" xml:space="preserve">
     <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;titleFilesMovies.Parent" xml:space="preserve">
+  <data name="&gt;&gt;titleFilesVideo.Parent" xml:space="preserve">
     <value>tabFiles</value>
   </data>
-  <data name="&gt;&gt;titleFilesMovies.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;titleFilesVideo.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="titleFilesAnime.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="titleFilesEbooks.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9.75pt</value>
   </data>
-  <data name="titleFilesAnime.Location" type="System.Drawing.Point, System.Drawing">
-    <value>141, 63</value>
+  <data name="titleFilesEbooks.Location" type="System.Drawing.Point, System.Drawing">
+    <value>135, 63</value>
   </data>
-  <data name="titleFilesAnime.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="titleFilesEbooks.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 3, 0, 3</value>
   </data>
-  <data name="titleFilesAnime.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 27</value>
+  <data name="titleFilesEbooks.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 27</value>
   </data>
-  <data name="titleFilesAnime.TabIndex" type="System.Int32, mscorlib">
+  <data name="titleFilesEbooks.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
-  <data name="titleFilesAnime.Text" xml:space="preserve">
-    <value>Anime</value>
+  <data name="titleFilesEbooks.Text" xml:space="preserve">
+    <value>eBooks</value>
   </data>
-  <data name="&gt;&gt;titleFilesAnime.Name" xml:space="preserve">
-    <value>titleFilesAnime</value>
+  <data name="&gt;&gt;titleFilesEbooks.Name" xml:space="preserve">
+    <value>titleFilesEbooks</value>
   </data>
-  <data name="&gt;&gt;titleFilesAnime.Type" xml:space="preserve">
+  <data name="&gt;&gt;titleFilesEbooks.Type" xml:space="preserve">
     <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;titleFilesAnime.Parent" xml:space="preserve">
+  <data name="&gt;&gt;titleFilesEbooks.Parent" xml:space="preserve">
     <value>tabFiles</value>
   </data>
-  <data name="&gt;&gt;titleFilesAnime.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;titleFilesEbooks.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="titleFilesSeries.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="titleFilesAudio.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9.75pt</value>
   </data>
-  <data name="titleFilesSeries.Location" type="System.Drawing.Point, System.Drawing">
-    <value>81, 63</value>
+  <data name="titleFilesAudio.Location" type="System.Drawing.Point, System.Drawing">
+    <value>75, 63</value>
   </data>
-  <data name="titleFilesSeries.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="titleFilesAudio.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 3, 0, 3</value>
   </data>
-  <data name="titleFilesSeries.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="titleFilesAudio.Size" type="System.Drawing.Size, System.Drawing">
     <value>60, 27</value>
   </data>
-  <data name="titleFilesSeries.TabIndex" type="System.Int32, mscorlib">
+  <data name="titleFilesAudio.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
-  <data name="titleFilesSeries.Text" xml:space="preserve">
-    <value>Series</value>
+  <data name="titleFilesAudio.Text" xml:space="preserve">
+    <value>Audio</value>
   </data>
-  <data name="&gt;&gt;titleFilesSeries.Name" xml:space="preserve">
-    <value>titleFilesSeries</value>
+  <data name="&gt;&gt;titleFilesAudio.Name" xml:space="preserve">
+    <value>titleFilesAudio</value>
   </data>
-  <data name="&gt;&gt;titleFilesSeries.Type" xml:space="preserve">
+  <data name="&gt;&gt;titleFilesAudio.Type" xml:space="preserve">
     <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;titleFilesSeries.Parent" xml:space="preserve">
+  <data name="&gt;&gt;titleFilesAudio.Parent" xml:space="preserve">
     <value>tabFiles</value>
   </data>
-  <data name="&gt;&gt;titleFilesSeries.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;titleFilesAudio.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
   <data name="titleFilesSubtitles.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9.75pt</value>
   </data>
   <data name="titleFilesSubtitles.Location" type="System.Drawing.Point, System.Drawing">
-    <value>201, 63</value>
+    <value>199, 63</value>
   </data>
   <data name="titleFilesSubtitles.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 3, 0, 3</value>
@@ -1378,7 +1378,7 @@
     <value>Segoe UI, 9.75pt</value>
   </data>
   <data name="titleFilesTorrents.Location" type="System.Drawing.Point, System.Drawing">
-    <value>273, 63</value>
+    <value>271, 63</value>
   </data>
   <data name="titleFilesTorrents.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 3, 0, 3</value>
@@ -1408,7 +1408,7 @@
     <value>Segoe UI, 9.75pt</value>
   </data>
   <data name="titleFilesArchives.Location" type="System.Drawing.Point, System.Drawing">
-    <value>347, 63</value>
+    <value>345, 63</value>
   </data>
   <data name="titleFilesArchives.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 3, 0, 3</value>
@@ -1438,7 +1438,7 @@
     <value>Segoe UI, 9.75pt</value>
   </data>
   <data name="titleFilesLocal.Location" type="System.Drawing.Point, System.Drawing">
-    <value>417, 63</value>
+    <value>415, 63</value>
   </data>
   <data name="titleFilesLocal.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 3, 0, 3</value>

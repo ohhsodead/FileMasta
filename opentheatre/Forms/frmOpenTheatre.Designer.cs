@@ -77,9 +77,9 @@
             this.columnFilesHost = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnFilesURL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.titleFilesSplitter = new CButtonLib.CButton();
-            this.titleFilesMovies = new CButtonLib.CButton();
-            this.titleFilesAnime = new CButtonLib.CButton();
-            this.titleFilesSeries = new CButtonLib.CButton();
+            this.titleFilesVideo = new CButtonLib.CButton();
+            this.titleFilesEbooks = new CButtonLib.CButton();
+            this.titleFilesAudio = new CButtonLib.CButton();
             this.titleFilesSubtitles = new CButtonLib.CButton();
             this.titleFilesTorrents = new CButtonLib.CButton();
             this.titleFilesArchives = new CButtonLib.CButton();
@@ -475,9 +475,9 @@
             this.tabFiles.Controls.Add(this.txtFilesSearchBox);
             this.tabFiles.Controls.Add(this.dataGridFiles);
             this.tabFiles.Controls.Add(this.titleFilesSplitter);
-            this.tabFiles.Controls.Add(this.titleFilesMovies);
-            this.tabFiles.Controls.Add(this.titleFilesAnime);
-            this.tabFiles.Controls.Add(this.titleFilesSeries);
+            this.tabFiles.Controls.Add(this.titleFilesVideo);
+            this.tabFiles.Controls.Add(this.titleFilesEbooks);
+            this.tabFiles.Controls.Add(this.titleFilesAudio);
             this.tabFiles.Controls.Add(this.titleFilesSubtitles);
             this.tabFiles.Controls.Add(this.titleFilesTorrents);
             this.tabFiles.Controls.Add(this.titleFilesArchives);
@@ -811,65 +811,65 @@
             this.titleFilesSplitter.ShowFocus = CButtonLib.CButton.eFocus.None;
             this.titleFilesSplitter.TabStop = false;
             // 
-            // titleFilesMovies
+            // titleFilesVideo
             // 
-            this.titleFilesMovies.BackColor = System.Drawing.Color.Transparent;
-            this.titleFilesMovies.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.titleFilesMovies.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.titleFilesMovies.Corners.UpperLeft = 2;
-            this.titleFilesMovies.Corners.UpperRight = 2;
-            this.titleFilesMovies.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.titleFilesMovies.DesignerSelected = false;
-            this.titleFilesMovies.DimFactorClick = 0;
-            this.titleFilesMovies.DimFactorHover = 0;
-            this.titleFilesMovies.FillType = CButtonLib.CButton.eFillType.Solid;
-            resources.ApplyResources(this.titleFilesMovies, "titleFilesMovies");
-            this.titleFilesMovies.ImageIndex = 0;
-            this.titleFilesMovies.Name = "titleFilesMovies";
-            this.titleFilesMovies.ShowFocus = CButtonLib.CButton.eFocus.Dim;
-            this.titleFilesMovies.TabStop = false;
-            this.titleFilesMovies.TextShadowShow = false;
-            this.titleFilesMovies.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.titleFilesMovies_ClickButtonArea);
+            this.titleFilesVideo.BackColor = System.Drawing.Color.Transparent;
+            this.titleFilesVideo.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.titleFilesVideo.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.titleFilesVideo.Corners.UpperLeft = 2;
+            this.titleFilesVideo.Corners.UpperRight = 2;
+            this.titleFilesVideo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.titleFilesVideo.DesignerSelected = false;
+            this.titleFilesVideo.DimFactorClick = 0;
+            this.titleFilesVideo.DimFactorHover = 0;
+            this.titleFilesVideo.FillType = CButtonLib.CButton.eFillType.Solid;
+            resources.ApplyResources(this.titleFilesVideo, "titleFilesVideo");
+            this.titleFilesVideo.ImageIndex = 0;
+            this.titleFilesVideo.Name = "titleFilesVideo";
+            this.titleFilesVideo.ShowFocus = CButtonLib.CButton.eFocus.Dim;
+            this.titleFilesVideo.TabStop = false;
+            this.titleFilesVideo.TextShadowShow = false;
+            this.titleFilesVideo.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.titleFilesVideo_ClickButtonArea);
             // 
-            // titleFilesAnime
+            // titleFilesEbooks
             // 
-            this.titleFilesAnime.BackColor = System.Drawing.Color.Transparent;
-            this.titleFilesAnime.BorderColor = System.Drawing.Color.Transparent;
-            this.titleFilesAnime.ColorFillSolid = System.Drawing.Color.Transparent;
-            this.titleFilesAnime.Corners.UpperLeft = 2;
-            this.titleFilesAnime.Corners.UpperRight = 2;
-            this.titleFilesAnime.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.titleFilesAnime.DesignerSelected = false;
-            this.titleFilesAnime.DimFactorClick = 0;
-            this.titleFilesAnime.DimFactorHover = 0;
-            this.titleFilesAnime.FillType = CButtonLib.CButton.eFillType.Solid;
-            resources.ApplyResources(this.titleFilesAnime, "titleFilesAnime");
-            this.titleFilesAnime.ImageIndex = 0;
-            this.titleFilesAnime.Name = "titleFilesAnime";
-            this.titleFilesAnime.ShowFocus = CButtonLib.CButton.eFocus.Dim;
-            this.titleFilesAnime.TabStop = false;
-            this.titleFilesAnime.TextShadowShow = false;
-            this.titleFilesAnime.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.titleFilesAnime_ClickButtonArea);
+            this.titleFilesEbooks.BackColor = System.Drawing.Color.Transparent;
+            this.titleFilesEbooks.BorderColor = System.Drawing.Color.Transparent;
+            this.titleFilesEbooks.ColorFillSolid = System.Drawing.Color.Transparent;
+            this.titleFilesEbooks.Corners.UpperLeft = 2;
+            this.titleFilesEbooks.Corners.UpperRight = 2;
+            this.titleFilesEbooks.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.titleFilesEbooks.DesignerSelected = false;
+            this.titleFilesEbooks.DimFactorClick = 0;
+            this.titleFilesEbooks.DimFactorHover = 0;
+            this.titleFilesEbooks.FillType = CButtonLib.CButton.eFillType.Solid;
+            resources.ApplyResources(this.titleFilesEbooks, "titleFilesEbooks");
+            this.titleFilesEbooks.ImageIndex = 0;
+            this.titleFilesEbooks.Name = "titleFilesEbooks";
+            this.titleFilesEbooks.ShowFocus = CButtonLib.CButton.eFocus.Dim;
+            this.titleFilesEbooks.TabStop = false;
+            this.titleFilesEbooks.TextShadowShow = false;
+            this.titleFilesEbooks.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.titleFilesEbooks_ClickButtonArea);
             // 
-            // titleFilesSeries
+            // titleFilesAudio
             // 
-            this.titleFilesSeries.BackColor = System.Drawing.Color.Transparent;
-            this.titleFilesSeries.BorderColor = System.Drawing.Color.Transparent;
-            this.titleFilesSeries.ColorFillSolid = System.Drawing.Color.Transparent;
-            this.titleFilesSeries.Corners.UpperLeft = 2;
-            this.titleFilesSeries.Corners.UpperRight = 2;
-            this.titleFilesSeries.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.titleFilesSeries.DesignerSelected = false;
-            this.titleFilesSeries.DimFactorClick = 0;
-            this.titleFilesSeries.DimFactorHover = 0;
-            this.titleFilesSeries.FillType = CButtonLib.CButton.eFillType.Solid;
-            resources.ApplyResources(this.titleFilesSeries, "titleFilesSeries");
-            this.titleFilesSeries.ImageIndex = 0;
-            this.titleFilesSeries.Name = "titleFilesSeries";
-            this.titleFilesSeries.ShowFocus = CButtonLib.CButton.eFocus.Dim;
-            this.titleFilesSeries.TabStop = false;
-            this.titleFilesSeries.TextShadowShow = false;
-            this.titleFilesSeries.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.titleFilesSeries_ClickButtonArea);
+            this.titleFilesAudio.BackColor = System.Drawing.Color.Transparent;
+            this.titleFilesAudio.BorderColor = System.Drawing.Color.Transparent;
+            this.titleFilesAudio.ColorFillSolid = System.Drawing.Color.Transparent;
+            this.titleFilesAudio.Corners.UpperLeft = 2;
+            this.titleFilesAudio.Corners.UpperRight = 2;
+            this.titleFilesAudio.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.titleFilesAudio.DesignerSelected = false;
+            this.titleFilesAudio.DimFactorClick = 0;
+            this.titleFilesAudio.DimFactorHover = 0;
+            this.titleFilesAudio.FillType = CButtonLib.CButton.eFillType.Solid;
+            resources.ApplyResources(this.titleFilesAudio, "titleFilesAudio");
+            this.titleFilesAudio.ImageIndex = 0;
+            this.titleFilesAudio.Name = "titleFilesAudio";
+            this.titleFilesAudio.ShowFocus = CButtonLib.CButton.eFocus.Dim;
+            this.titleFilesAudio.TabStop = false;
+            this.titleFilesAudio.TextShadowShow = false;
+            this.titleFilesAudio.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.titleFilesAudio_ClickButtonArea);
             // 
             // titleFilesSubtitles
             // 
@@ -1593,7 +1593,7 @@
             this.btnSettingsSave.Corners.UpperLeft = 2;
             this.btnSettingsSave.Corners.UpperRight = 2;
             this.btnSettingsSave.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSettingsSave.DesignerSelected = true;
+            this.btnSettingsSave.DesignerSelected = false;
             this.btnSettingsSave.DimFactorClick = 0;
             this.btnSettingsSave.DimFactorHover = 0;
             this.btnSettingsSave.FillType = CButtonLib.CButton.eFillType.Solid;
@@ -2101,10 +2101,10 @@
         private System.Windows.Forms.Label titleDownloads;
         private System.Windows.Forms.TabPage tabDownloads;
         private System.Windows.Forms.Label lblNoDownloads;
-        private CButtonLib.CButton titleFilesAnime;
-        private CButtonLib.CButton titleFilesMovies;
+        private CButtonLib.CButton titleFilesEbooks;
+        private CButtonLib.CButton titleFilesVideo;
         private CButtonLib.CButton titleFilesSplitter;
-        private CButtonLib.CButton titleFilesSeries;
+        private CButtonLib.CButton titleFilesAudio;
         private CButtonLib.CButton titleFilesTorrents;
         private CButtonLib.CButton titleFilesSubtitles;
         private System.Windows.Forms.Panel panelMoviesYear;
