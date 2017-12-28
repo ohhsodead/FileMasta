@@ -4,26 +4,26 @@
   OpenTheatre
 </h1>
 
-<h3 align="center">Search movies, series, anime, subtitles, torrents and archives from open directories</h3>
+<h3 align="center">Search the web for videos, audios, eBooks and much more </h3>
 <div align="center">
 </div>
 <br />
 
 ## What is OpenTheatre?
-OpenTheatre is a program which allows users to search for Movies, TV Series, Anime, Subtitles, Torrents and Archives. The program communicates with its own [API](https://dropbox.com/sh/bqb14ty282xm9xi/AACeniqYjhq2auw3KU3oNW2Fa?dl=0) written entirely using our custom built command-line web crawler designed to scrape information from trusted files which are updated every day. The public web resources used are available on our [open assets database](https://github.com/invu/opentheatre-app/tree/master/assets), where anyone can contribute their open directories. OpenTheatre works to query movies, series, anime, subtitles, torrents and archives from all around the web to provide you with the ultimate streaming experience.
+OpenTheatre is a search engine designed to search and index files hosted among millions of web servers. It communicates with our own [file database](https://dropbox.com/sh/bqb14ty282xm9xi/AACeniqYjhq2auw3KU3oNW2Fa?dl=0), which is updated daily by our robots that crawl through free access internet resources. All public resources are available for everyone to browse in our [directories database](https://github.com/invu/opentheatre-app/tree/master/assets), where can submit open web directories. OpenTheatre hosts no content, we provide only access to already available files in a same way Google and other search engines do.
 
 ## Some features available
-- Simple interface and background threads for the best performance
+- User-friendly with searches at lightning speed
 - Multilingual support (en, es, fr, de) - contributions are welcome!
-- Discover over 50,000 movies, series, anime, subtitles, torrents and archives
+- Discover over one hundred thousand files
 - Search movies by name, actor, year and genre
-- Store files in your Bookmarks for later use
+- Collects metadeta from public APIs
+- Save files to your Bookmarks for later use
 - Filter files by format, host and sort alphabetically
+- Direct downloads, proxy settings available too
 - Includes an internal VLC media player 
 - Support for external players (Currently includes WMP, MPC & VLC)
-- Built-in download client
-- Logging for exception handling
-- Collects metadata from OMDb API & Popcorn Time API
+- Error logging for exception handling
 - Automatic local cache updates
 
 ## Latest build
@@ -63,10 +63,7 @@ Download the latest installer [here](https://github.com/invu/opentheatre-app/rel
 - [VLC Player](https://www.videolan.org/vlc/)
 
 ## Contributing
-Our resources are completely open source, you find all of the necessary sources that our web-crawler scans [here](https://github.com/invu/opentheatre/assets/). If you would like to add an open web directory, simply edit the appropriate *e.g. open-movies-directories.txt*, add your source to the list and click save. This will create a pull request which I will review and submit if correct. The next daily scan will update the found files or you can just create an issue with the details of the web directory and we'll put it up as soon as.
-
-## References
-When you've forked the project, you may notice a few errors relating to the references used for the app. As they're not included by default, I've decided to add them here to fix building issues and for anyone else whom be interested.
+Our resources are completely open source, you can find all of the necessary web resources that our crawler scans [here](https://github.com/invu/opentheatre/assets/). If you would like to add an open web directory, simply edit the appropriate *e.g. video-directories.txt.txt or audio-directories.txt*, insert the url somewhere on a new line. This will create a pull request which I will review and submit, or simply [open an issue](https://github.com/invu/opentheatre/issues/new) and we'll put it up for you. The next daily scan will update the found files.
 
 ## Comments
 OpenTheatre is a new application and is not a segment of Popcorn Time or any other similar apps.
