@@ -56,13 +56,13 @@ namespace OpenTheatre
         protected override void OnPaint(PaintEventArgs e) { }
 
         // Exported database files
-        public static string linkMovies = "https://dl.dropbox.com/s/ionv8bszlgvf1xc/open-movies.json?dl=0"; // posters
-        public static string linkFilesMovies = "https://dl.dropbox.com/s/jtac1zhsdhy6931/open-movies-files.json?dl=0";
-        public static string linkFilesSeries = "https://dl.dropbox.com/s/2ze0xayim0cgk70/open-series-files.json?dl=0";
-        public static string linkFilesAnime = "https://dl.dropbox.com/s/e5lhyejb56cwo9k/open-anime-files.json?dl=0";
-        public static string linkFilesSubtitles = "https://dl.dropbox.com/s/ckkxsogprgviyto/open-subtitles-files.json?dl=0";
-        public static string linkFilesTorrents = "https://dl.dropbox.com/s/nkzzyk4vr6k4rlr/open-torrents-files.json?dl=0";
-        public static string linkFilesArchives = "https://dl.dropbox.com/s/el93946do0og2gg/open-archives-files.json?dl=0";
+        public static string linkMovies = "https://dl.dropbox.com/s/qknonvla6qeuiuj/movies-posters.json?dl=0";
+        public static string linkFilesVideo = "https://dl.dropbox.com/s/gkm57y5rxu3fxcs/video-files.json?dl=0";
+        public static string linkFilesAudio = "https://dl.dropbox.com/s/gqhjrt4re0n1ls1/audio-files.json?dl=0";
+        public static string linkFilesEbooks = "https://dl.dropbox.com/s/j0eec40nonx4vk5/ebooks-files.json?dl=0";
+        public static string linkFilesSubtitles = "https://dl.dropbox.com/s/ciofl06to2y8zko/subtitles-files.json?dl=0";
+        public static string linkFilesTorrents = "https://dl.dropbox.com/s/uvx3ypg7hd9b1ne/torrents-files.json?dl=0";
+        public static string linkFilesArchives = "https://dl.dropbox.com/s/d6xc1v24rnx4y0e/archives-files.json?dl=0";
 
         // Updates
         public static string linkLatestVersion = "https://raw.githubusercontent.com/invu/opentheatre-app/master/assets/latest-version.txt";
@@ -135,83 +135,76 @@ namespace OpenTheatre
             try
             {
                 //
-                if (UtilityTools.doUpdateFile(linkMovies, "open-movies.json"))
+                if (UtilityTools.doUpdateFile(linkMovies, "movies-posters.json"))
                 {
-                    client.DownloadFile(new Uri(linkMovies), pathData + "open-movies.json");
+                    client.DownloadFile(new Uri(linkMovies), pathData + "movies-posters.json");
                 }
 
-                dataMovies = File.ReadAllLines(pathData + "open-movies.json");
+                dataMovies = File.ReadAllLines(pathData + "movies-posters.json");
                 //
 
-
                 //
-                if (UtilityTools.doUpdateFile(linkFilesMovies, "open-movies-files.json"))
+                if (UtilityTools.doUpdateFile(linkFilesVideo, "video-files.json"))
                 {
-                    client.DownloadFile(new Uri(linkFilesMovies), pathData + "open-movies-files.json");
+                    client.DownloadFile(new Uri(linkFilesVideo), pathData + "video-files.json");
                 }
 
-                dataFilesMovies = File.ReadAllLines(pathData + "open-movies-files.json");
+                dataFilesVideo = File.ReadAllLines(pathData + "video-files.json");
                 //
 
-
                 //
-                if (UtilityTools.doUpdateFile(linkFilesSeries, "open-series-files.json"))
+                if (UtilityTools.doUpdateFile(linkFilesAudio, "audio-files.json"))
                 {
-                    client.DownloadFile(new Uri(linkFilesSeries), pathData + "open-series-files.json");
+                    client.DownloadFile(new Uri(linkFilesAudio), pathData + "audio-files.json");
                 }
 
-                dataFilesSeries = File.ReadAllLines(pathData + "open-series-files.json");
+                dataFilesAudio = File.ReadAllLines(pathData + "audio-files.json");
                 //
 
-
                 //
-                if (UtilityTools.doUpdateFile(linkFilesAnime, "open-anime-files.json"))
+                if (UtilityTools.doUpdateFile(linkFilesEbooks, "ebooks-files.json"))
                 {
-                    client.DownloadFile(new Uri(linkFilesAnime), pathData + "open-anime-files.json");
+                    client.DownloadFile(new Uri(linkFilesEbooks), pathData + "ebooks-files.json");
                 }
 
-                dataFilesAnime = File.ReadAllLines(pathData + "open-anime-files.json");
+                dataFilesEbooks = File.ReadAllLines(pathData + "ebooks-files.json");
                 //
 
-
                 //
-                if (UtilityTools.doUpdateFile(linkFilesSubtitles, "open-subtitles-files.json"))
+                if (UtilityTools.doUpdateFile(linkFilesSubtitles, "subtitles-files.json"))
                 {
-                    client.DownloadFile(new Uri(linkFilesSubtitles), pathData + "open-subtitles-files.json");
+                    client.DownloadFile(new Uri(linkFilesSubtitles), pathData + "subtitles-files.json");
                 }
 
-                dataFilesSubtitles = File.ReadAllLines(pathData + "open-subtitles-files.json");
+                dataFilesSubtitles = File.ReadAllLines(pathData + "subtitles-files.json");
                 //
 
-
                 //
-                if (UtilityTools.doUpdateFile(linkFilesTorrents, "open-torrents-files.json"))
+                if (UtilityTools.doUpdateFile(linkFilesTorrents, "torrents-files.json"))
                 {
-                    client.DownloadFile(new Uri(linkFilesTorrents), pathData + "open-torrents-files.json");
+                    client.DownloadFile(new Uri(linkFilesTorrents), pathData + "torrents-files.json");
                 }
 
-                dataFilesTorrents = File.ReadAllLines(pathData + "open-torrents-files.json");
+                dataFilesTorrents = File.ReadAllLines(pathData + "torrents-files.json");
                 //
 
-
                 //
-                if (UtilityTools.doUpdateFile(linkFilesArchives, "open-archives-files.json"))
+                if (UtilityTools.doUpdateFile(linkFilesArchives, "archives-files.json"))
                 {
-                    client.DownloadFile(new Uri(linkFilesArchives), pathData + "open-archives-files.json");
+                    client.DownloadFile(new Uri(linkFilesArchives), pathData + "archives-files.json");
                 }
 
-                dataFilesArchives = File.ReadAllLines(pathData + "open-archives-files.json");
+                dataFilesArchives = File.ReadAllLines(pathData + "archives-files.json");
                 //
 
                 // Get Local Files
                 loadLocalFiles();
             }
-            catch (Exception ex) { showStatusTab(rm.GetString("errorConnectToServer") + "\n\n" + ex.Message); Directory.Delete(pathData, true); }
+            catch (Exception ex) { MessageBox.Show(rm.GetString("errorConnectToServer") + "\n\n" + ex.Message); Directory.Delete(pathData, true); }
         }
 
         void worker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            showFiles();
             loadMovies(52);
             Controls.Remove(frmSplash);
         }
@@ -234,7 +227,7 @@ namespace OpenTheatre
 
         // Data, Movies, Files... & Everything else
 
-        public static string[] dataFilesArchives, dataFilesTorrents, dataFilesSubtitles, dataFilesAnime, dataFilesSeries, dataFilesMovies, dataMovies;
+        public static string[] dataFilesArchives, dataFilesTorrents, dataFilesSubtitles, dataFilesEbooks, dataFilesAudio, dataFilesVideo, dataMovies;
         public static List<string> dataFilesLocal = new List<string>();
 
         // Core Tabs
@@ -570,7 +563,7 @@ namespace OpenTheatre
 
 
         // Files
-        public string selectedFilesFileType = "", selectedFilesHost = "", selectedFilesQuality = "", selectedFiles = "Movies"; // Files Filter Preferences
+        public string selectedFilesFileType = "", selectedFilesHost = "", selectedFilesQuality = "", selectedFiles = "Video"; // Filter Preferences
 
         private void loadLocalFiles()
         {
@@ -587,17 +580,16 @@ namespace OpenTheatre
             }
         }
 
-        private void titleFilesMovies_ClickButtonArea(object Sender, MouseEventArgs e)
+        private void titleFilesVideo_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            imgSpinner.Visible = true;
-            selectedFiles = "Movies";
+            imgSpinner.Visible = true; selectedFiles = "Video";
 
-            titleFilesMovies.ColorFillSolid = Color.FromArgb(42, 42, 42);
-            titleFilesMovies.BorderColor = Color.FromArgb(42, 42, 42);
-            titleFilesSeries.ColorFillSolid = Color.Transparent;
-            titleFilesSeries.BorderColor = Color.Transparent;
-            titleFilesAnime.ColorFillSolid = Color.Transparent;
-            titleFilesAnime.BorderColor = Color.Transparent;
+            titleFilesVideo.ColorFillSolid = Color.FromArgb(42, 42, 42);
+            titleFilesVideo.BorderColor = Color.FromArgb(42, 42, 42);
+            titleFilesAudio.ColorFillSolid = Color.Transparent;
+            titleFilesAudio.BorderColor = Color.Transparent;
+            titleFilesEbooks.ColorFillSolid = Color.Transparent;
+            titleFilesEbooks.BorderColor = Color.Transparent;
             titleFilesSubtitles.ColorFillSolid = Color.Transparent;
             titleFilesSubtitles.BorderColor = Color.Transparent;
             titleFilesTorrents.ColorFillSolid = Color.Transparent;
@@ -608,19 +600,19 @@ namespace OpenTheatre
             titleFilesLocal.BorderColor = Color.Transparent;
 
             showFiles();
-            imgSpinner.Visible = false;
         }
 
-        private void titleFilesAnime_ClickButtonArea(object Sender, MouseEventArgs e)
-        {
-            imgSpinner.Visible = true; selectedFiles = "Anime";
 
-            titleFilesMovies.ColorFillSolid = Color.Transparent;
-            titleFilesMovies.BorderColor = Color.Transparent;
-            titleFilesSeries.ColorFillSolid = Color.Transparent;
-            titleFilesSeries.BorderColor = Color.Transparent;
-            titleFilesAnime.ColorFillSolid = Color.FromArgb(42, 42, 42);
-            titleFilesAnime.BorderColor = Color.FromArgb(42, 42, 42);
+        private void titleFilesAudio_ClickButtonArea(object Sender, MouseEventArgs e)
+        {
+            imgSpinner.Visible = true; selectedFiles = "Audio";
+
+            titleFilesVideo.ColorFillSolid = Color.Transparent;
+            titleFilesVideo.BorderColor = Color.Transparent;
+            titleFilesAudio.ColorFillSolid = Color.FromArgb(42, 42, 42);
+            titleFilesAudio.BorderColor = Color.FromArgb(42, 42, 42);
+            titleFilesEbooks.ColorFillSolid = Color.Transparent;
+            titleFilesEbooks.BorderColor = Color.Transparent;
             titleFilesSubtitles.ColorFillSolid = Color.Transparent;
             titleFilesSubtitles.BorderColor = Color.Transparent;
             titleFilesTorrents.ColorFillSolid = Color.Transparent;
@@ -631,19 +623,18 @@ namespace OpenTheatre
             titleFilesLocal.BorderColor = Color.Transparent;
 
             showFiles();
-
         }
 
-        private void titleFilesSeries_ClickButtonArea(object Sender, MouseEventArgs e)
+        private void titleFilesEbooks_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            imgSpinner.Visible = true; selectedFiles = "Series";
+            imgSpinner.Visible = true; selectedFiles = "Ebooks";
 
-            titleFilesMovies.ColorFillSolid = Color.Transparent;
-            titleFilesMovies.BorderColor = Color.Transparent;
-            titleFilesSeries.ColorFillSolid = Color.FromArgb(42, 42, 42);
-            titleFilesSeries.BorderColor = Color.FromArgb(42, 42, 42);
-            titleFilesAnime.ColorFillSolid = Color.Transparent;
-            titleFilesAnime.BorderColor = Color.Transparent;
+            titleFilesVideo.ColorFillSolid = Color.Transparent;
+            titleFilesVideo.BorderColor = Color.Transparent;
+            titleFilesAudio.ColorFillSolid = Color.Transparent;
+            titleFilesAudio.BorderColor = Color.Transparent;
+            titleFilesEbooks.ColorFillSolid = Color.FromArgb(42, 42, 42);
+            titleFilesEbooks.BorderColor = Color.FromArgb(42, 42, 42);
             titleFilesSubtitles.ColorFillSolid = Color.Transparent;
             titleFilesSubtitles.BorderColor = Color.Transparent;
             titleFilesTorrents.ColorFillSolid = Color.Transparent;
@@ -660,12 +651,12 @@ namespace OpenTheatre
         {
             imgSpinner.Visible = true; selectedFiles = "Torrents";
 
-            titleFilesMovies.ColorFillSolid = Color.Transparent;
-            titleFilesMovies.BorderColor = Color.Transparent;
-            titleFilesSeries.ColorFillSolid = Color.Transparent;
-            titleFilesSeries.BorderColor = Color.Transparent;
-            titleFilesAnime.ColorFillSolid = Color.Transparent;
-            titleFilesAnime.BorderColor = Color.Transparent;
+            titleFilesVideo.ColorFillSolid = Color.Transparent;
+            titleFilesVideo.BorderColor = Color.Transparent;
+            titleFilesAudio.ColorFillSolid = Color.Transparent;
+            titleFilesAudio.BorderColor = Color.Transparent;
+            titleFilesEbooks.ColorFillSolid = Color.Transparent;
+            titleFilesEbooks.BorderColor = Color.Transparent;
             titleFilesSubtitles.ColorFillSolid = Color.Transparent;
             titleFilesSubtitles.BorderColor = Color.Transparent;
             titleFilesTorrents.ColorFillSolid = Color.FromArgb(42, 42, 42);
@@ -682,12 +673,12 @@ namespace OpenTheatre
         {
             imgSpinner.Visible = true; selectedFiles = "Subtitles";
 
-            titleFilesMovies.ColorFillSolid = Color.Transparent;
-            titleFilesMovies.BorderColor = Color.Transparent;
-            titleFilesSeries.ColorFillSolid = Color.Transparent;
-            titleFilesSeries.BorderColor = Color.Transparent;
-            titleFilesAnime.ColorFillSolid = Color.Transparent;
-            titleFilesAnime.BorderColor = Color.Transparent;
+            titleFilesVideo.ColorFillSolid = Color.Transparent;
+            titleFilesVideo.BorderColor = Color.Transparent;
+            titleFilesAudio.ColorFillSolid = Color.Transparent;
+            titleFilesAudio.BorderColor = Color.Transparent;
+            titleFilesEbooks.ColorFillSolid = Color.Transparent;
+            titleFilesEbooks.BorderColor = Color.Transparent;
             titleFilesSubtitles.ColorFillSolid = Color.FromArgb(42, 42, 42);
             titleFilesSubtitles.BorderColor = Color.FromArgb(42, 42, 42);
             titleFilesTorrents.ColorFillSolid = Color.Transparent;
@@ -704,12 +695,12 @@ namespace OpenTheatre
         {
             imgSpinner.Visible = true; selectedFiles = "Archives";
 
-            titleFilesMovies.ColorFillSolid = Color.Transparent;
-            titleFilesMovies.BorderColor = Color.Transparent;
-            titleFilesSeries.ColorFillSolid = Color.Transparent;
-            titleFilesSeries.BorderColor = Color.Transparent;
-            titleFilesAnime.ColorFillSolid = Color.Transparent;
-            titleFilesAnime.BorderColor = Color.Transparent;
+            titleFilesVideo.ColorFillSolid = Color.Transparent;
+            titleFilesVideo.BorderColor = Color.Transparent;
+            titleFilesAudio.ColorFillSolid = Color.Transparent;
+            titleFilesAudio.BorderColor = Color.Transparent;
+            titleFilesEbooks.ColorFillSolid = Color.Transparent;
+            titleFilesEbooks.BorderColor = Color.Transparent;
             titleFilesSubtitles.ColorFillSolid = Color.Transparent;
             titleFilesSubtitles.BorderColor = Color.Transparent;
             titleFilesTorrents.ColorFillSolid = Color.Transparent;
@@ -726,12 +717,12 @@ namespace OpenTheatre
         {
             imgSpinner.Visible = true; selectedFiles = "Local";
 
-            titleFilesMovies.ColorFillSolid = Color.Transparent;
-            titleFilesMovies.BorderColor = Color.Transparent;
-            titleFilesSeries.ColorFillSolid = Color.Transparent;
-            titleFilesSeries.BorderColor = Color.Transparent;
-            titleFilesAnime.ColorFillSolid = Color.Transparent;
-            titleFilesAnime.BorderColor = Color.Transparent;
+            titleFilesVideo.ColorFillSolid = Color.Transparent;
+            titleFilesVideo.BorderColor = Color.Transparent;
+            titleFilesAudio.ColorFillSolid = Color.Transparent;
+            titleFilesAudio.BorderColor = Color.Transparent;
+            titleFilesEbooks.ColorFillSolid = Color.Transparent;
+            titleFilesEbooks.BorderColor = Color.Transparent;
             titleFilesSubtitles.ColorFillSolid = Color.Transparent;
             titleFilesSubtitles.BorderColor = Color.Transparent;
             titleFilesTorrents.ColorFillSolid = Color.Transparent;
@@ -768,35 +759,38 @@ namespace OpenTheatre
 
         public void showFiles()
         {
-            imgSpinner.Visible = true;
+            if (txtFilesSearchBox.Text != "")
+            {
+                imgSpinner.Visible = true;
 
-            if (selectedFiles == "Movies")
-            {
-                showSelectedFiles(dataFilesMovies);
-            }
-            else if (selectedFiles == "Series")
-            {
-                showSelectedFiles(dataFilesSeries);
-            }
-            else if (selectedFiles == "Anime")
-            {
-                showSelectedFiles(dataFilesAnime);
-            }
-            else if (selectedFiles == "Subtitles")
-            {
-                showSelectedFiles(dataFilesSubtitles);
-            }
-            else if (selectedFiles == "Torrents")
-            {
-                showSelectedFiles(dataFilesTorrents);
-            }
-            else if (selectedFiles == "Archives")
-            {
-                showSelectedFiles(dataFilesArchives);
-            }
-            else if (selectedFiles == "Local")
-            {
-                showSelectedFiles(dataFilesLocal.ToArray());
+                if (selectedFiles == "Video")
+                {
+                    showSelectedFiles(dataFilesVideo);
+                }
+                else if (selectedFiles == "Audio")
+                {
+                    showSelectedFiles(dataFilesAudio);
+                }
+                else if (selectedFiles == "Ebooks")
+                {
+                    showSelectedFiles(dataFilesEbooks);
+                }
+                else if (selectedFiles == "Subtitles")
+                {
+                    showSelectedFiles(dataFilesSubtitles);
+                }
+                else if (selectedFiles == "Torrents")
+                {
+                    showSelectedFiles(dataFilesTorrents);
+                }
+                else if (selectedFiles == "Archives")
+                {
+                    showSelectedFiles(dataFilesArchives);
+                }
+                else if (selectedFiles == "Local")
+                {
+                    showSelectedFiles(dataFilesLocal.ToArray());
+                }
             }
         }
 
@@ -1303,6 +1297,7 @@ namespace OpenTheatre
         {
             //* UI *\\
             Thread.Sleep(500);
+
             lblSettingsConnectionHost.Enabled = chkSettingsCustomConnection.Checked;
             lblSettingsConnectionPort.Enabled = chkSettingsCustomConnection.Checked;
             lblSettingsConnectionUsername.Enabled = chkSettingsCustomConnection.Checked;
@@ -1317,13 +1312,15 @@ namespace OpenTheatre
             bgSettingsConnectionPort.Enabled = chkSettingsCustomConnection.Checked;
             bgSettingsConnectionUsername.Enabled = chkSettingsCustomConnection.Checked;
             bgSettingsConnectionPassword.Enabled = chkSettingsCustomConnection.Checked;
+
             Thread.Sleep(500);
         }
 
         private void btnSettingsSave_ClickButtonArea(object sender, MouseEventArgs e)
         {
             Thread.Sleep(500);
-            Properties.Settings.Default.userLanguage = cmboboxSettingsLanguage.GetItemText(cmboboxSettingsLanguage.SelectedItem);
+            if (cmboboxSettingsLanguage.GetItemText(cmboboxSettingsLanguage.SelectedItem) == "") { Properties.Settings.Default.userLanguage = btnSettingsGeneralLanguage.Text; }
+            else { Properties.Settings.Default.userLanguage = cmboboxSettingsLanguage.GetItemText(cmboboxSettingsLanguage.SelectedItem); }
             Properties.Settings.Default.clearDataOnClose = chkSettingsClearData.Checked;
             Properties.Settings.Default.downloadsDirectory = txtBoxSettingsDownloadsDirectory.Text;
             Properties.Settings.Default.connectionCustom = chkSettingsCustomConnection.Checked;

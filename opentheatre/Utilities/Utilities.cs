@@ -67,20 +67,20 @@ namespace Utilities
                 var data = OMDbEntity.FromJson(file);
                 if (data.Sources.Contains(fileUrl)) { return resources.GetString("cmboBoxBookmarksType.Items1"); }
             }
-            foreach (string file in frmOpenTheatre.dataFilesMovies)
+            foreach (string file in frmOpenTheatre.dataFilesVideo)
             {
                 var data = DatabaseFilesEntity.FromJson(file);
-                if (data.URL == fileUrl) { return resources.GetString("cmboBoxBookmarksType.Items1"); }
+                if (data.URL == fileUrl) { return "Video"; }
             }
-            foreach (string file in frmOpenTheatre.dataFilesSeries)
+            foreach (string file in frmOpenTheatre.dataFilesAudio)
             {
                 var data = DatabaseFilesEntity.FromJson(file);
-                if (data.URL == fileUrl) { return resources.GetString("cmboBoxBookmarksType.Items2"); }
+                if (data.URL == fileUrl) { return "Audio"; }
             }
-            foreach (string file in frmOpenTheatre.dataFilesAnime)
+            foreach (string file in frmOpenTheatre.dataFilesEbooks)
             {
                 var data = DatabaseFilesEntity.FromJson(file);
-                if (data.URL == fileUrl) { return resources.GetString("cmboBoxBookmarksType.Items3"); }
+                if (data.URL == fileUrl) { return "Ebook"; }
             }
             foreach (string file in frmOpenTheatre.dataFilesSubtitles)
             {
