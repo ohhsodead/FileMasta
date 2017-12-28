@@ -84,7 +84,7 @@ namespace OpenTheatre
         {
             string noSymbolsTitle = Regex.Replace(infoTitle.Text, "[^A-Za-z0-9 _]", " ");
             string ifYearExists = ""; if (infoYear.Text != "Year") { ifYearExists = " " + infoYear.Text; }
-            frmOpenTheatre.form.selectedFiles = "Movies";
+            frmOpenTheatre.form.selectedFiles = "Video";
             frmOpenTheatre.form.txtFilesSearchBox.Text = noSymbolsTitle + ifYearExists;
             frmOpenTheatre.form.showFiles();
             frmOpenTheatre.form.tab.SelectedTab = frmOpenTheatre.form.tabFiles;
