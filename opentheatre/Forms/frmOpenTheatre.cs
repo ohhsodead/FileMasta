@@ -806,9 +806,10 @@ namespace OpenTheatre
                 }
                 else
                 {
+                    ComponentResourceManager resources = new ComponentResourceManager(typeof(frmOpenTheatre));
                     cmboBoxFilesSort.SelectedIndex = 0; dataGridFiles.Rows.Clear();
-                    cmboBoxFilesHost.Items.Clear(); cmboBoxFilesHost.Items.Add("Any");
-                    cmboBoxFilesFormat.Items.Clear(); cmboBoxFilesFormat.Items.Add("Any");
+                    cmboBoxFilesHost.Items.Clear(); cmboBoxFilesHost.Items.Add(resources.GetString("cmboBoxFilesHost.Items"));
+                    cmboBoxFilesFormat.Items.Clear(); cmboBoxFilesFormat.Items.Add(resources.GetString("cmboBoxFilesFormat.Items"));
 
                     foreach (string jsonData in data)
                     {

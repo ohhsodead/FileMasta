@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -117,64 +117,28 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="contextFileName.TrayLocation" type="System.Drawing.Point, System.Drawing">
-    <value>17, 17</value>
-  </data>
-  <data name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing">
-    <value>160, 17</value>
-  </data>
-  <data name="imgAddToBookmarks.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABgUlEQVRoQ+3SsUlEURCF4RctdmDixpob
-        WoeRuS3Ygi1sC4tgAVawYBcmRoImYvQ8D34GQYYd5eygcD84yd2ZM7C8aRiG4f+Y53mt3ClvitvSea+c
-        cs5LxWfKi3Joy401Z31Uuvw7Xbac9VHpIT6bzCtnfShuw1kfettw1ofeNpz1obcNZ33oLWMt8FzGmg+9
-        ZawFnstY86G3jLXAcxlrPvSWsRZ4LmPNh94UY2WspRjzoTfFWBlrKcZ86E0xVsZaijEfelOMlbGWYsyH
-        3jLWAs9lrPnQW8Za4LmMNR96y1gLPJex5kNvGWuB5zLWfOhtw1kfettw1ofeNpz1obcNZ33obcNZH3rb
-        cNaH3jac9aG3DWd96G3DWR9623DWh96qD2WrXCjnykZ5V8o460PvPs/KrXLCWtDbsXKjPCl7seZDb+ZR
-        uVaOGE9pZqVcKg9KinEfer+Kz4SRH9Nu+nkx4kPvIv1Mfktd3z4vfvJR5065UlY82S3d3NjxNAzD8KdN
-        0yf3lkxGScqHjQAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="timerUpdateInfo.TrayLocation" type="System.Drawing.Point, System.Drawing">
-    <value>257, 19</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="$this.TrayHeight" type="System.Int32, mscorlib">
-    <value>25</value>
-  </data>
   <data name="imgAddToBookmarks.ToolTip" xml:space="preserve">
-    <value>Add to Bookmarks</value>
+    <value>Přidat do záložek</value>
   </data>
   <data name="imgCopyURL.ToolTip" xml:space="preserve">
-    <value>Copy URL</value>
+    <value>Zkopírovat adresu</value>
   </data>
   <data name="imgDownload.ToolTip" xml:space="preserve">
-    <value>Download Now</value>
+    <value>Stáhnout</value>
   </data>
   <data name="imgMagnet.ToolTip" xml:space="preserve">
-    <value>Open Magnet</value>
+    <value>Otevřít magnet odkaz</value>
   </data>
   <data name="imgReportBroken.ToolTip" xml:space="preserve">
-    <value>Report Broken</value>
+    <value>Nahlásit poškozený soubor</value>
   </data>
   <data name="imgShare.ToolTip" xml:space="preserve">
-    <value>Share File</value>
+    <value>Sdílet soubor</value>
   </data>
   <data name="imgWatch.ToolTip" xml:space="preserve">
-    <value>Watch Now</value>
-  </data>
-  <data name="MPCToolStripMenuItem.Text" xml:space="preserve">
-    <value>MPC</value>
+    <value>Spustit</value>
   </data>
   <data name="VLC2ToolStripMenuItem.Text" xml:space="preserve">
-    <value>VLC (Built-in)</value>
-  </data>
-  <data name="VLCToolStripMenuItem.Text" xml:space="preserve">
-    <value>VLC</value>
-  </data>
-  <data name="WMPToolStripMenuItem.Text" xml:space="preserve">
-    <value>WMP</value>
+    <value>VLC (Zabudováno)</value>
   </data>
 </root>

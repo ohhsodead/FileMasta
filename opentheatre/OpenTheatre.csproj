@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -59,16 +59,16 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CButtonLib">
-      <HintPath>..\..\..\- Plugins\CButton\CButton\bin\Debug\CButtonLib.dll</HintPath>
+      <HintPath>..\references\CButtonLib.dll</HintPath>
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="ChreneLib">
-      <HintPath>..\..\..\- Plugins\ChreneLib_DLL\ChreneLib.dll</HintPath>
+      <HintPath>..\references\ChreneLib.dll</HintPath>
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\references\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -88,6 +88,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Languages\misc-cz.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>misc-cz.resx</DependentUpon>
+    </Compile>
     <Compile Include="Utilities\BackGroundWorker.cs" />
     <Compile Include="CControls\ctrlDetails.cs">
       <SubType>UserControl</SubType>
@@ -178,6 +183,9 @@
     </Compile>
     <Compile Include="Utilities\regexFileName.cs" />
     <Compile Include="Utilities\Utilities.cs" />
+    <EmbeddedResource Include="CControls\ctrlDetails.cz.resx">
+      <DependentUpon>ctrlDetails.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CControls\ctrlDetails.de.resx">
       <DependentUpon>ctrlDetails.cs</DependentUpon>
     </EmbeddedResource>
@@ -196,6 +204,9 @@
     <EmbeddedResource Include="CControls\ctrlPoster.resx">
       <DependentUpon>ctrlPoster.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CControls\ctrlSplashScreen.cz.resx">
+      <DependentUpon>ctrlSplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CControls\ctrlSplashScreen.de.resx">
       <DependentUpon>ctrlSplashScreen.cs</DependentUpon>
     </EmbeddedResource>
@@ -208,11 +219,20 @@
     <EmbeddedResource Include="CControls\ctrlSplashScreen.resx">
       <DependentUpon>ctrlSplashScreen.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CControls\ctrlStatus.cz.resx">
+      <DependentUpon>ctrlStatus.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CControls\ctrlStatus.resx">
       <DependentUpon>ctrlStatus.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CControls\ctrlStreamInfo.cz.resx">
+      <DependentUpon>ctrlStreamInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CControls\ctrlStreamInfo.resx">
       <DependentUpon>ctrlStreamInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmOpenTheatre.cz.resx">
+      <DependentUpon>frmOpenTheatre.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmOpenTheatre.de.resx">
       <DependentUpon>frmOpenTheatre.cs</DependentUpon>
@@ -226,11 +246,18 @@
     <EmbeddedResource Include="Forms\frmOpenTheatre.resx">
       <DependentUpon>frmOpenTheatre.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmShareFile.cz.resx">
+      <DependentUpon>frmShareFile.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmShareFile.resx">
       <DependentUpon>frmShareFile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmVLCPlayer.resx">
       <DependentUpon>frmVLCPlayer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\misc-cz.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>misc-cz.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Languages\misc-de.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -316,7 +343,7 @@
     <None Include="Resources\poster-glow.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\UnhandledExceptions\UnhandledExceptions.csproj">
+    <ProjectReference Include="..\UnhandledExceptions\UnhandledExceptions.csproj">
       <Project>{8c34bf91-cce3-47fa-aa32-4b2bb1a6f17a}</Project>
       <Name>UnhandledExceptions</Name>
     </ProjectReference>

@@ -217,9 +217,9 @@
             // 
             // tabMovies
             // 
+            resources.ApplyResources(this.tabMovies, "tabMovies");
             this.tabMovies.AllowDrop = true;
             this.tabMovies.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
-            resources.ApplyResources(this.tabMovies, "tabMovies");
             this.tabMovies.Controls.Add(this.panelMovies);
             this.tabMovies.Controls.Add(this.txtMoviesSearchBox);
             this.tabMovies.Controls.Add(this.btnSearchMovies);
@@ -237,12 +237,11 @@
             // 
             // txtMoviesSearchBox
             // 
+            resources.ApplyResources(this.txtMoviesSearchBox, "txtMoviesSearchBox");
             this.txtMoviesSearchBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(111)))), ((int)(((byte)(131)))));
             this.txtMoviesSearchBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            resources.ApplyResources(this.txtMoviesSearchBox, "txtMoviesSearchBox");
             this.txtMoviesSearchBox.ForeColor = System.Drawing.Color.White;
             this.txtMoviesSearchBox.Name = "txtMoviesSearchBox";
-            this.txtMoviesSearchBox.WaterMark = "Search for movies, people or imdb id...";
             this.txtMoviesSearchBox.WaterMarkActiveForeColor = System.Drawing.Color.White;
             this.txtMoviesSearchBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 10.75F);
             this.txtMoviesSearchBox.WaterMarkForeColor = System.Drawing.Color.Silver;
@@ -250,6 +249,7 @@
             // 
             // btnSearchMovies
             // 
+            resources.ApplyResources(this.btnSearchMovies, "btnSearchMovies");
             this.btnSearchMovies.BackColor = System.Drawing.Color.Transparent;
             this.btnSearchMovies.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.btnSearchMovies.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
@@ -262,7 +262,6 @@
             this.btnSearchMovies.FillType = CButtonLib.CButton.eFillType.Solid;
             this.btnSearchMovies.FocalPoints.CenterPtX = 0F;
             this.btnSearchMovies.FocalPoints.CenterPtY = 0F;
-            resources.ApplyResources(this.btnSearchMovies, "btnSearchMovies");
             this.btnSearchMovies.Image = ((System.Drawing.Image)(resources.GetObject("btnSearchMovies.Image")));
             this.btnSearchMovies.ImageIndex = 0;
             this.btnSearchMovies.ImageSize = new System.Drawing.Size(22, 22);
@@ -272,6 +271,7 @@
             // 
             // bgMoviesSearchBox
             // 
+            resources.ApplyResources(this.bgMoviesSearchBox, "bgMoviesSearchBox");
             this.bgMoviesSearchBox.BackColor = System.Drawing.Color.Transparent;
             this.bgMoviesSearchBox.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(111)))), ((int)(((byte)(131)))));
             this.bgMoviesSearchBox.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(111)))), ((int)(((byte)(131)))));
@@ -285,7 +285,6 @@
             this.bgMoviesSearchBox.DimFactorClick = 0;
             this.bgMoviesSearchBox.DimFactorHover = 0;
             this.bgMoviesSearchBox.FillType = CButtonLib.CButton.eFillType.Solid;
-            resources.ApplyResources(this.bgMoviesSearchBox, "bgMoviesSearchBox");
             this.bgMoviesSearchBox.ImageIndex = 0;
             this.bgMoviesSearchBox.Name = "bgMoviesSearchBox";
             this.bgMoviesSearchBox.ShowFocus = CButtonLib.CButton.eFocus.None;
@@ -302,8 +301,8 @@
             // 
             // panelMoviesRandom
             // 
-            this.panelMoviesRandom.Controls.Add(this.btnMoviesRandom);
             resources.ApplyResources(this.panelMoviesRandom, "panelMoviesRandom");
+            this.panelMoviesRandom.Controls.Add(this.btnMoviesRandom);
             this.panelMoviesRandom.Name = "panelMoviesRandom";
             // 
             // btnMoviesRandom
@@ -334,9 +333,9 @@
             // 
             // panelMoviesGenre
             // 
+            resources.ApplyResources(this.panelMoviesGenre, "panelMoviesGenre");
             this.panelMoviesGenre.Controls.Add(this.btnMoviesGenre);
             this.panelMoviesGenre.Controls.Add(this.cmboBoxMoviesGenre);
-            resources.ApplyResources(this.panelMoviesGenre, "panelMoviesGenre");
             this.panelMoviesGenre.Name = "panelMoviesGenre";
             // 
             // btnMoviesGenre
@@ -397,9 +396,9 @@
             // 
             // panelMoviesYear
             // 
+            resources.ApplyResources(this.panelMoviesYear, "panelMoviesYear");
             this.panelMoviesYear.Controls.Add(this.btnMoviesYear);
             this.panelMoviesYear.Controls.Add(this.cmboBoxMoviesYear);
-            resources.ApplyResources(this.panelMoviesYear, "panelMoviesYear");
             this.panelMoviesYear.Name = "panelMoviesYear";
             // 
             // btnMoviesYear
@@ -469,6 +468,7 @@
             // 
             // tabFiles
             // 
+            resources.ApplyResources(this.tabFiles, "tabFiles");
             this.tabFiles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
             this.tabFiles.Controls.Add(this.emptyDataFiles);
             this.tabFiles.Controls.Add(this.panelFileFilters);
@@ -485,7 +485,6 @@
             this.tabFiles.Controls.Add(this.btnSearchFiles);
             this.tabFiles.Controls.Add(this.bgFilesSearchBox);
             this.tabFiles.ForeColor = System.Drawing.Color.White;
-            resources.ApplyResources(this.tabFiles, "tabFiles");
             this.tabFiles.Name = "tabFiles";
             // 
             // emptyDataFiles
@@ -507,9 +506,9 @@
             // 
             // panelFilesSort
             // 
+            resources.ApplyResources(this.panelFilesSort, "panelFilesSort");
             this.panelFilesSort.Controls.Add(this.btnFilesSort);
             this.panelFilesSort.Controls.Add(this.cmboBoxFilesSort);
-            resources.ApplyResources(this.panelFilesSort, "panelFilesSort");
             this.panelFilesSort.Name = "panelFilesSort";
             // 
             // btnFilesSort
@@ -554,9 +553,9 @@
             // 
             // panelFilesFormat
             // 
+            resources.ApplyResources(this.panelFilesFormat, "panelFilesFormat");
             this.panelFilesFormat.Controls.Add(this.btnFilesFormat);
             this.panelFilesFormat.Controls.Add(this.cmboBoxFilesFormat);
-            resources.ApplyResources(this.panelFilesFormat, "panelFilesFormat");
             this.panelFilesFormat.Name = "panelFilesFormat";
             // 
             // btnFilesFormat
@@ -603,9 +602,9 @@
             // 
             // panelFilesHost
             // 
+            resources.ApplyResources(this.panelFilesHost, "panelFilesHost");
             this.panelFilesHost.Controls.Add(this.btnFilesHost);
             this.panelFilesHost.Controls.Add(this.cmboBoxFilesHost);
-            resources.ApplyResources(this.panelFilesHost, "panelFilesHost");
             this.panelFilesHost.Name = "panelFilesHost";
             // 
             // btnFilesHost
@@ -648,9 +647,9 @@
             // 
             // panelFilesQuality
             // 
+            resources.ApplyResources(this.panelFilesQuality, "panelFilesQuality");
             this.panelFilesQuality.Controls.Add(this.btnFilesQuality);
             this.panelFilesQuality.Controls.Add(this.cmboBoxFilesQuality);
-            resources.ApplyResources(this.panelFilesQuality, "panelFilesQuality");
             this.panelFilesQuality.Name = "panelFilesQuality";
             // 
             // btnFilesQuality
@@ -697,12 +696,11 @@
             // 
             // txtFilesSearchBox
             // 
+            resources.ApplyResources(this.txtFilesSearchBox, "txtFilesSearchBox");
             this.txtFilesSearchBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(111)))), ((int)(((byte)(131)))));
             this.txtFilesSearchBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            resources.ApplyResources(this.txtFilesSearchBox, "txtFilesSearchBox");
             this.txtFilesSearchBox.ForeColor = System.Drawing.Color.White;
             this.txtFilesSearchBox.Name = "txtFilesSearchBox";
-            this.txtFilesSearchBox.WaterMark = "Search for file names, add tags, insert a link ...";
             this.txtFilesSearchBox.WaterMarkActiveForeColor = System.Drawing.Color.White;
             this.txtFilesSearchBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 10.75F);
             this.txtFilesSearchBox.WaterMarkForeColor = System.Drawing.Color.Silver;
@@ -710,11 +708,11 @@
             // 
             // dataGridFiles
             // 
+            resources.ApplyResources(this.dataGridFiles, "dataGridFiles");
             this.dataGridFiles.AllowUserToAddRows = false;
             this.dataGridFiles.AllowUserToDeleteRows = false;
             this.dataGridFiles.AllowUserToResizeColumns = false;
             this.dataGridFiles.AllowUserToResizeRows = false;
-            resources.ApplyResources(this.dataGridFiles, "dataGridFiles");
             this.dataGridFiles.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
             this.dataGridFiles.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridFiles.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -764,34 +762,34 @@
             // 
             // columnFilesFileName
             // 
+            resources.ApplyResources(this.columnFilesFileName, "columnFilesFileName");
             this.columnFilesFileName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.columnFilesFileName.DefaultCellStyle = dataGridViewCellStyle2;
-            resources.ApplyResources(this.columnFilesFileName, "columnFilesFileName");
             this.columnFilesFileName.Name = "columnFilesFileName";
             this.columnFilesFileName.ReadOnly = true;
             // 
             // columnFilesFormat
             // 
-            this.columnFilesFormat.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             resources.ApplyResources(this.columnFilesFormat, "columnFilesFormat");
+            this.columnFilesFormat.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.columnFilesFormat.Name = "columnFilesFormat";
             this.columnFilesFormat.ReadOnly = true;
             // 
             // columnFilesHost
             // 
+            resources.ApplyResources(this.columnFilesHost, "columnFilesHost");
             this.columnFilesHost.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.columnFilesHost.DefaultCellStyle = dataGridViewCellStyle3;
-            resources.ApplyResources(this.columnFilesHost, "columnFilesHost");
             this.columnFilesHost.Name = "columnFilesHost";
             this.columnFilesHost.ReadOnly = true;
             // 
             // columnFilesURL
             // 
+            resources.ApplyResources(this.columnFilesURL, "columnFilesURL");
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.columnFilesURL.DefaultCellStyle = dataGridViewCellStyle4;
-            resources.ApplyResources(this.columnFilesURL, "columnFilesURL");
             this.columnFilesURL.Name = "columnFilesURL";
             this.columnFilesURL.ReadOnly = true;
             // 
@@ -810,7 +808,7 @@
             this.titleFilesSplitter.Name = "titleFilesSplitter";
             this.titleFilesSplitter.ShowFocus = CButtonLib.CButton.eFocus.None;
             this.titleFilesSplitter.TabStop = false;
-            // 
+            //
             // titleFilesVideo
             // 
             this.titleFilesVideo.BackColor = System.Drawing.Color.Transparent;
@@ -873,6 +871,7 @@
             // 
             // titleFilesSubtitles
             // 
+            resources.ApplyResources(this.titleFilesSubtitles, "titleFilesSubtitles");
             this.titleFilesSubtitles.BackColor = System.Drawing.Color.Transparent;
             this.titleFilesSubtitles.BorderColor = System.Drawing.Color.Transparent;
             this.titleFilesSubtitles.ColorFillSolid = System.Drawing.Color.Transparent;
@@ -883,7 +882,6 @@
             this.titleFilesSubtitles.DimFactorClick = 0;
             this.titleFilesSubtitles.DimFactorHover = 0;
             this.titleFilesSubtitles.FillType = CButtonLib.CButton.eFillType.Solid;
-            resources.ApplyResources(this.titleFilesSubtitles, "titleFilesSubtitles");
             this.titleFilesSubtitles.ImageIndex = 0;
             this.titleFilesSubtitles.Name = "titleFilesSubtitles";
             this.titleFilesSubtitles.ShowFocus = CButtonLib.CButton.eFocus.Dim;
@@ -893,6 +891,7 @@
             // 
             // titleFilesTorrents
             // 
+            resources.ApplyResources(this.titleFilesTorrents, "titleFilesTorrents");
             this.titleFilesTorrents.BackColor = System.Drawing.Color.Transparent;
             this.titleFilesTorrents.BorderColor = System.Drawing.Color.Transparent;
             this.titleFilesTorrents.ColorFillSolid = System.Drawing.Color.Transparent;
@@ -903,7 +902,6 @@
             this.titleFilesTorrents.DimFactorClick = 0;
             this.titleFilesTorrents.DimFactorHover = 0;
             this.titleFilesTorrents.FillType = CButtonLib.CButton.eFillType.Solid;
-            resources.ApplyResources(this.titleFilesTorrents, "titleFilesTorrents");
             this.titleFilesTorrents.ImageIndex = 0;
             this.titleFilesTorrents.Name = "titleFilesTorrents";
             this.titleFilesTorrents.ShowFocus = CButtonLib.CButton.eFocus.Dim;
@@ -913,6 +911,7 @@
             // 
             // titleFilesArchives
             // 
+            resources.ApplyResources(this.titleFilesArchives, "titleFilesArchives");
             this.titleFilesArchives.BackColor = System.Drawing.Color.Transparent;
             this.titleFilesArchives.BorderColor = System.Drawing.Color.Transparent;
             this.titleFilesArchives.ColorFillSolid = System.Drawing.Color.Transparent;
@@ -923,7 +922,6 @@
             this.titleFilesArchives.DimFactorClick = 0;
             this.titleFilesArchives.DimFactorHover = 0;
             this.titleFilesArchives.FillType = CButtonLib.CButton.eFillType.Solid;
-            resources.ApplyResources(this.titleFilesArchives, "titleFilesArchives");
             this.titleFilesArchives.ImageIndex = 0;
             this.titleFilesArchives.Name = "titleFilesArchives";
             this.titleFilesArchives.ShowFocus = CButtonLib.CButton.eFocus.Dim;
@@ -933,6 +931,7 @@
             // 
             // titleFilesLocal
             // 
+            resources.ApplyResources(this.titleFilesLocal, "titleFilesLocal");
             this.titleFilesLocal.BackColor = System.Drawing.Color.Transparent;
             this.titleFilesLocal.BorderColor = System.Drawing.Color.Transparent;
             this.titleFilesLocal.ColorFillSolid = System.Drawing.Color.Transparent;
@@ -943,7 +942,6 @@
             this.titleFilesLocal.DimFactorClick = 0;
             this.titleFilesLocal.DimFactorHover = 0;
             this.titleFilesLocal.FillType = CButtonLib.CButton.eFillType.Solid;
-            resources.ApplyResources(this.titleFilesLocal, "titleFilesLocal");
             this.titleFilesLocal.ImageIndex = 0;
             this.titleFilesLocal.Name = "titleFilesLocal";
             this.titleFilesLocal.ShowFocus = CButtonLib.CButton.eFocus.Dim;
@@ -953,6 +951,7 @@
             // 
             // btnSearchFiles
             // 
+            resources.ApplyResources(this.btnSearchFiles, "btnSearchFiles");
             this.btnSearchFiles.BackColor = System.Drawing.Color.Transparent;
             this.btnSearchFiles.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.btnSearchFiles.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
@@ -965,7 +964,6 @@
             this.btnSearchFiles.FillType = CButtonLib.CButton.eFillType.Solid;
             this.btnSearchFiles.FocalPoints.CenterPtX = 0F;
             this.btnSearchFiles.FocalPoints.CenterPtY = 0F;
-            resources.ApplyResources(this.btnSearchFiles, "btnSearchFiles");
             this.btnSearchFiles.Image = ((System.Drawing.Image)(resources.GetObject("btnSearchFiles.Image")));
             this.btnSearchFiles.ImageIndex = 0;
             this.btnSearchFiles.ImageSize = new System.Drawing.Size(22, 22);
@@ -975,6 +973,7 @@
             // 
             // bgFilesSearchBox
             // 
+            resources.ApplyResources(this.bgFilesSearchBox, "bgFilesSearchBox");
             this.bgFilesSearchBox.BackColor = System.Drawing.Color.Transparent;
             this.bgFilesSearchBox.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(111)))), ((int)(((byte)(131)))));
             this.bgFilesSearchBox.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(111)))), ((int)(((byte)(131)))));
@@ -988,7 +987,6 @@
             this.bgFilesSearchBox.DimFactorClick = 0;
             this.bgFilesSearchBox.DimFactorHover = 0;
             this.bgFilesSearchBox.FillType = CButtonLib.CButton.eFillType.Solid;
-            resources.ApplyResources(this.bgFilesSearchBox, "bgFilesSearchBox");
             this.bgFilesSearchBox.ImageIndex = 0;
             this.bgFilesSearchBox.Name = "bgFilesSearchBox";
             this.bgFilesSearchBox.ShowFocus = CButtonLib.CButton.eFocus.None;
@@ -997,6 +995,7 @@
             // 
             // tabBookmarks
             // 
+            resources.ApplyResources(this.tabBookmarks, "tabBookmarks");
             this.tabBookmarks.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
             this.tabBookmarks.Controls.Add(this.btnSearchBookmarks);
             this.tabBookmarks.Controls.Add(this.emptyDataBookmarks);
@@ -1005,11 +1004,11 @@
             this.tabBookmarks.Controls.Add(this.dataGridBookmarks);
             this.tabBookmarks.Controls.Add(this.bgBookmarksSearchBox);
             this.tabBookmarks.ForeColor = System.Drawing.Color.White;
-            resources.ApplyResources(this.tabBookmarks, "tabBookmarks");
             this.tabBookmarks.Name = "tabBookmarks";
             // 
             // btnSearchBookmarks
             // 
+            resources.ApplyResources(this.btnSearchBookmarks, "btnSearchBookmarks");
             this.btnSearchBookmarks.BackColor = System.Drawing.Color.Transparent;
             this.btnSearchBookmarks.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.btnSearchBookmarks.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
@@ -1022,7 +1021,6 @@
             this.btnSearchBookmarks.FillType = CButtonLib.CButton.eFillType.Solid;
             this.btnSearchBookmarks.FocalPoints.CenterPtX = 0F;
             this.btnSearchBookmarks.FocalPoints.CenterPtY = 0F;
-            resources.ApplyResources(this.btnSearchBookmarks, "btnSearchBookmarks");
             this.btnSearchBookmarks.ForeColor = System.Drawing.Color.Black;
             this.btnSearchBookmarks.Image = ((System.Drawing.Image)(resources.GetObject("btnSearchBookmarks.Image")));
             this.btnSearchBookmarks.ImageIndex = 0;
@@ -1048,9 +1046,9 @@
             // 
             // panelBookmarksSort
             // 
+            resources.ApplyResources(this.panelBookmarksSort, "panelBookmarksSort");
             this.panelBookmarksSort.Controls.Add(this.btnBookmarksSort);
             this.panelBookmarksSort.Controls.Add(this.cmboBoxBookmarksSort);
-            resources.ApplyResources(this.panelBookmarksSort, "panelBookmarksSort");
             this.panelBookmarksSort.Name = "panelBookmarksSort";
             // 
             // btnBookmarksSort
@@ -1095,9 +1093,9 @@
             // 
             // panelBookmarksType
             // 
+            resources.ApplyResources(this.panelBookmarksType, "panelBookmarksType");
             this.panelBookmarksType.Controls.Add(this.btnBookmarksType);
             this.panelBookmarksType.Controls.Add(this.cmboBoxBookmarksType);
-            resources.ApplyResources(this.panelBookmarksType, "panelBookmarksType");
             this.panelBookmarksType.Name = "panelBookmarksType";
             // 
             // btnBookmarksType
@@ -1147,12 +1145,11 @@
             // 
             // txtBookmarksSearchBox
             // 
+            resources.ApplyResources(this.txtBookmarksSearchBox, "txtBookmarksSearchBox");
             this.txtBookmarksSearchBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(111)))), ((int)(((byte)(131)))));
             this.txtBookmarksSearchBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            resources.ApplyResources(this.txtBookmarksSearchBox, "txtBookmarksSearchBox");
             this.txtBookmarksSearchBox.ForeColor = System.Drawing.Color.White;
             this.txtBookmarksSearchBox.Name = "txtBookmarksSearchBox";
-            this.txtBookmarksSearchBox.WaterMark = "Search for file names...";
             this.txtBookmarksSearchBox.WaterMarkActiveForeColor = System.Drawing.Color.White;
             this.txtBookmarksSearchBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 10.75F);
             this.txtBookmarksSearchBox.WaterMarkForeColor = System.Drawing.Color.Silver;
@@ -1160,11 +1157,11 @@
             // 
             // dataGridBookmarks
             // 
+            resources.ApplyResources(this.dataGridBookmarks, "dataGridBookmarks");
             this.dataGridBookmarks.AllowUserToAddRows = false;
             this.dataGridBookmarks.AllowUserToDeleteRows = false;
             this.dataGridBookmarks.AllowUserToResizeColumns = false;
             this.dataGridBookmarks.AllowUserToResizeRows = false;
-            resources.ApplyResources(this.dataGridBookmarks, "dataGridBookmarks");
             this.dataGridBookmarks.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
             this.dataGridBookmarks.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridBookmarks.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -1214,46 +1211,47 @@
             // 
             // columnBookmarksType
             // 
-            this.columnBookmarksType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
             resources.ApplyResources(this.columnBookmarksType, "columnBookmarksType");
+            this.columnBookmarksType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
             this.columnBookmarksType.Name = "columnBookmarksType";
             this.columnBookmarksType.ReadOnly = true;
             // 
             // columnBookmarksFileName
             // 
+            resources.ApplyResources(this.columnBookmarksFileName, "columnBookmarksFileName");
             this.columnBookmarksFileName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.columnBookmarksFileName.DefaultCellStyle = dataGridViewCellStyle7;
-            resources.ApplyResources(this.columnBookmarksFileName, "columnBookmarksFileName");
             this.columnBookmarksFileName.Name = "columnBookmarksFileName";
             this.columnBookmarksFileName.ReadOnly = true;
             // 
             // columnBookmarksFormat
             // 
-            this.columnBookmarksFormat.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             resources.ApplyResources(this.columnBookmarksFormat, "columnBookmarksFormat");
+            this.columnBookmarksFormat.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.columnBookmarksFormat.Name = "columnBookmarksFormat";
             this.columnBookmarksFormat.ReadOnly = true;
             // 
             // columnBookmarksHost
             // 
+            resources.ApplyResources(this.columnBookmarksHost, "columnBookmarksHost");
             this.columnBookmarksHost.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.columnBookmarksHost.DefaultCellStyle = dataGridViewCellStyle8;
-            resources.ApplyResources(this.columnBookmarksHost, "columnBookmarksHost");
             this.columnBookmarksHost.Name = "columnBookmarksHost";
             this.columnBookmarksHost.ReadOnly = true;
             // 
             // columnBookmarksURL
             // 
+            resources.ApplyResources(this.columnBookmarksURL, "columnBookmarksURL");
             dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.columnBookmarksURL.DefaultCellStyle = dataGridViewCellStyle9;
-            resources.ApplyResources(this.columnBookmarksURL, "columnBookmarksURL");
             this.columnBookmarksURL.Name = "columnBookmarksURL";
             this.columnBookmarksURL.ReadOnly = true;
             // 
             // bgBookmarksSearchBox
             // 
+            resources.ApplyResources(this.bgBookmarksSearchBox, "bgBookmarksSearchBox");
             this.bgBookmarksSearchBox.BackColor = System.Drawing.Color.Transparent;
             this.bgBookmarksSearchBox.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(111)))), ((int)(((byte)(131)))));
             this.bgBookmarksSearchBox.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(111)))), ((int)(((byte)(131)))));
@@ -1267,7 +1265,6 @@
             this.bgBookmarksSearchBox.DimFactorClick = 0;
             this.bgBookmarksSearchBox.DimFactorHover = 0;
             this.bgBookmarksSearchBox.FillType = CButtonLib.CButton.eFillType.Solid;
-            resources.ApplyResources(this.bgBookmarksSearchBox, "bgBookmarksSearchBox");
             this.bgBookmarksSearchBox.ImageIndex = 0;
             this.bgBookmarksSearchBox.Name = "bgBookmarksSearchBox";
             this.bgBookmarksSearchBox.ShowFocus = CButtonLib.CButton.eFocus.None;
@@ -1276,11 +1273,11 @@
             // 
             // tabDownloads
             // 
+            resources.ApplyResources(this.tabDownloads, "tabDownloads");
             this.tabDownloads.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
             this.tabDownloads.Controls.Add(this.lblNoDownloads);
             this.tabDownloads.Controls.Add(this.panelDownloads);
             this.tabDownloads.ForeColor = System.Drawing.Color.White;
-            resources.ApplyResources(this.tabDownloads, "tabDownloads");
             this.tabDownloads.Name = "tabDownloads";
             // 
             // lblNoDownloads
@@ -1300,8 +1297,8 @@
             // 
             // tabBlank
             // 
-            this.tabBlank.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
             resources.ApplyResources(this.tabBlank, "tabBlank");
+            this.tabBlank.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
             this.tabBlank.ForeColor = System.Drawing.Color.White;
             this.tabBlank.Name = "tabBlank";
             // 
@@ -1341,9 +1338,9 @@
             // 
             // panelGeneralSettingsLanguage
             // 
+            resources.ApplyResources(this.panelGeneralSettingsLanguage, "panelGeneralSettingsLanguage");
             this.panelGeneralSettingsLanguage.Controls.Add(this.btnSettingsGeneralLanguage);
             this.panelGeneralSettingsLanguage.Controls.Add(this.cmboboxSettingsLanguage);
-            resources.ApplyResources(this.panelGeneralSettingsLanguage, "panelGeneralSettingsLanguage");
             this.panelGeneralSettingsLanguage.Name = "panelGeneralSettingsLanguage";
             // 
             // btnSettingsGeneralLanguage
@@ -1383,7 +1380,8 @@
             resources.GetString("cmboboxSettingsLanguage.Items"),
             resources.GetString("cmboboxSettingsLanguage.Items1"),
             resources.GetString("cmboboxSettingsLanguage.Items2"),
-            resources.GetString("cmboboxSettingsLanguage.Items3")});
+            resources.GetString("cmboboxSettingsLanguage.Items3"),
+            resources.GetString("cmboboxSettingsLanguage.Items4")});
             this.cmboboxSettingsLanguage.Name = "cmboboxSettingsLanguage";
             this.cmboboxSettingsLanguage.TabStop = false;
             this.cmboboxSettingsLanguage.SelectedIndexChanged += new System.EventHandler(this.cmboboxGeneralSettingsLanguage_SelectedIndexChanged);
@@ -1406,9 +1404,9 @@
             // 
             // txtBoxSettingsDownloadsDirectory
             // 
+            resources.ApplyResources(this.txtBoxSettingsDownloadsDirectory, "txtBoxSettingsDownloadsDirectory");
             this.txtBoxSettingsDownloadsDirectory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.txtBoxSettingsDownloadsDirectory.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            resources.ApplyResources(this.txtBoxSettingsDownloadsDirectory, "txtBoxSettingsDownloadsDirectory");
             this.txtBoxSettingsDownloadsDirectory.ForeColor = System.Drawing.Color.Black;
             this.txtBoxSettingsDownloadsDirectory.Name = "txtBoxSettingsDownloadsDirectory";
             this.txtBoxSettingsDownloadsDirectory.ReadOnly = true;
@@ -1466,9 +1464,9 @@
             // 
             // txtBoxSettingsConnectionPassword
             // 
+            resources.ApplyResources(this.txtBoxSettingsConnectionPassword, "txtBoxSettingsConnectionPassword");
             this.txtBoxSettingsConnectionPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.txtBoxSettingsConnectionPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            resources.ApplyResources(this.txtBoxSettingsConnectionPassword, "txtBoxSettingsConnectionPassword");
             this.txtBoxSettingsConnectionPassword.ForeColor = System.Drawing.Color.Black;
             this.txtBoxSettingsConnectionPassword.Name = "txtBoxSettingsConnectionPassword";
             this.txtBoxSettingsConnectionPassword.WaterMark = "default";
@@ -1486,9 +1484,9 @@
             // 
             // txtBoxSettingsConnectionUsername
             // 
+            resources.ApplyResources(this.txtBoxSettingsConnectionUsername, "txtBoxSettingsConnectionUsername");
             this.txtBoxSettingsConnectionUsername.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.txtBoxSettingsConnectionUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            resources.ApplyResources(this.txtBoxSettingsConnectionUsername, "txtBoxSettingsConnectionUsername");
             this.txtBoxSettingsConnectionUsername.ForeColor = System.Drawing.Color.Black;
             this.txtBoxSettingsConnectionUsername.Name = "txtBoxSettingsConnectionUsername";
             this.txtBoxSettingsConnectionUsername.WaterMark = "default";
@@ -1506,9 +1504,9 @@
             // 
             // txtBoxSettingsConnectionPort
             // 
+            resources.ApplyResources(this.txtBoxSettingsConnectionPort, "txtBoxSettingsConnectionPort");
             this.txtBoxSettingsConnectionPort.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.txtBoxSettingsConnectionPort.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            resources.ApplyResources(this.txtBoxSettingsConnectionPort, "txtBoxSettingsConnectionPort");
             this.txtBoxSettingsConnectionPort.ForeColor = System.Drawing.Color.Black;
             this.txtBoxSettingsConnectionPort.Name = "txtBoxSettingsConnectionPort";
             this.txtBoxSettingsConnectionPort.WaterMark = "8080";
@@ -1526,9 +1524,9 @@
             // 
             // txtBoxSettingsConnectionHost
             // 
+            resources.ApplyResources(this.txtBoxSettingsConnectionHost, "txtBoxSettingsConnectionHost");
             this.txtBoxSettingsConnectionHost.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.txtBoxSettingsConnectionHost.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            resources.ApplyResources(this.txtBoxSettingsConnectionHost, "txtBoxSettingsConnectionHost");
             this.txtBoxSettingsConnectionHost.ForeColor = System.Drawing.Color.Black;
             this.txtBoxSettingsConnectionHost.Name = "txtBoxSettingsConnectionHost";
             this.txtBoxSettingsConnectionHost.WaterMark = "192.0.0.1";
@@ -1554,15 +1552,16 @@
             // 
             // imgSettingsDownloadsDirectory
             // 
+            resources.ApplyResources(this.imgSettingsDownloadsDirectory, "imgSettingsDownloadsDirectory");
             this.imgSettingsDownloadsDirectory.BackColor = System.Drawing.Color.Transparent;
             this.imgSettingsDownloadsDirectory.Cursor = System.Windows.Forms.Cursors.Hand;
-            resources.ApplyResources(this.imgSettingsDownloadsDirectory, "imgSettingsDownloadsDirectory");
             this.imgSettingsDownloadsDirectory.Name = "imgSettingsDownloadsDirectory";
             this.imgSettingsDownloadsDirectory.TabStop = false;
             this.imgSettingsDownloadsDirectory.Click += new System.EventHandler(this.imgSettingsDownloadsDirectory_Click);
             // 
             // bgSettingsDownloadsDirectory
             // 
+            resources.ApplyResources(this.bgSettingsDownloadsDirectory, "bgSettingsDownloadsDirectory");
             this.bgSettingsDownloadsDirectory.BackColor = System.Drawing.Color.Transparent;
             this.bgSettingsDownloadsDirectory.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.bgSettingsDownloadsDirectory.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
@@ -1576,7 +1575,6 @@
             this.bgSettingsDownloadsDirectory.DimFactorClick = 0;
             this.bgSettingsDownloadsDirectory.DimFactorHover = 0;
             this.bgSettingsDownloadsDirectory.FillType = CButtonLib.CButton.eFillType.Solid;
-            resources.ApplyResources(this.bgSettingsDownloadsDirectory, "bgSettingsDownloadsDirectory");
             this.bgSettingsDownloadsDirectory.ImageIndex = 0;
             this.bgSettingsDownloadsDirectory.Name = "bgSettingsDownloadsDirectory";
             this.bgSettingsDownloadsDirectory.ShowFocus = CButtonLib.CButton.eFocus.None;
@@ -1584,6 +1582,7 @@
             // 
             // btnSettingsSave
             // 
+            resources.ApplyResources(this.btnSettingsSave, "btnSettingsSave");
             this.btnSettingsSave.BackColor = System.Drawing.Color.Transparent;
             this.btnSettingsSave.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(139)))), ((int)(((byte)(202)))));
             this.btnSettingsSave.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(139)))), ((int)(((byte)(202)))));
@@ -1597,7 +1596,6 @@
             this.btnSettingsSave.DimFactorClick = 0;
             this.btnSettingsSave.DimFactorHover = 0;
             this.btnSettingsSave.FillType = CButtonLib.CButton.eFillType.Solid;
-            resources.ApplyResources(this.btnSettingsSave, "btnSettingsSave");
             this.btnSettingsSave.ImageIndex = 0;
             this.btnSettingsSave.Name = "btnSettingsSave";
             this.btnSettingsSave.ShowFocus = CButtonLib.CButton.eFocus.None;
@@ -1606,6 +1604,7 @@
             // 
             // btnSettingsRestoreDefault
             // 
+            resources.ApplyResources(this.btnSettingsRestoreDefault, "btnSettingsRestoreDefault");
             this.btnSettingsRestoreDefault.BackColor = System.Drawing.Color.Transparent;
             this.btnSettingsRestoreDefault.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(139)))), ((int)(((byte)(202)))));
             this.btnSettingsRestoreDefault.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(139)))), ((int)(((byte)(202)))));
@@ -1619,7 +1618,6 @@
             this.btnSettingsRestoreDefault.DimFactorClick = 0;
             this.btnSettingsRestoreDefault.DimFactorHover = 0;
             this.btnSettingsRestoreDefault.FillType = CButtonLib.CButton.eFillType.Solid;
-            resources.ApplyResources(this.btnSettingsRestoreDefault, "btnSettingsRestoreDefault");
             this.btnSettingsRestoreDefault.ImageIndex = 0;
             this.btnSettingsRestoreDefault.Name = "btnSettingsRestoreDefault";
             this.btnSettingsRestoreDefault.ShowFocus = CButtonLib.CButton.eFocus.None;
@@ -1628,6 +1626,7 @@
             // 
             // bgSettingsConnectionPassword
             // 
+            resources.ApplyResources(this.bgSettingsConnectionPassword, "bgSettingsConnectionPassword");
             this.bgSettingsConnectionPassword.BackColor = System.Drawing.Color.Transparent;
             this.bgSettingsConnectionPassword.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.bgSettingsConnectionPassword.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
@@ -1640,7 +1639,6 @@
             this.bgSettingsConnectionPassword.DesignerSelected = false;
             this.bgSettingsConnectionPassword.DimFactorClick = 0;
             this.bgSettingsConnectionPassword.DimFactorHover = 0;
-            resources.ApplyResources(this.bgSettingsConnectionPassword, "bgSettingsConnectionPassword");
             this.bgSettingsConnectionPassword.FillType = CButtonLib.CButton.eFillType.Solid;
             this.bgSettingsConnectionPassword.ImageIndex = 0;
             this.bgSettingsConnectionPassword.Name = "bgSettingsConnectionPassword";
@@ -1649,6 +1647,7 @@
             // 
             // bgSettingsConnectionUsername
             // 
+            resources.ApplyResources(this.bgSettingsConnectionUsername, "bgSettingsConnectionUsername");
             this.bgSettingsConnectionUsername.BackColor = System.Drawing.Color.Transparent;
             this.bgSettingsConnectionUsername.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.bgSettingsConnectionUsername.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
@@ -1661,7 +1660,6 @@
             this.bgSettingsConnectionUsername.DesignerSelected = false;
             this.bgSettingsConnectionUsername.DimFactorClick = 0;
             this.bgSettingsConnectionUsername.DimFactorHover = 0;
-            resources.ApplyResources(this.bgSettingsConnectionUsername, "bgSettingsConnectionUsername");
             this.bgSettingsConnectionUsername.FillType = CButtonLib.CButton.eFillType.Solid;
             this.bgSettingsConnectionUsername.ImageIndex = 0;
             this.bgSettingsConnectionUsername.Name = "bgSettingsConnectionUsername";
@@ -1670,6 +1668,7 @@
             // 
             // bgSettingsConnectionPort
             // 
+            resources.ApplyResources(this.bgSettingsConnectionPort, "bgSettingsConnectionPort");
             this.bgSettingsConnectionPort.BackColor = System.Drawing.Color.Transparent;
             this.bgSettingsConnectionPort.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.bgSettingsConnectionPort.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
@@ -1682,7 +1681,6 @@
             this.bgSettingsConnectionPort.DesignerSelected = false;
             this.bgSettingsConnectionPort.DimFactorClick = 0;
             this.bgSettingsConnectionPort.DimFactorHover = 0;
-            resources.ApplyResources(this.bgSettingsConnectionPort, "bgSettingsConnectionPort");
             this.bgSettingsConnectionPort.FillType = CButtonLib.CButton.eFillType.Solid;
             this.bgSettingsConnectionPort.ImageIndex = 0;
             this.bgSettingsConnectionPort.Name = "bgSettingsConnectionPort";
@@ -1691,6 +1689,7 @@
             // 
             // bgSettingsConnectionHost
             // 
+            resources.ApplyResources(this.bgSettingsConnectionHost, "bgSettingsConnectionHost");
             this.bgSettingsConnectionHost.BackColor = System.Drawing.Color.Transparent;
             this.bgSettingsConnectionHost.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.bgSettingsConnectionHost.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
@@ -1703,7 +1702,6 @@
             this.bgSettingsConnectionHost.DesignerSelected = false;
             this.bgSettingsConnectionHost.DimFactorClick = 0;
             this.bgSettingsConnectionHost.DimFactorHover = 0;
-            resources.ApplyResources(this.bgSettingsConnectionHost, "bgSettingsConnectionHost");
             this.bgSettingsConnectionHost.FillType = CButtonLib.CButton.eFillType.Solid;
             this.bgSettingsConnectionHost.ImageIndex = 0;
             this.bgSettingsConnectionHost.Name = "bgSettingsConnectionHost";
@@ -1712,8 +1710,8 @@
             // 
             // tabAbout
             // 
-            this.tabAbout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
             resources.ApplyResources(this.tabAbout, "tabAbout");
+            this.tabAbout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
             this.tabAbout.Controls.Add(this.lblAboutVersion);
             this.tabAbout.Controls.Add(this.btnAboutReportIssue);
             this.tabAbout.Controls.Add(this.lblAboutSubText);
@@ -1792,9 +1790,9 @@
             // 
             // imgSettings
             // 
+            resources.ApplyResources(this.imgSettings, "imgSettings");
             this.imgSettings.BackColor = System.Drawing.Color.Transparent;
             this.imgSettings.Cursor = System.Windows.Forms.Cursors.Hand;
-            resources.ApplyResources(this.imgSettings, "imgSettings");
             this.imgSettings.Name = "imgSettings";
             this.imgSettings.TabStop = false;
             this.imgSettings.Click += new System.EventHandler(this.imgSettings_Click);
@@ -1842,9 +1840,9 @@
             // 
             // imgBookmarks
             // 
+            resources.ApplyResources(this.imgBookmarks, "imgBookmarks");
             this.imgBookmarks.BackColor = System.Drawing.Color.Transparent;
             this.imgBookmarks.Cursor = System.Windows.Forms.Cursors.Hand;
-            resources.ApplyResources(this.imgBookmarks, "imgBookmarks");
             this.imgBookmarks.Name = "imgBookmarks";
             this.imgBookmarks.TabStop = false;
             this.imgBookmarks.Click += new System.EventHandler(this.imgBookmarks_Click);
@@ -1860,9 +1858,9 @@
             // 
             // imgDownloads
             // 
+            resources.ApplyResources(this.imgDownloads, "imgDownloads");
             this.imgDownloads.BackColor = System.Drawing.Color.Transparent;
             this.imgDownloads.Cursor = System.Windows.Forms.Cursors.Hand;
-            resources.ApplyResources(this.imgDownloads, "imgDownloads");
             this.imgDownloads.Name = "imgDownloads";
             this.imgDownloads.TabStop = false;
             this.imgDownloads.Click += new System.EventHandler(this.imgDownloads_Click);
@@ -1894,9 +1892,9 @@
             // 
             // imgAbout
             // 
+            resources.ApplyResources(this.imgAbout, "imgAbout");
             this.imgAbout.BackColor = System.Drawing.Color.Transparent;
             this.imgAbout.Cursor = System.Windows.Forms.Cursors.Hand;
-            resources.ApplyResources(this.imgAbout, "imgAbout");
             this.imgAbout.Name = "imgAbout";
             this.imgAbout.TabStop = false;
             this.imgAbout.Click += new System.EventHandler(this.imgAbout_Click);
@@ -1928,18 +1926,18 @@
             // 
             // imgFiles
             // 
+            resources.ApplyResources(this.imgFiles, "imgFiles");
             this.imgFiles.BackColor = System.Drawing.Color.Transparent;
             this.imgFiles.Cursor = System.Windows.Forms.Cursors.Hand;
-            resources.ApplyResources(this.imgFiles, "imgFiles");
             this.imgFiles.Name = "imgFiles";
             this.imgFiles.TabStop = false;
             this.imgFiles.Click += new System.EventHandler(this.imgFiles_Click);
             // 
             // imgMovies
             // 
+            resources.ApplyResources(this.imgMovies, "imgMovies");
             this.imgMovies.BackColor = System.Drawing.Color.Transparent;
             this.imgMovies.Cursor = System.Windows.Forms.Cursors.Hand;
-            resources.ApplyResources(this.imgMovies, "imgMovies");
             this.imgMovies.Name = "imgMovies";
             this.imgMovies.TabStop = false;
             this.imgMovies.Click += new System.EventHandler(this.imgMovies_Click);
@@ -2004,8 +2002,8 @@
             // 
             // frmOpenTheatre
             // 
-            this.AllowDrop = true;
             resources.ApplyResources(this, "$this");
+            this.AllowDrop = true;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
             this.Controls.Add(this.imgSpinner);

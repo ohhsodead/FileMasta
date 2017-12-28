@@ -198,9 +198,9 @@
             // 
             // imgIMDb
             // 
+            resources.ApplyResources(this.imgIMDb, "imgIMDb");
             this.imgIMDb.Cursor = System.Windows.Forms.Cursors.Hand;
             this.imgIMDb.Image = global::OpenTheatre.Properties.Resources.imdb;
-            resources.ApplyResources(this.imgIMDb, "imgIMDb");
             this.imgIMDb.Name = "imgIMDb";
             this.imgIMDb.TabStop = false;
             this.imgIMDb.Click += new System.EventHandler(this.imgIMDb_Click);
@@ -278,6 +278,7 @@
             // 
             // lineUserReviews
             // 
+            resources.ApplyResources(this.lineUserReviews, "lineUserReviews");
             this.lineUserReviews.BackColor = System.Drawing.Color.Transparent;
             this.lineUserReviews.BorderColor = System.Drawing.Color.White;
             this.lineUserReviews.ColorFillSolid = System.Drawing.Color.White;
@@ -286,7 +287,6 @@
             this.lineUserReviews.DimFactorClick = 0;
             this.lineUserReviews.DimFactorHover = 0;
             this.lineUserReviews.FillType = CButtonLib.CButton.eFillType.Solid;
-            resources.ApplyResources(this.lineUserReviews, "lineUserReviews");
             this.lineUserReviews.ForeColor = System.Drawing.Color.Transparent;
             this.lineUserReviews.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.lineUserReviews.ImageIndex = 0;
@@ -361,6 +361,7 @@
             // 
             // cButton1
             // 
+            resources.ApplyResources(this.cButton1, "cButton1");
             this.cButton1.BackColor = System.Drawing.Color.Transparent;
             this.cButton1.BorderColor = System.Drawing.Color.White;
             this.cButton1.ColorFillSolid = System.Drawing.Color.White;
@@ -369,7 +370,6 @@
             this.cButton1.DimFactorClick = 0;
             this.cButton1.DimFactorHover = 0;
             this.cButton1.FillType = CButtonLib.CButton.eFillType.Solid;
-            resources.ApplyResources(this.cButton1, "cButton1");
             this.cButton1.ForeColor = System.Drawing.Color.Transparent;
             this.cButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.cButton1.ImageIndex = 0;
@@ -420,6 +420,7 @@
             // 
             // btnWatchTrailer
             // 
+            resources.ApplyResources(this.btnWatchTrailer, "btnWatchTrailer");
             this.btnWatchTrailer.BackColor = System.Drawing.Color.Transparent;
             this.btnWatchTrailer.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.btnWatchTrailer.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
@@ -433,7 +434,6 @@
             this.btnWatchTrailer.DimFactorClick = 0;
             this.btnWatchTrailer.DimFactorHover = 0;
             this.btnWatchTrailer.FillType = CButtonLib.CButton.eFillType.Solid;
-            resources.ApplyResources(this.btnWatchTrailer, "btnWatchTrailer");
             this.btnWatchTrailer.ForeColor = System.Drawing.Color.Black;
             this.btnWatchTrailer.ImageIndex = 0;
             this.btnWatchTrailer.Name = "btnWatchTrailer";
@@ -447,8 +447,8 @@
             // 
             // imgPoster
             // 
-            this.imgPoster.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this.imgPoster, "imgPoster");
+            this.imgPoster.BackColor = System.Drawing.Color.Transparent;
             this.imgPoster.Name = "imgPoster";
             this.imgPoster.TabStop = false;
             // 
@@ -464,8 +464,8 @@
             // 
             // imgPosterBG
             // 
-            this.imgPosterBG.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this.imgPosterBG, "imgPosterBG");
+            this.imgPosterBG.BackColor = System.Drawing.Color.Transparent;
             this.imgPosterBG.Name = "imgPosterBG";
             this.imgPosterBG.TabStop = false;
             // 
