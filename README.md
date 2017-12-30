@@ -42,17 +42,14 @@ Download the latest installer [here](https://github.com/invu/opentheatre-app/rel
 ### Movies
 ![Movies](https://raw.githubusercontent.com/invu/opentheatre-app/master/screenshots/movies.png)
 
-### Files
-![Files](https://raw.githubusercontent.com/invu/opentheatre-app/master/screenshots/files.png)
-
-### Bookmarks
-![Bookmarks](https://raw.githubusercontent.com/invu/opentheatre-app/master/screenshots/bookmarks.png)
-
 ### Movie Details
 ![Movie Details](https://raw.githubusercontent.com/invu/opentheatre-app/master/screenshots/movie%20details.png)
 
-### Downloads
-![Downloads](https://raw.githubusercontent.com/invu/opentheatre-app/master/screenshots/downloads.png)
+### Files
+![Files](https://raw.githubusercontent.com/invu/opentheatre-app/master/screenshots/files.png)
+
+### File Details
+![File Details](https://raw.githubusercontent.com/invu/opentheatre-app/master/screenshots/file&20details.png)
 
 ## Where credit's due
 - [Material Design Icons (Powered by Google)](https://materialdesignicons.com/)
