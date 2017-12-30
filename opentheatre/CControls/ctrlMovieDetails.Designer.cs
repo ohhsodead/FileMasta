@@ -1,6 +1,6 @@
 ﻿namespace OpenTheatre
 {
-    partial class ctrlDetails
+    partial class ctrlMovieDetails
     {
         /// <summary> 
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ctrlDetails));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ctrlMovieDetails));
             this.infoYear = new System.Windows.Forms.Label();
             this.infoGenre = new System.Windows.Forms.Label();
             this.lblSubDirector = new System.Windows.Forms.Label();
@@ -55,9 +55,7 @@
             this.infoFileHost = new System.Windows.Forms.Label();
             this.infoFileName = new System.Windows.Forms.Label();
             this.lineUserReviews = new CButtonLib.CButton();
-            this.infoFileAge = new System.Windows.Forms.Label();
-            this.lblHeaderFiles = new System.Windows.Forms.Label();
-            this.infoFileSize = new System.Windows.Forms.Label();
+            this.lblHeaderDirectFiles = new System.Windows.Forms.Label();
             this.lineSplitter = new CButtonLib.CButton();
             this.panelFiles = new System.Windows.Forms.FlowLayoutPanel();
             this.panelTitleTorrents = new System.Windows.Forms.Panel();
@@ -228,9 +226,7 @@
             this.panelTitleFiles.Controls.Add(this.infoFileHost);
             this.panelTitleFiles.Controls.Add(this.infoFileName);
             this.panelTitleFiles.Controls.Add(this.lineUserReviews);
-            this.panelTitleFiles.Controls.Add(this.infoFileAge);
-            this.panelTitleFiles.Controls.Add(this.lblHeaderFiles);
-            this.panelTitleFiles.Controls.Add(this.infoFileSize);
+            this.panelTitleFiles.Controls.Add(this.lblHeaderDirectFiles);
             this.panelTitleFiles.Controls.Add(this.lineSplitter);
             this.panelDetails.SetFlowBreak(this.panelTitleFiles, true);
             this.panelTitleFiles.Name = "panelTitleFiles";
@@ -298,27 +294,13 @@
             this.lineUserReviews.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.lineUserReviews.TextShadowShow = false;
             // 
-            // infoFileAge
+            // lblHeaderDirectFiles
             // 
-            resources.ApplyResources(this.infoFileAge, "infoFileAge");
-            this.infoFileAge.AutoEllipsis = true;
-            this.infoFileAge.Cursor = System.Windows.Forms.Cursors.Default;
-            this.infoFileAge.Name = "infoFileAge";
-            // 
-            // lblHeaderFiles
-            // 
-            resources.ApplyResources(this.lblHeaderFiles, "lblHeaderFiles");
-            this.lblHeaderFiles.BackColor = System.Drawing.Color.Transparent;
-            this.lblHeaderFiles.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblHeaderFiles.ForeColor = System.Drawing.Color.White;
-            this.lblHeaderFiles.Name = "lblHeaderFiles";
-            // 
-            // infoFileSize
-            // 
-            resources.ApplyResources(this.infoFileSize, "infoFileSize");
-            this.infoFileSize.AutoEllipsis = true;
-            this.infoFileSize.Cursor = System.Windows.Forms.Cursors.Default;
-            this.infoFileSize.Name = "infoFileSize";
+            resources.ApplyResources(this.lblHeaderDirectFiles, "lblHeaderDirectFiles");
+            this.lblHeaderDirectFiles.BackColor = System.Drawing.Color.Transparent;
+            this.lblHeaderDirectFiles.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblHeaderDirectFiles.ForeColor = System.Drawing.Color.White;
+            this.lblHeaderDirectFiles.Name = "lblHeaderDirectFiles";
             // 
             // lineSplitter
             // 
@@ -469,7 +451,7 @@
             this.imgPosterBG.Name = "imgPosterBG";
             this.imgPosterBG.TabStop = false;
             // 
-            // ctrlDetails
+            // ctrlMovieDetails
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -482,7 +464,7 @@
             this.Controls.Add(this.imgPosterBG);
             this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.Color.White;
-            this.Name = "ctrlDetails";
+            this.Name = "ctrlMovieDetails";
             this.Load += new System.EventHandler(this.ctrlMovieDetails_Load);
             this.SizeChanged += new System.EventHandler(this.ctrlDetails_SizeChanged);
             this.panelDetails.ResumeLayout(false);
@@ -526,13 +508,11 @@
         internal System.Windows.Forms.PictureBox imgIMDb;
         internal System.Windows.Forms.Panel panelTitleFiles;
         public CButtonLib.CButton lineUserReviews;
-        internal System.Windows.Forms.Label lblHeaderFiles;
+        internal System.Windows.Forms.Label lblHeaderDirectFiles;
         public CButtonLib.CButton lineSplitter;
         public System.Windows.Forms.FlowLayoutPanel panelFiles;
         public System.Windows.Forms.Label infoFileHost;
         public System.Windows.Forms.Label infoFileName;
-        public System.Windows.Forms.Label infoFileAge;
-        public System.Windows.Forms.Label infoFileSize;
         private System.Windows.Forms.PictureBox imgAddToBookmarks;
         public CButtonLib.CButton btnWatchTrailer;
         internal System.Windows.Forms.Panel panelTitleTorrents;

@@ -31,7 +31,6 @@ namespace OpenTheatre
             MPCToolStripMenuItem.Visible = File.Exists(frmOpenTheatre.pathMPCCodec64) || File.Exists(frmOpenTheatre.pathMPC64) || File.Exists(frmOpenTheatre.pathMPC86);
 
             if (Properties.Settings.Default.dataBookmarks.Contains(infoFileURL)) { imgAddToBookmarks.Image = Properties.Resources.bookmark_remove; } else { imgAddToBookmarks.Image = Properties.Resources.bookmark_plus; }
-            if (frmOpenTheatre.currentDownloads.Contains(infoFileURL)) { imgDownload.Image = Properties.Resources.cloud_sync; } else if (File.Exists(Properties.Settings.Default.downloadsDirectory + Path.GetFileName(new Uri(infoFileURL).LocalPath)) && infoFileSize.Text == UtilityTools.ToFileSize(Convert.ToDouble(new FileInfo(Properties.Settings.Default.downloadsDirectory + Path.GetFileName(new Uri(infoFileURL).LocalPath)).Length))) { imgDownload.Image = Properties.Resources.cloud_done; }
 
             if (isTorrent == true)
             {
@@ -40,14 +39,14 @@ namespace OpenTheatre
                 imgMagnet.Visible = true;
             }
             else if (isLocal == true)
-            { infoFileHost.Text = frmOpenTheatre.rm.GetString("local"); infoFileSize.Text = UtilityTools.ToFileSize(new FileInfo(infoFileURL).Length); infoFileAge.Text = UtilityTools.getTimeAgo(File.GetLastWriteTime(infoFileURL)); imgDownload.Visible = false; imgReportBroken.Visible = false; imgShare.Visible = false; imgCopyURL.Visible = false; }
+            { infoFileHost.Text = frmOpenTheatre.rm.GetString("local"); imgDownload.Visible = false; imgReportBroken.Visible = false; imgShare.Visible = false; imgCopyURL.Visible = false; }
 
             // Checks for exact file name of a subtitle file that matches the one being loaded (e.g. Media File Name: 'Jigsaw.2017.mp4' > Subtitle File Name: 'Jigsaw.2017.srt' will be loaded)
             if (infoFileSubtitles == null)
             {
                 if (UtilityTools.isExistingSubtitlesFile(infoFileURL) == true)
                 {
-                    infoFileSubtitles = Properties.Settings.Default.downloadsDirectory + Path.GetFileNameWithoutExtension(infoFileURL) + ".srt";
+                    infoFileSubtitles = frmOpenTheatre.userDownloadsDirectory + Path.GetFileNameWithoutExtension(infoFileURL) + ".srt";
                 }
             }
         }
@@ -103,13 +102,7 @@ namespace OpenTheatre
 
         private void imgDownload_Click(object sender, EventArgs e)
         {
-            if (isTorrent == true)
-            {
-                Process.Start(infoFileURL);
-                return;
-            }
-
-            if (!frmOpenTheatre.currentDownloads.Contains(infoFileURL)) { imgDownload.Image = Properties.Resources.cloud_sync; frmOpenTheatre.form.doDownloadFile(infoFileURL); }
+            Process.Start(infoFileURL);
         }
 
         private void VLC2ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -125,21 +118,6 @@ namespace OpenTheatre
         {
             Clipboard.SetText(infoFileURL);
             imgCopyURL.Image = Properties.Resources.clipboard_check;
-        }
-
-        private void timerUpdateInfo_Tick(object sender, EventArgs e)
-        {
-            // Checks for local file, and get/compare file size
-            if (infoFileURL != null)
-            {
-                if (File.Exists(Properties.Settings.Default.downloadsDirectory + Path.GetFileName(new Uri(infoFileURL).LocalPath)))
-                {
-                    if (infoFileSize.Text == UtilityTools.ToFileSize(Convert.ToDouble(new FileInfo(Properties.Settings.Default.downloadsDirectory + Path.GetFileName(new Uri(infoFileURL).LocalPath)).Length)))
-                    {
-                        imgDownload.Image = Properties.Resources.cloud_done;
-                    }
-                }
-            }
         }
 
         private void imgShare_Click(object sender, EventArgs e)

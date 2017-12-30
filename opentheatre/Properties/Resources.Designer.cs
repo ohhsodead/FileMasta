@@ -63,6 +63,16 @@ namespace OpenTheatre.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap alert_octagon_black {
+            get {
+                object obj = ResourceManager.GetObject("alert-octagon-black", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap arrow_drop_down_black {
             get {
                 object obj = ResourceManager.GetObject("arrow_drop_down_black", resourceCulture);
@@ -76,6 +86,16 @@ namespace OpenTheatre.Properties {
         internal static System.Drawing.Bitmap arrow_drop_down_white {
             get {
                 object obj = ResourceManager.GetObject("arrow_drop_down_white", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap arrow_left_black {
+            get {
+                object obj = ResourceManager.GetObject("arrow-left-black", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -143,9 +163,29 @@ namespace OpenTheatre.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap clipboard_arrow_left_black {
+            get {
+                object obj = ResourceManager.GetObject("clipboard-arrow-left-black", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap clipboard_check {
             get {
                 object obj = ResourceManager.GetObject("clipboard_check", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap clipboard_check_black {
+            get {
+                object obj = ResourceManager.GetObject("clipboard_check_black", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -323,6 +363,26 @@ namespace OpenTheatre.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap link_variant {
+            get {
+                object obj = ResourceManager.GetObject("link-variant", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap link_variant_black {
+            get {
+                object obj = ResourceManager.GetObject("link-variant-black", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap loading {
             get {
                 object obj = ResourceManager.GetObject("loading", resourceCulture);
@@ -476,6 +536,16 @@ namespace OpenTheatre.Properties {
         internal static System.Drawing.Bitmap share_variant {
             get {
                 object obj = ResourceManager.GetObject("share-variant", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap share_variant_black {
+            get {
+                object obj = ResourceManager.GetObject("share-variant-black", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

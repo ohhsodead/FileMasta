@@ -46,7 +46,7 @@ namespace OpenTheatre
         {
             frmOpenTheatre.form.tabBlank.Controls.Clear();
 
-            ctrlDetails MovieDetails = new ctrlDetails();
+            ctrlMovieDetails MovieDetails = new ctrlMovieDetails();
 
             MovieDetails.infoTitle.Text = infoTitle.Text;
             MovieDetails.infoYear.Text = infoYear.Text;

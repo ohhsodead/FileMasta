@@ -38,66 +38,6 @@ namespace OpenTheatre.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string connectionHost {
-            get {
-                return ((string)(this["connectionHost"]));
-            }
-            set {
-                this["connectionHost"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string connectionPort {
-            get {
-                return ((string)(this["connectionPort"]));
-            }
-            set {
-                this["connectionPort"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string connectionUsername {
-            get {
-                return ((string)(this["connectionUsername"]));
-            }
-            set {
-                this["connectionUsername"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string connectionPassword {
-            get {
-                return ((string)(this["connectionPassword"]));
-            }
-            set {
-                this["connectionPassword"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool connectionCustom {
-            get {
-                return ((bool)(this["connectionCustom"]));
-            }
-            set {
-                this["connectionCustom"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool clearDataOnClose {
             get {
@@ -105,18 +45,6 @@ namespace OpenTheatre.Properties {
             }
             set {
                 this["clearDataOnClose"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string downloadsDirectory {
-            get {
-                return ((string)(this["downloadsDirectory"]));
-            }
-            set {
-                this["downloadsDirectory"] = value;
             }
         }
         

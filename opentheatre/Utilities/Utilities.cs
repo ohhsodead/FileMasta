@@ -20,15 +20,26 @@ namespace Utilities
 {
     public class UtilityTools
     {
-        // open new broken source issue template
+        // Report Broken File issue
         public static void openBrokenFileIssue(string webFile)
         {
-            Process.Start("https://github.com/invu/opentheatre/issues/new?title=" + "Broken File Report" + "&body=" +
+            Process.Start("https://github.com/invu/opentheatre/issues/new?title=" + "[Broken File] " + Path.GetFileName(webFile) + "&body=" +
                 "Type: " + getContainingListOfURL(webFile) + "%0A" +
                 "Host: " + new Uri(webFile).Host.Replace("www.", "") + "%0A" +
                 "Name: " + new Uri(webFile).LocalPath + "%0A" +
                 "----------------------- %0A" +
                 "Before creating an issue for a web file, ensure that you're able to access the same website (file host) from your web browser, as sometimes web files are unable to be accessed due to permissions or firewalls. Please explain your problem with the file, be clear and not vague.");
+        }
+
+        // Poor Quality File issue
+        public static void openPoorQualityFileIssue(string webFile)
+        {
+            Process.Start("https://github.com/invu/opentheatre/issues/new?title=" + "[Poor Quality File] " + Path.GetFileName(webFile) + "&body=" +
+                "Type: " + getContainingListOfURL(webFile) + "%0A" +
+                "Host: " + new Uri(webFile).Host.Replace("www.", "") + "%0A" +
+                "Name: " + new Uri(webFile).LocalPath + "%0A" +
+                "----------------------- %0A" +
+                "Please explain your problem with the file, be clear and not vague.");
         }
 
         // compare local and online files (used for updating database)
@@ -60,45 +71,47 @@ namespace Utilities
         // return list that contains file
         public static string getContainingListOfURL(string fileUrl)
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOpenTheatre));
+
             foreach (string file in frmOpenTheatre.dataMovies)
             {
                 var data = OMDbEntity.FromJson(file);
-                if (data.Sources.Contains(fileUrl)) { return "Movie"; }
+                if (data.Sources.Contains(fileUrl)) { return resources.GetString("cmboBoxBookmarksType.Items1"); }
             }
             foreach (string file in frmOpenTheatre.dataFilesVideo)
             {
                 var data = DatabaseFilesEntity.FromJson(file);
-                if (data.URL == fileUrl) { return "Video"; }
+                if (data.URL == fileUrl) { return resources.GetString("cmboBoxBookmarksType.Items2"); }
             }
             foreach (string file in frmOpenTheatre.dataFilesAudio)
             {
                 var data = DatabaseFilesEntity.FromJson(file);
-                if (data.URL == fileUrl) { return "Audio"; }
+                if (data.URL == fileUrl) { return resources.GetString("cmboBoxBookmarksType.Items2"); }
             }
             foreach (string file in frmOpenTheatre.dataFilesEbooks)
             {
                 var data = DatabaseFilesEntity.FromJson(file);
-                if (data.URL == fileUrl) { return "Ebook"; }
+                if (data.URL == fileUrl) { return resources.GetString("cmboBoxBookmarksType.Items3"); }
             }
             foreach (string file in frmOpenTheatre.dataFilesSubtitles)
             {
                 var data = DatabaseFilesEntity.FromJson(file);
-                if (data.URL == fileUrl) { return "Subtitle"; }
+                if (data.URL == fileUrl) { return resources.GetString("cmboBoxBookmarksType.Items4"); }
             }
             foreach (string file in frmOpenTheatre.dataFilesTorrents)
             {
                 var data = DatabaseFilesEntity.FromJson(file);
-                if (data.URL == fileUrl) { return "Torrent"; }
+                if (data.URL == fileUrl) { return resources.GetString("cmboBoxBookmarksType.Items5"); }
             }
             foreach (string file in frmOpenTheatre.dataFilesArchives)
             {
                 var data = DatabaseFilesEntity.FromJson(file);
-                if (data.URL == fileUrl) { return "Archive"; }
+                if (data.URL == fileUrl) { return resources.GetString("cmboBoxBookmarksType.Items6"); }
             }
             foreach (string file in frmOpenTheatre.dataFilesLocal)
             {
                 var data = DatabaseFilesEntity.FromJson(file);
-                if (data.URL == fileUrl) { return "Local"; }
+                if (data.URL == fileUrl) { return resources.GetString("cmboBoxBookmarksType.Items7"); }
             }
 
             return "null";
@@ -107,7 +120,7 @@ namespace Utilities
         // compare file bytes
         public static bool isFileSizeIdentical(string fileURLSize, string fileURL)
         {
-            if (File.Exists(Settings.Default.downloadsDirectory + Path.GetFileName(new Uri(fileURL).LocalPath)) && fileURLSize == ToFileSize(Convert.ToDouble(new FileInfo(Settings.Default.downloadsDirectory + Path.GetFileName(new Uri(fileURL).LocalPath)).Length))) { return true; }
+            if (File.Exists(frmOpenTheatre.userDownloadsDirectory + Path.GetFileName(new Uri(fileURL).LocalPath)) && fileURLSize == ToFileSize(Convert.ToDouble(new FileInfo(frmOpenTheatre.userDownloadsDirectory + Path.GetFileName(new Uri(fileURL).LocalPath)).Length))) { return true; }
             else { return false; }
         }
 
@@ -115,7 +128,7 @@ namespace Utilities
         public static bool isExistingSubtitlesFile(string fileURL)
         {
             // Checks for exact file name of a subtitle file that matches the one being loaded (e.g. File Name: 'Jigsaw.2017.mp4' > Subtitle File Name: 'Jigsaw.2017.srt' will be loaded)
-            if (File.Exists(Settings.Default.downloadsDirectory + Path.GetFileNameWithoutExtension(new Uri(fileURL).LocalPath) + ".srt")) {
+            if (File.Exists(frmOpenTheatre.userDownloadsDirectory + Path.GetFileNameWithoutExtension(new Uri(fileURL).LocalPath) + ".srt")) {
             return true; }
             else return false;
         }

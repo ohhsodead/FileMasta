@@ -320,9 +320,10 @@
   </data>
   <data name="btnMoviesGenre.SideImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAF9JREFUaEPt
-        z0sKgDAQRMEc3ZurWTS4UPETSAJVMNvhdQEAAABeW/ZbG1391UWLEd3i48+I7vHxZcQw8fFmxHDx8WTE
-        sPFxN2L4+DgbMU18HEdMFx81fNp4AAAArpWyAccxY6cp/GORAAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAABfSURBVGhD7c9LCoAwEETBHN2bq1k0uFDxE0gCVTDb4XUBAAAAXlv2Wxtd/dVFixHd4uPPiO7x
+        8WXEMPHxZsRw8fFkxLDxcTdi+Pg4GzFNfBxHTBcfNXzaeAAAAK6VsgHHMWOnKfxjkQAAAABJRU5ErkJg
+        gg==
 </value>
   </data>
   <data name="btnMoviesGenre.Size" type="System.Drawing.Size, System.Drawing">
@@ -465,9 +466,10 @@
   </data>
   <data name="btnMoviesYear.SideImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAF9JREFUaEPt
-        z0sKgDAQRMEc3ZurWTS4UPETSAJVMNvhdQEAAABeW/ZbG1391UWLEd3i48+I7vHxZcQw8fFmxHDx8WTE
-        sPFxN2L4+DgbMU18HEdMFx81fNp4AAAArpWyAccxY6cp/GORAAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAABfSURBVGhD7c9LCoAwEETBHN2bq1k0uFDxE0gCVTDb4XUBAAAAXlv2Wxtd/dVFixHd4uPPiO7x
+        8WXEMPHxZsRw8fFkxLDxcTdi+Pg4GzFNfBxHTBcfNXzaeAAAAK6VsgHHMWOnKfxjkQAAAABJRU5ErkJg
+        gg==
 </value>
   </data>
   <data name="btnMoviesYear.Size" type="System.Drawing.Size, System.Drawing">
@@ -674,6 +676,162 @@
   <data name="&gt;&gt;tabMovies.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="tabControlFiles.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="txtFilesSearch.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="txtFilesSearch.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 10.75pt</value>
+  </data>
+  <data name="txtFilesSearch.Location" type="System.Drawing.Point, System.Drawing">
+    <value>160, 249</value>
+  </data>
+  <data name="txtFilesSearch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>515, 20</value>
+  </data>
+  <data name="txtFilesSearch.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;txtFilesSearch.Name" xml:space="preserve">
+    <value>txtFilesSearch</value>
+  </data>
+  <data name="&gt;&gt;txtFilesSearch.Type" xml:space="preserve">
+    <value>ChreneLib.Controls.TextBoxes.CTextBox, ChreneLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;txtFilesSearch.Parent" xml:space="preserve">
+    <value>tabFilesSearch</value>
+  </data>
+  <data name="&gt;&gt;txtFilesSearch.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnSearchFiles.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="btnSearchFiles.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 8.25pt</value>
+  </data>
+  <data name="btnSearchFiles.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAitJREFUaEPt
+        l0tqFUEUQN9ERY0DHWeiZhqDAxERElyHottI/CXqFpwobkMU0ZjgD+dBcAHqGlRQzwEfXIpq0m1TFQv6
+        wIGQ5NWt231f1b2ziYmJiWY5jw9wB7/hj7/682u8jyv433EF3+Hvnr7FNTxwjuETzG2yj4/xKB4Ip/Aj
+        5jY2xA94Eqvik89t/hc+xat4Gg/hYTyD1/AZpp9Rk6j6JnJls4cXcD8u4idMP/8Iq+AXNg3+Eo9jXxZw
+        G9N1VrE47zEG9ckP2fwck0jfxBssiud8DGjN9ymbLi5hXE/PYTG8pGIwv7BjeY5xzXtYDG/YGMzTZizX
+        Ma75CothSxCDeVSO5SzGNb9gMexrYjDP+bEcwbjmdyxGmoCX1FjSBH5iMdIS8oYdyxLGNb9iMWyJYzDb
+        g7HcwLimMYphPx+D2duM5QXGNbewGA4jMZja2/wrlzFdbxmL4jASA9oO2BYM5QR+xrjWLhbHSSoGVRuz
+        IUm4+fRStC3xjVTBSSoGV9+Evc1+uMn0yetDrIbDh0NIugm1t7E98Ib1jFePSk+b9As71/tlEaviGNiV
+        xBDTy3ETq+GbcJKKG+irNW/Z+OTTv93FqjhJOYykG+nS0yZ+YXP/cwer4zBiP29LbFdpY2ZvY3vgDesl
+        lRtY/H0uidvYDNZ+80lY+7kkbmEzWPu5JG5iM1g2uSQ2sBm6kljHZrD2m0/C2m86AbH2m938HDfe7OYn
+        JiYmmmE2+wO+LVNfbsoz1QAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="btnSearchFiles.Location" type="System.Drawing.Point, System.Drawing">
+    <value>681, 241</value>
+  </data>
+  <data name="btnSearchFiles.Size" type="System.Drawing.Size, System.Drawing">
+    <value>36, 36</value>
+  </data>
+  <data name="btnSearchFiles.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="btnSearchFiles.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;btnSearchFiles.Name" xml:space="preserve">
+    <value>btnSearchFiles</value>
+  </data>
+  <data name="&gt;&gt;btnSearchFiles.Type" xml:space="preserve">
+    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;btnSearchFiles.Parent" xml:space="preserve">
+    <value>tabFilesSearch</value>
+  </data>
+  <data name="&gt;&gt;btnSearchFiles.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="bgFilesSearch.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="bgFilesSearch.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 8.25pt</value>
+  </data>
+  <data name="bgFilesSearch.Location" type="System.Drawing.Point, System.Drawing">
+    <value>151, 241</value>
+  </data>
+  <data name="bgFilesSearch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>566, 36</value>
+  </data>
+  <data name="bgFilesSearch.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="bgFilesSearch.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;bgFilesSearch.Name" xml:space="preserve">
+    <value>bgFilesSearch</value>
+  </data>
+  <data name="&gt;&gt;bgFilesSearch.Type" xml:space="preserve">
+    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;bgFilesSearch.Parent" xml:space="preserve">
+    <value>tabFilesSearch</value>
+  </data>
+  <data name="&gt;&gt;bgFilesSearch.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="tabFilesSearch.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tabFilesSearch.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabFilesSearch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>869, 518</value>
+  </data>
+  <data name="tabFilesSearch.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;tabFilesSearch.Name" xml:space="preserve">
+    <value>tabFilesSearch</value>
+  </data>
+  <data name="&gt;&gt;tabFilesSearch.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabFilesSearch.Parent" xml:space="preserve">
+    <value>tabControlFiles</value>
+  </data>
+  <data name="&gt;&gt;tabFilesSearch.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnFilesBackToSearch.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 8.25pt</value>
+  </data>
+  <data name="btnFilesBackToSearch.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 13</value>
+  </data>
+  <data name="btnFilesBackToSearch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>36, 36</value>
+  </data>
+  <data name="btnFilesBackToSearch.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="btnFilesBackToSearch.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;btnFilesBackToSearch.Name" xml:space="preserve">
+    <value>btnFilesBackToSearch</value>
+  </data>
+  <data name="&gt;&gt;btnFilesBackToSearch.Type" xml:space="preserve">
+    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;btnFilesBackToSearch.Parent" xml:space="preserve">
+    <value>tabFilesResults</value>
+  </data>
+  <data name="&gt;&gt;btnFilesBackToSearch.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="emptyDataFiles.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top</value>
   </data>
@@ -687,7 +845,7 @@
     <value>NoControl</value>
   </data>
   <data name="emptyDataFiles.Location" type="System.Drawing.Point, System.Drawing">
-    <value>377, 180</value>
+    <value>378, 180</value>
   </data>
   <data name="emptyDataFiles.Size" type="System.Drawing.Size, System.Drawing">
     <value>114, 19</value>
@@ -708,10 +866,10 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;emptyDataFiles.Parent" xml:space="preserve">
-    <value>tabFiles</value>
+    <value>tabFilesResults</value>
   </data>
   <data name="&gt;&gt;emptyDataFiles.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="panelFileFilters.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -1111,13 +1269,13 @@
     <value>3</value>
   </data>
   <data name="panelFileFilters.Location" type="System.Drawing.Point, System.Drawing">
-    <value>419, 13</value>
+    <value>463, 13</value>
   </data>
   <data name="panelFileFilters.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 3, 3, 3</value>
   </data>
   <data name="panelFileFilters.Size" type="System.Drawing.Size, System.Drawing">
-    <value>437, 36</value>
+    <value>394, 36</value>
   </data>
   <data name="panelFileFilters.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -1129,52 +1287,94 @@
     <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;panelFileFilters.Parent" xml:space="preserve">
-    <value>tabFiles</value>
+    <value>tabFilesResults</value>
   </data>
   <data name="&gt;&gt;panelFileFilters.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
-  <data name="txtFilesSearchBox.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="txtFilesSearchResults.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 10.75pt</value>
   </data>
-  <data name="txtFilesSearchBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>22, 21</value>
+  <data name="txtFilesSearchResults.Location" type="System.Drawing.Point, System.Drawing">
+    <value>66, 21</value>
   </data>
-  <data name="txtFilesSearchBox.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="txtFilesSearchResults.Size" type="System.Drawing.Size, System.Drawing">
     <value>348, 20</value>
   </data>
-  <data name="txtFilesSearchBox.TabIndex" type="System.Int32, mscorlib">
+  <data name="txtFilesSearchResults.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;txtFilesSearchBox.Name" xml:space="preserve">
-    <value>txtFilesSearchBox</value>
+  <data name="&gt;&gt;txtFilesSearchResults.Name" xml:space="preserve">
+    <value>txtFilesSearchResults</value>
   </data>
-  <data name="&gt;&gt;txtFilesSearchBox.Type" xml:space="preserve">
+  <data name="&gt;&gt;txtFilesSearchResults.Type" xml:space="preserve">
     <value>ChreneLib.Controls.TextBoxes.CTextBox, ChreneLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;txtFilesSearchBox.Parent" xml:space="preserve">
-    <value>tabFiles</value>
+  <data name="&gt;&gt;txtFilesSearchResults.Parent" xml:space="preserve">
+    <value>tabFilesResults</value>
   </data>
-  <data name="&gt;&gt;txtFilesSearchBox.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="&gt;&gt;txtFilesSearchResults.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="btnSearchFilesAgain.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 8.25pt</value>
+  </data>
+  <data name="btnSearchFilesAgain.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAitJREFUaEPt
+        l0tqFUEUQN9ERY0DHWeiZhqDAxERElyHottI/CXqFpwobkMU0ZjgD+dBcAHqGlRQzwEfXIpq0m1TFQv6
+        wIGQ5NWt231f1b2ziYmJiWY5jw9wB7/hj7/682u8jyv433EF3+Hvnr7FNTxwjuETzG2yj4/xKB4Ip/Aj
+        5jY2xA94Eqvik89t/hc+xat4Gg/hYTyD1/AZpp9Rk6j6JnJls4cXcD8u4idMP/8Iq+AXNg3+Eo9jXxZw
+        G9N1VrE47zEG9ckP2fwck0jfxBssiud8DGjN9ymbLi5hXE/PYTG8pGIwv7BjeY5xzXtYDG/YGMzTZizX
+        Ma75CothSxCDeVSO5SzGNb9gMexrYjDP+bEcwbjmdyxGmoCX1FjSBH5iMdIS8oYdyxLGNb9iMWyJYzDb
+        g7HcwLimMYphPx+D2duM5QXGNbewGA4jMZja2/wrlzFdbxmL4jASA9oO2BYM5QR+xrjWLhbHSSoGVRuz
+        IUm4+fRStC3xjVTBSSoGV9+Evc1+uMn0yetDrIbDh0NIugm1t7E98Ib1jFePSk+b9As71/tlEaviGNiV
+        xBDTy3ETq+GbcJKKG+irNW/Z+OTTv93FqjhJOYykG+nS0yZ+YXP/cwer4zBiP29LbFdpY2ZvY3vgDesl
+        lRtY/H0uidvYDNZ+80lY+7kkbmEzWPu5JG5iM1g2uSQ2sBm6kljHZrD2m0/C2m86AbH2m938HDfe7OYn
+        JiYmmmE2+wO+LVNfbsoz1QAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="btnSearchFilesAgain.Location" type="System.Drawing.Point, System.Drawing">
+    <value>420, 13</value>
+  </data>
+  <data name="btnSearchFilesAgain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>36, 36</value>
+  </data>
+  <data name="btnSearchFilesAgain.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="btnSearchFilesAgain.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;btnSearchFilesAgain.Name" xml:space="preserve">
+    <value>btnSearchFilesAgain</value>
+  </data>
+  <data name="&gt;&gt;btnSearchFilesAgain.Type" xml:space="preserve">
+    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;btnSearchFilesAgain.Parent" xml:space="preserve">
+    <value>tabFilesResults</value>
+  </data>
+  <data name="&gt;&gt;btnSearchFilesAgain.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <data name="dataGridFiles.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
-  <metadata name="columnFilesFormat.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="columnFilesType.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="columnFilesFormat.HeaderText" xml:space="preserve">
-    <value>Format</value>
+  <data name="columnFilesType.HeaderText" xml:space="preserve">
+    <value>Type</value>
   </data>
-  <data name="columnFilesFormat.Width" type="System.Int32, mscorlib">
-    <value>76</value>
+  <data name="columnFilesType.Width" type="System.Int32, mscorlib">
+    <value>62</value>
   </data>
-  <metadata name="columnFilesFileName.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="columnFilesName.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="columnFilesFileName.HeaderText" xml:space="preserve">
-    <value>File Name</value>
+  <data name="columnFilesName.HeaderText" xml:space="preserve">
+    <value>Name</value>
   </data>
   <metadata name="columnFilesSize.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -1189,19 +1389,19 @@
     <value>True</value>
   </metadata>
   <data name="columnFilesDateAdded.HeaderText" xml:space="preserve">
-    <value>Date Added</value>
+    <value>Added</value>
   </data>
   <data name="columnFilesDateAdded.Width" type="System.Int32, mscorlib">
-    <value>101</value>
+    <value>74</value>
   </data>
-  <metadata name="columnFilesHost.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="columnFilesReferrer.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="columnFilesHost.HeaderText" xml:space="preserve">
-    <value>Host</value>
+  <data name="columnFilesReferrer.HeaderText" xml:space="preserve">
+    <value>Referrer</value>
   </data>
-  <data name="columnFilesHost.Width" type="System.Int32, mscorlib">
-    <value>64</value>
+  <data name="columnFilesReferrer.Width" type="System.Int32, mscorlib">
+    <value>81</value>
   </data>
   <metadata name="columnFilesURL.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -1216,7 +1416,7 @@
     <value>851</value>
   </data>
   <data name="dataGridFiles.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 97</value>
+    <value>1, 97</value>
   </data>
   <data name="dataGridFiles.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 0, 3, 3</value>
@@ -1237,10 +1437,10 @@
     <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;dataGridFiles.Parent" xml:space="preserve">
-    <value>tabFiles</value>
+    <value>tabFilesResults</value>
   </data>
   <data name="&gt;&gt;dataGridFiles.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="titleFilesSplitter.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -1249,7 +1449,7 @@
     <value>Segoe UI, 8.25pt</value>
   </data>
   <data name="titleFilesSplitter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 89</value>
+    <value>14, 89</value>
   </data>
   <data name="titleFilesSplitter.Size" type="System.Drawing.Size, System.Drawing">
     <value>842, 1</value>
@@ -1267,166 +1467,16 @@
     <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;titleFilesSplitter.Parent" xml:space="preserve">
-    <value>tabFiles</value>
+    <value>tabFilesResults</value>
   </data>
   <data name="&gt;&gt;titleFilesSplitter.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="titleFilesVideo.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 9.75pt</value>
-  </data>
-  <data name="titleFilesVideo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 63</value>
-  </data>
-  <data name="titleFilesVideo.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 3, 0, 3</value>
-  </data>
-  <data name="titleFilesVideo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>62, 27</value>
-  </data>
-  <data name="titleFilesVideo.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="titleFilesVideo.Text" xml:space="preserve">
-    <value>Video</value>
-  </data>
-  <data name="&gt;&gt;titleFilesVideo.Name" xml:space="preserve">
-    <value>titleFilesVideo</value>
-  </data>
-  <data name="&gt;&gt;titleFilesVideo.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;titleFilesVideo.Parent" xml:space="preserve">
-    <value>tabFiles</value>
-  </data>
-  <data name="&gt;&gt;titleFilesVideo.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="titleFilesEbooks.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 9.75pt</value>
-  </data>
-  <data name="titleFilesEbooks.Location" type="System.Drawing.Point, System.Drawing">
-    <value>135, 63</value>
-  </data>
-  <data name="titleFilesEbooks.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 3, 0, 3</value>
-  </data>
-  <data name="titleFilesEbooks.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 27</value>
-  </data>
-  <data name="titleFilesEbooks.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="titleFilesEbooks.Text" xml:space="preserve">
-    <value>eBooks</value>
-  </data>
-  <data name="&gt;&gt;titleFilesEbooks.Name" xml:space="preserve">
-    <value>titleFilesEbooks</value>
-  </data>
-  <data name="&gt;&gt;titleFilesEbooks.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;titleFilesEbooks.Parent" xml:space="preserve">
-    <value>tabFiles</value>
-  </data>
-  <data name="&gt;&gt;titleFilesEbooks.ZOrder" xml:space="preserve">
     <value>6</value>
-  </data>
-  <data name="titleFilesAudio.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 9.75pt</value>
-  </data>
-  <data name="titleFilesAudio.Location" type="System.Drawing.Point, System.Drawing">
-    <value>75, 63</value>
-  </data>
-  <data name="titleFilesAudio.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 3, 0, 3</value>
-  </data>
-  <data name="titleFilesAudio.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 27</value>
-  </data>
-  <data name="titleFilesAudio.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="titleFilesAudio.Text" xml:space="preserve">
-    <value>Audio</value>
-  </data>
-  <data name="&gt;&gt;titleFilesAudio.Name" xml:space="preserve">
-    <value>titleFilesAudio</value>
-  </data>
-  <data name="&gt;&gt;titleFilesAudio.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;titleFilesAudio.Parent" xml:space="preserve">
-    <value>tabFiles</value>
-  </data>
-  <data name="&gt;&gt;titleFilesAudio.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="titleFilesSubtitles.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 9.75pt</value>
-  </data>
-  <data name="titleFilesSubtitles.Location" type="System.Drawing.Point, System.Drawing">
-    <value>199, 63</value>
-  </data>
-  <data name="titleFilesSubtitles.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 3, 0, 3</value>
-  </data>
-  <data name="titleFilesSubtitles.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 27</value>
-  </data>
-  <data name="titleFilesSubtitles.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="titleFilesSubtitles.Text" xml:space="preserve">
-    <value>Subtitles</value>
-  </data>
-  <data name="&gt;&gt;titleFilesSubtitles.Name" xml:space="preserve">
-    <value>titleFilesSubtitles</value>
-  </data>
-  <data name="&gt;&gt;titleFilesSubtitles.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;titleFilesSubtitles.Parent" xml:space="preserve">
-    <value>tabFiles</value>
-  </data>
-  <data name="&gt;&gt;titleFilesSubtitles.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="titleFilesTorrents.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 9.75pt</value>
-  </data>
-  <data name="titleFilesTorrents.Location" type="System.Drawing.Point, System.Drawing">
-    <value>271, 63</value>
-  </data>
-  <data name="titleFilesTorrents.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 3, 0, 3</value>
-  </data>
-  <data name="titleFilesTorrents.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 27</value>
-  </data>
-  <data name="titleFilesTorrents.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="titleFilesTorrents.Text" xml:space="preserve">
-    <value>Torrents</value>
-  </data>
-  <data name="&gt;&gt;titleFilesTorrents.Name" xml:space="preserve">
-    <value>titleFilesTorrents</value>
-  </data>
-  <data name="&gt;&gt;titleFilesTorrents.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;titleFilesTorrents.Parent" xml:space="preserve">
-    <value>tabFiles</value>
-  </data>
-  <data name="&gt;&gt;titleFilesTorrents.ZOrder" xml:space="preserve">
-    <value>9</value>
   </data>
   <data name="titleFilesArchives.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9.75pt</value>
   </data>
   <data name="titleFilesArchives.Location" type="System.Drawing.Point, System.Drawing">
-    <value>345, 63</value>
+    <value>346, 63</value>
   </data>
   <data name="titleFilesArchives.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 3, 0, 3</value>
@@ -1447,16 +1497,193 @@
     <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;titleFilesArchives.Parent" xml:space="preserve">
-    <value>tabFiles</value>
+    <value>tabFilesResults</value>
   </data>
   <data name="&gt;&gt;titleFilesArchives.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="titleFilesVideo.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9.75pt</value>
+  </data>
+  <data name="titleFilesVideo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 63</value>
+  </data>
+  <data name="titleFilesVideo.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 3, 0, 3</value>
+  </data>
+  <data name="titleFilesVideo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>62, 27</value>
+  </data>
+  <data name="titleFilesVideo.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="titleFilesVideo.Text" xml:space="preserve">
+    <value>Video</value>
+  </data>
+  <data name="&gt;&gt;titleFilesVideo.Name" xml:space="preserve">
+    <value>titleFilesVideo</value>
+  </data>
+  <data name="&gt;&gt;titleFilesVideo.Type" xml:space="preserve">
+    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;titleFilesVideo.Parent" xml:space="preserve">
+    <value>tabFilesResults</value>
+  </data>
+  <data name="&gt;&gt;titleFilesVideo.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="titleFilesTorrents.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9.75pt</value>
+  </data>
+  <data name="titleFilesTorrents.Location" type="System.Drawing.Point, System.Drawing">
+    <value>272, 63</value>
+  </data>
+  <data name="titleFilesTorrents.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 3, 0, 3</value>
+  </data>
+  <data name="titleFilesTorrents.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 27</value>
+  </data>
+  <data name="titleFilesTorrents.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="titleFilesTorrents.Text" xml:space="preserve">
+    <value>Torrents</value>
+  </data>
+  <data name="&gt;&gt;titleFilesTorrents.Name" xml:space="preserve">
+    <value>titleFilesTorrents</value>
+  </data>
+  <data name="&gt;&gt;titleFilesTorrents.Type" xml:space="preserve">
+    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;titleFilesTorrents.Parent" xml:space="preserve">
+    <value>tabFilesResults</value>
+  </data>
+  <data name="&gt;&gt;titleFilesTorrents.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="titleFilesEbooks.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9.75pt</value>
+  </data>
+  <data name="titleFilesEbooks.Location" type="System.Drawing.Point, System.Drawing">
+    <value>136, 63</value>
+  </data>
+  <data name="titleFilesEbooks.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 3, 0, 3</value>
+  </data>
+  <data name="titleFilesEbooks.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 27</value>
+  </data>
+  <data name="titleFilesEbooks.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="titleFilesEbooks.Text" xml:space="preserve">
+    <value>eBooks</value>
+  </data>
+  <data name="&gt;&gt;titleFilesEbooks.Name" xml:space="preserve">
+    <value>titleFilesEbooks</value>
+  </data>
+  <data name="&gt;&gt;titleFilesEbooks.Type" xml:space="preserve">
+    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;titleFilesEbooks.Parent" xml:space="preserve">
+    <value>tabFilesResults</value>
+  </data>
+  <data name="&gt;&gt;titleFilesEbooks.ZOrder" xml:space="preserve">
     <value>10</value>
+  </data>
+  <data name="titleFilesSubtitles.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9.75pt</value>
+  </data>
+  <data name="titleFilesSubtitles.Location" type="System.Drawing.Point, System.Drawing">
+    <value>200, 63</value>
+  </data>
+  <data name="titleFilesSubtitles.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 3, 0, 3</value>
+  </data>
+  <data name="titleFilesSubtitles.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 27</value>
+  </data>
+  <data name="titleFilesSubtitles.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="titleFilesSubtitles.Text" xml:space="preserve">
+    <value>Subtitles</value>
+  </data>
+  <data name="&gt;&gt;titleFilesSubtitles.Name" xml:space="preserve">
+    <value>titleFilesSubtitles</value>
+  </data>
+  <data name="&gt;&gt;titleFilesSubtitles.Type" xml:space="preserve">
+    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;titleFilesSubtitles.Parent" xml:space="preserve">
+    <value>tabFilesResults</value>
+  </data>
+  <data name="&gt;&gt;titleFilesSubtitles.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="titleFilesAudio.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9.75pt</value>
+  </data>
+  <data name="titleFilesAudio.Location" type="System.Drawing.Point, System.Drawing">
+    <value>76, 63</value>
+  </data>
+  <data name="titleFilesAudio.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 3, 0, 3</value>
+  </data>
+  <data name="titleFilesAudio.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 27</value>
+  </data>
+  <data name="titleFilesAudio.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="titleFilesAudio.Text" xml:space="preserve">
+    <value>Audio</value>
+  </data>
+  <data name="&gt;&gt;titleFilesAudio.Name" xml:space="preserve">
+    <value>titleFilesAudio</value>
+  </data>
+  <data name="&gt;&gt;titleFilesAudio.Type" xml:space="preserve">
+    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;titleFilesAudio.Parent" xml:space="preserve">
+    <value>tabFilesResults</value>
+  </data>
+  <data name="&gt;&gt;titleFilesAudio.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="bgFilesSearchBox.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 8.25pt</value>
+  </data>
+  <data name="bgFilesSearchBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>57, 13</value>
+  </data>
+  <data name="bgFilesSearchBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>399, 36</value>
+  </data>
+  <data name="bgFilesSearchBox.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="bgFilesSearchBox.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;bgFilesSearchBox.Name" xml:space="preserve">
+    <value>bgFilesSearchBox</value>
+  </data>
+  <data name="&gt;&gt;bgFilesSearchBox.Type" xml:space="preserve">
+    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;bgFilesSearchBox.Parent" xml:space="preserve">
+    <value>tabFilesResults</value>
+  </data>
+  <data name="&gt;&gt;bgFilesSearchBox.ZOrder" xml:space="preserve">
+    <value>13</value>
   </data>
   <data name="titleFilesLocal.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9.75pt</value>
   </data>
   <data name="titleFilesLocal.Location" type="System.Drawing.Point, System.Drawing">
-    <value>415, 63</value>
+    <value>416, 63</value>
   </data>
   <data name="titleFilesLocal.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 3, 0, 3</value>
@@ -1477,79 +1704,55 @@
     <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;titleFilesLocal.Parent" xml:space="preserve">
-    <value>tabFiles</value>
+    <value>tabFilesResults</value>
   </data>
   <data name="&gt;&gt;titleFilesLocal.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>14</value>
   </data>
-  <data name="btnSearchFiles.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 8.25pt</value>
+  <data name="tabFilesResults.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
   </data>
-  <data name="btnSearchFiles.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAitJREFUaEPt
-        l0tqFUEUQN9ERY0DHWeiZhqDAxERElyHottI/CXqFpwobkMU0ZjgD+dBcAHqGlRQzwEfXIpq0m1TFQv6
-        wIGQ5NWt231f1b2ziYmJiWY5jw9wB7/hj7/682u8jyv433EF3+Hvnr7FNTxwjuETzG2yj4/xKB4Ip/Aj
-        5jY2xA94Eqvik89t/hc+xat4Gg/hYTyD1/AZpp9Rk6j6JnJls4cXcD8u4idMP/8Iq+AXNg3+Eo9jXxZw
-        G9N1VrE47zEG9ckP2fwck0jfxBssiud8DGjN9ymbLi5hXE/PYTG8pGIwv7BjeY5xzXtYDG/YGMzTZizX
-        Ma75CothSxCDeVSO5SzGNb9gMexrYjDP+bEcwbjmdyxGmoCX1FjSBH5iMdIS8oYdyxLGNb9iMWyJYzDb
-        g7HcwLimMYphPx+D2duM5QXGNbewGA4jMZja2/wrlzFdbxmL4jASA9oO2BYM5QR+xrjWLhbHSSoGVRuz
-        IUm4+fRStC3xjVTBSSoGV9+Evc1+uMn0yetDrIbDh0NIugm1t7E98Ib1jFePSk+b9As71/tlEaviGNiV
-        xBDTy3ETq+GbcJKKG+irNW/Z+OTTv93FqjhJOYykG+nS0yZ+YXP/cwer4zBiP29LbFdpY2ZvY3vgDesl
-        lRtY/H0uidvYDNZ+80lY+7kkbmEzWPu5JG5iM1g2uSQ2sBm6kljHZrD2m0/C2m86AbH2m938HDfe7OYn
-        JiYmmmE2+wO+LVNfbsoz1QAAAABJRU5ErkJggg==
-</value>
+  <data name="tabFilesResults.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
   </data>
-  <data name="btnSearchFiles.Location" type="System.Drawing.Point, System.Drawing">
-    <value>376, 13</value>
+  <data name="tabFilesResults.Size" type="System.Drawing.Size, System.Drawing">
+    <value>869, 518</value>
   </data>
-  <data name="btnSearchFiles.Size" type="System.Drawing.Size, System.Drawing">
-    <value>36, 36</value>
-  </data>
-  <data name="btnSearchFiles.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="btnSearchFiles.Text" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;btnSearchFiles.Name" xml:space="preserve">
-    <value>btnSearchFiles</value>
-  </data>
-  <data name="&gt;&gt;btnSearchFiles.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;btnSearchFiles.Parent" xml:space="preserve">
-    <value>tabFiles</value>
-  </data>
-  <data name="&gt;&gt;btnSearchFiles.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="bgFilesSearchBox.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 8.25pt</value>
-  </data>
-  <data name="bgFilesSearchBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 13</value>
-  </data>
-  <data name="bgFilesSearchBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>399, 36</value>
-  </data>
-  <data name="bgFilesSearchBox.TabIndex" type="System.Int32, mscorlib">
+  <data name="tabFilesResults.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="bgFilesSearchBox.Text" xml:space="preserve">
-    <value />
+  <data name="&gt;&gt;tabFilesResults.Name" xml:space="preserve">
+    <value>tabFilesResults</value>
   </data>
-  <data name="&gt;&gt;bgFilesSearchBox.Name" xml:space="preserve">
-    <value>bgFilesSearchBox</value>
+  <data name="&gt;&gt;tabFilesResults.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;bgFilesSearchBox.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
+  <data name="&gt;&gt;tabFilesResults.Parent" xml:space="preserve">
+    <value>tabControlFiles</value>
   </data>
-  <data name="&gt;&gt;bgFilesSearchBox.Parent" xml:space="preserve">
+  <data name="&gt;&gt;tabFilesResults.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tabControlFiles.Location" type="System.Drawing.Point, System.Drawing">
+    <value>-5, -22</value>
+  </data>
+  <data name="tabControlFiles.Size" type="System.Drawing.Size, System.Drawing">
+    <value>877, 544</value>
+  </data>
+  <data name="tabControlFiles.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;tabControlFiles.Name" xml:space="preserve">
+    <value>tabControlFiles</value>
+  </data>
+  <data name="&gt;&gt;tabControlFiles.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabControlFiles.Parent" xml:space="preserve">
     <value>tabFiles</value>
   </data>
-  <data name="&gt;&gt;bgFilesSearchBox.ZOrder" xml:space="preserve">
-    <value>13</value>
+  <data name="&gt;&gt;tabControlFiles.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="tabFiles.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
@@ -1574,560 +1777,6 @@
   </data>
   <data name="&gt;&gt;tabFiles.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="btnSearchBookmarks.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 8.25pt</value>
-  </data>
-  <data name="btnSearchBookmarks.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAitJREFUaEPt
-        l0tqFUEUQN9ERY0DHWeiZhqDAxERElyHottI/CXqFpwobkMU0ZjgD+dBcAHqGlRQzwEfXIpq0m1TFQv6
-        wIGQ5NWt231f1b2ziYmJiWY5jw9wB7/hj7/682u8jyv433EF3+Hvnr7FNTxwjuETzG2yj4/xKB4Ip/Aj
-        5jY2xA94Eqvik89t/hc+xat4Gg/hYTyD1/AZpp9Rk6j6JnJls4cXcD8u4idMP/8Iq+AXNg3+Eo9jXxZw
-        G9N1VrE47zEG9ckP2fwck0jfxBssiud8DGjN9ymbLi5hXE/PYTG8pGIwv7BjeY5xzXtYDG/YGMzTZizX
-        Ma75CothSxCDeVSO5SzGNb9gMexrYjDP+bEcwbjmdyxGmoCX1FjSBH5iMdIS8oYdyxLGNb9iMWyJYzDb
-        g7HcwLimMYphPx+D2duM5QXGNbewGA4jMZja2/wrlzFdbxmL4jASA9oO2BYM5QR+xrjWLhbHSSoGVRuz
-        IUm4+fRStC3xjVTBSSoGV9+Evc1+uMn0yetDrIbDh0NIugm1t7E98Ib1jFePSk+b9As71/tlEaviGNiV
-        xBDTy3ETq+GbcJKKG+irNW/Z+OTTv93FqjhJOYykG+nS0yZ+YXP/cwer4zBiP29LbFdpY2ZvY3vgDesl
-        lRtY/H0uidvYDNZ+80lY+7kkbmEzWPu5JG5iM1g2uSQ2sBm6kljHZrD2m0/C2m86AbH2m938HDfe7OYn
-        JiYmmmE2+wO+LVNfbsoz1QAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="btnSearchBookmarks.Location" type="System.Drawing.Point, System.Drawing">
-    <value>376, 13</value>
-  </data>
-  <data name="btnSearchBookmarks.Size" type="System.Drawing.Size, System.Drawing">
-    <value>36, 36</value>
-  </data>
-  <data name="btnSearchBookmarks.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="btnSearchBookmarks.Text" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;btnSearchBookmarks.Name" xml:space="preserve">
-    <value>btnSearchBookmarks</value>
-  </data>
-  <data name="&gt;&gt;btnSearchBookmarks.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;btnSearchBookmarks.Parent" xml:space="preserve">
-    <value>tabBookmarks</value>
-  </data>
-  <data name="&gt;&gt;btnSearchBookmarks.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="emptyDataBookmarks.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="emptyDataBookmarks.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="emptyDataBookmarks.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 10.25pt, style=Bold</value>
-  </data>
-  <data name="emptyDataBookmarks.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="emptyDataBookmarks.Location" type="System.Drawing.Point, System.Drawing">
-    <value>377, 144</value>
-  </data>
-  <data name="emptyDataBookmarks.Size" type="System.Drawing.Size, System.Drawing">
-    <value>114, 19</value>
-  </data>
-  <data name="emptyDataBookmarks.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="emptyDataBookmarks.Text" xml:space="preserve">
-    <value>No results found</value>
-  </data>
-  <data name="emptyDataBookmarks.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>BottomCenter</value>
-  </data>
-  <data name="&gt;&gt;emptyDataBookmarks.Name" xml:space="preserve">
-    <value>emptyDataBookmarks</value>
-  </data>
-  <data name="&gt;&gt;emptyDataBookmarks.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;emptyDataBookmarks.Parent" xml:space="preserve">
-    <value>tabBookmarks</value>
-  </data>
-  <data name="&gt;&gt;emptyDataBookmarks.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="panelBookmarksFilters.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="btnBookmarksSort.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left, Right</value>
-  </data>
-  <data name="btnBookmarksSort.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 10.75pt</value>
-  </data>
-  <data name="btnBookmarksSort.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="btnBookmarksSort.SideImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAF9JREFUaEPt
-        z0sKgDAQRMEc3ZurWTS4UPETSAJVMNvhdQEAAABeW/ZbG1391UWLEd3i48+I7vHxZcQw8fFmxHDx8WTE
-        sPFxN2L4+DgbMU18HEdMFx81fNp4AAAArpWyAccxY6cp/GORAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="btnBookmarksSort.Size" type="System.Drawing.Size, System.Drawing">
-    <value>168, 36</value>
-  </data>
-  <data name="btnBookmarksSort.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="btnBookmarksSort.Text" xml:space="preserve">
-    <value>Sort : Recently Added</value>
-  </data>
-  <data name="&gt;&gt;btnBookmarksSort.Name" xml:space="preserve">
-    <value>btnBookmarksSort</value>
-  </data>
-  <data name="&gt;&gt;btnBookmarksSort.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;btnBookmarksSort.Parent" xml:space="preserve">
-    <value>panelBookmarksSort</value>
-  </data>
-  <data name="&gt;&gt;btnBookmarksSort.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="cmboBoxBookmarksSort.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left, Right</value>
-  </data>
-  <data name="cmboBoxBookmarksSort.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 10.75pt</value>
-  </data>
-  <data name="cmboBoxBookmarksSort.Items" xml:space="preserve">
-    <value>Recently Added</value>
-  </data>
-  <data name="cmboBoxBookmarksSort.Items1" xml:space="preserve">
-    <value>A-Z</value>
-  </data>
-  <data name="cmboBoxBookmarksSort.Items2" xml:space="preserve">
-    <value>Z-A</value>
-  </data>
-  <data name="cmboBoxBookmarksSort.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 8</value>
-  </data>
-  <data name="cmboBoxBookmarksSort.Size" type="System.Drawing.Size, System.Drawing">
-    <value>168, 27</value>
-  </data>
-  <data name="cmboBoxBookmarksSort.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;cmboBoxBookmarksSort.Name" xml:space="preserve">
-    <value>cmboBoxBookmarksSort</value>
-  </data>
-  <data name="&gt;&gt;cmboBoxBookmarksSort.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cmboBoxBookmarksSort.Parent" xml:space="preserve">
-    <value>panelBookmarksSort</value>
-  </data>
-  <data name="&gt;&gt;cmboBoxBookmarksSort.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="panelBookmarksSort.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="panelBookmarksSort.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 7, 0</value>
-  </data>
-  <data name="panelBookmarksSort.Size" type="System.Drawing.Size, System.Drawing">
-    <value>168, 36</value>
-  </data>
-  <data name="panelBookmarksSort.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;panelBookmarksSort.Name" xml:space="preserve">
-    <value>panelBookmarksSort</value>
-  </data>
-  <data name="&gt;&gt;panelBookmarksSort.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panelBookmarksSort.Parent" xml:space="preserve">
-    <value>panelBookmarksFilters</value>
-  </data>
-  <data name="&gt;&gt;panelBookmarksSort.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="btnBookmarksType.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left, Right</value>
-  </data>
-  <data name="btnBookmarksType.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 10.75pt</value>
-  </data>
-  <data name="btnBookmarksType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="btnBookmarksType.SideImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAF9JREFUaEPt
-        z0sKgDAQRMEc3ZurWTS4UPETSAJVMNvhdQEAAABeW/ZbG1391UWLEd3i48+I7vHxZcQw8fFmxHDx8WTE
-        sPFxN2L4+DgbMU18HEdMFx81fNp4AAAArpWyAccxY6cp/GORAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="btnBookmarksType.Size" type="System.Drawing.Size, System.Drawing">
-    <value>98, 36</value>
-  </data>
-  <data name="btnBookmarksType.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="btnBookmarksType.Text" xml:space="preserve">
-    <value>Type : Any</value>
-  </data>
-  <data name="&gt;&gt;btnBookmarksType.Name" xml:space="preserve">
-    <value>btnBookmarksType</value>
-  </data>
-  <data name="&gt;&gt;btnBookmarksType.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;btnBookmarksType.Parent" xml:space="preserve">
-    <value>panelBookmarksType</value>
-  </data>
-  <data name="&gt;&gt;btnBookmarksType.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="cmboBoxBookmarksType.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left, Right</value>
-  </data>
-  <data name="cmboBoxBookmarksType.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 10.75pt</value>
-  </data>
-  <data name="cmboBoxBookmarksType.Items" xml:space="preserve">
-    <value>Any</value>
-  </data>
-  <data name="cmboBoxBookmarksType.Items1" xml:space="preserve">
-    <value>Movie</value>
-  </data>
-  <data name="cmboBoxBookmarksType.Items2" xml:space="preserve">
-    <value>Episode</value>
-  </data>
-  <data name="cmboBoxBookmarksType.Items3" xml:space="preserve">
-    <value>Anime</value>
-  </data>
-  <data name="cmboBoxBookmarksType.Items4" xml:space="preserve">
-    <value>Subtitle</value>
-  </data>
-  <data name="cmboBoxBookmarksType.Items5" xml:space="preserve">
-    <value>Torrent</value>
-  </data>
-  <data name="cmboBoxBookmarksType.Items6" xml:space="preserve">
-    <value>Archive</value>
-  </data>
-  <data name="cmboBoxBookmarksType.Items7" xml:space="preserve">
-    <value>Local</value>
-  </data>
-  <data name="cmboBoxBookmarksType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 8</value>
-  </data>
-  <data name="cmboBoxBookmarksType.Size" type="System.Drawing.Size, System.Drawing">
-    <value>98, 27</value>
-  </data>
-  <data name="cmboBoxBookmarksType.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;cmboBoxBookmarksType.Name" xml:space="preserve">
-    <value>cmboBoxBookmarksType</value>
-  </data>
-  <data name="&gt;&gt;cmboBoxBookmarksType.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cmboBoxBookmarksType.Parent" xml:space="preserve">
-    <value>panelBookmarksType</value>
-  </data>
-  <data name="&gt;&gt;cmboBoxBookmarksType.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="panelBookmarksType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>175, 0</value>
-  </data>
-  <data name="panelBookmarksType.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 7, 0</value>
-  </data>
-  <data name="panelBookmarksType.Size" type="System.Drawing.Size, System.Drawing">
-    <value>98, 36</value>
-  </data>
-  <data name="panelBookmarksType.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;panelBookmarksType.Name" xml:space="preserve">
-    <value>panelBookmarksType</value>
-  </data>
-  <data name="&gt;&gt;panelBookmarksType.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panelBookmarksType.Parent" xml:space="preserve">
-    <value>panelBookmarksFilters</value>
-  </data>
-  <data name="&gt;&gt;panelBookmarksType.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="panelBookmarksFilters.Location" type="System.Drawing.Point, System.Drawing">
-    <value>419, 13</value>
-  </data>
-  <data name="panelBookmarksFilters.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 3, 3, 3</value>
-  </data>
-  <data name="panelBookmarksFilters.Size" type="System.Drawing.Size, System.Drawing">
-    <value>442, 36</value>
-  </data>
-  <data name="panelBookmarksFilters.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
-  </data>
-  <data name="&gt;&gt;panelBookmarksFilters.Name" xml:space="preserve">
-    <value>panelBookmarksFilters</value>
-  </data>
-  <data name="&gt;&gt;panelBookmarksFilters.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panelBookmarksFilters.Parent" xml:space="preserve">
-    <value>tabBookmarks</value>
-  </data>
-  <data name="&gt;&gt;panelBookmarksFilters.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="txtBookmarksSearchBox.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 10.75pt</value>
-  </data>
-  <data name="txtBookmarksSearchBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>22, 21</value>
-  </data>
-  <data name="txtBookmarksSearchBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>348, 20</value>
-  </data>
-  <data name="txtBookmarksSearchBox.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;txtBookmarksSearchBox.Name" xml:space="preserve">
-    <value>txtBookmarksSearchBox</value>
-  </data>
-  <data name="&gt;&gt;txtBookmarksSearchBox.Type" xml:space="preserve">
-    <value>ChreneLib.Controls.TextBoxes.CTextBox, ChreneLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;txtBookmarksSearchBox.Parent" xml:space="preserve">
-    <value>tabBookmarks</value>
-  </data>
-  <data name="&gt;&gt;txtBookmarksSearchBox.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="dataGridBookmarks.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <metadata name="columnBookmarksType.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="columnBookmarksType.HeaderText" xml:space="preserve">
-    <value>Type</value>
-  </data>
-  <data name="columnBookmarksType.Width" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <metadata name="columnBookmarksFileName.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="columnBookmarksFileName.HeaderText" xml:space="preserve">
-    <value>File Name</value>
-  </data>
-  <metadata name="columnBookmarksFormat.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="columnBookmarksFormat.HeaderText" xml:space="preserve">
-    <value>Format</value>
-  </data>
-  <data name="columnBookmarksFormat.Width" type="System.Int32, mscorlib">
-    <value>76</value>
-  </data>
-  <metadata name="columnBookmarksHost.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="columnBookmarksHost.HeaderText" xml:space="preserve">
-    <value>Host</value>
-  </data>
-  <data name="columnBookmarksHost.Width" type="System.Int32, mscorlib">
-    <value>64</value>
-  </data>
-  <metadata name="columnBookmarksURL.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="columnBookmarksURL.HeaderText" xml:space="preserve">
-    <value>URL</value>
-  </data>
-  <data name="columnBookmarksURL.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="columnBookmarksURL.Width" type="System.Int32, mscorlib">
-    <value>851</value>
-  </data>
-  <data name="dataGridBookmarks.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 63</value>
-  </data>
-  <data name="dataGridBookmarks.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 0, 3, 3</value>
-  </data>
-  <data name="dataGridBookmarks.RowHeadersWidth" type="System.Int32, mscorlib">
-    <value>40</value>
-  </data>
-  <data name="dataGridBookmarks.Size" type="System.Drawing.Size, System.Drawing">
-    <value>868, 455</value>
-  </data>
-  <data name="dataGridBookmarks.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="&gt;&gt;dataGridBookmarks.Name" xml:space="preserve">
-    <value>dataGridBookmarks</value>
-  </data>
-  <data name="&gt;&gt;dataGridBookmarks.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dataGridBookmarks.Parent" xml:space="preserve">
-    <value>tabBookmarks</value>
-  </data>
-  <data name="&gt;&gt;dataGridBookmarks.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="bgBookmarksSearchBox.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 8.25pt</value>
-  </data>
-  <data name="bgBookmarksSearchBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 13</value>
-  </data>
-  <data name="bgBookmarksSearchBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>399, 36</value>
-  </data>
-  <data name="bgBookmarksSearchBox.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="bgBookmarksSearchBox.Text" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;bgBookmarksSearchBox.Name" xml:space="preserve">
-    <value>bgBookmarksSearchBox</value>
-  </data>
-  <data name="&gt;&gt;bgBookmarksSearchBox.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;bgBookmarksSearchBox.Parent" xml:space="preserve">
-    <value>tabBookmarks</value>
-  </data>
-  <data name="&gt;&gt;bgBookmarksSearchBox.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="tabBookmarks.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tabBookmarks.Size" type="System.Drawing.Size, System.Drawing">
-    <value>868, 518</value>
-  </data>
-  <data name="tabBookmarks.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;tabBookmarks.Name" xml:space="preserve">
-    <value>tabBookmarks</value>
-  </data>
-  <data name="&gt;&gt;tabBookmarks.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabBookmarks.Parent" xml:space="preserve">
-    <value>tab</value>
-  </data>
-  <data name="&gt;&gt;tabBookmarks.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="lblNoDownloads.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="lblNoDownloads.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblNoDownloads.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 13pt</value>
-  </data>
-  <data name="lblNoDownloads.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblNoDownloads.Location" type="System.Drawing.Point, System.Drawing">
-    <value>347, 247</value>
-  </data>
-  <data name="lblNoDownloads.Size" type="System.Drawing.Size, System.Drawing">
-    <value>143, 25</value>
-  </data>
-  <data name="lblNoDownloads.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="lblNoDownloads.Text" xml:space="preserve">
-    <value>No Downloads...</value>
-  </data>
-  <data name="&gt;&gt;lblNoDownloads.Name" xml:space="preserve">
-    <value>lblNoDownloads</value>
-  </data>
-  <data name="&gt;&gt;lblNoDownloads.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblNoDownloads.Parent" xml:space="preserve">
-    <value>tabDownloads</value>
-  </data>
-  <data name="&gt;&gt;lblNoDownloads.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="panelDownloads.AutoScroll" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="panelDownloads.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="panelDownloads.FlowDirection" type="System.Windows.Forms.FlowDirection, System.Windows.Forms">
-    <value>TopDown</value>
-  </data>
-  <data name="panelDownloads.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="panelDownloads.Size" type="System.Drawing.Size, System.Drawing">
-    <value>868, 518</value>
-  </data>
-  <data name="panelDownloads.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="panelDownloads.WrapContents" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;panelDownloads.Name" xml:space="preserve">
-    <value>panelDownloads</value>
-  </data>
-  <data name="&gt;&gt;panelDownloads.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panelDownloads.Parent" xml:space="preserve">
-    <value>tabDownloads</value>
-  </data>
-  <data name="&gt;&gt;panelDownloads.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="tabDownloads.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tabDownloads.Size" type="System.Drawing.Size, System.Drawing">
-    <value>868, 518</value>
-  </data>
-  <data name="tabDownloads.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;tabDownloads.Name" xml:space="preserve">
-    <value>tabDownloads</value>
-  </data>
-  <data name="&gt;&gt;tabDownloads.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabDownloads.Parent" xml:space="preserve">
-    <value>tab</value>
-  </data>
-  <data name="&gt;&gt;tabDownloads.ZOrder" xml:space="preserve">
-    <value>3</value>
   </data>
   <data name="tabBlank.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Stretch</value>
@@ -2154,7 +1803,7 @@
     <value>tab</value>
   </data>
   <data name="&gt;&gt;tabBlank.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>2</value>
   </data>
   <data name="tabSettings.AutoScroll" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2294,168 +1943,6 @@
   <data name="&gt;&gt;lblSettingsGeneralLanguage.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="titleSettingsDownloads.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="titleSettingsDownloads.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 15.25pt</value>
-  </data>
-  <data name="titleSettingsDownloads.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="titleSettingsDownloads.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 153</value>
-  </data>
-  <data name="titleSettingsDownloads.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 8, 3, 8</value>
-  </data>
-  <data name="titleSettingsDownloads.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 30</value>
-  </data>
-  <data name="titleSettingsDownloads.TabIndex" type="System.Int32, mscorlib">
-    <value>40</value>
-  </data>
-  <data name="titleSettingsDownloads.Text" xml:space="preserve">
-    <value>Downloads</value>
-  </data>
-  <data name="&gt;&gt;titleSettingsDownloads.Name" xml:space="preserve">
-    <value>titleSettingsDownloads</value>
-  </data>
-  <data name="&gt;&gt;titleSettingsDownloads.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;titleSettingsDownloads.Parent" xml:space="preserve">
-    <value>tabSettings</value>
-  </data>
-  <data name="&gt;&gt;titleSettingsDownloads.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="txtBoxSettingsDownloadsDirectory.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 10.75pt</value>
-  </data>
-  <data name="txtBoxSettingsDownloadsDirectory.Location" type="System.Drawing.Point, System.Drawing">
-    <value>244, 196</value>
-  </data>
-  <data name="txtBoxSettingsDownloadsDirectory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>323, 20</value>
-  </data>
-  <data name="txtBoxSettingsDownloadsDirectory.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;txtBoxSettingsDownloadsDirectory.Name" xml:space="preserve">
-    <value>txtBoxSettingsDownloadsDirectory</value>
-  </data>
-  <data name="&gt;&gt;txtBoxSettingsDownloadsDirectory.Type" xml:space="preserve">
-    <value>ChreneLib.Controls.TextBoxes.CTextBox, ChreneLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;txtBoxSettingsDownloadsDirectory.Parent" xml:space="preserve">
-    <value>tabSettings</value>
-  </data>
-  <data name="&gt;&gt;txtBoxSettingsDownloadsDirectory.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="lblSettingsDownloadsDirectory.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblSettingsDownloadsDirectory.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 10.25pt</value>
-  </data>
-  <data name="lblSettingsDownloadsDirectory.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblSettingsDownloadsDirectory.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 199</value>
-  </data>
-  <data name="lblSettingsDownloadsDirectory.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 8, 3, 8</value>
-  </data>
-  <data name="lblSettingsDownloadsDirectory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>91, 19</value>
-  </data>
-  <data name="lblSettingsDownloadsDirectory.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lblSettingsDownloadsDirectory.Text" xml:space="preserve">
-    <value>Download to:</value>
-  </data>
-  <data name="&gt;&gt;lblSettingsDownloadsDirectory.Name" xml:space="preserve">
-    <value>lblSettingsDownloadsDirectory</value>
-  </data>
-  <data name="&gt;&gt;lblSettingsDownloadsDirectory.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblSettingsDownloadsDirectory.Parent" xml:space="preserve">
-    <value>tabSettings</value>
-  </data>
-  <data name="&gt;&gt;lblSettingsDownloadsDirectory.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="lblSettingsConnectionCustom.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblSettingsConnectionCustom.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 10.25pt</value>
-  </data>
-  <data name="lblSettingsConnectionCustom.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblSettingsConnectionCustom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 295</value>
-  </data>
-  <data name="lblSettingsConnectionCustom.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 8, 3, 8</value>
-  </data>
-  <data name="lblSettingsConnectionCustom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 19</value>
-  </data>
-  <data name="lblSettingsConnectionCustom.TabIndex" type="System.Int32, mscorlib">
-    <value>36</value>
-  </data>
-  <data name="lblSettingsConnectionCustom.Text" xml:space="preserve">
-    <value>Custom:</value>
-  </data>
-  <data name="&gt;&gt;lblSettingsConnectionCustom.Name" xml:space="preserve">
-    <value>lblSettingsConnectionCustom</value>
-  </data>
-  <data name="&gt;&gt;lblSettingsConnectionCustom.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblSettingsConnectionCustom.Parent" xml:space="preserve">
-    <value>tabSettings</value>
-  </data>
-  <data name="&gt;&gt;lblSettingsConnectionCustom.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="chkSettingsCustomConnection.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="chkSettingsCustomConnection.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 10.75pt</value>
-  </data>
-  <data name="chkSettingsCustomConnection.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="chkSettingsCustomConnection.Location" type="System.Drawing.Point, System.Drawing">
-    <value>238, 300</value>
-  </data>
-  <data name="chkSettingsCustomConnection.Size" type="System.Drawing.Size, System.Drawing">
-    <value>15, 14</value>
-  </data>
-  <data name="chkSettingsCustomConnection.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;chkSettingsCustomConnection.Name" xml:space="preserve">
-    <value>chkSettingsCustomConnection</value>
-  </data>
-  <data name="&gt;&gt;chkSettingsCustomConnection.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;chkSettingsCustomConnection.Parent" xml:space="preserve">
-    <value>tabSettings</value>
-  </data>
-  <data name="&gt;&gt;chkSettingsCustomConnection.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
   <data name="titleSettingsGeneral.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -2490,7 +1977,7 @@
     <value>tabSettings</value>
   </data>
   <data name="&gt;&gt;titleSettingsGeneral.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>2</value>
   </data>
   <data name="lblSettingsGeneralClearDataOnClose.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2526,7 +2013,7 @@
     <value>tabSettings</value>
   </data>
   <data name="&gt;&gt;lblSettingsGeneralClearDataOnClose.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>3</value>
   </data>
   <data name="chkSettingsClearData.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2556,383 +2043,13 @@
     <value>tabSettings</value>
   </data>
   <data name="&gt;&gt;chkSettingsClearData.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="txtBoxSettingsConnectionPassword.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="txtBoxSettingsConnectionPassword.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 10.75pt</value>
-  </data>
-  <data name="txtBoxSettingsConnectionPassword.Location" type="System.Drawing.Point, System.Drawing">
-    <value>244, 457</value>
-  </data>
-  <data name="txtBoxSettingsConnectionPassword.Size" type="System.Drawing.Size, System.Drawing">
-    <value>323, 20</value>
-  </data>
-  <data name="txtBoxSettingsConnectionPassword.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;txtBoxSettingsConnectionPassword.Name" xml:space="preserve">
-    <value>txtBoxSettingsConnectionPassword</value>
-  </data>
-  <data name="&gt;&gt;txtBoxSettingsConnectionPassword.Type" xml:space="preserve">
-    <value>ChreneLib.Controls.TextBoxes.CTextBox, ChreneLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;txtBoxSettingsConnectionPassword.Parent" xml:space="preserve">
-    <value>tabSettings</value>
-  </data>
-  <data name="&gt;&gt;txtBoxSettingsConnectionPassword.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="lblSettingsConnectionPassword.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblSettingsConnectionPassword.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="lblSettingsConnectionPassword.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 10.25pt</value>
-  </data>
-  <data name="lblSettingsConnectionPassword.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblSettingsConnectionPassword.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 460</value>
-  </data>
-  <data name="lblSettingsConnectionPassword.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 8, 3, 8</value>
-  </data>
-  <data name="lblSettingsConnectionPassword.Size" type="System.Drawing.Size, System.Drawing">
-    <value>70, 19</value>
-  </data>
-  <data name="lblSettingsConnectionPassword.TabIndex" type="System.Int32, mscorlib">
-    <value>27</value>
-  </data>
-  <data name="lblSettingsConnectionPassword.Text" xml:space="preserve">
-    <value>Password:</value>
-  </data>
-  <data name="&gt;&gt;lblSettingsConnectionPassword.Name" xml:space="preserve">
-    <value>lblSettingsConnectionPassword</value>
-  </data>
-  <data name="&gt;&gt;lblSettingsConnectionPassword.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblSettingsConnectionPassword.Parent" xml:space="preserve">
-    <value>tabSettings</value>
-  </data>
-  <data name="&gt;&gt;lblSettingsConnectionPassword.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="txtBoxSettingsConnectionUsername.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="txtBoxSettingsConnectionUsername.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 10.75pt</value>
-  </data>
-  <data name="txtBoxSettingsConnectionUsername.Location" type="System.Drawing.Point, System.Drawing">
-    <value>244, 416</value>
-  </data>
-  <data name="txtBoxSettingsConnectionUsername.Size" type="System.Drawing.Size, System.Drawing">
-    <value>323, 20</value>
-  </data>
-  <data name="txtBoxSettingsConnectionUsername.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;txtBoxSettingsConnectionUsername.Name" xml:space="preserve">
-    <value>txtBoxSettingsConnectionUsername</value>
-  </data>
-  <data name="&gt;&gt;txtBoxSettingsConnectionUsername.Type" xml:space="preserve">
-    <value>ChreneLib.Controls.TextBoxes.CTextBox, ChreneLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;txtBoxSettingsConnectionUsername.Parent" xml:space="preserve">
-    <value>tabSettings</value>
-  </data>
-  <data name="&gt;&gt;txtBoxSettingsConnectionUsername.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="lblSettingsConnectionUsername.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblSettingsConnectionUsername.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="lblSettingsConnectionUsername.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 10.25pt</value>
-  </data>
-  <data name="lblSettingsConnectionUsername.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblSettingsConnectionUsername.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 419</value>
-  </data>
-  <data name="lblSettingsConnectionUsername.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 8, 3, 8</value>
-  </data>
-  <data name="lblSettingsConnectionUsername.Size" type="System.Drawing.Size, System.Drawing">
-    <value>74, 19</value>
-  </data>
-  <data name="lblSettingsConnectionUsername.TabIndex" type="System.Int32, mscorlib">
-    <value>24</value>
-  </data>
-  <data name="lblSettingsConnectionUsername.Text" xml:space="preserve">
-    <value>Username:</value>
-  </data>
-  <data name="&gt;&gt;lblSettingsConnectionUsername.Name" xml:space="preserve">
-    <value>lblSettingsConnectionUsername</value>
-  </data>
-  <data name="&gt;&gt;lblSettingsConnectionUsername.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblSettingsConnectionUsername.Parent" xml:space="preserve">
-    <value>tabSettings</value>
-  </data>
-  <data name="&gt;&gt;lblSettingsConnectionUsername.ZOrder" xml:space="preserve">
-    <value>13</value>
-  </data>
-  <data name="txtBoxSettingsConnectionPort.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="txtBoxSettingsConnectionPort.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 10.75pt</value>
-  </data>
-  <data name="txtBoxSettingsConnectionPort.Location" type="System.Drawing.Point, System.Drawing">
-    <value>244, 375</value>
-  </data>
-  <data name="txtBoxSettingsConnectionPort.Size" type="System.Drawing.Size, System.Drawing">
-    <value>323, 20</value>
-  </data>
-  <data name="txtBoxSettingsConnectionPort.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
-  </data>
-  <data name="&gt;&gt;txtBoxSettingsConnectionPort.Name" xml:space="preserve">
-    <value>txtBoxSettingsConnectionPort</value>
-  </data>
-  <data name="&gt;&gt;txtBoxSettingsConnectionPort.Type" xml:space="preserve">
-    <value>ChreneLib.Controls.TextBoxes.CTextBox, ChreneLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;txtBoxSettingsConnectionPort.Parent" xml:space="preserve">
-    <value>tabSettings</value>
-  </data>
-  <data name="&gt;&gt;txtBoxSettingsConnectionPort.ZOrder" xml:space="preserve">
-    <value>14</value>
-  </data>
-  <data name="lblSettingsConnectionPort.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblSettingsConnectionPort.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="lblSettingsConnectionPort.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 10.25pt</value>
-  </data>
-  <data name="lblSettingsConnectionPort.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblSettingsConnectionPort.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 374</value>
-  </data>
-  <data name="lblSettingsConnectionPort.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 8, 3, 8</value>
-  </data>
-  <data name="lblSettingsConnectionPort.Size" type="System.Drawing.Size, System.Drawing">
-    <value>37, 19</value>
-  </data>
-  <data name="lblSettingsConnectionPort.TabIndex" type="System.Int32, mscorlib">
-    <value>21</value>
-  </data>
-  <data name="lblSettingsConnectionPort.Text" xml:space="preserve">
-    <value>Port:</value>
-  </data>
-  <data name="&gt;&gt;lblSettingsConnectionPort.Name" xml:space="preserve">
-    <value>lblSettingsConnectionPort</value>
-  </data>
-  <data name="&gt;&gt;lblSettingsConnectionPort.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblSettingsConnectionPort.Parent" xml:space="preserve">
-    <value>tabSettings</value>
-  </data>
-  <data name="&gt;&gt;lblSettingsConnectionPort.ZOrder" xml:space="preserve">
-    <value>15</value>
-  </data>
-  <data name="txtBoxSettingsConnectionHost.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="txtBoxSettingsConnectionHost.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 10.75pt</value>
-  </data>
-  <data name="txtBoxSettingsConnectionHost.Location" type="System.Drawing.Point, System.Drawing">
-    <value>244, 334</value>
-  </data>
-  <data name="txtBoxSettingsConnectionHost.Size" type="System.Drawing.Size, System.Drawing">
-    <value>323, 20</value>
-  </data>
-  <data name="txtBoxSettingsConnectionHost.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;txtBoxSettingsConnectionHost.Name" xml:space="preserve">
-    <value>txtBoxSettingsConnectionHost</value>
-  </data>
-  <data name="&gt;&gt;txtBoxSettingsConnectionHost.Type" xml:space="preserve">
-    <value>ChreneLib.Controls.TextBoxes.CTextBox, ChreneLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;txtBoxSettingsConnectionHost.Parent" xml:space="preserve">
-    <value>tabSettings</value>
-  </data>
-  <data name="&gt;&gt;txtBoxSettingsConnectionHost.ZOrder" xml:space="preserve">
-    <value>16</value>
-  </data>
-  <data name="lblSettingsConnectionHost.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblSettingsConnectionHost.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="lblSettingsConnectionHost.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 10.25pt</value>
-  </data>
-  <data name="lblSettingsConnectionHost.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblSettingsConnectionHost.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 335</value>
-  </data>
-  <data name="lblSettingsConnectionHost.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 8, 3, 8</value>
-  </data>
-  <data name="lblSettingsConnectionHost.Size" type="System.Drawing.Size, System.Drawing">
-    <value>41, 19</value>
-  </data>
-  <data name="lblSettingsConnectionHost.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
-  </data>
-  <data name="lblSettingsConnectionHost.Text" xml:space="preserve">
-    <value>Host:</value>
-  </data>
-  <data name="&gt;&gt;lblSettingsConnectionHost.Name" xml:space="preserve">
-    <value>lblSettingsConnectionHost</value>
-  </data>
-  <data name="&gt;&gt;lblSettingsConnectionHost.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblSettingsConnectionHost.Parent" xml:space="preserve">
-    <value>tabSettings</value>
-  </data>
-  <data name="&gt;&gt;lblSettingsConnectionHost.ZOrder" xml:space="preserve">
-    <value>17</value>
-  </data>
-  <data name="titleSettingsConnection.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="titleSettingsConnection.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 15.25pt</value>
-  </data>
-  <data name="titleSettingsConnection.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="titleSettingsConnection.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 251</value>
-  </data>
-  <data name="titleSettingsConnection.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 8, 3, 8</value>
-  </data>
-  <data name="titleSettingsConnection.Size" type="System.Drawing.Size, System.Drawing">
-    <value>122, 30</value>
-  </data>
-  <data name="titleSettingsConnection.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
-  </data>
-  <data name="titleSettingsConnection.Text" xml:space="preserve">
-    <value>Connection</value>
-  </data>
-  <data name="&gt;&gt;titleSettingsConnection.Name" xml:space="preserve">
-    <value>titleSettingsConnection</value>
-  </data>
-  <data name="&gt;&gt;titleSettingsConnection.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;titleSettingsConnection.Parent" xml:space="preserve">
-    <value>tabSettings</value>
-  </data>
-  <data name="&gt;&gt;titleSettingsConnection.ZOrder" xml:space="preserve">
-    <value>18</value>
-  </data>
-  <data name="imgSettingsDownloadsDirectory.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAadJREFUaEPt
-        2D1KA2EQxvGITQo7bRVFUFsbL5DKA+QENl7AysYuZ0hpIYL41Vp5gNxAEDvBRomgYCFx3nf+TLLZZDcG
-        cXbh/cGw7pNZ99mQItpIkiRJknGDwWBH5lbmXea3Tvg1PqRAKP8Wq8zP7yHk5uGd/ws+DyE3nudjM83/
-        PwQ3roLwRt7IbFNtNvHSanmVWaVeOb2mci6oV44LqqZPvXJcYIjrg96GuD7obYjrg96GuD7obYiNRA/6
-        irt9KmXxoiGO5HRNU3dfMkvUytLXh4gjOT3Q1N09lfJYMMSRnJ5r6u6YSnksGOKQL8i8xNDfHrXyWDDE
-        Id/VxF34W2WRWnm6M0Qc8iNN3F1SaTKWDHHI7zRxd0ilyVgyZE2Zjxj424xFp2HJkLX0zN1TLFmERUPW
-        0TN33ViyCIuGrKdn7tqxZBEWRy3LfOuPrkKHFWpOp7sZbY7eelQsxvKoLkdvHSoWY3nUI0dvLSoWk8W+
-        7lfKp0yTisVk8TpeUi2n1Csny1sy4Z9JVfEss0692cgF4SGuZDw/TuGr+5nMBrWSJEmSZEyj8QMOiMEH
-        U0M6xwAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="imgSettingsDownloadsDirectory.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="imgSettingsDownloadsDirectory.Location" type="System.Drawing.Point, System.Drawing">
-    <value>579, 195</value>
-  </data>
-  <data name="imgSettingsDownloadsDirectory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>22, 22</value>
-  </data>
-  <data name="imgSettingsDownloadsDirectory.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>StretchImage</value>
-  </data>
-  <data name="imgSettingsDownloadsDirectory.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
-  </data>
-  <data name="&gt;&gt;imgSettingsDownloadsDirectory.Name" xml:space="preserve">
-    <value>imgSettingsDownloadsDirectory</value>
-  </data>
-  <data name="&gt;&gt;imgSettingsDownloadsDirectory.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;imgSettingsDownloadsDirectory.Parent" xml:space="preserve">
-    <value>tabSettings</value>
-  </data>
-  <data name="&gt;&gt;imgSettingsDownloadsDirectory.ZOrder" xml:space="preserve">
-    <value>19</value>
-  </data>
-  <data name="bgSettingsDownloadsDirectory.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 8.25pt</value>
-  </data>
-  <data name="bgSettingsDownloadsDirectory.Location" type="System.Drawing.Point, System.Drawing">
-    <value>238, 191</value>
-  </data>
-  <data name="bgSettingsDownloadsDirectory.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 5, 3, 5</value>
-  </data>
-  <data name="bgSettingsDownloadsDirectory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>335, 31</value>
-  </data>
-  <data name="bgSettingsDownloadsDirectory.TabIndex" type="System.Int32, mscorlib">
-    <value>39</value>
-  </data>
-  <data name="bgSettingsDownloadsDirectory.Text" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;bgSettingsDownloadsDirectory.Name" xml:space="preserve">
-    <value>bgSettingsDownloadsDirectory</value>
-  </data>
-  <data name="&gt;&gt;bgSettingsDownloadsDirectory.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;bgSettingsDownloadsDirectory.Parent" xml:space="preserve">
-    <value>tabSettings</value>
-  </data>
-  <data name="&gt;&gt;bgSettingsDownloadsDirectory.ZOrder" xml:space="preserve">
-    <value>20</value>
   </data>
   <data name="btnSettingsSave.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Semibold, 9.75pt</value>
   </data>
   <data name="btnSettingsSave.Location" type="System.Drawing.Point, System.Drawing">
-    <value>147, 514</value>
+    <value>147, 170</value>
   </data>
   <data name="btnSettingsSave.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 1, 3, 0</value>
@@ -2956,13 +2073,13 @@
     <value>tabSettings</value>
   </data>
   <data name="&gt;&gt;btnSettingsSave.ZOrder" xml:space="preserve">
-    <value>21</value>
+    <value>5</value>
   </data>
   <data name="btnSettingsRestoreDefault.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Semibold, 9.75pt</value>
   </data>
   <data name="btnSettingsRestoreDefault.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 514</value>
+    <value>17, 170</value>
   </data>
   <data name="btnSettingsRestoreDefault.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 1, 3, 0</value>
@@ -2986,139 +2103,7 @@
     <value>tabSettings</value>
   </data>
   <data name="&gt;&gt;btnSettingsRestoreDefault.ZOrder" xml:space="preserve">
-    <value>22</value>
-  </data>
-  <data name="bgSettingsConnectionPassword.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="bgSettingsConnectionPassword.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 8.25pt</value>
-  </data>
-  <data name="bgSettingsConnectionPassword.Location" type="System.Drawing.Point, System.Drawing">
-    <value>238, 452</value>
-  </data>
-  <data name="bgSettingsConnectionPassword.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 5, 3, 5</value>
-  </data>
-  <data name="bgSettingsConnectionPassword.Size" type="System.Drawing.Size, System.Drawing">
-    <value>335, 31</value>
-  </data>
-  <data name="bgSettingsConnectionPassword.TabIndex" type="System.Int32, mscorlib">
-    <value>29</value>
-  </data>
-  <data name="bgSettingsConnectionPassword.Text" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;bgSettingsConnectionPassword.Name" xml:space="preserve">
-    <value>bgSettingsConnectionPassword</value>
-  </data>
-  <data name="&gt;&gt;bgSettingsConnectionPassword.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;bgSettingsConnectionPassword.Parent" xml:space="preserve">
-    <value>tabSettings</value>
-  </data>
-  <data name="&gt;&gt;bgSettingsConnectionPassword.ZOrder" xml:space="preserve">
-    <value>23</value>
-  </data>
-  <data name="bgSettingsConnectionUsername.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="bgSettingsConnectionUsername.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 8.25pt</value>
-  </data>
-  <data name="bgSettingsConnectionUsername.Location" type="System.Drawing.Point, System.Drawing">
-    <value>238, 411</value>
-  </data>
-  <data name="bgSettingsConnectionUsername.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 5, 3, 5</value>
-  </data>
-  <data name="bgSettingsConnectionUsername.Size" type="System.Drawing.Size, System.Drawing">
-    <value>335, 31</value>
-  </data>
-  <data name="bgSettingsConnectionUsername.TabIndex" type="System.Int32, mscorlib">
-    <value>26</value>
-  </data>
-  <data name="bgSettingsConnectionUsername.Text" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;bgSettingsConnectionUsername.Name" xml:space="preserve">
-    <value>bgSettingsConnectionUsername</value>
-  </data>
-  <data name="&gt;&gt;bgSettingsConnectionUsername.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;bgSettingsConnectionUsername.Parent" xml:space="preserve">
-    <value>tabSettings</value>
-  </data>
-  <data name="&gt;&gt;bgSettingsConnectionUsername.ZOrder" xml:space="preserve">
-    <value>24</value>
-  </data>
-  <data name="bgSettingsConnectionPort.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="bgSettingsConnectionPort.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 8.25pt</value>
-  </data>
-  <data name="bgSettingsConnectionPort.Location" type="System.Drawing.Point, System.Drawing">
-    <value>238, 370</value>
-  </data>
-  <data name="bgSettingsConnectionPort.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 5, 3, 5</value>
-  </data>
-  <data name="bgSettingsConnectionPort.Size" type="System.Drawing.Size, System.Drawing">
-    <value>335, 31</value>
-  </data>
-  <data name="bgSettingsConnectionPort.TabIndex" type="System.Int32, mscorlib">
-    <value>23</value>
-  </data>
-  <data name="bgSettingsConnectionPort.Text" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;bgSettingsConnectionPort.Name" xml:space="preserve">
-    <value>bgSettingsConnectionPort</value>
-  </data>
-  <data name="&gt;&gt;bgSettingsConnectionPort.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;bgSettingsConnectionPort.Parent" xml:space="preserve">
-    <value>tabSettings</value>
-  </data>
-  <data name="&gt;&gt;bgSettingsConnectionPort.ZOrder" xml:space="preserve">
-    <value>25</value>
-  </data>
-  <data name="bgSettingsConnectionHost.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="bgSettingsConnectionHost.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 8.25pt</value>
-  </data>
-  <data name="bgSettingsConnectionHost.Location" type="System.Drawing.Point, System.Drawing">
-    <value>238, 329</value>
-  </data>
-  <data name="bgSettingsConnectionHost.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 5, 3, 5</value>
-  </data>
-  <data name="bgSettingsConnectionHost.Size" type="System.Drawing.Size, System.Drawing">
-    <value>335, 31</value>
-  </data>
-  <data name="bgSettingsConnectionHost.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
-  </data>
-  <data name="bgSettingsConnectionHost.Text" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;bgSettingsConnectionHost.Name" xml:space="preserve">
-    <value>bgSettingsConnectionHost</value>
-  </data>
-  <data name="&gt;&gt;bgSettingsConnectionHost.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;bgSettingsConnectionHost.Parent" xml:space="preserve">
-    <value>tabSettings</value>
-  </data>
-  <data name="&gt;&gt;bgSettingsConnectionHost.ZOrder" xml:space="preserve">
-    <value>26</value>
+    <value>6</value>
   </data>
   <data name="tabSettings.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
@@ -3139,7 +2124,7 @@
     <value>tab</value>
   </data>
   <data name="&gt;&gt;tabSettings.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>3</value>
   </data>
   <data name="tabAbout.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Stretch</value>
@@ -3960,7 +2945,7 @@ If you've got any comments, queries or suggestions then simply open an issue - w
     <value>tab</value>
   </data>
   <data name="&gt;&gt;tabAbout.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>4</value>
   </data>
   <data name="tab.Location" type="System.Drawing.Point, System.Drawing">
     <value>176, -22</value>
@@ -4009,7 +2994,7 @@ If you've got any comments, queries or suggestions then simply open an issue - w
     <value>NoControl</value>
   </data>
   <data name="imgSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 233</value>
+    <value>17, 102</value>
   </data>
   <data name="imgSettings.Size" type="System.Drawing.Size, System.Drawing">
     <value>22, 22</value>
@@ -4039,7 +3024,7 @@ If you've got any comments, queries or suggestions then simply open an issue - w
     <value>Segoe UI, 8.25pt</value>
   </data>
   <data name="titleLineSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>176, 230</value>
+    <value>176, 99</value>
   </data>
   <data name="titleLineSettings.Size" type="System.Drawing.Size, System.Drawing">
     <value>3, 28</value>
@@ -4075,7 +3060,7 @@ If you've got any comments, queries or suggestions then simply open an issue - w
     <value>NoControl</value>
   </data>
   <data name="titleSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>42, 234</value>
+    <value>42, 103</value>
   </data>
   <data name="titleSettings.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 8, 3, 8</value>
@@ -4101,224 +3086,6 @@ If you've got any comments, queries or suggestions then simply open an issue - w
   <data name="&gt;&gt;titleSettings.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="titleLineBookmarks.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
-  <data name="titleLineBookmarks.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 8.25pt</value>
-  </data>
-  <data name="titleLineBookmarks.Location" type="System.Drawing.Point, System.Drawing">
-    <value>176, 98</value>
-  </data>
-  <data name="titleLineBookmarks.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 5, 3, 5</value>
-  </data>
-  <data name="titleLineBookmarks.Size" type="System.Drawing.Size, System.Drawing">
-    <value>3, 28</value>
-  </data>
-  <data name="titleLineBookmarks.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
-  <data name="titleLineBookmarks.Text" xml:space="preserve">
-    <value />
-  </data>
-  <data name="titleLineBookmarks.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;titleLineBookmarks.Name" xml:space="preserve">
-    <value>titleLineBookmarks</value>
-  </data>
-  <data name="&gt;&gt;titleLineBookmarks.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;titleLineBookmarks.Parent" xml:space="preserve">
-    <value>panelTitles</value>
-  </data>
-  <data name="&gt;&gt;titleLineBookmarks.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="imgBookmarks.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAUxJREFUaEPt
-        0jFqQkEAhOFXSW6QxrS5gGXOkcreK+QKXiFXEPUCOYGQW9ikMRAbsXrOwo8EZNHIOBjYD6Z57ptR2a5p
-        mub/6Pv+SZkrW8WtdC6VZ+a8VFy+/Ea5tW/F/yNUWv75lAWzPiq9xbWp+WHWh+IYZn3ojWHWh94YZn3o
-        jWHWh94YZn3ojWHWh94YZn3ojWHWh94YZn3ojWHWh94YZn3ojWHWh94YZn3ojWHWh94YZn3ojWHWh94Y
-        Zn3ojWHWh94YZn3ojWHWh94YZn3ojWHWh94YZn3ojWHWh94YZn3ojWHWh95L7ZWZ8qKMlHdlp1yMWR96
-        z/lSpsqQ14707FF5U9bKWbzmQ2/NpzJRHjhepTMD5VX5UKo47kPvb8drwpE/07vV68URH3qL6jW5lrpO
-        rhcf+ahzpYyVAY/sSjcbKx41TdPcta47AH95ixBfemSmAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="imgBookmarks.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="imgBookmarks.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 101</value>
-  </data>
-  <data name="imgBookmarks.Size" type="System.Drawing.Size, System.Drawing">
-    <value>22, 22</value>
-  </data>
-  <data name="imgBookmarks.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>StretchImage</value>
-  </data>
-  <data name="imgBookmarks.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="&gt;&gt;imgBookmarks.Name" xml:space="preserve">
-    <value>imgBookmarks</value>
-  </data>
-  <data name="&gt;&gt;imgBookmarks.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;imgBookmarks.Parent" xml:space="preserve">
-    <value>panelTitles</value>
-  </data>
-  <data name="&gt;&gt;imgBookmarks.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="titleBookmarks.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="titleBookmarks.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 10.75pt</value>
-  </data>
-  <data name="titleBookmarks.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="titleBookmarks.Location" type="System.Drawing.Point, System.Drawing">
-    <value>42, 102</value>
-  </data>
-  <data name="titleBookmarks.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 8, 3, 8</value>
-  </data>
-  <data name="titleBookmarks.Size" type="System.Drawing.Size, System.Drawing">
-    <value>82, 20</value>
-  </data>
-  <data name="titleBookmarks.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="titleBookmarks.Text" xml:space="preserve">
-    <value>Bookmarks</value>
-  </data>
-  <data name="&gt;&gt;titleBookmarks.Name" xml:space="preserve">
-    <value>titleBookmarks</value>
-  </data>
-  <data name="&gt;&gt;titleBookmarks.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;titleBookmarks.Parent" xml:space="preserve">
-    <value>panelTitles</value>
-  </data>
-  <data name="&gt;&gt;titleBookmarks.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="imgDownloads.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAN1JREFUaEPt
-        1EEOgzAMRFGOzs3bGn8vKlXI0MQMyG/vzF9laa21Z3gdxJkOutI400FXGmc66ErjTAddaZzpoCuNMx10
-        pXGmg640znTQlcaZDrrSONNBVxpnOuhK46zOZ3P16RIrs2PZw/7+VHPigw34zhRz44MN+d5QNfHBBn13
-        iNr4YMO+/5dr4oMFeMcp18YHC/GeQzTigwV5V4pWfLAw79ulGR8s0Dt/0o4PFuq9X+4RHyzYuzf3ig8W
-        ftv41p5m+0sKMTsO75ZhdhzeLcPsOLxbhtnWWmttx7K8AdaEMz5A7udfAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="imgDownloads.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="imgDownloads.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 140</value>
-  </data>
-  <data name="imgDownloads.Size" type="System.Drawing.Size, System.Drawing">
-    <value>22, 22</value>
-  </data>
-  <data name="imgDownloads.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>StretchImage</value>
-  </data>
-  <data name="imgDownloads.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="&gt;&gt;imgDownloads.Name" xml:space="preserve">
-    <value>imgDownloads</value>
-  </data>
-  <data name="&gt;&gt;imgDownloads.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;imgDownloads.Parent" xml:space="preserve">
-    <value>panelTitles</value>
-  </data>
-  <data name="&gt;&gt;imgDownloads.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="titleLineDownloads.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
-  <data name="titleLineDownloads.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 8.25pt</value>
-  </data>
-  <data name="titleLineDownloads.Location" type="System.Drawing.Point, System.Drawing">
-    <value>176, 137</value>
-  </data>
-  <data name="titleLineDownloads.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 5, 3, 5</value>
-  </data>
-  <data name="titleLineDownloads.Size" type="System.Drawing.Size, System.Drawing">
-    <value>3, 28</value>
-  </data>
-  <data name="titleLineDownloads.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="titleLineDownloads.Text" xml:space="preserve">
-    <value />
-  </data>
-  <data name="titleLineDownloads.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;titleLineDownloads.Name" xml:space="preserve">
-    <value>titleLineDownloads</value>
-  </data>
-  <data name="&gt;&gt;titleLineDownloads.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;titleLineDownloads.Parent" xml:space="preserve">
-    <value>panelTitles</value>
-  </data>
-  <data name="&gt;&gt;titleLineDownloads.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="titleDownloads.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="titleDownloads.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 10.75pt</value>
-  </data>
-  <data name="titleDownloads.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="titleDownloads.Location" type="System.Drawing.Point, System.Drawing">
-    <value>42, 141</value>
-  </data>
-  <data name="titleDownloads.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 8, 3, 8</value>
-  </data>
-  <data name="titleDownloads.Size" type="System.Drawing.Size, System.Drawing">
-    <value>84, 20</value>
-  </data>
-  <data name="titleDownloads.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="titleDownloads.Text" xml:space="preserve">
-    <value>Downloads</value>
-  </data>
-  <data name="&gt;&gt;titleDownloads.Name" xml:space="preserve">
-    <value>titleDownloads</value>
-  </data>
-  <data name="&gt;&gt;titleDownloads.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;titleDownloads.Parent" xml:space="preserve">
-    <value>panelTitles</value>
-  </data>
-  <data name="&gt;&gt;titleDownloads.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
   <data name="imgAbout.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAlhJREFUaEPt
@@ -4339,7 +3106,7 @@ If you've got any comments, queries or suggestions then simply open an issue - w
     <value>NoControl</value>
   </data>
   <data name="imgAbout.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 272</value>
+    <value>17, 141</value>
   </data>
   <data name="imgAbout.Size" type="System.Drawing.Size, System.Drawing">
     <value>22, 22</value>
@@ -4360,7 +3127,7 @@ If you've got any comments, queries or suggestions then simply open an issue - w
     <value>panelTitles</value>
   </data>
   <data name="&gt;&gt;imgAbout.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>3</value>
   </data>
   <data name="titleLineAbout.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -4369,7 +3136,7 @@ If you've got any comments, queries or suggestions then simply open an issue - w
     <value>Segoe UI, 8.25pt</value>
   </data>
   <data name="titleLineAbout.Location" type="System.Drawing.Point, System.Drawing">
-    <value>176, 269</value>
+    <value>176, 138</value>
   </data>
   <data name="titleLineAbout.Size" type="System.Drawing.Size, System.Drawing">
     <value>3, 28</value>
@@ -4393,7 +3160,7 @@ If you've got any comments, queries or suggestions then simply open an issue - w
     <value>panelTitles</value>
   </data>
   <data name="&gt;&gt;titleLineAbout.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>4</value>
   </data>
   <data name="titleAbout.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -4405,7 +3172,7 @@ If you've got any comments, queries or suggestions then simply open an issue - w
     <value>NoControl</value>
   </data>
   <data name="titleAbout.Location" type="System.Drawing.Point, System.Drawing">
-    <value>42, 273</value>
+    <value>42, 142</value>
   </data>
   <data name="titleAbout.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 8, 3, 8</value>
@@ -4429,7 +3196,7 @@ If you've got any comments, queries or suggestions then simply open an issue - w
     <value>panelTitles</value>
   </data>
   <data name="&gt;&gt;titleAbout.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>5</value>
   </data>
   <data name="imgFiles.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -4466,7 +3233,7 @@ If you've got any comments, queries or suggestions then simply open an issue - w
     <value>panelTitles</value>
   </data>
   <data name="&gt;&gt;imgFiles.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>6</value>
   </data>
   <data name="imgMovies.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -4503,7 +3270,7 @@ If you've got any comments, queries or suggestions then simply open an issue - w
     <value>panelTitles</value>
   </data>
   <data name="&gt;&gt;imgMovies.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>7</value>
   </data>
   <data name="titleLineFiles.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -4539,7 +3306,7 @@ If you've got any comments, queries or suggestions then simply open an issue - w
     <value>panelTitles</value>
   </data>
   <data name="&gt;&gt;titleLineFiles.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>8</value>
   </data>
   <data name="titleLineMovies.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -4572,7 +3339,7 @@ If you've got any comments, queries or suggestions then simply open an issue - w
     <value>panelTitles</value>
   </data>
   <data name="&gt;&gt;titleLineMovies.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>9</value>
   </data>
   <data name="titleFiles.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -4608,7 +3375,7 @@ If you've got any comments, queries or suggestions then simply open an issue - w
     <value>panelTitles</value>
   </data>
   <data name="&gt;&gt;titleFiles.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>10</value>
   </data>
   <data name="titleMovies.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -4644,7 +3411,7 @@ If you've got any comments, queries or suggestions then simply open an issue - w
     <value>panelTitles</value>
   </data>
   <data name="&gt;&gt;titleMovies.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>11</value>
   </data>
   <data name="panelTitles.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
@@ -7587,46 +6354,16 @@ If you've got any comments, queries or suggestions then simply open an issue - w
   <data name="$this.Text" xml:space="preserve">
     <value>OpenTheatre</value>
   </data>
-  <data name="&gt;&gt;columnBookmarksType.Name" xml:space="preserve">
-    <value>columnBookmarksType</value>
+  <data name="&gt;&gt;columnFilesType.Name" xml:space="preserve">
+    <value>columnFilesType</value>
   </data>
-  <data name="&gt;&gt;columnBookmarksType.Type" xml:space="preserve">
+  <data name="&gt;&gt;columnFilesType.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;columnBookmarksFileName.Name" xml:space="preserve">
-    <value>columnBookmarksFileName</value>
+  <data name="&gt;&gt;columnFilesName.Name" xml:space="preserve">
+    <value>columnFilesName</value>
   </data>
-  <data name="&gt;&gt;columnBookmarksFileName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;columnBookmarksFormat.Name" xml:space="preserve">
-    <value>columnBookmarksFormat</value>
-  </data>
-  <data name="&gt;&gt;columnBookmarksFormat.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;columnBookmarksHost.Name" xml:space="preserve">
-    <value>columnBookmarksHost</value>
-  </data>
-  <data name="&gt;&gt;columnBookmarksHost.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;columnBookmarksURL.Name" xml:space="preserve">
-    <value>columnBookmarksURL</value>
-  </data>
-  <data name="&gt;&gt;columnBookmarksURL.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;columnFilesFormat.Name" xml:space="preserve">
-    <value>columnFilesFormat</value>
-  </data>
-  <data name="&gt;&gt;columnFilesFormat.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;columnFilesFileName.Name" xml:space="preserve">
-    <value>columnFilesFileName</value>
-  </data>
-  <data name="&gt;&gt;columnFilesFileName.Type" xml:space="preserve">
+  <data name="&gt;&gt;columnFilesName.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;columnFilesSize.Name" xml:space="preserve">
@@ -7641,10 +6378,10 @@ If you've got any comments, queries or suggestions then simply open an issue - w
   <data name="&gt;&gt;columnFilesDateAdded.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;columnFilesHost.Name" xml:space="preserve">
-    <value>columnFilesHost</value>
+  <data name="&gt;&gt;columnFilesReferrer.Name" xml:space="preserve">
+    <value>columnFilesReferrer</value>
   </data>
-  <data name="&gt;&gt;columnFilesHost.Type" xml:space="preserve">
+  <data name="&gt;&gt;columnFilesReferrer.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;columnFilesURL.Name" xml:space="preserve">

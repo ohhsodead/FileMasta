@@ -45,9 +45,6 @@
             this.imgMagnet = new System.Windows.Forms.PictureBox();
             this.imgDownload = new System.Windows.Forms.PictureBox();
             this.imgAddToBookmarks = new System.Windows.Forms.PictureBox();
-            this.infoFileSize = new System.Windows.Forms.Label();
-            this.infoFileAge = new System.Windows.Forms.Label();
-            this.timerUpdateInfo = new System.Windows.Forms.Timer(this.components);
             this.panelControls = new System.Windows.Forms.FlowLayoutPanel();
             this.contextFileName.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgShare)).BeginInit();
@@ -82,7 +79,7 @@
             this.infoFileName.Location = new System.Drawing.Point(160, 2);
             this.infoFileName.Margin = new System.Windows.Forms.Padding(0, 3, 3, 0);
             this.infoFileName.Name = "infoFileName";
-            this.infoFileName.Size = new System.Drawing.Size(189, 17);
+            this.infoFileName.Size = new System.Drawing.Size(345, 17);
             this.infoFileName.TabIndex = 1;
             this.infoFileName.Text = "File Name";
             // 
@@ -245,38 +242,6 @@
             this.toolTip1.SetToolTip(this.imgAddToBookmarks, "Add to Bookmarks");
             this.imgAddToBookmarks.Click += new System.EventHandler(this.imgAddToBookmarks_Click);
             // 
-            // infoFileSize
-            // 
-            this.infoFileSize.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.infoFileSize.AutoEllipsis = true;
-            this.infoFileSize.Cursor = System.Windows.Forms.Cursors.Default;
-            this.infoFileSize.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.infoFileSize.Location = new System.Drawing.Point(352, 2);
-            this.infoFileSize.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
-            this.infoFileSize.Name = "infoFileSize";
-            this.infoFileSize.Size = new System.Drawing.Size(70, 17);
-            this.infoFileSize.TabIndex = 2;
-            this.infoFileSize.Text = "Size";
-            // 
-            // infoFileAge
-            // 
-            this.infoFileAge.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.infoFileAge.AutoEllipsis = true;
-            this.infoFileAge.Cursor = System.Windows.Forms.Cursors.Default;
-            this.infoFileAge.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.infoFileAge.Location = new System.Drawing.Point(422, 2);
-            this.infoFileAge.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
-            this.infoFileAge.Name = "infoFileAge";
-            this.infoFileAge.Size = new System.Drawing.Size(86, 17);
-            this.infoFileAge.TabIndex = 3;
-            this.infoFileAge.Text = "Age";
-            // 
-            // timerUpdateInfo
-            // 
-            this.timerUpdateInfo.Enabled = true;
-            this.timerUpdateInfo.Interval = 1000;
-            this.timerUpdateInfo.Tick += new System.EventHandler(this.timerUpdateInfo_Tick);
-            // 
             // panelControls
             // 
             this.panelControls.Anchor = System.Windows.Forms.AnchorStyles.Right;
@@ -300,8 +265,6 @@
             this.Controls.Add(this.panelControls);
             this.Controls.Add(this.infoFileName);
             this.Controls.Add(this.infoFileHost);
-            this.Controls.Add(this.infoFileAge);
-            this.Controls.Add(this.infoFileSize);
             this.Controls.Add(this.imgAddToBookmarks);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -330,9 +293,6 @@
         public System.Windows.Forms.ContextMenuStrip contextFileName;
         private System.Windows.Forms.PictureBox imgAddToBookmarks;
         private System.Windows.Forms.ToolTip toolTip1;
-        public System.Windows.Forms.Label infoFileSize;
-        public System.Windows.Forms.Label infoFileAge;
-        private System.Windows.Forms.Timer timerUpdateInfo;
         private System.Windows.Forms.FlowLayoutPanel panelControls;
         private System.Windows.Forms.ToolStripMenuItem VLC2ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem WMPToolStripMenuItem;

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -117,27 +117,52 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="contextFileName.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>160, 17</value>
-  </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="imgAddToBookmarks.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABgUlEQVRoQ+3SsUlEURCF4RctdmDixpob
-        WoeRuS3Ygi1sC4tgAVawYBcmRoImYvQ8D34GQYYd5eygcD84yd2ZM7C8aRiG4f+Y53mt3ClvitvSea+c
-        cs5LxWfKi3Joy401Z31Uuvw7Xbac9VHpIT6bzCtnfShuw1kfettw1ofeNpz1obcNZ33oLWMt8FzGmg+9
-        ZawFnstY86G3jLXAcxlrPvSWsRZ4LmPNh94UY2WspRjzoTfFWBlrKcZ86E0xVsZaijEfelOMlbGWYsyH
-        3jLWAs9lrPnQW8Za4LmMNR96y1gLPJex5kNvGWuB5zLWfOhtw1kfettw1ofeNpz1obcNZ33obcNZH3rb
-        cNaH3jac9aG3DWd96G3DWR9623DWh96qD2WrXCjnykZ5V8o460PvPs/KrXLCWtDbsXKjPCl7seZDb+ZR
-        uVaOGE9pZqVcKg9KinEfer+Kz4SRH9Nu+nkx4kPvIv1Mfktd3z4vfvJR5065UlY82S3d3NjxNAzD8KdN
-        0yf3lkxGScqHjQAAAABJRU5ErkJggg==
-</value>
+  <data name="complete" xml:space="preserve">
+    <value>Dokončeno</value>
   </data>
-  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>25</value>
-  </metadata>
+  <data name="connecting" xml:space="preserve">
+    <value>Připojování</value>
+  </data>
+  <data name="error" xml:space="preserve">
+    <value>Chyba</value>
+  </data>
+  <data name="errorConnectToServer" xml:space="preserve">
+    <value>Nepodařilo se připojit k serveru. Pokud problém přetrvá, založte issue na naší stránce na GitHubu.</value>
+  </data>
+  <data name="errorNoInternetConnection" xml:space="preserve">
+    <value>Nepodařilo se připojit k internetu. Pro používání OpenTheatre je vyžadován internet. Zkontrolujte připojení a zkuste to znovu.</value>
+  </data>
+  <data name="errorSearch" xml:space="preserve">
+    <value>Chyba při hledání souborů, zkuste to znovu později...</value>
+  </data>
+  <data name="local" xml:space="preserve">
+    <value>Lokální</value>
+  </data>
+  <data name="noDownloadDirectory" xml:space="preserve">
+    <value>Zadaná složka pro stahování neexistuje. Vyberte jinou složku v nastavení.</value>
+  </data>
+  <data name="restartRequiredLanguage" xml:space="preserve">
+    <value>Pro změnu jazyka je vyžadován restart programu. Chcete pokračovat?</value>
+  </data>
+  <data name="titleAbout" xml:space="preserve">
+    <value>O programu</value>
+  </data>
+  <data name="titleBookmarks" xml:space="preserve">
+    <value>Záložky</value>
+  </data>
+  <data name="titleDownloads" xml:space="preserve">
+    <value>Stahování</value>
+  </data>
+  <data name="titleFiles" xml:space="preserve">
+    <value>Soubory</value>
+  </data>
+  <data name="titleMovies" xml:space="preserve">
+    <value>Filmy</value>
+  </data>
+  <data name="titleRestartRequired" xml:space="preserve">
+    <value>Je vyžadován restart</value>
+  </data>
+  <data name="titleSettings" xml:space="preserve">
+    <value>Nastavení</value>
+  </data>
 </root>
