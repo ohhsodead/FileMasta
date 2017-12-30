@@ -10,7 +10,7 @@
 <br />
 
 ## What is OpenTheatre?
-OpenTheatre is a search engine designed to search and index files hosted among millions of web servers. It communicates with our own [file database](https://dropbox.com/sh/bqb14ty282xm9xi/AACeniqYjhq2auw3KU3oNW2Fa?dl=0), which is updated daily by our robots that crawl through free access internet resources. All public resources are available for everyone to browse in our [directories database](https://github.com/invu/opentheatre-app/tree/master/assets), where can submit open web directories. OpenTheatre hosts no content, we provide only access to already available files in a same way Google and other search engines do.
+OpenTheatre is a search engine designed to search and index files hosted among millions of web servers. It communicates with our own [file database](https://dropbox.com/sh/bqb14ty282xm9xi/AACeniqYjhq2auw3KU3oNW2Fa?dl=0), which is updated daily by our robots that crawl through free access internet resources. All public resources are available for everyone to browse in our [directories database](https://github.com/invu/opentheatre-app/tree/master/assets), where users can submit open web directories. OpenTheatre hosts no content, we provide only access to already available files in a same way Google and other search engines do.
 
 ## Some features available
 - User-friendly with searches at lightning speed
@@ -42,17 +42,14 @@ Download the latest installer [here](https://github.com/invu/opentheatre-app/rel
 ### Movies
 ![Movies](https://raw.githubusercontent.com/invu/opentheatre-app/master/screenshots/movies.png)
 
-### Files
-![Files](https://raw.githubusercontent.com/invu/opentheatre-app/master/screenshots/files.png)
-
-### Bookmarks
-![Bookmarks](https://raw.githubusercontent.com/invu/opentheatre-app/master/screenshots/bookmarks.png)
-
 ### Movie Details
 ![Movie Details](https://raw.githubusercontent.com/invu/opentheatre-app/master/screenshots/movie%20details.png)
 
-### Downloads
-![Downloads](https://raw.githubusercontent.com/invu/opentheatre-app/master/screenshots/downloads.png)
+### Files
+![Files](https://raw.githubusercontent.com/invu/opentheatre-app/master/screenshots/files.png)
+
+### File Details
+![File Details](https://raw.githubusercontent.com/invu/opentheatre-app/master/screenshots/file&20details.png)
 
 ## Where credit's due
 - [Material Design Icons (Powered by Google)](https://materialdesignicons.com/)
