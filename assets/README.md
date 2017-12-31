@@ -1,13 +1,13 @@
-# Contribute
+# Contribute your links to OpenTheatre
 
-Our asset files are designed to be used as a resource for our web-crawler, it simply scans through the list of open directories to grab file URLs and writes them to a Json file for use with the app.
+## Open Directories
+The *open-directories.txt* file is a list of every website/domain crawled by OpenTheatre ready to be discovered. To add links, edit the file and add your link to a new line somewhere, click 'Commit' and we'll verify the request as soon as we can. All files will be available upon our next automatic scan by the robots crawler.
 
-You may notice that there's quite a lot of files here, that's because we prefer to seperate all directories for each sub-categories for listed files. There's currently an individual files for the following categories:
-- Movies
-- TV Shows
-- Anime
-- Subtitles
-- Torrents
-- Archives
+- Only open directory links are allowed e.g. *https://domain.com/* or *https://domain.com/public/*
+- No site listings under multiple domain names
+- Do not submit incomplete or "Under Construction" web sites
+- Do not use URL shorteners in order to submit multiple similar links
+- No links to anything pornographic or in extremely bad taste
 
-TO-DO
+## Movie Posters
+The *movie-posters.txt* is our Json format only file... to-do
