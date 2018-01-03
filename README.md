@@ -56,11 +56,8 @@ Download the latest installer [here](https://github.com/invu/opentheatre-app/rel
 - [Open Movie Database API](https://omdbapi.com)
 - [Popcorn Time API](https://popcorntime.sh/)
 - [YTS.AG (.am) API](https://yts.am/)
-- [Json.NET (Newtonsoft)](https://www.newtonsoft.com/json)
-- [VLC Player](https://www.videolan.org/vlc/)
+- [Json.NET (Newtonsoft)](https://newtonsoft.com/json)
+- [VLC Player](https://videolan.org/vlc/)
 
 ## Contributing
-Our resources are completely open source, you can find all of the necessary web resources that our crawler scans [here](https://github.com/invu/opentheatre/assets/). If you would like to add an open web directory, simply edit the appropriate *e.g. video-directories.txt.txt or audio-directories.txt*, insert the url somewhere on a new line. This will create a pull request which I will review and submit, or simply [open an issue](https://github.com/invu/opentheatre/issues/new) and we'll put it up for you. The next daily scan will update the found files.
-
-## Comments
-OpenTheatre is a new application and is not a segment of Popcorn Time or any other similar apps.
+You can find all of the necessary web resources that our crawler scans [here](https://github.com/invu/opentheatre/assets/). If you would like to add a public web directory, simply edit the *open-directories.txt*, insert the the domain somewhere on a new line. This will create a pull request which I will review and submit, alternatively you can [open an issue](https://github.com/invu/opentheatre/issues/new) and we'll put it up for you. The next daily scan will update the files database.
