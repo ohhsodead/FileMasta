@@ -10,7 +10,7 @@
 <br />
 
 ## What is OpenTheatre?
-OpenTheatre is a search engine designed to search and index files hosted among millions of web servers. It communicates with our own [file database](https://dropbox.com/sh/bqb14ty282xm9xi/AACeniqYjhq2auw3KU3oNW2Fa?dl=0), which is updated daily by our robots that crawl through free access internet resources. All public resources are available for everyone to browse in our [directories database](https://github.com/invu/opentheatre-app/tree/master/assets), where users can submit open web directories. OpenTheatre hosts no content, we provide only access to already available files in a same way Google and other search engines do.
+OpenTheatre is a search engine designed to search and index files hosted among millions of web servers. It communicates with our own [Json API database](https://dropbox.com/sh/bqb14ty282xm9xi/AACeniqYjhq2auw3KU3oNW2Fa?dl=0), which is updated daily by our robots that crawl through free access internet resources. All public resources are available for everyone to browse in our [directories database](https://github.com/invu/opentheatre-app/tree/master/assets), where users can submit open web directories. OpenTheatre hosts no content, we provide only access to already available files in a same way Google and other search engines do.
 
 ## Some features available
 - User-friendly with searches at lightning speed
