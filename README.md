@@ -10,7 +10,7 @@
 <br />
 
 ## What is OpenTheatre?
-OpenTheatre is a search engine designed to search and index files hosted among millions of web servers. It communicates with our own [Json API database](https://dropbox.com/sh/bqb14ty282xm9xi/AACeniqYjhq2auw3KU3oNW2Fa?dl=0), which is updated daily by our robots that crawl through free access internet resources. All public resources are available for everyone to browse in our [directories database](https://github.com/invu/opentheatre-app/tree/master/api), where users can submit open web directories. OpenTheatre hosts no content, we provide only access to already available files in a same way Google and other search engines do.
+OpenTheatre is a search engine designed to search and index files hosted among millions of web servers. It communicates with our own [Json API database](https://dropbox.com/sh/bqb14ty282xm9xi/AACeniqYjhq2auw3KU3oNW2Fa?dl=0), which is updated daily by our robots that crawl through free access internet resources. All public resources are available for everyone to browse in our [directories database](https://github.com/invu/opentheatre/tree/master/api), where users can submit open web directories. OpenTheatre hosts no content, we provide only access to already available files in a same way Google and other search engines do.
 
 ## Some features available
 - User-friendly with searches at lightning speed
@@ -58,6 +58,6 @@ Download the latest installer [here](https://github.com/invu/opentheatre-app/rel
 - [VLC Player](https://videolan.org/vlc/)
 
 ## Contributing
-You can find all of the necessary web resources that our crawler scans [here](https://github.com/invu/opentheatre/api/). If you would like to add a public web directory, simply edit the *open-directories.txt*, insert the the domain somewhere on a new line. This will create a pull request which I will review and submit, alternatively you can [open an issue](https://github.com/invu/opentheatre/issues/new) and we'll put it up for you. The next daily scan will update the files database.
+You can find all of the necessary web resources that our crawler scans [here](https://github.com/invu/opentheatre/tree/master/api). If you would like to add a public web directory, simply edit the *open-directories.txt*, insert the the domain somewhere on a new line. This will create a pull request which I will review and submit, alternatively you can [open an issue](https://github.com/invu/opentheatre/issues/new) and we'll put it up for you. The next daily scan will update the files database.
 
-There's more information in our [README](https://github.com/invu/opentheatre/api/)
+There's more information [here](https://github.com/invu/opentheatre/tree/master/api)
