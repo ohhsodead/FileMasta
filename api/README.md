@@ -18,4 +18,5 @@ The *movie-posters.txt* is our Json format only file. Each item must be include 
 | sources | string array | Available direct file links for the movie | *http://hostname.com/movies/Deadpool.2016.720p.BluRay.H264.AAC-RARBG/Deadpool.2016.720p.BluRay.H264.mp4/* |
 
 Here is an example for the movie Deadpool (2016) with some URLs (this would go on one line):
-{ "id": "tt1431045", "sources": [ "http://s5.movies4star.xyz/load/Deadpool.2016.720p.BluRay.H264.AAC-RARBG/Deadpool.2016.720p.BluRay.H264.AAC-RARBG.mp4", "http://storm.pulsedmedia.com/media/bb4/new/Deadpool.2016.1080p.BluRay.MoviZLand.CoM.mp4", "http://s5.bitdownload.ir/Clips/Movie/foreign%28khareji%29/Dead.Pool/Deadpool.2016.1080P.BluRay.Censored.mp4" ] }
+
+*{ "id": "tt1431045", "sources": [ "http://s5.movies4star.xyz/load/Deadpool.2016.720p.BluRay.H264.AAC-RARBG/Deadpool.2016.720p.BluRay.H264.AAC-RARBG.mp4", "http://storm.pulsedmedia.com/media/bb4/new/Deadpool.2016.1080p.BluRay.MoviZLand.CoM.mp4", "http://s5.bitdownload.ir/Clips/Movie/foreign%28khareji%29/Dead.Pool/Deadpool.2016.1080P.BluRay.Censored.mp4" ] }*
