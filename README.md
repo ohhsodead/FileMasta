@@ -19,9 +19,8 @@ OpenTheatre is a search engine designed to search and index files hosted among m
 - Search movies by name, actor, year and genre
 - Collects metadeta from public APIs
 - Filter files by format, host and sort alphabetically
-- Includes an internal VLC media player 
+- Integrated VLC media player 
 - Support for external players (Currently includes WMP, MPC & VLC)
-- Error logging for exception handling
 - Automatic local cache updates
 
 ## Latest build
