@@ -635,6 +635,8 @@ namespace OpenTheatre
             titleFilesSubtitles.BorderColor = nonSelectedRGB;
             titleFilesTorrents.ColorFillSolid = nonSelectedRGB;
             titleFilesTorrents.BorderColor = nonSelectedRGB;
+            titleFilesMobile.ColorFillSolid = nonSelectedRGB;
+            titleFilesMobile.BorderColor = nonSelectedRGB;
             titleFilesArchives.ColorFillSolid = nonSelectedRGB;
             titleFilesArchives.BorderColor = nonSelectedRGB;
             titleFilesOther.ColorFillSolid = nonSelectedRGB;
