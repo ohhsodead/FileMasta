@@ -10,26 +10,26 @@
 <br />
 
 ## What is OpenTheatre?
-OpenTheatre is a search engine designed to search and index files hosted among freely available web servers. It communicates with our own [Json API database](https://dropbox.com/sh/bqb14ty282xm9xi/AACeniqYjhq2auw3KU3oNW2Fa?dl=0), which is updated daily by our robots that crawl through free access internet resources. All public resources are available for everyone to browse in our [directories database](https://github.com/invu/opentheatre/tree/master/api), where users can submit open web directories. OpenTheatre hosts no content, we provide only access to already available files in a same way Google and other search engines do.
+OpenTheatre is a search engine designed to search and index files hosted among freely available web servers. It communicates with our own [Public Json File](https://dropbox.com/sh/bqb14ty282xm9xi/AACeniqYjhq2auw3KU3oNW2Fa?dl=0), which is updated daily by our robots that crawl through free access internet resources to list the best quality files it finds. All resources are available for everyone to browse in our [directories database](https://github.com/invu/opentheatre/tree/master/api), where users can submit open web directories. OpenTheatre hosts no content, we provide only access to already available files in a same way Google and other search engines do.
 
-## Some features available
-- User-friendly with searches at lightning speed
-- Multilingual support (en, es, fr, de, cs) - contributions are welcome!
-- Discover over one hundred thousand files
+## Some Features Available
+- User-friendly interface with searches at lightning speed
+- Multilingual support - contributions are welcome!
+- Discover over one hundred thousand online files
 - Search movies by name, actor, year and genre
 - Collects metadeta from public APIs
 - Filter files by format, host and sort alphabetically
-- Integrated VLC media player 
+- Packed with VLC Media Player
 - Support for external players (Currently includes WMP, MPC & VLC)
 - Automatic local cache updates
 
-## Latest build
-OpenTheatre 2.11
+## Latest Build
+OpenTheatre 2.12.1
 
 ## Framework & Backend
-The application is using .NET 4.6.2 WinForms Framework written in C#
+The application is using .NET 4.7.1 WinForms Framework written in C#
 
-## Supported platforms
+## Supported Platforms
 Windows 7 and above (Windows 7, 8, 8.1, 10)
 
 ## Installation
@@ -48,7 +48,7 @@ Download the latest installer [here](https://github.com/invu/opentheatre-app/rel
 ### File Details
 ![File Details](https://raw.githubusercontent.com/invu/opentheatre-app/master/screenshots/file%20details.png)
 
-## Where credit's due
+## With Thanks to...
 - [Material Design Icons (Powered by Google)](https://materialdesignicons.com/)
 - [Open Movie Database API](https://omdbapi.com)
 - [Popcorn Time API](https://popcorntime.sh/)
@@ -56,7 +56,5 @@ Download the latest installer [here](https://github.com/invu/opentheatre-app/rel
 - [Json.NET (Newtonsoft)](https://newtonsoft.com/json)
 - [VLC Player](https://videolan.org/vlc/)
 
-## Contributing
-You can find all of the necessary web resources that our crawler scans [here](https://github.com/invu/opentheatre/tree/master/api). If you would like to add a public web directory, simply edit the *open-directories.txt*, insert the the domain somewhere on a new line. This will create a pull request which I will review and submit, alternatively you can [open an issue](https://github.com/invu/opentheatre/issues/new) and we'll put it up for you. The next daily scan will update the files database.
-
-There's more information [here](https://github.com/invu/opentheatre/tree/master/api)
+## Contribute Sources
+There's some information on contributing to our project [here](https://github.com/invu/opentheatre/tree/master/api)
