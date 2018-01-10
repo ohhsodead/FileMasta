@@ -10,33 +10,30 @@
 <br />
 
 ## What is OpenTheatre?
-OpenTheatre is a search engine designed to search and index files hosted among millions of web servers. It communicates with our own [file database](https://dropbox.com/sh/bqb14ty282xm9xi/AACeniqYjhq2auw3KU3oNW2Fa?dl=0), which is updated daily by our robots that crawl through free access internet resources. All public resources are available for everyone to browse in our [directories database](https://github.com/invu/opentheatre-app/tree/master/assets), where users can submit open web directories. OpenTheatre hosts no content, we provide only access to already available files in a same way Google and other search engines do.
+OpenTheatre is a search engine designed to search and index files hosted among freely available web servers. It communicates with our own [Public Json File](https://dropbox.com/sh/bqb14ty282xm9xi/AACeniqYjhq2auw3KU3oNW2Fa?dl=0), which is updated daily by our robots that crawl through free access internet resources to list the best quality files it finds. All resources are available for everyone to browse in our [directories database](https://github.com/invu/opentheatre/tree/master/api), where users can submit open web directories. OpenTheatre hosts no content, we provide only access to already available files in a same way Google and other search engines do.
 
-## Some features available
-- User-friendly with searches at lightning speed
-- Multilingual support (en, es, fr, de) - contributions are welcome!
-- Discover over one hundred thousand files
+## Some Features Available
+- User-friendly interface with searches at lightning speed
+- Multilingual support - contributions are welcome!
+- Discover over one hundred thousand online files
 - Search movies by name, actor, year and genre
 - Collects metadeta from public APIs
-- Save files to your Bookmarks for later use
 - Filter files by format, host and sort alphabetically
-- Direct downloads, proxy settings available too
-- Includes an internal VLC media player 
+- Packed with VLC Media Player
 - Support for external players (Currently includes WMP, MPC & VLC)
-- Error logging for exception handling
 - Automatic local cache updates
 
-## Latest build
-OpenTheatre 2.10
+## Latest Build
+OpenTheatre 2.12.2
 
 ## Framework & Backend
-The application is using .NET 4.6.2 WinForms Framework written in C#
+The application is using .NET 4.7.1 WinForms Framework written in C#
 
-## Supported platforms
+## Supported Platforms
 Windows 7 and above (Windows 7, 8, 8.1, 10)
 
 ## Installation
-Download the latest installer [here](https://github.com/invu/opentheatre-app/releases/download/0.2.10.0/OpenTheatreInstaller.exe)
+Download the latest installer [here](https://github.com/invu/opentheatre-app/releases/download/0.2.12.2/OpenTheatreInstaller.exe)
 
 ## Screenshots
 ### Movies
@@ -49,18 +46,15 @@ Download the latest installer [here](https://github.com/invu/opentheatre-app/rel
 ![Files](https://raw.githubusercontent.com/invu/opentheatre-app/master/screenshots/files.png)
 
 ### File Details
-![File Details](https://raw.githubusercontent.com/invu/opentheatre-app/master/screenshots/file&20details.png)
+![File Details](https://raw.githubusercontent.com/invu/opentheatre-app/master/screenshots/file%20details.png)
 
-## Where credit's due
+## With Thanks to...
 - [Material Design Icons (Powered by Google)](https://materialdesignicons.com/)
 - [Open Movie Database API](https://omdbapi.com)
 - [Popcorn Time API](https://popcorntime.sh/)
 - [YTS.AG (.am) API](https://yts.am/)
-- [Json.NET (Newtonsoft)](https://www.newtonsoft.com/json)
-- [VLC Player](https://www.videolan.org/vlc/)
+- [Json.NET (Newtonsoft)](https://newtonsoft.com/json)
+- [VLC Player](https://videolan.org/vlc/)
 
-## Contributing
-Our resources are completely open source, you can find all of the necessary web resources that our crawler scans [here](https://github.com/invu/opentheatre/assets/). If you would like to add an open web directory, simply edit the appropriate *e.g. video-directories.txt.txt or audio-directories.txt*, insert the url somewhere on a new line. This will create a pull request which I will review and submit, or simply [open an issue](https://github.com/invu/opentheatre/issues/new) and we'll put it up for you. The next daily scan will update the found files.
-
-## Comments
-OpenTheatre is a new application and is not a segment of Popcorn Time or any other similar apps.
+## Contribute Sources
+There's some information on contributing to our project [here](https://github.com/invu/opentheatre/tree/master/api)
