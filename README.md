@@ -14,7 +14,7 @@ OpenTheatre is a search engine designed to search and index files hosted among f
 
 ## Some features available
 - User-friendly with searches at lightning speed
-- Multilingual support (en, es, fr, de) - contributions are welcome!
+- Multilingual support (en, es, fr, de, cs) - contributions are welcome!
 - Discover over one hundred thousand files
 - Search movies by name, actor, year and genre
 - Collects metadeta from public APIs
