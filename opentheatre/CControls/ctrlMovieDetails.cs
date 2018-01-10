@@ -13,7 +13,7 @@ using Utilities;
 using System.Text.RegularExpressions;
 using System.IO;
 
-namespace OpenTheatre
+namespace OpenTheatre.CControls
 {
     public partial class ctrlMovieDetails : UserControl
     {
@@ -84,29 +84,29 @@ namespace OpenTheatre
         {
             string noSymbolsTitle = Regex.Replace(infoTitle.Text, "[^A-Za-z0-9 _]", " ");
             string ifYearExists = ""; if (infoYear.Text != "Year") { ifYearExists = " " + infoYear.Text; }
-            frmOpenTheatre.form.selectedFiles = "Video";
             frmOpenTheatre.form.txtFilesSearchResults.Text = noSymbolsTitle + ifYearExists;
-            frmOpenTheatre.form.showFiles();
+            frmOpenTheatre.form.showFiles(frmOpenTheatre.selectedFiles);
             frmOpenTheatre.form.tab.SelectedTab = frmOpenTheatre.form.tabFiles;
             Parent.Controls.Clear();
         }
 
-        public void addStream(string URL, bool isLocal, bool isTorrent, Panel toPanel, string torrentName = "", string quality = "")
+        public void AddStream(string URL, bool isLocal, bool isTorrent, Panel toPanel, string torrentName = "", string quality = "")
         {
+            ctrlStreamInfo ctrlInfo = new ctrlStreamInfo
+            {
+                infoFileURL = URL
+            }; 
+
             if (isLocal == false && isTorrent == false)
             {
-                ctrlStreamInfo ctrlInfo = new ctrlStreamInfo();
-                ctrlInfo.infoFileURL = new Uri(URL).AbsoluteUri;
-                ctrlInfo.infoFileHost.Text = new Uri(URL).Host.Replace("www.", "");
-                ctrlInfo.infoFileName.Text = Path.GetFileName(new Uri(URL).LocalPath);
+                ctrlInfo.infoHost.Text = new Uri(URL).Host.Replace("www.", "");
+                ctrlInfo.infoName.Text = Path.GetFileName(new Uri(URL).LocalPath);
                 toPanel.Controls.Add(ctrlInfo);
             }
             else if (isLocal == true && isTorrent == false)
             {
-                ctrlStreamInfo ctrlInfo = new ctrlStreamInfo();
-                ctrlInfo.infoFileURL = URL;
-                ctrlInfo.infoFileHost.Text = new Uri(URL).Host.Replace("www.", "");
-                ctrlInfo.infoFileName.Text = Path.GetFileName(new Uri(URL).LocalPath);
+                ctrlInfo.infoHost.Text = new Uri(URL).Host.Replace("www.", "");
+                ctrlInfo.infoName.Text = Path.GetFileName(new Uri(URL).LocalPath);
                 ctrlInfo.isLocal = isLocal;
                 toPanel.Controls.Add(ctrlInfo);
             }
@@ -114,7 +114,6 @@ namespace OpenTheatre
             {
                 if (torrentName == "YIFY")
                 {
-                    ctrlStreamInfo ctrlInfo = new ctrlStreamInfo();
 
                     //  Trackers : Public trackers for Magnets
                     string trackers = "&tr=" + "udp://open.demonii.com:1337/announce" + " &tr=" + "udp://tracker.openbittorrent.com:80" + "&tr=" + "udp://tracker.coppersurfer.tk:6969" + "&tr=" + "udp://glotorrents.pw:6969/announce" + "&tr=" + "udp://tracker.opentrackr.org:1337/announce" + "&tr=" + "udp://torrent.gresille.org:80/announce" + "&tr=" + "udp://p4p.arenabg.com:1337" + "&tr=" + "udp://tracker.leechers-paradise.org:6969";
@@ -123,20 +122,17 @@ namespace OpenTheatre
                     ctrlInfo.infoMagnet = "magnet:?xt=urn:btih:" + Path.GetFileName(URL) + "&dn=" + infoTitle.Text.Replace(" ", "+") + "%28" + infoYear.Text + "%29+%5B" + "720p" + "%5D+%5B" + "YTS.AG" + "%5D" + trackers;
 
                     ctrlInfo.isTorrent = true;
-                    ctrlInfo.infoFileURL = new Uri(URL).AbsoluteUri;
-                    ctrlInfo.infoFileHost.Text = "YIFY";
-                    ctrlInfo.infoFileName.Text = infoTitle.Text + " (" + infoYear.Text + ") [" + quality + "] [" + "YIFY" + "].torrent";
+                    ctrlInfo.infoHost.Text = "YIFY";
+                    ctrlInfo.infoName.Text = infoTitle.Text + " (" + infoYear.Text + ") [" + quality + "] [" + "YIFY" + "].torrent";
                     toPanel.Controls.Add(ctrlInfo);
                 }
                 else if (torrentName == "POPCORN")
                 {
-                    ctrlStreamInfo ctrlInfo = new ctrlStreamInfo();
                     ctrlInfo.imgDownload.Visible = false;
                     ctrlInfo.infoMagnet = URL;
                     ctrlInfo.isTorrent = true;
-                    ctrlInfo.infoFileURL = new Uri(URL).AbsoluteUri;
-                    ctrlInfo.infoFileHost.Text = "Popcorn Time";
-                    ctrlInfo.infoFileName.Text = infoTitle.Text + " (" + infoYear.Text + ") [" + quality + "] [" + "POPCORN TIME" + "].torrent";
+                    ctrlInfo.infoHost.Text = "Popcorn Time";
+                    ctrlInfo.infoName.Text = infoTitle.Text + " (" + infoYear.Text + ") [" + quality + "] [" + "POPCORN TIME" + "].torrent";
                     toPanel.Controls.Add(ctrlInfo);
                 }
             }

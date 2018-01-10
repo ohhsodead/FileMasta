@@ -133,20 +133,17 @@
   <data name="lineUserReviews.Size" type="System.Drawing.Size, System.Drawing">
     <value>104, 2</value>
   </data>
-  <data name="infoFileAge.Text" xml:space="preserve">
-    <value>Âge</value>
+  <data name="lblHeaderTorrents.Text" xml:space="preserve">
+    <value>TORRENTS</value>
   </data>
   <data name="lblHeaderUserReviews.Size" type="System.Drawing.Size, System.Drawing">
     <value>115, 21</value>
   </data>
-  <data name="lblHeaderUserReviews.Text" xml:space="preserve">
+  <data name="lblHeaderFiles.Text" xml:space="preserve">
     <value>DES DOSSIERS</value>
   </data>
   <data name="infoFileSize.Size" type="System.Drawing.Size, System.Drawing">
     <value>37, 17</value>
-  </data>
-  <data name="infoFileSize.Text" xml:space="preserve">
-    <value>Taille</value>
   </data>
   <data name="btnWatchTrailer.Size" type="System.Drawing.Size, System.Drawing">
     <value>159, 46</value>
@@ -205,5 +202,11 @@
         87X/7bX+Aaw/jPUXz83G+kHGfEjppe3660bXfrvtbv/q1X8Q/cvWG43+MNJvbddpt7zr/VHX7gf7l4/d
         B5E+B7teset7c7169QvsVejc4E4+bAAAAABJRU5ErkJggg==
 </value>
+  </data>
+  <data name="lblSubCast.Text" xml:space="preserve">
+    <value>Cast:</value>
+  </data>
+  <data name="lblSubDirector.Text" xml:space="preserve">
+    <value>Director:</value>
   </data>
 </root>

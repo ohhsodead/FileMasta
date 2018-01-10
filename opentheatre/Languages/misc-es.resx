@@ -141,6 +141,9 @@
   <data name="noDownloadDirectory" xml:space="preserve">
     <value>El directorio de descargas especificado no existe. Seleccione la carpeta en su configuración.</value>
   </data>
+  <data name="restart" xml:space="preserve">
+    <value>Reiniciar</value>
+  </data>
   <data name="restartRequiredLanguage" xml:space="preserve">
     <value>Tendrá que reiniciar para que los cambios de idioma surtan efecto. ¿Te gustaria continuar?</value>
   </data>

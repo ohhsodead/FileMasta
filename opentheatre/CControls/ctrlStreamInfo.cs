@@ -7,7 +7,7 @@ using System.Windows.Forms;
 using Utilities;
 using UnhandledExceptions;
 
-namespace OpenTheatre
+namespace OpenTheatre.CControls
 {
     public partial class ctrlStreamInfo : UserControl
     {
@@ -39,7 +39,7 @@ namespace OpenTheatre
                 imgMagnet.Visible = true;
             }
             else if (isLocal == true)
-            { infoFileHost.Text = frmOpenTheatre.rm.GetString("local"); imgDownload.Visible = false; imgReportBroken.Visible = false; imgShare.Visible = false; imgCopyURL.Visible = false; }
+            { infoHost.Text = frmOpenTheatre.rm.GetString("local"); imgDownload.Visible = false; imgReportBroken.Visible = false; imgShare.Visible = false; imgCopyURL.Visible = false; }
 
             // Checks for exact file name of a subtitle file that matches the one being loaded (e.g. Media File Name: 'Jigsaw.2017.mp4' > Subtitle File Name: 'Jigsaw.2017.srt' will be loaded)
             if (infoFileSubtitles == null)
@@ -48,6 +48,15 @@ namespace OpenTheatre
                 {
                     infoFileSubtitles = frmOpenTheatre.userDownloadsDirectory + Path.GetFileNameWithoutExtension(infoFileURL) + ".srt";
                 }
+            }
+
+            if (!UtilityTools.isSaved(UtilityTools.fileToJson(infoFileURL, infoName.Text, Path.GetExtension(infoName.Text), infoHost.Text)))
+            {
+                imgAddToBookmarks.Image = Properties.Resources.bookmark_remove;
+            }
+            else
+            {
+                imgAddToBookmarks.Image = Properties.Resources.bookmark_plus;
             }
         }
 
@@ -82,11 +91,16 @@ namespace OpenTheatre
         {
             if (!isTorrent)
             {
-                if (Properties.Settings.Default.dataBookmarks.Contains(infoFileURL))
+                if (!UtilityTools.isSaved(UtilityTools.fileToJson(infoFileURL, infoName.Text, Path.GetExtension(infoName.Text), infoHost.Text)))
                 {
-                    Properties.Settings.Default.dataBookmarks.Remove(infoFileURL); imgAddToBookmarks.Image = Properties.Resources.bookmark_plus;
+                    UtilityTools.saveFile(UtilityTools.fileToJson(infoFileURL, infoName.Text, Path.GetExtension(infoName.Text), infoHost.Text));
+                    imgAddToBookmarks.Image = Properties.Resources.bookmark_remove;
                 }
-                else { Properties.Settings.Default.dataBookmarks.Add(infoFileURL); imgAddToBookmarks.Image = Properties.Resources.bookmark_remove; }
+                else
+                {
+                    UtilityTools.unsaveFile(UtilityTools.fileToJson(infoFileURL, infoName.Text, Path.GetExtension(infoName.Text), infoHost.Text));
+                    imgAddToBookmarks.Image = Properties.Resources.bookmark_plus;
+                }
             }
         }
 

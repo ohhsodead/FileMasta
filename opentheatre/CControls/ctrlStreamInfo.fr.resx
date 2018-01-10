@@ -117,55 +117,33 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="complete" xml:space="preserve">
-    <value>Achevée</value>
+  <data name="infoHost.ToolTip" xml:space="preserve">
+    <value />
   </data>
-  <data name="connecting" xml:space="preserve">
-    <value>De liaison</value>
+  <data name="infoName.ToolTip" xml:space="preserve">
+    <value />
   </data>
-  <data name="error" xml:space="preserve">
-    <value>Erreur</value>
+  <data name="contextFileName.ToolTip" xml:space="preserve">
+    <value />
   </data>
-  <data name="errorConnectToServer" xml:space="preserve">
-    <value>Échec de connexion au serveur. Si ce problème persiste, veuillez ouvrir un problème sur notre page GitHub.</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="imgAddToBookmarks.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABgUlEQVRoQ+3SsUlEURCF4RctdmDixpob
+        WoeRuS3Ygi1sC4tgAVawYBcmRoImYvQ8D34GQYYd5eygcD84yd2ZM7C8aRiG4f+Y53mt3ClvitvSea+c
+        cs5LxWfKi3Joy401Z31Uuvw7Xbac9VHpIT6bzCtnfShuw1kfettw1ofeNpz1obcNZ33oLWMt8FzGmg+9
+        ZawFnstY86G3jLXAcxlrPvSWsRZ4LmPNh94UY2WspRjzoTfFWBlrKcZ86E0xVsZaijEfelOMlbGWYsyH
+        3jLWAs9lrPnQW8Za4LmMNR96y1gLPJex5kNvGWuB5zLWfOhtw1kfettw1ofeNpz1obcNZ33obcNZH3rb
+        cNaH3jac9aG3DWd96G3DWR9623DWh96qD2WrXCjnykZ5V8o460PvPs/KrXLCWtDbsXKjPCl7seZDb+ZR
+        uVaOGE9pZqVcKg9KinEfer+Kz4SRH9Nu+nkx4kPvIv1Mfktd3z4vfvJR5065UlY82S3d3NjxNAzD8KdN
+        0yf3lkxGScqHjQAAAABJRU5ErkJggg==
+</value>
   </data>
-  <data name="errorNoInternetConnection" xml:space="preserve">
-    <value>Aucune connexion Internet trouvée. Vous devez être connecté à Internet pour utiliser OpenTheatre. Veuillez vérifier votre connexion ou réessayer.</value>
+  <data name="panelControls.ToolTip" xml:space="preserve">
+    <value />
   </data>
-  <data name="errorSearch" xml:space="preserve">
-    <value>Erreur lors de la recherche de fichiers, réessayez plus tard ...</value>
-  </data>
-  <data name="local" xml:space="preserve">
-    <value>Local</value>
-  </data>
-  <data name="noDownloadDirectory" xml:space="preserve">
-    <value>Le répertoire de téléchargement spécifié n'existe pas. Veuillez sélectionner le dossier dans vos paramètres.</value>
-  </data>
-  <data name="restart" xml:space="preserve">
-    <value>Redémarrer</value>
-  </data>
-  <data name="restartRequiredLanguage" xml:space="preserve">
-    <value>Vous devrez redémarrer pour que les modifications de langue prennent effet. Voulez-vous continuer?</value>
-  </data>
-  <data name="titleAbout" xml:space="preserve">
-    <value>Sur</value>
-  </data>
-  <data name="titleBookmarks" xml:space="preserve">
-    <value>Signets</value>
-  </data>
-  <data name="titleDownloads" xml:space="preserve">
-    <value>Téléchargements</value>
-  </data>
-  <data name="titleFiles" xml:space="preserve">
-    <value>Des dossiers</value>
-  </data>
-  <data name="titleMovies" xml:space="preserve">
-    <value>Films</value>
-  </data>
-  <data name="titleRestartRequired" xml:space="preserve">
-    <value>Redémarrage requis</value>
-  </data>
-  <data name="titleSettings" xml:space="preserve">
-    <value>Paramètres</value>
+  <data name="$this.ToolTip" xml:space="preserve">
+    <value />
   </data>
 </root>

@@ -136,29 +136,20 @@
   <data name="infoFileHost.Size" type="System.Drawing.Size, System.Drawing">
     <value>69, 17</value>
   </data>
-  <data name="infoFileHost.Text" xml:space="preserve">
-    <value>Gastgeber</value>
-  </data>
   <data name="lineUserReviews.Size" type="System.Drawing.Size, System.Drawing">
     <value>62, 2</value>
   </data>
   <data name="infoFileAge.Size" type="System.Drawing.Size, System.Drawing">
     <value>35, 17</value>
   </data>
-  <data name="infoFileAge.Text" xml:space="preserve">
-    <value>Alter</value>
-  </data>
   <data name="lblHeaderUserReviews.Size" type="System.Drawing.Size, System.Drawing">
     <value>73, 21</value>
   </data>
-  <data name="lblHeaderUserReviews.Text" xml:space="preserve">
+  <data name="lblHeaderFiles.Text" xml:space="preserve">
     <value>DATEIEN</value>
   </data>
   <data name="infoFileSize.Size" type="System.Drawing.Size, System.Drawing">
     <value>44, 17</value>
-  </data>
-  <data name="infoFileSize.Text" xml:space="preserve">
-    <value>Größe</value>
   </data>
   <data name="infoDirector.Location" type="System.Drawing.Point, System.Drawing">
     <value>74, 86</value>
@@ -217,5 +208,14 @@
         87X/7bX+Aaw/jPUXz83G+kHGfEjppe3660bXfrvtbv/q1X8Q/cvWG43+MNJvbddpt7zr/VHX7gf7l4/d
         B5E+B7teset7c7169QvsVejc4E4+bAAAAABJRU5ErkJggg==
 </value>
+  </data>
+  <data name="infoFileHost.Text" xml:space="preserve">
+    <value>Gastgeber</value>
+  </data>
+  <data name="infoFileName.Text" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="lblHeaderTorrents.Text" xml:space="preserve">
+    <value>TORRENTS</value>
   </data>
 </root>

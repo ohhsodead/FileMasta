@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Threading;
 using System.Windows.Forms;
 using UnhandledExceptions;
 
@@ -15,9 +16,11 @@ namespace OpenTheatre
         {
             if (Debugger.IsAttached)
             {
+                Properties.Settings.Default.Reset();
                 Run();
                 return;
             }
+
 
             Application.SetUnhandledExceptionMode(UnhandledExceptionMode.CatchException);
             Application.ThreadException += ExceptionsEvents.ApplicationThreadException;
@@ -31,6 +34,16 @@ namespace OpenTheatre
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frmOpenTheatre());
+        }
+
+        private static void ThreadException(object sender, ThreadExceptionEventArgs e)
+        {
+            MessageBox.Show(e.Exception.ToString());
+        }
+
+        private static void UnhandledException(object sender, UnhandledExceptionEventArgs e)
+        {
+            MessageBox.Show(e.ExceptionObject.ToString());
         }
     }
 }

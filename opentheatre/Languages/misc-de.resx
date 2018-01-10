@@ -141,6 +141,9 @@
   <data name="noDownloadDirectory" xml:space="preserve">
     <value>Angegebenes Download-Verzeichnis existiert nicht. Bitte wählen Sie den Ordner in Ihren Einstellungen.</value>
   </data>
+  <data name="restart" xml:space="preserve">
+    <value>Neustart</value>
+  </data>
   <data name="restartRequiredLanguage" xml:space="preserve">
     <value>Sie müssen neu starten, damit die Sprachänderungen wirksam werden. Möchten Sie fortfahren?</value>
   </data>

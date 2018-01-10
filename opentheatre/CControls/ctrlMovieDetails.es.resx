@@ -149,13 +149,10 @@
   <data name="infoFileAge.Size" type="System.Drawing.Size, System.Drawing">
     <value>37, 17</value>
   </data>
-  <data name="infoFileAge.Text" xml:space="preserve">
-    <value>Años</value>
-  </data>
   <data name="lblHeaderUserReviews.Size" type="System.Drawing.Size, System.Drawing">
     <value>89, 21</value>
   </data>
-  <data name="lblHeaderUserReviews.Text" xml:space="preserve">
+  <data name="lblHeaderFiles.Text" xml:space="preserve">
     <value>ARCHIVOS</value>
   </data>
   <data name="infoFileSize.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
@@ -164,16 +161,13 @@
   <data name="infoFileSize.Size" type="System.Drawing.Size, System.Drawing">
     <value>54, 17</value>
   </data>
-  <data name="infoFileSize.Text" xml:space="preserve">
-    <value>Tamaño</value>
-  </data>
   <data name="cButton1.Size" type="System.Drawing.Size, System.Drawing">
     <value>85, 2</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
     <value>96, 21</value>
   </data>
-  <data name="label4.Text" xml:space="preserve">
+  <data name="lblHeaderTorrents.Text" xml:space="preserve">
     <value>TORRENTES</value>
   </data>
   <data name="btnWatchTrailer.Text" xml:space="preserve">
@@ -230,5 +224,11 @@
         87X/7bX+Aaw/jPUXz83G+kHGfEjppe3660bXfrvtbv/q1X8Q/cvWG43+MNJvbddpt7zr/VHX7gf7l4/d
         B5E+B7teset7c7169QvsVejc4E4+bAAAAABJRU5ErkJggg==
 </value>
+  </data>
+  <data name="lblSubCast.Text" xml:space="preserve">
+    <value>Cast:</value>
+  </data>
+  <data name="lblSubDirector.Text" xml:space="preserve">
+    <value>Director:</value>
   </data>
 </root>

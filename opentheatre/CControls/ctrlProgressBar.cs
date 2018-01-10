@@ -13,7 +13,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 
-namespace ctrlProgressBar
+namespace ctrlProgressBar.CControls
 {
     [ToolboxBitmap("PBEX.bmp")]
     public class ctrlProgressBar : Control

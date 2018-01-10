@@ -1,4 +1,4 @@
-﻿namespace OpenTheatre
+﻿namespace OpenTheatre.CControls
 {
     partial class ctrlMovieDetails
     {

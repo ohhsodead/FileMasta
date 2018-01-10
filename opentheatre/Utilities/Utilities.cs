@@ -20,26 +20,102 @@ namespace Utilities
 {
     public class UtilityTools
     {
+        // Saved Files (Convert: File Link -> Json)
+        public static string fileToJson(string Url, string Name, string Type, string Host)
+        {
+            var a = new DatabaseFilesEntity
+            {
+                URL = Url,
+                Title = Name,
+                Type = Type,
+                Host = Host,
+                Size = "-",
+                DateAdded = "-"
+            };
+
+            return a.ToJson();
+        }
+
+        public static string pathDataSaved = frmOpenTheatre.pathRoot + "saved-files.json";
+
+        public static void unsaveFile(string Json)
+        {
+            if (File.Exists(pathDataSaved))
+            {
+                TextLineRemover.RemoveTextLines(new List<string> { Json }, pathDataSaved, pathDataSaved + ".tmp");
+            }
+        }
+
+        public static void saveFile(string Json)
+        {
+            using (StreamWriter saved = File.AppendText(pathDataSaved))
+            {
+                saved.WriteLine(Json);
+                saved.Flush();
+            }
+        }
+
+        public static bool isSaved(string Json)
+        {
+            if (File.Exists(pathDataSaved))
+            {
+                using (StreamReader reader = new StreamReader(pathDataSaved))
+                {
+                    while (!reader.EndOfStream)
+                    {
+                        if (reader.ReadLine() == Json)
+                        {
+                            return true;
+                        }
+                    }
+                }
+            }
+
+            return false;
+        }
+
+        // Resize Combobox Control to Longest Text Size
+        public static int DropDownWidth(ComboBox myCombo)
+        {
+            int maxWidth = 0, temp = 0;
+            foreach (var obj in myCombo.Items)
+            {
+                temp = TextRenderer.MeasureText(obj.ToString(), myCombo.Font).Width;
+                if (temp > maxWidth)
+                {
+                    maxWidth = temp;
+                }
+            }
+            return maxWidth;
+        }
+
+        // Submit link (open directory/indexer)
+        public static void submitLink(string webUrl)
+        {
+            Process.Start("https://github.com/invu/opentheatre/issues/new?title=" + "[Indexer Request] " + new Uri(webUrl).Host + "&body=" +
+                "Website: " + webUrl + "%0A" +
+                "----------------------- %0A" +
+                "*Please include some information about this site e.g. What is the type of site? What's the content?*");
+        }
+
         // Report Broken File issue
         public static void openBrokenFileIssue(string webFile)
         {
             Process.Start("https://github.com/invu/opentheatre/issues/new?title=" + "[Broken File] " + Path.GetFileName(webFile) + "&body=" +
-                "Type: " + getContainingListOfURL(webFile) + "%0A" +
                 "Host: " + new Uri(webFile).Host.Replace("www.", "") + "%0A" +
-                "Name: " + new Uri(webFile).LocalPath + "%0A" +
+                "Name: " + Path.GetFileName(webFile) + "%0A" +
                 "----------------------- %0A" +
-                "Before creating an issue for a web file, ensure that you're able to access the same website (file host) from your web browser, as sometimes web files are unable to be accessed due to permissions or firewalls. Please explain your problem with the file, be clear and not vague.");
+                "*Before creating an issue for a web file, ensure you're able to access the same website (file host) in your browser, as sometimes files can't be accessed due to the server's permissions.*");
         }
 
         // Poor Quality File issue
         public static void openPoorQualityFileIssue(string webFile)
         {
             Process.Start("https://github.com/invu/opentheatre/issues/new?title=" + "[Poor Quality File] " + Path.GetFileName(webFile) + "&body=" +
-                "Type: " + getContainingListOfURL(webFile) + "%0A" +
                 "Host: " + new Uri(webFile).Host.Replace("www.", "") + "%0A" +
-                "Name: " + new Uri(webFile).LocalPath + "%0A" +
+                "Name: " + Path.GetFileName(webFile) + "%0A" +
                 "----------------------- %0A" +
-                "Please explain your problem with the file, be clear and not vague.");
+                "*Please explain the problem with the file, be clear and not vague.*");
         }
 
         // compare local and online files (used for updating database)
@@ -66,55 +142,6 @@ namespace Utilities
                 else { return true; }
             }
             catch { return true; }
-        }
-
-        // return list that contains file
-        public static string getContainingListOfURL(string fileUrl)
-        {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOpenTheatre));
-
-            foreach (string file in frmOpenTheatre.dataMovies)
-            {
-                var data = OMDbEntity.FromJson(file);
-                if (data.Sources.Contains(fileUrl)) { return resources.GetString("cmboBoxBookmarksType.Items1"); }
-            }
-            foreach (string file in frmOpenTheatre.dataFilesVideo)
-            {
-                var data = DatabaseFilesEntity.FromJson(file);
-                if (data.URL == fileUrl) { return resources.GetString("cmboBoxBookmarksType.Items2"); }
-            }
-            foreach (string file in frmOpenTheatre.dataFilesAudio)
-            {
-                var data = DatabaseFilesEntity.FromJson(file);
-                if (data.URL == fileUrl) { return resources.GetString("cmboBoxBookmarksType.Items2"); }
-            }
-            foreach (string file in frmOpenTheatre.dataFilesEbooks)
-            {
-                var data = DatabaseFilesEntity.FromJson(file);
-                if (data.URL == fileUrl) { return resources.GetString("cmboBoxBookmarksType.Items3"); }
-            }
-            foreach (string file in frmOpenTheatre.dataFilesSubtitles)
-            {
-                var data = DatabaseFilesEntity.FromJson(file);
-                if (data.URL == fileUrl) { return resources.GetString("cmboBoxBookmarksType.Items4"); }
-            }
-            foreach (string file in frmOpenTheatre.dataFilesTorrents)
-            {
-                var data = DatabaseFilesEntity.FromJson(file);
-                if (data.URL == fileUrl) { return resources.GetString("cmboBoxBookmarksType.Items5"); }
-            }
-            foreach (string file in frmOpenTheatre.dataFilesArchives)
-            {
-                var data = DatabaseFilesEntity.FromJson(file);
-                if (data.URL == fileUrl) { return resources.GetString("cmboBoxBookmarksType.Items6"); }
-            }
-            foreach (string file in frmOpenTheatre.dataFilesLocal)
-            {
-                var data = DatabaseFilesEntity.FromJson(file);
-                if (data.URL == fileUrl) { return resources.GetString("cmboBoxBookmarksType.Items7"); }
-            }
-
-            return "null";
         }
 
         // compare file bytes
@@ -225,7 +252,7 @@ namespace Utilities
             // it doesn't matter if there is a space after ','
             string argument = "/select, \"" + path + "\"";
 
-            System.Diagnostics.Process.Start("explorer.exe", argument);
+            Process.Start("explorer.exe", argument);
         }
 
         // if text contains words = true
@@ -342,7 +369,7 @@ namespace Utilities
             } catch { return false; }
         }
 
-        // check for updates, installs installer to downloads folder if available
+        // check for updates, installs installer to downloads folder if available and opens it
         public static void checkForUpdate()
         {
             Version newVersion = null;
@@ -357,6 +384,7 @@ namespace Utilities
                 MessageBox.Show("OpenTheatre " + newVersion.ToString() + " is ready to be installed.", "OpenTheatre - Update Available");
 
                 client.DownloadFile(frmOpenTheatre.getLatestInstaller(newVersion), frmOpenTheatre.pathDownloadInstaller);
+                Directory.Delete(frmOpenTheatre.pathData, true);
                 Process.Start(frmOpenTheatre.pathDownloadInstaller);
                 Application.Exit();
             }

@@ -1,6 +1,5 @@
 ﻿using OMDbAPI;
 using DatabaseFilesAPI;
-using regexFileName;
 using Utilities;
 using System;
 using System.Collections.Generic;
@@ -19,6 +18,8 @@ using System.Threading;
 using System.Resources;
 using System.Reflection;
 using System.Text;
+using OpenTheatre.CControls;
+using UnhandledExceptions;
 
 namespace OpenTheatre
 {
@@ -28,7 +29,20 @@ namespace OpenTheatre
         {
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Properties.Settings.Default.userLanguage);
 
+            allFileTypes.AddRange(videoFileTypes);
+            allFileTypes.AddRange(audioFileTypes);
+            allFileTypes.AddRange(ebooksFileTypes);
+            allFileTypes.AddRange(subtitleFileTypes);
+            allFileTypes.AddRange(torrentFileTypes);
+            allFileTypes.AddRange(mobileFileTypes);
+            allFileTypes.AddRange(archivesFileTypes);
+            allFileTypes.AddRange(otherFileTypes);
+
+            selectedFilesFileType = allFileTypes;
+
             InitializeComponent();
+
+            imgSpinner.BringToFront(); // Hidden in Designer
 
             form = this;
             frmSplash = new ctrlSplashScreen();
@@ -45,7 +59,7 @@ namespace OpenTheatre
 
         private BackgroundWorker worker; // startup background thread
 
-        // Media player directories
+        // Media Player Directories
         public static string pathVLC = @"C:\Program Files (x86)\VideoLAN\VLC\vlc.exe";
         public static string pathMPCCodec64 = @"C:\Program Files(x86)\K-Lite Codec Pack\MPC-HC64\mpc-hc64.exe";
         public static string pathMPC64 = @"C:\Program Files\MPC-HC\mpc-hc64.exe";
@@ -55,16 +69,12 @@ namespace OpenTheatre
         public ctrlSplashScreen frmSplash;
         protected override void OnPaint(PaintEventArgs e) { }
 
-        // Exported database files
+        // Database Files
         public static string linkMovies = "https://dl.dropbox.com/s/qknonvla6qeuiuj/movies-posters.json?dl=0";
-        public static string linkFilesVideo = "https://dl.dropbox.com/s/gkm57y5rxu3fxcs/video-files.json?dl=0";
-        public static string linkFilesAudio = "https://dl.dropbox.com/s/gqhjrt4re0n1ls1/audio-files.json?dl=0";
-        public static string linkFilesEbooks = "https://dl.dropbox.com/s/j0eec40nonx4vk5/ebooks-files.json?dl=0";
-        public static string linkFilesSubtitles = "https://dl.dropbox.com/s/ciofl06to2y8zko/subtitles-files.json?dl=0";
-        public static string linkFilesTorrents = "https://dl.dropbox.com/s/uvx3ypg7hd9b1ne/torrents-files.json?dl=0";
-        public static string linkFilesArchives = "https://dl.dropbox.com/s/d6xc1v24rnx4y0e/archives-files.json?dl=0";
+        public static string linkOpenFiles = "https://dl.dropbox.com/s/6ca7v71dwntiu0a/open-files.json?dl=0";
+        public static string linkOpenDirectories = "https://raw.githubusercontent.com/invu/opentheatre-app/master/api/open-directories.txt";
 
-        // Data/Downloads directories
+        // Data/Downloads Directories
         public static string pathRoot = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\OpenTheatre\";
         public static string pathData = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\OpenTheatre\Data\";
         public static string userDownloadsDirectory = KnownFolders.GetPath(KnownFolder.Downloads) + @"\";
@@ -72,7 +82,7 @@ namespace OpenTheatre
         // Updates
         public static string linkLatestVersion = "https://raw.githubusercontent.com/invu/opentheatre-app/master/assets/latest-version.txt";
         public static string pathInstallerFileName = "OpenTheatreInstaller.exe";
-        public static string pathDownloadInstaller = userDownloadsDirectory + @"\" + pathInstallerFileName;
+        public static string pathDownloadInstaller = userDownloadsDirectory + pathInstallerFileName;
         public static string getLatestInstaller(Version newVersion) { return "https://github.com/invu/opentheatre-app/releases/download/" + newVersion.ToString() + "/" + pathInstallerFileName; }
 
         WebClient client = new WebClient(); // public reusable web client
@@ -100,6 +110,7 @@ namespace OpenTheatre
             tabAbout.BackgroundImage = UtilityTools.ChangeOpacity(Properties.Resources.background_original, 0.5F);
             tabSettings.BackgroundImage = UtilityTools.ChangeOpacity(Properties.Resources.background_original, 0.5F);
             tabFilesSearch.BackgroundImage = UtilityTools.ChangeOpacity(Properties.Resources.background_original, 0.5F);
+            tabSubmit.BackgroundImage = UtilityTools.ChangeOpacity(Properties.Resources.background_original, 0.5F);
 
             lblAboutVersion.Text = "v" + Application.ProductVersion;
 
@@ -120,75 +131,35 @@ namespace OpenTheatre
 
         void worker_DoWork(object sender, DoWorkEventArgs e)
         {
-            try
+            //
+            if (UtilityTools.doUpdateFile(linkOpenDirectories, "open-directories.txt"))
             {
-                //
-                if (UtilityTools.doUpdateFile(linkMovies, "movies-posters.json"))
-                {
-                    client.DownloadFile(new Uri(linkMovies), pathData + "movies-posters.json");
-                }
-
-                dataMovies = File.ReadAllLines(pathData + "movies-posters.json");
-                //
-
-                //
-                if (UtilityTools.doUpdateFile(linkFilesVideo, "video-files.json"))
-                {
-                    //client.DownloadFile(new Uri(linkFilesVideo), pathData + "video-files.json");
-                }
-
-                dataFilesVideo = File.ReadAllLines(pathData + "video-files.json");
-                //
-
-                //
-                if (UtilityTools.doUpdateFile(linkFilesAudio, "audio-files.json"))
-                {
-                    //client.DownloadFile(new Uri(linkFilesAudio), pathData + "audio-files.json");
-                }
-
-                dataFilesAudio = File.ReadAllLines(pathData + "audio-files.json");
-                //
-
-                //
-                if (UtilityTools.doUpdateFile(linkFilesEbooks, "ebooks-files.json"))
-                {
-                    //client.DownloadFile(new Uri(linkFilesEbooks), pathData + "ebooks-files.json");
-                }
-
-                dataFilesEbooks = File.ReadAllLines(pathData + "ebooks-files.json");
-                //
-
-                //
-                if (UtilityTools.doUpdateFile(linkFilesSubtitles, "subtitles-files.json"))
-                {
-                    //client.DownloadFile(new Uri(linkFilesSubtitles), pathData + "subtitles-files.json");
-                }
-
-                dataFilesSubtitles = File.ReadAllLines(pathData + "subtitles-files.json");
-                //
-
-                //
-                if (UtilityTools.doUpdateFile(linkFilesTorrents, "torrents-files.json"))
-                {
-                    //client.DownloadFile(new Uri(linkFilesTorrents), pathData + "torrents-files.json");
-                }
-
-                dataFilesTorrents = File.ReadAllLines(pathData + "torrents-files.json");
-                //
-
-                //
-                if (UtilityTools.doUpdateFile(linkFilesArchives, "archives-files.json"))
-                {
-                    //client.DownloadFile(new Uri(linkFilesArchives), pathData + "archives-files.json");
-                }
-
-                dataFilesArchives = File.ReadAllLines(pathData + "archives-files.json");
-                //
-
-                // Get Local Files
-                loadLocalFiles();
+                client.DownloadFile(new Uri(linkOpenDirectories), pathData + "open-directories.txt");
             }
-            catch (Exception ex) { MessageBox.Show(rm.GetString("errorConnectToServer") + "\n\n" + ex.Message); Directory.Delete(pathData, true); }
+
+            dataOpenDirectories.AddRange(File.ReadAllLines(pathData + "open-directories.txt"));
+            //
+
+            //
+            if (UtilityTools.doUpdateFile(linkOpenFiles, "open-files.json"))
+            {
+                client.DownloadFile(new Uri(linkOpenFiles), pathData + "open-files.json");
+            }
+
+            dataOpenFiles.AddRange(File.ReadAllLines(pathData + "open-files.json"));
+            //
+
+            //
+            if (UtilityTools.doUpdateFile(linkMovies, "movies-posters.json"))
+            {
+                client.DownloadFile(new Uri(linkMovies), pathData + "movies-posters.json");
+            }
+
+            dataMovies.AddRange(File.ReadAllLines(pathData + "movies-posters.json").Reverse());
+            //
+
+            // Get Local Files
+            loadLocalFiles();
         }
 
         void worker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
@@ -201,11 +172,15 @@ namespace OpenTheatre
         {
             // throws error with  control on Movies tab (WIP)
             imgSpinner.Visible = false;
-            ctrlStatus a = new ctrlStatus();
-            a.BackColor = tabMovies.BackColor;
-            a.BackgroundImage = UtilityTools.ChangeOpacity(Properties.Resources.background_original, 0.5F);
+            ctrlStatus a = new ctrlStatus
+            {
+                BackColor = tabMovies.BackColor,
+                BackgroundImage = UtilityTools.ChangeOpacity(Properties.Resources.background_original, 0.5F),
+                Dock = DockStyle.Fill
+            };
+
             a.titleStatus.Text = errorText;
-            a.Dock = DockStyle.Fill;
+            a.btnRestartApp.Text = rm.GetString("restart");
             a.Show();
             tabMovies.Controls.Clear();
             tabMovies.Padding = new Padding(0, 0, 0, 0);
@@ -213,10 +188,14 @@ namespace OpenTheatre
             Controls.Remove(frmSplash);
         }
 
+
         // Data, Movies, Files... & Everything else
 
-        public static string[] dataFilesArchives, dataFilesTorrents, dataFilesSubtitles, dataFilesEbooks, dataFilesAudio, dataFilesVideo, dataMovies;
+        public static List<string> dataOpenDirectories = new List<string>();
+        public static List<string> dataOpenFiles = new List<string>();
+        public static List<string> dataMovies = new List<string>();
         public static List<string> dataFilesLocal = new List<string>();
+        public static List<string> dataFilesSaved = new List<string>();
 
         // Core Tabs
         public TabPage currentTab;
@@ -231,11 +210,19 @@ namespace OpenTheatre
             tab.SelectedTab = tabFiles;
         }
 
+        private void imgDiscover_Click(object sender, EventArgs e)
+        {
+            showHosts(); tab.SelectedTab = tabDiscover;
+        }
+
+        private void imgSubmit_Click(object sender, EventArgs e)
+        {
+            tab.SelectedTab = tabSubmit;
+        }
+
         private void imgSettings_Click(object sender, EventArgs e)
         {
-            loadSettings();
-
-            tab.SelectedTab = tabSettings;
+            loadSettings(); tab.SelectedTab = tabSettings;
         }
 
         private void imgAbout_Click(object sender, EventArgs e)
@@ -248,34 +235,49 @@ namespace OpenTheatre
             if (tab.SelectedTab == tabMovies)
             {
                 currentTab = tabMovies;
-                titleLineMovies.Visible = true;
-                titleLineFiles.Visible = false;
-                titleLineSettings.Visible = false;
-                titleLineAbout.Visible = false;
+
+                selectedTabLine(titleLineMovies);
             }
             else if (tab.SelectedTab == tabFiles)
             {
                 currentTab = tabFiles;
-                titleLineMovies.Visible = false;
-                titleLineFiles.Visible = true;
-                titleLineSettings.Visible = false;
-                titleLineAbout.Visible = false;
+
+                selectedTabLine(titleLineFiles);
+            }
+            else if (tab.SelectedTab == tabDiscover)
+            {
+                currentTab = tabDiscover;
+
+                selectedTabLine(titleLineDiscover);
+            }
+            else if (tab.SelectedTab == tabSubmit)
+            {
+                currentTab = tabDiscover;
+
+                selectedTabLine(titleLineSubmit);
             }
             else if (tab.SelectedTab == tabSettings)
             {
                 currentTab = tabSettings;
-                titleLineMovies.Visible = false;
-                titleLineFiles.Visible = false;
-                titleLineSettings.Visible = true;
-                titleLineAbout.Visible = false;
+
+                selectedTabLine(titleLineSettings);
             }
             else if (tab.SelectedTab == tabAbout)
             {
-                titleLineMovies.Visible = false;
-                titleLineFiles.Visible = false;
-                titleLineSettings.Visible = false;
-                titleLineAbout.Visible = true;
+                selectedTabLine(titleLineAbout);
             }
+        }
+
+        public void selectedTabLine(CButtonLib.CButton cbtn)
+        {
+            titleLineMovies.Visible = false;
+            titleLineFiles.Visible = false;
+            titleLineDiscover.Visible = false;
+            titleLineSubmit.Visible = false;
+            titleLineSettings.Visible = false;
+            titleLineAbout.Visible = false;
+
+            cbtn.Visible = true;
         }
 
         private void panelMovies_Scroll(object sender, ScrollEventArgs e)
@@ -302,7 +304,7 @@ namespace OpenTheatre
                 List<ctrlPoster> MoviesPosters = new List<ctrlPoster>();
                 int loadedCount = 0;
 
-                foreach (string movie in dataMovies.Reverse().Skip(countedMovies))
+                foreach (string movie in dataMovies.Skip(countedMovies))
                 {
                     if (loadedCount < loadCount)
                     {
@@ -313,7 +315,7 @@ namespace OpenTheatre
                             if (data.ImdbID.ToLower() == txtMoviesSearchBox.Text.ToLower() | data.Title.ToLower().Contains(txtMoviesSearchBox.Text.ToLower()) | data.Actors.ToLower().Contains(txtMoviesSearchBox.Text.ToLower()) && data.Year.Contains(selectedYear) && data.Genre.ToLower().Contains(selectedGenre.ToLower()))
                             {
                                 ctrlPoster ctrlPoster = new ctrlPoster();
-                                ctrlPoster.infoTitle.Text = data.Title;
+                                ctrlPoster.infoTitle.Text = data.Title.Replace("&", "&&");
                                 ctrlPoster.infoYear.Text = data.Year;
 
                                 ctrlPoster.infoPoster.BackgroundImage = UtilityTools.LoadPicture(data.Poster);
@@ -482,22 +484,22 @@ namespace OpenTheatre
 
             foreach (string movieLink in data.Sources)
             {
-                MovieDetails.addStream(movieLink, false, false, MovieDetails.panelFiles);
+                MovieDetails.AddStream(movieLink, false, false, MovieDetails.panelFiles);
             }
 
             if (data.YifyTorrent480p != null && data.YifyTorrent480p != "")
             {
-                MovieDetails.addStream(data.YifyTorrent480p, false, true, MovieDetails.panelTorrents, "480p");
+                MovieDetails.AddStream(data.YifyTorrent480p, false, true, MovieDetails.panelTorrents, "480p");
             }
 
             if (data.YifyTorrent720p != null && data.YifyTorrent720p != "")
             {
-                MovieDetails.addStream(data.YifyTorrent720p, false, true, MovieDetails.panelTorrents, "720p");
+                MovieDetails.AddStream(data.YifyTorrent720p, false, true, MovieDetails.panelTorrents, "720p");
             }
 
             if (data.YifyTorrent1080p != null && data.YifyTorrent1080p != "")
             {
-                MovieDetails.addStream(data.YifyTorrent1080p, false, true, MovieDetails.panelTorrents, "1080p");
+                MovieDetails.AddStream(data.YifyTorrent1080p, false, true, MovieDetails.panelTorrents, "1080p");
             }
 
 
@@ -510,7 +512,20 @@ namespace OpenTheatre
 
 
         // Files
-        public string selectedFilesFileType = "", selectedFilesHost = "", selectedFilesQuality = "", selectedFiles = "Video"; // Filter Preferences
+        public static List<string> selectedFiles = dataOpenFiles;
+        public static List<string> allFileTypes = new List<string>();
+        public static List<string> videoFileTypes = new List<string>() { "M2TS", "MP4", "MKV", "AVI", "MPEG" };
+        public static List<string> audioFileTypes = new List<string>() { "MP3", "WMA", "WAV", "M3U", "APE", "AIF", "MPA", "CDA" };
+        public static List<string> ebooksFileTypes = new List<string>() { "EPUB", "AZW", "LIT", "PDF", "ODF", "MOBI", "CBR" };
+        public static List<string> subtitleFileTypes = new List<string>() { "SRT", "SUB", "VTT" };
+        public static List<string> mobileFileTypes = new List<string>() { "APK", "IPA", "APPX", "XAP" };
+        public static List<string> torrentFileTypes = new List<string>() { "TORRENT" };
+        public static List<string> archivesFileTypes = new List<string>() { "VOB", "ZIP", "RAR", "7Z", "ISO", "PKG", "TAR.GZ" };
+        public static List<string> otherFileTypes = new List<string>() { "EXE", "XML", "TXT", "SQL", "CSV", "APK" };
+
+        // Filter Preferences
+        public List<string> selectedFilesFileType;
+        public string selectedFilesHost = "";
 
         private void loadLocalFiles()
         {
@@ -518,169 +533,116 @@ namespace OpenTheatre
 
             foreach (string fileName in Directory.GetFiles(userDownloadsDirectory))
             {
-                var data = new DatabaseFilesEntity();
-                data.Title = Path.GetFileNameWithoutExtension(fileName);
-                data.Host = rm.GetString("local");
-                data.Type = Path.GetExtension(fileName).Replace(".", "").ToUpper();
-                data.URL = fileName;
+                var data = new DatabaseFilesEntity
+                {
+                    Title = Path.GetFileNameWithoutExtension(fileName),
+                    Host = rm.GetString("local"),
+                    Type = Path.GetExtension(fileName).Replace(".", "").ToUpper(),
+                    URL = fileName
+                };
                 dataFilesLocal.Add(data.ToJson());
             }
         }
 
-        private void titleFilesVideo_ClickButtonArea(object Sender, MouseEventArgs e)
+        private void loadSavedFiles()
         {
-            imgSpinner.Visible = true; selectedFiles = "Video";
+            dataFilesSaved.Clear();
 
-            titleFilesVideo.ColorFillSolid = Color.FromArgb(42, 42, 42);
-            titleFilesVideo.BorderColor = Color.FromArgb(42, 42, 42);
-            titleFilesAudio.ColorFillSolid = Color.Transparent;
-            titleFilesAudio.BorderColor = Color.Transparent;
-            titleFilesEbooks.ColorFillSolid = Color.Transparent;
-            titleFilesEbooks.BorderColor = Color.Transparent;
-            titleFilesSubtitles.ColorFillSolid = Color.Transparent;
-            titleFilesSubtitles.BorderColor = Color.Transparent;
-            titleFilesTorrents.ColorFillSolid = Color.Transparent;
-            titleFilesTorrents.BorderColor = Color.Transparent;
-            titleFilesArchives.ColorFillSolid = Color.Transparent;
-            titleFilesArchives.BorderColor = Color.Transparent;
-            titleFilesLocal.ColorFillSolid = Color.Transparent;
-            titleFilesLocal.BorderColor = Color.Transparent;
-
-            showFiles();
+            if (File.Exists(UtilityTools.pathDataSaved))
+            {
+                using (StreamReader reader = new StreamReader(UtilityTools.pathDataSaved))
+                {
+                    while (!reader.EndOfStream)
+                    {
+                        dataFilesSaved.Add(reader.ReadLine());
+                    }
+                }
+            }            
         }
 
+        private void titleFilesAll_ClickButtonArea(object Sender, MouseEventArgs e)
+        {
+            imgSpinner.Visible = true; selectedFilesFileType = allFileTypes; selectFilesTab(titleFilesAll); selectedFiles = dataOpenFiles; showFiles(selectedFiles);
+        }
+
+        private void titleFilesVideo_ClickButtonArea(object Sender, MouseEventArgs e)
+        {
+            imgSpinner.Visible = true; selectedFilesFileType = videoFileTypes; selectFilesTab(titleFilesVideo); selectedFiles = dataOpenFiles; showFiles(selectedFiles);
+        }
 
         private void titleFilesAudio_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            imgSpinner.Visible = true; selectedFiles = "Audio";
-
-            titleFilesVideo.ColorFillSolid = Color.Transparent;
-            titleFilesVideo.BorderColor = Color.Transparent;
-            titleFilesAudio.ColorFillSolid = Color.FromArgb(42, 42, 42);
-            titleFilesAudio.BorderColor = Color.FromArgb(42, 42, 42);
-            titleFilesEbooks.ColorFillSolid = Color.Transparent;
-            titleFilesEbooks.BorderColor = Color.Transparent;
-            titleFilesSubtitles.ColorFillSolid = Color.Transparent;
-            titleFilesSubtitles.BorderColor = Color.Transparent;
-            titleFilesTorrents.ColorFillSolid = Color.Transparent;
-            titleFilesTorrents.BorderColor = Color.Transparent;
-            titleFilesArchives.ColorFillSolid = Color.Transparent;
-            titleFilesArchives.BorderColor = Color.Transparent;
-            titleFilesLocal.ColorFillSolid = Color.Transparent;
-            titleFilesLocal.BorderColor = Color.Transparent;
-
-            showFiles();
+            imgSpinner.Visible = true; selectedFilesFileType = audioFileTypes; selectFilesTab(titleFilesAudio); selectedFiles = dataOpenFiles; showFiles(selectedFiles);
         }
 
         private void titleFilesEbooks_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            imgSpinner.Visible = true; selectedFiles = "Ebooks";
-
-            titleFilesVideo.ColorFillSolid = Color.Transparent;
-            titleFilesVideo.BorderColor = Color.Transparent;
-            titleFilesAudio.ColorFillSolid = Color.Transparent;
-            titleFilesAudio.BorderColor = Color.Transparent;
-            titleFilesEbooks.ColorFillSolid = Color.FromArgb(42, 42, 42);
-            titleFilesEbooks.BorderColor = Color.FromArgb(42, 42, 42);
-            titleFilesSubtitles.ColorFillSolid = Color.Transparent;
-            titleFilesSubtitles.BorderColor = Color.Transparent;
-            titleFilesTorrents.ColorFillSolid = Color.Transparent;
-            titleFilesTorrents.BorderColor = Color.Transparent;
-            titleFilesArchives.ColorFillSolid = Color.Transparent;
-            titleFilesArchives.BorderColor = Color.Transparent;
-            titleFilesLocal.ColorFillSolid = Color.Transparent;
-            titleFilesLocal.BorderColor = Color.Transparent;
-
-            showFiles();
-        }
-
-        private void titleFilesTorrents_ClickButtonArea(object Sender, MouseEventArgs e)
-        {
-            imgSpinner.Visible = true; selectedFiles = "Torrents";
-
-            titleFilesVideo.ColorFillSolid = Color.Transparent;
-            titleFilesVideo.BorderColor = Color.Transparent;
-            titleFilesAudio.ColorFillSolid = Color.Transparent;
-            titleFilesAudio.BorderColor = Color.Transparent;
-            titleFilesEbooks.ColorFillSolid = Color.Transparent;
-            titleFilesEbooks.BorderColor = Color.Transparent;
-            titleFilesSubtitles.ColorFillSolid = Color.Transparent;
-            titleFilesSubtitles.BorderColor = Color.Transparent;
-            titleFilesTorrents.ColorFillSolid = Color.FromArgb(42, 42, 42);
-            titleFilesTorrents.BorderColor = Color.FromArgb(42, 42, 42);
-            titleFilesArchives.ColorFillSolid = Color.Transparent;
-            titleFilesArchives.BorderColor = Color.Transparent;
-            titleFilesLocal.ColorFillSolid = Color.Transparent;
-            titleFilesLocal.BorderColor = Color.Transparent;
-
-            showFiles();
+            imgSpinner.Visible = true; selectedFilesFileType = ebooksFileTypes; selectFilesTab(titleFilesEbooks); selectedFiles = dataOpenFiles; showFiles(selectedFiles);
         }
 
         private void titleFilesSubtitles_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            imgSpinner.Visible = true; selectedFiles = "Subtitles";
+            imgSpinner.Visible = true; selectedFilesFileType = subtitleFileTypes; selectFilesTab(titleFilesSubtitles); selectedFiles = dataOpenFiles; showFiles(selectedFiles);
+        }
+        
+        private void titleFilesMobile_ClickButtonArea(object Sender, MouseEventArgs e)
+        {
+            imgSpinner.Visible = true; selectedFilesFileType = mobileFileTypes; selectFilesTab(titleFilesMobile); selectedFiles = dataOpenFiles; showFiles(selectedFiles);
+        }
 
-            titleFilesVideo.ColorFillSolid = Color.Transparent;
-            titleFilesVideo.BorderColor = Color.Transparent;
-            titleFilesAudio.ColorFillSolid = Color.Transparent;
-            titleFilesAudio.BorderColor = Color.Transparent;
-            titleFilesEbooks.ColorFillSolid = Color.Transparent;
-            titleFilesEbooks.BorderColor = Color.Transparent;
-            titleFilesSubtitles.ColorFillSolid = Color.FromArgb(42, 42, 42);
-            titleFilesSubtitles.BorderColor = Color.FromArgb(42, 42, 42);
-            titleFilesTorrents.ColorFillSolid = Color.Transparent;
-            titleFilesTorrents.BorderColor = Color.Transparent;
-            titleFilesArchives.ColorFillSolid = Color.Transparent;
-            titleFilesArchives.BorderColor = Color.Transparent;
-            titleFilesLocal.ColorFillSolid = Color.Transparent;
-            titleFilesLocal.BorderColor = Color.Transparent;
-
-            showFiles();
+        private void titleFilesTorrents_ClickButtonArea(object Sender, MouseEventArgs e)
+        {
+            imgSpinner.Visible = true; selectedFilesFileType = torrentFileTypes; selectFilesTab(titleFilesTorrents); selectedFiles = dataOpenFiles; showFiles(selectedFiles);
         }
 
         private void titleFilesArchives_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            imgSpinner.Visible = true; selectedFiles = "Archives";
+            imgSpinner.Visible = true; selectedFilesFileType = archivesFileTypes; selectFilesTab(titleFilesArchives); selectedFiles = dataOpenFiles; showFiles(selectedFiles);
+        }
 
-            titleFilesVideo.ColorFillSolid = Color.Transparent;
-            titleFilesVideo.BorderColor = Color.Transparent;
-            titleFilesAudio.ColorFillSolid = Color.Transparent;
-            titleFilesAudio.BorderColor = Color.Transparent;
-            titleFilesEbooks.ColorFillSolid = Color.Transparent;
-            titleFilesEbooks.BorderColor = Color.Transparent;
-            titleFilesSubtitles.ColorFillSolid = Color.Transparent;
-            titleFilesSubtitles.BorderColor = Color.Transparent;
-            titleFilesTorrents.ColorFillSolid = Color.Transparent;
-            titleFilesTorrents.BorderColor = Color.Transparent;
-            titleFilesArchives.ColorFillSolid = Color.FromArgb(42, 42, 42);
-            titleFilesArchives.BorderColor = Color.FromArgb(42, 42, 42);
-            titleFilesLocal.ColorFillSolid = Color.Transparent;
-            titleFilesLocal.BorderColor = Color.Transparent;
-
-            showFiles();
+        private void titleFilesOther_ClickButtonArea(object Sender, MouseEventArgs e)
+        {
+            imgSpinner.Visible = true; selectedFilesFileType = otherFileTypes; selectFilesTab(titleFilesOther); selectedFiles = dataOpenFiles; showFiles(selectedFiles);
         }
 
         private void titleFilesLocal_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            imgSpinner.Visible = true; selectedFiles = "Local";
+            imgSpinner.Visible = true; selectedFilesFileType = allFileTypes; selectFilesTab(titleFilesLocal); loadLocalFiles(); selectedFiles = dataFilesLocal; showFiles(selectedFiles);
+        }
+        
+        private void titleFilesSaved_ClickButtonArea(object Sender, MouseEventArgs e)
+        {
+            imgSpinner.Visible = true; selectedFilesFileType = allFileTypes; selectFilesTab(titleFilesSaved); loadSavedFiles(); selectedFiles = dataFilesSaved; showFiles(selectedFiles);
+        }
 
-            titleFilesVideo.ColorFillSolid = Color.Transparent;
-            titleFilesVideo.BorderColor = Color.Transparent;
-            titleFilesAudio.ColorFillSolid = Color.Transparent;
-            titleFilesAudio.BorderColor = Color.Transparent;
-            titleFilesEbooks.ColorFillSolid = Color.Transparent;
-            titleFilesEbooks.BorderColor = Color.Transparent;
-            titleFilesSubtitles.ColorFillSolid = Color.Transparent;
-            titleFilesSubtitles.BorderColor = Color.Transparent;
-            titleFilesTorrents.ColorFillSolid = Color.Transparent;
-            titleFilesTorrents.BorderColor = Color.Transparent;
-            titleFilesArchives.ColorFillSolid = Color.Transparent;
-            titleFilesArchives.BorderColor = Color.Transparent;
-            titleFilesLocal.ColorFillSolid = Color.FromArgb(42, 42, 42);
-            titleFilesLocal.BorderColor = Color.FromArgb(42, 42, 42);
+        public void selectFilesTab(CButtonLib.CButton cbtn)
+        {
+            Color selectedRGB = Color.FromArgb(42, 42, 42);
+            Color nonSelectedRGB = Color.Transparent;
 
-            loadLocalFiles();
-            showFiles();
+            titleFilesAll.ColorFillSolid = nonSelectedRGB;
+            titleFilesAll.BorderColor = nonSelectedRGB;
+            titleFilesVideo.ColorFillSolid = nonSelectedRGB;
+            titleFilesVideo.BorderColor = nonSelectedRGB;
+            titleFilesAudio.ColorFillSolid = nonSelectedRGB;
+            titleFilesAudio.BorderColor = nonSelectedRGB;
+            titleFilesEbooks.ColorFillSolid = nonSelectedRGB;
+            titleFilesEbooks.BorderColor = nonSelectedRGB;
+            titleFilesSubtitles.ColorFillSolid = nonSelectedRGB;
+            titleFilesSubtitles.BorderColor = nonSelectedRGB;
+            titleFilesTorrents.ColorFillSolid = nonSelectedRGB;
+            titleFilesTorrents.BorderColor = nonSelectedRGB;
+            titleFilesArchives.ColorFillSolid = nonSelectedRGB;
+            titleFilesArchives.BorderColor = nonSelectedRGB;
+            titleFilesOther.ColorFillSolid = nonSelectedRGB;
+            titleFilesOther.BorderColor = nonSelectedRGB;
+            titleFilesLocal.ColorFillSolid = nonSelectedRGB;
+            titleFilesLocal.BorderColor = nonSelectedRGB;
+            titleFilesSaved.ColorFillSolid = nonSelectedRGB;
+            titleFilesSaved.BorderColor = nonSelectedRGB;
+
+            cbtn.ColorFillSolid = selectedRGB;
+            cbtn.BorderColor = selectedRGB;  
         }
 
         private void dataGridFiles_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
@@ -698,65 +660,49 @@ namespace OpenTheatre
             e.PaintParts &= ~DataGridViewPaintParts.Focus;
         }
 
-        private void dataGridFiles_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridFiles_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (selectedFiles == "Local") { showFileDetails(dataGridFiles.CurrentRow.Cells[5].Value.ToString(), dataGridFiles.CurrentRow.Cells[1].Value.ToString() + "." + dataGridFiles.CurrentRow.Cells[0].Value.ToString().ToLower(), dataGridFiles.CurrentRow.Cells[0].Value.ToString(), dataGridFiles.CurrentRow.Cells[4].Value.ToString(), dataGridFiles.CurrentRow.Cells[3].Value.ToString(), dataGridFiles.CurrentRow.Cells[2].Value.ToString(), true, dataGridFiles.CurrentRow.Cells[2].Value.ToString(), dataGridFiles.CurrentRow.Cells[3].Value.ToString()); }
-            else { showFileDetails(dataGridFiles.CurrentRow.Cells[5].Value.ToString(), dataGridFiles.CurrentRow.Cells[1].Value.ToString() + "." + dataGridFiles.CurrentRow.Cells[0].Value.ToString().ToLower(), dataGridFiles.CurrentRow.Cells[0].Value.ToString(), dataGridFiles.CurrentRow.Cells[4].Value.ToString(), dataGridFiles.CurrentRow.Cells[3].Value.ToString(), dataGridFiles.CurrentRow.Cells[2].Value.ToString(), false, dataGridFiles.CurrentRow.Cells[2].Value.ToString(), dataGridFiles.CurrentRow.Cells[3].Value.ToString()); }
-        }
-
-        public void showFiles()
-        {
-            if (txtFilesSearchResults.Text != "")
+            try
             {
-                imgSpinner.Visible = true;
-
-                if (selectedFiles == "Video")
+                if (dataGridFiles.CurrentRow.Cells[4].Value.ToString() == rm.GetString("local"))
                 {
-                    showSelectedFiles(dataFilesVideo);
+                    showFileDetails(dataGridFiles.CurrentRow.Cells[5].Value.ToString(),
+                    dataGridFiles.CurrentRow.Cells[1].Value.ToString() + "." + dataGridFiles.CurrentRow.Cells[0].Value.ToString().ToLower(),
+                    dataGridFiles.CurrentRow.Cells[0].Value.ToString(),
+                    dataGridFiles.CurrentRow.Cells[4].Value.ToString(),
+                    true,
+                    dataGridFiles.CurrentRow.Cells[2].Value.ToString(),
+                    dataGridFiles.CurrentRow.Cells[3].Value.ToString());
                 }
-                else if (selectedFiles == "Audio")
+                else
                 {
-                    showSelectedFiles(dataFilesAudio);
-                }
-                else if (selectedFiles == "Ebooks")
-                {
-                    showSelectedFiles(dataFilesEbooks);
-                }
-                else if (selectedFiles == "Subtitles")
-                {
-                    showSelectedFiles(dataFilesSubtitles);
-                }
-                else if (selectedFiles == "Torrents")
-                {
-                    showSelectedFiles(dataFilesTorrents);
-                }
-                else if (selectedFiles == "Archives")
-                {
-                    showSelectedFiles(dataFilesArchives);
-                }
-                else if (selectedFiles == "Local")
-                {
-                    showSelectedFiles(dataFilesLocal.ToArray());
+                    showFileDetails(dataGridFiles.CurrentRow.Cells[5].Value.ToString(),
+                    dataGridFiles.CurrentRow.Cells[1].Value.ToString() + "." + dataGridFiles.CurrentRow.Cells[0].Value.ToString().ToLower(),
+                    dataGridFiles.CurrentRow.Cells[0].Value.ToString(), dataGridFiles.CurrentRow.Cells[4].Value.ToString(),
+                    false,
+                    dataGridFiles.CurrentRow.Cells[2].Value.ToString(),
+                    dataGridFiles.CurrentRow.Cells[3].Value.ToString());
                 }
             }
+            catch (Exception ex) { MessageBox.Show("An error occurred showing file details.\n\n" + ex.Message); }
+
         }
 
-        delegate void loadFilesCallBack(string[] files);
-        public void showSelectedFiles(string[] files)
+        delegate void loadFilesCallBack(List<string> dataFiles);
+        public void showFiles(List<string> dataFiles)
         {
-            BackGroundWorker.RunWorkAsync<List<string>>(() => searchFiles(files), (data) =>
+            BackGroundWorker.RunWorkAsync<List<string>>(() => searchFiles(dataFiles), (data) =>
             {
                 if (tabFiles.InvokeRequired)
                 {
-                    loadFilesCallBack b = new loadFilesCallBack(showSelectedFiles);
-                    Invoke(b, new object[] { files });
+                    loadFilesCallBack b = new loadFilesCallBack(showFiles);
+                    Invoke(b, new object[] { dataFiles });
                 }
                 else
                 {
                     ComponentResourceManager resources = new ComponentResourceManager(typeof(frmOpenTheatre));
                     cmboBoxFilesSort.SelectedIndex = 0; dataGridFiles.Rows.Clear();
                     cmboBoxFilesHost.Items.Clear(); cmboBoxFilesHost.Items.Add(resources.GetString("cmboBoxFilesHost.Items"));
-                    cmboBoxFilesFormat.Items.Clear(); cmboBoxFilesFormat.Items.Add(resources.GetString("cmboBoxFilesFormat.Items"));
 
                     foreach (string jsonData in data)
                     {
@@ -764,39 +710,30 @@ namespace OpenTheatre
                         string dateAdded = dataJson.DateAdded;
                         if (dataJson.DateAdded != "-") { dateAdded = UtilityTools.getTimeAgo(Convert.ToDateTime(dataJson.DateAdded)); }
                         dataGridFiles.Rows.Add(dataJson.Type, dataJson.Title, dataJson.Size, dateAdded, dataJson.Host, dataJson.URL);
-                        if (!(cmboBoxFilesFormat.Items.Contains(dataJson.Type))) { cmboBoxFilesFormat.Items.Add(dataJson.Type); }
-                        if (!(cmboBoxFilesHost.Items.Contains(dataJson.Host))) { cmboBoxFilesHost.Items.Add(dataJson.Host); }
 
+                        if (!(cmboBoxFilesHost.Items.Contains(dataJson.Host))) { cmboBoxFilesHost.Items.Add(dataJson.Host); }
                     }
 
-                    cmboBoxFilesHost.DropDownWidth = DropDownWidth(cmboBoxFilesHost);
+                    tabControlFiles.SelectedTab = tabFilesResults;
+
+                    cmboBoxFilesHost.DropDownWidth = UtilityTools.DropDownWidth(cmboBoxFilesHost);
                     imgSpinner.Visible = false;
                 }
             });
         }
-        
-        private void btnSearchFiles_ClickButtonArea(object Sender, MouseEventArgs e)
-        {
-            if (txtFilesSearch.Text != "") { txtFilesSearchResults.Text = txtFilesSearch.Text; tabControlFiles.SelectedTab = tabFilesResults; showFiles(); }
-        }
-
-        private void btnSearchFilesAgain_ClickButtonArea(object Sender, MouseEventArgs e)
-        {
-            showFiles();
-        }
 
         object loadFilesLock = new object();
-        public List<string> searchFiles(string[] data)
+        public List<string> searchFiles(List<string> dataFiles)
         {
             lock (loadFilesLock)
             {
                 List<string> urls = new List<string>();
 
-                foreach (string file in data)
+                foreach (string file in dataFiles)
                 {
                     var dataJson = DatabaseFilesEntity.FromJson(file);
 
-                    if (UtilityTools.ContainsAll(dataJson.Title.ToLower(), UtilityTools.GetWords(txtFilesSearchResults.Text.ToLower())) && dataJson.Title.Contains(selectedFilesQuality) && dataJson.Type.Contains(selectedFilesFileType) && dataJson.Host.Contains(selectedFilesHost))
+                    if (UtilityTools.ContainsAll(dataJson.Title.ToLower(), UtilityTools.GetWords(txtFilesSearchResults.Text.ToLower())) && selectedFilesFileType.Contains(dataJson.Type) && dataJson.Host.Contains(selectedFilesHost))
                     {
                         urls.Add(dataJson.ToJson());
                     }
@@ -806,7 +743,17 @@ namespace OpenTheatre
             }
         }
 
-        public void showFileDetails(string Url, string Name, string Type, string Host, string DateAdded, string Size, bool isLocal, string fileSize = "", string fileDateAdded = "")
+        private void btnSearchFiles_ClickButtonArea(object Sender, MouseEventArgs e)
+        {
+            txtFilesSearchResults.Text = txtFilesSearch.Text; tabControlFiles.SelectedTab = tabFilesResults; imgSpinner.Visible = true; showFiles(selectedFiles);
+        }
+
+        private void btnSearchFilesAgain_ClickButtonArea(object Sender, MouseEventArgs e)
+        {
+            imgSpinner.Visible = true; showFiles(selectedFiles);
+        }
+
+        public void showFileDetails(string Url, string Name, string Type, string Host, bool isLocal, string Size = "-", string Age = "-")
         {
             imgSpinner.Visible = true;
 
@@ -823,7 +770,7 @@ namespace OpenTheatre
             }
             fileDetails.infoDirectory.Text = directories.ToString();
             fileDetails.infoType.Text = Type;
-            fileDetails.infoDateAdded.Text = DateAdded;
+            fileDetails.infoAge.Text = Age;
             fileDetails.infoFileURL.Text = Url;
             fileDetails.Dock = DockStyle.Fill;
             fileDetails.BackgroundImage = UtilityTools.ChangeOpacity(Properties.Resources.background_original, 0.5F);
@@ -865,47 +812,11 @@ namespace OpenTheatre
             var startText = btnFilesSort.Text.Split(':');
             btnFilesSort.Text = startText[0] + ": " + cmboBoxFilesSort.SelectedItem.ToString();
 
-            if (cmboBoxFilesSort.SelectedIndex == 0) { cmboBoxFilesSort.DropDownWidth = DropDownWidth(cmboBoxFilesSort); showFiles(); }
-            else if (cmboBoxFilesSort.SelectedIndex == 1) { dataGridFiles.Sort(dataGridFiles.Columns[0], ListSortDirection.Ascending); }
-            else if (cmboBoxFilesSort.SelectedIndex == 2) { dataGridFiles.Sort(dataGridFiles.Columns[0], ListSortDirection.Descending); }
+            if (cmboBoxFilesSort.SelectedIndex == 0) { cmboBoxFilesSort.DropDownWidth = UtilityTools.DropDownWidth(cmboBoxFilesSort); showFiles(selectedFiles); }
+            else if (cmboBoxFilesSort.SelectedIndex == 1) { dataGridFiles.Sort(dataGridFiles.Columns[1], ListSortDirection.Ascending); }
+            else if (cmboBoxFilesSort.SelectedIndex == 2) { dataGridFiles.Sort(dataGridFiles.Columns[1], ListSortDirection.Descending); }
         }
-
-        // Filter Files by File Format
-        int DropDownWidth(ComboBox myCombo)
-        {
-            int maxWidth = 0, temp = 0;
-            foreach (var obj in myCombo.Items)
-            {
-                temp = TextRenderer.MeasureText(obj.ToString(), myCombo.Font).Width;
-                if (temp > maxWidth)
-                {
-                    maxWidth = temp;
-                }
-            }
-            return maxWidth;
-        }
-
-        private void btnFilesFileType_ClickButtonArea(object Sender, MouseEventArgs e)
-        {
-            cmboBoxFilesFormat.DroppedDown = true;
-        }
-
-        private void cmboBoxFilesFileFormat_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            var startText = btnFilesFormat.Text.Split(':');
-            btnFilesFormat.Text = startText[0] + ": " + cmboBoxFilesFormat.SelectedItem.ToString();
-
-            Font myFont = new Font(btnFilesFormat.Font.FontFamily, this.btnFilesFormat.Font.Size);
-            SizeF mySize = btnFilesFormat.CreateGraphics().MeasureString(btnFilesFormat.Text, myFont);
-            panelFilesFormat.Width = (((int)(Math.Round(mySize.Width, 0))) + 26);
-            Refresh();
-
-            if (cmboBoxFilesFormat.SelectedIndex == 0) { selectedFilesFileType = ""; }
-            else { selectedFilesFileType = cmboBoxFilesFormat.SelectedItem.ToString(); }
-
-            showFiles();
-        }
-
+        
         // Filter Files by Host
         private void btnFilesHost_ClickButtonArea(object Sender, MouseEventArgs e)
         {
@@ -929,46 +840,89 @@ namespace OpenTheatre
             if (cmboBoxFilesHost.SelectedIndex == 0) { selectedFilesHost = ""; }
             else { selectedFilesHost = cmboBoxFilesHost.SelectedItem.ToString(); }
 
-            showFiles();
+            showFiles(selectedFiles);
 
-            cmboBoxFilesHost.DropDownWidth = DropDownWidth(cmboBoxFilesHost);
+            cmboBoxFilesHost.DropDownWidth = UtilityTools.DropDownWidth(cmboBoxFilesHost);
         }
 
-        // Filter Files by Quality
-        private void btnFilesQuality_ClickButtonArea(object Sender, MouseEventArgs e)
+        // Discover tab
+        private void dataGridDiscover_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            cmboBoxFilesQuality.DroppedDown = true;
+            Process.Start(dataGridDiscover.CurrentRow.Cells[3].Value.ToString());
         }
 
-        private void cmboBoxFilesQuality_SelectedIndexChanged(object sender, EventArgs e)
+        delegate void loadHostsCallBack();
+        void showHosts()
         {
-            var startText = btnFilesQuality.Text.Split(':');
-            btnFilesQuality.Text = startText[0] + ": " + cmboBoxFilesQuality.SelectedItem.ToString();
+            imgSpinner.Visible = true; 
 
-            Font myFont = new Font(btnFilesQuality.Font.FontFamily, this.btnFilesQuality.Font.Size);
-            SizeF mySize = btnFilesQuality.CreateGraphics().MeasureString(btnFilesQuality.Text, myFont);
-            panelFilesQuality.Width = (((int)(Math.Round(mySize.Width, 0))) + 26);
-            Refresh();
-            if (cmboBoxFilesQuality.SelectedIndex == 0) { selectedFilesQuality = ""; }
-            else { selectedFilesQuality = cmboBoxFilesQuality.SelectedItem.ToString(); }
+            BackGroundWorker.RunWorkAsync<List<string>>(() => getFileHosts(), (data) =>
+            {
+                if (tabDiscover.InvokeRequired)
+                {
+                    loadHostsCallBack b = new loadHostsCallBack(showHosts);
+                    Invoke(b, new object[] { });
+                }
+                else
+                {
+                    dataGridDiscover.Rows.Clear();
 
-            showFiles();
+                    int count = 1;
+                    foreach (string url in data)
+                    {
+                        dataGridDiscover.Rows.Add(count.ToString(), url, "Web", url);
+                        count += 1;
+                    }
+
+                    tab.SelectedTab = tabDiscover;
+                    imgSpinner.Visible = false;
+                }
+            });
+        }
+
+        object loadHostsLock = new object();
+        List<string> getFileHosts()
+        {
+            lock (loadHostsLock)
+            {
+                List<string> urls = new List<string>();
+
+                foreach (string file in dataOpenDirectories)
+                {
+                    if (!urls.Contains(new Uri(file.Replace("www.", "")).GetLeftPart(UriPartial.Scheme) + new Uri(file.Replace("www.", "")).Authority)) { urls.Add(new Uri(file.Replace("www.", "")).GetLeftPart(UriPartial.Scheme) + new Uri(file.Replace("www.", "")).Authority); }
+                }
+
+                return urls;
+            }
         }
         //
 
+        // Submit tab
+        private void btnSubmitLink_ClickButtonArea(object Sender, MouseEventArgs e)
+        {
+            if (txtSubmitLink.Text != "")
+            {
+                if (!Path.HasExtension(txtSubmitLink.Text))
+                {
+                    if (Uri.IsWellFormedUriString(txtSubmitLink.Text, UriKind.Absolute))
+                    {
+                        string formattedText = txtSubmitLink.Text;
+                        if (!txtSubmitLink.Text.EndsWith("/")) { formattedText = txtSubmitLink.Text + "/"; }
+                        UtilityTools.submitLink(formattedText); txtSubmitLink.Text = "";
+                    }
+                    else { MessageBox.Show("Link isn't in the correct format."); }
+                }
+                else { MessageBox.Show("This isn't a public web directory."); }
+            }
+        }
+        //
 
         // About tab
-        private void imgCloseAbout_Click(object sender, EventArgs e)
-        {
-            tab.SelectedTab = currentTab;
-        }
-
         private void lblAboutReportIssue_Click(object sender, EventArgs e)
         {
             Process.Start("https://github.com/invu/opentheatre/issues/new");
         }
         //
-
 
         // Settings tab
         public void loadSettings()

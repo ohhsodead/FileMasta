@@ -56,5 +56,10 @@ namespace OpenTheatre
         {
             Close();
         }
+
+        private void frmShareFile_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

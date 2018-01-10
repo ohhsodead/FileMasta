@@ -1,4 +1,4 @@
-﻿namespace OpenTheatre
+﻿namespace OpenTheatre.CControls
 {
     partial class ctrlStatus
     {
@@ -29,27 +29,21 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ctrlStatus));
             this.titleStatus = new System.Windows.Forms.Label();
             this.btnRestartApp = new CButtonLib.CButton();
             this.SuspendLayout();
             // 
             // titleStatus
             // 
-            this.titleStatus.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.titleStatus, "titleStatus");
             this.titleStatus.BackColor = System.Drawing.Color.Transparent;
-            this.titleStatus.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
             this.titleStatus.ForeColor = System.Drawing.Color.Silver;
-            this.titleStatus.Location = new System.Drawing.Point(60, 0);
             this.titleStatus.Name = "titleStatus";
-            this.titleStatus.Size = new System.Drawing.Size(341, 155);
-            this.titleStatus.TabIndex = 0;
-            this.titleStatus.Text = "Unable to connect to the the Internet";
-            this.titleStatus.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // btnRestartApp
             // 
-            this.btnRestartApp.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            resources.ApplyResources(this.btnRestartApp, "btnRestartApp");
             this.btnRestartApp.BackColor = System.Drawing.Color.Transparent;
             this.btnRestartApp.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(139)))), ((int)(((byte)(202)))));
             this.btnRestartApp.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(139)))), ((int)(((byte)(202)))));
@@ -63,28 +57,21 @@
             this.btnRestartApp.DimFactorClick = 0;
             this.btnRestartApp.DimFactorHover = 0;
             this.btnRestartApp.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.btnRestartApp.Font = new System.Drawing.Font("Segoe UI Semibold", 11F);
             this.btnRestartApp.ImageIndex = 0;
-            this.btnRestartApp.Location = new System.Drawing.Point(181, 208);
-            this.btnRestartApp.Margin = new System.Windows.Forms.Padding(3, 1, 3, 0);
             this.btnRestartApp.Name = "btnRestartApp";
             this.btnRestartApp.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.btnRestartApp.Size = new System.Drawing.Size(98, 34);
-            this.btnRestartApp.TabIndex = 9;
-            this.btnRestartApp.Text = "Restart";
             this.btnRestartApp.TextShadowShow = false;
             this.btnRestartApp.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnRestartApp_ClickButtonArea);
             // 
             // ctrlStatus
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
             this.Controls.Add(this.btnRestartApp);
             this.Controls.Add(this.titleStatus);
             this.ForeColor = System.Drawing.Color.White;
             this.Name = "ctrlStatus";
-            this.Size = new System.Drawing.Size(460, 361);
             this.ResumeLayout(false);
 
         }
@@ -92,6 +79,6 @@
         #endregion
 
         public System.Windows.Forms.Label titleStatus;
-        private CButtonLib.CButton btnRestartApp;
+        public CButtonLib.CButton btnRestartApp;
     }
 }

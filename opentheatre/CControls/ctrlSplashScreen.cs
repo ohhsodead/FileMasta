@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using UnhandledExceptions;
 
-namespace OpenTheatre
+namespace OpenTheatre.CControls
 {
     public partial class ctrlSplashScreen : UserControl
     {

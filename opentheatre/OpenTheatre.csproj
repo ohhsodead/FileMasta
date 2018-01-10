@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>OpenTheatre</RootNamespace>
     <AssemblyName>OpenTheatre</AssemblyName>
-    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <TargetFrameworkProfile />
@@ -38,6 +38,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -94,10 +95,21 @@
     <Compile Include="CControls\ctrlFileDetails.Designer.cs">
       <DependentUpon>ctrlFileDetails.cs</DependentUpon>
     </Compile>
-    <Compile Include="Languages\misc-cz.Designer.cs">
+    <Compile Include="CControls\ctrlStatus.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CControls\ctrlStatus.Designer.cs">
+      <DependentUpon>ctrlStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\misc-cs.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>misc-cz.resx</DependentUpon>
+      <DependentUpon>misc-cs.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Utilities\BackGroundWorker.cs" />
     <Compile Include="CControls\ctrlMovieDetails.cs">
@@ -117,12 +129,6 @@
     </Compile>
     <Compile Include="CControls\ctrlSplashScreen.Designer.cs">
       <DependentUpon>ctrlSplashScreen.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CControls\ctrlStatus.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="CControls\ctrlStatus.Designer.cs">
-      <DependentUpon>ctrlStatus.cs</DependentUpon>
     </Compile>
     <Compile Include="CControls\ctrlStreamInfo.cs">
       <SubType>UserControl</SubType>
@@ -176,13 +182,12 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Utilities\regexFileName.cs" />
+    <Compile Include="Utilities\TextLineRemover.cs" />
     <Compile Include="Utilities\Utilities.cs" />
+    <EmbeddedResource Include="CControls\ctrlMovieDetails.cs.resx">
+      <DependentUpon>ctrlMovieDetails.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CControls\ctrlMovieDetails.de.resx">
       <DependentUpon>ctrlMovieDetails.cs</DependentUpon>
     </EmbeddedResource>
@@ -201,6 +206,9 @@
     <EmbeddedResource Include="CControls\ctrlPoster.resx">
       <DependentUpon>ctrlPoster.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CControls\ctrlSplashScreen.cs.resx">
+      <DependentUpon>ctrlSplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CControls\ctrlSplashScreen.de.resx">
       <DependentUpon>ctrlSplashScreen.cs</DependentUpon>
     </EmbeddedResource>
@@ -216,8 +224,17 @@
     <EmbeddedResource Include="CControls\ctrlStatus.resx">
       <DependentUpon>ctrlStatus.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CControls\ctrlStreamInfo.cs.resx">
+      <DependentUpon>ctrlStreamInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CControls\ctrlStreamInfo.fr.resx">
+      <DependentUpon>ctrlStreamInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CControls\ctrlStreamInfo.resx">
       <DependentUpon>ctrlStreamInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmOpenTheatre.cs.resx">
+      <DependentUpon>frmOpenTheatre.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmOpenTheatre.de.resx">
       <DependentUpon>frmOpenTheatre.cs</DependentUpon>
@@ -231,15 +248,27 @@
     <EmbeddedResource Include="Forms\frmOpenTheatre.resx">
       <DependentUpon>frmOpenTheatre.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmShareFile.cs.resx">
+      <DependentUpon>frmShareFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmShareFile.de.resx">
+      <DependentUpon>frmShareFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmShareFile.es.resx">
+      <DependentUpon>frmShareFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmShareFile.fr.resx">
+      <DependentUpon>frmShareFile.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmShareFile.resx">
       <DependentUpon>frmShareFile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmVLCPlayer.resx">
       <DependentUpon>frmVLCPlayer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Languages\misc-cz.resx">
+    <EmbeddedResource Include="Languages\misc-cs.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>misc-cz.Designer.cs</LastGenOutput>
+      <LastGenOutput>misc-cs.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Languages\misc-de.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -277,6 +306,11 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\radar.png" />
+    <None Include="Resources\play.png" />
+    <None Include="Resources\send.png" />
+    <None Include="Resources\play-black.png" />
+    <None Include="Resources\web.png" />
     <None Include="Resources\share-variant-black.png" />
     <None Include="Resources\facebook-messenger.png" />
     <None Include="Resources\clipboard-arrow-left-black.png" />
@@ -285,6 +319,14 @@
     <None Include="Resources\clipboard-check-black.png" />
     <None Include="Resources\alert-octagon-black.png" />
     <None Include="Resources\arrow-left-black.png" />
+    <None Include="Resources\eye-black.png" />
+    <None Include="Resources\file.png" />
+    <None Include="Resources\chevron-up-black.png" />
+    <None Include="Resources\download.png" />
+    <None Include="Resources\bookmark1.png" />
+    <None Include="Resources\bookmark-plus-black.png" />
+    <None Include="Resources\bookmark-remove-black.png" />
+    <None Include="Resources\bookmark.png" />
     <Content Include="Resources\opentheatre_logo.ico" />
     <None Include="Resources\search-white.png" />
     <None Include="Resources\magnet.png" />
@@ -305,7 +347,6 @@
     <None Include="Resources\clipboard-check.png" />
     <None Include="Resources\clipboard-arrow-left.png" />
     <None Include="Resources\bookmark-remove.png" />
-    <None Include="Resources\bookmark.png" />
     <None Include="Resources\keyboard_arrow_down.png" />
     <None Include="Resources\opentheatre-logo.png" />
     <None Include="Resources\settings.png" />

@@ -5,9 +5,8 @@ using System.Windows.Forms;
 using System.IO;
 using UnhandledExceptions;
 
-namespace OpenTheatre
+namespace OpenTheatre.CControls
 {
-
     public partial class ctrlPoster : UserControl
     {
         public ctrlPoster()
@@ -71,32 +70,32 @@ namespace OpenTheatre
 
             foreach (string movieLink in infoMovieFiles)
             {
-                MovieDetails.addStream(movieLink, false, false, MovieDetails.panelFiles);
+                MovieDetails.AddStream(movieLink, false, false, MovieDetails.panelFiles);
             }
 
             if (infoYifyTorrent480p != null && infoYifyTorrent480p != "")
             {
-                MovieDetails.addStream(infoYifyTorrent480p, false, true, MovieDetails.panelTorrents, "YIFY", "480p");
+                MovieDetails.AddStream(infoYifyTorrent480p, false, true, MovieDetails.panelTorrents, "YIFY", "480p");
             }
 
             if (infoYifyTorrent720p != null && infoYifyTorrent720p != "")
             {
-                MovieDetails.addStream(infoYifyTorrent720p, false, true, MovieDetails.panelTorrents, "YIFY", "720p");
+                MovieDetails.AddStream(infoYifyTorrent720p, false, true, MovieDetails.panelTorrents, "YIFY", "720p");
             }
 
             if (infoYifyTorrent1080p != null && infoYifyTorrent1080p != "")
             {
-                MovieDetails.addStream(infoYifyTorrent1080p, false, true, MovieDetails.panelTorrents, "YIFY", "1080p");
+                MovieDetails.AddStream(infoYifyTorrent1080p, false, true, MovieDetails.panelTorrents, "YIFY", "1080p");
             }
 
             if (infoPopcornTorrent720p != null && infoPopcornTorrent720p != "")
             {
-                MovieDetails.addStream(infoPopcornTorrent720p, false, true, MovieDetails.panelTorrents, "POPCORN", "720p");
+                MovieDetails.AddStream(infoPopcornTorrent720p, false, true, MovieDetails.panelTorrents, "POPCORN", "720p");
             }
 
             if (infoPopcornTorrent1080p != null && infoPopcornTorrent1080p != "")
             {
-                MovieDetails.addStream(infoPopcornTorrent1080p, false, true, MovieDetails.panelTorrents, "POPCORN", "1080p");
+                MovieDetails.AddStream(infoPopcornTorrent1080p, false, true, MovieDetails.panelTorrents, "POPCORN", "1080p");
             }
 
             MovieDetails.Dock = DockStyle.Fill;

@@ -141,6 +141,9 @@
   <data name="noDownloadDirectory" xml:space="preserve">
     <value>Specified download directory doesn't exist. Please select the folder in your settings.</value>
   </data>
+  <data name="restart" xml:space="preserve">
+    <value>Restart</value>
+  </data>
   <data name="restartRequiredLanguage" xml:space="preserve">
     <value>You will need to restart for language changes to take effect. Would you like to continue?</value>
   </data>

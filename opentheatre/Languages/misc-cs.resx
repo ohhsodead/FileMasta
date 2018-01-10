@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -118,54 +118,54 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="complete" xml:space="preserve">
-    <value>Achevée</value>
+    <value>Dokončeno</value>
   </data>
   <data name="connecting" xml:space="preserve">
-    <value>De liaison</value>
+    <value>Připojování</value>
   </data>
   <data name="error" xml:space="preserve">
-    <value>Erreur</value>
+    <value>Chyba</value>
   </data>
   <data name="errorConnectToServer" xml:space="preserve">
-    <value>Échec de connexion au serveur. Si ce problème persiste, veuillez ouvrir un problème sur notre page GitHub.</value>
+    <value>Nepodařilo se připojit k serveru. Pokud problém přetrvá, založte issue na naší stránce na GitHubu.</value>
   </data>
   <data name="errorNoInternetConnection" xml:space="preserve">
-    <value>Aucune connexion Internet trouvée. Vous devez être connecté à Internet pour utiliser OpenTheatre. Veuillez vérifier votre connexion ou réessayer.</value>
+    <value>Nepodařilo se připojit k internetu. Pro používání OpenTheatre je vyžadován internet. Zkontrolujte připojení a zkuste to znovu.</value>
   </data>
   <data name="errorSearch" xml:space="preserve">
-    <value>Erreur lors de la recherche de fichiers, réessayez plus tard ...</value>
+    <value>Chyba při hledání souborů, zkuste to znovu později...</value>
   </data>
   <data name="local" xml:space="preserve">
-    <value>Local</value>
+    <value>Lokální</value>
   </data>
   <data name="noDownloadDirectory" xml:space="preserve">
-    <value>Le répertoire de téléchargement spécifié n'existe pas. Veuillez sélectionner le dossier dans vos paramètres.</value>
+    <value>Zadaná složka pro stahování neexistuje. Vyberte jinou složku v nastavení.</value>
   </data>
   <data name="restart" xml:space="preserve">
-    <value>Redémarrer</value>
+    <value>Restartujte</value>
   </data>
   <data name="restartRequiredLanguage" xml:space="preserve">
-    <value>Vous devrez redémarrer pour que les modifications de langue prennent effet. Voulez-vous continuer?</value>
+    <value>Pro změnu jazyka je vyžadován restart programu. Chcete pokračovat?</value>
   </data>
   <data name="titleAbout" xml:space="preserve">
-    <value>Sur</value>
+    <value>O programu</value>
   </data>
   <data name="titleBookmarks" xml:space="preserve">
-    <value>Signets</value>
+    <value>Záložky</value>
   </data>
   <data name="titleDownloads" xml:space="preserve">
-    <value>Téléchargements</value>
+    <value>Stahování</value>
   </data>
   <data name="titleFiles" xml:space="preserve">
-    <value>Des dossiers</value>
+    <value>Soubory</value>
   </data>
   <data name="titleMovies" xml:space="preserve">
-    <value>Films</value>
+    <value>Filmy</value>
   </data>
   <data name="titleRestartRequired" xml:space="preserve">
-    <value>Redémarrage requis</value>
+    <value>Je vyžadován restart</value>
   </data>
   <data name="titleSettings" xml:space="preserve">
-    <value>Paramètres</value>
+    <value>Nastavení</value>
   </data>
 </root>
