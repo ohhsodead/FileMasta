@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="/opentheatre/Resources/webplex-logo.png" height="128" width="128" alt="Logo" />
+  <img src="/WebPlex/Resources/logo.png" height="128" width="128" alt="Logo" />
   <br />
   WebPlex
 </h1>
@@ -49,13 +49,13 @@ All contributions are welcome just send a pull request. WebPlex's database allow
 
 ## Screenshots
 ### Movies
-![Movies](https://raw.githubusercontent.com/invu/WebPlex/master/screenshots/movies.png)
+![Movies](\Screenshots\Movies.png)
 
 ### Movie Details
-![Movie Details](https://raw.githubusercontent.com/invu/WebPlex/master/screenshots/movie%20details.png)
+![Movie Details](\Screenshots\Movie%20Details.png)
 
 ### Files
-![Files](https://raw.githubusercontent.com/invu/WebPlex/master/screenshots/files.png)
+![Files](\Screenshots\Files.png)
 
 ### File Details
-![File Details](https://raw.githubusercontent.com/invu/WebPlex/master/screenshots/file%20details.png)
+![File Details](\Screenshots\File%20Details.png)
