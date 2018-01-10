@@ -24,7 +24,7 @@ OpenTheatre is a search engine designed to search and index files hosted among f
 - Automatic local cache updates
 
 ## Latest Build
-OpenTheatre 2.12.1
+OpenTheatre 2.12.2
 
 ## Framework & Backend
 The application is using .NET 4.7.1 WinForms Framework written in C#
@@ -33,7 +33,7 @@ The application is using .NET 4.7.1 WinForms Framework written in C#
 Windows 7 and above (Windows 7, 8, 8.1, 10)
 
 ## Installation
-Download the latest installer [here](https://github.com/invu/opentheatre-app/releases/download/0.2.11.0/OpenTheatreInstaller.exe)
+Download the latest installer [here](https://github.com/invu/opentheatre-app/releases/download/0.2.12.2/OpenTheatreInstaller.exe)
 
 ## Screenshots
 ### Movies
