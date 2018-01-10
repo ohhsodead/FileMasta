@@ -26,11 +26,11 @@ namespace Utilities
             var a = new DatabaseFilesEntity
             {
                 URL = Url,
-                Title = Name,
-                Type = Type,
                 Host = Host,
+                Title = Path.GetFileNameWithoutExtension(new Uri(Url).LocalPath),
+                Type = Type,
                 Size = "-",
-                DateAdded = "-"
+                DateAdded = DateTime.Now.ToString()
             };
 
             return a.ToJson();

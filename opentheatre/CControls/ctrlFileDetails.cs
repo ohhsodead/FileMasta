@@ -62,7 +62,7 @@ namespace OpenTheatre.CControls
                 }
             }
 
-            if (!UtilityTools.isSaved(UtilityTools.fileToJson(infoFileURL.Text, infoName.Text, infoType.Text, infoReferrer.Text)))
+            if (UtilityTools.isSaved(UtilityTools.fileToJson(infoFileURL.Text, infoName.Text, infoType.Text, infoReferrer.Text)))
             {
                 btnSaveFile.Image = Properties.Resources.bookmark_remove_black;
             }

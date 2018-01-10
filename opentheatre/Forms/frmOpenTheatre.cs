@@ -521,7 +521,7 @@ namespace OpenTheatre
         public static List<string> mobileFileTypes = new List<string>() { "APK", "IPA", "APPX", "XAP" };
         public static List<string> torrentFileTypes = new List<string>() { "TORRENT" };
         public static List<string> archivesFileTypes = new List<string>() { "VOB", "ZIP", "RAR", "7Z", "ISO", "PKG", "TAR.GZ" };
-        public static List<string> otherFileTypes = new List<string>() { "EXE", "XML", "TXT", "SQL", "CSV", "APK" };
+        public static List<string> otherFileTypes = new List<string>() { "EXE", "XML", "TXT", "SQL", "CSV" };
 
         // Filter Preferences
         public List<string> selectedFilesFileType;
@@ -531,15 +531,18 @@ namespace OpenTheatre
         {
             dataFilesLocal.Clear();
 
-            foreach (string fileName in Directory.GetFiles(userDownloadsDirectory))
+            foreach (string pathFile in Directory.GetFiles(userDownloadsDirectory))
             {
                 var data = new DatabaseFilesEntity
                 {
-                    Title = Path.GetFileNameWithoutExtension(fileName),
+                    URL = pathFile,
                     Host = rm.GetString("local"),
-                    Type = Path.GetExtension(fileName).Replace(".", "").ToUpper(),
-                    URL = fileName
-                };
+                    Title = Path.GetFileNameWithoutExtension(pathFile),
+                    Type = Path.GetExtension(pathFile).Replace(".", "").ToUpper(),
+                    Size = UtilityTools.ToFileSize(new FileInfo(pathFile).Length),
+                    DateAdded = File.GetCreationTime(pathFile).ToString()
+            };
+
                 dataFilesLocal.Add(data.ToJson());
             }
         }

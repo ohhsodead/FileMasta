@@ -50,7 +50,7 @@ namespace OpenTheatre.CControls
                 }
             }
 
-            if (!UtilityTools.isSaved(UtilityTools.fileToJson(infoFileURL, infoName.Text, Path.GetExtension(infoName.Text), infoHost.Text)))
+            if (UtilityTools.isSaved(UtilityTools.fileToJson(infoFileURL, infoName.Text, Path.GetExtension(infoName.Text), infoHost.Text)))
             {
                 imgAddToBookmarks.Image = Properties.Resources.bookmark_remove;
             }
@@ -91,14 +91,14 @@ namespace OpenTheatre.CControls
         {
             if (!isTorrent)
             {
-                if (!UtilityTools.isSaved(UtilityTools.fileToJson(infoFileURL, infoName.Text, Path.GetExtension(infoName.Text), infoHost.Text)))
+                if (!UtilityTools.isSaved(UtilityTools.fileToJson(infoFileURL, infoName.Text, Path.GetExtension(infoName.Text).Replace(".", "").ToUpper(), infoHost.Text)))
                 {
-                    UtilityTools.saveFile(UtilityTools.fileToJson(infoFileURL, infoName.Text, Path.GetExtension(infoName.Text), infoHost.Text));
+                    UtilityTools.saveFile(UtilityTools.fileToJson(infoFileURL, infoName.Text, Path.GetExtension(infoName.Text).Replace(".", "").ToUpper(), infoHost.Text));
                     imgAddToBookmarks.Image = Properties.Resources.bookmark_remove;
                 }
                 else
                 {
-                    UtilityTools.unsaveFile(UtilityTools.fileToJson(infoFileURL, infoName.Text, Path.GetExtension(infoName.Text), infoHost.Text));
+                    UtilityTools.unsaveFile(UtilityTools.fileToJson(infoFileURL, infoName.Text, Path.GetExtension(infoName.Text).Replace(".", "").ToUpper(), infoHost.Text));
                     imgAddToBookmarks.Image = Properties.Resources.bookmark_plus;
                 }
             }
