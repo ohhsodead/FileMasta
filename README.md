@@ -49,13 +49,13 @@ All contributions are welcome just send a pull request. WebPlex's database allow
 
 ## Screenshots
 ### Movies
-![Movies](\Screenshots\Movies.png)
+![Movies](https://github.com/invu/WebPlex/blob/master/screenshots/Movies.png?raw=true)
 
 ### Movie Details
-![Movie Details](\Screenshots\Movie%20Details.png)
+![Movie Details](https://github.com/invu/WebPlex/blob/master/screenshots/Movie%20Details.png?raw=true)
 
 ### Files
-![Files](\Screenshots\Files.png)
+![Files](https://github.com/invu/WebPlex/blob/master/screenshots/Files.png?raw=true)
 
 ### File Details
-![File Details](\Screenshots\File%20Details.png)
+![File Details](https://github.com/invu/WebPlex/blob/master/screenshots/File%20Details.png?raw=true)
