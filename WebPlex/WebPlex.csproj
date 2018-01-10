@@ -1,0 +1,420 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{75A2CFC6-B0B1-42A6-B1F7-66B3C68A06CA}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebPlex</RootNamespace>
+    <AssemblyName>WebPlex</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\logo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>WebPlex.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CButtonLib">
+      <HintPath>..\..\..\- Plugins\CButton\CButton\bin\Debug\CButtonLib.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ChreneLib">
+      <HintPath>..\..\..\- Plugins\ChreneLib_DLL\ChreneLib.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CControls\ctrlFileDetails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CControls\ctrlFileDetails.Designer.cs">
+      <DependentUpon>ctrlFileDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CControls\ctrlStatus.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CControls\ctrlStatus.Designer.cs">
+      <DependentUpon>ctrlStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\misc-cs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>misc-cs.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities\BackGroundWorker.cs" />
+    <Compile Include="CControls\ctrlMovieDetails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CControls\ctrlMovieDetails.Designer.cs">
+      <DependentUpon>ctrlMovieDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CControls\ctrlPoster.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CControls\ctrlPoster.Designer.cs">
+      <DependentUpon>ctrlPoster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CControls\ctrlSplashScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CControls\ctrlSplashScreen.Designer.cs">
+      <DependentUpon>ctrlSplashScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CControls\ctrlStreamInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CControls\ctrlStreamInfo.Designer.cs">
+      <DependentUpon>ctrlStreamInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataJson\DatabaseFilesEntity.cs" />
+    <Compile Include="Forms\frmWebPlex.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmWebPlex.Designer.cs">
+      <DependentUpon>frmWebPlex.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmShareFile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmShareFile.Designer.cs">
+      <DependentUpon>frmShareFile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmVLCPlayer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmVLCPlayer.Designer.cs">
+      <DependentUpon>frmVLCPlayer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\misc-de.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>misc-de.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\misc-en.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>misc-en.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\misc-es.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>misc-es.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\misc-fr.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>misc-fr.resx</DependentUpon>
+    </Compile>
+    <Compile Include="DataJson\OMDbEntity.cs" />
+    <Compile Include="Utilities\KnownFolder.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="CControls\ctrlProgressBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\regexFileName.cs" />
+    <Compile Include="Utilities\TextLineRemover.cs" />
+    <Compile Include="Utilities\Utilities.cs" />
+    <EmbeddedResource Include="CControls\ctrlMovieDetails.cs.resx">
+      <DependentUpon>ctrlMovieDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CControls\ctrlMovieDetails.de.resx">
+      <DependentUpon>ctrlMovieDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CControls\ctrlMovieDetails.es.resx">
+      <DependentUpon>ctrlMovieDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CControls\ctrlMovieDetails.fr.resx">
+      <DependentUpon>ctrlMovieDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CControls\ctrlMovieDetails.resx">
+      <DependentUpon>ctrlMovieDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CControls\ctrlFileDetails.resx">
+      <DependentUpon>ctrlFileDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CControls\ctrlPoster.resx">
+      <DependentUpon>ctrlPoster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CControls\ctrlSplashScreen.cs.resx">
+      <DependentUpon>ctrlSplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CControls\ctrlSplashScreen.de.resx">
+      <DependentUpon>ctrlSplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CControls\ctrlSplashScreen.es.resx">
+      <DependentUpon>ctrlSplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CControls\ctrlSplashScreen.fr.resx">
+      <DependentUpon>ctrlSplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CControls\ctrlSplashScreen.resx">
+      <DependentUpon>ctrlSplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CControls\ctrlStatus.resx">
+      <DependentUpon>ctrlStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CControls\ctrlStreamInfo.cs.resx">
+      <DependentUpon>ctrlStreamInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CControls\ctrlStreamInfo.fr.resx">
+      <DependentUpon>ctrlStreamInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CControls\ctrlStreamInfo.resx">
+      <DependentUpon>ctrlStreamInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmWebPlex.cs.resx">
+      <DependentUpon>frmWebPlex.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmWebPlex.de.resx">
+      <DependentUpon>frmWebPlex.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmWebPlex.es.resx">
+      <DependentUpon>frmWebPlex.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmWebPlex.fr.resx">
+      <DependentUpon>frmWebPlex.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmWebPlex.resx">
+      <DependentUpon>frmWebPlex.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmShareFile.cs.resx">
+      <DependentUpon>frmShareFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmShareFile.de.resx">
+      <DependentUpon>frmShareFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmShareFile.es.resx">
+      <DependentUpon>frmShareFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmShareFile.fr.resx">
+      <DependentUpon>frmShareFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmShareFile.resx">
+      <DependentUpon>frmShareFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmVLCPlayer.resx">
+      <DependentUpon>frmVLCPlayer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\misc-cs.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>misc-cs.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\misc-de.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>misc-de.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\misc-en.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>misc-en.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\misc-es.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>misc-es.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\misc-fr.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>misc-fr.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\radar.png" />
+    <None Include="Resources\play.png" />
+    <None Include="Resources\send.png" />
+    <None Include="Resources\play-black.png" />
+    <None Include="Resources\web.png" />
+    <None Include="Resources\share-variant-black.png" />
+    <None Include="Resources\facebook-messenger.png" />
+    <None Include="Resources\clipboard-arrow-left-black.png" />
+    <None Include="Resources\link-variant-black.png" />
+    <None Include="Resources\link-variant.png" />
+    <None Include="Resources\clipboard-check-black.png" />
+    <None Include="Resources\alert-octagon-black.png" />
+    <None Include="Resources\arrow-left-black.png" />
+    <None Include="Resources\eye-black.png" />
+    <None Include="Resources\file.png" />
+    <None Include="Resources\chevron-up-black.png" />
+    <None Include="Resources\download.png" />
+    <None Include="Resources\bookmark1.png" />
+    <None Include="Resources\bookmark-plus-black.png" />
+    <None Include="Resources\bookmark-remove-black.png" />
+    <None Include="Resources\bookmark.png" />
+    <Content Include="Resources\opentheatre_logo.ico" />
+    <None Include="Resources\search-white.png" />
+    <None Include="Resources\magnet.png" />
+    <None Include="Resources\google-plus.png" />
+    <None Include="Resources\share-variant.png" />
+    <None Include="Resources\email.png" />
+    <None Include="Resources\twitter.png" />
+    <None Include="Resources\reddit.png" />
+    <None Include="Resources\pinterest.png" />
+    <None Include="Resources\facebook.png" />
+    <None Include="Resources\loading.gif" />
+    <None Include="Resources\refresh.png" />
+    <None Include="Resources\close_small.png" />
+    <None Include="Resources\check.png" />
+    <None Include="Resources\close-circle.png" />
+    <None Include="Resources\search.png" />
+    <None Include="Resources\folder-open.png" />
+    <None Include="Resources\clipboard-check.png" />
+    <None Include="Resources\clipboard-arrow-left.png" />
+    <None Include="Resources\bookmark-remove.png" />
+    <None Include="Resources\keyboard_arrow_down.png" />
+    <None Include="Resources\opentheatre-logo.png" />
+    <None Include="Resources\settings.png" />
+    <None Include="Resources\report.png" />
+    <None Include="Resources\play_circle.png" />
+    <None Include="Resources\local_movies.png" />
+    <None Include="Resources\info.png" />
+    <None Include="Resources\folder.png" />
+    <None Include="Resources\file_download.png" />
+    <None Include="Resources\cloud_download.png" />
+    <None Include="Resources\cloud_done.png" />
+    <None Include="Resources\close.png" />
+    <None Include="Resources\arrow_drop_down_white.png" />
+    <None Include="Resources\arrow_drop_down_black.png" />
+    <None Include="Resources\windows.png" />
+    <None Include="Resources\vlc.png" />
+    <None Include="Resources\dots-horizontal.png" />
+    <None Include="Resources\cloud-sync.png" />
+    <None Include="Resources\bookmark-plus.png" />
+    <None Include="Resources\background-original.jpg" />
+    <None Include="Resources\imdb.png" />
+    <None Include="Resources\opentheatre-text.png" />
+    <None Include="Resources\poster-default.png" />
+    <None Include="Resources\poster-glow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\UnhandledExceptions\UnhandledExceptions.csproj">
+      <Project>{8c34bf91-cce3-47fa-aa32-4b2bb1a6f17a}</Project>
+      <Name>UnhandledExceptions</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxAXVLC">
+      <Guid>{DF2BBE39-40A8-433B-A279-073F48DA94B6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="AXVLC">
+      <Guid>{DF2BBE39-40A8-433B-A279-073F48DA94B6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
