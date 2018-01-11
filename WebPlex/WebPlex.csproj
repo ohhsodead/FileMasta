@@ -323,10 +323,11 @@
     <None Include="Resources\file.png" />
     <None Include="Resources\chevron-up-black.png" />
     <None Include="Resources\download.png" />
-    <None Include="Resources\bookmark1.png" />
     <None Include="Resources\bookmark-plus-black.png" />
     <None Include="Resources\bookmark-remove-black.png" />
     <None Include="Resources\bookmark.png" />
+    <Content Include="Resources\bookmark-plus.png" />
+    <Content Include="Resources\bookmark-remove.png" />
     <Content Include="Resources\opentheatre_logo.ico" />
     <None Include="Resources\search-white.png" />
     <None Include="Resources\magnet.png" />
@@ -346,7 +347,6 @@
     <None Include="Resources\folder-open.png" />
     <None Include="Resources\clipboard-check.png" />
     <None Include="Resources\clipboard-arrow-left.png" />
-    <None Include="Resources\bookmark-remove.png" />
     <None Include="Resources\keyboard_arrow_down.png" />
     <None Include="Resources\opentheatre-logo.png" />
     <None Include="Resources\settings.png" />
@@ -365,7 +365,6 @@
     <None Include="Resources\vlc.png" />
     <None Include="Resources\dots-horizontal.png" />
     <None Include="Resources\cloud-sync.png" />
-    <None Include="Resources\bookmark-plus.png" />
     <None Include="Resources\background-original.jpg" />
     <None Include="Resources\imdb.png" />
     <None Include="Resources\opentheatre-text.png" />

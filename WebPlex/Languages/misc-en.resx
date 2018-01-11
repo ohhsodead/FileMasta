@@ -135,6 +135,9 @@
   <data name="errorSearch" xml:space="preserve">
     <value>Error searching files, try again later...</value>
   </data>
+  <data name="linkIncorrectFormat" xml:space="preserve">
+    <value>This isn't a public web directory.</value>
+  </data>
   <data name="local" xml:space="preserve">
     <value>Local</value>
   </data>

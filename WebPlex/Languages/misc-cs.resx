@@ -135,6 +135,9 @@
   <data name="errorSearch" xml:space="preserve">
     <value>Chyba při hledání souborů, zkuste to znovu později...</value>
   </data>
+  <data name="linkIncorrectFormat" xml:space="preserve">
+    <value>Toto není veřejný webový adresář.</value>
+  </data>
   <data name="local" xml:space="preserve">
     <value>Lokální</value>
   </data>

@@ -18,7 +18,6 @@ using System.Resources;
 using System.Reflection;
 using System.Text;
 using WebPlex.CControls;
-using UnhandledExceptions;
 
 namespace WebPlex
 {
@@ -70,7 +69,7 @@ namespace WebPlex
 
         // Database Files
         public static string linkMovies = "https://dl.dropbox.com/s/qknonvla6qeuiuj/movies-posters.json?dl=0";
-        public static string linkOpenFiles = "https://dl.dropbox.com/s/6ca7v71dwntiu0a/open-files.json?dl=0";
+        public static string linkOpenFiles = "https://dl.dropbox.com/s/ucyeqfn96x7n9lh/open-files.json?dl=0";
         public static string linkOpenDirectories = "https://raw.githubusercontent.com/invu/WebPlex/master/api/open-directories.txt";
 
         // Data/Downloads Directories
@@ -79,7 +78,7 @@ namespace WebPlex
         public static string userDownloadsDirectory = KnownFolders.GetPath(KnownFolder.Downloads) + @"\";
 
         // Updates
-        public static string linkLatestVersion = "https://raw.githubusercontent.com/invu/WebPlex/master/assets/latest-version.txt";
+        public static string linkLatestVersion = "https://dl.dropbox.com/s/wizu59t0tuk7p71/latest-version.txt?dl=0";
         public static string pathInstallerFileName = "WebPlex.Installer.Windows.exe";
         public static string pathDownloadInstaller = userDownloadsDirectory + pathInstallerFileName;
         public static string getLatestInstaller(Version newVersion) { return "https://github.com/invu/WebPlex/releases/download/" + newVersion.ToString() + "/" + pathInstallerFileName; }
@@ -666,30 +665,25 @@ namespace WebPlex
 
         private void dataGridFiles_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            try
+            if (dataGridFiles.CurrentRow.Cells[4].Value.ToString() == rm.GetString("local"))
             {
-                if (dataGridFiles.CurrentRow.Cells[4].Value.ToString() == rm.GetString("local"))
-                {
-                    showFileDetails(dataGridFiles.CurrentRow.Cells[5].Value.ToString(),
-                    dataGridFiles.CurrentRow.Cells[1].Value.ToString() + "." + dataGridFiles.CurrentRow.Cells[0].Value.ToString().ToLower(),
-                    dataGridFiles.CurrentRow.Cells[0].Value.ToString(),
-                    dataGridFiles.CurrentRow.Cells[4].Value.ToString(),
-                    true,
-                    dataGridFiles.CurrentRow.Cells[2].Value.ToString(),
-                    dataGridFiles.CurrentRow.Cells[3].Value.ToString());
-                }
-                else
-                {
-                    showFileDetails(dataGridFiles.CurrentRow.Cells[5].Value.ToString(),
-                    dataGridFiles.CurrentRow.Cells[1].Value.ToString() + "." + dataGridFiles.CurrentRow.Cells[0].Value.ToString().ToLower(),
-                    dataGridFiles.CurrentRow.Cells[0].Value.ToString(), dataGridFiles.CurrentRow.Cells[4].Value.ToString(),
-                    false,
-                    dataGridFiles.CurrentRow.Cells[2].Value.ToString(),
-                    dataGridFiles.CurrentRow.Cells[3].Value.ToString());
-                }
+                showFileDetails(dataGridFiles.CurrentRow.Cells[5].Value.ToString(),
+                dataGridFiles.CurrentRow.Cells[1].Value.ToString() + "." + dataGridFiles.CurrentRow.Cells[0].Value.ToString().ToLower(),
+                dataGridFiles.CurrentRow.Cells[0].Value.ToString(),
+                dataGridFiles.CurrentRow.Cells[4].Value.ToString(),
+                true,
+                dataGridFiles.CurrentRow.Cells[2].Value.ToString(),
+                dataGridFiles.CurrentRow.Cells[3].Value.ToString());
             }
-            catch (Exception ex) { MessageBox.Show("An error occurred showing file details.\n\n" + ex.Message); }
-
+            else
+            {
+                showFileDetails(dataGridFiles.CurrentRow.Cells[5].Value.ToString(),
+                dataGridFiles.CurrentRow.Cells[1].Value.ToString() + "." + dataGridFiles.CurrentRow.Cells[0].Value.ToString().ToLower(),
+                dataGridFiles.CurrentRow.Cells[0].Value.ToString(), dataGridFiles.CurrentRow.Cells[4].Value.ToString(),
+                false,
+                dataGridFiles.CurrentRow.Cells[2].Value.ToString(),
+                dataGridFiles.CurrentRow.Cells[3].Value.ToString());
+            }
         }
 
         delegate void loadFilesCallBack(List<string> dataFiles);
@@ -914,9 +908,9 @@ namespace WebPlex
                         if (!txtSubmitLink.Text.EndsWith("/")) { formattedText = txtSubmitLink.Text + "/"; }
                         Utilities.submitLink(formattedText); txtSubmitLink.Text = "";
                     }
-                    else { MessageBox.Show("Link isn't in the correct format."); }
+                    else { MessageBox.Show(rm.GetString("linkIncorrectFormat")); }
                 }
-                else { MessageBox.Show("This isn't a public web directory."); }
+                else { MessageBox.Show(rm.GetString("linkIncorrectFormat")); }
             }
         }
         //

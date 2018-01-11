@@ -115,6 +115,15 @@ namespace WebPlex.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Toto není veřejný webový adresář..
+        /// </summary>
+        internal static string linkIncorrectFormat {
+            get {
+                return ResourceManager.GetString("linkIncorrectFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Lokální.
         /// </summary>
         internal static string local {

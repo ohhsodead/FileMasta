@@ -115,6 +115,15 @@ namespace WebPlex.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to This isn&apos;t a public web directory..
+        /// </summary>
+        internal static string linkIncorrectFormat {
+            get {
+                return ResourceManager.GetString("linkIncorrectFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Local.
         /// </summary>
         internal static string local {

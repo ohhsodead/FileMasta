@@ -115,6 +115,15 @@ namespace WebPlex.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ce n&apos;est pas un annuaire Web public..
+        /// </summary>
+        internal static string linkIncorrectFormat {
+            get {
+                return ResourceManager.GetString("linkIncorrectFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Local.
         /// </summary>
         internal static string local {
