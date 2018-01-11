@@ -36,7 +36,7 @@ Download and run the latest version of the Windows installer, "WebPlex.Installer
 Please supply as much information about the problem you are experiencing as possible. Your issue has a much greater chance of being resolved if logs are supplied so that we can see what is going on. Creating an issue with '### isn't working' doesn't help anyone to fix the problem.
 
 ## Contributing
-All contributions are welcome just send a pull request. WebPlex's database allows our team (and any other volunteering dev) to implement new trackers in an hour or two. If you'd like support for a new tracker but are not a developer then feel free to leave a request on the [issues page](https://github.com/invu/webplex/issues). It is recommended to use Visual Studio 2017 when making code changes in this project. You can download the community version for free [here](https://www.visualstudio.com/downloads/).
+All contributions are welcome just send a pull request. WebPlex's directory database allows our team (and any other volunteering dev) to implement new indexers in a few seconds. If you'd like support for a new indexer but are not a developer then feel free to leave a request on the [issues page](https://github.com/invu/webplex/issues). It is recommended to use Visual Studio 2017 when making code changes in this project. You can download the community version for free [here](https://www.visualstudio.com/downloads/).
 
 ## Prerequisites
 - [Material Design Icons (Powered by Google)](https://materialdesignicons.com/)
@@ -49,13 +49,13 @@ All contributions are welcome just send a pull request. WebPlex's database allow
 
 ## Screenshots
 ### Movies
-![Movies](\Screenshots\Movies.png)
+![Movies](https://github.com/invu/WebPlex/blob/master/screenshots/movies.png?raw=true)
 
 ### Movie Details
-![Movie Details](\Screenshots\Movie%20Details.png)
+![Movie Details](https://github.com/invu/WebPlex/blob/master/screenshots/movie%20details.png?raw=true)
 
 ### Files
-![Files](\Screenshots\Files.png)
+![Files](https://github.com/invu/WebPlex/blob/master/screenshots/files.png?raw=true)
 
 ### File Details
-![File Details](\Screenshots\File%20Details.png)
+![File Details](https://github.com/invu/WebPlex/blob/master/screenshots/file%20details.png?raw=true)
