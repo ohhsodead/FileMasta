@@ -207,7 +207,7 @@ namespace WebPlex.CControls
             // Open source file in VLC with subtitles
             Process VLC = new Process();
             VLC.StartInfo.FileName = frmWebPlex.pathVLC;
-            VLC.StartInfo.Arguments = ("-vvv " + infoFileURL + " --sub-file=" + infoFileSubtitles);
+            VLC.StartInfo.Arguments = ("-vvv " + infoFileURL.Text + " --sub-file=" + infoFileSubtitles);
             VLC.Start();
         }
 
