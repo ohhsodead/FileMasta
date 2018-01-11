@@ -1636,6 +1636,7 @@
             this.btnFilesSort.ShowFocus = CButtonLib.CButton.eFocus.None;
             this.btnFilesSort.SideImage = ((System.Drawing.Image)(resources.GetObject("btnFilesSort.SideImage")));
             this.btnFilesSort.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnFilesSort.SideImageSize = new System.Drawing.Size(22, 22);
             this.btnFilesSort.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnFilesSort.TextMargin = new System.Windows.Forms.Padding(10, 3, 2, 2);
             this.btnFilesSort.TextShadowShow = false;
@@ -1663,6 +1664,7 @@
             this.btnFilesHost.ShowFocus = CButtonLib.CButton.eFocus.None;
             this.btnFilesHost.SideImage = ((System.Drawing.Image)(resources.GetObject("btnFilesHost.SideImage")));
             this.btnFilesHost.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnFilesHost.SideImageSize = new System.Drawing.Size(22, 22);
             this.btnFilesHost.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnFilesHost.TextMargin = new System.Windows.Forms.Padding(10, 3, 2, 2);
             this.btnFilesHost.TextShadowShow = false;
