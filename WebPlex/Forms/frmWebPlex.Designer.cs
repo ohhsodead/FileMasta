@@ -41,7 +41,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tab = new System.Windows.Forms.TabControl();
             this.tabHome = new System.Windows.Forms.TabPage();
-            this.imgLogo = new System.Windows.Forms.PictureBox();
             this.lblSearchTitle = new System.Windows.Forms.Label();
             this.btnSearchFilesHome = new CButtonLib.CButton();
             this.txtSearchFilesHome = new ChreneLib.Controls.TextBoxes.CTextBox();
@@ -94,6 +93,10 @@
             this.tabDiscover = new System.Windows.Forms.TabPage();
             this.lblHeaderDiscover = new System.Windows.Forms.Label();
             this.dataGridDiscover = new System.Windows.Forms.DataGridView();
+            this.columnDiscoverCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnDiscoverSite = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnDiscoverType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnDiscoverURL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabSubmit = new System.Windows.Forms.TabPage();
             this.panelSubmitDescription = new System.Windows.Forms.FlowLayoutPanel();
             this.lblSubSubmit = new System.Windows.Forms.Label();
@@ -144,7 +147,6 @@
             this.imgSpinner = new System.Windows.Forms.PictureBox();
             this.tab.SuspendLayout();
             this.tabHome.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
             this.tabMovies.SuspendLayout();
             this.panelMovieFilters.SuspendLayout();
             this.panelMoviesRandom.SuspendLayout();
@@ -194,22 +196,12 @@
             // tabHome
             // 
             this.tabHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
-            this.tabHome.Controls.Add(this.imgLogo);
             this.tabHome.Controls.Add(this.lblSearchTitle);
             this.tabHome.Controls.Add(this.btnSearchFilesHome);
             this.tabHome.Controls.Add(this.txtSearchFilesHome);
             this.tabHome.Controls.Add(this.bgSearchFilesHome);
             resources.ApplyResources(this.tabHome, "tabHome");
             this.tabHome.Name = "tabHome";
-            // 
-            // imgLogo
-            // 
-            resources.ApplyResources(this.imgLogo, "imgLogo");
-            this.imgLogo.BackColor = System.Drawing.Color.Transparent;
-            this.imgLogo.Cursor = System.Windows.Forms.Cursors.Default;
-            this.imgLogo.Image = global::WebPlex.Properties.Resources.logo;
-            this.imgLogo.Name = "imgLogo";
-            this.imgLogo.TabStop = false;
             // 
             // lblSearchTitle
             // 
@@ -612,6 +604,7 @@
             resources.GetString("cmboBoxFilesSort.Items2")});
             this.cmboBoxFilesSort.Name = "cmboBoxFilesSort";
             this.cmboBoxFilesSort.TabStop = false;
+            this.cmboBoxFilesSort.SelectedIndexChanged += new System.EventHandler(this.cmboBoxFilesSort_SelectedIndexChanged);
             // 
             // panelFilesHost
             // 
@@ -656,6 +649,7 @@
             resources.GetString("cmboBoxFilesHost.Items")});
             this.cmboBoxFilesHost.Name = "cmboBoxFilesHost";
             this.cmboBoxFilesHost.TabStop = false;
+            this.cmboBoxFilesHost.SelectedIndexChanged += new System.EventHandler(this.cmboBoxFilesHost_SelectedIndexChanged);
             // 
             // txtSearchFiles
             // 
@@ -1081,6 +1075,11 @@
             this.dataGridDiscover.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridDiscover.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridDiscover.ColumnHeadersVisible = false;
+            this.dataGridDiscover.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.columnDiscoverCount,
+            this.columnDiscoverSite,
+            this.columnDiscoverType,
+            this.columnDiscoverURL});
             this.dataGridDiscover.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dataGridDiscover.EnableHeadersVisualStyles = false;
             this.dataGridDiscover.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
@@ -1104,6 +1103,33 @@
             this.dataGridDiscover.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridDiscover.ShowEditingIcon = false;
             this.dataGridDiscover.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridDiscover_CellContentClick);
+            // 
+            // columnDiscoverCount
+            // 
+            this.columnDiscoverCount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            resources.ApplyResources(this.columnDiscoverCount, "columnDiscoverCount");
+            this.columnDiscoverCount.Name = "columnDiscoverCount";
+            this.columnDiscoverCount.ReadOnly = true;
+            // 
+            // columnDiscoverSite
+            // 
+            this.columnDiscoverSite.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            resources.ApplyResources(this.columnDiscoverSite, "columnDiscoverSite");
+            this.columnDiscoverSite.Name = "columnDiscoverSite";
+            this.columnDiscoverSite.ReadOnly = true;
+            // 
+            // columnDiscoverType
+            // 
+            this.columnDiscoverType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            resources.ApplyResources(this.columnDiscoverType, "columnDiscoverType");
+            this.columnDiscoverType.Name = "columnDiscoverType";
+            this.columnDiscoverType.ReadOnly = true;
+            // 
+            // columnDiscoverURL
+            // 
+            resources.ApplyResources(this.columnDiscoverURL, "columnDiscoverURL");
+            this.columnDiscoverURL.Name = "columnDiscoverURL";
+            this.columnDiscoverURL.ReadOnly = true;
             // 
             // tabSubmit
             // 
@@ -1705,7 +1731,6 @@
             this.tab.ResumeLayout(false);
             this.tabHome.ResumeLayout(false);
             this.tabHome.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).EndInit();
             this.tabMovies.ResumeLayout(false);
             this.tabMovies.PerformLayout();
             this.panelMovieFilters.ResumeLayout(false);
@@ -1848,7 +1873,10 @@
         private CButtonLib.CButton titleFilesLocal;
         private CButtonLib.CButton titleFilesSaved;
         public System.Windows.Forms.TabPage tabHome;
-        private System.Windows.Forms.PictureBox imgLogo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnDiscoverCount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnDiscoverSite;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnDiscoverType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnDiscoverURL;
     }
 }
 

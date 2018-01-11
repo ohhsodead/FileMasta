@@ -117,79 +117,323 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="&gt;&gt;imgAddToBookmarks.Name" xml:space="preserve">
-    <value>imgAddToBookmarks</value>
-  </data>
-  <data name="imgAddToBookmarks.ToolTip" xml:space="preserve">
-    <value>Add to Bookmarks</value>
-  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="infoHost.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="infoHost.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9.75pt</value>
+  </data>
+  <data name="infoHost.Location" type="System.Drawing.Point, System.Drawing">
+    <value>27, 2</value>
+  </data>
+  <data name="infoHost.Size" type="System.Drawing.Size, System.Drawing">
+    <value>130, 17</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="infoHost.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="infoHost.Text" xml:space="preserve">
+    <value>Host</value>
+  </data>
+  <data name="&gt;&gt;infoHost.Name" xml:space="preserve">
+    <value>infoHost</value>
+  </data>
+  <data name="&gt;&gt;infoHost.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;infoHost.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;infoHost.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
   <data name="infoName.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Left, Right</value>
   </data>
-  <data name="imgDownload.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 0, 3, 0</value>
+  <data name="infoName.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9.75pt</value>
   </data>
-  <data name="imgShare.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Right</value>
+  <data name="infoName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>160, 2</value>
   </data>
-  <data name="imgMagnet.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 5, 0</value>
+  <data name="infoName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>345, 17</value>
   </data>
-  <data name="&gt;&gt;MPCToolStripMenuItem.Name" xml:space="preserve">
-    <value>MPCToolStripMenuItem</value>
+  <data name="infoName.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
-  <data name="&gt;&gt;imgReportBroken.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="infoName.Text" xml:space="preserve">
+    <value>Name</value>
   </data>
   <data name="&gt;&gt;infoName.Name" xml:space="preserve">
     <value>infoName</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="imgWatch.Location" type="System.Drawing.Point, System.Drawing">
-    <value>37, 0</value>
+  <data name="&gt;&gt;infoName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;infoName.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;infoName.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <metadata name="contextFileName.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="VLC2ToolStripMenuItem.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Transparent</value>
+  </data>
+  <data name="VLC2ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>145, 22</value>
+  </data>
+  <data name="VLC2ToolStripMenuItem.Text" xml:space="preserve">
+    <value>VLC (Built-in)</value>
+  </data>
+  <data name="WMPToolStripMenuItem.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Transparent</value>
+  </data>
+  <data name="WMPToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>145, 22</value>
+  </data>
+  <data name="WMPToolStripMenuItem.Text" xml:space="preserve">
+    <value>WMP</value>
+  </data>
+  <data name="VLCToolStripMenuItem.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Transparent</value>
+  </data>
+  <data name="VLCToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>145, 22</value>
+  </data>
+  <data name="VLCToolStripMenuItem.Text" xml:space="preserve">
+    <value>VLC</value>
+  </data>
+  <data name="MPCToolStripMenuItem.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Transparent</value>
+  </data>
+  <data name="MPCToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>145, 22</value>
+  </data>
+  <data name="MPCToolStripMenuItem.Text" xml:space="preserve">
+    <value>MPC</value>
+  </data>
+  <data name="contextFileName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>146, 92</value>
+  </data>
+  <data name="&gt;&gt;contextFileName.Name" xml:space="preserve">
+    <value>contextFileName</value>
+  </data>
+  <data name="&gt;&gt;contextFileName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>160, 17</value>
+  </metadata>
+  <data name="imgShare.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="imgShare.Location" type="System.Drawing.Point, System.Drawing">
+    <value>91, 0</value>
+  </data>
+  <data name="imgShare.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 0, 3, 0</value>
+  </data>
+  <data name="imgShare.Size" type="System.Drawing.Size, System.Drawing">
+    <value>21, 21</value>
+  </data>
+  <data name="imgShare.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>StretchImage</value>
+  </data>
+  <data name="imgShare.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="imgShare.ToolTip" xml:space="preserve">
+    <value>Share File</value>
+  </data>
+  <data name="&gt;&gt;imgShare.Name" xml:space="preserve">
+    <value>imgShare</value>
+  </data>
+  <data name="&gt;&gt;imgShare.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;imgShare.Parent" xml:space="preserve">
+    <value>panelControls</value>
+  </data>
+  <data name="&gt;&gt;imgShare.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="imgCopyURL.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="imgCopyURL.Location" type="System.Drawing.Point, System.Drawing">
+    <value>64, 0</value>
+  </data>
+  <data name="imgCopyURL.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 0, 3, 0</value>
+  </data>
+  <data name="imgCopyURL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>21, 21</value>
+  </data>
+  <data name="imgCopyURL.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>StretchImage</value>
+  </data>
+  <data name="imgCopyURL.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="imgCopyURL.ToolTip" xml:space="preserve">
+    <value>Copy URL</value>
+  </data>
+  <data name="&gt;&gt;imgCopyURL.Name" xml:space="preserve">
+    <value>imgCopyURL</value>
+  </data>
+  <data name="&gt;&gt;imgCopyURL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;imgCopyURL.Parent" xml:space="preserve">
+    <value>panelControls</value>
+  </data>
+  <data name="&gt;&gt;imgCopyURL.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="imgReportBroken.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Right</value>
   </data>
   <data name="imgReportBroken.Location" type="System.Drawing.Point, System.Drawing">
     <value>118, 0</value>
   </data>
-  <data name="infoHost.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 9.75pt</value>
+  <data name="imgReportBroken.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 0, 3, 0</value>
   </data>
-  <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>12, 12, 12, 12</value>
+  <data name="imgReportBroken.Size" type="System.Drawing.Size, System.Drawing">
+    <value>21, 21</value>
   </data>
-  <data name="imgDownload.ToolTip" xml:space="preserve">
-    <value>Download Now</value>
+  <data name="imgReportBroken.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>StretchImage</value>
+  </data>
+  <data name="imgReportBroken.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="imgReportBroken.ToolTip" xml:space="preserve">
+    <value>Report Broken</value>
+  </data>
+  <data name="&gt;&gt;imgReportBroken.Name" xml:space="preserve">
+    <value>imgReportBroken</value>
+  </data>
+  <data name="&gt;&gt;imgReportBroken.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;imgReportBroken.Parent" xml:space="preserve">
+    <value>panelControls</value>
+  </data>
+  <data name="&gt;&gt;imgReportBroken.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="imgWatch.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="imgWatch.Location" type="System.Drawing.Point, System.Drawing">
+    <value>37, 0</value>
+  </data>
+  <data name="imgWatch.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 0, 3, 0</value>
+  </data>
+  <data name="imgWatch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>21, 21</value>
+  </data>
+  <data name="imgWatch.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>StretchImage</value>
+  </data>
+  <data name="imgWatch.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="imgWatch.ToolTip" xml:space="preserve">
+    <value>Watch Now</value>
+  </data>
+  <data name="&gt;&gt;imgWatch.Name" xml:space="preserve">
+    <value>imgWatch</value>
+  </data>
+  <data name="&gt;&gt;imgWatch.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;imgWatch.Parent" xml:space="preserve">
     <value>panelControls</value>
   </data>
   <data name="&gt;&gt;imgWatch.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="contextFileName.ToolTip" xml:space="preserve">
-    <value />
+  <data name="imgMagnet.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Right</value>
   </data>
-  <data name="WMPToolStripMenuItem.Text" xml:space="preserve">
-    <value>WMP</value>
+  <data name="imgMagnet.Location" type="System.Drawing.Point, System.Drawing">
+    <value>120, 23</value>
   </data>
-  <data name="imgReportBroken.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="imgMagnet.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 5, 0</value>
+  </data>
+  <data name="imgMagnet.Size" type="System.Drawing.Size, System.Drawing">
+    <value>17, 17</value>
+  </data>
+  <data name="imgMagnet.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>StretchImage</value>
+  </data>
+  <data name="imgMagnet.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="imgMagnet.ToolTip" xml:space="preserve">
+    <value>Open Magnet</value>
+  </data>
+  <data name="imgMagnet.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;imgMagnet.Name" xml:space="preserve">
+    <value>imgMagnet</value>
+  </data>
+  <data name="&gt;&gt;imgMagnet.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;imgMagnet.Parent" xml:space="preserve">
+    <value>panelControls</value>
+  </data>
+  <data name="&gt;&gt;imgMagnet.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="imgDownload.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="imgDownload.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 0</value>
+  </data>
+  <data name="imgDownload.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 0, 3, 0</value>
   </data>
-  <data name="&gt;&gt;infoName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="imgDownload.Size" type="System.Drawing.Size, System.Drawing">
+    <value>21, 21</value>
   </data>
-  <data name="&gt;&gt;panelControls.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="imgDownload.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>StretchImage</value>
   </data>
-  <data name="&gt;&gt;imgCopyURL.Type" xml:space="preserve">
+  <data name="imgDownload.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="imgDownload.ToolTip" xml:space="preserve">
+    <value>Download Now</value>
+  </data>
+  <data name="&gt;&gt;imgDownload.Name" xml:space="preserve">
+    <value>imgDownload</value>
+  </data>
+  <data name="&gt;&gt;imgDownload.Type" xml:space="preserve">
     <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;imgAddToBookmarks.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;imgDownload.Parent" xml:space="preserve">
+    <value>panelControls</value>
   </data>
-  <data name="&gt;&gt;infoHost.Name" xml:space="preserve">
-    <value>infoHost</value>
+  <data name="&gt;&gt;imgDownload.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="imgAddToBookmarks.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
   </data>
   <data name="imgAddToBookmarks.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -204,371 +448,115 @@
         0yf3lkxGScqHjQAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="&gt;&gt;imgCopyURL.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="imgAddToBookmarks.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1, 0</value>
   </data>
-  <data name="&gt;&gt;infoName.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="infoHost.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 17</value>
-  </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
-  </data>
-  <data name="imgCopyURL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>64, 0</value>
-  </data>
-  <data name="panelControls.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;VLC2ToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="imgWatch.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Right</value>
-  </data>
-  <data name="infoHost.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;toolTip1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="imgCopyURL.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
-  </data>
-  <data name="imgMagnet.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
-  </data>
-  <data name="MPCToolStripMenuItem.Text" xml:space="preserve">
-    <value>MPC</value>
-  </data>
-  <data name="panelControls.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Right</value>
-  </data>
-  <data name="imgDownload.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
-  <data name="imgReportBroken.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
-  </data>
-  <data name="VLC2ToolStripMenuItem.Text" xml:space="preserve">
-    <value>VLC (Built-in)</value>
-  </data>
-  <data name="infoHost.Location" type="System.Drawing.Point, System.Drawing">
-    <value>27, 2</value>
-  </data>
-  <data name="imgReportBroken.ToolTip" xml:space="preserve">
-    <value>Report Broken</value>
-  </data>
-  <data name="WMPToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>145, 22</value>
-  </data>
-  <data name="imgDownload.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Right</value>
-  </data>
-  <data name="panelControls.Location" type="System.Drawing.Point, System.Drawing">
-    <value>511, 0</value>
-  </data>
-  <data name="imgMagnet.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>StretchImage</value>
-  </data>
-  <data name="infoName.Text" xml:space="preserve">
-    <value>Name</value>
-  </data>
-  <data name="MPCToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>145, 22</value>
-  </data>
-  <data name="&gt;&gt;imgDownload.ZOrder" xml:space="preserve">
-    <value>4</value>
+  <data name="imgAddToBookmarks.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 23</value>
   </data>
   <data name="imgAddToBookmarks.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>StretchImage</value>
   </data>
-  <data name="&gt;&gt;toolTip1.Name" xml:space="preserve">
-    <value>toolTip1</value>
+  <data name="imgAddToBookmarks.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
   </data>
-  <data name="imgWatch.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>StretchImage</value>
+  <data name="imgAddToBookmarks.ToolTip" xml:space="preserve">
+    <value>Add to Bookmarks</value>
   </data>
-  <data name="&gt;&gt;infoHost.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;imgAddToBookmarks.Name" xml:space="preserve">
+    <value>imgAddToBookmarks</value>
   </data>
-  <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>653, 22</value>
+  <data name="&gt;&gt;imgAddToBookmarks.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="imgShare.ToolTip" xml:space="preserve">
-    <value>Share File</value>
-  </data>
-  <data name="&gt;&gt;MPCToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="imgCopyURL.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 0, 3, 0</value>
-  </data>
-  <data name="&gt;&gt;VLCToolStripMenuItem.Name" xml:space="preserve">
-    <value>VLCToolStripMenuItem</value>
-  </data>
-  <data name="WMPToolStripMenuItem.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Transparent</value>
-  </data>
-  <data name="imgDownload.Size" type="System.Drawing.Size, System.Drawing">
-    <value>21, 21</value>
-  </data>
-  <data name="imgCopyURL.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Right</value>
-  </data>
-  <data name="imgCopyURL.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>StretchImage</value>
-  </data>
-  <data name="&gt;&gt;VLCToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="imgWatch.ToolTip" xml:space="preserve">
-    <value>Watch Now</value>
-  </data>
-  <data name="imgMagnet.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Right</value>
-  </data>
-  <data name="&gt;&gt;VLC2ToolStripMenuItem.Name" xml:space="preserve">
-    <value>VLC2ToolStripMenuItem</value>
-  </data>
-  <data name="imgAddToBookmarks.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left</value>
-  </data>
-  <data name="&gt;&gt;imgWatch.Parent" xml:space="preserve">
-    <value>panelControls</value>
-  </data>
-  <data name="&gt;&gt;panelControls.Name" xml:space="preserve">
-    <value>panelControls</value>
-  </data>
-  <data name="infoName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>345, 17</value>
-  </data>
-  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 8.25pt</value>
-  </data>
-  <data name="&gt;&gt;contextFileName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="imgCopyURL.ToolTip" xml:space="preserve">
-    <value>Copy URL</value>
-  </data>
-  <data name="VLCToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>145, 22</value>
-  </data>
-  <data name="imgReportBroken.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Right</value>
+  <data name="&gt;&gt;imgAddToBookmarks.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="&gt;&gt;imgAddToBookmarks.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="imgShare.Location" type="System.Drawing.Point, System.Drawing">
-    <value>91, 0</value>
-  </data>
-  <data name="imgMagnet.Size" type="System.Drawing.Size, System.Drawing">
-    <value>17, 17</value>
+  <data name="panelControls.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Right</value>
   </data>
   <data name="panelControls.FlowDirection" type="System.Windows.Forms.FlowDirection, System.Windows.Forms">
     <value>RightToLeft</value>
   </data>
-  <data name="&gt;&gt;imgShare.Parent" xml:space="preserve">
-    <value>panelControls</value>
+  <data name="panelControls.Location" type="System.Drawing.Point, System.Drawing">
+    <value>511, 0</value>
   </data>
-  <data name="imgReportBroken.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>StretchImage</value>
-  </data>
-  <data name="&gt;&gt;panelControls.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;infoHost.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="panelControls.Size" type="System.Drawing.Size, System.Drawing">
+    <value>142, 21</value>
   </data>
   <data name="panelControls.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="imgShare.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>StretchImage</value>
-  </data>
-  <data name="contextFileName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>146, 92</value>
-  </data>
-  <data name="&gt;&gt;imgShare.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;infoHost.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;imgMagnet.Name" xml:space="preserve">
-    <value>imgMagnet</value>
-  </data>
-  <data name="VLCToolStripMenuItem.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Transparent</value>
-  </data>
-  <data name="infoName.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;imgMagnet.Parent" xml:space="preserve">
-    <value>panelControls</value>
-  </data>
-  <data name="&gt;&gt;imgReportBroken.Name" xml:space="preserve">
-    <value>imgReportBroken</value>
-  </data>
-  <data name="&gt;&gt;imgMagnet.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;imgCopyURL.Parent" xml:space="preserve">
-    <value>panelControls</value>
-  </data>
-  <data name="infoHost.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="imgMagnet.ToolTip" xml:space="preserve">
-    <value>Open Magnet</value>
-  </data>
-  <data name="VLC2ToolStripMenuItem.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Transparent</value>
-  </data>
-  <data name="imgDownload.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 0</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.UserControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;WMPToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="VLC2ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>145, 22</value>
-  </data>
-  <data name="&gt;&gt;imgDownload.Parent" xml:space="preserve">
+  <data name="&gt;&gt;panelControls.Name" xml:space="preserve">
     <value>panelControls</value>
   </data>
   <data name="&gt;&gt;panelControls.Type" xml:space="preserve">
     <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="imgMagnet.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="imgAddToBookmarks.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 23</value>
-  </data>
-  <data name="&gt;&gt;imgWatch.Name" xml:space="preserve">
-    <value>imgWatch</value>
-  </data>
-  <data name="imgAddToBookmarks.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1, 0</value>
-  </data>
-  <data name="imgWatch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>21, 21</value>
-  </data>
-  <data name="imgShare.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 0, 3, 0</value>
-  </data>
-  <data name="imgMagnet.Location" type="System.Drawing.Point, System.Drawing">
-    <value>120, 23</value>
-  </data>
-  <data name="&gt;&gt;imgDownload.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="$this.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;imgShare.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="imgDownload.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>StretchImage</value>
-  </data>
-  <data name="panelControls.Size" type="System.Drawing.Size, System.Drawing">
-    <value>142, 21</value>
-  </data>
-  <data name="imgCopyURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>21, 21</value>
-  </data>
-  <data name="&gt;&gt;infoName.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;contextFileName.Name" xml:space="preserve">
-    <value>contextFileName</value>
-  </data>
-  <data name="imgReportBroken.Size" type="System.Drawing.Size, System.Drawing">
-    <value>21, 21</value>
-  </data>
-  <data name="&gt;&gt;imgWatch.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="infoName.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 9.75pt</value>
-  </data>
-  <data name="VLCToolStripMenuItem.Text" xml:space="preserve">
-    <value>VLC</value>
-  </data>
-  <data name="&gt;&gt;WMPToolStripMenuItem.Name" xml:space="preserve">
-    <value>WMPToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;imgMagnet.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;imgReportBroken.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;imgAddToBookmarks.Parent" xml:space="preserve">
+  <data name="&gt;&gt;panelControls.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;imgCopyURL.Name" xml:space="preserve">
-    <value>imgCopyURL</value>
-  </data>
-  <data name="imgShare.Size" type="System.Drawing.Size, System.Drawing">
-    <value>21, 21</value>
-  </data>
-  <data name="infoName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>160, 2</value>
-  </data>
-  <data name="&gt;&gt;imgDownload.Name" xml:space="preserve">
-    <value>imgDownload</value>
-  </data>
-  <data name="imgAddToBookmarks.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
-  <data name="MPCToolStripMenuItem.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Transparent</value>
-  </data>
-  <data name="&gt;&gt;imgShare.Name" xml:space="preserve">
-    <value>imgShare</value>
-  </data>
-  <data name="imgShare.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
-  </data>
-  <data name="infoName.TabIndex" type="System.Int32, mscorlib">
+  <data name="&gt;&gt;panelControls.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>ctrlStreamInfo</value>
-  </data>
-  <data name="imgWatch.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
-  </data>
-  <data name="infoHost.Text" xml:space="preserve">
-    <value>Host</value>
-  </data>
-  <data name="imgWatch.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 0, 3, 0</value>
-  </data>
-  <data name="infoHost.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left</value>
-  </data>
-  <metadata name="contextFileName.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>25</value>
   </metadata>
-  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>160, 17</value>
-  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 8.25pt</value>
+  </data>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 0, 3, 0</value>
+  </data>
+  <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>12, 12, 12, 12</value>
+  </data>
+  <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
+    <value>653, 22</value>
+  </data>
+  <data name="&gt;&gt;VLC2ToolStripMenuItem.Name" xml:space="preserve">
+    <value>VLC2ToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;VLC2ToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;WMPToolStripMenuItem.Name" xml:space="preserve">
+    <value>WMPToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;WMPToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;VLCToolStripMenuItem.Name" xml:space="preserve">
+    <value>VLCToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;VLCToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;MPCToolStripMenuItem.Name" xml:space="preserve">
+    <value>MPCToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;MPCToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolTip1.Name" xml:space="preserve">
+    <value>toolTip1</value>
+  </data>
+  <data name="&gt;&gt;toolTip1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>ctrlStreamInfo</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.UserControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

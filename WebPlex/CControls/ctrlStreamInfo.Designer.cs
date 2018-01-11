@@ -63,7 +63,6 @@
             this.infoHost.AutoEllipsis = true;
             this.infoHost.Cursor = System.Windows.Forms.Cursors.Default;
             this.infoHost.Name = "infoHost";
-            this.toolTip1.SetToolTip(this.infoHost, resources.GetString("infoHost.ToolTip"));
             // 
             // infoName
             // 
@@ -71,11 +70,9 @@
             this.infoName.AutoEllipsis = true;
             this.infoName.Cursor = System.Windows.Forms.Cursors.Default;
             this.infoName.Name = "infoName";
-            this.toolTip1.SetToolTip(this.infoName, resources.GetString("infoName.ToolTip"));
             // 
             // contextFileName
             // 
-            resources.ApplyResources(this.contextFileName, "contextFileName");
             this.contextFileName.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.VLC2ToolStripMenuItem,
             this.WMPToolStripMenuItem,
@@ -83,33 +80,33 @@
             this.MPCToolStripMenuItem});
             this.contextFileName.Name = "contextMenuStrip1";
             this.contextFileName.ShowItemToolTips = false;
-            this.toolTip1.SetToolTip(this.contextFileName, resources.GetString("contextFileName.ToolTip"));
+            resources.ApplyResources(this.contextFileName, "contextFileName");
             // 
             // VLC2ToolStripMenuItem
             // 
-            resources.ApplyResources(this.VLC2ToolStripMenuItem, "VLC2ToolStripMenuItem");
             this.VLC2ToolStripMenuItem.Image = global::WebPlex.Properties.Resources.vlc;
+            resources.ApplyResources(this.VLC2ToolStripMenuItem, "VLC2ToolStripMenuItem");
             this.VLC2ToolStripMenuItem.Name = "VLC2ToolStripMenuItem";
             this.VLC2ToolStripMenuItem.Click += new System.EventHandler(this.VLC2ToolStripMenuItem_Click);
             // 
             // WMPToolStripMenuItem
             // 
-            resources.ApplyResources(this.WMPToolStripMenuItem, "WMPToolStripMenuItem");
             this.WMPToolStripMenuItem.Image = global::WebPlex.Properties.Resources.windows;
+            resources.ApplyResources(this.WMPToolStripMenuItem, "WMPToolStripMenuItem");
             this.WMPToolStripMenuItem.Name = "WMPToolStripMenuItem";
             this.WMPToolStripMenuItem.Click += new System.EventHandler(this.WMPToolStripMenuItem_Click);
             // 
             // VLCToolStripMenuItem
             // 
-            resources.ApplyResources(this.VLCToolStripMenuItem, "VLCToolStripMenuItem");
             this.VLCToolStripMenuItem.Image = global::WebPlex.Properties.Resources.vlc;
+            resources.ApplyResources(this.VLCToolStripMenuItem, "VLCToolStripMenuItem");
             this.VLCToolStripMenuItem.Name = "VLCToolStripMenuItem";
             this.VLCToolStripMenuItem.Click += new System.EventHandler(this.VLCToolStripMenuItem_Click);
             // 
             // MPCToolStripMenuItem
             // 
-            resources.ApplyResources(this.MPCToolStripMenuItem, "MPCToolStripMenuItem");
             this.MPCToolStripMenuItem.Image = global::WebPlex.Properties.Resources.dots_horizontal;
+            resources.ApplyResources(this.MPCToolStripMenuItem, "MPCToolStripMenuItem");
             this.MPCToolStripMenuItem.Name = "MPCToolStripMenuItem";
             this.MPCToolStripMenuItem.Click += new System.EventHandler(this.MPCToolStripMenuItem_Click);
             // 
@@ -199,7 +196,6 @@
             this.panelControls.Controls.Add(this.imgDownload);
             this.panelControls.Controls.Add(this.imgMagnet);
             this.panelControls.Name = "panelControls";
-            this.toolTip1.SetToolTip(this.panelControls, resources.GetString("panelControls.ToolTip"));
             // 
             // ctrlStreamInfo
             // 
@@ -213,7 +209,6 @@
             this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.Color.White;
             this.Name = "ctrlStreamInfo";
-            this.toolTip1.SetToolTip(this, resources.GetString("$this.ToolTip"));
             this.Load += new System.EventHandler(this.ctrlStreamInfo_Load);
             this.contextFileName.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.imgShare)).EndInit();

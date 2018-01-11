@@ -105,10 +105,10 @@ namespace WebPlex
             Directory.CreateDirectory(pathRoot);
             Directory.CreateDirectory(pathData);
 
-            tabAbout.BackgroundImage = Utilities.ChangeOpacity(Properties.Resources.background_original, 0.5F);
-            tabSettings.BackgroundImage = Utilities.ChangeOpacity(Properties.Resources.background_original, 0.5F);
             tabHome.BackgroundImage = Utilities.ChangeOpacity(Properties.Resources.background_original, 0.5F);
             tabSubmit.BackgroundImage = Utilities.ChangeOpacity(Properties.Resources.background_original, 0.5F);
+            tabSettings.BackgroundImage = Utilities.ChangeOpacity(Properties.Resources.background_original, 0.5F);
+            tabAbout.BackgroundImage = Utilities.ChangeOpacity(Properties.Resources.background_original, 0.5F);
 
             lblAboutVersion.Text = "v" + Application.ProductVersion;
 
@@ -155,9 +155,6 @@ namespace WebPlex
 
             dataMovies.AddRange(File.ReadAllLines(pathData + "movies-posters.json").Reverse());
             //
-
-            // Get Local Files
-            loadLocalFiles();
         }
 
         void worker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
@@ -541,7 +538,7 @@ namespace WebPlex
         {
             dataFilesLocal.Clear();
 
-            foreach (string pathFile in Directory.GetFiles(userDownloadsDirectory))
+            foreach (var pathFile in Utilities.getFiles(KnownFolders.GetPath(KnownFolder.Downloads), String.Join("|", allFileTypes), SearchOption.TopDirectoryOnly))
             {
                 var data = new DatabaseFilesEntity
                 {
@@ -975,7 +972,7 @@ namespace WebPlex
             Properties.Settings.Default.Save();
             Thread.Sleep(500);
         }
-
+        
         private void btnSettingsRestoreDefault_ClickButtonArea(object Sender, MouseEventArgs e)
         {
             Thread.Sleep(500);

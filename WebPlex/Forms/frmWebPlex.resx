@@ -121,44 +121,14 @@
   <data name="tab.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
-  <data name="imgLogo.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="imgLogo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="imgLogo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>309, 84</value>
-  </data>
-  <data name="imgLogo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>250, 250</value>
-  </data>
-  <data name="imgLogo.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>StretchImage</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="imgLogo.TabIndex" type="System.Int32, mscorlib">
-    <value>27</value>
-  </data>
-  <data name="&gt;&gt;imgLogo.Name" xml:space="preserve">
-    <value>imgLogo</value>
-  </data>
-  <data name="&gt;&gt;imgLogo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;imgLogo.Parent" xml:space="preserve">
-    <value>tabHome</value>
-  </data>
-  <data name="&gt;&gt;imgLogo.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="lblSearchTitle.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="lblSearchTitle.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="lblSearchTitle.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Semibold, 17pt</value>
   </data>
@@ -166,7 +136,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblSearchTitle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>319, 342</value>
+    <value>319, 36</value>
   </data>
   <data name="lblSearchTitle.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 9, 3, 9</value>
@@ -190,7 +160,7 @@
     <value>tabHome</value>
   </data>
   <data name="&gt;&gt;lblSearchTitle.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="btnSearchFilesHome.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
@@ -199,7 +169,7 @@
     <value>Segoe UI, 8.25pt</value>
   </data>
   <data name="btnSearchFilesHome.Location" type="System.Drawing.Point, System.Drawing">
-    <value>658, 398</value>
+    <value>658, 92</value>
   </data>
   <data name="btnSearchFilesHome.Size" type="System.Drawing.Size, System.Drawing">
     <value>36, 36</value>
@@ -220,7 +190,7 @@
     <value>tabHome</value>
   </data>
   <data name="&gt;&gt;btnSearchFilesHome.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="txtSearchFilesHome.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
@@ -229,7 +199,7 @@
     <value>Segoe UI, 10.75pt</value>
   </data>
   <data name="txtSearchFilesHome.Location" type="System.Drawing.Point, System.Drawing">
-    <value>184, 406</value>
+    <value>183, 100</value>
   </data>
   <data name="txtSearchFilesHome.Size" type="System.Drawing.Size, System.Drawing">
     <value>468, 20</value>
@@ -247,7 +217,7 @@
     <value>tabHome</value>
   </data>
   <data name="&gt;&gt;txtSearchFilesHome.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="bgSearchFilesHome.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
@@ -256,10 +226,10 @@
     <value>Segoe UI, 8.25pt</value>
   </data>
   <data name="bgSearchFilesHome.Location" type="System.Drawing.Point, System.Drawing">
-    <value>175, 398</value>
+    <value>174, 92</value>
   </data>
   <data name="bgSearchFilesHome.Size" type="System.Drawing.Size, System.Drawing">
-    <value>519, 36</value>
+    <value>520, 36</value>
   </data>
   <data name="bgSearchFilesHome.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -277,7 +247,7 @@
     <value>tabHome</value>
   </data>
   <data name="&gt;&gt;bgSearchFilesHome.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="tabHome.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
@@ -482,10 +452,9 @@
   </data>
   <data name="btnMoviesGenre.SideImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAABfSURBVGhD7c9LCoAwEETBHN2bq1k0uFDxE0gCVTDb4XUBAAAAXlv2Wxtd/dVFixHd4uPPiO7x
-        8WXEMPHxZsRw8fFkxLDxcTdi+Pg4GzFNfBxHTBcfNXzaeAAAAK6VsgHHMWOnKfxjkQAAAABJRU5ErkJg
-        gg==
+        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAF9JREFUaEPt
+        z0sKgDAQRMEc3ZurWTS4UPETSAJVMNvhdQEAAABeW/ZbG1391UWLEd3i48+I7vHxZcQw8fFmxHDx8WTE
+        sPFxN2L4+DgbMU18HEdMFx81fNp4AAAArpWyAccxY6cp/GORAAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="btnMoviesGenre.Size" type="System.Drawing.Size, System.Drawing">
@@ -628,10 +597,9 @@
   </data>
   <data name="btnMoviesYear.SideImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAABfSURBVGhD7c9LCoAwEETBHN2bq1k0uFDxE0gCVTDb4XUBAAAAXlv2Wxtd/dVFixHd4uPPiO7x
-        8WXEMPHxZsRw8fFkxLDxcTdi+Pg4GzFNfBxHTBcfNXzaeAAAAK6VsgHHMWOnKfxjkQAAAABJRU5ErkJg
-        gg==
+        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAF9JREFUaEPt
+        z0sKgDAQRMEc3ZurWTS4UPETSAJVMNvhdQEAAABeW/ZbG1391UWLEd3i48+I7vHxZcQw8fFmxHDx8WTE
+        sPFxN2L4+DgbMU18HEdMFx81fNp4AAAArpWyAccxY6cp/GORAAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="btnMoviesYear.Size" type="System.Drawing.Size, System.Drawing">
@@ -894,10 +862,9 @@
   </data>
   <data name="btnFilesSort.SideImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAABfSURBVGhD7c9LCoAwEETBHN2bq1k0uFDxE0gCVTDb4XUBAAAAXlv2Wxtd/dVFixHd4uPPiO7x
-        8WXEMPHxZsRw8fFkxLDxcTdi+Pg4GzFNfBxHTBcfNXzaeAAAAK6VsgHHMWOnKfxjkQAAAABJRU5ErkJg
-        gg==
+        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAF9JREFUaEPt
+        z0sKgDAQRMEc3ZurWTS4UPETSAJVMNvhdQEAAABeW/ZbG1391UWLEd3i48+I7vHxZcQw8fFmxHDx8WTE
+        sPFxN2L4+DgbMU18HEdMFx81fNp4AAAArpWyAccxY6cp/GORAAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="btnFilesSort.Size" type="System.Drawing.Size, System.Drawing">
@@ -992,10 +959,9 @@
   </data>
   <data name="btnFilesHost.SideImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAABfSURBVGhD7c9LCoAwEETBHN2bq1k0uFDxE0gCVTDb4XUBAAAAXlv2Wxtd/dVFixHd4uPPiO7x
-        8WXEMPHxZsRw8fFkxLDxcTdi+Pg4GzFNfBxHTBcfNXzaeAAAAK6VsgHHMWOnKfxjkQAAAABJRU5ErkJg
-        gg==
+        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAF9JREFUaEPt
+        z0sKgDAQRMEc3ZurWTS4UPETSAJVMNvhdQEAAABeW/ZbG1391UWLEd3i48+I7vHxZcQw8fFmxHDx8WTE
+        sPFxN2L4+DgbMU18HEdMFx81fNp4AAAArpWyAccxY6cp/GORAAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="btnFilesHost.Size" type="System.Drawing.Size, System.Drawing">
@@ -1684,6 +1650,36 @@
   </data>
   <data name="dataGridDiscover.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
+  </data>
+  <metadata name="columnDiscoverCount.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="columnDiscoverCount.HeaderText" xml:space="preserve">
+    <value>Count</value>
+  </data>
+  <data name="columnDiscoverCount.Width" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <metadata name="columnDiscoverSite.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="columnDiscoverSite.HeaderText" xml:space="preserve">
+    <value>Site</value>
+  </data>
+  <metadata name="columnDiscoverType.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="columnDiscoverType.HeaderText" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <metadata name="columnDiscoverURL.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="columnDiscoverURL.HeaderText" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="columnDiscoverURL.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="dataGridDiscover.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 50</value>
@@ -4105,6 +4101,30 @@ WebPlex hosts no content, we provide only access to already available files foun
     <value>columnFilesURL</value>
   </data>
   <data name="&gt;&gt;columnFilesURL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;columnDiscoverCount.Name" xml:space="preserve">
+    <value>columnDiscoverCount</value>
+  </data>
+  <data name="&gt;&gt;columnDiscoverCount.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;columnDiscoverSite.Name" xml:space="preserve">
+    <value>columnDiscoverSite</value>
+  </data>
+  <data name="&gt;&gt;columnDiscoverSite.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;columnDiscoverType.Name" xml:space="preserve">
+    <value>columnDiscoverType</value>
+  </data>
+  <data name="&gt;&gt;columnDiscoverType.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;columnDiscoverURL.Name" xml:space="preserve">
+    <value>columnDiscoverURL</value>
+  </data>
+  <data name="&gt;&gt;columnDiscoverURL.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
