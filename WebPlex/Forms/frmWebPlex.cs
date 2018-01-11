@@ -538,7 +538,7 @@ namespace WebPlex
         {
             dataFilesLocal.Clear();
 
-            foreach (var pathFile in Utilities.getFiles(KnownFolders.GetPath(KnownFolder.Downloads), String.Join("|", allFileTypes), SearchOption.TopDirectoryOnly))
+            foreach (var pathFile in Directory.GetFiles(userDownloadsDirectory))
             {
                 var data = new DatabaseFilesEntity
                 {
