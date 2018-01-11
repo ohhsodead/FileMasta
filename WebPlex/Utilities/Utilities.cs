@@ -90,7 +90,7 @@ namespace WebPlex
         public static void submitLink(string webUrl)
         {
             Process.Start("https://github.com/invu/WebPlex/issues/new?title=" + "[Indexer Request] " + new Uri(webUrl).Host + "&body=" +
-                "Website: " + webUrl + "%0A" +
+                "Website: " + new Uri(webUrl).AbsoluteUri + "%0A" +
                 "----------------------- %0A" +
                 "*Please include some information about this site e.g. What is the type of site? What's the content?*");
         }
@@ -101,6 +101,7 @@ namespace WebPlex
             Process.Start("https://github.com/invu/WebPlex/issues/new?title=" + "[Broken File] " + Path.GetFileName(webFile) + "&body=" +
                 "Host: " + new Uri(webFile).Host.Replace("www.", "") + "%0A" +
                 "Name: " + Path.GetFileName(webFile) + "%0A" +
+                "URL: " + new Uri(webFile).AbsoluteUri + "%0A" +
                 "----------------------- %0A" +
                 "*Before creating an issue for a web file, ensure you're able to access the same website (file host) in your browser, as sometimes files can't be accessed due to the server's permissions.*");
         }
@@ -111,6 +112,7 @@ namespace WebPlex
             Process.Start("https://github.com/invu/WebPlex/issues/new?title=" + "[Poor Quality File] " + Path.GetFileName(webFile) + "&body=" +
                 "Host: " + new Uri(webFile).Host.Replace("www.", "") + "%0A" +
                 "Name: " + Path.GetFileName(webFile) + "%0A" +
+                "URL: " + new Uri(webFile).AbsoluteUri + "%0A" +
                 "----------------------- %0A" +
                 "*Please explain the problem with the file, be clear and not vague.*");
         }

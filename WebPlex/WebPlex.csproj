@@ -118,11 +118,11 @@
     <Compile Include="CControls\ctrlMovieDetails.Designer.cs">
       <DependentUpon>ctrlMovieDetails.cs</DependentUpon>
     </Compile>
-    <Compile Include="CControls\ctrlPoster.cs">
+    <Compile Include="CControls\ctrlMoviePoster.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="CControls\ctrlPoster.Designer.cs">
-      <DependentUpon>ctrlPoster.cs</DependentUpon>
+    <Compile Include="CControls\ctrlMoviePoster.Designer.cs">
+      <DependentUpon>ctrlMoviePoster.cs</DependentUpon>
     </Compile>
     <Compile Include="CControls\ctrlSplashScreen.cs">
       <SubType>UserControl</SubType>
@@ -203,8 +203,8 @@
     <EmbeddedResource Include="CControls\ctrlFileDetails.resx">
       <DependentUpon>ctrlFileDetails.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CControls\ctrlPoster.resx">
-      <DependentUpon>ctrlPoster.cs</DependentUpon>
+    <EmbeddedResource Include="CControls\ctrlMoviePoster.resx">
+      <DependentUpon>ctrlMoviePoster.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CControls\ctrlSplashScreen.cs.resx">
       <DependentUpon>ctrlSplashScreen.cs</DependentUpon>
@@ -328,6 +328,7 @@
     <None Include="Resources\bookmark.png" />
     <Content Include="Resources\bookmark-plus.png" />
     <Content Include="Resources\bookmark-remove.png" />
+    <None Include="Resources\home.png" />
     <Content Include="Resources\opentheatre_logo.ico" />
     <None Include="Resources\search-white.png" />
     <None Include="Resources\magnet.png" />

@@ -1,6 +1,6 @@
 ﻿namespace WebPlex.CControls
 {
-    partial class ctrlPoster
+    partial class ctrlMoviePoster
     {
         /// <summary> 
         /// Required designer variable.
@@ -144,7 +144,7 @@
             this.imageBackgroundEffect.TabIndex = 75;
             this.imageBackgroundEffect.TabStop = false;
             // 
-            // ctrlPoster
+            // ctrlMoviePoster
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -157,9 +157,9 @@
             this.Controls.Add(this.imageBackgroundEffect);
             this.DoubleBuffered = true;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 3, 0);
-            this.Name = "ctrlPoster";
+            this.Name = "ctrlMoviePoster";
             this.Size = new System.Drawing.Size(156, 267);
-            this.Load += new System.EventHandler(this.ctrlPosterTitle_Load);
+            this.Load += new System.EventHandler(this.ctrlMoviePoster_Load);
             ((System.ComponentModel.ISupportInitialize)(this.imageBackgroundEffect)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

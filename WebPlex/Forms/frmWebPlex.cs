@@ -100,14 +100,14 @@ namespace WebPlex
         {
             loadSettings();
 
-            currentTab = tabMovies;
+            currentTab = tabHome;
 
             Directory.CreateDirectory(pathRoot);
             Directory.CreateDirectory(pathData);
 
             tabAbout.BackgroundImage = Utilities.ChangeOpacity(Properties.Resources.background_original, 0.5F);
             tabSettings.BackgroundImage = Utilities.ChangeOpacity(Properties.Resources.background_original, 0.5F);
-            tabFilesSearch.BackgroundImage = Utilities.ChangeOpacity(Properties.Resources.background_original, 0.5F);
+            tabHome.BackgroundImage = Utilities.ChangeOpacity(Properties.Resources.background_original, 0.5F);
             tabSubmit.BackgroundImage = Utilities.ChangeOpacity(Properties.Resources.background_original, 0.5F);
 
             lblAboutVersion.Text = "v" + Application.ProductVersion;
@@ -172,7 +172,7 @@ namespace WebPlex
             imgSpinner.Visible = false;
             ctrlStatus a = new ctrlStatus
             {
-                BackColor = tabMovies.BackColor,
+                BackColor = tabHome.BackColor,
                 BackgroundImage = Utilities.ChangeOpacity(Properties.Resources.background_original, 0.5F),
                 Dock = DockStyle.Fill
             };
@@ -180,9 +180,9 @@ namespace WebPlex
             a.titleStatus.Text = errorText;
             a.btnRestartApp.Text = rm.GetString("restart");
             a.Show();
-            tabMovies.Controls.Clear();
-            tabMovies.Padding = new Padding(0, 0, 0, 0);
-            tabMovies.Controls.Add(a);
+            tabHome.Controls.Clear();
+            tabHome.Padding = new Padding(0, 0, 0, 0);
+            tabHome.Controls.Add(a);
             Controls.Remove(frmSplash);
         }
 
@@ -197,6 +197,11 @@ namespace WebPlex
 
         // Core Tabs
         public TabPage currentTab;
+
+        private void imgHome_Click(object sender, EventArgs e)
+        {
+            tab.SelectedTab = tabHome;
+        }
 
         private void imgMovies_Click(object sender, EventArgs e)
         {
@@ -230,7 +235,13 @@ namespace WebPlex
 
         private void tab_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (tab.SelectedTab == tabMovies)
+            if (tab.SelectedTab == tabHome)
+            {
+                currentTab = tabHome;
+
+                selectedTabLine(titleLineHome);
+            }
+            else if (tab.SelectedTab == tabMovies)
             {
                 currentTab = tabMovies;
 
@@ -268,6 +279,7 @@ namespace WebPlex
 
         public void selectedTabLine(CButtonLib.CButton cbtn)
         {
+            titleLineHome.Visible = false;
             titleLineMovies.Visible = false;
             titleLineFiles.Visible = false;
             titleLineDiscover.Visible = false;
@@ -295,11 +307,11 @@ namespace WebPlex
         string selectedGenre = "", selectedYear = "";
 
         object loadMoviesLock = new object();
-        public List<ctrlPoster> LoadMovies(int loadCount)
+        public List<ctrlMoviePoster> LoadMovies(int loadCount)
         {
             lock (loadMoviesLock)
             {
-                List<ctrlPoster> MoviesPosters = new List<ctrlPoster>();
+                List<ctrlMoviePoster> MoviesPosters = new List<ctrlMoviePoster>();
                 int loadedCount = 0;
 
                 foreach (string movie in dataMovies.Skip(countedMovies))
@@ -312,7 +324,7 @@ namespace WebPlex
 
                             if (data.ImdbID.ToLower() == txtMoviesSearchBox.Text.ToLower() | data.Title.ToLower().Contains(txtMoviesSearchBox.Text.ToLower()) | data.Actors.ToLower().Contains(txtMoviesSearchBox.Text.ToLower()) && data.Year.Contains(selectedYear) && data.Genre.ToLower().Contains(selectedGenre.ToLower()))
                             {
-                                ctrlPoster ctrlPoster = new ctrlPoster();
+                                ctrlMoviePoster ctrlPoster = new ctrlMoviePoster();
                                 ctrlPoster.infoTitle.Text = data.Title.Replace("&", "&&");
                                 ctrlPoster.infoYear.Text = data.Year;
 
@@ -358,7 +370,7 @@ namespace WebPlex
         public void loadMovies(int count)
         {
             imgSpinner.Visible = true;
-            BackGroundWorker.RunWorkAsync<List<ctrlPoster>>(() => LoadMovies(count), (data) =>
+            BackGroundWorker.RunWorkAsync<List<ctrlMoviePoster>>(() => LoadMovies(count), (data) =>
             {
                 if (panelMovies.InvokeRequired)
                 {
@@ -367,12 +379,12 @@ namespace WebPlex
                 }
                 else
                 {
-                    foreach (ctrlPoster item in data)
+                    foreach (ctrlMoviePoster item in data)
                     {
                         panelMovies.Controls.Add(item);
                     }
 
-                    tab.SelectedTab = tabMovies;
+                    tab.SelectedTab = currentTab;
                     imgSpinner.Visible = false;
                 }
             });
@@ -712,7 +724,7 @@ namespace WebPlex
                         if (!(cmboBoxFilesHost.Items.Contains(dataJson.Host))) { cmboBoxFilesHost.Items.Add(dataJson.Host); }
                     }
 
-                    tabControlFiles.SelectedTab = tabFilesResults;
+                    tab.SelectedTab = currentTab;
 
                     cmboBoxFilesHost.DropDownWidth = Utilities.DropDownWidth(cmboBoxFilesHost);
                     imgSpinner.Visible = false;
@@ -743,7 +755,7 @@ namespace WebPlex
 
         private void btnSearchFiles_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            txtFilesSearchResults.Text = txtFilesSearch.Text; tabControlFiles.SelectedTab = tabFilesResults; imgSpinner.Visible = true; showFiles(selectedFiles);
+            txtFilesSearchResults.Text = txtFilesSearch.Text; imgSpinner.Visible = true; showFiles(selectedFiles);
         }
 
         private void btnSearchFilesAgain_ClickButtonArea(object Sender, MouseEventArgs e)
@@ -807,14 +819,16 @@ namespace WebPlex
 
         private void cmboBoxFilesSort_SelectedIndexChanged(object sender, EventArgs e)
         {
+            imgSpinner.Visible = true;
             var startText = btnFilesSort.Text.Split(':');
             btnFilesSort.Text = startText[0] + ": " + cmboBoxFilesSort.SelectedItem.ToString();
 
             if (cmboBoxFilesSort.SelectedIndex == 0) { cmboBoxFilesSort.DropDownWidth = Utilities.DropDownWidth(cmboBoxFilesSort); showFiles(selectedFiles); }
             else if (cmboBoxFilesSort.SelectedIndex == 1) { dataGridFiles.Sort(dataGridFiles.Columns[1], ListSortDirection.Ascending); }
             else if (cmboBoxFilesSort.SelectedIndex == 2) { dataGridFiles.Sort(dataGridFiles.Columns[1], ListSortDirection.Descending); }
+            imgSpinner.Visible = false;
         }
-        
+
         // Filter Files by Host
         private void btnFilesHost_ClickButtonArea(object Sender, MouseEventArgs e)
         {
@@ -823,11 +837,13 @@ namespace WebPlex
 
         private void btnFilesBackToSearch_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            tabControlFiles.SelectedTab = tabFilesSearch;
+            tab.SelectedTab = tabFiles;
         }
 
         private void cmboBoxFilesHost_SelectedIndexChanged(object sender, EventArgs e)
         {
+            imgSpinner.Visible = true;
+
             var startText = btnFilesHost.Text.Split(':');
             btnFilesHost.Text = startText[0] + ": " + cmboBoxFilesHost.SelectedItem.ToString();
 
@@ -872,7 +888,7 @@ namespace WebPlex
                         count += 1;
                     }
 
-                    tab.SelectedTab = tabDiscover;
+                    tab.SelectedTab = currentTab;
                     imgSpinner.Visible = false;
                 }
             });
@@ -955,7 +971,7 @@ namespace WebPlex
             Properties.Settings.Default.Save();
             Thread.Sleep(500);
         }
-        
+
         private void btnSettingsRestoreDefault_ClickButtonArea(object Sender, MouseEventArgs e)
         {
             Thread.Sleep(500);

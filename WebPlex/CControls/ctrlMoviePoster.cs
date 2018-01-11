@@ -5,9 +5,9 @@ using UnhandledExceptions;
 
 namespace WebPlex.CControls
 {
-    public partial class ctrlPoster : UserControl
+    public partial class ctrlMoviePoster : UserControl
     {
-        public ctrlPoster()
+        public ctrlMoviePoster()
         {
             InitializeComponent();
         }
@@ -33,7 +33,7 @@ namespace WebPlex.CControls
         public string infoPopcornTorrent720p;
         public string infoPopcornTorrent1080p;
 
-        private void ctrlPosterTitle_Load(object sender, EventArgs e)
+        private void ctrlMoviePoster_Load(object sender, EventArgs e)
         {
             BackColor = Color.Transparent;
             if (infoPoster.BackgroundImage == null) { infoPoster.BackgroundImage = Properties.Resources.poster_default; }
