@@ -83,7 +83,7 @@ namespace WebPlex.CControls
         {
             string noSymbolsTitle = Regex.Replace(infoTitle.Text, "[^A-Za-z0-9 _]", " ");
             string ifYearExists = ""; if (infoYear.Text != "Year") { ifYearExists = " " + infoYear.Text; }
-            frmWebPlex.form.txtFilesSearchResults.Text = noSymbolsTitle + ifYearExists;
+            frmWebPlex.form.txtSearchFiles.Text = noSymbolsTitle + ifYearExists;
             frmWebPlex.form.showFiles(frmWebPlex.selectedFiles);
             frmWebPlex.form.tab.SelectedTab = frmWebPlex.form.tabFiles;
             Parent.Controls.Clear();

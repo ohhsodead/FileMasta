@@ -101,7 +101,7 @@
             this.titleName.Margin = new System.Windows.Forms.Padding(0, 8, 0, 8);
             this.titleName.Name = "titleName";
             this.titleName.Size = new System.Drawing.Size(54, 20);
-            this.titleName.TabIndex = 100047;
+            this.titleName.TabIndex = 0;
             this.titleName.Text = "Name:";
             // 
             // infoName
@@ -115,7 +115,7 @@
             this.infoName.Margin = new System.Windows.Forms.Padding(0, 8, 0, 8);
             this.infoName.Name = "infoName";
             this.infoName.Size = new System.Drawing.Size(15, 20);
-            this.infoName.TabIndex = 100046;
+            this.infoName.TabIndex = 0;
             this.infoName.Text = "-";
             // 
             // infoSplitter0
@@ -138,7 +138,8 @@
             this.infoSplitter0.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.infoSplitter0.SideImageSize = new System.Drawing.Size(21, 21);
             this.infoSplitter0.Size = new System.Drawing.Size(924, 1);
-            this.infoSplitter0.TabIndex = 100049;
+            this.infoSplitter0.TabIndex = 0;
+            this.infoSplitter0.TabStop = false;
             this.infoSplitter0.Text = "";
             this.infoSplitter0.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.infoSplitter0.TextShadowShow = false;
@@ -163,7 +164,8 @@
             this.infoSplitter1.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.infoSplitter1.SideImageSize = new System.Drawing.Size(21, 21);
             this.infoSplitter1.Size = new System.Drawing.Size(924, 2);
-            this.infoSplitter1.TabIndex = 100052;
+            this.infoSplitter1.TabIndex = 0;
+            this.infoSplitter1.TabStop = false;
             this.infoSplitter1.Text = "";
             this.infoSplitter1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.infoSplitter1.TextShadowShow = false;
@@ -179,7 +181,7 @@
             this.titleSize.Margin = new System.Windows.Forms.Padding(0, 8, 0, 8);
             this.titleSize.Name = "titleSize";
             this.titleSize.Size = new System.Drawing.Size(39, 20);
-            this.titleSize.TabIndex = 5;
+            this.titleSize.TabIndex = 0;
             this.titleSize.Text = "Size:";
             // 
             // infoSize
@@ -193,7 +195,7 @@
             this.infoSize.Margin = new System.Windows.Forms.Padding(0, 8, 0, 8);
             this.infoSize.Name = "infoSize";
             this.infoSize.Size = new System.Drawing.Size(15, 20);
-            this.infoSize.TabIndex = 100053;
+            this.infoSize.TabIndex = 0;
             this.infoSize.Text = "-";
             // 
             // titleReferrer
@@ -207,7 +209,7 @@
             this.titleReferrer.Margin = new System.Windows.Forms.Padding(0, 8, 0, 8);
             this.titleReferrer.Name = "titleReferrer";
             this.titleReferrer.Size = new System.Drawing.Size(65, 20);
-            this.titleReferrer.TabIndex = 100056;
+            this.titleReferrer.TabIndex = 0;
             this.titleReferrer.Text = "Referrer:";
             // 
             // infoReferrer
@@ -222,7 +224,7 @@
             this.infoReferrer.Margin = new System.Windows.Forms.Padding(0, 8, 0, 8);
             this.infoReferrer.Name = "infoReferrer";
             this.infoReferrer.Size = new System.Drawing.Size(15, 20);
-            this.infoReferrer.TabIndex = 100055;
+            this.infoReferrer.TabIndex = 0;
             this.infoReferrer.Text = "-";
             this.infoReferrer.Click += new System.EventHandler(this.infoReferrer_Click);
             // 
@@ -246,7 +248,8 @@
             this.infoSplitter2.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.infoSplitter2.SideImageSize = new System.Drawing.Size(21, 21);
             this.infoSplitter2.Size = new System.Drawing.Size(924, 1);
-            this.infoSplitter2.TabIndex = 100057;
+            this.infoSplitter2.TabIndex = 0;
+            this.infoSplitter2.TabStop = false;
             this.infoSplitter2.Text = "";
             this.infoSplitter2.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.infoSplitter2.TextShadowShow = false;
@@ -263,7 +266,7 @@
             this.infoDirectory.Margin = new System.Windows.Forms.Padding(0, 8, 0, 8);
             this.infoDirectory.Name = "infoDirectory";
             this.infoDirectory.Size = new System.Drawing.Size(15, 20);
-            this.infoDirectory.TabIndex = 100060;
+            this.infoDirectory.TabIndex = 0;
             this.infoDirectory.Text = "-";
             this.infoDirectory.Click += new System.EventHandler(this.infoDirectory_Click);
             // 
@@ -278,7 +281,7 @@
             this.titleDirectory.Margin = new System.Windows.Forms.Padding(0, 8, 0, 8);
             this.titleDirectory.Name = "titleDirectory";
             this.titleDirectory.Size = new System.Drawing.Size(73, 20);
-            this.titleDirectory.TabIndex = 100061;
+            this.titleDirectory.TabIndex = 0;
             this.titleDirectory.Text = "Directory:";
             // 
             // infoSplitter3
@@ -301,7 +304,8 @@
             this.infoSplitter3.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.infoSplitter3.SideImageSize = new System.Drawing.Size(21, 21);
             this.infoSplitter3.Size = new System.Drawing.Size(924, 1);
-            this.infoSplitter3.TabIndex = 100062;
+            this.infoSplitter3.TabIndex = 0;
+            this.infoSplitter3.TabStop = false;
             this.infoSplitter3.Text = "";
             this.infoSplitter3.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.infoSplitter3.TextShadowShow = false;
@@ -326,7 +330,8 @@
             this.infoSplitter5.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.infoSplitter5.SideImageSize = new System.Drawing.Size(21, 21);
             this.infoSplitter5.Size = new System.Drawing.Size(924, 1);
-            this.infoSplitter5.TabIndex = 100065;
+            this.infoSplitter5.TabIndex = 0;
+            this.infoSplitter5.TabStop = false;
             this.infoSplitter5.Text = "";
             this.infoSplitter5.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.infoSplitter5.TextShadowShow = false;
@@ -342,7 +347,7 @@
             this.titleAge.Margin = new System.Windows.Forms.Padding(0, 8, 0, 8);
             this.titleAge.Name = "titleAge";
             this.titleAge.Size = new System.Drawing.Size(39, 20);
-            this.titleAge.TabIndex = 100064;
+            this.titleAge.TabIndex = 0;
             this.titleAge.Text = "Age:";
             // 
             // infoAge
@@ -356,7 +361,7 @@
             this.infoAge.Margin = new System.Windows.Forms.Padding(0, 8, 0, 8);
             this.infoAge.Name = "infoAge";
             this.infoAge.Size = new System.Drawing.Size(15, 20);
-            this.infoAge.TabIndex = 100063;
+            this.infoAge.TabIndex = 0;
             this.infoAge.Text = "-";
             // 
             // infoFileURL
@@ -385,7 +390,7 @@
             this.infoFileURL.Name = "infoFileURL";
             this.infoFileURL.ShowFocus = CButtonLib.CButton.eFocus.None;
             this.infoFileURL.Size = new System.Drawing.Size(874, 31);
-            this.infoFileURL.TabIndex = 100067;
+            this.infoFileURL.TabIndex = 0;
             this.infoFileURL.TabStop = false;
             this.infoFileURL.Text = "URL";
             this.infoFileURL.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -403,8 +408,8 @@
             this.lblDisclaimer.Location = new System.Drawing.Point(20, 468);
             this.lblDisclaimer.Margin = new System.Windows.Forms.Padding(0, 5, 0, 5);
             this.lblDisclaimer.Name = "lblDisclaimer";
-            this.lblDisclaimer.Size = new System.Drawing.Size(924, 26);
-            this.lblDisclaimer.TabIndex = 100069;
+            this.lblDisclaimer.Size = new System.Drawing.Size(924, 38);
+            this.lblDisclaimer.TabIndex = 7;
             this.lblDisclaimer.Text = resources.GetString("lblDisclaimer.Text");
             // 
             // infoSplitter4
@@ -427,7 +432,8 @@
             this.infoSplitter4.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.infoSplitter4.SideImageSize = new System.Drawing.Size(21, 21);
             this.infoSplitter4.Size = new System.Drawing.Size(924, 1);
-            this.infoSplitter4.TabIndex = 100072;
+            this.infoSplitter4.TabIndex = 0;
+            this.infoSplitter4.TabStop = false;
             this.infoSplitter4.Text = "";
             this.infoSplitter4.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.infoSplitter4.TextShadowShow = false;
@@ -443,7 +449,7 @@
             this.titleType.Margin = new System.Windows.Forms.Padding(0, 8, 0, 8);
             this.titleType.Name = "titleType";
             this.titleType.Size = new System.Drawing.Size(43, 20);
-            this.titleType.TabIndex = 100071;
+            this.titleType.TabIndex = 0;
             this.titleType.Text = "Type:";
             // 
             // infoType
@@ -457,7 +463,7 @@
             this.infoType.Margin = new System.Windows.Forms.Padding(0, 8, 0, 8);
             this.infoType.Name = "infoType";
             this.infoType.Size = new System.Drawing.Size(15, 20);
-            this.infoType.TabIndex = 100070;
+            this.infoType.TabIndex = 0;
             this.infoType.Text = "-";
             // 
             // panelReportFile
@@ -502,7 +508,7 @@
             this.btnReportFile.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnReportFile.SideImageSize = new System.Drawing.Size(21, 21);
             this.btnReportFile.Size = new System.Drawing.Size(89, 31);
-            this.btnReportFile.TabIndex = 4;
+            this.btnReportFile.TabIndex = 3;
             this.btnReportFile.Text = "Report";
             this.btnReportFile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnReportFile.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -531,8 +537,8 @@
             // btnRequestFileSize
             // 
             this.btnRequestFileSize.BackColor = System.Drawing.Color.Transparent;
-            this.btnRequestFileSize.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(192)))), ((int)(((byte)(222)))));
-            this.btnRequestFileSize.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(192)))), ((int)(((byte)(222)))));
+            this.btnRequestFileSize.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.btnRequestFileSize.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.btnRequestFileSize.Corners.All = 2;
             this.btnRequestFileSize.Corners.LowerLeft = 2;
             this.btnRequestFileSize.Corners.LowerRight = 2;
@@ -544,6 +550,7 @@
             this.btnRequestFileSize.DimFactorHover = 0;
             this.btnRequestFileSize.FillType = CButtonLib.CButton.eFillType.Solid;
             this.btnRequestFileSize.Font = new System.Drawing.Font("Segoe UI", 10.75F);
+            this.btnRequestFileSize.ForeColor = System.Drawing.Color.Black;
             this.btnRequestFileSize.ImageIndex = 0;
             this.btnRequestFileSize.ImageSize = new System.Drawing.Size(17, 17);
             this.btnRequestFileSize.Location = new System.Drawing.Point(155, 142);
@@ -552,7 +559,7 @@
             this.btnRequestFileSize.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnRequestFileSize.SideImageSize = new System.Drawing.Size(21, 21);
             this.btnRequestFileSize.Size = new System.Drawing.Size(124, 28);
-            this.btnRequestFileSize.TabIndex = 100074;
+            this.btnRequestFileSize.TabIndex = 4;
             this.btnRequestFileSize.Text = "Request File Size";
             this.btnRequestFileSize.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnRequestFileSize.TextMargin = new System.Windows.Forms.Padding(6, 3, 2, 2);
@@ -587,7 +594,7 @@
             this.btnSaveFile.SideImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnSaveFile.SideImageSize = new System.Drawing.Size(24, 24);
             this.btnSaveFile.Size = new System.Drawing.Size(40, 31);
-            this.btnSaveFile.TabIndex = 100077;
+            this.btnSaveFile.TabIndex = 0;
             this.btnSaveFile.Text = "";
             this.btnSaveFile.TextShadowShow = false;
             this.toolTip1.SetToolTip(this.btnSaveFile, "Save File");
@@ -620,7 +627,7 @@
             this.btnViewDirectory.SideImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnViewDirectory.SideImageSize = new System.Drawing.Size(21, 21);
             this.btnViewDirectory.Size = new System.Drawing.Size(40, 31);
-            this.btnViewDirectory.TabIndex = 100075;
+            this.btnViewDirectory.TabIndex = 1;
             this.btnViewDirectory.Text = "";
             this.btnViewDirectory.TextShadowShow = false;
             this.toolTip1.SetToolTip(this.btnViewDirectory, "View Directory");
@@ -653,7 +660,7 @@
             this.btnShareFile.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnShareFile.SideImageSize = new System.Drawing.Size(21, 21);
             this.btnShareFile.Size = new System.Drawing.Size(72, 31);
-            this.btnShareFile.TabIndex = 5;
+            this.btnShareFile.TabIndex = 2;
             this.btnShareFile.Text = "Share";
             this.btnShareFile.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnShareFile.TextMargin = new System.Windows.Forms.Padding(6, 3, 2, 2);
@@ -734,7 +741,7 @@
             this.btnPlayMedia.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnPlayMedia.SideImageSize = new System.Drawing.Size(21, 21);
             this.btnPlayMedia.Size = new System.Drawing.Size(104, 28);
-            this.btnPlayMedia.TabIndex = 100076;
+            this.btnPlayMedia.TabIndex = 7;
             this.btnPlayMedia.Text = "Play Media";
             this.btnPlayMedia.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnPlayMedia.TextMargin = new System.Windows.Forms.Padding(6, 3, 2, 2);
@@ -769,7 +776,7 @@
             this.btnCopyURL.SideImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnCopyURL.SideImageSize = new System.Drawing.Size(22, 22);
             this.btnCopyURL.Size = new System.Drawing.Size(40, 31);
-            this.btnCopyURL.TabIndex = 100068;
+            this.btnCopyURL.TabIndex = 5;
             this.btnCopyURL.Text = "";
             this.btnCopyURL.TextShadowShow = false;
             this.btnCopyURL.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnCopyURL_ClickButtonArea);
@@ -801,7 +808,7 @@
             this.btnDirectLink.SideImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnDirectLink.SideImageSize = new System.Drawing.Size(22, 22);
             this.btnDirectLink.Size = new System.Drawing.Size(924, 32);
-            this.btnDirectLink.TabIndex = 100048;
+            this.btnDirectLink.TabIndex = 6;
             this.btnDirectLink.Text = "Direct Link";
             this.btnDirectLink.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDirectLink.TextShadowShow = false;

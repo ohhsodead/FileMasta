@@ -45,8 +45,8 @@
             // 
             resources.ApplyResources(this.btnRestartApp, "btnRestartApp");
             this.btnRestartApp.BackColor = System.Drawing.Color.Transparent;
-            this.btnRestartApp.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(139)))), ((int)(((byte)(202)))));
-            this.btnRestartApp.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(139)))), ((int)(((byte)(202)))));
+            this.btnRestartApp.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.btnRestartApp.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.btnRestartApp.Corners.All = 2;
             this.btnRestartApp.Corners.LowerLeft = 2;
             this.btnRestartApp.Corners.LowerRight = 2;
@@ -57,6 +57,7 @@
             this.btnRestartApp.DimFactorClick = 0;
             this.btnRestartApp.DimFactorHover = 0;
             this.btnRestartApp.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.btnRestartApp.ForeColor = System.Drawing.Color.Black;
             this.btnRestartApp.ImageIndex = 0;
             this.btnRestartApp.Name = "btnRestartApp";
             this.btnRestartApp.ShowFocus = CButtonLib.CButton.eFocus.None;

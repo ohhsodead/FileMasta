@@ -322,7 +322,7 @@ namespace WebPlex
                         {
                             var data = OMDbEntity.FromJson(movie);
 
-                            if (data.ImdbID.ToLower() == txtMoviesSearchBox.Text.ToLower() | data.Title.ToLower().Contains(txtMoviesSearchBox.Text.ToLower()) | data.Actors.ToLower().Contains(txtMoviesSearchBox.Text.ToLower()) && data.Year.Contains(selectedYear) && data.Genre.ToLower().Contains(selectedGenre.ToLower()))
+                            if (data.ImdbID.ToLower() == txtSearchMovies.Text.ToLower() | data.Title.ToLower().Contains(txtSearchMovies.Text.ToLower()) | data.Actors.ToLower().Contains(txtSearchMovies.Text.ToLower()) && data.Year.Contains(selectedYear) && data.Genre.ToLower().Contains(selectedGenre.ToLower()))
                             {
                                 ctrlMoviePoster ctrlPoster = new ctrlMoviePoster();
                                 ctrlPoster.infoTitle.Text = data.Title.Replace("&", "&&");
@@ -403,7 +403,7 @@ namespace WebPlex
 
         private void bgMoviesSearchBox_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            txtMoviesSearchBox.Focus();
+            txtSearchMovies.Focus();
         }
 
         private void btnSearchMovies_ClickButtonArea(object Sender, MouseEventArgs e)
@@ -677,25 +677,29 @@ namespace WebPlex
 
         private void dataGridFiles_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dataGridFiles.CurrentRow.Cells[4].Value.ToString() == rm.GetString("local"))
+            if (e.RowIndex != -1)
             {
-                showFileDetails(dataGridFiles.CurrentRow.Cells[5].Value.ToString(),
-                dataGridFiles.CurrentRow.Cells[1].Value.ToString() + "." + dataGridFiles.CurrentRow.Cells[0].Value.ToString().ToLower(),
-                dataGridFiles.CurrentRow.Cells[0].Value.ToString(),
-                dataGridFiles.CurrentRow.Cells[4].Value.ToString(),
-                true,
-                dataGridFiles.CurrentRow.Cells[2].Value.ToString(),
-                dataGridFiles.CurrentRow.Cells[3].Value.ToString());
+                if (dataGridFiles.CurrentRow.Cells[4].Value.ToString() == rm.GetString("local"))
+                {
+                    showFileDetails(dataGridFiles.CurrentRow.Cells[5].Value.ToString(),
+                    dataGridFiles.CurrentRow.Cells[1].Value.ToString() + "." + dataGridFiles.CurrentRow.Cells[0].Value.ToString().ToLower(),
+                    dataGridFiles.CurrentRow.Cells[0].Value.ToString(),
+                    dataGridFiles.CurrentRow.Cells[4].Value.ToString(),
+                    true,
+                    dataGridFiles.CurrentRow.Cells[2].Value.ToString(),
+                    dataGridFiles.CurrentRow.Cells[3].Value.ToString());
+                }
+                else
+                {
+                    showFileDetails(dataGridFiles.CurrentRow.Cells[5].Value.ToString(),
+                    dataGridFiles.CurrentRow.Cells[1].Value.ToString() + "." + dataGridFiles.CurrentRow.Cells[0].Value.ToString().ToLower(),
+                    dataGridFiles.CurrentRow.Cells[0].Value.ToString(), dataGridFiles.CurrentRow.Cells[4].Value.ToString(),
+                    false,
+                    dataGridFiles.CurrentRow.Cells[2].Value.ToString(),
+                    dataGridFiles.CurrentRow.Cells[3].Value.ToString());
+                }
             }
-            else
-            {
-                showFileDetails(dataGridFiles.CurrentRow.Cells[5].Value.ToString(),
-                dataGridFiles.CurrentRow.Cells[1].Value.ToString() + "." + dataGridFiles.CurrentRow.Cells[0].Value.ToString().ToLower(),
-                dataGridFiles.CurrentRow.Cells[0].Value.ToString(), dataGridFiles.CurrentRow.Cells[4].Value.ToString(),
-                false,
-                dataGridFiles.CurrentRow.Cells[2].Value.ToString(),
-                dataGridFiles.CurrentRow.Cells[3].Value.ToString());
-            }
+                
         }
 
         delegate void loadFilesCallBack(List<string> dataFiles);
@@ -743,7 +747,7 @@ namespace WebPlex
                 {
                     var dataJson = DatabaseFilesEntity.FromJson(file);
 
-                    if (Utilities.ContainsAll(dataJson.Title.ToLower(), Utilities.GetWords(txtFilesSearchResults.Text.ToLower())) && selectedFilesFileType.Contains(dataJson.Type) && dataJson.Host.Contains(selectedFilesHost))
+                    if (Utilities.ContainsAll(dataJson.Title.ToLower(), Utilities.GetWords(txtSearchFiles.Text.ToLower())) && selectedFilesFileType.Contains(dataJson.Type) && dataJson.Host.Contains(selectedFilesHost))
                     {
                         urls.Add(dataJson.ToJson());
                     }
@@ -755,7 +759,7 @@ namespace WebPlex
 
         private void btnSearchFiles_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            txtFilesSearchResults.Text = txtFilesSearch.Text; imgSpinner.Visible = true; showFiles(selectedFiles);
+            txtSearchFiles.Text = txtSearchFilesHome.Text; imgSpinner.Visible = true; tab.SelectedTab = tabFiles; showFiles(selectedFiles);
         }
 
         private void btnSearchFilesAgain_ClickButtonArea(object Sender, MouseEventArgs e)
@@ -792,14 +796,14 @@ namespace WebPlex
 
         private void bgFilesSearchBox_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            txtFilesSearchResults.Focus();
+            txtSearchFiles.Focus();
         }
 
         private void txtFilesSearchBox_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                btnSearchFilesAgain.PerformClick();
+                btnSearchFiles.PerformClick();
             }
         }
 
@@ -807,7 +811,7 @@ namespace WebPlex
         {
             if (e.KeyCode == Keys.Enter)
             {
-                btnSearchFiles.PerformClick();
+                btnSearchFilesHome.PerformClick();
             }
         }
 
