@@ -44,18 +44,22 @@ All contributions are welcome just send a pull request. WebPlex's directory data
 - [Open Movie Database API](https://omdbapi.com)
 - [Popcorn Time API](https://popcorntime.sh/)
 - [YTS.AG (.am) API](https://yts.am/)
+- [FileChef.com Top Searches](https://filechef.com/searches)
 - [Json.NET (Newtonsoft)](https://newtonsoft.com/json)
 - [VLC Player](https://videolan.org/vlc/)
 
 ## Screenshots
+### Home
+![Home](https://github.com/invu/WebPlex/blob/master/Screenshots/Home.png?raw=true)
+
 ### Movies
-![Movies](https://github.com/invu/WebPlex/blob/master/screenshots/movies.png?raw=true)
+![Movies](https://github.com/invu/WebPlex/blob/master/Screenshots/Movies.png?raw=true)
 
 ### Movie Details
-![Movie Details](https://github.com/invu/WebPlex/blob/master/screenshots/movie%20details.png?raw=true)
+![Movie Details](https://github.com/invu/WebPlex/blob/master/Screenshots/Movie%20Details.png?raw=true)
 
 ### Files
-![Files](https://github.com/invu/WebPlex/blob/master/screenshots/files.png?raw=true)
+![Files](https://github.com/invu/WebPlex/blob/master/Screenshots/Files.png?raw=true)
 
 ### File Details
-![File Details](https://github.com/invu/WebPlex/blob/master/screenshots/file%20details.png?raw=true)
+![File Details](https://github.com/invu/WebPlex/blob/master/Screenshots/File%20Details.png?raw=true)
