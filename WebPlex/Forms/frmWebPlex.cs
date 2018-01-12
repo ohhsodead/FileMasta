@@ -337,8 +337,29 @@ namespace WebPlex
                         }
                     }
                 }
+
+                // Add 'Top Results Powered by FileChef.com'
+                Label a = new Label
+                {
+                    Text = "Top Results Powered by FileChef.com",
+                    Font = new Font(btnHomeFileType.Font.Name, 9, FontStyle.Regular),
+                    BackColor = Color.Transparent,
+                    ForeColor = Color.White,
+                    Margin = new Padding(0, 8, 0, 3),
+                    Cursor = Cursors.Hand,
+                    Name = "btnFileChef",
+                    AutoSize = true,
+                };
+
+                a.Click += btnFileChef_Click;
+                panelTopSearches.Controls.Add(a);
             }
             catch { } // Error occurred, so skip...
+        }
+
+        private void btnFileChef_Click(object Sender, EventArgs e)
+        {
+            Process.Start("http://filechef.com/");
         }
 
         public void addTopSearchTag(string text, int count)
@@ -373,7 +394,7 @@ namespace WebPlex
             a.ClickButtonArea += btnTopSearchesTag_ClickButtonArea;
             panelTopSearches.Controls.Add(a);
         }
-        
+
         private void btnTopSearchesTag_ClickButtonArea(object Sender, MouseEventArgs e)
         {
             CButtonLib.CButton tagItem = Sender as CButtonLib.CButton;
