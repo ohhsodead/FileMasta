@@ -71,6 +71,7 @@ namespace WebPlex
         public static string linkMovies = "https://dl.dropbox.com/s/qknonvla6qeuiuj/movies-posters.json?dl=0";
         public static string linkOpenFiles = "https://dl.dropbox.com/s/ucyeqfn96x7n9lh/open-files.json?dl=0";
         public static string linkOpenDirectories = "https://raw.githubusercontent.com/invu/WebPlex/master/api/open-directories.txt";
+        public static string linkTopSearches = "https://dl.dropbox.com/s/9y0smo8g95g0ty4/top-searches.txt?dl=0";
 
         // Data/Downloads Directories
         public static string pathRoot = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\WebPlex\";
@@ -116,6 +117,8 @@ namespace WebPlex
             {
                 Utilities.checkForUpdate();
 
+                loadTopSearches(); // Powered by the HackerTarget API to get Top Searches from FileChef.com
+
                 worker = new BackgroundWorker();
                 worker.DoWork += worker_DoWork;
                 worker.RunWorkerCompleted += worker_RunWorkerCompleted;
@@ -129,6 +132,8 @@ namespace WebPlex
 
         void worker_DoWork(object sender, DoWorkEventArgs e)
         {
+            // Checks if database file exists, if so whether they're the same size, and downloads the latest one if any of them returns false
+
             //
             if (Utilities.doUpdateFile(linkOpenDirectories, "open-directories.txt"))
             {
@@ -163,10 +168,10 @@ namespace WebPlex
             Controls.Remove(frmSplash);
         }
 
-        public void showStatusTab(string errorText)
+        public void showStatusTab(string errorText) // Shows Error/Restart Button on Movies tab after loading expection occurs (WIP)
         {
-            // throws error with  control on Movies tab (WIP)
             imgSpinner.Visible = false;
+
             ctrlStatus a = new ctrlStatus
             {
                 BackColor = tabHome.BackColor,
@@ -270,6 +275,8 @@ namespace WebPlex
             }
             else if (tab.SelectedTab == tabAbout)
             {
+                currentTab = tabAbout;
+
                 selectedTabLine(titleLineAbout);
             }
         }
@@ -308,7 +315,70 @@ namespace WebPlex
 
         private void btnShareFacebook_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            Process.Start("https://www.facebook.com/sharer/sharer.php?app_id=248335808680372&kid_directed_site=0&sdk=joey&u=http%3A%2F%2Fgithub.com/invu/WebPlex%2F&display=popup&ref=plugin&src=share_button");
+            Process.Start("https://facebook.com/sharer/sharer.php?app_id=248335808680372&kid_directed_site=0&sdk=joey&u=http%3A%2F%2Fgithub.com/invu/WebPlex%2F&display=popup&ref=plugin&src=share_button");
+        }
+
+        public void loadTopSearches()
+        {
+            try
+            {
+                int count = 0;
+                var client = new WebClient();
+                using (var stream = client.OpenRead(linkTopSearches))
+                using (var reader = new StreamReader(stream))
+                {
+                    string line;
+                    while ((line = reader.ReadLine()) != null)
+                    {
+                        if (count <= 30)
+                        {
+                            addTopSearchTag(line, count);
+                            count++;
+                        }
+                    }
+                }
+            }
+            catch { } // Error occurred, so skip...
+        }
+
+        public void addTopSearchTag(string text, int count)
+        {
+            CButtonLib.CButton a = new CButtonLib.CButton
+            {
+                Text = text,
+                TextAlign = ContentAlignment.MiddleCenter,
+                Font = new Font(btnHomeFileType.Font.Name, 9.25F, FontStyle.Regular),
+                Size = new Size(70, 24),
+                BackColor = Color.Transparent,
+                ForeColor = Color.Black,
+                TextMargin = new Padding(0, 2, 0, 2),
+                BorderColor = Color.FromArgb(230, 230, 230),
+                ColorFillSolid = Color.FromArgb(230, 230, 230),
+                FillType = CButtonLib.CButton.eFillType.Solid,
+                TextShadowShow = false,
+                ShowFocus = CButtonLib.CButton.eFocus.None,
+                Margin = new Padding(0, 3, 6, 3),
+                BorderShow = true,
+                DimFactorHover = 0,
+                DimFactorClick = 0,
+                Cursor = Cursors.Hand,
+                Name = "tagItem" + count
+            };
+
+            a.Corners.All = 2;
+
+            Font myFont = new Font(a.Font.FontFamily, a.Font.Size);
+            SizeF mySize = a.CreateGraphics().MeasureString(a.Text, myFont);
+            a.Width = (((int)(Math.Round(mySize.Width, 0))) + 10);
+            a.ClickButtonArea += btnTopSearchesTag_ClickButtonArea;
+            panelTopSearches.Controls.Add(a);
+        }
+        
+        private void btnTopSearchesTag_ClickButtonArea(object Sender, MouseEventArgs e)
+        {
+            CButtonLib.CButton tagItem = Sender as CButtonLib.CButton;
+            txtSearchFilesHome.Text = tagItem.Text;
+            btnSearchFilesHome.PerformClick();
         }
 
         private void btnHomeFileType_ClickButtonArea(object Sender, MouseEventArgs e)

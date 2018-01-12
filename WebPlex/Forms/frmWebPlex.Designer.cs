@@ -41,6 +41,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tab = new System.Windows.Forms.TabControl();
             this.tabHome = new System.Windows.Forms.TabPage();
+            this.panelTopSearches = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnShareFacebook = new CButtonLib.CButton();
+            this.btnShareTwitter = new CButtonLib.CButton();
+            this.lblHeaderHome = new System.Windows.Forms.Label();
             this.panelHomeFileType = new System.Windows.Forms.Panel();
             this.btnHomeFileType = new CButtonLib.CButton();
             this.cmboBoxHomeFileType = new System.Windows.Forms.ComboBox();
@@ -147,9 +151,9 @@
             this.titleFiles = new System.Windows.Forms.Label();
             this.titleMovies = new System.Windows.Forms.Label();
             this.imgSpinner = new System.Windows.Forms.PictureBox();
-            this.lblHeaderHome = new System.Windows.Forms.Label();
-            this.btnShareTwitter = new CButtonLib.CButton();
-            this.btnShareFacebook = new CButtonLib.CButton();
+            this.lineUserReviews = new CButtonLib.CButton();
+            this.lblHeaderTopSearches = new System.Windows.Forms.Label();
+            this.lineSplitter = new CButtonLib.CButton();
             this.tab.SuspendLayout();
             this.tabHome.SuspendLayout();
             this.panelHomeFileType.SuspendLayout();
@@ -202,6 +206,10 @@
             // tabHome
             // 
             this.tabHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
+            this.tabHome.Controls.Add(this.lineUserReviews);
+            this.tabHome.Controls.Add(this.lblHeaderTopSearches);
+            this.tabHome.Controls.Add(this.lineSplitter);
+            this.tabHome.Controls.Add(this.panelTopSearches);
             this.tabHome.Controls.Add(this.btnShareFacebook);
             this.tabHome.Controls.Add(this.btnShareTwitter);
             this.tabHome.Controls.Add(this.lblHeaderHome);
@@ -211,6 +219,68 @@
             this.tabHome.Controls.Add(this.bgSearchFilesHome);
             resources.ApplyResources(this.tabHome, "tabHome");
             this.tabHome.Name = "tabHome";
+            // 
+            // panelTopSearches
+            // 
+            resources.ApplyResources(this.panelTopSearches, "panelTopSearches");
+            this.panelTopSearches.BackColor = System.Drawing.Color.Transparent;
+            this.panelTopSearches.Name = "panelTopSearches";
+            // 
+            // btnShareFacebook
+            // 
+            resources.ApplyResources(this.btnShareFacebook, "btnShareFacebook");
+            this.btnShareFacebook.BackColor = System.Drawing.Color.Transparent;
+            this.btnShareFacebook.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(103)))), ((int)(((byte)(178)))));
+            this.btnShareFacebook.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(103)))), ((int)(((byte)(178)))));
+            this.btnShareFacebook.Corners.All = 2;
+            this.btnShareFacebook.Corners.LowerLeft = 2;
+            this.btnShareFacebook.Corners.LowerRight = 2;
+            this.btnShareFacebook.Corners.UpperLeft = 2;
+            this.btnShareFacebook.Corners.UpperRight = 2;
+            this.btnShareFacebook.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnShareFacebook.DesignerSelected = false;
+            this.btnShareFacebook.DimFactorClick = 0;
+            this.btnShareFacebook.DimFactorHover = 0;
+            this.btnShareFacebook.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.btnShareFacebook.Image = global::WebPlex.Properties.Resources.facebook;
+            this.btnShareFacebook.ImageIndex = 0;
+            this.btnShareFacebook.Name = "btnShareFacebook";
+            this.btnShareFacebook.ShowFocus = CButtonLib.CButton.eFocus.None;
+            this.btnShareFacebook.TabStop = false;
+            this.btnShareFacebook.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnShareFacebook.TextMargin = new System.Windows.Forms.Padding(0, 3, 2, 2);
+            this.btnShareFacebook.TextShadowShow = false;
+            // 
+            // btnShareTwitter
+            // 
+            resources.ApplyResources(this.btnShareTwitter, "btnShareTwitter");
+            this.btnShareTwitter.BackColor = System.Drawing.Color.Transparent;
+            this.btnShareTwitter.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(149)))), ((int)(((byte)(224)))));
+            this.btnShareTwitter.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(149)))), ((int)(((byte)(224)))));
+            this.btnShareTwitter.Corners.All = 2;
+            this.btnShareTwitter.Corners.LowerLeft = 2;
+            this.btnShareTwitter.Corners.LowerRight = 2;
+            this.btnShareTwitter.Corners.UpperLeft = 2;
+            this.btnShareTwitter.Corners.UpperRight = 2;
+            this.btnShareTwitter.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnShareTwitter.DesignerSelected = false;
+            this.btnShareTwitter.DimFactorClick = 0;
+            this.btnShareTwitter.DimFactorHover = 0;
+            this.btnShareTwitter.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.btnShareTwitter.Image = global::WebPlex.Properties.Resources.twitter;
+            this.btnShareTwitter.ImageIndex = 0;
+            this.btnShareTwitter.Name = "btnShareTwitter";
+            this.btnShareTwitter.ShowFocus = CButtonLib.CButton.eFocus.None;
+            this.btnShareTwitter.TabStop = false;
+            this.btnShareTwitter.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnShareTwitter.TextMargin = new System.Windows.Forms.Padding(0, 3, 2, 2);
+            this.btnShareTwitter.TextShadowShow = false;
+            // 
+            // lblHeaderHome
+            // 
+            resources.ApplyResources(this.lblHeaderHome, "lblHeaderHome");
+            this.lblHeaderHome.BackColor = System.Drawing.Color.Transparent;
+            this.lblHeaderHome.Name = "lblHeaderHome";
             // 
             // panelHomeFileType
             // 
@@ -1761,61 +1831,57 @@
             this.imgSpinner.Name = "imgSpinner";
             this.imgSpinner.TabStop = false;
             // 
-            // lblHeaderHome
+            // lineUserReviews
             // 
-            resources.ApplyResources(this.lblHeaderHome, "lblHeaderHome");
-            this.lblHeaderHome.BackColor = System.Drawing.Color.Transparent;
-            this.lblHeaderHome.Name = "lblHeaderHome";
+            resources.ApplyResources(this.lineUserReviews, "lineUserReviews");
+            this.lineUserReviews.BackColor = System.Drawing.Color.Transparent;
+            this.lineUserReviews.BorderColor = System.Drawing.Color.White;
+            this.lineUserReviews.ColorFillSolid = System.Drawing.Color.White;
+            this.lineUserReviews.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lineUserReviews.DesignerSelected = false;
+            this.lineUserReviews.DimFactorClick = 0;
+            this.lineUserReviews.DimFactorHover = 0;
+            this.lineUserReviews.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.lineUserReviews.ForeColor = System.Drawing.Color.Transparent;
+            this.lineUserReviews.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lineUserReviews.ImageIndex = 0;
+            this.lineUserReviews.ImageSize = new System.Drawing.Size(25, 36);
+            this.lineUserReviews.Name = "lineUserReviews";
+            this.lineUserReviews.ShowFocus = CButtonLib.CButton.eFocus.None;
+            this.lineUserReviews.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lineUserReviews.SideImageSize = new System.Drawing.Size(36, 36);
+            this.lineUserReviews.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.lineUserReviews.TextShadowShow = false;
             // 
-            // btnShareTwitter
+            // lblHeaderTopSearches
             // 
-            resources.ApplyResources(this.btnShareTwitter, "btnShareTwitter");
-            this.btnShareTwitter.BackColor = System.Drawing.Color.Transparent;
-            this.btnShareTwitter.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(149)))), ((int)(((byte)(224)))));
-            this.btnShareTwitter.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(149)))), ((int)(((byte)(224)))));
-            this.btnShareTwitter.Corners.All = 2;
-            this.btnShareTwitter.Corners.LowerLeft = 2;
-            this.btnShareTwitter.Corners.LowerRight = 2;
-            this.btnShareTwitter.Corners.UpperLeft = 2;
-            this.btnShareTwitter.Corners.UpperRight = 2;
-            this.btnShareTwitter.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnShareTwitter.DesignerSelected = false;
-            this.btnShareTwitter.DimFactorClick = 0;
-            this.btnShareTwitter.DimFactorHover = 0;
-            this.btnShareTwitter.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.btnShareTwitter.Image = global::WebPlex.Properties.Resources.twitter;
-            this.btnShareTwitter.ImageIndex = 0;
-            this.btnShareTwitter.Name = "btnShareTwitter";
-            this.btnShareTwitter.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.btnShareTwitter.TabStop = false;
-            this.btnShareTwitter.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnShareTwitter.TextMargin = new System.Windows.Forms.Padding(0, 3, 2, 2);
-            this.btnShareTwitter.TextShadowShow = false;
+            resources.ApplyResources(this.lblHeaderTopSearches, "lblHeaderTopSearches");
+            this.lblHeaderTopSearches.BackColor = System.Drawing.Color.Transparent;
+            this.lblHeaderTopSearches.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lblHeaderTopSearches.ForeColor = System.Drawing.Color.White;
+            this.lblHeaderTopSearches.Name = "lblHeaderTopSearches";
             // 
-            // btnShareFacebook
+            // lineSplitter
             // 
-            resources.ApplyResources(this.btnShareFacebook, "btnShareFacebook");
-            this.btnShareFacebook.BackColor = System.Drawing.Color.Transparent;
-            this.btnShareFacebook.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(103)))), ((int)(((byte)(178)))));
-            this.btnShareFacebook.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(103)))), ((int)(((byte)(178)))));
-            this.btnShareFacebook.Corners.All = 2;
-            this.btnShareFacebook.Corners.LowerLeft = 2;
-            this.btnShareFacebook.Corners.LowerRight = 2;
-            this.btnShareFacebook.Corners.UpperLeft = 2;
-            this.btnShareFacebook.Corners.UpperRight = 2;
-            this.btnShareFacebook.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnShareFacebook.DesignerSelected = false;
-            this.btnShareFacebook.DimFactorClick = 0;
-            this.btnShareFacebook.DimFactorHover = 0;
-            this.btnShareFacebook.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.btnShareFacebook.Image = global::WebPlex.Properties.Resources.facebook;
-            this.btnShareFacebook.ImageIndex = 0;
-            this.btnShareFacebook.Name = "btnShareFacebook";
-            this.btnShareFacebook.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.btnShareFacebook.TabStop = false;
-            this.btnShareFacebook.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnShareFacebook.TextMargin = new System.Windows.Forms.Padding(0, 3, 2, 2);
-            this.btnShareFacebook.TextShadowShow = false;
+            resources.ApplyResources(this.lineSplitter, "lineSplitter");
+            this.lineSplitter.BackColor = System.Drawing.Color.Transparent;
+            this.lineSplitter.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(109)))), ((int)(((byte)(125)))));
+            this.lineSplitter.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(109)))), ((int)(((byte)(125)))));
+            this.lineSplitter.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lineSplitter.DesignerSelected = false;
+            this.lineSplitter.DimFactorClick = 0;
+            this.lineSplitter.DimFactorHover = 0;
+            this.lineSplitter.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.lineSplitter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(180)))), ((int)(((byte)(191)))));
+            this.lineSplitter.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lineSplitter.ImageIndex = 0;
+            this.lineSplitter.ImageSize = new System.Drawing.Size(25, 36);
+            this.lineSplitter.Name = "lineSplitter";
+            this.lineSplitter.ShowFocus = CButtonLib.CButton.eFocus.None;
+            this.lineSplitter.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lineSplitter.SideImageSize = new System.Drawing.Size(36, 36);
+            this.lineSplitter.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.lineSplitter.TextShadowShow = false;
             // 
             // frmWebPlex
             // 
@@ -1988,6 +2054,10 @@
         private System.Windows.Forms.Label lblHeaderHome;
         private CButtonLib.CButton btnShareFacebook;
         private CButtonLib.CButton btnShareTwitter;
+        private System.Windows.Forms.FlowLayoutPanel panelTopSearches;
+        public CButtonLib.CButton lineUserReviews;
+        internal System.Windows.Forms.Label lblHeaderTopSearches;
+        public CButtonLib.CButton lineSplitter;
     }
 }
 
