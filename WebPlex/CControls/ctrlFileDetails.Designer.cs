@@ -761,7 +761,7 @@
             this.btnCopyURL.Corners.UpperLeft = 2;
             this.btnCopyURL.Corners.UpperRight = 2;
             this.btnCopyURL.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCopyURL.DesignerSelected = false;
+            this.btnCopyURL.DesignerSelected = true;
             this.btnCopyURL.DimFactorClick = 0;
             this.btnCopyURL.DimFactorHover = 0;
             this.btnCopyURL.FillType = CButtonLib.CButton.eFillType.Solid;

@@ -23,7 +23,7 @@ namespace WebPlex
             return tvshow;
         }
 
-        public static string[] getMovieAndYear(string input)
+        public static string getMovieAndYear(string input)
         {
             string pattern = @"(?'title'.*)\.(?'year'[^\.]+)\.(?'pixelsize'[^\.]+)\.(?'format'[^\.]+)\.(?'formatsize'[^\.]+)\.(?'filename'[^\.]+)\.(?'extension'[^\.]+)";
             Match match = Regex.Match(input, pattern, RegexOptions.IgnoreCase);
@@ -36,8 +36,8 @@ namespace WebPlex
             string title = match.Groups["title"].Value;
             title = title.Replace(".", " ");
 
-            string[] movie = { title, year };
-            return movie;
+            return format;
         }
+        
     }
 }
