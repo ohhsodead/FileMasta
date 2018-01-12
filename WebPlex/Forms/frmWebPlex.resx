@@ -121,55 +121,174 @@
   <data name="tab.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
-  <data name="lblSearchTitle.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>None</value>
+  <data name="lblHeaderHome.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="lblSearchTitle.AutoSize" type="System.Boolean, mscorlib">
+  <data name="lblHeaderHome.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="lblSearchTitle.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 17pt</value>
+  <data name="lblHeaderHome.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Courier New, 10.75pt</value>
   </data>
-  <data name="lblSearchTitle.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="lblHeaderHome.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="lblSearchTitle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>319, 36</value>
+  <data name="lblHeaderHome.Location" type="System.Drawing.Point, System.Drawing">
+    <value>214, 34</value>
   </data>
-  <data name="lblSearchTitle.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 9, 3, 9</value>
+  <data name="lblHeaderHome.Size" type="System.Drawing.Size, System.Drawing">
+    <value>440, 153</value>
   </data>
-  <data name="lblSearchTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>230, 31</value>
+  <data name="lblHeaderHome.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
   </data>
-  <data name="lblSearchTitle.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="lblHeaderHome.Text" xml:space="preserve">
+    <value> __          __    _      _____   _             
+ \ \        / /   | |    |  __ \ | |            
+  \ \  /\  / /___ | |__  | |__) || |  ___ __  __
+   \ \/  \/ // _ \| '_ \ |  ___/ | | / _ \\ \/ /
+    \  /\  /|  __/| |_) || |     | ||  __/ &gt;  &lt; 
+     \/  \/  \___||_.__/ |_|     |_| \___|/_/\_\
+
+
+Get direct download links for almost anything!</value>
   </data>
-  <data name="lblSearchTitle.Text" xml:space="preserve">
-    <value>Discover Everything!</value>
+  <data name="lblHeaderHome.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopCenter</value>
   </data>
-  <data name="&gt;&gt;lblSearchTitle.Name" xml:space="preserve">
-    <value>lblSearchTitle</value>
+  <data name="&gt;&gt;lblHeaderHome.Name" xml:space="preserve">
+    <value>lblHeaderHome</value>
   </data>
-  <data name="&gt;&gt;lblSearchTitle.Type" xml:space="preserve">
+  <data name="&gt;&gt;lblHeaderHome.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lblSearchTitle.Parent" xml:space="preserve">
+  <data name="&gt;&gt;lblHeaderHome.Parent" xml:space="preserve">
     <value>tabHome</value>
   </data>
-  <data name="&gt;&gt;lblSearchTitle.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;lblHeaderHome.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="panelHomeFileType.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="btnHomeFileType.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left, Right</value>
+  </data>
+  <data name="btnHomeFileType.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 10.75pt</value>
+  </data>
+  <data name="btnHomeFileType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="btnHomeFileType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>143, 36</value>
+  </data>
+  <data name="btnHomeFileType.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="btnHomeFileType.Text" xml:space="preserve">
+    <value>Choose Filetype</value>
+  </data>
+  <data name="&gt;&gt;btnHomeFileType.Name" xml:space="preserve">
+    <value>btnHomeFileType</value>
+  </data>
+  <data name="&gt;&gt;btnHomeFileType.Type" xml:space="preserve">
+    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;btnHomeFileType.Parent" xml:space="preserve">
+    <value>panelHomeFileType</value>
+  </data>
+  <data name="&gt;&gt;btnHomeFileType.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="cmboBoxHomeFileType.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left, Right</value>
+  </data>
+  <data name="cmboBoxHomeFileType.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 10.75pt</value>
+  </data>
+  <data name="cmboBoxHomeFileType.Items" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="cmboBoxHomeFileType.Items1" xml:space="preserve">
+    <value>Video</value>
+  </data>
+  <data name="cmboBoxHomeFileType.Items2" xml:space="preserve">
+    <value>Audio</value>
+  </data>
+  <data name="cmboBoxHomeFileType.Items3" xml:space="preserve">
+    <value>eBooks</value>
+  </data>
+  <data name="cmboBoxHomeFileType.Items4" xml:space="preserve">
+    <value>Subtitles</value>
+  </data>
+  <data name="cmboBoxHomeFileType.Items5" xml:space="preserve">
+    <value>Torrents</value>
+  </data>
+  <data name="cmboBoxHomeFileType.Items6" xml:space="preserve">
+    <value>Mobile</value>
+  </data>
+  <data name="cmboBoxHomeFileType.Items7" xml:space="preserve">
+    <value>Archives</value>
+  </data>
+  <data name="cmboBoxHomeFileType.Items8" xml:space="preserve">
+    <value>Other</value>
+  </data>
+  <data name="cmboBoxHomeFileType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 8</value>
+  </data>
+  <data name="cmboBoxHomeFileType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>143, 27</value>
+  </data>
+  <data name="cmboBoxHomeFileType.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;cmboBoxHomeFileType.Name" xml:space="preserve">
+    <value>cmboBoxHomeFileType</value>
+  </data>
+  <data name="&gt;&gt;cmboBoxHomeFileType.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cmboBoxHomeFileType.Parent" xml:space="preserve">
+    <value>panelHomeFileType</value>
+  </data>
+  <data name="&gt;&gt;cmboBoxHomeFileType.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="panelHomeFileType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>167, 230</value>
+  </data>
+  <data name="panelHomeFileType.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="panelHomeFileType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>143, 36</value>
+  </data>
+  <data name="panelHomeFileType.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;panelHomeFileType.Name" xml:space="preserve">
+    <value>panelHomeFileType</value>
+  </data>
+  <data name="&gt;&gt;panelHomeFileType.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panelHomeFileType.Parent" xml:space="preserve">
+    <value>tabHome</value>
+  </data>
+  <data name="&gt;&gt;panelHomeFileType.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="btnSearchFilesHome.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>None</value>
+    <value>Top</value>
   </data>
   <data name="btnSearchFilesHome.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 8.25pt</value>
   </data>
   <data name="btnSearchFilesHome.Location" type="System.Drawing.Point, System.Drawing">
-    <value>658, 92</value>
+    <value>664, 230</value>
   </data>
   <data name="btnSearchFilesHome.Size" type="System.Drawing.Size, System.Drawing">
     <value>36, 36</value>
@@ -190,19 +309,19 @@
     <value>tabHome</value>
   </data>
   <data name="&gt;&gt;btnSearchFilesHome.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="txtSearchFilesHome.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>None</value>
+    <value>Top</value>
   </data>
   <data name="txtSearchFilesHome.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 10.75pt</value>
   </data>
   <data name="txtSearchFilesHome.Location" type="System.Drawing.Point, System.Drawing">
-    <value>183, 100</value>
+    <value>319, 238</value>
   </data>
   <data name="txtSearchFilesHome.Size" type="System.Drawing.Size, System.Drawing">
-    <value>468, 20</value>
+    <value>339, 20</value>
   </data>
   <data name="txtSearchFilesHome.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -217,19 +336,22 @@
     <value>tabHome</value>
   </data>
   <data name="&gt;&gt;txtSearchFilesHome.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="bgSearchFilesHome.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>None</value>
+    <value>Top</value>
   </data>
   <data name="bgSearchFilesHome.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 8.25pt</value>
   </data>
   <data name="bgSearchFilesHome.Location" type="System.Drawing.Point, System.Drawing">
-    <value>174, 92</value>
+    <value>310, 230</value>
+  </data>
+  <data name="bgSearchFilesHome.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 3, 3, 3</value>
   </data>
   <data name="bgSearchFilesHome.Size" type="System.Drawing.Size, System.Drawing">
-    <value>520, 36</value>
+    <value>391, 36</value>
   </data>
   <data name="bgSearchFilesHome.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -247,7 +369,7 @@
     <value>tabHome</value>
   </data>
   <data name="&gt;&gt;bgSearchFilesHome.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="tabHome.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
@@ -1292,7 +1414,7 @@
     <value>Segoe UI, 9.75pt</value>
   </data>
   <data name="titleFilesTorrents.Location" type="System.Drawing.Point, System.Drawing">
-    <value>315, 63</value>
+    <value>377, 63</value>
   </data>
   <data name="titleFilesTorrents.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 3, 0, 3</value>
@@ -1469,7 +1591,7 @@
     <value>Segoe UI, 9.75pt</value>
   </data>
   <data name="titleFilesMobile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>387, 63</value>
+    <value>315, 63</value>
   </data>
   <data name="titleFilesMobile.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 3, 0, 3</value>
@@ -2559,7 +2681,7 @@ WebPlex hosts no content, we provide only access to already available files foun
     <value>NoControl</value>
   </data>
   <data name="imgHome.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 23</value>
+    <value>17, 26</value>
   </data>
   <data name="imgHome.Size" type="System.Drawing.Size, System.Drawing">
     <value>22, 22</value>
@@ -2589,7 +2711,7 @@ WebPlex hosts no content, we provide only access to already available files foun
     <value>Segoe UI, 8.25pt</value>
   </data>
   <data name="titleLineHome.Location" type="System.Drawing.Point, System.Drawing">
-    <value>176, 21</value>
+    <value>176, 24</value>
   </data>
   <data name="titleLineHome.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 5, 3, 5</value>
@@ -2625,7 +2747,7 @@ WebPlex hosts no content, we provide only access to already available files foun
     <value>NoControl</value>
   </data>
   <data name="titleHome.Location" type="System.Drawing.Point, System.Drawing">
-    <value>43, 24</value>
+    <value>43, 27</value>
   </data>
   <data name="titleHome.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 9, 3, 9</value>
@@ -2655,7 +2777,7 @@ WebPlex hosts no content, we provide only access to already available files foun
     <value>NoControl</value>
   </data>
   <data name="imgSubmit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 175</value>
+    <value>17, 178</value>
   </data>
   <data name="imgSubmit.Size" type="System.Drawing.Size, System.Drawing">
     <value>22, 22</value>
@@ -2685,7 +2807,7 @@ WebPlex hosts no content, we provide only access to already available files foun
     <value>Segoe UI, 8.25pt</value>
   </data>
   <data name="titleLineSubmit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>176, 172</value>
+    <value>176, 175</value>
   </data>
   <data name="titleLineSubmit.Size" type="System.Drawing.Size, System.Drawing">
     <value>3, 28</value>
@@ -2721,7 +2843,7 @@ WebPlex hosts no content, we provide only access to already available files foun
     <value>NoControl</value>
   </data>
   <data name="titleSubmit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>43, 176</value>
+    <value>43, 179</value>
   </data>
   <data name="titleSubmit.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 9, 3, 9</value>
@@ -2751,7 +2873,7 @@ WebPlex hosts no content, we provide only access to already available files foun
     <value>NoControl</value>
   </data>
   <data name="imgDiscover.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 138</value>
+    <value>17, 141</value>
   </data>
   <data name="imgDiscover.Size" type="System.Drawing.Size, System.Drawing">
     <value>22, 22</value>
@@ -2781,7 +2903,7 @@ WebPlex hosts no content, we provide only access to already available files foun
     <value>Segoe UI, 8.25pt</value>
   </data>
   <data name="titleLineDiscover.Location" type="System.Drawing.Point, System.Drawing">
-    <value>176, 135</value>
+    <value>176, 138</value>
   </data>
   <data name="titleLineDiscover.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 5, 3, 5</value>
@@ -2820,7 +2942,7 @@ WebPlex hosts no content, we provide only access to already available files foun
     <value>NoControl</value>
   </data>
   <data name="titleDiscover.Location" type="System.Drawing.Point, System.Drawing">
-    <value>43, 138</value>
+    <value>43, 141</value>
   </data>
   <data name="titleDiscover.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 9, 3, 9</value>
@@ -2850,7 +2972,7 @@ WebPlex hosts no content, we provide only access to already available files foun
     <value>NoControl</value>
   </data>
   <data name="imgSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 251</value>
+    <value>17, 254</value>
   </data>
   <data name="imgSettings.Size" type="System.Drawing.Size, System.Drawing">
     <value>22, 22</value>
@@ -2880,7 +3002,7 @@ WebPlex hosts no content, we provide only access to already available files foun
     <value>Segoe UI, 8.25pt</value>
   </data>
   <data name="titleLineSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>176, 248</value>
+    <value>176, 251</value>
   </data>
   <data name="titleLineSettings.Size" type="System.Drawing.Size, System.Drawing">
     <value>3, 28</value>
@@ -2916,7 +3038,7 @@ WebPlex hosts no content, we provide only access to already available files foun
     <value>NoControl</value>
   </data>
   <data name="titleSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>43, 252</value>
+    <value>43, 255</value>
   </data>
   <data name="titleSettings.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 9, 3, 9</value>
@@ -2946,7 +3068,7 @@ WebPlex hosts no content, we provide only access to already available files foun
     <value>NoControl</value>
   </data>
   <data name="imgAbout.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 289</value>
+    <value>17, 292</value>
   </data>
   <data name="imgAbout.Size" type="System.Drawing.Size, System.Drawing">
     <value>22, 22</value>
@@ -2976,7 +3098,7 @@ WebPlex hosts no content, we provide only access to already available files foun
     <value>Segoe UI, 8.25pt</value>
   </data>
   <data name="titleLineAbout.Location" type="System.Drawing.Point, System.Drawing">
-    <value>176, 286</value>
+    <value>176, 289</value>
   </data>
   <data name="titleLineAbout.Size" type="System.Drawing.Size, System.Drawing">
     <value>3, 28</value>
@@ -3012,7 +3134,7 @@ WebPlex hosts no content, we provide only access to already available files foun
     <value>NoControl</value>
   </data>
   <data name="titleAbout.Location" type="System.Drawing.Point, System.Drawing">
-    <value>43, 290</value>
+    <value>43, 293</value>
   </data>
   <data name="titleAbout.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 9, 3, 9</value>
@@ -3042,7 +3164,7 @@ WebPlex hosts no content, we provide only access to already available files foun
     <value>NoControl</value>
   </data>
   <data name="imgFiles.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 100</value>
+    <value>17, 103</value>
   </data>
   <data name="imgFiles.Size" type="System.Drawing.Size, System.Drawing">
     <value>22, 22</value>
@@ -3069,7 +3191,7 @@ WebPlex hosts no content, we provide only access to already available files foun
     <value>NoControl</value>
   </data>
   <data name="imgMovies.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 61</value>
+    <value>17, 64</value>
   </data>
   <data name="imgMovies.Size" type="System.Drawing.Size, System.Drawing">
     <value>22, 22</value>
@@ -3099,7 +3221,7 @@ WebPlex hosts no content, we provide only access to already available files foun
     <value>Segoe UI, 8.25pt</value>
   </data>
   <data name="titleLineFiles.Location" type="System.Drawing.Point, System.Drawing">
-    <value>176, 97</value>
+    <value>176, 100</value>
   </data>
   <data name="titleLineFiles.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 5, 3, 5</value>
@@ -3135,7 +3257,7 @@ WebPlex hosts no content, we provide only access to already available files foun
     <value>Segoe UI, 8.25pt</value>
   </data>
   <data name="titleLineMovies.Location" type="System.Drawing.Point, System.Drawing">
-    <value>176, 59</value>
+    <value>176, 62</value>
   </data>
   <data name="titleLineMovies.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 5, 3, 5</value>
@@ -3174,7 +3296,7 @@ WebPlex hosts no content, we provide only access to already available files foun
     <value>NoControl</value>
   </data>
   <data name="titleFiles.Location" type="System.Drawing.Point, System.Drawing">
-    <value>43, 100</value>
+    <value>43, 103</value>
   </data>
   <data name="titleFiles.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 9, 3, 9</value>
@@ -3210,7 +3332,7 @@ WebPlex hosts no content, we provide only access to already available files foun
     <value>NoControl</value>
   </data>
   <data name="titleMovies.Location" type="System.Drawing.Point, System.Drawing">
-    <value>43, 62</value>
+    <value>43, 65</value>
   </data>
   <data name="titleMovies.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 9, 3, 9</value>
@@ -4065,7 +4187,7 @@ WebPlex hosts no content, we provide only access to already available files foun
     <value>CenterScreen</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>WebPlex</value>
+    <value> WebPlex</value>
   </data>
   <data name="&gt;&gt;columnFilesType.Name" xml:space="preserve">
     <value>columnFilesType</value>

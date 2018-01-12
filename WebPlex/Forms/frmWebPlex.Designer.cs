@@ -41,7 +41,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tab = new System.Windows.Forms.TabControl();
             this.tabHome = new System.Windows.Forms.TabPage();
-            this.lblSearchTitle = new System.Windows.Forms.Label();
+            this.panelHomeFileType = new System.Windows.Forms.Panel();
+            this.btnHomeFileType = new CButtonLib.CButton();
+            this.cmboBoxHomeFileType = new System.Windows.Forms.ComboBox();
             this.btnSearchFilesHome = new CButtonLib.CButton();
             this.txtSearchFilesHome = new ChreneLib.Controls.TextBoxes.CTextBox();
             this.bgSearchFilesHome = new CButtonLib.CButton();
@@ -145,8 +147,10 @@
             this.titleFiles = new System.Windows.Forms.Label();
             this.titleMovies = new System.Windows.Forms.Label();
             this.imgSpinner = new System.Windows.Forms.PictureBox();
+            this.lblHeaderHome = new System.Windows.Forms.Label();
             this.tab.SuspendLayout();
             this.tabHome.SuspendLayout();
+            this.panelHomeFileType.SuspendLayout();
             this.tabMovies.SuspendLayout();
             this.panelMovieFilters.SuspendLayout();
             this.panelMoviesRandom.SuspendLayout();
@@ -196,20 +200,63 @@
             // tabHome
             // 
             this.tabHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
-            this.tabHome.Controls.Add(this.lblSearchTitle);
+            this.tabHome.Controls.Add(this.lblHeaderHome);
+            this.tabHome.Controls.Add(this.panelHomeFileType);
             this.tabHome.Controls.Add(this.btnSearchFilesHome);
             this.tabHome.Controls.Add(this.txtSearchFilesHome);
             this.tabHome.Controls.Add(this.bgSearchFilesHome);
             resources.ApplyResources(this.tabHome, "tabHome");
             this.tabHome.Name = "tabHome";
             // 
-            // lblSearchTitle
+            // panelHomeFileType
             // 
-            resources.ApplyResources(this.lblSearchTitle, "lblSearchTitle");
-            this.lblSearchTitle.BackColor = System.Drawing.Color.Transparent;
-            this.lblSearchTitle.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblSearchTitle.ForeColor = System.Drawing.Color.White;
-            this.lblSearchTitle.Name = "lblSearchTitle";
+            resources.ApplyResources(this.panelHomeFileType, "panelHomeFileType");
+            this.panelHomeFileType.Controls.Add(this.btnHomeFileType);
+            this.panelHomeFileType.Controls.Add(this.cmboBoxHomeFileType);
+            this.panelHomeFileType.Name = "panelHomeFileType";
+            // 
+            // btnHomeFileType
+            // 
+            resources.ApplyResources(this.btnHomeFileType, "btnHomeFileType");
+            this.btnHomeFileType.BackColor = System.Drawing.Color.Transparent;
+            this.btnHomeFileType.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.btnHomeFileType.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.btnHomeFileType.Corners.LowerLeft = 2;
+            this.btnHomeFileType.Corners.UpperLeft = 2;
+            this.btnHomeFileType.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnHomeFileType.DesignerSelected = false;
+            this.btnHomeFileType.DimFactorClick = 0;
+            this.btnHomeFileType.DimFactorHover = 0;
+            this.btnHomeFileType.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.btnHomeFileType.ForeColor = System.Drawing.Color.Black;
+            this.btnHomeFileType.ImageIndex = 0;
+            this.btnHomeFileType.Name = "btnHomeFileType";
+            this.btnHomeFileType.ShowFocus = CButtonLib.CButton.eFocus.None;
+            this.btnHomeFileType.SideImage = global::WebPlex.Properties.Resources.arrow_drop_down_black;
+            this.btnHomeFileType.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnHomeFileType.SideImageSize = new System.Drawing.Size(22, 22);
+            this.btnHomeFileType.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnHomeFileType.TextMargin = new System.Windows.Forms.Padding(10, 3, 2, 2);
+            this.btnHomeFileType.TextShadowShow = false;
+            this.btnHomeFileType.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnHomeFileType_ClickButtonArea);
+            // 
+            // cmboBoxHomeFileType
+            // 
+            resources.ApplyResources(this.cmboBoxHomeFileType, "cmboBoxHomeFileType");
+            this.cmboBoxHomeFileType.FormattingEnabled = true;
+            this.cmboBoxHomeFileType.Items.AddRange(new object[] {
+            resources.GetString("cmboBoxHomeFileType.Items"),
+            resources.GetString("cmboBoxHomeFileType.Items1"),
+            resources.GetString("cmboBoxHomeFileType.Items2"),
+            resources.GetString("cmboBoxHomeFileType.Items3"),
+            resources.GetString("cmboBoxHomeFileType.Items4"),
+            resources.GetString("cmboBoxHomeFileType.Items5"),
+            resources.GetString("cmboBoxHomeFileType.Items6"),
+            resources.GetString("cmboBoxHomeFileType.Items7"),
+            resources.GetString("cmboBoxHomeFileType.Items8")});
+            this.cmboBoxHomeFileType.Name = "cmboBoxHomeFileType";
+            this.cmboBoxHomeFileType.TabStop = false;
+            this.cmboBoxHomeFileType.SelectedIndexChanged += new System.EventHandler(this.cmboBoxHomeFileType_SelectedIndexChanged);
             // 
             // btnSearchFilesHome
             // 
@@ -231,7 +278,7 @@
             this.btnSearchFilesHome.ImageSize = new System.Drawing.Size(22, 22);
             this.btnSearchFilesHome.Name = "btnSearchFilesHome";
             this.btnSearchFilesHome.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.btnSearchFilesHome.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnSearchFiles_ClickButtonArea);
+            this.btnSearchFilesHome.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnSearchFilesHome_ClickButtonArea);
             // 
             // txtSearchFilesHome
             // 
@@ -240,10 +287,10 @@
             this.txtSearchFilesHome.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSearchFilesHome.ForeColor = System.Drawing.Color.White;
             this.txtSearchFilesHome.Name = "txtSearchFilesHome";
-            this.txtSearchFilesHome.WaterMark = "Search the web for files, videos, audios, eBooks & much more..";
+            this.txtSearchFilesHome.WaterMark = "Search anything e.g Deadpool";
             this.txtSearchFilesHome.WaterMarkActiveForeColor = System.Drawing.Color.White;
             this.txtSearchFilesHome.WaterMarkFont = new System.Drawing.Font("Segoe UI", 10.75F);
-            this.txtSearchFilesHome.WaterMarkForeColor = System.Drawing.Color.Silver;
+            this.txtSearchFilesHome.WaterMarkForeColor = System.Drawing.Color.LightGray;
             this.txtSearchFilesHome.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearchFilesHome_KeyDown);
             // 
             // bgSearchFilesHome
@@ -252,10 +299,7 @@
             this.bgSearchFilesHome.BackColor = System.Drawing.Color.Transparent;
             this.bgSearchFilesHome.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(111)))), ((int)(((byte)(131)))));
             this.bgSearchFilesHome.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(111)))), ((int)(((byte)(131)))));
-            this.bgSearchFilesHome.Corners.All = 2;
-            this.bgSearchFilesHome.Corners.LowerLeft = 2;
             this.bgSearchFilesHome.Corners.LowerRight = 2;
-            this.bgSearchFilesHome.Corners.UpperLeft = 2;
             this.bgSearchFilesHome.Corners.UpperRight = 2;
             this.bgSearchFilesHome.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.bgSearchFilesHome.DesignerSelected = false;
@@ -297,7 +341,7 @@
             this.txtSearchMovies.WaterMark = "Search for movies, people or imdb id...";
             this.txtSearchMovies.WaterMarkActiveForeColor = System.Drawing.Color.White;
             this.txtSearchMovies.WaterMarkFont = new System.Drawing.Font("Segoe UI", 10.75F);
-            this.txtSearchMovies.WaterMarkForeColor = System.Drawing.Color.Silver;
+            this.txtSearchMovies.WaterMarkForeColor = System.Drawing.Color.LightGray;
             this.txtSearchMovies.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtMoviesSearchBox_KeyDown);
             // 
             // btnSearchMovies
@@ -661,7 +705,7 @@
             this.txtSearchFiles.WaterMark = "Search for file names, add tags or insert a link...";
             this.txtSearchFiles.WaterMarkActiveForeColor = System.Drawing.Color.White;
             this.txtSearchFiles.WaterMarkFont = new System.Drawing.Font("Segoe UI", 10.75F);
-            this.txtSearchFiles.WaterMarkForeColor = System.Drawing.Color.Silver;
+            this.txtSearchFiles.WaterMarkForeColor = System.Drawing.Color.LightGray;
             this.txtSearchFiles.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearchFiles_KeyDown);
             // 
             // btnSearchFiles
@@ -1202,7 +1246,7 @@
             this.txtSubmitLink.WaterMark = "Link/website";
             this.txtSubmitLink.WaterMarkActiveForeColor = System.Drawing.Color.White;
             this.txtSubmitLink.WaterMarkFont = new System.Drawing.Font("Segoe UI", 10.75F);
-            this.txtSubmitLink.WaterMarkForeColor = System.Drawing.Color.White;
+            this.txtSubmitLink.WaterMarkForeColor = System.Drawing.Color.LightGray;
             // 
             // bgSubmitLink
             // 
@@ -1713,6 +1757,12 @@
             this.imgSpinner.Name = "imgSpinner";
             this.imgSpinner.TabStop = false;
             // 
+            // lblHeaderHome
+            // 
+            resources.ApplyResources(this.lblHeaderHome, "lblHeaderHome");
+            this.lblHeaderHome.BackColor = System.Drawing.Color.Transparent;
+            this.lblHeaderHome.Name = "lblHeaderHome";
+            // 
             // frmWebPlex
             // 
             resources.ApplyResources(this, "$this");
@@ -1732,6 +1782,7 @@
             this.tab.ResumeLayout(false);
             this.tabHome.ResumeLayout(false);
             this.tabHome.PerformLayout();
+            this.panelHomeFileType.ResumeLayout(false);
             this.tabMovies.ResumeLayout(false);
             this.tabMovies.PerformLayout();
             this.panelMovieFilters.ResumeLayout(false);
@@ -1826,7 +1877,6 @@
         private System.Windows.Forms.Label titleDiscover;
         public System.Windows.Forms.TabPage tabDiscover;
         private System.Windows.Forms.DataGridView dataGridDiscover;
-        private System.Windows.Forms.Label lblSearchTitle;
         public System.Windows.Forms.Label lblHeaderDiscover;
         private System.Windows.Forms.PictureBox imgSubmit;
         private CButtonLib.CButton titleLineSubmit;
@@ -1878,6 +1928,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn columnDiscoverSite;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnDiscoverType;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnDiscoverURL;
+        private System.Windows.Forms.Panel panelHomeFileType;
+        private CButtonLib.CButton btnHomeFileType;
+        private System.Windows.Forms.ComboBox cmboBoxHomeFileType;
+        private System.Windows.Forms.Label lblHeaderHome;
     }
 }
 

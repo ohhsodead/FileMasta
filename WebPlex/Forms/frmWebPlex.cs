@@ -297,9 +297,35 @@ namespace WebPlex
                 loadMovies(52);
             }
         }
-        //
 
-        // Movies
+        // Home tab
+        private void btnHomeFileType_ClickButtonArea(object Sender, MouseEventArgs e)
+        {
+            cmboBoxHomeFileType.DroppedDown = true;
+        }
+
+        private void cmboBoxHomeFileType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            btnHomeFileType.Text = "Filetype : " + cmboBoxHomeFileType.SelectedItem.ToString();
+        }
+
+        private void btnSearchFilesHome_ClickButtonArea(object Sender, MouseEventArgs e)
+        {
+            imgSpinner.Visible = true; txtSearchFiles.Text = txtSearchFilesHome.Text;
+
+            if (cmboBoxHomeFileType.SelectedIndex == -1) { selectedFilesFileType = allFileTypes; selectFilesTab(titleFilesAll); selectedFiles = dataOpenFiles; tab.SelectedTab = tabFiles; showFiles(selectedFiles); }
+            else if (cmboBoxHomeFileType.SelectedIndex == 0) { selectedFilesFileType = allFileTypes; selectFilesTab(titleFilesAll); selectedFiles = dataOpenFiles; tab.SelectedTab = tabFiles; showFiles(selectedFiles); }
+            else if (cmboBoxHomeFileType.SelectedIndex == 1) { selectedFilesFileType = videoFileTypes; selectFilesTab(titleFilesVideo); selectedFiles = dataOpenFiles; tab.SelectedTab = tabFiles; showFiles(selectedFiles); }
+            else if (cmboBoxHomeFileType.SelectedIndex == 2) { selectedFilesFileType = audioFileTypes; selectFilesTab(titleFilesAudio); selectedFiles = dataOpenFiles; tab.SelectedTab = tabFiles; showFiles(selectedFiles); }
+            else if (cmboBoxHomeFileType.SelectedIndex == 3) { selectedFilesFileType = ebooksFileTypes; selectFilesTab(titleFilesEbooks); selectedFiles = dataOpenFiles; tab.SelectedTab = tabFiles; showFiles(selectedFiles); }
+            else if (cmboBoxHomeFileType.SelectedIndex == 4) { selectedFilesFileType = subtitleFileTypes; selectFilesTab(titleFilesSubtitles); selectedFiles = dataOpenFiles; tab.SelectedTab = tabFiles; showFiles(selectedFiles); }
+            else if (cmboBoxHomeFileType.SelectedIndex == 5) { selectedFilesFileType = torrentFileTypes; selectFilesTab(titleFilesTorrents); selectedFiles = dataOpenFiles; tab.SelectedTab = tabFiles; showFiles(selectedFiles); }
+            else if (cmboBoxHomeFileType.SelectedIndex == 6) { selectedFilesFileType = mobileFileTypes; selectFilesTab(titleFilesMobile); selectedFiles = dataOpenFiles; tab.SelectedTab = tabFiles; showFiles(selectedFiles); }
+            else if (cmboBoxHomeFileType.SelectedIndex == 7) { selectedFilesFileType = archivesFileTypes; selectFilesTab(titleFilesArchives); selectedFiles = dataOpenFiles; tab.SelectedTab = tabFiles; showFiles(selectedFiles); }
+            else if (cmboBoxHomeFileType.SelectedIndex == 8) { selectedFilesFileType = otherFileTypes; selectFilesTab(titleFilesOther); selectedFiles = dataOpenFiles; tab.SelectedTab = tabFiles; showFiles(selectedFiles); }
+        }
+
+        // Movies tab
         int countedMovies = 0;
         string selectedGenre = "", selectedYear = "";
 
@@ -525,8 +551,8 @@ namespace WebPlex
         public static List<string> audioFileTypes = new List<string>() { "MP3", "WMA", "WAV", "M3U", "APE", "AIF", "MPA", "CDA" };
         public static List<string> ebooksFileTypes = new List<string>() { "MOBI", "CBZ", "CBR", "CBC", "CHM", "EPUB", "FB2", "LIT", "LRF", "ODT", "PDF", "PRC", "PDB", "PML", "RB", "RTF", "TCR", "DOC", "DOCX" };
         public static List<string> subtitleFileTypes = new List<string>() { "SRT", "SUB", "VTT" };
-        public static List<string> mobileFileTypes = new List<string>() { "APK", "IPA", "APPX", "XAP" };
         public static List<string> torrentFileTypes = new List<string>() { "TORRENT" };
+        public static List<string> mobileFileTypes = new List<string>() { "APK", "IPA", "APPX", "XAP" };
         public static List<string> archivesFileTypes = new List<string>() { "VOB", "ZIP", "RAR", "7Z", "ISO", "PKG", "TAR.GZ" };
         public static List<string> otherFileTypes = new List<string>() { "EXE", "XML", "TXT", "SQL", "CSV" };
 
@@ -754,19 +780,9 @@ namespace WebPlex
             }
         }
 
-        private void btnSearchFilesHome_ClickButtonArea(object Sender, MouseEventArgs e)
-        {
-            txtSearchFiles.Text = txtSearchFilesHome.Text; imgSpinner.Visible = true; tab.SelectedTab = tabFiles; showFiles(selectedFiles);
-        }
-
         private void btnSearchFiles_ClickButtonArea(object Sender, MouseEventArgs e)
         {
             imgSpinner.Visible = true; tab.SelectedTab = tabFiles; showFiles(selectedFiles);
-        }
-
-        private void btnSearchFilesAgain_ClickButtonArea(object Sender, MouseEventArgs e)
-        {
-            imgSpinner.Visible = true; showFiles(selectedFiles);
         }
 
         public void showFileDetails(string Url, string Name, string Type, string Host, bool isLocal, string Size = "-", string Age = "-")
@@ -977,7 +993,7 @@ namespace WebPlex
             Properties.Settings.Default.Save();
             Thread.Sleep(500);
         }
-        
+
         private void btnSettingsRestoreDefault_ClickButtonArea(object Sender, MouseEventArgs e)
         {
             Thread.Sleep(500);
