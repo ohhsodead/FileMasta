@@ -22,8 +22,8 @@ namespace WebPlex.CControls
 
         string infoFileSubtitles;
 
-        static string[] videoFileTypes = { "MP4", "MKV", "AVI", "MPEG" };
-        static string[] audioFileTypes = { "MP3", "WMA", "WAV", "M3U", "APE" };
+        public static List<string> videoFileTypes = new List<string>() { "M2TS", "MP4", "MKV", "AVI", "MPEG", "MPG", "MOV" };
+        public static List<string> audioFileTypes = new List<string>() { "MP3", "WMA", "WAV", "M3U", "APE", "AIF", "MPA", "CDA" };
 
         private void ctrlFileDetails_Load(object sender, EventArgs e)
         {
