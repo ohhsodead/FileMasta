@@ -129,7 +129,7 @@
     <value>Segoe UI Semibold, 13.25pt</value>
   </data>
   <data name="lineUserReviews.Location" type="System.Drawing.Point, System.Drawing">
-    <value>167, 318</value>
+    <value>126, 318</value>
   </data>
   <data name="lineUserReviews.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 16, 0, 3</value>
@@ -169,7 +169,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblHeaderTopSearches.Location" type="System.Drawing.Point, System.Drawing">
-    <value>163, 294</value>
+    <value>122, 294</value>
   </data>
   <data name="lblHeaderTopSearches.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -195,47 +195,47 @@
   <data name="&gt;&gt;lblHeaderTopSearches.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="lineSplitter.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="lineHomeSplitter.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
   </data>
-  <data name="lineSplitter.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="lineHomeSplitter.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Semibold, 13.25pt</value>
   </data>
-  <data name="lineSplitter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>167, 318</value>
+  <data name="lineHomeSplitter.Location" type="System.Drawing.Point, System.Drawing">
+    <value>126, 318</value>
   </data>
-  <data name="lineSplitter.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="lineHomeSplitter.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 16, 3, 3</value>
   </data>
-  <data name="lineSplitter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>534, 2</value>
+  <data name="lineHomeSplitter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>617, 2</value>
   </data>
-  <data name="lineSplitter.TabIndex" type="System.Int32, mscorlib">
+  <data name="lineHomeSplitter.TabIndex" type="System.Int32, mscorlib">
     <value>1103</value>
   </data>
-  <data name="lineSplitter.Text" xml:space="preserve">
+  <data name="lineHomeSplitter.Text" xml:space="preserve">
     <value />
   </data>
-  <data name="&gt;&gt;lineSplitter.Name" xml:space="preserve">
-    <value>lineSplitter</value>
+  <data name="&gt;&gt;lineHomeSplitter.Name" xml:space="preserve">
+    <value>lineHomeSplitter</value>
   </data>
-  <data name="&gt;&gt;lineSplitter.Type" xml:space="preserve">
+  <data name="&gt;&gt;lineHomeSplitter.Type" xml:space="preserve">
     <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;lineSplitter.Parent" xml:space="preserve">
+  <data name="&gt;&gt;lineHomeSplitter.Parent" xml:space="preserve">
     <value>tabHome</value>
   </data>
-  <data name="&gt;&gt;lineSplitter.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;lineHomeSplitter.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
   <data name="panelTopSearches.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
   </data>
   <data name="panelTopSearches.Location" type="System.Drawing.Point, System.Drawing">
-    <value>167, 325</value>
+    <value>126, 325</value>
   </data>
   <data name="panelTopSearches.Size" type="System.Drawing.Size, System.Drawing">
-    <value>534, 196</value>
+    <value>616, 196</value>
   </data>
   <data name="panelTopSearches.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -447,7 +447,7 @@ Get direct download links for almost anything!</value>
     <value>1</value>
   </data>
   <data name="panelHomeFileType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>167, 250</value>
+    <value>126, 250</value>
   </data>
   <data name="panelHomeFileType.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -477,7 +477,7 @@ Get direct download links for almost anything!</value>
     <value>Segoe UI, 8.25pt</value>
   </data>
   <data name="btnSearchFilesHome.Location" type="System.Drawing.Point, System.Drawing">
-    <value>665, 250</value>
+    <value>706, 250</value>
   </data>
   <data name="btnSearchFilesHome.Size" type="System.Drawing.Size, System.Drawing">
     <value>36, 36</value>
@@ -507,10 +507,10 @@ Get direct download links for almost anything!</value>
     <value>Segoe UI, 10.75pt</value>
   </data>
   <data name="txtSearchFilesHome.Location" type="System.Drawing.Point, System.Drawing">
-    <value>319, 258</value>
+    <value>278, 258</value>
   </data>
   <data name="txtSearchFilesHome.Size" type="System.Drawing.Size, System.Drawing">
-    <value>339, 20</value>
+    <value>422, 20</value>
   </data>
   <data name="txtSearchFilesHome.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -534,13 +534,13 @@ Get direct download links for almost anything!</value>
     <value>Segoe UI, 8.25pt</value>
   </data>
   <data name="bgSearchFilesHome.Location" type="System.Drawing.Point, System.Drawing">
-    <value>310, 250</value>
+    <value>269, 250</value>
   </data>
   <data name="bgSearchFilesHome.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 3, 3, 3</value>
   </data>
   <data name="bgSearchFilesHome.Size" type="System.Drawing.Size, System.Drawing">
-    <value>391, 36</value>
+    <value>474, 36</value>
   </data>
   <data name="bgSearchFilesHome.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>

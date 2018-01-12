@@ -153,7 +153,7 @@
             this.imgSpinner = new System.Windows.Forms.PictureBox();
             this.lineUserReviews = new CButtonLib.CButton();
             this.lblHeaderTopSearches = new System.Windows.Forms.Label();
-            this.lineSplitter = new CButtonLib.CButton();
+            this.lineHomeSplitter = new CButtonLib.CButton();
             this.tab.SuspendLayout();
             this.tabHome.SuspendLayout();
             this.panelHomeFileType.SuspendLayout();
@@ -208,7 +208,7 @@
             this.tabHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
             this.tabHome.Controls.Add(this.lineUserReviews);
             this.tabHome.Controls.Add(this.lblHeaderTopSearches);
-            this.tabHome.Controls.Add(this.lineSplitter);
+            this.tabHome.Controls.Add(this.lineHomeSplitter);
             this.tabHome.Controls.Add(this.panelTopSearches);
             this.tabHome.Controls.Add(this.btnShareFacebook);
             this.tabHome.Controls.Add(this.btnShareTwitter);
@@ -1861,27 +1861,27 @@
             this.lblHeaderTopSearches.ForeColor = System.Drawing.Color.White;
             this.lblHeaderTopSearches.Name = "lblHeaderTopSearches";
             // 
-            // lineSplitter
+            // lineHomeSplitter
             // 
-            resources.ApplyResources(this.lineSplitter, "lineSplitter");
-            this.lineSplitter.BackColor = System.Drawing.Color.Transparent;
-            this.lineSplitter.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(109)))), ((int)(((byte)(125)))));
-            this.lineSplitter.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(109)))), ((int)(((byte)(125)))));
-            this.lineSplitter.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lineSplitter.DesignerSelected = false;
-            this.lineSplitter.DimFactorClick = 0;
-            this.lineSplitter.DimFactorHover = 0;
-            this.lineSplitter.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.lineSplitter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(180)))), ((int)(((byte)(191)))));
-            this.lineSplitter.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lineSplitter.ImageIndex = 0;
-            this.lineSplitter.ImageSize = new System.Drawing.Size(25, 36);
-            this.lineSplitter.Name = "lineSplitter";
-            this.lineSplitter.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.lineSplitter.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lineSplitter.SideImageSize = new System.Drawing.Size(36, 36);
-            this.lineSplitter.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.lineSplitter.TextShadowShow = false;
+            resources.ApplyResources(this.lineHomeSplitter, "lineHomeSplitter");
+            this.lineHomeSplitter.BackColor = System.Drawing.Color.Transparent;
+            this.lineHomeSplitter.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(109)))), ((int)(((byte)(125)))));
+            this.lineHomeSplitter.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(109)))), ((int)(((byte)(125)))));
+            this.lineHomeSplitter.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lineHomeSplitter.DesignerSelected = false;
+            this.lineHomeSplitter.DimFactorClick = 0;
+            this.lineHomeSplitter.DimFactorHover = 0;
+            this.lineHomeSplitter.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.lineHomeSplitter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(180)))), ((int)(((byte)(191)))));
+            this.lineHomeSplitter.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lineHomeSplitter.ImageIndex = 0;
+            this.lineHomeSplitter.ImageSize = new System.Drawing.Size(25, 36);
+            this.lineHomeSplitter.Name = "lineHomeSplitter";
+            this.lineHomeSplitter.ShowFocus = CButtonLib.CButton.eFocus.None;
+            this.lineHomeSplitter.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lineHomeSplitter.SideImageSize = new System.Drawing.Size(36, 36);
+            this.lineHomeSplitter.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.lineHomeSplitter.TextShadowShow = false;
             // 
             // frmWebPlex
             // 
@@ -2057,7 +2057,7 @@
         private System.Windows.Forms.FlowLayoutPanel panelTopSearches;
         public CButtonLib.CButton lineUserReviews;
         internal System.Windows.Forms.Label lblHeaderTopSearches;
-        public CButtonLib.CButton lineSplitter;
+        public CButtonLib.CButton lineHomeSplitter;
     }
 }
 
