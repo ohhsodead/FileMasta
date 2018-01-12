@@ -597,7 +597,7 @@ Get direct download links for almost anything!</value>
     <value>5, 0, 0, 0</value>
   </data>
   <data name="panelMovies.Size" type="System.Drawing.Size, System.Drawing">
-    <value>868, 455</value>
+    <value>868, 473</value>
   </data>
   <data name="panelMovies.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -1492,7 +1492,7 @@ Get direct download links for almost anything!</value>
     <value>40</value>
   </data>
   <data name="dataGridFiles.Size" type="System.Drawing.Size, System.Drawing">
-    <value>867, 421</value>
+    <value>867, 439</value>
   </data>
   <data name="dataGridFiles.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
@@ -2002,7 +2002,7 @@ Get direct download links for almost anything!</value>
     <value>40</value>
   </data>
   <data name="dataGridDiscover.Size" type="System.Drawing.Size, System.Drawing">
-    <value>868, 468</value>
+    <value>868, 486</value>
   </data>
   <data name="dataGridDiscover.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
