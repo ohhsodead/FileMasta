@@ -862,7 +862,7 @@
     <value>Segoe UI Semibold, 13.25pt</value>
   </data>
   <data name="lineUserReviews.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 24</value>
+    <value>4, 24</value>
   </data>
   <data name="lineUserReviews.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 16, 0, 3</value>
@@ -1024,7 +1024,7 @@
     <value>Segoe UI Semibold, 13.25pt</value>
   </data>
   <data name="cButton1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 24</value>
+    <value>4, 24</value>
   </data>
   <data name="cButton1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 16, 0, 3</value>

@@ -278,7 +278,7 @@
             this.lineUserReviews.BorderColor = System.Drawing.Color.White;
             this.lineUserReviews.ColorFillSolid = System.Drawing.Color.White;
             this.lineUserReviews.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lineUserReviews.DesignerSelected = false;
+            this.lineUserReviews.DesignerSelected = true;
             this.lineUserReviews.DimFactorClick = 0;
             this.lineUserReviews.DimFactorHover = 0;
             this.lineUserReviews.FillType = CButtonLib.CButton.eFillType.Solid;
@@ -298,7 +298,7 @@
             // 
             resources.ApplyResources(this.lblHeaderDirectFiles, "lblHeaderDirectFiles");
             this.lblHeaderDirectFiles.BackColor = System.Drawing.Color.Transparent;
-            this.lblHeaderDirectFiles.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblHeaderDirectFiles.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblHeaderDirectFiles.ForeColor = System.Drawing.Color.White;
             this.lblHeaderDirectFiles.Name = "lblHeaderDirectFiles";
             // 
@@ -367,7 +367,7 @@
             // 
             resources.ApplyResources(this.lblHeaderTorrents, "lblHeaderTorrents");
             this.lblHeaderTorrents.BackColor = System.Drawing.Color.Transparent;
-            this.lblHeaderTorrents.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblHeaderTorrents.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblHeaderTorrents.ForeColor = System.Drawing.Color.White;
             this.lblHeaderTorrents.Name = "lblHeaderTorrents";
             // 
