@@ -148,6 +148,8 @@
             this.titleMovies = new System.Windows.Forms.Label();
             this.imgSpinner = new System.Windows.Forms.PictureBox();
             this.lblHeaderHome = new System.Windows.Forms.Label();
+            this.btnShareTwitter = new CButtonLib.CButton();
+            this.btnShareFacebook = new CButtonLib.CButton();
             this.tab.SuspendLayout();
             this.tabHome.SuspendLayout();
             this.panelHomeFileType.SuspendLayout();
@@ -200,6 +202,8 @@
             // tabHome
             // 
             this.tabHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
+            this.tabHome.Controls.Add(this.btnShareFacebook);
+            this.tabHome.Controls.Add(this.btnShareTwitter);
             this.tabHome.Controls.Add(this.lblHeaderHome);
             this.tabHome.Controls.Add(this.panelHomeFileType);
             this.tabHome.Controls.Add(this.btnSearchFilesHome);
@@ -1763,6 +1767,58 @@
             this.lblHeaderHome.BackColor = System.Drawing.Color.Transparent;
             this.lblHeaderHome.Name = "lblHeaderHome";
             // 
+            // btnShareTwitter
+            // 
+            resources.ApplyResources(this.btnShareTwitter, "btnShareTwitter");
+            this.btnShareTwitter.BackColor = System.Drawing.Color.Transparent;
+            this.btnShareTwitter.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(149)))), ((int)(((byte)(224)))));
+            this.btnShareTwitter.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(149)))), ((int)(((byte)(224)))));
+            this.btnShareTwitter.Corners.All = 2;
+            this.btnShareTwitter.Corners.LowerLeft = 2;
+            this.btnShareTwitter.Corners.LowerRight = 2;
+            this.btnShareTwitter.Corners.UpperLeft = 2;
+            this.btnShareTwitter.Corners.UpperRight = 2;
+            this.btnShareTwitter.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnShareTwitter.DesignerSelected = false;
+            this.btnShareTwitter.DimFactorClick = 0;
+            this.btnShareTwitter.DimFactorHover = 0;
+            this.btnShareTwitter.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.btnShareTwitter.Image = global::WebPlex.Properties.Resources.twitter;
+            this.btnShareTwitter.ImageIndex = 0;
+            this.btnShareTwitter.Name = "btnShareTwitter";
+            this.btnShareTwitter.ShowFocus = CButtonLib.CButton.eFocus.None;
+            this.btnShareTwitter.TabStop = false;
+            this.btnShareTwitter.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnShareTwitter.TextMargin = new System.Windows.Forms.Padding(0, 3, 2, 2);
+            this.btnShareTwitter.TextShadowShow = false;
+            this.btnShareTwitter.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnShareTwitter_ClickButtonArea);
+            // 
+            // btnShareFacebook
+            // 
+            resources.ApplyResources(this.btnShareFacebook, "btnShareFacebook");
+            this.btnShareFacebook.BackColor = System.Drawing.Color.Transparent;
+            this.btnShareFacebook.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(103)))), ((int)(((byte)(178)))));
+            this.btnShareFacebook.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(103)))), ((int)(((byte)(178)))));
+            this.btnShareFacebook.Corners.All = 2;
+            this.btnShareFacebook.Corners.LowerLeft = 2;
+            this.btnShareFacebook.Corners.LowerRight = 2;
+            this.btnShareFacebook.Corners.UpperLeft = 2;
+            this.btnShareFacebook.Corners.UpperRight = 2;
+            this.btnShareFacebook.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnShareFacebook.DesignerSelected = true;
+            this.btnShareFacebook.DimFactorClick = 0;
+            this.btnShareFacebook.DimFactorHover = 0;
+            this.btnShareFacebook.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.btnShareFacebook.Image = global::WebPlex.Properties.Resources.facebook;
+            this.btnShareFacebook.ImageIndex = 0;
+            this.btnShareFacebook.Name = "btnShareFacebook";
+            this.btnShareFacebook.ShowFocus = CButtonLib.CButton.eFocus.None;
+            this.btnShareFacebook.TabStop = false;
+            this.btnShareFacebook.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnShareFacebook.TextMargin = new System.Windows.Forms.Padding(0, 3, 2, 2);
+            this.btnShareFacebook.TextShadowShow = false;
+            this.btnShareFacebook.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnShareFacebook_ClickButtonArea);
+            // 
             // frmWebPlex
             // 
             resources.ApplyResources(this, "$this");
@@ -1932,6 +1988,8 @@
         private CButtonLib.CButton btnHomeFileType;
         private System.Windows.Forms.ComboBox cmboBoxHomeFileType;
         private System.Windows.Forms.Label lblHeaderHome;
+        private CButtonLib.CButton btnShareFacebook;
+        private CButtonLib.CButton btnShareTwitter;
     }
 }
 

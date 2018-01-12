@@ -121,14 +121,74 @@
   <data name="tab.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
+  <data name="btnShareFacebook.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnShareFacebook.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 10pt</value>
+  </data>
+  <data name="btnShareFacebook.Location" type="System.Drawing.Point, System.Drawing">
+    <value>442, 204</value>
+  </data>
+  <data name="btnShareFacebook.Size" type="System.Drawing.Size, System.Drawing">
+    <value>70, 24</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnShareFacebook.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="btnShareFacebook.Text" xml:space="preserve">
+    <value>Share</value>
+  </data>
+  <data name="&gt;&gt;btnShareFacebook.Name" xml:space="preserve">
+    <value>btnShareFacebook</value>
+  </data>
+  <data name="&gt;&gt;btnShareFacebook.Type" xml:space="preserve">
+    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;btnShareFacebook.Parent" xml:space="preserve">
+    <value>tabHome</value>
+  </data>
+  <data name="&gt;&gt;btnShareFacebook.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnShareTwitter.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="btnShareTwitter.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 10pt</value>
+  </data>
+  <data name="btnShareTwitter.Location" type="System.Drawing.Point, System.Drawing">
+    <value>356, 204</value>
+  </data>
+  <data name="btnShareTwitter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 24</value>
+  </data>
+  <data name="btnShareTwitter.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="btnShareTwitter.Text" xml:space="preserve">
+    <value>Tweet</value>
+  </data>
+  <data name="&gt;&gt;btnShareTwitter.Name" xml:space="preserve">
+    <value>btnShareTwitter</value>
+  </data>
+  <data name="&gt;&gt;btnShareTwitter.Type" xml:space="preserve">
+    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;btnShareTwitter.Parent" xml:space="preserve">
+    <value>tabHome</value>
+  </data>
+  <data name="&gt;&gt;btnShareTwitter.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="lblHeaderHome.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="lblHeaderHome.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="lblHeaderHome.Font" type="System.Drawing.Font, System.Drawing">
     <value>Courier New, 10.75pt</value>
   </data>
@@ -136,7 +196,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblHeaderHome.Location" type="System.Drawing.Point, System.Drawing">
-    <value>214, 34</value>
+    <value>214, 27</value>
   </data>
   <data name="lblHeaderHome.Size" type="System.Drawing.Size, System.Drawing">
     <value>440, 153</value>
@@ -168,10 +228,10 @@ Get direct download links for almost anything!</value>
     <value>tabHome</value>
   </data>
   <data name="&gt;&gt;lblHeaderHome.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="panelHomeFileType.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top</value>
+    <value>None</value>
   </data>
   <data name="btnHomeFileType.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Left, Right</value>
@@ -186,7 +246,7 @@ Get direct download links for almost anything!</value>
     <value>143, 36</value>
   </data>
   <data name="btnHomeFileType.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>2</value>
   </data>
   <data name="btnHomeFileType.Text" xml:space="preserve">
     <value>Choose Filetype</value>
@@ -258,7 +318,7 @@ Get direct download links for almost anything!</value>
     <value>1</value>
   </data>
   <data name="panelHomeFileType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>167, 230</value>
+    <value>167, 241</value>
   </data>
   <data name="panelHomeFileType.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -279,16 +339,16 @@ Get direct download links for almost anything!</value>
     <value>tabHome</value>
   </data>
   <data name="&gt;&gt;panelHomeFileType.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="btnSearchFilesHome.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top</value>
+    <value>None</value>
   </data>
   <data name="btnSearchFilesHome.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 8.25pt</value>
   </data>
   <data name="btnSearchFilesHome.Location" type="System.Drawing.Point, System.Drawing">
-    <value>664, 230</value>
+    <value>664, 241</value>
   </data>
   <data name="btnSearchFilesHome.Size" type="System.Drawing.Size, System.Drawing">
     <value>36, 36</value>
@@ -309,16 +369,16 @@ Get direct download links for almost anything!</value>
     <value>tabHome</value>
   </data>
   <data name="&gt;&gt;btnSearchFilesHome.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="txtSearchFilesHome.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top</value>
+    <value>None</value>
   </data>
   <data name="txtSearchFilesHome.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 10.75pt</value>
   </data>
   <data name="txtSearchFilesHome.Location" type="System.Drawing.Point, System.Drawing">
-    <value>319, 238</value>
+    <value>319, 249</value>
   </data>
   <data name="txtSearchFilesHome.Size" type="System.Drawing.Size, System.Drawing">
     <value>339, 20</value>
@@ -336,16 +396,16 @@ Get direct download links for almost anything!</value>
     <value>tabHome</value>
   </data>
   <data name="&gt;&gt;txtSearchFilesHome.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="bgSearchFilesHome.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top</value>
+    <value>None</value>
   </data>
   <data name="bgSearchFilesHome.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 8.25pt</value>
   </data>
   <data name="bgSearchFilesHome.Location" type="System.Drawing.Point, System.Drawing">
-    <value>310, 230</value>
+    <value>310, 241</value>
   </data>
   <data name="bgSearchFilesHome.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 3, 3, 3</value>
@@ -369,7 +429,7 @@ Get direct download links for almost anything!</value>
     <value>tabHome</value>
   </data>
   <data name="&gt;&gt;bgSearchFilesHome.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="tabHome.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>

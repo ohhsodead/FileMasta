@@ -299,6 +299,18 @@ namespace WebPlex
         }
 
         // Home tab
+        public string textMessage = "Hey%20guys%2C%20I%20found%20a%20brilliant%20way%20to%20find%20Direct%20download%20links%20for%20anything.";
+
+        private void btnShareTwitter_ClickButtonArea(object Sender, MouseEventArgs e)
+        {
+            Process.Start("https://twitter.com/intent/tweet?hashtags=webplex&original_referer=https%3A%2F%2Fgithub.com/invu/WebPlex%2F&ref_src=twsrc%5Etfw&text=" + textMessage + "&tw_p=tweetbutton&url=https%3A%2F%2Fgithub.com/invu/WebPlex");
+        }
+
+        private void btnShareFacebook_ClickButtonArea(object Sender, MouseEventArgs e)
+        {
+            Process.Start("https://www.facebook.com/sharer/sharer.php?app_id=248335808680372&kid_directed_site=0&sdk=joey&u=http%3A%2F%2Fgithub.com/invu/WebPlex%2F&display=popup&ref=plugin&src=share_button");
+        }
+
         private void btnHomeFileType_ClickButtonArea(object Sender, MouseEventArgs e)
         {
             cmboBoxHomeFileType.DroppedDown = true;
