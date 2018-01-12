@@ -244,7 +244,7 @@
             this.txtSearchFilesHome.WaterMarkActiveForeColor = System.Drawing.Color.White;
             this.txtSearchFilesHome.WaterMarkFont = new System.Drawing.Font("Segoe UI", 10.75F);
             this.txtSearchFilesHome.WaterMarkForeColor = System.Drawing.Color.Silver;
-            this.txtSearchFilesHome.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtFilesSearch_KeyDown);
+            this.txtSearchFilesHome.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearchFilesHome_KeyDown);
             // 
             // bgSearchFilesHome
             // 
@@ -662,6 +662,7 @@
             this.txtSearchFiles.WaterMarkActiveForeColor = System.Drawing.Color.White;
             this.txtSearchFiles.WaterMarkFont = new System.Drawing.Font("Segoe UI", 10.75F);
             this.txtSearchFiles.WaterMarkForeColor = System.Drawing.Color.Silver;
+            this.txtSearchFiles.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearchFiles_KeyDown);
             // 
             // btnSearchFiles
             // 

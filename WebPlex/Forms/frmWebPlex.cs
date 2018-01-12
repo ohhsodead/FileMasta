@@ -521,9 +521,9 @@ namespace WebPlex
         // Files
         public static List<string> selectedFiles = dataOpenFiles;
         public static List<string> allFileTypes = new List<string>();
-        public static List<string> videoFileTypes = new List<string>() { "M2TS", "MP4", "MKV", "AVI", "MPEG" };
+        public static List<string> videoFileTypes = new List<string>() { "M2TS", "MP4", "MKV", "AVI", "MPEG", "MPG", "MOV" };
         public static List<string> audioFileTypes = new List<string>() { "MP3", "WMA", "WAV", "M3U", "APE", "AIF", "MPA", "CDA" };
-        public static List<string> ebooksFileTypes = new List<string>() { "EPUB", "AZW", "LIT", "PDF", "ODF", "MOBI", "CBR", "CBZ" };
+        public static List<string> ebooksFileTypes = new List<string>() { "MOBI", "CBZ", "CBR", "CBC", "CHM", "EPUB", "FB2", "LIT", "LRF", "ODT", "PDF", "PRC", "PDB", "PML", "RB", "RTF", "TCR", "DOC", "DOCX" };
         public static List<string> subtitleFileTypes = new List<string>() { "SRT", "SUB", "VTT" };
         public static List<string> mobileFileTypes = new List<string>() { "APK", "IPA", "APPX", "XAP" };
         public static List<string> torrentFileTypes = new List<string>() { "TORRENT" };
@@ -754,9 +754,14 @@ namespace WebPlex
             }
         }
 
-        private void btnSearchFiles_ClickButtonArea(object Sender, MouseEventArgs e)
+        private void btnSearchFilesHome_ClickButtonArea(object Sender, MouseEventArgs e)
         {
             txtSearchFiles.Text = txtSearchFilesHome.Text; imgSpinner.Visible = true; tab.SelectedTab = tabFiles; showFiles(selectedFiles);
+        }
+
+        private void btnSearchFiles_ClickButtonArea(object Sender, MouseEventArgs e)
+        {
+            imgSpinner.Visible = true; tab.SelectedTab = tabFiles; showFiles(selectedFiles);
         }
 
         private void btnSearchFilesAgain_ClickButtonArea(object Sender, MouseEventArgs e)
@@ -796,19 +801,19 @@ namespace WebPlex
             txtSearchFiles.Focus();
         }
 
-        private void txtFilesSearchBox_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                btnSearchFiles.PerformClick();
-            }
-        }
-
-        private void txtFilesSearch_KeyDown(object sender, KeyEventArgs e)
+        private void txtSearchFilesHome_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
                 btnSearchFilesHome.PerformClick();
+            }
+        }
+
+        private void txtSearchFiles_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSearchFiles.PerformClick();
             }
         }
 
