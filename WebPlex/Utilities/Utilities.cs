@@ -13,6 +13,8 @@ using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using UnhandledExceptions;
 using System.Collections;
+using System.Text;
+using System.Reflection;
 
 namespace WebPlex
 {
