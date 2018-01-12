@@ -129,7 +129,7 @@
     <value>Segoe UI Semibold, 13.25pt</value>
   </data>
   <data name="lineUserReviews.Location" type="System.Drawing.Point, System.Drawing">
-    <value>126, 318</value>
+    <value>126, 322</value>
   </data>
   <data name="lineUserReviews.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 16, 0, 3</value>
@@ -169,7 +169,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblHeaderTopSearches.Location" type="System.Drawing.Point, System.Drawing">
-    <value>122, 294</value>
+    <value>122, 298</value>
   </data>
   <data name="lblHeaderTopSearches.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -202,7 +202,7 @@
     <value>Segoe UI Semibold, 13.25pt</value>
   </data>
   <data name="lineHomeSplitter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>126, 318</value>
+    <value>126, 322</value>
   </data>
   <data name="lineHomeSplitter.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 16, 3, 3</value>
@@ -232,7 +232,7 @@
     <value>None</value>
   </data>
   <data name="panelTopSearches.Location" type="System.Drawing.Point, System.Drawing">
-    <value>126, 325</value>
+    <value>126, 329</value>
   </data>
   <data name="panelTopSearches.Size" type="System.Drawing.Size, System.Drawing">
     <value>616, 196</value>
@@ -256,13 +256,13 @@
     <value>Top</value>
   </data>
   <data name="btnShareFacebook.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 10pt</value>
+    <value>Segoe UI Semibold, 10.25pt</value>
   </data>
   <data name="btnShareFacebook.Location" type="System.Drawing.Point, System.Drawing">
-    <value>441, 203</value>
+    <value>440, 203</value>
   </data>
   <data name="btnShareFacebook.Size" type="System.Drawing.Size, System.Drawing">
-    <value>70, 24</value>
+    <value>72, 24</value>
   </data>
   <data name="btnShareFacebook.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -286,10 +286,10 @@
     <value>Top</value>
   </data>
   <data name="btnShareTwitter.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 10pt</value>
+    <value>Segoe UI Semibold, 10.25pt</value>
   </data>
   <data name="btnShareTwitter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>358, 203</value>
+    <value>357, 203</value>
   </data>
   <data name="btnShareTwitter.Size" type="System.Drawing.Size, System.Drawing">
     <value>77, 24</value>
