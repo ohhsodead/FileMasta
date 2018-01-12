@@ -1791,7 +1791,6 @@
             this.btnShareTwitter.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnShareTwitter.TextMargin = new System.Windows.Forms.Padding(0, 3, 2, 2);
             this.btnShareTwitter.TextShadowShow = false;
-            this.btnShareTwitter.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnShareTwitter_ClickButtonArea);
             // 
             // btnShareFacebook
             // 
@@ -1805,7 +1804,7 @@
             this.btnShareFacebook.Corners.UpperLeft = 2;
             this.btnShareFacebook.Corners.UpperRight = 2;
             this.btnShareFacebook.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnShareFacebook.DesignerSelected = true;
+            this.btnShareFacebook.DesignerSelected = false;
             this.btnShareFacebook.DimFactorClick = 0;
             this.btnShareFacebook.DimFactorHover = 0;
             this.btnShareFacebook.FillType = CButtonLib.CButton.eFillType.Solid;
@@ -1817,7 +1816,6 @@
             this.btnShareFacebook.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnShareFacebook.TextMargin = new System.Windows.Forms.Padding(0, 3, 2, 2);
             this.btnShareFacebook.TextShadowShow = false;
-            this.btnShareFacebook.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnShareFacebook_ClickButtonArea);
             // 
             // frmWebPlex
             // 

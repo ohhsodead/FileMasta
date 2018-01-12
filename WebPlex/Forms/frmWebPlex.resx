@@ -129,7 +129,7 @@
     <value>Segoe UI, 10pt</value>
   </data>
   <data name="btnShareFacebook.Location" type="System.Drawing.Point, System.Drawing">
-    <value>442, 204</value>
+    <value>441, 203</value>
   </data>
   <data name="btnShareFacebook.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 24</value>
@@ -160,10 +160,10 @@
     <value>Segoe UI, 10pt</value>
   </data>
   <data name="btnShareTwitter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>356, 204</value>
+    <value>358, 203</value>
   </data>
   <data name="btnShareTwitter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 24</value>
+    <value>77, 24</value>
   </data>
   <data name="btnShareTwitter.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -196,7 +196,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblHeaderHome.Location" type="System.Drawing.Point, System.Drawing">
-    <value>214, 27</value>
+    <value>214, 21</value>
   </data>
   <data name="lblHeaderHome.Size" type="System.Drawing.Size, System.Drawing">
     <value>440, 153</value>
@@ -318,7 +318,7 @@ Get direct download links for almost anything!</value>
     <value>1</value>
   </data>
   <data name="panelHomeFileType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>167, 241</value>
+    <value>167, 250</value>
   </data>
   <data name="panelHomeFileType.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -348,7 +348,7 @@ Get direct download links for almost anything!</value>
     <value>Segoe UI, 8.25pt</value>
   </data>
   <data name="btnSearchFilesHome.Location" type="System.Drawing.Point, System.Drawing">
-    <value>664, 241</value>
+    <value>664, 250</value>
   </data>
   <data name="btnSearchFilesHome.Size" type="System.Drawing.Size, System.Drawing">
     <value>36, 36</value>
@@ -378,7 +378,7 @@ Get direct download links for almost anything!</value>
     <value>Segoe UI, 10.75pt</value>
   </data>
   <data name="txtSearchFilesHome.Location" type="System.Drawing.Point, System.Drawing">
-    <value>319, 249</value>
+    <value>319, 258</value>
   </data>
   <data name="txtSearchFilesHome.Size" type="System.Drawing.Size, System.Drawing">
     <value>339, 20</value>
@@ -405,7 +405,7 @@ Get direct download links for almost anything!</value>
     <value>Segoe UI, 8.25pt</value>
   </data>
   <data name="bgSearchFilesHome.Location" type="System.Drawing.Point, System.Drawing">
-    <value>310, 241</value>
+    <value>310, 250</value>
   </data>
   <data name="bgSearchFilesHome.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 3, 3, 3</value>
@@ -435,7 +435,7 @@ Get direct download links for almost anything!</value>
     <value>4, 22</value>
   </data>
   <data name="tabHome.Size" type="System.Drawing.Size, System.Drawing">
-    <value>868, 518</value>
+    <value>868, 536</value>
   </data>
   <data name="tabHome.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -2717,7 +2717,7 @@ WebPlex hosts no content, we provide only access to already available files foun
     <value>176, -22</value>
   </data>
   <data name="tab.Size" type="System.Drawing.Size, System.Drawing">
-    <value>876, 544</value>
+    <value>876, 562</value>
   </data>
   <data name="tab.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -3422,7 +3422,7 @@ WebPlex hosts no content, we provide only access to already available files foun
     <value>0, 0</value>
   </data>
   <data name="panelTitles.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 518</value>
+    <value>180, 536</value>
   </data>
   <data name="panelTitles.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -3482,7 +3482,7 @@ WebPlex hosts no content, we provide only access to already available files foun
     <value>GrowAndShrink</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1048, 518</value>
+    <value>1048, 536</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 8.25pt</value>
@@ -4243,11 +4243,17 @@ WebPlex hosts no content, we provide only access to already available files foun
         rkJggg==
 </value>
   </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>800, 575</value>
+  </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value> WebPlex</value>
+    <value>WebPlex</value>
   </data>
   <data name="&gt;&gt;columnFilesType.Name" xml:space="preserve">
     <value>columnFilesType</value>
