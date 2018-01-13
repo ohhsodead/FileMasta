@@ -291,7 +291,7 @@
             this.btnShareFacebook.Corners.UpperLeft = 2;
             this.btnShareFacebook.Corners.UpperRight = 2;
             this.btnShareFacebook.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnShareFacebook.DesignerSelected = false;
+            this.btnShareFacebook.DesignerSelected = true;
             this.btnShareFacebook.DimFactorClick = 0;
             this.btnShareFacebook.DimFactorHover = 0;
             this.btnShareFacebook.FillType = CButtonLib.CButton.eFillType.Solid;
@@ -317,7 +317,7 @@
             this.btnShareTwitter.Corners.UpperLeft = 2;
             this.btnShareTwitter.Corners.UpperRight = 2;
             this.btnShareTwitter.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnShareTwitter.DesignerSelected = true;
+            this.btnShareTwitter.DesignerSelected = false;
             this.btnShareTwitter.DimFactorClick = 0;
             this.btnShareTwitter.DimFactorHover = 0;
             this.btnShareTwitter.FillType = CButtonLib.CButton.eFillType.Solid;
