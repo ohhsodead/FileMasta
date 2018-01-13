@@ -299,6 +299,12 @@ namespace WebPlex
             return word;
         }
 
+        // Return Number with Comma's for Thousands
+        public static string getFormattedNumber(string value)
+        {
+            return string.Format("{0:n0}", Convert.ToInt32(value));
+        }
+
         // change image opacity
         public static Bitmap ChangeOpacity(Image img, float opacityvalue)
         {
