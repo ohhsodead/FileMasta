@@ -854,6 +854,8 @@ namespace WebPlex
                         if (!(cmboBoxFilesHost.Items.Contains(dataJson.Host))) { cmboBoxFilesHost.Items.Add(dataJson.Host); }
                     }
 
+                    lblFilesResultsInfo.Text = "Showing " + Utilities.getFormattedNumber(dataGridFiles.Rows.Count.ToString()) + " / " + Utilities.getFormattedNumber(dataFiles.Count.ToString()) + " Files";
+
                     tab.SelectedTab = currentTab;
 
                     cmboBoxFilesHost.DropDownWidth = Utilities.DropDownWidth(cmboBoxFilesHost);

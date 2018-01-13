@@ -1374,6 +1374,45 @@ Get direct download links for almost anything!</value>
   <data name="&gt;&gt;panelFileFilters.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="lblFilesResultsInfo.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="lblFilesResultsInfo.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9.75pt</value>
+  </data>
+  <data name="lblFilesResultsInfo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblFilesResultsInfo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>694, 66</value>
+  </data>
+  <data name="lblFilesResultsInfo.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 9, 3, 9</value>
+  </data>
+  <data name="lblFilesResultsInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>168, 20</value>
+  </data>
+  <data name="lblFilesResultsInfo.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="lblFilesResultsInfo.Text" xml:space="preserve">
+    <value>Showing 0 / 0 Files</value>
+  </data>
+  <data name="lblFilesResultsInfo.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
+  </data>
+  <data name="&gt;&gt;lblFilesResultsInfo.Name" xml:space="preserve">
+    <value>lblFilesResultsInfo</value>
+  </data>
+  <data name="&gt;&gt;lblFilesResultsInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblFilesResultsInfo.Parent" xml:space="preserve">
+    <value>tabFiles</value>
+  </data>
+  <data name="&gt;&gt;lblFilesResultsInfo.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="txtSearchFiles.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 10.75pt</value>
   </data>
@@ -1396,7 +1435,7 @@ Get direct download links for almost anything!</value>
     <value>tabFiles</value>
   </data>
   <data name="&gt;&gt;txtSearchFiles.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="btnSearchFiles.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 8.25pt</value>
@@ -1423,7 +1462,7 @@ Get direct download links for almost anything!</value>
     <value>tabFiles</value>
   </data>
   <data name="&gt;&gt;btnSearchFiles.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="dataGridFiles.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -1507,7 +1546,7 @@ Get direct download links for almost anything!</value>
     <value>tabFiles</value>
   </data>
   <data name="&gt;&gt;dataGridFiles.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="titleFilesSplitter.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -1537,7 +1576,7 @@ Get direct download links for almost anything!</value>
     <value>tabFiles</value>
   </data>
   <data name="&gt;&gt;titleFilesSplitter.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="titleFilesArchives.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9.75pt</value>
@@ -1567,7 +1606,7 @@ Get direct download links for almost anything!</value>
     <value>tabFiles</value>
   </data>
   <data name="&gt;&gt;titleFilesArchives.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="titleFilesVideo.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9.75pt</value>
@@ -1597,7 +1636,7 @@ Get direct download links for almost anything!</value>
     <value>tabFiles</value>
   </data>
   <data name="&gt;&gt;titleFilesVideo.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="titleFilesTorrents.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9.75pt</value>
@@ -1627,7 +1666,7 @@ Get direct download links for almost anything!</value>
     <value>tabFiles</value>
   </data>
   <data name="&gt;&gt;titleFilesTorrents.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="titleFilesEbooks.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9.75pt</value>
@@ -1657,7 +1696,7 @@ Get direct download links for almost anything!</value>
     <value>tabFiles</value>
   </data>
   <data name="&gt;&gt;titleFilesEbooks.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="titleFilesSubtitles.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9.75pt</value>
@@ -1687,7 +1726,7 @@ Get direct download links for almost anything!</value>
     <value>tabFiles</value>
   </data>
   <data name="&gt;&gt;titleFilesSubtitles.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="titleFilesAudio.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9.75pt</value>
@@ -1717,7 +1756,7 @@ Get direct download links for almost anything!</value>
     <value>tabFiles</value>
   </data>
   <data name="&gt;&gt;titleFilesAudio.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="bgSearchFiles.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 8.25pt</value>
@@ -1744,7 +1783,7 @@ Get direct download links for almost anything!</value>
     <value>tabFiles</value>
   </data>
   <data name="&gt;&gt;bgSearchFiles.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>13</value>
   </data>
   <data name="titleFilesAll.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9.75pt</value>
@@ -1774,7 +1813,7 @@ Get direct download links for almost anything!</value>
     <value>tabFiles</value>
   </data>
   <data name="&gt;&gt;titleFilesAll.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>14</value>
   </data>
   <data name="titleFilesMobile.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9.75pt</value>
@@ -1804,7 +1843,7 @@ Get direct download links for almost anything!</value>
     <value>tabFiles</value>
   </data>
   <data name="&gt;&gt;titleFilesMobile.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>15</value>
   </data>
   <data name="titleFilesOther.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9.75pt</value>
@@ -1834,7 +1873,7 @@ Get direct download links for almost anything!</value>
     <value>tabFiles</value>
   </data>
   <data name="&gt;&gt;titleFilesOther.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>16</value>
   </data>
   <data name="titleFilesLocal.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9.75pt</value>
@@ -1864,7 +1903,7 @@ Get direct download links for almost anything!</value>
     <value>tabFiles</value>
   </data>
   <data name="&gt;&gt;titleFilesLocal.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>17</value>
   </data>
   <data name="titleFilesSaved.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9.75pt</value>
@@ -1894,7 +1933,7 @@ Get direct download links for almost anything!</value>
     <value>tabFiles</value>
   </data>
   <data name="&gt;&gt;titleFilesSaved.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>18</value>
   </data>
   <data name="tabFiles.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>

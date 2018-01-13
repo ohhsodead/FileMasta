@@ -154,6 +154,7 @@
             this.lineUserReviews = new CButtonLib.CButton();
             this.lblHeaderTopSearches = new System.Windows.Forms.Label();
             this.lineHomeSplitter = new CButtonLib.CButton();
+            this.lblFilesResultsInfo = new System.Windows.Forms.Label();
             this.tab.SuspendLayout();
             this.tabHome.SuspendLayout();
             this.panelHomeFileType.SuspendLayout();
@@ -643,6 +644,7 @@
             this.tabFiles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
             this.tabFiles.Controls.Add(this.emptyDataFiles);
             this.tabFiles.Controls.Add(this.panelFileFilters);
+            this.tabFiles.Controls.Add(this.lblFilesResultsInfo);
             this.tabFiles.Controls.Add(this.txtSearchFiles);
             this.tabFiles.Controls.Add(this.btnSearchFiles);
             this.tabFiles.Controls.Add(this.dataGridFiles);
@@ -1883,6 +1885,14 @@
             this.lineHomeSplitter.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.lineHomeSplitter.TextShadowShow = false;
             // 
+            // lblFilesResultsInfo
+            // 
+            resources.ApplyResources(this.lblFilesResultsInfo, "lblFilesResultsInfo");
+            this.lblFilesResultsInfo.BackColor = System.Drawing.Color.Transparent;
+            this.lblFilesResultsInfo.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lblFilesResultsInfo.ForeColor = System.Drawing.Color.White;
+            this.lblFilesResultsInfo.Name = "lblFilesResultsInfo";
+            // 
             // frmWebPlex
             // 
             resources.ApplyResources(this, "$this");
@@ -2058,6 +2068,7 @@
         public CButtonLib.CButton lineUserReviews;
         internal System.Windows.Forms.Label lblHeaderTopSearches;
         public CButtonLib.CButton lineHomeSplitter;
+        private System.Windows.Forms.Label lblFilesResultsInfo;
     }
 }
 
