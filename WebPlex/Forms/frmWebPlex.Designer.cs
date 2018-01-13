@@ -41,6 +41,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tab = new System.Windows.Forms.TabControl();
             this.tabHome = new System.Windows.Forms.TabPage();
+            this.lineTopSearches = new CButtonLib.CButton();
+            this.lblHeaderTopSearches = new System.Windows.Forms.Label();
+            this.lineHomeTopSearchesSplitter = new CButtonLib.CButton();
             this.panelTopSearches = new System.Windows.Forms.FlowLayoutPanel();
             this.btnShareFacebook = new CButtonLib.CButton();
             this.btnShareTwitter = new CButtonLib.CButton();
@@ -74,6 +77,7 @@
             this.panelFilesHost = new System.Windows.Forms.Panel();
             this.btnFilesHost = new CButtonLib.CButton();
             this.cmboBoxFilesHost = new System.Windows.Forms.ComboBox();
+            this.lblFilesResultsInfo = new System.Windows.Forms.Label();
             this.txtSearchFiles = new ChreneLib.Controls.TextBoxes.CTextBox();
             this.btnSearchFiles = new CButtonLib.CButton();
             this.dataGridFiles = new System.Windows.Forms.DataGridView();
@@ -151,10 +155,6 @@
             this.titleFiles = new System.Windows.Forms.Label();
             this.titleMovies = new System.Windows.Forms.Label();
             this.imgSpinner = new System.Windows.Forms.PictureBox();
-            this.lineUserReviews = new CButtonLib.CButton();
-            this.lblHeaderTopSearches = new System.Windows.Forms.Label();
-            this.lineHomeSplitter = new CButtonLib.CButton();
-            this.lblFilesResultsInfo = new System.Windows.Forms.Label();
             this.tab.SuspendLayout();
             this.tabHome.SuspendLayout();
             this.panelHomeFileType.SuspendLayout();
@@ -207,9 +207,9 @@
             // tabHome
             // 
             this.tabHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
-            this.tabHome.Controls.Add(this.lineUserReviews);
+            this.tabHome.Controls.Add(this.lineTopSearches);
             this.tabHome.Controls.Add(this.lblHeaderTopSearches);
-            this.tabHome.Controls.Add(this.lineHomeSplitter);
+            this.tabHome.Controls.Add(this.lineHomeTopSearchesSplitter);
             this.tabHome.Controls.Add(this.panelTopSearches);
             this.tabHome.Controls.Add(this.btnShareFacebook);
             this.tabHome.Controls.Add(this.btnShareTwitter);
@@ -220,6 +220,58 @@
             this.tabHome.Controls.Add(this.bgSearchFilesHome);
             resources.ApplyResources(this.tabHome, "tabHome");
             this.tabHome.Name = "tabHome";
+            // 
+            // lineTopSearches
+            // 
+            resources.ApplyResources(this.lineTopSearches, "lineTopSearches");
+            this.lineTopSearches.BackColor = System.Drawing.Color.Transparent;
+            this.lineTopSearches.BorderColor = System.Drawing.Color.White;
+            this.lineTopSearches.ColorFillSolid = System.Drawing.Color.White;
+            this.lineTopSearches.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lineTopSearches.DesignerSelected = false;
+            this.lineTopSearches.DimFactorClick = 0;
+            this.lineTopSearches.DimFactorHover = 0;
+            this.lineTopSearches.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.lineTopSearches.ForeColor = System.Drawing.Color.Transparent;
+            this.lineTopSearches.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lineTopSearches.ImageIndex = 0;
+            this.lineTopSearches.ImageSize = new System.Drawing.Size(25, 36);
+            this.lineTopSearches.Name = "lineTopSearches";
+            this.lineTopSearches.ShowFocus = CButtonLib.CButton.eFocus.None;
+            this.lineTopSearches.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lineTopSearches.SideImageSize = new System.Drawing.Size(36, 36);
+            this.lineTopSearches.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.lineTopSearches.TextShadowShow = false;
+            // 
+            // lblHeaderTopSearches
+            // 
+            resources.ApplyResources(this.lblHeaderTopSearches, "lblHeaderTopSearches");
+            this.lblHeaderTopSearches.BackColor = System.Drawing.Color.Transparent;
+            this.lblHeaderTopSearches.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lblHeaderTopSearches.ForeColor = System.Drawing.Color.White;
+            this.lblHeaderTopSearches.Name = "lblHeaderTopSearches";
+            // 
+            // lineHomeTopSearchesSplitter
+            // 
+            resources.ApplyResources(this.lineHomeTopSearchesSplitter, "lineHomeTopSearchesSplitter");
+            this.lineHomeTopSearchesSplitter.BackColor = System.Drawing.Color.Transparent;
+            this.lineHomeTopSearchesSplitter.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(109)))), ((int)(((byte)(125)))));
+            this.lineHomeTopSearchesSplitter.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(109)))), ((int)(((byte)(125)))));
+            this.lineHomeTopSearchesSplitter.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lineHomeTopSearchesSplitter.DesignerSelected = true;
+            this.lineHomeTopSearchesSplitter.DimFactorClick = 0;
+            this.lineHomeTopSearchesSplitter.DimFactorHover = 0;
+            this.lineHomeTopSearchesSplitter.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.lineHomeTopSearchesSplitter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(180)))), ((int)(((byte)(191)))));
+            this.lineHomeTopSearchesSplitter.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lineHomeTopSearchesSplitter.ImageIndex = 0;
+            this.lineHomeTopSearchesSplitter.ImageSize = new System.Drawing.Size(25, 36);
+            this.lineHomeTopSearchesSplitter.Name = "lineHomeTopSearchesSplitter";
+            this.lineHomeTopSearchesSplitter.ShowFocus = CButtonLib.CButton.eFocus.None;
+            this.lineHomeTopSearchesSplitter.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lineHomeTopSearchesSplitter.SideImageSize = new System.Drawing.Size(36, 36);
+            this.lineHomeTopSearchesSplitter.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.lineHomeTopSearchesSplitter.TextShadowShow = false;
             // 
             // panelTopSearches
             // 
@@ -770,6 +822,14 @@
             this.cmboBoxFilesHost.Name = "cmboBoxFilesHost";
             this.cmboBoxFilesHost.TabStop = false;
             this.cmboBoxFilesHost.SelectedIndexChanged += new System.EventHandler(this.cmboBoxFilesHost_SelectedIndexChanged);
+            // 
+            // lblFilesResultsInfo
+            // 
+            resources.ApplyResources(this.lblFilesResultsInfo, "lblFilesResultsInfo");
+            this.lblFilesResultsInfo.BackColor = System.Drawing.Color.Transparent;
+            this.lblFilesResultsInfo.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lblFilesResultsInfo.ForeColor = System.Drawing.Color.White;
+            this.lblFilesResultsInfo.Name = "lblFilesResultsInfo";
             // 
             // txtSearchFiles
             // 
@@ -1833,66 +1893,6 @@
             this.imgSpinner.Name = "imgSpinner";
             this.imgSpinner.TabStop = false;
             // 
-            // lineUserReviews
-            // 
-            resources.ApplyResources(this.lineUserReviews, "lineUserReviews");
-            this.lineUserReviews.BackColor = System.Drawing.Color.Transparent;
-            this.lineUserReviews.BorderColor = System.Drawing.Color.White;
-            this.lineUserReviews.ColorFillSolid = System.Drawing.Color.White;
-            this.lineUserReviews.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lineUserReviews.DesignerSelected = false;
-            this.lineUserReviews.DimFactorClick = 0;
-            this.lineUserReviews.DimFactorHover = 0;
-            this.lineUserReviews.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.lineUserReviews.ForeColor = System.Drawing.Color.Transparent;
-            this.lineUserReviews.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lineUserReviews.ImageIndex = 0;
-            this.lineUserReviews.ImageSize = new System.Drawing.Size(25, 36);
-            this.lineUserReviews.Name = "lineUserReviews";
-            this.lineUserReviews.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.lineUserReviews.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lineUserReviews.SideImageSize = new System.Drawing.Size(36, 36);
-            this.lineUserReviews.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.lineUserReviews.TextShadowShow = false;
-            // 
-            // lblHeaderTopSearches
-            // 
-            resources.ApplyResources(this.lblHeaderTopSearches, "lblHeaderTopSearches");
-            this.lblHeaderTopSearches.BackColor = System.Drawing.Color.Transparent;
-            this.lblHeaderTopSearches.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lblHeaderTopSearches.ForeColor = System.Drawing.Color.White;
-            this.lblHeaderTopSearches.Name = "lblHeaderTopSearches";
-            // 
-            // lineHomeSplitter
-            // 
-            resources.ApplyResources(this.lineHomeSplitter, "lineHomeSplitter");
-            this.lineHomeSplitter.BackColor = System.Drawing.Color.Transparent;
-            this.lineHomeSplitter.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(109)))), ((int)(((byte)(125)))));
-            this.lineHomeSplitter.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(109)))), ((int)(((byte)(125)))));
-            this.lineHomeSplitter.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lineHomeSplitter.DesignerSelected = false;
-            this.lineHomeSplitter.DimFactorClick = 0;
-            this.lineHomeSplitter.DimFactorHover = 0;
-            this.lineHomeSplitter.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.lineHomeSplitter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(180)))), ((int)(((byte)(191)))));
-            this.lineHomeSplitter.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lineHomeSplitter.ImageIndex = 0;
-            this.lineHomeSplitter.ImageSize = new System.Drawing.Size(25, 36);
-            this.lineHomeSplitter.Name = "lineHomeSplitter";
-            this.lineHomeSplitter.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.lineHomeSplitter.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lineHomeSplitter.SideImageSize = new System.Drawing.Size(36, 36);
-            this.lineHomeSplitter.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.lineHomeSplitter.TextShadowShow = false;
-            // 
-            // lblFilesResultsInfo
-            // 
-            resources.ApplyResources(this.lblFilesResultsInfo, "lblFilesResultsInfo");
-            this.lblFilesResultsInfo.BackColor = System.Drawing.Color.Transparent;
-            this.lblFilesResultsInfo.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lblFilesResultsInfo.ForeColor = System.Drawing.Color.White;
-            this.lblFilesResultsInfo.Name = "lblFilesResultsInfo";
-            // 
             // frmWebPlex
             // 
             resources.ApplyResources(this, "$this");
@@ -2065,9 +2065,9 @@
         private CButtonLib.CButton btnShareFacebook;
         private CButtonLib.CButton btnShareTwitter;
         private System.Windows.Forms.FlowLayoutPanel panelTopSearches;
-        public CButtonLib.CButton lineUserReviews;
+        public CButtonLib.CButton lineTopSearches;
         internal System.Windows.Forms.Label lblHeaderTopSearches;
-        public CButtonLib.CButton lineHomeSplitter;
+        public CButtonLib.CButton lineHomeTopSearchesSplitter;
         private System.Windows.Forms.Label lblFilesResultsInfo;
     }
 }

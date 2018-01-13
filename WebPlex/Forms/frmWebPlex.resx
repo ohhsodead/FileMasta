@@ -121,39 +121,39 @@
   <data name="tab.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
-  <data name="lineUserReviews.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="lineTopSearches.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="lineUserReviews.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="lineTopSearches.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Semibold, 13.25pt</value>
   </data>
-  <data name="lineUserReviews.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="lineTopSearches.Location" type="System.Drawing.Point, System.Drawing">
     <value>126, 322</value>
   </data>
-  <data name="lineUserReviews.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="lineTopSearches.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 16, 0, 3</value>
   </data>
-  <data name="lineUserReviews.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="lineTopSearches.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 2</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="lineUserReviews.TabIndex" type="System.Int32, mscorlib">
+  <data name="lineTopSearches.TabIndex" type="System.Int32, mscorlib">
     <value>1105</value>
   </data>
-  <data name="lineUserReviews.Text" xml:space="preserve">
+  <data name="lineTopSearches.Text" xml:space="preserve">
     <value />
   </data>
-  <data name="&gt;&gt;lineUserReviews.Name" xml:space="preserve">
-    <value>lineUserReviews</value>
+  <data name="&gt;&gt;lineTopSearches.Name" xml:space="preserve">
+    <value>lineTopSearches</value>
   </data>
-  <data name="&gt;&gt;lineUserReviews.Type" xml:space="preserve">
+  <data name="&gt;&gt;lineTopSearches.Type" xml:space="preserve">
     <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;lineUserReviews.Parent" xml:space="preserve">
+  <data name="&gt;&gt;lineTopSearches.Parent" xml:space="preserve">
     <value>tabHome</value>
   </data>
-  <data name="&gt;&gt;lineUserReviews.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;lineTopSearches.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="lblHeaderTopSearches.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
@@ -195,37 +195,37 @@
   <data name="&gt;&gt;lblHeaderTopSearches.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="lineHomeSplitter.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="lineHomeTopSearchesSplitter.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
   </data>
-  <data name="lineHomeSplitter.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="lineHomeTopSearchesSplitter.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Semibold, 13.25pt</value>
   </data>
-  <data name="lineHomeSplitter.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="lineHomeTopSearchesSplitter.Location" type="System.Drawing.Point, System.Drawing">
     <value>126, 322</value>
   </data>
-  <data name="lineHomeSplitter.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="lineHomeTopSearchesSplitter.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 16, 3, 3</value>
   </data>
-  <data name="lineHomeSplitter.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="lineHomeTopSearchesSplitter.Size" type="System.Drawing.Size, System.Drawing">
     <value>617, 2</value>
   </data>
-  <data name="lineHomeSplitter.TabIndex" type="System.Int32, mscorlib">
+  <data name="lineHomeTopSearchesSplitter.TabIndex" type="System.Int32, mscorlib">
     <value>1103</value>
   </data>
-  <data name="lineHomeSplitter.Text" xml:space="preserve">
+  <data name="lineHomeTopSearchesSplitter.Text" xml:space="preserve">
     <value />
   </data>
-  <data name="&gt;&gt;lineHomeSplitter.Name" xml:space="preserve">
-    <value>lineHomeSplitter</value>
+  <data name="&gt;&gt;lineHomeTopSearchesSplitter.Name" xml:space="preserve">
+    <value>lineHomeTopSearchesSplitter</value>
   </data>
-  <data name="&gt;&gt;lineHomeSplitter.Type" xml:space="preserve">
+  <data name="&gt;&gt;lineHomeTopSearchesSplitter.Type" xml:space="preserve">
     <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;lineHomeSplitter.Parent" xml:space="preserve">
+  <data name="&gt;&gt;lineHomeTopSearchesSplitter.Parent" xml:space="preserve">
     <value>tabHome</value>
   </data>
-  <data name="&gt;&gt;lineHomeSplitter.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;lineHomeTopSearchesSplitter.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
   <data name="panelTopSearches.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
