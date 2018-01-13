@@ -258,7 +258,7 @@
             this.lineHomeTopSearchesSplitter.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(109)))), ((int)(((byte)(125)))));
             this.lineHomeTopSearchesSplitter.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(109)))), ((int)(((byte)(125)))));
             this.lineHomeTopSearchesSplitter.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lineHomeTopSearchesSplitter.DesignerSelected = true;
+            this.lineHomeTopSearchesSplitter.DesignerSelected = false;
             this.lineHomeTopSearchesSplitter.DimFactorClick = 0;
             this.lineHomeTopSearchesSplitter.DimFactorHover = 0;
             this.lineHomeTopSearchesSplitter.FillType = CButtonLib.CButton.eFillType.Solid;
@@ -303,6 +303,7 @@
             this.btnShareFacebook.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnShareFacebook.TextMargin = new System.Windows.Forms.Padding(0, 3, 2, 2);
             this.btnShareFacebook.TextShadowShow = false;
+            this.btnShareFacebook.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnShareFacebook_ClickButtonArea);
             // 
             // btnShareTwitter
             // 
@@ -316,7 +317,7 @@
             this.btnShareTwitter.Corners.UpperLeft = 2;
             this.btnShareTwitter.Corners.UpperRight = 2;
             this.btnShareTwitter.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnShareTwitter.DesignerSelected = false;
+            this.btnShareTwitter.DesignerSelected = true;
             this.btnShareTwitter.DimFactorClick = 0;
             this.btnShareTwitter.DimFactorHover = 0;
             this.btnShareTwitter.FillType = CButtonLib.CButton.eFillType.Solid;
@@ -328,6 +329,7 @@
             this.btnShareTwitter.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnShareTwitter.TextMargin = new System.Windows.Forms.Padding(0, 3, 2, 2);
             this.btnShareTwitter.TextShadowShow = false;
+            this.btnShareTwitter.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnShareTwitter_ClickButtonArea);
             // 
             // lblHeaderHome
             // 
