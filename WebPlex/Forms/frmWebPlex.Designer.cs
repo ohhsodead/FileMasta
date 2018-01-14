@@ -378,9 +378,9 @@
             resources.ApplyResources(this.tabMovies, "tabMovies");
             this.tabMovies.Controls.Add(this.panelMovies);
             this.tabMovies.Controls.Add(this.txtSearchMovies);
-            this.tabMovies.Controls.Add(this.bgSearchMovies);
             this.tabMovies.Controls.Add(this.panelMovieFilters);
             this.tabMovies.Controls.Add(this.btnSearchMovies);
+            this.tabMovies.Controls.Add(this.bgSearchMovies);
             this.tabMovies.ForeColor = System.Drawing.Color.White;
             this.tabMovies.Name = "tabMovies";
             // 
@@ -561,13 +561,13 @@
             this.tabFiles.Controls.Add(this.titleFilesEbooks);
             this.tabFiles.Controls.Add(this.titleFilesSubtitles);
             this.tabFiles.Controls.Add(this.titleFilesAudio);
-            this.tabFiles.Controls.Add(this.bgSearchFiles);
             this.tabFiles.Controls.Add(this.titleFilesAll);
             this.tabFiles.Controls.Add(this.titleFilesMobile);
             this.tabFiles.Controls.Add(this.titleFilesOther);
             this.tabFiles.Controls.Add(this.titleFilesLocal);
             this.tabFiles.Controls.Add(this.titleFilesSaved);
             this.tabFiles.Controls.Add(this.btnSearchFiles);
+            this.tabFiles.Controls.Add(this.bgSearchFiles);
             resources.ApplyResources(this.tabFiles, "tabFiles");
             this.tabFiles.Name = "tabFiles";
             // 
@@ -888,7 +888,7 @@
             this.bgSearchFiles.Corners.UpperLeft = 2;
             this.bgSearchFiles.Corners.UpperRight = 2;
             this.bgSearchFiles.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bgSearchFiles.DesignerSelected = false;
+            this.bgSearchFiles.DesignerSelected = true;
             this.bgSearchFiles.DimFactorClick = 0;
             this.bgSearchFiles.DimFactorHover = 0;
             this.bgSearchFiles.FillType = CButtonLib.CButton.eFillType.Solid;
@@ -1772,6 +1772,7 @@
             this.btnMoviesGenre.ShowFocus = CButtonLib.CButton.eFocus.None;
             this.btnMoviesGenre.SideImage = ((System.Drawing.Image)(resources.GetObject("btnMoviesGenre.SideImage")));
             this.btnMoviesGenre.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnMoviesGenre.SideImageSize = new System.Drawing.Size(22, 22);
             this.btnMoviesGenre.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnMoviesGenre.TextMargin = new System.Windows.Forms.Padding(10, 3, 2, 2);
             this.btnMoviesGenre.TextShadowShow = false;
@@ -1799,6 +1800,7 @@
             this.btnMoviesYear.ShowFocus = CButtonLib.CButton.eFocus.None;
             this.btnMoviesYear.SideImage = ((System.Drawing.Image)(resources.GetObject("btnMoviesYear.SideImage")));
             this.btnMoviesYear.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnMoviesYear.SideImageSize = new System.Drawing.Size(22, 22);
             this.btnMoviesYear.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnMoviesYear.TextMargin = new System.Windows.Forms.Padding(10, 3, 2, 2);
             this.btnMoviesYear.TextShadowShow = false;
@@ -1848,6 +1850,7 @@
             this.btnFilesSort.ShowFocus = CButtonLib.CButton.eFocus.None;
             this.btnFilesSort.SideImage = ((System.Drawing.Image)(resources.GetObject("btnFilesSort.SideImage")));
             this.btnFilesSort.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnFilesSort.SideImageSize = new System.Drawing.Size(22, 22);
             this.btnFilesSort.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnFilesSort.TextMargin = new System.Windows.Forms.Padding(10, 3, 2, 2);
             this.btnFilesSort.TextShadowShow = false;
@@ -1875,6 +1878,7 @@
             this.btnFilesHost.ShowFocus = CButtonLib.CButton.eFocus.None;
             this.btnFilesHost.SideImage = ((System.Drawing.Image)(resources.GetObject("btnFilesHost.SideImage")));
             this.btnFilesHost.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnFilesHost.SideImageSize = new System.Drawing.Size(22, 22);
             this.btnFilesHost.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnFilesHost.TextMargin = new System.Windows.Forms.Padding(10, 3, 2, 2);
             this.btnFilesHost.TextShadowShow = false;

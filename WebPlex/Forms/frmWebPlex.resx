@@ -809,33 +809,6 @@ Get direct download links for almost anything!</value>
   <data name="&gt;&gt;txtSearchMovies.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="bgSearchMovies.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 8.25pt</value>
-  </data>
-  <data name="bgSearchMovies.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 13</value>
-  </data>
-  <data name="bgSearchMovies.Size" type="System.Drawing.Size, System.Drawing">
-    <value>399, 36</value>
-  </data>
-  <data name="bgSearchMovies.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="bgSearchMovies.Text" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;bgSearchMovies.Name" xml:space="preserve">
-    <value>bgSearchMovies</value>
-  </data>
-  <data name="&gt;&gt;bgSearchMovies.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;bgSearchMovies.Parent" xml:space="preserve">
-    <value>tabMovies</value>
-  </data>
-  <data name="&gt;&gt;bgSearchMovies.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="panelMovieFilters.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
@@ -904,9 +877,10 @@ Get direct download links for almost anything!</value>
   </data>
   <data name="btnMoviesGenre.SideImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAF9JREFUaEPt
-        z0sKgDAQRMEc3ZurWTS4UPETSAJVMNvhdQEAAABeW/ZbG1391UWLEd3i48+I7vHxZcQw8fFmxHDx8WTE
-        sPFxN2L4+DgbMU18HEdMFx81fNp4AAAArpWyAccxY6cp/GORAAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAABfSURBVGhD7c9LCoAwEETBHN2bq1k0uFDxE0gCVTDb4XUBAAAAXlv2Wxtd/dVFixHd4uPPiO7x
+        8WXEMPHxZsRw8fFkxLDxcTdi+Pg4GzFNfBxHTBcfNXzaeAAAAK6VsgHHMWOnKfxjkQAAAABJRU5ErkJg
+        gg==
 </value>
   </data>
   <data name="btnMoviesGenre.Size" type="System.Drawing.Size, System.Drawing">
@@ -1049,9 +1023,10 @@ Get direct download links for almost anything!</value>
   </data>
   <data name="btnMoviesYear.SideImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAF9JREFUaEPt
-        z0sKgDAQRMEc3ZurWTS4UPETSAJVMNvhdQEAAABeW/ZbG1391UWLEd3i48+I7vHxZcQw8fFmxHDx8WTE
-        sPFxN2L4+DgbMU18HEdMFx81fNp4AAAArpWyAccxY6cp/GORAAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAABfSURBVGhD7c9LCoAwEETBHN2bq1k0uFDxE0gCVTDb4XUBAAAAXlv2Wxtd/dVFixHd4uPPiO7x
+        8WXEMPHxZsRw8fFkxLDxcTdi+Pg4GzFNfBxHTBcfNXzaeAAAAK6VsgHHMWOnKfxjkQAAAABJRU5ErkJg
+        gg==
 </value>
   </data>
   <data name="btnMoviesYear.Size" type="System.Drawing.Size, System.Drawing">
@@ -1232,7 +1207,7 @@ Get direct download links for almost anything!</value>
     <value>tabMovies</value>
   </data>
   <data name="&gt;&gt;panelMovieFilters.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="btnSearchMovies.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 8.25pt</value>
@@ -1262,6 +1237,33 @@ Get direct download links for almost anything!</value>
     <value>tabMovies</value>
   </data>
   <data name="&gt;&gt;btnSearchMovies.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="bgSearchMovies.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 8.25pt</value>
+  </data>
+  <data name="bgSearchMovies.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 13</value>
+  </data>
+  <data name="bgSearchMovies.Size" type="System.Drawing.Size, System.Drawing">
+    <value>399, 36</value>
+  </data>
+  <data name="bgSearchMovies.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="bgSearchMovies.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;bgSearchMovies.Name" xml:space="preserve">
+    <value>bgSearchMovies</value>
+  </data>
+  <data name="&gt;&gt;bgSearchMovies.Type" xml:space="preserve">
+    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;bgSearchMovies.Parent" xml:space="preserve">
+    <value>tabMovies</value>
+  </data>
+  <data name="&gt;&gt;bgSearchMovies.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
   <data name="tabMovies.Location" type="System.Drawing.Point, System.Drawing">
@@ -1344,9 +1346,10 @@ Get direct download links for almost anything!</value>
   </data>
   <data name="btnFilesSort.SideImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAF9JREFUaEPt
-        z0sKgDAQRMEc3ZurWTS4UPETSAJVMNvhdQEAAABeW/ZbG1391UWLEd3i48+I7vHxZcQw8fFmxHDx8WTE
-        sPFxN2L4+DgbMU18HEdMFx81fNp4AAAArpWyAccxY6cp/GORAAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAABfSURBVGhD7c9LCoAwEETBHN2bq1k0uFDxE0gCVTDb4XUBAAAAXlv2Wxtd/dVFixHd4uPPiO7x
+        8WXEMPHxZsRw8fFkxLDxcTdi+Pg4GzFNfBxHTBcfNXzaeAAAAK6VsgHHMWOnKfxjkQAAAABJRU5ErkJg
+        gg==
 </value>
   </data>
   <data name="btnFilesSort.Size" type="System.Drawing.Size, System.Drawing">
@@ -1441,9 +1444,10 @@ Get direct download links for almost anything!</value>
   </data>
   <data name="btnFilesHost.SideImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAF9JREFUaEPt
-        z0sKgDAQRMEc3ZurWTS4UPETSAJVMNvhdQEAAABeW/ZbG1391UWLEd3i48+I7vHxZcQw8fFmxHDx8WTE
-        sPFxN2L4+DgbMU18HEdMFx81fNp4AAAArpWyAccxY6cp/GORAAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAABfSURBVGhD7c9LCoAwEETBHN2bq1k0uFDxE0gCVTDb4XUBAAAAXlv2Wxtd/dVFixHd4uPPiO7x
+        8WXEMPHxZsRw8fFkxLDxcTdi+Pg4GzFNfBxHTBcfNXzaeAAAAK6VsgHHMWOnKfxjkQAAAABJRU5ErkJg
+        gg==
 </value>
   </data>
   <data name="btnFilesHost.Size" type="System.Drawing.Size, System.Drawing">
@@ -1902,33 +1906,6 @@ Get direct download links for almost anything!</value>
   <data name="&gt;&gt;titleFilesAudio.ZOrder" xml:space="preserve">
     <value>11</value>
   </data>
-  <data name="bgSearchFiles.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 8.25pt</value>
-  </data>
-  <data name="bgSearchFiles.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 13</value>
-  </data>
-  <data name="bgSearchFiles.Size" type="System.Drawing.Size, System.Drawing">
-    <value>399, 36</value>
-  </data>
-  <data name="bgSearchFiles.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="bgSearchFiles.Text" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;bgSearchFiles.Name" xml:space="preserve">
-    <value>bgSearchFiles</value>
-  </data>
-  <data name="&gt;&gt;bgSearchFiles.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;bgSearchFiles.Parent" xml:space="preserve">
-    <value>tabFiles</value>
-  </data>
-  <data name="&gt;&gt;bgSearchFiles.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
   <data name="titleFilesAll.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9.75pt</value>
   </data>
@@ -1957,7 +1934,7 @@ Get direct download links for almost anything!</value>
     <value>tabFiles</value>
   </data>
   <data name="&gt;&gt;titleFilesAll.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>12</value>
   </data>
   <data name="titleFilesMobile.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9.75pt</value>
@@ -1987,7 +1964,7 @@ Get direct download links for almost anything!</value>
     <value>tabFiles</value>
   </data>
   <data name="&gt;&gt;titleFilesMobile.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>13</value>
   </data>
   <data name="titleFilesOther.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9.75pt</value>
@@ -2017,7 +1994,7 @@ Get direct download links for almost anything!</value>
     <value>tabFiles</value>
   </data>
   <data name="&gt;&gt;titleFilesOther.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>14</value>
   </data>
   <data name="titleFilesLocal.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9.75pt</value>
@@ -2047,7 +2024,7 @@ Get direct download links for almost anything!</value>
     <value>tabFiles</value>
   </data>
   <data name="&gt;&gt;titleFilesLocal.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>15</value>
   </data>
   <data name="titleFilesSaved.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9.75pt</value>
@@ -2077,7 +2054,7 @@ Get direct download links for almost anything!</value>
     <value>tabFiles</value>
   </data>
   <data name="&gt;&gt;titleFilesSaved.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>16</value>
   </data>
   <data name="btnSearchFiles.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 8.25pt</value>
@@ -2104,6 +2081,33 @@ Get direct download links for almost anything!</value>
     <value>tabFiles</value>
   </data>
   <data name="&gt;&gt;btnSearchFiles.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="bgSearchFiles.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 8.25pt</value>
+  </data>
+  <data name="bgSearchFiles.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 13</value>
+  </data>
+  <data name="bgSearchFiles.Size" type="System.Drawing.Size, System.Drawing">
+    <value>399, 36</value>
+  </data>
+  <data name="bgSearchFiles.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="bgSearchFiles.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;bgSearchFiles.Name" xml:space="preserve">
+    <value>bgSearchFiles</value>
+  </data>
+  <data name="&gt;&gt;bgSearchFiles.Type" xml:space="preserve">
+    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;bgSearchFiles.Parent" xml:space="preserve">
+    <value>tabFiles</value>
+  </data>
+  <data name="&gt;&gt;bgSearchFiles.ZOrder" xml:space="preserve">
     <value>18</value>
   </data>
   <data name="tabFiles.Location" type="System.Drawing.Point, System.Drawing">
