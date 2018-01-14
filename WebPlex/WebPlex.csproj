@@ -308,7 +308,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\radar.png" />
+    <Content Include="Resources\search-web.png" />
     <None Include="Resources\play.png" />
     <None Include="Resources\send.png" />
     <None Include="Resources\play-black.png" />
@@ -331,7 +331,6 @@
     <Content Include="Resources\bookmark-plus.png" />
     <Content Include="Resources\bookmark-remove.png" />
     <None Include="Resources\home.png" />
-    <Content Include="Resources\opentheatre_logo.ico" />
     <None Include="Resources\search-white.png" />
     <None Include="Resources\magnet.png" />
     <None Include="Resources\google-plus.png" />
@@ -351,7 +350,6 @@
     <None Include="Resources\clipboard-check.png" />
     <None Include="Resources\clipboard-arrow-left.png" />
     <None Include="Resources\keyboard_arrow_down.png" />
-    <None Include="Resources\opentheatre-logo.png" />
     <None Include="Resources\settings.png" />
     <None Include="Resources\report.png" />
     <None Include="Resources\play_circle.png" />
@@ -370,7 +368,6 @@
     <None Include="Resources\cloud-sync.png" />
     <None Include="Resources\background-original.jpg" />
     <None Include="Resources\imdb.png" />
-    <None Include="Resources\opentheatre-text.png" />
     <None Include="Resources\poster-default.png" />
     <None Include="Resources\poster-glow.png" />
   </ItemGroup>

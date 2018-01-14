@@ -121,15 +121,115 @@
   <data name="tab.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
+  <data name="panelHomeEngine.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="btnHomeEngine.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left, Right</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnHomeEngine.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 10.75pt</value>
+  </data>
+  <data name="btnHomeEngine.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="btnHomeEngine.Size" type="System.Drawing.Size, System.Drawing">
+    <value>103, 36</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnHomeEngine.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="btnHomeEngine.Text" xml:space="preserve">
+    <value>WebPlex</value>
+  </data>
+  <data name="&gt;&gt;btnHomeEngine.Name" xml:space="preserve">
+    <value>btnHomeEngine</value>
+  </data>
+  <data name="&gt;&gt;btnHomeEngine.Type" xml:space="preserve">
+    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;btnHomeEngine.Parent" xml:space="preserve">
+    <value>panelHomeEngine</value>
+  </data>
+  <data name="&gt;&gt;btnHomeEngine.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="cmboBoxHomeEngine.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left, Right</value>
+  </data>
+  <data name="cmboBoxHomeEngine.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 10.75pt</value>
+  </data>
+  <data name="cmboBoxHomeEngine.Items" xml:space="preserve">
+    <value>WebPlex</value>
+  </data>
+  <data name="cmboBoxHomeEngine.Items1" xml:space="preserve">
+    <value>Google</value>
+  </data>
+  <data name="cmboBoxHomeEngine.Items2" xml:space="preserve">
+    <value>Googol</value>
+  </data>
+  <data name="cmboBoxHomeEngine.Items3" xml:space="preserve">
+    <value>Startpage</value>
+  </data>
+  <data name="cmboBoxHomeEngine.Items4" xml:space="preserve">
+    <value>Searx</value>
+  </data>
+  <data name="cmboBoxHomeEngine.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 8</value>
+  </data>
+  <data name="cmboBoxHomeEngine.Size" type="System.Drawing.Size, System.Drawing">
+    <value>103, 27</value>
+  </data>
+  <data name="cmboBoxHomeEngine.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;cmboBoxHomeEngine.Name" xml:space="preserve">
+    <value>cmboBoxHomeEngine</value>
+  </data>
+  <data name="&gt;&gt;cmboBoxHomeEngine.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cmboBoxHomeEngine.Parent" xml:space="preserve">
+    <value>panelHomeEngine</value>
+  </data>
+  <data name="&gt;&gt;cmboBoxHomeEngine.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="panelHomeEngine.Location" type="System.Drawing.Point, System.Drawing">
+    <value>258, 250</value>
+  </data>
+  <data name="panelHomeEngine.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="panelHomeEngine.Size" type="System.Drawing.Size, System.Drawing">
+    <value>103, 36</value>
+  </data>
+  <data name="panelHomeEngine.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;panelHomeEngine.Name" xml:space="preserve">
+    <value>panelHomeEngine</value>
+  </data>
+  <data name="&gt;&gt;panelHomeEngine.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panelHomeEngine.Parent" xml:space="preserve">
+    <value>tabHome</value>
+  </data>
+  <data name="&gt;&gt;panelHomeEngine.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="lineTopSearches.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="lineTopSearches.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Semibold, 13.25pt</value>
   </data>
   <data name="lineTopSearches.Location" type="System.Drawing.Point, System.Drawing">
-    <value>126, 322</value>
+    <value>114, 322</value>
   </data>
   <data name="lineTopSearches.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 16, 0, 3</value>
@@ -137,7 +237,6 @@
   <data name="lineTopSearches.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 2</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="lineTopSearches.TabIndex" type="System.Int32, mscorlib">
     <value>1105</value>
   </data>
@@ -154,7 +253,7 @@
     <value>tabHome</value>
   </data>
   <data name="&gt;&gt;lineTopSearches.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="lblHeaderTopSearches.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
@@ -169,7 +268,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblHeaderTopSearches.Location" type="System.Drawing.Point, System.Drawing">
-    <value>122, 298</value>
+    <value>110, 298</value>
   </data>
   <data name="lblHeaderTopSearches.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -193,7 +292,7 @@
     <value>tabHome</value>
   </data>
   <data name="&gt;&gt;lblHeaderTopSearches.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="lineHomeTopSearchesSplitter.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
@@ -202,13 +301,13 @@
     <value>Segoe UI Semibold, 13.25pt</value>
   </data>
   <data name="lineHomeTopSearchesSplitter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>126, 322</value>
+    <value>114, 322</value>
   </data>
   <data name="lineHomeTopSearchesSplitter.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 16, 3, 3</value>
   </data>
   <data name="lineHomeTopSearchesSplitter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>617, 2</value>
+    <value>645, 2</value>
   </data>
   <data name="lineHomeTopSearchesSplitter.TabIndex" type="System.Int32, mscorlib">
     <value>1103</value>
@@ -226,16 +325,16 @@
     <value>tabHome</value>
   </data>
   <data name="&gt;&gt;lineHomeTopSearchesSplitter.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="panelTopSearches.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
   </data>
   <data name="panelTopSearches.Location" type="System.Drawing.Point, System.Drawing">
-    <value>126, 329</value>
+    <value>114, 329</value>
   </data>
   <data name="panelTopSearches.Size" type="System.Drawing.Size, System.Drawing">
-    <value>616, 196</value>
+    <value>644, 196</value>
   </data>
   <data name="panelTopSearches.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -250,7 +349,7 @@
     <value>tabHome</value>
   </data>
   <data name="&gt;&gt;panelTopSearches.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="btnShareFacebook.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top</value>
@@ -280,7 +379,7 @@
     <value>tabHome</value>
   </data>
   <data name="&gt;&gt;btnShareFacebook.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="btnShareTwitter.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top</value>
@@ -310,7 +409,7 @@
     <value>tabHome</value>
   </data>
   <data name="&gt;&gt;btnShareTwitter.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="lblHeaderHome.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top</value>
@@ -357,7 +456,7 @@ Get direct download links for almost anything!</value>
     <value>tabHome</value>
   </data>
   <data name="&gt;&gt;lblHeaderHome.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="panelHomeFileType.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
@@ -447,7 +546,7 @@ Get direct download links for almost anything!</value>
     <value>1</value>
   </data>
   <data name="panelHomeFileType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>126, 250</value>
+    <value>114, 250</value>
   </data>
   <data name="panelHomeFileType.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -468,7 +567,7 @@ Get direct download links for almost anything!</value>
     <value>tabHome</value>
   </data>
   <data name="&gt;&gt;panelHomeFileType.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="btnSearchFilesHome.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
@@ -477,7 +576,7 @@ Get direct download links for almost anything!</value>
     <value>Segoe UI, 8.25pt</value>
   </data>
   <data name="btnSearchFilesHome.Location" type="System.Drawing.Point, System.Drawing">
-    <value>706, 250</value>
+    <value>722, 250</value>
   </data>
   <data name="btnSearchFilesHome.Size" type="System.Drawing.Size, System.Drawing">
     <value>36, 36</value>
@@ -498,7 +597,7 @@ Get direct download links for almost anything!</value>
     <value>tabHome</value>
   </data>
   <data name="&gt;&gt;btnSearchFilesHome.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="txtSearchFilesHome.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
@@ -507,10 +606,10 @@ Get direct download links for almost anything!</value>
     <value>Segoe UI, 10.75pt</value>
   </data>
   <data name="txtSearchFilesHome.Location" type="System.Drawing.Point, System.Drawing">
-    <value>278, 258</value>
+    <value>371, 258</value>
   </data>
   <data name="txtSearchFilesHome.Size" type="System.Drawing.Size, System.Drawing">
-    <value>422, 20</value>
+    <value>342, 20</value>
   </data>
   <data name="txtSearchFilesHome.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -525,7 +624,7 @@ Get direct download links for almost anything!</value>
     <value>tabHome</value>
   </data>
   <data name="&gt;&gt;txtSearchFilesHome.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="bgSearchFilesHome.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
@@ -534,13 +633,13 @@ Get direct download links for almost anything!</value>
     <value>Segoe UI, 8.25pt</value>
   </data>
   <data name="bgSearchFilesHome.Location" type="System.Drawing.Point, System.Drawing">
-    <value>269, 250</value>
+    <value>361, 250</value>
   </data>
   <data name="bgSearchFilesHome.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 3, 3, 3</value>
   </data>
   <data name="bgSearchFilesHome.Size" type="System.Drawing.Size, System.Drawing">
-    <value>474, 36</value>
+    <value>397, 36</value>
   </data>
   <data name="bgSearchFilesHome.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -558,7 +657,7 @@ Get direct download links for almost anything!</value>
     <value>tabHome</value>
   </data>
   <data name="&gt;&gt;bgSearchFilesHome.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="tabHome.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
@@ -638,36 +737,6 @@ Get direct download links for almost anything!</value>
   <data name="&gt;&gt;txtSearchMovies.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="btnSearchMovies.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 8.25pt</value>
-  </data>
-  <data name="btnSearchMovies.Location" type="System.Drawing.Point, System.Drawing">
-    <value>376, 13</value>
-  </data>
-  <data name="btnSearchMovies.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 3, 0, 3</value>
-  </data>
-  <data name="btnSearchMovies.Size" type="System.Drawing.Size, System.Drawing">
-    <value>36, 36</value>
-  </data>
-  <data name="btnSearchMovies.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="btnSearchMovies.Text" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;btnSearchMovies.Name" xml:space="preserve">
-    <value>btnSearchMovies</value>
-  </data>
-  <data name="&gt;&gt;btnSearchMovies.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;btnSearchMovies.Parent" xml:space="preserve">
-    <value>tabMovies</value>
-  </data>
-  <data name="&gt;&gt;btnSearchMovies.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="bgSearchMovies.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 8.25pt</value>
   </data>
@@ -693,7 +762,7 @@ Get direct download links for almost anything!</value>
     <value>tabMovies</value>
   </data>
   <data name="&gt;&gt;bgSearchMovies.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="panelMovieFilters.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -1091,6 +1160,36 @@ Get direct download links for almost anything!</value>
     <value>tabMovies</value>
   </data>
   <data name="&gt;&gt;panelMovieFilters.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="btnSearchMovies.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 8.25pt</value>
+  </data>
+  <data name="btnSearchMovies.Location" type="System.Drawing.Point, System.Drawing">
+    <value>376, 13</value>
+  </data>
+  <data name="btnSearchMovies.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 3, 0, 3</value>
+  </data>
+  <data name="btnSearchMovies.Size" type="System.Drawing.Size, System.Drawing">
+    <value>36, 36</value>
+  </data>
+  <data name="btnSearchMovies.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="btnSearchMovies.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;btnSearchMovies.Name" xml:space="preserve">
+    <value>btnSearchMovies</value>
+  </data>
+  <data name="&gt;&gt;btnSearchMovies.Type" xml:space="preserve">
+    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;btnSearchMovies.Parent" xml:space="preserve">
+    <value>tabMovies</value>
+  </data>
+  <data name="&gt;&gt;btnSearchMovies.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
   <data name="tabMovies.Location" type="System.Drawing.Point, System.Drawing">
@@ -1437,33 +1536,6 @@ Get direct download links for almost anything!</value>
   <data name="&gt;&gt;txtSearchFiles.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="btnSearchFiles.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 8.25pt</value>
-  </data>
-  <data name="btnSearchFiles.Location" type="System.Drawing.Point, System.Drawing">
-    <value>377, 13</value>
-  </data>
-  <data name="btnSearchFiles.Size" type="System.Drawing.Size, System.Drawing">
-    <value>36, 36</value>
-  </data>
-  <data name="btnSearchFiles.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="btnSearchFiles.Text" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;btnSearchFiles.Name" xml:space="preserve">
-    <value>btnSearchFiles</value>
-  </data>
-  <data name="&gt;&gt;btnSearchFiles.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;btnSearchFiles.Parent" xml:space="preserve">
-    <value>tabFiles</value>
-  </data>
-  <data name="&gt;&gt;btnSearchFiles.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
   <data name="dataGridFiles.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
@@ -1546,7 +1618,7 @@ Get direct download links for almost anything!</value>
     <value>tabFiles</value>
   </data>
   <data name="&gt;&gt;dataGridFiles.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="titleFilesSplitter.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -1576,7 +1648,7 @@ Get direct download links for almost anything!</value>
     <value>tabFiles</value>
   </data>
   <data name="&gt;&gt;titleFilesSplitter.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>5</value>
   </data>
   <data name="titleFilesArchives.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9.75pt</value>
@@ -1606,7 +1678,7 @@ Get direct download links for almost anything!</value>
     <value>tabFiles</value>
   </data>
   <data name="&gt;&gt;titleFilesArchives.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>6</value>
   </data>
   <data name="titleFilesVideo.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9.75pt</value>
@@ -1636,7 +1708,7 @@ Get direct download links for almost anything!</value>
     <value>tabFiles</value>
   </data>
   <data name="&gt;&gt;titleFilesVideo.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>7</value>
   </data>
   <data name="titleFilesTorrents.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9.75pt</value>
@@ -1666,7 +1738,7 @@ Get direct download links for almost anything!</value>
     <value>tabFiles</value>
   </data>
   <data name="&gt;&gt;titleFilesTorrents.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>8</value>
   </data>
   <data name="titleFilesEbooks.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9.75pt</value>
@@ -1696,7 +1768,7 @@ Get direct download links for almost anything!</value>
     <value>tabFiles</value>
   </data>
   <data name="&gt;&gt;titleFilesEbooks.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>9</value>
   </data>
   <data name="titleFilesSubtitles.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9.75pt</value>
@@ -1726,7 +1798,7 @@ Get direct download links for almost anything!</value>
     <value>tabFiles</value>
   </data>
   <data name="&gt;&gt;titleFilesSubtitles.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>10</value>
   </data>
   <data name="titleFilesAudio.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9.75pt</value>
@@ -1756,7 +1828,7 @@ Get direct download links for almost anything!</value>
     <value>tabFiles</value>
   </data>
   <data name="&gt;&gt;titleFilesAudio.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>11</value>
   </data>
   <data name="bgSearchFiles.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 8.25pt</value>
@@ -1783,7 +1855,7 @@ Get direct download links for almost anything!</value>
     <value>tabFiles</value>
   </data>
   <data name="&gt;&gt;bgSearchFiles.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>12</value>
   </data>
   <data name="titleFilesAll.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9.75pt</value>
@@ -1813,7 +1885,7 @@ Get direct download links for almost anything!</value>
     <value>tabFiles</value>
   </data>
   <data name="&gt;&gt;titleFilesAll.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>13</value>
   </data>
   <data name="titleFilesMobile.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9.75pt</value>
@@ -1843,7 +1915,7 @@ Get direct download links for almost anything!</value>
     <value>tabFiles</value>
   </data>
   <data name="&gt;&gt;titleFilesMobile.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>14</value>
   </data>
   <data name="titleFilesOther.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9.75pt</value>
@@ -1873,7 +1945,7 @@ Get direct download links for almost anything!</value>
     <value>tabFiles</value>
   </data>
   <data name="&gt;&gt;titleFilesOther.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>15</value>
   </data>
   <data name="titleFilesLocal.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9.75pt</value>
@@ -1903,7 +1975,7 @@ Get direct download links for almost anything!</value>
     <value>tabFiles</value>
   </data>
   <data name="&gt;&gt;titleFilesLocal.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>16</value>
   </data>
   <data name="titleFilesSaved.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9.75pt</value>
@@ -1933,6 +2005,33 @@ Get direct download links for almost anything!</value>
     <value>tabFiles</value>
   </data>
   <data name="&gt;&gt;titleFilesSaved.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="btnSearchFiles.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 8.25pt</value>
+  </data>
+  <data name="btnSearchFiles.Location" type="System.Drawing.Point, System.Drawing">
+    <value>377, 13</value>
+  </data>
+  <data name="btnSearchFiles.Size" type="System.Drawing.Size, System.Drawing">
+    <value>36, 36</value>
+  </data>
+  <data name="btnSearchFiles.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="btnSearchFiles.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;btnSearchFiles.Name" xml:space="preserve">
+    <value>btnSearchFiles</value>
+  </data>
+  <data name="&gt;&gt;btnSearchFiles.Type" xml:space="preserve">
+    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;btnSearchFiles.Parent" xml:space="preserve">
+    <value>tabFiles</value>
+  </data>
+  <data name="&gt;&gt;btnSearchFiles.ZOrder" xml:space="preserve">
     <value>18</value>
   </data>
   <data name="tabFiles.Location" type="System.Drawing.Point, System.Drawing">
