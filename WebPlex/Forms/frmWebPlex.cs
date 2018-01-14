@@ -336,7 +336,7 @@ namespace WebPlex
             catch { }
 
             lblHomeStats.Text = String.Format(lblHomeStats.Text, Utilities.getFormattedNumber(dataOpenFiles.Count.ToString()), Utilities.ToFileSize(Convert.ToDouble(totalSize)), Utilities.getFormattedNumber(dataOpenDirectories.Count.ToString()));
-            lblHomeStatsUpdated.Text = String.Format(lblHomeStatsUpdated.Text, Convert.ToDateTime(Utilities.getLastModifiedTime(linkOpenFiles)).ToShortDateString());
+            try { lblHomeStatsUpdated.Text = String.Format(lblHomeStatsUpdated.Text, Convert.ToDateTime(Utilities.getLastModifiedTime(linkOpenFiles)).ToShortDateString()); } catch { lblHomeStatsUpdated.Text = String.Format(lblHomeStatsUpdated.Text, "n/a"); }
         }
 
         public void loadTopSearches()
