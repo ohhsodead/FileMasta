@@ -1,6 +1,5 @@
 ﻿using DatabaseFileAPI;
 using OMDbAPI;
-using WebPlex;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -11,10 +10,7 @@ using System.Linq;
 using System.Net;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
-using UnhandledExceptions;
 using System.Collections;
-using System.Text;
-using System.Reflection;
 
 namespace WebPlex
 {

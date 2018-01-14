@@ -106,6 +106,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>misc-cs.resx</DependentUpon>
     </Compile>
+    <Compile Include="ExceptionHandler\ExceptionsEvents.cs" />
+    <Compile Include="ExceptionHandler\Logger.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -371,12 +373,6 @@
     <None Include="Resources\opentheatre-text.png" />
     <None Include="Resources\poster-default.png" />
     <None Include="Resources\poster-glow.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\UnhandledExceptions\UnhandledExceptions.csproj">
-      <Project>{8c34bf91-cce3-47fa-aa32-4b2bb1a6f17a}</Project>
-      <Name>UnhandledExceptions</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.2">
