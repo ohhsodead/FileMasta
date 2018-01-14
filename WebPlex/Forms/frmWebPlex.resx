@@ -4510,6 +4510,9 @@ WebPlex hosts no content, we provide only access to already available files foun
         rkJggg==
 </value>
   </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>800, 575</value>
   </data>
