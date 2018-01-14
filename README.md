@@ -10,7 +10,15 @@
 <br />
 
 ## What is WebPlex?
-WebPlex is a search engine designed to search and index files hosted among freely available web servers. It communicates with our own [public Json database](https://dl.dropbox.com/s/ucyeqfn96x7n9lh/open-files.json?dl=0), which is updated daily by our robots that crawl through free access internet resources to list the best quality files it finds. All resources are available for everyone to browse in our [open directories file](https://github.com/invu/WebPlex/tree/master/api), where users can submit open web directories. WebPlex hosts no content, we provide only access to already available files in a same way Google and other search engines do.
+WebPlex is intended to provide a very powerful web server indexing and search service allowing you to find a file among millions of files located on public servers around the internet. 
+
+The search engine is powered by a [database](https://dl.dropbox.com/s/ucyeqfn96x7n9lh/open-files.json?dl=0) that holds information about all the files web servers have. The information about the files is gathered by an intelligent web crawler that runs every 2 to 4 days. It keeps the database clean and up-to-date with the previous contents and new entries for each web server address submitted by members. 
+
+All web addresses this app uses for indexing are submitted by users only, our crawler also try to give more priority to the servers that are most accessed via the website, if a web server isn't checked successfully in a period of time, usually 10-15 days, it is automatically deleted from our database. Servers are available in our [open directories](https://github.com/invu/WebPlex/blob/master/api/open-directories.txt), where users can submit open web directories. Also please check our [Terms of Use](https://github.com/invu/WebPlex/blob/master/TERMSOFUSE.md) statement for more information about what you have to take into consideration to use this site.
+
+We host no content, we provide only access to already available files in a same way Google and other search engines do.
+
+To contact the website owner and administrator of this site you can send an e-mail to this address: bettercodes1@gmail.com, any comments or suggestions are welcome too, Thank you.
 
 ## Some Features Available
  * User-friendly interface with searches at lightning speed
