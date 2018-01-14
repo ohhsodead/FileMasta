@@ -121,13 +121,86 @@
   <data name="tab.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
+  <data name="lblHomeStatsUpdated.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="lblHomeStatsUpdated.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 10pt</value>
+  </data>
+  <data name="lblHomeStatsUpdated.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblHomeStatsUpdated.Location" type="System.Drawing.Point, System.Drawing">
+    <value>112, 507</value>
+  </data>
+  <data name="lblHomeStatsUpdated.Size" type="System.Drawing.Size, System.Drawing">
+    <value>644, 20</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="lblHomeStatsUpdated.TabIndex" type="System.Int32, mscorlib">
+    <value>1107</value>
+  </data>
+  <data name="lblHomeStatsUpdated.Text" xml:space="preserve">
+    <value>Updated: {0}</value>
+  </data>
+  <data name="lblHomeStatsUpdated.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopCenter</value>
+  </data>
+  <data name="&gt;&gt;lblHomeStatsUpdated.Name" xml:space="preserve">
+    <value>lblHomeStatsUpdated</value>
+  </data>
+  <data name="&gt;&gt;lblHomeStatsUpdated.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblHomeStatsUpdated.Parent" xml:space="preserve">
+    <value>tabHome</value>
+  </data>
+  <data name="&gt;&gt;lblHomeStatsUpdated.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblHomeStats.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="lblHomeStats.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 10pt</value>
+  </data>
+  <data name="lblHomeStats.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblHomeStats.Location" type="System.Drawing.Point, System.Drawing">
+    <value>112, 296</value>
+  </data>
+  <data name="lblHomeStats.Size" type="System.Drawing.Size, System.Drawing">
+    <value>644, 20</value>
+  </data>
+  <data name="lblHomeStats.TabIndex" type="System.Int32, mscorlib">
+    <value>1106</value>
+  </data>
+  <data name="lblHomeStats.Text" xml:space="preserve">
+    <value>Searching {0} files ({1}+) in {2} open directories</value>
+  </data>
+  <data name="lblHomeStats.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopCenter</value>
+  </data>
+  <data name="&gt;&gt;lblHomeStats.Name" xml:space="preserve">
+    <value>lblHomeStats</value>
+  </data>
+  <data name="&gt;&gt;lblHomeStats.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblHomeStats.Parent" xml:space="preserve">
+    <value>tabHome</value>
+  </data>
+  <data name="&gt;&gt;lblHomeStats.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="panelHomeEngine.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
   </data>
   <data name="btnHomeEngine.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Left, Right</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnHomeEngine.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 10.75pt</value>
   </data>
@@ -137,7 +210,6 @@
   <data name="btnHomeEngine.Size" type="System.Drawing.Size, System.Drawing">
     <value>103, 36</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btnHomeEngine.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
@@ -220,7 +292,7 @@
     <value>tabHome</value>
   </data>
   <data name="&gt;&gt;panelHomeEngine.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="lineTopSearches.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
@@ -229,7 +301,7 @@
     <value>Segoe UI Semibold, 13.25pt</value>
   </data>
   <data name="lineTopSearches.Location" type="System.Drawing.Point, System.Drawing">
-    <value>114, 322</value>
+    <value>114, 348</value>
   </data>
   <data name="lineTopSearches.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 16, 0, 3</value>
@@ -253,7 +325,7 @@
     <value>tabHome</value>
   </data>
   <data name="&gt;&gt;lineTopSearches.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="lblHeaderTopSearches.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
@@ -268,7 +340,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblHeaderTopSearches.Location" type="System.Drawing.Point, System.Drawing">
-    <value>110, 298</value>
+    <value>110, 324</value>
   </data>
   <data name="lblHeaderTopSearches.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -292,7 +364,7 @@
     <value>tabHome</value>
   </data>
   <data name="&gt;&gt;lblHeaderTopSearches.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="lineHomeTopSearchesSplitter.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
@@ -301,7 +373,7 @@
     <value>Segoe UI Semibold, 13.25pt</value>
   </data>
   <data name="lineHomeTopSearchesSplitter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>114, 322</value>
+    <value>114, 348</value>
   </data>
   <data name="lineHomeTopSearchesSplitter.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 16, 3, 3</value>
@@ -325,16 +397,16 @@
     <value>tabHome</value>
   </data>
   <data name="&gt;&gt;lineHomeTopSearchesSplitter.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="panelTopSearches.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
   </data>
   <data name="panelTopSearches.Location" type="System.Drawing.Point, System.Drawing">
-    <value>114, 329</value>
+    <value>114, 355</value>
   </data>
   <data name="panelTopSearches.Size" type="System.Drawing.Size, System.Drawing">
-    <value>644, 196</value>
+    <value>644, 134</value>
   </data>
   <data name="panelTopSearches.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -349,7 +421,7 @@
     <value>tabHome</value>
   </data>
   <data name="&gt;&gt;panelTopSearches.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="btnShareFacebook.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top</value>
@@ -379,7 +451,7 @@
     <value>tabHome</value>
   </data>
   <data name="&gt;&gt;btnShareFacebook.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>7</value>
   </data>
   <data name="btnShareTwitter.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top</value>
@@ -409,7 +481,7 @@
     <value>tabHome</value>
   </data>
   <data name="&gt;&gt;btnShareTwitter.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>8</value>
   </data>
   <data name="lblHeaderHome.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top</value>
@@ -456,7 +528,7 @@ Get direct download links for almost anything!</value>
     <value>tabHome</value>
   </data>
   <data name="&gt;&gt;lblHeaderHome.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>9</value>
   </data>
   <data name="panelHomeFileType.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
@@ -567,7 +639,7 @@ Get direct download links for almost anything!</value>
     <value>tabHome</value>
   </data>
   <data name="&gt;&gt;panelHomeFileType.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>10</value>
   </data>
   <data name="btnSearchFilesHome.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
@@ -597,7 +669,7 @@ Get direct download links for almost anything!</value>
     <value>tabHome</value>
   </data>
   <data name="&gt;&gt;btnSearchFilesHome.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>11</value>
   </data>
   <data name="txtSearchFilesHome.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
@@ -624,7 +696,7 @@ Get direct download links for almost anything!</value>
     <value>tabHome</value>
   </data>
   <data name="&gt;&gt;txtSearchFilesHome.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>12</value>
   </data>
   <data name="bgSearchFilesHome.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
@@ -657,7 +729,7 @@ Get direct download links for almost anything!</value>
     <value>tabHome</value>
   </data>
   <data name="&gt;&gt;bgSearchFilesHome.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>13</value>
   </data>
   <data name="tabHome.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>

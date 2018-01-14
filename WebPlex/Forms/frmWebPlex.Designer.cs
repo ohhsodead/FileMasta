@@ -158,6 +158,8 @@
             this.btnSettingsGeneralLanguage = new CButtonLib.CButton();
             this.imgHeaderAbout = new System.Windows.Forms.PictureBox();
             this.imgSpinner = new System.Windows.Forms.PictureBox();
+            this.lblHomeStats = new System.Windows.Forms.Label();
+            this.lblHomeStatsUpdated = new System.Windows.Forms.Label();
             this.tab.SuspendLayout();
             this.tabHome.SuspendLayout();
             this.panelHomeEngine.SuspendLayout();
@@ -211,6 +213,8 @@
             // tabHome
             // 
             this.tabHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
+            this.tabHome.Controls.Add(this.lblHomeStatsUpdated);
+            this.tabHome.Controls.Add(this.lblHomeStats);
             this.tabHome.Controls.Add(this.panelHomeEngine);
             this.tabHome.Controls.Add(this.lineTopSearches);
             this.tabHome.Controls.Add(this.lblHeaderTopSearches);
@@ -1943,6 +1947,18 @@
             this.imgSpinner.Name = "imgSpinner";
             this.imgSpinner.TabStop = false;
             // 
+            // lblHomeStats
+            // 
+            resources.ApplyResources(this.lblHomeStats, "lblHomeStats");
+            this.lblHomeStats.BackColor = System.Drawing.Color.Transparent;
+            this.lblHomeStats.Name = "lblHomeStats";
+            // 
+            // lblHomeStatsUpdated
+            // 
+            resources.ApplyResources(this.lblHomeStatsUpdated, "lblHomeStatsUpdated");
+            this.lblHomeStatsUpdated.BackColor = System.Drawing.Color.Transparent;
+            this.lblHomeStatsUpdated.Name = "lblHomeStatsUpdated";
+            // 
             // frmWebPlex
             // 
             resources.ApplyResources(this, "$this");
@@ -2123,6 +2139,8 @@
         private System.Windows.Forms.Panel panelHomeEngine;
         private CButtonLib.CButton btnHomeEngine;
         private System.Windows.Forms.ComboBox cmboBoxHomeEngine;
+        private System.Windows.Forms.Label lblHomeStats;
+        private System.Windows.Forms.Label lblHomeStatsUpdated;
     }
 }
 

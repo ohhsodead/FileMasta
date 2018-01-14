@@ -164,6 +164,7 @@ namespace WebPlex
 
         void worker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
+            getStats();
             loadMovies(52);
             Controls.Remove(frmSplash);
         }
@@ -318,6 +319,26 @@ namespace WebPlex
             Process.Start("https://facebook.com/sharer/sharer.php?app_id=248335808680372&kid_directed_site=0&sdk=joey&u=http%3A%2F%2Fgithub.com/invu/WebPlex%2F&display=popup&ref=plugin&src=share_button");
         }
 
+        public void getStats()
+        {
+            int totalSize = 0;
+
+            try
+            {
+
+                foreach (string jsonData in dataOpenFiles)
+                {
+                    var dataJson = DatabaseFilesEntity.FromJson(jsonData);
+                    if (dataJson.Size != "-") { totalSize += Convert.ToInt32(dataJson.Size); }
+                }
+
+            }
+            catch { }
+
+            lblHomeStats.Text = String.Format(lblHomeStats.Text, Utilities.getFormattedNumber(dataOpenFiles.Count.ToString()), Utilities.ToFileSize(Convert.ToDouble(totalSize)), Utilities.getFormattedNumber(dataOpenDirectories.Count.ToString()));
+            lblHomeStatsUpdated.Text = String.Format(lblHomeStatsUpdated.Text, Convert.ToDateTime(Utilities.getLastModifiedTime(linkOpenFiles)).ToShortDateString());
+        }
+
         public void loadTopSearches()
         {
             try
@@ -338,10 +359,10 @@ namespace WebPlex
                     }
                 }
 
-                // Add 'Top Results Powered by FileChef.com'
+                // Add 'Top Searches Powered by FileChef.com'
                 Label a = new Label
                 {
-                    Text = "Top Results Powered by FileChef.com",
+                    Text = "Top Searches Powered by FileChef.com",
                     Font = new Font(btnHomeFileType.Font.Name, 9, FontStyle.Regular),
                     BackColor = Color.Transparent,
                     ForeColor = Color.White,
