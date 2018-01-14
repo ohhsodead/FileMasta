@@ -441,10 +441,10 @@ namespace WebPlex
             else if (cmboBoxHomeEngine.SelectedIndex == 4) { selectedFilesEngine = exploreUrlSearx; }
         }
 
-        public static string exploreUrlGoogle = "https://www.google.com/search?q={0}+({1}) -inurl:(jsp|pl|php|html|aspx|htm|cf|shtml) intitle:index.of -inurl:(listen77|mp3raid|mp3toss|mp3drug|index_of|index-of|wallywashis|downloadmana)";
-        public static string exploreUrlGoogol = "https://googol.warriordudimanche.net/?q={0}%20%2B({1})%20-inurl%3A(jsp%7Cpl%7Cphp%7Chtml%7Caspx%7Chtm%7Ccf%7Cshtml)%20intitle%3Aindex.of%20-inurl%3A(listen77%7Cmp3raid%7Cmp3toss%7Cmp3drug%7Cindex_of%7Cindex-of%7Cwallywashis%7Cdownloadmana)";
-        public static string exploreUrlStartpage = "https://www.startpage.com/do/dsearch?query={0}%20%2B({1})%20-inurl%3A(jsp%7Cpl%7Cphp%7Chtml%7Caspx%7Chtm%7Ccf%7Cshtml)%20intitle%3Aindex.of%20-inurl%3A(listen77%7Cmp3raid%7Cmp3toss%7Cmp3drug%7Cindex_of%7Cindex-of%7Cwallywashis%7Cdownloadmana)";
-        public static string exploreUrlSearx = "https://searx.me/?q={0}%20%2B({1})%20-inurl%3A(jsp%7Cpl%7Cphp%7Chtml%7Caspx%7Chtm%7Ccf%7Cshtml)%20intitle%3Aindex.of%20-inurl%3A(listen77%7Cmp3raid%7Cmp3toss%7Cmp3drug%7Cindex_of%7Cindex-of%7Cwallywashis%7Cdownloadmana)";
+        public static string exploreUrlGoogle = "https://google.com/search?q=";
+        public static string exploreUrlGoogol = "https://googol.warriordudimanche.net/?q=";
+        public static string exploreUrlStartpage = "https://startpage.com/do/dsearch?query=";
+        public static string exploreUrlSearx = "https://searx.me/?q=";
 
         private void btnSearchFilesHome_ClickButtonArea(object Sender, MouseEventArgs e)
         {
@@ -465,14 +465,14 @@ namespace WebPlex
             }
             else
             {
-                Process.Start(String.Format(selectedFilesEngine, txtSearchFilesHome.Text, String.Join("|", selectedFilesFileType.ToArray()))); imgSpinner.Visible = false;
+                Process.Start(selectedFilesEngine + String.Format("{0}+({1}) -inurl:(jsp|pl|php|html|aspx|htm|cf|shtml) intitle:index.of -inurl:(listen77|mp3raid|mp3toss|mp3drug|index_of|index-of|wallywashis|downloadmana)", txtSearchFilesHome.Text, String.Join("|", selectedFilesFileType.ToArray()))); imgSpinner.Visible = false;
             }
         }
 
         // Movies tab
-        int countedMovies = 0;
         string selectedGenre = "", selectedYear = "";
 
+        int countedMovies = 0;
         object loadMoviesLock = new object();
         public List<ctrlMoviePoster> LoadMovies(int loadCount)
         {
