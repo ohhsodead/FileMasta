@@ -30,27 +30,14 @@ namespace WebPlex.CControls
             VLCToolStripMenuItem.Visible = File.Exists(frmWebPlex.pathVLC);
             MPCToolStripMenuItem.Visible = File.Exists(frmWebPlex.pathMPCCodec64) || File.Exists(frmWebPlex.pathMPC64) || File.Exists(frmWebPlex.pathMPC86);
 
-            if (infoSize.Text == "-") { btnRequestFileSize.Visible = true; }
             if (videoFileTypes.Contains(infoType.Text.ToUpper()) || audioFileTypes.Contains(infoType.Text.ToUpper())) { btnPlayMedia.Visible = true; }
+
             if (infoAge.Text == "-")
             {
-                try
-                {
-                    WebRequest req = WebRequest.Create(infoFileURL.Text);
-                    req.Method = "HEAD";
-                    req.Timeout = 3000;
-                    using (HttpWebResponse fileResponse = (HttpWebResponse)req.GetResponse())
-                    {
-                        DateTime fileModifiedTime = fileResponse.LastModified;
-                        if (fileModifiedTime != null)
-                        {
-                            infoAge.Text = Utilities.getTimeAgo(Convert.ToDateTime(fileModifiedTime.ToString()));
-                        }
-                        else { infoAge.Text = "-"; }
-                    }
-                }
-                catch { }          
+                try { infoAge.Text = Utilities.getTimeAgo(Convert.ToDateTime(Utilities.getLastModifiedTime(infoFileURL.Text))); } catch { infoAge.Text = "-"; }  
             }
+
+            if (infoSize.Text == "-") { btnRequestFileSize.Visible = true; }
 
             if (infoFileSubtitles == null)
             {
