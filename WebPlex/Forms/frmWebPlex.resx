@@ -2823,7 +2823,7 @@ The link you submit will go to our issue tracker on GitHub. Links are reviewed o
     <value>NoControl</value>
   </data>
   <data name="lblAboutVersion.Location" type="System.Drawing.Point, System.Drawing">
-    <value>747, 496</value>
+    <value>747, 513</value>
   </data>
   <data name="lblAboutVersion.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 0, 3, 5</value>
@@ -2865,7 +2865,7 @@ The link you submit will go to our issue tracker on GitHub. Links are reviewed o
     <value>NoControl</value>
   </data>
   <data name="btnAboutReportIssue.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 496</value>
+    <value>7, 513</value>
   </data>
   <data name="btnAboutReportIssue.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 0, 3, 5</value>
@@ -2907,7 +2907,7 @@ The link you submit will go to our issue tracker on GitHub. Links are reviewed o
     <value>NoControl</value>
   </data>
   <data name="lblAboutSubText.Location" type="System.Drawing.Point, System.Drawing">
-    <value>317, 484</value>
+    <value>317, 501</value>
   </data>
   <data name="lblAboutSubText.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 0, 3, 5</value>
