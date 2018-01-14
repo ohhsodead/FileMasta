@@ -10,7 +10,7 @@
 <br />
 
 ## What is WebPlex?
-WebPlex is a search engine designed to search and index files hosted among freely available web servers. It communicates with our own [public Json database](https://dl.dropbox.com/s/6ca7v71dwntiu0a/open-files.json?dl=0), which is updated daily by our robots that crawl through free access internet resources to list the best quality files it finds. All resources are available for everyone to browse in our [open directories file](https://github.com/invu/WebPlex/tree/master/api), where users can submit open web directories. WebPlex hosts no content, we provide only access to already available files in a same way Google and other search engines do.
+WebPlex is a search engine designed to search and index files hosted among freely available web servers. It communicates with our own [public Json database](https://dl.dropbox.com/s/ucyeqfn96x7n9lh/open-files.json?dl=0), which is updated daily by our robots that crawl through free access internet resources to list the best quality files it finds. All resources are available for everyone to browse in our [open directories file](https://github.com/invu/WebPlex/tree/master/api), where users can submit open web directories. WebPlex hosts no content, we provide only access to already available files in a same way Google and other search engines do.
 
 ## Some Features Available
  * User-friendly interface with searches at lightning speed
@@ -24,7 +24,7 @@ WebPlex is a search engine designed to search and index files hosted among freel
  * Automatic local cache updates
 
 ## Latest Build
-WebPlex 2.13
+WebPlex 2.14
 
 ## Supported Systems
 * Windows 7 and above (Windows 7, 8, 8.1, 10) using .NET 4.7.1 [Download here](https://www.microsoft.com/net/download/dotnet-framework-runtime/net471).
