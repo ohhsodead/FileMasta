@@ -142,6 +142,26 @@ namespace WebPlex
             catch { return true; }
         }
 
+        public static string getLastModifiedTime(string webUrl)
+        {
+            try
+            {
+                WebRequest req = WebRequest.Create(webUrl);
+                req.Method = "HEAD";
+                req.Timeout = -1;
+                using (HttpWebResponse fileResponse = (HttpWebResponse)req.GetResponse())
+                {
+                    DateTime fileModifiedTime = fileResponse.LastModified;
+                    if (fileModifiedTime != null)
+                    {
+                        return fileModifiedTime.ToString();
+                    }
+                    else { return "n/a"; }
+                }
+            }
+            catch { return "n/a"; }
+        }
+
         // compare file bytes
         public static bool isFileSizeIdentical(string fileURLSize, string fileURL)
         {
