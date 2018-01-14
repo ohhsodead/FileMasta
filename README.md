@@ -46,6 +46,38 @@ Please supply as much information about the problem you are experiencing as poss
 ## Contributing
 All contributions are welcome just send a pull request. WebPlex's directory database allows our team (and any other volunteering dev) to implement new indexers in a few seconds. If you'd like support for a new indexer but are not a developer then feel free to leave a request on the [issues page](https://github.com/invu/webplex/issues). It is recommended to use Visual Studio 2017 when making code changes in this project. You can download the community version for free [here](https://www.visualstudio.com/downloads/).
 
+## Frequently Asked Questions
+<details>
+<summary>Is this application secure?</summary>
+<br>
+Yes. All communications between our servers and your client is 100% secure.
+</details>
+<br>
+<details>
+<summary>How do you handle my privacy?</summary>
+<br>
+We don't use cookies, store sessions, userid's or IP addresses.
+</details>
+<br>
+<details>
+<summary>I have found the files I need, but I cannot download them, the link does not work. Why?</summary>
+<br>
+None of the file links you can find on this app is located on current server, so this can happen very frequently.
+<br>
+There could be several reasons for that:
+<br>
+* These files were recently removed from the server they were located, by the owner of the server or by someone else in the case of public servers.
+* The server that contains the files has a limit of maximum number of concurrent users logged in, and the limit has been reached. You can try to download the files later when some users disconnect or better still you should use a download manager that keeps trying to download the file.
+* The server where the files are is turned off or is not connected to the Internet at the moment.
+* The owner of the server has put a restriction on downloading these files.
+* Take a look at the age column on search results page, this represents the last time the indexer saw the file on the server, so the more recent, the more probable the file is available to download.
+</details>
+<br>
+<details>
+<summary>How can I download files from WebPlex? Do I need an special program?</summary>
+<br>
+You don't need a special program but it is very recommended. For example if you just click on the file link from your browser you can't see what is happening exactly between you and the web server (see previous question). So I would recommend to use a good web client that supports queuing or your favorite download manager, when you located the file you want to download just copy the shortcut by right clicking on the link and paste it on your web client or whatever, that its.</details>
+
 ## Prerequisites
 - [Material Design Icons (Powered by Google)](https://materialdesignicons.com/)
 - [CButton for .NET](https://www.codeproject.com/Articles/26622/Custom-Button-Control-with-Gradient-Colors-and-Ext)
