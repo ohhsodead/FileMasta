@@ -33,7 +33,7 @@ To contact the website owner and administrator of this site you can send an e-ma
  * Automatic local cache updates
 
 ## Latest Build
-WebPlex 2.14
+WebPlex 2.14.1
 
 ## Supported Systems
 * Windows 7 and above (Windows 7, 8, 8.1, 10) using .NET 4.7.1 [Download here](https://www.microsoft.com/net/download/dotnet-framework-runtime/net471).
