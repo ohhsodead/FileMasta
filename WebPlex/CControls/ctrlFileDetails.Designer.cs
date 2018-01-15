@@ -83,7 +83,7 @@
             this.infoFileName.Font = new System.Drawing.Font("Segoe UI Semibold", 18F);
             this.infoFileName.ForeColor = System.Drawing.Color.White;
             this.infoFileName.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.infoFileName.Location = new System.Drawing.Point(15, 25);
+            this.infoFileName.Location = new System.Drawing.Point(15, 20);
             this.infoFileName.Margin = new System.Windows.Forms.Padding(0);
             this.infoFileName.Name = "infoFileName";
             this.infoFileName.Size = new System.Drawing.Size(594, 32);
@@ -471,7 +471,7 @@
             this.panelReportFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panelReportFile.Controls.Add(this.btnReportFile);
             this.panelReportFile.Controls.Add(this.cmboboxReportFile);
-            this.panelReportFile.Location = new System.Drawing.Point(806, 26);
+            this.panelReportFile.Location = new System.Drawing.Point(813, 21);
             this.panelReportFile.Margin = new System.Windows.Forms.Padding(0, 0, 7, 0);
             this.panelReportFile.Name = "panelReportFile";
             this.panelReportFile.Size = new System.Drawing.Size(89, 31);
@@ -579,7 +579,7 @@
             this.btnSaveFile.Corners.UpperLeft = 2;
             this.btnSaveFile.Corners.UpperRight = 2;
             this.btnSaveFile.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSaveFile.DesignerSelected = false;
+            this.btnSaveFile.DesignerSelected = true;
             this.btnSaveFile.DimFactorClick = 0;
             this.btnSaveFile.DimFactorHover = 0;
             this.btnSaveFile.FillType = CButtonLib.CButton.eFillType.Solid;
@@ -587,7 +587,7 @@
             this.btnSaveFile.ForeColor = System.Drawing.Color.Black;
             this.btnSaveFile.ImageIndex = 0;
             this.btnSaveFile.ImageSize = new System.Drawing.Size(24, 24);
-            this.btnSaveFile.Location = new System.Drawing.Point(618, 26);
+            this.btnSaveFile.Location = new System.Drawing.Point(625, 21);
             this.btnSaveFile.Name = "btnSaveFile";
             this.btnSaveFile.ShowFocus = CButtonLib.CButton.eFocus.None;
             this.btnSaveFile.SideImage = global::WebPlex.Properties.Resources.bookmark_plus_black;
@@ -620,7 +620,7 @@
             this.btnViewDirectory.ForeColor = System.Drawing.Color.Black;
             this.btnViewDirectory.ImageIndex = 0;
             this.btnViewDirectory.ImageSize = new System.Drawing.Size(24, 24);
-            this.btnViewDirectory.Location = new System.Drawing.Point(670, 26);
+            this.btnViewDirectory.Location = new System.Drawing.Point(677, 21);
             this.btnViewDirectory.Name = "btnViewDirectory";
             this.btnViewDirectory.ShowFocus = CButtonLib.CButton.eFocus.None;
             this.btnViewDirectory.SideImage = global::WebPlex.Properties.Resources.eye_black;
@@ -654,7 +654,7 @@
             this.btnShareFile.Image = global::WebPlex.Properties.Resources.share_variant_black;
             this.btnShareFile.ImageIndex = 0;
             this.btnShareFile.ImageSize = new System.Drawing.Size(17, 17);
-            this.btnShareFile.Location = new System.Drawing.Point(722, 26);
+            this.btnShareFile.Location = new System.Drawing.Point(729, 21);
             this.btnShareFile.Name = "btnShareFile";
             this.btnShareFile.ShowFocus = CButtonLib.CButton.eFocus.None;
             this.btnShareFile.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -761,7 +761,7 @@
             this.btnCopyURL.Corners.UpperLeft = 2;
             this.btnCopyURL.Corners.UpperRight = 2;
             this.btnCopyURL.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCopyURL.DesignerSelected = true;
+            this.btnCopyURL.DesignerSelected = false;
             this.btnCopyURL.DimFactorClick = 0;
             this.btnCopyURL.DimFactorHover = 0;
             this.btnCopyURL.FillType = CButtonLib.CButton.eFillType.Solid;
@@ -821,7 +821,7 @@
             this.appClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.appClose.Image = global::WebPlex.Properties.Resources.close;
             this.appClose.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.appClose.Location = new System.Drawing.Point(910, 25);
+            this.appClose.Location = new System.Drawing.Point(916, 20);
             this.appClose.Margin = new System.Windows.Forms.Padding(3, 25, 25, 3);
             this.appClose.Name = "appClose";
             this.appClose.Size = new System.Drawing.Size(32, 32);
