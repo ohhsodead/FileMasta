@@ -41,34 +41,46 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tab = new System.Windows.Forms.TabControl();
             this.tabHome = new System.Windows.Forms.TabPage();
+            this.lblHomeStatsUpdated = new System.Windows.Forms.Label();
+            this.lblHomeStats = new System.Windows.Forms.Label();
             this.panelHomeEngine = new System.Windows.Forms.Panel();
+            this.btnHomeEngine = new CButtonLib.CButton();
             this.cmboBoxHomeEngine = new System.Windows.Forms.ComboBox();
             this.lineTopSearches = new CButtonLib.CButton();
             this.lblHeaderTopSearches = new System.Windows.Forms.Label();
             this.lineHomeTopSearchesSplitter = new CButtonLib.CButton();
             this.panelTopSearches = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnShareFacebook = new CButtonLib.CButton();
+            this.btnShareTwitter = new CButtonLib.CButton();
             this.lblHeaderHome = new System.Windows.Forms.Label();
             this.panelHomeFileType = new System.Windows.Forms.Panel();
+            this.btnHomeFileType = new CButtonLib.CButton();
             this.cmboBoxHomeFileType = new System.Windows.Forms.ComboBox();
+            this.btnSearchFilesHome = new CButtonLib.CButton();
             this.txtSearchFilesHome = new ChreneLib.Controls.TextBoxes.CTextBox();
             this.bgSearchFilesHome = new CButtonLib.CButton();
             this.tabMovies = new System.Windows.Forms.TabPage();
             this.panelMovies = new System.Windows.Forms.FlowLayoutPanel();
             this.txtSearchMovies = new ChreneLib.Controls.TextBoxes.CTextBox();
-            this.bgSearchMovies = new CButtonLib.CButton();
             this.panelMovieFilters = new System.Windows.Forms.FlowLayoutPanel();
             this.panelMoviesRandom = new System.Windows.Forms.Panel();
             this.btnMoviesRandom = new CButtonLib.CButton();
             this.panelMoviesGenre = new System.Windows.Forms.Panel();
+            this.btnMoviesGenre = new CButtonLib.CButton();
             this.cmboBoxMoviesGenre = new System.Windows.Forms.ComboBox();
             this.panelMoviesYear = new System.Windows.Forms.Panel();
+            this.btnMoviesYear = new CButtonLib.CButton();
             this.cmboBoxMoviesYear = new System.Windows.Forms.ComboBox();
+            this.btnSearchMovies = new CButtonLib.CButton();
+            this.bgSearchMovies = new CButtonLib.CButton();
             this.tabFiles = new System.Windows.Forms.TabPage();
             this.emptyDataFiles = new System.Windows.Forms.Label();
             this.panelFileFilters = new System.Windows.Forms.FlowLayoutPanel();
             this.panelFilesSort = new System.Windows.Forms.Panel();
+            this.btnFilesSort = new CButtonLib.CButton();
             this.cmboBoxFilesSort = new System.Windows.Forms.ComboBox();
             this.panelFilesHost = new System.Windows.Forms.Panel();
+            this.btnFilesHost = new CButtonLib.CButton();
             this.cmboBoxFilesHost = new System.Windows.Forms.ComboBox();
             this.lblFilesResultsInfo = new System.Windows.Forms.Label();
             this.txtSearchFiles = new ChreneLib.Controls.TextBoxes.CTextBox();
@@ -86,12 +98,13 @@
             this.titleFilesEbooks = new CButtonLib.CButton();
             this.titleFilesSubtitles = new CButtonLib.CButton();
             this.titleFilesAudio = new CButtonLib.CButton();
-            this.bgSearchFiles = new CButtonLib.CButton();
             this.titleFilesAll = new CButtonLib.CButton();
             this.titleFilesMobile = new CButtonLib.CButton();
             this.titleFilesOther = new CButtonLib.CButton();
             this.titleFilesLocal = new CButtonLib.CButton();
             this.titleFilesSaved = new CButtonLib.CButton();
+            this.btnSearchFiles = new CButtonLib.CButton();
+            this.bgSearchFiles = new CButtonLib.CButton();
             this.tabDiscover = new System.Windows.Forms.TabPage();
             this.lblHeaderDiscover = new System.Windows.Forms.Label();
             this.dataGridDiscover = new System.Windows.Forms.DataGridView();
@@ -109,6 +122,7 @@
             this.lblHeaderSubmit = new System.Windows.Forms.Label();
             this.tabSettings = new System.Windows.Forms.TabPage();
             this.panelGeneralSettingsLanguage = new System.Windows.Forms.Panel();
+            this.btnSettingsGeneralLanguage = new CButtonLib.CButton();
             this.cmboboxSettingsLanguage = new System.Windows.Forms.ComboBox();
             this.lblSettingsGeneralLanguage = new System.Windows.Forms.Label();
             this.titleSettingsGeneral = new System.Windows.Forms.Label();
@@ -117,49 +131,37 @@
             this.btnSettingsSave = new CButtonLib.CButton();
             this.btnSettingsRestoreDefault = new CButtonLib.CButton();
             this.tabAbout = new System.Windows.Forms.TabPage();
-            this.lblAboutVersion = new System.Windows.Forms.Label();
+            this.lblAboutChangelogVersion = new System.Windows.Forms.Label();
             this.btnAboutReportIssue = new System.Windows.Forms.Label();
             this.lblAboutSubText = new System.Windows.Forms.Label();
             this.lblAboutText = new System.Windows.Forms.Label();
+            this.imgHeaderAbout = new System.Windows.Forms.PictureBox();
             this.tabBlank = new System.Windows.Forms.TabPage();
             this.panelTitles = new System.Windows.Forms.Panel();
+            this.imgHome = new System.Windows.Forms.PictureBox();
             this.titleLineHome = new CButtonLib.CButton();
             this.titleHome = new System.Windows.Forms.Label();
+            this.imgSubmit = new System.Windows.Forms.PictureBox();
             this.titleLineSubmit = new CButtonLib.CButton();
             this.titleSubmit = new System.Windows.Forms.Label();
+            this.imgDiscover = new System.Windows.Forms.PictureBox();
             this.titleLineDiscover = new CButtonLib.CButton();
             this.titleDiscover = new System.Windows.Forms.Label();
+            this.imgSettings = new System.Windows.Forms.PictureBox();
             this.titleLineSettings = new CButtonLib.CButton();
             this.titleSettings = new System.Windows.Forms.Label();
+            this.imgAbout = new System.Windows.Forms.PictureBox();
             this.titleLineAbout = new CButtonLib.CButton();
             this.titleAbout = new System.Windows.Forms.Label();
+            this.imgFiles = new System.Windows.Forms.PictureBox();
+            this.imgMovies = new System.Windows.Forms.PictureBox();
             this.titleLineFiles = new CButtonLib.CButton();
             this.titleLineMovies = new CButtonLib.CButton();
             this.titleFiles = new System.Windows.Forms.Label();
             this.titleMovies = new System.Windows.Forms.Label();
-            this.imgHome = new System.Windows.Forms.PictureBox();
-            this.imgSubmit = new System.Windows.Forms.PictureBox();
-            this.imgDiscover = new System.Windows.Forms.PictureBox();
-            this.imgSettings = new System.Windows.Forms.PictureBox();
-            this.imgAbout = new System.Windows.Forms.PictureBox();
-            this.imgFiles = new System.Windows.Forms.PictureBox();
-            this.imgMovies = new System.Windows.Forms.PictureBox();
-            this.btnHomeEngine = new CButtonLib.CButton();
-            this.btnShareFacebook = new CButtonLib.CButton();
-            this.btnShareTwitter = new CButtonLib.CButton();
-            this.btnHomeFileType = new CButtonLib.CButton();
-            this.btnSearchFilesHome = new CButtonLib.CButton();
-            this.btnMoviesGenre = new CButtonLib.CButton();
-            this.btnMoviesYear = new CButtonLib.CButton();
-            this.btnSearchMovies = new CButtonLib.CButton();
-            this.btnFilesSort = new CButtonLib.CButton();
-            this.btnFilesHost = new CButtonLib.CButton();
-            this.btnSearchFiles = new CButtonLib.CButton();
-            this.btnSettingsGeneralLanguage = new CButtonLib.CButton();
-            this.imgHeaderAbout = new System.Windows.Forms.PictureBox();
             this.imgSpinner = new System.Windows.Forms.PictureBox();
-            this.lblHomeStats = new System.Windows.Forms.Label();
-            this.lblHomeStatsUpdated = new System.Windows.Forms.Label();
+            this.btnAboutTermsOfUse = new System.Windows.Forms.Label();
+            this.btnAboutPrivacyPolicy = new System.Windows.Forms.Label();
             this.tab.SuspendLayout();
             this.tabHome.SuspendLayout();
             this.panelHomeEngine.SuspendLayout();
@@ -182,6 +184,7 @@
             this.tabSettings.SuspendLayout();
             this.panelGeneralSettingsLanguage.SuspendLayout();
             this.tabAbout.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgHeaderAbout)).BeginInit();
             this.panelTitles.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgHome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgSubmit)).BeginInit();
@@ -190,7 +193,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.imgAbout)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgFiles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgMovies)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgHeaderAbout)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgSpinner)).BeginInit();
             this.SuspendLayout();
             // 
@@ -230,12 +232,50 @@
             resources.ApplyResources(this.tabHome, "tabHome");
             this.tabHome.Name = "tabHome";
             // 
+            // lblHomeStatsUpdated
+            // 
+            resources.ApplyResources(this.lblHomeStatsUpdated, "lblHomeStatsUpdated");
+            this.lblHomeStatsUpdated.BackColor = System.Drawing.Color.Transparent;
+            this.lblHomeStatsUpdated.Name = "lblHomeStatsUpdated";
+            // 
+            // lblHomeStats
+            // 
+            resources.ApplyResources(this.lblHomeStats, "lblHomeStats");
+            this.lblHomeStats.BackColor = System.Drawing.Color.Transparent;
+            this.lblHomeStats.Name = "lblHomeStats";
+            // 
             // panelHomeEngine
             // 
             resources.ApplyResources(this.panelHomeEngine, "panelHomeEngine");
             this.panelHomeEngine.Controls.Add(this.btnHomeEngine);
             this.panelHomeEngine.Controls.Add(this.cmboBoxHomeEngine);
             this.panelHomeEngine.Name = "panelHomeEngine";
+            // 
+            // btnHomeEngine
+            // 
+            resources.ApplyResources(this.btnHomeEngine, "btnHomeEngine");
+            this.btnHomeEngine.BackColor = System.Drawing.Color.Transparent;
+            this.btnHomeEngine.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.btnHomeEngine.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.btnHomeEngine.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnHomeEngine.DesignerSelected = false;
+            this.btnHomeEngine.DimFactorClick = 0;
+            this.btnHomeEngine.DimFactorHover = 0;
+            this.btnHomeEngine.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.btnHomeEngine.ForeColor = System.Drawing.Color.Black;
+            this.btnHomeEngine.Image = global::WebPlex.Properties.Resources.search;
+            this.btnHomeEngine.ImageIndex = 0;
+            this.btnHomeEngine.ImageSize = new System.Drawing.Size(21, 21);
+            this.btnHomeEngine.Name = "btnHomeEngine";
+            this.btnHomeEngine.ShowFocus = CButtonLib.CButton.eFocus.None;
+            this.btnHomeEngine.SideImage = global::WebPlex.Properties.Resources.arrow_drop_down_black;
+            this.btnHomeEngine.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnHomeEngine.SideImageSize = new System.Drawing.Size(22, 22);
+            this.btnHomeEngine.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHomeEngine.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnHomeEngine.TextMargin = new System.Windows.Forms.Padding(2, 3, 2, 2);
+            this.btnHomeEngine.TextShadowShow = false;
+            this.btnHomeEngine.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnExploreEngine_ClickButtonArea);
             // 
             // cmboBoxHomeEngine
             // 
@@ -309,6 +349,58 @@
             this.panelTopSearches.BackColor = System.Drawing.Color.Transparent;
             this.panelTopSearches.Name = "panelTopSearches";
             // 
+            // btnShareFacebook
+            // 
+            resources.ApplyResources(this.btnShareFacebook, "btnShareFacebook");
+            this.btnShareFacebook.BackColor = System.Drawing.Color.Transparent;
+            this.btnShareFacebook.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(103)))), ((int)(((byte)(178)))));
+            this.btnShareFacebook.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(103)))), ((int)(((byte)(178)))));
+            this.btnShareFacebook.Corners.All = 2;
+            this.btnShareFacebook.Corners.LowerLeft = 2;
+            this.btnShareFacebook.Corners.LowerRight = 2;
+            this.btnShareFacebook.Corners.UpperLeft = 2;
+            this.btnShareFacebook.Corners.UpperRight = 2;
+            this.btnShareFacebook.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnShareFacebook.DesignerSelected = false;
+            this.btnShareFacebook.DimFactorClick = 0;
+            this.btnShareFacebook.DimFactorHover = 0;
+            this.btnShareFacebook.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.btnShareFacebook.Image = global::WebPlex.Properties.Resources.facebook;
+            this.btnShareFacebook.ImageIndex = 0;
+            this.btnShareFacebook.Name = "btnShareFacebook";
+            this.btnShareFacebook.ShowFocus = CButtonLib.CButton.eFocus.None;
+            this.btnShareFacebook.TabStop = false;
+            this.btnShareFacebook.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnShareFacebook.TextMargin = new System.Windows.Forms.Padding(0, 3, 2, 2);
+            this.btnShareFacebook.TextShadowShow = false;
+            this.btnShareFacebook.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnShareFacebook_ClickButtonArea);
+            // 
+            // btnShareTwitter
+            // 
+            resources.ApplyResources(this.btnShareTwitter, "btnShareTwitter");
+            this.btnShareTwitter.BackColor = System.Drawing.Color.Transparent;
+            this.btnShareTwitter.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(149)))), ((int)(((byte)(224)))));
+            this.btnShareTwitter.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(149)))), ((int)(((byte)(224)))));
+            this.btnShareTwitter.Corners.All = 2;
+            this.btnShareTwitter.Corners.LowerLeft = 2;
+            this.btnShareTwitter.Corners.LowerRight = 2;
+            this.btnShareTwitter.Corners.UpperLeft = 2;
+            this.btnShareTwitter.Corners.UpperRight = 2;
+            this.btnShareTwitter.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnShareTwitter.DesignerSelected = false;
+            this.btnShareTwitter.DimFactorClick = 0;
+            this.btnShareTwitter.DimFactorHover = 0;
+            this.btnShareTwitter.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.btnShareTwitter.Image = global::WebPlex.Properties.Resources.twitter;
+            this.btnShareTwitter.ImageIndex = 0;
+            this.btnShareTwitter.Name = "btnShareTwitter";
+            this.btnShareTwitter.ShowFocus = CButtonLib.CButton.eFocus.None;
+            this.btnShareTwitter.TabStop = false;
+            this.btnShareTwitter.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnShareTwitter.TextMargin = new System.Windows.Forms.Padding(0, 3, 2, 2);
+            this.btnShareTwitter.TextShadowShow = false;
+            this.btnShareTwitter.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnShareTwitter_ClickButtonArea);
+            // 
             // lblHeaderHome
             // 
             resources.ApplyResources(this.lblHeaderHome, "lblHeaderHome");
@@ -321,6 +413,31 @@
             this.panelHomeFileType.Controls.Add(this.btnHomeFileType);
             this.panelHomeFileType.Controls.Add(this.cmboBoxHomeFileType);
             this.panelHomeFileType.Name = "panelHomeFileType";
+            // 
+            // btnHomeFileType
+            // 
+            resources.ApplyResources(this.btnHomeFileType, "btnHomeFileType");
+            this.btnHomeFileType.BackColor = System.Drawing.Color.Transparent;
+            this.btnHomeFileType.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.btnHomeFileType.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.btnHomeFileType.Corners.LowerLeft = 2;
+            this.btnHomeFileType.Corners.UpperLeft = 2;
+            this.btnHomeFileType.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnHomeFileType.DesignerSelected = false;
+            this.btnHomeFileType.DimFactorClick = 0;
+            this.btnHomeFileType.DimFactorHover = 0;
+            this.btnHomeFileType.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.btnHomeFileType.ForeColor = System.Drawing.Color.Black;
+            this.btnHomeFileType.ImageIndex = 0;
+            this.btnHomeFileType.Name = "btnHomeFileType";
+            this.btnHomeFileType.ShowFocus = CButtonLib.CButton.eFocus.None;
+            this.btnHomeFileType.SideImage = global::WebPlex.Properties.Resources.arrow_drop_down_black;
+            this.btnHomeFileType.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnHomeFileType.SideImageSize = new System.Drawing.Size(22, 22);
+            this.btnHomeFileType.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnHomeFileType.TextMargin = new System.Windows.Forms.Padding(10, 3, 2, 2);
+            this.btnHomeFileType.TextShadowShow = false;
+            this.btnHomeFileType.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnHomeFileType_ClickButtonArea);
             // 
             // cmboBoxHomeFileType
             // 
@@ -339,6 +456,28 @@
             this.cmboBoxHomeFileType.Name = "cmboBoxHomeFileType";
             this.cmboBoxHomeFileType.TabStop = false;
             this.cmboBoxHomeFileType.SelectedIndexChanged += new System.EventHandler(this.cmboBoxHomeFileType_SelectedIndexChanged);
+            // 
+            // btnSearchFilesHome
+            // 
+            resources.ApplyResources(this.btnSearchFilesHome, "btnSearchFilesHome");
+            this.btnSearchFilesHome.BackColor = System.Drawing.Color.Transparent;
+            this.btnSearchFilesHome.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.btnSearchFilesHome.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.btnSearchFilesHome.Corners.LowerRight = 2;
+            this.btnSearchFilesHome.Corners.UpperRight = 2;
+            this.btnSearchFilesHome.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSearchFilesHome.DesignerSelected = false;
+            this.btnSearchFilesHome.DimFactorClick = 0;
+            this.btnSearchFilesHome.DimFactorHover = 0;
+            this.btnSearchFilesHome.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.btnSearchFilesHome.FocalPoints.CenterPtX = 0F;
+            this.btnSearchFilesHome.FocalPoints.CenterPtY = 0F;
+            this.btnSearchFilesHome.Image = global::WebPlex.Properties.Resources.search;
+            this.btnSearchFilesHome.ImageIndex = 0;
+            this.btnSearchFilesHome.ImageSize = new System.Drawing.Size(22, 22);
+            this.btnSearchFilesHome.Name = "btnSearchFilesHome";
+            this.btnSearchFilesHome.ShowFocus = CButtonLib.CButton.eFocus.None;
+            this.btnSearchFilesHome.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnSearchFilesHome_ClickButtonArea);
             // 
             // txtSearchFilesHome
             // 
@@ -404,28 +543,6 @@
             this.txtSearchMovies.WaterMarkForeColor = System.Drawing.Color.LightGray;
             this.txtSearchMovies.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtMoviesSearchBox_KeyDown);
             // 
-            // bgSearchMovies
-            // 
-            this.bgSearchMovies.BackColor = System.Drawing.Color.Transparent;
-            this.bgSearchMovies.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(111)))), ((int)(((byte)(131)))));
-            this.bgSearchMovies.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(111)))), ((int)(((byte)(131)))));
-            this.bgSearchMovies.Corners.All = 2;
-            this.bgSearchMovies.Corners.LowerLeft = 2;
-            this.bgSearchMovies.Corners.LowerRight = 2;
-            this.bgSearchMovies.Corners.UpperLeft = 2;
-            this.bgSearchMovies.Corners.UpperRight = 2;
-            this.bgSearchMovies.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bgSearchMovies.DesignerSelected = false;
-            this.bgSearchMovies.DimFactorClick = 0;
-            this.bgSearchMovies.DimFactorHover = 0;
-            this.bgSearchMovies.FillType = CButtonLib.CButton.eFillType.Solid;
-            resources.ApplyResources(this.bgSearchMovies, "bgSearchMovies");
-            this.bgSearchMovies.ImageIndex = 0;
-            this.bgSearchMovies.Name = "bgSearchMovies";
-            this.bgSearchMovies.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.bgSearchMovies.TabStop = false;
-            this.bgSearchMovies.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.bgMoviesSearchBox_ClickButtonArea);
-            // 
             // panelMovieFilters
             // 
             resources.ApplyResources(this.panelMovieFilters, "panelMovieFilters");
@@ -474,6 +591,34 @@
             resources.ApplyResources(this.panelMoviesGenre, "panelMoviesGenre");
             this.panelMoviesGenre.Name = "panelMoviesGenre";
             // 
+            // btnMoviesGenre
+            // 
+            resources.ApplyResources(this.btnMoviesGenre, "btnMoviesGenre");
+            this.btnMoviesGenre.BackColor = System.Drawing.Color.Transparent;
+            this.btnMoviesGenre.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.btnMoviesGenre.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.btnMoviesGenre.Corners.All = 2;
+            this.btnMoviesGenre.Corners.LowerLeft = 2;
+            this.btnMoviesGenre.Corners.LowerRight = 2;
+            this.btnMoviesGenre.Corners.UpperLeft = 2;
+            this.btnMoviesGenre.Corners.UpperRight = 2;
+            this.btnMoviesGenre.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMoviesGenre.DesignerSelected = false;
+            this.btnMoviesGenre.DimFactorClick = 0;
+            this.btnMoviesGenre.DimFactorHover = 0;
+            this.btnMoviesGenre.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.btnMoviesGenre.ForeColor = System.Drawing.Color.Black;
+            this.btnMoviesGenre.ImageIndex = 0;
+            this.btnMoviesGenre.Name = "btnMoviesGenre";
+            this.btnMoviesGenre.ShowFocus = CButtonLib.CButton.eFocus.None;
+            this.btnMoviesGenre.SideImage = ((System.Drawing.Image)(resources.GetObject("btnMoviesGenre.SideImage")));
+            this.btnMoviesGenre.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnMoviesGenre.SideImageSize = new System.Drawing.Size(22, 22);
+            this.btnMoviesGenre.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnMoviesGenre.TextMargin = new System.Windows.Forms.Padding(10, 3, 2, 2);
+            this.btnMoviesGenre.TextShadowShow = false;
+            this.btnMoviesGenre.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnMoviesGenre_ClickButtonArea);
+            // 
             // cmboBoxMoviesGenre
             // 
             resources.ApplyResources(this.cmboBoxMoviesGenre, "cmboBoxMoviesGenre");
@@ -508,6 +653,34 @@
             this.panelMoviesYear.Controls.Add(this.cmboBoxMoviesYear);
             resources.ApplyResources(this.panelMoviesYear, "panelMoviesYear");
             this.panelMoviesYear.Name = "panelMoviesYear";
+            // 
+            // btnMoviesYear
+            // 
+            resources.ApplyResources(this.btnMoviesYear, "btnMoviesYear");
+            this.btnMoviesYear.BackColor = System.Drawing.Color.Transparent;
+            this.btnMoviesYear.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.btnMoviesYear.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.btnMoviesYear.Corners.All = 2;
+            this.btnMoviesYear.Corners.LowerLeft = 2;
+            this.btnMoviesYear.Corners.LowerRight = 2;
+            this.btnMoviesYear.Corners.UpperLeft = 2;
+            this.btnMoviesYear.Corners.UpperRight = 2;
+            this.btnMoviesYear.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMoviesYear.DesignerSelected = false;
+            this.btnMoviesYear.DimFactorClick = 0;
+            this.btnMoviesYear.DimFactorHover = 0;
+            this.btnMoviesYear.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.btnMoviesYear.ForeColor = System.Drawing.Color.Black;
+            this.btnMoviesYear.ImageIndex = 0;
+            this.btnMoviesYear.Name = "btnMoviesYear";
+            this.btnMoviesYear.ShowFocus = CButtonLib.CButton.eFocus.None;
+            this.btnMoviesYear.SideImage = ((System.Drawing.Image)(resources.GetObject("btnMoviesYear.SideImage")));
+            this.btnMoviesYear.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnMoviesYear.SideImageSize = new System.Drawing.Size(22, 22);
+            this.btnMoviesYear.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnMoviesYear.TextMargin = new System.Windows.Forms.Padding(10, 3, 2, 2);
+            this.btnMoviesYear.TextShadowShow = false;
+            this.btnMoviesYear.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnMoviesYear_ClickButtonArea);
             // 
             // cmboBoxMoviesYear
             // 
@@ -545,6 +718,50 @@
             this.cmboBoxMoviesYear.Name = "cmboBoxMoviesYear";
             this.cmboBoxMoviesYear.TabStop = false;
             this.cmboBoxMoviesYear.SelectedIndexChanged += new System.EventHandler(this.cmboBoxMoviesYear_SelectedIndexChanged);
+            // 
+            // btnSearchMovies
+            // 
+            this.btnSearchMovies.BackColor = System.Drawing.Color.Transparent;
+            this.btnSearchMovies.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.btnSearchMovies.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.btnSearchMovies.Corners.LowerRight = 2;
+            this.btnSearchMovies.Corners.UpperRight = 2;
+            this.btnSearchMovies.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSearchMovies.DesignerSelected = false;
+            this.btnSearchMovies.DimFactorClick = 0;
+            this.btnSearchMovies.DimFactorHover = 0;
+            this.btnSearchMovies.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.btnSearchMovies.FocalPoints.CenterPtX = 0F;
+            this.btnSearchMovies.FocalPoints.CenterPtY = 0F;
+            resources.ApplyResources(this.btnSearchMovies, "btnSearchMovies");
+            this.btnSearchMovies.Image = global::WebPlex.Properties.Resources.search;
+            this.btnSearchMovies.ImageIndex = 0;
+            this.btnSearchMovies.ImageSize = new System.Drawing.Size(22, 22);
+            this.btnSearchMovies.Name = "btnSearchMovies";
+            this.btnSearchMovies.ShowFocus = CButtonLib.CButton.eFocus.None;
+            this.btnSearchMovies.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnSearchMovies_ClickButtonArea);
+            // 
+            // bgSearchMovies
+            // 
+            this.bgSearchMovies.BackColor = System.Drawing.Color.Transparent;
+            this.bgSearchMovies.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(111)))), ((int)(((byte)(131)))));
+            this.bgSearchMovies.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(111)))), ((int)(((byte)(131)))));
+            this.bgSearchMovies.Corners.All = 2;
+            this.bgSearchMovies.Corners.LowerLeft = 2;
+            this.bgSearchMovies.Corners.LowerRight = 2;
+            this.bgSearchMovies.Corners.UpperLeft = 2;
+            this.bgSearchMovies.Corners.UpperRight = 2;
+            this.bgSearchMovies.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.bgSearchMovies.DesignerSelected = false;
+            this.bgSearchMovies.DimFactorClick = 0;
+            this.bgSearchMovies.DimFactorHover = 0;
+            this.bgSearchMovies.FillType = CButtonLib.CButton.eFillType.Solid;
+            resources.ApplyResources(this.bgSearchMovies, "bgSearchMovies");
+            this.bgSearchMovies.ImageIndex = 0;
+            this.bgSearchMovies.Name = "bgSearchMovies";
+            this.bgSearchMovies.ShowFocus = CButtonLib.CButton.eFocus.None;
+            this.bgSearchMovies.TabStop = false;
+            this.bgSearchMovies.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.bgMoviesSearchBox_ClickButtonArea);
             // 
             // tabFiles
             // 
@@ -593,6 +810,34 @@
             resources.ApplyResources(this.panelFilesSort, "panelFilesSort");
             this.panelFilesSort.Name = "panelFilesSort";
             // 
+            // btnFilesSort
+            // 
+            resources.ApplyResources(this.btnFilesSort, "btnFilesSort");
+            this.btnFilesSort.BackColor = System.Drawing.Color.Transparent;
+            this.btnFilesSort.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.btnFilesSort.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.btnFilesSort.Corners.All = 2;
+            this.btnFilesSort.Corners.LowerLeft = 2;
+            this.btnFilesSort.Corners.LowerRight = 2;
+            this.btnFilesSort.Corners.UpperLeft = 2;
+            this.btnFilesSort.Corners.UpperRight = 2;
+            this.btnFilesSort.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFilesSort.DesignerSelected = false;
+            this.btnFilesSort.DimFactorClick = 0;
+            this.btnFilesSort.DimFactorHover = 0;
+            this.btnFilesSort.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.btnFilesSort.ForeColor = System.Drawing.Color.Black;
+            this.btnFilesSort.ImageIndex = 0;
+            this.btnFilesSort.Name = "btnFilesSort";
+            this.btnFilesSort.ShowFocus = CButtonLib.CButton.eFocus.None;
+            this.btnFilesSort.SideImage = ((System.Drawing.Image)(resources.GetObject("btnFilesSort.SideImage")));
+            this.btnFilesSort.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnFilesSort.SideImageSize = new System.Drawing.Size(22, 22);
+            this.btnFilesSort.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnFilesSort.TextMargin = new System.Windows.Forms.Padding(10, 3, 2, 2);
+            this.btnFilesSort.TextShadowShow = false;
+            this.btnFilesSort.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnFilesSort_ClickButtonArea);
+            // 
             // cmboBoxFilesSort
             // 
             resources.ApplyResources(this.cmboBoxFilesSort, "cmboBoxFilesSort");
@@ -611,6 +856,34 @@
             this.panelFilesHost.Controls.Add(this.cmboBoxFilesHost);
             resources.ApplyResources(this.panelFilesHost, "panelFilesHost");
             this.panelFilesHost.Name = "panelFilesHost";
+            // 
+            // btnFilesHost
+            // 
+            resources.ApplyResources(this.btnFilesHost, "btnFilesHost");
+            this.btnFilesHost.BackColor = System.Drawing.Color.Transparent;
+            this.btnFilesHost.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.btnFilesHost.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.btnFilesHost.Corners.All = 2;
+            this.btnFilesHost.Corners.LowerLeft = 2;
+            this.btnFilesHost.Corners.LowerRight = 2;
+            this.btnFilesHost.Corners.UpperLeft = 2;
+            this.btnFilesHost.Corners.UpperRight = 2;
+            this.btnFilesHost.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFilesHost.DesignerSelected = false;
+            this.btnFilesHost.DimFactorClick = 0;
+            this.btnFilesHost.DimFactorHover = 0;
+            this.btnFilesHost.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.btnFilesHost.ForeColor = System.Drawing.Color.Black;
+            this.btnFilesHost.ImageIndex = 0;
+            this.btnFilesHost.Name = "btnFilesHost";
+            this.btnFilesHost.ShowFocus = CButtonLib.CButton.eFocus.None;
+            this.btnFilesHost.SideImage = ((System.Drawing.Image)(resources.GetObject("btnFilesHost.SideImage")));
+            this.btnFilesHost.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnFilesHost.SideImageSize = new System.Drawing.Size(22, 22);
+            this.btnFilesHost.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnFilesHost.TextMargin = new System.Windows.Forms.Padding(10, 3, 2, 2);
+            this.btnFilesHost.TextShadowShow = false;
+            this.btnFilesHost.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnFilesHost_ClickButtonArea);
             // 
             // cmboBoxFilesHost
             // 
@@ -877,27 +1150,6 @@
             this.titleFilesAudio.TextShadowShow = false;
             this.titleFilesAudio.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.titleFilesAudio_ClickButtonArea);
             // 
-            // bgSearchFiles
-            // 
-            this.bgSearchFiles.BackColor = System.Drawing.Color.Transparent;
-            this.bgSearchFiles.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(111)))), ((int)(((byte)(131)))));
-            this.bgSearchFiles.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(111)))), ((int)(((byte)(131)))));
-            this.bgSearchFiles.Corners.All = 2;
-            this.bgSearchFiles.Corners.LowerLeft = 2;
-            this.bgSearchFiles.Corners.LowerRight = 2;
-            this.bgSearchFiles.Corners.UpperLeft = 2;
-            this.bgSearchFiles.Corners.UpperRight = 2;
-            this.bgSearchFiles.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bgSearchFiles.DesignerSelected = true;
-            this.bgSearchFiles.DimFactorClick = 0;
-            this.bgSearchFiles.DimFactorHover = 0;
-            this.bgSearchFiles.FillType = CButtonLib.CButton.eFillType.Solid;
-            resources.ApplyResources(this.bgSearchFiles, "bgSearchFiles");
-            this.bgSearchFiles.ImageIndex = 0;
-            this.bgSearchFiles.Name = "bgSearchFiles";
-            this.bgSearchFiles.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.bgSearchFiles.TabStop = false;
-            // 
             // titleFilesAll
             // 
             this.titleFilesAll.BackColor = System.Drawing.Color.Transparent;
@@ -992,6 +1244,49 @@
             this.titleFilesSaved.ShowFocus = CButtonLib.CButton.eFocus.Dim;
             this.titleFilesSaved.TextShadowShow = false;
             this.titleFilesSaved.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.titleFilesSaved_ClickButtonArea);
+            // 
+            // btnSearchFiles
+            // 
+            this.btnSearchFiles.BackColor = System.Drawing.Color.Transparent;
+            this.btnSearchFiles.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.btnSearchFiles.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.btnSearchFiles.Corners.LowerRight = 2;
+            this.btnSearchFiles.Corners.UpperRight = 2;
+            this.btnSearchFiles.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSearchFiles.DesignerSelected = false;
+            this.btnSearchFiles.DimFactorClick = 0;
+            this.btnSearchFiles.DimFactorHover = 0;
+            this.btnSearchFiles.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.btnSearchFiles.FocalPoints.CenterPtX = 0F;
+            this.btnSearchFiles.FocalPoints.CenterPtY = 0F;
+            resources.ApplyResources(this.btnSearchFiles, "btnSearchFiles");
+            this.btnSearchFiles.Image = global::WebPlex.Properties.Resources.search;
+            this.btnSearchFiles.ImageIndex = 0;
+            this.btnSearchFiles.ImageSize = new System.Drawing.Size(22, 22);
+            this.btnSearchFiles.Name = "btnSearchFiles";
+            this.btnSearchFiles.ShowFocus = CButtonLib.CButton.eFocus.None;
+            this.btnSearchFiles.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnSearchFiles_ClickButtonArea);
+            // 
+            // bgSearchFiles
+            // 
+            this.bgSearchFiles.BackColor = System.Drawing.Color.Transparent;
+            this.bgSearchFiles.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(111)))), ((int)(((byte)(131)))));
+            this.bgSearchFiles.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(111)))), ((int)(((byte)(131)))));
+            this.bgSearchFiles.Corners.All = 2;
+            this.bgSearchFiles.Corners.LowerLeft = 2;
+            this.bgSearchFiles.Corners.LowerRight = 2;
+            this.bgSearchFiles.Corners.UpperLeft = 2;
+            this.bgSearchFiles.Corners.UpperRight = 2;
+            this.bgSearchFiles.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.bgSearchFiles.DesignerSelected = false;
+            this.bgSearchFiles.DimFactorClick = 0;
+            this.bgSearchFiles.DimFactorHover = 0;
+            this.bgSearchFiles.FillType = CButtonLib.CButton.eFillType.Solid;
+            resources.ApplyResources(this.bgSearchFiles, "bgSearchFiles");
+            this.bgSearchFiles.ImageIndex = 0;
+            this.bgSearchFiles.Name = "bgSearchFiles";
+            this.bgSearchFiles.ShowFocus = CButtonLib.CButton.eFocus.None;
+            this.bgSearchFiles.TabStop = false;
             // 
             // tabDiscover
             // 
@@ -1212,6 +1507,34 @@
             resources.ApplyResources(this.panelGeneralSettingsLanguage, "panelGeneralSettingsLanguage");
             this.panelGeneralSettingsLanguage.Name = "panelGeneralSettingsLanguage";
             // 
+            // btnSettingsGeneralLanguage
+            // 
+            resources.ApplyResources(this.btnSettingsGeneralLanguage, "btnSettingsGeneralLanguage");
+            this.btnSettingsGeneralLanguage.BackColor = System.Drawing.Color.Transparent;
+            this.btnSettingsGeneralLanguage.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.btnSettingsGeneralLanguage.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.btnSettingsGeneralLanguage.Corners.All = 2;
+            this.btnSettingsGeneralLanguage.Corners.LowerLeft = 2;
+            this.btnSettingsGeneralLanguage.Corners.LowerRight = 2;
+            this.btnSettingsGeneralLanguage.Corners.UpperLeft = 2;
+            this.btnSettingsGeneralLanguage.Corners.UpperRight = 2;
+            this.btnSettingsGeneralLanguage.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSettingsGeneralLanguage.DesignerSelected = false;
+            this.btnSettingsGeneralLanguage.DimFactorClick = 0;
+            this.btnSettingsGeneralLanguage.DimFactorHover = 0;
+            this.btnSettingsGeneralLanguage.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.btnSettingsGeneralLanguage.ForeColor = System.Drawing.Color.Black;
+            this.btnSettingsGeneralLanguage.ImageIndex = 0;
+            this.btnSettingsGeneralLanguage.Name = "btnSettingsGeneralLanguage";
+            this.btnSettingsGeneralLanguage.ShowFocus = CButtonLib.CButton.eFocus.None;
+            this.btnSettingsGeneralLanguage.SideImage = global::WebPlex.Properties.Resources.arrow_drop_down_black;
+            this.btnSettingsGeneralLanguage.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSettingsGeneralLanguage.SideImageSize = new System.Drawing.Size(21, 21);
+            this.btnSettingsGeneralLanguage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSettingsGeneralLanguage.TextMargin = new System.Windows.Forms.Padding(6, 3, 2, 2);
+            this.btnSettingsGeneralLanguage.TextShadowShow = false;
+            this.btnSettingsGeneralLanguage.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnSettingsGeneralLanguage_ClickButtonArea);
+            // 
             // cmboboxSettingsLanguage
             // 
             resources.ApplyResources(this.cmboboxSettingsLanguage, "cmboboxSettingsLanguage");
@@ -1308,7 +1631,9 @@
             // 
             this.tabAbout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
             resources.ApplyResources(this.tabAbout, "tabAbout");
-            this.tabAbout.Controls.Add(this.lblAboutVersion);
+            this.tabAbout.Controls.Add(this.btnAboutPrivacyPolicy);
+            this.tabAbout.Controls.Add(this.btnAboutTermsOfUse);
+            this.tabAbout.Controls.Add(this.lblAboutChangelogVersion);
             this.tabAbout.Controls.Add(this.btnAboutReportIssue);
             this.tabAbout.Controls.Add(this.lblAboutSubText);
             this.tabAbout.Controls.Add(this.lblAboutText);
@@ -1316,11 +1641,13 @@
             this.tabAbout.ForeColor = System.Drawing.Color.White;
             this.tabAbout.Name = "tabAbout";
             // 
-            // lblAboutVersion
+            // lblAboutChangelogVersion
             // 
-            resources.ApplyResources(this.lblAboutVersion, "lblAboutVersion");
-            this.lblAboutVersion.BackColor = System.Drawing.Color.Transparent;
-            this.lblAboutVersion.Name = "lblAboutVersion";
+            resources.ApplyResources(this.lblAboutChangelogVersion, "lblAboutChangelogVersion");
+            this.lblAboutChangelogVersion.BackColor = System.Drawing.Color.Transparent;
+            this.lblAboutChangelogVersion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblAboutChangelogVersion.Name = "lblAboutChangelogVersion";
+            this.lblAboutChangelogVersion.Click += new System.EventHandler(this.lblAboutChangelogVersion_Click);
             // 
             // btnAboutReportIssue
             // 
@@ -1341,6 +1668,14 @@
             resources.ApplyResources(this.lblAboutText, "lblAboutText");
             this.lblAboutText.BackColor = System.Drawing.Color.Transparent;
             this.lblAboutText.Name = "lblAboutText";
+            // 
+            // imgHeaderAbout
+            // 
+            resources.ApplyResources(this.imgHeaderAbout, "imgHeaderAbout");
+            this.imgHeaderAbout.BackColor = System.Drawing.Color.Transparent;
+            this.imgHeaderAbout.Image = global::WebPlex.Properties.Resources.logo_text;
+            this.imgHeaderAbout.Name = "imgHeaderAbout";
+            this.imgHeaderAbout.TabStop = false;
             // 
             // tabBlank
             // 
@@ -1377,6 +1712,16 @@
             this.panelTitles.ForeColor = System.Drawing.Color.White;
             this.panelTitles.Name = "panelTitles";
             // 
+            // imgHome
+            // 
+            this.imgHome.BackColor = System.Drawing.Color.Transparent;
+            this.imgHome.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imgHome.Image = global::WebPlex.Properties.Resources.home;
+            resources.ApplyResources(this.imgHome, "imgHome");
+            this.imgHome.Name = "imgHome";
+            this.imgHome.TabStop = false;
+            this.imgHome.Click += new System.EventHandler(this.imgHome_Click);
+            // 
             // titleLineHome
             // 
             resources.ApplyResources(this.titleLineHome, "titleLineHome");
@@ -1402,6 +1747,16 @@
             this.titleHome.ForeColor = System.Drawing.Color.White;
             this.titleHome.Name = "titleHome";
             this.titleHome.Click += new System.EventHandler(this.imgHome_Click);
+            // 
+            // imgSubmit
+            // 
+            this.imgSubmit.BackColor = System.Drawing.Color.Transparent;
+            this.imgSubmit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imgSubmit.Image = global::WebPlex.Properties.Resources.send;
+            resources.ApplyResources(this.imgSubmit, "imgSubmit");
+            this.imgSubmit.Name = "imgSubmit";
+            this.imgSubmit.TabStop = false;
+            this.imgSubmit.Click += new System.EventHandler(this.imgSubmit_Click);
             // 
             // titleLineSubmit
             // 
@@ -1429,6 +1784,16 @@
             this.titleSubmit.Name = "titleSubmit";
             this.titleSubmit.Click += new System.EventHandler(this.imgSubmit_Click);
             // 
+            // imgDiscover
+            // 
+            this.imgDiscover.BackColor = System.Drawing.Color.Transparent;
+            this.imgDiscover.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imgDiscover.Image = global::WebPlex.Properties.Resources.web;
+            resources.ApplyResources(this.imgDiscover, "imgDiscover");
+            this.imgDiscover.Name = "imgDiscover";
+            this.imgDiscover.TabStop = false;
+            this.imgDiscover.Click += new System.EventHandler(this.imgDiscover_Click);
+            // 
             // titleLineDiscover
             // 
             resources.ApplyResources(this.titleLineDiscover, "titleLineDiscover");
@@ -1453,6 +1818,16 @@
             this.titleDiscover.ForeColor = System.Drawing.Color.White;
             this.titleDiscover.Name = "titleDiscover";
             this.titleDiscover.Click += new System.EventHandler(this.imgDiscover_Click);
+            // 
+            // imgSettings
+            // 
+            this.imgSettings.BackColor = System.Drawing.Color.Transparent;
+            this.imgSettings.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imgSettings.Image = global::WebPlex.Properties.Resources.settings;
+            resources.ApplyResources(this.imgSettings, "imgSettings");
+            this.imgSettings.Name = "imgSettings";
+            this.imgSettings.TabStop = false;
+            this.imgSettings.Click += new System.EventHandler(this.imgSettings_Click);
             // 
             // titleLineSettings
             // 
@@ -1480,6 +1855,16 @@
             this.titleSettings.Name = "titleSettings";
             this.titleSettings.Click += new System.EventHandler(this.imgSettings_Click);
             // 
+            // imgAbout
+            // 
+            this.imgAbout.BackColor = System.Drawing.Color.Transparent;
+            this.imgAbout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imgAbout.Image = global::WebPlex.Properties.Resources.info;
+            resources.ApplyResources(this.imgAbout, "imgAbout");
+            this.imgAbout.Name = "imgAbout";
+            this.imgAbout.TabStop = false;
+            this.imgAbout.Click += new System.EventHandler(this.imgAbout_Click);
+            // 
             // titleLineAbout
             // 
             resources.ApplyResources(this.titleLineAbout, "titleLineAbout");
@@ -1504,6 +1889,26 @@
             this.titleAbout.ForeColor = System.Drawing.Color.White;
             this.titleAbout.Name = "titleAbout";
             this.titleAbout.Click += new System.EventHandler(this.imgAbout_Click);
+            // 
+            // imgFiles
+            // 
+            this.imgFiles.BackColor = System.Drawing.Color.Transparent;
+            this.imgFiles.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imgFiles.Image = global::WebPlex.Properties.Resources.file;
+            resources.ApplyResources(this.imgFiles, "imgFiles");
+            this.imgFiles.Name = "imgFiles";
+            this.imgFiles.TabStop = false;
+            this.imgFiles.Click += new System.EventHandler(this.imgFiles_Click);
+            // 
+            // imgMovies
+            // 
+            this.imgMovies.BackColor = System.Drawing.Color.Transparent;
+            this.imgMovies.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imgMovies.Image = global::WebPlex.Properties.Resources.local_movies;
+            resources.ApplyResources(this.imgMovies, "imgMovies");
+            this.imgMovies.Name = "imgMovies";
+            this.imgMovies.TabStop = false;
+            this.imgMovies.Click += new System.EventHandler(this.imgMovies_Click);
             // 
             // titleLineFiles
             // 
@@ -1555,393 +1960,6 @@
             this.titleMovies.Name = "titleMovies";
             this.titleMovies.Click += new System.EventHandler(this.imgMovies_Click);
             // 
-            // imgHome
-            // 
-            this.imgHome.BackColor = System.Drawing.Color.Transparent;
-            this.imgHome.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgHome.Image = global::WebPlex.Properties.Resources.home;
-            resources.ApplyResources(this.imgHome, "imgHome");
-            this.imgHome.Name = "imgHome";
-            this.imgHome.TabStop = false;
-            this.imgHome.Click += new System.EventHandler(this.imgHome_Click);
-            // 
-            // imgSubmit
-            // 
-            this.imgSubmit.BackColor = System.Drawing.Color.Transparent;
-            this.imgSubmit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgSubmit.Image = global::WebPlex.Properties.Resources.send;
-            resources.ApplyResources(this.imgSubmit, "imgSubmit");
-            this.imgSubmit.Name = "imgSubmit";
-            this.imgSubmit.TabStop = false;
-            this.imgSubmit.Click += new System.EventHandler(this.imgSubmit_Click);
-            // 
-            // imgDiscover
-            // 
-            this.imgDiscover.BackColor = System.Drawing.Color.Transparent;
-            this.imgDiscover.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgDiscover.Image = global::WebPlex.Properties.Resources.web;
-            resources.ApplyResources(this.imgDiscover, "imgDiscover");
-            this.imgDiscover.Name = "imgDiscover";
-            this.imgDiscover.TabStop = false;
-            this.imgDiscover.Click += new System.EventHandler(this.imgDiscover_Click);
-            // 
-            // imgSettings
-            // 
-            this.imgSettings.BackColor = System.Drawing.Color.Transparent;
-            this.imgSettings.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgSettings.Image = global::WebPlex.Properties.Resources.settings;
-            resources.ApplyResources(this.imgSettings, "imgSettings");
-            this.imgSettings.Name = "imgSettings";
-            this.imgSettings.TabStop = false;
-            this.imgSettings.Click += new System.EventHandler(this.imgSettings_Click);
-            // 
-            // imgAbout
-            // 
-            this.imgAbout.BackColor = System.Drawing.Color.Transparent;
-            this.imgAbout.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgAbout.Image = global::WebPlex.Properties.Resources.info;
-            resources.ApplyResources(this.imgAbout, "imgAbout");
-            this.imgAbout.Name = "imgAbout";
-            this.imgAbout.TabStop = false;
-            this.imgAbout.Click += new System.EventHandler(this.imgAbout_Click);
-            // 
-            // imgFiles
-            // 
-            this.imgFiles.BackColor = System.Drawing.Color.Transparent;
-            this.imgFiles.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgFiles.Image = global::WebPlex.Properties.Resources.file;
-            resources.ApplyResources(this.imgFiles, "imgFiles");
-            this.imgFiles.Name = "imgFiles";
-            this.imgFiles.TabStop = false;
-            this.imgFiles.Click += new System.EventHandler(this.imgFiles_Click);
-            // 
-            // imgMovies
-            // 
-            this.imgMovies.BackColor = System.Drawing.Color.Transparent;
-            this.imgMovies.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgMovies.Image = global::WebPlex.Properties.Resources.local_movies;
-            resources.ApplyResources(this.imgMovies, "imgMovies");
-            this.imgMovies.Name = "imgMovies";
-            this.imgMovies.TabStop = false;
-            this.imgMovies.Click += new System.EventHandler(this.imgMovies_Click);
-            // 
-            // btnHomeEngine
-            // 
-            resources.ApplyResources(this.btnHomeEngine, "btnHomeEngine");
-            this.btnHomeEngine.BackColor = System.Drawing.Color.Transparent;
-            this.btnHomeEngine.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.btnHomeEngine.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.btnHomeEngine.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnHomeEngine.DesignerSelected = false;
-            this.btnHomeEngine.DimFactorClick = 0;
-            this.btnHomeEngine.DimFactorHover = 0;
-            this.btnHomeEngine.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.btnHomeEngine.ForeColor = System.Drawing.Color.Black;
-            this.btnHomeEngine.Image = global::WebPlex.Properties.Resources.search;
-            this.btnHomeEngine.ImageIndex = 0;
-            this.btnHomeEngine.ImageSize = new System.Drawing.Size(21, 21);
-            this.btnHomeEngine.Name = "btnHomeEngine";
-            this.btnHomeEngine.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.btnHomeEngine.SideImage = global::WebPlex.Properties.Resources.arrow_drop_down_black;
-            this.btnHomeEngine.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnHomeEngine.SideImageSize = new System.Drawing.Size(22, 22);
-            this.btnHomeEngine.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHomeEngine.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnHomeEngine.TextMargin = new System.Windows.Forms.Padding(2, 3, 2, 2);
-            this.btnHomeEngine.TextShadowShow = false;
-            this.btnHomeEngine.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnExploreEngine_ClickButtonArea);
-            // 
-            // btnShareFacebook
-            // 
-            resources.ApplyResources(this.btnShareFacebook, "btnShareFacebook");
-            this.btnShareFacebook.BackColor = System.Drawing.Color.Transparent;
-            this.btnShareFacebook.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(103)))), ((int)(((byte)(178)))));
-            this.btnShareFacebook.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(103)))), ((int)(((byte)(178)))));
-            this.btnShareFacebook.Corners.All = 2;
-            this.btnShareFacebook.Corners.LowerLeft = 2;
-            this.btnShareFacebook.Corners.LowerRight = 2;
-            this.btnShareFacebook.Corners.UpperLeft = 2;
-            this.btnShareFacebook.Corners.UpperRight = 2;
-            this.btnShareFacebook.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnShareFacebook.DesignerSelected = false;
-            this.btnShareFacebook.DimFactorClick = 0;
-            this.btnShareFacebook.DimFactorHover = 0;
-            this.btnShareFacebook.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.btnShareFacebook.Image = global::WebPlex.Properties.Resources.facebook;
-            this.btnShareFacebook.ImageIndex = 0;
-            this.btnShareFacebook.Name = "btnShareFacebook";
-            this.btnShareFacebook.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.btnShareFacebook.TabStop = false;
-            this.btnShareFacebook.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnShareFacebook.TextMargin = new System.Windows.Forms.Padding(0, 3, 2, 2);
-            this.btnShareFacebook.TextShadowShow = false;
-            this.btnShareFacebook.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnShareFacebook_ClickButtonArea);
-            // 
-            // btnShareTwitter
-            // 
-            resources.ApplyResources(this.btnShareTwitter, "btnShareTwitter");
-            this.btnShareTwitter.BackColor = System.Drawing.Color.Transparent;
-            this.btnShareTwitter.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(149)))), ((int)(((byte)(224)))));
-            this.btnShareTwitter.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(149)))), ((int)(((byte)(224)))));
-            this.btnShareTwitter.Corners.All = 2;
-            this.btnShareTwitter.Corners.LowerLeft = 2;
-            this.btnShareTwitter.Corners.LowerRight = 2;
-            this.btnShareTwitter.Corners.UpperLeft = 2;
-            this.btnShareTwitter.Corners.UpperRight = 2;
-            this.btnShareTwitter.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnShareTwitter.DesignerSelected = false;
-            this.btnShareTwitter.DimFactorClick = 0;
-            this.btnShareTwitter.DimFactorHover = 0;
-            this.btnShareTwitter.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.btnShareTwitter.Image = global::WebPlex.Properties.Resources.twitter;
-            this.btnShareTwitter.ImageIndex = 0;
-            this.btnShareTwitter.Name = "btnShareTwitter";
-            this.btnShareTwitter.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.btnShareTwitter.TabStop = false;
-            this.btnShareTwitter.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnShareTwitter.TextMargin = new System.Windows.Forms.Padding(0, 3, 2, 2);
-            this.btnShareTwitter.TextShadowShow = false;
-            this.btnShareTwitter.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnShareTwitter_ClickButtonArea);
-            // 
-            // btnHomeFileType
-            // 
-            resources.ApplyResources(this.btnHomeFileType, "btnHomeFileType");
-            this.btnHomeFileType.BackColor = System.Drawing.Color.Transparent;
-            this.btnHomeFileType.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.btnHomeFileType.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.btnHomeFileType.Corners.LowerLeft = 2;
-            this.btnHomeFileType.Corners.UpperLeft = 2;
-            this.btnHomeFileType.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnHomeFileType.DesignerSelected = false;
-            this.btnHomeFileType.DimFactorClick = 0;
-            this.btnHomeFileType.DimFactorHover = 0;
-            this.btnHomeFileType.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.btnHomeFileType.ForeColor = System.Drawing.Color.Black;
-            this.btnHomeFileType.ImageIndex = 0;
-            this.btnHomeFileType.Name = "btnHomeFileType";
-            this.btnHomeFileType.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.btnHomeFileType.SideImage = global::WebPlex.Properties.Resources.arrow_drop_down_black;
-            this.btnHomeFileType.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnHomeFileType.SideImageSize = new System.Drawing.Size(22, 22);
-            this.btnHomeFileType.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnHomeFileType.TextMargin = new System.Windows.Forms.Padding(10, 3, 2, 2);
-            this.btnHomeFileType.TextShadowShow = false;
-            this.btnHomeFileType.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnHomeFileType_ClickButtonArea);
-            // 
-            // btnSearchFilesHome
-            // 
-            resources.ApplyResources(this.btnSearchFilesHome, "btnSearchFilesHome");
-            this.btnSearchFilesHome.BackColor = System.Drawing.Color.Transparent;
-            this.btnSearchFilesHome.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.btnSearchFilesHome.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.btnSearchFilesHome.Corners.LowerRight = 2;
-            this.btnSearchFilesHome.Corners.UpperRight = 2;
-            this.btnSearchFilesHome.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSearchFilesHome.DesignerSelected = false;
-            this.btnSearchFilesHome.DimFactorClick = 0;
-            this.btnSearchFilesHome.DimFactorHover = 0;
-            this.btnSearchFilesHome.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.btnSearchFilesHome.FocalPoints.CenterPtX = 0F;
-            this.btnSearchFilesHome.FocalPoints.CenterPtY = 0F;
-            this.btnSearchFilesHome.Image = global::WebPlex.Properties.Resources.search;
-            this.btnSearchFilesHome.ImageIndex = 0;
-            this.btnSearchFilesHome.ImageSize = new System.Drawing.Size(22, 22);
-            this.btnSearchFilesHome.Name = "btnSearchFilesHome";
-            this.btnSearchFilesHome.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.btnSearchFilesHome.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnSearchFilesHome_ClickButtonArea);
-            // 
-            // btnMoviesGenre
-            // 
-            resources.ApplyResources(this.btnMoviesGenre, "btnMoviesGenre");
-            this.btnMoviesGenre.BackColor = System.Drawing.Color.Transparent;
-            this.btnMoviesGenre.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.btnMoviesGenre.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.btnMoviesGenre.Corners.All = 2;
-            this.btnMoviesGenre.Corners.LowerLeft = 2;
-            this.btnMoviesGenre.Corners.LowerRight = 2;
-            this.btnMoviesGenre.Corners.UpperLeft = 2;
-            this.btnMoviesGenre.Corners.UpperRight = 2;
-            this.btnMoviesGenre.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMoviesGenre.DesignerSelected = false;
-            this.btnMoviesGenre.DimFactorClick = 0;
-            this.btnMoviesGenre.DimFactorHover = 0;
-            this.btnMoviesGenre.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.btnMoviesGenre.ForeColor = System.Drawing.Color.Black;
-            this.btnMoviesGenre.ImageIndex = 0;
-            this.btnMoviesGenre.Name = "btnMoviesGenre";
-            this.btnMoviesGenre.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.btnMoviesGenre.SideImage = ((System.Drawing.Image)(resources.GetObject("btnMoviesGenre.SideImage")));
-            this.btnMoviesGenre.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnMoviesGenre.SideImageSize = new System.Drawing.Size(22, 22);
-            this.btnMoviesGenre.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnMoviesGenre.TextMargin = new System.Windows.Forms.Padding(10, 3, 2, 2);
-            this.btnMoviesGenre.TextShadowShow = false;
-            this.btnMoviesGenre.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnMoviesGenre_ClickButtonArea);
-            // 
-            // btnMoviesYear
-            // 
-            resources.ApplyResources(this.btnMoviesYear, "btnMoviesYear");
-            this.btnMoviesYear.BackColor = System.Drawing.Color.Transparent;
-            this.btnMoviesYear.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.btnMoviesYear.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.btnMoviesYear.Corners.All = 2;
-            this.btnMoviesYear.Corners.LowerLeft = 2;
-            this.btnMoviesYear.Corners.LowerRight = 2;
-            this.btnMoviesYear.Corners.UpperLeft = 2;
-            this.btnMoviesYear.Corners.UpperRight = 2;
-            this.btnMoviesYear.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMoviesYear.DesignerSelected = false;
-            this.btnMoviesYear.DimFactorClick = 0;
-            this.btnMoviesYear.DimFactorHover = 0;
-            this.btnMoviesYear.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.btnMoviesYear.ForeColor = System.Drawing.Color.Black;
-            this.btnMoviesYear.ImageIndex = 0;
-            this.btnMoviesYear.Name = "btnMoviesYear";
-            this.btnMoviesYear.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.btnMoviesYear.SideImage = ((System.Drawing.Image)(resources.GetObject("btnMoviesYear.SideImage")));
-            this.btnMoviesYear.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnMoviesYear.SideImageSize = new System.Drawing.Size(22, 22);
-            this.btnMoviesYear.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnMoviesYear.TextMargin = new System.Windows.Forms.Padding(10, 3, 2, 2);
-            this.btnMoviesYear.TextShadowShow = false;
-            this.btnMoviesYear.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnMoviesYear_ClickButtonArea);
-            // 
-            // btnSearchMovies
-            // 
-            this.btnSearchMovies.BackColor = System.Drawing.Color.Transparent;
-            this.btnSearchMovies.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.btnSearchMovies.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.btnSearchMovies.Corners.LowerRight = 2;
-            this.btnSearchMovies.Corners.UpperRight = 2;
-            this.btnSearchMovies.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSearchMovies.DesignerSelected = false;
-            this.btnSearchMovies.DimFactorClick = 0;
-            this.btnSearchMovies.DimFactorHover = 0;
-            this.btnSearchMovies.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.btnSearchMovies.FocalPoints.CenterPtX = 0F;
-            this.btnSearchMovies.FocalPoints.CenterPtY = 0F;
-            resources.ApplyResources(this.btnSearchMovies, "btnSearchMovies");
-            this.btnSearchMovies.Image = global::WebPlex.Properties.Resources.search;
-            this.btnSearchMovies.ImageIndex = 0;
-            this.btnSearchMovies.ImageSize = new System.Drawing.Size(22, 22);
-            this.btnSearchMovies.Name = "btnSearchMovies";
-            this.btnSearchMovies.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.btnSearchMovies.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnSearchMovies_ClickButtonArea);
-            // 
-            // btnFilesSort
-            // 
-            resources.ApplyResources(this.btnFilesSort, "btnFilesSort");
-            this.btnFilesSort.BackColor = System.Drawing.Color.Transparent;
-            this.btnFilesSort.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.btnFilesSort.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.btnFilesSort.Corners.All = 2;
-            this.btnFilesSort.Corners.LowerLeft = 2;
-            this.btnFilesSort.Corners.LowerRight = 2;
-            this.btnFilesSort.Corners.UpperLeft = 2;
-            this.btnFilesSort.Corners.UpperRight = 2;
-            this.btnFilesSort.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFilesSort.DesignerSelected = false;
-            this.btnFilesSort.DimFactorClick = 0;
-            this.btnFilesSort.DimFactorHover = 0;
-            this.btnFilesSort.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.btnFilesSort.ForeColor = System.Drawing.Color.Black;
-            this.btnFilesSort.ImageIndex = 0;
-            this.btnFilesSort.Name = "btnFilesSort";
-            this.btnFilesSort.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.btnFilesSort.SideImage = ((System.Drawing.Image)(resources.GetObject("btnFilesSort.SideImage")));
-            this.btnFilesSort.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnFilesSort.SideImageSize = new System.Drawing.Size(22, 22);
-            this.btnFilesSort.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnFilesSort.TextMargin = new System.Windows.Forms.Padding(10, 3, 2, 2);
-            this.btnFilesSort.TextShadowShow = false;
-            this.btnFilesSort.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnFilesSort_ClickButtonArea);
-            // 
-            // btnFilesHost
-            // 
-            resources.ApplyResources(this.btnFilesHost, "btnFilesHost");
-            this.btnFilesHost.BackColor = System.Drawing.Color.Transparent;
-            this.btnFilesHost.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.btnFilesHost.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.btnFilesHost.Corners.All = 2;
-            this.btnFilesHost.Corners.LowerLeft = 2;
-            this.btnFilesHost.Corners.LowerRight = 2;
-            this.btnFilesHost.Corners.UpperLeft = 2;
-            this.btnFilesHost.Corners.UpperRight = 2;
-            this.btnFilesHost.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFilesHost.DesignerSelected = false;
-            this.btnFilesHost.DimFactorClick = 0;
-            this.btnFilesHost.DimFactorHover = 0;
-            this.btnFilesHost.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.btnFilesHost.ForeColor = System.Drawing.Color.Black;
-            this.btnFilesHost.ImageIndex = 0;
-            this.btnFilesHost.Name = "btnFilesHost";
-            this.btnFilesHost.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.btnFilesHost.SideImage = ((System.Drawing.Image)(resources.GetObject("btnFilesHost.SideImage")));
-            this.btnFilesHost.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnFilesHost.SideImageSize = new System.Drawing.Size(22, 22);
-            this.btnFilesHost.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnFilesHost.TextMargin = new System.Windows.Forms.Padding(10, 3, 2, 2);
-            this.btnFilesHost.TextShadowShow = false;
-            this.btnFilesHost.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnFilesHost_ClickButtonArea);
-            // 
-            // btnSearchFiles
-            // 
-            this.btnSearchFiles.BackColor = System.Drawing.Color.Transparent;
-            this.btnSearchFiles.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.btnSearchFiles.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.btnSearchFiles.Corners.LowerRight = 2;
-            this.btnSearchFiles.Corners.UpperRight = 2;
-            this.btnSearchFiles.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSearchFiles.DesignerSelected = false;
-            this.btnSearchFiles.DimFactorClick = 0;
-            this.btnSearchFiles.DimFactorHover = 0;
-            this.btnSearchFiles.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.btnSearchFiles.FocalPoints.CenterPtX = 0F;
-            this.btnSearchFiles.FocalPoints.CenterPtY = 0F;
-            resources.ApplyResources(this.btnSearchFiles, "btnSearchFiles");
-            this.btnSearchFiles.Image = global::WebPlex.Properties.Resources.search;
-            this.btnSearchFiles.ImageIndex = 0;
-            this.btnSearchFiles.ImageSize = new System.Drawing.Size(22, 22);
-            this.btnSearchFiles.Name = "btnSearchFiles";
-            this.btnSearchFiles.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.btnSearchFiles.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnSearchFiles_ClickButtonArea);
-            // 
-            // btnSettingsGeneralLanguage
-            // 
-            resources.ApplyResources(this.btnSettingsGeneralLanguage, "btnSettingsGeneralLanguage");
-            this.btnSettingsGeneralLanguage.BackColor = System.Drawing.Color.Transparent;
-            this.btnSettingsGeneralLanguage.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.btnSettingsGeneralLanguage.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.btnSettingsGeneralLanguage.Corners.All = 2;
-            this.btnSettingsGeneralLanguage.Corners.LowerLeft = 2;
-            this.btnSettingsGeneralLanguage.Corners.LowerRight = 2;
-            this.btnSettingsGeneralLanguage.Corners.UpperLeft = 2;
-            this.btnSettingsGeneralLanguage.Corners.UpperRight = 2;
-            this.btnSettingsGeneralLanguage.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSettingsGeneralLanguage.DesignerSelected = false;
-            this.btnSettingsGeneralLanguage.DimFactorClick = 0;
-            this.btnSettingsGeneralLanguage.DimFactorHover = 0;
-            this.btnSettingsGeneralLanguage.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.btnSettingsGeneralLanguage.ForeColor = System.Drawing.Color.Black;
-            this.btnSettingsGeneralLanguage.ImageIndex = 0;
-            this.btnSettingsGeneralLanguage.Name = "btnSettingsGeneralLanguage";
-            this.btnSettingsGeneralLanguage.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.btnSettingsGeneralLanguage.SideImage = global::WebPlex.Properties.Resources.arrow_drop_down_black;
-            this.btnSettingsGeneralLanguage.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSettingsGeneralLanguage.SideImageSize = new System.Drawing.Size(21, 21);
-            this.btnSettingsGeneralLanguage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSettingsGeneralLanguage.TextMargin = new System.Windows.Forms.Padding(6, 3, 2, 2);
-            this.btnSettingsGeneralLanguage.TextShadowShow = false;
-            this.btnSettingsGeneralLanguage.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnSettingsGeneralLanguage_ClickButtonArea);
-            // 
-            // imgHeaderAbout
-            // 
-            resources.ApplyResources(this.imgHeaderAbout, "imgHeaderAbout");
-            this.imgHeaderAbout.BackColor = System.Drawing.Color.Transparent;
-            this.imgHeaderAbout.Image = global::WebPlex.Properties.Resources.logo_text;
-            this.imgHeaderAbout.Name = "imgHeaderAbout";
-            this.imgHeaderAbout.TabStop = false;
-            // 
             // imgSpinner
             // 
             resources.ApplyResources(this.imgSpinner, "imgSpinner");
@@ -1951,17 +1969,21 @@
             this.imgSpinner.Name = "imgSpinner";
             this.imgSpinner.TabStop = false;
             // 
-            // lblHomeStats
+            // btnAboutTermsOfUse
             // 
-            resources.ApplyResources(this.lblHomeStats, "lblHomeStats");
-            this.lblHomeStats.BackColor = System.Drawing.Color.Transparent;
-            this.lblHomeStats.Name = "lblHomeStats";
+            resources.ApplyResources(this.btnAboutTermsOfUse, "btnAboutTermsOfUse");
+            this.btnAboutTermsOfUse.BackColor = System.Drawing.Color.Transparent;
+            this.btnAboutTermsOfUse.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAboutTermsOfUse.Name = "btnAboutTermsOfUse";
+            this.btnAboutTermsOfUse.Click += new System.EventHandler(this.btnAboutTermsOfUse_Click);
             // 
-            // lblHomeStatsUpdated
+            // btnAboutPrivacyPolicy
             // 
-            resources.ApplyResources(this.lblHomeStatsUpdated, "lblHomeStatsUpdated");
-            this.lblHomeStatsUpdated.BackColor = System.Drawing.Color.Transparent;
-            this.lblHomeStatsUpdated.Name = "lblHomeStatsUpdated";
+            resources.ApplyResources(this.btnAboutPrivacyPolicy, "btnAboutPrivacyPolicy");
+            this.btnAboutPrivacyPolicy.BackColor = System.Drawing.Color.Transparent;
+            this.btnAboutPrivacyPolicy.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAboutPrivacyPolicy.Name = "btnAboutPrivacyPolicy";
+            this.btnAboutPrivacyPolicy.Click += new System.EventHandler(this.btnAboutPrivacyPolicy_Click);
             // 
             // frmWebPlex
             // 
@@ -1999,6 +2021,7 @@
             this.tabDiscover.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridDiscover)).EndInit();
             this.tabSubmit.ResumeLayout(false);
+            this.tabSubmit.PerformLayout();
             this.panelSubmitDescription.ResumeLayout(false);
             this.panelSubmitDescription.PerformLayout();
             this.panelSubmitItems.ResumeLayout(false);
@@ -2008,6 +2031,7 @@
             this.panelGeneralSettingsLanguage.ResumeLayout(false);
             this.tabAbout.ResumeLayout(false);
             this.tabAbout.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgHeaderAbout)).EndInit();
             this.panelTitles.ResumeLayout(false);
             this.panelTitles.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgHome)).EndInit();
@@ -2017,7 +2041,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.imgAbout)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgFiles)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgMovies)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgHeaderAbout)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgSpinner)).EndInit();
             this.ResumeLayout(false);
 
@@ -2028,7 +2051,7 @@
         private System.Windows.Forms.PictureBox imgHeaderAbout;
         private System.Windows.Forms.Label lblAboutText;
         private System.Windows.Forms.Label lblAboutSubText;
-        private System.Windows.Forms.Label lblAboutVersion;
+        private System.Windows.Forms.Label lblAboutChangelogVersion;
         private System.Windows.Forms.Label btnAboutReportIssue;
         public System.Windows.Forms.TabPage tabMovies;
         private CButtonLib.CButton btnSearchMovies;
@@ -2145,6 +2168,8 @@
         private System.Windows.Forms.ComboBox cmboBoxHomeEngine;
         private System.Windows.Forms.Label lblHomeStats;
         private System.Windows.Forms.Label lblHomeStatsUpdated;
+        private System.Windows.Forms.Label btnAboutTermsOfUse;
+        private System.Windows.Forms.Label btnAboutPrivacyPolicy;
     }
 }
 

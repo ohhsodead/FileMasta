@@ -169,7 +169,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblHomeStats.Location" type="System.Drawing.Point, System.Drawing">
-    <value>112, 296</value>
+    <value>112, 298</value>
   </data>
   <data name="lblHomeStats.Size" type="System.Drawing.Size, System.Drawing">
     <value>644, 20</value>
@@ -877,10 +877,9 @@ Get direct download links for almost anything!</value>
   </data>
   <data name="btnMoviesGenre.SideImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAABfSURBVGhD7c9LCoAwEETBHN2bq1k0uFDxE0gCVTDb4XUBAAAAXlv2Wxtd/dVFixHd4uPPiO7x
-        8WXEMPHxZsRw8fFkxLDxcTdi+Pg4GzFNfBxHTBcfNXzaeAAAAK6VsgHHMWOnKfxjkQAAAABJRU5ErkJg
-        gg==
+        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAF9JREFUaEPt
+        z0sKgDAQRMEc3ZurWTS4UPETSAJVMNvhdQEAAABeW/ZbG1391UWLEd3i48+I7vHxZcQw8fFmxHDx8WTE
+        sPFxN2L4+DgbMU18HEdMFx81fNp4AAAArpWyAccxY6cp/GORAAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="btnMoviesGenre.Size" type="System.Drawing.Size, System.Drawing">
@@ -1023,10 +1022,9 @@ Get direct download links for almost anything!</value>
   </data>
   <data name="btnMoviesYear.SideImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAABfSURBVGhD7c9LCoAwEETBHN2bq1k0uFDxE0gCVTDb4XUBAAAAXlv2Wxtd/dVFixHd4uPPiO7x
-        8WXEMPHxZsRw8fFkxLDxcTdi+Pg4GzFNfBxHTBcfNXzaeAAAAK6VsgHHMWOnKfxjkQAAAABJRU5ErkJg
-        gg==
+        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAF9JREFUaEPt
+        z0sKgDAQRMEc3ZurWTS4UPETSAJVMNvhdQEAAABeW/ZbG1391UWLEd3i48+I7vHxZcQw8fFmxHDx8WTE
+        sPFxN2L4+DgbMU18HEdMFx81fNp4AAAArpWyAccxY6cp/GORAAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="btnMoviesYear.Size" type="System.Drawing.Size, System.Drawing">
@@ -1346,10 +1344,9 @@ Get direct download links for almost anything!</value>
   </data>
   <data name="btnFilesSort.SideImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAABfSURBVGhD7c9LCoAwEETBHN2bq1k0uFDxE0gCVTDb4XUBAAAAXlv2Wxtd/dVFixHd4uPPiO7x
-        8WXEMPHxZsRw8fFkxLDxcTdi+Pg4GzFNfBxHTBcfNXzaeAAAAK6VsgHHMWOnKfxjkQAAAABJRU5ErkJg
-        gg==
+        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAF9JREFUaEPt
+        z0sKgDAQRMEc3ZurWTS4UPETSAJVMNvhdQEAAABeW/ZbG1391UWLEd3i48+I7vHxZcQw8fFmxHDx8WTE
+        sPFxN2L4+DgbMU18HEdMFx81fNp4AAAArpWyAccxY6cp/GORAAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="btnFilesSort.Size" type="System.Drawing.Size, System.Drawing">
@@ -1444,10 +1441,9 @@ Get direct download links for almost anything!</value>
   </data>
   <data name="btnFilesHost.SideImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAABfSURBVGhD7c9LCoAwEETBHN2bq1k0uFDxE0gCVTDb4XUBAAAAXlv2Wxtd/dVFixHd4uPPiO7x
-        8WXEMPHxZsRw8fFkxLDxcTdi+Pg4GzFNfBxHTBcfNXzaeAAAAK6VsgHHMWOnKfxjkQAAAABJRU5ErkJg
-        gg==
+        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAF9JREFUaEPt
+        z0sKgDAQRMEc3ZurWTS4UPETSAJVMNvhdQEAAABeW/ZbG1391UWLEd3i48+I7vHxZcQw8fFmxHDx8WTE
+        sPFxN2L4+DgbMU18HEdMFx81fNp4AAAArpWyAccxY6cp/GORAAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="btnFilesHost.Size" type="System.Drawing.Size, System.Drawing">
@@ -2257,6 +2253,9 @@ Get direct download links for almost anything!</value>
   <data name="panelSubmitDescription.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
+  <data name="panelSubmitDescription.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="lblSubSubmit.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
@@ -2276,7 +2275,7 @@ Get direct download links for almost anything!</value>
     <value>0, 0, 0, 0</value>
   </data>
   <data name="lblSubSubmit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>811, 220</value>
+    <value>849, 360</value>
   </data>
   <data name="lblSubSubmit.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2285,6 +2284,10 @@ Get direct download links for almost anything!</value>
     <value>Submit your links to WebPlex.
 
 The link you submit will go to our issue tracker on GitHub. Links are reviewed on a first-in, first-out basis. This could take anywhere from a few hours to a couple of weeks before your site is listed depending on number of submissions yet to be checked.
+
+Our crawler will scan the web server starting at the directory you specify, and, all the files that pass a set of filters will be added to our database, it will also check if a randomly chosen file can be downloaded, and ignore the whole web server if the download fails. So *ONLY* web serverswith downloadable content will be considered.
+
+Please keep in mind we are a search engine having strict policies, read the following guidelines first before submitting a link/website.
 
 • Only open directory links are allowed e.g. https://website.com/ or https://website.com/public/
 • No site listings under multiple domain names
@@ -2308,7 +2311,7 @@ The link you submit will go to our issue tracker on GitHub. Links are reviewed o
     <value>Top, Left, Right</value>
   </data>
   <data name="btnSubmitLink.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 10pt</value>
+    <value>Segoe UI Semibold, 9.25pt</value>
   </data>
   <data name="btnSubmitLink.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 52</value>
@@ -2386,7 +2389,7 @@ The link you submit will go to our issue tracker on GitHub. Links are reviewed o
     <value>2</value>
   </data>
   <data name="panelSubmitItems.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 245</value>
+    <value>0, 385</value>
   </data>
   <data name="panelSubmitItems.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 25, 0, 3</value>
@@ -2410,10 +2413,10 @@ The link you submit will go to our issue tracker on GitHub. Links are reviewed o
     <value>1</value>
   </data>
   <data name="panelSubmitDescription.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 49</value>
+    <value>10, 51</value>
   </data>
   <data name="panelSubmitDescription.Size" type="System.Drawing.Size, System.Drawing">
-    <value>838, 456</value>
+    <value>849, 475</value>
   </data>
   <data name="panelSubmitDescription.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2817,44 +2820,128 @@ The link you submit will go to our issue tracker on GitHub. Links are reviewed o
   <data name="tabAbout.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Stretch</value>
   </data>
-  <data name="lblAboutVersion.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
+  <data name="btnAboutPrivacyPolicy.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
   </data>
-  <data name="lblAboutVersion.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="btnAboutPrivacyPolicy.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="btnAboutPrivacyPolicy.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9pt</value>
   </data>
-  <data name="lblAboutVersion.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="btnAboutPrivacyPolicy.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="lblAboutVersion.Location" type="System.Drawing.Point, System.Drawing">
-    <value>747, 513</value>
+  <data name="btnAboutPrivacyPolicy.Location" type="System.Drawing.Point, System.Drawing">
+    <value>181, 513</value>
   </data>
-  <data name="lblAboutVersion.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="btnAboutPrivacyPolicy.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 0, 3, 5</value>
   </data>
-  <data name="lblAboutVersion.Size" type="System.Drawing.Size, System.Drawing">
-    <value>114, 15</value>
+  <data name="btnAboutPrivacyPolicy.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 15</value>
   </data>
-  <data name="lblAboutVersion.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
+  <data name="btnAboutPrivacyPolicy.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
   </data>
-  <data name="lblAboutVersion.Text" xml:space="preserve">
-    <value>version</value>
+  <data name="btnAboutPrivacyPolicy.Text" xml:space="preserve">
+    <value>Privacy Policy</value>
   </data>
-  <data name="lblAboutVersion.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
+  <data name="btnAboutPrivacyPolicy.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
   </data>
-  <data name="&gt;&gt;lblAboutVersion.Name" xml:space="preserve">
-    <value>lblAboutVersion</value>
+  <data name="&gt;&gt;btnAboutPrivacyPolicy.Name" xml:space="preserve">
+    <value>btnAboutPrivacyPolicy</value>
   </data>
-  <data name="&gt;&gt;lblAboutVersion.Type" xml:space="preserve">
+  <data name="&gt;&gt;btnAboutPrivacyPolicy.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lblAboutVersion.Parent" xml:space="preserve">
+  <data name="&gt;&gt;btnAboutPrivacyPolicy.Parent" xml:space="preserve">
     <value>tabAbout</value>
   </data>
-  <data name="&gt;&gt;lblAboutVersion.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;btnAboutPrivacyPolicy.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="btnAboutTermsOfUse.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="btnAboutTermsOfUse.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="btnAboutTermsOfUse.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt</value>
+  </data>
+  <data name="btnAboutTermsOfUse.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnAboutTermsOfUse.Location" type="System.Drawing.Point, System.Drawing">
+    <value>100, 513</value>
+  </data>
+  <data name="btnAboutTermsOfUse.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 0, 3, 5</value>
+  </data>
+  <data name="btnAboutTermsOfUse.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 15</value>
+  </data>
+  <data name="btnAboutTermsOfUse.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="btnAboutTermsOfUse.Text" xml:space="preserve">
+    <value>Terms of Use</value>
+  </data>
+  <data name="btnAboutTermsOfUse.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;btnAboutTermsOfUse.Name" xml:space="preserve">
+    <value>btnAboutTermsOfUse</value>
+  </data>
+  <data name="&gt;&gt;btnAboutTermsOfUse.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnAboutTermsOfUse.Parent" xml:space="preserve">
+    <value>tabAbout</value>
+  </data>
+  <data name="&gt;&gt;btnAboutTermsOfUse.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblAboutChangelogVersion.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="lblAboutChangelogVersion.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt</value>
+  </data>
+  <data name="lblAboutChangelogVersion.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblAboutChangelogVersion.Location" type="System.Drawing.Point, System.Drawing">
+    <value>688, 513</value>
+  </data>
+  <data name="lblAboutChangelogVersion.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 0, 3, 5</value>
+  </data>
+  <data name="lblAboutChangelogVersion.Size" type="System.Drawing.Size, System.Drawing">
+    <value>173, 15</value>
+  </data>
+  <data name="lblAboutChangelogVersion.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="lblAboutChangelogVersion.Text" xml:space="preserve">
+    <value>Change Log - v{0}</value>
+  </data>
+  <data name="lblAboutChangelogVersion.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;lblAboutChangelogVersion.Name" xml:space="preserve">
+    <value>lblAboutChangelogVersion</value>
+  </data>
+  <data name="&gt;&gt;lblAboutChangelogVersion.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblAboutChangelogVersion.Parent" xml:space="preserve">
+    <value>tabAbout</value>
+  </data>
+  <data name="&gt;&gt;lblAboutChangelogVersion.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="btnAboutReportIssue.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
@@ -2896,7 +2983,7 @@ The link you submit will go to our issue tracker on GitHub. Links are reviewed o
     <value>tabAbout</value>
   </data>
   <data name="&gt;&gt;btnAboutReportIssue.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="lblAboutSubText.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom</value>
@@ -2938,7 +3025,7 @@ The link you submit will go to our issue tracker on GitHub. Links are reviewed o
     <value>tabAbout</value>
   </data>
   <data name="&gt;&gt;lblAboutSubText.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="lblAboutText.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -2976,7 +3063,7 @@ WebPlex hosts no content, we provide only access to already available files foun
     <value>tabAbout</value>
   </data>
   <data name="&gt;&gt;lblAboutText.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="imgHeaderAbout.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top</value>
@@ -3006,7 +3093,7 @@ WebPlex hosts no content, we provide only access to already available files foun
     <value>tabAbout</value>
   </data>
   <data name="&gt;&gt;imgHeaderAbout.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="tabAbout.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
@@ -4585,9 +4672,6 @@ WebPlex hosts no content, we provide only access to already available files foun
         CHsXIgKIEGEcIyKACBHGMSICiBBhHCMigAgRxjEiAogQYRwjIoAIEcYx/j8lZ/SrpuicRgAAAABJRU5E
         rkJggg==
 </value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>800, 575</value>

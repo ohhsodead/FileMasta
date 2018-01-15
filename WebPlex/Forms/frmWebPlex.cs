@@ -40,9 +40,21 @@ namespace WebPlex
 
             InitializeComponent();
 
+            lblAboutChangelogVersion.Text = String.Format(lblAboutChangelogVersion.Text, Application.ProductVersion);
+
             imgSpinner.BringToFront(); // Hidden in Designer
 
             form = this;
+
+            frmInfo = new ctrlInfoTemplate();
+            frmInfo.Hide();
+            Controls.Add(frmInfo);
+            frmInfo.Dock = DockStyle.Fill;
+            frmInfo.Location = new Point(0, 0);
+            frmInfo.ClientSize = ClientSize;
+            frmInfo.BringToFront();
+            frmInfo.Hide();
+
             frmSplash = new ctrlSplashScreen();
 
             Controls.Add(frmSplash);
@@ -65,6 +77,7 @@ namespace WebPlex
 
         public static frmWebPlex form = null;
         public ctrlSplashScreen frmSplash;
+        public ctrlInfoTemplate frmInfo;
         protected override void OnPaint(PaintEventArgs e) { }
 
         // Database Files
@@ -83,6 +96,11 @@ namespace WebPlex
         public static string pathInstallerFileName = "WebPlex.Installer.Windows.exe";
         public static string pathDownloadInstaller = userDownloadsDirectory + pathInstallerFileName;
         public static string getLatestInstaller(Version newVersion) { return "https://github.com/invu/WebPlex/releases/download/" + newVersion.ToString() + "/" + pathInstallerFileName; }
+
+        // Misc
+        public static string linkChangelog = "https://raw.githubusercontent.com/invu/WebPlex/master/CHANGELOG.md";
+        public static string linkTermsOfUse = "https://raw.githubusercontent.com/invu/WebPlex/master/TERMSOFUSE.md";
+        public static string linkPrivacyPolicy = "https://raw.githubusercontent.com/invu/WebPlex/master/PRIVACYPOLICY.md";
 
         WebClient client = new WebClient(); // public reusable web client
 
@@ -110,8 +128,6 @@ namespace WebPlex
             tabSubmit.BackgroundImage = Utilities.ChangeOpacity(Properties.Resources.background_original, 0.5F);
             tabSettings.BackgroundImage = Utilities.ChangeOpacity(Properties.Resources.background_original, 0.5F);
             tabAbout.BackgroundImage = Utilities.ChangeOpacity(Properties.Resources.background_original, 0.5F);
-
-            lblAboutVersion.Text = "v" + Application.ProductVersion;
 
             if (Utilities.checkForInternetConnection() == true)
             {
@@ -1124,6 +1140,38 @@ namespace WebPlex
         private void lblAboutReportIssue_Click(object sender, EventArgs e)
         {
             Process.Start("https://github.com/invu/WebPlex/issues/new");
+        }
+
+        private void btnAboutTermsOfUse_Click(object sender, EventArgs e)
+        {
+            Label lbl = sender as Label;
+            showInfo(lbl.Text, linkTermsOfUse);
+        }
+
+        private void btnAboutPrivacyPolicy_Click(object sender, EventArgs e)
+        {
+            Label lbl = sender as Label;
+            showInfo(lbl.Text, linkPrivacyPolicy);
+        }
+
+        private void lblAboutChangelogVersion_Click(object sender, EventArgs e)
+        {
+            Label lbl = sender as Label;
+            showInfo(lbl.Text, linkChangelog);
+        }
+
+        public void showInfo(string Title, string URL)
+        {
+            frmInfo.dataTitle.Text = Title;
+
+            var client = new WebClient();
+            using (var stream = client.OpenRead(URL))
+            using (var reader = new StreamReader(stream))
+            {
+                frmInfo.dataInfo.Text = reader.ReadToEnd();
+            }
+
+            frmInfo.Show();
         }
         //
 

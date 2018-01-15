@@ -178,6 +178,12 @@
       <DependentUpon>misc-fr.resx</DependentUpon>
     </Compile>
     <Compile Include="DataJson\OMDbEntity.cs" />
+    <Compile Include="CControls\ctrlInfoTemplate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CControls\ctrlInfoTemplate.Designer.cs">
+      <DependentUpon>ctrlInfoTemplate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utilities\KnownFolder.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="CControls\ctrlProgressBar.cs">
@@ -292,6 +298,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CControls\ctrlInfoTemplate.resx">
+      <DependentUpon>ctrlInfoTemplate.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
