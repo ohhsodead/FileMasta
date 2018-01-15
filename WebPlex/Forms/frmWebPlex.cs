@@ -327,7 +327,7 @@ namespace WebPlex
 
         public void getStats()
         {
-            int totalSize = 0;
+            Int64 totalSize = 0;
 
             try
             {
@@ -335,11 +335,11 @@ namespace WebPlex
                 foreach (string jsonData in dataOpenFiles)
                 {
                     var dataJson = DatabaseFilesEntity.FromJson(jsonData);
-                    if (dataJson.Size != "-") { totalSize += Convert.ToInt32(dataJson.Size); }
+                    if (dataJson.Size != "-") { totalSize = totalSize + Convert.ToInt64(dataJson.Size); }
                 }
 
             }
-            catch { }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
 
             lblHomeStats.Text = String.Format(lblHomeStats.Text, Utilities.getFormattedNumber(dataOpenFiles.Count.ToString()), Utilities.ToFileSize(Convert.ToDouble(totalSize)), Utilities.getFormattedNumber(dataOpenDirectories.Count.ToString()));
             try { lblHomeStatsUpdated.Text = String.Format(lblHomeStatsUpdated.Text, Convert.ToDateTime(Utilities.getLastModifiedTime(linkOpenFiles)).ToShortDateString()); } catch { lblHomeStatsUpdated.Text = String.Format(lblHomeStatsUpdated.Text, "n/a"); }
@@ -915,9 +915,11 @@ namespace WebPlex
                     foreach (string jsonData in data)
                     {
                         var dataJson = DatabaseFilesEntity.FromJson(jsonData);
-                        string dateAdded = dataJson.DateAdded;
-                        if (dataJson.DateAdded != "-") { dateAdded = Utilities.getTimeAgo(Convert.ToDateTime(dataJson.DateAdded)); }
-                        dataGridFiles.Rows.Add(dataJson.Type, dataJson.Title, dataJson.Size, dateAdded, dataJson.Host, dataJson.URL);
+                        string formattedDate = dataJson.DateAdded;
+                        if (dataJson.DateAdded != "-") { formattedDate = Utilities.getTimeAgo(Convert.ToDateTime(dataJson.DateAdded)); }
+                        string formattedSize = dataJson.Size;
+                        if (dataJson.Size != "-") { formattedSize = Utilities.ToFileSize(Convert.ToDouble(dataJson.Size)); }
+                        dataGridFiles.Rows.Add(dataJson.Type, dataJson.Title, formattedSize, formattedDate, dataJson.Host, dataJson.URL);
 
                         if (!(cmboBoxFilesHost.Items.Contains(dataJson.Host))) { cmboBoxFilesHost.Items.Add(dataJson.Host); }
                     }
