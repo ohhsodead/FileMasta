@@ -1,4 +1,3 @@
-## Terms of Use
 WebPlex Indexer software (collectively referred as "NFI App") service is provided for your use subject to these terms and conditions ("Terms of Use") and which you agree to be bound by through your use of NFI Site. If you do not agree to these Terms of Use, please do not use any NFI Site service.
 
 All the search results produced by NFI App contains links to files or archives located in web servers around the world, these files represent software, photos, video, text, graphics, music, sounds or any other material (collectively, referred as "content") that may be protected by copyrights, patents, trademarks, trade secrets or other proprietary rights, we assumes no responsibility for the content of any FTP server that is referenced by any search result page.
