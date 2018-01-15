@@ -47,7 +47,7 @@ namespace WebPlex.CControls
                 }
             }
 
-            if (Utilities.isSaved(Utilities.fileToJson(infoFileURL, infoName.Text, Path.GetExtension(infoName.Text), infoHost.Text)))
+            if (Utilities.isSaved(Utilities.fileToJson(infoFileURL, infoName.Text, Path.GetExtension(infoName.Text).ToUpper().Replace(".", ""), infoHost.Text)))
             {
                 imgAddToBookmarks.Image = Properties.Resources.bookmark_remove;
             }
