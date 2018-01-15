@@ -66,7 +66,7 @@ We don't use cookies, store sessions, userid's or IP addresses.
 None of the file links you can find on this app is located on current server, so this can happen very frequently.
 <br>
 There could be several reasons for that:
-<br>
+
  * These files were recently removed from the server they were located, by the owner of the server or by someone else in the case of public servers.
  * The server that contains the files has a limit of maximum number of concurrent users logged in, and the limit has been reached. You can try to download the files later when some users disconnect or better still you should use a download manager that keeps trying to download the file.
  * The server where the files are is turned off or is not connected to the Internet at the moment.
