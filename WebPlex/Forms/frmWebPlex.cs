@@ -1165,6 +1165,7 @@ namespace WebPlex
                 frmInfo.dataInfo.Text = reader.ReadToEnd();
             }
 
+            frmInfo.MaximumSize = new Size(frmInfo.MaximumSize.Width, this.Height - 100);
             frmInfo.ShowDialog();
         }
         //

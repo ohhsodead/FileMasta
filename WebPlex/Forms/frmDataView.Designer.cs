@@ -43,7 +43,7 @@
             this.panelDataItems.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.panelDataItems.Location = new System.Drawing.Point(12, 12);
             this.panelDataItems.Name = "panelDataItems";
-            this.panelDataItems.Size = new System.Drawing.Size(460, 85);
+            this.panelDataItems.Size = new System.Drawing.Size(435, 87);
             this.panelDataItems.TabIndex = 100052;
             // 
             // dataInfo
@@ -69,19 +69,19 @@
             this.AutoScroll = true;
             this.AutoScrollMargin = new System.Drawing.Size(0, 12);
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(484, 110);
+            this.ClientSize = new System.Drawing.Size(459, 111);
             this.Controls.Add(this.panelDataItems);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(500, 650);
+            this.MaximumSize = new System.Drawing.Size(475, 650);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(500, 39);
+            this.MinimumSize = new System.Drawing.Size(475, 40);
             this.Name = "frmDataView";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Title";
             this.panelDataItems.ResumeLayout(false);
             this.panelDataItems.PerformLayout();
