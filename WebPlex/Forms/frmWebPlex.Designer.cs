@@ -131,6 +131,8 @@
             this.btnSettingsSave = new CButtonLib.CButton();
             this.btnSettingsRestoreDefault = new CButtonLib.CButton();
             this.tabAbout = new System.Windows.Forms.TabPage();
+            this.btnAboutPrivacyPolicy = new System.Windows.Forms.Label();
+            this.btnAboutTermsOfUse = new System.Windows.Forms.Label();
             this.lblAboutChangelogVersion = new System.Windows.Forms.Label();
             this.btnAboutReportIssue = new System.Windows.Forms.Label();
             this.lblAboutSubText = new System.Windows.Forms.Label();
@@ -160,8 +162,6 @@
             this.titleFiles = new System.Windows.Forms.Label();
             this.titleMovies = new System.Windows.Forms.Label();
             this.imgSpinner = new System.Windows.Forms.PictureBox();
-            this.btnAboutTermsOfUse = new System.Windows.Forms.Label();
-            this.btnAboutPrivacyPolicy = new System.Windows.Forms.Label();
             this.tab.SuspendLayout();
             this.tabHome.SuspendLayout();
             this.panelHomeEngine.SuspendLayout();
@@ -215,6 +215,7 @@
             // tabHome
             // 
             this.tabHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
+            resources.ApplyResources(this.tabHome, "tabHome");
             this.tabHome.Controls.Add(this.lblHomeStatsUpdated);
             this.tabHome.Controls.Add(this.lblHomeStats);
             this.tabHome.Controls.Add(this.panelHomeEngine);
@@ -229,7 +230,6 @@
             this.tabHome.Controls.Add(this.btnSearchFilesHome);
             this.tabHome.Controls.Add(this.txtSearchFilesHome);
             this.tabHome.Controls.Add(this.bgSearchFilesHome);
-            resources.ApplyResources(this.tabHome, "tabHome");
             this.tabHome.Name = "tabHome";
             // 
             // lblHomeStatsUpdated
@@ -1387,9 +1387,9 @@
             // tabSubmit
             // 
             this.tabSubmit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
+            resources.ApplyResources(this.tabSubmit, "tabSubmit");
             this.tabSubmit.Controls.Add(this.panelSubmitDescription);
             this.tabSubmit.Controls.Add(this.lblHeaderSubmit);
-            resources.ApplyResources(this.tabSubmit, "tabSubmit");
             this.tabSubmit.Name = "tabSubmit";
             // 
             // panelSubmitDescription
@@ -1640,6 +1640,22 @@
             this.tabAbout.Controls.Add(this.imgHeaderAbout);
             this.tabAbout.ForeColor = System.Drawing.Color.White;
             this.tabAbout.Name = "tabAbout";
+            // 
+            // btnAboutPrivacyPolicy
+            // 
+            resources.ApplyResources(this.btnAboutPrivacyPolicy, "btnAboutPrivacyPolicy");
+            this.btnAboutPrivacyPolicy.BackColor = System.Drawing.Color.Transparent;
+            this.btnAboutPrivacyPolicy.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAboutPrivacyPolicy.Name = "btnAboutPrivacyPolicy";
+            this.btnAboutPrivacyPolicy.Click += new System.EventHandler(this.btnAboutPrivacyPolicy_Click);
+            // 
+            // btnAboutTermsOfUse
+            // 
+            resources.ApplyResources(this.btnAboutTermsOfUse, "btnAboutTermsOfUse");
+            this.btnAboutTermsOfUse.BackColor = System.Drawing.Color.Transparent;
+            this.btnAboutTermsOfUse.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAboutTermsOfUse.Name = "btnAboutTermsOfUse";
+            this.btnAboutTermsOfUse.Click += new System.EventHandler(this.btnAboutTermsOfUse_Click);
             // 
             // lblAboutChangelogVersion
             // 
@@ -1968,22 +1984,6 @@
             this.imgSpinner.Image = global::WebPlex.Properties.Resources.loading;
             this.imgSpinner.Name = "imgSpinner";
             this.imgSpinner.TabStop = false;
-            // 
-            // btnAboutTermsOfUse
-            // 
-            resources.ApplyResources(this.btnAboutTermsOfUse, "btnAboutTermsOfUse");
-            this.btnAboutTermsOfUse.BackColor = System.Drawing.Color.Transparent;
-            this.btnAboutTermsOfUse.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAboutTermsOfUse.Name = "btnAboutTermsOfUse";
-            this.btnAboutTermsOfUse.Click += new System.EventHandler(this.btnAboutTermsOfUse_Click);
-            // 
-            // btnAboutPrivacyPolicy
-            // 
-            resources.ApplyResources(this.btnAboutPrivacyPolicy, "btnAboutPrivacyPolicy");
-            this.btnAboutPrivacyPolicy.BackColor = System.Drawing.Color.Transparent;
-            this.btnAboutPrivacyPolicy.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAboutPrivacyPolicy.Name = "btnAboutPrivacyPolicy";
-            this.btnAboutPrivacyPolicy.Click += new System.EventHandler(this.btnAboutPrivacyPolicy_Click);
             // 
             // frmWebPlex
             // 

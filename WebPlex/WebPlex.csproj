@@ -101,6 +101,12 @@
     <Compile Include="CControls\ctrlStatus.Designer.cs">
       <DependentUpon>ctrlStatus.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmDataView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmDataView.Designer.cs">
+      <DependentUpon>frmDataView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Languages\misc-cs.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -178,12 +184,6 @@
       <DependentUpon>misc-fr.resx</DependentUpon>
     </Compile>
     <Compile Include="DataJson\OMDbEntity.cs" />
-    <Compile Include="CControls\ctrlInfoTemplate.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="CControls\ctrlInfoTemplate.Designer.cs">
-      <DependentUpon>ctrlInfoTemplate.cs</DependentUpon>
-    </Compile>
     <Compile Include="Utilities\KnownFolder.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="CControls\ctrlProgressBar.cs">
@@ -240,6 +240,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CControls\ctrlStreamInfo.resx">
       <DependentUpon>ctrlStreamInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmDataView.resx">
+      <DependentUpon>frmDataView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmWebPlex.cs.resx">
       <DependentUpon>frmWebPlex.cs</DependentUpon>
@@ -298,9 +301,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CControls\ctrlInfoTemplate.resx">
-      <DependentUpon>ctrlInfoTemplate.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

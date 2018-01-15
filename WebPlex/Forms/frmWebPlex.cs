@@ -46,15 +46,6 @@ namespace WebPlex
 
             form = this;
 
-            frmInfo = new ctrlInfoTemplate();
-            frmInfo.Hide();
-            Controls.Add(frmInfo);
-            frmInfo.Dock = DockStyle.Fill;
-            frmInfo.Location = new Point(0, 0);
-            frmInfo.ClientSize = ClientSize;
-            frmInfo.BringToFront();
-            frmInfo.Hide();
-
             frmSplash = new ctrlSplashScreen();
 
             Controls.Add(frmSplash);
@@ -77,7 +68,6 @@ namespace WebPlex
 
         public static frmWebPlex form = null;
         public ctrlSplashScreen frmSplash;
-        public ctrlInfoTemplate frmInfo;
         protected override void OnPaint(PaintEventArgs e) { }
 
         // Database Files
@@ -1162,7 +1152,10 @@ namespace WebPlex
 
         public void showInfo(string Title, string URL)
         {
-            frmInfo.dataTitle.Text = Title;
+            frmDataView frmInfo = new frmDataView
+            {
+                Text = Title
+            };
 
             var client = new WebClient();
             using (var stream = client.OpenRead(URL))
@@ -1171,7 +1164,7 @@ namespace WebPlex
                 frmInfo.dataInfo.Text = reader.ReadToEnd();
             }
 
-            frmInfo.Show();
+            frmInfo.ShowDialog();
         }
         //
 

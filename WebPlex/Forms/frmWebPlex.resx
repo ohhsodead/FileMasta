@@ -121,12 +121,15 @@
   <data name="tab.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
+  <data name="tabHome.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Stretch</value>
+  </data>
   <data name="lblHomeStatsUpdated.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="lblHomeStatsUpdated.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 10pt</value>
+    <value>Segoe UI, 9.75pt</value>
   </data>
   <data name="lblHomeStatsUpdated.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -2249,6 +2252,9 @@ Get direct download links for almost anything!</value>
   </data>
   <data name="&gt;&gt;tabDiscover.ZOrder" xml:space="preserve">
     <value>3</value>
+  </data>
+  <data name="tabSubmit.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Stretch</value>
   </data>
   <data name="panelSubmitDescription.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
