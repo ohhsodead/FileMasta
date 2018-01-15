@@ -1,3 +1,13 @@
+## 0.2.14.1
+- Improved UI
+- Added Files/Directories/Database stats
+- Added latest database update date
+- Added external search engines
+- Added Privacy Policy
+- Added Terms of Use
+- Added Change Log
+- Fixed #63, temporarily #62 
+
 ## 0.2.14.0
 - Improved form/button UI consistency
 - Added Home tab
