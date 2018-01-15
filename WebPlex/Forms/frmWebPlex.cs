@@ -1157,7 +1157,6 @@ namespace WebPlex
                 Text = Title
             };
 
-            var client = new WebClient();
             using (var stream = client.OpenRead(URL))
             using (var reader = new StreamReader(stream))
             {
@@ -1171,7 +1170,7 @@ namespace WebPlex
         // Settings tab
         public void loadSettings()
         {
-            // UI
+            // Set UI Properties
             btnSettingsGeneralLanguage.Text = Properties.Settings.Default.userLanguage;
             chkSettingsClearData.Checked = Properties.Settings.Default.clearDataOnClose;
         }
@@ -1193,7 +1192,6 @@ namespace WebPlex
 
         private void btnSettingsSave_ClickButtonArea(object sender, MouseEventArgs e)
         {
-            Thread.Sleep(500);
             if (cmboboxSettingsLanguage.GetItemText(cmboboxSettingsLanguage.SelectedItem) == "") { Properties.Settings.Default.userLanguage = btnSettingsGeneralLanguage.Text; }
             else { Properties.Settings.Default.userLanguage = cmboboxSettingsLanguage.GetItemText(cmboboxSettingsLanguage.SelectedItem); }
             Properties.Settings.Default.clearDataOnClose = chkSettingsClearData.Checked;
@@ -1204,7 +1202,6 @@ namespace WebPlex
 
         private void btnSettingsRestoreDefault_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            Thread.Sleep(500);
             Properties.Settings.Default.clearDataOnClose = false;
             Thread.Sleep(500);
             loadSettings();
