@@ -155,7 +155,7 @@ namespace WebPlex
                 client.DownloadFile(new Uri(linkOpenFiles), pathData + "open-files.json");
             }
 
-            dataOpenFiles.AddRange(File.ReadAllLines(pathData + "open-files.json"));
+            dataOpenFiles.AddRange(File.ReadAllLines(pathData + "open-files.json").Skip(1));
             //
 
             //
@@ -327,7 +327,7 @@ namespace WebPlex
 
         public void getStats()
         {
-            Int64 totalSize = 0;
+            long totalSize = 0;
 
             try
             {
