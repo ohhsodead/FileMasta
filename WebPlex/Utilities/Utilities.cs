@@ -1,5 +1,5 @@
-﻿using DatabaseFileAPI;
-using OMDbAPI;
+﻿using jsonDatabaseFile;
+using jsonOMDb;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;

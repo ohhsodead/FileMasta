@@ -1,4 +1,4 @@
-﻿namespace OMDbAPI
+﻿namespace jsonOMDb
 {
     using Newtonsoft.Json;
     using System.Collections.Generic;
