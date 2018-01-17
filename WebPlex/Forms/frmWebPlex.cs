@@ -1,14 +1,16 @@
-﻿using jsonDatabaseInfo;
-using jsonDatabaseFile;
-using jsonOMDb;
+﻿using OMDbAPI;
+using DatabaseFileAPI;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Net;
 using System.Windows.Forms;
+using System.Drawing.Imaging;
 using System.Diagnostics;
+using System.Text.RegularExpressions;
 using System.ComponentModel;
 using System.Globalization;
 using System.Threading;
@@ -150,10 +152,9 @@ namespace WebPlex
             //
             if (Utilities.doUpdateFile(linkOpenFiles, "open-files.json"))
             {
-                //client.DownloadFile(new Uri(linkOpenFiles), pathData + "open-files.json");
+                client.DownloadFile(new Uri(linkOpenFiles), pathData + "open-files.json");
             }
 
-            databaseInfo = File.ReadLines(pathData + "open-files.json").First();
             dataOpenFiles.AddRange(File.ReadAllLines(pathData + "open-files.json").Skip(1));
             //
 
@@ -202,7 +203,6 @@ namespace WebPlex
         public static List<string> dataMovies = new List<string>();
         public static List<string> dataFilesLocal = new List<string>();
         public static List<string> dataFilesSaved = new List<string>();
-        public static string databaseInfo;
 
         // Core Tabs
         public TabPage currentTab;
@@ -334,18 +334,15 @@ namespace WebPlex
 
                 foreach (string jsonData in dataOpenFiles)
                 {
-                    var dataJsonFile = DatabaseFilesEntity.FromJson(jsonData);
-                    if (dataJsonFile.Size != "-") { totalSize = totalSize + Convert.ToInt64(dataJsonFile.Size); }
+                    var dataJson = DatabaseFilesEntity.FromJson(jsonData);
+                    if (dataJson.Size != "-") { totalSize = totalSize + Convert.ToInt64(dataJson.Size); }
                 }
 
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
 
             lblHomeStats.Text = String.Format(lblHomeStats.Text, Utilities.getFormattedNumber(dataOpenFiles.Count.ToString()), Utilities.ToFileSize(Convert.ToDouble(totalSize)), Utilities.getFormattedNumber(dataOpenDirectories.Count.ToString()));
-
-            // Database Info
-            var dataJsonInfo = DatabaseInfoEntity.FromJson(databaseInfo);
-            lblHomeStatsUpdated.Text = String.Format(lblHomeStatsUpdated.Text, Convert.ToDateTime(dataJsonInfo.LastUpdated).ToShortDateString());
+            try { lblHomeStatsUpdated.Text = String.Format(lblHomeStatsUpdated.Text, Convert.ToDateTime(Utilities.getLastModifiedTime(linkOpenFiles)).ToShortDateString()); } catch { lblHomeStatsUpdated.Text = String.Format(lblHomeStatsUpdated.Text, "n/a"); }
         }
 
         public void loadTopSearches()

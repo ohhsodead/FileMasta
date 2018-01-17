@@ -1,4 +1,4 @@
-﻿namespace jsonDatabaseFile
+﻿namespace DatabaseFileAPI
 {
     using Newtonsoft.Json;
 
