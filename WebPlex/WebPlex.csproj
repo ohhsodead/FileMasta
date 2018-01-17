@@ -101,6 +101,7 @@
     <Compile Include="CControls\ctrlStatus.Designer.cs">
       <DependentUpon>ctrlStatus.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataJson\DatabaseInfoEntity.cs" />
     <Compile Include="Forms\frmDataView.cs">
       <SubType>Form</SubType>
     </Compile>
