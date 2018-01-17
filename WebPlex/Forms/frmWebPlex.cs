@@ -3,15 +3,12 @@ using jsonDatabaseFile;
 using jsonOMDb;
 using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Net;
 using System.Windows.Forms;
-using System.Drawing.Imaging;
 using System.Diagnostics;
-using System.Text.RegularExpressions;
 using System.ComponentModel;
 using System.Globalization;
 using System.Threading;
@@ -153,7 +150,7 @@ namespace WebPlex
             //
             if (Utilities.doUpdateFile(linkOpenFiles, "open-files.json"))
             {
-                //client.DownloadFile(new Uri(linkOpenFiles), pathData + "open-files.json");
+                client.DownloadFile(new Uri(linkOpenFiles), pathData + "open-files.json");
             }
 
             databaseInfo = File.ReadLines(pathData + "open-files.json").First();
