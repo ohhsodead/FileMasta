@@ -83,6 +83,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Title";
+            this.Scroll += new System.Windows.Forms.ScrollEventHandler(this.frmDataView_Scroll);
             this.panelDataItems.ResumeLayout(false);
             this.panelDataItems.PerformLayout();
             this.ResumeLayout(false);

@@ -160,7 +160,7 @@ namespace WebPlex.CControls
                     int ContentLength;
                     if (int.TryParse(fileResponse.Headers.Get("Content-Length"), out ContentLength))
                     {
-                        infoSize.Text = Utilities.ToFileSize(Convert.ToDouble(ContentLength));
+                        infoSize.Text = Utilities.bytesToString(ContentLength);
                     }
                     else { infoSize.Text = "Error"; }
                 }

@@ -16,5 +16,10 @@ namespace WebPlex
         {
             InitializeComponent();
         }
+
+        private void frmDataView_Scroll(object sender, ScrollEventArgs e)
+        {
+            Update(); // Stops 'Lag/Bad Drawing' when scrolling
+        }
     }
 }

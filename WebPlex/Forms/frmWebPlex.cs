@@ -341,7 +341,7 @@ namespace WebPlex
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
 
-            lblHomeStats.Text = String.Format(lblHomeStats.Text, Utilities.getFormattedNumber(dataOpenFiles.Count.ToString()), Utilities.ToFileSize(Convert.ToDouble(totalSize)), Utilities.getFormattedNumber(dataOpenDirectories.Count.ToString()));
+            lblHomeStats.Text = String.Format(lblHomeStats.Text, Utilities.getFormattedNumber(dataOpenFiles.Count.ToString()), Utilities.bytesToString(totalSize), Utilities.getFormattedNumber(dataOpenDirectories.Count.ToString()));
 
             // Database Info
             var dataJsonInfo = DatabaseInfoEntity.FromJson(databaseInfo);
@@ -368,10 +368,10 @@ namespace WebPlex
                     }
                 }
 
-                // Add 'Top Searches Powered by FileChef.com'
+                // Add 'Top Searches Powered by FileChef'
                 Label a = new Label
                 {
-                    Text = "Top Searches Powered by FileChef.com",
+                    Text = "Top Searches Powered by FileChef",
                     Font = new Font(btnHomeFileType.Font.Name, 9, FontStyle.Regular),
                     BackColor = Color.Transparent,
                     ForeColor = Color.White,
@@ -746,7 +746,7 @@ namespace WebPlex
                     Host = rm.GetString("local"),
                     Title = Path.GetFileNameWithoutExtension(pathFile),
                     Type = Path.GetExtension(pathFile).Replace(".", "").ToUpper(),
-                    Size = Utilities.ToFileSize(new FileInfo(pathFile).Length),
+                    Size = Utilities.bytesToString(new FileInfo(pathFile).Length),
                     DateAdded = File.GetCreationTime(pathFile).ToString()
             };
 
@@ -921,7 +921,7 @@ namespace WebPlex
                         string formattedDate = dataJson.DateAdded;
                         if (dataJson.DateAdded != "-") { formattedDate = Utilities.getTimeAgo(Convert.ToDateTime(dataJson.DateAdded)); }
                         string formattedSize = dataJson.Size;
-                        if (dataJson.Size != "-") { formattedSize = Utilities.ToFileSize(Convert.ToDouble(dataJson.Size)); }
+                        if (dataJson.Size != "-") { formattedSize = Utilities.bytesToString(Convert.ToInt64(dataJson.Size)); }
                         dataGridFiles.Rows.Add(dataJson.Type, dataJson.Title, formattedSize, formattedDate, dataJson.Host, dataJson.URL);
 
                         if (!(cmboBoxFilesHost.Items.Contains(dataJson.Host))) { cmboBoxFilesHost.Items.Add(dataJson.Host); }
@@ -1169,7 +1169,7 @@ namespace WebPlex
             }
 
             frmInfo.MaximumSize = new Size(frmInfo.MaximumSize.Width, this.Height - 100);
-            frmInfo.ShowDialog();
+            frmInfo.ShowDialog(form);
         }
         //
 
