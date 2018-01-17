@@ -163,9 +163,9 @@ namespace WebPlex
         }
 
         // compare file bytes
-        public static bool isFileSizeIdentical(string fileURLSize, string fileURL)
+        public static bool isFileSizeIdentical(string fileSize, string fileURL)
         {
-            if (File.Exists(frmWebPlex.userDownloadsDirectory + Path.GetFileName(new Uri(fileURL).LocalPath)) && fileURLSize == ToFileSize(Convert.ToDouble(new FileInfo(frmWebPlex.userDownloadsDirectory + Path.GetFileName(new Uri(fileURL).LocalPath)).Length))) { return true; }
+            if (File.Exists(frmWebPlex.userDownloadsDirectory + Path.GetFileName(new Uri(fileURL).LocalPath)) && fileSize == bytesToString(new FileInfo(frmWebPlex.userDownloadsDirectory + Path.GetFileName(new Uri(fileURL).LocalPath)).Length)) { return true; }
             else { return false; }
         }
 
@@ -216,46 +216,15 @@ namespace WebPlex
         }
 
         // return file size with suffix
-        public static string ToFileSize(double value)
+        public static String bytesToString(long byteCount)
         {
-            string[] suffixes = { "bytes", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB" };
-            for (int i = 0; i < suffixes.Length; i++)
-            {
-                if (value <= (Math.Pow(1024, i + 1)))
-                {
-                    return ThreeNonZeroDigits(value / Math.Pow(1024, i)) + " " + suffixes[i];
-                }
-            }
-
-            return ThreeNonZeroDigits(value / Math.Pow(1024, suffixes.Length - 1)) +
-                " " + suffixes[suffixes.Length - 1];
-        }
-
-        // Return the value formatted to include at most three
-        // non-zero digits and at most two digits after the
-        // decimal point. Examples:
-        //         1
-        //       123
-        //        12.3
-        //         1.23
-        //         0.12
-        public static string ThreeNonZeroDigits(double value)
-        {
-            if (value >= 100)
-            {
-                // No digits after the decimal.
-                return value.ToString("0,0");
-            }
-            else if (value >= 10)
-            {
-                // One digit after the decimal.
-                return value.ToString("0.0");
-            }
-            else
-            {
-                // Two digits after the decimal.
-                return value.ToString("0.00");
-            }
+            string[] suf = { "Bytes", "KB", "MB", "GB", "TB", "PB", "EB" }; // Longs run out around EB
+            if (byteCount == 0)
+                return "0" + " " + suf[0];
+            long bytes = Math.Abs(byteCount);
+            int place = Convert.ToInt32(Math.Floor(Math.Log(bytes, 1024)));
+            double num = Math.Round(bytes / Math.Pow(1024, place), 1);
+            return (Math.Sign(byteCount) * num).ToString() + " " + suf[place];
         }
 
         // open file
