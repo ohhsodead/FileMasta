@@ -368,10 +368,10 @@ namespace WebPlex
                     }
                 }
 
-                // Add 'Top Searches Powered by FileChef'
+                // Add Credits Label to end of Top Searches
                 Label a = new Label
                 {
-                    Text = "Top Searches Powered by FileChef",
+                    Text = "Powered by FileChef",
                     Font = new Font(btnHomeFileType.Font.Name, 9, FontStyle.Regular),
                     BackColor = Color.Transparent,
                     ForeColor = Color.White,
@@ -384,7 +384,7 @@ namespace WebPlex
                 a.Click += btnFileChef_Click;
                 panelTopSearches.Controls.Add(a);
             }
-            catch { } // Error occurred, so skip...
+            catch { lblHeaderTopSearches.Visible = false; lineTopSearches.Visible = false; lineHomeTopSearchesSplitter.Visible = false; panelTopSearches.Visible = false; } // Error occurred, so hide controls/skip...
         }
 
         private void btnFileChef_Click(object Sender, EventArgs e)

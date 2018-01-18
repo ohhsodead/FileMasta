@@ -430,13 +430,13 @@
     <value>Top</value>
   </data>
   <data name="btnShareFacebook.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9.75pt</value>
+    <value>Segoe UI Semibold, 9.25pt</value>
   </data>
   <data name="btnShareFacebook.Location" type="System.Drawing.Point, System.Drawing">
-    <value>440, 203</value>
+    <value>440, 202</value>
   </data>
   <data name="btnShareFacebook.Size" type="System.Drawing.Size, System.Drawing">
-    <value>66, 22</value>
+    <value>62, 22</value>
   </data>
   <data name="btnShareFacebook.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -460,13 +460,13 @@
     <value>Top</value>
   </data>
   <data name="btnShareTwitter.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9.75pt</value>
+    <value>Segoe UI Semibold, 9.25pt</value>
   </data>
   <data name="btnShareTwitter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>362, 203</value>
+    <value>366, 202</value>
   </data>
   <data name="btnShareTwitter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 22</value>
+    <value>68, 22</value>
   </data>
   <data name="btnShareTwitter.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
