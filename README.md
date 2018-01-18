@@ -14,26 +14,26 @@ WebPlex is intended to provide a very powerful web server indexing and search se
 
 The search engine is powered by a [database](https://dl.dropbox.com/s/ucyeqfn96x7n9lh/open-files.json?dl=0) that holds information about all the files web servers have. The information about the files is gathered by an intelligent web crawler that runs every 2 to 4 days. It keeps the database clean and up-to-date with the previous contents and new entries for each web server address submitted by members. 
 
-All web addresses this app uses for indexing are submitted by users only, our crawler also try to give more priority to the servers that are most accessed via the website, if a web server isn't checked successfully in a period of time, usually 10-15 days, it is automatically deleted from our database. Servers are stored in our [open directories](https://github.com/invu/WebPlex/blob/master/api/open-directories.txt). Also please check our [Terms of Use](https://github.com/invu/WebPlex/blob/master/TERMSOFUSE.md) statement for more information about what you have to take into consideration to use this site.
+All web addresses this app uses for indexing are submitted by users only, our crawler also try to give more priority to the servers that are most accessed via the website, if a web server isn't checked successfully in a period of time, usually 10-15 days, it is automatically deleted from our database. A list of the servers we index are stored in our [open directories](https://github.com/invu/WebPlex/blob/master/api/open-directories.txt). Also please check our [Terms of Use](https://github.com/invu/WebPlex/blob/master/TERMSOFUSE.md) statement for more information about what you have to take into consideration to use this application.
 
 We host no content, we provide only access to already available files in a same way Google and other search engines do.
 
-To contact the website owner and administrator of this site you can send an e-mail to this address: bettercodes1@gmail.com, any comments or suggestions are welcome too, Thank you.
+To contact the application owner and administrator you can send an e-mail to this address: bettercodes1@gmail.com, any comments or suggestions are welcome too, Thank you.
 
 ## Some Features Available
  * User-friendly interface with searches at lightning speed
  * Multilingual support - contributions are welcome!
- * Discover over one hundred thousand online files
- * Index external search engines, like Google, Searx, etc.
- * Search movies by name, actor, year and genre
- * Collects metadeta from public APIs
+ * Discover direct download links for almost anything!
  * Filter files by format, host and sort alphabetically
- * Includes VLC Media Player
- * Support for external players (Currently includes WMP, MPC & VLC)
+ * Search external search engines for directories/files
+ * Find movies by name, actor, year and genre
+ * Collects metadeta from public APIs
+ * Embedded VLC Media Player
+ * Support for other players (WMP, MPC & VLC)
  * Automatic local cache updates
 
 ## Latest Build
-WebPlex 2.14.1
+WebPlex 2.14.2
 
 ## Supported Systems
 * Windows 7 and above (Windows 7, 8, 8.1, 10) using .NET 4.7.1 [Download here](https://www.microsoft.com/net/download/dotnet-framework-runtime/net471).

@@ -1,3 +1,10 @@
+## 0.2.14.2
+- Improved UI
+- Added Info to database
+- Fixed data form not showing in parent
+- Fixed overall total size
+- Some code changes
+
 ## 0.2.14.1
 - Improved UI
 - Added Files/Directories/Database stats
