@@ -814,6 +814,16 @@ namespace WebPlex
         {
             imgSpinner.Visible = true; selectedFilesFileType = otherFileTypes; selectFilesTab(titleFilesOther); selectedFiles = dataOpenFiles; showFiles(selectedFiles);
         }
+        
+        private void titleFilesCustom_ClickButtonArea(object Sender, MouseEventArgs e)
+        {
+            string getUserResponse = Microsoft.VisualBasic.Interaction.InputBox("File Type/Extensions (enter only one extension):", "Custom*", "e.g. MP4");
+            string userResponse = getUserResponse.Replace(".", "");
+            if (userResponse != "")
+            {
+                imgSpinner.Visible = true; selectedFilesFileType = new List<string>() { userResponse.ToUpper() }; selectFilesTab(titleFilesCustom); selectedFiles = dataOpenFiles; showFiles(selectedFiles);
+            }
+        }
 
         private void titleFilesLocal_ClickButtonArea(object Sender, MouseEventArgs e)
         {
@@ -846,6 +856,8 @@ namespace WebPlex
             titleFilesMobile.BorderColor = nonSelectedRGB;
             titleFilesArchives.ColorFillSolid = nonSelectedRGB;
             titleFilesArchives.BorderColor = nonSelectedRGB;
+            titleFilesCustom.ColorFillSolid = nonSelectedRGB;
+            titleFilesCustom.BorderColor = nonSelectedRGB;
             titleFilesOther.ColorFillSolid = nonSelectedRGB;
             titleFilesOther.BorderColor = nonSelectedRGB;
             titleFilesLocal.ColorFillSolid = nonSelectedRGB;

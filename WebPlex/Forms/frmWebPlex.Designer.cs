@@ -161,6 +161,7 @@
             this.titleFiles = new System.Windows.Forms.Label();
             this.titleMovies = new System.Windows.Forms.Label();
             this.imgSpinner = new System.Windows.Forms.PictureBox();
+            this.titleFilesCustom = new CButtonLib.CButton();
             this.tab.SuspendLayout();
             this.tabHome.SuspendLayout();
             this.panelHomeEngine.SuspendLayout();
@@ -783,6 +784,7 @@
             this.tabFiles.Controls.Add(this.titleFilesSaved);
             this.tabFiles.Controls.Add(this.btnSearchFiles);
             this.tabFiles.Controls.Add(this.bgSearchFiles);
+            this.tabFiles.Controls.Add(this.titleFilesCustom);
             resources.ApplyResources(this.tabFiles, "tabFiles");
             this.tabFiles.Name = "tabFiles";
             // 
@@ -1976,6 +1978,25 @@
             this.imgSpinner.Name = "imgSpinner";
             this.imgSpinner.TabStop = false;
             // 
+            // titleFilesCustom
+            // 
+            this.titleFilesCustom.BackColor = System.Drawing.Color.Transparent;
+            this.titleFilesCustom.BorderColor = System.Drawing.Color.Transparent;
+            this.titleFilesCustom.ColorFillSolid = System.Drawing.Color.Transparent;
+            this.titleFilesCustom.Corners.UpperLeft = 2;
+            this.titleFilesCustom.Corners.UpperRight = 2;
+            this.titleFilesCustom.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.titleFilesCustom.DesignerSelected = false;
+            this.titleFilesCustom.DimFactorClick = 0;
+            this.titleFilesCustom.DimFactorHover = 0;
+            this.titleFilesCustom.FillType = CButtonLib.CButton.eFillType.Solid;
+            resources.ApplyResources(this.titleFilesCustom, "titleFilesCustom");
+            this.titleFilesCustom.ImageIndex = 0;
+            this.titleFilesCustom.Name = "titleFilesCustom";
+            this.titleFilesCustom.ShowFocus = CButtonLib.CButton.eFocus.Dim;
+            this.titleFilesCustom.TextShadowShow = false;
+            this.titleFilesCustom.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.titleFilesCustom_ClickButtonArea);
+            // 
             // frmWebPlex
             // 
             resources.ApplyResources(this, "$this");
@@ -2160,6 +2181,7 @@
         private System.Windows.Forms.Label lblHomeStatsUpdated;
         private System.Windows.Forms.Label btnAboutTermsOfUse;
         private System.Windows.Forms.Label btnAboutPrivacyPolicy;
+        private CButtonLib.CButton titleFilesCustom;
     }
 }
 

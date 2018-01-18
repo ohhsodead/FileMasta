@@ -1558,13 +1558,13 @@ Get direct download links for almost anything!</value>
     <value>NoControl</value>
   </data>
   <data name="lblFilesResultsInfo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>694, 66</value>
+    <value>761, 66</value>
   </data>
   <data name="lblFilesResultsInfo.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 9, 3, 9</value>
+    <value>0, 9, 3, 9</value>
   </data>
   <data name="lblFilesResultsInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>168, 20</value>
+    <value>99, 20</value>
   </data>
   <data name="lblFilesResultsInfo.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
@@ -1999,7 +1999,7 @@ Get direct download links for almost anything!</value>
     <value>Segoe UI, 9.75pt</value>
   </data>
   <data name="titleFilesLocal.Location" type="System.Drawing.Point, System.Drawing">
-    <value>577, 63</value>
+    <value>647, 63</value>
   </data>
   <data name="titleFilesLocal.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 3, 0, 3</value>
@@ -2029,7 +2029,7 @@ Get direct download links for almost anything!</value>
     <value>Segoe UI, 9.75pt</value>
   </data>
   <data name="titleFilesSaved.Location" type="System.Drawing.Point, System.Drawing">
-    <value>633, 63</value>
+    <value>703, 63</value>
   </data>
   <data name="titleFilesSaved.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 3, 0, 3</value>
@@ -2108,6 +2108,36 @@ Get direct download links for almost anything!</value>
   </data>
   <data name="&gt;&gt;bgSearchFiles.ZOrder" xml:space="preserve">
     <value>18</value>
+  </data>
+  <data name="titleFilesCustom.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9.75pt</value>
+  </data>
+  <data name="titleFilesCustom.Location" type="System.Drawing.Point, System.Drawing">
+    <value>577, 63</value>
+  </data>
+  <data name="titleFilesCustom.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 3, 0, 3</value>
+  </data>
+  <data name="titleFilesCustom.Size" type="System.Drawing.Size, System.Drawing">
+    <value>70, 27</value>
+  </data>
+  <data name="titleFilesCustom.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
+  </data>
+  <data name="titleFilesCustom.Text" xml:space="preserve">
+    <value>Custom*</value>
+  </data>
+  <data name="&gt;&gt;titleFilesCustom.Name" xml:space="preserve">
+    <value>titleFilesCustom</value>
+  </data>
+  <data name="&gt;&gt;titleFilesCustom.Type" xml:space="preserve">
+    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;titleFilesCustom.Parent" xml:space="preserve">
+    <value>tabFiles</value>
+  </data>
+  <data name="&gt;&gt;titleFilesCustom.ZOrder" xml:space="preserve">
+    <value>19</value>
   </data>
   <data name="tabFiles.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
