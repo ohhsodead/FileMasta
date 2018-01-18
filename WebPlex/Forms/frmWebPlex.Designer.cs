@@ -966,6 +966,8 @@
             this.dataGridFiles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridFiles.ShowEditingIcon = false;
             this.dataGridFiles.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridFiles_CellClick);
+            this.dataGridFiles.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dataGridFiles_RowsAdded);
+            this.dataGridFiles.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dataGridFiles_RowsRemoved);
             // 
             // columnFilesType
             // 

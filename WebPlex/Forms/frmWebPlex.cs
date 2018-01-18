@@ -899,6 +899,8 @@ namespace WebPlex
                 
         }
 
+        public Stopwatch stopWatch = new Stopwatch();
+
         delegate void loadFilesCallBack(List<string> dataFiles);
         public void showFiles(List<string> dataFiles)
         {
@@ -915,6 +917,8 @@ namespace WebPlex
                     cmboBoxFilesSort.SelectedIndex = 0; dataGridFiles.Rows.Clear();
                     cmboBoxFilesHost.Items.Clear(); cmboBoxFilesHost.Items.Add(resources.GetString("cmboBoxFilesHost.Items"));
 
+                    stopWatch.Start();
+
                     foreach (string jsonData in data)
                     {
                         var dataJson = DatabaseFilesEntity.FromJson(jsonData);
@@ -927,7 +931,8 @@ namespace WebPlex
                         if (!(cmboBoxFilesHost.Items.Contains(dataJson.Host))) { cmboBoxFilesHost.Items.Add(dataJson.Host); }
                     }
 
-                    lblFilesResultsInfo.Text = "Showing " + Utilities.getFormattedNumber(dataGridFiles.Rows.Count.ToString()) + " / " + Utilities.getFormattedNumber(dataFiles.Count.ToString()) + " Files";
+                    stopWatch.Stop(); TimeSpan ts = stopWatch.Elapsed;
+                    lblFilesResultsInfo.Text = Utilities.getFormattedNumber(dataGridFiles.Rows.Count.ToString()) + " / " + Utilities.getFormattedNumber(dataFiles.Count.ToString()) + " Files (" + String.Format("{0:0.000}", ts.TotalSeconds) + " Seconds)"; stopWatch.Reset();
 
                     tab.SelectedTab = currentTab;
 
