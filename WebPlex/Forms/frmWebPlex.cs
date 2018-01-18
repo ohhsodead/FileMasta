@@ -91,6 +91,7 @@ namespace WebPlex
         public static string linkPrivacyPolicy = "https://raw.githubusercontent.com/invu/WebPlex/master/PRIVACYPOLICY.md";
 
         WebClient client = new WebClient(); // public reusable web client
+        int intPostersPerScroll = 85;
 
         private void frmWebPlex_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -170,7 +171,7 @@ namespace WebPlex
         void worker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             getStats();
-            loadMovies(52);
+            loadMovies(intPostersPerScroll);
             Controls.Remove(frmSplash);
         }
 
@@ -308,7 +309,7 @@ namespace WebPlex
             VScrollProperties vs = panelMovies.VerticalScroll;
             if (e.NewValue == vs.Maximum - vs.LargeChange + 1)
             {
-                loadMovies(52);
+                loadMovies(intPostersPerScroll);
             }
         }
 
@@ -341,11 +342,11 @@ namespace WebPlex
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
 
-            lblHomeStats.Text = String.Format(lblHomeStats.Text, Utilities.getFormattedNumber(dataOpenFiles.Count.ToString()), Utilities.bytesToString(totalSize), Utilities.getFormattedNumber(dataOpenDirectories.Count.ToString()));
+            lblHomeStatsFiles.Text = String.Format(lblHomeStatsFiles.Text, Utilities.getFormattedNumber(dataOpenFiles.Count.ToString()), Utilities.bytesToString(totalSize), Utilities.getFormattedNumber(dataOpenDirectories.Count.ToString()));
 
             // Database Info
             var dataJsonInfo = DatabaseInfoEntity.FromJson(databaseInfo);
-            lblHomeStatsUpdated.Text = String.Format(lblHomeStatsUpdated.Text, Convert.ToDateTime(dataJsonInfo.LastUpdated).ToShortDateString());
+            lblHomeStatsDatabaseUpdated.Text = String.Format(lblHomeStatsDatabaseUpdated.Text, Convert.ToDateTime(dataJsonInfo.LastUpdated).ToShortDateString());
         }
 
         public void loadTopSearches()
@@ -360,7 +361,7 @@ namespace WebPlex
                     string line;
                     while ((line = reader.ReadLine()) != null)
                     {
-                        if (count <= 30)
+                        if (count <= 40)
                         {
                             addTopSearchTag(line, count);
                             count++;
@@ -594,7 +595,7 @@ namespace WebPlex
             {
                 panelMovies.Controls.Clear();
                 countedMovies = 0;
-                loadMovies(52);
+                loadMovies(intPostersPerScroll);
             }
         }
 
@@ -607,7 +608,7 @@ namespace WebPlex
         {
             panelMovies.Controls.Clear();
             countedMovies = 0;
-            loadMovies(52);
+            loadMovies(intPostersPerScroll);
         }
 
         // Filter Movies by Genre
@@ -630,7 +631,7 @@ namespace WebPlex
 
             panelMovies.Controls.Clear();
             countedMovies = 0;
-            loadMovies(52);
+            loadMovies(intPostersPerScroll);
         }
 
         // Filter Movies by Year        
@@ -653,7 +654,7 @@ namespace WebPlex
 
             panelMovies.Controls.Clear();
             countedMovies = 0;
-            loadMovies(52);
+            loadMovies(intPostersPerScroll);
         }
         //
 

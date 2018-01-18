@@ -41,8 +41,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tab = new System.Windows.Forms.TabControl();
             this.tabHome = new System.Windows.Forms.TabPage();
-            this.lblHomeStatsUpdated = new System.Windows.Forms.Label();
-            this.lblHomeStats = new System.Windows.Forms.Label();
+            this.lblHomeStatsDatabaseUpdated = new System.Windows.Forms.Label();
+            this.lblHomeStatsFiles = new System.Windows.Forms.Label();
             this.panelHomeEngine = new System.Windows.Forms.Panel();
             this.btnHomeEngine = new CButtonLib.CButton();
             this.cmboBoxHomeEngine = new System.Windows.Forms.ComboBox();
@@ -71,8 +71,8 @@
             this.panelMoviesYear = new System.Windows.Forms.Panel();
             this.btnMoviesYear = new CButtonLib.CButton();
             this.cmboBoxMoviesYear = new System.Windows.Forms.ComboBox();
-            this.btnSearchMovies = new CButtonLib.CButton();
             this.bgSearchMovies = new CButtonLib.CButton();
+            this.btnSearchMovies = new CButtonLib.CButton();
             this.tabFiles = new System.Windows.Forms.TabPage();
             this.emptyDataFiles = new System.Windows.Forms.Label();
             this.panelFileFilters = new System.Windows.Forms.FlowLayoutPanel();
@@ -103,8 +103,9 @@
             this.titleFilesOther = new CButtonLib.CButton();
             this.titleFilesLocal = new CButtonLib.CButton();
             this.titleFilesSaved = new CButtonLib.CButton();
-            this.btnSearchFiles = new CButtonLib.CButton();
             this.bgSearchFiles = new CButtonLib.CButton();
+            this.titleFilesCustom = new CButtonLib.CButton();
+            this.btnSearchFiles = new CButtonLib.CButton();
             this.tabDiscover = new System.Windows.Forms.TabPage();
             this.lblHeaderDiscover = new System.Windows.Forms.Label();
             this.dataGridDiscover = new System.Windows.Forms.DataGridView();
@@ -161,7 +162,6 @@
             this.titleFiles = new System.Windows.Forms.Label();
             this.titleMovies = new System.Windows.Forms.Label();
             this.imgSpinner = new System.Windows.Forms.PictureBox();
-            this.titleFilesCustom = new CButtonLib.CButton();
             this.tab.SuspendLayout();
             this.tabHome.SuspendLayout();
             this.panelHomeEngine.SuspendLayout();
@@ -215,8 +215,8 @@
             // 
             this.tabHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
             resources.ApplyResources(this.tabHome, "tabHome");
-            this.tabHome.Controls.Add(this.lblHomeStatsUpdated);
-            this.tabHome.Controls.Add(this.lblHomeStats);
+            this.tabHome.Controls.Add(this.lblHomeStatsDatabaseUpdated);
+            this.tabHome.Controls.Add(this.lblHomeStatsFiles);
             this.tabHome.Controls.Add(this.panelHomeEngine);
             this.tabHome.Controls.Add(this.lineTopSearches);
             this.tabHome.Controls.Add(this.lblHeaderTopSearches);
@@ -231,17 +231,17 @@
             this.tabHome.Controls.Add(this.bgSearchFilesHome);
             this.tabHome.Name = "tabHome";
             // 
-            // lblHomeStatsUpdated
+            // lblHomeStatsDatabaseUpdated
             // 
-            resources.ApplyResources(this.lblHomeStatsUpdated, "lblHomeStatsUpdated");
-            this.lblHomeStatsUpdated.BackColor = System.Drawing.Color.Transparent;
-            this.lblHomeStatsUpdated.Name = "lblHomeStatsUpdated";
+            resources.ApplyResources(this.lblHomeStatsDatabaseUpdated, "lblHomeStatsDatabaseUpdated");
+            this.lblHomeStatsDatabaseUpdated.BackColor = System.Drawing.Color.Transparent;
+            this.lblHomeStatsDatabaseUpdated.Name = "lblHomeStatsDatabaseUpdated";
             // 
-            // lblHomeStats
+            // lblHomeStatsFiles
             // 
-            resources.ApplyResources(this.lblHomeStats, "lblHomeStats");
-            this.lblHomeStats.BackColor = System.Drawing.Color.Transparent;
-            this.lblHomeStats.Name = "lblHomeStats";
+            resources.ApplyResources(this.lblHomeStatsFiles, "lblHomeStatsFiles");
+            this.lblHomeStatsFiles.BackColor = System.Drawing.Color.Transparent;
+            this.lblHomeStatsFiles.Name = "lblHomeStatsFiles";
             // 
             // panelHomeEngine
             // 
@@ -256,23 +256,26 @@
             this.btnHomeEngine.BackColor = System.Drawing.Color.Transparent;
             this.btnHomeEngine.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.btnHomeEngine.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.btnHomeEngine.Corners.All = 2;
+            this.btnHomeEngine.Corners.LowerLeft = 2;
+            this.btnHomeEngine.Corners.LowerRight = 2;
+            this.btnHomeEngine.Corners.UpperLeft = 2;
+            this.btnHomeEngine.Corners.UpperRight = 2;
             this.btnHomeEngine.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnHomeEngine.DesignerSelected = false;
             this.btnHomeEngine.DimFactorClick = 0;
             this.btnHomeEngine.DimFactorHover = 0;
             this.btnHomeEngine.FillType = CButtonLib.CButton.eFillType.Solid;
             this.btnHomeEngine.ForeColor = System.Drawing.Color.Black;
-            this.btnHomeEngine.Image = global::WebPlex.Properties.Resources.search;
+            this.btnHomeEngine.Image = global::WebPlex.Properties.Resources.menu_down_black;
             this.btnHomeEngine.ImageIndex = 0;
-            this.btnHomeEngine.ImageSize = new System.Drawing.Size(21, 21);
+            this.btnHomeEngine.ImageSize = new System.Drawing.Size(20, 20);
             this.btnHomeEngine.Name = "btnHomeEngine";
             this.btnHomeEngine.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.btnHomeEngine.SideImage = global::WebPlex.Properties.Resources.arrow_drop_down_black;
-            this.btnHomeEngine.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnHomeEngine.SideImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnHomeEngine.SideImageSize = new System.Drawing.Size(22, 22);
-            this.btnHomeEngine.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHomeEngine.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnHomeEngine.TextMargin = new System.Windows.Forms.Padding(2, 3, 2, 2);
+            this.btnHomeEngine.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnHomeEngine.TextMargin = new System.Windows.Forms.Padding(0);
             this.btnHomeEngine.TextShadowShow = false;
             this.btnHomeEngine.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnExploreEngine_ClickButtonArea);
             // 
@@ -419,22 +422,26 @@
             this.btnHomeFileType.BackColor = System.Drawing.Color.Transparent;
             this.btnHomeFileType.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.btnHomeFileType.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.btnHomeFileType.Corners.All = 2;
             this.btnHomeFileType.Corners.LowerLeft = 2;
+            this.btnHomeFileType.Corners.LowerRight = 2;
             this.btnHomeFileType.Corners.UpperLeft = 2;
+            this.btnHomeFileType.Corners.UpperRight = 2;
             this.btnHomeFileType.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnHomeFileType.DesignerSelected = false;
             this.btnHomeFileType.DimFactorClick = 0;
             this.btnHomeFileType.DimFactorHover = 0;
             this.btnHomeFileType.FillType = CButtonLib.CButton.eFillType.Solid;
             this.btnHomeFileType.ForeColor = System.Drawing.Color.Black;
+            this.btnHomeFileType.Image = global::WebPlex.Properties.Resources.menu_down_black;
             this.btnHomeFileType.ImageIndex = 0;
+            this.btnHomeFileType.ImageSize = new System.Drawing.Size(20, 20);
             this.btnHomeFileType.Name = "btnHomeFileType";
             this.btnHomeFileType.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.btnHomeFileType.SideImage = global::WebPlex.Properties.Resources.arrow_drop_down_black;
-            this.btnHomeFileType.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnHomeFileType.SideImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnHomeFileType.SideImageSize = new System.Drawing.Size(22, 22);
             this.btnHomeFileType.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnHomeFileType.TextMargin = new System.Windows.Forms.Padding(10, 3, 2, 2);
+            this.btnHomeFileType.TextMargin = new System.Windows.Forms.Padding(0);
             this.btnHomeFileType.TextShadowShow = false;
             this.btnHomeFileType.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnHomeFileType_ClickButtonArea);
             // 
@@ -462,7 +469,10 @@
             this.btnSearchFilesHome.BackColor = System.Drawing.Color.Transparent;
             this.btnSearchFilesHome.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.btnSearchFilesHome.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.btnSearchFilesHome.Corners.All = 2;
+            this.btnSearchFilesHome.Corners.LowerLeft = 2;
             this.btnSearchFilesHome.Corners.LowerRight = 2;
+            this.btnSearchFilesHome.Corners.UpperLeft = 2;
             this.btnSearchFilesHome.Corners.UpperRight = 2;
             this.btnSearchFilesHome.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSearchFilesHome.DesignerSelected = false;
@@ -471,11 +481,14 @@
             this.btnSearchFilesHome.FillType = CButtonLib.CButton.eFillType.Solid;
             this.btnSearchFilesHome.FocalPoints.CenterPtX = 0F;
             this.btnSearchFilesHome.FocalPoints.CenterPtY = 0F;
-            this.btnSearchFilesHome.Image = global::WebPlex.Properties.Resources.search;
+            this.btnSearchFilesHome.ForeColor = System.Drawing.Color.Black;
+            this.btnSearchFilesHome.Image = global::WebPlex.Properties.Resources.magnify_black;
             this.btnSearchFilesHome.ImageIndex = 0;
-            this.btnSearchFilesHome.ImageSize = new System.Drawing.Size(22, 22);
+            this.btnSearchFilesHome.ImageSize = new System.Drawing.Size(19, 19);
             this.btnSearchFilesHome.Name = "btnSearchFilesHome";
             this.btnSearchFilesHome.ShowFocus = CButtonLib.CButton.eFocus.None;
+            this.btnSearchFilesHome.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSearchFilesHome.TextShadowShow = false;
             this.btnSearchFilesHome.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnSearchFilesHome_ClickButtonArea);
             // 
             // txtSearchFilesHome
@@ -487,7 +500,7 @@
             this.txtSearchFilesHome.Name = "txtSearchFilesHome";
             this.txtSearchFilesHome.WaterMark = "Search anything e.g Deadpool";
             this.txtSearchFilesHome.WaterMarkActiveForeColor = System.Drawing.Color.White;
-            this.txtSearchFilesHome.WaterMarkFont = new System.Drawing.Font("Segoe UI", 10.75F);
+            this.txtSearchFilesHome.WaterMarkFont = new System.Drawing.Font("Segoe UI", 9.75F);
             this.txtSearchFilesHome.WaterMarkForeColor = System.Drawing.Color.LightGray;
             this.txtSearchFilesHome.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearchFilesHome_KeyDown);
             // 
@@ -497,7 +510,10 @@
             this.bgSearchFilesHome.BackColor = System.Drawing.Color.Transparent;
             this.bgSearchFilesHome.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(111)))), ((int)(((byte)(131)))));
             this.bgSearchFilesHome.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(111)))), ((int)(((byte)(131)))));
+            this.bgSearchFilesHome.Corners.All = 2;
+            this.bgSearchFilesHome.Corners.LowerLeft = 2;
             this.bgSearchFilesHome.Corners.LowerRight = 2;
+            this.bgSearchFilesHome.Corners.UpperLeft = 2;
             this.bgSearchFilesHome.Corners.UpperRight = 2;
             this.bgSearchFilesHome.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.bgSearchFilesHome.DesignerSelected = false;
@@ -538,7 +554,7 @@
             this.txtSearchMovies.Name = "txtSearchMovies";
             this.txtSearchMovies.WaterMark = "Search for movies, people or imdb id...";
             this.txtSearchMovies.WaterMarkActiveForeColor = System.Drawing.Color.White;
-            this.txtSearchMovies.WaterMarkFont = new System.Drawing.Font("Segoe UI", 10.75F);
+            this.txtSearchMovies.WaterMarkFont = new System.Drawing.Font("Segoe UI", 9.75F);
             this.txtSearchMovies.WaterMarkForeColor = System.Drawing.Color.LightGray;
             this.txtSearchMovies.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtMoviesSearchBox_KeyDown);
             // 
@@ -607,14 +623,13 @@
             this.btnMoviesGenre.DimFactorHover = 0;
             this.btnMoviesGenre.FillType = CButtonLib.CButton.eFillType.Solid;
             this.btnMoviesGenre.ForeColor = System.Drawing.Color.Black;
+            this.btnMoviesGenre.Image = ((System.Drawing.Image)(resources.GetObject("btnMoviesGenre.Image")));
             this.btnMoviesGenre.ImageIndex = 0;
+            this.btnMoviesGenre.ImageSize = new System.Drawing.Size(18, 18);
             this.btnMoviesGenre.Name = "btnMoviesGenre";
             this.btnMoviesGenre.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.btnMoviesGenre.SideImage = ((System.Drawing.Image)(resources.GetObject("btnMoviesGenre.SideImage")));
-            this.btnMoviesGenre.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnMoviesGenre.SideImageSize = new System.Drawing.Size(22, 22);
             this.btnMoviesGenre.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnMoviesGenre.TextMargin = new System.Windows.Forms.Padding(10, 3, 2, 2);
+            this.btnMoviesGenre.TextMargin = new System.Windows.Forms.Padding(0, 0, 0, 0);
             this.btnMoviesGenre.TextShadowShow = false;
             this.btnMoviesGenre.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnMoviesGenre_ClickButtonArea);
             // 
@@ -670,14 +685,13 @@
             this.btnMoviesYear.DimFactorHover = 0;
             this.btnMoviesYear.FillType = CButtonLib.CButton.eFillType.Solid;
             this.btnMoviesYear.ForeColor = System.Drawing.Color.Black;
+            this.btnMoviesYear.Image = ((System.Drawing.Image)(resources.GetObject("btnMoviesYear.Image")));
             this.btnMoviesYear.ImageIndex = 0;
+            this.btnMoviesYear.ImageSize = new System.Drawing.Size(18, 18);
             this.btnMoviesYear.Name = "btnMoviesYear";
             this.btnMoviesYear.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.btnMoviesYear.SideImage = ((System.Drawing.Image)(resources.GetObject("btnMoviesYear.SideImage")));
-            this.btnMoviesYear.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnMoviesYear.SideImageSize = new System.Drawing.Size(22, 22);
             this.btnMoviesYear.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnMoviesYear.TextMargin = new System.Windows.Forms.Padding(10, 3, 2, 2);
+            this.btnMoviesYear.TextMargin = new System.Windows.Forms.Padding(0, 0, 0, 0);
             this.btnMoviesYear.TextShadowShow = false;
             this.btnMoviesYear.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnMoviesYear_ClickButtonArea);
             // 
@@ -718,28 +732,6 @@
             this.cmboBoxMoviesYear.TabStop = false;
             this.cmboBoxMoviesYear.SelectedIndexChanged += new System.EventHandler(this.cmboBoxMoviesYear_SelectedIndexChanged);
             // 
-            // btnSearchMovies
-            // 
-            this.btnSearchMovies.BackColor = System.Drawing.Color.Transparent;
-            this.btnSearchMovies.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.btnSearchMovies.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.btnSearchMovies.Corners.LowerRight = 2;
-            this.btnSearchMovies.Corners.UpperRight = 2;
-            this.btnSearchMovies.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSearchMovies.DesignerSelected = false;
-            this.btnSearchMovies.DimFactorClick = 0;
-            this.btnSearchMovies.DimFactorHover = 0;
-            this.btnSearchMovies.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.btnSearchMovies.FocalPoints.CenterPtX = 0F;
-            this.btnSearchMovies.FocalPoints.CenterPtY = 0F;
-            resources.ApplyResources(this.btnSearchMovies, "btnSearchMovies");
-            this.btnSearchMovies.Image = global::WebPlex.Properties.Resources.search;
-            this.btnSearchMovies.ImageIndex = 0;
-            this.btnSearchMovies.ImageSize = new System.Drawing.Size(22, 22);
-            this.btnSearchMovies.Name = "btnSearchMovies";
-            this.btnSearchMovies.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.btnSearchMovies.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnSearchMovies_ClickButtonArea);
-            // 
             // bgSearchMovies
             // 
             this.bgSearchMovies.BackColor = System.Drawing.Color.Transparent;
@@ -762,6 +754,34 @@
             this.bgSearchMovies.TabStop = false;
             this.bgSearchMovies.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.bgMoviesSearchBox_ClickButtonArea);
             // 
+            // btnSearchMovies
+            // 
+            this.btnSearchMovies.BackColor = System.Drawing.Color.Transparent;
+            this.btnSearchMovies.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.btnSearchMovies.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.btnSearchMovies.Corners.All = 2;
+            this.btnSearchMovies.Corners.LowerLeft = 2;
+            this.btnSearchMovies.Corners.LowerRight = 2;
+            this.btnSearchMovies.Corners.UpperLeft = 2;
+            this.btnSearchMovies.Corners.UpperRight = 2;
+            this.btnSearchMovies.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSearchMovies.DesignerSelected = false;
+            this.btnSearchMovies.DimFactorClick = 0;
+            this.btnSearchMovies.DimFactorHover = 0;
+            this.btnSearchMovies.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.btnSearchMovies.FocalPoints.CenterPtX = 0F;
+            this.btnSearchMovies.FocalPoints.CenterPtY = 0F;
+            resources.ApplyResources(this.btnSearchMovies, "btnSearchMovies");
+            this.btnSearchMovies.ForeColor = System.Drawing.Color.Black;
+            this.btnSearchMovies.Image = global::WebPlex.Properties.Resources.magnify_black;
+            this.btnSearchMovies.ImageIndex = 0;
+            this.btnSearchMovies.ImageSize = new System.Drawing.Size(19, 19);
+            this.btnSearchMovies.Name = "btnSearchMovies";
+            this.btnSearchMovies.ShowFocus = CButtonLib.CButton.eFocus.None;
+            this.btnSearchMovies.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSearchMovies.TextShadowShow = false;
+            this.btnSearchMovies.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnSearchMovies_ClickButtonArea);
+            // 
             // tabFiles
             // 
             this.tabFiles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
@@ -782,9 +802,9 @@
             this.tabFiles.Controls.Add(this.titleFilesOther);
             this.tabFiles.Controls.Add(this.titleFilesLocal);
             this.tabFiles.Controls.Add(this.titleFilesSaved);
-            this.tabFiles.Controls.Add(this.btnSearchFiles);
             this.tabFiles.Controls.Add(this.bgSearchFiles);
             this.tabFiles.Controls.Add(this.titleFilesCustom);
+            this.tabFiles.Controls.Add(this.btnSearchFiles);
             resources.ApplyResources(this.tabFiles, "tabFiles");
             this.tabFiles.Name = "tabFiles";
             // 
@@ -827,14 +847,13 @@
             this.btnFilesSort.DimFactorHover = 0;
             this.btnFilesSort.FillType = CButtonLib.CButton.eFillType.Solid;
             this.btnFilesSort.ForeColor = System.Drawing.Color.Black;
+            this.btnFilesSort.Image = global::WebPlex.Properties.Resources.menu_down_black;
             this.btnFilesSort.ImageIndex = 0;
+            this.btnFilesSort.ImageSize = new System.Drawing.Size(18, 18);
             this.btnFilesSort.Name = "btnFilesSort";
             this.btnFilesSort.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.btnFilesSort.SideImage = ((System.Drawing.Image)(resources.GetObject("btnFilesSort.SideImage")));
-            this.btnFilesSort.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnFilesSort.SideImageSize = new System.Drawing.Size(22, 22);
             this.btnFilesSort.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnFilesSort.TextMargin = new System.Windows.Forms.Padding(10, 3, 2, 2);
+            this.btnFilesSort.TextMargin = new System.Windows.Forms.Padding(0);
             this.btnFilesSort.TextShadowShow = false;
             this.btnFilesSort.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnFilesSort_ClickButtonArea);
             // 
@@ -874,14 +893,13 @@
             this.btnFilesHost.DimFactorHover = 0;
             this.btnFilesHost.FillType = CButtonLib.CButton.eFillType.Solid;
             this.btnFilesHost.ForeColor = System.Drawing.Color.Black;
+            this.btnFilesHost.Image = global::WebPlex.Properties.Resources.menu_down_black;
             this.btnFilesHost.ImageIndex = 0;
+            this.btnFilesHost.ImageSize = new System.Drawing.Size(18, 18);
             this.btnFilesHost.Name = "btnFilesHost";
             this.btnFilesHost.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.btnFilesHost.SideImage = ((System.Drawing.Image)(resources.GetObject("btnFilesHost.SideImage")));
-            this.btnFilesHost.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnFilesHost.SideImageSize = new System.Drawing.Size(22, 22);
             this.btnFilesHost.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnFilesHost.TextMargin = new System.Windows.Forms.Padding(10, 3, 2, 2);
+            this.btnFilesHost.TextMargin = new System.Windows.Forms.Padding(0);
             this.btnFilesHost.TextShadowShow = false;
             this.btnFilesHost.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnFilesHost_ClickButtonArea);
             // 
@@ -912,7 +930,7 @@
             this.txtSearchFiles.Name = "txtSearchFiles";
             this.txtSearchFiles.WaterMark = "Search for file names, add tags or insert a link...";
             this.txtSearchFiles.WaterMarkActiveForeColor = System.Drawing.Color.White;
-            this.txtSearchFiles.WaterMarkFont = new System.Drawing.Font("Segoe UI", 10.75F);
+            this.txtSearchFiles.WaterMarkFont = new System.Drawing.Font("Segoe UI", 9.75F);
             this.txtSearchFiles.WaterMarkForeColor = System.Drawing.Color.LightGray;
             this.txtSearchFiles.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearchFiles_KeyDown);
             // 
@@ -1247,28 +1265,6 @@
             this.titleFilesSaved.TextShadowShow = false;
             this.titleFilesSaved.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.titleFilesSaved_ClickButtonArea);
             // 
-            // btnSearchFiles
-            // 
-            this.btnSearchFiles.BackColor = System.Drawing.Color.Transparent;
-            this.btnSearchFiles.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.btnSearchFiles.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.btnSearchFiles.Corners.LowerRight = 2;
-            this.btnSearchFiles.Corners.UpperRight = 2;
-            this.btnSearchFiles.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSearchFiles.DesignerSelected = false;
-            this.btnSearchFiles.DimFactorClick = 0;
-            this.btnSearchFiles.DimFactorHover = 0;
-            this.btnSearchFiles.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.btnSearchFiles.FocalPoints.CenterPtX = 0F;
-            this.btnSearchFiles.FocalPoints.CenterPtY = 0F;
-            resources.ApplyResources(this.btnSearchFiles, "btnSearchFiles");
-            this.btnSearchFiles.Image = global::WebPlex.Properties.Resources.search;
-            this.btnSearchFiles.ImageIndex = 0;
-            this.btnSearchFiles.ImageSize = new System.Drawing.Size(22, 22);
-            this.btnSearchFiles.Name = "btnSearchFiles";
-            this.btnSearchFiles.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.btnSearchFiles.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnSearchFiles_ClickButtonArea);
-            // 
             // bgSearchFiles
             // 
             this.bgSearchFiles.BackColor = System.Drawing.Color.Transparent;
@@ -1289,6 +1285,53 @@
             this.bgSearchFiles.Name = "bgSearchFiles";
             this.bgSearchFiles.ShowFocus = CButtonLib.CButton.eFocus.None;
             this.bgSearchFiles.TabStop = false;
+            // 
+            // titleFilesCustom
+            // 
+            this.titleFilesCustom.BackColor = System.Drawing.Color.Transparent;
+            this.titleFilesCustom.BorderColor = System.Drawing.Color.Transparent;
+            this.titleFilesCustom.ColorFillSolid = System.Drawing.Color.Transparent;
+            this.titleFilesCustom.Corners.UpperLeft = 2;
+            this.titleFilesCustom.Corners.UpperRight = 2;
+            this.titleFilesCustom.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.titleFilesCustom.DesignerSelected = false;
+            this.titleFilesCustom.DimFactorClick = 0;
+            this.titleFilesCustom.DimFactorHover = 0;
+            this.titleFilesCustom.FillType = CButtonLib.CButton.eFillType.Solid;
+            resources.ApplyResources(this.titleFilesCustom, "titleFilesCustom");
+            this.titleFilesCustom.ImageIndex = 0;
+            this.titleFilesCustom.Name = "titleFilesCustom";
+            this.titleFilesCustom.ShowFocus = CButtonLib.CButton.eFocus.Dim;
+            this.titleFilesCustom.TextShadowShow = false;
+            this.titleFilesCustom.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.titleFilesCustom_ClickButtonArea);
+            // 
+            // btnSearchFiles
+            // 
+            this.btnSearchFiles.BackColor = System.Drawing.Color.Transparent;
+            this.btnSearchFiles.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.btnSearchFiles.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.btnSearchFiles.Corners.All = 2;
+            this.btnSearchFiles.Corners.LowerLeft = 2;
+            this.btnSearchFiles.Corners.LowerRight = 2;
+            this.btnSearchFiles.Corners.UpperLeft = 2;
+            this.btnSearchFiles.Corners.UpperRight = 2;
+            this.btnSearchFiles.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSearchFiles.DesignerSelected = false;
+            this.btnSearchFiles.DimFactorClick = 0;
+            this.btnSearchFiles.DimFactorHover = 0;
+            this.btnSearchFiles.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.btnSearchFiles.FocalPoints.CenterPtX = 0F;
+            this.btnSearchFiles.FocalPoints.CenterPtY = 0F;
+            resources.ApplyResources(this.btnSearchFiles, "btnSearchFiles");
+            this.btnSearchFiles.ForeColor = System.Drawing.Color.Black;
+            this.btnSearchFiles.Image = global::WebPlex.Properties.Resources.magnify_black;
+            this.btnSearchFiles.ImageIndex = 0;
+            this.btnSearchFiles.ImageSize = new System.Drawing.Size(19, 19);
+            this.btnSearchFiles.Name = "btnSearchFiles";
+            this.btnSearchFiles.ShowFocus = CButtonLib.CButton.eFocus.None;
+            this.btnSearchFiles.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSearchFiles.TextShadowShow = false;
+            this.btnSearchFiles.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnSearchFiles_ClickButtonArea);
             // 
             // tabDiscover
             // 
@@ -1442,7 +1485,6 @@
             this.btnSubmitLink.Name = "btnSubmitLink";
             this.btnSubmitLink.ShowFocus = CButtonLib.CButton.eFocus.None;
             this.btnSubmitLink.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSubmitLink.TextMargin = new System.Windows.Forms.Padding(2, 3, 2, 2);
             this.btnSubmitLink.TextShadowShow = false;
             this.btnSubmitLink.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnSubmitLink_ClickButtonArea);
             // 
@@ -1455,7 +1497,7 @@
             this.txtSubmitLink.Name = "txtSubmitLink";
             this.txtSubmitLink.WaterMark = "Link/website";
             this.txtSubmitLink.WaterMarkActiveForeColor = System.Drawing.Color.White;
-            this.txtSubmitLink.WaterMarkFont = new System.Drawing.Font("Segoe UI", 10.75F);
+            this.txtSubmitLink.WaterMarkFont = new System.Drawing.Font("Segoe UI", 9.75F);
             this.txtSubmitLink.WaterMarkForeColor = System.Drawing.Color.LightGray;
             // 
             // bgSubmitLink
@@ -1529,9 +1571,9 @@
             this.btnSettingsGeneralLanguage.ImageIndex = 0;
             this.btnSettingsGeneralLanguage.Name = "btnSettingsGeneralLanguage";
             this.btnSettingsGeneralLanguage.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.btnSettingsGeneralLanguage.SideImage = global::WebPlex.Properties.Resources.arrow_drop_down_black;
+            this.btnSettingsGeneralLanguage.SideImage = global::WebPlex.Properties.Resources.menu_down_black;
             this.btnSettingsGeneralLanguage.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSettingsGeneralLanguage.SideImageSize = new System.Drawing.Size(21, 21);
+            this.btnSettingsGeneralLanguage.SideImageSize = new System.Drawing.Size(20, 20);
             this.btnSettingsGeneralLanguage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSettingsGeneralLanguage.TextMargin = new System.Windows.Forms.Padding(6, 3, 2, 2);
             this.btnSettingsGeneralLanguage.TextShadowShow = false;
@@ -1683,6 +1725,7 @@
             // lblAboutText
             // 
             resources.ApplyResources(this.lblAboutText, "lblAboutText");
+            this.lblAboutText.AutoEllipsis = true;
             this.lblAboutText.BackColor = System.Drawing.Color.Transparent;
             this.lblAboutText.Name = "lblAboutText";
             // 
@@ -1978,25 +2021,6 @@
             this.imgSpinner.Name = "imgSpinner";
             this.imgSpinner.TabStop = false;
             // 
-            // titleFilesCustom
-            // 
-            this.titleFilesCustom.BackColor = System.Drawing.Color.Transparent;
-            this.titleFilesCustom.BorderColor = System.Drawing.Color.Transparent;
-            this.titleFilesCustom.ColorFillSolid = System.Drawing.Color.Transparent;
-            this.titleFilesCustom.Corners.UpperLeft = 2;
-            this.titleFilesCustom.Corners.UpperRight = 2;
-            this.titleFilesCustom.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.titleFilesCustom.DesignerSelected = false;
-            this.titleFilesCustom.DimFactorClick = 0;
-            this.titleFilesCustom.DimFactorHover = 0;
-            this.titleFilesCustom.FillType = CButtonLib.CButton.eFillType.Solid;
-            resources.ApplyResources(this.titleFilesCustom, "titleFilesCustom");
-            this.titleFilesCustom.ImageIndex = 0;
-            this.titleFilesCustom.Name = "titleFilesCustom";
-            this.titleFilesCustom.ShowFocus = CButtonLib.CButton.eFocus.Dim;
-            this.titleFilesCustom.TextShadowShow = false;
-            this.titleFilesCustom.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.titleFilesCustom_ClickButtonArea);
-            // 
             // frmWebPlex
             // 
             resources.ApplyResources(this, "$this");
@@ -2177,8 +2201,8 @@
         private System.Windows.Forms.Panel panelHomeEngine;
         private CButtonLib.CButton btnHomeEngine;
         private System.Windows.Forms.ComboBox cmboBoxHomeEngine;
-        private System.Windows.Forms.Label lblHomeStats;
-        private System.Windows.Forms.Label lblHomeStatsUpdated;
+        private System.Windows.Forms.Label lblHomeStatsFiles;
+        private System.Windows.Forms.Label lblHomeStatsDatabaseUpdated;
         private System.Windows.Forms.Label btnAboutTermsOfUse;
         private System.Windows.Forms.Label btnAboutPrivacyPolicy;
         private CButtonLib.CButton titleFilesCustom;

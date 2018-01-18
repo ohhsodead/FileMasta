@@ -58,7 +58,7 @@
             this.infoPoster.Location = new System.Drawing.Point(7, 8);
             this.infoPoster.Name = "infoPoster";
             this.infoPoster.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.infoPoster.Size = new System.Drawing.Size(141, 207);
+            this.infoPoster.Size = new System.Drawing.Size(128, 192);
             this.infoPoster.TabIndex = 72;
             this.infoPoster.TabStop = false;
             this.infoPoster.Text = "";
@@ -73,7 +73,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.infoSearches.Location = new System.Drawing.Point(26, 22);
             this.infoSearches.Name = "infoSearches";
-            this.infoSearches.Size = new System.Drawing.Size(16, 20);
+            this.infoSearches.Size = new System.Drawing.Size(3, 3);
             this.infoSearches.TabIndex = 68;
             this.infoSearches.Text = "";
             this.infoSearches.Visible = false;
@@ -83,12 +83,12 @@
             this.infoYear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.infoYear.AutoSize = true;
             this.infoYear.BackColor = System.Drawing.Color.Transparent;
-            this.infoYear.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.infoYear.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.infoYear.ForeColor = System.Drawing.Color.Silver;
-            this.infoYear.Location = new System.Drawing.Point(7, 242);
+            this.infoYear.Location = new System.Drawing.Point(7, 230);
             this.infoYear.Margin = new System.Windows.Forms.Padding(0, 0, 1, 0);
             this.infoYear.Name = "infoYear";
-            this.infoYear.Size = new System.Drawing.Size(33, 17);
+            this.infoYear.Size = new System.Drawing.Size(29, 15);
             this.infoYear.TabIndex = 62;
             this.infoYear.Text = "Year";
             // 
@@ -97,9 +97,9 @@
             this.infoTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.infoTitle.AutoEllipsis = true;
             this.infoTitle.BackColor = System.Drawing.Color.Transparent;
-            this.infoTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.infoTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
             this.infoTitle.ForeColor = System.Drawing.Color.White;
-            this.infoTitle.Location = new System.Drawing.Point(6, 223);
+            this.infoTitle.Location = new System.Drawing.Point(6, 209);
             this.infoTitle.Margin = new System.Windows.Forms.Padding(0, 0, 1, 0);
             this.infoTitle.Name = "infoTitle";
             this.infoTitle.Size = new System.Drawing.Size(145, 20);
@@ -126,7 +126,7 @@
             this.infoPoster2.Location = new System.Drawing.Point(8, 8);
             this.infoPoster2.Name = "infoPoster2";
             this.infoPoster2.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.infoPoster2.Size = new System.Drawing.Size(139, 205);
+            this.infoPoster2.Size = new System.Drawing.Size(126, 190);
             this.infoPoster2.TabIndex = 74;
             this.infoPoster2.TabStop = false;
             this.infoPoster2.Text = "";
@@ -139,7 +139,7 @@
             this.imageBackgroundEffect.Image = global::WebPlex.Properties.Resources.poster_glow;
             this.imageBackgroundEffect.Location = new System.Drawing.Point(-1, -2);
             this.imageBackgroundEffect.Name = "imageBackgroundEffect";
-            this.imageBackgroundEffect.Size = new System.Drawing.Size(158, 225);
+            this.imageBackgroundEffect.Size = new System.Drawing.Size(145, 210);
             this.imageBackgroundEffect.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imageBackgroundEffect.TabIndex = 75;
             this.imageBackgroundEffect.TabStop = false;
@@ -156,9 +156,9 @@
             this.Controls.Add(this.infoPoster2);
             this.Controls.Add(this.imageBackgroundEffect);
             this.DoubleBuffered = true;
-            this.Margin = new System.Windows.Forms.Padding(4, 3, 3, 0);
+            this.Margin = new System.Windows.Forms.Padding(1, 3, 1, 0);
             this.Name = "ctrlMoviePoster";
-            this.Size = new System.Drawing.Size(156, 267);
+            this.Size = new System.Drawing.Size(143, 250);
             this.Load += new System.EventHandler(this.ctrlMoviePoster_Load);
             ((System.ComponentModel.ISupportInitialize)(this.imageBackgroundEffect)).EndInit();
             this.ResumeLayout(false);

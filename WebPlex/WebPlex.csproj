@@ -318,6 +318,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\magnify.png" />
+    <None Include="Resources\magnify-black.png" />
+    <None Include="Resources\menu-down-black.png" />
     <Content Include="Resources\search-web.png" />
     <None Include="Resources\play.png" />
     <None Include="Resources\send.png" />
