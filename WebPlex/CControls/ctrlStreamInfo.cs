@@ -36,7 +36,7 @@ namespace WebPlex.CControls
                 imgMagnet.Visible = true;
             }
             else if (isLocal == true)
-            { infoHost.Text = frmWebPlex.rm.GetString("local"); imgDownload.Visible = false; imgReportBroken.Visible = false; imgShare.Visible = false; imgCopyURL.Visible = false; }
+            { infoHost.Text = frmWebPlex.rm.GetString("local"); imgDownload.Visible = false; imgReportBroken.Visible = false; imgCopyURL.Visible = false; }
 
             // Checks for exact file name of a subtitle file that matches the one being loaded (e.g. Media File Name: 'Jigsaw.2017.mp4' > Subtitle File Name: 'Jigsaw.2017.srt' will be loaded)
             if (infoFileSubtitles == null)
@@ -129,13 +129,6 @@ namespace WebPlex.CControls
         {
             Clipboard.SetText(infoFileURL);
             imgCopyURL.Image = Properties.Resources.clipboard_check;
-        }
-
-        private void imgShare_Click(object sender, EventArgs e)
-        {
-            var a = new frmShareFile();
-            a.infoFileURL = infoFileURL;
-            a.ShowDialog(this);
         }
 
         private void imgMagnet_Click(object sender, EventArgs e)

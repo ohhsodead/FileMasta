@@ -30,12 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmWebPlex));
-            CButtonLib.cBlendItems cBlendItems15 = new CButtonLib.cBlendItems();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             CButtonLib.cBlendItems cBlendItems4 = new CButtonLib.cBlendItems();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             CButtonLib.cBlendItems cBlendItems11 = new CButtonLib.cBlendItems();
             CButtonLib.cBlendItems cBlendItems13 = new CButtonLib.cBlendItems();
             CButtonLib.cBlendItems cBlendItems14 = new CButtonLib.cBlendItems();
@@ -48,11 +47,12 @@
             CButtonLib.cBlendItems cBlendItems8 = new CButtonLib.cBlendItems();
             CButtonLib.cBlendItems cBlendItems9 = new CButtonLib.cBlendItems();
             CButtonLib.cBlendItems cBlendItems10 = new CButtonLib.cBlendItems();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            CButtonLib.cBlendItems cBlendItems12 = new CButtonLib.cBlendItems();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tab = new System.Windows.Forms.TabControl();
             this.tabHome = new System.Windows.Forms.TabPage();
             this.lblHomeStatsDatabaseUpdated = new System.Windows.Forms.Label();
@@ -453,13 +453,13 @@
             resources.ApplyResources(this.btnMoviesRandom, "btnMoviesRandom");
             this.btnMoviesRandom.BackColor = System.Drawing.Color.Transparent;
             this.btnMoviesRandom.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            cBlendItems15.iColor = new System.Drawing.Color[] {
+            cBlendItems4.iColor = new System.Drawing.Color[] {
         System.Drawing.Color.White,
         System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))))};
-            cBlendItems15.iPoint = new float[] {
+            cBlendItems4.iPoint = new float[] {
         0F,
         1F};
-            this.btnMoviesRandom.ColorFillBlend = cBlendItems15;
+            this.btnMoviesRandom.ColorFillBlend = cBlendItems4;
             this.btnMoviesRandom.ColorFillSolid = System.Drawing.Color.Empty;
             this.btnMoviesRandom.Corners.All = 2;
             this.btnMoviesRandom.Corners.LowerLeft = 2;
@@ -688,15 +688,15 @@
             this.dataGridFiles.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridFiles.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             this.dataGridFiles.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle10.Padding = new System.Windows.Forms.Padding(10, 4, 0, 4);
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridFiles.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(10, 4, 0, 4);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridFiles.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridFiles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridFiles.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.columnFilesType,
@@ -706,17 +706,18 @@
             this.columnFilesReferrer,
             this.columnFilesURL});
             this.dataGridFiles.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dataGridFiles.EnableHeadersVisualStyles = false;
             this.dataGridFiles.GridColor = System.Drawing.Color.White;
             this.dataGridFiles.MultiSelect = false;
             this.dataGridFiles.Name = "dataGridFiles";
             this.dataGridFiles.ReadOnly = true;
             this.dataGridFiles.RowHeadersVisible = false;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Segoe UI", 10.25F);
-            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGridFiles.RowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 10.25F);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridFiles.RowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridFiles.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
             this.dataGridFiles.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.dataGridFiles.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.DimGray;
@@ -1026,15 +1027,15 @@
             this.dataGridDiscover.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridDiscover.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             this.dataGridDiscover.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle17.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle17.Padding = new System.Windows.Forms.Padding(10, 4, 0, 4);
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridDiscover.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(10, 4, 0, 4);
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridDiscover.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridDiscover.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridDiscover.ColumnHeadersVisible = false;
             this.dataGridDiscover.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1049,12 +1050,12 @@
             this.dataGridDiscover.Name = "dataGridDiscover";
             this.dataGridDiscover.ReadOnly = true;
             this.dataGridDiscover.RowHeadersVisible = false;
-            dataGridViewCellStyle18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Segoe UI", 10.25F);
-            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGridDiscover.RowsDefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 10.25F);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridDiscover.RowsDefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridDiscover.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
             this.dataGridDiscover.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 10.25F);
             this.dataGridDiscover.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.DimGray;
@@ -1132,13 +1133,13 @@
             // 
             this.btnSubmitLink.BackColor = System.Drawing.Color.Transparent;
             this.btnSubmitLink.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            cBlendItems4.iColor = new System.Drawing.Color[] {
+            cBlendItems11.iColor = new System.Drawing.Color[] {
         System.Drawing.Color.White,
         System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))))};
-            cBlendItems4.iPoint = new float[] {
+            cBlendItems11.iPoint = new float[] {
         0F,
         1F};
-            this.btnSubmitLink.ColorFillBlend = cBlendItems4;
+            this.btnSubmitLink.ColorFillBlend = cBlendItems11;
             this.btnSubmitLink.ColorFillSolid = System.Drawing.Color.Empty;
             this.btnSubmitLink.Corners.All = 2;
             this.btnSubmitLink.Corners.LowerLeft = 2;
@@ -1270,13 +1271,13 @@
             // 
             this.btnSettingsSave.BackColor = System.Drawing.Color.Transparent;
             this.btnSettingsSave.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            cBlendItems11.iColor = new System.Drawing.Color[] {
+            cBlendItems13.iColor = new System.Drawing.Color[] {
         System.Drawing.Color.White,
         System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))))};
-            cBlendItems11.iPoint = new float[] {
+            cBlendItems13.iPoint = new float[] {
         0F,
         1F};
-            this.btnSettingsSave.ColorFillBlend = cBlendItems11;
+            this.btnSettingsSave.ColorFillBlend = cBlendItems13;
             this.btnSettingsSave.ColorFillSolid = System.Drawing.Color.Empty;
             this.btnSettingsSave.Corners.All = 2;
             this.btnSettingsSave.Corners.LowerLeft = 2;
@@ -1299,13 +1300,13 @@
             // 
             this.btnSettingsRestoreDefault.BackColor = System.Drawing.Color.Transparent;
             this.btnSettingsRestoreDefault.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            cBlendItems13.iColor = new System.Drawing.Color[] {
+            cBlendItems14.iColor = new System.Drawing.Color[] {
         System.Drawing.Color.White,
         System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))))};
-            cBlendItems13.iPoint = new float[] {
+            cBlendItems14.iPoint = new float[] {
         0F,
         1F};
-            this.btnSettingsRestoreDefault.ColorFillBlend = cBlendItems13;
+            this.btnSettingsRestoreDefault.ColorFillBlend = cBlendItems14;
             this.btnSettingsRestoreDefault.ColorFillSolid = System.Drawing.Color.Empty;
             this.btnSettingsRestoreDefault.Corners.All = 2;
             this.btnSettingsRestoreDefault.Corners.LowerLeft = 2;
@@ -1670,13 +1671,13 @@
             resources.ApplyResources(this.btnHomeEngine, "btnHomeEngine");
             this.btnHomeEngine.BackColor = System.Drawing.Color.Transparent;
             this.btnHomeEngine.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            cBlendItems14.iColor = new System.Drawing.Color[] {
+            cBlendItems1.iColor = new System.Drawing.Color[] {
         System.Drawing.Color.White,
         System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))))};
-            cBlendItems14.iPoint = new float[] {
+            cBlendItems1.iPoint = new float[] {
         0F,
         1F};
-            this.btnHomeEngine.ColorFillBlend = cBlendItems14;
+            this.btnHomeEngine.ColorFillBlend = cBlendItems1;
             this.btnHomeEngine.ColorFillSolid = System.Drawing.Color.Empty;
             this.btnHomeEngine.Corners.All = 2;
             this.btnHomeEngine.Corners.LowerLeft = 2;
@@ -1756,13 +1757,13 @@
             resources.ApplyResources(this.btnHomeFileType, "btnHomeFileType");
             this.btnHomeFileType.BackColor = System.Drawing.Color.Transparent;
             this.btnHomeFileType.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            cBlendItems1.iColor = new System.Drawing.Color[] {
+            cBlendItems2.iColor = new System.Drawing.Color[] {
         System.Drawing.Color.White,
         System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))))};
-            cBlendItems1.iPoint = new float[] {
+            cBlendItems2.iPoint = new float[] {
         0F,
         1F};
-            this.btnHomeFileType.ColorFillBlend = cBlendItems1;
+            this.btnHomeFileType.ColorFillBlend = cBlendItems2;
             this.btnHomeFileType.ColorFillSolid = System.Drawing.Color.Empty;
             this.btnHomeFileType.Corners.All = 2;
             this.btnHomeFileType.Corners.LowerLeft = 2;
@@ -1790,13 +1791,13 @@
             resources.ApplyResources(this.btnSearchFilesHome, "btnSearchFilesHome");
             this.btnSearchFilesHome.BackColor = System.Drawing.Color.Transparent;
             this.btnSearchFilesHome.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            cBlendItems2.iColor = new System.Drawing.Color[] {
+            cBlendItems3.iColor = new System.Drawing.Color[] {
         System.Drawing.Color.White,
         System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))))};
-            cBlendItems2.iPoint = new float[] {
+            cBlendItems3.iPoint = new float[] {
         0F,
         1F};
-            this.btnSearchFilesHome.ColorFillBlend = cBlendItems2;
+            this.btnSearchFilesHome.ColorFillBlend = cBlendItems3;
             this.btnSearchFilesHome.ColorFillSolid = System.Drawing.Color.Empty;
             this.btnSearchFilesHome.Corners.All = 2;
             this.btnSearchFilesHome.Corners.LowerLeft = 2;
@@ -1823,13 +1824,13 @@
             resources.ApplyResources(this.btnMoviesGenre, "btnMoviesGenre");
             this.btnMoviesGenre.BackColor = System.Drawing.Color.Transparent;
             this.btnMoviesGenre.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            cBlendItems3.iColor = new System.Drawing.Color[] {
+            cBlendItems5.iColor = new System.Drawing.Color[] {
         System.Drawing.Color.White,
         System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))))};
-            cBlendItems3.iPoint = new float[] {
+            cBlendItems5.iPoint = new float[] {
         0F,
         1F};
-            this.btnMoviesGenre.ColorFillBlend = cBlendItems3;
+            this.btnMoviesGenre.ColorFillBlend = cBlendItems5;
             this.btnMoviesGenre.ColorFillSolid = System.Drawing.Color.Empty;
             this.btnMoviesGenre.Corners.All = 2;
             this.btnMoviesGenre.Corners.LowerLeft = 2;
@@ -1856,13 +1857,13 @@
             resources.ApplyResources(this.btnMoviesYear, "btnMoviesYear");
             this.btnMoviesYear.BackColor = System.Drawing.Color.Transparent;
             this.btnMoviesYear.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            cBlendItems5.iColor = new System.Drawing.Color[] {
+            cBlendItems6.iColor = new System.Drawing.Color[] {
         System.Drawing.Color.White,
         System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))))};
-            cBlendItems5.iPoint = new float[] {
+            cBlendItems6.iPoint = new float[] {
         0F,
         1F};
-            this.btnMoviesYear.ColorFillBlend = cBlendItems5;
+            this.btnMoviesYear.ColorFillBlend = cBlendItems6;
             this.btnMoviesYear.ColorFillSolid = System.Drawing.Color.Empty;
             this.btnMoviesYear.Corners.All = 2;
             this.btnMoviesYear.Corners.LowerLeft = 2;
@@ -1888,13 +1889,13 @@
             // 
             this.btnSearchMovies.BackColor = System.Drawing.Color.Transparent;
             this.btnSearchMovies.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            cBlendItems6.iColor = new System.Drawing.Color[] {
+            cBlendItems7.iColor = new System.Drawing.Color[] {
         System.Drawing.Color.White,
         System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))))};
-            cBlendItems6.iPoint = new float[] {
+            cBlendItems7.iPoint = new float[] {
         0F,
         1F};
-            this.btnSearchMovies.ColorFillBlend = cBlendItems6;
+            this.btnSearchMovies.ColorFillBlend = cBlendItems7;
             this.btnSearchMovies.ColorFillSolid = System.Drawing.Color.Empty;
             this.btnSearchMovies.Corners.All = 2;
             this.btnSearchMovies.Corners.LowerLeft = 2;
@@ -1923,13 +1924,13 @@
             resources.ApplyResources(this.btnFilesSort, "btnFilesSort");
             this.btnFilesSort.BackColor = System.Drawing.Color.Transparent;
             this.btnFilesSort.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            cBlendItems7.iColor = new System.Drawing.Color[] {
+            cBlendItems8.iColor = new System.Drawing.Color[] {
         System.Drawing.Color.White,
         System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))))};
-            cBlendItems7.iPoint = new float[] {
+            cBlendItems8.iPoint = new float[] {
         0F,
         1F};
-            this.btnFilesSort.ColorFillBlend = cBlendItems7;
+            this.btnFilesSort.ColorFillBlend = cBlendItems8;
             this.btnFilesSort.ColorFillSolid = System.Drawing.Color.Empty;
             this.btnFilesSort.Corners.All = 2;
             this.btnFilesSort.Corners.LowerLeft = 2;
@@ -1955,13 +1956,13 @@
             resources.ApplyResources(this.btnFilesHost, "btnFilesHost");
             this.btnFilesHost.BackColor = System.Drawing.Color.Transparent;
             this.btnFilesHost.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            cBlendItems8.iColor = new System.Drawing.Color[] {
+            cBlendItems9.iColor = new System.Drawing.Color[] {
         System.Drawing.Color.White,
         System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))))};
-            cBlendItems8.iPoint = new float[] {
+            cBlendItems9.iPoint = new float[] {
         0F,
         1F};
-            this.btnFilesHost.ColorFillBlend = cBlendItems8;
+            this.btnFilesHost.ColorFillBlend = cBlendItems9;
             this.btnFilesHost.ColorFillSolid = System.Drawing.Color.Empty;
             this.btnFilesHost.Corners.All = 2;
             this.btnFilesHost.Corners.LowerLeft = 2;
@@ -1986,13 +1987,13 @@
             // 
             this.btnSearchFiles.BackColor = System.Drawing.Color.Transparent;
             this.btnSearchFiles.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            cBlendItems9.iColor = new System.Drawing.Color[] {
+            cBlendItems10.iColor = new System.Drawing.Color[] {
         System.Drawing.Color.White,
         System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))))};
-            cBlendItems9.iPoint = new float[] {
+            cBlendItems10.iPoint = new float[] {
         0F,
         1F};
-            this.btnSearchFiles.ColorFillBlend = cBlendItems9;
+            this.btnSearchFiles.ColorFillBlend = cBlendItems10;
             this.btnSearchFiles.ColorFillSolid = System.Drawing.Color.Empty;
             this.btnSearchFiles.Corners.All = 2;
             this.btnSearchFiles.Corners.LowerLeft = 2;
@@ -2020,13 +2021,13 @@
             resources.ApplyResources(this.btnSettingsGeneralLanguage, "btnSettingsGeneralLanguage");
             this.btnSettingsGeneralLanguage.BackColor = System.Drawing.Color.Transparent;
             this.btnSettingsGeneralLanguage.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            cBlendItems10.iColor = new System.Drawing.Color[] {
+            cBlendItems12.iColor = new System.Drawing.Color[] {
         System.Drawing.Color.White,
         System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))))};
-            cBlendItems10.iPoint = new float[] {
+            cBlendItems12.iPoint = new float[] {
         0F,
         1F};
-            this.btnSettingsGeneralLanguage.ColorFillBlend = cBlendItems10;
+            this.btnSettingsGeneralLanguage.ColorFillBlend = cBlendItems12;
             this.btnSettingsGeneralLanguage.ColorFillSolid = System.Drawing.Color.Empty;
             this.btnSettingsGeneralLanguage.Corners.All = 2;
             this.btnSettingsGeneralLanguage.Corners.LowerLeft = 2;
@@ -2067,8 +2068,8 @@
             // columnFilesName
             // 
             this.columnFilesName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.columnFilesName.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.columnFilesName.DefaultCellStyle = dataGridViewCellStyle2;
             resources.ApplyResources(this.columnFilesName, "columnFilesName");
             this.columnFilesName.Name = "columnFilesName";
             this.columnFilesName.ReadOnly = true;
@@ -2076,8 +2077,8 @@
             // columnFilesSize
             // 
             this.columnFilesSize.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.columnFilesSize.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.columnFilesSize.DefaultCellStyle = dataGridViewCellStyle3;
             resources.ApplyResources(this.columnFilesSize, "columnFilesSize");
             this.columnFilesSize.Name = "columnFilesSize";
             this.columnFilesSize.ReadOnly = true;
@@ -2085,8 +2086,8 @@
             // columnFilesAge
             // 
             this.columnFilesAge.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.columnFilesAge.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.columnFilesAge.DefaultCellStyle = dataGridViewCellStyle4;
             resources.ApplyResources(this.columnFilesAge, "columnFilesAge");
             this.columnFilesAge.Name = "columnFilesAge";
             this.columnFilesAge.ReadOnly = true;
@@ -2094,16 +2095,16 @@
             // columnFilesReferrer
             // 
             this.columnFilesReferrer.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.columnFilesReferrer.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.columnFilesReferrer.DefaultCellStyle = dataGridViewCellStyle5;
             resources.ApplyResources(this.columnFilesReferrer, "columnFilesReferrer");
             this.columnFilesReferrer.Name = "columnFilesReferrer";
             this.columnFilesReferrer.ReadOnly = true;
             // 
             // columnFilesURL
             // 
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.columnFilesURL.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.columnFilesURL.DefaultCellStyle = dataGridViewCellStyle6;
             resources.ApplyResources(this.columnFilesURL, "columnFilesURL");
             this.columnFilesURL.Name = "columnFilesURL";
             this.columnFilesURL.ReadOnly = true;

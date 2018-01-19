@@ -62,8 +62,8 @@ namespace WebPlex.CControls
 
             try
             {
-                MovieDetails.imgPoster.Image = Utilities.ChangeOpacity(Utilities.LoadPicture(infoImagePoster), 1);
-                MovieDetails.BackgroundImage = Utilities.ChangeOpacity(Utilities.LoadPicture(infoImageFanart), 0.2F);
+                if (infoImagePoster != "") { MovieDetails.imgPoster.BackColor = Color.Silver; MovieDetails.imgPoster.Image = Utilities.ChangeOpacity(Utilities.LoadPicture(infoImagePoster), 1); }
+                if (infoImageFanart != "") { MovieDetails.BackColor = Color.Silver; MovieDetails.BackgroundImage = Utilities.ChangeOpacity(Utilities.LoadPicture(infoImageFanart), 0.2F); }
             }
             catch { }
 

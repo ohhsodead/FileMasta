@@ -98,9 +98,31 @@ namespace WebPlex.CControls
 
         private void btnShareFile_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            var a = new frmShareFile();
-            a.infoFileURL = infoFileURL.Text;
-            a.ShowDialog(this);
+            cmboBoxShareFile.DroppedDown = true;
+        }
+
+        private void cmboBoxShareFile_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmboBoxShareFile.SelectedIndex == 0)
+            {
+                Process.Start("https://www.facebook.com/sharer/sharer.php?u=" + infoFileURL.Text);
+            }
+            else if (cmboBoxShareFile.SelectedIndex == 1)
+            {
+                Process.Start("https://twitter.com/home?status=Check%20out%20this%20file%20I%20found%20on%20%40WebPlex%20" + infoFileURL.Text);
+            }
+            else if (cmboBoxShareFile.SelectedIndex == 2)
+            {
+                Process.Start("http://reddit.com/submit?url=" + infoFileURL.Text + "&title=" + Path.GetFileNameWithoutExtension(new Uri(infoFileURL.Text).LocalPath) + "%20%5BWebPlex%5D");
+            }
+            else if (cmboBoxShareFile.SelectedIndex == 3)
+            {
+                Process.Start("https://plus.google.com/share?url=" + infoFileURL.Text);
+            }
+            else if (cmboBoxShareFile.SelectedIndex == 4)
+            {
+                Process.Start("mailto:?&body=Check%20out%20this%20awesome%20file%20I%20found%20on%20WebPlex%20-%20" + infoFileURL.Text);
+            }
         }
 
         private void infoDirectory_Click(object sender, EventArgs e)

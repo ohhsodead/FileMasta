@@ -124,899 +124,10 @@
   <data name="tabHome.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Stretch</value>
   </data>
-  <data name="&gt;&gt;lblHomeStatsDatabaseUpdated.Name" xml:space="preserve">
-    <value>lblHomeStatsDatabaseUpdated</value>
-  </data>
-  <data name="&gt;&gt;lblHomeStatsDatabaseUpdated.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblHomeStatsDatabaseUpdated.Parent" xml:space="preserve">
-    <value>tabHome</value>
-  </data>
-  <data name="&gt;&gt;lblHomeStatsDatabaseUpdated.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;lblHomeStatsFiles.Name" xml:space="preserve">
-    <value>lblHomeStatsFiles</value>
-  </data>
-  <data name="&gt;&gt;lblHomeStatsFiles.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblHomeStatsFiles.Parent" xml:space="preserve">
-    <value>tabHome</value>
-  </data>
-  <data name="&gt;&gt;lblHomeStatsFiles.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;panelHomeEngine.Name" xml:space="preserve">
-    <value>panelHomeEngine</value>
-  </data>
-  <data name="&gt;&gt;panelHomeEngine.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panelHomeEngine.Parent" xml:space="preserve">
-    <value>tabHome</value>
-  </data>
-  <data name="&gt;&gt;panelHomeEngine.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;lineTopSearches.Name" xml:space="preserve">
-    <value>lineTopSearches</value>
-  </data>
-  <data name="&gt;&gt;lineTopSearches.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;lineTopSearches.Parent" xml:space="preserve">
-    <value>tabHome</value>
-  </data>
-  <data name="&gt;&gt;lineTopSearches.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;lblHeaderTopSearches.Name" xml:space="preserve">
-    <value>lblHeaderTopSearches</value>
-  </data>
-  <data name="&gt;&gt;lblHeaderTopSearches.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblHeaderTopSearches.Parent" xml:space="preserve">
-    <value>tabHome</value>
-  </data>
-  <data name="&gt;&gt;lblHeaderTopSearches.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;lineHomeTopSearchesSplitter.Name" xml:space="preserve">
-    <value>lineHomeTopSearchesSplitter</value>
-  </data>
-  <data name="&gt;&gt;lineHomeTopSearchesSplitter.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;lineHomeTopSearchesSplitter.Parent" xml:space="preserve">
-    <value>tabHome</value>
-  </data>
-  <data name="&gt;&gt;lineHomeTopSearchesSplitter.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;panelTopSearches.Name" xml:space="preserve">
-    <value>panelTopSearches</value>
-  </data>
-  <data name="&gt;&gt;panelTopSearches.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panelTopSearches.Parent" xml:space="preserve">
-    <value>tabHome</value>
-  </data>
-  <data name="&gt;&gt;panelTopSearches.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;btnShareFacebook.Name" xml:space="preserve">
-    <value>btnShareFacebook</value>
-  </data>
-  <data name="&gt;&gt;btnShareFacebook.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;btnShareFacebook.Parent" xml:space="preserve">
-    <value>tabHome</value>
-  </data>
-  <data name="&gt;&gt;btnShareFacebook.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;btnShareTwitter.Name" xml:space="preserve">
-    <value>btnShareTwitter</value>
-  </data>
-  <data name="&gt;&gt;btnShareTwitter.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;btnShareTwitter.Parent" xml:space="preserve">
-    <value>tabHome</value>
-  </data>
-  <data name="&gt;&gt;btnShareTwitter.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;lblHeaderHome.Name" xml:space="preserve">
-    <value>lblHeaderHome</value>
-  </data>
-  <data name="&gt;&gt;lblHeaderHome.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblHeaderHome.Parent" xml:space="preserve">
-    <value>tabHome</value>
-  </data>
-  <data name="&gt;&gt;lblHeaderHome.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;panelHomeFileType.Name" xml:space="preserve">
-    <value>panelHomeFileType</value>
-  </data>
-  <data name="&gt;&gt;panelHomeFileType.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panelHomeFileType.Parent" xml:space="preserve">
-    <value>tabHome</value>
-  </data>
-  <data name="&gt;&gt;panelHomeFileType.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;btnSearchFilesHome.Name" xml:space="preserve">
-    <value>btnSearchFilesHome</value>
-  </data>
-  <data name="&gt;&gt;btnSearchFilesHome.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;btnSearchFilesHome.Parent" xml:space="preserve">
-    <value>tabHome</value>
-  </data>
-  <data name="&gt;&gt;btnSearchFilesHome.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="&gt;&gt;txtSearchFilesHome.Name" xml:space="preserve">
-    <value>txtSearchFilesHome</value>
-  </data>
-  <data name="&gt;&gt;txtSearchFilesHome.Type" xml:space="preserve">
-    <value>ChreneLib.Controls.TextBoxes.CTextBox, ChreneLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;txtSearchFilesHome.Parent" xml:space="preserve">
-    <value>tabHome</value>
-  </data>
-  <data name="&gt;&gt;txtSearchFilesHome.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="&gt;&gt;bgSearchFilesHome.Name" xml:space="preserve">
-    <value>bgSearchFilesHome</value>
-  </data>
-  <data name="&gt;&gt;bgSearchFilesHome.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;bgSearchFilesHome.Parent" xml:space="preserve">
-    <value>tabHome</value>
-  </data>
-  <data name="&gt;&gt;bgSearchFilesHome.ZOrder" xml:space="preserve">
-    <value>13</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="tabHome.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tabHome.Size" type="System.Drawing.Size, System.Drawing">
-    <value>868, 536</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="tabHome.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;tabHome.Name" xml:space="preserve">
-    <value>tabHome</value>
-  </data>
-  <data name="&gt;&gt;tabHome.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabHome.Parent" xml:space="preserve">
-    <value>tab</value>
-  </data>
-  <data name="&gt;&gt;tabHome.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;panelMovies.Name" xml:space="preserve">
-    <value>panelMovies</value>
-  </data>
-  <data name="&gt;&gt;panelMovies.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panelMovies.Parent" xml:space="preserve">
-    <value>tabMovies</value>
-  </data>
-  <data name="&gt;&gt;panelMovies.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;txtSearchMovies.Name" xml:space="preserve">
-    <value>txtSearchMovies</value>
-  </data>
-  <data name="&gt;&gt;txtSearchMovies.Type" xml:space="preserve">
-    <value>ChreneLib.Controls.TextBoxes.CTextBox, ChreneLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;txtSearchMovies.Parent" xml:space="preserve">
-    <value>tabMovies</value>
-  </data>
-  <data name="&gt;&gt;txtSearchMovies.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;panelMovieFilters.Name" xml:space="preserve">
-    <value>panelMovieFilters</value>
-  </data>
-  <data name="&gt;&gt;panelMovieFilters.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panelMovieFilters.Parent" xml:space="preserve">
-    <value>tabMovies</value>
-  </data>
-  <data name="&gt;&gt;panelMovieFilters.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;bgSearchMovies.Name" xml:space="preserve">
-    <value>bgSearchMovies</value>
-  </data>
-  <data name="&gt;&gt;bgSearchMovies.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;bgSearchMovies.Parent" xml:space="preserve">
-    <value>tabMovies</value>
-  </data>
-  <data name="&gt;&gt;bgSearchMovies.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;btnSearchMovies.Name" xml:space="preserve">
-    <value>btnSearchMovies</value>
-  </data>
-  <data name="&gt;&gt;btnSearchMovies.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;btnSearchMovies.Parent" xml:space="preserve">
-    <value>tabMovies</value>
-  </data>
-  <data name="&gt;&gt;btnSearchMovies.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="tabMovies.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tabMovies.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tabMovies.Size" type="System.Drawing.Size, System.Drawing">
-    <value>868, 536</value>
-  </data>
-  <data name="tabMovies.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;tabMovies.Name" xml:space="preserve">
-    <value>tabMovies</value>
-  </data>
-  <data name="&gt;&gt;tabMovies.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabMovies.Parent" xml:space="preserve">
-    <value>tab</value>
-  </data>
-  <data name="&gt;&gt;tabMovies.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;emptyDataFiles.Name" xml:space="preserve">
-    <value>emptyDataFiles</value>
-  </data>
-  <data name="&gt;&gt;emptyDataFiles.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;emptyDataFiles.Parent" xml:space="preserve">
-    <value>tabFiles</value>
-  </data>
-  <data name="&gt;&gt;emptyDataFiles.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;panelFileFilters.Name" xml:space="preserve">
-    <value>panelFileFilters</value>
-  </data>
-  <data name="&gt;&gt;panelFileFilters.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panelFileFilters.Parent" xml:space="preserve">
-    <value>tabFiles</value>
-  </data>
-  <data name="&gt;&gt;panelFileFilters.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;lblFilesResultsInfo.Name" xml:space="preserve">
-    <value>lblFilesResultsInfo</value>
-  </data>
-  <data name="&gt;&gt;lblFilesResultsInfo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblFilesResultsInfo.Parent" xml:space="preserve">
-    <value>tabFiles</value>
-  </data>
-  <data name="&gt;&gt;lblFilesResultsInfo.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;txtSearchFiles.Name" xml:space="preserve">
-    <value>txtSearchFiles</value>
-  </data>
-  <data name="&gt;&gt;txtSearchFiles.Type" xml:space="preserve">
-    <value>ChreneLib.Controls.TextBoxes.CTextBox, ChreneLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;txtSearchFiles.Parent" xml:space="preserve">
-    <value>tabFiles</value>
-  </data>
-  <data name="&gt;&gt;txtSearchFiles.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;dataGridFiles.Name" xml:space="preserve">
-    <value>dataGridFiles</value>
-  </data>
-  <data name="&gt;&gt;dataGridFiles.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dataGridFiles.Parent" xml:space="preserve">
-    <value>tabFiles</value>
-  </data>
-  <data name="&gt;&gt;dataGridFiles.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;titleFilesSplitter.Name" xml:space="preserve">
-    <value>titleFilesSplitter</value>
-  </data>
-  <data name="&gt;&gt;titleFilesSplitter.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;titleFilesSplitter.Parent" xml:space="preserve">
-    <value>tabFiles</value>
-  </data>
-  <data name="&gt;&gt;titleFilesSplitter.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;titleFilesArchives.Name" xml:space="preserve">
-    <value>titleFilesArchives</value>
-  </data>
-  <data name="&gt;&gt;titleFilesArchives.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;titleFilesArchives.Parent" xml:space="preserve">
-    <value>tabFiles</value>
-  </data>
-  <data name="&gt;&gt;titleFilesArchives.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;titleFilesVideo.Name" xml:space="preserve">
-    <value>titleFilesVideo</value>
-  </data>
-  <data name="&gt;&gt;titleFilesVideo.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;titleFilesVideo.Parent" xml:space="preserve">
-    <value>tabFiles</value>
-  </data>
-  <data name="&gt;&gt;titleFilesVideo.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;titleFilesTorrents.Name" xml:space="preserve">
-    <value>titleFilesTorrents</value>
-  </data>
-  <data name="&gt;&gt;titleFilesTorrents.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;titleFilesTorrents.Parent" xml:space="preserve">
-    <value>tabFiles</value>
-  </data>
-  <data name="&gt;&gt;titleFilesTorrents.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;titleFilesEbooks.Name" xml:space="preserve">
-    <value>titleFilesEbooks</value>
-  </data>
-  <data name="&gt;&gt;titleFilesEbooks.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;titleFilesEbooks.Parent" xml:space="preserve">
-    <value>tabFiles</value>
-  </data>
-  <data name="&gt;&gt;titleFilesEbooks.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;titleFilesSubtitles.Name" xml:space="preserve">
-    <value>titleFilesSubtitles</value>
-  </data>
-  <data name="&gt;&gt;titleFilesSubtitles.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;titleFilesSubtitles.Parent" xml:space="preserve">
-    <value>tabFiles</value>
-  </data>
-  <data name="&gt;&gt;titleFilesSubtitles.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;titleFilesAudio.Name" xml:space="preserve">
-    <value>titleFilesAudio</value>
-  </data>
-  <data name="&gt;&gt;titleFilesAudio.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;titleFilesAudio.Parent" xml:space="preserve">
-    <value>tabFiles</value>
-  </data>
-  <data name="&gt;&gt;titleFilesAudio.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="&gt;&gt;titleFilesMobile.Name" xml:space="preserve">
-    <value>titleFilesMobile</value>
-  </data>
-  <data name="&gt;&gt;titleFilesMobile.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;titleFilesMobile.Parent" xml:space="preserve">
-    <value>tabFiles</value>
-  </data>
-  <data name="&gt;&gt;titleFilesMobile.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="&gt;&gt;titleFilesOther.Name" xml:space="preserve">
-    <value>titleFilesOther</value>
-  </data>
-  <data name="&gt;&gt;titleFilesOther.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;titleFilesOther.Parent" xml:space="preserve">
-    <value>tabFiles</value>
-  </data>
-  <data name="&gt;&gt;titleFilesOther.ZOrder" xml:space="preserve">
-    <value>13</value>
-  </data>
-  <data name="&gt;&gt;titleFilesLocal.Name" xml:space="preserve">
-    <value>titleFilesLocal</value>
-  </data>
-  <data name="&gt;&gt;titleFilesLocal.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;titleFilesLocal.Parent" xml:space="preserve">
-    <value>tabFiles</value>
-  </data>
-  <data name="&gt;&gt;titleFilesLocal.ZOrder" xml:space="preserve">
-    <value>14</value>
-  </data>
-  <data name="&gt;&gt;titleFilesSaved.Name" xml:space="preserve">
-    <value>titleFilesSaved</value>
-  </data>
-  <data name="&gt;&gt;titleFilesSaved.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;titleFilesSaved.Parent" xml:space="preserve">
-    <value>tabFiles</value>
-  </data>
-  <data name="&gt;&gt;titleFilesSaved.ZOrder" xml:space="preserve">
-    <value>15</value>
-  </data>
-  <data name="&gt;&gt;bgSearchFiles.Name" xml:space="preserve">
-    <value>bgSearchFiles</value>
-  </data>
-  <data name="&gt;&gt;bgSearchFiles.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;bgSearchFiles.Parent" xml:space="preserve">
-    <value>tabFiles</value>
-  </data>
-  <data name="&gt;&gt;bgSearchFiles.ZOrder" xml:space="preserve">
-    <value>16</value>
-  </data>
-  <data name="&gt;&gt;titleFilesCustom.Name" xml:space="preserve">
-    <value>titleFilesCustom</value>
-  </data>
-  <data name="&gt;&gt;titleFilesCustom.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;titleFilesCustom.Parent" xml:space="preserve">
-    <value>tabFiles</value>
-  </data>
-  <data name="&gt;&gt;titleFilesCustom.ZOrder" xml:space="preserve">
-    <value>17</value>
-  </data>
-  <data name="&gt;&gt;titleFilesAll.Name" xml:space="preserve">
-    <value>titleFilesAll</value>
-  </data>
-  <data name="&gt;&gt;titleFilesAll.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;titleFilesAll.Parent" xml:space="preserve">
-    <value>tabFiles</value>
-  </data>
-  <data name="&gt;&gt;titleFilesAll.ZOrder" xml:space="preserve">
-    <value>18</value>
-  </data>
-  <data name="&gt;&gt;btnSearchFiles.Name" xml:space="preserve">
-    <value>btnSearchFiles</value>
-  </data>
-  <data name="&gt;&gt;btnSearchFiles.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;btnSearchFiles.Parent" xml:space="preserve">
-    <value>tabFiles</value>
-  </data>
-  <data name="&gt;&gt;btnSearchFiles.ZOrder" xml:space="preserve">
-    <value>19</value>
-  </data>
-  <data name="tabFiles.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tabFiles.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tabFiles.Size" type="System.Drawing.Size, System.Drawing">
-    <value>868, 536</value>
-  </data>
-  <data name="tabFiles.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;tabFiles.Name" xml:space="preserve">
-    <value>tabFiles</value>
-  </data>
-  <data name="&gt;&gt;tabFiles.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabFiles.Parent" xml:space="preserve">
-    <value>tab</value>
-  </data>
-  <data name="&gt;&gt;tabFiles.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;lblHeaderDiscover.Name" xml:space="preserve">
-    <value>lblHeaderDiscover</value>
-  </data>
-  <data name="&gt;&gt;lblHeaderDiscover.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblHeaderDiscover.Parent" xml:space="preserve">
-    <value>tabDiscover</value>
-  </data>
-  <data name="&gt;&gt;lblHeaderDiscover.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;dataGridDiscover.Name" xml:space="preserve">
-    <value>dataGridDiscover</value>
-  </data>
-  <data name="&gt;&gt;dataGridDiscover.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dataGridDiscover.Parent" xml:space="preserve">
-    <value>tabDiscover</value>
-  </data>
-  <data name="&gt;&gt;dataGridDiscover.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="tabDiscover.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tabDiscover.Size" type="System.Drawing.Size, System.Drawing">
-    <value>868, 536</value>
-  </data>
-  <data name="tabDiscover.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;tabDiscover.Name" xml:space="preserve">
-    <value>tabDiscover</value>
-  </data>
-  <data name="&gt;&gt;tabDiscover.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabDiscover.Parent" xml:space="preserve">
-    <value>tab</value>
-  </data>
-  <data name="&gt;&gt;tabDiscover.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="tabSubmit.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Stretch</value>
-  </data>
-  <data name="&gt;&gt;panelSubmitDescription.Name" xml:space="preserve">
-    <value>panelSubmitDescription</value>
-  </data>
-  <data name="&gt;&gt;panelSubmitDescription.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panelSubmitDescription.Parent" xml:space="preserve">
-    <value>tabSubmit</value>
-  </data>
-  <data name="&gt;&gt;panelSubmitDescription.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;lblHeaderSubmit.Name" xml:space="preserve">
-    <value>lblHeaderSubmit</value>
-  </data>
-  <data name="&gt;&gt;lblHeaderSubmit.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblHeaderSubmit.Parent" xml:space="preserve">
-    <value>tabSubmit</value>
-  </data>
-  <data name="&gt;&gt;lblHeaderSubmit.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="tabSubmit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tabSubmit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>868, 536</value>
-  </data>
-  <data name="tabSubmit.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;tabSubmit.Name" xml:space="preserve">
-    <value>tabSubmit</value>
-  </data>
-  <data name="&gt;&gt;tabSubmit.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabSubmit.Parent" xml:space="preserve">
-    <value>tab</value>
-  </data>
-  <data name="&gt;&gt;tabSubmit.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="tabSettings.AutoScroll" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="tabSettings.AutoScrollMargin" type="System.Drawing.Size, System.Drawing">
-    <value>0, 15</value>
-  </data>
-  <data name="tabSettings.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Stretch</value>
-  </data>
-  <data name="&gt;&gt;panelGeneralSettingsLanguage.Name" xml:space="preserve">
-    <value>panelGeneralSettingsLanguage</value>
-  </data>
-  <data name="&gt;&gt;panelGeneralSettingsLanguage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panelGeneralSettingsLanguage.Parent" xml:space="preserve">
-    <value>tabSettings</value>
-  </data>
-  <data name="&gt;&gt;panelGeneralSettingsLanguage.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;lblSettingsGeneralLanguage.Name" xml:space="preserve">
-    <value>lblSettingsGeneralLanguage</value>
-  </data>
-  <data name="&gt;&gt;lblSettingsGeneralLanguage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblSettingsGeneralLanguage.Parent" xml:space="preserve">
-    <value>tabSettings</value>
-  </data>
-  <data name="&gt;&gt;lblSettingsGeneralLanguage.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;titleSettingsGeneral.Name" xml:space="preserve">
-    <value>titleSettingsGeneral</value>
-  </data>
-  <data name="&gt;&gt;titleSettingsGeneral.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;titleSettingsGeneral.Parent" xml:space="preserve">
-    <value>tabSettings</value>
-  </data>
-  <data name="&gt;&gt;titleSettingsGeneral.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;lblSettingsGeneralClearDataOnClose.Name" xml:space="preserve">
-    <value>lblSettingsGeneralClearDataOnClose</value>
-  </data>
-  <data name="&gt;&gt;lblSettingsGeneralClearDataOnClose.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblSettingsGeneralClearDataOnClose.Parent" xml:space="preserve">
-    <value>tabSettings</value>
-  </data>
-  <data name="&gt;&gt;lblSettingsGeneralClearDataOnClose.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;chkSettingsClearData.Name" xml:space="preserve">
-    <value>chkSettingsClearData</value>
-  </data>
-  <data name="&gt;&gt;chkSettingsClearData.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;chkSettingsClearData.Parent" xml:space="preserve">
-    <value>tabSettings</value>
-  </data>
-  <data name="&gt;&gt;chkSettingsClearData.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;btnSettingsSave.Name" xml:space="preserve">
-    <value>btnSettingsSave</value>
-  </data>
-  <data name="&gt;&gt;btnSettingsSave.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;btnSettingsSave.Parent" xml:space="preserve">
-    <value>tabSettings</value>
-  </data>
-  <data name="&gt;&gt;btnSettingsSave.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;btnSettingsRestoreDefault.Name" xml:space="preserve">
-    <value>btnSettingsRestoreDefault</value>
-  </data>
-  <data name="&gt;&gt;btnSettingsRestoreDefault.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;btnSettingsRestoreDefault.Parent" xml:space="preserve">
-    <value>tabSettings</value>
-  </data>
-  <data name="&gt;&gt;btnSettingsRestoreDefault.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="tabSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tabSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>868, 536</value>
-  </data>
-  <data name="tabSettings.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;tabSettings.Name" xml:space="preserve">
-    <value>tabSettings</value>
-  </data>
-  <data name="&gt;&gt;tabSettings.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabSettings.Parent" xml:space="preserve">
-    <value>tab</value>
-  </data>
-  <data name="&gt;&gt;tabSettings.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="tabAbout.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Stretch</value>
-  </data>
-  <data name="&gt;&gt;btnAboutPrivacyPolicy.Name" xml:space="preserve">
-    <value>btnAboutPrivacyPolicy</value>
-  </data>
-  <data name="&gt;&gt;btnAboutPrivacyPolicy.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnAboutPrivacyPolicy.Parent" xml:space="preserve">
-    <value>tabAbout</value>
-  </data>
-  <data name="&gt;&gt;btnAboutPrivacyPolicy.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;btnAboutTermsOfUse.Name" xml:space="preserve">
-    <value>btnAboutTermsOfUse</value>
-  </data>
-  <data name="&gt;&gt;btnAboutTermsOfUse.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnAboutTermsOfUse.Parent" xml:space="preserve">
-    <value>tabAbout</value>
-  </data>
-  <data name="&gt;&gt;btnAboutTermsOfUse.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;lblAboutChangelogVersion.Name" xml:space="preserve">
-    <value>lblAboutChangelogVersion</value>
-  </data>
-  <data name="&gt;&gt;lblAboutChangelogVersion.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblAboutChangelogVersion.Parent" xml:space="preserve">
-    <value>tabAbout</value>
-  </data>
-  <data name="&gt;&gt;lblAboutChangelogVersion.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;btnAboutReportIssue.Name" xml:space="preserve">
-    <value>btnAboutReportIssue</value>
-  </data>
-  <data name="&gt;&gt;btnAboutReportIssue.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnAboutReportIssue.Parent" xml:space="preserve">
-    <value>tabAbout</value>
-  </data>
-  <data name="&gt;&gt;btnAboutReportIssue.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;lblAboutSubText.Name" xml:space="preserve">
-    <value>lblAboutSubText</value>
-  </data>
-  <data name="&gt;&gt;lblAboutSubText.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblAboutSubText.Parent" xml:space="preserve">
-    <value>tabAbout</value>
-  </data>
-  <data name="&gt;&gt;lblAboutSubText.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;lblAboutText.Name" xml:space="preserve">
-    <value>lblAboutText</value>
-  </data>
-  <data name="&gt;&gt;lblAboutText.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblAboutText.Parent" xml:space="preserve">
-    <value>tabAbout</value>
-  </data>
-  <data name="&gt;&gt;lblAboutText.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="tabAbout.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tabAbout.Size" type="System.Drawing.Size, System.Drawing">
-    <value>868, 536</value>
-  </data>
-  <data name="tabAbout.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;tabAbout.Name" xml:space="preserve">
-    <value>tabAbout</value>
-  </data>
-  <data name="&gt;&gt;tabAbout.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabAbout.Parent" xml:space="preserve">
-    <value>tab</value>
-  </data>
-  <data name="&gt;&gt;tabAbout.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="tabBlank.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Stretch</value>
-  </data>
-  <data name="tabBlank.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tabBlank.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
-    <value>No</value>
-  </data>
-  <data name="tabBlank.Size" type="System.Drawing.Size, System.Drawing">
-    <value>868, 536</value>
-  </data>
-  <data name="tabBlank.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;tabBlank.Name" xml:space="preserve">
-    <value>tabBlank</value>
-  </data>
-  <data name="&gt;&gt;tabBlank.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabBlank.Parent" xml:space="preserve">
-    <value>tab</value>
-  </data>
-  <data name="&gt;&gt;tabBlank.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="tab.Location" type="System.Drawing.Point, System.Drawing">
-    <value>176, -22</value>
-  </data>
-  <data name="tab.Size" type="System.Drawing.Size, System.Drawing">
-    <value>876, 562</value>
-  </data>
-  <data name="tab.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;tab.Name" xml:space="preserve">
-    <value>tab</value>
-  </data>
-  <data name="&gt;&gt;tab.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tab.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;tab.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="lblHomeStatsDatabaseUpdated.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left, Right</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="lblHomeStatsDatabaseUpdated.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9.25pt</value>
   </data>
@@ -1029,6 +140,7 @@
   <data name="lblHomeStatsDatabaseUpdated.Size" type="System.Drawing.Size, System.Drawing">
     <value>533, 20</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="lblHomeStatsDatabaseUpdated.TabIndex" type="System.Int32, mscorlib">
     <value>1107</value>
   </data>
@@ -1089,6 +201,24 @@
   <data name="panelHomeEngine.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Left</value>
   </data>
+  <data name="btnHomeEngine.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="btnHomeEngine.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9.75pt</value>
+  </data>
+  <data name="btnHomeEngine.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="btnHomeEngine.Size" type="System.Drawing.Size, System.Drawing">
+    <value>96, 30</value>
+  </data>
+  <data name="btnHomeEngine.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="btnHomeEngine.Text" xml:space="preserve">
+    <value>WebPlex</value>
+  </data>
   <data name="&gt;&gt;btnHomeEngine.Name" xml:space="preserve">
     <value>btnHomeEngine</value>
   </data>
@@ -1100,42 +230,6 @@
   </data>
   <data name="&gt;&gt;btnHomeEngine.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="&gt;&gt;cmboBoxHomeEngine.Name" xml:space="preserve">
-    <value>cmboBoxHomeEngine</value>
-  </data>
-  <data name="&gt;&gt;cmboBoxHomeEngine.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cmboBoxHomeEngine.Parent" xml:space="preserve">
-    <value>panelHomeEngine</value>
-  </data>
-  <data name="&gt;&gt;cmboBoxHomeEngine.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="panelHomeEngine.Location" type="System.Drawing.Point, System.Drawing">
-    <value>313, 250</value>
-  </data>
-  <data name="panelHomeEngine.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 0, 2, 0</value>
-  </data>
-  <data name="panelHomeEngine.Size" type="System.Drawing.Size, System.Drawing">
-    <value>96, 30</value>
-  </data>
-  <data name="panelHomeEngine.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;panelHomeEngine.Name" xml:space="preserve">
-    <value>panelHomeEngine</value>
-  </data>
-  <data name="&gt;&gt;panelHomeEngine.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panelHomeEngine.Parent" xml:space="preserve">
-    <value>tabHome</value>
-  </data>
-  <data name="&gt;&gt;panelHomeEngine.ZOrder" xml:space="preserve">
-    <value>2</value>
   </data>
   <data name="cmboBoxHomeEngine.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left, Right</value>
@@ -1178,6 +272,30 @@
   </data>
   <data name="&gt;&gt;cmboBoxHomeEngine.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="panelHomeEngine.Location" type="System.Drawing.Point, System.Drawing">
+    <value>313, 250</value>
+  </data>
+  <data name="panelHomeEngine.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
+  </data>
+  <data name="panelHomeEngine.Size" type="System.Drawing.Size, System.Drawing">
+    <value>96, 30</value>
+  </data>
+  <data name="panelHomeEngine.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;panelHomeEngine.Name" xml:space="preserve">
+    <value>panelHomeEngine</value>
+  </data>
+  <data name="&gt;&gt;panelHomeEngine.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panelHomeEngine.Parent" xml:space="preserve">
+    <value>tabHome</value>
+  </data>
+  <data name="&gt;&gt;panelHomeEngine.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="lineTopSearches.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Left</value>
@@ -1308,6 +426,66 @@
   <data name="&gt;&gt;panelTopSearches.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
+  <data name="btnShareFacebook.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="btnShareFacebook.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9.25pt</value>
+  </data>
+  <data name="btnShareFacebook.Location" type="System.Drawing.Point, System.Drawing">
+    <value>440, 204</value>
+  </data>
+  <data name="btnShareFacebook.Size" type="System.Drawing.Size, System.Drawing">
+    <value>62, 22</value>
+  </data>
+  <data name="btnShareFacebook.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="btnShareFacebook.Text" xml:space="preserve">
+    <value>Share</value>
+  </data>
+  <data name="&gt;&gt;btnShareFacebook.Name" xml:space="preserve">
+    <value>btnShareFacebook</value>
+  </data>
+  <data name="&gt;&gt;btnShareFacebook.Type" xml:space="preserve">
+    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;btnShareFacebook.Parent" xml:space="preserve">
+    <value>tabHome</value>
+  </data>
+  <data name="&gt;&gt;btnShareFacebook.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="btnShareTwitter.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="btnShareTwitter.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9.25pt</value>
+  </data>
+  <data name="btnShareTwitter.Location" type="System.Drawing.Point, System.Drawing">
+    <value>366, 204</value>
+  </data>
+  <data name="btnShareTwitter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>68, 22</value>
+  </data>
+  <data name="btnShareTwitter.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="btnShareTwitter.Text" xml:space="preserve">
+    <value>Tweet</value>
+  </data>
+  <data name="&gt;&gt;btnShareTwitter.Name" xml:space="preserve">
+    <value>btnShareTwitter</value>
+  </data>
+  <data name="&gt;&gt;btnShareTwitter.Type" xml:space="preserve">
+    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;btnShareTwitter.Parent" xml:space="preserve">
+    <value>tabHome</value>
+  </data>
+  <data name="&gt;&gt;btnShareTwitter.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
   <data name="lblHeaderHome.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top</value>
   </data>
@@ -1358,6 +536,24 @@ Get direct download links for almost anything!</value>
   <data name="panelHomeFileType.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Left</value>
   </data>
+  <data name="btnHomeFileType.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="btnHomeFileType.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9.75pt</value>
+  </data>
+  <data name="btnHomeFileType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="btnHomeFileType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>138, 30</value>
+  </data>
+  <data name="btnHomeFileType.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="btnHomeFileType.Text" xml:space="preserve">
+    <value>Choose Filetype</value>
+  </data>
   <data name="&gt;&gt;btnHomeFileType.Name" xml:space="preserve">
     <value>btnHomeFileType</value>
   </data>
@@ -1369,42 +565,6 @@ Get direct download links for almost anything!</value>
   </data>
   <data name="&gt;&gt;btnHomeFileType.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="&gt;&gt;cmboBoxHomeFileType.Name" xml:space="preserve">
-    <value>cmboBoxHomeFileType</value>
-  </data>
-  <data name="&gt;&gt;cmboBoxHomeFileType.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cmboBoxHomeFileType.Parent" xml:space="preserve">
-    <value>panelHomeFileType</value>
-  </data>
-  <data name="&gt;&gt;cmboBoxHomeFileType.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="panelHomeFileType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>170, 250</value>
-  </data>
-  <data name="panelHomeFileType.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 0, 2, 0</value>
-  </data>
-  <data name="panelHomeFileType.Size" type="System.Drawing.Size, System.Drawing">
-    <value>138, 30</value>
-  </data>
-  <data name="panelHomeFileType.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;panelHomeFileType.Name" xml:space="preserve">
-    <value>panelHomeFileType</value>
-  </data>
-  <data name="&gt;&gt;panelHomeFileType.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panelHomeFileType.Parent" xml:space="preserve">
-    <value>tabHome</value>
-  </data>
-  <data name="&gt;&gt;panelHomeFileType.ZOrder" xml:space="preserve">
-    <value>10</value>
   </data>
   <data name="cmboBoxHomeFileType.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left, Right</value>
@@ -1459,6 +619,73 @@ Get direct download links for almost anything!</value>
   </data>
   <data name="&gt;&gt;cmboBoxHomeFileType.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="panelHomeFileType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>170, 250</value>
+  </data>
+  <data name="panelHomeFileType.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
+  </data>
+  <data name="panelHomeFileType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>138, 30</value>
+  </data>
+  <data name="panelHomeFileType.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;panelHomeFileType.Name" xml:space="preserve">
+    <value>panelHomeFileType</value>
+  </data>
+  <data name="&gt;&gt;panelHomeFileType.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panelHomeFileType.Parent" xml:space="preserve">
+    <value>tabHome</value>
+  </data>
+  <data name="&gt;&gt;panelHomeFileType.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="btnSearchFilesHome.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="btnSearchFilesHome.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9.75pt</value>
+  </data>
+  <data name="btnSearchFilesHome.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAA5ElEQVRIS+2TTQ4BQRBGeyHcQoRDzMLP
+        zRxD3ICJO4kIjmDBhu+J2lGmujObiZe8dLp1d42q6vSnhLms5UXe5Flu5UwW0ZNr+XBcSfZlYZdf5VKO
+        Zf89MmfdgoRZSLu8YuEDrFuQKQsRyDkH+VIPfmff5jULQEE5SDo8JpJ9FD4E3cJBcu4xkOxjf4joP2B/
+        CPqcg01rQM1C8Ig42LSLeIxh6G8LwpeSDmrCyNwu38kseKEW5JtczniQI5kFj4g+P8m7pKDk3NLC5cVB
+        PIZyLwlylL86L4vuBWktAFDoVordaVJ6AmCqVJKyuZn7AAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="btnSearchFilesHome.Location" type="System.Drawing.Point, System.Drawing">
+    <value>627, 250</value>
+  </data>
+  <data name="btnSearchFilesHome.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 3, 3, 3</value>
+  </data>
+  <data name="btnSearchFilesHome.Size" type="System.Drawing.Size, System.Drawing">
+    <value>76, 30</value>
+  </data>
+  <data name="btnSearchFilesHome.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="btnSearchFilesHome.Text" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="&gt;&gt;btnSearchFilesHome.Name" xml:space="preserve">
+    <value>btnSearchFilesHome</value>
+  </data>
+  <data name="&gt;&gt;btnSearchFilesHome.Type" xml:space="preserve">
+    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;btnSearchFilesHome.Parent" xml:space="preserve">
+    <value>tabHome</value>
+  </data>
+  <data name="&gt;&gt;btnSearchFilesHome.ZOrder" xml:space="preserve">
+    <value>11</value>
   </data>
   <data name="txtSearchFilesHome.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Left, Right</value>
@@ -1520,6 +747,27 @@ Get direct download links for almost anything!</value>
   <data name="&gt;&gt;bgSearchFilesHome.ZOrder" xml:space="preserve">
     <value>13</value>
   </data>
+  <data name="tabHome.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tabHome.Size" type="System.Drawing.Size, System.Drawing">
+    <value>868, 536</value>
+  </data>
+  <data name="tabHome.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;tabHome.Name" xml:space="preserve">
+    <value>tabHome</value>
+  </data>
+  <data name="&gt;&gt;tabHome.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabHome.Parent" xml:space="preserve">
+    <value>tab</value>
+  </data>
+  <data name="&gt;&gt;tabHome.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="panelMovies.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
@@ -1580,65 +828,23 @@ Get direct download links for almost anything!</value>
   <data name="panelMovieFilters.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
-  <data name="&gt;&gt;panelMoviesRandom.Name" xml:space="preserve">
-    <value>panelMoviesRandom</value>
+  <data name="btnMoviesRandom.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
   </data>
-  <data name="&gt;&gt;panelMoviesRandom.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="btnMoviesRandom.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9.75pt</value>
   </data>
-  <data name="&gt;&gt;panelMoviesRandom.Parent" xml:space="preserve">
-    <value>panelMovieFilters</value>
+  <data name="btnMoviesRandom.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
   </data>
-  <data name="&gt;&gt;panelMoviesRandom.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="btnMoviesRandom.Size" type="System.Drawing.Size, System.Drawing">
+    <value>123, 30</value>
   </data>
-  <data name="&gt;&gt;panelMoviesGenre.Name" xml:space="preserve">
-    <value>panelMoviesGenre</value>
-  </data>
-  <data name="&gt;&gt;panelMoviesGenre.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panelMoviesGenre.Parent" xml:space="preserve">
-    <value>panelMovieFilters</value>
-  </data>
-  <data name="&gt;&gt;panelMoviesGenre.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;panelMoviesYear.Name" xml:space="preserve">
-    <value>panelMoviesYear</value>
-  </data>
-  <data name="&gt;&gt;panelMoviesYear.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panelMoviesYear.Parent" xml:space="preserve">
-    <value>panelMovieFilters</value>
-  </data>
-  <data name="&gt;&gt;panelMoviesYear.ZOrder" xml:space="preserve">
+  <data name="btnMoviesRandom.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="panelMovieFilters.Location" type="System.Drawing.Point, System.Drawing">
-    <value>420, 13</value>
-  </data>
-  <data name="panelMovieFilters.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 3, 3, 3</value>
-  </data>
-  <data name="panelMovieFilters.Size" type="System.Drawing.Size, System.Drawing">
-    <value>437, 30</value>
-  </data>
-  <data name="panelMovieFilters.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;panelMovieFilters.Name" xml:space="preserve">
-    <value>panelMovieFilters</value>
-  </data>
-  <data name="&gt;&gt;panelMovieFilters.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panelMovieFilters.Parent" xml:space="preserve">
-    <value>tabMovies</value>
-  </data>
-  <data name="&gt;&gt;panelMovieFilters.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="btnMoviesRandom.Text" xml:space="preserve">
+    <value>I'm Feeling Lucky</value>
   </data>
   <data name="&gt;&gt;btnMoviesRandom.Name" xml:space="preserve">
     <value>btnMoviesRandom</value>
@@ -1676,35 +882,30 @@ Get direct download links for almost anything!</value>
   <data name="&gt;&gt;panelMoviesRandom.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="btnMoviesRandom.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="btnMoviesGenre.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
-  <data name="btnMoviesRandom.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="btnMoviesGenre.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9.75pt</value>
   </data>
-  <data name="btnMoviesRandom.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="btnMoviesGenre.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAOElEQVRIS2MYBaNgFIwAUA7E/wngeiCm
+        COCzhGLDYQCbJVQzHAaQLaG64TDQAMWjYBSMgsEDGBgAWBUYxfIUNf0AAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="btnMoviesGenre.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="btnMoviesRandom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 30</value>
+  <data name="btnMoviesGenre.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 30</value>
   </data>
-  <data name="btnMoviesRandom.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+  <data name="btnMoviesGenre.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
   </data>
-  <data name="btnMoviesRandom.Text" xml:space="preserve">
-    <value>I'm Feeling Lucky</value>
-  </data>
-  <data name="&gt;&gt;btnMoviesRandom.Name" xml:space="preserve">
-    <value>btnMoviesRandom</value>
-  </data>
-  <data name="&gt;&gt;btnMoviesRandom.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;btnMoviesRandom.Parent" xml:space="preserve">
-    <value>panelMoviesRandom</value>
-  </data>
-  <data name="&gt;&gt;btnMoviesRandom.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="btnMoviesGenre.Text" xml:space="preserve">
+    <value>Genre : Any</value>
   </data>
   <data name="&gt;&gt;btnMoviesGenre.Name" xml:space="preserve">
     <value>btnMoviesGenre</value>
@@ -1717,42 +918,6 @@ Get direct download links for almost anything!</value>
   </data>
   <data name="&gt;&gt;btnMoviesGenre.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="&gt;&gt;cmboBoxMoviesGenre.Name" xml:space="preserve">
-    <value>cmboBoxMoviesGenre</value>
-  </data>
-  <data name="&gt;&gt;cmboBoxMoviesGenre.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cmboBoxMoviesGenre.Parent" xml:space="preserve">
-    <value>panelMoviesGenre</value>
-  </data>
-  <data name="&gt;&gt;cmboBoxMoviesGenre.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="panelMoviesGenre.Location" type="System.Drawing.Point, System.Drawing">
-    <value>128, 0</value>
-  </data>
-  <data name="panelMoviesGenre.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 5, 0</value>
-  </data>
-  <data name="panelMoviesGenre.Size" type="System.Drawing.Size, System.Drawing">
-    <value>109, 30</value>
-  </data>
-  <data name="panelMoviesGenre.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;panelMoviesGenre.Name" xml:space="preserve">
-    <value>panelMoviesGenre</value>
-  </data>
-  <data name="&gt;&gt;panelMoviesGenre.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panelMoviesGenre.Parent" xml:space="preserve">
-    <value>panelMovieFilters</value>
-  </data>
-  <data name="&gt;&gt;panelMoviesGenre.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="cmboBoxMoviesGenre.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left, Right</value>
@@ -1838,6 +1003,55 @@ Get direct download links for almost anything!</value>
   <data name="&gt;&gt;cmboBoxMoviesGenre.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="panelMoviesGenre.Location" type="System.Drawing.Point, System.Drawing">
+    <value>128, 0</value>
+  </data>
+  <data name="panelMoviesGenre.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 5, 0</value>
+  </data>
+  <data name="panelMoviesGenre.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 30</value>
+  </data>
+  <data name="panelMoviesGenre.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;panelMoviesGenre.Name" xml:space="preserve">
+    <value>panelMoviesGenre</value>
+  </data>
+  <data name="&gt;&gt;panelMoviesGenre.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panelMoviesGenre.Parent" xml:space="preserve">
+    <value>panelMovieFilters</value>
+  </data>
+  <data name="&gt;&gt;panelMoviesGenre.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btnMoviesYear.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="btnMoviesYear.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9.75pt</value>
+  </data>
+  <data name="btnMoviesYear.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAOElEQVRIS2MYBaNgFIwAUA7E/wngeiCm
+        COCzhGLDYQCbJVQzHAaQLaG64TDQAMWjYBSMgsEDGBgAWBUYxfIUNf0AAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="btnMoviesYear.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="btnMoviesYear.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 30</value>
+  </data>
+  <data name="btnMoviesYear.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="btnMoviesYear.Text" xml:space="preserve">
+    <value>Year : Any</value>
+  </data>
   <data name="&gt;&gt;btnMoviesYear.Name" xml:space="preserve">
     <value>btnMoviesYear</value>
   </data>
@@ -1849,42 +1063,6 @@ Get direct download links for almost anything!</value>
   </data>
   <data name="&gt;&gt;btnMoviesYear.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="&gt;&gt;cmboBoxMoviesYear.Name" xml:space="preserve">
-    <value>cmboBoxMoviesYear</value>
-  </data>
-  <data name="&gt;&gt;cmboBoxMoviesYear.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cmboBoxMoviesYear.Parent" xml:space="preserve">
-    <value>panelMoviesYear</value>
-  </data>
-  <data name="&gt;&gt;cmboBoxMoviesYear.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="panelMoviesYear.Location" type="System.Drawing.Point, System.Drawing">
-    <value>242, 0</value>
-  </data>
-  <data name="panelMoviesYear.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 5, 0</value>
-  </data>
-  <data name="panelMoviesYear.Size" type="System.Drawing.Size, System.Drawing">
-    <value>98, 30</value>
-  </data>
-  <data name="panelMoviesYear.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;panelMoviesYear.Name" xml:space="preserve">
-    <value>panelMoviesYear</value>
-  </data>
-  <data name="&gt;&gt;panelMoviesYear.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panelMoviesYear.Parent" xml:space="preserve">
-    <value>panelMovieFilters</value>
-  </data>
-  <data name="&gt;&gt;panelMoviesYear.ZOrder" xml:space="preserve">
-    <value>2</value>
   </data>
   <data name="cmboBoxMoviesYear.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left, Right</value>
@@ -1997,6 +1175,54 @@ Get direct download links for almost anything!</value>
   <data name="&gt;&gt;cmboBoxMoviesYear.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="panelMoviesYear.Location" type="System.Drawing.Point, System.Drawing">
+    <value>242, 0</value>
+  </data>
+  <data name="panelMoviesYear.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 5, 0</value>
+  </data>
+  <data name="panelMoviesYear.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 30</value>
+  </data>
+  <data name="panelMoviesYear.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;panelMoviesYear.Name" xml:space="preserve">
+    <value>panelMoviesYear</value>
+  </data>
+  <data name="&gt;&gt;panelMoviesYear.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panelMoviesYear.Parent" xml:space="preserve">
+    <value>panelMovieFilters</value>
+  </data>
+  <data name="&gt;&gt;panelMoviesYear.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="panelMovieFilters.Location" type="System.Drawing.Point, System.Drawing">
+    <value>420, 13</value>
+  </data>
+  <data name="panelMovieFilters.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 3, 3</value>
+  </data>
+  <data name="panelMovieFilters.Size" type="System.Drawing.Size, System.Drawing">
+    <value>437, 30</value>
+  </data>
+  <data name="panelMovieFilters.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;panelMovieFilters.Name" xml:space="preserve">
+    <value>panelMovieFilters</value>
+  </data>
+  <data name="&gt;&gt;panelMovieFilters.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panelMovieFilters.Parent" xml:space="preserve">
+    <value>tabMovies</value>
+  </data>
+  <data name="&gt;&gt;panelMovieFilters.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="bgSearchMovies.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 8.25pt</value>
   </data>
@@ -2026,6 +1252,70 @@ Get direct download links for almost anything!</value>
   </data>
   <data name="&gt;&gt;bgSearchMovies.ZOrder" xml:space="preserve">
     <value>3</value>
+  </data>
+  <data name="btnSearchMovies.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9.75pt</value>
+  </data>
+  <data name="btnSearchMovies.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAA5ElEQVRIS+2TTQ4BQRBGeyHcQoRDzMLP
+        zRxD3ICJO4kIjmDBhu+J2lGmujObiZe8dLp1d42q6vSnhLms5UXe5Flu5UwW0ZNr+XBcSfZlYZdf5VKO
+        Zf89MmfdgoRZSLu8YuEDrFuQKQsRyDkH+VIPfmff5jULQEE5SDo8JpJ9FD4E3cJBcu4xkOxjf4joP2B/
+        CPqcg01rQM1C8Ig42LSLeIxh6G8LwpeSDmrCyNwu38kseKEW5JtczniQI5kFj4g+P8m7pKDk3NLC5cVB
+        PIZyLwlylL86L4vuBWktAFDoVordaVJ6AmCqVJKyuZn7AAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="btnSearchMovies.Location" type="System.Drawing.Point, System.Drawing">
+    <value>339, 13</value>
+  </data>
+  <data name="btnSearchMovies.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 3, 2, 3</value>
+  </data>
+  <data name="btnSearchMovies.Size" type="System.Drawing.Size, System.Drawing">
+    <value>76, 30</value>
+  </data>
+  <data name="btnSearchMovies.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="btnSearchMovies.Text" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="&gt;&gt;btnSearchMovies.Name" xml:space="preserve">
+    <value>btnSearchMovies</value>
+  </data>
+  <data name="&gt;&gt;btnSearchMovies.Type" xml:space="preserve">
+    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;btnSearchMovies.Parent" xml:space="preserve">
+    <value>tabMovies</value>
+  </data>
+  <data name="&gt;&gt;btnSearchMovies.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="tabMovies.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tabMovies.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabMovies.Size" type="System.Drawing.Size, System.Drawing">
+    <value>868, 536</value>
+  </data>
+  <data name="tabMovies.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tabMovies.Name" xml:space="preserve">
+    <value>tabMovies</value>
+  </data>
+  <data name="&gt;&gt;tabMovies.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabMovies.Parent" xml:space="preserve">
+    <value>tab</value>
+  </data>
+  <data name="&gt;&gt;tabMovies.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="emptyDataFiles.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top</value>
@@ -2072,53 +1362,23 @@ Get direct download links for almost anything!</value>
   <data name="panelFileFilters.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
-  <data name="&gt;&gt;panelFilesSort.Name" xml:space="preserve">
-    <value>panelFilesSort</value>
+  <data name="btnFilesSort.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
   </data>
-  <data name="&gt;&gt;panelFilesSort.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="btnFilesSort.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9.75pt</value>
   </data>
-  <data name="&gt;&gt;panelFilesSort.Parent" xml:space="preserve">
-    <value>panelFileFilters</value>
+  <data name="btnFilesSort.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
   </data>
-  <data name="&gt;&gt;panelFilesSort.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="btnFilesSort.Size" type="System.Drawing.Size, System.Drawing">
+    <value>95, 30</value>
   </data>
-  <data name="&gt;&gt;panelFilesHost.Name" xml:space="preserve">
-    <value>panelFilesHost</value>
+  <data name="btnFilesSort.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
   </data>
-  <data name="&gt;&gt;panelFilesHost.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panelFilesHost.Parent" xml:space="preserve">
-    <value>panelFileFilters</value>
-  </data>
-  <data name="&gt;&gt;panelFilesHost.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="panelFileFilters.Location" type="System.Drawing.Point, System.Drawing">
-    <value>449, 13</value>
-  </data>
-  <data name="panelFileFilters.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 3, 3, 3</value>
-  </data>
-  <data name="panelFileFilters.Size" type="System.Drawing.Size, System.Drawing">
-    <value>405, 30</value>
-  </data>
-  <data name="panelFileFilters.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;panelFileFilters.Name" xml:space="preserve">
-    <value>panelFileFilters</value>
-  </data>
-  <data name="&gt;&gt;panelFileFilters.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panelFileFilters.Parent" xml:space="preserve">
-    <value>tabFiles</value>
-  </data>
-  <data name="&gt;&gt;panelFileFilters.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="btnFilesSort.Text" xml:space="preserve">
+    <value>Sort : Any</value>
   </data>
   <data name="&gt;&gt;btnFilesSort.Name" xml:space="preserve">
     <value>btnFilesSort</value>
@@ -2130,42 +1390,6 @@ Get direct download links for almost anything!</value>
     <value>panelFilesSort</value>
   </data>
   <data name="&gt;&gt;btnFilesSort.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;cmboBoxFilesSort.Name" xml:space="preserve">
-    <value>cmboBoxFilesSort</value>
-  </data>
-  <data name="&gt;&gt;cmboBoxFilesSort.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cmboBoxFilesSort.Parent" xml:space="preserve">
-    <value>panelFilesSort</value>
-  </data>
-  <data name="&gt;&gt;cmboBoxFilesSort.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="panelFilesSort.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="panelFilesSort.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 5, 0</value>
-  </data>
-  <data name="panelFilesSort.Size" type="System.Drawing.Size, System.Drawing">
-    <value>95, 30</value>
-  </data>
-  <data name="panelFilesSort.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;panelFilesSort.Name" xml:space="preserve">
-    <value>panelFilesSort</value>
-  </data>
-  <data name="&gt;&gt;panelFilesSort.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panelFilesSort.Parent" xml:space="preserve">
-    <value>panelFileFilters</value>
-  </data>
-  <data name="&gt;&gt;panelFilesSort.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="cmboBoxFilesSort.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
@@ -2204,6 +1428,48 @@ Get direct download links for almost anything!</value>
   <data name="&gt;&gt;cmboBoxFilesSort.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="panelFilesSort.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="panelFilesSort.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 5, 0</value>
+  </data>
+  <data name="panelFilesSort.Size" type="System.Drawing.Size, System.Drawing">
+    <value>95, 30</value>
+  </data>
+  <data name="panelFilesSort.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;panelFilesSort.Name" xml:space="preserve">
+    <value>panelFilesSort</value>
+  </data>
+  <data name="&gt;&gt;panelFilesSort.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panelFilesSort.Parent" xml:space="preserve">
+    <value>panelFileFilters</value>
+  </data>
+  <data name="&gt;&gt;panelFilesSort.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnFilesHost.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="btnFilesHost.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9.75pt</value>
+  </data>
+  <data name="btnFilesHost.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="btnFilesHost.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 30</value>
+  </data>
+  <data name="btnFilesHost.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="btnFilesHost.Text" xml:space="preserve">
+    <value>Host : Any</value>
+  </data>
   <data name="&gt;&gt;btnFilesHost.Name" xml:space="preserve">
     <value>btnFilesHost</value>
   </data>
@@ -2214,6 +1480,24 @@ Get direct download links for almost anything!</value>
     <value>panelFilesHost</value>
   </data>
   <data name="&gt;&gt;btnFilesHost.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="cmboBoxFilesHost.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left, Right</value>
+  </data>
+  <data name="cmboBoxFilesHost.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9.75pt</value>
+  </data>
+  <data name="cmboBoxFilesHost.Items" xml:space="preserve">
+    <value>Any</value>
+  </data>
+  <data name="cmboBoxFilesHost.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 3</value>
+  </data>
+  <data name="cmboBoxFilesHost.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 25</value>
+  </data>
+  <data name="cmboBoxFilesHost.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="&gt;&gt;cmboBoxFilesHost.Name" xml:space="preserve">
@@ -2252,34 +1536,28 @@ Get direct download links for almost anything!</value>
   <data name="&gt;&gt;panelFilesHost.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="cmboBoxFilesHost.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left, Right</value>
+  <data name="panelFileFilters.Location" type="System.Drawing.Point, System.Drawing">
+    <value>449, 13</value>
   </data>
-  <data name="cmboBoxFilesHost.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 9.75pt</value>
+  <data name="panelFileFilters.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 3, 3, 3</value>
   </data>
-  <data name="cmboBoxFilesHost.Items" xml:space="preserve">
-    <value>Any</value>
+  <data name="panelFileFilters.Size" type="System.Drawing.Size, System.Drawing">
+    <value>405, 30</value>
   </data>
-  <data name="cmboBoxFilesHost.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 3</value>
+  <data name="panelFileFilters.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
   </data>
-  <data name="cmboBoxFilesHost.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 25</value>
+  <data name="&gt;&gt;panelFileFilters.Name" xml:space="preserve">
+    <value>panelFileFilters</value>
   </data>
-  <data name="cmboBoxFilesHost.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="&gt;&gt;panelFileFilters.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;cmboBoxFilesHost.Name" xml:space="preserve">
-    <value>cmboBoxFilesHost</value>
+  <data name="&gt;&gt;panelFileFilters.Parent" xml:space="preserve">
+    <value>tabFiles</value>
   </data>
-  <data name="&gt;&gt;cmboBoxFilesHost.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cmboBoxFilesHost.Parent" xml:space="preserve">
-    <value>panelFilesHost</value>
-  </data>
-  <data name="&gt;&gt;cmboBoxFilesHost.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;panelFileFilters.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="lblFilesResultsInfo.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
@@ -2352,7 +1630,7 @@ Get direct download links for almost anything!</value>
     <value>Type</value>
   </data>
   <data name="columnFilesType.Width" type="System.Int32, mscorlib">
-    <value>71</value>
+    <value>69</value>
   </data>
   <data name="columnFilesName.HeaderText" xml:space="preserve">
     <value>Name</value>
@@ -2361,19 +1639,19 @@ Get direct download links for almost anything!</value>
     <value>Size</value>
   </data>
   <data name="columnFilesSize.Width" type="System.Int32, mscorlib">
-    <value>66</value>
+    <value>64</value>
   </data>
   <data name="columnFilesAge.HeaderText" xml:space="preserve">
     <value>Age</value>
   </data>
   <data name="columnFilesAge.Width" type="System.Int32, mscorlib">
-    <value>67</value>
+    <value>65</value>
   </data>
   <data name="columnFilesReferrer.HeaderText" xml:space="preserve">
     <value>Referrer</value>
   </data>
   <data name="columnFilesReferrer.Width" type="System.Int32, mscorlib">
-    <value>91</value>
+    <value>89</value>
   </data>
   <data name="columnFilesURL.HeaderText" xml:space="preserve">
     <value>URL</value>
@@ -2825,6 +2103,60 @@ Get direct download links for almost anything!</value>
   <data name="&gt;&gt;titleFilesAll.ZOrder" xml:space="preserve">
     <value>18</value>
   </data>
+  <data name="btnSearchFiles.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9.75pt</value>
+  </data>
+  <data name="btnSearchFiles.Location" type="System.Drawing.Point, System.Drawing">
+    <value>368, 13</value>
+  </data>
+  <data name="btnSearchFiles.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 3, 3, 3</value>
+  </data>
+  <data name="btnSearchFiles.Size" type="System.Drawing.Size, System.Drawing">
+    <value>76, 30</value>
+  </data>
+  <data name="btnSearchFiles.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="btnSearchFiles.Text" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="&gt;&gt;btnSearchFiles.Name" xml:space="preserve">
+    <value>btnSearchFiles</value>
+  </data>
+  <data name="&gt;&gt;btnSearchFiles.Type" xml:space="preserve">
+    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;btnSearchFiles.Parent" xml:space="preserve">
+    <value>tabFiles</value>
+  </data>
+  <data name="&gt;&gt;btnSearchFiles.ZOrder" xml:space="preserve">
+    <value>19</value>
+  </data>
+  <data name="tabFiles.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tabFiles.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabFiles.Size" type="System.Drawing.Size, System.Drawing">
+    <value>868, 536</value>
+  </data>
+  <data name="tabFiles.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;tabFiles.Name" xml:space="preserve">
+    <value>tabFiles</value>
+  </data>
+  <data name="&gt;&gt;tabFiles.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabFiles.Parent" xml:space="preserve">
+    <value>tab</value>
+  </data>
+  <data name="&gt;&gt;tabFiles.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="lblHeaderDiscover.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
@@ -2924,56 +2256,35 @@ Get direct download links for almost anything!</value>
   <data name="&gt;&gt;dataGridDiscover.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="tabDiscover.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tabDiscover.Size" type="System.Drawing.Size, System.Drawing">
+    <value>868, 536</value>
+  </data>
+  <data name="tabDiscover.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;tabDiscover.Name" xml:space="preserve">
+    <value>tabDiscover</value>
+  </data>
+  <data name="&gt;&gt;tabDiscover.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabDiscover.Parent" xml:space="preserve">
+    <value>tab</value>
+  </data>
+  <data name="&gt;&gt;tabDiscover.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="tabSubmit.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Stretch</value>
+  </data>
   <data name="panelSubmitDescription.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="panelSubmitDescription.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
-  </data>
-  <data name="&gt;&gt;lblSubSubmit.Name" xml:space="preserve">
-    <value>lblSubSubmit</value>
-  </data>
-  <data name="&gt;&gt;lblSubSubmit.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblSubSubmit.Parent" xml:space="preserve">
-    <value>panelSubmitDescription</value>
-  </data>
-  <data name="&gt;&gt;lblSubSubmit.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;panelSubmitItems.Name" xml:space="preserve">
-    <value>panelSubmitItems</value>
-  </data>
-  <data name="&gt;&gt;panelSubmitItems.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panelSubmitItems.Parent" xml:space="preserve">
-    <value>panelSubmitDescription</value>
-  </data>
-  <data name="&gt;&gt;panelSubmitItems.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="panelSubmitDescription.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 53</value>
-  </data>
-  <data name="panelSubmitDescription.Size" type="System.Drawing.Size, System.Drawing">
-    <value>849, 475</value>
-  </data>
-  <data name="panelSubmitDescription.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;panelSubmitDescription.Name" xml:space="preserve">
-    <value>panelSubmitDescription</value>
-  </data>
-  <data name="&gt;&gt;panelSubmitDescription.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panelSubmitDescription.Parent" xml:space="preserve">
-    <value>tabSubmit</value>
-  </data>
-  <data name="&gt;&gt;panelSubmitDescription.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="lblSubSubmit.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -3028,66 +2339,6 @@ Please keep in mind we are a search engine having strict policies, read the foll
   </data>
   <data name="panelSubmitItems.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
-  </data>
-  <data name="&gt;&gt;btnSubmitLink.Name" xml:space="preserve">
-    <value>btnSubmitLink</value>
-  </data>
-  <data name="&gt;&gt;btnSubmitLink.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;btnSubmitLink.Parent" xml:space="preserve">
-    <value>panelSubmitItems</value>
-  </data>
-  <data name="&gt;&gt;btnSubmitLink.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;txtSubmitLink.Name" xml:space="preserve">
-    <value>txtSubmitLink</value>
-  </data>
-  <data name="&gt;&gt;txtSubmitLink.Type" xml:space="preserve">
-    <value>ChreneLib.Controls.TextBoxes.CTextBox, ChreneLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;txtSubmitLink.Parent" xml:space="preserve">
-    <value>panelSubmitItems</value>
-  </data>
-  <data name="&gt;&gt;txtSubmitLink.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;bgSubmitLink.Name" xml:space="preserve">
-    <value>bgSubmitLink</value>
-  </data>
-  <data name="&gt;&gt;bgSubmitLink.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;bgSubmitLink.Parent" xml:space="preserve">
-    <value>panelSubmitItems</value>
-  </data>
-  <data name="&gt;&gt;bgSubmitLink.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="panelSubmitItems.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 297</value>
-  </data>
-  <data name="panelSubmitItems.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 25, 0, 3</value>
-  </data>
-  <data name="panelSubmitItems.Size" type="System.Drawing.Size, System.Drawing">
-    <value>849, 38</value>
-  </data>
-  <data name="panelSubmitItems.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;panelSubmitItems.Name" xml:space="preserve">
-    <value>panelSubmitItems</value>
-  </data>
-  <data name="&gt;&gt;panelSubmitItems.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panelSubmitItems.Parent" xml:space="preserve">
-    <value>panelSubmitDescription</value>
-  </data>
-  <data name="&gt;&gt;panelSubmitItems.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="btnSubmitLink.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9.75pt</value>
@@ -3173,6 +2424,51 @@ Please keep in mind we are a search engine having strict policies, read the foll
   <data name="&gt;&gt;bgSubmitLink.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="panelSubmitItems.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 297</value>
+  </data>
+  <data name="panelSubmitItems.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 25, 0, 3</value>
+  </data>
+  <data name="panelSubmitItems.Size" type="System.Drawing.Size, System.Drawing">
+    <value>849, 38</value>
+  </data>
+  <data name="panelSubmitItems.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;panelSubmitItems.Name" xml:space="preserve">
+    <value>panelSubmitItems</value>
+  </data>
+  <data name="&gt;&gt;panelSubmitItems.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panelSubmitItems.Parent" xml:space="preserve">
+    <value>panelSubmitDescription</value>
+  </data>
+  <data name="&gt;&gt;panelSubmitItems.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="panelSubmitDescription.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 53</value>
+  </data>
+  <data name="panelSubmitDescription.Size" type="System.Drawing.Size, System.Drawing">
+    <value>849, 475</value>
+  </data>
+  <data name="panelSubmitDescription.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;panelSubmitDescription.Name" xml:space="preserve">
+    <value>panelSubmitDescription</value>
+  </data>
+  <data name="&gt;&gt;panelSubmitDescription.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panelSubmitDescription.Parent" xml:space="preserve">
+    <value>tabSubmit</value>
+  </data>
+  <data name="&gt;&gt;panelSubmitDescription.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="lblHeaderSubmit.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
@@ -3212,6 +2508,54 @@ Please keep in mind we are a search engine having strict policies, read the foll
   <data name="&gt;&gt;lblHeaderSubmit.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="tabSubmit.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tabSubmit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>868, 536</value>
+  </data>
+  <data name="tabSubmit.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;tabSubmit.Name" xml:space="preserve">
+    <value>tabSubmit</value>
+  </data>
+  <data name="&gt;&gt;tabSubmit.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabSubmit.Parent" xml:space="preserve">
+    <value>tab</value>
+  </data>
+  <data name="&gt;&gt;tabSubmit.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="tabSettings.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="tabSettings.AutoScrollMargin" type="System.Drawing.Size, System.Drawing">
+    <value>0, 15</value>
+  </data>
+  <data name="tabSettings.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Stretch</value>
+  </data>
+  <data name="btnSettingsGeneralLanguage.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="btnSettingsGeneralLanguage.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 10.75pt</value>
+  </data>
+  <data name="btnSettingsGeneralLanguage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="btnSettingsGeneralLanguage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>335, 31</value>
+  </data>
+  <data name="btnSettingsGeneralLanguage.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="btnSettingsGeneralLanguage.Text" xml:space="preserve">
+    <value>en</value>
+  </data>
   <data name="&gt;&gt;btnSettingsGeneralLanguage.Name" xml:space="preserve">
     <value>btnSettingsGeneralLanguage</value>
   </data>
@@ -3222,42 +2566,6 @@ Please keep in mind we are a search engine having strict policies, read the foll
     <value>panelGeneralSettingsLanguage</value>
   </data>
   <data name="&gt;&gt;btnSettingsGeneralLanguage.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;cmboboxSettingsLanguage.Name" xml:space="preserve">
-    <value>cmboboxSettingsLanguage</value>
-  </data>
-  <data name="&gt;&gt;cmboboxSettingsLanguage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cmboboxSettingsLanguage.Parent" xml:space="preserve">
-    <value>panelGeneralSettingsLanguage</value>
-  </data>
-  <data name="&gt;&gt;cmboboxSettingsLanguage.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="panelGeneralSettingsLanguage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>238, 58</value>
-  </data>
-  <data name="panelGeneralSettingsLanguage.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 7, 0</value>
-  </data>
-  <data name="panelGeneralSettingsLanguage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>335, 31</value>
-  </data>
-  <data name="panelGeneralSettingsLanguage.TabIndex" type="System.Int32, mscorlib">
-    <value>42</value>
-  </data>
-  <data name="&gt;&gt;panelGeneralSettingsLanguage.Name" xml:space="preserve">
-    <value>panelGeneralSettingsLanguage</value>
-  </data>
-  <data name="&gt;&gt;panelGeneralSettingsLanguage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panelGeneralSettingsLanguage.Parent" xml:space="preserve">
-    <value>tabSettings</value>
-  </data>
-  <data name="&gt;&gt;panelGeneralSettingsLanguage.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="cmboboxSettingsLanguage.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
@@ -3301,6 +2609,30 @@ Please keep in mind we are a search engine having strict policies, read the foll
   </data>
   <data name="&gt;&gt;cmboboxSettingsLanguage.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="panelGeneralSettingsLanguage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>238, 58</value>
+  </data>
+  <data name="panelGeneralSettingsLanguage.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 7, 0</value>
+  </data>
+  <data name="panelGeneralSettingsLanguage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>335, 31</value>
+  </data>
+  <data name="panelGeneralSettingsLanguage.TabIndex" type="System.Int32, mscorlib">
+    <value>42</value>
+  </data>
+  <data name="&gt;&gt;panelGeneralSettingsLanguage.Name" xml:space="preserve">
+    <value>panelGeneralSettingsLanguage</value>
+  </data>
+  <data name="&gt;&gt;panelGeneralSettingsLanguage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panelGeneralSettingsLanguage.Parent" xml:space="preserve">
+    <value>tabSettings</value>
+  </data>
+  <data name="&gt;&gt;panelGeneralSettingsLanguage.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="lblSettingsGeneralLanguage.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3499,6 +2831,30 @@ Please keep in mind we are a search engine having strict policies, read the foll
   </data>
   <data name="&gt;&gt;btnSettingsRestoreDefault.ZOrder" xml:space="preserve">
     <value>6</value>
+  </data>
+  <data name="tabSettings.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tabSettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>868, 536</value>
+  </data>
+  <data name="tabSettings.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;tabSettings.Name" xml:space="preserve">
+    <value>tabSettings</value>
+  </data>
+  <data name="&gt;&gt;tabSettings.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabSettings.Parent" xml:space="preserve">
+    <value>tab</value>
+  </data>
+  <data name="&gt;&gt;tabSettings.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="tabAbout.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Stretch</value>
   </data>
   <data name="btnAboutPrivacyPolicy.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
@@ -3750,6 +3106,75 @@ To contact the application owner and administrator you can send an e-mail to thi
   </data>
   <data name="&gt;&gt;lblAboutText.ZOrder" xml:space="preserve">
     <value>5</value>
+  </data>
+  <data name="tabAbout.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tabAbout.Size" type="System.Drawing.Size, System.Drawing">
+    <value>868, 536</value>
+  </data>
+  <data name="tabAbout.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;tabAbout.Name" xml:space="preserve">
+    <value>tabAbout</value>
+  </data>
+  <data name="&gt;&gt;tabAbout.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabAbout.Parent" xml:space="preserve">
+    <value>tab</value>
+  </data>
+  <data name="&gt;&gt;tabAbout.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="tabBlank.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Stretch</value>
+  </data>
+  <data name="tabBlank.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tabBlank.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="tabBlank.Size" type="System.Drawing.Size, System.Drawing">
+    <value>868, 536</value>
+  </data>
+  <data name="tabBlank.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;tabBlank.Name" xml:space="preserve">
+    <value>tabBlank</value>
+  </data>
+  <data name="&gt;&gt;tabBlank.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabBlank.Parent" xml:space="preserve">
+    <value>tab</value>
+  </data>
+  <data name="&gt;&gt;tabBlank.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="tab.Location" type="System.Drawing.Point, System.Drawing">
+    <value>176, -22</value>
+  </data>
+  <data name="tab.Size" type="System.Drawing.Size, System.Drawing">
+    <value>876, 562</value>
+  </data>
+  <data name="tab.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tab.Name" xml:space="preserve">
+    <value>tab</value>
+  </data>
+  <data name="&gt;&gt;tab.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tab.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tab.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="panelTitles.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left</value>
@@ -4454,403 +3879,6 @@ To contact the application owner and administrator you can send an e-mail to thi
     <value>$this</value>
   </data>
   <data name="&gt;&gt;panelTitles.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="btnHomeEngine.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="btnHomeEngine.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 9.75pt</value>
-  </data>
-  <data name="btnHomeEngine.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="btnHomeEngine.Size" type="System.Drawing.Size, System.Drawing">
-    <value>96, 30</value>
-  </data>
-  <data name="btnHomeEngine.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="btnHomeEngine.Text" xml:space="preserve">
-    <value>WebPlex</value>
-  </data>
-  <data name="&gt;&gt;btnHomeEngine.Name" xml:space="preserve">
-    <value>btnHomeEngine</value>
-  </data>
-  <data name="&gt;&gt;btnHomeEngine.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;btnHomeEngine.Parent" xml:space="preserve">
-    <value>panelHomeEngine</value>
-  </data>
-  <data name="&gt;&gt;btnHomeEngine.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="btnShareFacebook.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="btnShareFacebook.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9.25pt</value>
-  </data>
-  <data name="btnShareFacebook.Location" type="System.Drawing.Point, System.Drawing">
-    <value>440, 204</value>
-  </data>
-  <data name="btnShareFacebook.Size" type="System.Drawing.Size, System.Drawing">
-    <value>62, 22</value>
-  </data>
-  <data name="btnShareFacebook.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="btnShareFacebook.Text" xml:space="preserve">
-    <value>Share</value>
-  </data>
-  <data name="&gt;&gt;btnShareFacebook.Name" xml:space="preserve">
-    <value>btnShareFacebook</value>
-  </data>
-  <data name="&gt;&gt;btnShareFacebook.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;btnShareFacebook.Parent" xml:space="preserve">
-    <value>tabHome</value>
-  </data>
-  <data name="&gt;&gt;btnShareFacebook.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="btnShareTwitter.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="btnShareTwitter.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9.25pt</value>
-  </data>
-  <data name="btnShareTwitter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>366, 204</value>
-  </data>
-  <data name="btnShareTwitter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>68, 22</value>
-  </data>
-  <data name="btnShareTwitter.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="btnShareTwitter.Text" xml:space="preserve">
-    <value>Tweet</value>
-  </data>
-  <data name="&gt;&gt;btnShareTwitter.Name" xml:space="preserve">
-    <value>btnShareTwitter</value>
-  </data>
-  <data name="&gt;&gt;btnShareTwitter.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;btnShareTwitter.Parent" xml:space="preserve">
-    <value>tabHome</value>
-  </data>
-  <data name="&gt;&gt;btnShareTwitter.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="btnHomeFileType.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="btnHomeFileType.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 9.75pt</value>
-  </data>
-  <data name="btnHomeFileType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="btnHomeFileType.Size" type="System.Drawing.Size, System.Drawing">
-    <value>138, 30</value>
-  </data>
-  <data name="btnHomeFileType.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="btnHomeFileType.Text" xml:space="preserve">
-    <value>Choose Filetype</value>
-  </data>
-  <data name="&gt;&gt;btnHomeFileType.Name" xml:space="preserve">
-    <value>btnHomeFileType</value>
-  </data>
-  <data name="&gt;&gt;btnHomeFileType.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;btnHomeFileType.Parent" xml:space="preserve">
-    <value>panelHomeFileType</value>
-  </data>
-  <data name="&gt;&gt;btnHomeFileType.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="btnSearchFilesHome.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Right</value>
-  </data>
-  <data name="btnSearchFilesHome.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 9.75pt</value>
-  </data>
-  <data name="btnSearchFilesHome.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAA5ElEQVRIS+2TTQ4BQRBGeyHcQoRDzMLP
-        zRxD3ICJO4kIjmDBhu+J2lGmujObiZe8dLp1d42q6vSnhLms5UXe5Flu5UwW0ZNr+XBcSfZlYZdf5VKO
-        Zf89MmfdgoRZSLu8YuEDrFuQKQsRyDkH+VIPfmff5jULQEE5SDo8JpJ9FD4E3cJBcu4xkOxjf4joP2B/
-        CPqcg01rQM1C8Ig42LSLeIxh6G8LwpeSDmrCyNwu38kseKEW5JtczniQI5kFj4g+P8m7pKDk3NLC5cVB
-        PIZyLwlylL86L4vuBWktAFDoVordaVJ6AmCqVJKyuZn7AAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="btnSearchFilesHome.Location" type="System.Drawing.Point, System.Drawing">
-    <value>627, 250</value>
-  </data>
-  <data name="btnSearchFilesHome.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 3, 3, 3</value>
-  </data>
-  <data name="btnSearchFilesHome.Size" type="System.Drawing.Size, System.Drawing">
-    <value>76, 30</value>
-  </data>
-  <data name="btnSearchFilesHome.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="btnSearchFilesHome.Text" xml:space="preserve">
-    <value>Search</value>
-  </data>
-  <data name="&gt;&gt;btnSearchFilesHome.Name" xml:space="preserve">
-    <value>btnSearchFilesHome</value>
-  </data>
-  <data name="&gt;&gt;btnSearchFilesHome.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;btnSearchFilesHome.Parent" xml:space="preserve">
-    <value>tabHome</value>
-  </data>
-  <data name="&gt;&gt;btnSearchFilesHome.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="btnMoviesGenre.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="btnMoviesGenre.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 9.75pt</value>
-  </data>
-  <data name="btnMoviesGenre.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAOElEQVRIS2MYBaNgFIwAUA7E/wngeiCm
-        COCzhGLDYQCbJVQzHAaQLaG64TDQAMWjYBSMgsEDGBgAWBUYxfIUNf0AAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="btnMoviesGenre.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="btnMoviesGenre.Size" type="System.Drawing.Size, System.Drawing">
-    <value>109, 30</value>
-  </data>
-  <data name="btnMoviesGenre.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="btnMoviesGenre.Text" xml:space="preserve">
-    <value>Genre : Any</value>
-  </data>
-  <data name="&gt;&gt;btnMoviesGenre.Name" xml:space="preserve">
-    <value>btnMoviesGenre</value>
-  </data>
-  <data name="&gt;&gt;btnMoviesGenre.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;btnMoviesGenre.Parent" xml:space="preserve">
-    <value>panelMoviesGenre</value>
-  </data>
-  <data name="&gt;&gt;btnMoviesGenre.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="btnMoviesYear.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="btnMoviesYear.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 9.75pt</value>
-  </data>
-  <data name="btnMoviesYear.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAOElEQVRIS2MYBaNgFIwAUA7E/wngeiCm
-        COCzhGLDYQCbJVQzHAaQLaG64TDQAMWjYBSMgsEDGBgAWBUYxfIUNf0AAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="btnMoviesYear.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="btnMoviesYear.Size" type="System.Drawing.Size, System.Drawing">
-    <value>98, 30</value>
-  </data>
-  <data name="btnMoviesYear.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="btnMoviesYear.Text" xml:space="preserve">
-    <value>Year : Any</value>
-  </data>
-  <data name="&gt;&gt;btnMoviesYear.Name" xml:space="preserve">
-    <value>btnMoviesYear</value>
-  </data>
-  <data name="&gt;&gt;btnMoviesYear.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;btnMoviesYear.Parent" xml:space="preserve">
-    <value>panelMoviesYear</value>
-  </data>
-  <data name="&gt;&gt;btnMoviesYear.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="btnSearchMovies.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 9.75pt</value>
-  </data>
-  <data name="btnSearchMovies.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAA5ElEQVRIS+2TTQ4BQRBGeyHcQoRDzMLP
-        zRxD3ICJO4kIjmDBhu+J2lGmujObiZe8dLp1d42q6vSnhLms5UXe5Flu5UwW0ZNr+XBcSfZlYZdf5VKO
-        Zf89MmfdgoRZSLu8YuEDrFuQKQsRyDkH+VIPfmff5jULQEE5SDo8JpJ9FD4E3cJBcu4xkOxjf4joP2B/
-        CPqcg01rQM1C8Ig42LSLeIxh6G8LwpeSDmrCyNwu38kseKEW5JtczniQI5kFj4g+P8m7pKDk3NLC5cVB
-        PIZyLwlylL86L4vuBWktAFDoVordaVJ6AmCqVJKyuZn7AAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="btnSearchMovies.Location" type="System.Drawing.Point, System.Drawing">
-    <value>339, 13</value>
-  </data>
-  <data name="btnSearchMovies.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 3, 2, 3</value>
-  </data>
-  <data name="btnSearchMovies.Size" type="System.Drawing.Size, System.Drawing">
-    <value>76, 30</value>
-  </data>
-  <data name="btnSearchMovies.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="btnSearchMovies.Text" xml:space="preserve">
-    <value>Search</value>
-  </data>
-  <data name="&gt;&gt;btnSearchMovies.Name" xml:space="preserve">
-    <value>btnSearchMovies</value>
-  </data>
-  <data name="&gt;&gt;btnSearchMovies.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;btnSearchMovies.Parent" xml:space="preserve">
-    <value>tabMovies</value>
-  </data>
-  <data name="&gt;&gt;btnSearchMovies.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="btnFilesSort.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="btnFilesSort.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 9.75pt</value>
-  </data>
-  <data name="btnFilesSort.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="btnFilesSort.Size" type="System.Drawing.Size, System.Drawing">
-    <value>95, 30</value>
-  </data>
-  <data name="btnFilesSort.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="btnFilesSort.Text" xml:space="preserve">
-    <value>Sort : Any</value>
-  </data>
-  <data name="&gt;&gt;btnFilesSort.Name" xml:space="preserve">
-    <value>btnFilesSort</value>
-  </data>
-  <data name="&gt;&gt;btnFilesSort.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;btnFilesSort.Parent" xml:space="preserve">
-    <value>panelFilesSort</value>
-  </data>
-  <data name="&gt;&gt;btnFilesSort.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="btnFilesHost.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="btnFilesHost.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 9.75pt</value>
-  </data>
-  <data name="btnFilesHost.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="btnFilesHost.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 30</value>
-  </data>
-  <data name="btnFilesHost.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="btnFilesHost.Text" xml:space="preserve">
-    <value>Host : Any</value>
-  </data>
-  <data name="&gt;&gt;btnFilesHost.Name" xml:space="preserve">
-    <value>btnFilesHost</value>
-  </data>
-  <data name="&gt;&gt;btnFilesHost.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;btnFilesHost.Parent" xml:space="preserve">
-    <value>panelFilesHost</value>
-  </data>
-  <data name="&gt;&gt;btnFilesHost.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="btnSearchFiles.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 9.75pt</value>
-  </data>
-  <data name="btnSearchFiles.Location" type="System.Drawing.Point, System.Drawing">
-    <value>368, 13</value>
-  </data>
-  <data name="btnSearchFiles.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 3, 3, 3</value>
-  </data>
-  <data name="btnSearchFiles.Size" type="System.Drawing.Size, System.Drawing">
-    <value>76, 30</value>
-  </data>
-  <data name="btnSearchFiles.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="btnSearchFiles.Text" xml:space="preserve">
-    <value>Search</value>
-  </data>
-  <data name="&gt;&gt;btnSearchFiles.Name" xml:space="preserve">
-    <value>btnSearchFiles</value>
-  </data>
-  <data name="&gt;&gt;btnSearchFiles.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;btnSearchFiles.Parent" xml:space="preserve">
-    <value>tabFiles</value>
-  </data>
-  <data name="&gt;&gt;btnSearchFiles.ZOrder" xml:space="preserve">
-    <value>19</value>
-  </data>
-  <data name="btnSettingsGeneralLanguage.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="btnSettingsGeneralLanguage.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 10.75pt</value>
-  </data>
-  <data name="btnSettingsGeneralLanguage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="btnSettingsGeneralLanguage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>335, 31</value>
-  </data>
-  <data name="btnSettingsGeneralLanguage.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="btnSettingsGeneralLanguage.Text" xml:space="preserve">
-    <value>en</value>
-  </data>
-  <data name="&gt;&gt;btnSettingsGeneralLanguage.Name" xml:space="preserve">
-    <value>btnSettingsGeneralLanguage</value>
-  </data>
-  <data name="&gt;&gt;btnSettingsGeneralLanguage.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;btnSettingsGeneralLanguage.Parent" xml:space="preserve">
-    <value>panelGeneralSettingsLanguage</value>
-  </data>
-  <data name="&gt;&gt;btnSettingsGeneralLanguage.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="imgSpinner.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">

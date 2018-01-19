@@ -38,7 +38,6 @@
             this.VLCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MPCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.imgShare = new System.Windows.Forms.PictureBox();
             this.imgCopyURL = new System.Windows.Forms.PictureBox();
             this.imgReportBroken = new System.Windows.Forms.PictureBox();
             this.imgWatch = new System.Windows.Forms.PictureBox();
@@ -47,7 +46,6 @@
             this.imgAddToBookmarks = new System.Windows.Forms.PictureBox();
             this.panelControls = new System.Windows.Forms.FlowLayoutPanel();
             this.contextFileName.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgShare)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgCopyURL)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgReportBroken)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgWatch)).BeginInit();
@@ -112,21 +110,10 @@
             this.MPCToolStripMenuItem.Name = "MPCToolStripMenuItem";
             this.MPCToolStripMenuItem.Click += new System.EventHandler(this.MPCToolStripMenuItem_Click);
             // 
-            // imgShare
-            // 
-            resources.ApplyResources(this.imgShare, "imgShare");
-            this.imgShare.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgShare.Image = global::WebPlex.Properties.Resources.share_variant;
-            this.imgShare.Name = "imgShare";
-            this.imgShare.TabStop = false;
-            this.toolTip1.SetToolTip(this.imgShare, resources.GetString("imgShare.ToolTip"));
-            this.imgShare.Click += new System.EventHandler(this.imgShare_Click);
-            // 
             // imgCopyURL
             // 
             resources.ApplyResources(this.imgCopyURL, "imgCopyURL");
             this.imgCopyURL.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgCopyURL.Image = global::WebPlex.Properties.Resources.clipboard_arrow_left;
             this.imgCopyURL.Name = "imgCopyURL";
             this.imgCopyURL.TabStop = false;
             this.toolTip1.SetToolTip(this.imgCopyURL, resources.GetString("imgCopyURL.ToolTip"));
@@ -146,7 +133,6 @@
             // 
             resources.ApplyResources(this.imgWatch, "imgWatch");
             this.imgWatch.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgWatch.Image = global::WebPlex.Properties.Resources.play_circle;
             this.imgWatch.Name = "imgWatch";
             this.imgWatch.TabStop = false;
             this.toolTip1.SetToolTip(this.imgWatch, resources.GetString("imgWatch.ToolTip"));
@@ -156,7 +142,6 @@
             // 
             resources.ApplyResources(this.imgMagnet, "imgMagnet");
             this.imgMagnet.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgMagnet.Image = global::WebPlex.Properties.Resources.magnet;
             this.imgMagnet.Name = "imgMagnet";
             this.imgMagnet.TabStop = false;
             this.toolTip1.SetToolTip(this.imgMagnet, resources.GetString("imgMagnet.ToolTip"));
@@ -166,7 +151,6 @@
             // 
             resources.ApplyResources(this.imgDownload, "imgDownload");
             this.imgDownload.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgDownload.Image = global::WebPlex.Properties.Resources.cloud_download;
             this.imgDownload.Name = "imgDownload";
             this.imgDownload.TabStop = false;
             this.toolTip1.SetToolTip(this.imgDownload, resources.GetString("imgDownload.ToolTip"));
@@ -176,7 +160,6 @@
             // 
             resources.ApplyResources(this.imgAddToBookmarks, "imgAddToBookmarks");
             this.imgAddToBookmarks.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgAddToBookmarks.Image = global::WebPlex.Properties.Resources.bookmark_plus;
             this.imgAddToBookmarks.Name = "imgAddToBookmarks";
             this.imgAddToBookmarks.TabStop = false;
             this.toolTip1.SetToolTip(this.imgAddToBookmarks, resources.GetString("imgAddToBookmarks.ToolTip"));
@@ -186,7 +169,6 @@
             // 
             resources.ApplyResources(this.panelControls, "panelControls");
             this.panelControls.Controls.Add(this.imgReportBroken);
-            this.panelControls.Controls.Add(this.imgShare);
             this.panelControls.Controls.Add(this.imgCopyURL);
             this.panelControls.Controls.Add(this.imgWatch);
             this.panelControls.Controls.Add(this.imgDownload);
@@ -207,7 +189,6 @@
             this.Name = "ctrlStreamInfo";
             this.Load += new System.EventHandler(this.ctrlStreamInfo_Load);
             this.contextFileName.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.imgShare)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgCopyURL)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgReportBroken)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgWatch)).EndInit();
@@ -235,7 +216,6 @@
         public System.Windows.Forms.PictureBox imgWatch;
         public System.Windows.Forms.PictureBox imgReportBroken;
         public System.Windows.Forms.PictureBox imgCopyURL;
-        public System.Windows.Forms.PictureBox imgShare;
         public System.Windows.Forms.PictureBox imgMagnet;
     }
 }

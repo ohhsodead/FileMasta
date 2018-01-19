@@ -672,12 +672,8 @@ namespace WebPlex
             MovieDetails.infoFanartUrl = data.imageFanart;
             MovieDetails.infoTrailerUrl = data.trailerUrl;
 
-            try
-            {
-                MovieDetails.imgPoster.Image = Utilities.ChangeOpacity(Utilities.LoadPicture(data.Poster), 1);
-                MovieDetails.BackgroundImage = Utilities.ChangeOpacity(Utilities.LoadPicture(data.imageFanart), 0.2F);
-            }
-            catch { }
+            if (data.Poster != "") { MovieDetails.imgPoster.BackColor = Color.FromName("Control"); MovieDetails.imgPoster.Image = Utilities.ChangeOpacity(Utilities.LoadPicture(data.Poster), 1); }
+            if (data.imageFanart != "") { MovieDetails.BackColor = Color.FromName("Control"); MovieDetails.BackgroundImage = Utilities.ChangeOpacity(Utilities.LoadPicture(data.imageFanart), 0.2F); }
 
             foreach (string movieLink in data.Sources)
             {

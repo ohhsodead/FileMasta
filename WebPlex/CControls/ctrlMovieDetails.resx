@@ -684,11 +684,21 @@
   <data name="imgSearchForMore.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
+  <data name="imgSearchForMore.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAA5ElEQVRIS+2TTQ4BQRBGeyHcQoRDzMLP
+        zRxD3ICJO4kIjmDBhu+J2lGmujObiZe8dLp1d42q6vSnhLms5UXe5Flu5UwW0ZNr+XBcSfZlYZdf5VKO
+        Zf89MmfdgoRZSLu8YuEDrFuQKQsRyDkH+VIPfmff5jULQEE5SDo8JpJ9FD4E3cJBcu4xkOxjf4joP2B/
+        CPqcg01rQM1C8Ig42LSLeIxh6G8LwpeSDmrCyNwu38kseKEW5JtczniQI5kFj4g+P8m7pKDk3NLC5cVB
+        PIZyLwlylL86L4vuBWktAFDoVordaVJ6AmCqVJKyuZn7AAAAAElFTkSuQmCC
+</value>
+  </data>
   <data name="imgSearchForMore.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="imgSearchForMore.Location" type="System.Drawing.Point, System.Drawing">
-    <value>563, 2</value>
+    <value>613, 2</value>
   </data>
   <data name="imgSearchForMore.Size" type="System.Drawing.Size, System.Drawing">
     <value>21, 21</value>
@@ -724,7 +734,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblSearchForMore.Location" type="System.Drawing.Point, System.Drawing">
-    <value>584, 3</value>
+    <value>634, 3</value>
   </data>
   <data name="lblSearchForMore.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 2, 0, 20</value>
@@ -752,6 +762,15 @@
   </data>
   <data name="imgAddToBookmarks.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Left</value>
+  </data>
+  <data name="imgAddToBookmarks.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAmElEQVRIS+3UsQnCUBhF4Ve5go1bWDqB
+        OEIGcYWskBXcxDXUwg2ClTkvIMjjEo7WOfAVgf++MmXt30544C3dcYSuDtJDS27QpQcMXRobujQ2dGls
+        6NLY0KWxoUtjQ5fGhi6NDV0aG7o0NnRpbOjS2NC1wxcuOGCPASPaO91n8ESPHdq2OOP71667osNm/lqu
+        3tTbuln7tVImzxXkO0VUjzoAAAAASUVORK5CYII=
+</value>
   </data>
   <data name="imgAddToBookmarks.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -937,7 +956,7 @@
     <value>10, 16, 3, 3</value>
   </data>
   <data name="lineSplitter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>681, 2</value>
+    <value>731, 2</value>
   </data>
   <data name="lineSplitter.TabIndex" type="System.Int32, mscorlib">
     <value>1096</value>
@@ -964,7 +983,7 @@
     <value>3, 20, 0, 0</value>
   </data>
   <data name="panelTitleFiles.Size" type="System.Drawing.Size, System.Drawing">
-    <value>690, 54</value>
+    <value>740, 54</value>
   </data>
   <data name="panelTitleFiles.TabIndex" type="System.Int32, mscorlib">
     <value>100042</value>
@@ -1099,7 +1118,7 @@
     <value>10, 16, 3, 3</value>
   </data>
   <data name="cButton2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>681, 2</value>
+    <value>731, 2</value>
   </data>
   <data name="cButton2.TabIndex" type="System.Int32, mscorlib">
     <value>1096</value>
@@ -1126,7 +1145,7 @@
     <value>3, 3, 0, 0</value>
   </data>
   <data name="panelTitleTorrents.Size" type="System.Drawing.Size, System.Drawing">
-    <value>690, 28</value>
+    <value>740, 28</value>
   </data>
   <data name="panelTitleTorrents.TabIndex" type="System.Int32, mscorlib">
     <value>100044</value>
@@ -1183,7 +1202,7 @@
     <value>199, 60</value>
   </data>
   <data name="panelDetails.Size" type="System.Drawing.Size, System.Drawing">
-    <value>693, 448</value>
+    <value>743, 448</value>
   </data>
   <data name="panelDetails.TabIndex" type="System.Int32, mscorlib">
     <value>100036</value>
@@ -1249,7 +1268,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="infoTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>693, 32</value>
+    <value>700, 32</value>
   </data>
   <data name="infoTitle.TabIndex" type="System.Int32, mscorlib">
     <value>46</value>
@@ -1325,6 +1344,15 @@
   </data>
   <data name="appClose.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
+  </data>
+  <data name="appClose.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAjUlEQVRIS+2UQQqAMAwE+wnBJ3jQ/5+k
+        f9CDz9HdQiCHGgJNT+3AYkuzm1jBNBmXDcrQWnY2C3RCR9k5oeGFbogBf/CMNaylxw2NF0TjA9XexFNj
+        YgU0hwu1oLBwgYFyz3zqNc9C0FOHTa7p2qDrFenJwz+yFdTcxBPQ1KT7r2KHaLDCBdawlp7JeKT0AcCU
+        QxewpghEAAAAAElFTkSuQmCC
+</value>
   </data>
   <data name="appClose.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>

@@ -152,12 +152,6 @@
     <Compile Include="Forms\frmWebPlex.Designer.cs">
       <DependentUpon>frmWebPlex.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmShareFile.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\frmShareFile.Designer.cs">
-      <DependentUpon>frmShareFile.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\frmVLCPlayer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -256,21 +250,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmWebPlex.resx">
       <DependentUpon>frmWebPlex.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmShareFile.cs.resx">
-      <DependentUpon>frmShareFile.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmShareFile.de.resx">
-      <DependentUpon>frmShareFile.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmShareFile.es.resx">
-      <DependentUpon>frmShareFile.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmShareFile.fr.resx">
-      <DependentUpon>frmShareFile.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmShareFile.resx">
-      <DependentUpon>frmShareFile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmVLCPlayer.resx">
       <DependentUpon>frmVLCPlayer.cs</DependentUpon>

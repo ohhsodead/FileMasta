@@ -221,7 +221,6 @@
             resources.ApplyResources(this.imgSearchForMore, "imgSearchForMore");
             this.imgSearchForMore.BackColor = System.Drawing.Color.Transparent;
             this.imgSearchForMore.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgSearchForMore.Image = global::WebPlex.Properties.Resources.magnify;
             this.imgSearchForMore.Name = "imgSearchForMore";
             this.imgSearchForMore.TabStop = false;
             this.imgSearchForMore.Click += new System.EventHandler(this.imgSearchForMore_Click);
@@ -238,7 +237,6 @@
             resources.ApplyResources(this.imgAddToBookmarks, "imgAddToBookmarks");
             this.imgAddToBookmarks.BackColor = System.Drawing.Color.Transparent;
             this.imgAddToBookmarks.Cursor = System.Windows.Forms.Cursors.Default;
-            this.imgAddToBookmarks.Image = global::WebPlex.Properties.Resources.bookmark;
             this.imgAddToBookmarks.Name = "imgAddToBookmarks";
             this.imgAddToBookmarks.TabStop = false;
             // 
@@ -400,9 +398,8 @@
             this.btnWatchTrailer.Corners.UpperLeft = 2;
             this.btnWatchTrailer.Corners.UpperRight = 2;
             this.btnWatchTrailer.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnWatchTrailer.DesignerSelected = true;
-            this.btnWatchTrailer.DimFactorClick = -35;
-            this.btnWatchTrailer.DimFactorHover = -25;
+            this.btnWatchTrailer.DesignerSelected = false;
+            this.btnWatchTrailer.DimFactorHover = -18;
             resources.ApplyResources(this.btnWatchTrailer, "btnWatchTrailer");
             this.btnWatchTrailer.ForeColor = System.Drawing.Color.Black;
             this.btnWatchTrailer.ImageIndex = 0;
@@ -427,7 +424,6 @@
             resources.ApplyResources(this.appClose, "appClose");
             this.appClose.BackColor = System.Drawing.Color.Transparent;
             this.appClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.appClose.Image = global::WebPlex.Properties.Resources.close;
             this.appClose.Name = "appClose";
             this.appClose.TabStop = false;
             this.appClose.Click += new System.EventHandler(this.appClose_Click);
