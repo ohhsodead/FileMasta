@@ -49,7 +49,7 @@
             this.infoPoster.BorderShow = false;
             this.infoPoster.ColorFillSolid = System.Drawing.Color.Transparent;
             this.infoPoster.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.infoPoster.DesignerSelected = true;
+            this.infoPoster.DesignerSelected = false;
             this.infoPoster.DimFactorClick = 0;
             this.infoPoster.DimFactorHover = 0;
             this.infoPoster.FillType = CButtonLib.CButton.eFillType.Solid;
@@ -84,7 +84,7 @@
             this.infoYear.AutoSize = true;
             this.infoYear.BackColor = System.Drawing.Color.Transparent;
             this.infoYear.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.infoYear.ForeColor = System.Drawing.Color.Silver;
+            this.infoYear.ForeColor = System.Drawing.Color.DimGray;
             this.infoYear.Location = new System.Drawing.Point(7, 230);
             this.infoYear.Margin = new System.Windows.Forms.Padding(0, 0, 1, 0);
             this.infoYear.Name = "infoYear";
