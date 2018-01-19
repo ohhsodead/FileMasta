@@ -88,7 +88,7 @@ namespace WebPlex.CControls
             }
             else if (cmboboxReportFile.SelectedIndex == 1)
             {
-                MessageBox.Show("Please write an email to the database administrator with your appropriate details at bettercodes1@gmail.com\n\n Thank you.");
+                MessageBox.Show(this, "Please write an email to the application administrator with your appropriate details at bettercodes1@gmail.com\n\n Thank you.");
             }
             else if (cmboboxReportFile.SelectedIndex == 2)
             {
@@ -113,11 +113,11 @@ namespace WebPlex.CControls
             }
             else if (cmboBoxShareFile.SelectedIndex == 2)
             {
-                Process.Start("http://reddit.com/submit?url=" + infoFileURL.Text + "&title=" + Path.GetFileNameWithoutExtension(new Uri(infoFileURL.Text).LocalPath) + "%20%5BWebPlex%5D");
+                Process.Start("https://plus.google.com/share?url=" + infoFileURL.Text);
             }
             else if (cmboBoxShareFile.SelectedIndex == 3)
             {
-                Process.Start("https://plus.google.com/share?url=" + infoFileURL.Text);
+                Process.Start("http://reddit.com/submit?url=" + infoFileURL.Text + "&title=" + Path.GetFileNameWithoutExtension(new Uri(infoFileURL.Text).LocalPath) + "%20%5BWebPlex%5D");
             }
             else if (cmboBoxShareFile.SelectedIndex == 4)
             {
