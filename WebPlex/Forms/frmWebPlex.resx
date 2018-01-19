@@ -432,6 +432,17 @@
   <data name="btnShareFacebook.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Semibold, 9.25pt</value>
   </data>
+  <data name="btnShareFacebook.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABIUlEQVRoQ+3TMa7CMBRE0XRUrIOKfbA9
+        GtgNq4CVQIvCM7kFBRMS6WFP4SOlG9tX+vyh67r/GsdxH98xvmt8j/i+Yu4jmjbxneJ7lsBfOOYhekr8
+        5V22EEc9RM95ylqOo+1FS/nNL/rZfOJ4e9FS/mFX43h70XKbktbheHvRcp+S1uF4e/TMKX+hHXM/U+Os
+        A1NPRM7ZMvVEpMTMF50SM190Ssx80Skx80WnxKw9etJwbT28m4Zr6+HdNFxbD++m4dp6eDcN19bDu2m4
+        th7eTcO19fBuGq5tjx6JmS86JWa+6JSY+aJTYuaLTomZLzolZr7olJj5olNi5otOiZkvOiVmvuiUmPmi
+        U2Lmi06JmS86JWa+6JSY+aJTYtZ1XYpheAFSdiCdASOKPAAAAABJRU5ErkJggg==
+</value>
+  </data>
   <data name="btnShareFacebook.Location" type="System.Drawing.Point, System.Drawing">
     <value>440, 204</value>
   </data>
@@ -461,6 +472,24 @@
   </data>
   <data name="btnShareTwitter.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Semibold, 9.25pt</value>
+  </data>
+  <data name="btnShareTwitter.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAACx0lEQVRoQ+2YX4hMYRiHZ9cusUtaNtHa
+        C+XCJVlyQezFti5sJKHkhmtqS2g3LuRaahNqo5RSIuKCGy4kIpL/0orIn1DEhdB4ft+8bWLmzHfO+eYM
+        dZ56aubM+/6+b3fmzJzzFnJycnJycrKkWCwuwgP4AL+Yj/AwdltZWXi90x5GQ+EEbLenQSBvCp7CalzA
+        mdamvkbsxSu4yQ5Ho0K8jq12KBXkdOJT9OUlbsaj+FYH4D6Os8hoKLzhWorFi9hihxNB/3i8rbAUfMZ5
+        FhkNhS34U13GNZxqL8eG3p0uJTl6BxbjbBzEjRZdHgpm4Z/o7e+yEm/oacYPCkjBHXxfelg8j40WXx4K
+        2l3p33zDHdhspVWhtluNgdDHerJFR0Ohvtoq8RCXW2kk1G1xHek5i/7nIsXnXFs0+o+sw4rvCK/tUWFK
+        LuMYi/SDhpWu1Q99xodxBbZZhIPnWzEtxy3OH5r043HJtcfnCZ7BITypAykZtm3Fg8YOfO0i6ss+25If
+        NMxFfV2txR7USVtP+m1rftAwvdT3z9BnW/OHpjjXLbWmw7blD027Sr11Z8S2FA8a2/CNi6gvh2xL8aFZ
+        1+DfXUz96LHtJIOANfjVRWWP7gm8r7sqQsgc9Lm0CM2gbSE5hEzEPlyC/fgKs0A3MInvQUYhpAF1aZA1
+        u20L6SFsdSkzM55jkHvxUQg86KKzodeWDQehTZjFHzFkS9YGFtB9wj23VHg090n/tVkNFtGJPR91s3IV
+        Q3AXgw7SImExjV724+/jl6RoYDXNomsLC01C/R68wBBocOY3aUgKC8zADXgEP2EIdI21F5tsmTAQ2IUn
+        UCfUY9QvYmhu4QJbMjyEa5a5Hd9hSDRCX4/Rk7VQsNBYXIWaMCS9rNbI5RguxQaLzh4Wb8VlOICn8SY+
+        Q33EfuBHHEENgjUj2oYLMd5AKicnJ+c/o1D4BWrhaPfKELkbAAAAAElFTkSuQmCC
+</value>
   </data>
   <data name="btnShareTwitter.Location" type="System.Drawing.Point, System.Drawing">
     <value>366, 204</value>
@@ -4684,6 +4713,9 @@ To contact the application owner and administrator you can send an e-mail to thi
         CHsXIgKIEGEcIyKACBHGMSICiBBhHCMigAgRxjEiAogQYRwjIoAIEcYx/j8lZ/SrpuicRgAAAABJRU5E
         rkJggg==
 </value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>800, 575</value>
