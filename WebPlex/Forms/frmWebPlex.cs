@@ -328,7 +328,7 @@ namespace WebPlex
                 }
 
             }
-            catch (Exception ex) { MessageBox.Show(ex.Message); }
+            catch (Exception ex) { MessageBox.Show(this, ex.Message); }
 
             lblHomeStatsFiles.Text = String.Format(lblHomeStatsFiles.Text, Utilities.getFormattedNumber(dataOpenFiles.Count.ToString()), Utilities.bytesToString(totalSize), Utilities.getFormattedNumber(dataOpenDirectories.Count.ToString()));
 
@@ -1126,9 +1126,9 @@ namespace WebPlex
                         if (!txtSubmitLink.Text.EndsWith("/")) { formattedText = txtSubmitLink.Text + "/"; }
                         Utilities.submitLink(formattedText); txtSubmitLink.Text = "";
                     }
-                    else { MessageBox.Show(rm.GetString("linkIncorrectFormat")); }
+                    else { MessageBox.Show(this, rm.GetString("linkIncorrectFormat")); }
                 }
-                else { MessageBox.Show(rm.GetString("linkIncorrectFormat")); }
+                else { MessageBox.Show(this, rm.GetString("linkIncorrectFormat")); }
             }
         }
         //
@@ -1195,7 +1195,7 @@ namespace WebPlex
             Properties.Settings.Default.userLanguage = cmboboxSettingsLanguage.SelectedItem.ToString();
             Properties.Settings.Default.Save();
 
-            if (MessageBox.Show(rm.GetString("restartRequiredLanguage"), rm.GetString("titleRestartRequired"), MessageBoxButtons.YesNo) == DialogResult.Yes) { Application.Restart(); }
+            if (MessageBox.Show(this, rm.GetString("restartRequiredLanguage"), rm.GetString("titleRestartRequired"), MessageBoxButtons.YesNo) == DialogResult.Yes) { Application.Restart(); }
         }
 
         private void btnSettingsSave_ClickButtonArea(object sender, MouseEventArgs e)

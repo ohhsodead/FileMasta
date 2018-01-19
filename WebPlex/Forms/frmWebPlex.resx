@@ -1630,7 +1630,7 @@ Get direct download links for almost anything!</value>
     <value>Type</value>
   </data>
   <data name="columnFilesType.Width" type="System.Int32, mscorlib">
-    <value>69</value>
+    <value>62</value>
   </data>
   <data name="columnFilesName.HeaderText" xml:space="preserve">
     <value>Name</value>
@@ -1639,19 +1639,19 @@ Get direct download links for almost anything!</value>
     <value>Size</value>
   </data>
   <data name="columnFilesSize.Width" type="System.Int32, mscorlib">
-    <value>64</value>
+    <value>60</value>
   </data>
   <data name="columnFilesAge.HeaderText" xml:space="preserve">
     <value>Age</value>
   </data>
   <data name="columnFilesAge.Width" type="System.Int32, mscorlib">
-    <value>65</value>
+    <value>60</value>
   </data>
   <data name="columnFilesReferrer.HeaderText" xml:space="preserve">
     <value>Referrer</value>
   </data>
   <data name="columnFilesReferrer.Width" type="System.Int32, mscorlib">
-    <value>89</value>
+    <value>81</value>
   </data>
   <data name="columnFilesURL.HeaderText" xml:space="preserve">
     <value>URL</value>
@@ -4694,30 +4694,6 @@ To contact the application owner and administrator you can send an e-mail to thi
   <data name="$this.Text" xml:space="preserve">
     <value>WebPlex</value>
   </data>
-  <data name="&gt;&gt;columnDiscoverCount.Name" xml:space="preserve">
-    <value>columnDiscoverCount</value>
-  </data>
-  <data name="&gt;&gt;columnDiscoverCount.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;columnDiscoverSite.Name" xml:space="preserve">
-    <value>columnDiscoverSite</value>
-  </data>
-  <data name="&gt;&gt;columnDiscoverSite.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;columnDiscoverType.Name" xml:space="preserve">
-    <value>columnDiscoverType</value>
-  </data>
-  <data name="&gt;&gt;columnDiscoverType.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;columnDiscoverURL.Name" xml:space="preserve">
-    <value>columnDiscoverURL</value>
-  </data>
-  <data name="&gt;&gt;columnDiscoverURL.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;columnFilesType.Name" xml:space="preserve">
     <value>columnFilesType</value>
   </data>
@@ -4752,6 +4728,30 @@ To contact the application owner and administrator you can send an e-mail to thi
     <value>columnFilesURL</value>
   </data>
   <data name="&gt;&gt;columnFilesURL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;columnDiscoverCount.Name" xml:space="preserve">
+    <value>columnDiscoverCount</value>
+  </data>
+  <data name="&gt;&gt;columnDiscoverCount.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;columnDiscoverSite.Name" xml:space="preserve">
+    <value>columnDiscoverSite</value>
+  </data>
+  <data name="&gt;&gt;columnDiscoverSite.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;columnDiscoverType.Name" xml:space="preserve">
+    <value>columnDiscoverType</value>
+  </data>
+  <data name="&gt;&gt;columnDiscoverType.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;columnDiscoverURL.Name" xml:space="preserve">
+    <value>columnDiscoverURL</value>
+  </data>
+  <data name="&gt;&gt;columnDiscoverURL.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

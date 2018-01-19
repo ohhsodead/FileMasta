@@ -402,7 +402,7 @@ namespace WebPlex
 
             if (curVersion.CompareTo(newVersion) < 0)
             {
-                MessageBox.Show("WebPlex " + newVersion.ToString() + " is ready to be installed.", "WebPlex - Update Available");
+                MessageBox.Show(frmWebPlex.form, "WebPlex " + newVersion.ToString() + " is ready to be installed.", "WebPlex - Update Available");
 
                 client.DownloadFile(frmWebPlex.getLatestInstaller(newVersion), frmWebPlex.pathDownloadInstaller);
                 Directory.Delete(frmWebPlex.pathData, true);
