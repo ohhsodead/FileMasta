@@ -29,7 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            CButtonLib.cBlendItems cBlendItems1 = new CButtonLib.cBlendItems();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ctrlFileDetails));
+            CButtonLib.cBlendItems cBlendItems2 = new CButtonLib.cBlendItems();
+            CButtonLib.cBlendItems cBlendItems3 = new CButtonLib.cBlendItems();
+            CButtonLib.cBlendItems cBlendItems4 = new CButtonLib.cBlendItems();
+            CButtonLib.cBlendItems cBlendItems5 = new CButtonLib.cBlendItems();
+            CButtonLib.cBlendItems cBlendItems6 = new CButtonLib.cBlendItems();
+            CButtonLib.cBlendItems cBlendItems7 = new CButtonLib.cBlendItems();
+            CButtonLib.cBlendItems cBlendItems8 = new CButtonLib.cBlendItems();
             this.infoFileName = new System.Windows.Forms.Label();
             this.titleName = new System.Windows.Forms.Label();
             this.infoName = new System.Windows.Forms.Label();
@@ -81,12 +89,11 @@
             this.infoFileName.BackColor = System.Drawing.Color.Transparent;
             this.infoFileName.Cursor = System.Windows.Forms.Cursors.Default;
             this.infoFileName.Font = new System.Drawing.Font("Segoe UI Semibold", 18F);
-            this.infoFileName.ForeColor = System.Drawing.Color.White;
             this.infoFileName.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.infoFileName.Location = new System.Drawing.Point(15, 20);
             this.infoFileName.Margin = new System.Windows.Forms.Padding(0);
             this.infoFileName.Name = "infoFileName";
-            this.infoFileName.Size = new System.Drawing.Size(594, 32);
+            this.infoFileName.Size = new System.Drawing.Size(622, 32);
             this.infoFileName.TabIndex = 100045;
             this.infoFileName.Text = "File Name";
             // 
@@ -95,7 +102,6 @@
             this.titleName.AutoSize = true;
             this.titleName.BackColor = System.Drawing.Color.Transparent;
             this.titleName.Font = new System.Drawing.Font("Segoe UI Semibold", 10.75F);
-            this.titleName.ForeColor = System.Drawing.Color.White;
             this.titleName.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.titleName.Location = new System.Drawing.Point(17, 102);
             this.titleName.Margin = new System.Windows.Forms.Padding(0, 8, 0, 8);
@@ -109,7 +115,6 @@
             this.infoName.AutoSize = true;
             this.infoName.BackColor = System.Drawing.Color.Transparent;
             this.infoName.Font = new System.Drawing.Font("Segoe UI Semibold", 10.75F);
-            this.infoName.ForeColor = System.Drawing.Color.White;
             this.infoName.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.infoName.Location = new System.Drawing.Point(151, 102);
             this.infoName.Margin = new System.Windows.Forms.Padding(0, 8, 0, 8);
@@ -123,7 +128,7 @@
             this.infoSplitter0.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.infoSplitter0.BackColor = System.Drawing.Color.Transparent;
-            this.infoSplitter0.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(221)))), ((int)(((byte)(221)))));
+            this.infoSplitter0.BorderColor = System.Drawing.Color.Black;
             this.infoSplitter0.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(221)))), ((int)(((byte)(221)))));
             this.infoSplitter0.Cursor = System.Windows.Forms.Cursors.Default;
             this.infoSplitter0.DesignerSelected = false;
@@ -131,6 +136,7 @@
             this.infoSplitter0.DimFactorHover = 0;
             this.infoSplitter0.FillType = CButtonLib.CButton.eFillType.Solid;
             this.infoSplitter0.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.infoSplitter0.ForeColor = System.Drawing.Color.Black;
             this.infoSplitter0.ImageIndex = 0;
             this.infoSplitter0.Location = new System.Drawing.Point(21, 90);
             this.infoSplitter0.Name = "infoSplitter0";
@@ -149,7 +155,7 @@
             this.infoSplitter1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.infoSplitter1.BackColor = System.Drawing.Color.Transparent;
-            this.infoSplitter1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(221)))), ((int)(((byte)(221)))));
+            this.infoSplitter1.BorderColor = System.Drawing.Color.Black;
             this.infoSplitter1.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(221)))), ((int)(((byte)(221)))));
             this.infoSplitter1.Cursor = System.Windows.Forms.Cursors.Default;
             this.infoSplitter1.DesignerSelected = false;
@@ -157,6 +163,7 @@
             this.infoSplitter1.DimFactorHover = 0;
             this.infoSplitter1.FillType = CButtonLib.CButton.eFillType.Solid;
             this.infoSplitter1.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.infoSplitter1.ForeColor = System.Drawing.Color.Black;
             this.infoSplitter1.ImageIndex = 0;
             this.infoSplitter1.Location = new System.Drawing.Point(21, 133);
             this.infoSplitter1.Name = "infoSplitter1";
@@ -175,7 +182,6 @@
             this.titleSize.AutoSize = true;
             this.titleSize.BackColor = System.Drawing.Color.Transparent;
             this.titleSize.Font = new System.Drawing.Font("Segoe UI", 10.75F);
-            this.titleSize.ForeColor = System.Drawing.Color.White;
             this.titleSize.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.titleSize.Location = new System.Drawing.Point(17, 146);
             this.titleSize.Margin = new System.Windows.Forms.Padding(0, 8, 0, 8);
@@ -189,7 +195,6 @@
             this.infoSize.AutoSize = true;
             this.infoSize.BackColor = System.Drawing.Color.Transparent;
             this.infoSize.Font = new System.Drawing.Font("Segoe UI", 10.75F);
-            this.infoSize.ForeColor = System.Drawing.Color.White;
             this.infoSize.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.infoSize.Location = new System.Drawing.Point(151, 146);
             this.infoSize.Margin = new System.Windows.Forms.Padding(0, 8, 0, 8);
@@ -203,7 +208,6 @@
             this.titleReferrer.AutoSize = true;
             this.titleReferrer.BackColor = System.Drawing.Color.Transparent;
             this.titleReferrer.Font = new System.Drawing.Font("Segoe UI", 10.75F);
-            this.titleReferrer.ForeColor = System.Drawing.Color.White;
             this.titleReferrer.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.titleReferrer.Location = new System.Drawing.Point(17, 189);
             this.titleReferrer.Margin = new System.Windows.Forms.Padding(0, 8, 0, 8);
@@ -218,7 +222,6 @@
             this.infoReferrer.BackColor = System.Drawing.Color.Transparent;
             this.infoReferrer.Cursor = System.Windows.Forms.Cursors.Hand;
             this.infoReferrer.Font = new System.Drawing.Font("Segoe UI", 10.75F);
-            this.infoReferrer.ForeColor = System.Drawing.Color.White;
             this.infoReferrer.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.infoReferrer.Location = new System.Drawing.Point(151, 189);
             this.infoReferrer.Margin = new System.Windows.Forms.Padding(0, 8, 0, 8);
@@ -233,7 +236,7 @@
             this.infoSplitter2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.infoSplitter2.BackColor = System.Drawing.Color.Transparent;
-            this.infoSplitter2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(221)))), ((int)(((byte)(221)))));
+            this.infoSplitter2.BorderColor = System.Drawing.Color.Black;
             this.infoSplitter2.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(221)))), ((int)(((byte)(221)))));
             this.infoSplitter2.Cursor = System.Windows.Forms.Cursors.Default;
             this.infoSplitter2.DesignerSelected = false;
@@ -241,6 +244,7 @@
             this.infoSplitter2.DimFactorHover = 0;
             this.infoSplitter2.FillType = CButtonLib.CButton.eFillType.Solid;
             this.infoSplitter2.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.infoSplitter2.ForeColor = System.Drawing.Color.Black;
             this.infoSplitter2.ImageIndex = 0;
             this.infoSplitter2.Location = new System.Drawing.Point(21, 177);
             this.infoSplitter2.Name = "infoSplitter2";
@@ -260,7 +264,6 @@
             this.infoDirectory.BackColor = System.Drawing.Color.Transparent;
             this.infoDirectory.Cursor = System.Windows.Forms.Cursors.Hand;
             this.infoDirectory.Font = new System.Drawing.Font("Segoe UI", 10.75F);
-            this.infoDirectory.ForeColor = System.Drawing.Color.White;
             this.infoDirectory.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.infoDirectory.Location = new System.Drawing.Point(151, 232);
             this.infoDirectory.Margin = new System.Windows.Forms.Padding(0, 8, 0, 8);
@@ -275,7 +278,6 @@
             this.titleDirectory.AutoSize = true;
             this.titleDirectory.BackColor = System.Drawing.Color.Transparent;
             this.titleDirectory.Font = new System.Drawing.Font("Segoe UI", 10.75F);
-            this.titleDirectory.ForeColor = System.Drawing.Color.White;
             this.titleDirectory.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.titleDirectory.Location = new System.Drawing.Point(17, 232);
             this.titleDirectory.Margin = new System.Windows.Forms.Padding(0, 8, 0, 8);
@@ -289,7 +291,7 @@
             this.infoSplitter3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.infoSplitter3.BackColor = System.Drawing.Color.Transparent;
-            this.infoSplitter3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(221)))), ((int)(((byte)(221)))));
+            this.infoSplitter3.BorderColor = System.Drawing.Color.Black;
             this.infoSplitter3.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(221)))), ((int)(((byte)(221)))));
             this.infoSplitter3.Cursor = System.Windows.Forms.Cursors.Default;
             this.infoSplitter3.DesignerSelected = false;
@@ -297,6 +299,7 @@
             this.infoSplitter3.DimFactorHover = 0;
             this.infoSplitter3.FillType = CButtonLib.CButton.eFillType.Solid;
             this.infoSplitter3.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.infoSplitter3.ForeColor = System.Drawing.Color.Black;
             this.infoSplitter3.ImageIndex = 0;
             this.infoSplitter3.Location = new System.Drawing.Point(21, 220);
             this.infoSplitter3.Name = "infoSplitter3";
@@ -315,7 +318,7 @@
             this.infoSplitter5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.infoSplitter5.BackColor = System.Drawing.Color.Transparent;
-            this.infoSplitter5.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(221)))), ((int)(((byte)(221)))));
+            this.infoSplitter5.BorderColor = System.Drawing.Color.Black;
             this.infoSplitter5.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(221)))), ((int)(((byte)(221)))));
             this.infoSplitter5.Cursor = System.Windows.Forms.Cursors.Default;
             this.infoSplitter5.DesignerSelected = false;
@@ -323,6 +326,7 @@
             this.infoSplitter5.DimFactorHover = 0;
             this.infoSplitter5.FillType = CButtonLib.CButton.eFillType.Solid;
             this.infoSplitter5.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.infoSplitter5.ForeColor = System.Drawing.Color.Black;
             this.infoSplitter5.ImageIndex = 0;
             this.infoSplitter5.Location = new System.Drawing.Point(21, 306);
             this.infoSplitter5.Name = "infoSplitter5";
@@ -341,7 +345,6 @@
             this.titleAge.AutoSize = true;
             this.titleAge.BackColor = System.Drawing.Color.Transparent;
             this.titleAge.Font = new System.Drawing.Font("Segoe UI", 10.75F);
-            this.titleAge.ForeColor = System.Drawing.Color.White;
             this.titleAge.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.titleAge.Location = new System.Drawing.Point(17, 318);
             this.titleAge.Margin = new System.Windows.Forms.Padding(0, 8, 0, 8);
@@ -355,7 +358,6 @@
             this.infoAge.AutoSize = true;
             this.infoAge.BackColor = System.Drawing.Color.Transparent;
             this.infoAge.Font = new System.Drawing.Font("Segoe UI", 10.75F);
-            this.infoAge.ForeColor = System.Drawing.Color.White;
             this.infoAge.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.infoAge.Location = new System.Drawing.Point(151, 318);
             this.infoAge.Margin = new System.Windows.Forms.Padding(0, 8, 0, 8);
@@ -369,8 +371,15 @@
             this.infoFileURL.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.infoFileURL.BackColor = System.Drawing.Color.Transparent;
-            this.infoFileURL.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.infoFileURL.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.infoFileURL.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            cBlendItems1.iColor = new System.Drawing.Color[] {
+        System.Drawing.Color.White,
+        System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))))};
+            cBlendItems1.iPoint = new float[] {
+        0F,
+        1F};
+            this.infoFileURL.ColorFillBlend = cBlendItems1;
+            this.infoFileURL.ColorFillSolid = System.Drawing.Color.Empty;
             this.infoFileURL.Corners.All = 2;
             this.infoFileURL.Corners.LowerLeft = 2;
             this.infoFileURL.Corners.LowerRight = 2;
@@ -381,7 +390,6 @@
             this.infoFileURL.DimFactorClick = 0;
             this.infoFileURL.DimFactorHover = 0;
             this.infoFileURL.Enabled = false;
-            this.infoFileURL.FillType = CButtonLib.CButton.eFillType.Solid;
             this.infoFileURL.Font = new System.Drawing.Font("Segoe UI", 10.75F);
             this.infoFileURL.ForeColor = System.Drawing.Color.Black;
             this.infoFileURL.ImageIndex = 0;
@@ -389,7 +397,7 @@
             this.infoFileURL.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.infoFileURL.Name = "infoFileURL";
             this.infoFileURL.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.infoFileURL.Size = new System.Drawing.Size(874, 31);
+            this.infoFileURL.Size = new System.Drawing.Size(879, 30);
             this.infoFileURL.TabIndex = 0;
             this.infoFileURL.TabStop = false;
             this.infoFileURL.Text = "URL";
@@ -417,7 +425,7 @@
             this.infoSplitter4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.infoSplitter4.BackColor = System.Drawing.Color.Transparent;
-            this.infoSplitter4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(221)))), ((int)(((byte)(221)))));
+            this.infoSplitter4.BorderColor = System.Drawing.Color.Black;
             this.infoSplitter4.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(221)))), ((int)(((byte)(221)))));
             this.infoSplitter4.Cursor = System.Windows.Forms.Cursors.Default;
             this.infoSplitter4.DesignerSelected = false;
@@ -425,6 +433,7 @@
             this.infoSplitter4.DimFactorHover = 0;
             this.infoSplitter4.FillType = CButtonLib.CButton.eFillType.Solid;
             this.infoSplitter4.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.infoSplitter4.ForeColor = System.Drawing.Color.Black;
             this.infoSplitter4.ImageIndex = 0;
             this.infoSplitter4.Location = new System.Drawing.Point(21, 263);
             this.infoSplitter4.Name = "infoSplitter4";
@@ -443,7 +452,6 @@
             this.titleType.AutoSize = true;
             this.titleType.BackColor = System.Drawing.Color.Transparent;
             this.titleType.Font = new System.Drawing.Font("Segoe UI", 10.75F);
-            this.titleType.ForeColor = System.Drawing.Color.White;
             this.titleType.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.titleType.Location = new System.Drawing.Point(17, 275);
             this.titleType.Margin = new System.Windows.Forms.Padding(0, 8, 0, 8);
@@ -457,7 +465,6 @@
             this.infoType.AutoSize = true;
             this.infoType.BackColor = System.Drawing.Color.Transparent;
             this.infoType.Font = new System.Drawing.Font("Segoe UI", 10.75F);
-            this.infoType.ForeColor = System.Drawing.Color.White;
             this.infoType.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.infoType.Location = new System.Drawing.Point(151, 275);
             this.infoType.Margin = new System.Windows.Forms.Padding(0, 8, 0, 8);
@@ -472,7 +479,7 @@
             this.panelReportFile.Controls.Add(this.btnReportFile);
             this.panelReportFile.Controls.Add(this.cmboboxReportFile);
             this.panelReportFile.Location = new System.Drawing.Point(813, 21);
-            this.panelReportFile.Margin = new System.Windows.Forms.Padding(0, 0, 7, 0);
+            this.panelReportFile.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.panelReportFile.Name = "panelReportFile";
             this.panelReportFile.Size = new System.Drawing.Size(89, 31);
             this.panelReportFile.TabIndex = 100073;
@@ -483,8 +490,15 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnReportFile.BackColor = System.Drawing.Color.Transparent;
-            this.btnReportFile.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.btnReportFile.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.btnReportFile.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            cBlendItems2.iColor = new System.Drawing.Color[] {
+        System.Drawing.Color.White,
+        System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))))};
+            cBlendItems2.iPoint = new float[] {
+        0F,
+        1F};
+            this.btnReportFile.ColorFillBlend = cBlendItems2;
+            this.btnReportFile.ColorFillSolid = System.Drawing.Color.Empty;
             this.btnReportFile.Corners.All = 2;
             this.btnReportFile.Corners.LowerLeft = 2;
             this.btnReportFile.Corners.LowerRight = 2;
@@ -492,19 +506,17 @@
             this.btnReportFile.Corners.UpperRight = 2;
             this.btnReportFile.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReportFile.DesignerSelected = false;
-            this.btnReportFile.DimFactorClick = 0;
-            this.btnReportFile.DimFactorHover = 0;
-            this.btnReportFile.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.btnReportFile.DimFactorHover = -18;
             this.btnReportFile.Font = new System.Drawing.Font("Segoe UI", 10.75F);
             this.btnReportFile.ForeColor = System.Drawing.Color.Black;
-            this.btnReportFile.Image = global::WebPlex.Properties.Resources.alert_octagon_black;
+            this.btnReportFile.Image = global::WebPlex.Properties.Resources.alert_octagon;
             this.btnReportFile.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnReportFile.ImageIndex = 0;
             this.btnReportFile.ImageSize = new System.Drawing.Size(19, 19);
             this.btnReportFile.Location = new System.Drawing.Point(0, 0);
             this.btnReportFile.Name = "btnReportFile";
             this.btnReportFile.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.btnReportFile.SideImage = global::WebPlex.Properties.Resources.arrow_drop_down_black;
+            this.btnReportFile.SideImage = global::WebPlex.Properties.Resources.menu_down;
             this.btnReportFile.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnReportFile.SideImageSize = new System.Drawing.Size(21, 21);
             this.btnReportFile.Size = new System.Drawing.Size(89, 31);
@@ -512,7 +524,8 @@
             this.btnReportFile.Text = "Report";
             this.btnReportFile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnReportFile.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnReportFile.TextMargin = new System.Windows.Forms.Padding(6, 3, 2, 2);
+            this.btnReportFile.TextMargin = new System.Windows.Forms.Padding(2, 3, 2, 2);
+            this.btnReportFile.TextShadow = System.Drawing.Color.Empty;
             this.btnReportFile.TextShadowShow = false;
             this.toolTip1.SetToolTip(this.btnReportFile, "Report File");
             this.btnReportFile.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnReportFile_ClickButtonArea);
@@ -537,8 +550,15 @@
             // btnRequestFileSize
             // 
             this.btnRequestFileSize.BackColor = System.Drawing.Color.Transparent;
-            this.btnRequestFileSize.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.btnRequestFileSize.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.btnRequestFileSize.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            cBlendItems3.iColor = new System.Drawing.Color[] {
+        System.Drawing.Color.White,
+        System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))))};
+            cBlendItems3.iPoint = new float[] {
+        0F,
+        1F};
+            this.btnRequestFileSize.ColorFillBlend = cBlendItems3;
+            this.btnRequestFileSize.ColorFillSolid = System.Drawing.Color.Empty;
             this.btnRequestFileSize.Corners.All = 2;
             this.btnRequestFileSize.Corners.LowerLeft = 2;
             this.btnRequestFileSize.Corners.LowerRight = 2;
@@ -546,9 +566,7 @@
             this.btnRequestFileSize.Corners.UpperRight = 2;
             this.btnRequestFileSize.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRequestFileSize.DesignerSelected = false;
-            this.btnRequestFileSize.DimFactorClick = 0;
-            this.btnRequestFileSize.DimFactorHover = 0;
-            this.btnRequestFileSize.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.btnRequestFileSize.DimFactorHover = -18;
             this.btnRequestFileSize.Font = new System.Drawing.Font("Segoe UI", 10.75F);
             this.btnRequestFileSize.ForeColor = System.Drawing.Color.Black;
             this.btnRequestFileSize.ImageIndex = 0;
@@ -556,13 +574,12 @@
             this.btnRequestFileSize.Location = new System.Drawing.Point(155, 142);
             this.btnRequestFileSize.Name = "btnRequestFileSize";
             this.btnRequestFileSize.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.btnRequestFileSize.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnRequestFileSize.SideImageSize = new System.Drawing.Size(21, 21);
             this.btnRequestFileSize.Size = new System.Drawing.Size(124, 28);
             this.btnRequestFileSize.TabIndex = 4;
             this.btnRequestFileSize.Text = "Request File Size";
-            this.btnRequestFileSize.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnRequestFileSize.TextMargin = new System.Windows.Forms.Padding(6, 3, 2, 2);
+            this.btnRequestFileSize.TextMargin = new System.Windows.Forms.Padding(2, 3, 2, 2);
+            this.btnRequestFileSize.TextShadow = System.Drawing.Color.Empty;
             this.btnRequestFileSize.TextShadowShow = false;
             this.btnRequestFileSize.Visible = false;
             this.btnRequestFileSize.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnRequestFileSize_ClickButtonArea);
@@ -571,31 +588,38 @@
             // 
             this.btnSaveFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSaveFile.BackColor = System.Drawing.Color.Transparent;
-            this.btnSaveFile.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.btnSaveFile.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.btnSaveFile.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            cBlendItems4.iColor = new System.Drawing.Color[] {
+        System.Drawing.Color.White,
+        System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))))};
+            cBlendItems4.iPoint = new float[] {
+        0F,
+        1F};
+            this.btnSaveFile.ColorFillBlend = cBlendItems4;
+            this.btnSaveFile.ColorFillSolid = System.Drawing.Color.Empty;
             this.btnSaveFile.Corners.All = 2;
             this.btnSaveFile.Corners.LowerLeft = 2;
             this.btnSaveFile.Corners.LowerRight = 2;
             this.btnSaveFile.Corners.UpperLeft = 2;
             this.btnSaveFile.Corners.UpperRight = 2;
             this.btnSaveFile.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSaveFile.DesignerSelected = true;
-            this.btnSaveFile.DimFactorClick = 0;
-            this.btnSaveFile.DimFactorHover = 0;
-            this.btnSaveFile.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.btnSaveFile.DesignerSelected = false;
+            this.btnSaveFile.DimFactorHover = -18;
             this.btnSaveFile.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.btnSaveFile.ForeColor = System.Drawing.Color.Black;
             this.btnSaveFile.ImageIndex = 0;
             this.btnSaveFile.ImageSize = new System.Drawing.Size(24, 24);
-            this.btnSaveFile.Location = new System.Drawing.Point(625, 21);
+            this.btnSaveFile.Location = new System.Drawing.Point(645, 21);
+            this.btnSaveFile.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.btnSaveFile.Name = "btnSaveFile";
             this.btnSaveFile.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.btnSaveFile.SideImage = global::WebPlex.Properties.Resources.bookmark_plus_black;
+            this.btnSaveFile.SideImage = ((System.Drawing.Image)(resources.GetObject("btnSaveFile.SideImage")));
             this.btnSaveFile.SideImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnSaveFile.SideImageSize = new System.Drawing.Size(24, 24);
             this.btnSaveFile.Size = new System.Drawing.Size(40, 31);
             this.btnSaveFile.TabIndex = 0;
             this.btnSaveFile.Text = "";
+            this.btnSaveFile.TextShadow = System.Drawing.Color.Empty;
             this.btnSaveFile.TextShadowShow = false;
             this.toolTip1.SetToolTip(this.btnSaveFile, "Save File");
             this.btnSaveFile.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnSaveFile_ClickButtonArea);
@@ -604,8 +628,15 @@
             // 
             this.btnViewDirectory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnViewDirectory.BackColor = System.Drawing.Color.Transparent;
-            this.btnViewDirectory.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.btnViewDirectory.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.btnViewDirectory.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            cBlendItems5.iColor = new System.Drawing.Color[] {
+        System.Drawing.Color.White,
+        System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))))};
+            cBlendItems5.iPoint = new float[] {
+        0F,
+        1F};
+            this.btnViewDirectory.ColorFillBlend = cBlendItems5;
+            this.btnViewDirectory.ColorFillSolid = System.Drawing.Color.Empty;
             this.btnViewDirectory.Corners.All = 2;
             this.btnViewDirectory.Corners.LowerLeft = 2;
             this.btnViewDirectory.Corners.LowerRight = 2;
@@ -613,22 +644,22 @@
             this.btnViewDirectory.Corners.UpperRight = 2;
             this.btnViewDirectory.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnViewDirectory.DesignerSelected = false;
-            this.btnViewDirectory.DimFactorClick = 0;
-            this.btnViewDirectory.DimFactorHover = 0;
-            this.btnViewDirectory.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.btnViewDirectory.DimFactorHover = -18;
             this.btnViewDirectory.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.btnViewDirectory.ForeColor = System.Drawing.Color.Black;
             this.btnViewDirectory.ImageIndex = 0;
             this.btnViewDirectory.ImageSize = new System.Drawing.Size(24, 24);
-            this.btnViewDirectory.Location = new System.Drawing.Point(677, 21);
+            this.btnViewDirectory.Location = new System.Drawing.Point(689, 21);
+            this.btnViewDirectory.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.btnViewDirectory.Name = "btnViewDirectory";
             this.btnViewDirectory.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.btnViewDirectory.SideImage = global::WebPlex.Properties.Resources.eye_black;
+            this.btnViewDirectory.SideImage = global::WebPlex.Properties.Resources.eye;
             this.btnViewDirectory.SideImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnViewDirectory.SideImageSize = new System.Drawing.Size(21, 21);
             this.btnViewDirectory.Size = new System.Drawing.Size(40, 31);
             this.btnViewDirectory.TabIndex = 1;
             this.btnViewDirectory.Text = "";
+            this.btnViewDirectory.TextShadow = System.Drawing.Color.Empty;
             this.btnViewDirectory.TextShadowShow = false;
             this.toolTip1.SetToolTip(this.btnViewDirectory, "View Directory");
             this.btnViewDirectory.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnViewDirectory_ClickButtonArea);
@@ -637,8 +668,15 @@
             // 
             this.btnShareFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnShareFile.BackColor = System.Drawing.Color.Transparent;
-            this.btnShareFile.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.btnShareFile.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.btnShareFile.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            cBlendItems6.iColor = new System.Drawing.Color[] {
+        System.Drawing.Color.White,
+        System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))))};
+            cBlendItems6.iPoint = new float[] {
+        0F,
+        1F};
+            this.btnShareFile.ColorFillBlend = cBlendItems6;
+            this.btnShareFile.ColorFillSolid = System.Drawing.Color.Empty;
             this.btnShareFile.Corners.All = 2;
             this.btnShareFile.Corners.LowerLeft = 2;
             this.btnShareFile.Corners.LowerRight = 2;
@@ -646,24 +684,24 @@
             this.btnShareFile.Corners.UpperRight = 2;
             this.btnShareFile.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnShareFile.DesignerSelected = false;
-            this.btnShareFile.DimFactorClick = 0;
-            this.btnShareFile.DimFactorHover = 0;
-            this.btnShareFile.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.btnShareFile.DimFactorHover = -18;
             this.btnShareFile.Font = new System.Drawing.Font("Segoe UI", 10.75F);
             this.btnShareFile.ForeColor = System.Drawing.Color.Black;
-            this.btnShareFile.Image = global::WebPlex.Properties.Resources.share_variant_black;
+            this.btnShareFile.Image = ((System.Drawing.Image)(resources.GetObject("btnShareFile.Image")));
             this.btnShareFile.ImageIndex = 0;
             this.btnShareFile.ImageSize = new System.Drawing.Size(17, 17);
-            this.btnShareFile.Location = new System.Drawing.Point(729, 21);
+            this.btnShareFile.Location = new System.Drawing.Point(733, 21);
+            this.btnShareFile.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.btnShareFile.Name = "btnShareFile";
             this.btnShareFile.ShowFocus = CButtonLib.CButton.eFocus.None;
             this.btnShareFile.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnShareFile.SideImageSize = new System.Drawing.Size(21, 21);
-            this.btnShareFile.Size = new System.Drawing.Size(72, 31);
+            this.btnShareFile.Size = new System.Drawing.Size(76, 31);
             this.btnShareFile.TabIndex = 2;
             this.btnShareFile.Text = "Share";
             this.btnShareFile.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnShareFile.TextMargin = new System.Windows.Forms.Padding(6, 3, 2, 2);
+            this.btnShareFile.TextMargin = new System.Windows.Forms.Padding(2, 3, 2, 2);
+            this.btnShareFile.TextShadow = System.Drawing.Color.Empty;
             this.btnShareFile.TextShadowShow = false;
             this.toolTip1.SetToolTip(this.btnShareFile, "Share File");
             this.btnShareFile.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnShareFile_ClickButtonArea);
@@ -718,8 +756,15 @@
             // btnPlayMedia
             // 
             this.btnPlayMedia.BackColor = System.Drawing.Color.Transparent;
-            this.btnPlayMedia.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.btnPlayMedia.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.btnPlayMedia.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            cBlendItems7.iColor = new System.Drawing.Color[] {
+        System.Drawing.Color.White,
+        System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))))};
+            cBlendItems7.iPoint = new float[] {
+        0F,
+        1F};
+            this.btnPlayMedia.ColorFillBlend = cBlendItems7;
+            this.btnPlayMedia.ColorFillSolid = System.Drawing.Color.Empty;
             this.btnPlayMedia.Corners.All = 2;
             this.btnPlayMedia.Corners.LowerLeft = 2;
             this.btnPlayMedia.Corners.LowerRight = 2;
@@ -727,12 +772,10 @@
             this.btnPlayMedia.Corners.UpperRight = 2;
             this.btnPlayMedia.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPlayMedia.DesignerSelected = false;
-            this.btnPlayMedia.DimFactorClick = 0;
-            this.btnPlayMedia.DimFactorHover = 0;
-            this.btnPlayMedia.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.btnPlayMedia.DimFactorHover = -18;
             this.btnPlayMedia.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.btnPlayMedia.ForeColor = System.Drawing.Color.Black;
-            this.btnPlayMedia.Image = global::WebPlex.Properties.Resources.play_black;
+            this.btnPlayMedia.Image = global::WebPlex.Properties.Resources.play_circle;
             this.btnPlayMedia.ImageIndex = 0;
             this.btnPlayMedia.ImageSize = new System.Drawing.Size(21, 21);
             this.btnPlayMedia.Location = new System.Drawing.Point(20, 514);
@@ -740,11 +783,10 @@
             this.btnPlayMedia.ShowFocus = CButtonLib.CButton.eFocus.None;
             this.btnPlayMedia.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnPlayMedia.SideImageSize = new System.Drawing.Size(21, 21);
-            this.btnPlayMedia.Size = new System.Drawing.Size(104, 28);
+            this.btnPlayMedia.Size = new System.Drawing.Size(110, 28);
             this.btnPlayMedia.TabIndex = 7;
             this.btnPlayMedia.Text = "Play Media";
             this.btnPlayMedia.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnPlayMedia.TextMargin = new System.Windows.Forms.Padding(6, 3, 2, 2);
             this.btnPlayMedia.TextShadowShow = false;
             this.btnPlayMedia.Visible = false;
             this.btnPlayMedia.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnPlayMedia_ClickButtonArea);
@@ -753,8 +795,15 @@
             // 
             this.btnCopyURL.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCopyURL.BackColor = System.Drawing.Color.Transparent;
-            this.btnCopyURL.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.btnCopyURL.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.btnCopyURL.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            cBlendItems8.iColor = new System.Drawing.Color[] {
+        System.Drawing.Color.White,
+        System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))))};
+            cBlendItems8.iPoint = new float[] {
+        0F,
+        1F};
+            this.btnCopyURL.ColorFillBlend = cBlendItems8;
+            this.btnCopyURL.ColorFillSolid = System.Drawing.Color.Empty;
             this.btnCopyURL.Corners.All = 2;
             this.btnCopyURL.Corners.LowerLeft = 2;
             this.btnCopyURL.Corners.LowerRight = 2;
@@ -767,15 +816,15 @@
             this.btnCopyURL.FillType = CButtonLib.CButton.eFillType.Solid;
             this.btnCopyURL.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.btnCopyURL.ForeColor = System.Drawing.Color.Black;
+            this.btnCopyURL.Image = global::WebPlex.Properties.Resources.clipboard_arrow_left;
             this.btnCopyURL.ImageIndex = 0;
-            this.btnCopyURL.ImageSize = new System.Drawing.Size(24, 24);
+            this.btnCopyURL.ImageSize = new System.Drawing.Size(22, 22);
             this.btnCopyURL.Location = new System.Drawing.Point(904, 373);
             this.btnCopyURL.Name = "btnCopyURL";
             this.btnCopyURL.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.btnCopyURL.SideImage = global::WebPlex.Properties.Resources.clipboard_arrow_left_black;
             this.btnCopyURL.SideImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnCopyURL.SideImageSize = new System.Drawing.Size(22, 22);
-            this.btnCopyURL.Size = new System.Drawing.Size(40, 31);
+            this.btnCopyURL.SideImageSize = new System.Drawing.Size(0, 0);
+            this.btnCopyURL.Size = new System.Drawing.Size(40, 30);
             this.btnCopyURL.TabIndex = 5;
             this.btnCopyURL.Text = "";
             this.btnCopyURL.TextShadowShow = false;
@@ -799,7 +848,8 @@
             this.btnDirectLink.DimFactorHover = 0;
             this.btnDirectLink.FillType = CButtonLib.CButton.eFillType.Solid;
             this.btnDirectLink.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.btnDirectLink.Image = global::WebPlex.Properties.Resources.link_variant;
+            this.btnDirectLink.ForeColor = System.Drawing.Color.Black;
+            this.btnDirectLink.Image = ((System.Drawing.Image)(resources.GetObject("btnDirectLink.Image")));
             this.btnDirectLink.ImageIndex = 0;
             this.btnDirectLink.ImageSize = new System.Drawing.Size(20, 20);
             this.btnDirectLink.Location = new System.Drawing.Point(20, 429);
@@ -834,7 +884,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(32)))), ((int)(((byte)(45)))));
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.btnSaveFile);
             this.Controls.Add(this.btnPlayMedia);
             this.Controls.Add(this.btnViewDirectory);
@@ -867,7 +917,7 @@
             this.Controls.Add(this.appClose);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.ForeColor = System.Drawing.Color.White;
+            this.ForeColor = System.Drawing.Color.Black;
             this.Name = "ctrlFileDetails";
             this.Size = new System.Drawing.Size(967, 565);
             this.Load += new System.EventHandler(this.ctrlFileDetails_Load);

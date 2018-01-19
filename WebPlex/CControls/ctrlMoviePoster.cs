@@ -11,6 +11,8 @@ namespace WebPlex.CControls
             InitializeComponent();
         }
 
+        protected override void OnPaint(PaintEventArgs e) { }
+
         public string infoGenres;
         public string infoSynopsis;
         public string infoRuntime;
@@ -111,7 +113,6 @@ namespace WebPlex.CControls
                 }
 
                 infoPoster2.Image = new Bitmap(infoPoster.BackgroundImage);
-                infoPoster.BorderShow = true;
                 infoPoster.BackgroundImage.Dispose();
                 infoPoster.BackgroundImage = Utilities.ChangeOpacity(infoPoster2.Image, 0.4F);
                 Update();
@@ -127,7 +128,6 @@ namespace WebPlex.CControls
             try
             {
                 infoPoster.BackgroundImage.Dispose();
-                infoPoster.BorderShow = false;
                 infoPoster.BackgroundImage = Utilities.ChangeOpacity(infoPoster2.Image, 1);
             }
             catch

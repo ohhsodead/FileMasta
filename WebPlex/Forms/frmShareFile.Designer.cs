@@ -54,7 +54,7 @@
             // 
             resources.ApplyResources(this.imgClose, "imgClose");
             this.imgClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgClose.Image = global::WebPlex.Properties.Resources.close_small;
+            this.imgClose.Image = global::WebPlex.Properties.Resources.close;
             this.imgClose.Name = "imgClose";
             this.imgClose.TabStop = false;
             this.imgClose.Click += new System.EventHandler(this.imgClose_Click);

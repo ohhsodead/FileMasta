@@ -45,11 +45,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.infoPoster.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.infoPoster.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.infoPoster.BorderColor = System.Drawing.Color.White;
+            this.infoPoster.BorderColor = System.Drawing.Color.Transparent;
             this.infoPoster.BorderShow = false;
             this.infoPoster.ColorFillSolid = System.Drawing.Color.Transparent;
             this.infoPoster.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.infoPoster.DesignerSelected = false;
+            this.infoPoster.DesignerSelected = true;
             this.infoPoster.DimFactorClick = 0;
             this.infoPoster.DimFactorHover = 0;
             this.infoPoster.FillType = CButtonLib.CButton.eFillType.Solid;
@@ -98,7 +98,7 @@
             this.infoTitle.AutoEllipsis = true;
             this.infoTitle.BackColor = System.Drawing.Color.Transparent;
             this.infoTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
-            this.infoTitle.ForeColor = System.Drawing.Color.White;
+            this.infoTitle.ForeColor = System.Drawing.Color.Black;
             this.infoTitle.Location = new System.Drawing.Point(6, 209);
             this.infoTitle.Margin = new System.Windows.Forms.Padding(0, 0, 1, 0);
             this.infoTitle.Name = "infoTitle";

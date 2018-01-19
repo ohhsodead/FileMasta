@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ctrlStatus));
+            CButtonLib.cBlendItems cBlendItems1 = new CButtonLib.cBlendItems();
             this.titleStatus = new System.Windows.Forms.Label();
             this.btnRestartApp = new CButtonLib.CButton();
             this.SuspendLayout();
@@ -45,22 +46,29 @@
             // 
             resources.ApplyResources(this.btnRestartApp, "btnRestartApp");
             this.btnRestartApp.BackColor = System.Drawing.Color.Transparent;
-            this.btnRestartApp.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.btnRestartApp.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.btnRestartApp.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            cBlendItems1.iColor = new System.Drawing.Color[] {
+        System.Drawing.Color.White,
+        System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))))};
+            cBlendItems1.iPoint = new float[] {
+        0F,
+        1F};
+            this.btnRestartApp.ColorFillBlend = cBlendItems1;
+            this.btnRestartApp.ColorFillSolid = System.Drawing.Color.Empty;
             this.btnRestartApp.Corners.All = 2;
             this.btnRestartApp.Corners.LowerLeft = 2;
             this.btnRestartApp.Corners.LowerRight = 2;
             this.btnRestartApp.Corners.UpperLeft = 2;
             this.btnRestartApp.Corners.UpperRight = 2;
             this.btnRestartApp.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRestartApp.DesignerSelected = false;
-            this.btnRestartApp.DimFactorClick = 0;
-            this.btnRestartApp.DimFactorHover = 0;
-            this.btnRestartApp.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.btnRestartApp.DesignerSelected = true;
+            this.btnRestartApp.DimFactorClick = -35;
+            this.btnRestartApp.DimFactorHover = -25;
             this.btnRestartApp.ForeColor = System.Drawing.Color.Black;
             this.btnRestartApp.ImageIndex = 0;
             this.btnRestartApp.Name = "btnRestartApp";
-            this.btnRestartApp.ShowFocus = CButtonLib.CButton.eFocus.None;
+            this.btnRestartApp.ShowFocus = CButtonLib.CButton.eFocus.Dim;
+            this.btnRestartApp.TextShadow = System.Drawing.Color.Empty;
             this.btnRestartApp.TextShadowShow = false;
             this.btnRestartApp.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnRestartApp_ClickButtonArea);
             // 
@@ -68,7 +76,7 @@
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(56)))), ((int)(((byte)(73)))));
+            this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.btnRestartApp);
             this.Controls.Add(this.titleStatus);
             this.ForeColor = System.Drawing.Color.White;

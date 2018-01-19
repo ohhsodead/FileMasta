@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ctrlMovieDetails));
+            CButtonLib.cBlendItems cBlendItems1 = new CButtonLib.cBlendItems();
             this.infoYear = new System.Windows.Forms.Label();
             this.infoGenre = new System.Windows.Forms.Label();
             this.lblSubDirector = new System.Windows.Forms.Label();
@@ -81,44 +82,37 @@
             // infoYear
             // 
             resources.ApplyResources(this.infoYear, "infoYear");
-            this.infoYear.ForeColor = System.Drawing.Color.White;
             this.infoYear.Name = "infoYear";
             // 
             // infoGenre
             // 
             resources.ApplyResources(this.infoGenre, "infoGenre");
-            this.infoGenre.ForeColor = System.Drawing.Color.White;
             this.infoGenre.Name = "infoGenre";
             // 
             // lblSubDirector
             // 
             resources.ApplyResources(this.lblSubDirector, "lblSubDirector");
-            this.lblSubDirector.ForeColor = System.Drawing.Color.White;
             this.lblSubDirector.Name = "lblSubDirector";
             // 
             // infoDirector
             // 
             resources.ApplyResources(this.infoDirector, "infoDirector");
             this.panelDetails.SetFlowBreak(this.infoDirector, true);
-            this.infoDirector.ForeColor = System.Drawing.Color.White;
             this.infoDirector.Name = "infoDirector";
             // 
             // lblSubCast
             // 
             resources.ApplyResources(this.lblSubCast, "lblSubCast");
-            this.lblSubCast.ForeColor = System.Drawing.Color.White;
             this.lblSubCast.Name = "lblSubCast";
             // 
             // infoRuntime
             // 
             resources.ApplyResources(this.infoRuntime, "infoRuntime");
-            this.infoRuntime.ForeColor = System.Drawing.Color.White;
             this.infoRuntime.Name = "infoRuntime";
             // 
             // infoRated
             // 
             resources.ApplyResources(this.infoRated, "infoRated");
-            this.infoRated.ForeColor = System.Drawing.Color.White;
             this.infoRated.Name = "infoRated";
             // 
             // infoTitle
@@ -127,21 +121,18 @@
             this.infoTitle.AutoEllipsis = true;
             this.infoTitle.BackColor = System.Drawing.Color.Transparent;
             this.infoTitle.Cursor = System.Windows.Forms.Cursors.Default;
-            this.infoTitle.ForeColor = System.Drawing.Color.White;
             this.infoTitle.Name = "infoTitle";
             // 
             // infoSynopsis
             // 
             resources.ApplyResources(this.infoSynopsis, "infoSynopsis");
             this.panelDetails.SetFlowBreak(this.infoSynopsis, true);
-            this.infoSynopsis.ForeColor = System.Drawing.Color.White;
             this.infoSynopsis.Name = "infoSynopsis";
             // 
             // infoCast
             // 
             resources.ApplyResources(this.infoCast, "infoCast");
             this.panelDetails.SetFlowBreak(this.infoCast, true);
-            this.infoCast.ForeColor = System.Drawing.Color.White;
             this.infoCast.Name = "infoCast";
             // 
             // panelDetails
@@ -173,25 +164,21 @@
             // infoSplitter0
             // 
             resources.ApplyResources(this.infoSplitter0, "infoSplitter0");
-            this.infoSplitter0.ForeColor = System.Drawing.Color.White;
             this.infoSplitter0.Name = "infoSplitter0";
             // 
             // infoSplitter1
             // 
             resources.ApplyResources(this.infoSplitter1, "infoSplitter1");
-            this.infoSplitter1.ForeColor = System.Drawing.Color.White;
             this.infoSplitter1.Name = "infoSplitter1";
             // 
             // infoSplitter2
             // 
             resources.ApplyResources(this.infoSplitter2, "infoSplitter2");
-            this.infoSplitter2.ForeColor = System.Drawing.Color.White;
             this.infoSplitter2.Name = "infoSplitter2";
             // 
             // infoSplitter3
             // 
             resources.ApplyResources(this.infoSplitter3, "infoSplitter3");
-            this.infoSplitter3.ForeColor = System.Drawing.Color.White;
             this.infoSplitter3.Name = "infoSplitter3";
             // 
             // imgIMDb
@@ -206,14 +193,12 @@
             // infoSplitter4
             // 
             resources.ApplyResources(this.infoSplitter4, "infoSplitter4");
-            this.infoSplitter4.ForeColor = System.Drawing.Color.White;
             this.infoSplitter4.Name = "infoSplitter4";
             // 
             // infoRatingIMDb
             // 
             resources.ApplyResources(this.infoRatingIMDb, "infoRatingIMDb");
             this.panelDetails.SetFlowBreak(this.infoRatingIMDb, true);
-            this.infoRatingIMDb.ForeColor = System.Drawing.Color.White;
             this.infoRatingIMDb.Name = "infoRatingIMDb";
             // 
             // panelTitleFiles
@@ -236,7 +221,7 @@
             resources.ApplyResources(this.imgSearchForMore, "imgSearchForMore");
             this.imgSearchForMore.BackColor = System.Drawing.Color.Transparent;
             this.imgSearchForMore.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgSearchForMore.Image = global::WebPlex.Properties.Resources.search_white;
+            this.imgSearchForMore.Image = global::WebPlex.Properties.Resources.magnify;
             this.imgSearchForMore.Name = "imgSearchForMore";
             this.imgSearchForMore.TabStop = false;
             this.imgSearchForMore.Click += new System.EventHandler(this.imgSearchForMore_Click);
@@ -245,7 +230,6 @@
             // 
             resources.ApplyResources(this.lblSearchForMore, "lblSearchForMore");
             this.lblSearchForMore.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblSearchForMore.ForeColor = System.Drawing.Color.White;
             this.lblSearchForMore.Name = "lblSearchForMore";
             this.lblSearchForMore.Click += new System.EventHandler(this.imgSearchForMore_Click);
             // 
@@ -275,10 +259,10 @@
             // lineUserReviews
             // 
             this.lineUserReviews.BackColor = System.Drawing.Color.Transparent;
-            this.lineUserReviews.BorderColor = System.Drawing.Color.White;
-            this.lineUserReviews.ColorFillSolid = System.Drawing.Color.White;
+            this.lineUserReviews.BorderColor = System.Drawing.Color.Black;
+            this.lineUserReviews.ColorFillSolid = System.Drawing.Color.Black;
             this.lineUserReviews.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lineUserReviews.DesignerSelected = true;
+            this.lineUserReviews.DesignerSelected = false;
             this.lineUserReviews.DimFactorClick = 0;
             this.lineUserReviews.DimFactorHover = 0;
             this.lineUserReviews.FillType = CButtonLib.CButton.eFillType.Solid;
@@ -299,15 +283,14 @@
             resources.ApplyResources(this.lblHeaderDirectFiles, "lblHeaderDirectFiles");
             this.lblHeaderDirectFiles.BackColor = System.Drawing.Color.Transparent;
             this.lblHeaderDirectFiles.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lblHeaderDirectFiles.ForeColor = System.Drawing.Color.White;
             this.lblHeaderDirectFiles.Name = "lblHeaderDirectFiles";
             // 
             // lineSplitter
             // 
             resources.ApplyResources(this.lineSplitter, "lineSplitter");
             this.lineSplitter.BackColor = System.Drawing.Color.Transparent;
-            this.lineSplitter.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(109)))), ((int)(((byte)(125)))));
-            this.lineSplitter.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(109)))), ((int)(((byte)(125)))));
+            this.lineSplitter.BorderColor = System.Drawing.Color.DimGray;
+            this.lineSplitter.ColorFillSolid = System.Drawing.Color.DimGray;
             this.lineSplitter.Cursor = System.Windows.Forms.Cursors.Default;
             this.lineSplitter.DesignerSelected = false;
             this.lineSplitter.DimFactorClick = 0;
@@ -344,8 +327,8 @@
             // cButton1
             // 
             this.cButton1.BackColor = System.Drawing.Color.Transparent;
-            this.cButton1.BorderColor = System.Drawing.Color.White;
-            this.cButton1.ColorFillSolid = System.Drawing.Color.White;
+            this.cButton1.BorderColor = System.Drawing.Color.Black;
+            this.cButton1.ColorFillSolid = System.Drawing.Color.Black;
             this.cButton1.Cursor = System.Windows.Forms.Cursors.Default;
             this.cButton1.DesignerSelected = false;
             this.cButton1.DimFactorClick = 0;
@@ -368,15 +351,14 @@
             resources.ApplyResources(this.lblHeaderTorrents, "lblHeaderTorrents");
             this.lblHeaderTorrents.BackColor = System.Drawing.Color.Transparent;
             this.lblHeaderTorrents.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lblHeaderTorrents.ForeColor = System.Drawing.Color.White;
             this.lblHeaderTorrents.Name = "lblHeaderTorrents";
             // 
             // cButton2
             // 
             resources.ApplyResources(this.cButton2, "cButton2");
             this.cButton2.BackColor = System.Drawing.Color.Transparent;
-            this.cButton2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(109)))), ((int)(((byte)(125)))));
-            this.cButton2.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(109)))), ((int)(((byte)(125)))));
+            this.cButton2.BorderColor = System.Drawing.Color.DimGray;
+            this.cButton2.ColorFillSolid = System.Drawing.Color.DimGray;
             this.cButton2.Cursor = System.Windows.Forms.Cursors.Default;
             this.cButton2.DesignerSelected = false;
             this.cButton2.DimFactorClick = 0;
@@ -403,27 +385,33 @@
             // btnWatchTrailer
             // 
             this.btnWatchTrailer.BackColor = System.Drawing.Color.Transparent;
-            this.btnWatchTrailer.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.btnWatchTrailer.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.btnWatchTrailer.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            cBlendItems1.iColor = new System.Drawing.Color[] {
+        System.Drawing.Color.White,
+        System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))))};
+            cBlendItems1.iPoint = new float[] {
+        0F,
+        1F};
+            this.btnWatchTrailer.ColorFillBlend = cBlendItems1;
+            this.btnWatchTrailer.ColorFillSolid = System.Drawing.Color.Empty;
             this.btnWatchTrailer.Corners.All = 2;
             this.btnWatchTrailer.Corners.LowerLeft = 2;
             this.btnWatchTrailer.Corners.LowerRight = 2;
             this.btnWatchTrailer.Corners.UpperLeft = 2;
             this.btnWatchTrailer.Corners.UpperRight = 2;
             this.btnWatchTrailer.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnWatchTrailer.DesignerSelected = false;
-            this.btnWatchTrailer.DimFactorClick = 0;
-            this.btnWatchTrailer.DimFactorHover = 0;
-            this.btnWatchTrailer.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.btnWatchTrailer.DesignerSelected = true;
+            this.btnWatchTrailer.DimFactorClick = -35;
+            this.btnWatchTrailer.DimFactorHover = -25;
             resources.ApplyResources(this.btnWatchTrailer, "btnWatchTrailer");
             this.btnWatchTrailer.ForeColor = System.Drawing.Color.Black;
             this.btnWatchTrailer.ImageIndex = 0;
             this.btnWatchTrailer.Name = "btnWatchTrailer";
             this.btnWatchTrailer.ShowFocus = CButtonLib.CButton.eFocus.None;
             this.btnWatchTrailer.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnWatchTrailer.SideImageSize = new System.Drawing.Size(21, 21);
+            this.btnWatchTrailer.SideImageSize = new System.Drawing.Size(0, 0);
             this.btnWatchTrailer.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnWatchTrailer.TextMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
+            this.btnWatchTrailer.TextShadow = System.Drawing.Color.Empty;
             this.btnWatchTrailer.TextShadowShow = false;
             this.btnWatchTrailer.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnWatchTrailer_ClickButtonArea);
             // 
@@ -455,7 +443,7 @@
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(32)))), ((int)(((byte)(45)))));
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.btnWatchTrailer);
             this.Controls.Add(this.infoTitle);
             this.Controls.Add(this.imgPoster);
@@ -463,7 +451,7 @@
             this.Controls.Add(this.appClose);
             this.Controls.Add(this.imgPosterBG);
             this.DoubleBuffered = true;
-            this.ForeColor = System.Drawing.Color.White;
+            this.ForeColor = System.Drawing.Color.Black;
             this.Name = "ctrlMovieDetails";
             this.Load += new System.EventHandler(this.ctrlMovieDetails_Load);
             this.SizeChanged += new System.EventHandler(this.ctrlDetails_SizeChanged);

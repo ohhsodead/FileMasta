@@ -49,11 +49,11 @@ namespace WebPlex.CControls
 
             if (Utilities.isSaved(Utilities.fileToJson(infoFileURL.Text, infoName.Text, infoType.Text, infoReferrer.Text)))
             {
-                btnSaveFile.Image = Properties.Resources.bookmark_remove_black;
+                btnSaveFile.Image = Properties.Resources.bookmark_remove;
             }
             else
             {
-                btnSaveFile.Image = Properties.Resources.bookmark_plus_black;
+                btnSaveFile.Image = Properties.Resources.bookmark_plus;
             }
         }
 
@@ -71,7 +71,7 @@ namespace WebPlex.CControls
         private void btnCopyURL_ClickButtonArea(object Sender, MouseEventArgs e)
         {
             Clipboard.SetText(infoFileURL.Text);
-            btnCopyURL.SideImage = Properties.Resources.clipboard_check_black;
+            btnCopyURL.SideImage = Properties.Resources.clipboard_check;
             btnCopyURL.SideImageSize = new Size(22, 22);
         }
 
@@ -227,12 +227,12 @@ namespace WebPlex.CControls
             if (!Utilities.isSaved(Utilities.fileToJson(infoFileURL.Text, infoName.Text, infoType.Text, infoReferrer.Text)))
             {
                 Utilities.saveFile(Utilities.fileToJson(infoFileURL.Text, infoName.Text, infoType.Text, infoReferrer.Text));
-                btnSaveFile.Image = Properties.Resources.bookmark_remove_black;
+                btnSaveFile.Image = Properties.Resources.bookmark_remove;
             }
             else
             {
                 Utilities.unsaveFile(Utilities.fileToJson(infoFileURL.Text, infoName.Text, infoType.Text, infoReferrer.Text));
-                btnSaveFile.Image = Properties.Resources.bookmark_plus_black;
+                btnSaveFile.Image = Properties.Resources.bookmark_plus;
             }
         }
     }

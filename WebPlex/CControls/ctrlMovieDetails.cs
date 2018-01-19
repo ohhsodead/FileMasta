@@ -33,7 +33,6 @@ namespace WebPlex.CControls
             if (panelTorrents.Controls.Count == 0) { panelTorrents.Visible = false; panelTitleTorrents.Visible = false; }
             if (infoTrailerUrl == "") { btnWatchTrailer.Visible = false; }
             if (infoImagePoster == "") { imgPoster.Image = Utilities.ChangeOpacity(Properties.Resources.poster_default, 1); }
-            if (infoFanartUrl == "") { BackgroundImage = Utilities.ChangeOpacity(Properties.Resources.background_original, 0.5F); }
             panelTitleFiles.Size = new Size(panelDetails.Size.Width, panelTitleFiles.Size.Height);
             panelTitleTorrents.Size = new Size(panelDetails.Size.Width, panelTitleTorrents.Size.Height);
             panelFiles.Size = new Size(panelDetails.Size.Width, panelFiles.Size.Height);

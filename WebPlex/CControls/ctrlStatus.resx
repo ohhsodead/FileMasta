@@ -157,19 +157,19 @@
     <value>Top</value>
   </data>
   <data name="btnRestartApp.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt, style=Bold</value>
+    <value>Segoe UI, 10pt</value>
   </data>
   <data name="btnRestartApp.Location" type="System.Drawing.Point, System.Drawing">
-    <value>181, 208</value>
+    <value>199, 208</value>
   </data>
   <data name="btnRestartApp.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 1, 3, 0</value>
   </data>
   <data name="btnRestartApp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>98, 34</value>
+    <value>77, 30</value>
   </data>
   <data name="btnRestartApp.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>1</value>
   </data>
   <data name="btnRestartApp.Text" xml:space="preserve">
     <value>Restart</value>

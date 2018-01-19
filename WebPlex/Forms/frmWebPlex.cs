@@ -25,14 +25,7 @@ namespace WebPlex
         {
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Properties.Settings.Default.userLanguage);
 
-            allFileTypes.AddRange(videoFileTypes);
-            allFileTypes.AddRange(audioFileTypes);
-            allFileTypes.AddRange(ebooksFileTypes);
-            allFileTypes.AddRange(subtitleFileTypes);
-            allFileTypes.AddRange(torrentFileTypes);
-            allFileTypes.AddRange(mobileFileTypes);
-            allFileTypes.AddRange(archivesFileTypes);
-            allFileTypes.AddRange(otherFileTypes);
+            allFileTypes.AddRange(videoFileTypes); allFileTypes.AddRange(audioFileTypes); allFileTypes.AddRange(ebooksFileTypes); allFileTypes.AddRange(subtitleFileTypes); allFileTypes.AddRange(torrentFileTypes); allFileTypes.AddRange(mobileFileTypes); allFileTypes.AddRange(archivesFileTypes); allFileTypes.AddRange(otherFileTypes);
 
             selectedFilesFileType = allFileTypes;
 
@@ -92,6 +85,7 @@ namespace WebPlex
 
         WebClient client = new WebClient(); // public reusable web client
         int intPostersPerScroll = 85;
+        bool showSpinnerForMovies = false;
 
         private void frmWebPlex_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -112,11 +106,6 @@ namespace WebPlex
 
             Directory.CreateDirectory(pathRoot);
             Directory.CreateDirectory(pathData);
-
-            tabHome.BackgroundImage = Utilities.ChangeOpacity(Properties.Resources.background_original, 0.5F);
-            tabSubmit.BackgroundImage = Utilities.ChangeOpacity(Properties.Resources.background_original, 0.5F);
-            tabSettings.BackgroundImage = Utilities.ChangeOpacity(Properties.Resources.background_original, 0.5F);
-            tabAbout.BackgroundImage = Utilities.ChangeOpacity(Properties.Resources.background_original, 0.5F);
 
             if (Utilities.checkForInternetConnection() == true)
             {
@@ -182,7 +171,6 @@ namespace WebPlex
             ctrlStatus a = new ctrlStatus
             {
                 BackColor = tabHome.BackColor,
-                BackgroundImage = Utilities.ChangeOpacity(Properties.Resources.background_original, 0.5F),
                 Dock = DockStyle.Fill
             };
 
@@ -375,7 +363,7 @@ namespace WebPlex
                     Text = "Powered by FileChef",
                     Font = new Font(btnHomeFileType.Font.Name, 9, FontStyle.Regular),
                     BackColor = Color.Transparent,
-                    ForeColor = Color.White,
+                    ForeColor = Color.Black,
                     Margin = new Padding(0, 8, 0, 3),
                     Cursor = Cursors.Hand,
                     Name = "btnFileChef",
@@ -404,15 +392,15 @@ namespace WebPlex
                 BackColor = Color.Transparent,
                 ForeColor = Color.Black,
                 TextMargin = new Padding(0, 2, 0, 2),
-                BorderColor = Color.FromArgb(230, 230, 230),
-                ColorFillSolid = Color.FromArgb(230, 230, 230),
-                FillType = CButtonLib.CButton.eFillType.Solid,
+                BorderColor = Color.FromArgb(204, 204, 204),
+                ColorFillBlend = btnSearchFiles.ColorFillBlend,
+                FillType = CButtonLib.CButton.eFillType.GradientLinear,
                 TextShadowShow = false,
-                ShowFocus = CButtonLib.CButton.eFocus.None,
+                ShowFocus = CButtonLib.CButton.eFocus.Dim,
                 Margin = new Padding(0, 3, 6, 3),
                 BorderShow = true,
-                DimFactorHover = 0,
-                DimFactorClick = 0,
+                DimFactorClick = -25,
+                DimFactorHover = -18,
                 Cursor = Cursors.Hand,
                 Name = "tagItem" + count
             };
@@ -567,7 +555,7 @@ namespace WebPlex
         delegate void loadMoviesCallBack(int count);
         public void loadMovies(int count)
         {
-            imgSpinner.Visible = true;
+            imgSpinner.Visible = showSpinnerForMovies;
             BackGroundWorker.RunWorkAsync<List<ctrlMoviePoster>>(() => LoadMovies(count), (data) =>
             {
                 if (panelMovies.InvokeRequired)
@@ -586,6 +574,7 @@ namespace WebPlex
                     imgSpinner.Visible = false;
                 }
             });
+            showSpinnerForMovies = true;
         }
 
         // Search Movies by Text
@@ -838,7 +827,7 @@ namespace WebPlex
 
         public void selectFilesTab(CButtonLib.CButton cbtn)
         {
-            Color selectedRGB = Color.FromArgb(42, 42, 42);
+            Color selectedRGB = Color.FromArgb(225, 225, 220);
             Color nonSelectedRGB = Color.Transparent;
 
             titleFilesAll.ColorFillSolid = nonSelectedRGB;
@@ -1001,7 +990,6 @@ namespace WebPlex
             fileDetails.infoAge.Text = Age;
             fileDetails.infoFileURL.Text = Url;
             fileDetails.Dock = DockStyle.Fill;
-            fileDetails.BackgroundImage = Utilities.ChangeOpacity(Properties.Resources.background_original, 0.5F);
             tabBlank.Controls.Clear();
             tabBlank.Controls.Add(fileDetails);
             imgSpinner.Visible = false;
@@ -1223,7 +1211,7 @@ namespace WebPlex
             Properties.Settings.Default.Save();
             Thread.Sleep(500);
         }
-
+        
         private void btnSettingsRestoreDefault_ClickButtonArea(object Sender, MouseEventArgs e)
         {
             Properties.Settings.Default.clearDataOnClose = false;

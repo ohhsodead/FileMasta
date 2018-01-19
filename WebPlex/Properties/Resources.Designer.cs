@@ -63,49 +63,9 @@ namespace WebPlex.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap alert_octagon_black {
+        internal static System.Drawing.Bitmap alert_octagon {
             get {
-                object obj = ResourceManager.GetObject("alert-octagon-black", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap arrow_drop_down_black {
-            get {
-                object obj = ResourceManager.GetObject("arrow_drop_down_black", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap arrow_drop_down_white {
-            get {
-                object obj = ResourceManager.GetObject("arrow_drop_down_white", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap arrow_left_black {
-            get {
-                object obj = ResourceManager.GetObject("arrow-left-black", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap background_original {
-            get {
-                object obj = ResourceManager.GetObject("background_original", resourceCulture);
+                object obj = ResourceManager.GetObject("alert_octagon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,49 +93,9 @@ namespace WebPlex.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap bookmark_plus_black {
-            get {
-                object obj = ResourceManager.GetObject("bookmark-plus-black", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap bookmark_remove {
             get {
                 object obj = ResourceManager.GetObject("bookmark_remove", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap bookmark_remove_black {
-            get {
-                object obj = ResourceManager.GetObject("bookmark_remove_black", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap check {
-            get {
-                object obj = ResourceManager.GetObject("check", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap chevron_up_black {
-            get {
-                object obj = ResourceManager.GetObject("chevron-up-black", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -193,29 +113,9 @@ namespace WebPlex.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap clipboard_arrow_left_black {
-            get {
-                object obj = ResourceManager.GetObject("clipboard-arrow-left-black", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap clipboard_check {
             get {
                 object obj = ResourceManager.GetObject("clipboard_check", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap clipboard_check_black {
-            get {
-                object obj = ResourceManager.GetObject("clipboard_check_black", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -233,29 +133,9 @@ namespace WebPlex.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap close_circle {
+        internal static System.Drawing.Bitmap cloud_check {
             get {
-                object obj = ResourceManager.GetObject("close-circle", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap close_small {
-            get {
-                object obj = ResourceManager.GetObject("close_small", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap cloud_done {
-            get {
-                object obj = ResourceManager.GetObject("cloud_done", resourceCulture);
+                object obj = ResourceManager.GetObject("cloud_check", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -293,16 +173,6 @@ namespace WebPlex.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap download {
-            get {
-                object obj = ResourceManager.GetObject("download", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap email {
             get {
                 object obj = ResourceManager.GetObject("email", resourceCulture);
@@ -313,9 +183,9 @@ namespace WebPlex.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap eye_black {
+        internal static System.Drawing.Bitmap eye {
             get {
-                object obj = ResourceManager.GetObject("eye-black", resourceCulture);
+                object obj = ResourceManager.GetObject("eye", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -373,16 +243,6 @@ namespace WebPlex.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap folder_open {
-            get {
-                object obj = ResourceManager.GetObject("folder_open", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap google_plus {
             get {
                 object obj = ResourceManager.GetObject("google-plus", resourceCulture);
@@ -423,29 +283,9 @@ namespace WebPlex.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap keyboard_arrow_down {
-            get {
-                object obj = ResourceManager.GetObject("keyboard_arrow_down", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap link_variant {
             get {
-                object obj = ResourceManager.GetObject("link-variant", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap link_variant_black {
-            get {
-                object obj = ResourceManager.GetObject("link-variant-black", resourceCulture);
+                object obj = ResourceManager.GetObject("link_variant", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -513,19 +353,9 @@ namespace WebPlex.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap magnify_black {
+        internal static System.Drawing.Bitmap menu_down {
             get {
-                object obj = ResourceManager.GetObject("magnify-black", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap menu_down_black {
-            get {
-                object obj = ResourceManager.GetObject("menu-down-black", resourceCulture);
+                object obj = ResourceManager.GetObject("menu_down", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -536,26 +366,6 @@ namespace WebPlex.Properties {
         internal static System.Drawing.Bitmap pinterest {
             get {
                 object obj = ResourceManager.GetObject("pinterest", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap play {
-            get {
-                object obj = ResourceManager.GetObject("play", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap play_black {
-            get {
-                object obj = ResourceManager.GetObject("play-black", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -603,46 +413,6 @@ namespace WebPlex.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap refresh {
-            get {
-                object obj = ResourceManager.GetObject("refresh", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap report {
-            get {
-                object obj = ResourceManager.GetObject("report", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap search {
-            get {
-                object obj = ResourceManager.GetObject("search", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap search_white {
-            get {
-                object obj = ResourceManager.GetObject("search-white", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap send {
             get {
                 object obj = ResourceManager.GetObject("send", resourceCulture);
@@ -665,17 +435,7 @@ namespace WebPlex.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap share_variant {
             get {
-                object obj = ResourceManager.GetObject("share-variant", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap share_variant_black {
-            get {
-                object obj = ResourceManager.GetObject("share-variant-black", resourceCulture);
+                object obj = ResourceManager.GetObject("share_variant", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
