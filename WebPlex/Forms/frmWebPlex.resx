@@ -135,10 +135,10 @@
     <value>NoControl</value>
   </data>
   <data name="lblHomeStatsDatabaseUpdated.Location" type="System.Drawing.Point, System.Drawing">
-    <value>170, 503</value>
+    <value>210, 513</value>
   </data>
   <data name="lblHomeStatsDatabaseUpdated.Size" type="System.Drawing.Size, System.Drawing">
-    <value>533, 20</value>
+    <value>632, 20</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="lblHomeStatsDatabaseUpdated.TabIndex" type="System.Int32, mscorlib">
@@ -172,10 +172,10 @@
     <value>NoControl</value>
   </data>
   <data name="lblHomeStatsFiles.Location" type="System.Drawing.Point, System.Drawing">
-    <value>170, 481</value>
+    <value>210, 491</value>
   </data>
   <data name="lblHomeStatsFiles.Size" type="System.Drawing.Size, System.Drawing">
-    <value>533, 20</value>
+    <value>632, 20</value>
   </data>
   <data name="lblHomeStatsFiles.TabIndex" type="System.Int32, mscorlib">
     <value>1106</value>
@@ -274,7 +274,7 @@
     <value>1</value>
   </data>
   <data name="panelHomeEngine.Location" type="System.Drawing.Point, System.Drawing">
-    <value>313, 250</value>
+    <value>353, 255</value>
   </data>
   <data name="panelHomeEngine.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 0, 2, 0</value>
@@ -304,7 +304,7 @@
     <value>Segoe UI Semibold, 13.25pt</value>
   </data>
   <data name="lineTopSearches.Location" type="System.Drawing.Point, System.Drawing">
-    <value>170, 313</value>
+    <value>210, 318</value>
   </data>
   <data name="lineTopSearches.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 16, 0, 3</value>
@@ -343,7 +343,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblHeaderTopSearches.Location" type="System.Drawing.Point, System.Drawing">
-    <value>166, 290</value>
+    <value>206, 295</value>
   </data>
   <data name="lblHeaderTopSearches.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -376,13 +376,13 @@
     <value>Segoe UI Semibold, 13.25pt</value>
   </data>
   <data name="lineHomeTopSearchesSplitter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>170, 313</value>
+    <value>210, 318</value>
   </data>
   <data name="lineHomeTopSearchesSplitter.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 16, 3, 3</value>
   </data>
   <data name="lineHomeTopSearchesSplitter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>533, 2</value>
+    <value>632, 2</value>
   </data>
   <data name="lineHomeTopSearchesSplitter.TabIndex" type="System.Int32, mscorlib">
     <value>1103</value>
@@ -406,10 +406,10 @@
     <value>Left, Right</value>
   </data>
   <data name="panelTopSearches.Location" type="System.Drawing.Point, System.Drawing">
-    <value>170, 320</value>
+    <value>210, 325</value>
   </data>
   <data name="panelTopSearches.Size" type="System.Drawing.Size, System.Drawing">
-    <value>533, 134</value>
+    <value>632, 134</value>
   </data>
   <data name="panelTopSearches.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -444,7 +444,7 @@
 </value>
   </data>
   <data name="btnShareFacebook.Location" type="System.Drawing.Point, System.Drawing">
-    <value>440, 204</value>
+    <value>530, 213</value>
   </data>
   <data name="btnShareFacebook.Size" type="System.Drawing.Size, System.Drawing">
     <value>62, 22</value>
@@ -492,7 +492,7 @@
 </value>
   </data>
   <data name="btnShareTwitter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>366, 204</value>
+    <value>456, 213</value>
   </data>
   <data name="btnShareTwitter.Size" type="System.Drawing.Size, System.Drawing">
     <value>68, 22</value>
@@ -528,7 +528,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblHeaderHome.Location" type="System.Drawing.Point, System.Drawing">
-    <value>214, 21</value>
+    <value>304, 30</value>
   </data>
   <data name="lblHeaderHome.Size" type="System.Drawing.Size, System.Drawing">
     <value>440, 153</value>
@@ -650,7 +650,7 @@ Get direct download links for almost anything!</value>
     <value>1</value>
   </data>
   <data name="panelHomeFileType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>170, 250</value>
+    <value>210, 255</value>
   </data>
   <data name="panelHomeFileType.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 0, 2, 0</value>
@@ -690,7 +690,7 @@ Get direct download links for almost anything!</value>
 </value>
   </data>
   <data name="btnSearchFilesHome.Location" type="System.Drawing.Point, System.Drawing">
-    <value>627, 250</value>
+    <value>766, 255</value>
   </data>
   <data name="btnSearchFilesHome.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 3, 3, 3</value>
@@ -723,10 +723,10 @@ Get direct download links for almost anything!</value>
     <value>Segoe UI, 9.75pt</value>
   </data>
   <data name="txtSearchFilesHome.Location" type="System.Drawing.Point, System.Drawing">
-    <value>423, 255</value>
+    <value>463, 260</value>
   </data>
   <data name="txtSearchFilesHome.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 18</value>
+    <value>286, 18</value>
   </data>
   <data name="txtSearchFilesHome.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -750,13 +750,13 @@ Get direct download links for almost anything!</value>
     <value>Segoe UI, 8.25pt</value>
   </data>
   <data name="bgSearchFilesHome.Location" type="System.Drawing.Point, System.Drawing">
-    <value>414, 250</value>
+    <value>454, 255</value>
   </data>
   <data name="bgSearchFilesHome.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 3, 2, 3</value>
   </data>
   <data name="bgSearchFilesHome.Size" type="System.Drawing.Size, System.Drawing">
-    <value>208, 30</value>
+    <value>304, 30</value>
   </data>
   <data name="bgSearchFilesHome.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -780,7 +780,7 @@ Get direct download links for almost anything!</value>
     <value>4, 22</value>
   </data>
   <data name="tabHome.Size" type="System.Drawing.Size, System.Drawing">
-    <value>868, 536</value>
+    <value>1048, 546</value>
   </data>
   <data name="tabHome.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -2865,7 +2865,7 @@ Please keep in mind we are a search engine having strict policies, read the foll
     <value>4, 22</value>
   </data>
   <data name="tabSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>868, 536</value>
+    <value>1048, 496</value>
   </data>
   <data name="tabSettings.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -3185,10 +3185,10 @@ To contact the application owner and administrator you can send an e-mail to thi
     <value>7</value>
   </data>
   <data name="tab.Location" type="System.Drawing.Point, System.Drawing">
-    <value>176, -22</value>
+    <value>-4, 18</value>
   </data>
   <data name="tab.Size" type="System.Drawing.Size, System.Drawing">
-    <value>876, 562</value>
+    <value>1056, 572</value>
   </data>
   <data name="tab.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -3206,16 +3206,19 @@ To contact the application owner and administrator you can send an e-mail to thi
     <value>1</value>
   </data>
   <data name="panelTitles.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left</value>
+    <value>Top, Left, Right</value>
   </data>
   <data name="imgHome.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="imgHome.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 26</value>
+    <value>13, 10</value>
+  </data>
+  <data name="imgHome.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 0, 3</value>
   </data>
   <data name="imgHome.Size" type="System.Drawing.Size, System.Drawing">
-    <value>22, 22</value>
+    <value>20, 20</value>
   </data>
   <data name="imgHome.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>StretchImage</value>
@@ -3235,20 +3238,17 @@ To contact the application owner and administrator you can send an e-mail to thi
   <data name="&gt;&gt;imgHome.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="titleLineHome.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
   <data name="titleLineHome.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 8.25pt</value>
   </data>
   <data name="titleLineHome.Location" type="System.Drawing.Point, System.Drawing">
-    <value>177, 24</value>
+    <value>13, 37</value>
   </data>
   <data name="titleLineHome.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 5, 3, 5</value>
   </data>
   <data name="titleLineHome.Size" type="System.Drawing.Size, System.Drawing">
-    <value>3, 28</value>
+    <value>66, 3</value>
   </data>
   <data name="titleLineHome.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
@@ -3272,19 +3272,19 @@ To contact the application owner and administrator you can send an e-mail to thi
     <value>True</value>
   </data>
   <data name="titleHome.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 10.75pt</value>
+    <value>Segoe UI Semibold, 10.25pt</value>
   </data>
   <data name="titleHome.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="titleHome.Location" type="System.Drawing.Point, System.Drawing">
-    <value>43, 27</value>
+    <value>33, 11</value>
   </data>
   <data name="titleHome.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 9, 3, 9</value>
+    <value>0, 9, 3, 9</value>
   </data>
   <data name="titleHome.Size" type="System.Drawing.Size, System.Drawing">
-    <value>50, 20</value>
+    <value>46, 19</value>
   </data>
   <data name="titleHome.TabIndex" type="System.Int32, mscorlib">
     <value>24</value>
@@ -3308,10 +3308,13 @@ To contact the application owner and administrator you can send an e-mail to thi
     <value>NoControl</value>
   </data>
   <data name="imgSubmit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 178</value>
+    <value>321, 10</value>
+  </data>
+  <data name="imgSubmit.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 0, 3</value>
   </data>
   <data name="imgSubmit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>22, 22</value>
+    <value>20, 20</value>
   </data>
   <data name="imgSubmit.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>StretchImage</value>
@@ -3331,17 +3334,14 @@ To contact the application owner and administrator you can send an e-mail to thi
   <data name="&gt;&gt;imgSubmit.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="titleLineSubmit.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
   <data name="titleLineSubmit.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 8.25pt</value>
   </data>
   <data name="titleLineSubmit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>177, 175</value>
+    <value>321, 37</value>
   </data>
   <data name="titleLineSubmit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>3, 28</value>
+    <value>74, 3</value>
   </data>
   <data name="titleLineSubmit.TabIndex" type="System.Int32, mscorlib">
     <value>22</value>
@@ -3368,19 +3368,19 @@ To contact the application owner and administrator you can send an e-mail to thi
     <value>True</value>
   </data>
   <data name="titleSubmit.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 10.75pt</value>
+    <value>Segoe UI Semibold, 10.25pt</value>
   </data>
   <data name="titleSubmit.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="titleSubmit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>43, 179</value>
+    <value>341, 11</value>
   </data>
   <data name="titleSubmit.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 9, 3, 9</value>
+    <value>0, 9, 3, 9</value>
   </data>
   <data name="titleSubmit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 20</value>
+    <value>54, 19</value>
   </data>
   <data name="titleSubmit.TabIndex" type="System.Int32, mscorlib">
     <value>21</value>
@@ -3404,10 +3404,13 @@ To contact the application owner and administrator you can send an e-mail to thi
     <value>NoControl</value>
   </data>
   <data name="imgDiscover.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 141</value>
+    <value>231, 10</value>
+  </data>
+  <data name="imgDiscover.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 0, 3</value>
   </data>
   <data name="imgDiscover.Size" type="System.Drawing.Size, System.Drawing">
-    <value>22, 22</value>
+    <value>20, 20</value>
   </data>
   <data name="imgDiscover.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>StretchImage</value>
@@ -3427,20 +3430,17 @@ To contact the application owner and administrator you can send an e-mail to thi
   <data name="&gt;&gt;imgDiscover.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="titleLineDiscover.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
   <data name="titleLineDiscover.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 8.25pt</value>
   </data>
   <data name="titleLineDiscover.Location" type="System.Drawing.Point, System.Drawing">
-    <value>177, 138</value>
+    <value>231, 37</value>
   </data>
   <data name="titleLineDiscover.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 5, 3, 5</value>
   </data>
   <data name="titleLineDiscover.Size" type="System.Drawing.Size, System.Drawing">
-    <value>3, 28</value>
+    <value>83, 3</value>
   </data>
   <data name="titleLineDiscover.TabIndex" type="System.Int32, mscorlib">
     <value>19</value>
@@ -3467,19 +3467,19 @@ To contact the application owner and administrator you can send an e-mail to thi
     <value>True</value>
   </data>
   <data name="titleDiscover.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 10.75pt</value>
+    <value>Segoe UI Semibold, 10.25pt</value>
   </data>
   <data name="titleDiscover.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="titleDiscover.Location" type="System.Drawing.Point, System.Drawing">
-    <value>43, 141</value>
+    <value>251, 11</value>
   </data>
   <data name="titleDiscover.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 9, 3, 9</value>
+    <value>0, 9, 3, 9</value>
   </data>
   <data name="titleDiscover.Size" type="System.Drawing.Size, System.Drawing">
-    <value>66, 20</value>
+    <value>63, 19</value>
   </data>
   <data name="titleDiscover.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
@@ -3503,10 +3503,13 @@ To contact the application owner and administrator you can send an e-mail to thi
     <value>NoControl</value>
   </data>
   <data name="imgSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 254</value>
+    <value>402, 10</value>
+  </data>
+  <data name="imgSettings.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 0, 3</value>
   </data>
   <data name="imgSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>22, 22</value>
+    <value>20, 20</value>
   </data>
   <data name="imgSettings.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>StretchImage</value>
@@ -3526,17 +3529,14 @@ To contact the application owner and administrator you can send an e-mail to thi
   <data name="&gt;&gt;imgSettings.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
-  <data name="titleLineSettings.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
   <data name="titleLineSettings.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 8.25pt</value>
   </data>
   <data name="titleLineSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>177, 251</value>
+    <value>402, 37</value>
   </data>
   <data name="titleLineSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>3, 28</value>
+    <value>80, 3</value>
   </data>
   <data name="titleLineSettings.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
@@ -3563,19 +3563,19 @@ To contact the application owner and administrator you can send an e-mail to thi
     <value>True</value>
   </data>
   <data name="titleSettings.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 10.75pt</value>
+    <value>Segoe UI Semibold, 10.25pt</value>
   </data>
   <data name="titleSettings.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="titleSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>43, 255</value>
+    <value>422, 11</value>
   </data>
   <data name="titleSettings.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 9, 3, 9</value>
+    <value>0, 9, 3, 9</value>
   </data>
   <data name="titleSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>62, 20</value>
+    <value>60, 19</value>
   </data>
   <data name="titleSettings.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -3599,10 +3599,13 @@ To contact the application owner and administrator you can send an e-mail to thi
     <value>NoControl</value>
   </data>
   <data name="imgAbout.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 292</value>
+    <value>489, 10</value>
+  </data>
+  <data name="imgAbout.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 0, 3</value>
   </data>
   <data name="imgAbout.Size" type="System.Drawing.Size, System.Drawing">
-    <value>22, 22</value>
+    <value>20, 20</value>
   </data>
   <data name="imgAbout.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>StretchImage</value>
@@ -3622,17 +3625,14 @@ To contact the application owner and administrator you can send an e-mail to thi
   <data name="&gt;&gt;imgAbout.ZOrder" xml:space="preserve">
     <value>12</value>
   </data>
-  <data name="titleLineAbout.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
   <data name="titleLineAbout.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 8.25pt</value>
   </data>
   <data name="titleLineAbout.Location" type="System.Drawing.Point, System.Drawing">
-    <value>177, 289</value>
+    <value>489, 37</value>
   </data>
   <data name="titleLineAbout.Size" type="System.Drawing.Size, System.Drawing">
-    <value>3, 28</value>
+    <value>67, 3</value>
   </data>
   <data name="titleLineAbout.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -3659,19 +3659,19 @@ To contact the application owner and administrator you can send an e-mail to thi
     <value>True</value>
   </data>
   <data name="titleAbout.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 10.75pt</value>
+    <value>Segoe UI Semibold, 10.25pt</value>
   </data>
   <data name="titleAbout.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="titleAbout.Location" type="System.Drawing.Point, System.Drawing">
-    <value>43, 293</value>
+    <value>509, 11</value>
   </data>
   <data name="titleAbout.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 9, 3, 9</value>
+    <value>0, 9, 3, 9</value>
   </data>
   <data name="titleAbout.Size" type="System.Drawing.Size, System.Drawing">
-    <value>50, 20</value>
+    <value>47, 19</value>
   </data>
   <data name="titleAbout.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -3695,10 +3695,13 @@ To contact the application owner and administrator you can send an e-mail to thi
     <value>NoControl</value>
   </data>
   <data name="imgFiles.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 103</value>
+    <value>167, 10</value>
+  </data>
+  <data name="imgFiles.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 0, 3</value>
   </data>
   <data name="imgFiles.Size" type="System.Drawing.Size, System.Drawing">
-    <value>22, 22</value>
+    <value>20, 20</value>
   </data>
   <data name="imgFiles.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>StretchImage</value>
@@ -3722,10 +3725,13 @@ To contact the application owner and administrator you can send an e-mail to thi
     <value>NoControl</value>
   </data>
   <data name="imgMovies.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 64</value>
+    <value>86, 10</value>
+  </data>
+  <data name="imgMovies.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 0, 3</value>
   </data>
   <data name="imgMovies.Size" type="System.Drawing.Size, System.Drawing">
-    <value>22, 22</value>
+    <value>20, 20</value>
   </data>
   <data name="imgMovies.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>StretchImage</value>
@@ -3745,20 +3751,17 @@ To contact the application owner and administrator you can send an e-mail to thi
   <data name="&gt;&gt;imgMovies.ZOrder" xml:space="preserve">
     <value>16</value>
   </data>
-  <data name="titleLineFiles.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
   <data name="titleLineFiles.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 8.25pt</value>
   </data>
   <data name="titleLineFiles.Location" type="System.Drawing.Point, System.Drawing">
-    <value>177, 100</value>
+    <value>167, 37</value>
   </data>
   <data name="titleLineFiles.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 5, 3, 5</value>
   </data>
   <data name="titleLineFiles.Size" type="System.Drawing.Size, System.Drawing">
-    <value>3, 28</value>
+    <value>57, 3</value>
   </data>
   <data name="titleLineFiles.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -3781,20 +3784,17 @@ To contact the application owner and administrator you can send an e-mail to thi
   <data name="&gt;&gt;titleLineFiles.ZOrder" xml:space="preserve">
     <value>17</value>
   </data>
-  <data name="titleLineMovies.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
   <data name="titleLineMovies.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 8.25pt</value>
   </data>
   <data name="titleLineMovies.Location" type="System.Drawing.Point, System.Drawing">
-    <value>177, 62</value>
+    <value>86, 37</value>
   </data>
   <data name="titleLineMovies.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 5, 3, 5</value>
   </data>
   <data name="titleLineMovies.Size" type="System.Drawing.Size, System.Drawing">
-    <value>3, 28</value>
+    <value>74, 3</value>
   </data>
   <data name="titleLineMovies.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -3821,19 +3821,19 @@ To contact the application owner and administrator you can send an e-mail to thi
     <value>True</value>
   </data>
   <data name="titleFiles.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 10.75pt</value>
+    <value>Segoe UI Semibold, 10.25pt</value>
   </data>
   <data name="titleFiles.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="titleFiles.Location" type="System.Drawing.Point, System.Drawing">
-    <value>43, 103</value>
+    <value>187, 11</value>
   </data>
   <data name="titleFiles.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 9, 3, 9</value>
+    <value>0, 9, 3, 9</value>
   </data>
   <data name="titleFiles.Size" type="System.Drawing.Size, System.Drawing">
-    <value>38, 20</value>
+    <value>37, 19</value>
   </data>
   <data name="titleFiles.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -3857,19 +3857,19 @@ To contact the application owner and administrator you can send an e-mail to thi
     <value>True</value>
   </data>
   <data name="titleMovies.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 10.75pt</value>
+    <value>Segoe UI Semibold, 10.25pt</value>
   </data>
   <data name="titleMovies.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="titleMovies.Location" type="System.Drawing.Point, System.Drawing">
-    <value>43, 65</value>
+    <value>106, 11</value>
   </data>
   <data name="titleMovies.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 9, 3, 9</value>
+    <value>0, 9, 3, 9</value>
   </data>
   <data name="titleMovies.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 20</value>
+    <value>54, 19</value>
   </data>
   <data name="titleMovies.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -3893,7 +3893,7 @@ To contact the application owner and administrator you can send an e-mail to thi
     <value>0, 0</value>
   </data>
   <data name="panelTitles.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 536</value>
+    <value>1048, 40</value>
   </data>
   <data name="panelTitles.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -3917,7 +3917,7 @@ To contact the application owner and administrator you can send an e-mail to thi
     <value>NoControl</value>
   </data>
   <data name="imgSpinner.Location" type="System.Drawing.Point, System.Drawing">
-    <value>514, 249</value>
+    <value>514, 274</value>
   </data>
   <data name="imgSpinner.Size" type="System.Drawing.Size, System.Drawing">
     <value>20, 20</value>
@@ -3953,7 +3953,7 @@ To contact the application owner and administrator you can send an e-mail to thi
     <value>GrowAndShrink</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1048, 536</value>
+    <value>1048, 586</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 8.25pt</value>
@@ -4714,11 +4714,8 @@ To contact the application owner and administrator you can send an e-mail to thi
         rkJggg==
 </value>
   </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>800, 575</value>
+    <value>800, 625</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>

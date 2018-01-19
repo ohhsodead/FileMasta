@@ -1471,7 +1471,6 @@
             // 
             // titleLineHome
             // 
-            resources.ApplyResources(this.titleLineHome, "titleLineHome");
             this.titleLineHome.BackColor = System.Drawing.Color.Transparent;
             this.titleLineHome.BorderColor = System.Drawing.Color.White;
             this.titleLineHome.ColorFillSolid = System.Drawing.Color.White;
@@ -1480,6 +1479,7 @@
             this.titleLineHome.DimFactorClick = 0;
             this.titleLineHome.DimFactorHover = 0;
             this.titleLineHome.FillType = CButtonLib.CButton.eFillType.Solid;
+            resources.ApplyResources(this.titleLineHome, "titleLineHome");
             this.titleLineHome.ImageIndex = 0;
             this.titleLineHome.Name = "titleLineHome";
             this.titleLineHome.ShowFocus = CButtonLib.CButton.eFocus.None;
@@ -1497,7 +1497,6 @@
             // 
             // titleLineSubmit
             // 
-            resources.ApplyResources(this.titleLineSubmit, "titleLineSubmit");
             this.titleLineSubmit.BackColor = System.Drawing.Color.Transparent;
             this.titleLineSubmit.BorderColor = System.Drawing.Color.White;
             this.titleLineSubmit.ColorFillSolid = System.Drawing.Color.White;
@@ -1506,6 +1505,7 @@
             this.titleLineSubmit.DimFactorClick = 0;
             this.titleLineSubmit.DimFactorHover = 0;
             this.titleLineSubmit.FillType = CButtonLib.CButton.eFillType.Solid;
+            resources.ApplyResources(this.titleLineSubmit, "titleLineSubmit");
             this.titleLineSubmit.ImageIndex = 0;
             this.titleLineSubmit.Name = "titleLineSubmit";
             this.titleLineSubmit.ShowFocus = CButtonLib.CButton.eFocus.None;
@@ -1523,7 +1523,6 @@
             // 
             // titleLineDiscover
             // 
-            resources.ApplyResources(this.titleLineDiscover, "titleLineDiscover");
             this.titleLineDiscover.BackColor = System.Drawing.Color.Transparent;
             this.titleLineDiscover.BorderColor = System.Drawing.Color.White;
             this.titleLineDiscover.ColorFillSolid = System.Drawing.Color.White;
@@ -1532,6 +1531,7 @@
             this.titleLineDiscover.DimFactorClick = 0;
             this.titleLineDiscover.DimFactorHover = 0;
             this.titleLineDiscover.FillType = CButtonLib.CButton.eFillType.Solid;
+            resources.ApplyResources(this.titleLineDiscover, "titleLineDiscover");
             this.titleLineDiscover.ImageIndex = 0;
             this.titleLineDiscover.Name = "titleLineDiscover";
             this.titleLineDiscover.ShowFocus = CButtonLib.CButton.eFocus.None;
@@ -1548,7 +1548,6 @@
             // 
             // titleLineSettings
             // 
-            resources.ApplyResources(this.titleLineSettings, "titleLineSettings");
             this.titleLineSettings.BackColor = System.Drawing.Color.Transparent;
             this.titleLineSettings.BorderColor = System.Drawing.Color.White;
             this.titleLineSettings.ColorFillSolid = System.Drawing.Color.White;
@@ -1557,6 +1556,7 @@
             this.titleLineSettings.DimFactorClick = 0;
             this.titleLineSettings.DimFactorHover = 0;
             this.titleLineSettings.FillType = CButtonLib.CButton.eFillType.Solid;
+            resources.ApplyResources(this.titleLineSettings, "titleLineSettings");
             this.titleLineSettings.ImageIndex = 0;
             this.titleLineSettings.Name = "titleLineSettings";
             this.titleLineSettings.ShowFocus = CButtonLib.CButton.eFocus.None;
@@ -1574,7 +1574,6 @@
             // 
             // titleLineAbout
             // 
-            resources.ApplyResources(this.titleLineAbout, "titleLineAbout");
             this.titleLineAbout.BackColor = System.Drawing.Color.Transparent;
             this.titleLineAbout.BorderColor = System.Drawing.Color.White;
             this.titleLineAbout.ColorFillSolid = System.Drawing.Color.White;
@@ -1583,6 +1582,7 @@
             this.titleLineAbout.DimFactorClick = 0;
             this.titleLineAbout.DimFactorHover = 0;
             this.titleLineAbout.FillType = CButtonLib.CButton.eFillType.Solid;
+            resources.ApplyResources(this.titleLineAbout, "titleLineAbout");
             this.titleLineAbout.ImageIndex = 0;
             this.titleLineAbout.Name = "titleLineAbout";
             this.titleLineAbout.ShowFocus = CButtonLib.CButton.eFocus.None;
@@ -1599,7 +1599,6 @@
             // 
             // titleLineFiles
             // 
-            resources.ApplyResources(this.titleLineFiles, "titleLineFiles");
             this.titleLineFiles.BackColor = System.Drawing.Color.Transparent;
             this.titleLineFiles.BorderColor = System.Drawing.Color.White;
             this.titleLineFiles.ColorFillSolid = System.Drawing.Color.White;
@@ -1608,6 +1607,7 @@
             this.titleLineFiles.DimFactorClick = 0;
             this.titleLineFiles.DimFactorHover = 0;
             this.titleLineFiles.FillType = CButtonLib.CButton.eFillType.Solid;
+            resources.ApplyResources(this.titleLineFiles, "titleLineFiles");
             this.titleLineFiles.ImageIndex = 0;
             this.titleLineFiles.Name = "titleLineFiles";
             this.titleLineFiles.ShowFocus = CButtonLib.CButton.eFocus.None;
@@ -1615,7 +1615,6 @@
             // 
             // titleLineMovies
             // 
-            resources.ApplyResources(this.titleLineMovies, "titleLineMovies");
             this.titleLineMovies.BackColor = System.Drawing.Color.Transparent;
             this.titleLineMovies.BorderColor = System.Drawing.Color.White;
             this.titleLineMovies.ColorFillSolid = System.Drawing.Color.White;
@@ -1624,6 +1623,7 @@
             this.titleLineMovies.DimFactorClick = 0;
             this.titleLineMovies.DimFactorHover = 0;
             this.titleLineMovies.FillType = CButtonLib.CButton.eFillType.Solid;
+            resources.ApplyResources(this.titleLineMovies, "titleLineMovies");
             this.titleLineMovies.ImageIndex = 0;
             this.titleLineMovies.Name = "titleLineMovies";
             this.titleLineMovies.ShowFocus = CButtonLib.CButton.eFocus.None;
