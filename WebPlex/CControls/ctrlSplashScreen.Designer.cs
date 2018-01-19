@@ -28,44 +28,64 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ctrlSplashScreen));
-            this.labelLoading = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.lblLoadingText = new System.Windows.Forms.Label();
+            this.imgLogo = new System.Windows.Forms.PictureBox();
+            this.lblLoadingStuckRestart = new System.Windows.Forms.Label();
+            this.timerCount = new System.Windows.Forms.Timer(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
             this.SuspendLayout();
             // 
-            // labelLoading
+            // lblLoadingText
             // 
-            resources.ApplyResources(this.labelLoading, "labelLoading");
-            this.labelLoading.BackColor = System.Drawing.Color.Transparent;
-            this.labelLoading.Name = "labelLoading";
+            resources.ApplyResources(this.lblLoadingText, "lblLoadingText");
+            this.lblLoadingText.BackColor = System.Drawing.Color.Transparent;
+            this.lblLoadingText.Name = "lblLoadingText";
             // 
-            // pictureBox1
+            // imgLogo
             // 
-            resources.ApplyResources(this.pictureBox1, "pictureBox1");
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::WebPlex.Properties.Resources.logo;
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.TabStop = false;
+            resources.ApplyResources(this.imgLogo, "imgLogo");
+            this.imgLogo.BackColor = System.Drawing.Color.Transparent;
+            this.imgLogo.Image = global::WebPlex.Properties.Resources.logo;
+            this.imgLogo.Name = "imgLogo";
+            this.imgLogo.TabStop = false;
+            // 
+            // lblLoadingStuckRestart
+            // 
+            resources.ApplyResources(this.lblLoadingStuckRestart, "lblLoadingStuckRestart");
+            this.lblLoadingStuckRestart.BackColor = System.Drawing.Color.Transparent;
+            this.lblLoadingStuckRestart.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblLoadingStuckRestart.Name = "lblLoadingStuckRestart";
+            this.lblLoadingStuckRestart.Click += new System.EventHandler(this.lblLoadingStuckRestart_Click);
+            // 
+            // timerCount
+            // 
+            this.timerCount.Enabled = true;
+            this.timerCount.Interval = 30000;
+            this.timerCount.Tick += new System.EventHandler(this.timerCount_Tick);
             // 
             // ctrlSplashScreen
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.labelLoading);
+            this.Controls.Add(this.lblLoadingStuckRestart);
+            this.Controls.Add(this.imgLogo);
+            this.Controls.Add(this.lblLoadingText);
             this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.Color.Black;
             this.Name = "ctrlSplashScreen";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        public System.Windows.Forms.Label labelLoading;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        public System.Windows.Forms.Label lblLoadingText;
+        private System.Windows.Forms.PictureBox imgLogo;
+        public System.Windows.Forms.Label lblLoadingStuckRestart;
+        private System.Windows.Forms.Timer timerCount;
     }
 }
