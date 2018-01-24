@@ -157,7 +157,7 @@
     <value>Top</value>
   </data>
   <data name="btnRestartApp.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 10pt</value>
+    <value>Segoe UI Semibold, 9.75pt</value>
   </data>
   <data name="btnRestartApp.Location" type="System.Drawing.Point, System.Drawing">
     <value>199, 208</value>

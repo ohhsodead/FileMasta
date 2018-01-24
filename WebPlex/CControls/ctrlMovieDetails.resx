@@ -684,16 +684,6 @@
   <data name="imgSearchForMore.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
-  <data name="imgSearchForMore.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAA5ElEQVRIS+2TTQ4BQRBGeyHcQoRDzMLP
-        zRxD3ICJO4kIjmDBhu+J2lGmujObiZe8dLp1d42q6vSnhLms5UXe5Flu5UwW0ZNr+XBcSfZlYZdf5VKO
-        Zf89MmfdgoRZSLu8YuEDrFuQKQsRyDkH+VIPfmff5jULQEE5SDo8JpJ9FD4E3cJBcu4xkOxjf4joP2B/
-        CPqcg01rQM1C8Ig42LSLeIxh6G8LwpeSDmrCyNwu38kseKEW5JtczniQI5kFj4g+P8m7pKDk3NLC5cVB
-        PIZyLwlylL86L4vuBWktAFDoVordaVJ6AmCqVJKyuZn7AAAAAElFTkSuQmCC
-</value>
-  </data>
   <data name="imgSearchForMore.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -762,15 +752,6 @@
   </data>
   <data name="imgAddToBookmarks.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Left</value>
-  </data>
-  <data name="imgAddToBookmarks.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAmElEQVRIS+3UsQnCUBhF4Ve5go1bWDqB
-        OEIGcYWskBXcxDXUwg2ClTkvIMjjEo7WOfAVgf++MmXt30544C3dcYSuDtJDS27QpQcMXRobujQ2dGls
-        6NLY0KWxoUtjQ5fGhi6NDV0aG7o0NnRpbOjS2NC1wxcuOGCPASPaO91n8ESPHdq2OOP71667osNm/lqu
-        3tTbuln7tVImzxXkO0VUjzoAAAAASUVORK5CYII=
-</value>
   </data>
   <data name="imgAddToBookmarks.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -877,36 +858,6 @@
   <data name="&gt;&gt;infoFileName.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="lineUserReviews.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 13.25pt</value>
-  </data>
-  <data name="lineUserReviews.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 24</value>
-  </data>
-  <data name="lineUserReviews.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 16, 0, 3</value>
-  </data>
-  <data name="lineUserReviews.Size" type="System.Drawing.Size, System.Drawing">
-    <value>93, 2</value>
-  </data>
-  <data name="lineUserReviews.TabIndex" type="System.Int32, mscorlib">
-    <value>1102</value>
-  </data>
-  <data name="lineUserReviews.Text" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;lineUserReviews.Name" xml:space="preserve">
-    <value>lineUserReviews</value>
-  </data>
-  <data name="&gt;&gt;lineUserReviews.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;lineUserReviews.Parent" xml:space="preserve">
-    <value>panelTitleFiles</value>
-  </data>
-  <data name="&gt;&gt;lineUserReviews.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
   <data name="lblHeaderDirectFiles.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -941,7 +892,7 @@
     <value>panelTitleFiles</value>
   </data>
   <data name="&gt;&gt;lblHeaderDirectFiles.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>5</value>
   </data>
   <data name="lineSplitter.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -974,7 +925,7 @@
     <value>panelTitleFiles</value>
   </data>
   <data name="&gt;&gt;lineSplitter.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>6</value>
   </data>
   <data name="panelTitleFiles.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 152</value>
@@ -1039,36 +990,6 @@
   <data name="panelTitleTorrents.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
-  <data name="cButton1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 13.25pt</value>
-  </data>
-  <data name="cButton1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 24</value>
-  </data>
-  <data name="cButton1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 16, 0, 3</value>
-  </data>
-  <data name="cButton1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>77, 2</value>
-  </data>
-  <data name="cButton1.TabIndex" type="System.Int32, mscorlib">
-    <value>1102</value>
-  </data>
-  <data name="cButton1.Text" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;cButton1.Name" xml:space="preserve">
-    <value>cButton1</value>
-  </data>
-  <data name="&gt;&gt;cButton1.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;cButton1.Parent" xml:space="preserve">
-    <value>panelTitleTorrents</value>
-  </data>
-  <data name="&gt;&gt;cButton1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="lblHeaderTorrents.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1103,7 +1024,7 @@
     <value>panelTitleTorrents</value>
   </data>
   <data name="&gt;&gt;lblHeaderTorrents.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="cButton2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -1136,7 +1057,7 @@
     <value>panelTitleTorrents</value>
   </data>
   <data name="&gt;&gt;cButton2.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="panelTitleTorrents.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 240</value>
@@ -1289,7 +1210,7 @@
     <value>1</value>
   </data>
   <data name="btnWatchTrailer.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 10pt</value>
+    <value>Segoe UI Semibold, 9.75pt</value>
   </data>
   <data name="btnWatchTrailer.Location" type="System.Drawing.Point, System.Drawing">
     <value>26, 284</value>
@@ -1344,15 +1265,6 @@
   </data>
   <data name="appClose.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
-  </data>
-  <data name="appClose.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAjUlEQVRIS+2UQQqAMAwE+wnBJ3jQ/5+k
-        f9CDz9HdQiCHGgJNT+3AYkuzm1jBNBmXDcrQWnY2C3RCR9k5oeGFbogBf/CMNaylxw2NF0TjA9XexFNj
-        YgU0hwu1oLBwgYFyz3zqNc9C0FOHTa7p2qDrFenJwz+yFdTcxBPQ1KT7r2KHaLDCBdawlp7JeKT0AcCU
-        QxewpghEAAAAAElFTkSuQmCC
-</value>
   </data>
   <data name="appClose.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>

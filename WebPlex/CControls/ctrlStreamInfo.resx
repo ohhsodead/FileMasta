@@ -183,6 +183,15 @@
   <metadata name="contextFileName.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="contextFileName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>146, 92</value>
+  </data>
+  <data name="&gt;&gt;contextFileName.Name" xml:space="preserve">
+    <value>contextFileName</value>
+  </data>
+  <data name="&gt;&gt;contextFileName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="VLC2ToolStripMenuItem.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Transparent</value>
   </data>
@@ -219,30 +228,11 @@
   <data name="MPCToolStripMenuItem.Text" xml:space="preserve">
     <value>MPC</value>
   </data>
-  <data name="contextFileName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>146, 92</value>
-  </data>
-  <data name="&gt;&gt;contextFileName.Name" xml:space="preserve">
-    <value>contextFileName</value>
-  </data>
-  <data name="&gt;&gt;contextFileName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>160, 17</value>
   </metadata>
   <data name="imgCopyURL.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Right</value>
-  </data>
-  <data name="imgCopyURL.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAwElEQVRIS+2VQQ5BQRBE/4JLCXviUCwF
-        p/zsHIKqxCSTSpX5hoWFl7xNd3X3bmb4FebwDG9Pj3AGv8YJ3kUeeZstvEJdVlzApdRqL3ADIwy4wSKX
-        r6SmjjDiBnqMuHCPERfuMeLCtTtTc0ZcuMjlxPXUiAvTspy4vhpx4Xq5w81ENNhaTnSGRjR4gC10hkZc
-        uHXEzURcmNZHXF+NuHCxHHE9NeLCtXtTc0ZcuMdI67me4svnmp/FJ0e4fA3/TGUYHqT2G1WvN9SuAAAA
-        AElFTkSuQmCC
-</value>
   </data>
   <data name="imgCopyURL.Location" type="System.Drawing.Point, System.Drawing">
     <value>91, 0</value>
@@ -277,6 +267,15 @@
   <data name="imgReportBroken.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Right</value>
   </data>
+  <data name="imgReportBroken.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAoklEQVRIS+2UMQ7EIAwEKe5dV/H/Nrl/
+        RGnJOqwry8ZclI6RLEVivNsQyuIRrbUv5sB4nJhKfQ4sjsKV+RIsZMOVfAnE2XBlXAIhDKcmnkdcQsGF
+        WlQgnNQsFFyopT0Dz12orYLnMM7C84gNs/dPH8ZZcBZdUwn/cKKS8JpWEW7NkilI/c1RiQT/+qdhHK5A
+        fO+xU7Dw3nOtYHFU8n/4olPKBYxHJyM6SJjUAAAAAElFTkSuQmCC
+</value>
+  </data>
   <data name="imgReportBroken.Location" type="System.Drawing.Point, System.Drawing">
     <value>118, 0</value>
   </data>
@@ -310,17 +309,6 @@
   <data name="imgWatch.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Right</value>
   </data>
-  <data name="imgWatch.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABFElEQVRIS93US2oCQRSF4UZRCG7E3RjM
-        a+Z61GQDjhwYkv0EQsxrEWLm8T+QC411uqpbMvLAB01xqxrqcauzzxB3eMIWP3/0rbFbqOakXOEbvwVf
-        mKJ1+niAWyznHj0Uc8riYYFstC1uYheXsNFh5fb81Yw5n7AHr9viJoQR1kdjTW6Q5BmuOERm0FV1NeER
-        ST7gikM9Y7zA1YneSZI9XHE4zgVWcLVaK8l//mCHJO9wxaGe0ha9IYl6iysOkTaHvEESNS5XHLpc02sk
-        0eNQ43ITpMtDG8BGXdFN6mKCbNQV3cQ25ihGLXcJt0COOmmrdh1RV9R+usXqVFPclqbosNS41Ft0t/UY
-        Rd8a021pPNBzSFUdAIZMHBSf3hfnAAAAAElFTkSuQmCC
-</value>
-  </data>
   <data name="imgWatch.Location" type="System.Drawing.Point, System.Drawing">
     <value>64, 0</value>
   </data>
@@ -353,16 +341,6 @@
   </data>
   <data name="imgMagnet.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Right</value>
-  </data>
-  <data name="imgMagnet.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAyUlEQVRIS92TywnCUBQFU4DYg6BlCP6q
-        EhsRu1DXahViD+JCLEDn7C6XF98xuzgwIHLmkZjY/B3vpIvd2cOE3dnDRNeuh3S9Vbuzhwm7s4cJu7OH
-        Cbuzhwm7s4cJu3thHA6wxhBj88RWbhjHM6yxwNhcsZUdxvEeaxwxNltsZYVxLNfYxgbzXnf0lQvm6IBz
-        1DOROiRfuTxhlRHeMcc1HzhGiykqKB1UUls1PzHBM5YOjOpnsa+8xBL1Zuj10/9E6rO+qz7QvtM0H5pV
-        nr0/aF7gAAAAAElFTkSuQmCC
-</value>
   </data>
   <data name="imgMagnet.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 3</value>
@@ -400,17 +378,6 @@
   <data name="imgDownload.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Right</value>
   </data>
-  <data name="imgDownload.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAA+klEQVRIS+3UPUoDURSG4WsTcQuJlUtw
-        EyJpspBIWktRUJtsSEjakDSBINmFIP4UWqjvN5hwc3Puz5AiBOaDpzmce2bmDDOuyUGkjXvM8IJPPGOI
-        M+yUPr7wG/GNaxyhdh5gDbXoaWrlAj+whsX0kMwxBtCuU2uJWSK6qlMsYB1cCWP1nGMrJ8gNlzBWzyue
-        cIl1tBarORTG6vHdoop2bjWEwlg9oS7ch1cI3SAX9VhnZQz37hUsj4glNVw02029Qoz1JLnh8gZ35RVS
-        /IuUDJcRqg9s/l/I0eDS4VK9ZKWD0ouUusNGWtDfc4Lci4/ROa1lfedN9h3n/gBO2/a9YlPSbQAAAABJ
-        RU5ErkJggg==
-</value>
-  </data>
   <data name="imgDownload.Location" type="System.Drawing.Point, System.Drawing">
     <value>37, 0</value>
   </data>
@@ -443,15 +410,6 @@
   </data>
   <data name="imgAddToBookmarks.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Left</value>
-  </data>
-  <data name="imgAddToBookmarks.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAp0lEQVRIS+3UMQ0CURRE0V9hgQYXlCgA
-        CwjBAhawgBNssBQ4IFQwQ/IS8neyuVDvTU5B/pstaXP/tpObvKBBtoLzIH1oylVw6QMELo0JXBpbld4M
-        l8ZWpTfD0SG9G0WH9G5UPyxVejNcGluV3gyXxgQujQlcGhO4NCZwaUzg+uFTzrKRtZzkIf0drgZ3OcpK
-        +pZykO+/dtxF9rL4/JrON771Zu7XWnsDMQvQTgVYlBEAAAAASUVORK5CYII=
-</value>
   </data>
   <data name="imgAddToBookmarks.Location" type="System.Drawing.Point, System.Drawing">
     <value>1, 0</value>

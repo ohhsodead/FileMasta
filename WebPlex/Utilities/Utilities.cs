@@ -390,6 +390,29 @@ namespace WebPlex
             return (string[])alFiles.ToArray(typeof(string));
         }
 
+        // Replaces Colour of image https://stackoverflow.com/a/17209284
+        public static Bitmap changeColor(Bitmap scrBitmap, Color newColor)
+        {
+            //You can change your new color here. Red,Green,LawnGreen any..
+            Color actualColor;
+            //make an empty bitmap the same size as scrBitmap
+            Bitmap newBitmap = new Bitmap(scrBitmap.Width, scrBitmap.Height);
+            for (int i = 0; i < scrBitmap.Width; i++)
+            {
+                for (int j = 0; j < scrBitmap.Height; j++)
+                {
+                    //get the pixel from the scrBitmap image
+                    actualColor = scrBitmap.GetPixel(i, j);
+                    // > 150 because.. Images edges can be of low pixel colr. if we set all pixel color to new then there will be no smoothness left.
+                    if (actualColor.A > 150)
+                        newBitmap.SetPixel(i, j, newColor);
+                    else
+                        newBitmap.SetPixel(i, j, actualColor);
+                }
+            }
+            return newBitmap;
+        }
+
         // check for updates, installs installer to downloads folder if available and opens it
         public static void checkForUpdate()
         {

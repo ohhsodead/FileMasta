@@ -87,6 +87,19 @@ namespace WebPlex
         int intPostersPerScroll = 85;
         bool showSpinnerForMovies = false;
 
+        // Share us on
+        public string textMessage = "Hey%20guys%2C%20I%20found%20a%20brilliant%20way%20to%20find%20Direct%20download%20links%20for%20anything.";
+
+        private void imgShareTwitter_Click(object sender, EventArgs e)
+        {
+            Process.Start("https://twitter.com/intent/tweet?hashtags=webplex&original_referer=https%3A%2F%2Fgithub.com/invu/WebPlex%2F&ref_src=twsrc%5Etfw&text=" + textMessage + "&tw_p=tweetbutton&url=https%3A%2F%2Fgithub.com/invu/WebPlex");
+        }
+
+        private void imgShareFacebook_Click(object sender, EventArgs e)
+        {
+            Process.Start("https://facebook.com/sharer/sharer.php?app_id=248335808680372&kid_directed_site=0&sdk=joey&u=http%3A%2F%2Fgithub.com/invu/WebPlex%2F&display=popup&ref=plugin&src=share_button");
+        }
+
         private void frmWebPlex_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (e.CloseReason == CloseReason.UserClosing || e.CloseReason == CloseReason.ApplicationExitCall) { Properties.Settings.Default.Save(); if (Properties.Settings.Default.clearDataOnClose == true) { if (Directory.Exists(pathData)) { Directory.Delete(pathData, true); } } }
@@ -159,7 +172,7 @@ namespace WebPlex
 
         void worker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            getStats();
+            getDatabaseInfo();
             loadMovies(intPostersPerScroll);
             Controls.Remove(frmSplash);
         }
@@ -196,39 +209,39 @@ namespace WebPlex
         // Core Tabs
         public TabPage currentTab;
 
-        private void imgHome_Click(object sender, EventArgs e)
+        private void titleHome_ClickButtonArea(object sender, MouseEventArgs e)
         {
             tab.SelectedTab = tabHome;
         }
 
-        private void imgMovies_Click(object sender, EventArgs e)
+        private void titleMovies_ClickButtonArea(object sender, MouseEventArgs e)
         {
             tab.SelectedTab = tabMovies;
         }
 
-        private void imgFiles_Click(object sender, EventArgs e)
+        private void titleFiles_ClickButtonArea(object sender, MouseEventArgs e)
         {
             tab.SelectedTab = tabFiles;
         }
 
-        private void imgDiscover_Click(object sender, EventArgs e)
+        private void titleDiscover_ClickButtonArea(object sender, MouseEventArgs e)
         {
             showHosts(); tab.SelectedTab = tabDiscover;
         }
 
-        private void imgSubmit_Click(object sender, EventArgs e)
+        private void titleSubmit_ClickButtonArea(object sender, MouseEventArgs e)
         {
             tab.SelectedTab = tabSubmit;
         }
 
-        private void imgSettings_Click(object sender, EventArgs e)
+        private void titleSettings_ClickButtonArea(object sender, MouseEventArgs e)
         {
             loadSettings(); tab.SelectedTab = tabSettings;
         }
 
-        private void imgAbout_Click(object sender, EventArgs e)
+        private void titleInformation_ClickButtonArea(object sender, MouseEventArgs e)
         {
-            tab.SelectedTab = tabAbout;
+            tab.SelectedTab = tabInformation;
         }
 
         private void tab_SelectedIndexChanged(object sender, EventArgs e)
@@ -237,57 +250,76 @@ namespace WebPlex
             {
                 currentTab = tabHome;
 
-                selectedTabLine(titleLineHome);
+                selectedTabLine(titleHome);
             }
             else if (tab.SelectedTab == tabMovies)
             {
                 currentTab = tabMovies;
 
-                selectedTabLine(titleLineMovies);
+                selectedTabLine(titleMovies);
             }
             else if (tab.SelectedTab == tabFiles)
             {
                 currentTab = tabFiles;
 
-                selectedTabLine(titleLineFiles);
+                selectedTabLine(titleFiles);
             }
             else if (tab.SelectedTab == tabDiscover)
             {
                 currentTab = tabDiscover;
 
-                selectedTabLine(titleLineDiscover);
+                selectedTabLine(titleDiscover);
             }
             else if (tab.SelectedTab == tabSubmit)
             {
                 currentTab = tabDiscover;
 
-                selectedTabLine(titleLineSubmit);
+                selectedTabLine(titleSubmit);
             }
             else if (tab.SelectedTab == tabSettings)
             {
                 currentTab = tabSettings;
 
-                selectedTabLine(titleLineSettings);
+                selectedTabLine(titleSettings);
             }
-            else if (tab.SelectedTab == tabAbout)
+            else if (tab.SelectedTab == tabInformation)
             {
-                currentTab = tabAbout;
+                currentTab = tabInformation;
 
-                selectedTabLine(titleLineAbout);
+                selectedTabLine(titleInformation);
             }
         }
 
         public void selectedTabLine(CButtonLib.CButton cbtn)
         {
-            titleLineHome.Visible = false;
-            titleLineMovies.Visible = false;
-            titleLineFiles.Visible = false;
-            titleLineDiscover.Visible = false;
-            titleLineSubmit.Visible = false;
-            titleLineSettings.Visible = false;
-            titleLineAbout.Visible = false;
+            Color selectedRGB = Color.FromArgb(51, 60, 67);
+            Color nonSelectedRGB = Color.FromArgb(43, 52, 59);
 
-            cbtn.Visible = true;
+            titleHome.ColorFillSolid = nonSelectedRGB;
+            titleHome.BorderColor = nonSelectedRGB;
+            titleHome.BackColor = nonSelectedRGB;
+            titleMovies.ColorFillSolid = nonSelectedRGB;
+            titleMovies.BorderColor = nonSelectedRGB;
+            titleMovies.BackColor = nonSelectedRGB;
+            titleFiles.ColorFillSolid = nonSelectedRGB;
+            titleFiles.BorderColor = nonSelectedRGB;
+            titleFiles.BackColor = nonSelectedRGB;
+            titleDiscover.ColorFillSolid = nonSelectedRGB;
+            titleDiscover.BorderColor = nonSelectedRGB;
+            titleDiscover.BackColor = nonSelectedRGB;
+            titleSubmit.ColorFillSolid = nonSelectedRGB;
+            titleSubmit.BorderColor = nonSelectedRGB;
+            titleSubmit.BackColor = nonSelectedRGB;
+            titleSettings.ColorFillSolid = nonSelectedRGB;
+            titleSettings.BorderColor = nonSelectedRGB;
+            titleSettings.BackColor = nonSelectedRGB;
+            titleInformation.ColorFillSolid = nonSelectedRGB;
+            titleInformation.BorderColor = nonSelectedRGB;
+            titleInformation.BackColor = nonSelectedRGB;
+
+            cbtn.ColorFillSolid = selectedRGB;
+            cbtn.BorderColor = selectedRGB;
+            cbtn.BackColor = selectedRGB;
         }
 
         private void panelMovies_Scroll(object sender, ScrollEventArgs e)
@@ -302,39 +334,29 @@ namespace WebPlex
         }
 
         // Home tab
-        public string textMessage = "Hey%20guys%2C%20I%20found%20a%20brilliant%20way%20to%20find%20Direct%20download%20links%20for%20anything.";
-
-        private void btnShareTwitter_ClickButtonArea(object Sender, MouseEventArgs e)
-        {
-            Process.Start("https://twitter.com/intent/tweet?hashtags=webplex&original_referer=https%3A%2F%2Fgithub.com/invu/WebPlex%2F&ref_src=twsrc%5Etfw&text=" + textMessage + "&tw_p=tweetbutton&url=https%3A%2F%2Fgithub.com/invu/WebPlex");
-        }
-
-        private void btnShareFacebook_ClickButtonArea(object Sender, MouseEventArgs e)
-        {
-            Process.Start("https://facebook.com/sharer/sharer.php?app_id=248335808680372&kid_directed_site=0&sdk=joey&u=http%3A%2F%2Fgithub.com/invu/WebPlex%2F&display=popup&ref=plugin&src=share_button");
-        }
-
-        public void getStats()
+        public void getDatabaseInfo()
         {
             long totalSize = 0;
 
             try
             {
-
                 foreach (string jsonData in dataOpenFiles)
                 {
                     var dataJsonFile = DatabaseFilesEntity.FromJson(jsonData);
-                    if (dataJsonFile.Size != "-") { totalSize = totalSize + Convert.ToInt64(dataJsonFile.Size); }
+                    if (dataJsonFile.Size != "-" | dataJsonFile.Size != "" | dataJsonFile.Size != " ") { totalSize = totalSize + Convert.ToInt64(dataJsonFile.Size); }
                 }
 
+                lblHomeStatsFiles.Text = String.Format(lblHomeStatsFiles.Text, Utilities.getFormattedNumber(dataOpenFiles.Count.ToString()), Utilities.bytesToString(totalSize), Utilities.getFormattedNumber(dataOpenDirectories.Count.ToString()));
             }
-            catch (Exception ex) { MessageBox.Show(this, ex.Message); }
+            catch { lblHomeStatsFiles.Text = String.Format(lblHomeStatsFiles.Text, Utilities.getFormattedNumber(dataOpenFiles.Count.ToString()), Utilities.bytesToString(totalSize), Utilities.getFormattedNumber(dataOpenDirectories.Count.ToString())); }
 
-            lblHomeStatsFiles.Text = String.Format(lblHomeStatsFiles.Text, Utilities.getFormattedNumber(dataOpenFiles.Count.ToString()), Utilities.bytesToString(totalSize), Utilities.getFormattedNumber(dataOpenDirectories.Count.ToString()));
-
-            // Database Info
-            var dataJsonInfo = DatabaseInfoEntity.FromJson(databaseInfo);
-            lblHomeStatsDatabaseUpdated.Text = String.Format(lblHomeStatsDatabaseUpdated.Text, Convert.ToDateTime(dataJsonInfo.LastUpdated).ToShortDateString());
+            try
+            {
+                // Database Info
+                var dataJsonInfo = DatabaseInfoEntity.FromJson(databaseInfo);
+                lblHomeStatsDatabaseUpdated.Text = String.Format(lblHomeStatsDatabaseUpdated.Text, Convert.ToDateTime(dataJsonInfo.LastUpdated).ToShortDateString());
+            }
+            catch { lblHomeStatsDatabaseUpdated.Text = "Updated: n/a"; }
         }
 
         public void loadTopSearches()
@@ -363,7 +385,7 @@ namespace WebPlex
                     Text = "Powered by FileChef",
                     Font = new Font(btnHomeFileType.Font.Name, 9, FontStyle.Regular),
                     BackColor = Color.Transparent,
-                    ForeColor = Color.Black,
+                    ForeColor = Color.Silver,
                     Margin = new Padding(0, 8, 0, 3),
                     Cursor = Cursors.Hand,
                     Name = "btnFileChef",
@@ -373,7 +395,7 @@ namespace WebPlex
                 a.Click += btnFileChef_Click;
                 panelTopSearches.Controls.Add(a);
             }
-            catch { lblHeaderTopSearches.Visible = false; lineTopSearches.Visible = false; lineHomeTopSearchesSplitter.Visible = false; panelTopSearches.Visible = false; } // Error occurred, so hide controls/skip...
+            catch { lblHeaderTopSearches.Visible = false; lineHomeTopSearchesSplitter.Visible = false; panelTopSearches.Visible = false; } // Error occurred, so hide controls/skip...
         }
 
         private void btnFileChef_Click(object Sender, EventArgs e)
@@ -390,17 +412,17 @@ namespace WebPlex
                 Font = new Font(btnHomeFileType.Font.Name, 9.25F, FontStyle.Regular),
                 Size = new Size(70, 24),
                 BackColor = Color.Transparent,
-                ForeColor = Color.Black,
+                ForeColor = Color.White,
                 TextMargin = new Padding(0, 2, 0, 2),
-                BorderColor = Color.FromArgb(204, 204, 204),
-                ColorFillBlend = btnSearchFiles.ColorFillBlend,
-                FillType = CButtonLib.CButton.eFillType.GradientLinear,
+                BorderColor = Color.FromArgb(51, 60, 67),
+                ColorFillSolid = Color.FromArgb(51, 60, 67),
+                FillType = CButtonLib.CButton.eFillType.Solid,
                 TextShadowShow = false,
-                ShowFocus = CButtonLib.CButton.eFocus.Dim,
+                ShowFocus = CButtonLib.CButton.eFocus.None,
                 Margin = new Padding(0, 3, 6, 3),
                 BorderShow = true,
-                DimFactorClick = -25,
-                DimFactorHover = -18,
+                DimFactorClick = 0,
+                DimFactorHover = 0,
                 Cursor = Cursors.Hand,
                 Name = "tagItem" + count
             };
@@ -672,8 +694,8 @@ namespace WebPlex
             MovieDetails.infoFanartUrl = data.imageFanart;
             MovieDetails.infoTrailerUrl = data.trailerUrl;
 
-            if (data.Poster != "") { MovieDetails.imgPoster.BackColor = Color.FromName("Control"); MovieDetails.imgPoster.Image = Utilities.ChangeOpacity(Utilities.LoadPicture(data.Poster), 1); }
-            if (data.imageFanart != "") { MovieDetails.BackColor = Color.FromName("Control"); MovieDetails.BackgroundImage = Utilities.ChangeOpacity(Utilities.LoadPicture(data.imageFanart), 0.2F); }
+            if (data.Poster != "") { MovieDetails.imgPoster.Image = Utilities.ChangeOpacity(Utilities.LoadPicture(data.Poster), 1); }
+            if (data.imageFanart != "") { MovieDetails.BackgroundImage = Utilities.ChangeOpacity(Utilities.LoadPicture(data.imageFanart), 0.2F); }
 
             foreach (string movieLink in data.Sources)
             {
@@ -823,36 +845,51 @@ namespace WebPlex
 
         public void selectFilesTab(CButtonLib.CButton cbtn)
         {
-            Color selectedRGB = Color.FromArgb(225, 225, 220);
+            Color selectedRGB = Color.FromArgb(51, 60, 67);
             Color nonSelectedRGB = Color.Transparent;
+            Color selectedForeRGB = Color.White;
+            Color nonSelectedForeRGB = Color.Silver;
 
             titleFilesAll.ColorFillSolid = nonSelectedRGB;
             titleFilesAll.BorderColor = nonSelectedRGB;
+            titleFilesAll.ForeColor = nonSelectedForeRGB;
             titleFilesVideo.ColorFillSolid = nonSelectedRGB;
             titleFilesVideo.BorderColor = nonSelectedRGB;
+            titleFilesVideo.ForeColor = nonSelectedForeRGB;
             titleFilesAudio.ColorFillSolid = nonSelectedRGB;
             titleFilesAudio.BorderColor = nonSelectedRGB;
+            titleFilesAudio.ForeColor = nonSelectedForeRGB;
             titleFilesEbooks.ColorFillSolid = nonSelectedRGB;
             titleFilesEbooks.BorderColor = nonSelectedRGB;
+            titleFilesEbooks.ForeColor = nonSelectedForeRGB;
             titleFilesSubtitles.ColorFillSolid = nonSelectedRGB;
             titleFilesSubtitles.BorderColor = nonSelectedRGB;
+            titleFilesSubtitles.ForeColor = nonSelectedForeRGB;
             titleFilesTorrents.ColorFillSolid = nonSelectedRGB;
             titleFilesTorrents.BorderColor = nonSelectedRGB;
+            titleFilesTorrents.ForeColor = nonSelectedForeRGB;
             titleFilesMobile.ColorFillSolid = nonSelectedRGB;
             titleFilesMobile.BorderColor = nonSelectedRGB;
+            titleFilesMobile.ForeColor = nonSelectedForeRGB;
             titleFilesArchives.ColorFillSolid = nonSelectedRGB;
             titleFilesArchives.BorderColor = nonSelectedRGB;
+            titleFilesArchives.ForeColor = nonSelectedForeRGB;
             titleFilesCustom.ColorFillSolid = nonSelectedRGB;
             titleFilesCustom.BorderColor = nonSelectedRGB;
+            titleFilesCustom.ForeColor = nonSelectedForeRGB;
             titleFilesOther.ColorFillSolid = nonSelectedRGB;
             titleFilesOther.BorderColor = nonSelectedRGB;
+            titleFilesOther.ForeColor = nonSelectedForeRGB;
             titleFilesLocal.ColorFillSolid = nonSelectedRGB;
             titleFilesLocal.BorderColor = nonSelectedRGB;
+            titleFilesLocal.ForeColor = nonSelectedForeRGB;
             titleFilesSaved.ColorFillSolid = nonSelectedRGB;
             titleFilesSaved.BorderColor = nonSelectedRGB;
+            titleFilesSaved.ForeColor = nonSelectedForeRGB;
 
             cbtn.ColorFillSolid = selectedRGB;
-            cbtn.BorderColor = selectedRGB;  
+            cbtn.BorderColor = selectedRGB;
+            cbtn.ForeColor = selectedForeRGB;
         }
 
         private void dataGridFiles_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
@@ -1185,14 +1222,14 @@ namespace WebPlex
 
         private void btnSettingsGeneralLanguage_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            cmboboxSettingsLanguage.DroppedDown = true;
+            cmboBoxSettingsLanguage.DroppedDown = true;
         }
 
         private void cmboboxGeneralSettingsLanguage_SelectedIndexChanged(object sender, EventArgs e)
         {
-            btnSettingsGeneralLanguage.Text = cmboboxSettingsLanguage.SelectedItem.ToString();
+            btnSettingsGeneralLanguage.Text = cmboBoxSettingsLanguage.SelectedItem.ToString();
 
-            Properties.Settings.Default.userLanguage = cmboboxSettingsLanguage.SelectedItem.ToString();
+            Properties.Settings.Default.userLanguage = cmboBoxSettingsLanguage.SelectedItem.ToString();
             Properties.Settings.Default.Save();
 
             if (MessageBox.Show(this, rm.GetString("restartRequiredLanguage"), rm.GetString("titleRestartRequired"), MessageBoxButtons.YesNo) == DialogResult.Yes) { Application.Restart(); }
@@ -1200,14 +1237,14 @@ namespace WebPlex
 
         private void btnSettingsSave_ClickButtonArea(object sender, MouseEventArgs e)
         {
-            if (cmboboxSettingsLanguage.GetItemText(cmboboxSettingsLanguage.SelectedItem) == "") { Properties.Settings.Default.userLanguage = btnSettingsGeneralLanguage.Text; }
-            else { Properties.Settings.Default.userLanguage = cmboboxSettingsLanguage.GetItemText(cmboboxSettingsLanguage.SelectedItem); }
+            if (cmboBoxSettingsLanguage.GetItemText(cmboBoxSettingsLanguage.SelectedItem) == "") { Properties.Settings.Default.userLanguage = btnSettingsGeneralLanguage.Text; }
+            else { Properties.Settings.Default.userLanguage = cmboBoxSettingsLanguage.GetItemText(cmboBoxSettingsLanguage.SelectedItem); }
             Properties.Settings.Default.clearDataOnClose = chkSettingsClearData.Checked;
             Thread.Sleep(500);
             Properties.Settings.Default.Save();
             Thread.Sleep(500);
         }
-        
+
         private void btnSettingsRestoreDefault_ClickButtonArea(object Sender, MouseEventArgs e)
         {
             Properties.Settings.Default.clearDataOnClose = false;

@@ -46,7 +46,7 @@
             // 
             resources.ApplyResources(this.btnRestartApp, "btnRestartApp");
             this.btnRestartApp.BackColor = System.Drawing.Color.Transparent;
-            this.btnRestartApp.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnRestartApp.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
             cBlendItems1.iColor = new System.Drawing.Color[] {
         System.Drawing.Color.White,
         System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))))};
@@ -54,17 +54,17 @@
         0F,
         1F};
             this.btnRestartApp.ColorFillBlend = cBlendItems1;
-            this.btnRestartApp.ColorFillSolid = System.Drawing.Color.Empty;
+            this.btnRestartApp.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
             this.btnRestartApp.Corners.All = 2;
             this.btnRestartApp.Corners.LowerLeft = 2;
             this.btnRestartApp.Corners.LowerRight = 2;
             this.btnRestartApp.Corners.UpperLeft = 2;
             this.btnRestartApp.Corners.UpperRight = 2;
             this.btnRestartApp.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRestartApp.DesignerSelected = true;
-            this.btnRestartApp.DimFactorClick = -35;
-            this.btnRestartApp.DimFactorHover = -25;
-            this.btnRestartApp.ForeColor = System.Drawing.Color.Black;
+            this.btnRestartApp.DesignerSelected = false;
+            this.btnRestartApp.DimFactorClick = 0;
+            this.btnRestartApp.DimFactorHover = 0;
+            this.btnRestartApp.FillType = CButtonLib.CButton.eFillType.Solid;
             this.btnRestartApp.ImageIndex = 0;
             this.btnRestartApp.Name = "btnRestartApp";
             this.btnRestartApp.ShowFocus = CButtonLib.CButton.eFocus.Dim;

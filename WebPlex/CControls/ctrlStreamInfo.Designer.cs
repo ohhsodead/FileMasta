@@ -60,7 +60,6 @@
             resources.ApplyResources(this.infoHost, "infoHost");
             this.infoHost.AutoEllipsis = true;
             this.infoHost.Cursor = System.Windows.Forms.Cursors.Default;
-            this.infoHost.ForeColor = System.Drawing.Color.Black;
             this.infoHost.Name = "infoHost";
             // 
             // infoName
@@ -68,7 +67,6 @@
             resources.ApplyResources(this.infoName, "infoName");
             this.infoName.AutoEllipsis = true;
             this.infoName.Cursor = System.Windows.Forms.Cursors.Default;
-            this.infoName.ForeColor = System.Drawing.Color.Black;
             this.infoName.Name = "infoName";
             // 
             // contextFileName
@@ -114,6 +112,7 @@
             // 
             resources.ApplyResources(this.imgCopyURL, "imgCopyURL");
             this.imgCopyURL.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imgCopyURL.Image = global::WebPlex.Properties.Resources.clipboard_arrow_left;
             this.imgCopyURL.Name = "imgCopyURL";
             this.imgCopyURL.TabStop = false;
             this.toolTip1.SetToolTip(this.imgCopyURL, resources.GetString("imgCopyURL.ToolTip"));
@@ -123,7 +122,6 @@
             // 
             resources.ApplyResources(this.imgReportBroken, "imgReportBroken");
             this.imgReportBroken.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgReportBroken.Image = global::WebPlex.Properties.Resources.alert_octagon;
             this.imgReportBroken.Name = "imgReportBroken";
             this.imgReportBroken.TabStop = false;
             this.toolTip1.SetToolTip(this.imgReportBroken, resources.GetString("imgReportBroken.ToolTip"));
@@ -133,6 +131,7 @@
             // 
             resources.ApplyResources(this.imgWatch, "imgWatch");
             this.imgWatch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imgWatch.Image = global::WebPlex.Properties.Resources.play_circle;
             this.imgWatch.Name = "imgWatch";
             this.imgWatch.TabStop = false;
             this.toolTip1.SetToolTip(this.imgWatch, resources.GetString("imgWatch.ToolTip"));
@@ -142,6 +141,7 @@
             // 
             resources.ApplyResources(this.imgMagnet, "imgMagnet");
             this.imgMagnet.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imgMagnet.Image = global::WebPlex.Properties.Resources.magnet;
             this.imgMagnet.Name = "imgMagnet";
             this.imgMagnet.TabStop = false;
             this.toolTip1.SetToolTip(this.imgMagnet, resources.GetString("imgMagnet.ToolTip"));
@@ -151,6 +151,7 @@
             // 
             resources.ApplyResources(this.imgDownload, "imgDownload");
             this.imgDownload.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imgDownload.Image = global::WebPlex.Properties.Resources.cloud_download;
             this.imgDownload.Name = "imgDownload";
             this.imgDownload.TabStop = false;
             this.toolTip1.SetToolTip(this.imgDownload, resources.GetString("imgDownload.ToolTip"));
@@ -160,6 +161,7 @@
             // 
             resources.ApplyResources(this.imgAddToBookmarks, "imgAddToBookmarks");
             this.imgAddToBookmarks.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imgAddToBookmarks.Image = global::WebPlex.Properties.Resources.bookmark_plus;
             this.imgAddToBookmarks.Name = "imgAddToBookmarks";
             this.imgAddToBookmarks.TabStop = false;
             this.toolTip1.SetToolTip(this.imgAddToBookmarks, resources.GetString("imgAddToBookmarks.ToolTip"));
@@ -185,7 +187,7 @@
             this.Controls.Add(this.infoHost);
             this.Controls.Add(this.imgAddToBookmarks);
             this.DoubleBuffered = true;
-            this.ForeColor = System.Drawing.Color.Black;
+            this.ForeColor = System.Drawing.Color.White;
             this.Name = "ctrlStreamInfo";
             this.Load += new System.EventHandler(this.ctrlStreamInfo_Load);
             this.contextFileName.ResumeLayout(false);

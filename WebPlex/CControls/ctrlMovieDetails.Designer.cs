@@ -55,12 +55,10 @@
             this.imgAddToBookmarks = new System.Windows.Forms.PictureBox();
             this.infoFileHost = new System.Windows.Forms.Label();
             this.infoFileName = new System.Windows.Forms.Label();
-            this.lineUserReviews = new CButtonLib.CButton();
             this.lblHeaderDirectFiles = new System.Windows.Forms.Label();
             this.lineSplitter = new CButtonLib.CButton();
             this.panelFiles = new System.Windows.Forms.FlowLayoutPanel();
             this.panelTitleTorrents = new System.Windows.Forms.Panel();
-            this.cButton1 = new CButtonLib.CButton();
             this.lblHeaderTorrents = new System.Windows.Forms.Label();
             this.cButton2 = new CButtonLib.CButton();
             this.panelTorrents = new System.Windows.Forms.FlowLayoutPanel();
@@ -210,7 +208,6 @@
             this.panelTitleFiles.Controls.Add(this.imgAddToBookmarks);
             this.panelTitleFiles.Controls.Add(this.infoFileHost);
             this.panelTitleFiles.Controls.Add(this.infoFileName);
-            this.panelTitleFiles.Controls.Add(this.lineUserReviews);
             this.panelTitleFiles.Controls.Add(this.lblHeaderDirectFiles);
             this.panelTitleFiles.Controls.Add(this.lineSplitter);
             this.panelDetails.SetFlowBreak(this.panelTitleFiles, true);
@@ -221,6 +218,7 @@
             resources.ApplyResources(this.imgSearchForMore, "imgSearchForMore");
             this.imgSearchForMore.BackColor = System.Drawing.Color.Transparent;
             this.imgSearchForMore.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imgSearchForMore.Image = global::WebPlex.Properties.Resources.magnify;
             this.imgSearchForMore.Name = "imgSearchForMore";
             this.imgSearchForMore.TabStop = false;
             this.imgSearchForMore.Click += new System.EventHandler(this.imgSearchForMore_Click);
@@ -237,6 +235,7 @@
             resources.ApplyResources(this.imgAddToBookmarks, "imgAddToBookmarks");
             this.imgAddToBookmarks.BackColor = System.Drawing.Color.Transparent;
             this.imgAddToBookmarks.Cursor = System.Windows.Forms.Cursors.Default;
+            this.imgAddToBookmarks.Image = global::WebPlex.Properties.Resources.bookmark;
             this.imgAddToBookmarks.Name = "imgAddToBookmarks";
             this.imgAddToBookmarks.TabStop = false;
             // 
@@ -254,41 +253,20 @@
             this.infoFileName.Cursor = System.Windows.Forms.Cursors.Default;
             this.infoFileName.Name = "infoFileName";
             // 
-            // lineUserReviews
-            // 
-            this.lineUserReviews.BackColor = System.Drawing.Color.Transparent;
-            this.lineUserReviews.BorderColor = System.Drawing.Color.Black;
-            this.lineUserReviews.ColorFillSolid = System.Drawing.Color.Black;
-            this.lineUserReviews.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lineUserReviews.DesignerSelected = false;
-            this.lineUserReviews.DimFactorClick = 0;
-            this.lineUserReviews.DimFactorHover = 0;
-            this.lineUserReviews.FillType = CButtonLib.CButton.eFillType.Solid;
-            resources.ApplyResources(this.lineUserReviews, "lineUserReviews");
-            this.lineUserReviews.ForeColor = System.Drawing.Color.Transparent;
-            this.lineUserReviews.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lineUserReviews.ImageIndex = 0;
-            this.lineUserReviews.ImageSize = new System.Drawing.Size(25, 36);
-            this.lineUserReviews.Name = "lineUserReviews";
-            this.lineUserReviews.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.lineUserReviews.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lineUserReviews.SideImageSize = new System.Drawing.Size(36, 36);
-            this.lineUserReviews.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.lineUserReviews.TextShadowShow = false;
-            // 
             // lblHeaderDirectFiles
             // 
             resources.ApplyResources(this.lblHeaderDirectFiles, "lblHeaderDirectFiles");
             this.lblHeaderDirectFiles.BackColor = System.Drawing.Color.Transparent;
             this.lblHeaderDirectFiles.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lblHeaderDirectFiles.ForeColor = System.Drawing.Color.LightGray;
             this.lblHeaderDirectFiles.Name = "lblHeaderDirectFiles";
             // 
             // lineSplitter
             // 
             resources.ApplyResources(this.lineSplitter, "lineSplitter");
             this.lineSplitter.BackColor = System.Drawing.Color.Transparent;
-            this.lineSplitter.BorderColor = System.Drawing.Color.DimGray;
-            this.lineSplitter.ColorFillSolid = System.Drawing.Color.DimGray;
+            this.lineSplitter.BorderColor = System.Drawing.Color.DarkGray;
+            this.lineSplitter.ColorFillSolid = System.Drawing.Color.DarkGray;
             this.lineSplitter.Cursor = System.Windows.Forms.Cursors.Default;
             this.lineSplitter.DesignerSelected = false;
             this.lineSplitter.DimFactorClick = 0;
@@ -316,47 +294,25 @@
             // 
             resources.ApplyResources(this.panelTitleTorrents, "panelTitleTorrents");
             this.panelTitleTorrents.BackColor = System.Drawing.Color.Transparent;
-            this.panelTitleTorrents.Controls.Add(this.cButton1);
             this.panelTitleTorrents.Controls.Add(this.lblHeaderTorrents);
             this.panelTitleTorrents.Controls.Add(this.cButton2);
             this.panelDetails.SetFlowBreak(this.panelTitleTorrents, true);
             this.panelTitleTorrents.Name = "panelTitleTorrents";
-            // 
-            // cButton1
-            // 
-            this.cButton1.BackColor = System.Drawing.Color.Transparent;
-            this.cButton1.BorderColor = System.Drawing.Color.Black;
-            this.cButton1.ColorFillSolid = System.Drawing.Color.Black;
-            this.cButton1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.cButton1.DesignerSelected = false;
-            this.cButton1.DimFactorClick = 0;
-            this.cButton1.DimFactorHover = 0;
-            this.cButton1.FillType = CButtonLib.CButton.eFillType.Solid;
-            resources.ApplyResources(this.cButton1, "cButton1");
-            this.cButton1.ForeColor = System.Drawing.Color.Transparent;
-            this.cButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.cButton1.ImageIndex = 0;
-            this.cButton1.ImageSize = new System.Drawing.Size(25, 36);
-            this.cButton1.Name = "cButton1";
-            this.cButton1.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.cButton1.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.cButton1.SideImageSize = new System.Drawing.Size(36, 36);
-            this.cButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.cButton1.TextShadowShow = false;
             // 
             // lblHeaderTorrents
             // 
             resources.ApplyResources(this.lblHeaderTorrents, "lblHeaderTorrents");
             this.lblHeaderTorrents.BackColor = System.Drawing.Color.Transparent;
             this.lblHeaderTorrents.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lblHeaderTorrents.ForeColor = System.Drawing.Color.LightGray;
             this.lblHeaderTorrents.Name = "lblHeaderTorrents";
             // 
             // cButton2
             // 
             resources.ApplyResources(this.cButton2, "cButton2");
             this.cButton2.BackColor = System.Drawing.Color.Transparent;
-            this.cButton2.BorderColor = System.Drawing.Color.DimGray;
-            this.cButton2.ColorFillSolid = System.Drawing.Color.DimGray;
+            this.cButton2.BorderColor = System.Drawing.Color.DarkGray;
+            this.cButton2.ColorFillSolid = System.Drawing.Color.DarkGray;
             this.cButton2.Cursor = System.Windows.Forms.Cursors.Default;
             this.cButton2.DesignerSelected = false;
             this.cButton2.DimFactorClick = 0;
@@ -383,7 +339,7 @@
             // btnWatchTrailer
             // 
             this.btnWatchTrailer.BackColor = System.Drawing.Color.Transparent;
-            this.btnWatchTrailer.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnWatchTrailer.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
             cBlendItems1.iColor = new System.Drawing.Color[] {
         System.Drawing.Color.White,
         System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))))};
@@ -391,7 +347,7 @@
         0F,
         1F};
             this.btnWatchTrailer.ColorFillBlend = cBlendItems1;
-            this.btnWatchTrailer.ColorFillSolid = System.Drawing.Color.Empty;
+            this.btnWatchTrailer.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
             this.btnWatchTrailer.Corners.All = 2;
             this.btnWatchTrailer.Corners.LowerLeft = 2;
             this.btnWatchTrailer.Corners.LowerRight = 2;
@@ -399,9 +355,10 @@
             this.btnWatchTrailer.Corners.UpperRight = 2;
             this.btnWatchTrailer.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnWatchTrailer.DesignerSelected = false;
-            this.btnWatchTrailer.DimFactorHover = -18;
+            this.btnWatchTrailer.DimFactorClick = 0;
+            this.btnWatchTrailer.DimFactorHover = 0;
+            this.btnWatchTrailer.FillType = CButtonLib.CButton.eFillType.Solid;
             resources.ApplyResources(this.btnWatchTrailer, "btnWatchTrailer");
-            this.btnWatchTrailer.ForeColor = System.Drawing.Color.Black;
             this.btnWatchTrailer.ImageIndex = 0;
             this.btnWatchTrailer.Name = "btnWatchTrailer";
             this.btnWatchTrailer.ShowFocus = CButtonLib.CButton.eFocus.None;
@@ -424,6 +381,7 @@
             resources.ApplyResources(this.appClose, "appClose");
             this.appClose.BackColor = System.Drawing.Color.Transparent;
             this.appClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.appClose.Image = global::WebPlex.Properties.Resources.close;
             this.appClose.Name = "appClose";
             this.appClose.TabStop = false;
             this.appClose.Click += new System.EventHandler(this.appClose_Click);
@@ -439,7 +397,7 @@
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.Controls.Add(this.btnWatchTrailer);
             this.Controls.Add(this.infoTitle);
             this.Controls.Add(this.imgPoster);
@@ -447,7 +405,7 @@
             this.Controls.Add(this.appClose);
             this.Controls.Add(this.imgPosterBG);
             this.DoubleBuffered = true;
-            this.ForeColor = System.Drawing.Color.Black;
+            this.ForeColor = System.Drawing.Color.White;
             this.Name = "ctrlMovieDetails";
             this.Load += new System.EventHandler(this.ctrlMovieDetails_Load);
             this.SizeChanged += new System.EventHandler(this.ctrlDetails_SizeChanged);
@@ -491,7 +449,6 @@
         internal System.Windows.Forms.Label infoSplitter4;
         internal System.Windows.Forms.PictureBox imgIMDb;
         internal System.Windows.Forms.Panel panelTitleFiles;
-        public CButtonLib.CButton lineUserReviews;
         internal System.Windows.Forms.Label lblHeaderDirectFiles;
         public CButtonLib.CButton lineSplitter;
         public System.Windows.Forms.FlowLayoutPanel panelFiles;
@@ -500,7 +457,6 @@
         private System.Windows.Forms.PictureBox imgAddToBookmarks;
         public CButtonLib.CButton btnWatchTrailer;
         internal System.Windows.Forms.Panel panelTitleTorrents;
-        public CButtonLib.CButton cButton1;
         internal System.Windows.Forms.Label lblHeaderTorrents;
         public CButtonLib.CButton cButton2;
         public System.Windows.Forms.FlowLayoutPanel panelTorrents;

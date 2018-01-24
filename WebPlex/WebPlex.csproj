@@ -295,35 +295,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\twitter.png" />
-    <None Include="Resources\share-variant.png" />
-    <None Include="Resources\cloud-check.png" />
-    <None Include="Resources\cloud-download.png" />
-    <None Include="Resources\cloud-sync.png" />
-    <None Include="Resources\close.png" />
-    <None Include="Resources\magnet.png" />
-    <None Include="Resources\play-circle.png" />
-    <None Include="Resources\link-variant.png" />
-    <None Include="Resources\magnify.png" />
-    <None Include="Resources\menu-down.png" />
-    <None Include="Resources\bookmark.png" />
-    <None Include="Resources\bookmark-plus.png" />
-    <None Include="Resources\bookmark-remove.png" />
-    <None Include="Resources\clipboard-arrow-left.png" />
-    <None Include="Resources\clipboard-check.png" />
-    <None Include="Resources\eye.png" />
-    <None Include="Resources\alert-octagon.png" />
     <None Include="Resources\facebook.png" />
     <None Include="Resources\send.png" />
     <None Include="Resources\web.png" />
     <None Include="Resources\file.png" />
     <None Include="Resources\home.png" />
     <None Include="Resources\loading.gif" />
-    <None Include="Resources\search.png" />
     <None Include="Resources\settings.png" />
-    <None Include="Resources\play_circle.png" />
     <None Include="Resources\local_movies.png" />
     <None Include="Resources\info.png" />
-    <None Include="Resources\cloud_download.png" />
     <None Include="Resources\windows.png" />
     <None Include="Resources\vlc.png" />
     <None Include="Resources\dots-horizontal.png" />
@@ -361,6 +341,54 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\magnify.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menu-down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\link-variant.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\play-circle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clipboard-check.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clipboard-arrow-left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cloud-download.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cloud-check.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bookmark-remove.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bookmark-plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bookmark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\share-variant.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eye.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\alert-octagon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\magnet.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

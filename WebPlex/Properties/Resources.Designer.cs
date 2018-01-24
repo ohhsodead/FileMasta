@@ -153,16 +153,6 @@ namespace WebPlex.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap cloud_sync {
-            get {
-                object obj = ResourceManager.GetObject("cloud_sync", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap dots_horizontal {
             get {
                 object obj = ResourceManager.GetObject("dots_horizontal", resourceCulture);
@@ -266,16 +256,6 @@ namespace WebPlex.Properties {
         internal static System.Drawing.Bitmap logo {
             get {
                 object obj = ResourceManager.GetObject("logo", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap logo_text {
-            get {
-                object obj = ResourceManager.GetObject("logo_text", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
