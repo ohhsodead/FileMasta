@@ -57,7 +57,7 @@ Yes. All communications between our servers and your client is 100% secure.
 <details>
 <summary>How do you handle my privacy?</summary>
 <br>
-We don't use cookies, store sessions, userid's or IP addresses.
+We don't use cookies, store sessions, userid's or IP addresses. See our <a href="https://github.com/invu/WebPlex/blob/master/PRIVACYPOLICY.md">Privacy Policy</a> for more information. 
 </details>
 <br>
 <details>
