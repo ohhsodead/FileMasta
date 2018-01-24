@@ -343,7 +343,7 @@ namespace WebPlex
                 foreach (string jsonData in dataOpenFiles)
                 {
                     var dataJsonFile = DatabaseFilesEntity.FromJson(jsonData);
-                    if (dataJsonFile.Size != "-" | dataJsonFile.Size != "" | dataJsonFile.Size != " ") { totalSize = totalSize + Convert.ToInt64(dataJsonFile.Size); }
+                    if (dataJsonFile.Size != "-" && dataJsonFile.Size != "" && dataJsonFile.Size != " ") { totalSize = totalSize + Convert.ToInt64(dataJsonFile.Size); }
                 }
 
                 lblHomeStatsFiles.Text = String.Format(lblHomeStatsFiles.Text, Utilities.getFormattedNumber(dataOpenFiles.Count.ToString()), Utilities.bytesToString(totalSize), Utilities.getFormattedNumber(dataOpenDirectories.Count.ToString()));
