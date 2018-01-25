@@ -47,7 +47,7 @@
             this.infoSize = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.splitter0 = new System.Windows.Forms.Label();
-            this.cButton1 = new CButtonLib.CButton();
+            this.splitter = new CButtonLib.CButton();
             this.contextFileName.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgCopyURL)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgReportBroken)).BeginInit();
@@ -182,7 +182,6 @@
             this.flowLayoutPanel1.Controls.Add(this.infoAge);
             this.flowLayoutPanel1.Controls.Add(this.splitter0);
             this.flowLayoutPanel1.Controls.Add(this.infoSize);
-            this.flowLayoutPanel1.Controls.Add(this.cButton1);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             // 
             // splitter0
@@ -193,12 +192,18 @@
             this.splitter0.ForeColor = System.Drawing.Color.DarkGray;
             this.splitter0.Name = "splitter0";
             // 
-            // cButton1
+            // splitter
             // 
-            this.cButton1.DesignerSelected = true;
-            this.cButton1.ImageIndex = 0;
-            resources.ApplyResources(this.cButton1, "cButton1");
-            this.cButton1.Name = "cButton1";
+            resources.ApplyResources(this.splitter, "splitter");
+            this.splitter.BorderColor = System.Drawing.Color.Silver;
+            this.splitter.ColorFillSolid = System.Drawing.Color.Silver;
+            this.splitter.DesignerSelected = false;
+            this.splitter.DimFactorClick = 0;
+            this.splitter.DimFactorHover = 0;
+            this.splitter.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.splitter.ImageIndex = 0;
+            this.splitter.Name = "splitter";
+            this.splitter.ShowFocus = CButtonLib.CButton.eFocus.None;
             // 
             // StreamInfo
             // 
@@ -207,6 +212,7 @@
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.panelControls);
             this.Controls.Add(this.infoName);
+            this.Controls.Add(this.splitter);
             this.Controls.Add(this.imgAddToBookmarks);
             this.Controls.Add(this.flowLayoutPanel1);
             this.DoubleBuffered = true;
@@ -245,6 +251,6 @@
         public System.Windows.Forms.Label infoSize;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         public System.Windows.Forms.Label splitter0;
-        private CButtonLib.CButton cButton1;
+        private CButtonLib.CButton splitter;
     }
 }

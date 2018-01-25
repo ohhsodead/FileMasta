@@ -15,6 +15,7 @@ using System.Text;
 using WebPlex.CControls;
 using Newtonsoft.Json;
 using WebPlex.ExceptionHandler;
+using CButtonLib;
 
 namespace WebPlex
 {
@@ -195,9 +196,22 @@ namespace WebPlex
             Controls.Remove(frmSplash);
         }
 
+        // Mouse colour effect for CButton Controls
+        public void control_MouseEnter(object sender, EventArgs e)
+        {
+            CButton ctrl = sender as CButton;
+            ctrl.BorderColor = Color.FromArgb(58, 69, 78);
+            ctrl.ColorFillSolid = Color.FromArgb(58, 69, 78);
+        }
 
-        // Data, Movies, Files... & Everything else
+        public void control_MouseLeave(object sender, EventArgs e)
+        {
+            CButton ctrl = sender as CButton;
+            ctrl.BorderColor = Color.FromArgb(51, 60, 67);
+            ctrl.ColorFillSolid = Color.FromArgb(51, 60, 67);
+        }
 
+        // Data, Movies, Files... and everything else
         public static List<string> dataOpenDirectories = new List<string>();
         public static List<string> dataOpenFiles = new List<string>();
         public static List<string> dataMovies = new List<string>();

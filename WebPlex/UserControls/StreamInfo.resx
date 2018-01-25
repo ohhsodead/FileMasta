@@ -130,7 +130,7 @@
     <value>Segoe UI, 10.25pt</value>
   </data>
   <data name="infoAge.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 6</value>
+    <value>0, 0</value>
   </data>
   <data name="infoAge.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 3, 0</value>
@@ -406,7 +406,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;imgAddToBookmarks.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="panelControls.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Right</value>
@@ -448,7 +448,7 @@
     <value>NoControl</value>
   </data>
   <data name="infoSize.Location" type="System.Drawing.Point, System.Drawing">
-    <value>57, 6</value>
+    <value>57, 0</value>
   </data>
   <data name="infoSize.Size" type="System.Drawing.Size, System.Drawing">
     <value>32, 19</value>
@@ -487,7 +487,7 @@
     <value>NoControl</value>
   </data>
   <data name="splitter0.Location" type="System.Drawing.Point, System.Drawing">
-    <value>37, 6</value>
+    <value>37, 0</value>
   </data>
   <data name="splitter0.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>1, 0, 2, 0</value>
@@ -513,32 +513,8 @@
   <data name="&gt;&gt;splitter0.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="cButton1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>95, 3</value>
-  </data>
-  <data name="cButton1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 25</value>
-  </data>
-  <data name="cButton1.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
-  </data>
-  <data name="cButton1.Text" xml:space="preserve">
-    <value>cButton1</value>
-  </data>
-  <data name="&gt;&gt;cButton1.Name" xml:space="preserve">
-    <value>cButton1</value>
-  </data>
-  <data name="&gt;&gt;cButton1.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;cButton1.Parent" xml:space="preserve">
-    <value>flowLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;cButton1.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
   <data name="flowLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>29, 21</value>
+    <value>29, 22</value>
   </data>
   <data name="flowLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>500, 18</value>
@@ -556,7 +532,34 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;flowLayoutPanel1.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
+  </data>
+  <data name="splitter.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left, Right</value>
+  </data>
+  <data name="splitter.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 45</value>
+  </data>
+  <data name="splitter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>653, 1</value>
+  </data>
+  <data name="splitter.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="splitter.Text" xml:space="preserve">
+    <value>cButton1</value>
+  </data>
+  <data name="&gt;&gt;splitter.Name" xml:space="preserve">
+    <value>splitter</value>
+  </data>
+  <data name="&gt;&gt;splitter.Type" xml:space="preserve">
+    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;splitter.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;splitter.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -574,7 +577,7 @@
     <value>12, 12, 12, 12</value>
   </data>
   <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>653, 42</value>
+    <value>653, 46</value>
   </data>
   <data name="&gt;&gt;VLC2ToolStripMenuItem.Name" xml:space="preserve">
     <value>VLC2ToolStripMenuItem</value>

@@ -281,6 +281,8 @@
             this.btnHomeEngine.TextMargin = new System.Windows.Forms.Padding(0);
             this.btnHomeEngine.TextShadowShow = false;
             this.btnHomeEngine.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnExploreEngine_ClickButtonArea);
+            this.btnHomeEngine.MouseEnter += new System.EventHandler(this.control_MouseEnter);
+            this.btnHomeEngine.MouseLeave += new System.EventHandler(this.control_MouseLeave);
             // 
             // cmboBoxHomeEngine
             // 
@@ -360,7 +362,7 @@
             this.btnHomeFileType.Corners.UpperLeft = 2;
             this.btnHomeFileType.Corners.UpperRight = 2;
             this.btnHomeFileType.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnHomeFileType.DesignerSelected = false;
+            this.btnHomeFileType.DesignerSelected = true;
             this.btnHomeFileType.DimFactorClick = 0;
             this.btnHomeFileType.DimFactorHover = 0;
             this.btnHomeFileType.FillType = CButtonLib.CButton.eFillType.Solid;
@@ -375,6 +377,8 @@
             this.btnHomeFileType.TextMargin = new System.Windows.Forms.Padding(0);
             this.btnHomeFileType.TextShadowShow = false;
             this.btnHomeFileType.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnHomeFileType_ClickButtonArea);
+            this.btnHomeFileType.MouseEnter += new System.EventHandler(this.control_MouseEnter);
+            this.btnHomeFileType.MouseLeave += new System.EventHandler(this.control_MouseLeave);
             // 
             // cmboBoxHomeFileType
             // 
@@ -429,6 +433,8 @@
             this.btnSearchFilesHome.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSearchFilesHome.TextShadowShow = false;
             this.btnSearchFilesHome.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnSearchFilesHome_ClickButtonArea);
+            this.btnSearchFilesHome.MouseEnter += new System.EventHandler(this.control_MouseEnter);
+            this.btnSearchFilesHome.MouseLeave += new System.EventHandler(this.control_MouseLeave);
             // 
             // txtSearchFilesHome
             // 
@@ -543,6 +549,8 @@
             this.btnMoviesRandom.TextShadow = System.Drawing.Color.Empty;
             this.btnMoviesRandom.TextShadowShow = false;
             this.btnMoviesRandom.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnMoviesRandom_ClickButtonArea);
+            this.btnMoviesRandom.MouseEnter += new System.EventHandler(this.control_MouseEnter);
+            this.btnMoviesRandom.MouseLeave += new System.EventHandler(this.control_MouseLeave);
             // 
             // panelMoviesGenre
             // 
@@ -583,6 +591,8 @@
             this.btnMoviesGenre.TextShadow = System.Drawing.Color.Empty;
             this.btnMoviesGenre.TextShadowShow = false;
             this.btnMoviesGenre.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnMoviesGenre_ClickButtonArea);
+            this.btnMoviesGenre.MouseEnter += new System.EventHandler(this.control_MouseEnter);
+            this.btnMoviesGenre.MouseLeave += new System.EventHandler(this.control_MouseLeave);
             // 
             // cmboBoxMoviesGenre
             // 
@@ -653,6 +663,8 @@
             this.btnMoviesYear.TextShadow = System.Drawing.Color.Empty;
             this.btnMoviesYear.TextShadowShow = false;
             this.btnMoviesYear.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnMoviesYear_ClickButtonArea);
+            this.btnMoviesYear.MouseEnter += new System.EventHandler(this.control_MouseEnter);
+            this.btnMoviesYear.MouseLeave += new System.EventHandler(this.control_MouseLeave);
             // 
             // cmboBoxMoviesYear
             // 
@@ -748,6 +760,8 @@
             this.btnSearchMovies.TextShadow = System.Drawing.Color.Empty;
             this.btnSearchMovies.TextShadowShow = false;
             this.btnSearchMovies.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnSearchMovies_ClickButtonArea);
+            this.btnSearchMovies.MouseEnter += new System.EventHandler(this.control_MouseEnter);
+            this.btnSearchMovies.MouseLeave += new System.EventHandler(this.control_MouseLeave);
             // 
             // tabFiles
             // 
@@ -830,6 +844,8 @@
             this.btnFilesSort.TextMargin = new System.Windows.Forms.Padding(0);
             this.btnFilesSort.TextShadowShow = false;
             this.btnFilesSort.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnFilesSort_ClickButtonArea);
+            this.btnFilesSort.MouseEnter += new System.EventHandler(this.control_MouseEnter);
+            this.btnFilesSort.MouseLeave += new System.EventHandler(this.control_MouseLeave);
             // 
             // cmboBoxFilesSort
             // 
@@ -884,6 +900,8 @@
             this.btnFilesHost.TextMargin = new System.Windows.Forms.Padding(0);
             this.btnFilesHost.TextShadowShow = false;
             this.btnFilesHost.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnFilesHost_ClickButtonArea);
+            this.btnFilesHost.MouseEnter += new System.EventHandler(this.control_MouseEnter);
+            this.btnFilesHost.MouseLeave += new System.EventHandler(this.control_MouseLeave);
             // 
             // cmboBoxFilesHost
             // 
@@ -1322,6 +1340,8 @@
             this.btnSearchFiles.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSearchFiles.TextShadowShow = false;
             this.btnSearchFiles.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnSearchFiles_ClickButtonArea);
+            this.btnSearchFiles.MouseEnter += new System.EventHandler(this.control_MouseEnter);
+            this.btnSearchFiles.MouseLeave += new System.EventHandler(this.control_MouseLeave);
             // 
             // tabDiscover
             // 
@@ -1484,6 +1504,8 @@
             this.btnSubmitLink.TextShadow = System.Drawing.Color.Empty;
             this.btnSubmitLink.TextShadowShow = false;
             this.btnSubmitLink.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnSubmitLink_ClickButtonArea);
+            this.btnSubmitLink.MouseEnter += new System.EventHandler(this.control_MouseEnter);
+            this.btnSubmitLink.MouseLeave += new System.EventHandler(this.control_MouseLeave);
             // 
             // txtSubmitLink
             // 
@@ -1581,6 +1603,8 @@
             this.btnSettingsGeneralLanguage.TextMargin = new System.Windows.Forms.Padding(6, 3, 2, 2);
             this.btnSettingsGeneralLanguage.TextShadowShow = false;
             this.btnSettingsGeneralLanguage.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnSettingsGeneralLanguage_ClickButtonArea);
+            this.btnSettingsGeneralLanguage.MouseEnter += new System.EventHandler(this.control_MouseEnter);
+            this.btnSettingsGeneralLanguage.MouseLeave += new System.EventHandler(this.control_MouseLeave);
             // 
             // cmboBoxSettingsLanguage
             // 
@@ -1655,6 +1679,8 @@
             this.btnSettingsSave.TextShadow = System.Drawing.Color.Empty;
             this.btnSettingsSave.TextShadowShow = false;
             this.btnSettingsSave.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnSettingsSave_ClickButtonArea);
+            this.btnSettingsSave.MouseEnter += new System.EventHandler(this.control_MouseEnter);
+            this.btnSettingsSave.MouseLeave += new System.EventHandler(this.control_MouseLeave);
             // 
             // btnSettingsRestoreDefault
             // 
@@ -1685,6 +1711,8 @@
             this.btnSettingsRestoreDefault.TextShadow = System.Drawing.Color.Empty;
             this.btnSettingsRestoreDefault.TextShadowShow = false;
             this.btnSettingsRestoreDefault.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnSettingsRestoreDefault_ClickButtonArea);
+            this.btnSettingsRestoreDefault.MouseEnter += new System.EventHandler(this.control_MouseEnter);
+            this.btnSettingsRestoreDefault.MouseLeave += new System.EventHandler(this.control_MouseLeave);
             // 
             // tabInformation
             // 

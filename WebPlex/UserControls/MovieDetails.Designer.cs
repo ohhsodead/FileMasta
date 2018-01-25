@@ -271,7 +271,7 @@
             this.btnWatchTrailer.Corners.UpperLeft = 2;
             this.btnWatchTrailer.Corners.UpperRight = 2;
             this.btnWatchTrailer.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnWatchTrailer.DesignerSelected = false;
+            this.btnWatchTrailer.DesignerSelected = true;
             this.btnWatchTrailer.DimFactorClick = 0;
             this.btnWatchTrailer.DimFactorHover = 0;
             this.btnWatchTrailer.FillType = CButtonLib.CButton.eFillType.Solid;

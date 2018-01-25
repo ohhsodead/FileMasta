@@ -527,6 +527,8 @@
             this.btnReportFile.TextShadowShow = false;
             this.toolTip1.SetToolTip(this.btnReportFile, "Report File");
             this.btnReportFile.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnReportFile_ClickButtonArea);
+            this.btnReportFile.MouseEnter += new System.EventHandler(MainForm.form.control_MouseEnter);
+            this.btnReportFile.MouseLeave += new System.EventHandler(MainForm.form.control_MouseLeave);
             // 
             // cmboboxReportFile
             // 
@@ -564,7 +566,7 @@
             this.btnRequestFileSize.Corners.UpperLeft = 2;
             this.btnRequestFileSize.Corners.UpperRight = 2;
             this.btnRequestFileSize.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRequestFileSize.DesignerSelected = true;
+            this.btnRequestFileSize.DesignerSelected = false;
             this.btnRequestFileSize.DimFactorClick = 0;
             this.btnRequestFileSize.DimFactorHover = 0;
             this.btnRequestFileSize.FillType = CButtonLib.CButton.eFillType.Solid;
@@ -583,6 +585,8 @@
             this.btnRequestFileSize.TextShadowShow = false;
             this.btnRequestFileSize.Visible = false;
             this.btnRequestFileSize.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnRequestFileSize_ClickButtonArea);
+            this.btnRequestFileSize.MouseEnter += new System.EventHandler(MainForm.form.control_MouseEnter);
+            this.btnRequestFileSize.MouseLeave += new System.EventHandler(MainForm.form.control_MouseLeave);
             // 
             // btnShareFile
             // 
@@ -630,6 +634,8 @@
             this.btnShareFile.TextShadowShow = false;
             this.toolTip1.SetToolTip(this.btnShareFile, "Report File");
             this.btnShareFile.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnShareFile_ClickButtonArea);
+            this.btnShareFile.MouseEnter += new System.EventHandler(MainForm.form.control_MouseEnter);
+            this.btnShareFile.MouseLeave += new System.EventHandler(MainForm.form.control_MouseLeave);
             // 
             // btnSaveFile
             // 
@@ -650,7 +656,7 @@
             this.btnSaveFile.Corners.UpperLeft = 2;
             this.btnSaveFile.Corners.UpperRight = 2;
             this.btnSaveFile.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSaveFile.DesignerSelected = false;
+            this.btnSaveFile.DesignerSelected = true;
             this.btnSaveFile.DimFactorClick = 0;
             this.btnSaveFile.DimFactorHover = 0;
             this.btnSaveFile.FillType = CButtonLib.CButton.eFillType.Solid;
@@ -671,6 +677,8 @@
             this.btnSaveFile.TextShadowShow = false;
             this.toolTip1.SetToolTip(this.btnSaveFile, "Save File");
             this.btnSaveFile.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnSaveFile_ClickButtonArea);
+            this.btnSaveFile.MouseEnter += new System.EventHandler(MainForm.form.control_MouseEnter);
+            this.btnSaveFile.MouseLeave += new System.EventHandler(MainForm.form.control_MouseLeave);
             // 
             // btnViewDirectory
             // 
@@ -712,6 +720,8 @@
             this.btnViewDirectory.TextShadowShow = false;
             this.toolTip1.SetToolTip(this.btnViewDirectory, "View Directory");
             this.btnViewDirectory.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnViewDirectory_ClickButtonArea);
+            this.btnViewDirectory.MouseEnter += new System.EventHandler(MainForm.form.control_MouseEnter);
+            this.btnViewDirectory.MouseLeave += new System.EventHandler(MainForm.form.control_MouseLeave);
             // 
             // contextFileName
             // 
@@ -829,6 +839,8 @@
             this.btnPlayMedia.TextShadowShow = false;
             this.btnPlayMedia.Visible = false;
             this.btnPlayMedia.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnPlayMedia_ClickButtonArea);
+            this.btnPlayMedia.MouseEnter += new System.EventHandler(MainForm.form.control_MouseEnter);
+            this.btnPlayMedia.MouseLeave += new System.EventHandler(MainForm.form.control_MouseLeave);
             // 
             // btnCopyURL
             // 
@@ -869,6 +881,8 @@
             this.btnCopyURL.TextShadow = System.Drawing.Color.Empty;
             this.btnCopyURL.TextShadowShow = false;
             this.btnCopyURL.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnCopyURL_ClickButtonArea);
+            this.btnCopyURL.MouseEnter += new System.EventHandler(MainForm.form.control_MouseEnter);
+            this.btnCopyURL.MouseLeave += new System.EventHandler(MainForm.form.control_MouseLeave);
             // 
             // btnDirectLink
             // 
@@ -910,6 +924,8 @@
             this.btnDirectLink.TextShadow = System.Drawing.Color.Empty;
             this.btnDirectLink.TextShadowShow = false;
             this.btnDirectLink.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnDirectLink_ClickButtonArea);
+            this.btnDirectLink.MouseEnter += new System.EventHandler(MainForm.form.control_MouseEnter);
+            this.btnDirectLink.MouseLeave += new System.EventHandler(MainForm.form.control_MouseLeave);
             // 
             // appClose
             // 
