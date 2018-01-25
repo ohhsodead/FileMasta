@@ -35,11 +35,11 @@
 - Improved form/button UI consistency
 - Added Home tab
 - Added Top Search Results (Powered by FileChef.com)
-- Added Share WebPlex on Facebook/Twitter
+- Added Share WebCrunch on Facebook/Twitter
 - Moved latest version text to DropBox
 
 ## 0.2.13.0
-- Renamed project to 'WebPlex'
+- Renamed project to 'WebCrunch'
 - Added localization strings
 - Bug fixes
 
