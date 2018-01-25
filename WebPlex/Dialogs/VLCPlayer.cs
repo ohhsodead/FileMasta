@@ -2,9 +2,9 @@
 
 namespace WebPlex
 {
-    public partial class frmVLCPlayer : Form
+    public partial class VLCPlayer : Form
     {
-        public frmVLCPlayer()
+        public VLCPlayer()
         {
             InitializeComponent();
         }

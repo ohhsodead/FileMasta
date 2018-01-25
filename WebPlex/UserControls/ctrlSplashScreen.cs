@@ -18,7 +18,7 @@ namespace WebPlex.CControls
 
         private void lblLoadingStuckRestart_Click(object sender, System.EventArgs e)
         {
-            if (Directory.Exists(frmWebPlex.pathData)) { Directory.Delete(frmWebPlex.pathData, true); } Application.Restart();
+            if (Directory.Exists(Main.pathData)) { Directory.Delete(Main.pathData, true); } Application.Restart();
         }
     }
 }

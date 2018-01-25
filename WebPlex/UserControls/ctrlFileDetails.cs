@@ -27,8 +27,8 @@ namespace WebPlex.CControls
 
         private void ctrlFileDetails_Load(object sender, EventArgs e)
         {
-            VLCToolStripMenuItem.Visible = File.Exists(frmWebPlex.pathVLC);
-            MPCToolStripMenuItem.Visible = File.Exists(frmWebPlex.pathMPCCodec64) || File.Exists(frmWebPlex.pathMPC64) || File.Exists(frmWebPlex.pathMPC86);
+            VLCToolStripMenuItem.Visible = File.Exists(Main.pathVLC);
+            MPCToolStripMenuItem.Visible = File.Exists(Main.pathMPCCodec64) || File.Exists(Main.pathMPC64) || File.Exists(Main.pathMPC86);
 
             if (videoFileTypes.Contains(infoType.Text.ToUpper()) || audioFileTypes.Contains(infoType.Text.ToUpper())) { btnPlayMedia.Visible = true; }
 
@@ -43,7 +43,7 @@ namespace WebPlex.CControls
             {
                 if (Utilities.isExistingSubtitlesFile(infoFileURL.Text) == true)
                 {
-                    infoFileSubtitles = frmWebPlex.userDownloadsDirectory + Path.GetFileNameWithoutExtension(infoFileURL.Text) + ".srt";
+                    infoFileSubtitles = Main.userDownloadsDirectory + Path.GetFileNameWithoutExtension(infoFileURL.Text) + ".srt";
                 }
             }
 
@@ -59,7 +59,7 @@ namespace WebPlex.CControls
 
         private void appClose_Click(object sender, EventArgs e)
         {
-            frmWebPlex.form.tab.SelectedTab = frmWebPlex.form.currentTab;
+            Main.form.tab.SelectedTab = Main.form.currentTab;
             Parent.Controls.Clear();
         }
 
@@ -215,7 +215,7 @@ namespace WebPlex.CControls
         {
             // Open source file in VLC with subtitles
             Process VLC = new Process();
-            VLC.StartInfo.FileName = frmWebPlex.pathVLC;
+            VLC.StartInfo.FileName = Main.pathVLC;
             VLC.StartInfo.Arguments = ("-vvv " + infoFileURL.Text + " --sub-file=" + infoFileSubtitles);
             VLC.Start();
         }
@@ -223,19 +223,19 @@ namespace WebPlex.CControls
         private void MPCToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Process MPC = new Process();
-            if (File.Exists(frmWebPlex.pathMPCCodec64))
-                MPC.StartInfo.FileName = frmWebPlex.pathMPCCodec64;
-            else if (File.Exists(frmWebPlex.pathMPC64))
-                MPC.StartInfo.FileName = frmWebPlex.pathMPC64;
+            if (File.Exists(Main.pathMPCCodec64))
+                MPC.StartInfo.FileName = Main.pathMPCCodec64;
+            else if (File.Exists(Main.pathMPC64))
+                MPC.StartInfo.FileName = Main.pathMPC64;
             else
-                MPC.StartInfo.FileName = frmWebPlex.pathMPC86;
+                MPC.StartInfo.FileName = Main.pathMPC86;
             MPC.StartInfo.Arguments = (infoFileURL.Text);
             MPC.Start();
         }
 
         private void VLC2ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var a = new frmVLCPlayer
+            var a = new VLCPlayer
             {
                 Text = new Uri(infoFileURL.Text).LocalPath
             };

@@ -33,7 +33,7 @@ namespace WebPlex
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmWebPlex());
+            Application.Run(new MainForm());
         }
         private static void ThreadException(object sender, ThreadExceptionEventArgs e)
         {

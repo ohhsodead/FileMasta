@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace WebPlex
 {
-    public partial class frmDataView : Form
+    public partial class DataDialog : Form
     {
-        public frmDataView()
+        public DataDialog()
         {
             InitializeComponent();
         }
 
-        private void frmDataView_Scroll(object sender, ScrollEventArgs e)
+        private void DataDialog_Scroll(object sender, ScrollEventArgs e)
         {
             Refresh(); // Stops 'Lag/Bad Drawing' when scrolling
         }

@@ -58,10 +58,6 @@
             this.lblHeaderDirectFiles = new System.Windows.Forms.Label();
             this.lineSplitter = new CButtonLib.CButton();
             this.panelFiles = new System.Windows.Forms.FlowLayoutPanel();
-            this.panelTitleTorrents = new System.Windows.Forms.Panel();
-            this.lblHeaderTorrents = new System.Windows.Forms.Label();
-            this.cButton2 = new CButtonLib.CButton();
-            this.panelTorrents = new System.Windows.Forms.FlowLayoutPanel();
             this.btnWatchTrailer = new CButtonLib.CButton();
             this.imgPoster = new System.Windows.Forms.PictureBox();
             this.appClose = new System.Windows.Forms.PictureBox();
@@ -71,7 +67,6 @@
             this.panelTitleFiles.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgSearchForMore)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgAddToBookmarks)).BeginInit();
-            this.panelTitleTorrents.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgPoster)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.appClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgPosterBG)).BeginInit();
@@ -155,8 +150,6 @@
             this.panelDetails.Controls.Add(this.infoCast);
             this.panelDetails.Controls.Add(this.panelTitleFiles);
             this.panelDetails.Controls.Add(this.panelFiles);
-            this.panelDetails.Controls.Add(this.panelTitleTorrents);
-            this.panelDetails.Controls.Add(this.panelTorrents);
             this.panelDetails.Name = "panelDetails";
             // 
             // infoSplitter0
@@ -290,52 +283,6 @@
             this.panelDetails.SetFlowBreak(this.panelFiles, true);
             this.panelFiles.Name = "panelFiles";
             // 
-            // panelTitleTorrents
-            // 
-            resources.ApplyResources(this.panelTitleTorrents, "panelTitleTorrents");
-            this.panelTitleTorrents.BackColor = System.Drawing.Color.Transparent;
-            this.panelTitleTorrents.Controls.Add(this.lblHeaderTorrents);
-            this.panelTitleTorrents.Controls.Add(this.cButton2);
-            this.panelDetails.SetFlowBreak(this.panelTitleTorrents, true);
-            this.panelTitleTorrents.Name = "panelTitleTorrents";
-            // 
-            // lblHeaderTorrents
-            // 
-            resources.ApplyResources(this.lblHeaderTorrents, "lblHeaderTorrents");
-            this.lblHeaderTorrents.BackColor = System.Drawing.Color.Transparent;
-            this.lblHeaderTorrents.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lblHeaderTorrents.ForeColor = System.Drawing.Color.LightGray;
-            this.lblHeaderTorrents.Name = "lblHeaderTorrents";
-            // 
-            // cButton2
-            // 
-            resources.ApplyResources(this.cButton2, "cButton2");
-            this.cButton2.BackColor = System.Drawing.Color.Transparent;
-            this.cButton2.BorderColor = System.Drawing.Color.DarkGray;
-            this.cButton2.ColorFillSolid = System.Drawing.Color.DarkGray;
-            this.cButton2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.cButton2.DesignerSelected = false;
-            this.cButton2.DimFactorClick = 0;
-            this.cButton2.DimFactorHover = 0;
-            this.cButton2.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.cButton2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(180)))), ((int)(((byte)(191)))));
-            this.cButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.cButton2.ImageIndex = 0;
-            this.cButton2.ImageSize = new System.Drawing.Size(25, 36);
-            this.cButton2.Name = "cButton2";
-            this.cButton2.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.cButton2.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.cButton2.SideImageSize = new System.Drawing.Size(36, 36);
-            this.cButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.cButton2.TextShadowShow = false;
-            // 
-            // panelTorrents
-            // 
-            resources.ApplyResources(this.panelTorrents, "panelTorrents");
-            this.panelTorrents.BackColor = System.Drawing.Color.Transparent;
-            this.panelDetails.SetFlowBreak(this.panelTorrents, true);
-            this.panelTorrents.Name = "panelTorrents";
-            // 
             // btnWatchTrailer
             // 
             this.btnWatchTrailer.BackColor = System.Drawing.Color.Transparent;
@@ -416,8 +363,6 @@
             this.panelTitleFiles.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgSearchForMore)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgAddToBookmarks)).EndInit();
-            this.panelTitleTorrents.ResumeLayout(false);
-            this.panelTitleTorrents.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgPoster)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.appClose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgPosterBG)).EndInit();
@@ -456,10 +401,6 @@
         public System.Windows.Forms.Label infoFileName;
         private System.Windows.Forms.PictureBox imgAddToBookmarks;
         public CButtonLib.CButton btnWatchTrailer;
-        internal System.Windows.Forms.Panel panelTitleTorrents;
-        internal System.Windows.Forms.Label lblHeaderTorrents;
-        public CButtonLib.CButton cButton2;
-        public System.Windows.Forms.FlowLayoutPanel panelTorrents;
         private System.Windows.Forms.PictureBox imgSearchForMore;
         internal System.Windows.Forms.Label lblSearchForMore;
     }

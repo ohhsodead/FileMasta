@@ -1,6 +1,4 @@
-﻿using jsonDatabaseFile;
-using jsonOMDb;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
@@ -11,15 +9,23 @@ using System.Net;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using System.Collections;
+using Newtonsoft.Json;
 
 namespace WebPlex
 {
     public class Utilities
     {
-        // Saved Files (Convert: File Link -> Json)
+        /// <summary>
+        /// Converts File to Json for saving)
+        /// </summary>
+        /// <param name="Url">URL of the file</param>
+        /// <param name="Name">File Name</param>
+        /// <param name="Type">File Extension</param>
+        /// <param name="Host">File Host (Website)</param>
+        /// <returns></returns>
         public static string fileToJson(string Url, string Name, string Type, string Host)
         {
-            var a = new DatabaseFilesEntity
+            var a = new Models.WebFile
             {
                 URL = Url,
                 Host = Host,
@@ -29,10 +35,10 @@ namespace WebPlex
                 DateAdded = "-"
             };
 
-            return a.ToJson();
+            return JsonConvert.SerializeObject(a);
         }
 
-        public static string pathDataSaved = frmWebPlex.pathRoot + "saved-files.json";
+        public static string pathDataSaved = Main.pathRoot + "saved-files.json";
 
         public static void unsaveFile(string Json)
         {
@@ -70,7 +76,11 @@ namespace WebPlex
             return false;
         }
 
-        // Resize Combobox Control to Longest Text Size
+        /// <summary>
+        /// Resize Combobox Control to Longest Text Size (Fit Contents)
+        /// </summary>
+        /// <param name="myCombo">ComboBox Control to Get Items</param>
+        /// <returns></returns>
         public static int DropDownWidth(ComboBox myCombo)
         {
             int maxWidth = 0, temp = 0;
@@ -121,7 +131,7 @@ namespace WebPlex
         {
             try
             {
-                if (File.Exists(frmWebPlex.pathData + fileName) == true)
+                if (File.Exists(Main.pathData + fileName) == true)
                 {
                     WebRequest req = WebRequest.Create(webFile);
                     req.Method = "HEAD";
@@ -131,7 +141,7 @@ namespace WebPlex
                         int ContentLength;
                         if (int.TryParse(fileResponse.Headers.Get("Content-Length"), out ContentLength))
                         {
-                            if (new FileInfo(frmWebPlex.pathData + fileName).Length == ContentLength) { return false; }
+                            if (new FileInfo(Main.pathData + fileName).Length == ContentLength) { return false; }
                             else { return true; }
                         }
                         else { return true; }
@@ -163,22 +173,36 @@ namespace WebPlex
         }
 
         // compare file bytes
+        /// <summary>
+        /// If Web File Size and Local File Size is identical
+        /// </summary>
+        /// <param name="fileSize"></param>
+        /// <param name="fileURL"></param>
+        /// <returns></returns>
         public static bool isFileSizeIdentical(string fileSize, string fileURL)
         {
-            if (File.Exists(frmWebPlex.userDownloadsDirectory + Path.GetFileName(new Uri(fileURL).LocalPath)) && fileSize == bytesToString(new FileInfo(frmWebPlex.userDownloadsDirectory + Path.GetFileName(new Uri(fileURL).LocalPath)).Length)) { return true; }
+            if (File.Exists(Main.userDownloadsDirectory + Path.GetFileName(new Uri(fileURL).LocalPath)) && fileSize == bytesToString(new FileInfo(Main.userDownloadsDirectory + Path.GetFileName(new Uri(fileURL).LocalPath)).Length)) { return true; }
             else { return false; }
         }
 
-        // if user has file subtitles in their downloads direcotry
+        /// <summary>
+        /// If user has file subtitles in their downloads direcotry
+        /// </summary>
+        /// <param name="fileURL">Web File URL</param>
+        /// <returns></returns>
         public static bool isExistingSubtitlesFile(string fileURL)
         {
             // Checks for exact file name of a subtitle file that matches the one being loaded (e.g. File Name: 'Jigsaw.2017.mp4' > Subtitle File Name: 'Jigsaw.2017.srt' will be loaded)
-            if (File.Exists(frmWebPlex.userDownloadsDirectory + Path.GetFileNameWithoutExtension(new Uri(fileURL).LocalPath) + ".srt")) {
+            if (File.Exists(Main.userDownloadsDirectory + Path.GetFileNameWithoutExtension(new Uri(fileURL).LocalPath) + ".srt")) {
             return true; }
             else return false;
         }
 
-        // load picturebox from web resource
+        /// <summary>
+        /// Load Bitmap from web resource
+        /// </summary>
+        /// <param name="url">Web Image</param>
+        /// <returns></returns>
         public static Bitmap LoadPicture(string url)
         {
             HttpWebRequest wreq;
@@ -418,18 +442,18 @@ namespace WebPlex
         {
             Version newVersion = null;
             WebClient client = new WebClient();
-            Stream stream = client.OpenRead(frmWebPlex.linkLatestVersion);
+            Stream stream = client.OpenRead(Main.linkLatestVersion);
             StreamReader reader = new StreamReader(stream);
             newVersion = new Version(reader.ReadToEnd());
             Version curVersion = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
 
             if (curVersion.CompareTo(newVersion) < 0)
             {
-                MessageBox.Show(frmWebPlex.form, "WebPlex " + newVersion.ToString() + " is ready to be installed.", "WebPlex - Update Available");
+                MessageBox.Show(Main.form, "WebPlex " + newVersion.ToString() + " is ready to be installed.", "WebPlex - Update Available");
 
-                client.DownloadFile(frmWebPlex.getLatestInstaller(newVersion), frmWebPlex.pathDownloadInstaller);
-                Directory.Delete(frmWebPlex.pathData, true);
-                Process.Start(frmWebPlex.pathDownloadInstaller);
+                client.DownloadFile(Main.getLatestInstaller(newVersion), Main.pathDownloadInstaller);
+                Directory.Delete(Main.pathData, true);
+                Process.Start(Main.pathDownloadInstaller);
                 Application.Exit();
             }
         }

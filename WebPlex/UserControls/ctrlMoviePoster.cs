@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -25,14 +26,7 @@ namespace WebPlex.CControls
         public string infoImageFanart;
         public string infoTrailer;
 
-        public string[] infoMovieFiles;
-
-        public string infoYifyTorrent480p;
-        public string infoYifyTorrent720p;
-        public string infoYifyTorrent1080p;
-
-        public string infoPopcornTorrent720p;
-        public string infoPopcornTorrent1080p;
+        public List<Models.Stream> infoMovieStreams = new List<Models.Stream>();
 
         private void ctrlMoviePoster_Load(object sender, EventArgs e)
         {
@@ -42,7 +36,7 @@ namespace WebPlex.CControls
 
         private void InfoPoster_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            frmWebPlex.form.tabBlank.Controls.Clear();
+            Main.form.tabBlank.Controls.Clear();
 
             ctrlMovieDetails MovieDetails = new ctrlMovieDetails();
 
@@ -55,10 +49,10 @@ namespace WebPlex.CControls
             MovieDetails.infoDirector.Text = infoDirector;
             MovieDetails.infoCast.Text = infoCast;
             MovieDetails.infoRatingIMDb.Text = infoImdbRating;
-            MovieDetails.infoImdbId = infoImdbId;
-            MovieDetails.infoTrailerUrl = infoTrailer;
-            MovieDetails.infoFanartUrl = infoImageFanart;
-            MovieDetails.infoImagePoster = infoImagePoster;
+            MovieDetails.ImdbId = infoImdbId;
+            MovieDetails.TrailerURL = infoTrailer;
+            MovieDetails.FanartURL = infoImageFanart;
+            MovieDetails.PosterURL = infoImagePoster;
 
             try
             {
@@ -67,40 +61,15 @@ namespace WebPlex.CControls
             }
             catch { }
 
-            foreach (string movieLink in infoMovieFiles)
+            foreach (var movieLink in infoMovieStreams)
             {
-                MovieDetails.AddStream(movieLink, false, false, MovieDetails.panelFiles);
-            }
-
-            if (infoYifyTorrent480p != null && infoYifyTorrent480p != "")
-            {
-                MovieDetails.AddStream(infoYifyTorrent480p, false, true, MovieDetails.panelTorrents, "YIFY", "480p");
-            }
-
-            if (infoYifyTorrent720p != null && infoYifyTorrent720p != "")
-            {
-                MovieDetails.AddStream(infoYifyTorrent720p, false, true, MovieDetails.panelTorrents, "YIFY", "720p");
-            }
-
-            if (infoYifyTorrent1080p != null && infoYifyTorrent1080p != "")
-            {
-                MovieDetails.AddStream(infoYifyTorrent1080p, false, true, MovieDetails.panelTorrents, "YIFY", "1080p");
-            }
-
-            if (infoPopcornTorrent720p != null && infoPopcornTorrent720p != "")
-            {
-                MovieDetails.AddStream(infoPopcornTorrent720p, false, true, MovieDetails.panelTorrents, "POPCORN", "720p");
-            }
-
-            if (infoPopcornTorrent1080p != null && infoPopcornTorrent1080p != "")
-            {
-                MovieDetails.AddStream(infoPopcornTorrent1080p, false, true, MovieDetails.panelTorrents, "POPCORN", "1080p");
+                MovieDetails.AddStream(movieLink, false, MovieDetails.panelFiles);
             }
 
             MovieDetails.Dock = DockStyle.Fill;
-            frmWebPlex.form.tabBlank.Controls.Clear();
-            frmWebPlex.form.tabBlank.Controls.Add(MovieDetails);
-            frmWebPlex.form.tab.SelectedTab = frmWebPlex.form.tabBlank;
+            Main.form.tabBlank.Controls.Clear();
+            Main.form.tabBlank.Controls.Add(MovieDetails);
+            Main.form.tab.SelectedTab = Main.form.tabBlank;
         }
 
         private void InfoPoster_MouseEnter(object sender, EventArgs e)

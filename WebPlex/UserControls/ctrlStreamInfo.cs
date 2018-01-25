@@ -24,8 +24,8 @@ namespace WebPlex.CControls
         {
             BackColor = Color.Transparent;
 
-            VLCToolStripMenuItem.Visible = File.Exists(frmWebPlex.pathVLC);
-            MPCToolStripMenuItem.Visible = File.Exists(frmWebPlex.pathMPCCodec64) || File.Exists(frmWebPlex.pathMPC64) || File.Exists(frmWebPlex.pathMPC86);
+            VLCToolStripMenuItem.Visible = File.Exists(Main.pathVLC);
+            MPCToolStripMenuItem.Visible = File.Exists(Main.pathMPCCodec64) || File.Exists(Main.pathMPC64) || File.Exists(Main.pathMPC86);
 
             if (Properties.Settings.Default.dataBookmarks.Contains(infoFileURL)) { imgAddToBookmarks.Image = Properties.Resources.bookmark_remove; } else { imgAddToBookmarks.Image = Properties.Resources.bookmark_plus; }
 
@@ -36,18 +36,18 @@ namespace WebPlex.CControls
                 imgMagnet.Visible = true;
             }
             else if (isLocal == true)
-            { infoHost.Text = frmWebPlex.rm.GetString("local"); imgDownload.Visible = false; imgReportBroken.Visible = false; imgCopyURL.Visible = false; }
+            { infoAge.Text = Main.rm.GetString("local"); imgDownload.Visible = false; imgReportBroken.Visible = false; imgCopyURL.Visible = false; }
 
             // Checks for exact file name of a subtitle file that matches the one being loaded (e.g. Media File Name: 'Jigsaw.2017.mp4' > Subtitle File Name: 'Jigsaw.2017.srt' will be loaded)
             if (infoFileSubtitles == null)
             {
                 if (Utilities.isExistingSubtitlesFile(infoFileURL) == true)
                 {
-                    infoFileSubtitles = frmWebPlex.userDownloadsDirectory + Path.GetFileNameWithoutExtension(infoFileURL) + ".srt";
+                    infoFileSubtitles = Main.userDownloadsDirectory + Path.GetFileNameWithoutExtension(infoFileURL) + ".srt";
                 }
             }
 
-            if (Utilities.isSaved(Utilities.fileToJson(infoFileURL, infoName.Text, Path.GetExtension(infoName.Text).ToUpper().Replace(".", ""), infoHost.Text)))
+            if (Utilities.isSaved(Utilities.fileToJson(infoFileURL, infoName.Text, Path.GetExtension(infoName.Text).ToUpper().Replace(".", ""), infoAge.Text)))
             {
                 imgAddToBookmarks.Image = Properties.Resources.bookmark_remove;
             }
@@ -66,7 +66,7 @@ namespace WebPlex.CControls
         {
             // Open source file in VLC with subtitles
             Process VLC = new Process();
-            VLC.StartInfo.FileName = frmWebPlex.pathVLC;
+            VLC.StartInfo.FileName = Main.pathVLC;
             VLC.StartInfo.Arguments = ("-vvv " + infoFileURL + " --sub-file=" + infoFileSubtitles);
             VLC.Start();
         }
@@ -74,12 +74,12 @@ namespace WebPlex.CControls
         private void MPCToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Process MPC = new Process();
-            if (File.Exists(frmWebPlex.pathMPCCodec64))
-                MPC.StartInfo.FileName = frmWebPlex.pathMPCCodec64;
-            else if (File.Exists(frmWebPlex.pathMPC64))
-                MPC.StartInfo.FileName = frmWebPlex.pathMPC64;
+            if (File.Exists(Main.pathMPCCodec64))
+                MPC.StartInfo.FileName = Main.pathMPCCodec64;
+            else if (File.Exists(Main.pathMPC64))
+                MPC.StartInfo.FileName = Main.pathMPC64;
             else
-                MPC.StartInfo.FileName = frmWebPlex.pathMPC86;
+                MPC.StartInfo.FileName = Main.pathMPC86;
             MPC.StartInfo.Arguments = (infoFileURL);
             MPC.Start();
         }
@@ -88,14 +88,14 @@ namespace WebPlex.CControls
         {
             if (!isTorrent)
             {
-                if (!Utilities.isSaved(Utilities.fileToJson(infoFileURL, infoName.Text, Path.GetExtension(infoName.Text).Replace(".", "").ToUpper(), infoHost.Text)))
+                if (!Utilities.isSaved(Utilities.fileToJson(infoFileURL, infoName.Text, Path.GetExtension(infoName.Text).Replace(".", "").ToUpper(), infoAge.Text)))
                 {
-                    Utilities.saveFile(Utilities.fileToJson(infoFileURL, infoName.Text, Path.GetExtension(infoName.Text).Replace(".", "").ToUpper(), infoHost.Text));
+                    Utilities.saveFile(Utilities.fileToJson(infoFileURL, infoName.Text, Path.GetExtension(infoName.Text).Replace(".", "").ToUpper(), infoAge.Text));
                     imgAddToBookmarks.Image = Properties.Resources.bookmark_remove;
                 }
                 else
                 {
-                    Utilities.unsaveFile(Utilities.fileToJson(infoFileURL, infoName.Text, Path.GetExtension(infoName.Text).Replace(".", "").ToUpper(), infoHost.Text));
+                    Utilities.unsaveFile(Utilities.fileToJson(infoFileURL, infoName.Text, Path.GetExtension(infoName.Text).Replace(".", "").ToUpper(), infoAge.Text));
                     imgAddToBookmarks.Image = Properties.Resources.bookmark_plus;
                 }
             }
@@ -118,7 +118,7 @@ namespace WebPlex.CControls
 
         private void VLC2ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var a = new frmVLCPlayer();
+            var a = new VLCPlayer();
             a.Text = new Uri(infoFileURL).LocalPath;
             a.axVLCPlugin21.playlist.add(infoFileURL);
             a.axVLCPlugin21.playlist.play();

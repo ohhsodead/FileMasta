@@ -118,49 +118,55 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="infoHost.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="infoAge.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Left</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="infoAge.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="infoHost.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="infoAge.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9.75pt</value>
   </data>
-  <data name="infoHost.Location" type="System.Drawing.Point, System.Drawing">
-    <value>27, 2</value>
+  <data name="infoAge.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
   </data>
-  <data name="infoHost.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 17</value>
+  <data name="infoAge.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 3, 0</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="infoHost.TabIndex" type="System.Int32, mscorlib">
+  <data name="infoAge.Size" type="System.Drawing.Size, System.Drawing">
+    <value>31, 17</value>
+  </data>
+  <data name="infoAge.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="infoHost.Text" xml:space="preserve">
-    <value>Host</value>
+  <data name="infoAge.Text" xml:space="preserve">
+    <value>Age</value>
   </data>
-  <data name="&gt;&gt;infoHost.Name" xml:space="preserve">
-    <value>infoHost</value>
+  <data name="&gt;&gt;infoAge.Name" xml:space="preserve">
+    <value>infoAge</value>
   </data>
-  <data name="&gt;&gt;infoHost.Type" xml:space="preserve">
+  <data name="&gt;&gt;infoAge.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;infoHost.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="&gt;&gt;infoAge.Parent" xml:space="preserve">
+    <value>flowLayoutPanel1</value>
   </data>
-  <data name="&gt;&gt;infoHost.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="&gt;&gt;infoAge.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="infoName.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Left, Right</value>
   </data>
   <data name="infoName.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 9.75pt</value>
+    <value>Segoe UI Semibold, 10pt</value>
   </data>
   <data name="infoName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>160, 2</value>
+    <value>29, 2</value>
   </data>
   <data name="infoName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>345, 17</value>
+    <value>476, 20</value>
   </data>
   <data name="infoName.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -235,13 +241,13 @@
     <value>Right</value>
   </data>
   <data name="imgCopyURL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>91, 0</value>
+    <value>97, 0</value>
   </data>
   <data name="imgCopyURL.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 0, 3, 0</value>
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="imgCopyURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>21, 21</value>
+    <value>24, 24</value>
   </data>
   <data name="imgCopyURL.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>StretchImage</value>
@@ -277,13 +283,13 @@
 </value>
   </data>
   <data name="imgReportBroken.Location" type="System.Drawing.Point, System.Drawing">
-    <value>118, 0</value>
+    <value>125, 0</value>
   </data>
   <data name="imgReportBroken.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 0, 3, 0</value>
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="imgReportBroken.Size" type="System.Drawing.Size, System.Drawing">
-    <value>21, 21</value>
+    <value>24, 24</value>
   </data>
   <data name="imgReportBroken.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>StretchImage</value>
@@ -310,13 +316,13 @@
     <value>Right</value>
   </data>
   <data name="imgWatch.Location" type="System.Drawing.Point, System.Drawing">
-    <value>64, 0</value>
+    <value>69, 0</value>
   </data>
   <data name="imgWatch.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 0, 3, 0</value>
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="imgWatch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>21, 21</value>
+    <value>24, 24</value>
   </data>
   <data name="imgWatch.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>StretchImage</value>
@@ -343,13 +349,13 @@
     <value>Right</value>
   </data>
   <data name="imgMagnet.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 3</value>
+    <value>13, 1</value>
   </data>
   <data name="imgMagnet.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 5, 0</value>
+    <value>2, 1, 4, 0</value>
   </data>
   <data name="imgMagnet.Size" type="System.Drawing.Size, System.Drawing">
-    <value>17, 17</value>
+    <value>22, 22</value>
   </data>
   <data name="imgMagnet.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>StretchImage</value>
@@ -379,13 +385,13 @@
     <value>Right</value>
   </data>
   <data name="imgDownload.Location" type="System.Drawing.Point, System.Drawing">
-    <value>37, 0</value>
+    <value>41, 0</value>
   </data>
   <data name="imgDownload.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 0, 3, 0</value>
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="imgDownload.Size" type="System.Drawing.Size, System.Drawing">
-    <value>21, 21</value>
+    <value>24, 24</value>
   </data>
   <data name="imgDownload.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>StretchImage</value>
@@ -412,10 +418,10 @@
     <value>Left</value>
   </data>
   <data name="imgAddToBookmarks.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1, 0</value>
+    <value>1, 1</value>
   </data>
   <data name="imgAddToBookmarks.Size" type="System.Drawing.Size, System.Drawing">
-    <value>22, 22</value>
+    <value>24, 24</value>
   </data>
   <data name="imgAddToBookmarks.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>StretchImage</value>
@@ -436,7 +442,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;imgAddToBookmarks.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="panelControls.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Right</value>
@@ -445,10 +451,10 @@
     <value>RightToLeft</value>
   </data>
   <data name="panelControls.Location" type="System.Drawing.Point, System.Drawing">
-    <value>511, 0</value>
+    <value>501, 1</value>
   </data>
   <data name="panelControls.Size" type="System.Drawing.Size, System.Drawing">
-    <value>142, 21</value>
+    <value>151, 28</value>
   </data>
   <data name="panelControls.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -464,6 +470,105 @@
   </data>
   <data name="&gt;&gt;panelControls.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="infoSize.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="infoSize.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="infoSize.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9.75pt</value>
+  </data>
+  <data name="infoSize.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="infoSize.Location" type="System.Drawing.Point, System.Drawing">
+    <value>54, 0</value>
+  </data>
+  <data name="infoSize.Size" type="System.Drawing.Size, System.Drawing">
+    <value>31, 17</value>
+  </data>
+  <data name="infoSize.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="infoSize.Text" xml:space="preserve">
+    <value>Size</value>
+  </data>
+  <data name="&gt;&gt;infoSize.Name" xml:space="preserve">
+    <value>infoSize</value>
+  </data>
+  <data name="&gt;&gt;infoSize.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;infoSize.Parent" xml:space="preserve">
+    <value>flowLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;infoSize.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="flowLayoutPanel1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="splitter0.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="splitter0.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="splitter0.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9.75pt</value>
+  </data>
+  <data name="splitter0.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="splitter0.Location" type="System.Drawing.Point, System.Drawing">
+    <value>36, 0</value>
+  </data>
+  <data name="splitter0.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
+  </data>
+  <data name="splitter0.Size" type="System.Drawing.Size, System.Drawing">
+    <value>13, 17</value>
+  </data>
+  <data name="splitter0.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="splitter0.Text" xml:space="preserve">
+    <value>•</value>
+  </data>
+  <data name="&gt;&gt;splitter0.Name" xml:space="preserve">
+    <value>splitter0</value>
+  </data>
+  <data name="&gt;&gt;splitter0.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;splitter0.Parent" xml:space="preserve">
+    <value>flowLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;splitter0.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="flowLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>29, 23</value>
+  </data>
+  <data name="flowLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>467, 18</value>
+  </data>
+  <data name="flowLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel1.Name" xml:space="preserve">
+    <value>flowLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel1.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -481,7 +586,7 @@
     <value>12, 12, 12, 12</value>
   </data>
   <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>653, 22</value>
+    <value>653, 42</value>
   </data>
   <data name="&gt;&gt;VLC2ToolStripMenuItem.Name" xml:space="preserve">
     <value>VLC2ToolStripMenuItem</value>

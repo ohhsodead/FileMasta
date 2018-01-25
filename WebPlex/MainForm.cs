@@ -1,7 +1,4 @@
-﻿using jsonDatabaseInfo;
-using jsonDatabaseFile;
-using jsonOMDb;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
@@ -16,12 +13,13 @@ using System.Resources;
 using System.Reflection;
 using System.Text;
 using WebPlex.CControls;
+using Newtonsoft.Json;
 
 namespace WebPlex
 {
-    public partial class frmWebPlex : Form
+    public partial class MainForm : Form
     {
-        public frmWebPlex()
+        public MainForm()
         {
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Properties.Settings.Default.userLanguage);
 
@@ -57,7 +55,7 @@ namespace WebPlex
         public static string pathMPC64 = @"C:\Program Files\MPC-HC\mpc-hc64.exe";
         public static string pathMPC86 = @"C:\Program Files (x86)\MPC-HC\mpc-hc.exe";
 
-        public static frmWebPlex form = null;
+        public static MainForm form = null;
         public ctrlSplashScreen frmSplash;
         protected override void OnPaint(PaintEventArgs e) { }
 
@@ -102,7 +100,7 @@ namespace WebPlex
 
         private void frmWebPlex_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (e.CloseReason == CloseReason.UserClosing || e.CloseReason == CloseReason.ApplicationExitCall) { Properties.Settings.Default.Save(); if (Properties.Settings.Default.clearDataOnClose == true) { if (Directory.Exists(pathData)) { Directory.Delete(pathData, true); } } }
+            if (e.CloseReason == CloseReason.UserClosing | e.CloseReason == CloseReason.ApplicationExitCall) { Properties.Settings.Default.Save(); if (Properties.Settings.Default.clearDataOnClose == true) { if (Directory.Exists(pathData)) { Directory.Delete(pathData, true); } } }
         }
 
         private void frmWebPlex_SizeChanged(object sender, EventArgs e)
@@ -177,7 +175,7 @@ namespace WebPlex
             Controls.Remove(frmSplash);
         }
 
-        public void showStatusTab(string errorText) // Shows Error/Restart Button on Movies tab after loading expection occurs (WIP)
+        public void showStatusTab(string errorText) // Shows Message and Restart Button on Home tab if no connection established (WIP/TO-DO)
         {
             imgSpinner.Visible = false;
 
@@ -250,47 +248,47 @@ namespace WebPlex
             {
                 currentTab = tabHome;
 
-                selectedTabLine(titleHome);
+                selectTabTitle(titleHome);
             }
             else if (tab.SelectedTab == tabMovies)
             {
                 currentTab = tabMovies;
 
-                selectedTabLine(titleMovies);
+                selectTabTitle(titleMovies);
             }
             else if (tab.SelectedTab == tabFiles)
             {
                 currentTab = tabFiles;
 
-                selectedTabLine(titleFiles);
+                selectTabTitle(titleFiles);
             }
             else if (tab.SelectedTab == tabDiscover)
             {
                 currentTab = tabDiscover;
 
-                selectedTabLine(titleDiscover);
+                selectTabTitle(titleDiscover);
             }
             else if (tab.SelectedTab == tabSubmit)
             {
                 currentTab = tabDiscover;
 
-                selectedTabLine(titleSubmit);
+                selectTabTitle(titleSubmit);
             }
             else if (tab.SelectedTab == tabSettings)
             {
                 currentTab = tabSettings;
 
-                selectedTabLine(titleSettings);
+                selectTabTitle(titleSettings);
             }
             else if (tab.SelectedTab == tabInformation)
             {
                 currentTab = tabInformation;
 
-                selectedTabLine(titleInformation);
+                selectTabTitle(titleInformation);
             }
         }
 
-        public void selectedTabLine(CButtonLib.CButton cbtn)
+        public void selectTabTitle(CButtonLib.CButton cbtn)
         {
             Color selectedRGB = Color.FromArgb(51, 60, 67);
             Color nonSelectedRGB = Color.FromArgb(43, 52, 59);
@@ -342,7 +340,7 @@ namespace WebPlex
             {
                 foreach (string jsonData in dataOpenFiles)
                 {
-                    var dataJsonFile = DatabaseFilesEntity.FromJson(jsonData);
+                    var dataJsonFile = JsonConvert.DeserializeObject<Models.WebFile>(jsonData);
                     if (dataJsonFile.Size != "-" && dataJsonFile.Size != "" && dataJsonFile.Size != " ") { totalSize = totalSize + Convert.ToInt64(dataJsonFile.Size); }
                 }
 
@@ -353,7 +351,7 @@ namespace WebPlex
             try
             {
                 // Database Info
-                var dataJsonInfo = DatabaseInfoEntity.FromJson(databaseInfo);
+                var dataJsonInfo = JsonConvert.DeserializeObject<Models.DatabaseInfo>(databaseInfo);
                 lblHomeStatsDatabaseUpdated.Text = String.Format(lblHomeStatsDatabaseUpdated.Text, Convert.ToDateTime(dataJsonInfo.LastUpdated).ToShortDateString());
             }
             catch { lblHomeStatsDatabaseUpdated.Text = "Updated: n/a"; }
@@ -528,7 +526,7 @@ namespace WebPlex
                     {
                         if (string.IsNullOrEmpty(movie) == false)
                         {
-                            var data = OMDbEntity.FromJson(movie);
+                            var data = JsonConvert.DeserializeObject<Models.Movie>(movie);
 
                             if (data.ImdbID.ToLower() == txtSearchMovies.Text.ToLower() | data.Title.ToLower().Contains(txtSearchMovies.Text.ToLower()) | data.Actors.ToLower().Contains(txtSearchMovies.Text.ToLower()) && data.Year.Contains(selectedYear) && data.Genre.ToLower().Contains(selectedGenre.ToLower()))
                             {
@@ -550,17 +548,10 @@ namespace WebPlex
 
                                 ctrlPoster.infoImagePoster = data.Poster;
                                 ctrlPoster.Name = data.ImdbID;
-                                ctrlPoster.infoMovieFiles = data.Sources;
+                                ctrlPoster.infoMovieStreams = data.Streams;
 
-                                ctrlPoster.infoYifyTorrent480p = data.YifyTorrent480p;
-                                ctrlPoster.infoYifyTorrent720p = data.YifyTorrent720p;
-                                ctrlPoster.infoYifyTorrent1080p = data.YifyTorrent1080p;
-
-                                ctrlPoster.infoPopcornTorrent720p = data.PopcornTorrent720p;
-                                ctrlPoster.infoPopcornTorrent1080p = data.PopcornTorrent1080p;
-
-                                ctrlPoster.infoTrailer = data.trailerUrl;
-                                ctrlPoster.infoImageFanart = data.imageFanart;
+                                ctrlPoster.infoTrailer = data.TrailerURL;
+                                ctrlPoster.infoImageFanart = data.FanartURL;
 
                                 ctrlPoster.Show();
                                 MoviesPosters.Add(ctrlPoster);
@@ -676,45 +667,30 @@ namespace WebPlex
 
             Thread.Sleep(100);
 
-            var data = OMDbEntity.FromJson(Utilities.Random(dataMovies));
+            var dataOMDb = JsonConvert.DeserializeObject<Models.Movie>(Utilities.Random(dataMovies));
 
             ctrlMovieDetails MovieDetails = new ctrlMovieDetails();
 
-            MovieDetails.infoTitle.Text = data.Title;
-            MovieDetails.infoYear.Text = data.Year;
-            MovieDetails.infoGenre.Text = data.Genre;
-            MovieDetails.infoSynopsis.Text = data.Plot;
-            MovieDetails.infoRuntime.Text = data.Runtime;
-            MovieDetails.infoRated.Text = data.Rated;
-            MovieDetails.infoDirector.Text = data.Director;
-            MovieDetails.infoCast.Text = data.Actors;
-            MovieDetails.infoRatingIMDb.Text = data.ImdbRating;
-            MovieDetails.infoImdbId = data.ImdbID;
-            MovieDetails.infoImagePoster = data.Poster;
-            MovieDetails.infoFanartUrl = data.imageFanart;
-            MovieDetails.infoTrailerUrl = data.trailerUrl;
+            MovieDetails.infoTitle.Text = dataOMDb.Title;
+            MovieDetails.infoYear.Text = dataOMDb.Year;
+            MovieDetails.infoGenre.Text = dataOMDb.Genre;
+            MovieDetails.infoSynopsis.Text = dataOMDb.Plot;
+            MovieDetails.infoRuntime.Text = dataOMDb.Runtime;
+            MovieDetails.infoRated.Text = dataOMDb.Rated;
+            MovieDetails.infoDirector.Text = dataOMDb.Director;
+            MovieDetails.infoCast.Text = dataOMDb.Actors;
+            MovieDetails.infoRatingIMDb.Text = dataOMDb.ImdbRating;
+            MovieDetails.ImdbId = dataOMDb.ImdbID;
+            MovieDetails.PosterURL = dataOMDb.Poster;
+            MovieDetails.FanartURL = dataOMDb.FanartURL;
+            MovieDetails.TrailerURL = dataOMDb.TrailerURL;
 
-            if (data.Poster != "") { MovieDetails.imgPoster.Image = Utilities.ChangeOpacity(Utilities.LoadPicture(data.Poster), 1); }
-            if (data.imageFanart != "") { MovieDetails.BackgroundImage = Utilities.ChangeOpacity(Utilities.LoadPicture(data.imageFanart), 0.2F); }
+            if (dataOMDb.Poster != "") { MovieDetails.imgPoster.Image = Utilities.ChangeOpacity(Utilities.LoadPicture(dataOMDb.Poster), 1); }
+            if (dataOMDb.FanartURL != "") { MovieDetails.BackgroundImage = Utilities.ChangeOpacity(Utilities.LoadPicture(dataOMDb.FanartURL), 0.2F); }
 
-            foreach (string movieLink in data.Sources)
+            foreach (var movieLink in dataOMDb.Streams)
             {
-                MovieDetails.AddStream(movieLink, false, false, MovieDetails.panelFiles);
-            }
-
-            if (data.YifyTorrent480p != null && data.YifyTorrent480p != "")
-            {
-                MovieDetails.AddStream(data.YifyTorrent480p, false, true, MovieDetails.panelTorrents, "480p");
-            }
-
-            if (data.YifyTorrent720p != null && data.YifyTorrent720p != "")
-            {
-                MovieDetails.AddStream(data.YifyTorrent720p, false, true, MovieDetails.panelTorrents, "720p");
-            }
-
-            if (data.YifyTorrent1080p != null && data.YifyTorrent1080p != "")
-            {
-                MovieDetails.AddStream(data.YifyTorrent1080p, false, true, MovieDetails.panelTorrents, "1080p");
+                MovieDetails.AddStream(movieLink, false, MovieDetails.panelFiles);
             }
 
 
@@ -748,7 +724,7 @@ namespace WebPlex
 
             foreach (var pathFile in Directory.GetFiles(userDownloadsDirectory))
             {
-                var data = new DatabaseFilesEntity
+                var dataJson = new Models.WebFile
                 {
                     URL = pathFile,
                     Host = rm.GetString("local"),
@@ -758,7 +734,7 @@ namespace WebPlex
                     DateAdded = File.GetCreationTime(pathFile).ToString()
             };
 
-                dataFilesLocal.Add(data.ToJson());
+                dataFilesLocal.Add(JsonConvert.SerializeObject(dataJson));
             }
         }
 
@@ -948,7 +924,7 @@ namespace WebPlex
                 }
                 else
                 {
-                    ComponentResourceManager resources = new ComponentResourceManager(typeof(frmWebPlex));
+                    ComponentResourceManager resources = new ComponentResourceManager(typeof(MainForm));
                     cmboBoxFilesSort.SelectedIndex = 0; dataGridFiles.Rows.Clear();
                     cmboBoxFilesHost.Items.Clear(); cmboBoxFilesHost.Items.Add(resources.GetString("cmboBoxFilesHost.Items"));
 
@@ -956,7 +932,7 @@ namespace WebPlex
 
                     foreach (string jsonData in data)
                     {
-                        var dataJson = DatabaseFilesEntity.FromJson(jsonData);
+                        var dataJson = JsonConvert.DeserializeObject<Models.WebFile>(jsonData);
                         string formattedDate = dataJson.DateAdded;
                         if (dataJson.DateAdded != "-") { formattedDate = Utilities.getTimeAgo(Convert.ToDateTime(dataJson.DateAdded)); }
                         string formattedSize = dataJson.Size;
@@ -986,11 +962,11 @@ namespace WebPlex
 
                 foreach (string file in dataFiles)
                 {
-                    var dataJson = DatabaseFilesEntity.FromJson(file);
+                    var dataJson = JsonConvert.DeserializeObject<Models.WebFile>(file);
 
                     if (Utilities.ContainsAll(dataJson.Title.ToLower(), Utilities.GetWords(txtSearchFiles.Text.ToLower())) && selectedFilesFileType.Contains(dataJson.Type) && dataJson.Host.Contains(selectedFilesHost))
                     {
-                        urls.Add(dataJson.ToJson());
+                        urls.Add(JsonConvert.SerializeObject(dataJson));
                     }
 
                 }
@@ -1196,7 +1172,7 @@ namespace WebPlex
 
         public void showInfo(string Title, string URL)
         {
-            frmDataView frmInfo = new frmDataView
+            DataDialog frmInfo = new DataDialog
             {
                 Text = Title
             };

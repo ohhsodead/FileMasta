@@ -1,6 +1,6 @@
 ﻿namespace WebPlex
 {
-    partial class frmDataView
+    partial class DataDialog
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDataView));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DataDialog));
             this.panelDataItems = new System.Windows.Forms.FlowLayoutPanel();
             this.dataInfo = new System.Windows.Forms.Label();
             this.panelDataItems.SuspendLayout();
@@ -62,7 +62,7 @@
             this.dataInfo.TabIndex = 100046;
             this.dataInfo.Text = "Text";
             // 
-            // frmDataView
+            // DataDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -78,12 +78,12 @@
             this.MaximumSize = new System.Drawing.Size(475, 650);
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(475, 40);
-            this.Name = "frmDataView";
+            this.Name = "DataDialog";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Title";
-            this.Scroll += new System.Windows.Forms.ScrollEventHandler(this.frmDataView_Scroll);
+            this.Scroll += new System.Windows.Forms.ScrollEventHandler(this.DataDialog_Scroll);
             this.panelDataItems.ResumeLayout(false);
             this.panelDataItems.PerformLayout();
             this.ResumeLayout(false);

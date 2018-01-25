@@ -378,6 +378,9 @@
   <data name="panelTopSearches.Location" type="System.Drawing.Point, System.Drawing">
     <value>210, 264</value>
   </data>
+  <data name="panelTopSearches.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
   <data name="panelTopSearches.Size" type="System.Drawing.Size, System.Drawing">
     <value>432, 180</value>
   </data>
@@ -605,6 +608,9 @@
   </data>
   <data name="tabHome.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
+  </data>
+  <data name="tabHome.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
   </data>
   <data name="tabHome.Size" type="System.Drawing.Size, System.Drawing">
     <value>848, 586</value>
@@ -1046,6 +1052,9 @@
   </data>
   <data name="panelMovieFilters.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 3, 3, 3</value>
+  </data>
+  <data name="panelMovieFilters.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
   </data>
   <data name="panelMovieFilters.Size" type="System.Drawing.Size, System.Drawing">
     <value>416, 30</value>
@@ -2996,6 +3005,9 @@ To contact the application owner and administrator you can send an e-mail to thi
   <data name="tab.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
+  <data name="tab.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
   <data name="tab.Size" type="System.Drawing.Size, System.Drawing">
     <value>856, 612</value>
   </data>
@@ -3379,6 +3391,9 @@ To contact the application owner and administrator you can send an e-mail to thi
   </data>
   <data name="panelTitles.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
+  </data>
+  <data name="panelTitles.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>Yes</value>
   </data>
   <data name="panelTitles.Size" type="System.Drawing.Size, System.Drawing">
     <value>200, 586</value>
@@ -4272,7 +4287,7 @@ To contact the application owner and administrator you can send an e-mail to thi
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>frmWebPlex</value>
+    <value>MainForm</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>

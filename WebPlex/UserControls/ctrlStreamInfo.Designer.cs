@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ctrlStreamInfo));
-            this.infoHost = new System.Windows.Forms.Label();
+            this.infoAge = new System.Windows.Forms.Label();
             this.infoName = new System.Windows.Forms.Label();
             this.contextFileName = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.VLC2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -45,6 +45,9 @@
             this.imgDownload = new System.Windows.Forms.PictureBox();
             this.imgAddToBookmarks = new System.Windows.Forms.PictureBox();
             this.panelControls = new System.Windows.Forms.FlowLayoutPanel();
+            this.infoSize = new System.Windows.Forms.Label();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.splitter0 = new System.Windows.Forms.Label();
             this.contextFileName.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgCopyURL)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgReportBroken)).BeginInit();
@@ -53,14 +56,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.imgDownload)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgAddToBookmarks)).BeginInit();
             this.panelControls.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // infoHost
+            // infoAge
             // 
-            resources.ApplyResources(this.infoHost, "infoHost");
-            this.infoHost.AutoEllipsis = true;
-            this.infoHost.Cursor = System.Windows.Forms.Cursors.Default;
-            this.infoHost.Name = "infoHost";
+            resources.ApplyResources(this.infoAge, "infoAge");
+            this.infoAge.AutoEllipsis = true;
+            this.infoAge.Cursor = System.Windows.Forms.Cursors.Default;
+            this.infoAge.Name = "infoAge";
             // 
             // infoName
             // 
@@ -177,6 +181,29 @@
             this.panelControls.Controls.Add(this.imgMagnet);
             this.panelControls.Name = "panelControls";
             // 
+            // infoSize
+            // 
+            resources.ApplyResources(this.infoSize, "infoSize");
+            this.infoSize.AutoEllipsis = true;
+            this.infoSize.Cursor = System.Windows.Forms.Cursors.Default;
+            this.infoSize.Name = "infoSize";
+            // 
+            // flowLayoutPanel1
+            // 
+            resources.ApplyResources(this.flowLayoutPanel1, "flowLayoutPanel1");
+            this.flowLayoutPanel1.Controls.Add(this.infoAge);
+            this.flowLayoutPanel1.Controls.Add(this.splitter0);
+            this.flowLayoutPanel1.Controls.Add(this.infoSize);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            // 
+            // splitter0
+            // 
+            resources.ApplyResources(this.splitter0, "splitter0");
+            this.splitter0.AutoEllipsis = true;
+            this.splitter0.Cursor = System.Windows.Forms.Cursors.Default;
+            this.splitter0.ForeColor = System.Drawing.Color.Silver;
+            this.splitter0.Name = "splitter0";
+            // 
             // ctrlStreamInfo
             // 
             resources.ApplyResources(this, "$this");
@@ -184,8 +211,8 @@
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.panelControls);
             this.Controls.Add(this.infoName);
-            this.Controls.Add(this.infoHost);
             this.Controls.Add(this.imgAddToBookmarks);
+            this.Controls.Add(this.flowLayoutPanel1);
             this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.Color.White;
             this.Name = "ctrlStreamInfo";
@@ -198,13 +225,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.imgDownload)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgAddToBookmarks)).EndInit();
             this.panelControls.ResumeLayout(false);
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        public System.Windows.Forms.Label infoHost;
+        public System.Windows.Forms.Label infoAge;
         public System.Windows.Forms.Label infoName;
         public System.Windows.Forms.ContextMenuStrip contextFileName;
         private System.Windows.Forms.PictureBox imgAddToBookmarks;
@@ -219,5 +248,8 @@
         public System.Windows.Forms.PictureBox imgReportBroken;
         public System.Windows.Forms.PictureBox imgCopyURL;
         public System.Windows.Forms.PictureBox imgMagnet;
+        public System.Windows.Forms.Label infoSize;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        public System.Windows.Forms.Label splitter0;
     }
 }

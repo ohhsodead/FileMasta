@@ -156,6 +156,7 @@
             this.Controls.Add(this.infoPoster2);
             this.Controls.Add(this.imageBackgroundEffect);
             this.DoubleBuffered = true;
+            this.ForeColor = System.Drawing.Color.White;
             this.Margin = new System.Windows.Forms.Padding(1, 3, 1, 0);
             this.Name = "ctrlMoviePoster";
             this.Size = new System.Drawing.Size(155, 260);
