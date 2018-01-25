@@ -1,3 +1,8 @@
+## 0.2.14.5
+- Somewhat responsive UI, to-do consistency
+- Various code improvements
+- Fixed #65, #66 (hopefully)
+
 ## 0.2.14.4
 - Fixed total database file size
 
