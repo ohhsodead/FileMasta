@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 
-namespace WebPlex
+namespace Utilities
 {
     public static class BackGroundWorker
     {

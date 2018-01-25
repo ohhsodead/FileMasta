@@ -1,4 +1,4 @@
-﻿namespace WebPlex.CControls
+﻿namespace UserControls
 {
     partial class SplashScreen
     {
@@ -47,7 +47,7 @@
             // 
             resources.ApplyResources(this.imgLogo, "imgLogo");
             this.imgLogo.BackColor = System.Drawing.Color.Transparent;
-            this.imgLogo.Image = global::WebPlex.Properties.Resources.logo;
+            this.imgLogo.Image = global::WebCrunch.Properties.Resources.logo;
             this.imgLogo.Name = "imgLogo";
             this.imgLogo.TabStop = false;
             // 

@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace WebPlex
+namespace Dialogs
 {
     public partial class VLCPlayer : Form
     {

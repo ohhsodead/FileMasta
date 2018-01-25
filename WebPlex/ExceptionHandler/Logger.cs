@@ -30,7 +30,7 @@ using System;
 using System.IO;
 using System.Threading;
 
-namespace WebPlex.ExceptionHandler
+namespace ExceptionHandler
 {
     public static class Logger
     {

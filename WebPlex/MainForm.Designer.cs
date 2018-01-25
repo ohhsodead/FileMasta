@@ -1,4 +1,4 @@
-﻿namespace WebPlex
+﻿namespace WebCrunch
 {
     partial class MainForm
     {
@@ -270,7 +270,7 @@
             this.btnHomeEngine.DimFactorClick = 0;
             this.btnHomeEngine.DimFactorHover = 0;
             this.btnHomeEngine.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.btnHomeEngine.Image = global::WebPlex.Properties.Resources.menu_down;
+            this.btnHomeEngine.Image = global::WebCrunch.Properties.Resources.menu_down;
             this.btnHomeEngine.ImageIndex = 0;
             this.btnHomeEngine.ImageSize = new System.Drawing.Size(20, 20);
             this.btnHomeEngine.Name = "btnHomeEngine";
@@ -281,8 +281,8 @@
             this.btnHomeEngine.TextMargin = new System.Windows.Forms.Padding(0);
             this.btnHomeEngine.TextShadowShow = false;
             this.btnHomeEngine.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnExploreEngine_ClickButtonArea);
-            this.btnHomeEngine.MouseEnter += new System.EventHandler(this.control_MouseEnter);
-            this.btnHomeEngine.MouseLeave += new System.EventHandler(this.control_MouseLeave);
+            this.btnHomeEngine.MouseEnter += new System.EventHandler(this.btnCButton_MouseEnter);
+            this.btnHomeEngine.MouseLeave += new System.EventHandler(this.btnCButton_MouseLeave);
             // 
             // cmboBoxHomeEngine
             // 
@@ -362,11 +362,11 @@
             this.btnHomeFileType.Corners.UpperLeft = 2;
             this.btnHomeFileType.Corners.UpperRight = 2;
             this.btnHomeFileType.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnHomeFileType.DesignerSelected = true;
+            this.btnHomeFileType.DesignerSelected = false;
             this.btnHomeFileType.DimFactorClick = 0;
             this.btnHomeFileType.DimFactorHover = 0;
             this.btnHomeFileType.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.btnHomeFileType.Image = global::WebPlex.Properties.Resources.menu_down;
+            this.btnHomeFileType.Image = global::WebCrunch.Properties.Resources.menu_down;
             this.btnHomeFileType.ImageIndex = 0;
             this.btnHomeFileType.ImageSize = new System.Drawing.Size(20, 20);
             this.btnHomeFileType.Name = "btnHomeFileType";
@@ -377,8 +377,8 @@
             this.btnHomeFileType.TextMargin = new System.Windows.Forms.Padding(0);
             this.btnHomeFileType.TextShadowShow = false;
             this.btnHomeFileType.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnHomeFileType_ClickButtonArea);
-            this.btnHomeFileType.MouseEnter += new System.EventHandler(this.control_MouseEnter);
-            this.btnHomeFileType.MouseLeave += new System.EventHandler(this.control_MouseLeave);
+            this.btnHomeFileType.MouseEnter += new System.EventHandler(this.btnCButton_MouseEnter);
+            this.btnHomeFileType.MouseLeave += new System.EventHandler(this.btnCButton_MouseLeave);
             // 
             // cmboBoxHomeFileType
             // 
@@ -425,7 +425,7 @@
             this.btnSearchFilesHome.FillType = CButtonLib.CButton.eFillType.Solid;
             this.btnSearchFilesHome.FocalPoints.CenterPtX = 0F;
             this.btnSearchFilesHome.FocalPoints.CenterPtY = 0F;
-            this.btnSearchFilesHome.Image = global::WebPlex.Properties.Resources.magnify;
+            this.btnSearchFilesHome.Image = global::WebCrunch.Properties.Resources.magnify;
             this.btnSearchFilesHome.ImageIndex = 0;
             this.btnSearchFilesHome.ImageSize = new System.Drawing.Size(19, 19);
             this.btnSearchFilesHome.Name = "btnSearchFilesHome";
@@ -433,8 +433,8 @@
             this.btnSearchFilesHome.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSearchFilesHome.TextShadowShow = false;
             this.btnSearchFilesHome.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnSearchFilesHome_ClickButtonArea);
-            this.btnSearchFilesHome.MouseEnter += new System.EventHandler(this.control_MouseEnter);
-            this.btnSearchFilesHome.MouseLeave += new System.EventHandler(this.control_MouseLeave);
+            this.btnSearchFilesHome.MouseEnter += new System.EventHandler(this.btnCButton_MouseEnter);
+            this.btnSearchFilesHome.MouseLeave += new System.EventHandler(this.btnCButton_MouseLeave);
             // 
             // txtSearchFilesHome
             // 
@@ -549,8 +549,8 @@
             this.btnMoviesRandom.TextShadow = System.Drawing.Color.Empty;
             this.btnMoviesRandom.TextShadowShow = false;
             this.btnMoviesRandom.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnMoviesRandom_ClickButtonArea);
-            this.btnMoviesRandom.MouseEnter += new System.EventHandler(this.control_MouseEnter);
-            this.btnMoviesRandom.MouseLeave += new System.EventHandler(this.control_MouseLeave);
+            this.btnMoviesRandom.MouseEnter += new System.EventHandler(this.btnCButton_MouseEnter);
+            this.btnMoviesRandom.MouseLeave += new System.EventHandler(this.btnCButton_MouseLeave);
             // 
             // panelMoviesGenre
             // 
@@ -581,7 +581,7 @@
             this.btnMoviesGenre.DesignerSelected = false;
             this.btnMoviesGenre.DimFactorHover = -18;
             this.btnMoviesGenre.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.btnMoviesGenre.Image = global::WebPlex.Properties.Resources.menu_down;
+            this.btnMoviesGenre.Image = global::WebCrunch.Properties.Resources.menu_down;
             this.btnMoviesGenre.ImageIndex = 0;
             this.btnMoviesGenre.ImageSize = new System.Drawing.Size(18, 18);
             this.btnMoviesGenre.Name = "btnMoviesGenre";
@@ -591,8 +591,8 @@
             this.btnMoviesGenre.TextShadow = System.Drawing.Color.Empty;
             this.btnMoviesGenre.TextShadowShow = false;
             this.btnMoviesGenre.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnMoviesGenre_ClickButtonArea);
-            this.btnMoviesGenre.MouseEnter += new System.EventHandler(this.control_MouseEnter);
-            this.btnMoviesGenre.MouseLeave += new System.EventHandler(this.control_MouseLeave);
+            this.btnMoviesGenre.MouseEnter += new System.EventHandler(this.btnCButton_MouseEnter);
+            this.btnMoviesGenre.MouseLeave += new System.EventHandler(this.btnCButton_MouseLeave);
             // 
             // cmboBoxMoviesGenre
             // 
@@ -653,7 +653,7 @@
             this.btnMoviesYear.DesignerSelected = false;
             this.btnMoviesYear.DimFactorHover = -18;
             this.btnMoviesYear.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.btnMoviesYear.Image = global::WebPlex.Properties.Resources.menu_down;
+            this.btnMoviesYear.Image = global::WebCrunch.Properties.Resources.menu_down;
             this.btnMoviesYear.ImageIndex = 0;
             this.btnMoviesYear.ImageSize = new System.Drawing.Size(18, 18);
             this.btnMoviesYear.Name = "btnMoviesYear";
@@ -663,8 +663,8 @@
             this.btnMoviesYear.TextShadow = System.Drawing.Color.Empty;
             this.btnMoviesYear.TextShadowShow = false;
             this.btnMoviesYear.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnMoviesYear_ClickButtonArea);
-            this.btnMoviesYear.MouseEnter += new System.EventHandler(this.control_MouseEnter);
-            this.btnMoviesYear.MouseLeave += new System.EventHandler(this.control_MouseLeave);
+            this.btnMoviesYear.MouseEnter += new System.EventHandler(this.btnCButton_MouseEnter);
+            this.btnMoviesYear.MouseLeave += new System.EventHandler(this.btnCButton_MouseLeave);
             // 
             // cmboBoxMoviesYear
             // 
@@ -751,7 +751,7 @@
             this.btnSearchMovies.FocalPoints.CenterPtX = 0F;
             this.btnSearchMovies.FocalPoints.CenterPtY = 0F;
             resources.ApplyResources(this.btnSearchMovies, "btnSearchMovies");
-            this.btnSearchMovies.Image = global::WebPlex.Properties.Resources.magnify;
+            this.btnSearchMovies.Image = global::WebCrunch.Properties.Resources.magnify;
             this.btnSearchMovies.ImageIndex = 0;
             this.btnSearchMovies.ImageSize = new System.Drawing.Size(19, 19);
             this.btnSearchMovies.Name = "btnSearchMovies";
@@ -760,8 +760,8 @@
             this.btnSearchMovies.TextShadow = System.Drawing.Color.Empty;
             this.btnSearchMovies.TextShadowShow = false;
             this.btnSearchMovies.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnSearchMovies_ClickButtonArea);
-            this.btnSearchMovies.MouseEnter += new System.EventHandler(this.control_MouseEnter);
-            this.btnSearchMovies.MouseLeave += new System.EventHandler(this.control_MouseLeave);
+            this.btnSearchMovies.MouseEnter += new System.EventHandler(this.btnCButton_MouseEnter);
+            this.btnSearchMovies.MouseLeave += new System.EventHandler(this.btnCButton_MouseLeave);
             // 
             // tabFiles
             // 
@@ -835,7 +835,7 @@
             this.btnFilesSort.DimFactorClick = 0;
             this.btnFilesSort.DimFactorHover = 0;
             this.btnFilesSort.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.btnFilesSort.Image = global::WebPlex.Properties.Resources.menu_down;
+            this.btnFilesSort.Image = global::WebCrunch.Properties.Resources.menu_down;
             this.btnFilesSort.ImageIndex = 0;
             this.btnFilesSort.ImageSize = new System.Drawing.Size(18, 18);
             this.btnFilesSort.Name = "btnFilesSort";
@@ -844,8 +844,8 @@
             this.btnFilesSort.TextMargin = new System.Windows.Forms.Padding(0);
             this.btnFilesSort.TextShadowShow = false;
             this.btnFilesSort.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnFilesSort_ClickButtonArea);
-            this.btnFilesSort.MouseEnter += new System.EventHandler(this.control_MouseEnter);
-            this.btnFilesSort.MouseLeave += new System.EventHandler(this.control_MouseLeave);
+            this.btnFilesSort.MouseEnter += new System.EventHandler(this.btnCButton_MouseEnter);
+            this.btnFilesSort.MouseLeave += new System.EventHandler(this.btnCButton_MouseLeave);
             // 
             // cmboBoxFilesSort
             // 
@@ -891,7 +891,7 @@
             this.btnFilesHost.DimFactorClick = 0;
             this.btnFilesHost.DimFactorHover = 0;
             this.btnFilesHost.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.btnFilesHost.Image = global::WebPlex.Properties.Resources.menu_down;
+            this.btnFilesHost.Image = global::WebCrunch.Properties.Resources.menu_down;
             this.btnFilesHost.ImageIndex = 0;
             this.btnFilesHost.ImageSize = new System.Drawing.Size(18, 18);
             this.btnFilesHost.Name = "btnFilesHost";
@@ -900,8 +900,8 @@
             this.btnFilesHost.TextMargin = new System.Windows.Forms.Padding(0);
             this.btnFilesHost.TextShadowShow = false;
             this.btnFilesHost.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnFilesHost_ClickButtonArea);
-            this.btnFilesHost.MouseEnter += new System.EventHandler(this.control_MouseEnter);
-            this.btnFilesHost.MouseLeave += new System.EventHandler(this.control_MouseLeave);
+            this.btnFilesHost.MouseEnter += new System.EventHandler(this.btnCButton_MouseEnter);
+            this.btnFilesHost.MouseLeave += new System.EventHandler(this.btnCButton_MouseLeave);
             // 
             // cmboBoxFilesHost
             // 
@@ -1332,7 +1332,7 @@
             this.btnSearchFiles.FocalPoints.CenterPtX = 0F;
             this.btnSearchFiles.FocalPoints.CenterPtY = 0F;
             resources.ApplyResources(this.btnSearchFiles, "btnSearchFiles");
-            this.btnSearchFiles.Image = global::WebPlex.Properties.Resources.magnify;
+            this.btnSearchFiles.Image = global::WebCrunch.Properties.Resources.magnify;
             this.btnSearchFiles.ImageIndex = 0;
             this.btnSearchFiles.ImageSize = new System.Drawing.Size(19, 19);
             this.btnSearchFiles.Name = "btnSearchFiles";
@@ -1340,8 +1340,8 @@
             this.btnSearchFiles.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSearchFiles.TextShadowShow = false;
             this.btnSearchFiles.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnSearchFiles_ClickButtonArea);
-            this.btnSearchFiles.MouseEnter += new System.EventHandler(this.control_MouseEnter);
-            this.btnSearchFiles.MouseLeave += new System.EventHandler(this.control_MouseLeave);
+            this.btnSearchFiles.MouseEnter += new System.EventHandler(this.btnCButton_MouseEnter);
+            this.btnSearchFiles.MouseLeave += new System.EventHandler(this.btnCButton_MouseLeave);
             // 
             // tabDiscover
             // 
@@ -1504,8 +1504,8 @@
             this.btnSubmitLink.TextShadow = System.Drawing.Color.Empty;
             this.btnSubmitLink.TextShadowShow = false;
             this.btnSubmitLink.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnSubmitLink_ClickButtonArea);
-            this.btnSubmitLink.MouseEnter += new System.EventHandler(this.control_MouseEnter);
-            this.btnSubmitLink.MouseLeave += new System.EventHandler(this.control_MouseLeave);
+            this.btnSubmitLink.MouseEnter += new System.EventHandler(this.btnCButton_MouseEnter);
+            this.btnSubmitLink.MouseLeave += new System.EventHandler(this.btnCButton_MouseLeave);
             // 
             // txtSubmitLink
             // 
@@ -1596,15 +1596,15 @@
             this.btnSettingsGeneralLanguage.ImageIndex = 0;
             this.btnSettingsGeneralLanguage.Name = "btnSettingsGeneralLanguage";
             this.btnSettingsGeneralLanguage.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.btnSettingsGeneralLanguage.SideImage = global::WebPlex.Properties.Resources.menu_down;
+            this.btnSettingsGeneralLanguage.SideImage = global::WebCrunch.Properties.Resources.menu_down;
             this.btnSettingsGeneralLanguage.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSettingsGeneralLanguage.SideImageSize = new System.Drawing.Size(20, 20);
             this.btnSettingsGeneralLanguage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSettingsGeneralLanguage.TextMargin = new System.Windows.Forms.Padding(6, 3, 2, 2);
             this.btnSettingsGeneralLanguage.TextShadowShow = false;
             this.btnSettingsGeneralLanguage.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnSettingsGeneralLanguage_ClickButtonArea);
-            this.btnSettingsGeneralLanguage.MouseEnter += new System.EventHandler(this.control_MouseEnter);
-            this.btnSettingsGeneralLanguage.MouseLeave += new System.EventHandler(this.control_MouseLeave);
+            this.btnSettingsGeneralLanguage.MouseEnter += new System.EventHandler(this.btnCButton_MouseEnter);
+            this.btnSettingsGeneralLanguage.MouseLeave += new System.EventHandler(this.btnCButton_MouseLeave);
             // 
             // cmboBoxSettingsLanguage
             // 
@@ -1679,8 +1679,8 @@
             this.btnSettingsSave.TextShadow = System.Drawing.Color.Empty;
             this.btnSettingsSave.TextShadowShow = false;
             this.btnSettingsSave.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnSettingsSave_ClickButtonArea);
-            this.btnSettingsSave.MouseEnter += new System.EventHandler(this.control_MouseEnter);
-            this.btnSettingsSave.MouseLeave += new System.EventHandler(this.control_MouseLeave);
+            this.btnSettingsSave.MouseEnter += new System.EventHandler(this.btnCButton_MouseEnter);
+            this.btnSettingsSave.MouseLeave += new System.EventHandler(this.btnCButton_MouseLeave);
             // 
             // btnSettingsRestoreDefault
             // 
@@ -1711,8 +1711,8 @@
             this.btnSettingsRestoreDefault.TextShadow = System.Drawing.Color.Empty;
             this.btnSettingsRestoreDefault.TextShadowShow = false;
             this.btnSettingsRestoreDefault.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnSettingsRestoreDefault_ClickButtonArea);
-            this.btnSettingsRestoreDefault.MouseEnter += new System.EventHandler(this.control_MouseEnter);
-            this.btnSettingsRestoreDefault.MouseLeave += new System.EventHandler(this.control_MouseLeave);
+            this.btnSettingsRestoreDefault.MouseEnter += new System.EventHandler(this.btnCButton_MouseEnter);
+            this.btnSettingsRestoreDefault.MouseLeave += new System.EventHandler(this.btnCButton_MouseLeave);
             // 
             // tabInformation
             // 
@@ -1808,7 +1808,7 @@
             // 
             resources.ApplyResources(this.imgShareFacebook, "imgShareFacebook");
             this.imgShareFacebook.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgShareFacebook.Image = global::WebPlex.Properties.Resources.facebook;
+            this.imgShareFacebook.Image = global::WebCrunch.Properties.Resources.facebook;
             this.imgShareFacebook.Name = "imgShareFacebook";
             this.imgShareFacebook.TabStop = false;
             this.imgShareFacebook.Click += new System.EventHandler(this.imgShareFacebook_Click);
@@ -1817,7 +1817,7 @@
             // 
             resources.ApplyResources(this.imgShareTwitter, "imgShareTwitter");
             this.imgShareTwitter.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgShareTwitter.Image = global::WebPlex.Properties.Resources.twitter;
+            this.imgShareTwitter.Image = global::WebCrunch.Properties.Resources.twitter;
             this.imgShareTwitter.Name = "imgShareTwitter";
             this.imgShareTwitter.TabStop = false;
             this.imgShareTwitter.Click += new System.EventHandler(this.imgShareTwitter_Click);
@@ -1840,7 +1840,7 @@
             this.titleInformation.DimFactorClick = 0;
             this.titleInformation.DimFactorHover = 0;
             this.titleInformation.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.titleInformation.Image = global::WebPlex.Properties.Resources.info;
+            this.titleInformation.Image = global::WebCrunch.Properties.Resources.info;
             this.titleInformation.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.titleInformation.ImageIndex = 0;
             this.titleInformation.ImageSize = new System.Drawing.Size(19, 19);
@@ -1871,7 +1871,7 @@
             this.titleSubmit.DimFactorClick = 0;
             this.titleSubmit.DimFactorHover = 0;
             this.titleSubmit.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.titleSubmit.Image = global::WebPlex.Properties.Resources.send;
+            this.titleSubmit.Image = global::WebCrunch.Properties.Resources.send;
             this.titleSubmit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.titleSubmit.ImageIndex = 0;
             this.titleSubmit.ImageSize = new System.Drawing.Size(19, 19);
@@ -1902,7 +1902,7 @@
             this.titleSettings.DimFactorClick = 0;
             this.titleSettings.DimFactorHover = 0;
             this.titleSettings.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.titleSettings.Image = global::WebPlex.Properties.Resources.settings;
+            this.titleSettings.Image = global::WebCrunch.Properties.Resources.settings;
             this.titleSettings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.titleSettings.ImageIndex = 0;
             this.titleSettings.ImageSize = new System.Drawing.Size(19, 19);
@@ -1933,7 +1933,7 @@
             this.titleDiscover.DimFactorClick = 0;
             this.titleDiscover.DimFactorHover = 0;
             this.titleDiscover.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.titleDiscover.Image = global::WebPlex.Properties.Resources.web;
+            this.titleDiscover.Image = global::WebCrunch.Properties.Resources.web;
             this.titleDiscover.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.titleDiscover.ImageIndex = 0;
             this.titleDiscover.ImageSize = new System.Drawing.Size(19, 19);
@@ -1964,7 +1964,7 @@
             this.titleFiles.DimFactorClick = 0;
             this.titleFiles.DimFactorHover = 0;
             this.titleFiles.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.titleFiles.Image = global::WebPlex.Properties.Resources.file;
+            this.titleFiles.Image = global::WebCrunch.Properties.Resources.file;
             this.titleFiles.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.titleFiles.ImageIndex = 0;
             this.titleFiles.ImageSize = new System.Drawing.Size(19, 19);
@@ -1995,7 +1995,7 @@
             this.titleMovies.DimFactorClick = 0;
             this.titleMovies.DimFactorHover = 0;
             this.titleMovies.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.titleMovies.Image = global::WebPlex.Properties.Resources.local_movies;
+            this.titleMovies.Image = global::WebCrunch.Properties.Resources.local_movies;
             this.titleMovies.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.titleMovies.ImageIndex = 0;
             this.titleMovies.ImageSize = new System.Drawing.Size(19, 19);
@@ -2026,7 +2026,7 @@
             this.titleHome.DimFactorClick = 0;
             this.titleHome.DimFactorHover = 0;
             this.titleHome.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.titleHome.Image = global::WebPlex.Properties.Resources.home;
+            this.titleHome.Image = global::WebCrunch.Properties.Resources.home;
             this.titleHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.titleHome.ImageIndex = 0;
             this.titleHome.ImageSize = new System.Drawing.Size(19, 19);
@@ -2044,7 +2044,7 @@
             resources.ApplyResources(this.imgSpinner, "imgSpinner");
             this.imgSpinner.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.imgSpinner.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgSpinner.Image = global::WebPlex.Properties.Resources.loading;
+            this.imgSpinner.Image = global::WebCrunch.Properties.Resources.loading;
             this.imgSpinner.Name = "imgSpinner";
             this.imgSpinner.TabStop = false;
             // 
@@ -2062,9 +2062,9 @@
             this.Name = "MainForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmWebPlex_FormClosing);
-            this.Load += new System.EventHandler(this.frmWebPlex_Load);
-            this.SizeChanged += new System.EventHandler(this.frmWebPlex_SizeChanged);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
+            this.Load += new System.EventHandler(this.MainForm_Load);
+            this.SizeChanged += new System.EventHandler(this.MainForm_SizeChanged);
             this.tab.ResumeLayout(false);
             this.tabHome.ResumeLayout(false);
             this.tabHome.PerformLayout();

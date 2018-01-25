@@ -1,4 +1,4 @@
-﻿namespace WebPlex.CControls
+﻿namespace WebCrunch.UserControls
 {
     partial class StreamInfo
     {
@@ -85,28 +85,28 @@
             // 
             // VLC2ToolStripMenuItem
             // 
-            this.VLC2ToolStripMenuItem.Image = global::WebPlex.Properties.Resources.vlc;
+            this.VLC2ToolStripMenuItem.Image = global::WebCrunch.Properties.Resources.vlc;
             resources.ApplyResources(this.VLC2ToolStripMenuItem, "VLC2ToolStripMenuItem");
             this.VLC2ToolStripMenuItem.Name = "VLC2ToolStripMenuItem";
             this.VLC2ToolStripMenuItem.Click += new System.EventHandler(this.VLC2ToolStripMenuItem_Click);
             // 
             // WMPToolStripMenuItem
             // 
-            this.WMPToolStripMenuItem.Image = global::WebPlex.Properties.Resources.windows;
+            this.WMPToolStripMenuItem.Image = global::WebCrunch.Properties.Resources.windows;
             resources.ApplyResources(this.WMPToolStripMenuItem, "WMPToolStripMenuItem");
             this.WMPToolStripMenuItem.Name = "WMPToolStripMenuItem";
             this.WMPToolStripMenuItem.Click += new System.EventHandler(this.WMPToolStripMenuItem_Click);
             // 
             // VLCToolStripMenuItem
             // 
-            this.VLCToolStripMenuItem.Image = global::WebPlex.Properties.Resources.vlc;
+            this.VLCToolStripMenuItem.Image = global::WebCrunch.Properties.Resources.vlc;
             resources.ApplyResources(this.VLCToolStripMenuItem, "VLCToolStripMenuItem");
             this.VLCToolStripMenuItem.Name = "VLCToolStripMenuItem";
             this.VLCToolStripMenuItem.Click += new System.EventHandler(this.VLCToolStripMenuItem_Click);
             // 
             // MPCToolStripMenuItem
             // 
-            this.MPCToolStripMenuItem.Image = global::WebPlex.Properties.Resources.dots_horizontal;
+            this.MPCToolStripMenuItem.Image = global::WebCrunch.Properties.Resources.dots_horizontal;
             resources.ApplyResources(this.MPCToolStripMenuItem, "MPCToolStripMenuItem");
             this.MPCToolStripMenuItem.Name = "MPCToolStripMenuItem";
             this.MPCToolStripMenuItem.Click += new System.EventHandler(this.MPCToolStripMenuItem_Click);
@@ -115,7 +115,7 @@
             // 
             resources.ApplyResources(this.imgCopyURL, "imgCopyURL");
             this.imgCopyURL.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgCopyURL.Image = global::WebPlex.Properties.Resources.clipboard_arrow_left;
+            this.imgCopyURL.Image = global::WebCrunch.Properties.Resources.clipboard_arrow_left;
             this.imgCopyURL.Name = "imgCopyURL";
             this.imgCopyURL.TabStop = false;
             this.toolTip1.SetToolTip(this.imgCopyURL, resources.GetString("imgCopyURL.ToolTip"));
@@ -134,7 +134,7 @@
             // 
             resources.ApplyResources(this.imgWatch, "imgWatch");
             this.imgWatch.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgWatch.Image = global::WebPlex.Properties.Resources.play_circle;
+            this.imgWatch.Image = global::WebCrunch.Properties.Resources.play_circle;
             this.imgWatch.Name = "imgWatch";
             this.imgWatch.TabStop = false;
             this.toolTip1.SetToolTip(this.imgWatch, resources.GetString("imgWatch.ToolTip"));
@@ -144,7 +144,7 @@
             // 
             resources.ApplyResources(this.imgDownload, "imgDownload");
             this.imgDownload.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgDownload.Image = global::WebPlex.Properties.Resources.cloud_download;
+            this.imgDownload.Image = global::WebCrunch.Properties.Resources.cloud_download;
             this.imgDownload.Name = "imgDownload";
             this.imgDownload.TabStop = false;
             this.toolTip1.SetToolTip(this.imgDownload, resources.GetString("imgDownload.ToolTip"));
@@ -154,7 +154,7 @@
             // 
             resources.ApplyResources(this.imgAddToBookmarks, "imgAddToBookmarks");
             this.imgAddToBookmarks.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgAddToBookmarks.Image = global::WebPlex.Properties.Resources.bookmark_plus;
+            this.imgAddToBookmarks.Image = global::WebCrunch.Properties.Resources.bookmark_plus;
             this.imgAddToBookmarks.Name = "imgAddToBookmarks";
             this.imgAddToBookmarks.TabStop = false;
             this.toolTip1.SetToolTip(this.imgAddToBookmarks, resources.GetString("imgAddToBookmarks.ToolTip"));

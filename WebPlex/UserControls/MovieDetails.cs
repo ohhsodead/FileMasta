@@ -4,8 +4,11 @@ using System.Windows.Forms;
 using System.Diagnostics;
 using System.Text.RegularExpressions;
 using System.IO;
+using WebCrunch;
+using Utilities;
+using WebCrunch.UserControls;
 
-namespace WebPlex.CControls
+namespace UserControls
 {
     public partial class MovieDetails : UserControl
     {
@@ -24,7 +27,7 @@ namespace WebPlex.CControls
         private void ctrlMovieDetails_Load(object sender, EventArgs e)
         {
             if (TrailerURL == "") { btnWatchTrailer.Visible = false; }
-            if (PosterURL == "") { imgPoster.Image = Utilities.SetAlpha (Properties.Resources.poster_default, 255); }
+            if (PosterURL == "") { imgPoster.Image = UtilityTools.SetAlpha (WebCrunch.Properties.Resources.poster_default, 255); }
             panelTitleFiles.Size = new Size(panelDetails.Size.Width, panelTitleFiles.Size.Height);
             panelStreams.Size = new Size(panelDetails.Size.Width, panelStreams.Size.Height);
 
@@ -77,8 +80,8 @@ namespace WebPlex.CControls
                 infoFileURL = stream.URL,
             };
 
-            if (stream.Size != "-") { ctrlInfo.infoSize.Text = Utilities.bytesToString(Convert.ToInt32(stream.Size)); } else { ctrlInfo.infoSize.Text = stream.Size; }
-            if (stream.DateUploaded != "-") { ctrlInfo.infoAge.Text = Utilities.getTimeAgo(Convert.ToDateTime(stream.DateUploaded)); } else { ctrlInfo.infoAge.Text = stream.DateUploaded; }
+            if (stream.Size != "-") { ctrlInfo.infoSize.Text = UtilityTools.bytesToString(Convert.ToInt32(stream.Size)); } else { ctrlInfo.infoSize.Text = stream.Size; }
+            if (stream.DateUploaded != "-") { ctrlInfo.infoAge.Text = UtilityTools.getTimeAgo(Convert.ToDateTime(stream.DateUploaded)); } else { ctrlInfo.infoAge.Text = stream.DateUploaded; }
             ctrlInfo.infoName.Text = stream.Name;
             toPanel.Controls.Add(ctrlInfo);
         }

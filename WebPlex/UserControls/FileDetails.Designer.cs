@@ -1,4 +1,6 @@
-﻿namespace WebPlex.CControls
+﻿using WebCrunch;
+
+namespace UserControls
 {
     partial class FileDetails
     {
@@ -507,14 +509,14 @@
             this.btnReportFile.DimFactorHover = 0;
             this.btnReportFile.FillType = CButtonLib.CButton.eFillType.Solid;
             this.btnReportFile.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
-            this.btnReportFile.Image = global::WebPlex.Properties.Resources.alert_octagon;
+            this.btnReportFile.Image = global::WebCrunch.Properties.Resources.alert_octagon;
             this.btnReportFile.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnReportFile.ImageIndex = 0;
             this.btnReportFile.ImageSize = new System.Drawing.Size(19, 19);
             this.btnReportFile.Location = new System.Drawing.Point(0, 0);
             this.btnReportFile.Name = "btnReportFile";
             this.btnReportFile.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.btnReportFile.SideImage = global::WebPlex.Properties.Resources.menu_down;
+            this.btnReportFile.SideImage = global::WebCrunch.Properties.Resources.menu_down;
             this.btnReportFile.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnReportFile.SideImageSize = new System.Drawing.Size(21, 21);
             this.btnReportFile.Size = new System.Drawing.Size(89, 31);
@@ -527,8 +529,8 @@
             this.btnReportFile.TextShadowShow = false;
             this.toolTip1.SetToolTip(this.btnReportFile, "Report File");
             this.btnReportFile.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnReportFile_ClickButtonArea);
-            this.btnReportFile.MouseEnter += new System.EventHandler(MainForm.form.control_MouseEnter);
-            this.btnReportFile.MouseLeave += new System.EventHandler(MainForm.form.control_MouseLeave);
+            this.btnReportFile.MouseEnter += new System.EventHandler(MainForm.form.btnCButton_MouseEnter);
+            this.btnReportFile.MouseLeave += new System.EventHandler(MainForm.form.btnCButton_MouseLeave);
             // 
             // cmboboxReportFile
             // 
@@ -585,8 +587,8 @@
             this.btnRequestFileSize.TextShadowShow = false;
             this.btnRequestFileSize.Visible = false;
             this.btnRequestFileSize.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnRequestFileSize_ClickButtonArea);
-            this.btnRequestFileSize.MouseEnter += new System.EventHandler(MainForm.form.control_MouseEnter);
-            this.btnRequestFileSize.MouseLeave += new System.EventHandler(MainForm.form.control_MouseLeave);
+            this.btnRequestFileSize.MouseEnter += new System.EventHandler(MainForm.form.btnCButton_MouseEnter);
+            this.btnRequestFileSize.MouseLeave += new System.EventHandler(MainForm.form.btnCButton_MouseLeave);
             // 
             // btnShareFile
             // 
@@ -614,14 +616,14 @@
             this.btnShareFile.DimFactorHover = 0;
             this.btnShareFile.FillType = CButtonLib.CButton.eFillType.Solid;
             this.btnShareFile.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
-            this.btnShareFile.Image = global::WebPlex.Properties.Resources.share_variant;
+            this.btnShareFile.Image = global::WebCrunch.Properties.Resources.share_variant;
             this.btnShareFile.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnShareFile.ImageIndex = 0;
             this.btnShareFile.ImageSize = new System.Drawing.Size(18, 18);
             this.btnShareFile.Location = new System.Drawing.Point(0, 0);
             this.btnShareFile.Name = "btnShareFile";
             this.btnShareFile.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.btnShareFile.SideImage = global::WebPlex.Properties.Resources.menu_down;
+            this.btnShareFile.SideImage = global::WebCrunch.Properties.Resources.menu_down;
             this.btnShareFile.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnShareFile.SideImageSize = new System.Drawing.Size(21, 21);
             this.btnShareFile.Size = new System.Drawing.Size(82, 31);
@@ -634,8 +636,8 @@
             this.btnShareFile.TextShadowShow = false;
             this.toolTip1.SetToolTip(this.btnShareFile, "Report File");
             this.btnShareFile.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnShareFile_ClickButtonArea);
-            this.btnShareFile.MouseEnter += new System.EventHandler(MainForm.form.control_MouseEnter);
-            this.btnShareFile.MouseLeave += new System.EventHandler(MainForm.form.control_MouseLeave);
+            this.btnShareFile.MouseEnter += new System.EventHandler(MainForm.form.btnCButton_MouseEnter);
+            this.btnShareFile.MouseLeave += new System.EventHandler(MainForm.form.btnCButton_MouseLeave);
             // 
             // btnSaveFile
             // 
@@ -667,7 +669,7 @@
             this.btnSaveFile.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.btnSaveFile.Name = "btnSaveFile";
             this.btnSaveFile.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.btnSaveFile.SideImage = global::WebPlex.Properties.Resources.bookmark_plus;
+            this.btnSaveFile.SideImage = global::WebCrunch.Properties.Resources.bookmark_plus;
             this.btnSaveFile.SideImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnSaveFile.SideImageSize = new System.Drawing.Size(24, 24);
             this.btnSaveFile.Size = new System.Drawing.Size(40, 31);
@@ -677,8 +679,8 @@
             this.btnSaveFile.TextShadowShow = false;
             this.toolTip1.SetToolTip(this.btnSaveFile, "Save File");
             this.btnSaveFile.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnSaveFile_ClickButtonArea);
-            this.btnSaveFile.MouseEnter += new System.EventHandler(MainForm.form.control_MouseEnter);
-            this.btnSaveFile.MouseLeave += new System.EventHandler(MainForm.form.control_MouseLeave);
+            this.btnSaveFile.MouseEnter += new System.EventHandler(MainForm.form.btnCButton_MouseEnter);
+            this.btnSaveFile.MouseLeave += new System.EventHandler(MainForm.form.btnCButton_MouseLeave);
             // 
             // btnViewDirectory
             // 
@@ -710,7 +712,7 @@
             this.btnViewDirectory.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.btnViewDirectory.Name = "btnViewDirectory";
             this.btnViewDirectory.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.btnViewDirectory.SideImage = global::WebPlex.Properties.Resources.eye;
+            this.btnViewDirectory.SideImage = global::WebCrunch.Properties.Resources.eye;
             this.btnViewDirectory.SideImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnViewDirectory.SideImageSize = new System.Drawing.Size(24, 24);
             this.btnViewDirectory.Size = new System.Drawing.Size(40, 31);
@@ -720,8 +722,8 @@
             this.btnViewDirectory.TextShadowShow = false;
             this.toolTip1.SetToolTip(this.btnViewDirectory, "View Directory");
             this.btnViewDirectory.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnViewDirectory_ClickButtonArea);
-            this.btnViewDirectory.MouseEnter += new System.EventHandler(MainForm.form.control_MouseEnter);
-            this.btnViewDirectory.MouseLeave += new System.EventHandler(MainForm.form.control_MouseLeave);
+            this.btnViewDirectory.MouseEnter += new System.EventHandler(MainForm.form.btnCButton_MouseEnter);
+            this.btnViewDirectory.MouseLeave += new System.EventHandler(MainForm.form.btnCButton_MouseLeave);
             // 
             // contextFileName
             // 
@@ -736,7 +738,7 @@
             // 
             // VLC2ToolStripMenuItem
             // 
-            this.VLC2ToolStripMenuItem.Image = global::WebPlex.Properties.Resources.vlc;
+            this.VLC2ToolStripMenuItem.Image = global::WebCrunch.Properties.Resources.vlc;
             this.VLC2ToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Transparent;
             this.VLC2ToolStripMenuItem.Name = "VLC2ToolStripMenuItem";
             this.VLC2ToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
@@ -745,7 +747,7 @@
             // 
             // WMPToolStripMenuItem
             // 
-            this.WMPToolStripMenuItem.Image = global::WebPlex.Properties.Resources.windows;
+            this.WMPToolStripMenuItem.Image = global::WebCrunch.Properties.Resources.windows;
             this.WMPToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Transparent;
             this.WMPToolStripMenuItem.Name = "WMPToolStripMenuItem";
             this.WMPToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
@@ -754,7 +756,7 @@
             // 
             // VLCToolStripMenuItem
             // 
-            this.VLCToolStripMenuItem.Image = global::WebPlex.Properties.Resources.vlc;
+            this.VLCToolStripMenuItem.Image = global::WebCrunch.Properties.Resources.vlc;
             this.VLCToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Transparent;
             this.VLCToolStripMenuItem.Name = "VLCToolStripMenuItem";
             this.VLCToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
@@ -763,7 +765,7 @@
             // 
             // MPCToolStripMenuItem
             // 
-            this.MPCToolStripMenuItem.Image = global::WebPlex.Properties.Resources.dots_horizontal;
+            this.MPCToolStripMenuItem.Image = global::WebCrunch.Properties.Resources.dots_horizontal;
             this.MPCToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Transparent;
             this.MPCToolStripMenuItem.Name = "MPCToolStripMenuItem";
             this.MPCToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
@@ -824,7 +826,7 @@
             this.btnPlayMedia.DimFactorHover = 0;
             this.btnPlayMedia.FillType = CButtonLib.CButton.eFillType.Solid;
             this.btnPlayMedia.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.btnPlayMedia.Image = global::WebPlex.Properties.Resources.play_circle;
+            this.btnPlayMedia.Image = global::WebCrunch.Properties.Resources.play_circle;
             this.btnPlayMedia.ImageIndex = 0;
             this.btnPlayMedia.ImageSize = new System.Drawing.Size(18, 18);
             this.btnPlayMedia.Location = new System.Drawing.Point(20, 510);
@@ -839,8 +841,8 @@
             this.btnPlayMedia.TextShadowShow = false;
             this.btnPlayMedia.Visible = false;
             this.btnPlayMedia.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnPlayMedia_ClickButtonArea);
-            this.btnPlayMedia.MouseEnter += new System.EventHandler(MainForm.form.control_MouseEnter);
-            this.btnPlayMedia.MouseLeave += new System.EventHandler(MainForm.form.control_MouseLeave);
+            this.btnPlayMedia.MouseEnter += new System.EventHandler(MainForm.form.btnCButton_MouseEnter);
+            this.btnPlayMedia.MouseLeave += new System.EventHandler(MainForm.form.btnCButton_MouseLeave);
             // 
             // btnCopyURL
             // 
@@ -872,7 +874,7 @@
             this.btnCopyURL.Location = new System.Drawing.Point(904, 373);
             this.btnCopyURL.Name = "btnCopyURL";
             this.btnCopyURL.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.btnCopyURL.SideImage = global::WebPlex.Properties.Resources.clipboard_arrow_left;
+            this.btnCopyURL.SideImage = global::WebCrunch.Properties.Resources.clipboard_arrow_left;
             this.btnCopyURL.SideImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnCopyURL.SideImageSize = new System.Drawing.Size(24, 24);
             this.btnCopyURL.Size = new System.Drawing.Size(40, 30);
@@ -881,8 +883,8 @@
             this.btnCopyURL.TextShadow = System.Drawing.Color.Empty;
             this.btnCopyURL.TextShadowShow = false;
             this.btnCopyURL.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnCopyURL_ClickButtonArea);
-            this.btnCopyURL.MouseEnter += new System.EventHandler(MainForm.form.control_MouseEnter);
-            this.btnCopyURL.MouseLeave += new System.EventHandler(MainForm.form.control_MouseLeave);
+            this.btnCopyURL.MouseEnter += new System.EventHandler(MainForm.form.btnCButton_MouseEnter);
+            this.btnCopyURL.MouseLeave += new System.EventHandler(MainForm.form.btnCButton_MouseLeave);
             // 
             // btnDirectLink
             // 
@@ -909,7 +911,7 @@
             this.btnDirectLink.DimFactorHover = 0;
             this.btnDirectLink.FillType = CButtonLib.CButton.eFillType.Solid;
             this.btnDirectLink.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.btnDirectLink.Image = global::WebPlex.Properties.Resources.link_variant;
+            this.btnDirectLink.Image = global::WebCrunch.Properties.Resources.link_variant;
             this.btnDirectLink.ImageIndex = 0;
             this.btnDirectLink.ImageSize = new System.Drawing.Size(20, 20);
             this.btnDirectLink.Location = new System.Drawing.Point(20, 429);
@@ -924,15 +926,15 @@
             this.btnDirectLink.TextShadow = System.Drawing.Color.Empty;
             this.btnDirectLink.TextShadowShow = false;
             this.btnDirectLink.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnDirectLink_ClickButtonArea);
-            this.btnDirectLink.MouseEnter += new System.EventHandler(MainForm.form.control_MouseEnter);
-            this.btnDirectLink.MouseLeave += new System.EventHandler(MainForm.form.control_MouseLeave);
+            this.btnDirectLink.MouseEnter += new System.EventHandler(MainForm.form.btnCButton_MouseEnter);
+            this.btnDirectLink.MouseLeave += new System.EventHandler(MainForm.form.btnCButton_MouseLeave);
             // 
             // appClose
             // 
             this.appClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.appClose.BackColor = System.Drawing.Color.Transparent;
             this.appClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.appClose.Image = global::WebPlex.Properties.Resources.close;
+            this.appClose.Image = global::WebCrunch.Properties.Resources.close;
             this.appClose.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.appClose.Location = new System.Drawing.Point(916, 20);
             this.appClose.Margin = new System.Windows.Forms.Padding(3, 25, 25, 3);

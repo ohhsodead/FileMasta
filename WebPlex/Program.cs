@@ -2,9 +2,9 @@
 using System.Diagnostics;
 using System.Threading;
 using System.Windows.Forms;
-using WebPlex.ExceptionHandler;
+using ExceptionHandler;
 
-namespace WebPlex
+namespace WebCrunch
 {
     static class Program
     {

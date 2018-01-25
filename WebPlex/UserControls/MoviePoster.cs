@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
+using Utilities;
+using WebCrunch;
 
-namespace WebPlex.CControls
+namespace UserControls
 {
     public partial class MoviePoster : UserControl
     {
@@ -31,7 +33,7 @@ namespace WebPlex.CControls
         private void ctrlMoviePoster_Load(object sender, EventArgs e)
         {
             BackColor = Color.Transparent;
-            if (infoPoster.BackgroundImage == null) { infoPoster.BackgroundImage = Properties.Resources.poster_default; }
+            if (infoPoster.BackgroundImage == null) { infoPoster.BackgroundImage = WebCrunch.Properties.Resources.poster_default; }
         }
 
         private void InfoPoster_ClickButtonArea(object Sender, MouseEventArgs e)
@@ -56,8 +58,8 @@ namespace WebPlex.CControls
 
             try
             {
-                if (infoImagePoster != "") { MovieDetails.imgPoster.Image = Utilities.SetAlpha(Utilities.LoadPicture(infoImagePoster), 255); }
-                if (infoImageFanart != "") { MovieDetails.BackgroundImage = Utilities.SetAlpha(Utilities.LoadPicture(infoImageFanart), 50); }
+                if (infoImagePoster != "") { MovieDetails.imgPoster.Image = UtilityTools.SetAlpha(UtilityTools.LoadPicture(infoImagePoster), 255); }
+                if (infoImageFanart != "") { MovieDetails.BackgroundImage = UtilityTools.SetAlpha(UtilityTools.LoadPicture(infoImageFanart), 50); }
             }
             catch (Exception ex) { MessageBox.Show(ex.Message + "\n\n" + infoImageFanart); }
 
@@ -83,12 +85,12 @@ namespace WebPlex.CControls
 
                 infoPoster2.Image = new Bitmap(infoPoster.BackgroundImage);
                 infoPoster.BackgroundImage.Dispose();
-                infoPoster.BackgroundImage = Utilities.SetAlpha((Bitmap)infoPoster2.Image, 100);
+                infoPoster.BackgroundImage = UtilityTools.SetAlpha((Bitmap)infoPoster2.Image, 100);
                 Update();
             }
             catch
             {
-                infoPoster.BackgroundImage = Utilities.SetAlpha(Properties.Resources.poster_default, 255); 
+                infoPoster.BackgroundImage = UtilityTools.SetAlpha(WebCrunch.Properties.Resources.poster_default, 255); 
             }
         }
 
@@ -97,11 +99,11 @@ namespace WebPlex.CControls
             try
             {
                 infoPoster.BackgroundImage.Dispose();
-                infoPoster.BackgroundImage = Utilities.SetAlpha((Bitmap)infoPoster2.Image, 255);
+                infoPoster.BackgroundImage = UtilityTools.SetAlpha((Bitmap)infoPoster2.Image, 255);
             }
             catch
             {
-                infoPoster.BackgroundImage = Utilities.SetAlpha(Properties.Resources.poster_default, 255);
+                infoPoster.BackgroundImage = UtilityTools.SetAlpha(WebCrunch.Properties.Resources.poster_default, 255);
             }
         }
 

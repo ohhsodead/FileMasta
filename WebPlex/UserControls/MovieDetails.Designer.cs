@@ -1,4 +1,4 @@
-﻿namespace WebPlex.CControls
+﻿namespace UserControls
 {
     partial class MovieDetails
     {
@@ -171,7 +171,7 @@
             // imgIMDb
             // 
             this.imgIMDb.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgIMDb.Image = global::WebPlex.Properties.Resources.imdb;
+            this.imgIMDb.Image = global::WebCrunch.Properties.Resources.imdb;
             resources.ApplyResources(this.imgIMDb, "imgIMDb");
             this.imgIMDb.Name = "imgIMDb";
             this.imgIMDb.TabStop = false;
@@ -204,7 +204,7 @@
             resources.ApplyResources(this.imgSearchForMore, "imgSearchForMore");
             this.imgSearchForMore.BackColor = System.Drawing.Color.Transparent;
             this.imgSearchForMore.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgSearchForMore.Image = global::WebPlex.Properties.Resources.magnify;
+            this.imgSearchForMore.Image = global::WebCrunch.Properties.Resources.magnify;
             this.imgSearchForMore.Name = "imgSearchForMore";
             this.imgSearchForMore.TabStop = false;
             this.imgSearchForMore.Click += new System.EventHandler(this.imgSearchForMore_Click);
@@ -298,7 +298,7 @@
             resources.ApplyResources(this.appClose, "appClose");
             this.appClose.BackColor = System.Drawing.Color.Transparent;
             this.appClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.appClose.Image = global::WebPlex.Properties.Resources.close;
+            this.appClose.Image = global::WebCrunch.Properties.Resources.close;
             this.appClose.Name = "appClose";
             this.appClose.TabStop = false;
             this.appClose.Click += new System.EventHandler(this.appClose_Click);

@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace WebPlex.CControls
+namespace UserControls
 {
     public partial class ErrorInfo : UserControl
     {

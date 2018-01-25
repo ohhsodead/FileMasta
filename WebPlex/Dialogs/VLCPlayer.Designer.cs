@@ -1,4 +1,4 @@
-﻿namespace WebPlex
+﻿namespace Dialogs
 {
     partial class VLCPlayer
     {

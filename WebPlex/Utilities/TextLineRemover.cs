@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WebPlex
+namespace Utilities
 {
     public static class TextLineRemover
     {

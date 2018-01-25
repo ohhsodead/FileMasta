@@ -12,12 +12,13 @@ using System.Threading;
 using System.Resources;
 using System.Reflection;
 using System.Text;
-using WebPlex.CControls;
 using Newtonsoft.Json;
-using WebPlex.ExceptionHandler;
 using CButtonLib;
+using UserControls;
+using Utilities;
+using Dialogs;
 
-namespace WebPlex
+namespace WebCrunch
 {
     public partial class MainForm : Form
     {
@@ -47,7 +48,7 @@ namespace WebPlex
             frmSplash.Show();
         }
 
-        public static ResourceManager rm = new ResourceManager("WebPlex.Languages.misc-" + Properties.Settings.Default.userLanguage, Assembly.GetExecutingAssembly());
+        public static ResourceManager rm = new ResourceManager("WebCrunch.Languages.misc-" + Properties.Settings.Default.userLanguage, Assembly.GetExecutingAssembly());
 
         private BackgroundWorker worker; // startup background thread
 
@@ -64,24 +65,24 @@ namespace WebPlex
         // Database Files
         public static string linkMovies = "https://dl.dropbox.com/s/qknonvla6qeuiuj/movies-posters.json?dl=0";
         public static string linkOpenFiles = "https://dl.dropbox.com/s/ucyeqfn96x7n9lh/open-files.json?dl=0";
-        public static string linkOpenDirectories = "https://raw.githubusercontent.com/invu/WebPlex/master/api/open-directories.txt";
+        public static string linkOpenDirectories = "https://raw.githubusercontent.com/invu/WebCrunch/master/api/open-directories.txt";
         public static string linkTopSearches = "https://dl.dropbox.com/s/9y0smo8g95g0ty4/top-searches.txt?dl=0";
 
         // Data/Downloads Directories
-        public static string pathRoot = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\WebPlex\";
-        public static string pathData = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\WebPlex\Data\";
+        public static string pathRoot = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\WebCrunch\";
+        public static string pathData = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\WebCrunch\Data\";
         public static string userDownloadsDirectory = KnownFolders.GetPath(KnownFolder.Downloads) + @"\";
 
         // Updates
         public static string linkLatestVersion = "https://dl.dropbox.com/s/wizu59t0tuk7p71/latest-version.txt?dl=0";
-        public static string pathInstallerFileName = "WebPlex.Installer.Windows.exe";
+        public static string pathInstallerFileName = "WebCrunch.Installer.Windows.exe";
         public static string pathDownloadInstaller = userDownloadsDirectory + pathInstallerFileName;
-        public static string getLatestInstaller(Version newVersion) { return "https://github.com/invu/WebPlex/releases/download/" + newVersion.ToString() + "/" + pathInstallerFileName; }
+        public static string getLatestInstaller(Version newVersion) { return "https://github.com/invu/WebCrunch/releases/download/" + newVersion.ToString() + "/" + pathInstallerFileName; }
 
         // Misc
-        public static string linkChangelog = "https://raw.githubusercontent.com/invu/WebPlex/master/CHANGELOG.md";
-        public static string linkTermsOfUse = "https://raw.githubusercontent.com/invu/WebPlex/master/TERMSOFUSE.md";
-        public static string linkPrivacyPolicy = "https://raw.githubusercontent.com/invu/WebPlex/master/PRIVACYPOLICY.md";
+        public static string linkChangelog = "https://raw.githubusercontent.com/invu/WebCrunch/master/CHANGELOG.md";
+        public static string linkTermsOfUse = "https://raw.githubusercontent.com/invu/WebCrunch/master/TERMSOFUSE.md";
+        public static string linkPrivacyPolicy = "https://raw.githubusercontent.com/invu/WebCrunch/master/PRIVACYPOLICY.md";
 
         WebClient client = new WebClient(); // public reusable web client
         int intPostersPerScroll = 85;
@@ -92,26 +93,26 @@ namespace WebPlex
 
         private void imgShareTwitter_Click(object sender, EventArgs e)
         {
-            Process.Start("https://twitter.com/intent/tweet?hashtags=webplex&original_referer=https%3A%2F%2Fgithub.com/invu/WebPlex%2F&ref_src=twsrc%5Etfw&text=" + textMessage + "&tw_p=tweetbutton&url=https%3A%2F%2Fgithub.com/invu/WebPlex");
+            Process.Start("https://twitter.com/intent/tweet?hashtags=WebCrunch&original_referer=https%3A%2F%2Fgithub.com/invu/WebCrunch%2F&ref_src=twsrc%5Etfw&text=" + textMessage + "&tw_p=tweetbutton&url=https%3A%2F%2Fgithub.com/invu/WebCrunch");
         }
 
         private void imgShareFacebook_Click(object sender, EventArgs e)
         {
-            Process.Start("https://facebook.com/sharer/sharer.php?app_id=248335808680372&kid_directed_site=0&sdk=joey&u=http%3A%2F%2Fgithub.com/invu/WebPlex%2F&display=popup&ref=plugin&src=share_button");
+            Process.Start("https://facebook.com/sharer/sharer.php?app_id=248335808680372&kid_directed_site=0&sdk=joey&u=http%3A%2F%2Fgithub.com/invu/WebCrunch%2F&display=popup&ref=plugin&src=share_button");
         }
 
-        private void frmWebPlex_FormClosing(object sender, FormClosingEventArgs e)
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (e.CloseReason == CloseReason.UserClosing | e.CloseReason == CloseReason.ApplicationExitCall) { Properties.Settings.Default.Save(); if (Properties.Settings.Default.clearDataOnClose == true) { if (Directory.Exists(pathData)) { Directory.Delete(pathData, true); } } }
         }
 
-        private void frmWebPlex_SizeChanged(object sender, EventArgs e)
+        private void MainForm_SizeChanged(object sender, EventArgs e)
         {
             Refresh();
             panelMovies.Refresh();
         }
 
-        private void frmWebPlex_Load(object sender, EventArgs e)
+        private void MainForm_Load(object sender, EventArgs e)
         {
             loadSettings();
 
@@ -120,9 +121,9 @@ namespace WebPlex
             Directory.CreateDirectory(pathRoot);
             Directory.CreateDirectory(pathData);
 
-            if (Utilities.checkForInternetConnection() == true)
+            if (UtilityTools.checkForInternetConnection() == true)
             {
-                Utilities.checkForUpdate();
+                UtilityTools.checkForUpdate();
 
                 loadTopSearches(); // Powered by the HackerTarget API to get Top Searches from FileChef.com
 
@@ -142,7 +143,7 @@ namespace WebPlex
             // Checks if database file exists, if so whether they're the same size, and downloads the latest one if any of them returns false
 
             //
-            if (Utilities.doUpdateFile(linkOpenDirectories, "open-directories.txt"))
+            if (UtilityTools.doUpdateFile(linkOpenDirectories, "open-directories.txt"))
             {
                 client.DownloadFile(new Uri(linkOpenDirectories), pathData + "open-directories.txt");
             }
@@ -151,7 +152,7 @@ namespace WebPlex
             //
 
             //
-            if (Utilities.doUpdateFile(linkOpenFiles, "open-files.json"))
+            if (UtilityTools.doUpdateFile(linkOpenFiles, "open-files.json"))
             {
                 client.DownloadFile(new Uri(linkOpenFiles), pathData + "open-files.json");
             }
@@ -161,9 +162,9 @@ namespace WebPlex
             //
 
             //
-            if (Utilities.doUpdateFile(linkMovies, "movies-posters.json"))
+            if (UtilityTools.doUpdateFile(linkMovies, "movies-posters.json"))
             {
-                //client.DownloadFile(new Uri(linkMovies), pathData + "movies-posters.json");
+                client.DownloadFile(new Uri(linkMovies), pathData + "movies-posters.json");
             }
 
             dataMovies.AddRange(File.ReadAllLines(pathData + "movies-posters.json").Reverse());
@@ -197,14 +198,14 @@ namespace WebPlex
         }
 
         // Mouse colour effect for CButton Controls
-        public void control_MouseEnter(object sender, EventArgs e)
+        public void btnCButton_MouseEnter(object sender, EventArgs e)
         {
             CButton ctrl = sender as CButton;
             ctrl.BorderColor = Color.FromArgb(58, 69, 78);
             ctrl.ColorFillSolid = Color.FromArgb(58, 69, 78);
         }
 
-        public void control_MouseLeave(object sender, EventArgs e)
+        public void btnCButton_MouseLeave(object sender, EventArgs e)
         {
             CButton ctrl = sender as CButton;
             ctrl.BorderColor = Color.FromArgb(51, 60, 67);
@@ -359,9 +360,9 @@ namespace WebPlex
                     if (dataJsonFile.Size != "-" && dataJsonFile.Size != "" && dataJsonFile.Size != " ") { totalSize = totalSize + Convert.ToInt64(dataJsonFile.Size); }
                 }
 
-                lblHomeStatsFiles.Text = String.Format(lblHomeStatsFiles.Text, Utilities.getFormattedNumber(dataOpenFiles.Count.ToString()), Utilities.bytesToString(totalSize), Utilities.getFormattedNumber(dataOpenDirectories.Count.ToString()));
+                lblHomeStatsFiles.Text = String.Format(lblHomeStatsFiles.Text, UtilityTools.getFormattedNumber(dataOpenFiles.Count.ToString()), UtilityTools.bytesToString(totalSize), UtilityTools.getFormattedNumber(dataOpenDirectories.Count.ToString()));
             }
-            catch { lblHomeStatsFiles.Text = String.Format(lblHomeStatsFiles.Text, Utilities.getFormattedNumber(dataOpenFiles.Count.ToString()), Utilities.bytesToString(totalSize), Utilities.getFormattedNumber(dataOpenDirectories.Count.ToString())); }
+            catch { lblHomeStatsFiles.Text = String.Format(lblHomeStatsFiles.Text, UtilityTools.getFormattedNumber(dataOpenFiles.Count.ToString()), UtilityTools.bytesToString(totalSize), UtilityTools.getFormattedNumber(dataOpenDirectories.Count.ToString())); }
 
             try
             {
@@ -549,7 +550,7 @@ namespace WebPlex
                                 ctrlPoster.infoTitle.Text = data.Title.Replace("&", "&&");
                                 ctrlPoster.infoYear.Text = data.Year;
 
-                                ctrlPoster.infoPoster.BackgroundImage = Utilities.LoadPicture(data.Poster);
+                                ctrlPoster.infoPoster.BackgroundImage = UtilityTools.LoadPicture(data.Poster);
 
                                 ctrlPoster.infoGenres = data.Genre;
                                 ctrlPoster.infoSynopsis = data.Plot;
@@ -683,7 +684,7 @@ namespace WebPlex
 
             Thread.Sleep(100);
 
-            var dataOMDb = JsonConvert.DeserializeObject<Models.Movie>(Utilities.Random(dataMovies));
+            var dataOMDb = JsonConvert.DeserializeObject<Models.Movie>(UtilityTools.Random(dataMovies));
 
             MovieDetails MovieDetails = new MovieDetails();
 
@@ -701,8 +702,8 @@ namespace WebPlex
             MovieDetails.FanartURL = dataOMDb.FanartURL;
             MovieDetails.TrailerURL = dataOMDb.TrailerURL;
 
-            if (dataOMDb.Poster != "") { MovieDetails.imgPoster.Image = Utilities.SetAlpha(Utilities.LoadPicture(dataOMDb.Poster), 255); }
-            if (dataOMDb.FanartURL != "") { MovieDetails.BackgroundImage = Utilities.SetAlpha(Utilities.LoadPicture(dataOMDb.FanartURL), 50); }
+            if (dataOMDb.Poster != "") { MovieDetails.imgPoster.Image = UtilityTools.SetAlpha(UtilityTools.LoadPicture(dataOMDb.Poster), 255); }
+            if (dataOMDb.FanartURL != "") { MovieDetails.BackgroundImage = UtilityTools.SetAlpha(UtilityTools.LoadPicture(dataOMDb.FanartURL), 50); }
 
             foreach (var movieLink in dataOMDb.Streams)
             {
@@ -746,7 +747,7 @@ namespace WebPlex
                     Host = rm.GetString("local"),
                     Title = Path.GetFileNameWithoutExtension(pathFile),
                     Type = Path.GetExtension(pathFile).Replace(".", "").ToUpper(),
-                    Size = Utilities.bytesToString(new FileInfo(pathFile).Length),
+                    Size = UtilityTools.bytesToString(new FileInfo(pathFile).Length),
                     DateAdded = File.GetCreationTime(pathFile).ToString()
             };
 
@@ -758,9 +759,9 @@ namespace WebPlex
         {
             dataFilesSaved.Clear();
 
-            if (File.Exists(Utilities.pathDataSaved))
+            if (File.Exists(UtilityTools.pathDataSaved))
             {
-                using (StreamReader reader = new StreamReader(Utilities.pathDataSaved))
+                using (StreamReader reader = new StreamReader(UtilityTools.pathDataSaved))
                 {
                     while (!reader.EndOfStream)
                     {
@@ -950,20 +951,20 @@ namespace WebPlex
                     {
                         var dataJson = JsonConvert.DeserializeObject<Models.WebFile>(jsonData);
                         string formattedDate = dataJson.DateAdded;
-                        if (dataJson.DateAdded != "-") { formattedDate = Utilities.getTimeAgo(Convert.ToDateTime(dataJson.DateAdded)); }
+                        if (dataJson.DateAdded != "-") { formattedDate = UtilityTools.getTimeAgo(Convert.ToDateTime(dataJson.DateAdded)); }
                         string formattedSize = dataJson.Size;
-                        if (dataJson.Size != "-") { formattedSize = Utilities.bytesToString(Convert.ToInt64(dataJson.Size)); }
+                        if (dataJson.Size != "-") { formattedSize = UtilityTools.bytesToString(Convert.ToInt64(dataJson.Size)); }
                         dataGridFiles.Rows.Add(dataJson.Type, dataJson.Title, formattedSize, formattedDate, dataJson.Host, dataJson.URL);
 
                         if (!(cmboBoxFilesHost.Items.Contains(dataJson.Host))) { cmboBoxFilesHost.Items.Add(dataJson.Host); }
                     }
 
                     stopWatch.Stop(); TimeSpan ts = stopWatch.Elapsed;
-                    lblFilesResultsInfo.Text = Utilities.getFormattedNumber(dataGridFiles.Rows.Count.ToString()) + " / " + Utilities.getFormattedNumber(dataFiles.Count.ToString()) + " Files (" + String.Format("{0:0.000}", ts.TotalSeconds) + " Seconds)"; stopWatch.Reset();
+                    lblFilesResultsInfo.Text = UtilityTools.getFormattedNumber(dataGridFiles.Rows.Count.ToString()) + " / " + UtilityTools.getFormattedNumber(dataFiles.Count.ToString()) + " Files (" + String.Format("{0:0.000}", ts.TotalSeconds) + " Seconds)"; stopWatch.Reset();
 
                     tab.SelectedTab = currentTab;
 
-                    cmboBoxFilesHost.DropDownWidth = Utilities.DropDownWidth(cmboBoxFilesHost);
+                    cmboBoxFilesHost.DropDownWidth = UtilityTools.DropDownWidth(cmboBoxFilesHost);
                     imgSpinner.Visible = false;
                 }
             });
@@ -980,7 +981,7 @@ namespace WebPlex
                 {
                     var dataJson = JsonConvert.DeserializeObject<Models.WebFile>(file);
 
-                    if (Utilities.ContainsAll(dataJson.Title.ToLower(), Utilities.GetWords(txtSearchFiles.Text.ToLower())) && selectedFilesFileType.Contains(dataJson.Type) && dataJson.Host.Contains(selectedFilesHost))
+                    if (UtilityTools.ContainsAll(dataJson.Title.ToLower(), UtilityTools.GetWords(txtSearchFiles.Text.ToLower())) && selectedFilesFileType.Contains(dataJson.Type) && dataJson.Host.Contains(selectedFilesHost))
                     {
                         urls.Add(JsonConvert.SerializeObject(dataJson));
                     }
@@ -1054,7 +1055,7 @@ namespace WebPlex
             var startText = btnFilesSort.Text.Split(':');
             btnFilesSort.Text = startText[0] + ": " + cmboBoxFilesSort.SelectedItem.ToString();
 
-            if (cmboBoxFilesSort.SelectedIndex == 0) { cmboBoxFilesSort.DropDownWidth = Utilities.DropDownWidth(cmboBoxFilesSort); showFiles(selectedFiles); }
+            if (cmboBoxFilesSort.SelectedIndex == 0) { cmboBoxFilesSort.DropDownWidth = UtilityTools.DropDownWidth(cmboBoxFilesSort); showFiles(selectedFiles); }
             else if (cmboBoxFilesSort.SelectedIndex == 1) { dataGridFiles.Sort(dataGridFiles.Columns[1], ListSortDirection.Ascending); }
             else if (cmboBoxFilesSort.SelectedIndex == 2) { dataGridFiles.Sort(dataGridFiles.Columns[1], ListSortDirection.Descending); }
             imgSpinner.Visible = false;
@@ -1087,7 +1088,7 @@ namespace WebPlex
 
             showFiles(selectedFiles);
 
-            cmboBoxFilesHost.DropDownWidth = Utilities.DropDownWidth(cmboBoxFilesHost);
+            cmboBoxFilesHost.DropDownWidth = UtilityTools.DropDownWidth(cmboBoxFilesHost);
         }
 
         // Discover tab
@@ -1153,7 +1154,7 @@ namespace WebPlex
                     {
                         string formattedText = txtSubmitLink.Text;
                         if (!txtSubmitLink.Text.EndsWith("/")) { formattedText = txtSubmitLink.Text + "/"; }
-                        Utilities.submitLink(formattedText); txtSubmitLink.Text = "";
+                        UtilityTools.submitLink(formattedText); txtSubmitLink.Text = "";
                     }
                     else { MessageBox.Show(this, rm.GetString("linkIncorrectFormat")); }
                 }
@@ -1165,7 +1166,7 @@ namespace WebPlex
         // About tab
         private void lblAboutReportIssue_Click(object sender, EventArgs e)
         {
-            Process.Start("https://github.com/invu/WebPlex/issues/new");
+            Process.Start("https://github.com/invu/WebCrunch/issues/new");
         }
 
         private void btnAboutTermsOfUse_Click(object sender, EventArgs e)

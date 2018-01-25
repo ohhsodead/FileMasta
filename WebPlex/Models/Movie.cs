@@ -1,4 +1,4 @@
-﻿namespace WebPlex.Models
+﻿namespace Models
 {
     using System.Collections.Generic;
 

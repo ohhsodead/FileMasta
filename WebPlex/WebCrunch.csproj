@@ -7,8 +7,8 @@
     <ProjectGuid>{75A2CFC6-B0B1-42A6-B1F7-66B3C68A06CA}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WebPlex</RootNamespace>
-    <AssemblyName>WebPlex</AssemblyName>
+    <RootNamespace>WebCrunch</RootNamespace>
+    <AssemblyName>WebCrunch</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -56,7 +56,7 @@
     <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>WebPlex.Program</StartupObject>
+    <StartupObject>WebCrunch.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CButtonLib">

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebPlex.Languages {
+namespace WebCrunch.Languages {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace WebPlex.Languages {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("WebPlex.Languages.misc-fr", typeof(misc_fr).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("WebCrunch.Languages.misc-fr", typeof(misc_fr).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

@@ -1,4 +1,4 @@
-﻿namespace WebPlex.Models
+﻿namespace Models
 {
     /// <summary>
     /// Represents a Web File

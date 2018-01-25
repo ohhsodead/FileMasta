@@ -1,4 +1,4 @@
-﻿namespace WebPlex.CControls
+﻿namespace UserControls
 {
     partial class ErrorInfo
     {

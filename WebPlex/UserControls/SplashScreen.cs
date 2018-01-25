@@ -1,8 +1,8 @@
-﻿using System.Diagnostics;
-using System.IO;
+﻿using System.IO;
 using System.Windows.Forms;
+using WebCrunch;
 
-namespace WebPlex.CControls
+namespace UserControls
 {
     public partial class SplashScreen : UserControl
     {

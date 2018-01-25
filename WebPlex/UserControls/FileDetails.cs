@@ -10,8 +10,11 @@ using System.Windows.Forms;
 using System.Diagnostics;
 using System.IO;
 using System.Net;
+using WebCrunch;
+using Utilities;
+using Dialogs;
 
-namespace WebPlex.CControls
+namespace UserControls
 {
     public partial class FileDetails : UserControl
     {
@@ -34,26 +37,26 @@ namespace WebPlex.CControls
 
             if (infoAge.Text == "-")
             {
-                try { infoAge.Text = Utilities.getTimeAgo(Convert.ToDateTime(Utilities.getLastModifiedTime(infoFileURL.Text))); } catch { infoAge.Text = "-"; }  
+                try { infoAge.Text = UtilityTools.getTimeAgo(Convert.ToDateTime(UtilityTools.getLastModifiedTime(infoFileURL.Text))); } catch { infoAge.Text = "-"; }  
             }
 
             if (infoSize.Text == "-") { btnRequestFileSize.Visible = true; }
 
             if (infoFileSubtitles == null)
             {
-                if (Utilities.isExistingSubtitlesFile(infoFileURL.Text) == true)
+                if (UtilityTools.isExistingSubtitlesFile(infoFileURL.Text) == true)
                 {
                     infoFileSubtitles = MainForm.userDownloadsDirectory + Path.GetFileNameWithoutExtension(infoFileURL.Text) + ".srt";
                 }
             }
 
-            if (Utilities.isSaved(Utilities.fileToJson(infoFileURL.Text, infoName.Text, infoType.Text, infoReferrer.Text)))
+            if (UtilityTools.isSaved(UtilityTools.fileToJson(infoFileURL.Text, infoName.Text, infoType.Text, infoReferrer.Text)))
             {
-                btnSaveFile.Image = Properties.Resources.bookmark_remove;
+                btnSaveFile.Image = WebCrunch.Properties.Resources.bookmark_remove;
             }
             else
             {
-                btnSaveFile.Image = Properties.Resources.bookmark_plus;
+                btnSaveFile.Image = WebCrunch.Properties.Resources.bookmark_plus;
             }
         }
 
@@ -71,7 +74,7 @@ namespace WebPlex.CControls
         private void btnCopyURL_ClickButtonArea(object Sender, MouseEventArgs e)
         {
             Clipboard.SetText(infoFileURL.Text);
-            btnCopyURL.SideImage = Properties.Resources.clipboard_check;
+            btnCopyURL.SideImage = WebCrunch.Properties.Resources.clipboard_check;
             btnCopyURL.SideImageSize = new Size(22, 22);
         }
 
@@ -84,7 +87,7 @@ namespace WebPlex.CControls
         {
             if (cmboboxReportFile.SelectedIndex == 0)
             {
-                Utilities.openBrokenFileIssue(infoFileURL.Text);
+                UtilityTools.openBrokenFileIssue(infoFileURL.Text);
             }
             else if (cmboboxReportFile.SelectedIndex == 1)
             {
@@ -92,7 +95,7 @@ namespace WebPlex.CControls
             }
             else if (cmboboxReportFile.SelectedIndex == 2)
             {
-                Utilities.openPoorQualityFileIssue(infoFileURL.Text);
+                UtilityTools.openPoorQualityFileIssue(infoFileURL.Text);
             }
         }
 
@@ -182,7 +185,7 @@ namespace WebPlex.CControls
                     int ContentLength;
                     if (int.TryParse(fileResponse.Headers.Get("Content-Length"), out ContentLength))
                     {
-                        infoSize.Text = Utilities.bytesToString(ContentLength);
+                        infoSize.Text = UtilityTools.bytesToString(ContentLength);
                     }
                     else { infoSize.Text = "Error"; }
                 }
@@ -246,15 +249,15 @@ namespace WebPlex.CControls
 
         private void btnSaveFile_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            if (!Utilities.isSaved(Utilities.fileToJson(infoFileURL.Text, infoName.Text, infoType.Text, infoReferrer.Text)))
+            if (!UtilityTools.isSaved(UtilityTools.fileToJson(infoFileURL.Text, infoName.Text, infoType.Text, infoReferrer.Text)))
             {
-                Utilities.saveFile(Utilities.fileToJson(infoFileURL.Text, infoName.Text, infoType.Text, infoReferrer.Text));
-                btnSaveFile.Image = Properties.Resources.bookmark_remove;
+                UtilityTools.saveFile(UtilityTools.fileToJson(infoFileURL.Text, infoName.Text, infoType.Text, infoReferrer.Text));
+                btnSaveFile.Image = WebCrunch.Properties.Resources.bookmark_remove;
             }
             else
             {
-                Utilities.unsaveFile(Utilities.fileToJson(infoFileURL.Text, infoName.Text, infoType.Text, infoReferrer.Text));
-                btnSaveFile.Image = Properties.Resources.bookmark_plus;
+                UtilityTools.unsaveFile(UtilityTools.fileToJson(infoFileURL.Text, infoName.Text, infoType.Text, infoReferrer.Text));
+                btnSaveFile.Image = WebCrunch.Properties.Resources.bookmark_plus;
             }
         }
     }

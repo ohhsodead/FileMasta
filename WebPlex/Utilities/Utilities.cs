@@ -10,10 +10,11 @@ using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using System.Collections;
 using Newtonsoft.Json;
+using WebCrunch;
 
-namespace WebPlex
+namespace Utilities
 {
-    public class Utilities
+    public class UtilityTools
     {
         public static string fileToJson(string Url, string Name, string Type, string Host)
         {

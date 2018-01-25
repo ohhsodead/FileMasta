@@ -1,10 +1,12 @@
-﻿using System;
+﻿using Dialogs;
+using System;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
+using Utilities;
 
-namespace WebPlex.CControls
+namespace WebCrunch.UserControls
 {
     public partial class StreamInfo : UserControl
     {
@@ -31,13 +33,13 @@ namespace WebPlex.CControls
             // Checks for exact file name of a subtitle file that matches the one being loaded (e.g. Media File Name: 'Jigsaw.2017.mp4' > Subtitle File Name: 'Jigsaw.2017.srt' will be loaded)
             if (infoFileSubtitles == null)
             {
-                if (Utilities.isExistingSubtitlesFile(infoFileURL) == true)
+                if (UtilityTools.isExistingSubtitlesFile(infoFileURL) == true)
                 {
                     infoFileSubtitles = MainForm.userDownloadsDirectory + Path.GetFileNameWithoutExtension(infoFileURL) + ".srt";
                 }
             }
 
-            if (Utilities.isSaved(Utilities.fileToJson(infoFileURL, infoName.Text, Path.GetExtension(infoName.Text).ToUpper().Replace(".", ""), infoAge.Text)))
+            if (UtilityTools.isSaved(UtilityTools.fileToJson(infoFileURL, infoName.Text, Path.GetExtension(infoName.Text).ToUpper().Replace(".", ""), infoAge.Text)))
             {
                 imgAddToBookmarks.Image = Properties.Resources.bookmark_remove;
             }
@@ -76,14 +78,14 @@ namespace WebPlex.CControls
 
         private void imgAddToBookmarks_Click(object sender, EventArgs e)
         {
-            if (!Utilities.isSaved(Utilities.fileToJson(infoFileURL, infoName.Text, Path.GetExtension(infoName.Text).Replace(".", "").ToUpper(), infoAge.Text)))
+            if (!UtilityTools.isSaved(UtilityTools.fileToJson(infoFileURL, infoName.Text, Path.GetExtension(infoName.Text).Replace(".", "").ToUpper(), infoAge.Text)))
             {
-                Utilities.saveFile(Utilities.fileToJson(infoFileURL, infoName.Text, Path.GetExtension(infoName.Text).Replace(".", "").ToUpper(), infoAge.Text));
+                UtilityTools.saveFile(UtilityTools.fileToJson(infoFileURL, infoName.Text, Path.GetExtension(infoName.Text).Replace(".", "").ToUpper(), infoAge.Text));
                 imgAddToBookmarks.Image = Properties.Resources.bookmark_remove;
             }
             else
             {
-                Utilities.unsaveFile(Utilities.fileToJson(infoFileURL, infoName.Text, Path.GetExtension(infoName.Text).Replace(".", "").ToUpper(), infoAge.Text));
+                UtilityTools.unsaveFile(UtilityTools.fileToJson(infoFileURL, infoName.Text, Path.GetExtension(infoName.Text).Replace(".", "").ToUpper(), infoAge.Text));
                 imgAddToBookmarks.Image = Properties.Resources.bookmark_plus;
             }
         }
@@ -95,7 +97,7 @@ namespace WebPlex.CControls
 
         private void imgReportBroken_Click(object sender, EventArgs e)
         {
-            Utilities.openBrokenFileIssue(infoFileURL);
+            UtilityTools.openBrokenFileIssue(infoFileURL);
         }
 
         private void imgDownload_Click(object sender, EventArgs e)
@@ -105,8 +107,10 @@ namespace WebPlex.CControls
 
         private void VLC2ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var a = new VLCPlayer();
-            a.Text = new Uri(infoFileURL).LocalPath;
+            var a = new VLCPlayer
+            {
+                Text = new Uri(infoFileURL).LocalPath
+            };
             a.axVLCPlugin21.playlist.add(infoFileURL);
             a.axVLCPlugin21.playlist.play();
             a.Show();
