@@ -1,3 +1,14 @@
+## 0.2.14.4
+- Fixed total database file size
+
+## 0.2.14.3
+- Improved UI, a lot more smooth and consistent (Dark UI)
+- Added Custom* Files section
+- Added 'Loading stuck?' button to splash screen, workaround for #64
+- Added search time in seconds
+- Renamed 'About' tab to 'Information'
+- Bug fixes
+
 ## 0.2.14.2
 - Improved UI
 - Added Info to database
