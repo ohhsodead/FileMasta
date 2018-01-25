@@ -750,114 +750,6 @@
   <data name="&gt;&gt;lblSearchForMore.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="imgAddToBookmarks.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left</value>
-  </data>
-  <data name="imgAddToBookmarks.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="imgAddToBookmarks.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1, 31</value>
-  </data>
-  <data name="imgAddToBookmarks.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 23</value>
-  </data>
-  <data name="imgAddToBookmarks.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>StretchImage</value>
-  </data>
-  <data name="imgAddToBookmarks.TabIndex" type="System.Int32, mscorlib">
-    <value>1103</value>
-  </data>
-  <data name="&gt;&gt;imgAddToBookmarks.Name" xml:space="preserve">
-    <value>imgAddToBookmarks</value>
-  </data>
-  <data name="&gt;&gt;imgAddToBookmarks.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;imgAddToBookmarks.Parent" xml:space="preserve">
-    <value>panelTitleFiles</value>
-  </data>
-  <data name="&gt;&gt;imgAddToBookmarks.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="infoFileHost.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left</value>
-  </data>
-  <data name="infoFileHost.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="infoFileHost.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9.75pt</value>
-  </data>
-  <data name="infoFileHost.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="infoFileHost.Location" type="System.Drawing.Point, System.Drawing">
-    <value>27, 33</value>
-  </data>
-  <data name="infoFileHost.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 3, 0, 0</value>
-  </data>
-  <data name="infoFileHost.Size" type="System.Drawing.Size, System.Drawing">
-    <value>37, 17</value>
-  </data>
-  <data name="infoFileHost.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="infoFileHost.Text" xml:space="preserve">
-    <value>Host</value>
-  </data>
-  <data name="&gt;&gt;infoFileHost.Name" xml:space="preserve">
-    <value>infoFileHost</value>
-  </data>
-  <data name="&gt;&gt;infoFileHost.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;infoFileHost.Parent" xml:space="preserve">
-    <value>panelTitleFiles</value>
-  </data>
-  <data name="&gt;&gt;infoFileHost.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="infoFileName.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left</value>
-  </data>
-  <data name="infoFileName.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="infoFileName.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9.75pt</value>
-  </data>
-  <data name="infoFileName.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="infoFileName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>160, 33</value>
-  </data>
-  <data name="infoFileName.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 3, 0, 0</value>
-  </data>
-  <data name="infoFileName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>44, 17</value>
-  </data>
-  <data name="infoFileName.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="infoFileName.Text" xml:space="preserve">
-    <value>Name</value>
-  </data>
-  <data name="&gt;&gt;infoFileName.Name" xml:space="preserve">
-    <value>infoFileName</value>
-  </data>
-  <data name="&gt;&gt;infoFileName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;infoFileName.Parent" xml:space="preserve">
-    <value>panelTitleFiles</value>
-  </data>
-  <data name="&gt;&gt;infoFileName.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
   <data name="lblHeaderDirectFiles.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -892,7 +784,7 @@
     <value>panelTitleFiles</value>
   </data>
   <data name="&gt;&gt;lblHeaderDirectFiles.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>2</value>
   </data>
   <data name="lineSplitter.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -901,7 +793,7 @@
     <value>Segoe UI Semibold, 13.25pt</value>
   </data>
   <data name="lineSplitter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 24</value>
+    <value>4, 25</value>
   </data>
   <data name="lineSplitter.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 16, 3, 3</value>
@@ -925,7 +817,7 @@
     <value>panelTitleFiles</value>
   </data>
   <data name="&gt;&gt;lineSplitter.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>3</value>
   </data>
   <data name="panelTitleFiles.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 152</value>
@@ -934,7 +826,7 @@
     <value>3, 20, 0, 0</value>
   </data>
   <data name="panelTitleFiles.Size" type="System.Drawing.Size, System.Drawing">
-    <value>740, 54</value>
+    <value>740, 29</value>
   </data>
   <data name="panelTitleFiles.TabIndex" type="System.Int32, mscorlib">
     <value>100042</value>
@@ -951,47 +843,47 @@
   <data name="&gt;&gt;panelTitleFiles.ZOrder" xml:space="preserve">
     <value>16</value>
   </data>
-  <data name="panelFiles.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="panelStreams.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
-  <data name="panelFiles.AutoSize" type="System.Boolean, mscorlib">
+  <data name="panelStreams.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="panelFiles.FlowDirection" type="System.Windows.Forms.FlowDirection, System.Windows.Forms">
+  <data name="panelStreams.FlowDirection" type="System.Windows.Forms.FlowDirection, System.Windows.Forms">
     <value>TopDown</value>
   </data>
-  <data name="panelFiles.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 208</value>
+  <data name="panelStreams.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 183</value>
   </data>
-  <data name="panelFiles.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="panelStreams.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 2, 0, 0</value>
   </data>
-  <data name="panelFiles.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="panelStreams.Size" type="System.Drawing.Size, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="panelFiles.TabIndex" type="System.Int32, mscorlib">
+  <data name="panelStreams.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="panelFiles.WrapContents" type="System.Boolean, mscorlib">
+  <data name="panelStreams.WrapContents" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="&gt;&gt;panelFiles.Name" xml:space="preserve">
-    <value>panelFiles</value>
+  <data name="&gt;&gt;panelStreams.Name" xml:space="preserve">
+    <value>panelStreams</value>
   </data>
-  <data name="&gt;&gt;panelFiles.Type" xml:space="preserve">
+  <data name="&gt;&gt;panelStreams.Type" xml:space="preserve">
     <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;panelFiles.Parent" xml:space="preserve">
+  <data name="&gt;&gt;panelStreams.Parent" xml:space="preserve">
     <value>panelDetails</value>
   </data>
-  <data name="&gt;&gt;panelFiles.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;panelStreams.ZOrder" xml:space="preserve">
     <value>17</value>
   </data>
   <data name="panelDetails.Location" type="System.Drawing.Point, System.Drawing">
     <value>199, 60</value>
   </data>
   <data name="panelDetails.Size" type="System.Drawing.Size, System.Drawing">
-    <value>743, 448</value>
+    <value>744, 448</value>
   </data>
   <data name="panelDetails.TabIndex" type="System.Int32, mscorlib">
     <value>100036</value>
@@ -1057,7 +949,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="infoTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>700, 32</value>
+    <value>701, 32</value>
   </data>
   <data name="infoTitle.TabIndex" type="System.Int32, mscorlib">
     <value>46</value>
@@ -1078,7 +970,7 @@
     <value>1</value>
   </data>
   <data name="btnWatchTrailer.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9.75pt</value>
+    <value>Segoe UI Semibold, 10.75pt</value>
   </data>
   <data name="btnWatchTrailer.Location" type="System.Drawing.Point, System.Drawing">
     <value>26, 284</value>
@@ -1138,7 +1030,7 @@
     <value>NoControl</value>
   </data>
   <data name="appClose.Location" type="System.Drawing.Point, System.Drawing">
-    <value>910, 25</value>
+    <value>911, 25</value>
   </data>
   <data name="appClose.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 25, 25, 3</value>
@@ -1256,7 +1148,7 @@
     <value>True</value>
   </data>
   <data name="$this.AutoScrollMargin" type="System.Drawing.Size, System.Drawing">
-    <value>0, 40</value>
+    <value>0, 18</value>
   </data>
   <data name="$this.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Stretch</value>
@@ -1268,7 +1160,7 @@
     <value>967, 533</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>ctrlMovieDetails</value>
+    <value>MovieDetails</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.UserControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>

@@ -127,16 +127,16 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="infoAge.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 9.75pt</value>
+    <value>Segoe UI, 10.25pt</value>
   </data>
   <data name="infoAge.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
+    <value>0, 6</value>
   </data>
   <data name="infoAge.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 3, 0</value>
   </data>
   <data name="infoAge.Size" type="System.Drawing.Size, System.Drawing">
-    <value>31, 17</value>
+    <value>33, 19</value>
   </data>
   <data name="infoAge.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -157,16 +157,16 @@
     <value>0</value>
   </data>
   <data name="infoName.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left, Right</value>
+    <value>Top, Left, Right</value>
   </data>
   <data name="infoName.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 10pt</value>
+    <value>Segoe UI Semibold, 10.75pt</value>
   </data>
   <data name="infoName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>29, 2</value>
+    <value>29, 0</value>
   </data>
   <data name="infoName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>476, 20</value>
+    <value>500, 22</value>
   </data>
   <data name="infoName.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -189,15 +189,6 @@
   <metadata name="contextFileName.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <data name="contextFileName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>146, 92</value>
-  </data>
-  <data name="&gt;&gt;contextFileName.Name" xml:space="preserve">
-    <value>contextFileName</value>
-  </data>
-  <data name="&gt;&gt;contextFileName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="VLC2ToolStripMenuItem.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Transparent</value>
   </data>
@@ -234,6 +225,15 @@
   <data name="MPCToolStripMenuItem.Text" xml:space="preserve">
     <value>MPC</value>
   </data>
+  <data name="contextFileName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>146, 92</value>
+  </data>
+  <data name="&gt;&gt;contextFileName.Name" xml:space="preserve">
+    <value>contextFileName</value>
+  </data>
+  <data name="&gt;&gt;contextFileName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>160, 17</value>
   </metadata>
@@ -241,7 +241,7 @@
     <value>Right</value>
   </data>
   <data name="imgCopyURL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>97, 0</value>
+    <value>63, 0</value>
   </data>
   <data name="imgCopyURL.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 0, 2, 0</value>
@@ -283,7 +283,7 @@
 </value>
   </data>
   <data name="imgReportBroken.Location" type="System.Drawing.Point, System.Drawing">
-    <value>125, 0</value>
+    <value>91, 0</value>
   </data>
   <data name="imgReportBroken.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 0, 2, 0</value>
@@ -316,7 +316,7 @@
     <value>Right</value>
   </data>
   <data name="imgWatch.Location" type="System.Drawing.Point, System.Drawing">
-    <value>69, 0</value>
+    <value>35, 0</value>
   </data>
   <data name="imgWatch.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 0, 2, 0</value>
@@ -345,47 +345,11 @@
   <data name="&gt;&gt;imgWatch.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="imgMagnet.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Right</value>
-  </data>
-  <data name="imgMagnet.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 1</value>
-  </data>
-  <data name="imgMagnet.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 1, 4, 0</value>
-  </data>
-  <data name="imgMagnet.Size" type="System.Drawing.Size, System.Drawing">
-    <value>22, 22</value>
-  </data>
-  <data name="imgMagnet.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>StretchImage</value>
-  </data>
-  <data name="imgMagnet.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
-  </data>
-  <data name="imgMagnet.ToolTip" xml:space="preserve">
-    <value>Open Magnet</value>
-  </data>
-  <data name="imgMagnet.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;imgMagnet.Name" xml:space="preserve">
-    <value>imgMagnet</value>
-  </data>
-  <data name="&gt;&gt;imgMagnet.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;imgMagnet.Parent" xml:space="preserve">
-    <value>panelControls</value>
-  </data>
-  <data name="&gt;&gt;imgMagnet.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
   <data name="imgDownload.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Right</value>
   </data>
   <data name="imgDownload.Location" type="System.Drawing.Point, System.Drawing">
-    <value>41, 0</value>
+    <value>7, 0</value>
   </data>
   <data name="imgDownload.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 0, 2, 0</value>
@@ -451,10 +415,10 @@
     <value>RightToLeft</value>
   </data>
   <data name="panelControls.Location" type="System.Drawing.Point, System.Drawing">
-    <value>501, 1</value>
+    <value>535, 1</value>
   </data>
   <data name="panelControls.Size" type="System.Drawing.Size, System.Drawing">
-    <value>151, 28</value>
+    <value>117, 28</value>
   </data>
   <data name="panelControls.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -478,16 +442,16 @@
     <value>True</value>
   </data>
   <data name="infoSize.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 9.75pt</value>
+    <value>Segoe UI, 10.25pt</value>
   </data>
   <data name="infoSize.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="infoSize.Location" type="System.Drawing.Point, System.Drawing">
-    <value>54, 0</value>
+    <value>57, 6</value>
   </data>
   <data name="infoSize.Size" type="System.Drawing.Size, System.Drawing">
-    <value>31, 17</value>
+    <value>32, 19</value>
   </data>
   <data name="infoSize.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -508,7 +472,7 @@
     <value>2</value>
   </data>
   <data name="flowLayoutPanel1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Right</value>
+    <value>Top, Left, Right</value>
   </data>
   <data name="splitter0.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Left</value>
@@ -517,19 +481,19 @@
     <value>True</value>
   </data>
   <data name="splitter0.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 9.75pt</value>
+    <value>Segoe UI, 10.25pt</value>
   </data>
   <data name="splitter0.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="splitter0.Location" type="System.Drawing.Point, System.Drawing">
-    <value>36, 0</value>
+    <value>37, 6</value>
   </data>
   <data name="splitter0.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 0, 2, 0</value>
+    <value>1, 0, 2, 0</value>
   </data>
   <data name="splitter0.Size" type="System.Drawing.Size, System.Drawing">
-    <value>13, 17</value>
+    <value>15, 19</value>
   </data>
   <data name="splitter0.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
@@ -549,11 +513,35 @@
   <data name="&gt;&gt;splitter0.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="cButton1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>95, 3</value>
+  </data>
+  <data name="cButton1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>90, 25</value>
+  </data>
+  <data name="cButton1.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="cButton1.Text" xml:space="preserve">
+    <value>cButton1</value>
+  </data>
+  <data name="&gt;&gt;cButton1.Name" xml:space="preserve">
+    <value>cButton1</value>
+  </data>
+  <data name="&gt;&gt;cButton1.Type" xml:space="preserve">
+    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;cButton1.Parent" xml:space="preserve">
+    <value>flowLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;cButton1.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
   <data name="flowLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>29, 23</value>
+    <value>29, 21</value>
   </data>
   <data name="flowLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>467, 18</value>
+    <value>500, 18</value>
   </data>
   <data name="flowLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
     <value>21</value>
@@ -619,7 +607,7 @@
     <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>ctrlStreamInfo</value>
+    <value>StreamInfo</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.UserControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>

@@ -15,14 +15,6 @@ namespace WebPlex
 {
     public class Utilities
     {
-        /// <summary>
-        /// Converts File to Json for saving)
-        /// </summary>
-        /// <param name="Url">URL of the file</param>
-        /// <param name="Name">File Name</param>
-        /// <param name="Type">File Extension</param>
-        /// <param name="Host">File Host (Website)</param>
-        /// <returns></returns>
         public static string fileToJson(string Url, string Name, string Type, string Host)
         {
             var a = new Models.WebFile
@@ -38,7 +30,7 @@ namespace WebPlex
             return JsonConvert.SerializeObject(a);
         }
 
-        public static string pathDataSaved = Main.pathRoot + "saved-files.json";
+        public static string pathDataSaved = MainForm.pathRoot + "saved-files.json";
 
         public static void unsaveFile(string Json)
         {
@@ -76,11 +68,6 @@ namespace WebPlex
             return false;
         }
 
-        /// <summary>
-        /// Resize Combobox Control to Longest Text Size (Fit Contents)
-        /// </summary>
-        /// <param name="myCombo">ComboBox Control to Get Items</param>
-        /// <returns></returns>
         public static int DropDownWidth(ComboBox myCombo)
         {
             int maxWidth = 0, temp = 0;
@@ -131,7 +118,7 @@ namespace WebPlex
         {
             try
             {
-                if (File.Exists(Main.pathData + fileName) == true)
+                if (File.Exists(MainForm.pathData + fileName) == true)
                 {
                     WebRequest req = WebRequest.Create(webFile);
                     req.Method = "HEAD";
@@ -141,7 +128,7 @@ namespace WebPlex
                         int ContentLength;
                         if (int.TryParse(fileResponse.Headers.Get("Content-Length"), out ContentLength))
                         {
-                            if (new FileInfo(Main.pathData + fileName).Length == ContentLength) { return false; }
+                            if (new FileInfo(MainForm.pathData + fileName).Length == ContentLength) { return false; }
                             else { return true; }
                         }
                         else { return true; }
@@ -172,37 +159,20 @@ namespace WebPlex
             catch { return "n/a"; }
         }
 
-        // compare file bytes
-        /// <summary>
-        /// If Web File Size and Local File Size is identical
-        /// </summary>
-        /// <param name="fileSize"></param>
-        /// <param name="fileURL"></param>
-        /// <returns></returns>
         public static bool isFileSizeIdentical(string fileSize, string fileURL)
         {
-            if (File.Exists(Main.userDownloadsDirectory + Path.GetFileName(new Uri(fileURL).LocalPath)) && fileSize == bytesToString(new FileInfo(Main.userDownloadsDirectory + Path.GetFileName(new Uri(fileURL).LocalPath)).Length)) { return true; }
+            if (File.Exists(MainForm.userDownloadsDirectory + Path.GetFileName(new Uri(fileURL).LocalPath)) && fileSize == bytesToString(new FileInfo(MainForm.userDownloadsDirectory + Path.GetFileName(new Uri(fileURL).LocalPath)).Length)) { return true; }
             else { return false; }
         }
 
-        /// <summary>
-        /// If user has file subtitles in their downloads direcotry
-        /// </summary>
-        /// <param name="fileURL">Web File URL</param>
-        /// <returns></returns>
         public static bool isExistingSubtitlesFile(string fileURL)
         {
             // Checks for exact file name of a subtitle file that matches the one being loaded (e.g. File Name: 'Jigsaw.2017.mp4' > Subtitle File Name: 'Jigsaw.2017.srt' will be loaded)
-            if (File.Exists(Main.userDownloadsDirectory + Path.GetFileNameWithoutExtension(new Uri(fileURL).LocalPath) + ".srt")) {
+            if (File.Exists(MainForm.userDownloadsDirectory + Path.GetFileNameWithoutExtension(new Uri(fileURL).LocalPath) + ".srt")) {
             return true; }
             else return false;
         }
 
-        /// <summary>
-        /// Load Bitmap from web resource
-        /// </summary>
-        /// <param name="url">Web Image</param>
-        /// <returns></returns>
         public static Bitmap LoadPicture(string url)
         {
             HttpWebRequest wreq;
@@ -314,18 +284,28 @@ namespace WebPlex
             return string.Format("{0:n0}", Convert.ToInt32(value));
         }
 
-        // change image opacity
-        public static Bitmap ChangeOpacity(Image img, float opacityvalue)
+        public static Bitmap SetAlpha(Bitmap bmpIn, int alpha)
         {
-            Bitmap bmp = new Bitmap(img.Width, img.Height);
-            Graphics graphics = Graphics.FromImage(bmp);
-            ColorMatrix colormatrix = new ColorMatrix();
-            colormatrix.Matrix33 = opacityvalue;
-            ImageAttributes imgAttribute = new ImageAttributes();
-            imgAttribute.SetColorMatrix(colormatrix, ColorMatrixFlag.Default, ColorAdjustType.Bitmap);
-            graphics.DrawImage(img, new Rectangle(0, 0, bmp.Width, bmp.Height), 0, 0, img.Width, img.Height, GraphicsUnit.Pixel, imgAttribute);
-            graphics.Dispose();
-            return bmp;
+            Bitmap bmpOut = new Bitmap(bmpIn.Width, bmpIn.Height);
+            float a = alpha / 255f;
+            Rectangle r = new Rectangle(0, 0, bmpIn.Width, bmpIn.Height);
+
+            float[][] matrixItems = {
+        new float[] {1, 0, 0, 0, 0},
+        new float[] {0, 1, 0, 0, 0},
+        new float[] {0, 0, 1, 0, 0},
+        new float[] {0, 0, 0, a, 0},
+        new float[] {0, 0, 0, 0, 1}};
+
+            ColorMatrix colorMatrix = new ColorMatrix(matrixItems);
+
+            ImageAttributes imageAtt = new ImageAttributes();
+            imageAtt.SetColorMatrix(colorMatrix, ColorMatrixFlag.Default, ColorAdjustType.Bitmap);
+
+            using (Graphics g = Graphics.FromImage(bmpOut))
+                g.DrawImage(bmpIn, r, r.X, r.Y, r.Width, r.Height, GraphicsUnit.Pixel, imageAtt);
+
+            return bmpOut;
         }
 
         // get time ago
@@ -386,15 +366,6 @@ namespace WebPlex
             } catch { return false; }
         }
 
-        /// <summary>
-        /// Returns file names from given folder that comply to given filters
-        /// </summary>
-        /// <param name="SourceFolder">Folder with files to retrieve</param>
-        /// <param name="Filter">Multiple file filters separated by | character</param>
-        /// <param name="searchOption">File.IO.SearchOption, 
-        /// could be AllDirectories or TopDirectoryOnly</param>
-        /// <returns>Array of FileInfo objects that presents collection of file names that 
-        /// meet given filter</returns>
         public static string[] getFiles(string SourceFolder, string Filter, SearchOption searchOption)
         {
             // ArrayList will hold all file names
@@ -442,18 +413,18 @@ namespace WebPlex
         {
             Version newVersion = null;
             WebClient client = new WebClient();
-            Stream stream = client.OpenRead(Main.linkLatestVersion);
+            Stream stream = client.OpenRead(MainForm.linkLatestVersion);
             StreamReader reader = new StreamReader(stream);
             newVersion = new Version(reader.ReadToEnd());
             Version curVersion = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
 
             if (curVersion.CompareTo(newVersion) < 0)
             {
-                MessageBox.Show(Main.form, "WebPlex " + newVersion.ToString() + " is ready to be installed.", "WebPlex - Update Available");
+                MessageBox.Show(MainForm.form, "WebPlex " + newVersion.ToString() + " is ready to be installed.", "WebPlex - Update Available");
 
-                client.DownloadFile(Main.getLatestInstaller(newVersion), Main.pathDownloadInstaller);
-                Directory.Delete(Main.pathData, true);
-                Process.Start(Main.pathDownloadInstaller);
+                client.DownloadFile(MainForm.getLatestInstaller(newVersion), MainForm.pathDownloadInstaller);
+                Directory.Delete(MainForm.pathData, true);
+                Process.Start(MainForm.pathDownloadInstaller);
                 Application.Exit();
             }
         }

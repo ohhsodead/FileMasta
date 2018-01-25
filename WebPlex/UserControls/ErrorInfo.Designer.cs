@@ -1,6 +1,6 @@
 ﻿namespace WebPlex.CControls
 {
-    partial class ctrlStatus
+    partial class ErrorInfo
     {
         /// <summary> 
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ctrlStatus));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ErrorInfo));
             CButtonLib.cBlendItems cBlendItems1 = new CButtonLib.cBlendItems();
             this.titleStatus = new System.Windows.Forms.Label();
             this.btnRestartApp = new CButtonLib.CButton();
@@ -61,18 +61,18 @@
             this.btnRestartApp.Corners.UpperLeft = 2;
             this.btnRestartApp.Corners.UpperRight = 2;
             this.btnRestartApp.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRestartApp.DesignerSelected = false;
+            this.btnRestartApp.DesignerSelected = true;
             this.btnRestartApp.DimFactorClick = 0;
             this.btnRestartApp.DimFactorHover = 0;
             this.btnRestartApp.FillType = CButtonLib.CButton.eFillType.Solid;
             this.btnRestartApp.ImageIndex = 0;
             this.btnRestartApp.Name = "btnRestartApp";
-            this.btnRestartApp.ShowFocus = CButtonLib.CButton.eFocus.Dim;
+            this.btnRestartApp.ShowFocus = CButtonLib.CButton.eFocus.None;
             this.btnRestartApp.TextShadow = System.Drawing.Color.Empty;
             this.btnRestartApp.TextShadowShow = false;
             this.btnRestartApp.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnRestartApp_ClickButtonArea);
             // 
-            // ctrlStatus
+            // ErrorInfo
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -80,7 +80,7 @@
             this.Controls.Add(this.btnRestartApp);
             this.Controls.Add(this.titleStatus);
             this.ForeColor = System.Drawing.Color.White;
-            this.Name = "ctrlStatus";
+            this.Name = "ErrorInfo";
             this.ResumeLayout(false);
 
         }

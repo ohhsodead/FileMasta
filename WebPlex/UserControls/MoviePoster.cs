@@ -5,9 +5,9 @@ using System.Windows.Forms;
 
 namespace WebPlex.CControls
 {
-    public partial class ctrlMoviePoster : UserControl
+    public partial class MoviePoster : UserControl
     {
-        public ctrlMoviePoster()
+        public MoviePoster()
         {
             InitializeComponent();
         }
@@ -36,9 +36,9 @@ namespace WebPlex.CControls
 
         private void InfoPoster_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            Main.form.tabBlank.Controls.Clear();
+            MainForm.form.tabBlank.Controls.Clear();
 
-            ctrlMovieDetails MovieDetails = new ctrlMovieDetails();
+            MovieDetails MovieDetails = new MovieDetails();
 
             MovieDetails.infoTitle.Text = infoTitle.Text;
             MovieDetails.infoYear.Text = infoYear.Text;
@@ -56,20 +56,20 @@ namespace WebPlex.CControls
 
             try
             {
-                if (infoImagePoster != "") { MovieDetails.imgPoster.Image = Utilities.ChangeOpacity(Utilities.LoadPicture(infoImagePoster), 1); }
-                if (infoImageFanart != "") { MovieDetails.BackgroundImage = Utilities.ChangeOpacity(Utilities.LoadPicture(infoImageFanart), 0.2F); }
+                if (infoImagePoster != "") { MovieDetails.imgPoster.Image = Utilities.SetAlpha(Utilities.LoadPicture(infoImagePoster), 255); }
+                if (infoImageFanart != "") { MovieDetails.BackgroundImage = Utilities.SetAlpha(Utilities.LoadPicture(infoImageFanart), 50); }
             }
-            catch { }
+            catch (Exception ex) { MessageBox.Show(ex.Message + "\n\n" + infoImageFanart); }
 
             foreach (var movieLink in infoMovieStreams)
             {
-                MovieDetails.AddStream(movieLink, false, MovieDetails.panelFiles);
+                MovieDetails.AddStream(movieLink, false, MovieDetails.panelStreams);
             }
 
             MovieDetails.Dock = DockStyle.Fill;
-            Main.form.tabBlank.Controls.Clear();
-            Main.form.tabBlank.Controls.Add(MovieDetails);
-            Main.form.tab.SelectedTab = Main.form.tabBlank;
+            MainForm.form.tabBlank.Controls.Clear();
+            MainForm.form.tabBlank.Controls.Add(MovieDetails);
+            MainForm.form.tab.SelectedTab = MainForm.form.tabBlank;
         }
 
         private void InfoPoster_MouseEnter(object sender, EventArgs e)
@@ -83,12 +83,12 @@ namespace WebPlex.CControls
 
                 infoPoster2.Image = new Bitmap(infoPoster.BackgroundImage);
                 infoPoster.BackgroundImage.Dispose();
-                infoPoster.BackgroundImage = Utilities.ChangeOpacity(infoPoster2.Image, 0.4F);
+                infoPoster.BackgroundImage = Utilities.SetAlpha((Bitmap)infoPoster2.Image, 100);
                 Update();
             }
             catch
             {
-                infoPoster.BackgroundImage = Utilities.ChangeOpacity(Properties.Resources.poster_default, 0.4F); 
+                infoPoster.BackgroundImage = Utilities.SetAlpha(Properties.Resources.poster_default, 255); 
             }
         }
 
@@ -97,11 +97,11 @@ namespace WebPlex.CControls
             try
             {
                 infoPoster.BackgroundImage.Dispose();
-                infoPoster.BackgroundImage = Utilities.ChangeOpacity(infoPoster2.Image, 1);
+                infoPoster.BackgroundImage = Utilities.SetAlpha((Bitmap)infoPoster2.Image, 255);
             }
             catch
             {
-                infoPoster.BackgroundImage = Utilities.ChangeOpacity(Properties.Resources.poster_default, 1);
+                infoPoster.BackgroundImage = Utilities.SetAlpha(Properties.Resources.poster_default, 255);
             }
         }
 

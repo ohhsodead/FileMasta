@@ -303,7 +303,7 @@
             resources.ApplyResources(this.lblHeaderTopSearches, "lblHeaderTopSearches");
             this.lblHeaderTopSearches.BackColor = System.Drawing.Color.Transparent;
             this.lblHeaderTopSearches.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lblHeaderTopSearches.ForeColor = System.Drawing.Color.LightGray;
+            this.lblHeaderTopSearches.ForeColor = System.Drawing.Color.White;
             this.lblHeaderTopSearches.Name = "lblHeaderTopSearches";
             // 
             // lineHomeTopSearchesSplitter

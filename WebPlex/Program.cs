@@ -23,8 +23,8 @@ namespace WebPlex
 
 
             Application.SetUnhandledExceptionMode(UnhandledExceptionMode.CatchException);
-            Application.ThreadException += ExceptionsEvents.ApplicationThreadException;
-            AppDomain.CurrentDomain.UnhandledException += ExceptionsEvents.CurrentDomainUnhandledException;
+            Application.ThreadException += ExceptionEvents.ApplicationThreadException;
+            AppDomain.CurrentDomain.UnhandledException += ExceptionEvents.CurrentDomainUnhandledException;
 
             Run();
         }

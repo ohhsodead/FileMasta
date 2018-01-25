@@ -14,6 +14,7 @@ using System.Reflection;
 using System.Text;
 using WebPlex.CControls;
 using Newtonsoft.Json;
+using WebPlex.ExceptionHandler;
 
 namespace WebPlex
 {
@@ -35,7 +36,7 @@ namespace WebPlex
 
             form = this;
 
-            frmSplash = new ctrlSplashScreen();
+            frmSplash = new SplashScreen();
 
             Controls.Add(frmSplash);
             frmSplash.Dock = DockStyle.Fill;
@@ -56,7 +57,7 @@ namespace WebPlex
         public static string pathMPC86 = @"C:\Program Files (x86)\MPC-HC\mpc-hc.exe";
 
         public static MainForm form = null;
-        public ctrlSplashScreen frmSplash;
+        public SplashScreen frmSplash;
         protected override void OnPaint(PaintEventArgs e) { }
 
         // Database Files
@@ -161,7 +162,7 @@ namespace WebPlex
             //
             if (Utilities.doUpdateFile(linkMovies, "movies-posters.json"))
             {
-                client.DownloadFile(new Uri(linkMovies), pathData + "movies-posters.json");
+                //client.DownloadFile(new Uri(linkMovies), pathData + "movies-posters.json");
             }
 
             dataMovies.AddRange(File.ReadAllLines(pathData + "movies-posters.json").Reverse());
@@ -179,7 +180,7 @@ namespace WebPlex
         {
             imgSpinner.Visible = false;
 
-            ctrlStatus a = new ctrlStatus
+            ErrorInfo a = new ErrorInfo
             {
                 BackColor = tabHome.BackColor,
                 Dock = DockStyle.Fill
@@ -513,11 +514,11 @@ namespace WebPlex
 
         int countedMovies = 0;
         object loadMoviesLock = new object();
-        public List<ctrlMoviePoster> LoadMovies(int loadCount)
+        public List<MoviePoster> LoadMovies(int loadCount)
         {
             lock (loadMoviesLock)
             {
-                List<ctrlMoviePoster> MoviesPosters = new List<ctrlMoviePoster>();
+                List<MoviePoster> MoviesPosters = new List<MoviePoster>();
                 int loadedCount = 0;
 
                 foreach (string movie in dataMovies.Skip(countedMovies))
@@ -530,7 +531,7 @@ namespace WebPlex
 
                             if (data.ImdbID.ToLower() == txtSearchMovies.Text.ToLower() | data.Title.ToLower().Contains(txtSearchMovies.Text.ToLower()) | data.Actors.ToLower().Contains(txtSearchMovies.Text.ToLower()) && data.Year.Contains(selectedYear) && data.Genre.ToLower().Contains(selectedGenre.ToLower()))
                             {
-                                ctrlMoviePoster ctrlPoster = new ctrlMoviePoster();
+                                MoviePoster ctrlPoster = new MoviePoster();
                                 ctrlPoster.infoTitle.Text = data.Title.Replace("&", "&&");
                                 ctrlPoster.infoYear.Text = data.Year;
 
@@ -547,12 +548,13 @@ namespace WebPlex
                                 ctrlPoster.infoImdbId = data.ImdbID;
 
                                 ctrlPoster.infoImagePoster = data.Poster;
-                                ctrlPoster.Name = data.ImdbID;
-                                ctrlPoster.infoMovieStreams = data.Streams;
 
                                 ctrlPoster.infoTrailer = data.TrailerURL;
                                 ctrlPoster.infoImageFanart = data.FanartURL;
 
+                                ctrlPoster.infoMovieStreams = data.Streams;
+
+                                ctrlPoster.Name = data.ImdbID;
                                 ctrlPoster.Show();
                                 MoviesPosters.Add(ctrlPoster);
                                 loadedCount += 1;
@@ -569,7 +571,7 @@ namespace WebPlex
         public void loadMovies(int count)
         {
             imgSpinner.Visible = showSpinnerForMovies;
-            BackGroundWorker.RunWorkAsync<List<ctrlMoviePoster>>(() => LoadMovies(count), (data) =>
+            BackGroundWorker.RunWorkAsync<List<MoviePoster>>(() => LoadMovies(count), (data) =>
             {
                 if (panelMovies.InvokeRequired)
                 {
@@ -578,7 +580,7 @@ namespace WebPlex
                 }
                 else
                 {
-                    foreach (ctrlMoviePoster item in data)
+                    foreach (MoviePoster item in data)
                     {
                         panelMovies.Controls.Add(item);
                     }
@@ -669,7 +671,7 @@ namespace WebPlex
 
             var dataOMDb = JsonConvert.DeserializeObject<Models.Movie>(Utilities.Random(dataMovies));
 
-            ctrlMovieDetails MovieDetails = new ctrlMovieDetails();
+            MovieDetails MovieDetails = new MovieDetails();
 
             MovieDetails.infoTitle.Text = dataOMDb.Title;
             MovieDetails.infoYear.Text = dataOMDb.Year;
@@ -685,12 +687,12 @@ namespace WebPlex
             MovieDetails.FanartURL = dataOMDb.FanartURL;
             MovieDetails.TrailerURL = dataOMDb.TrailerURL;
 
-            if (dataOMDb.Poster != "") { MovieDetails.imgPoster.Image = Utilities.ChangeOpacity(Utilities.LoadPicture(dataOMDb.Poster), 1); }
-            if (dataOMDb.FanartURL != "") { MovieDetails.BackgroundImage = Utilities.ChangeOpacity(Utilities.LoadPicture(dataOMDb.FanartURL), 0.2F); }
+            if (dataOMDb.Poster != "") { MovieDetails.imgPoster.Image = Utilities.SetAlpha(Utilities.LoadPicture(dataOMDb.Poster), 255); }
+            if (dataOMDb.FanartURL != "") { MovieDetails.BackgroundImage = Utilities.SetAlpha(Utilities.LoadPicture(dataOMDb.FanartURL), 50); }
 
             foreach (var movieLink in dataOMDb.Streams)
             {
-                MovieDetails.AddStream(movieLink, false, MovieDetails.panelFiles);
+                MovieDetails.AddStream(movieLink, false, MovieDetails.panelStreams);
             }
 
 
@@ -983,7 +985,7 @@ namespace WebPlex
         {
             imgSpinner.Visible = true;
 
-            ctrlFileDetails fileDetails = new ctrlFileDetails();
+            FileDetails fileDetails = new FileDetails();
             fileDetails.infoFileName.Text = Name;
             fileDetails.infoName.Text = Name;
             fileDetails.infoSize.Text = Size;

@@ -1,6 +1,6 @@
 ﻿namespace WebPlex.CControls
 {
-    partial class ctrlMovieDetails
+    partial class MovieDetails
     {
         /// <summary> 
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ctrlMovieDetails));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MovieDetails));
             CButtonLib.cBlendItems cBlendItems1 = new CButtonLib.cBlendItems();
             this.infoYear = new System.Windows.Forms.Label();
             this.infoGenre = new System.Windows.Forms.Label();
@@ -52,12 +52,9 @@
             this.panelTitleFiles = new System.Windows.Forms.Panel();
             this.imgSearchForMore = new System.Windows.Forms.PictureBox();
             this.lblSearchForMore = new System.Windows.Forms.Label();
-            this.imgAddToBookmarks = new System.Windows.Forms.PictureBox();
-            this.infoFileHost = new System.Windows.Forms.Label();
-            this.infoFileName = new System.Windows.Forms.Label();
             this.lblHeaderDirectFiles = new System.Windows.Forms.Label();
             this.lineSplitter = new CButtonLib.CButton();
-            this.panelFiles = new System.Windows.Forms.FlowLayoutPanel();
+            this.panelStreams = new System.Windows.Forms.FlowLayoutPanel();
             this.btnWatchTrailer = new CButtonLib.CButton();
             this.imgPoster = new System.Windows.Forms.PictureBox();
             this.appClose = new System.Windows.Forms.PictureBox();
@@ -66,7 +63,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.imgIMDb)).BeginInit();
             this.panelTitleFiles.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgSearchForMore)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgAddToBookmarks)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgPoster)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.appClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgPosterBG)).BeginInit();
@@ -149,7 +145,7 @@
             this.panelDetails.Controls.Add(this.lblSubCast);
             this.panelDetails.Controls.Add(this.infoCast);
             this.panelDetails.Controls.Add(this.panelTitleFiles);
-            this.panelDetails.Controls.Add(this.panelFiles);
+            this.panelDetails.Controls.Add(this.panelStreams);
             this.panelDetails.Name = "panelDetails";
             // 
             // infoSplitter0
@@ -198,9 +194,6 @@
             this.panelTitleFiles.BackColor = System.Drawing.Color.Transparent;
             this.panelTitleFiles.Controls.Add(this.imgSearchForMore);
             this.panelTitleFiles.Controls.Add(this.lblSearchForMore);
-            this.panelTitleFiles.Controls.Add(this.imgAddToBookmarks);
-            this.panelTitleFiles.Controls.Add(this.infoFileHost);
-            this.panelTitleFiles.Controls.Add(this.infoFileName);
             this.panelTitleFiles.Controls.Add(this.lblHeaderDirectFiles);
             this.panelTitleFiles.Controls.Add(this.lineSplitter);
             this.panelDetails.SetFlowBreak(this.panelTitleFiles, true);
@@ -223,35 +216,12 @@
             this.lblSearchForMore.Name = "lblSearchForMore";
             this.lblSearchForMore.Click += new System.EventHandler(this.imgSearchForMore_Click);
             // 
-            // imgAddToBookmarks
-            // 
-            resources.ApplyResources(this.imgAddToBookmarks, "imgAddToBookmarks");
-            this.imgAddToBookmarks.BackColor = System.Drawing.Color.Transparent;
-            this.imgAddToBookmarks.Cursor = System.Windows.Forms.Cursors.Default;
-            this.imgAddToBookmarks.Image = global::WebPlex.Properties.Resources.bookmark;
-            this.imgAddToBookmarks.Name = "imgAddToBookmarks";
-            this.imgAddToBookmarks.TabStop = false;
-            // 
-            // infoFileHost
-            // 
-            resources.ApplyResources(this.infoFileHost, "infoFileHost");
-            this.infoFileHost.AutoEllipsis = true;
-            this.infoFileHost.Cursor = System.Windows.Forms.Cursors.Default;
-            this.infoFileHost.Name = "infoFileHost";
-            // 
-            // infoFileName
-            // 
-            resources.ApplyResources(this.infoFileName, "infoFileName");
-            this.infoFileName.AutoEllipsis = true;
-            this.infoFileName.Cursor = System.Windows.Forms.Cursors.Default;
-            this.infoFileName.Name = "infoFileName";
-            // 
             // lblHeaderDirectFiles
             // 
             resources.ApplyResources(this.lblHeaderDirectFiles, "lblHeaderDirectFiles");
             this.lblHeaderDirectFiles.BackColor = System.Drawing.Color.Transparent;
             this.lblHeaderDirectFiles.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lblHeaderDirectFiles.ForeColor = System.Drawing.Color.LightGray;
+            this.lblHeaderDirectFiles.ForeColor = System.Drawing.Color.White;
             this.lblHeaderDirectFiles.Name = "lblHeaderDirectFiles";
             // 
             // lineSplitter
@@ -276,12 +246,12 @@
             this.lineSplitter.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.lineSplitter.TextShadowShow = false;
             // 
-            // panelFiles
+            // panelStreams
             // 
-            resources.ApplyResources(this.panelFiles, "panelFiles");
-            this.panelFiles.BackColor = System.Drawing.Color.Transparent;
-            this.panelDetails.SetFlowBreak(this.panelFiles, true);
-            this.panelFiles.Name = "panelFiles";
+            resources.ApplyResources(this.panelStreams, "panelStreams");
+            this.panelStreams.BackColor = System.Drawing.Color.Transparent;
+            this.panelDetails.SetFlowBreak(this.panelStreams, true);
+            this.panelStreams.Name = "panelStreams";
             // 
             // btnWatchTrailer
             // 
@@ -340,7 +310,7 @@
             this.imgPosterBG.Name = "imgPosterBG";
             this.imgPosterBG.TabStop = false;
             // 
-            // ctrlMovieDetails
+            // MovieDetails
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -353,7 +323,7 @@
             this.Controls.Add(this.imgPosterBG);
             this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.Color.White;
-            this.Name = "ctrlMovieDetails";
+            this.Name = "MovieDetails";
             this.Load += new System.EventHandler(this.ctrlMovieDetails_Load);
             this.SizeChanged += new System.EventHandler(this.ctrlDetails_SizeChanged);
             this.panelDetails.ResumeLayout(false);
@@ -362,7 +332,6 @@
             this.panelTitleFiles.ResumeLayout(false);
             this.panelTitleFiles.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgSearchForMore)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgAddToBookmarks)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgPoster)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.appClose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgPosterBG)).EndInit();
@@ -396,10 +365,7 @@
         internal System.Windows.Forms.Panel panelTitleFiles;
         internal System.Windows.Forms.Label lblHeaderDirectFiles;
         public CButtonLib.CButton lineSplitter;
-        public System.Windows.Forms.FlowLayoutPanel panelFiles;
-        public System.Windows.Forms.Label infoFileHost;
-        public System.Windows.Forms.Label infoFileName;
-        private System.Windows.Forms.PictureBox imgAddToBookmarks;
+        public System.Windows.Forms.FlowLayoutPanel panelStreams;
         public CButtonLib.CButton btnWatchTrailer;
         private System.Windows.Forms.PictureBox imgSearchForMore;
         internal System.Windows.Forms.Label lblSearchForMore;

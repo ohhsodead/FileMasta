@@ -4,9 +4,9 @@ using System.Windows.Forms;
 
 namespace WebPlex.CControls
 {
-    public partial class ctrlSplashScreen : UserControl
+    public partial class SplashScreen : UserControl
     {
-        public ctrlSplashScreen()
+        public SplashScreen()
         {
             InitializeComponent();
         }
@@ -18,7 +18,7 @@ namespace WebPlex.CControls
 
         private void lblLoadingStuckRestart_Click(object sender, System.EventArgs e)
         {
-            if (Directory.Exists(Main.pathData)) { Directory.Delete(Main.pathData, true); } Application.Restart();
+            if (Directory.Exists(MainForm.pathData)) { Directory.Delete(MainForm.pathData, true); } Application.Restart();
         }
     }
 }

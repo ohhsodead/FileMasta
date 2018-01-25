@@ -89,17 +89,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="UserControls\ctrlFileDetails.cs">
+    <Compile Include="UserControls\FileDetails.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\ctrlFileDetails.Designer.cs">
-      <DependentUpon>ctrlFileDetails.cs</DependentUpon>
+    <Compile Include="UserControls\FileDetails.Designer.cs">
+      <DependentUpon>FileDetails.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\ctrlStatus.cs">
+    <Compile Include="UserControls\ErrorInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\ctrlStatus.Designer.cs">
-      <DependentUpon>ctrlStatus.cs</DependentUpon>
+    <Compile Include="UserControls\ErrorInfo.Designer.cs">
+      <DependentUpon>ErrorInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\DatabaseInfo.cs" />
     <Compile Include="Dialogs\DataDialog.cs">
@@ -121,29 +121,29 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Utilities\BackGroundWorker.cs" />
-    <Compile Include="UserControls\ctrlMovieDetails.cs">
+    <Compile Include="UserControls\MovieDetails.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\ctrlMovieDetails.Designer.cs">
-      <DependentUpon>ctrlMovieDetails.cs</DependentUpon>
+    <Compile Include="UserControls\MovieDetails.Designer.cs">
+      <DependentUpon>MovieDetails.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\ctrlMoviePoster.cs">
+    <Compile Include="UserControls\MoviePoster.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\ctrlMoviePoster.Designer.cs">
-      <DependentUpon>ctrlMoviePoster.cs</DependentUpon>
+    <Compile Include="UserControls\MoviePoster.Designer.cs">
+      <DependentUpon>MoviePoster.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\ctrlSplashScreen.cs">
+    <Compile Include="UserControls\SplashScreen.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\ctrlSplashScreen.Designer.cs">
-      <DependentUpon>ctrlSplashScreen.cs</DependentUpon>
+    <Compile Include="UserControls\SplashScreen.Designer.cs">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\ctrlStreamInfo.cs">
+    <Compile Include="UserControls\StreamInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\ctrlStreamInfo.Designer.cs">
-      <DependentUpon>ctrlStreamInfo.cs</DependentUpon>
+    <Compile Include="UserControls\StreamInfo.Designer.cs">
+      <DependentUpon>StreamInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\WebFile.cs" />
     <Compile Include="MainForm.cs">
@@ -185,53 +185,53 @@
     <Compile Include="Utilities\regexFileName.cs" />
     <Compile Include="Utilities\TextLineRemover.cs" />
     <Compile Include="Utilities\Utilities.cs" />
-    <EmbeddedResource Include="UserControls\ctrlMovieDetails.cs.resx">
-      <DependentUpon>ctrlMovieDetails.cs</DependentUpon>
+    <EmbeddedResource Include="UserControls\MovieDetails.cs.resx">
+      <DependentUpon>MovieDetails.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\ctrlMovieDetails.de.resx">
-      <DependentUpon>ctrlMovieDetails.cs</DependentUpon>
+    <EmbeddedResource Include="UserControls\MovieDetails.de.resx">
+      <DependentUpon>MovieDetails.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\ctrlMovieDetails.es.resx">
-      <DependentUpon>ctrlMovieDetails.cs</DependentUpon>
+    <EmbeddedResource Include="UserControls\MovieDetails.es.resx">
+      <DependentUpon>MovieDetails.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\ctrlMovieDetails.fr.resx">
-      <DependentUpon>ctrlMovieDetails.cs</DependentUpon>
+    <EmbeddedResource Include="UserControls\MovieDetails.fr.resx">
+      <DependentUpon>MovieDetails.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\ctrlMovieDetails.resx">
-      <DependentUpon>ctrlMovieDetails.cs</DependentUpon>
+    <EmbeddedResource Include="UserControls\MovieDetails.resx">
+      <DependentUpon>MovieDetails.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\ctrlFileDetails.resx">
-      <DependentUpon>ctrlFileDetails.cs</DependentUpon>
+    <EmbeddedResource Include="UserControls\FileDetails.resx">
+      <DependentUpon>FileDetails.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\ctrlMoviePoster.resx">
-      <DependentUpon>ctrlMoviePoster.cs</DependentUpon>
+    <EmbeddedResource Include="UserControls\MoviePoster.resx">
+      <DependentUpon>MoviePoster.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\ctrlSplashScreen.cs.resx">
-      <DependentUpon>ctrlSplashScreen.cs</DependentUpon>
+    <EmbeddedResource Include="UserControls\SplashScreen.cs.resx">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\ctrlSplashScreen.de.resx">
-      <DependentUpon>ctrlSplashScreen.cs</DependentUpon>
+    <EmbeddedResource Include="UserControls\SplashScreen.de.resx">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\ctrlSplashScreen.es.resx">
-      <DependentUpon>ctrlSplashScreen.cs</DependentUpon>
+    <EmbeddedResource Include="UserControls\SplashScreen.es.resx">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\ctrlSplashScreen.fr.resx">
-      <DependentUpon>ctrlSplashScreen.cs</DependentUpon>
+    <EmbeddedResource Include="UserControls\SplashScreen.fr.resx">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\ctrlSplashScreen.resx">
-      <DependentUpon>ctrlSplashScreen.cs</DependentUpon>
+    <EmbeddedResource Include="UserControls\SplashScreen.resx">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\ctrlStatus.resx">
-      <DependentUpon>ctrlStatus.cs</DependentUpon>
+    <EmbeddedResource Include="UserControls\ErrorInfo.resx">
+      <DependentUpon>ErrorInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\ctrlStreamInfo.cs.resx">
-      <DependentUpon>ctrlStreamInfo.cs</DependentUpon>
+    <EmbeddedResource Include="UserControls\StreamInfo.cs.resx">
+      <DependentUpon>StreamInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\ctrlStreamInfo.fr.resx">
-      <DependentUpon>ctrlStreamInfo.cs</DependentUpon>
+    <EmbeddedResource Include="UserControls\StreamInfo.fr.resx">
+      <DependentUpon>StreamInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\ctrlStreamInfo.resx">
-      <DependentUpon>ctrlStreamInfo.cs</DependentUpon>
+    <EmbeddedResource Include="UserControls\StreamInfo.resx">
+      <DependentUpon>StreamInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\DataDialog.resx">
       <DependentUpon>DataDialog.cs</DependentUpon>

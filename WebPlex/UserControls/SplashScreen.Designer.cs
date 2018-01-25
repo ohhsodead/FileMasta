@@ -1,6 +1,6 @@
 ﻿namespace WebPlex.CControls
 {
-    partial class ctrlSplashScreen
+    partial class SplashScreen
     {
         /// <summary> 
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ctrlSplashScreen));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SplashScreen));
             this.lblLoadingText = new System.Windows.Forms.Label();
             this.imgLogo = new System.Windows.Forms.PictureBox();
             this.lblLoadingStuckRestart = new System.Windows.Forms.Label();
@@ -65,7 +65,7 @@
             this.timerCount.Interval = 30000;
             this.timerCount.Tick += new System.EventHandler(this.timerCount_Tick);
             // 
-            // ctrlSplashScreen
+            // SplashScreen
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -75,7 +75,7 @@
             this.Controls.Add(this.lblLoadingText);
             this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.Color.White;
-            this.Name = "ctrlSplashScreen";
+            this.Name = "SplashScreen";
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).EndInit();
             this.ResumeLayout(false);
 

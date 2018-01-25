@@ -6,15 +6,14 @@ using System.Windows.Forms;
 
 namespace WebPlex.CControls
 {
-    public partial class ctrlStreamInfo : UserControl
+    public partial class StreamInfo : UserControl
     {
-        public ctrlStreamInfo()
+        public StreamInfo()
         {
             InitializeComponent();
         }
 
         public bool isLocal;
-        public bool isTorrent;
         public string infoFileURL;
         public string infoFileSubtitles;
 
@@ -24,26 +23,17 @@ namespace WebPlex.CControls
         {
             BackColor = Color.Transparent;
 
-            VLCToolStripMenuItem.Visible = File.Exists(Main.pathVLC);
-            MPCToolStripMenuItem.Visible = File.Exists(Main.pathMPCCodec64) || File.Exists(Main.pathMPC64) || File.Exists(Main.pathMPC86);
+            VLCToolStripMenuItem.Visible = File.Exists(MainForm.pathVLC);
+            MPCToolStripMenuItem.Visible = File.Exists(MainForm.pathMPCCodec64) || File.Exists(MainForm.pathMPC64) || File.Exists(MainForm.pathMPC86);
 
-            if (Properties.Settings.Default.dataBookmarks.Contains(infoFileURL)) { imgAddToBookmarks.Image = Properties.Resources.bookmark_remove; } else { imgAddToBookmarks.Image = Properties.Resources.bookmark_plus; }
-
-            if (isTorrent == true)
-            {
-                imgReportBroken.Visible = false;
-                imgWatch.Visible = false;
-                imgMagnet.Visible = true;
-            }
-            else if (isLocal == true)
-            { infoAge.Text = Main.rm.GetString("local"); imgDownload.Visible = false; imgReportBroken.Visible = false; imgCopyURL.Visible = false; }
+            if (isLocal == true) { infoAge.Text = MainForm.rm.GetString("local"); imgDownload.Visible = false; imgReportBroken.Visible = false; imgCopyURL.Visible = false; }
 
             // Checks for exact file name of a subtitle file that matches the one being loaded (e.g. Media File Name: 'Jigsaw.2017.mp4' > Subtitle File Name: 'Jigsaw.2017.srt' will be loaded)
             if (infoFileSubtitles == null)
             {
                 if (Utilities.isExistingSubtitlesFile(infoFileURL) == true)
                 {
-                    infoFileSubtitles = Main.userDownloadsDirectory + Path.GetFileNameWithoutExtension(infoFileURL) + ".srt";
+                    infoFileSubtitles = MainForm.userDownloadsDirectory + Path.GetFileNameWithoutExtension(infoFileURL) + ".srt";
                 }
             }
 
@@ -66,7 +56,7 @@ namespace WebPlex.CControls
         {
             // Open source file in VLC with subtitles
             Process VLC = new Process();
-            VLC.StartInfo.FileName = Main.pathVLC;
+            VLC.StartInfo.FileName = MainForm.pathVLC;
             VLC.StartInfo.Arguments = ("-vvv " + infoFileURL + " --sub-file=" + infoFileSubtitles);
             VLC.Start();
         }
@@ -74,30 +64,27 @@ namespace WebPlex.CControls
         private void MPCToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Process MPC = new Process();
-            if (File.Exists(Main.pathMPCCodec64))
-                MPC.StartInfo.FileName = Main.pathMPCCodec64;
-            else if (File.Exists(Main.pathMPC64))
-                MPC.StartInfo.FileName = Main.pathMPC64;
+            if (File.Exists(MainForm.pathMPCCodec64))
+                MPC.StartInfo.FileName = MainForm.pathMPCCodec64;
+            else if (File.Exists(MainForm.pathMPC64))
+                MPC.StartInfo.FileName = MainForm.pathMPC64;
             else
-                MPC.StartInfo.FileName = Main.pathMPC86;
+                MPC.StartInfo.FileName = MainForm.pathMPC86;
             MPC.StartInfo.Arguments = (infoFileURL);
             MPC.Start();
         }
 
         private void imgAddToBookmarks_Click(object sender, EventArgs e)
         {
-            if (!isTorrent)
+            if (!Utilities.isSaved(Utilities.fileToJson(infoFileURL, infoName.Text, Path.GetExtension(infoName.Text).Replace(".", "").ToUpper(), infoAge.Text)))
             {
-                if (!Utilities.isSaved(Utilities.fileToJson(infoFileURL, infoName.Text, Path.GetExtension(infoName.Text).Replace(".", "").ToUpper(), infoAge.Text)))
-                {
-                    Utilities.saveFile(Utilities.fileToJson(infoFileURL, infoName.Text, Path.GetExtension(infoName.Text).Replace(".", "").ToUpper(), infoAge.Text));
-                    imgAddToBookmarks.Image = Properties.Resources.bookmark_remove;
-                }
-                else
-                {
-                    Utilities.unsaveFile(Utilities.fileToJson(infoFileURL, infoName.Text, Path.GetExtension(infoName.Text).Replace(".", "").ToUpper(), infoAge.Text));
-                    imgAddToBookmarks.Image = Properties.Resources.bookmark_plus;
-                }
+                Utilities.saveFile(Utilities.fileToJson(infoFileURL, infoName.Text, Path.GetExtension(infoName.Text).Replace(".", "").ToUpper(), infoAge.Text));
+                imgAddToBookmarks.Image = Properties.Resources.bookmark_remove;
+            }
+            else
+            {
+                Utilities.unsaveFile(Utilities.fileToJson(infoFileURL, infoName.Text, Path.GetExtension(infoName.Text).Replace(".", "").ToUpper(), infoAge.Text));
+                imgAddToBookmarks.Image = Properties.Resources.bookmark_plus;
             }
         }
 

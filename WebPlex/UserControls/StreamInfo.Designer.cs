@@ -1,6 +1,6 @@
 ﻿namespace WebPlex.CControls
 {
-    partial class ctrlStreamInfo
+    partial class StreamInfo
     {
         /// <summary> 
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ctrlStreamInfo));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StreamInfo));
             this.infoAge = new System.Windows.Forms.Label();
             this.infoName = new System.Windows.Forms.Label();
             this.contextFileName = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -41,18 +41,17 @@
             this.imgCopyURL = new System.Windows.Forms.PictureBox();
             this.imgReportBroken = new System.Windows.Forms.PictureBox();
             this.imgWatch = new System.Windows.Forms.PictureBox();
-            this.imgMagnet = new System.Windows.Forms.PictureBox();
             this.imgDownload = new System.Windows.Forms.PictureBox();
             this.imgAddToBookmarks = new System.Windows.Forms.PictureBox();
             this.panelControls = new System.Windows.Forms.FlowLayoutPanel();
             this.infoSize = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.splitter0 = new System.Windows.Forms.Label();
+            this.cButton1 = new CButtonLib.CButton();
             this.contextFileName.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgCopyURL)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgReportBroken)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgWatch)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgMagnet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgDownload)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgAddToBookmarks)).BeginInit();
             this.panelControls.SuspendLayout();
@@ -141,16 +140,6 @@
             this.toolTip1.SetToolTip(this.imgWatch, resources.GetString("imgWatch.ToolTip"));
             this.imgWatch.Click += new System.EventHandler(this.imgWatch_Click);
             // 
-            // imgMagnet
-            // 
-            resources.ApplyResources(this.imgMagnet, "imgMagnet");
-            this.imgMagnet.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgMagnet.Image = global::WebPlex.Properties.Resources.magnet;
-            this.imgMagnet.Name = "imgMagnet";
-            this.imgMagnet.TabStop = false;
-            this.toolTip1.SetToolTip(this.imgMagnet, resources.GetString("imgMagnet.ToolTip"));
-            this.imgMagnet.Click += new System.EventHandler(this.imgMagnet_Click);
-            // 
             // imgDownload
             // 
             resources.ApplyResources(this.imgDownload, "imgDownload");
@@ -178,7 +167,6 @@
             this.panelControls.Controls.Add(this.imgCopyURL);
             this.panelControls.Controls.Add(this.imgWatch);
             this.panelControls.Controls.Add(this.imgDownload);
-            this.panelControls.Controls.Add(this.imgMagnet);
             this.panelControls.Name = "panelControls";
             // 
             // infoSize
@@ -194,6 +182,7 @@
             this.flowLayoutPanel1.Controls.Add(this.infoAge);
             this.flowLayoutPanel1.Controls.Add(this.splitter0);
             this.flowLayoutPanel1.Controls.Add(this.infoSize);
+            this.flowLayoutPanel1.Controls.Add(this.cButton1);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             // 
             // splitter0
@@ -201,10 +190,17 @@
             resources.ApplyResources(this.splitter0, "splitter0");
             this.splitter0.AutoEllipsis = true;
             this.splitter0.Cursor = System.Windows.Forms.Cursors.Default;
-            this.splitter0.ForeColor = System.Drawing.Color.Silver;
+            this.splitter0.ForeColor = System.Drawing.Color.DarkGray;
             this.splitter0.Name = "splitter0";
             // 
-            // ctrlStreamInfo
+            // cButton1
+            // 
+            this.cButton1.DesignerSelected = true;
+            this.cButton1.ImageIndex = 0;
+            resources.ApplyResources(this.cButton1, "cButton1");
+            this.cButton1.Name = "cButton1";
+            // 
+            // StreamInfo
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -215,13 +211,12 @@
             this.Controls.Add(this.flowLayoutPanel1);
             this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.Color.White;
-            this.Name = "ctrlStreamInfo";
+            this.Name = "StreamInfo";
             this.Load += new System.EventHandler(this.ctrlStreamInfo_Load);
             this.contextFileName.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.imgCopyURL)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgReportBroken)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgWatch)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgMagnet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgDownload)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgAddToBookmarks)).EndInit();
             this.panelControls.ResumeLayout(false);
@@ -247,9 +242,9 @@
         public System.Windows.Forms.PictureBox imgWatch;
         public System.Windows.Forms.PictureBox imgReportBroken;
         public System.Windows.Forms.PictureBox imgCopyURL;
-        public System.Windows.Forms.PictureBox imgMagnet;
         public System.Windows.Forms.Label infoSize;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         public System.Windows.Forms.Label splitter0;
+        private CButtonLib.CButton cButton1;
     }
 }

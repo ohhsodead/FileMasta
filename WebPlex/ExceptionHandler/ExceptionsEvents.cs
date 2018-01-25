@@ -1,5 +1,5 @@
 ﻿/*************************************************************************/
-/*  ExceptionsEvents.cs                                                  */
+/*  ExceptionEvents.cs                                                  */
 /*************************************************************************/
 /*                       This file is part of:                           */
 /*                              WebPlex                                  */
@@ -35,7 +35,7 @@ using System.Windows.Forms;
 
 namespace WebPlex.ExceptionHandler
 {
-    public static class ExceptionsEvents
+    public static class ExceptionEvents
     {
         public static Task<StackFrame> RunLoop(StackTrace ST)
         {
@@ -66,7 +66,7 @@ namespace WebPlex.ExceptionHandler
 
             if (MessageBox.Show("An error has occurred. Would you like to report this issue on GitHub?", "Error", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                Process.Start("https://github.com/invu/webplex/issues/new?title=" + "[Error] " + e.Exception.Message + "&body=" +
+                Process.Start("https://github.com/invu/webplex/issues/new?title=" + "[Exception] " + e.Exception.Message + "&body=" +
                 "Version: " + Application.ProductVersion +
                 "%0AFile Name: " + Path.GetFileName(fileName) +
                 "%0AMethod Name: " + methodName +
@@ -91,7 +91,7 @@ namespace WebPlex.ExceptionHandler
 
             if (MessageBox.Show("An error has occurred. Would you like to report this issue on GitHub?", "Error", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                Process.Start("https://github.com/invu/webplex/issues/new?title=" + "[Error] " + ((Exception)e.ExceptionObject).Message + "&body=" +
+                Process.Start("https://github.com/invu/webplex/issues/new?title=" + "[Exception] " + ((Exception)e.ExceptionObject).Message + "&body=" +
                 "Version: " + Application.ProductVersion +
                 "%0AFile Name: " + Path.GetFileName(fileName) +
                 "%0AMethod Name: " + methodName +

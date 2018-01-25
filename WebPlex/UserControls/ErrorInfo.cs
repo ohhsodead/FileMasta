@@ -2,9 +2,9 @@
 
 namespace WebPlex.CControls
 {
-    public partial class ctrlStatus : UserControl
+    public partial class ErrorInfo : UserControl
     {
-        public ctrlStatus()
+        public ErrorInfo()
         {
             InitializeComponent();
         }

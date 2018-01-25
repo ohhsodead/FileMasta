@@ -7,27 +7,28 @@ using System.IO;
 
 namespace WebPlex.CControls
 {
-    public partial class ctrlMovieDetails : UserControl
+    public partial class MovieDetails : UserControl
     {
-        public ctrlMovieDetails()
+        public MovieDetails()
         {
             InitializeComponent();
 
-            panelFiles.Size = new Size(panelDetails.Size.Width, panelFiles.Size.Height);
+            panelStreams.Size = new Size(panelDetails.Size.Width, panelStreams.Size.Height);
         }
 
-        public string ImdbId { get; set; }
-        public string PosterURL { get; set; }
-        public string FanartURL { get; set; }
-        public string TrailerURL { get; set; }
+        public string ImdbId = "";
+        public string PosterURL = "";
+        public string FanartURL = "";
+        public string TrailerURL = "";
 
         private void ctrlMovieDetails_Load(object sender, EventArgs e)
         {
             if (TrailerURL == "") { btnWatchTrailer.Visible = false; }
-            imgPoster.Image = Utilities.ChangeOpacity(Properties.Resources.poster_default, 1); panelTitleFiles.Size = new Size(panelDetails.Size.Width, panelTitleFiles.Size.Height);
-            panelFiles.Size = new Size(panelDetails.Size.Width, panelFiles.Size.Height);
+            if (PosterURL == "") { imgPoster.Image = Utilities.SetAlpha (Properties.Resources.poster_default, 255); }
+            panelTitleFiles.Size = new Size(panelDetails.Size.Width, panelTitleFiles.Size.Height);
+            panelStreams.Size = new Size(panelDetails.Size.Width, panelStreams.Size.Height);
 
-            foreach (Control ctrl in panelFiles.Controls)
+            foreach (Control ctrl in panelStreams.Controls)
             {
                 ctrl.Size = new Size(panelDetails.Size.Width - 3, ctrl.Size.Height);
             }
@@ -35,7 +36,7 @@ namespace WebPlex.CControls
 
         private void appClose_Click(object sender, EventArgs e)
         {
-            Main.form.tab.SelectedTab = Main.form.currentTab;
+            MainForm.form.tab.SelectedTab = MainForm.form.currentTab;
             Parent.Controls.Clear();
         }
 
@@ -46,11 +47,11 @@ namespace WebPlex.CControls
 
         private void ctrlDetails_SizeChanged(object sender, EventArgs e)
         {
-            panelFiles.Size = new Size(panelDetails.Size.Width, panelFiles.Size.Height);
+            panelStreams.Size = new Size(panelDetails.Size.Width, panelStreams.Size.Height);
 
-            foreach (Control ctrl in panelFiles.Controls)
+            foreach (Control ctrl in panelStreams.Controls)
             {
-                ctrl.Size = new Size(panelFiles.Size.Width - 5, ctrl.Size.Height);
+                ctrl.Size = new Size(panelStreams.Size.Width - 5, ctrl.Size.Height);
             }
         }
 
@@ -63,22 +64,22 @@ namespace WebPlex.CControls
         {
             string noSymbolsTitle = Regex.Replace(infoTitle.Text, "[^A-Za-z0-9 _]", " ");
             string ifYearExists = ""; if (infoYear.Text != "Year") { ifYearExists = " " + infoYear.Text; }
-            Main.form.txtSearchFiles.Text = noSymbolsTitle + ifYearExists;
-            Main.form.showFiles(Main.selectedFiles);
-            Main.form.tab.SelectedTab = Main.form.tabFiles;
+            MainForm.form.txtSearchFiles.Text = noSymbolsTitle + ifYearExists;
+            MainForm.form.showFiles(MainForm.selectedFiles);
+            MainForm.form.tab.SelectedTab = MainForm.form.tabFiles;
             Parent.Controls.Clear();
         }
 
         public void AddStream(Models.Stream stream, bool local, Panel toPanel)
         {
-            ctrlStreamInfo ctrlInfo = new ctrlStreamInfo
+            StreamInfo ctrlInfo = new StreamInfo
             {
                 infoFileURL = stream.URL,
             };
 
             if (stream.Size != "-") { ctrlInfo.infoSize.Text = Utilities.bytesToString(Convert.ToInt32(stream.Size)); } else { ctrlInfo.infoSize.Text = stream.Size; }
             if (stream.DateUploaded != "-") { ctrlInfo.infoAge.Text = Utilities.getTimeAgo(Convert.ToDateTime(stream.DateUploaded)); } else { ctrlInfo.infoAge.Text = stream.DateUploaded; }
-            ctrlInfo.infoSize.Text = stream.Size;
+            ctrlInfo.infoName.Text = stream.Name;
             toPanel.Controls.Add(ctrlInfo);
         }
     }

@@ -1,6 +1,6 @@
 ﻿namespace WebPlex.CControls
 {
-    partial class ctrlFileDetails
+    partial class FileDetails
     {
         /// <summary> 
         /// Required designer variable.
@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             CButtonLib.cBlendItems cBlendItems1 = new CButtonLib.cBlendItems();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ctrlFileDetails));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FileDetails));
             CButtonLib.cBlendItems cBlendItems2 = new CButtonLib.cBlendItems();
             CButtonLib.cBlendItems cBlendItems3 = new CButtonLib.cBlendItems();
             CButtonLib.cBlendItems cBlendItems4 = new CButtonLib.cBlendItems();
@@ -502,7 +502,7 @@
             this.btnReportFile.Corners.UpperLeft = 2;
             this.btnReportFile.Corners.UpperRight = 2;
             this.btnReportFile.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnReportFile.DesignerSelected = true;
+            this.btnReportFile.DesignerSelected = false;
             this.btnReportFile.DimFactorClick = 0;
             this.btnReportFile.DimFactorHover = 0;
             this.btnReportFile.FillType = CButtonLib.CButton.eFillType.Solid;
@@ -564,8 +564,9 @@
             this.btnRequestFileSize.Corners.UpperLeft = 2;
             this.btnRequestFileSize.Corners.UpperRight = 2;
             this.btnRequestFileSize.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRequestFileSize.DesignerSelected = false;
-            this.btnRequestFileSize.DimFactorHover = -18;
+            this.btnRequestFileSize.DesignerSelected = true;
+            this.btnRequestFileSize.DimFactorClick = 0;
+            this.btnRequestFileSize.DimFactorHover = 0;
             this.btnRequestFileSize.FillType = CButtonLib.CButton.eFillType.Solid;
             this.btnRequestFileSize.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
             this.btnRequestFileSize.ImageIndex = 0;
@@ -809,7 +810,8 @@
             this.btnPlayMedia.Corners.UpperRight = 2;
             this.btnPlayMedia.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPlayMedia.DesignerSelected = false;
-            this.btnPlayMedia.DimFactorHover = -18;
+            this.btnPlayMedia.DimFactorClick = 0;
+            this.btnPlayMedia.DimFactorHover = 0;
             this.btnPlayMedia.FillType = CButtonLib.CButton.eFillType.Solid;
             this.btnPlayMedia.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.btnPlayMedia.Image = global::WebPlex.Properties.Resources.play_circle;
@@ -925,7 +927,7 @@
             this.appClose.TabStop = false;
             this.appClose.Click += new System.EventHandler(this.appClose_Click);
             // 
-            // ctrlFileDetails
+            // FileDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -963,7 +965,7 @@
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.ForeColor = System.Drawing.Color.White;
-            this.Name = "ctrlFileDetails";
+            this.Name = "FileDetails";
             this.Size = new System.Drawing.Size(967, 565);
             this.Load += new System.EventHandler(this.ctrlFileDetails_Load);
             this.panelReportFile.ResumeLayout(false);
