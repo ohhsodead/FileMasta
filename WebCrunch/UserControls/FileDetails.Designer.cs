@@ -529,8 +529,6 @@ namespace UserControls
             this.btnReportFile.TextShadowShow = false;
             this.toolTip1.SetToolTip(this.btnReportFile, "Report File");
             this.btnReportFile.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnReportFile_ClickButtonArea);
-            this.btnReportFile.MouseEnter += new System.EventHandler(MainForm.form.btnCButton_MouseEnter);
-            this.btnReportFile.MouseLeave += new System.EventHandler(MainForm.form.btnCButton_MouseLeave);
             // 
             // cmboboxReportFile
             // 
@@ -587,8 +585,6 @@ namespace UserControls
             this.btnRequestFileSize.TextShadowShow = false;
             this.btnRequestFileSize.Visible = false;
             this.btnRequestFileSize.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnRequestFileSize_ClickButtonArea);
-            this.btnRequestFileSize.MouseEnter += new System.EventHandler(MainForm.form.btnCButton_MouseEnter);
-            this.btnRequestFileSize.MouseLeave += new System.EventHandler(MainForm.form.btnCButton_MouseLeave);
             // 
             // btnShareFile
             // 
@@ -636,8 +632,6 @@ namespace UserControls
             this.btnShareFile.TextShadowShow = false;
             this.toolTip1.SetToolTip(this.btnShareFile, "Report File");
             this.btnShareFile.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnShareFile_ClickButtonArea);
-            this.btnShareFile.MouseEnter += new System.EventHandler(MainForm.form.btnCButton_MouseEnter);
-            this.btnShareFile.MouseLeave += new System.EventHandler(MainForm.form.btnCButton_MouseLeave);
             // 
             // btnSaveFile
             // 
@@ -658,7 +652,7 @@ namespace UserControls
             this.btnSaveFile.Corners.UpperLeft = 2;
             this.btnSaveFile.Corners.UpperRight = 2;
             this.btnSaveFile.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSaveFile.DesignerSelected = true;
+            this.btnSaveFile.DesignerSelected = false;
             this.btnSaveFile.DimFactorClick = 0;
             this.btnSaveFile.DimFactorHover = 0;
             this.btnSaveFile.FillType = CButtonLib.CButton.eFillType.Solid;
@@ -679,8 +673,6 @@ namespace UserControls
             this.btnSaveFile.TextShadowShow = false;
             this.toolTip1.SetToolTip(this.btnSaveFile, "Save File");
             this.btnSaveFile.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnSaveFile_ClickButtonArea);
-            this.btnSaveFile.MouseEnter += new System.EventHandler(MainForm.form.btnCButton_MouseEnter);
-            this.btnSaveFile.MouseLeave += new System.EventHandler(MainForm.form.btnCButton_MouseLeave);
             // 
             // btnViewDirectory
             // 
@@ -722,8 +714,6 @@ namespace UserControls
             this.btnViewDirectory.TextShadowShow = false;
             this.toolTip1.SetToolTip(this.btnViewDirectory, "View Directory");
             this.btnViewDirectory.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnViewDirectory_ClickButtonArea);
-            this.btnViewDirectory.MouseEnter += new System.EventHandler(MainForm.form.btnCButton_MouseEnter);
-            this.btnViewDirectory.MouseLeave += new System.EventHandler(MainForm.form.btnCButton_MouseLeave);
             // 
             // contextFileName
             // 
@@ -841,8 +831,6 @@ namespace UserControls
             this.btnPlayMedia.TextShadowShow = false;
             this.btnPlayMedia.Visible = false;
             this.btnPlayMedia.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnPlayMedia_ClickButtonArea);
-            this.btnPlayMedia.MouseEnter += new System.EventHandler(MainForm.form.btnCButton_MouseEnter);
-            this.btnPlayMedia.MouseLeave += new System.EventHandler(MainForm.form.btnCButton_MouseLeave);
             // 
             // btnCopyURL
             // 
@@ -883,8 +871,6 @@ namespace UserControls
             this.btnCopyURL.TextShadow = System.Drawing.Color.Empty;
             this.btnCopyURL.TextShadowShow = false;
             this.btnCopyURL.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnCopyURL_ClickButtonArea);
-            this.btnCopyURL.MouseEnter += new System.EventHandler(MainForm.form.btnCButton_MouseEnter);
-            this.btnCopyURL.MouseLeave += new System.EventHandler(MainForm.form.btnCButton_MouseLeave);
             // 
             // btnDirectLink
             // 
@@ -926,8 +912,6 @@ namespace UserControls
             this.btnDirectLink.TextShadow = System.Drawing.Color.Empty;
             this.btnDirectLink.TextShadowShow = false;
             this.btnDirectLink.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnDirectLink_ClickButtonArea);
-            this.btnDirectLink.MouseEnter += new System.EventHandler(MainForm.form.btnCButton_MouseEnter);
-            this.btnDirectLink.MouseLeave += new System.EventHandler(MainForm.form.btnCButton_MouseLeave);
             // 
             // appClose
             // 

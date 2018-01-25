@@ -1,8 +1,8 @@
 ﻿/*************************************************************************/
-/*  ExceptionEvents.cs                                                  */
+/*  ExceptionEvents.cs                                                   */
 /*************************************************************************/
 /*                       This file is part of:                           */
-/*                              WebPlex                                  */
+/*                             WebCrunch                                 */
 /*************************************************************************/
 /* Copyright (c) 2017-2017 Badr Azizi.                                   */
 /*                                                                       */
@@ -66,7 +66,12 @@ namespace ExceptionHandler
 
             if (MessageBox.Show("An error has occurred. Would you like to report this issue on GitHub?", "Error", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                Process.Start("https://github.com/invu/webplex/issues/new?title=" + "[Exception] " + e.Exception.Message + "&body=" +
+                Process.Start("https://github.com/invu/WebCrunch/issues/new?title=" + "[Exception] " + e.Exception.Message + "&body=" +
+                "*Please explain the problem, be clear and not vague.*%0A" +
+                "**Expected behavior: **%0A" +
+                "**Actual behavior: **%0A" +
+                "**Steps to reproduce the behavior: **%0A" +
+                "%0A ----------------------- %0A" +
                 "Version: " + Application.ProductVersion +
                 "%0AFile Name: " + Path.GetFileName(fileName) +
                 "%0AMethod Name: " + methodName +
@@ -91,7 +96,12 @@ namespace ExceptionHandler
 
             if (MessageBox.Show("An error has occurred. Would you like to report this issue on GitHub?", "Error", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                Process.Start("https://github.com/invu/webplex/issues/new?title=" + "[Exception] " + ((Exception)e.ExceptionObject).Message + "&body=" +
+                Process.Start("https://github.com/invu/WebCrunch/issues/new?title=" + "[Exception] " + ((Exception)e.ExceptionObject).Message + "&body=" +
+                "*Please explain the problem, be clear and not vague.*%0A" +
+                "**Expected behavior: **%0A" +
+                "**Actual behavior: **%0A" +
+                "**Steps to reproduce the behavior: **%0A" +
+                "%0A ----------------------- %0A" +
                 "Version: " + Application.ProductVersion +
                 "%0AFile Name: " + Path.GetFileName(fileName) +
                 "%0AMethod Name: " + methodName +
