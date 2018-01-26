@@ -66,7 +66,7 @@ namespace WebCrunch
 
         // Database Files
         public static string linkOpenFiles = "https://dl.dropbox.com/s/ucyeqfn96x7n9lh/open-files.json?dl=0";
-        public static string linkOpenDirectories = "https://raw.githubusercontent.com/invu/WebCrunch/master/api/open-directories.txt";
+        public static string linkOpenDirectories = "https://raw.githubusercontent.com/ekkash/WebCrunch/master/api/open-directories.txt";
         public static string linkTopSearches = "https://dl.dropbox.com/s/9y0smo8g95g0ty4/top-searches.txt?dl=0";
 
         // Data/Downloads Directories
@@ -78,12 +78,12 @@ namespace WebCrunch
         public static string linkLatestVersion = "https://dl.dropbox.com/s/wizu59t0tuk7p71/latest-version.txt?dl=0";
         public static string pathInstallerFileName = "WebCrunch.Installer.Windows.exe";
         public static string pathDownloadInstaller = userDownloadsDirectory + pathInstallerFileName;
-        public static string getLatestInstaller(Version newVersion) { return "https://github.com/invu/WebCrunch/releases/download/" + newVersion.ToString() + "/" + pathInstallerFileName; }
+        public static string getLatestInstaller(Version newVersion) { return "https://github.com/ekkash/WebCrunch/releases/download/" + newVersion.ToString() + "/" + pathInstallerFileName; }
 
         // Misc
-        public static string linkChangelog = "https://raw.githubusercontent.com/invu/WebCrunch/master/CHANGELOG.md";
-        public static string linkTermsOfUse = "https://raw.githubusercontent.com/invu/WebCrunch/master/TERMSOFUSE.md";
-        public static string linkPrivacyPolicy = "https://raw.githubusercontent.com/invu/WebCrunch/master/PRIVACYPOLICY.md";
+        public static string linkChangelog = "https://raw.githubusercontent.com/ekkash/WebCrunch/master/CHANGELOG.md";
+        public static string linkTermsOfUse = "https://raw.githubusercontent.com/ekkash/WebCrunch/master/TERMSOFUSE.md";
+        public static string linkPrivacyPolicy = "https://raw.githubusercontent.com/ekkash/WebCrunch/master/PRIVACYPOLICY.md";
 
         WebClient client = new WebClient(); // public reusable web client
 
@@ -92,12 +92,12 @@ namespace WebCrunch
 
         private void imgShareTwitter_Click(object sender, EventArgs e)
         {
-            Process.Start("https://twitter.com/intent/tweet?hashtags=WebCrunch&original_referer=https%3A%2F%2Fgithub.com/invu/WebCrunch%2F&ref_src=twsrc%5Etfw&text=" + textMessage + "&tw_p=tweetbutton&url=https%3A%2F%2Fgithub.com/invu/WebCrunch");
+            Process.Start("https://twitter.com/intent/tweet?hashtags=WebCrunch&original_referer=https%3A%2F%2Fgithub.com/ekkash/WebCrunch%2F&ref_src=twsrc%5Etfw&text=" + textMessage + "&tw_p=tweetbutton&url=https%3A%2F%2Fgithub.com/ekkash/WebCrunch");
         }
 
         private void imgShareFacebook_Click(object sender, EventArgs e)
         {
-            Process.Start("https://facebook.com/sharer/sharer.php?app_id=248335808680372&kid_directed_site=0&sdk=joey&u=http%3A%2F%2Fgithub.com/invu/WebCrunch%2F&display=popup&ref=plugin&src=share_button");
+            Process.Start("https://facebook.com/sharer/sharer.php?app_id=248335808680372&kid_directed_site=0&sdk=joey&u=http%3A%2F%2Fgithub.com/ekkash/WebCrunch%2F&display=popup&ref=plugin&src=share_button");
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -1040,7 +1040,7 @@ namespace WebCrunch
         // About tab
         private void lblAboutReportIssue_Click(object sender, EventArgs e)
         {
-            Process.Start("https://github.com/invu/WebCrunch/issues/new");
+            Process.Start("https://github.com/ekkash/WebCrunch/issues/new");
         }
 
         private void btnAboutTermsOfUse_Click(object sender, EventArgs e)

@@ -407,7 +407,7 @@
             this.bgSearchFilesHome.Corners.UpperLeft = 2;
             this.bgSearchFilesHome.Corners.UpperRight = 2;
             this.bgSearchFilesHome.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bgSearchFilesHome.DesignerSelected = false;
+            this.bgSearchFilesHome.DesignerSelected = true;
             this.bgSearchFilesHome.DimFactorClick = 0;
             this.bgSearchFilesHome.DimFactorHover = 0;
             this.bgSearchFilesHome.FillType = CButtonLib.CButton.eFillType.Solid;

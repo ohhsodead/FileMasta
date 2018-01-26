@@ -23,7 +23,7 @@ namespace Utilities
             {
                 URL = Url,
                 Host = Host,
-                Title = Path.GetFileNameWithoutExtension(new Uri(Url).LocalPath),
+                Name = Path.GetFileNameWithoutExtension(new Uri(Url).LocalPath),
                 Type = Type,
                 Size = 0,
                 DateUploaded = default(DateTime)
@@ -87,7 +87,7 @@ namespace Utilities
         // Submit link (open directory/indexer)
         public static void submitLink(string webUrl)
         {
-            Process.Start("https://github.com/invu/WebCrunch/issues/new?title=" + "[Indexer Request] " + new Uri(webUrl).Host + "&body=" +
+            Process.Start("https://github.com/ekkash/WebCrunch/issues/new?title=" + "[Indexer Request] " + new Uri(webUrl).Host + "&body=" +
                 "Website: " + new Uri(webUrl).AbsoluteUri + "%0A" +
                 "----------------------- %0A" +
                 "*Please include some information about this site e.g. What is the type of site? What's the content?*");
@@ -96,7 +96,7 @@ namespace Utilities
         // Report Broken File issue
         public static void openBrokenFileIssue(string webFile)
         {
-            Process.Start("https://github.com/invu/WebCrunch/issues/new?title=" + "[Broken File] " + Path.GetFileName(webFile) + "&body=" +
+            Process.Start("https://github.com/ekkash/WebCrunch/issues/new?title=" + "[Broken File] " + Path.GetFileName(webFile) + "&body=" +
                 "Host: " + new Uri(webFile).Host.Replace("www.", "") + "%0A" +
                 "Name: " + Path.GetFileName(webFile) + "%0A" +
                 "URL: " + new Uri(webFile).AbsoluteUri + "%0A" +
@@ -107,7 +107,7 @@ namespace Utilities
         // Poor Quality File issue
         public static void openPoorQualityFileIssue(string webFile)
         {
-            Process.Start("https://github.com/invu/WebCrunch/issues/new?title=" + "[Poor Quality File] " + Path.GetFileName(webFile) + "&body=" +
+            Process.Start("https://github.com/ekkash/WebCrunch/issues/new?title=" + "[Poor Quality File] " + Path.GetFileName(webFile) + "&body=" +
                 "Host: " + new Uri(webFile).Host.Replace("www.", "") + "%0A" +
                 "Name: " + Path.GetFileName(webFile) + "%0A" +
                 "URL: " + new Uri(webFile).AbsoluteUri + "%0A" +
