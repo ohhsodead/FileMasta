@@ -25,8 +25,8 @@ namespace Utilities
                 Host = Host,
                 Title = Path.GetFileNameWithoutExtension(new Uri(Url).LocalPath),
                 Type = Type,
-                Size = "-",
-                DateAdded = "-"
+                Size = 0,
+                DateUploaded = default(DateTime)
             };
 
             return JsonConvert.SerializeObject(a);
@@ -141,7 +141,7 @@ namespace Utilities
             catch { return true; }
         }
 
-        public static string getLastModifiedTime(string webUrl)
+        public static DateTime getFileLastModified(string webUrl)
         {
             try
             {
@@ -153,12 +153,31 @@ namespace Utilities
                     DateTime fileModifiedTime = fileResponse.LastModified;
                     if (fileModifiedTime != null)
                     {
-                        return fileModifiedTime.ToString();
+                        return fileModifiedTime;
                     }
-                    else { return "n/a"; }
+                    else { return default(DateTime); ; }
                 }
             }
-            catch { return "n/a"; }
+            catch { return default(DateTime); }
+        }
+
+        public static int getFileSize(string webUrl)
+        {
+            try
+            {
+                WebRequest req = WebRequest.Create(webUrl);
+                req.Method = "HEAD";
+                req.Timeout = 7000;
+                using (HttpWebResponse fileResponse = (HttpWebResponse)req.GetResponse())
+                {
+                    if (int.TryParse(fileResponse.Headers.Get("Content-Length"), out int ContentLength))
+                    {
+                        return ContentLength;
+                    }
+                    else { return 0; }
+                }
+            }
+            catch { return 0; }
         }
 
         public static bool isFileSizeIdentical(string fileSize, string fileURL)
