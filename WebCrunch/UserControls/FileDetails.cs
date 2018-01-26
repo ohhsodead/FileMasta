@@ -33,24 +33,19 @@ namespace UserControls
             VLCToolStripMenuItem.Visible = File.Exists(MainForm.pathVLC);
             MPCToolStripMenuItem.Visible = File.Exists(MainForm.pathMPCCodec64) || File.Exists(MainForm.pathMPC64) || File.Exists(MainForm.pathMPC86);
 
-            if (videoFileTypes.Contains(infoType.Text.ToUpper()) || audioFileTypes.Contains(infoType.Text.ToUpper())) { btnPlayMedia.Visible = true; }
+            if (videoFileTypes.Contains(infoType.Text.ToUpper()) || audioFileTypes.Contains(infoType.Text.ToUpper())) { btnPlayMedia.Visible = true; } // Shows 'Play Media' button if is valid file extension
 
-            if (infoAge.Text == "-")
+            if (infoSize.Text == "0 Bytes") { btnRequestFileSize.Visible = true; } // Checks if file size isn't default
+
+            if (infoFileSubtitles == null) // Add subtitle file to be played when opening external VLC
             {
-                try { infoAge.Text = UtilityTools.getTimeAgo(Convert.ToDateTime(UtilityTools.getLastModifiedTime(infoFileURL.Text))); } catch { infoAge.Text = "-"; }  
-            }
-
-            if (infoSize.Text == "-") { btnRequestFileSize.Visible = true; }
-
-            if (infoFileSubtitles == null)
-            {
-                if (UtilityTools.isExistingSubtitlesFile(infoFileURL.Text) == true)
+                if (UtilityTools.isExistingSubtitlesFile(infoFileURL.Text) == true) // If downloads folder contains file matching web file name
                 {
                     infoFileSubtitles = MainForm.userDownloadsDirectory + Path.GetFileNameWithoutExtension(infoFileURL.Text) + ".srt";
                 }
             }
 
-            if (UtilityTools.isSaved(UtilityTools.fileToJson(infoFileURL.Text, infoName.Text, infoType.Text, infoReferrer.Text)))
+            if (UtilityTools.isSaved(UtilityTools.fileToJson(infoFileURL.Text, infoName.Text, infoType.Text, infoReferrer.Text))) // If user has this file saved
             {
                 btnSaveFile.Image = WebCrunch.Properties.Resources.bookmark_remove;
             }
@@ -75,7 +70,7 @@ namespace UserControls
         {
             Clipboard.SetText(infoFileURL.Text);
             btnCopyURL.SideImage = WebCrunch.Properties.Resources.clipboard_check;
-            btnCopyURL.SideImageSize = new Size(22, 22);
+            btnCopyURL.SideImageSize = new Size(24, 24);
         }
 
         private void btnReportFile_ClickButtonArea(object Sender, MouseEventArgs e)
@@ -112,7 +107,7 @@ namespace UserControls
             }
             else if (cmboBoxShareFile.SelectedIndex == 1)
             {
-                Process.Start("https://twitter.com/home?status=Check%20out%20this%20file%20I%20found%20on%20%40WebPlex%20" + infoFileURL.Text);
+                Process.Start("https://twitter.com/home?status=Check%20out%20this%20file%20I%20found%20on%20%40WebCrunch%20" + infoFileURL.Text);
             }
             else if (cmboBoxShareFile.SelectedIndex == 2)
             {
@@ -120,11 +115,11 @@ namespace UserControls
             }
             else if (cmboBoxShareFile.SelectedIndex == 3)
             {
-                Process.Start("http://reddit.com/submit?url=" + infoFileURL.Text + "&title=" + Path.GetFileNameWithoutExtension(new Uri(infoFileURL.Text).LocalPath) + "%20%5BWebPlex%5D");
+                Process.Start("http://reddit.com/submit?url=" + infoFileURL.Text + "&title=" + Path.GetFileNameWithoutExtension(new Uri(infoFileURL.Text).LocalPath) + "%20%5BWebCrunch%5D");
             }
             else if (cmboBoxShareFile.SelectedIndex == 4)
             {
-                Process.Start("mailto:?&body=Check%20out%20this%20awesome%20file%20I%20found%20on%20WebPlex%20-%20" + infoFileURL.Text);
+                Process.Start("mailto:?&body=Check%20out%20this%20awesome%20file%20I%20found%20on%20WebCrunch%20-%20" + infoFileURL.Text);
             }
         }
 
@@ -176,19 +171,7 @@ namespace UserControls
             try
             {
                 btnRequestFileSize.Visible = false;
-
-                WebRequest req = WebRequest.Create(infoFileURL.Text);
-                req.Method = "HEAD";
-                req.Timeout = 7000;
-                using (HttpWebResponse fileResponse = (HttpWebResponse)req.GetResponse())
-                {
-                    int ContentLength;
-                    if (int.TryParse(fileResponse.Headers.Get("Content-Length"), out ContentLength))
-                    {
-                        infoSize.Text = UtilityTools.bytesToString(ContentLength);
-                    }
-                    else { infoSize.Text = "Error"; }
-                }
+                infoSize.Text = UtilityTools.bytesToString(UtilityTools.getFileSize(infoFileURL.Text));
             }
             catch { infoSize.Text = "Error"; }
         }
