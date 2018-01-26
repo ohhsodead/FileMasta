@@ -93,12 +93,6 @@ You don't need a special program but it is very recommended. For example if you 
 ### Home
 ![Home](https://github.com/invu/WebCrunch/blob/master/Screenshots/Home.png?raw=true)
 
-### Movies
-![Movies](https://github.com/invu/WebCrunch/blob/master/Screenshots/Movies.png?raw=true)
-
-### Movie Details
-![Movie Details](https://github.com/invu/WebCrunch/blob/master/Screenshots/Movie%20Details.png?raw=true)
-
 ### Files
 ![Files](https://github.com/invu/WebCrunch/blob/master/Screenshots/Files.png?raw=true)
 
