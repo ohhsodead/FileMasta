@@ -413,7 +413,7 @@ namespace WebCrunch
                     if (UtilityTools.isValidJSON(jsonData))
                     {
                         var dataJsonFile = JsonConvert.DeserializeObject<Models.WebFile>(jsonData);
-                        if (dataJsonFile.Size >= 0) { totalSize += Convert.ToInt32(dataJsonFile.Size); }
+                        if (dataJsonFile.Size >= 0) { totalSize += dataJsonFile.Size; }
                     }
                 }
 
@@ -459,7 +459,7 @@ namespace WebCrunch
                     Text = "Powered by FileChef",
                     Font = new Font(btnHomeFileType.Font.Name, 9, FontStyle.Regular),
                     BackColor = Color.Transparent,
-                    ForeColor = Color.Silver,
+                    ForeColor = Color.White,
                     Margin = new Padding(0, 8, 0, 3),
                     Cursor = Cursors.Hand,
                     Name = "btnFileChef",
@@ -590,9 +590,9 @@ namespace WebCrunch
                 {
                     URL = pathFile,
                     Host = rm.GetString("local"),
-                    Title = Path.GetFileNameWithoutExtension(pathFile),
+                    Name = Path.GetFileNameWithoutExtension(pathFile),
                     Type = Path.GetExtension(pathFile).Replace(".", "").ToUpper(),
-                    Size = Convert.ToInt32(new FileInfo(pathFile).Length),
+                    Size = new FileInfo(pathFile).Length,
                     DateUploaded = File.GetCreationTime(pathFile)
             };
 
@@ -797,7 +797,7 @@ namespace WebCrunch
                         if (UtilityTools.isValidJSON(jsonData))
                         {
                             var dataJson = JsonConvert.DeserializeObject<Models.WebFile>(jsonData);
-                            dataGridFiles.Rows.Add(dataJson.Type, dataJson.Title, UtilityTools.bytesToString(dataJson.Size), UtilityTools.getTimeAgo(dataJson.DateUploaded), dataJson.Host, dataJson.URL);
+                            dataGridFiles.Rows.Add(dataJson.Type, dataJson.Name, UtilityTools.bytesToString(dataJson.Size), UtilityTools.getTimeAgo(dataJson.DateUploaded), dataJson.Host, dataJson.URL);
 
                             if (!(cmboBoxFilesHost.Items.Contains(dataJson.Host))) { cmboBoxFilesHost.Items.Add(dataJson.Host); }
                         }
@@ -825,7 +825,7 @@ namespace WebCrunch
                 {
                     var dataJson = JsonConvert.DeserializeObject<Models.WebFile>(file);
 
-                    if (UtilityTools.ContainsAll(dataJson.Title.ToLower(), UtilityTools.GetWords(txtSearchFiles.Text.ToLower())) && selectedFilesFileType.Contains(dataJson.Type) && dataJson.Host.Contains(selectedFilesHost))
+                    if (UtilityTools.ContainsAll(dataJson.Name.ToLower(), UtilityTools.GetWords(txtSearchFiles.Text.ToLower())) && selectedFilesFileType.Contains(dataJson.Type) && dataJson.Host.Contains(selectedFilesHost))
                     {
                         urls.Add(JsonConvert.SerializeObject(dataJson));
                     }
