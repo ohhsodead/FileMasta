@@ -148,6 +148,7 @@
             this.titleFiles = new CButtonLib.CButton();
             this.titleHome = new CButtonLib.CButton();
             this.imgSpinner = new System.Windows.Forms.PictureBox();
+            this.imgLogo = new System.Windows.Forms.PictureBox();
             this.tab.SuspendLayout();
             this.tabHome.SuspendLayout();
             this.panelHomeEngine.SuspendLayout();
@@ -169,6 +170,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.imgShareFacebook)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgShareTwitter)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgSpinner)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // tab
@@ -190,6 +192,7 @@
             // 
             this.tabHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             resources.ApplyResources(this.tabHome, "tabHome");
+            this.tabHome.Controls.Add(this.imgLogo);
             this.tabHome.Controls.Add(this.lblHomeStatsDatabaseUpdated);
             this.tabHome.Controls.Add(this.lblHomeStatsFiles);
             this.tabHome.Controls.Add(this.panelHomeEngine);
@@ -421,7 +424,9 @@
             this.txtSearchFilesHome.WaterMarkActiveForeColor = System.Drawing.Color.White;
             this.txtSearchFilesHome.WaterMarkFont = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
             this.txtSearchFilesHome.WaterMarkForeColor = System.Drawing.Color.DarkGray;
+            this.txtSearchFilesHome.Enter += new System.EventHandler(this.txtSearch_Enter);
             this.txtSearchFilesHome.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearchFilesHome_KeyDown);
+            this.txtSearchFilesHome.Leave += new System.EventHandler(this.txtSearch_Leave);
             // 
             // bgSearchFilesHome
             // 
@@ -614,7 +619,9 @@
             this.txtSearchFiles.WaterMarkActiveForeColor = System.Drawing.Color.White;
             this.txtSearchFiles.WaterMarkFont = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
             this.txtSearchFiles.WaterMarkForeColor = System.Drawing.Color.DarkGray;
+            this.txtSearchFiles.Enter += new System.EventHandler(this.txtSearch_Enter);
             this.txtSearchFiles.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearchFiles_KeyDown);
+            this.txtSearchFiles.Leave += new System.EventHandler(this.txtSearch_Leave);
             // 
             // dataGridFiles
             // 
@@ -655,14 +662,14 @@
             dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 10.25F);
             dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(37)))), ((int)(((byte)(43)))));
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(69)))), ((int)(((byte)(78)))));
             dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
             this.dataGridFiles.RowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridFiles.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.dataGridFiles.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.dataGridFiles.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Silver;
             this.dataGridFiles.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.dataGridFiles.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(37)))), ((int)(((byte)(43)))));
+            this.dataGridFiles.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(69)))), ((int)(((byte)(78)))));
             this.dataGridFiles.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.White;
             this.dataGridFiles.RowTemplate.Height = 30;
             this.dataGridFiles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -1079,14 +1086,14 @@
             dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 10.25F);
             dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(37)))), ((int)(((byte)(43)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(69)))), ((int)(((byte)(78)))));
             dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
             this.dataGridDiscover.RowsDefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridDiscover.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.dataGridDiscover.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 10.25F);
             this.dataGridDiscover.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Silver;
             this.dataGridDiscover.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.dataGridDiscover.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(37)))), ((int)(((byte)(43)))));
+            this.dataGridDiscover.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(69)))), ((int)(((byte)(78)))));
             this.dataGridDiscover.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.White;
             this.dataGridDiscover.RowTemplate.Height = 30;
             this.dataGridDiscover.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -1199,6 +1206,8 @@
             this.txtSubmitLink.WaterMarkActiveForeColor = System.Drawing.Color.White;
             this.txtSubmitLink.WaterMarkFont = new System.Drawing.Font("Segoe UI", 9.75F);
             this.txtSubmitLink.WaterMarkForeColor = System.Drawing.Color.DarkGray;
+            this.txtSubmitLink.Enter += new System.EventHandler(this.txtSearch_Enter);
+            this.txtSubmitLink.Leave += new System.EventHandler(this.txtSearch_Leave);
             // 
             // bgSubmitLink
             // 
@@ -1492,6 +1501,8 @@
             this.imgShareFacebook.Name = "imgShareFacebook";
             this.imgShareFacebook.TabStop = false;
             this.imgShareFacebook.Click += new System.EventHandler(this.imgShareFacebook_Click);
+            this.imgShareFacebook.MouseEnter += new System.EventHandler(this.image_MouseEnter);
+            this.imgShareFacebook.MouseLeave += new System.EventHandler(this.image_MouseLeave);
             // 
             // imgShareTwitter
             // 
@@ -1501,6 +1512,8 @@
             this.imgShareTwitter.Name = "imgShareTwitter";
             this.imgShareTwitter.TabStop = false;
             this.imgShareTwitter.Click += new System.EventHandler(this.imgShareTwitter_Click);
+            this.imgShareTwitter.MouseEnter += new System.EventHandler(this.image_MouseEnter);
+            this.imgShareTwitter.MouseLeave += new System.EventHandler(this.image_MouseLeave);
             // 
             // titleInformation
             // 
@@ -1532,6 +1545,8 @@
             this.titleInformation.TextMargin = new System.Windows.Forms.Padding(0);
             this.titleInformation.TextShadowShow = false;
             this.titleInformation.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.titleInformation_ClickButtonArea);
+            this.titleInformation.MouseEnter += new System.EventHandler(this.titleCButton_MouseEnter);
+            this.titleInformation.MouseLeave += new System.EventHandler(this.titleCButton_MouseLeave);
             // 
             // titleSubmit
             // 
@@ -1563,6 +1578,8 @@
             this.titleSubmit.TextMargin = new System.Windows.Forms.Padding(0);
             this.titleSubmit.TextShadowShow = false;
             this.titleSubmit.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.titleSubmit_ClickButtonArea);
+            this.titleSubmit.MouseEnter += new System.EventHandler(this.titleCButton_MouseEnter);
+            this.titleSubmit.MouseLeave += new System.EventHandler(this.titleCButton_MouseLeave);
             // 
             // titleSettings
             // 
@@ -1594,6 +1611,8 @@
             this.titleSettings.TextMargin = new System.Windows.Forms.Padding(0);
             this.titleSettings.TextShadowShow = false;
             this.titleSettings.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.titleSettings_ClickButtonArea);
+            this.titleSettings.MouseEnter += new System.EventHandler(this.titleCButton_MouseEnter);
+            this.titleSettings.MouseLeave += new System.EventHandler(this.titleCButton_MouseLeave);
             // 
             // titleDiscover
             // 
@@ -1625,6 +1644,8 @@
             this.titleDiscover.TextMargin = new System.Windows.Forms.Padding(0);
             this.titleDiscover.TextShadowShow = false;
             this.titleDiscover.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.titleDiscover_ClickButtonArea);
+            this.titleDiscover.MouseEnter += new System.EventHandler(this.titleCButton_MouseEnter);
+            this.titleDiscover.MouseLeave += new System.EventHandler(this.titleCButton_MouseLeave);
             // 
             // titleFiles
             // 
@@ -1656,6 +1677,8 @@
             this.titleFiles.TextMargin = new System.Windows.Forms.Padding(0);
             this.titleFiles.TextShadowShow = false;
             this.titleFiles.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.titleFiles_ClickButtonArea);
+            this.titleFiles.MouseEnter += new System.EventHandler(this.titleCButton_MouseEnter);
+            this.titleFiles.MouseLeave += new System.EventHandler(this.titleCButton_MouseLeave);
             // 
             // titleHome
             // 
@@ -1687,6 +1710,8 @@
             this.titleHome.TextMargin = new System.Windows.Forms.Padding(0);
             this.titleHome.TextShadowShow = false;
             this.titleHome.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.titleHome_ClickButtonArea);
+            this.titleHome.MouseEnter += new System.EventHandler(this.titleCButton_MouseEnter);
+            this.titleHome.MouseLeave += new System.EventHandler(this.titleCButton_MouseLeave);
             // 
             // imgSpinner
             // 
@@ -1696,6 +1721,14 @@
             this.imgSpinner.Image = global::WebCrunch.Properties.Resources.loading;
             this.imgSpinner.Name = "imgSpinner";
             this.imgSpinner.TabStop = false;
+            // 
+            // imgLogo
+            // 
+            resources.ApplyResources(this.imgLogo, "imgLogo");
+            this.imgLogo.BackColor = System.Drawing.Color.Transparent;
+            this.imgLogo.Image = global::WebCrunch.Properties.Resources.logo;
+            this.imgLogo.Name = "imgLogo";
+            this.imgLogo.TabStop = false;
             // 
             // MainForm
             // 
@@ -1743,6 +1776,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.imgShareFacebook)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgShareTwitter)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgSpinner)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1841,6 +1875,7 @@
         private System.Windows.Forms.PictureBox imgShareTwitter;
         internal System.Windows.Forms.Label lblShareUsOn;
         private System.Windows.Forms.PictureBox imgShareFacebook;
+        private System.Windows.Forms.PictureBox imgLogo;
     }
 }
 

@@ -387,11 +387,12 @@ namespace UserControls
             this.infoFileURL.Corners.UpperLeft = 2;
             this.infoFileURL.Corners.UpperRight = 2;
             this.infoFileURL.Cursor = System.Windows.Forms.Cursors.Default;
-            this.infoFileURL.DesignerSelected = false;
+            this.infoFileURL.DesignerSelected = true;
             this.infoFileURL.DimFactorClick = 0;
             this.infoFileURL.DimFactorHover = 0;
-            this.infoFileURL.Enabled = false;
             this.infoFileURL.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.infoFileURL.FocalPoints.CenterPtX = 0F;
+            this.infoFileURL.FocalPoints.CenterPtY = 0F;
             this.infoFileURL.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
             this.infoFileURL.ImageIndex = 0;
             this.infoFileURL.Location = new System.Drawing.Point(20, 373);

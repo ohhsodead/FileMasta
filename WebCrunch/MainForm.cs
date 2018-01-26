@@ -13,6 +13,8 @@ using System.Resources;
 using System.Reflection;
 using System.Text;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Schema;
+using Newtonsoft.Json.Linq;
 using CButtonLib;
 using UserControls;
 using Utilities;
@@ -113,6 +115,7 @@ namespace WebCrunch
             loadSettings();
 
             currentTab = tabHome;
+            currentTabTitle = titleHome;
 
             Directory.CreateDirectory(pathRoot);
             Directory.CreateDirectory(pathData);
@@ -150,7 +153,7 @@ namespace WebCrunch
             //
             if (UtilityTools.doUpdateFile(linkOpenFiles, "open-files.json"))
             {
-                client.DownloadFile(new Uri(linkOpenFiles), pathData + "open-files.json");
+                //client.DownloadFile(new Uri(linkOpenFiles), pathData + "open-files.json");
             }
 
             databaseInfo = File.ReadLines(pathData + "open-files.json").First();
@@ -183,6 +186,33 @@ namespace WebCrunch
             Controls.Remove(frmSplash);
         }
 
+        // Focus effect for Title Button
+        public void titleCButton_MouseEnter(object sender, EventArgs e)
+        {
+            CButton ctrl = sender as CButton;
+            ctrl.BackColor = Color.FromArgb(58, 69, 78);
+            ctrl.BorderColor = Color.FromArgb(58, 69, 78);
+            ctrl.ColorFillSolid = Color.FromArgb(58, 69, 78);
+        }
+
+        public void titleCButton_MouseLeave(object sender, EventArgs e)
+        {
+            CButton ctrl = sender as CButton;
+
+            if (currentTabTitle == ctrl)
+            {
+                ctrl.BackColor = selectedTitleRGB;
+                ctrl.BorderColor = selectedTitleRGB;
+                ctrl.ColorFillSolid = selectedTitleRGB;
+            }
+            else
+            {
+                ctrl.BackColor = Color.Transparent;
+                ctrl.BorderColor = Color.Transparent;
+                ctrl.ColorFillSolid = Color.Transparent;
+            }
+        }
+
         // Focus effect for Button
         public void btnCButton_MouseEnter(object sender, EventArgs e)
         {
@@ -199,16 +229,64 @@ namespace WebCrunch
         }
 
         // Focus effect for Text Box
-        public void txtSearch_MouseEnter(object sender, EventArgs e)
+        public void txtSearch_Enter(object sender, EventArgs e)
         {
-            CButton ctrl = sender as CButton;
-            ctrl.BorderColor = Color.FromArgb(58, 69, 78);
+            TextBox ctrl = sender as TextBox;
+            ctrl.BackColor = Color.FromArgb(58, 69, 78);
+
+            if (ctrl == txtSearchFiles)
+            {
+                bgSearchFiles.BorderColor = Color.FromArgb(58, 69, 78);
+                bgSearchFiles.ColorFillSolid = Color.FromArgb(58, 69, 78);
+            }
+            else if (ctrl == txtSearchFilesHome)
+            {
+                bgSearchFilesHome.BorderColor = Color.FromArgb(58, 69, 78);
+                bgSearchFilesHome.ColorFillSolid = Color.FromArgb(58, 69, 78);
+            }
+            else if (ctrl == txtSubmitLink)
+            {
+                bgSubmitLink.BorderColor = Color.FromArgb(58, 69, 78);
+                bgSubmitLink.ColorFillSolid = Color.FromArgb(58, 69, 78);
+            }
         }
 
-        public void txtSearch_MouseLeave(object sender, EventArgs e)
+        public void txtSearch_Leave(object sender, EventArgs e)
         {
-            CButton ctrl = sender as CButton;
-            ctrl.BorderColor = Color.FromArgb(51, 60, 67);
+            TextBox ctrl = sender as TextBox;
+            ctrl.BackColor = Color.FromArgb(51, 60, 67);
+
+            if (ctrl == txtSearchFiles)
+            {
+                bgSearchFiles.BorderColor = Color.FromArgb(51, 60, 67);
+                bgSearchFiles.ColorFillSolid = Color.FromArgb(51, 60, 67);
+            }
+            else if (ctrl == txtSearchFilesHome)
+            {
+                bgSearchFilesHome.BorderColor = Color.FromArgb(51, 60, 67);
+                bgSearchFilesHome.ColorFillSolid = Color.FromArgb(51, 60, 67);
+            }
+            else if (ctrl == txtSubmitLink)
+            {
+                bgSubmitLink.BorderColor = Color.FromArgb(51, 60, 67);
+                bgSubmitLink.ColorFillSolid = Color.FromArgb(51, 60, 67);
+            }
+        }
+
+        // Focus effect for Text Box
+        Bitmap tmpImage = null;
+
+        public void image_MouseEnter(object sender, EventArgs e)
+        {
+            PictureBox ctrl = sender as PictureBox;
+            tmpImage = (Bitmap)ctrl.Image;
+            ctrl.Image = UtilityTools.SetAlpha((Bitmap)ctrl.Image, 100);
+        }
+
+        public void image_MouseLeave(object sender, EventArgs e)
+        {
+            PictureBox ctrl = sender as PictureBox;
+            ctrl.Image = UtilityTools.SetAlpha(tmpImage, 255);
         }
 
         // Data, Movies, Files... and everything else
@@ -221,35 +299,36 @@ namespace WebCrunch
 
         // Core Tabs
         public TabPage currentTab;
+        public CButton currentTabTitle;
 
         private void titleHome_ClickButtonArea(object sender, MouseEventArgs e)
         {
-            tab.SelectedTab = tabHome;
+            currentTabTitle = (CButton)sender; tab.SelectedTab = tabHome;
         }
         
         private void titleFiles_ClickButtonArea(object sender, MouseEventArgs e)
         {
-            tab.SelectedTab = tabFiles;
+            currentTabTitle = (CButton)sender; tab.SelectedTab = tabFiles;
         }
 
         private void titleDiscover_ClickButtonArea(object sender, MouseEventArgs e)
         {
-            showHosts(); tab.SelectedTab = tabDiscover;
+            currentTabTitle = (CButton)sender; showHosts(); tab.SelectedTab = tabDiscover;
         }
 
         private void titleSubmit_ClickButtonArea(object sender, MouseEventArgs e)
         {
-            tab.SelectedTab = tabSubmit;
+            currentTabTitle = (CButton)sender; tab.SelectedTab = tabSubmit;
         }
 
         private void titleSettings_ClickButtonArea(object sender, MouseEventArgs e)
         {
-            loadSettings(); tab.SelectedTab = tabSettings;
+            loadSettings(); currentTabTitle = (CButton)sender; tab.SelectedTab = tabSettings;
         }
 
         private void titleInformation_ClickButtonArea(object sender, MouseEventArgs e)
         {
-            tab.SelectedTab = tabInformation;
+            currentTabTitle = (CButton)sender; tab.SelectedTab = tabInformation;
         }
 
         private void tab_SelectedIndexChanged(object sender, EventArgs e)
@@ -292,33 +371,34 @@ namespace WebCrunch
             }
         }
 
-        public void selectTabTitle(CButtonLib.CButton cbtn)
+        Color selectedTitleRGB = Color.FromArgb(51, 60, 67);
+        Color nonSelectedTitleRGB = Color.FromArgb(43, 52, 59);
+
+        public void selectTabTitle(CButton cbtn)
         {
-            Color selectedRGB = Color.FromArgb(51, 60, 67);
-            Color nonSelectedRGB = Color.FromArgb(43, 52, 59);
 
-            titleHome.ColorFillSolid = nonSelectedRGB;
-            titleHome.BorderColor = nonSelectedRGB;
-            titleHome.BackColor = nonSelectedRGB;
-            titleFiles.ColorFillSolid = nonSelectedRGB;
-            titleFiles.BorderColor = nonSelectedRGB;
-            titleFiles.BackColor = nonSelectedRGB;
-            titleDiscover.ColorFillSolid = nonSelectedRGB;
-            titleDiscover.BorderColor = nonSelectedRGB;
-            titleDiscover.BackColor = nonSelectedRGB;
-            titleSubmit.ColorFillSolid = nonSelectedRGB;
-            titleSubmit.BorderColor = nonSelectedRGB;
-            titleSubmit.BackColor = nonSelectedRGB;
-            titleSettings.ColorFillSolid = nonSelectedRGB;
-            titleSettings.BorderColor = nonSelectedRGB;
-            titleSettings.BackColor = nonSelectedRGB;
-            titleInformation.ColorFillSolid = nonSelectedRGB;
-            titleInformation.BorderColor = nonSelectedRGB;
-            titleInformation.BackColor = nonSelectedRGB;
+            titleHome.ColorFillSolid = nonSelectedTitleRGB;
+            titleHome.BorderColor = nonSelectedTitleRGB;
+            titleHome.BackColor = nonSelectedTitleRGB;
+            titleFiles.ColorFillSolid = nonSelectedTitleRGB;
+            titleFiles.BorderColor = nonSelectedTitleRGB;
+            titleFiles.BackColor = nonSelectedTitleRGB;
+            titleDiscover.ColorFillSolid = nonSelectedTitleRGB;
+            titleDiscover.BorderColor = nonSelectedTitleRGB;
+            titleDiscover.BackColor = nonSelectedTitleRGB;
+            titleSubmit.ColorFillSolid = nonSelectedTitleRGB;
+            titleSubmit.BorderColor = nonSelectedTitleRGB;
+            titleSubmit.BackColor = nonSelectedTitleRGB;
+            titleSettings.ColorFillSolid = nonSelectedTitleRGB;
+            titleSettings.BorderColor = nonSelectedTitleRGB;
+            titleSettings.BackColor = nonSelectedTitleRGB;
+            titleInformation.ColorFillSolid = nonSelectedTitleRGB;
+            titleInformation.BorderColor = nonSelectedTitleRGB;
+            titleInformation.BackColor = nonSelectedTitleRGB;
 
-            cbtn.ColorFillSolid = selectedRGB;
-            cbtn.BorderColor = selectedRGB;
-            cbtn.BackColor = selectedRGB;
+            cbtn.ColorFillSolid = selectedTitleRGB;
+            cbtn.BorderColor = selectedTitleRGB;
+            cbtn.BackColor = selectedTitleRGB;
         }
 
         // Home tab
@@ -330,8 +410,11 @@ namespace WebCrunch
             {
                 foreach (string jsonData in dataOpenFiles)
                 {
-                    var dataJsonFile = JsonConvert.DeserializeObject<Models.WebFile>(jsonData);
-                    if (dataJsonFile.Size != "-" && dataJsonFile.Size != "" && dataJsonFile.Size != " ") { totalSize = totalSize + Convert.ToInt64(dataJsonFile.Size); }
+                    if (UtilityTools.isValidJSON(jsonData))
+                    {
+                        var dataJsonFile = JsonConvert.DeserializeObject<Models.WebFile>(jsonData);
+                        if (dataJsonFile.Size != "-" && dataJsonFile.Size != "" && dataJsonFile.Size != "0") { totalSize = totalSize + Convert.ToInt64(dataJsonFile.Size); }
+                    }
                 }
 
                 lblHomeStatsFiles.Text = String.Format(lblHomeStatsFiles.Text, UtilityTools.getFormattedNumber(dataOpenFiles.Count.ToString()), UtilityTools.bytesToString(totalSize), UtilityTools.getFormattedNumber(dataOpenDirectories.Count.ToString()));
@@ -341,8 +424,11 @@ namespace WebCrunch
             try
             {
                 // Database Info
-                var dataJsonInfo = JsonConvert.DeserializeObject<Models.DatabaseInfo>(databaseInfo);
-                lblHomeStatsDatabaseUpdated.Text = String.Format(lblHomeStatsDatabaseUpdated.Text, Convert.ToDateTime(dataJsonInfo.LastUpdated).ToShortDateString());
+                if (UtilityTools.isValidJSON(databaseInfo))
+                {
+                    var dataJsonInfo = JsonConvert.DeserializeObject<Models.DatabaseInfo>(databaseInfo);
+                    if (UtilityTools.isDateTime(dataJsonInfo.LastUpdated)) { lblHomeStatsDatabaseUpdated.Text = String.Format(lblHomeStatsDatabaseUpdated.Text, Convert.ToDateTime(dataJsonInfo.LastUpdated).ToShortDateString()); }
+                }
             }
             catch { lblHomeStatsDatabaseUpdated.Text = "Updated: n/a"; }
         }
@@ -393,7 +479,7 @@ namespace WebCrunch
 
         public void addTopSearchTag(string text, int count)
         {
-            CButtonLib.CButton a = new CButtonLib.CButton
+            CButton a = new CButton
             {
                 Text = text,
                 TextAlign = ContentAlignment.MiddleCenter,
@@ -412,7 +498,7 @@ namespace WebCrunch
                 DimFactorClick = 0,
                 DimFactorHover = 0,
                 Cursor = Cursors.Hand,
-                Name = "tagItem" + count
+                Name = "tagItem" + count,
             };
 
             a.Corners.All = 2;
@@ -421,6 +507,8 @@ namespace WebCrunch
             SizeF mySize = a.CreateGraphics().MeasureString(a.Text, myFont);
             a.Width = (((int)(Math.Round(mySize.Width, 0))) + 10);
             a.ClickButtonArea += btnTopSearchesTag_ClickButtonArea;
+            a.MouseEnter += btnCButton_MouseEnter;
+            a.MouseLeave += btnCButton_MouseLeave;
             panelTopSearches.Controls.Add(a);
         }
 
@@ -618,45 +706,45 @@ namespace WebCrunch
         public void selectFilesTab(CButtonLib.CButton cbtn)
         {
             Color selectedRGB = Color.FromArgb(51, 60, 67);
-            Color nonSelectedRGB = Color.Transparent;
+            Color nonSelectedTitleRGB = Color.Transparent;
             Color selectedForeRGB = Color.White;
             Color nonSelectedForeRGB = Color.Silver;
 
-            titleFilesAll.ColorFillSolid = nonSelectedRGB;
-            titleFilesAll.BorderColor = nonSelectedRGB;
+            titleFilesAll.ColorFillSolid = nonSelectedTitleRGB;
+            titleFilesAll.BorderColor = nonSelectedTitleRGB;
             titleFilesAll.ForeColor = nonSelectedForeRGB;
-            titleFilesVideo.ColorFillSolid = nonSelectedRGB;
-            titleFilesVideo.BorderColor = nonSelectedRGB;
+            titleFilesVideo.ColorFillSolid = nonSelectedTitleRGB;
+            titleFilesVideo.BorderColor = nonSelectedTitleRGB;
             titleFilesVideo.ForeColor = nonSelectedForeRGB;
-            titleFilesAudio.ColorFillSolid = nonSelectedRGB;
-            titleFilesAudio.BorderColor = nonSelectedRGB;
+            titleFilesAudio.ColorFillSolid = nonSelectedTitleRGB;
+            titleFilesAudio.BorderColor = nonSelectedTitleRGB;
             titleFilesAudio.ForeColor = nonSelectedForeRGB;
-            titleFilesEbooks.ColorFillSolid = nonSelectedRGB;
-            titleFilesEbooks.BorderColor = nonSelectedRGB;
+            titleFilesEbooks.ColorFillSolid = nonSelectedTitleRGB;
+            titleFilesEbooks.BorderColor = nonSelectedTitleRGB;
             titleFilesEbooks.ForeColor = nonSelectedForeRGB;
-            titleFilesSubtitles.ColorFillSolid = nonSelectedRGB;
-            titleFilesSubtitles.BorderColor = nonSelectedRGB;
+            titleFilesSubtitles.ColorFillSolid = nonSelectedTitleRGB;
+            titleFilesSubtitles.BorderColor = nonSelectedTitleRGB;
             titleFilesSubtitles.ForeColor = nonSelectedForeRGB;
-            titleFilesTorrents.ColorFillSolid = nonSelectedRGB;
-            titleFilesTorrents.BorderColor = nonSelectedRGB;
+            titleFilesTorrents.ColorFillSolid = nonSelectedTitleRGB;
+            titleFilesTorrents.BorderColor = nonSelectedTitleRGB;
             titleFilesTorrents.ForeColor = nonSelectedForeRGB;
-            titleFilesMobile.ColorFillSolid = nonSelectedRGB;
-            titleFilesMobile.BorderColor = nonSelectedRGB;
+            titleFilesMobile.ColorFillSolid = nonSelectedTitleRGB;
+            titleFilesMobile.BorderColor = nonSelectedTitleRGB;
             titleFilesMobile.ForeColor = nonSelectedForeRGB;
-            titleFilesArchives.ColorFillSolid = nonSelectedRGB;
-            titleFilesArchives.BorderColor = nonSelectedRGB;
+            titleFilesArchives.ColorFillSolid = nonSelectedTitleRGB;
+            titleFilesArchives.BorderColor = nonSelectedTitleRGB;
             titleFilesArchives.ForeColor = nonSelectedForeRGB;
-            titleFilesCustom.ColorFillSolid = nonSelectedRGB;
-            titleFilesCustom.BorderColor = nonSelectedRGB;
+            titleFilesCustom.ColorFillSolid = nonSelectedTitleRGB;
+            titleFilesCustom.BorderColor = nonSelectedTitleRGB;
             titleFilesCustom.ForeColor = nonSelectedForeRGB;
-            titleFilesOther.ColorFillSolid = nonSelectedRGB;
-            titleFilesOther.BorderColor = nonSelectedRGB;
+            titleFilesOther.ColorFillSolid = nonSelectedTitleRGB;
+            titleFilesOther.BorderColor = nonSelectedTitleRGB;
             titleFilesOther.ForeColor = nonSelectedForeRGB;
-            titleFilesLocal.ColorFillSolid = nonSelectedRGB;
-            titleFilesLocal.BorderColor = nonSelectedRGB;
+            titleFilesLocal.ColorFillSolid = nonSelectedTitleRGB;
+            titleFilesLocal.BorderColor = nonSelectedTitleRGB;
             titleFilesLocal.ForeColor = nonSelectedForeRGB;
-            titleFilesSaved.ColorFillSolid = nonSelectedRGB;
-            titleFilesSaved.BorderColor = nonSelectedRGB;
+            titleFilesSaved.ColorFillSolid = nonSelectedTitleRGB;
+            titleFilesSaved.BorderColor = nonSelectedTitleRGB;
             titleFilesSaved.ForeColor = nonSelectedForeRGB;
 
             cbtn.ColorFillSolid = selectedRGB;
@@ -728,14 +816,17 @@ namespace WebCrunch
 
                     foreach (string jsonData in data)
                     {
-                        var dataJson = JsonConvert.DeserializeObject<Models.WebFile>(jsonData);
-                        string formattedDate = dataJson.DateAdded;
-                        if (dataJson.DateAdded != "-") { formattedDate = UtilityTools.getTimeAgo(Convert.ToDateTime(dataJson.DateAdded)); }
-                        string formattedSize = dataJson.Size;
-                        if (dataJson.Size != "-") { formattedSize = UtilityTools.bytesToString(Convert.ToInt64(dataJson.Size)); }
-                        dataGridFiles.Rows.Add(dataJson.Type, dataJson.Title, formattedSize, formattedDate, dataJson.Host, dataJson.URL);
+                        if (UtilityTools.isValidJSON(jsonData))
+                        {
+                            var dataJson = JsonConvert.DeserializeObject<Models.WebFile>(jsonData);
+                            string formattedDate = dataJson.DateAdded;
+                            if (UtilityTools.isDateTime(dataJson.DateAdded)) { formattedDate = UtilityTools.getTimeAgo(Convert.ToDateTime(dataJson.DateAdded)); }
+                            string formattedSize = dataJson.Size;
+                            if (dataJson.Size != "0" && dataJson.Size != "-") { formattedSize = UtilityTools.bytesToString(Convert.ToInt64(dataJson.Size)); }
+                            dataGridFiles.Rows.Add(dataJson.Type, dataJson.Title, formattedSize, formattedDate, dataJson.Host, dataJson.URL);
 
-                        if (!(cmboBoxFilesHost.Items.Contains(dataJson.Host))) { cmboBoxFilesHost.Items.Add(dataJson.Host); }
+                            if (!(cmboBoxFilesHost.Items.Contains(dataJson.Host))) { cmboBoxFilesHost.Items.Add(dataJson.Host); }
+                        }
                     }
 
                     stopWatch.Stop(); TimeSpan ts = stopWatch.Elapsed;

@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using System.Collections;
 using Newtonsoft.Json;
 using WebCrunch;
+using Newtonsoft.Json.Linq;
 
 namespace Utilities
 {
@@ -409,6 +410,33 @@ namespace Utilities
             return newBitmap;
         }
 
+        /// <summary>
+        /// Checks if string is valid DateTime
+        /// </summary>
+        /// <param name="txtDate"></param>
+        /// <returns></returns>
+        public static bool isDateTime(string txtDate)
+        {
+            return DateTime.TryParse(txtDate, out DateTime tempDate);
+        }
+
+        /// <summary>
+        /// Checks if string is valid Json
+        /// </summary>
+        /// <param name="json"></param>
+        /// <returns></returns>
+        public static bool isValidJSON(string json)
+        {
+            try
+            {
+                JToken token = JObject.Parse(json);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
         // check for updates, installs installer to downloads folder if available and opens it
         public static void checkForUpdate()
         {

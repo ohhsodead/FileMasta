@@ -124,10 +124,41 @@
   <data name="tabHome.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Stretch</value>
   </data>
+  <data name="imgLogo.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="imgLogo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="imgLogo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>331, 57</value>
+  </data>
+  <data name="imgLogo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 200</value>
+  </data>
+  <data name="imgLogo.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>StretchImage</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="imgLogo.TabIndex" type="System.Int32, mscorlib">
+    <value>1108</value>
+  </data>
+  <data name="&gt;&gt;imgLogo.Name" xml:space="preserve">
+    <value>imgLogo</value>
+  </data>
+  <data name="&gt;&gt;imgLogo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;imgLogo.Parent" xml:space="preserve">
+    <value>tabHome</value>
+  </data>
+  <data name="&gt;&gt;imgLogo.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="lblHomeStatsDatabaseUpdated.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left, Right</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="lblHomeStatsDatabaseUpdated.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9.25pt</value>
   </data>
@@ -140,7 +171,6 @@
   <data name="lblHomeStatsDatabaseUpdated.Size" type="System.Drawing.Size, System.Drawing">
     <value>432, 20</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="lblHomeStatsDatabaseUpdated.TabIndex" type="System.Int32, mscorlib">
     <value>1107</value>
   </data>
@@ -160,7 +190,7 @@
     <value>tabHome</value>
   </data>
   <data name="&gt;&gt;lblHomeStatsDatabaseUpdated.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="lblHomeStatsFiles.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left, Right</value>
@@ -196,7 +226,7 @@
     <value>tabHome</value>
   </data>
   <data name="&gt;&gt;lblHomeStatsFiles.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="panelHomeEngine.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Left</value>
@@ -277,7 +307,7 @@
     <value>1</value>
   </data>
   <data name="panelHomeEngine.Location" type="System.Drawing.Point, System.Drawing">
-    <value>353, 194</value>
+    <value>353, 280</value>
   </data>
   <data name="panelHomeEngine.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 0, 2, 0</value>
@@ -298,7 +328,7 @@
     <value>tabHome</value>
   </data>
   <data name="&gt;&gt;panelHomeEngine.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="lblHeaderTopSearches.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Left</value>
@@ -313,7 +343,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblHeaderTopSearches.Location" type="System.Drawing.Point, System.Drawing">
-    <value>206, 234</value>
+    <value>206, 320</value>
   </data>
   <data name="lblHeaderTopSearches.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -337,7 +367,7 @@
     <value>tabHome</value>
   </data>
   <data name="&gt;&gt;lblHeaderTopSearches.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="lineHomeTopSearchesSplitter.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Left, Right</value>
@@ -346,7 +376,7 @@
     <value>Segoe UI Semibold, 13.25pt</value>
   </data>
   <data name="lineHomeTopSearchesSplitter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>210, 257</value>
+    <value>210, 343</value>
   </data>
   <data name="lineHomeTopSearchesSplitter.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 16, 3, 3</value>
@@ -370,19 +400,19 @@
     <value>tabHome</value>
   </data>
   <data name="&gt;&gt;lineHomeTopSearchesSplitter.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="panelTopSearches.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Left, Right</value>
   </data>
   <data name="panelTopSearches.Location" type="System.Drawing.Point, System.Drawing">
-    <value>210, 264</value>
+    <value>210, 350</value>
   </data>
   <data name="panelTopSearches.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
     <value>No</value>
   </data>
   <data name="panelTopSearches.Size" type="System.Drawing.Size, System.Drawing">
-    <value>432, 180</value>
+    <value>432, 171</value>
   </data>
   <data name="panelTopSearches.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -397,7 +427,7 @@
     <value>tabHome</value>
   </data>
   <data name="&gt;&gt;panelTopSearches.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="panelHomeFileType.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Left</value>
@@ -490,7 +520,7 @@
     <value>1</value>
   </data>
   <data name="panelHomeFileType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>210, 194</value>
+    <value>210, 280</value>
   </data>
   <data name="panelHomeFileType.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 0, 2, 0</value>
@@ -511,7 +541,7 @@
     <value>tabHome</value>
   </data>
   <data name="&gt;&gt;panelHomeFileType.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="btnSearchFilesHome.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Right</value>
@@ -520,7 +550,7 @@
     <value>Segoe UI Semibold, 9.75pt</value>
   </data>
   <data name="btnSearchFilesHome.Location" type="System.Drawing.Point, System.Drawing">
-    <value>566, 194</value>
+    <value>566, 280</value>
   </data>
   <data name="btnSearchFilesHome.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -544,7 +574,7 @@
     <value>tabHome</value>
   </data>
   <data name="&gt;&gt;btnSearchFilesHome.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="txtSearchFilesHome.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Left, Right</value>
@@ -553,7 +583,7 @@
     <value>Segoe UI Semibold, 9.75pt</value>
   </data>
   <data name="txtSearchFilesHome.Location" type="System.Drawing.Point, System.Drawing">
-    <value>463, 199</value>
+    <value>463, 285</value>
   </data>
   <data name="txtSearchFilesHome.Size" type="System.Drawing.Size, System.Drawing">
     <value>86, 18</value>
@@ -571,7 +601,7 @@
     <value>tabHome</value>
   </data>
   <data name="&gt;&gt;txtSearchFilesHome.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="bgSearchFilesHome.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Left, Right</value>
@@ -580,7 +610,7 @@
     <value>Segoe UI, 8.25pt</value>
   </data>
   <data name="bgSearchFilesHome.Location" type="System.Drawing.Point, System.Drawing">
-    <value>454, 194</value>
+    <value>454, 280</value>
   </data>
   <data name="bgSearchFilesHome.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 3, 2, 3</value>
@@ -604,7 +634,7 @@
     <value>tabHome</value>
   </data>
   <data name="&gt;&gt;bgSearchFilesHome.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="tabHome.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
@@ -2866,6 +2896,9 @@ To contact the application owner and administrator you can send an e-mail to thi
   </data>
   <data name="imgSpinner.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
+  </data>
+  <data name="imgSpinner.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="&gt;&gt;imgSpinner.Name" xml:space="preserve">
     <value>imgSpinner</value>
