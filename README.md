@@ -82,9 +82,6 @@ You don't need a special program but it is very recommended. For example if you 
 ## Prerequisites
 - [Material Design Icons (Powered by Google)](https://materialdesignicons.com/)
 - [CButton for .NET](https://www.codeproject.com/Articles/26622/Custom-Button-Control-with-Gradient-Colors-and-Ext)
-- [Open Movie Database API](https://omdbapi.com)
-- [Popcorn Time API](https://popcorntime.sh/)
-- [YTS.AG (.am) API](https://yts.am/)
 - [FileChef.com Top Searches](https://filechef.com/searches)
 - [Json.NET (Newtonsoft)](https://newtonsoft.com/json)
 - [VLC Player](https://videolan.org/vlc/)
@@ -92,12 +89,6 @@ You don't need a special program but it is very recommended. For example if you 
 ## Screenshots
 ### Home
 ![Home](https://github.com/invu/WebCrunch/blob/master/Screenshots/Home.png?raw=true)
-
-### Movies
-![Movies](https://github.com/invu/WebCrunch/blob/master/Screenshots/Movies.png?raw=true)
-
-### Movie Details
-![Movie Details](https://github.com/invu/WebCrunch/blob/master/Screenshots/Movie%20Details.png?raw=true)
 
 ### Files
 ![Files](https://github.com/invu/WebCrunch/blob/master/Screenshots/Files.png?raw=true)
