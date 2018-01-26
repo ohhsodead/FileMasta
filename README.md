@@ -33,7 +33,7 @@ To contact the application owner and administrator you can send an e-mail to thi
  * Automatic local cache updates
 
 ## Latest Build
-WebCrunch 2.14.5
+WebCrunch 2.14.6
 
 ## Supported Systems
 * Windows 7 and above (Windows 7, 8, 8.1, 10) using .NET 4.7.1 [Download here](https://www.microsoft.com/net/download/dotnet-framework-runtime/net471).

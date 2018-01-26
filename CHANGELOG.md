@@ -1,3 +1,6 @@
+## 0.2.14.6
+- Renamed project
+
 ## 0.2.14.5
 - Somewhat responsive UI, to-do consistency
 - Various code improvements
