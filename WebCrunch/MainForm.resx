@@ -630,534 +630,6 @@
   <data name="&gt;&gt;tabHome.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="panelMovies.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="panelMovies.AutoScroll" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="panelMovies.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 54</value>
-  </data>
-  <data name="panelMovies.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 8, 0, 0</value>
-  </data>
-  <data name="panelMovies.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 0, 2, 0</value>
-  </data>
-  <data name="panelMovies.Size" type="System.Drawing.Size, System.Drawing">
-    <value>848, 532</value>
-  </data>
-  <data name="panelMovies.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;panelMovies.Name" xml:space="preserve">
-    <value>panelMovies</value>
-  </data>
-  <data name="&gt;&gt;panelMovies.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panelMovies.Parent" xml:space="preserve">
-    <value>tabMovies</value>
-  </data>
-  <data name="&gt;&gt;panelMovies.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="txtSearchMovies.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9.75pt</value>
-  </data>
-  <data name="txtSearchMovies.Location" type="System.Drawing.Point, System.Drawing">
-    <value>22, 19</value>
-  </data>
-  <data name="txtSearchMovies.Size" type="System.Drawing.Size, System.Drawing">
-    <value>304, 18</value>
-  </data>
-  <data name="txtSearchMovies.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;txtSearchMovies.Name" xml:space="preserve">
-    <value>txtSearchMovies</value>
-  </data>
-  <data name="&gt;&gt;txtSearchMovies.Type" xml:space="preserve">
-    <value>ChreneLib.Controls.TextBoxes.CTextBox, ChreneLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;txtSearchMovies.Parent" xml:space="preserve">
-    <value>tabMovies</value>
-  </data>
-  <data name="&gt;&gt;txtSearchMovies.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="panelMovieFilters.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="btnMoviesRandom.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="btnMoviesRandom.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9.75pt</value>
-  </data>
-  <data name="btnMoviesRandom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="btnMoviesRandom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 30</value>
-  </data>
-  <data name="btnMoviesRandom.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="btnMoviesRandom.Text" xml:space="preserve">
-    <value>I'm Feeling Lucky</value>
-  </data>
-  <data name="&gt;&gt;btnMoviesRandom.Name" xml:space="preserve">
-    <value>btnMoviesRandom</value>
-  </data>
-  <data name="&gt;&gt;btnMoviesRandom.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;btnMoviesRandom.Parent" xml:space="preserve">
-    <value>panelMoviesRandom</value>
-  </data>
-  <data name="&gt;&gt;btnMoviesRandom.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="panelMoviesRandom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="panelMoviesRandom.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 5, 0</value>
-  </data>
-  <data name="panelMoviesRandom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 30</value>
-  </data>
-  <data name="panelMoviesRandom.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;panelMoviesRandom.Name" xml:space="preserve">
-    <value>panelMoviesRandom</value>
-  </data>
-  <data name="&gt;&gt;panelMoviesRandom.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panelMoviesRandom.Parent" xml:space="preserve">
-    <value>panelMovieFilters</value>
-  </data>
-  <data name="&gt;&gt;panelMoviesRandom.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="btnMoviesGenre.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="btnMoviesGenre.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9.75pt</value>
-  </data>
-  <data name="btnMoviesGenre.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="btnMoviesGenre.Size" type="System.Drawing.Size, System.Drawing">
-    <value>109, 30</value>
-  </data>
-  <data name="btnMoviesGenre.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="btnMoviesGenre.Text" xml:space="preserve">
-    <value>Genre : Any</value>
-  </data>
-  <data name="&gt;&gt;btnMoviesGenre.Name" xml:space="preserve">
-    <value>btnMoviesGenre</value>
-  </data>
-  <data name="&gt;&gt;btnMoviesGenre.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;btnMoviesGenre.Parent" xml:space="preserve">
-    <value>panelMoviesGenre</value>
-  </data>
-  <data name="&gt;&gt;btnMoviesGenre.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="cmboBoxMoviesGenre.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left, Right</value>
-  </data>
-  <data name="cmboBoxMoviesGenre.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9.75pt</value>
-  </data>
-  <data name="cmboBoxMoviesGenre.Items" xml:space="preserve">
-    <value>Any</value>
-  </data>
-  <data name="cmboBoxMoviesGenre.Items1" xml:space="preserve">
-    <value>Action</value>
-  </data>
-  <data name="cmboBoxMoviesGenre.Items2" xml:space="preserve">
-    <value>Adventure</value>
-  </data>
-  <data name="cmboBoxMoviesGenre.Items3" xml:space="preserve">
-    <value>Animation</value>
-  </data>
-  <data name="cmboBoxMoviesGenre.Items4" xml:space="preserve">
-    <value>Comedy</value>
-  </data>
-  <data name="cmboBoxMoviesGenre.Items5" xml:space="preserve">
-    <value>Crime</value>
-  </data>
-  <data name="cmboBoxMoviesGenre.Items6" xml:space="preserve">
-    <value>Documentary</value>
-  </data>
-  <data name="cmboBoxMoviesGenre.Items7" xml:space="preserve">
-    <value>Drama</value>
-  </data>
-  <data name="cmboBoxMoviesGenre.Items8" xml:space="preserve">
-    <value>Family</value>
-  </data>
-  <data name="cmboBoxMoviesGenre.Items9" xml:space="preserve">
-    <value>Fantasy</value>
-  </data>
-  <data name="cmboBoxMoviesGenre.Items10" xml:space="preserve">
-    <value>History</value>
-  </data>
-  <data name="cmboBoxMoviesGenre.Items11" xml:space="preserve">
-    <value>Horror</value>
-  </data>
-  <data name="cmboBoxMoviesGenre.Items12" xml:space="preserve">
-    <value>Music</value>
-  </data>
-  <data name="cmboBoxMoviesGenre.Items13" xml:space="preserve">
-    <value>Mystery</value>
-  </data>
-  <data name="cmboBoxMoviesGenre.Items14" xml:space="preserve">
-    <value>Romance</value>
-  </data>
-  <data name="cmboBoxMoviesGenre.Items15" xml:space="preserve">
-    <value>Sci-Fi</value>
-  </data>
-  <data name="cmboBoxMoviesGenre.Items16" xml:space="preserve">
-    <value>Thriller</value>
-  </data>
-  <data name="cmboBoxMoviesGenre.Items17" xml:space="preserve">
-    <value>War</value>
-  </data>
-  <data name="cmboBoxMoviesGenre.Items18" xml:space="preserve">
-    <value>Western</value>
-  </data>
-  <data name="cmboBoxMoviesGenre.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 4</value>
-  </data>
-  <data name="cmboBoxMoviesGenre.Size" type="System.Drawing.Size, System.Drawing">
-    <value>109, 25</value>
-  </data>
-  <data name="cmboBoxMoviesGenre.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;cmboBoxMoviesGenre.Name" xml:space="preserve">
-    <value>cmboBoxMoviesGenre</value>
-  </data>
-  <data name="&gt;&gt;cmboBoxMoviesGenre.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cmboBoxMoviesGenre.Parent" xml:space="preserve">
-    <value>panelMoviesGenre</value>
-  </data>
-  <data name="&gt;&gt;cmboBoxMoviesGenre.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="panelMoviesGenre.Location" type="System.Drawing.Point, System.Drawing">
-    <value>128, 0</value>
-  </data>
-  <data name="panelMoviesGenre.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 5, 0</value>
-  </data>
-  <data name="panelMoviesGenre.Size" type="System.Drawing.Size, System.Drawing">
-    <value>109, 30</value>
-  </data>
-  <data name="panelMoviesGenre.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;panelMoviesGenre.Name" xml:space="preserve">
-    <value>panelMoviesGenre</value>
-  </data>
-  <data name="&gt;&gt;panelMoviesGenre.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panelMoviesGenre.Parent" xml:space="preserve">
-    <value>panelMovieFilters</value>
-  </data>
-  <data name="&gt;&gt;panelMoviesGenre.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="btnMoviesYear.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="btnMoviesYear.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9.75pt</value>
-  </data>
-  <data name="btnMoviesYear.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="btnMoviesYear.Size" type="System.Drawing.Size, System.Drawing">
-    <value>98, 30</value>
-  </data>
-  <data name="btnMoviesYear.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="btnMoviesYear.Text" xml:space="preserve">
-    <value>Year : Any</value>
-  </data>
-  <data name="&gt;&gt;btnMoviesYear.Name" xml:space="preserve">
-    <value>btnMoviesYear</value>
-  </data>
-  <data name="&gt;&gt;btnMoviesYear.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;btnMoviesYear.Parent" xml:space="preserve">
-    <value>panelMoviesYear</value>
-  </data>
-  <data name="&gt;&gt;btnMoviesYear.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="cmboBoxMoviesYear.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left, Right</value>
-  </data>
-  <data name="cmboBoxMoviesYear.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9.75pt</value>
-  </data>
-  <data name="cmboBoxMoviesYear.Items" xml:space="preserve">
-    <value>Any</value>
-  </data>
-  <data name="cmboBoxMoviesYear.Items1" xml:space="preserve">
-    <value>2017</value>
-  </data>
-  <data name="cmboBoxMoviesYear.Items2" xml:space="preserve">
-    <value>2016</value>
-  </data>
-  <data name="cmboBoxMoviesYear.Items3" xml:space="preserve">
-    <value>2015</value>
-  </data>
-  <data name="cmboBoxMoviesYear.Items4" xml:space="preserve">
-    <value>2014</value>
-  </data>
-  <data name="cmboBoxMoviesYear.Items5" xml:space="preserve">
-    <value>2013</value>
-  </data>
-  <data name="cmboBoxMoviesYear.Items6" xml:space="preserve">
-    <value>2012</value>
-  </data>
-  <data name="cmboBoxMoviesYear.Items7" xml:space="preserve">
-    <value>2011</value>
-  </data>
-  <data name="cmboBoxMoviesYear.Items8" xml:space="preserve">
-    <value>2010</value>
-  </data>
-  <data name="cmboBoxMoviesYear.Items9" xml:space="preserve">
-    <value>2009</value>
-  </data>
-  <data name="cmboBoxMoviesYear.Items10" xml:space="preserve">
-    <value>2008</value>
-  </data>
-  <data name="cmboBoxMoviesYear.Items11" xml:space="preserve">
-    <value>2007</value>
-  </data>
-  <data name="cmboBoxMoviesYear.Items12" xml:space="preserve">
-    <value>2006</value>
-  </data>
-  <data name="cmboBoxMoviesYear.Items13" xml:space="preserve">
-    <value>2005</value>
-  </data>
-  <data name="cmboBoxMoviesYear.Items14" xml:space="preserve">
-    <value>2004</value>
-  </data>
-  <data name="cmboBoxMoviesYear.Items15" xml:space="preserve">
-    <value>2003</value>
-  </data>
-  <data name="cmboBoxMoviesYear.Items16" xml:space="preserve">
-    <value>2002</value>
-  </data>
-  <data name="cmboBoxMoviesYear.Items17" xml:space="preserve">
-    <value>2001</value>
-  </data>
-  <data name="cmboBoxMoviesYear.Items18" xml:space="preserve">
-    <value>2000</value>
-  </data>
-  <data name="cmboBoxMoviesYear.Items19" xml:space="preserve">
-    <value>1999</value>
-  </data>
-  <data name="cmboBoxMoviesYear.Items20" xml:space="preserve">
-    <value>1998</value>
-  </data>
-  <data name="cmboBoxMoviesYear.Items21" xml:space="preserve">
-    <value>1997</value>
-  </data>
-  <data name="cmboBoxMoviesYear.Items22" xml:space="preserve">
-    <value>1996</value>
-  </data>
-  <data name="cmboBoxMoviesYear.Items23" xml:space="preserve">
-    <value>1995</value>
-  </data>
-  <data name="cmboBoxMoviesYear.Items24" xml:space="preserve">
-    <value>1994</value>
-  </data>
-  <data name="cmboBoxMoviesYear.Items25" xml:space="preserve">
-    <value>1993</value>
-  </data>
-  <data name="cmboBoxMoviesYear.Items26" xml:space="preserve">
-    <value>1992</value>
-  </data>
-  <data name="cmboBoxMoviesYear.Items27" xml:space="preserve">
-    <value>1991</value>
-  </data>
-  <data name="cmboBoxMoviesYear.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 4</value>
-  </data>
-  <data name="cmboBoxMoviesYear.Size" type="System.Drawing.Size, System.Drawing">
-    <value>98, 25</value>
-  </data>
-  <data name="cmboBoxMoviesYear.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;cmboBoxMoviesYear.Name" xml:space="preserve">
-    <value>cmboBoxMoviesYear</value>
-  </data>
-  <data name="&gt;&gt;cmboBoxMoviesYear.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cmboBoxMoviesYear.Parent" xml:space="preserve">
-    <value>panelMoviesYear</value>
-  </data>
-  <data name="&gt;&gt;cmboBoxMoviesYear.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="panelMoviesYear.Location" type="System.Drawing.Point, System.Drawing">
-    <value>242, 0</value>
-  </data>
-  <data name="panelMoviesYear.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 5, 0</value>
-  </data>
-  <data name="panelMoviesYear.Size" type="System.Drawing.Size, System.Drawing">
-    <value>98, 30</value>
-  </data>
-  <data name="panelMoviesYear.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;panelMoviesYear.Name" xml:space="preserve">
-    <value>panelMoviesYear</value>
-  </data>
-  <data name="&gt;&gt;panelMoviesYear.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panelMoviesYear.Parent" xml:space="preserve">
-    <value>panelMovieFilters</value>
-  </data>
-  <data name="&gt;&gt;panelMoviesYear.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="panelMovieFilters.Location" type="System.Drawing.Point, System.Drawing">
-    <value>420, 13</value>
-  </data>
-  <data name="panelMovieFilters.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 3, 3, 3</value>
-  </data>
-  <data name="panelMovieFilters.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
-    <value>No</value>
-  </data>
-  <data name="panelMovieFilters.Size" type="System.Drawing.Size, System.Drawing">
-    <value>416, 30</value>
-  </data>
-  <data name="panelMovieFilters.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;panelMovieFilters.Name" xml:space="preserve">
-    <value>panelMovieFilters</value>
-  </data>
-  <data name="&gt;&gt;panelMovieFilters.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panelMovieFilters.Parent" xml:space="preserve">
-    <value>tabMovies</value>
-  </data>
-  <data name="&gt;&gt;panelMovieFilters.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="bgSearchMovies.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 8.25pt</value>
-  </data>
-  <data name="bgSearchMovies.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 13</value>
-  </data>
-  <data name="bgSearchMovies.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 2, 3</value>
-  </data>
-  <data name="bgSearchMovies.Size" type="System.Drawing.Size, System.Drawing">
-    <value>321, 30</value>
-  </data>
-  <data name="bgSearchMovies.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="bgSearchMovies.Text" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;bgSearchMovies.Name" xml:space="preserve">
-    <value>bgSearchMovies</value>
-  </data>
-  <data name="&gt;&gt;bgSearchMovies.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;bgSearchMovies.Parent" xml:space="preserve">
-    <value>tabMovies</value>
-  </data>
-  <data name="&gt;&gt;bgSearchMovies.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="btnSearchMovies.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9.75pt</value>
-  </data>
-  <data name="btnSearchMovies.Location" type="System.Drawing.Point, System.Drawing">
-    <value>339, 13</value>
-  </data>
-  <data name="btnSearchMovies.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 3, 2, 3</value>
-  </data>
-  <data name="btnSearchMovies.Size" type="System.Drawing.Size, System.Drawing">
-    <value>76, 30</value>
-  </data>
-  <data name="btnSearchMovies.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="btnSearchMovies.Text" xml:space="preserve">
-    <value>Search</value>
-  </data>
-  <data name="&gt;&gt;btnSearchMovies.Name" xml:space="preserve">
-    <value>btnSearchMovies</value>
-  </data>
-  <data name="&gt;&gt;btnSearchMovies.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;btnSearchMovies.Parent" xml:space="preserve">
-    <value>tabMovies</value>
-  </data>
-  <data name="&gt;&gt;btnSearchMovies.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="tabMovies.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tabMovies.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tabMovies.Size" type="System.Drawing.Size, System.Drawing">
-    <value>848, 586</value>
-  </data>
-  <data name="tabMovies.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;tabMovies.Name" xml:space="preserve">
-    <value>tabMovies</value>
-  </data>
-  <data name="&gt;&gt;tabMovies.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabMovies.Parent" xml:space="preserve">
-    <value>tab</value>
-  </data>
-  <data name="&gt;&gt;tabMovies.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="emptyDataFiles.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top</value>
   </data>
@@ -1999,7 +1471,7 @@
     <value>tab</value>
   </data>
   <data name="&gt;&gt;tabFiles.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="lblHeaderDiscover.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -2119,7 +1591,7 @@
     <value>tab</value>
   </data>
   <data name="&gt;&gt;tabDiscover.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="tabSubmit.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Stretch</value>
@@ -2371,7 +1843,7 @@ Please keep in mind we are a search engine having strict policies, read the foll
     <value>tab</value>
   </data>
   <data name="&gt;&gt;tabSubmit.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="tabSettings.AutoScroll" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2695,7 +2167,7 @@ Please keep in mind we are a search engine having strict policies, read the foll
     <value>tab</value>
   </data>
   <data name="&gt;&gt;tabSettings.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="tabInformation.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Stretch</value>
@@ -2970,7 +2442,7 @@ To contact the application owner and administrator you can send an e-mail to thi
     <value>tab</value>
   </data>
   <data name="&gt;&gt;tabInformation.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>5</value>
   </data>
   <data name="tabBlank.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Stretch</value>
@@ -2997,7 +2469,7 @@ To contact the application owner and administrator you can send an e-mail to thi
     <value>tab</value>
   </data>
   <data name="&gt;&gt;tabBlank.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>6</value>
   </data>
   <data name="tab.Location" type="System.Drawing.Point, System.Drawing">
     <value>196, -22</value>
@@ -3141,7 +2613,7 @@ To contact the application owner and administrator you can send an e-mail to thi
     <value>Segoe UI Semibold, 9.75pt</value>
   </data>
   <data name="titleInformation.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 225</value>
+    <value>0, 189</value>
   </data>
   <data name="titleInformation.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -3177,7 +2649,7 @@ To contact the application owner and administrator you can send an e-mail to thi
     <value>Segoe UI Semibold, 9.75pt</value>
   </data>
   <data name="titleSubmit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 153</value>
+    <value>0, 117</value>
   </data>
   <data name="titleSubmit.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -3213,7 +2685,7 @@ To contact the application owner and administrator you can send an e-mail to thi
     <value>Segoe UI Semibold, 9.75pt</value>
   </data>
   <data name="titleSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 189</value>
+    <value>0, 153</value>
   </data>
   <data name="titleSettings.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -3249,7 +2721,7 @@ To contact the application owner and administrator you can send an e-mail to thi
     <value>Segoe UI Semibold, 9.75pt</value>
   </data>
   <data name="titleDiscover.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 117</value>
+    <value>0, 81</value>
   </data>
   <data name="titleDiscover.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -3285,7 +2757,7 @@ To contact the application owner and administrator you can send an e-mail to thi
     <value>Segoe UI Semibold, 9.75pt</value>
   </data>
   <data name="titleFiles.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 81</value>
+    <value>0, 45</value>
   </data>
   <data name="titleFiles.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -3313,42 +2785,6 @@ To contact the application owner and administrator you can send an e-mail to thi
   </data>
   <data name="&gt;&gt;titleFiles.ZOrder" xml:space="preserve">
     <value>7</value>
-  </data>
-  <data name="titleMovies.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="titleMovies.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9.75pt</value>
-  </data>
-  <data name="titleMovies.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 45</value>
-  </data>
-  <data name="titleMovies.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="titleMovies.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>16, 0, 0, 0</value>
-  </data>
-  <data name="titleMovies.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 36</value>
-  </data>
-  <data name="titleMovies.TabIndex" type="System.Int32, mscorlib">
-    <value>27</value>
-  </data>
-  <data name="titleMovies.Text" xml:space="preserve">
-    <value>   Movies</value>
-  </data>
-  <data name="&gt;&gt;titleMovies.Name" xml:space="preserve">
-    <value>titleMovies</value>
-  </data>
-  <data name="&gt;&gt;titleMovies.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;titleMovies.Parent" xml:space="preserve">
-    <value>panelTitles</value>
-  </data>
-  <data name="&gt;&gt;titleMovies.ZOrder" xml:space="preserve">
-    <value>8</value>
   </data>
   <data name="titleHome.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -3384,7 +2820,7 @@ To contact the application owner and administrator you can send an e-mail to thi
     <value>panelTitles</value>
   </data>
   <data name="&gt;&gt;titleHome.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>8</value>
   </data>
   <data name="panelTitles.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>

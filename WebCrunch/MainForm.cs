@@ -63,7 +63,6 @@ namespace WebCrunch
         protected override void OnPaint(PaintEventArgs e) { }
 
         // Database Files
-        public static string linkMovies = "https://dl.dropbox.com/s/qknonvla6qeuiuj/movies-posters.json?dl=0";
         public static string linkOpenFiles = "https://dl.dropbox.com/s/ucyeqfn96x7n9lh/open-files.json?dl=0";
         public static string linkOpenDirectories = "https://raw.githubusercontent.com/invu/WebCrunch/master/api/open-directories.txt";
         public static string linkTopSearches = "https://dl.dropbox.com/s/9y0smo8g95g0ty4/top-searches.txt?dl=0";
@@ -85,8 +84,6 @@ namespace WebCrunch
         public static string linkPrivacyPolicy = "https://raw.githubusercontent.com/invu/WebCrunch/master/PRIVACYPOLICY.md";
 
         WebClient client = new WebClient(); // public reusable web client
-        int intPostersPerScroll = 85;
-        bool showSpinnerForMovies = false;
 
         // Share us on
         public string textMessage = "Hey%20guys%2C%20I%20found%20a%20brilliant%20way%20to%20find%20Direct%20download%20links%20for%20anything.";
@@ -109,7 +106,6 @@ namespace WebCrunch
         private void MainForm_SizeChanged(object sender, EventArgs e)
         {
             Refresh();
-            panelMovies.Refresh();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -160,21 +156,11 @@ namespace WebCrunch
             databaseInfo = File.ReadLines(pathData + "open-files.json").First();
             dataOpenFiles.AddRange(File.ReadAllLines(pathData + "open-files.json").Skip(1));
             //
-
-            //
-            if (UtilityTools.doUpdateFile(linkMovies, "movies-posters.json"))
-            {
-                client.DownloadFile(new Uri(linkMovies), pathData + "movies-posters.json");
-            }
-
-            dataMovies.AddRange(File.ReadAllLines(pathData + "movies-posters.json").Reverse());
-            //
         }
 
         void worker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             getDatabaseInfo();
-            loadMovies(intPostersPerScroll);
             Controls.Remove(frmSplash);
         }
 
@@ -197,7 +183,7 @@ namespace WebCrunch
             Controls.Remove(frmSplash);
         }
 
-        // Mouse colour effect for CButton Controls
+        // Focus effect for Button
         public void btnCButton_MouseEnter(object sender, EventArgs e)
         {
             CButton ctrl = sender as CButton;
@@ -210,6 +196,19 @@ namespace WebCrunch
             CButton ctrl = sender as CButton;
             ctrl.BorderColor = Color.FromArgb(51, 60, 67);
             ctrl.ColorFillSolid = Color.FromArgb(51, 60, 67);
+        }
+
+        // Focus effect for Text Box
+        public void txtSearch_MouseEnter(object sender, EventArgs e)
+        {
+            CButton ctrl = sender as CButton;
+            ctrl.BorderColor = Color.FromArgb(58, 69, 78);
+        }
+
+        public void txtSearch_MouseLeave(object sender, EventArgs e)
+        {
+            CButton ctrl = sender as CButton;
+            ctrl.BorderColor = Color.FromArgb(51, 60, 67);
         }
 
         // Data, Movies, Files... and everything else
@@ -227,12 +226,7 @@ namespace WebCrunch
         {
             tab.SelectedTab = tabHome;
         }
-
-        private void titleMovies_ClickButtonArea(object sender, MouseEventArgs e)
-        {
-            tab.SelectedTab = tabMovies;
-        }
-
+        
         private void titleFiles_ClickButtonArea(object sender, MouseEventArgs e)
         {
             tab.SelectedTab = tabFiles;
@@ -265,12 +259,6 @@ namespace WebCrunch
                 currentTab = tabHome;
 
                 selectTabTitle(titleHome);
-            }
-            else if (tab.SelectedTab == tabMovies)
-            {
-                currentTab = tabMovies;
-
-                selectTabTitle(titleMovies);
             }
             else if (tab.SelectedTab == tabFiles)
             {
@@ -312,9 +300,6 @@ namespace WebCrunch
             titleHome.ColorFillSolid = nonSelectedRGB;
             titleHome.BorderColor = nonSelectedRGB;
             titleHome.BackColor = nonSelectedRGB;
-            titleMovies.ColorFillSolid = nonSelectedRGB;
-            titleMovies.BorderColor = nonSelectedRGB;
-            titleMovies.BackColor = nonSelectedRGB;
             titleFiles.ColorFillSolid = nonSelectedRGB;
             titleFiles.BorderColor = nonSelectedRGB;
             titleFiles.BackColor = nonSelectedRGB;
@@ -334,17 +319,6 @@ namespace WebCrunch
             cbtn.ColorFillSolid = selectedRGB;
             cbtn.BorderColor = selectedRGB;
             cbtn.BackColor = selectedRGB;
-        }
-
-        private void panelMovies_Scroll(object sender, ScrollEventArgs e)
-        {
-            panelMovies.Update();
-
-            VScrollProperties vs = panelMovies.VerticalScroll;
-            if (e.NewValue == vs.Maximum - vs.LargeChange + 1)
-            {
-                loadMovies(intPostersPerScroll);
-            }
         }
 
         // Home tab
@@ -523,201 +497,6 @@ namespace WebCrunch
                 Process.Start(selectedFilesEngine + String.Format("{0}+({1}) -inurl:(jsp|pl|php|html|aspx|htm|cf|shtml) intitle:index.of -inurl:(listen77|mp3raid|mp3toss|mp3drug|index_of|index-of|wallywashis|downloadmana)", txtSearchFilesHome.Text, String.Join("|", selectedFilesFileType.ToArray()))); imgSpinner.Visible = false;
             }
         }
-
-        // Movies tab
-        string selectedGenre = "", selectedYear = "";
-
-        int countedMovies = 0;
-        object loadMoviesLock = new object();
-        public List<MoviePoster> LoadMovies(int loadCount)
-        {
-            lock (loadMoviesLock)
-            {
-                List<MoviePoster> MoviesPosters = new List<MoviePoster>();
-                int loadedCount = 0;
-
-                foreach (string movie in dataMovies.Skip(countedMovies))
-                {
-                    if (loadedCount < loadCount)
-                    {
-                        if (string.IsNullOrEmpty(movie) == false)
-                        {
-                            var data = JsonConvert.DeserializeObject<Models.Movie>(movie);
-
-                            if (data.ImdbID.ToLower() == txtSearchMovies.Text.ToLower() | data.Title.ToLower().Contains(txtSearchMovies.Text.ToLower()) | data.Actors.ToLower().Contains(txtSearchMovies.Text.ToLower()) && data.Year.Contains(selectedYear) && data.Genre.ToLower().Contains(selectedGenre.ToLower()))
-                            {
-                                MoviePoster ctrlPoster = new MoviePoster();
-                                ctrlPoster.infoTitle.Text = data.Title.Replace("&", "&&");
-                                ctrlPoster.infoYear.Text = data.Year;
-
-                                ctrlPoster.infoPoster.BackgroundImage = UtilityTools.LoadPicture(data.Poster);
-
-                                ctrlPoster.infoGenres = data.Genre;
-                                ctrlPoster.infoSynopsis = data.Plot;
-                                ctrlPoster.infoRuntime = data.Runtime;
-                                ctrlPoster.infoRated = data.Rated;
-                                ctrlPoster.infoDirector = data.Director;
-                                ctrlPoster.infoCast = data.Actors;
-
-                                ctrlPoster.infoImdbRating = data.ImdbRating;
-                                ctrlPoster.infoImdbId = data.ImdbID;
-
-                                ctrlPoster.infoImagePoster = data.Poster;
-
-                                ctrlPoster.infoTrailer = data.TrailerURL;
-                                ctrlPoster.infoImageFanart = data.FanartURL;
-
-                                ctrlPoster.infoMovieStreams = data.Streams;
-
-                                ctrlPoster.Name = data.ImdbID;
-                                ctrlPoster.Show();
-                                MoviesPosters.Add(ctrlPoster);
-                                loadedCount += 1;
-                            }
-                            countedMovies += 1;
-                        }
-                    }
-                }
-                return MoviesPosters;
-            }
-        }
-
-        delegate void loadMoviesCallBack(int count);
-        public void loadMovies(int count)
-        {
-            imgSpinner.Visible = showSpinnerForMovies;
-            BackGroundWorker.RunWorkAsync<List<MoviePoster>>(() => LoadMovies(count), (data) =>
-            {
-                if (panelMovies.InvokeRequired)
-                {
-                    loadMoviesCallBack b = new loadMoviesCallBack(loadMovies);
-                    Invoke(b, new object[] { count });
-                }
-                else
-                {
-                    foreach (MoviePoster item in data)
-                    {
-                        panelMovies.Controls.Add(item);
-                    }
-
-                    tab.SelectedTab = currentTab;
-                    imgSpinner.Visible = false;
-                }
-            });
-            showSpinnerForMovies = true;
-        }
-
-        // Search Movies by Text
-        private void txtMoviesSearchBox_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                panelMovies.Controls.Clear();
-                countedMovies = 0;
-                loadMovies(intPostersPerScroll);
-            }
-        }
-
-        private void bgMoviesSearchBox_ClickButtonArea(object Sender, MouseEventArgs e)
-        {
-            txtSearchMovies.Focus();
-        }
-
-        private void btnSearchMovies_ClickButtonArea(object Sender, MouseEventArgs e)
-        {
-            panelMovies.Controls.Clear();
-            countedMovies = 0;
-            loadMovies(intPostersPerScroll);
-        }
-
-        // Filter Movies by Genre
-        private void btnMoviesGenre_ClickButtonArea(object Sender, MouseEventArgs e)
-        {
-            cmboBoxMoviesGenre.DroppedDown = true;
-        }
-
-        private void cmboBoxMoviesGenre_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            var startText = btnMoviesGenre.Text.Split(':');
-            btnMoviesGenre.Text = startText[0] + ": " + cmboBoxMoviesGenre.SelectedItem.ToString();
-
-            Font myFont = new Font(btnMoviesGenre.Font.FontFamily, this.btnMoviesGenre.Font.Size);
-            SizeF mySize = btnMoviesGenre.CreateGraphics().MeasureString(btnMoviesGenre.Text, myFont);
-            panelMoviesGenre.Width = (((int)(Math.Round(mySize.Width, 0))) + 26);
-            Refresh();
-            if (cmboBoxMoviesGenre.SelectedIndex == 0) { selectedGenre = ""; }
-            else { selectedGenre = cmboBoxMoviesGenre.SelectedItem.ToString(); }
-
-            panelMovies.Controls.Clear();
-            countedMovies = 0;
-            loadMovies(intPostersPerScroll);
-        }
-
-        // Filter Movies by Year        
-        private void btnMoviesYear_ClickButtonArea(object Sender, MouseEventArgs e)
-        {
-            cmboBoxMoviesYear.DroppedDown = true;
-        }
-
-        private void cmboBoxMoviesYear_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            var startText = btnMoviesYear.Text.Split(':');
-            btnMoviesYear.Text = startText[0] + ": " + cmboBoxMoviesYear.SelectedItem.ToString();
-
-            Font myFont = new Font(btnMoviesYear.Font.FontFamily, this.btnMoviesYear.Font.Size);
-            SizeF mySize = btnMoviesYear.CreateGraphics().MeasureString(btnMoviesYear.Text, myFont);
-            panelMoviesYear.Width = (((int)(Math.Round(mySize.Width, 0))) + 26);
-            Refresh();
-            if (cmboBoxMoviesYear.SelectedIndex == 0) { selectedYear = ""; }
-            else { selectedYear = cmboBoxMoviesYear.SelectedItem.ToString(); }
-
-            panelMovies.Controls.Clear();
-            countedMovies = 0;
-            loadMovies(intPostersPerScroll);
-        }
-        //
-
-        // Random Movie Button (I'm Feeling Lucky)
-        private void btnMoviesRandom_ClickButtonArea(object Sender, MouseEventArgs e)
-        {
-            imgSpinner.Visible = true;
-
-            Thread.Sleep(100);
-
-            var dataOMDb = JsonConvert.DeserializeObject<Models.Movie>(UtilityTools.Random(dataMovies));
-
-            MovieDetails MovieDetails = new MovieDetails();
-
-            MovieDetails.infoTitle.Text = dataOMDb.Title;
-            MovieDetails.infoYear.Text = dataOMDb.Year;
-            MovieDetails.infoGenre.Text = dataOMDb.Genre;
-            MovieDetails.infoSynopsis.Text = dataOMDb.Plot;
-            MovieDetails.infoRuntime.Text = dataOMDb.Runtime;
-            MovieDetails.infoRated.Text = dataOMDb.Rated;
-            MovieDetails.infoDirector.Text = dataOMDb.Director;
-            MovieDetails.infoCast.Text = dataOMDb.Actors;
-            MovieDetails.infoRatingIMDb.Text = dataOMDb.ImdbRating;
-            MovieDetails.ImdbId = dataOMDb.ImdbID;
-            MovieDetails.PosterURL = dataOMDb.Poster;
-            MovieDetails.FanartURL = dataOMDb.FanartURL;
-            MovieDetails.TrailerURL = dataOMDb.TrailerURL;
-
-            if (dataOMDb.Poster != "") { MovieDetails.imgPoster.Image = UtilityTools.SetAlpha(UtilityTools.LoadPicture(dataOMDb.Poster), 255); }
-            if (dataOMDb.FanartURL != "") { MovieDetails.BackgroundImage = UtilityTools.SetAlpha(UtilityTools.LoadPicture(dataOMDb.FanartURL), 50); }
-
-            foreach (var movieLink in dataOMDb.Streams)
-            {
-                MovieDetails.AddStream(movieLink, false, MovieDetails.panelStreams);
-            }
-
-
-            MovieDetails.Dock = DockStyle.Fill;
-            tabBlank.Controls.Clear();
-            tabBlank.Controls.Add(MovieDetails);
-            imgSpinner.Visible = false;
-            tab.SelectedTab = tabBlank;
-        }
-
 
         // Files
         public static List<string> selectedFiles = dataOpenFiles;
