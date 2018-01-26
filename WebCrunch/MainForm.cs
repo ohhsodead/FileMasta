@@ -306,9 +306,9 @@ namespace WebCrunch
             currentTabTitle = (CButton)sender; tab.SelectedTab = tabHome;
         }
         
-        private void titleFiles_ClickButtonArea(object sender, MouseEventArgs e)
+        private void titleSearch_ClickButtonArea(object sender, MouseEventArgs e)
         {
-            currentTabTitle = (CButton)sender; tab.SelectedTab = tabFiles;
+            currentTabTitle = (CButton)sender; tab.SelectedTab = tabSearch;
         }
 
         private void titleDiscover_ClickButtonArea(object sender, MouseEventArgs e)
@@ -339,11 +339,11 @@ namespace WebCrunch
 
                 selectTabTitle(titleHome);
             }
-            else if (tab.SelectedTab == tabFiles)
+            else if (tab.SelectedTab == tabSearch)
             {
-                currentTab = tabFiles;
+                currentTab = tabSearch;
 
-                selectTabTitle(titleFiles);
+                selectTabTitle(titleSearch);
             }
             else if (tab.SelectedTab == tabDiscover)
             {
@@ -380,9 +380,9 @@ namespace WebCrunch
             titleHome.ColorFillSolid = nonSelectedTitleRGB;
             titleHome.BorderColor = nonSelectedTitleRGB;
             titleHome.BackColor = nonSelectedTitleRGB;
-            titleFiles.ColorFillSolid = nonSelectedTitleRGB;
-            titleFiles.BorderColor = nonSelectedTitleRGB;
-            titleFiles.BackColor = nonSelectedTitleRGB;
+            titleSearch.ColorFillSolid = nonSelectedTitleRGB;
+            titleSearch.BorderColor = nonSelectedTitleRGB;
+            titleSearch.BackColor = nonSelectedTitleRGB;
             titleDiscover.ColorFillSolid = nonSelectedTitleRGB;
             titleDiscover.BorderColor = nonSelectedTitleRGB;
             titleDiscover.BackColor = nonSelectedTitleRGB;
@@ -413,7 +413,7 @@ namespace WebCrunch
                     if (UtilityTools.isValidJSON(jsonData))
                     {
                         var dataJsonFile = JsonConvert.DeserializeObject<Models.WebFile>(jsonData);
-                        if (dataJsonFile.Size != "-" && dataJsonFile.Size != "" && dataJsonFile.Size != "0") { totalSize = totalSize + Convert.ToInt64(dataJsonFile.Size); }
+                        if (dataJsonFile.Size >= 0) { totalSize += Convert.ToInt32(dataJsonFile.Size); }
                     }
                 }
 
@@ -514,9 +514,10 @@ namespace WebCrunch
 
         private void btnTopSearchesTag_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            CButtonLib.CButton tagItem = Sender as CButtonLib.CButton;
+            CButton tagItem = Sender as CButton;
             txtSearchFilesHome.Text = tagItem.Text;
-            btnSearchFilesHome.PerformClick();
+
+            doSearchFiles();
         }
 
         private void btnHomeFileType_ClickButtonArea(object Sender, MouseEventArgs e)
@@ -563,29 +564,6 @@ namespace WebCrunch
         public static string exploreUrlStartpage = "https://startpage.com/do/dsearch?query=";
         public static string exploreUrlSearx = "https://searx.me/?q=";
 
-        private void btnSearchFilesHome_ClickButtonArea(object Sender, MouseEventArgs e)
-        {
-            imgSpinner.Visible = true; txtSearchFiles.Text = txtSearchFilesHome.Text;
-
-            if (cmboBoxHomeEngine.SelectedIndex == -1 | cmboBoxHomeEngine.SelectedIndex == 0)
-            {
-                if (cmboBoxHomeFileType.SelectedIndex == -1) { selectedFilesFileType = allFileTypes; selectFilesTab(titleFilesAll); selectedFiles = dataOpenFiles; tab.SelectedTab = tabFiles; showFiles(selectedFiles); }
-                else if (cmboBoxHomeFileType.SelectedIndex == 0) { selectedFilesFileType = allFileTypes; selectFilesTab(titleFilesAll); selectedFiles = dataOpenFiles; tab.SelectedTab = tabFiles; showFiles(selectedFiles); }
-                else if (cmboBoxHomeFileType.SelectedIndex == 1) { selectedFilesFileType = videoFileTypes; selectFilesTab(titleFilesVideo); selectedFiles = dataOpenFiles; tab.SelectedTab = tabFiles; showFiles(selectedFiles); }
-                else if (cmboBoxHomeFileType.SelectedIndex == 2) { selectedFilesFileType = audioFileTypes; selectFilesTab(titleFilesAudio); selectedFiles = dataOpenFiles; tab.SelectedTab = tabFiles; showFiles(selectedFiles); }
-                else if (cmboBoxHomeFileType.SelectedIndex == 3) { selectedFilesFileType = ebooksFileTypes; selectFilesTab(titleFilesEbooks); selectedFiles = dataOpenFiles; tab.SelectedTab = tabFiles; showFiles(selectedFiles); }
-                else if (cmboBoxHomeFileType.SelectedIndex == 4) { selectedFilesFileType = subtitleFileTypes; selectFilesTab(titleFilesSubtitles); selectedFiles = dataOpenFiles; tab.SelectedTab = tabFiles; showFiles(selectedFiles); }
-                else if (cmboBoxHomeFileType.SelectedIndex == 5) { selectedFilesFileType = torrentFileTypes; selectFilesTab(titleFilesTorrents); selectedFiles = dataOpenFiles; tab.SelectedTab = tabFiles; showFiles(selectedFiles); }
-                else if (cmboBoxHomeFileType.SelectedIndex == 6) { selectedFilesFileType = mobileFileTypes; selectFilesTab(titleFilesMobile); selectedFiles = dataOpenFiles; tab.SelectedTab = tabFiles; showFiles(selectedFiles); }
-                else if (cmboBoxHomeFileType.SelectedIndex == 7) { selectedFilesFileType = archivesFileTypes; selectFilesTab(titleFilesArchives); selectedFiles = dataOpenFiles; tab.SelectedTab = tabFiles; showFiles(selectedFiles); }
-                else if (cmboBoxHomeFileType.SelectedIndex == 8) { selectedFilesFileType = otherFileTypes; selectFilesTab(titleFilesOther); selectedFiles = dataOpenFiles; tab.SelectedTab = tabFiles; showFiles(selectedFiles); }
-            }
-            else
-            {
-                Process.Start(selectedFilesEngine + String.Format("{0}+({1}) -inurl:(jsp|pl|php|html|aspx|htm|cf|shtml) intitle:index.of -inurl:(listen77|mp3raid|mp3toss|mp3drug|index_of|index-of|wallywashis|downloadmana)", txtSearchFilesHome.Text, String.Join("|", selectedFilesFileType.ToArray()))); imgSpinner.Visible = false;
-            }
-        }
-
         // Files
         public static List<string> selectedFiles = dataOpenFiles;
         public static List<string> allFileTypes = new List<string>();
@@ -614,8 +592,8 @@ namespace WebCrunch
                     Host = rm.GetString("local"),
                     Title = Path.GetFileNameWithoutExtension(pathFile),
                     Type = Path.GetExtension(pathFile).Replace(".", "").ToUpper(),
-                    Size = UtilityTools.bytesToString(new FileInfo(pathFile).Length),
-                    DateAdded = File.GetCreationTime(pathFile).ToString()
+                    Size = Convert.ToInt32(new FileInfo(pathFile).Length),
+                    DateUploaded = File.GetCreationTime(pathFile)
             };
 
                 dataFilesLocal.Add(JsonConvert.SerializeObject(dataJson));
@@ -801,7 +779,7 @@ namespace WebCrunch
         {
             BackGroundWorker.RunWorkAsync<List<string>>(() => searchFiles(dataFiles), (data) =>
             {
-                if (tabFiles.InvokeRequired)
+                if (tabSearch.InvokeRequired)
                 {
                     loadFilesCallBack b = new loadFilesCallBack(showFiles);
                     Invoke(b, new object[] { dataFiles });
@@ -819,11 +797,7 @@ namespace WebCrunch
                         if (UtilityTools.isValidJSON(jsonData))
                         {
                             var dataJson = JsonConvert.DeserializeObject<Models.WebFile>(jsonData);
-                            string formattedDate = dataJson.DateAdded;
-                            if (UtilityTools.isDateTime(dataJson.DateAdded)) { formattedDate = UtilityTools.getTimeAgo(Convert.ToDateTime(dataJson.DateAdded)); }
-                            string formattedSize = dataJson.Size;
-                            if (dataJson.Size != "0" && dataJson.Size != "-") { formattedSize = UtilityTools.bytesToString(Convert.ToInt64(dataJson.Size)); }
-                            dataGridFiles.Rows.Add(dataJson.Type, dataJson.Title, formattedSize, formattedDate, dataJson.Host, dataJson.URL);
+                            dataGridFiles.Rows.Add(dataJson.Type, dataJson.Title, UtilityTools.bytesToString(dataJson.Size), UtilityTools.getTimeAgo(dataJson.DateUploaded), dataJson.Host, dataJson.URL);
 
                             if (!(cmboBoxFilesHost.Items.Contains(dataJson.Host))) { cmboBoxFilesHost.Items.Add(dataJson.Host); }
                         }
@@ -861,11 +835,6 @@ namespace WebCrunch
             }
         }
 
-        private void btnSearchFiles_ClickButtonArea(object Sender, MouseEventArgs e)
-        {
-            imgSpinner.Visible = true; tab.SelectedTab = tabFiles; showFiles(selectedFiles);
-        }
-
         public void showFileDetails(string Url, string Name, string Type, string Host, bool isLocal, string Size = "-", string Age = "-")
         {
             imgSpinner.Visible = true;
@@ -875,6 +844,8 @@ namespace WebCrunch
             fileDetails.infoName.Text = Name;
             fileDetails.infoSize.Text = Size;
             fileDetails.infoReferrer.Text = Host;
+
+            // Split parts of the url into a nice looking structure
             var url = new Uri(Url);
             var directories = new StringBuilder(Host);
             foreach (string path in url.LocalPath.Split('/'))
@@ -892,24 +863,57 @@ namespace WebCrunch
             tab.SelectedTab = tabBlank;
         }
 
-        private void bgFilesSearchBox_ClickButtonArea(object Sender, MouseEventArgs e)
+        private void bgSearchFiles_ClickButtonArea(object Sender, MouseEventArgs e)
         {
             txtSearchFiles.Focus();
-        }
-
-        private void txtSearchFilesHome_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                btnSearchFilesHome.PerformClick();
-            }
         }
 
         private void txtSearchFiles_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                btnSearchFiles.PerformClick();
+                doSearchFiles();
+            }
+        }
+
+        private void bgSearchFilesHome_ClickButtonArea(object Sender, MouseEventArgs e)
+        {
+            txtSearchFilesHome.Focus();
+        }
+
+        private void txtSearchFilesHome_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                doSearchFilesFromHome();
+            }
+        }
+
+        public void doSearchFiles()
+        {
+            imgSpinner.Visible = true; tab.SelectedTab = tabSearch; showFiles(selectedFiles);
+        }
+
+        public void doSearchFilesFromHome()
+        {
+            imgSpinner.Visible = true; txtSearchFiles.Text = txtSearchFilesHome.Text;
+
+            if (cmboBoxHomeEngine.SelectedIndex == -1 | cmboBoxHomeEngine.SelectedIndex == 0)
+            {
+                if (cmboBoxHomeFileType.SelectedIndex == -1) { selectedFilesFileType = allFileTypes; selectFilesTab(titleFilesAll); selectedFiles = dataOpenFiles; tab.SelectedTab = tabSearch; showFiles(selectedFiles); }
+                else if (cmboBoxHomeFileType.SelectedIndex == 0) { selectedFilesFileType = allFileTypes; selectFilesTab(titleFilesAll); selectedFiles = dataOpenFiles; tab.SelectedTab = tabSearch; showFiles(selectedFiles); }
+                else if (cmboBoxHomeFileType.SelectedIndex == 1) { selectedFilesFileType = videoFileTypes; selectFilesTab(titleFilesVideo); selectedFiles = dataOpenFiles; tab.SelectedTab = tabSearch; showFiles(selectedFiles); }
+                else if (cmboBoxHomeFileType.SelectedIndex == 2) { selectedFilesFileType = audioFileTypes; selectFilesTab(titleFilesAudio); selectedFiles = dataOpenFiles; tab.SelectedTab = tabSearch; showFiles(selectedFiles); }
+                else if (cmboBoxHomeFileType.SelectedIndex == 3) { selectedFilesFileType = ebooksFileTypes; selectFilesTab(titleFilesEbooks); selectedFiles = dataOpenFiles; tab.SelectedTab = tabSearch; showFiles(selectedFiles); }
+                else if (cmboBoxHomeFileType.SelectedIndex == 4) { selectedFilesFileType = subtitleFileTypes; selectFilesTab(titleFilesSubtitles); selectedFiles = dataOpenFiles; tab.SelectedTab = tabSearch; showFiles(selectedFiles); }
+                else if (cmboBoxHomeFileType.SelectedIndex == 5) { selectedFilesFileType = torrentFileTypes; selectFilesTab(titleFilesTorrents); selectedFiles = dataOpenFiles; tab.SelectedTab = tabSearch; showFiles(selectedFiles); }
+                else if (cmboBoxHomeFileType.SelectedIndex == 6) { selectedFilesFileType = mobileFileTypes; selectFilesTab(titleFilesMobile); selectedFiles = dataOpenFiles; tab.SelectedTab = tabSearch; showFiles(selectedFiles); }
+                else if (cmboBoxHomeFileType.SelectedIndex == 7) { selectedFilesFileType = archivesFileTypes; selectFilesTab(titleFilesArchives); selectedFiles = dataOpenFiles; tab.SelectedTab = tabSearch; showFiles(selectedFiles); }
+                else if (cmboBoxHomeFileType.SelectedIndex == 8) { selectedFilesFileType = otherFileTypes; selectFilesTab(titleFilesOther); selectedFiles = dataOpenFiles; tab.SelectedTab = tabSearch; showFiles(selectedFiles); }
+            }
+            else
+            {
+                Process.Start(selectedFilesEngine + String.Format("{0}+({1}) -inurl:(jsp|pl|php|html|aspx|htm|cf|shtml) intitle:index.of -inurl:(listen77|mp3raid|mp3toss|mp3drug|index_of|index-of|wallywashis|downloadmana)", txtSearchFilesHome.Text, String.Join("|", selectedFilesFileType.ToArray()))); imgSpinner.Visible = false;
             }
         }
 
@@ -939,7 +943,7 @@ namespace WebCrunch
 
         private void btnFilesBackToSearch_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            tab.SelectedTab = tabFiles;
+            tab.SelectedTab = tabSearch;
         }
 
         private void cmboBoxFilesHost_SelectedIndexChanged(object sender, EventArgs e)

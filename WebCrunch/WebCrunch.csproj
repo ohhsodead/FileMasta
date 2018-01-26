@@ -121,29 +121,11 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Utilities\BackGroundWorker.cs" />
-    <Compile Include="UserControls\MovieDetails.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\MovieDetails.Designer.cs">
-      <DependentUpon>MovieDetails.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\MoviePoster.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\MoviePoster.Designer.cs">
-      <DependentUpon>MoviePoster.cs</DependentUpon>
-    </Compile>
     <Compile Include="UserControls\SplashScreen.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControls\SplashScreen.Designer.cs">
       <DependentUpon>SplashScreen.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\StreamInfo.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\StreamInfo.Designer.cs">
-      <DependentUpon>StreamInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\WebFile.cs" />
     <Compile Include="MainForm.cs">
@@ -178,33 +160,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>misc-fr.resx</DependentUpon>
     </Compile>
-    <Compile Include="Models\Movie.cs" />
     <Compile Include="Utilities\KnownFolder.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\regexFileName.cs" />
     <Compile Include="Utilities\TextLineRemover.cs" />
     <Compile Include="Utilities\Utilities.cs" />
-    <EmbeddedResource Include="UserControls\MovieDetails.cs.resx">
-      <DependentUpon>MovieDetails.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\MovieDetails.de.resx">
-      <DependentUpon>MovieDetails.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\MovieDetails.es.resx">
-      <DependentUpon>MovieDetails.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\MovieDetails.fr.resx">
-      <DependentUpon>MovieDetails.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\MovieDetails.resx">
-      <DependentUpon>MovieDetails.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\FileDetails.resx">
       <DependentUpon>FileDetails.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\MoviePoster.resx">
-      <DependentUpon>MoviePoster.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SplashScreen.cs.resx">
       <DependentUpon>SplashScreen.cs</DependentUpon>
@@ -223,15 +186,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ErrorInfo.resx">
       <DependentUpon>ErrorInfo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\StreamInfo.cs.resx">
-      <DependentUpon>StreamInfo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\StreamInfo.fr.resx">
-      <DependentUpon>StreamInfo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\StreamInfo.resx">
-      <DependentUpon>StreamInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\DataDialog.resx">
       <DependentUpon>DataDialog.cs</DependentUpon>
