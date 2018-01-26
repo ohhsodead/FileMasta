@@ -752,7 +752,7 @@ namespace WebCrunch
                 if (dataGridFiles.CurrentRow.Cells[4].Value.ToString() == rm.GetString("local"))
                 {
                     showFileDetails(dataGridFiles.CurrentRow.Cells[5].Value.ToString(),
-                    dataGridFiles.CurrentRow.Cells[1].Value.ToString() + "." + dataGridFiles.CurrentRow.Cells[0].Value.ToString().ToLower(),
+                    dataGridFiles.CurrentRow.Cells[1].Value.ToString(),
                     dataGridFiles.CurrentRow.Cells[0].Value.ToString(),
                     dataGridFiles.CurrentRow.Cells[4].Value.ToString(),
                     true,
@@ -762,7 +762,7 @@ namespace WebCrunch
                 else
                 {
                     showFileDetails(dataGridFiles.CurrentRow.Cells[5].Value.ToString(),
-                    dataGridFiles.CurrentRow.Cells[1].Value.ToString() + "." + dataGridFiles.CurrentRow.Cells[0].Value.ToString().ToLower(),
+                    dataGridFiles.CurrentRow.Cells[1].Value.ToString(),
                     dataGridFiles.CurrentRow.Cells[0].Value.ToString(), dataGridFiles.CurrentRow.Cells[4].Value.ToString(),
                     false,
                     dataGridFiles.CurrentRow.Cells[2].Value.ToString(),
