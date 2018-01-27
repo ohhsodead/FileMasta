@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Increment the version for each update. -->
+<Manifest version="2">
+    <!-- Your application will check for updates every (seconds) -->
+    <CheckInterval>900</CheckInterval>
+
+    <!-- The URI to the remote manifest -->
+    <RemoteConfigUri>https://github.com/ekkash/WebCrunch/blob/master/Update/update.xml?raw=true</RemoteConfigUri>
+
+    <!-- This token must be the same at both ends to avoid tampering -->
+    <SecurityToken>D68EF3A7-E787-4CC4-B020-878BA649B4CD</SecurityToken>
+    <!-- All payload files are assumed to have this URI prefix. -->
+    <BaseUri>https://github.com/ekkash/WebCrunch/blob/master/Update/</BaseUri>
+
+    <!-- One or more files containing updates. -->
+    <Payload>WindowsBuild.zip</Payload>
+</Manifest>
