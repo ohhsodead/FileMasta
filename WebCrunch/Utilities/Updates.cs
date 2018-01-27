@@ -17,7 +17,7 @@ namespace WebCrunch.Utilities
             {
                 Version newVersion = null;
                 WebClient client = new WebClient();
-                Stream stream = client.OpenRead(MainForm.linkLatestVersion);
+                Stream stream = client.OpenRead(MainForm.urlLatestVersion);
                 StreamReader reader = new StreamReader(stream);
                 newVersion = new Version(reader.ReadToEnd());
                 Version curVersion = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
@@ -26,9 +26,9 @@ namespace WebCrunch.Utilities
                 {
                      MessageBox.Show(MainForm.form, "WebCrunch " + newVersion.ToString() + " is ready to be installed.", "WebCrunch - Update Available");
 
-                     client.DownloadFile(MainForm.getLatestInstaller(newVersion), MainForm.pathDownloadInstaller);
+                     client.DownloadFile(MainForm.getUrlLatestInstaller(newVersion), MainForm.userDownloadsDirectory + MainForm.pathInstallerFileName);
                      Directory.Delete(MainForm.pathData, true);
-                     Process.Start(MainForm.pathDownloadInstaller);
+                     Process.Start(MainForm.userDownloadsDirectory + MainForm.pathInstallerFileName);
                      Process.Start(Application.StartupPath + @"\AutoUpdater.exe");
                      Application.Exit();
                 }
@@ -36,7 +36,7 @@ namespace WebCrunch.Utilities
             catch
             {
                 MessageBox.Show("There was an error checking for update. You will be directed to the latest available version download page.");
-                Process.Start(MainForm.linkLatestDownload);
+                Process.Start(MainForm.urlLatestDownload);
                 Application.Exit();
             }
         }

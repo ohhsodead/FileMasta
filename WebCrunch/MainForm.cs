@@ -65,9 +65,9 @@ namespace WebCrunch
         protected override void OnPaint(PaintEventArgs e) { }
 
         // Database Files
-        public static string linkOpenFiles = "https://dl.dropbox.com/s/charfmjveo2v1h3/open-files.json?dl=0";
-        public static string linkTopSearches = "https://dl.dropbox.com/s/512qe4ogan92vea/top-searches.txt?dl=0";
-        public static string linkOpenDirectories = "https://raw.githubusercontent.com/ekkash/WebCrunch/master/api/open-directories.txt";
+        public static string urlOpenFiles = "https://dl.dropbox.com/s/charfmjveo2v1h3/open-files.json?dl=0";
+        public static string urlTopSearches = "https://dl.dropbox.com/s/512qe4ogan92vea/top-searches.txt?dl=0";
+        public static string urlOpenDirectories = "https://raw.githubusercontent.com/ekkash/WebCrunch/master/api/open-directories.txt";
 
         // Data/Downloads Directories
         public static string pathRoot = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\WebCrunch\";
@@ -76,16 +76,16 @@ namespace WebCrunch
         public static string userDownloadsDirectory = KnownFolders.GetPath(KnownFolder.Downloads) + @"\";
 
         // Updates
-        public static string linkLatestVersion = "https://dl.dropbox.com/s/9v1cwjoj8bm5wf8/latest-version.txt?dl=0";
+        public static string urlLatestVersion = "https://dl.dropbox.com/s/9v1cwjoj8bm5wf8/latest-version.txt?dl=0";
+        public static string urlLatestDownload = "https://github.com/ekkash/WebCrunch/releases/";
+        public static string getUrlLatestInstaller(Version newVersion) { return "https://github.com/ekkash/WebCrunch/releases/download/" + newVersion.ToString() + "/" + pathInstallerFileName; }
         public static string pathInstallerFileName = "WebCrunch.Installer.Windows.exe";
-        public static string pathDownloadInstaller = userDownloadsDirectory + pathInstallerFileName;
-        public static string getLatestInstaller(Version newVersion) { return "https://github.com/ekkash/WebCrunch/releases/download/" + newVersion.ToString() + "/" + pathInstallerFileName; }
 
         // Misc
-        public static string linkChangelog = "https://raw.githubusercontent.com/ekkash/WebCrunch/master/CHANGELOG.md";
-        public static string linkTermsOfUse = "https://raw.githubusercontent.com/ekkash/WebCrunch/master/TERMSOFUSE.md";
-        public static string linkPrivacyPolicy = "https://raw.githubusercontent.com/ekkash/WebCrunch/master/PRIVACYPOLICY.md";
-        public static string linkGitHubIssues = "https://github.com/ekkash/WebCrunch/issues/";
+        public static string urlChangelog = "https://raw.githubusercontent.com/ekkash/WebCrunch/master/CHANGELOG.md";
+        public static string urlTermsOfUse = "https://raw.githubusercontent.com/ekkash/WebCrunch/master/TERMSOFUSE.md";
+        public static string urlPrivacyPolicy = "https://raw.githubusercontent.com/ekkash/WebCrunch/master/PRIVACYPOLICY.md";
+        public static string urlGitHubIssues = "https://github.com/ekkash/WebCrunch/issues/";
 
         WebClient client = new WebClient(); // public reusable web client
 
@@ -144,18 +144,18 @@ namespace WebCrunch
             // Checks if database file exists, if so whether they're the same size, and downloads the latest one if any of them returns false
 
             //
-            if (FileExtensions.doUpdateFile(linkOpenDirectories, "open-directories.txt"))
+            if (FileExtensions.doUpdateFile(urlOpenDirectories, "open-directories.txt"))
             {
-                client.DownloadFile(new Uri(linkOpenDirectories), pathData + "open-directories.txt");
+                client.DownloadFile(new Uri(urlOpenDirectories), pathData + "open-directories.txt");
             }
 
             dataOpenDirectories.AddRange(File.ReadAllLines(pathData + "open-directories.txt"));
             //
 
             //
-            if (FileExtensions.doUpdateFile(linkOpenFiles, "open-files.json"))
+            if (FileExtensions.doUpdateFile(urlOpenFiles, "open-files.json"))
             {
-                client.DownloadFile(new Uri(linkOpenFiles), pathData + "open-files.json");
+                client.DownloadFile(new Uri(urlOpenFiles), pathData + "open-files.json");
             }
 
             databaseInfo = File.ReadLines(pathData + "open-files.json").First();
@@ -441,7 +441,7 @@ namespace WebCrunch
             {
                 int count = 0;
                 var client = new WebClient();
-                using (var stream = client.OpenRead(linkTopSearches))
+                using (var stream = client.OpenRead(urlTopSearches))
                 using (var reader = new StreamReader(stream))
                 {
                     string line;
@@ -1042,25 +1042,25 @@ namespace WebCrunch
         // About tab
         private void lblAboutReportIssue_Click(object sender, EventArgs e)
         {
-            Process.Start(linkGitHubIssues + "new");
+            Process.Start(urlGitHubIssues + "new");
         }
 
         private void btnAboutTermsOfUse_Click(object sender, EventArgs e)
         {
             Label lbl = sender as Label;
-            showInfo(lbl.Text, linkTermsOfUse);
+            showInfo(lbl.Text, urlTermsOfUse);
         }
 
         private void btnAboutPrivacyPolicy_Click(object sender, EventArgs e)
         {
             Label lbl = sender as Label;
-            showInfo(lbl.Text, linkPrivacyPolicy);
+            showInfo(lbl.Text, urlPrivacyPolicy);
         }
 
         private void lblAboutChangelogVersion_Click(object sender, EventArgs e)
         {
             Label lbl = sender as Label;
-            showInfo(lbl.Text, linkChangelog);
+            showInfo(lbl.Text, urlChangelog);
         }
 
         public void showInfo(string Title, string URL)

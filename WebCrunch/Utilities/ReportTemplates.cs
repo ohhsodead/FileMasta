@@ -13,7 +13,7 @@ namespace WebCrunch.Utilities
         // Submit link (open directory/indexer)
         public static void submitLink(string webUrl)
         {
-            Process.Start(MainForm.linkGitHubIssues + "new?title=" + "[Indexer Request] " + new Uri(webUrl).Host + "&body=" +
+            Process.Start(MainForm.urlGitHubIssues + "new?title=" + "[Indexer Request] " + new Uri(webUrl).Host + "&body=" +
                 "Website: " + new Uri(webUrl).AbsoluteUri + "%0A" +
                 "----------------------- %0A" +
                 "*Please include some information about this site e.g. What is the type of site? What's the content?*");
@@ -22,7 +22,7 @@ namespace WebCrunch.Utilities
         // Report Broken File issue
         public static void openBrokenFileIssue(string webFile)
         {
-            Process.Start(MainForm.linkGitHubIssues + "new?title=" + "[Broken File] " + Path.GetFileName(webFile) + "&body=" +
+            Process.Start(MainForm.urlGitHubIssues + "new?title=" + "[Broken File] " + Path.GetFileName(webFile) + "&body=" +
                 "Host: " + new Uri(webFile).Host.Replace("www.", "") + "%0A" +
                 "Name: " + Path.GetFileName(webFile) + "%0A" +
                 "URL: " + new Uri(webFile).AbsoluteUri + "%0A" +
@@ -33,7 +33,7 @@ namespace WebCrunch.Utilities
         // Poor Quality File issue
         public static void openPoorQualityFileIssue(string webFile)
         {
-            Process.Start(MainForm.linkGitHubIssues + "new?title=" + "[Poor Quality File] " + Path.GetFileName(webFile) + "&body=" +
+            Process.Start(MainForm.urlGitHubIssues + "new?title=" + "[Poor Quality File] " + Path.GetFileName(webFile) + "&body=" +
                 "Host: " + new Uri(webFile).Host.Replace("www.", "") + "%0A" +
                 "Name: " + Path.GetFileName(webFile) + "%0A" +
                 "URL: " + new Uri(webFile).AbsoluteUri + "%0A" +
