@@ -19,6 +19,8 @@ using CButtonLib;
 using UserControls;
 using Utilities;
 using Dialogs;
+using WebCrunch.Extensions;
+using WebCrunch.Utilities;
 
 namespace WebCrunch
 {
@@ -72,6 +74,7 @@ namespace WebCrunch
         // Data/Downloads Directories
         public static string pathRoot = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\WebCrunch\";
         public static string pathData = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\WebCrunch\Data\";
+        public static string pathDataSaved = pathRoot + "saved-files.json";
         public static string userDownloadsDirectory = KnownFolders.GetPath(KnownFolder.Downloads) + @"\";
 
         // Updates
@@ -84,6 +87,7 @@ namespace WebCrunch
         public static string linkChangelog = "https://raw.githubusercontent.com/ekkash/WebCrunch/master/CHANGELOG.md";
         public static string linkTermsOfUse = "https://raw.githubusercontent.com/ekkash/WebCrunch/master/TERMSOFUSE.md";
         public static string linkPrivacyPolicy = "https://raw.githubusercontent.com/ekkash/WebCrunch/master/PRIVACYPOLICY.md";
+        public static string linkGitHubIssues = "https://github.com/ekkash/WebCrunch/issues/";
 
         WebClient client = new WebClient(); // public reusable web client
 
@@ -120,9 +124,9 @@ namespace WebCrunch
             Directory.CreateDirectory(pathRoot);
             Directory.CreateDirectory(pathData);
 
-            if (UtilityTools.checkForInternetConnection() == true)
+            if (LocalExtensions.checkForInternetConnection() == true)
             {
-                UtilityTools.checkForUpdate();
+                Updates.checkForUpdate();
 
                 loadTopSearches(); // Powered by the HackerTarget API to get Top Searches from FileChef.com
 
@@ -142,7 +146,7 @@ namespace WebCrunch
             // Checks if database file exists, if so whether they're the same size, and downloads the latest one if any of them returns false
 
             //
-            if (UtilityTools.doUpdateFile(linkOpenDirectories, "open-directories.txt"))
+            if (FileExtensions.doUpdateFile(linkOpenDirectories, "open-directories.txt"))
             {
                 client.DownloadFile(new Uri(linkOpenDirectories), pathData + "open-directories.txt");
             }
@@ -151,7 +155,7 @@ namespace WebCrunch
             //
 
             //
-            if (UtilityTools.doUpdateFile(linkOpenFiles, "open-files.json"))
+            if (FileExtensions.doUpdateFile(linkOpenFiles, "open-files.json"))
             {
                 //client.DownloadFile(new Uri(linkOpenFiles), pathData + "open-files.json");
             }
@@ -280,13 +284,13 @@ namespace WebCrunch
         {
             PictureBox ctrl = sender as PictureBox;
             tmpImage = (Bitmap)ctrl.Image;
-            ctrl.Image = UtilityTools.SetAlpha((Bitmap)ctrl.Image, 100);
+            ctrl.Image = ImageExtensions.SetAlpha((Bitmap)ctrl.Image, 100);
         }
 
         public void image_MouseLeave(object sender, EventArgs e)
         {
             PictureBox ctrl = sender as PictureBox;
-            ctrl.Image = UtilityTools.SetAlpha(tmpImage, 255);
+            ctrl.Image = ImageExtensions.SetAlpha(tmpImage, 255);
         }
 
         // Data, Movies, Files... and everything else
@@ -410,24 +414,24 @@ namespace WebCrunch
             {
                 foreach (string jsonData in dataOpenFiles)
                 {
-                    if (UtilityTools.isValidJSON(jsonData))
+                    if (TextExtensions.isValidJSON(jsonData))
                     {
                         var dataJsonFile = JsonConvert.DeserializeObject<Models.WebFile>(jsonData);
                         if (dataJsonFile.Size >= 0) { totalSize += dataJsonFile.Size; }
                     }
                 }
 
-                lblHomeStatsFiles.Text = String.Format(lblHomeStatsFiles.Text, UtilityTools.getFormattedNumber(dataOpenFiles.Count.ToString()), UtilityTools.bytesToString(totalSize), UtilityTools.getFormattedNumber(dataOpenDirectories.Count.ToString()));
+                lblHomeStatsFiles.Text = String.Format(lblHomeStatsFiles.Text, TextExtensions.getFormattedNumber(dataOpenFiles.Count.ToString()), TextExtensions.bytesToString(totalSize), TextExtensions.getFormattedNumber(dataOpenDirectories.Count.ToString()));
             }
-            catch { lblHomeStatsFiles.Text = String.Format(lblHomeStatsFiles.Text, UtilityTools.getFormattedNumber(dataOpenFiles.Count.ToString()), UtilityTools.bytesToString(totalSize), UtilityTools.getFormattedNumber(dataOpenDirectories.Count.ToString())); }
+            catch { lblHomeStatsFiles.Text = String.Format(lblHomeStatsFiles.Text, TextExtensions.getFormattedNumber(dataOpenFiles.Count.ToString()), TextExtensions.bytesToString(totalSize), TextExtensions.getFormattedNumber(dataOpenDirectories.Count.ToString())); }
 
             try
             {
                 // Database Info
-                if (UtilityTools.isValidJSON(databaseInfo))
+                if (TextExtensions.isValidJSON(databaseInfo))
                 {
                     var dataJsonInfo = JsonConvert.DeserializeObject<Models.DatabaseInfo>(databaseInfo);
-                    if (UtilityTools.isDateTime(dataJsonInfo.LastUpdated)) { lblHomeStatsDatabaseUpdated.Text = String.Format(lblHomeStatsDatabaseUpdated.Text, Convert.ToDateTime(dataJsonInfo.LastUpdated).ToShortDateString()); }
+                    if (TextExtensions.isDateTime(dataJsonInfo.LastUpdated)) { lblHomeStatsDatabaseUpdated.Text = String.Format(lblHomeStatsDatabaseUpdated.Text, Convert.ToDateTime(dataJsonInfo.LastUpdated).ToShortDateString()); }
                 }
             }
             catch { lblHomeStatsDatabaseUpdated.Text = "Updated: n/a"; }
@@ -604,9 +608,9 @@ namespace WebCrunch
         {
             dataFilesSaved.Clear();
 
-            if (File.Exists(UtilityTools.pathDataSaved))
+            if (File.Exists(pathDataSaved))
             {
-                using (StreamReader reader = new StreamReader(UtilityTools.pathDataSaved))
+                using (StreamReader reader = new StreamReader(pathDataSaved))
                 {
                     while (!reader.EndOfStream)
                     {
@@ -794,21 +798,21 @@ namespace WebCrunch
 
                     foreach (string jsonData in data)
                     {
-                        if (UtilityTools.isValidJSON(jsonData))
+                        if (TextExtensions.isValidJSON(jsonData))
                         {
                             var dataJson = JsonConvert.DeserializeObject<Models.WebFile>(jsonData);
-                            dataGridFiles.Rows.Add(dataJson.Type, dataJson.Name, UtilityTools.bytesToString(dataJson.Size), UtilityTools.getTimeAgo(dataJson.DateUploaded), dataJson.Host, dataJson.URL);
+                            dataGridFiles.Rows.Add(dataJson.Type, dataJson.Name, TextExtensions.bytesToString(dataJson.Size), TextExtensions.getTimeAgo(dataJson.DateUploaded), dataJson.Host, dataJson.URL);
 
                             if (!(cmboBoxFilesHost.Items.Contains(dataJson.Host))) { cmboBoxFilesHost.Items.Add(dataJson.Host); }
                         }
                     }
 
                     stopWatch.Stop(); TimeSpan ts = stopWatch.Elapsed;
-                    lblFilesResultsInfo.Text = UtilityTools.getFormattedNumber(dataGridFiles.Rows.Count.ToString()) + " / " + UtilityTools.getFormattedNumber(dataFiles.Count.ToString()) + " Files (" + String.Format("{0:0.000}", ts.TotalSeconds) + " Seconds)"; stopWatch.Reset();
+                    lblFilesResultsInfo.Text = TextExtensions.getFormattedNumber(dataGridFiles.Rows.Count.ToString()) + " / " + TextExtensions.getFormattedNumber(dataFiles.Count.ToString()) + " Files (" + String.Format("{0:0.000}", ts.TotalSeconds) + " Seconds)"; stopWatch.Reset();
 
                     tab.SelectedTab = currentTab;
 
-                    cmboBoxFilesHost.DropDownWidth = UtilityTools.DropDownWidth(cmboBoxFilesHost);
+                    cmboBoxFilesHost.DropDownWidth = ControlExtensions.DropDownWidth(cmboBoxFilesHost);
                     imgSpinner.Visible = false;
                 }
             });
@@ -825,7 +829,7 @@ namespace WebCrunch
                 {
                     var dataJson = JsonConvert.DeserializeObject<Models.WebFile>(file);
 
-                    if (UtilityTools.ContainsAll(dataJson.Name.ToLower(), UtilityTools.GetWords(txtSearchFiles.Text.ToLower())) && selectedFilesFileType.Contains(dataJson.Type) && dataJson.Host.Contains(selectedFilesHost))
+                    if (TextExtensions.ContainsAll(dataJson.Name.ToLower(), TextExtensions.GetWords(txtSearchFiles.Text.ToLower())) && selectedFilesFileType.Contains(dataJson.Type) && dataJson.Host.Contains(selectedFilesHost))
                     {
                         urls.Add(JsonConvert.SerializeObject(dataJson));
                     }
@@ -929,7 +933,7 @@ namespace WebCrunch
             var startText = btnFilesSort.Text.Split(':');
             btnFilesSort.Text = startText[0] + ": " + cmboBoxFilesSort.SelectedItem.ToString();
 
-            if (cmboBoxFilesSort.SelectedIndex == 0) { cmboBoxFilesSort.DropDownWidth = UtilityTools.DropDownWidth(cmboBoxFilesSort); showFiles(selectedFiles); }
+            if (cmboBoxFilesSort.SelectedIndex == 0) { cmboBoxFilesSort.DropDownWidth = ControlExtensions.DropDownWidth(cmboBoxFilesSort); showFiles(selectedFiles); }
             else if (cmboBoxFilesSort.SelectedIndex == 1) { dataGridFiles.Sort(dataGridFiles.Columns[1], ListSortDirection.Ascending); }
             else if (cmboBoxFilesSort.SelectedIndex == 2) { dataGridFiles.Sort(dataGridFiles.Columns[1], ListSortDirection.Descending); }
             imgSpinner.Visible = false;
@@ -962,7 +966,7 @@ namespace WebCrunch
 
             showFiles(selectedFiles);
 
-            cmboBoxFilesHost.DropDownWidth = UtilityTools.DropDownWidth(cmboBoxFilesHost);
+            cmboBoxFilesHost.DropDownWidth = ControlExtensions.DropDownWidth(cmboBoxFilesHost);
         }
 
         // Discover tab
@@ -1028,7 +1032,7 @@ namespace WebCrunch
                     {
                         string formattedText = txtSubmitLink.Text;
                         if (!txtSubmitLink.Text.EndsWith("/")) { formattedText = txtSubmitLink.Text + "/"; }
-                        UtilityTools.submitLink(formattedText); txtSubmitLink.Text = "";
+                        ReportTemplates.submitLink(formattedText); txtSubmitLink.Text = "";
                     }
                     else { MessageBox.Show(this, rm.GetString("linkIncorrectFormat")); }
                 }
@@ -1040,7 +1044,7 @@ namespace WebCrunch
         // About tab
         private void lblAboutReportIssue_Click(object sender, EventArgs e)
         {
-            Process.Start("https://github.com/ekkash/WebCrunch/issues/new");
+            Process.Start(linkGitHubIssues + "new");
         }
 
         private void btnAboutTermsOfUse_Click(object sender, EventArgs e)

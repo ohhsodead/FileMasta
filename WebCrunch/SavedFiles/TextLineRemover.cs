@@ -1,14 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Utilities
+namespace WebCrunch.SavedFiles
 {
     public static class TextLineRemover
     {
+        /// <summary>
+        /// Removes lines that match string from file
+        /// </summary>
+        /// <param name="linesToRemove"></param>
+        /// <param name="filename"></param>
+        /// <param name="tempFilename"></param>
         public static void RemoveTextLines(IList<string> linesToRemove, string filename, string tempFilename)
         {
             // Initial values

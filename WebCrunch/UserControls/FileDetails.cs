@@ -13,6 +13,9 @@ using System.Net;
 using WebCrunch;
 using Utilities;
 using Dialogs;
+using WebCrunch.Extensions;
+using WebCrunch.SavedFiles;
+using WebCrunch.Utilities;
 
 namespace UserControls
 {
@@ -39,13 +42,13 @@ namespace UserControls
 
             if (infoFileSubtitles == null) // Add subtitle file to be played when opening external VLC
             {
-                if (UtilityTools.isExistingSubtitlesFile(infoFileURL.Text) == true) // If downloads folder contains file matching web file name
+                if (FileExtensions.hasExistingSubtitles(infoFileURL.Text) == true) // If downloads folder contains file matching web file name
                 {
                     infoFileSubtitles = MainForm.userDownloadsDirectory + Path.GetFileNameWithoutExtension(infoFileURL.Text) + ".srt";
                 }
             }
 
-            if (UtilityTools.isSaved(UtilityTools.fileToJson(infoFileURL.Text, infoName.Text, infoType.Text, infoReferrer.Text))) // If user has this file saved
+            if (Saved.isSaved(Saved.fileToJson(infoFileURL.Text, infoName.Text, infoType.Text, infoReferrer.Text))) // If user has this file saved
             {
                 btnSaveFile.Image = WebCrunch.Properties.Resources.bookmark_remove;
             }
@@ -82,7 +85,7 @@ namespace UserControls
         {
             if (cmboboxReportFile.SelectedIndex == 0)
             {
-                UtilityTools.openBrokenFileIssue(infoFileURL.Text);
+                ReportTemplates.openBrokenFileIssue(infoFileURL.Text);
             }
             else if (cmboboxReportFile.SelectedIndex == 1)
             {
@@ -90,7 +93,7 @@ namespace UserControls
             }
             else if (cmboboxReportFile.SelectedIndex == 2)
             {
-                UtilityTools.openPoorQualityFileIssue(infoFileURL.Text);
+                ReportTemplates.openPoorQualityFileIssue(infoFileURL.Text);
             }
         }
 
@@ -171,7 +174,7 @@ namespace UserControls
             try
             {
                 btnRequestFileSize.Visible = false;
-                infoSize.Text = UtilityTools.bytesToString(UtilityTools.getFileSize(infoFileURL.Text));
+                infoSize.Text = TextExtensions.bytesToString(FileExtensions.getFileSize(infoFileURL.Text));
             }
             catch { infoSize.Text = "Error"; }
         }
@@ -232,14 +235,14 @@ namespace UserControls
 
         private void btnSaveFile_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            if (!UtilityTools.isSaved(UtilityTools.fileToJson(infoFileURL.Text, infoName.Text, infoType.Text, infoReferrer.Text)))
+            if (!Saved.isSaved(Saved.fileToJson(infoFileURL.Text, infoName.Text, infoType.Text, infoReferrer.Text)))
             {
-                UtilityTools.saveFile(UtilityTools.fileToJson(infoFileURL.Text, infoName.Text, infoType.Text, infoReferrer.Text));
+                Saved.saveFile(Saved.fileToJson(infoFileURL.Text, infoName.Text, infoType.Text, infoReferrer.Text));
                 btnSaveFile.Image = WebCrunch.Properties.Resources.bookmark_remove;
             }
             else
             {
-                UtilityTools.unsaveFile(UtilityTools.fileToJson(infoFileURL.Text, infoName.Text, infoType.Text, infoReferrer.Text));
+                Saved.unsaveFile(Saved.fileToJson(infoFileURL.Text, infoName.Text, infoType.Text, infoReferrer.Text));
                 btnSaveFile.Image = WebCrunch.Properties.Resources.bookmark_plus;
             }
         }
