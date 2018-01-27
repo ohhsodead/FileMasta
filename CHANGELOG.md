@@ -1,3 +1,17 @@
+## 0.2.14.8
+- Improved UI
+- Renamed Files tab to Search
+- Database improvements
+- Several fixes
+
+## 0.2.14.7
+- Responsive UI throughout
+- Code improvements
+- Added code/data validations
+- Fixed #68, #69, #70, #71,, #74, #75
+- Deflated Installer
+- Added support for Windows XP, Vista and Servers (2008-2012)
+
 ## 0.2.14.6
 - Renamed project
 
