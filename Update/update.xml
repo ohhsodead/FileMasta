@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<item>
-    <version>0.2.14.8</version>
-    <url>https://raw.githubusercontent.com/ekkash/WebCrunch/master/Update/WindowsBuild.zip</url>
-    <changelog>https://github.com/ekkash/WebCrunch/releases</changelog>
-    <mandatory>true</mandatory>
-</item>

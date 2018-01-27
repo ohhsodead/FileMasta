@@ -155,7 +155,7 @@ namespace WebCrunch
             //
             if (FileExtensions.doUpdateFile(linkOpenFiles, "open-files.json"))
             {
-                //client.DownloadFile(new Uri(linkOpenFiles), pathData + "open-files.json");
+                client.DownloadFile(new Uri(linkOpenFiles), pathData + "open-files.json");
             }
 
             databaseInfo = File.ReadLines(pathData + "open-files.json").First();
