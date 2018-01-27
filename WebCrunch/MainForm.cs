@@ -13,8 +13,6 @@ using System.Resources;
 using System.Reflection;
 using System.Text;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Schema;
-using Newtonsoft.Json.Linq;
 using CButtonLib;
 using UserControls;
 using Utilities;
@@ -82,6 +80,7 @@ namespace WebCrunch
         public static string pathInstallerFileName = "WebCrunch.Installer.Windows.exe";
         public static string pathDownloadInstaller = userDownloadsDirectory + pathInstallerFileName;
         public static string getLatestInstaller(Version newVersion) { return "https://github.com/ekkash/WebCrunch/releases/download/" + newVersion.ToString() + "/" + pathInstallerFileName; }
+        public static string linkUpdateXML = "https://raw.githubusercontent.com/ekkash/WebCrunch/master/Update/update.xml";
 
         // Misc
         public static string linkChangelog = "https://raw.githubusercontent.com/ekkash/WebCrunch/master/CHANGELOG.md";

@@ -14,6 +14,7 @@ namespace WebCrunch
         [STAThread]
         static void Main()
         {
+
             if (Debugger.IsAttached)
             {
                 Properties.Settings.Default.Reset();

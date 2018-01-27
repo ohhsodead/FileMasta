@@ -224,13 +224,17 @@ namespace UserControls
 
         private void VLC2ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var a = new VLCPlayer
+            try
             {
-                Text = new Uri(infoFileURL.Text).LocalPath
-            };
-            a.axVLCPlugin21.playlist.add(infoFileURL.Text);
-            a.axVLCPlugin21.playlist.play();
-            a.Show();
+                var a = new VLCPlayer
+                {
+                    Text = new Uri(infoFileURL.Text).LocalPath
+                };
+                a.axVLCPlugin21.playlist.add(infoFileURL.Text);
+                a.axVLCPlugin21.playlist.play();
+                a.Show();
+            }
+            catch { MessageBox.Show("Built-in player was unable to load. We are aware there are some issues with this function and are working to resolve this. For the time being, please install the VLC player on your computer and choose 'Play Media' > 'VLC' "); }
         }
 
         private void btnSaveFile_ClickButtonArea(object Sender, MouseEventArgs e)
