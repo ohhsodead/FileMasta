@@ -67,10 +67,10 @@ namespace ExceptionHandler
             if (MessageBox.Show("An error has occurred. Would you like to report this issue on GitHub?", "Error", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 Process.Start("https://github.com/invu/WebCrunch/issues/new?title=" + "[Exception] " + e.Exception.Message + "&body=" +
-                "*Please explain the problem, be clear and not vague.*%0A" +
-                "**Expected behavior: **%0A" +
-                "**Actual behavior: **%0A" +
-                "**Steps to reproduce the behavior: **%0A" +
+                "*Please explain the problem, be clear and not vague.*%0A%0A" +
+                "__Expected behavior__: %0A" +
+                "__Actual behavior__: %0A" +
+                "__Steps to reproduce the behavior__: %0A" +
                 "%0A ----------------------- %0A" +
                 "Version: " + Application.ProductVersion +
                 "%0AFile Name: " + Path.GetFileName(fileName) +
@@ -97,10 +97,10 @@ namespace ExceptionHandler
             if (MessageBox.Show("An error has occurred. Would you like to report this issue on GitHub?", "Error", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 Process.Start("https://github.com/invu/WebCrunch/issues/new?title=" + "[Exception] " + ((Exception)e.ExceptionObject).Message + "&body=" +
-                "*Please explain the problem, be clear and not vague.*%0A" +
-                "**Expected behavior: **%0A" +
-                "**Actual behavior: **%0A" +
-                "**Steps to reproduce the behavior: **%0A" +
+                "*Please explain the problem, be clear and not vague.*%0A%0A" +
+                "__Expected behavior__: %0A" +
+                "__Actual behavior__: %0A" +
+                "__Steps to reproduce the behavior__: %0A" +
                 "%0A ----------------------- %0A" +
                 "Version: " + Application.ProductVersion +
                 "%0AFile Name: " + Path.GetFileName(fileName) +
