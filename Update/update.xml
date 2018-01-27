@@ -3,5 +3,5 @@
     <version>0.2.14.8</version>
     <url>https://raw.githubusercontent.com/ekkash/WebCrunch/master/Update/WindowsBuild.zip</url>
     <changelog>https://github.com/ekkash/WebCrunch/releases</changelog>
-    <mandatory>false</mandatory>
+    <mandatory>true</mandatory>
 </item>
