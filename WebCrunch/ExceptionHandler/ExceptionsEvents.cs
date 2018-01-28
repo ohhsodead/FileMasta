@@ -32,6 +32,7 @@ using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WebCrunch;
 
 namespace ExceptionHandler
 {
@@ -62,7 +63,8 @@ namespace ExceptionHandler
             int line = frame.GetFileLineNumber();
             int col = frame.GetFileColumnNumber();
 
-            Logger.log("ERROR Message: " + e.Exception.Message + " -File Name: " + Path.GetFileName(fileName) + " -Method Name: " + methodName + " -Line: " + line + " -Column: " + col);
+            //Program.log.Error("Unexpected Error", + e.Exception + " -File Name: " + Path.GetFileName(fileName) + " -Method Name: " + methodName + " -Line: " + line + " -Column: " + col);
+            Program.log.Error("Unexpected Error", e.Exception);
 
             if (MessageBox.Show("An error has occurred. Would you like to report this issue on GitHub?", "Error", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
@@ -92,7 +94,8 @@ namespace ExceptionHandler
             int line = frame.GetFileLineNumber();
             int col = frame.GetFileColumnNumber();
 
-            Logger.log("ERROR Message: " + ((Exception)e.ExceptionObject).Message + " -File Name: " + Path.GetFileName(fileName) + " -Method Name: " + methodName + " -Line: " + line + " -Column: " + col);
+            //Program.log.Error("Unexpected Error: " + ((Exception)e.ExceptionObject).Message + " -File Name: " + Path.GetFileName(fileName) + " -Method Name: " + methodName + " -Line: " + line + " -Column: " + col);
+            Program.log.Error("Unexpected Error", ((Exception)e.ExceptionObject));
 
             if (MessageBox.Show("An error has occurred. Would you like to report this issue on GitHub?", "Error", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {

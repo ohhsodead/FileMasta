@@ -26,6 +26,8 @@ namespace WebCrunch
     {
         public MainForm()
         {
+            Program.log.Info("Initializing");
+
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Properties.Settings.Default.userLanguage);
 
             allFileTypes.AddRange(videoFileTypes); allFileTypes.AddRange(audioFileTypes); allFileTypes.AddRange(ebooksFileTypes); allFileTypes.AddRange(subtitleFileTypes); allFileTypes.AddRange(torrentFileTypes); allFileTypes.AddRange(mobileFileTypes); allFileTypes.AddRange(archivesFileTypes); allFileTypes.AddRange(otherFileTypes);
@@ -48,6 +50,8 @@ namespace WebCrunch
             frmSplash.ClientSize = ClientSize;
             frmSplash.BringToFront();
             frmSplash.Show();
+
+            Program.log.Info("Tnitialized");
         }
 
         public static ResourceManager rm = new ResourceManager("WebCrunch.Languages.misc-" + Properties.Settings.Default.userLanguage, Assembly.GetExecutingAssembly());
@@ -105,6 +109,7 @@ namespace WebCrunch
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (e.CloseReason == CloseReason.UserClosing | e.CloseReason == CloseReason.ApplicationExitCall) { Properties.Settings.Default.Save(); if (Properties.Settings.Default.clearDataOnClose == true) { if (Directory.Exists(pathData)) { Directory.Delete(pathData, true); } } }
+            Program.log.Info("Closing");
         }
 
         private void MainForm_SizeChanged(object sender, EventArgs e)
@@ -114,6 +119,8 @@ namespace WebCrunch
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            Program.log.Info("Loading");
+
             loadSettings();
 
             currentTab = tabHome;
@@ -141,12 +148,15 @@ namespace WebCrunch
 
         void worker_DoWork(object sender, DoWorkEventArgs e)
         {
+            Program.log.Info("Checking for database updates");
+
             // Checks if database file exists, if so whether they're the same size, and downloads the latest one if any of them returns false
 
             //
             if (FileExtensions.doUpdateFile(urlOpenDirectories, "open-directories.txt"))
             {
                 client.DownloadFile(new Uri(urlOpenDirectories), pathData + "open-directories.txt");
+                Program.log.Info("open-directories.txt updated");
             }
 
             dataOpenDirectories.AddRange(File.ReadAllLines(pathData + "open-directories.txt"));
@@ -156,6 +166,7 @@ namespace WebCrunch
             if (FileExtensions.doUpdateFile(urlOpenFiles, "open-files.json"))
             {
                 client.DownloadFile(new Uri(urlOpenFiles), pathData + "open-files.json");
+                Program.log.Info("open-files.json updated");
             }
 
             databaseInfo = File.ReadLines(pathData + "open-files.json").First();
@@ -167,6 +178,7 @@ namespace WebCrunch
         {
             getDatabaseInfo();
             Controls.Remove(frmSplash);
+            Program.log.Info("Initiated");
         }
 
         public void showStatusTab(string errorText) // Shows Message and Restart Button on Home tab if no connection established (WIP/TO-DO)
@@ -406,10 +418,14 @@ namespace WebCrunch
         // Home tab
         public void getDatabaseInfo()
         {
+            Program.log.Info("Getting latest database information");
+
             long totalSize = 0;
 
             try
             {
+                Program.log.Info("Attempting to get absolute total size of all files");
+
                 foreach (string jsonData in dataOpenFiles)
                 {
                     if (TextExtensions.isValidJSON(jsonData))
@@ -420,26 +436,39 @@ namespace WebCrunch
                 }
 
                 lblHomeStatsFiles.Text = String.Format(lblHomeStatsFiles.Text, TextExtensions.getFormattedNumber(dataOpenFiles.Count.ToString()), TextExtensions.bytesToString(totalSize), TextExtensions.getFormattedNumber(dataOpenDirectories.Count.ToString()));
+
+                Program.log.Info("Total size of all files successful");
             }
-            catch { lblHomeStatsFiles.Text = String.Format(lblHomeStatsFiles.Text, TextExtensions.getFormattedNumber(dataOpenFiles.Count.ToString()), TextExtensions.bytesToString(totalSize), TextExtensions.getFormattedNumber(dataOpenDirectories.Count.ToString())); }
+            catch (Exception ex)
+            {
+                lblHomeStatsFiles.Text = String.Format(lblHomeStatsFiles.Text, TextExtensions.getFormattedNumber(dataOpenFiles.Count.ToString()), TextExtensions.bytesToString(totalSize), TextExtensions.getFormattedNumber(dataOpenDirectories.Count.ToString()));
+                Program.log.Error("Unable to get absolute total size of all files", ex);
+            }
 
             try
             {
                 // Database Info
                 if (TextExtensions.isValidJSON(databaseInfo))
                 {
+                    Program.log.Info("Attempting to get latest database update date");
+
                     var dataJsonInfo = JsonConvert.DeserializeObject<Models.DatabaseInfo>(databaseInfo);
                     if (TextExtensions.isDateTime(dataJsonInfo.LastUpdated)) { lblHomeStatsDatabaseUpdated.Text = String.Format(lblHomeStatsDatabaseUpdated.Text, Convert.ToDateTime(dataJsonInfo.LastUpdated).ToShortDateString()); }
+
+                    Program.log.Info("Latest database update date successful");
                 }
             }
-            catch { lblHomeStatsDatabaseUpdated.Text = "Updated: n/a"; }
+            catch (Exception ex) { lblHomeStatsDatabaseUpdated.Text = "Updated: n/a"; Program.log.Error("Error getting latest datebase update date"); }
         }
 
         public void loadTopSearches()
         {
             try
             {
-                int count = 0;
+                Program.log.Info("Attempting to get top searches");
+
+                List<string> listTopSearches = new List<string>();
+
                 var client = new WebClient();
                 using (var stream = client.OpenRead(urlTopSearches))
                 using (var reader = new StreamReader(stream))
@@ -447,11 +476,20 @@ namespace WebCrunch
                     string line;
                     while ((line = reader.ReadLine()) != null)
                     {
-                        if (count <= 40)
-                        {
-                            addTopSearchTag(line, count);
-                            count++;
-                        }
+                        listTopSearches.Add(line);
+                    }
+                }
+
+                listTopSearches.Reverse();
+
+                int count = 0;
+
+                foreach (var tag in listTopSearches)
+                {
+                    if (count <= 40)
+                    {
+                        addTopSearchTag(tag, count);
+                        count++;
                     }
                 }
 
@@ -470,8 +508,9 @@ namespace WebCrunch
 
                 a.Click += btnFileChef_Click;
                 panelTopSearches.Controls.Add(a);
+                Program.log.Info("Top searches returned successful");
             }
-            catch { lblHeaderTopSearches.Visible = false; lineHomeTopSearchesSplitter.Visible = false; panelTopSearches.Visible = false; } // Error occurred, so hide controls/skip...
+            catch (Exception ex) { lblHeaderTopSearches.Visible = false; lineHomeTopSearchesSplitter.Visible = false; panelTopSearches.Visible = false; Program.log.Error("Error getting top searches", ex); } // Error occurred, so hide controls/skip...
         }
 
         private void btnFileChef_Click(object Sender, EventArgs e)
@@ -584,6 +623,8 @@ namespace WebCrunch
 
         private void loadLocalFiles()
         {
+            Program.log.Info("Loading local files");
+
             dataFilesLocal.Clear();
 
             foreach (var pathFile in Directory.GetFiles(userDownloadsDirectory))
@@ -600,10 +641,14 @@ namespace WebCrunch
 
                 dataFilesLocal.Add(JsonConvert.SerializeObject(dataJson));
             }
+
+            Program.log.Info("Local files loading successful");
         }
 
         private void loadSavedFiles()
         {
+            Program.log.Info("Getting users saved filess");
+
             dataFilesSaved.Clear();
 
             if (File.Exists(pathDataSaved))
@@ -615,7 +660,9 @@ namespace WebCrunch
                         dataFilesSaved.Add(reader.ReadLine());
                     }
                 }
-            }            
+            }
+
+            Program.log.Info("Users saved files successful");
         }
 
         private void titleFilesAll_ClickButtonArea(object Sender, MouseEventArgs e)
@@ -683,7 +730,7 @@ namespace WebCrunch
             imgSpinner.Visible = true; selectedFilesFileType = allFileTypes; selectFilesTab(titleFilesSaved); loadSavedFiles(); selectedFiles = dataFilesSaved; showFiles(selectedFiles);
         }
 
-        public void selectFilesTab(CButtonLib.CButton cbtn)
+        public void selectFilesTab(CButton cbtn)
         {
             Color selectedRGB = Color.FromArgb(51, 60, 67);
             Color nonSelectedTitleRGB = Color.Transparent;
@@ -779,6 +826,8 @@ namespace WebCrunch
         delegate void loadFilesCallBack(List<string> dataFiles);
         public void showFiles(List<string> dataFiles)
         {
+            Program.log.Info("Searching files");
+
             BackGroundWorker.RunWorkAsync<List<string>>(() => searchFiles(dataFiles), (data) =>
             {
                 if (tabSearch.InvokeRequired)
@@ -814,6 +863,7 @@ namespace WebCrunch
                     imgSpinner.Visible = false;
                 }
             });
+            Program.log.Info("Successfully returned files");
         }
 
         object loadFilesLock = new object();
@@ -839,6 +889,8 @@ namespace WebCrunch
 
         public void showFileDetails(string Url, string Name, string Type, string Host, bool isLocal, string Size = "-", string Age = "-")
         {
+            Program.log.Info("Attempting to show file details dialog");
+
             imgSpinner.Visible = true;
 
             FileDetails fileDetails = new FileDetails();
@@ -863,6 +915,8 @@ namespace WebCrunch
             tabBlank.Controls.Add(fileDetails);
             imgSpinner.Visible = false;
             tab.SelectedTab = tabBlank;
+
+            Program.log.Info("Successfully showed file details dialog");
         }
 
         private void bgSearchFiles_ClickButtonArea(object Sender, MouseEventArgs e)
@@ -976,6 +1030,8 @@ namespace WebCrunch
         delegate void loadHostsCallBack();
         void showHosts()
         {
+            Program.log.Info("Attempting to load and file hosts/servers");
+
             imgSpinner.Visible = true; 
 
             BackGroundWorker.RunWorkAsync<List<string>>(() => getFileHosts(), (data) =>
@@ -1000,6 +1056,8 @@ namespace WebCrunch
                     imgSpinner.Visible = false;
                 }
             });
+
+            Program.log.Info("Successfully loaded hosts/servers");
         }
 
         object loadHostsLock = new object();
@@ -1101,6 +1159,8 @@ namespace WebCrunch
             Properties.Settings.Default.userLanguage = cmboBoxSettingsLanguage.SelectedItem.ToString();
             Properties.Settings.Default.Save();
 
+            Program.log.Info("Language changed to: " + cmboBoxSettingsLanguage.SelectedItem.ToString());
+
             if (MessageBox.Show(this, rm.GetString("restartRequiredLanguage"), rm.GetString("titleRestartRequired"), MessageBoxButtons.YesNo) == DialogResult.Yes) { Application.Restart(); }
         }
 
@@ -1112,6 +1172,8 @@ namespace WebCrunch
             Thread.Sleep(500);
             Properties.Settings.Default.Save();
             Thread.Sleep(500);
+
+            Program.log.Info("Successfully saved all user settings");
         }
 
         private void btnSettingsRestoreDefault_ClickButtonArea(object Sender, MouseEventArgs e)
@@ -1120,6 +1182,8 @@ namespace WebCrunch
             Thread.Sleep(500);
             loadSettings();
             Thread.Sleep(500);
+
+            Program.log.Info("Successfully restored all user settings");
         }
     }
 }

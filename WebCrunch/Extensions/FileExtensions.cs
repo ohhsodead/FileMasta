@@ -17,6 +17,8 @@ namespace WebCrunch.Extensions
         {
             try
             {
+                Program.log.Info("Checking if file '" + fileName + "' needs to be updated");
+
                 if (File.Exists(MainForm.pathData + fileName) == true)
                 {
                     WebRequest req = WebRequest.Create(webFile);
@@ -24,8 +26,7 @@ namespace WebCrunch.Extensions
                     //req.Timeout = 1250;
                     using (HttpWebResponse fileResponse = (HttpWebResponse)req.GetResponse())
                     {
-                        int ContentLength;
-                        if (int.TryParse(fileResponse.Headers.Get("Content-Length"), out ContentLength))
+                        if (int.TryParse(fileResponse.Headers.Get("Content-Length"), out int ContentLength))
                         {
                             if (new FileInfo(MainForm.pathData + fileName).Length == ContentLength) { return false; }
                             else { return true; }
@@ -35,7 +36,7 @@ namespace WebCrunch.Extensions
                 }
                 else { return true; }
             }
-            catch { return true; }
+            catch (Exception ex) { Program.log.Error("Errro checking file '" + fileName + "' for update", ex); return true;  }
         }
 
         /// <summary>
@@ -47,6 +48,8 @@ namespace WebCrunch.Extensions
         {
             try
             {
+                Program.log.Info("Requesting file modified date from web file");
+
                 WebRequest req = WebRequest.Create(webUrl);
                 req.Method = "HEAD";
                 req.Timeout = -1;
@@ -55,12 +58,13 @@ namespace WebCrunch.Extensions
                     DateTime fileModifiedTime = fileResponse.LastModified;
                     if (fileModifiedTime != null)
                     {
+                        Program.log.Info("Succesffuly returned file modified date from web file");
                         return fileModifiedTime;
                     }
                     else { return default(DateTime); ; }
                 }
             }
-            catch { return default(DateTime); }
+            catch (Exception ex) { Program.log.Error("Error requesting file modified date from web file", ex); return default(DateTime); }
         }
 
         /// <summary>
@@ -72,6 +76,8 @@ namespace WebCrunch.Extensions
         {
             try
             {
+                Program.log.Info("Requesting file size from web file");
+
                 WebRequest req = WebRequest.Create(webUrl);
                 req.Method = "HEAD";
                 req.Timeout = 7000;
@@ -79,12 +85,13 @@ namespace WebCrunch.Extensions
                 {
                     if (int.TryParse(fileResponse.Headers.Get("Content-Length"), out int ContentLength))
                     {
+                        Program.log.Info("Successfully returned file size from web file");
                         return ContentLength;
                     }
                     else { return 0; }
                 }
             }
-            catch { return 0; }
+            catch (Exception ex) { Program.log.Error("Error requesting file size from web file", ex); return 0; }
         }
 
         /// <summary>

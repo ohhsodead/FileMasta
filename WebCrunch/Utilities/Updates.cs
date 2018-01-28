@@ -15,6 +15,8 @@ namespace WebCrunch.Utilities
         {
             try
             {
+                Program.log.Info("Checking for internet connection");
+
                 Version newVersion = null;
                 WebClient client = new WebClient();
                 Stream stream = client.OpenRead(MainForm.urlLatestVersion);
@@ -24,17 +26,19 @@ namespace WebCrunch.Utilities
 
                 if (curVersion.CompareTo(newVersion) < 0)
                 {
-                     MessageBox.Show(MainForm.form, "WebCrunch " + newVersion.ToString() + " is ready to be installed.", "WebCrunch - Update Available");
+                    Program.log.Info("Update found - Preparing to update");
+                    MessageBox.Show(MainForm.form, "WebCrunch " + newVersion.ToString() + " is ready to be installed.", "WebCrunch - Update Available");
 
-                     client.DownloadFile(MainForm.getUrlLatestInstaller(newVersion), MainForm.userDownloadsDirectory + MainForm.pathInstallerFileName);
-                     Directory.Delete(MainForm.pathData, true);
-                     Process.Start(MainForm.userDownloadsDirectory + MainForm.pathInstallerFileName);
-                     Process.Start(Application.StartupPath + @"\AutoUpdater.exe");
-                     Application.Exit();
+                    client.DownloadFile(MainForm.getUrlLatestInstaller(newVersion), MainForm.userDownloadsDirectory + MainForm.pathInstallerFileName);
+                    Directory.Delete(MainForm.pathData, true);
+                    Process.Start(MainForm.userDownloadsDirectory + MainForm.pathInstallerFileName);
+                    Process.Start(Application.StartupPath + @"\AutoUpdater.exe");
+                    Application.Exit();
                 }
             } 
-            catch
+            catch (Exception ex)
             {
+                Program.log.Error("Unable to update", ex);
                 MessageBox.Show("There was an error checking for update. You will be directed to the latest available version download page.");
                 Process.Start(MainForm.urlLatestDownload);
                 Application.Exit();

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Diagnostics;
 using System.IO;
 using System.Net;
@@ -15,13 +16,16 @@ namespace WebCrunch.Extensions
         {
             try
             {
+                Program.log.Info("Checking for internet connection");
+
                 using (var client = new WebClient())
                 using (var stream = client.OpenRead("https://google.com"))
                 {
+                    Program.log.Info("Internet connection detected");
                     return true;
                 }
             }
-            catch { return false; }
+            catch (Exception ex) { Program.log.Error("Error, no internet connection detected", ex); return false; }
         }
 
         /// <summary>

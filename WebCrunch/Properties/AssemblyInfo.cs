@@ -34,3 +34,4 @@ using System.Runtime.InteropServices;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("0.2.14.8")]
 [assembly: AssemblyFileVersion("0.2.14.8")]
+[assembly: log4net.Config.XmlConfigurator(ConfigFile = "log4net.config")]
