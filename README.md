@@ -14,7 +14,7 @@ WebCrunch is intended to provide a very powerful web server indexing and search 
 
 The search engine is powered by a [database](https://dl.dropbox.com/s/ucyeqfn96x7n9lh/open-files.json?dl=0) that holds information about all the files web servers have. The information about the files is gathered by an intelligent web crawler that runs every 2 to 4 days. It keeps the database clean and up-to-date with the previous contents and new entries for each web server address submitted by members. 
 
-All web addresses this app uses for indexing are submitted by users only, our crawler also try to give more priority to the servers that have the most up-time, if a web server isn't checked successfully in a period of time, usually 10-15 days, it is automatically deleted from our database. A list of the servers we index are stored in our [open directories](https://github.com/invu/WebCrunch/blob/master/api/open-directories.txt). Also please check our [Terms of Use](https://github.com/invu/WebCrunch/blob/master/TERMSOFUSE.md) statement for more information about what you have to take into consideration to use this application.
+All web addresses this app uses for indexing are submitted by users only, our crawler also try to give more priority to the servers that have the most up-time, if a web server isn't checked successfully in a period of time, usually 10-15 days, it is automatically deleted from our database. A list of the servers we index are stored in our [open directories](https://github.com/ekkash/WebCrunch/blob/master/api/open-directories.txt). Also please check our [Terms of Use](https://github.com/ekkash/WebCrunch/blob/master/TERMSOFUSE.md) statement for more information about what you have to take into consideration to use this application.
 
 We host no content, we provide only access to already available files in a same way Google and other search engines do.
 
@@ -39,7 +39,7 @@ WebCrunch 2.14.8
 * Windows 7 and above (Windows 7, 8, 8.1, 10) using .NET 4.7.1 [Download here](https://www.microsoft.com/net/download/dotnet-framework-runtime/net471).
 
 ## Installation
-Download and run the latest version of the Windows installer, "WebCrunch.Installer.Windows.exe" from the [releases](https://github.com/invu/WebCrunch/releases/latest) page.
+Download and run the latest version of the Windows installer, "WebCrunch.Installer.Windows.exe" from the [releases](https://github.com/ekkash/WebCrunch/releases/latest) page.
 
 ## Creating an issue
 Please supply as much information about the problem you are experiencing as possible. Your issue has a much greater chance of being resolved if logs are supplied so that we can see what is going on. Creating an issue with '### isn't working' doesn't help anyone to fix the problem.
@@ -85,13 +85,14 @@ You don't need a special program but it is very recommended. For example if you 
 - [FileChef.com Top Searches](https://filechef.com/searches)
 - [Json.NET (Newtonsoft)](https://newtonsoft.com/json)
 - [VLC Player](https://videolan.org/vlc/)
+- [log4net](https://logging.apache.org/log4net/)
 
 ## Screenshots
 ### Home
-![Home](https://github.com/invu/WebCrunch/blob/master/Screenshots/Home.png?raw=true)
+![Home](https://github.com/ekkash/WebCrunch/blob/master/Screenshots/Home.png?raw=true)
 
 ### Files
-![Files](https://github.com/invu/WebCrunch/blob/master/Screenshots/Files.png?raw=true)
+![Files](https://github.com/ekkash/WebCrunch/blob/master/Screenshots/Files.png?raw=true)
 
 ### File Details
-![File Details](https://github.com/invu/WebCrunch/blob/master/Screenshots/File%20Details.png?raw=true)
+![File Details](https://github.com/ekkash/WebCrunch/blob/master/Screenshots/File%20Details.png?raw=true)
