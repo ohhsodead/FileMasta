@@ -9,6 +9,8 @@
 </div>
 <br />
 
+[![Report a bug](http://i.imgur.com/xSpw482.png)](https://github.com/ekkash/WebCrunch/issues/new) [![Feature request](http://i.imgur.com/mFO0OuX.png)](http://feathub.com/ekkash/WebCrunch)
+
 ## What is WebCrunch?
 WebCrunch is intended to provide a very powerful web server indexing and search service allowing you to find a file among millions of files located on public servers around the internet. 
 
