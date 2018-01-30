@@ -20,21 +20,25 @@ namespace WebCrunch.Utilities
                 Version newVersion = null;
                 WebClient client = new WebClient();
                 Stream stream = client.OpenRead(MainForm.urlLatestVersion);
-                StreamReader reader = new StreamReader(stream);
-                newVersion = new Version(reader.ReadToEnd());
-                Version curVersion = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
-
-                if (curVersion.CompareTo(newVersion) < 0)
+                stream.ReadTimeout = 10000;
+                using (StreamReader reader = new StreamReader(stream))
                 {
-                    Program.log.Info("Update found - Preparing to update");
-                    MessageBox.Show(MainForm.form, "WebCrunch " + newVersion.ToString() + " is ready to be installed.", "WebCrunch - Update Available");
+                    newVersion = new Version(reader.ReadToEnd());
+                    Version curVersion = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
 
-                    client.DownloadFile(MainForm.getUrlLatestInstaller(newVersion), MainForm.userDownloadsDirectory + MainForm.pathInstallerFileName);
-                    Directory.Delete(MainForm.pathData, true);
-                    Process.Start(MainForm.userDownloadsDirectory + MainForm.pathInstallerFileName);
-                    Process.Start(Application.StartupPath + @"\AutoUpdater.exe");
-                    Application.Exit();
-                }
+                    if (curVersion.CompareTo(newVersion) < 0)
+                    {
+                        Program.log.Info("Update found - preparing to update");
+                        MessageBox.Show(MainForm.form, "WebCrunch " + newVersion.ToString() + " is ready to be installed.", "WebCrunch - Update Available");
+
+                        client.DownloadFile(MainForm.getUrlLatestInstaller(newVersion), MainForm.userDownloadsDirectory + MainForm.pathInstallerFileName);
+                        Program.log.Info("Installer downloaded successfully - opening installer...");
+                        Directory.Delete(MainForm.pathData, true);
+                        Process.Start(MainForm.userDownloadsDirectory + MainForm.pathInstallerFileName);
+                        Process.Start(Application.StartupPath + @"\AutoUpdater.exe");
+                        Application.Exit();
+                    }
+                }                    
             } 
             catch (Exception ex)
             {

@@ -65,7 +65,7 @@ namespace WebCrunch.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap alert_octagon {
             get {
-                object obj = ResourceManager.GetObject("alert_octagon", resourceCulture);
+                object obj = ResourceManager.GetObject("alert-octagon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace WebCrunch.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap bookmark {
+        internal static System.Drawing.Bitmap alert_octagon_orange {
             get {
-                object obj = ResourceManager.GetObject("bookmark", resourceCulture);
+                object obj = ResourceManager.GetObject("alert_octagon_orange", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +83,9 @@ namespace WebCrunch.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap bookmark_plus {
+        internal static System.Drawing.Bitmap bookmark_plus_orange {
             get {
-                object obj = ResourceManager.GetObject("bookmark_plus", resourceCulture);
+                object obj = ResourceManager.GetObject("bookmark_plus_orange", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +93,9 @@ namespace WebCrunch.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap bookmark_remove {
+        internal static System.Drawing.Bitmap bookmark_remove_orange {
             get {
-                object obj = ResourceManager.GetObject("bookmark_remove", resourceCulture);
+                object obj = ResourceManager.GetObject("bookmark_remove_orange", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,9 +103,9 @@ namespace WebCrunch.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap clipboard_arrow_left {
+        internal static System.Drawing.Bitmap clipboard_arrow_left_orange {
             get {
-                object obj = ResourceManager.GetObject("clipboard_arrow_left", resourceCulture);
+                object obj = ResourceManager.GetObject("clipboard_arrow_left_orange", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +113,9 @@ namespace WebCrunch.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap clipboard_check {
+        internal static System.Drawing.Bitmap clipboard_check_orange {
             get {
-                object obj = ResourceManager.GetObject("clipboard_check", resourceCulture);
+                object obj = ResourceManager.GetObject("clipboard_check_orange", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,39 +133,9 @@ namespace WebCrunch.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap cloud_check {
-            get {
-                object obj = ResourceManager.GetObject("cloud_check", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap cloud_download {
-            get {
-                object obj = ResourceManager.GetObject("cloud_download", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap dots_horizontal {
             get {
                 object obj = ResourceManager.GetObject("dots_horizontal", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap eye {
-            get {
-                object obj = ResourceManager.GetObject("eye", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -193,9 +163,9 @@ namespace WebCrunch.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap home {
+        internal static System.Drawing.Bitmap file_find_orange {
             get {
-                object obj = ResourceManager.GetObject("home", resourceCulture);
+                object obj = ResourceManager.GetObject("file-find-orange", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -203,9 +173,9 @@ namespace WebCrunch.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap imdb {
+        internal static System.Drawing.Bitmap home {
             get {
-                object obj = ResourceManager.GetObject("imdb", resourceCulture);
+                object obj = ResourceManager.GetObject("home", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -233,9 +203,9 @@ namespace WebCrunch.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap loading {
+        internal static System.Drawing.Bitmap loader {
             get {
-                object obj = ResourceManager.GetObject("loading", resourceCulture);
+                object obj = ResourceManager.GetObject("loader", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -263,9 +233,9 @@ namespace WebCrunch.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap magnet {
+        internal static System.Drawing.Bitmap magnify {
             get {
-                object obj = ResourceManager.GetObject("magnet", resourceCulture);
+                object obj = ResourceManager.GetObject("magnify", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -273,9 +243,9 @@ namespace WebCrunch.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap magnify {
+        internal static System.Drawing.Bitmap magnify_orange {
             get {
-                object obj = ResourceManager.GetObject("magnify", resourceCulture);
+                object obj = ResourceManager.GetObject("magnify_orange", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -293,9 +263,9 @@ namespace WebCrunch.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap play_circle {
+        internal static System.Drawing.Bitmap play_orange {
             get {
-                object obj = ResourceManager.GetObject("play_circle", resourceCulture);
+                object obj = ResourceManager.GetObject("play-orange", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -323,6 +293,16 @@ namespace WebCrunch.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap search_web_orange {
+            get {
+                object obj = ResourceManager.GetObject("search_web_orange", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap send {
             get {
                 object obj = ResourceManager.GetObject("send", resourceCulture);
@@ -343,9 +323,19 @@ namespace WebCrunch.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap share_variant {
+        internal static System.Drawing.Bitmap share {
             get {
-                object obj = ResourceManager.GetObject("share_variant", resourceCulture);
+                object obj = ResourceManager.GetObject("share", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap share_orange {
+            get {
+                object obj = ResourceManager.GetObject("share_orange", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

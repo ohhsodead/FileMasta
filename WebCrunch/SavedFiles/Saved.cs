@@ -18,17 +18,7 @@ namespace WebCrunch.SavedFiles
         /// <returns></returns>
         public static string fileToJson(string Url, string Name, string Type, string Host)
         {
-            var a = new Models.WebFile
-            {
-                URL = Url,
-                Host = Host,
-                Name = Path.GetFileNameWithoutExtension(new Uri(Url).LocalPath),
-                Type = Type,
-                Size = 0,
-                DateUploaded = default(DateTime)
-            };
-
-            return JsonConvert.SerializeObject(a);
+            return JsonConvert.SerializeObject(new Models.WebFile(Type, Name, 0, default(DateTime), Host, Url));
         }
 
         /// <summary>

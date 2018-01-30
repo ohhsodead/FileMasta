@@ -92,6 +92,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="UI\Colors.cs" />
     <Compile Include="UserControls\FileDetails.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -265,14 +266,12 @@
     <None Include="Resources\web.png" />
     <None Include="Resources\file.png" />
     <None Include="Resources\home.png" />
-    <None Include="Resources\loading.gif" />
     <None Include="Resources\settings.png" />
     <None Include="Resources\local_movies.png" />
     <None Include="Resources\info.png" />
     <None Include="Resources\windows.png" />
     <None Include="Resources\vlc.png" />
     <None Include="Resources\dots-horizontal.png" />
-    <None Include="Resources\imdb.png" />
     <None Include="Resources\poster-default.png" />
     <None Include="Resources\poster-glow.png" />
   </ItemGroup>
@@ -308,9 +307,6 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\magnify.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\menu-down.png" />
   </ItemGroup>
   <ItemGroup>
@@ -320,40 +316,49 @@
     <None Include="Resources\link-variant.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\play-circle.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\clipboard-check.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\clipboard-arrow-left.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\cloud-download.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\cloud-check.png" />
+    <None Include="Resources\magnify-orange.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\bookmark-remove.png" />
+    <None Include="Resources\clipboard-arrow-left-orange.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\bookmark-plus.png" />
+    <None Include="Resources\clipboard-check-orange.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\bookmark.png" />
+    <None Include="Resources\alert-octagon-orange.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\share-variant.png" />
+    <None Include="Resources\bookmark-plus-orange.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\eye.png" />
+    <None Include="Resources\bookmark-remove-orange.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search-web-orange.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\share-orange.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file-find-orange.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\play-orange.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\magnify.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\share.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\alert-octagon.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\magnet.png" />
+    <None Include="Resources\loader.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

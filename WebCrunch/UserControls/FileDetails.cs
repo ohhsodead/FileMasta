@@ -16,6 +16,7 @@ using Dialogs;
 using WebCrunch.Extensions;
 using WebCrunch.SavedFiles;
 using WebCrunch.Utilities;
+using CButtonLib;
 
 namespace UserControls
 {
@@ -50,11 +51,11 @@ namespace UserControls
 
             if (Saved.isSaved(Saved.fileToJson(infoFileURL.Text, infoName.Text, infoType.Text, infoReferrer.Text))) // If user has this file saved
             {
-                btnSaveFile.Image = WebCrunch.Properties.Resources.bookmark_remove;
+                btnSaveFile.Image = WebCrunch.Properties.Resources.bookmark_remove_orange;
             }
             else
             {
-                btnSaveFile.Image = WebCrunch.Properties.Resources.bookmark_plus;
+                btnSaveFile.Image = WebCrunch.Properties.Resources.bookmark_plus_orange;
             }
         }
 
@@ -67,13 +68,6 @@ namespace UserControls
         private void btnDirectLink_ClickButtonArea(object Sender, MouseEventArgs e)
         {
             Process.Start(infoFileURL.Text);
-        }
-
-        private void btnCopyURL_ClickButtonArea(object Sender, MouseEventArgs e)
-        {
-            Clipboard.SetText(infoFileURL.Text);
-            btnCopyURL.SideImage = WebCrunch.Properties.Resources.clipboard_check;
-            btnCopyURL.SideImageSize = new Size(24, 24);
         }
 
         private void btnReportFile_ClickButtonArea(object Sender, MouseEventArgs e)
@@ -242,13 +236,55 @@ namespace UserControls
             if (!Saved.isSaved(Saved.fileToJson(infoFileURL.Text, infoName.Text, infoType.Text, infoReferrer.Text)))
             {
                 Saved.saveFile(Saved.fileToJson(infoFileURL.Text, infoName.Text, infoType.Text, infoReferrer.Text));
-                btnSaveFile.Image = WebCrunch.Properties.Resources.bookmark_remove;
             }
             else
             {
                 Saved.unsaveFile(Saved.fileToJson(infoFileURL.Text, infoName.Text, infoType.Text, infoReferrer.Text));
-                btnSaveFile.Image = WebCrunch.Properties.Resources.bookmark_plus;
             }
+        }
+
+
+        // Focus effect for Combobox/Button
+        Bitmap tmpButtonImage = null;
+
+        public void btnCButton_MouseEnter(object sender, EventArgs e)
+        {
+            CButton ctrl = sender as CButton;
+            tmpButtonImage = (Bitmap)ctrl.Image;
+            if (ctrl.Image != null) { ctrl.Image = ImageExtensions.changeColor((Bitmap)ctrl.Image, Color.White); }
+            ctrl.BorderColor = Colors.uiColorOrange;
+            ctrl.ForeColor = Color.White;
+            ctrl.ColorFillSolid = Colors.uiColorOrange;
+        }
+
+        public void btnCButton_MouseLeave(object sender, EventArgs e)
+        {
+            CButton ctrl = sender as CButton;
+            ctrl.Image = tmpButtonImage;
+            ctrl.BorderColor = Colors.uiColorOrange;
+            ctrl.ForeColor = Colors.uiColorOrange;
+            ctrl.ColorFillSolid = Color.Transparent;
+        }
+
+        public void comboboxCButton_MouseEnter(object sender, EventArgs e)
+        {
+            CButton ctrl = sender as CButton;
+            ctrl.BorderColor = Colors.uiColorOrange;
+            ctrl.ColorFillSolid = Colors.uiColorOrange;
+        }
+
+        public void comboboxCButton_MouseLeave(object sender, EventArgs e)
+        {
+            CButton ctrl = sender as CButton;
+            ctrl.BorderColor = Colors.uiColorBorder;
+            ctrl.ColorFillSolid = Color.Transparent;
+        }
+
+        private void infoFileURL_SideImageClicked(object Sender, MouseEventArgs e)
+        {
+            Clipboard.SetText(infoFileURL.Text);
+            infoFileURL.Image = WebCrunch.Properties.Resources.clipboard_check_orange;
+            infoFileURL.ImageSize = new Size(24, 24);
         }
     }
 }

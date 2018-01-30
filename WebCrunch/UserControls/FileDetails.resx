@@ -120,6 +120,16 @@
   <data name="lblDisclaimer.Text" xml:space="preserve">
     <value>Through this application you are able to link to other websites which are not under the control of WebCrunch. We have no control over the nature, content and availability of those sites. The inclusion of any links does not necessarily imply a recommendation or endorse the views expressed within them.</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnReportFile.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAoklEQVRIS+2UMQ7EIAwEKe5dV/H/Nrl/
+        RGnJOqwry8ZclI6RLEVivNsQyuIRrbUv5sB4nJhKfQ4sjsKV+RIsZMOVfAnE2XBlXAIhDKcmnkdcQsGF
+        WlQgnNQsFFyopT0Dz12orYLnMM7C84gNs/dPH8ZZcBZdUwn/cKKS8JpWEW7NkilI/c1RiQT/+qdhHK5A
+        fO+xU7Dw3nOtYHFU8n/4olPKBYxHJyM6SJjUAAAAAElFTkSuQmCC
+</value>
+  </data>
   <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>1, 2</value>
   </metadata>

@@ -13,5 +13,15 @@ namespace Models
         public DateTime DateUploaded { get; set; } = default(DateTime);
         public string Host { get; set; }
         public string URL { get; set; }
+
+        public WebFile(string type, string name, long size, DateTime dateuploaded, string host, string url)
+        {
+            Type = type;
+            Name = name;
+            Size = size;
+            DateUploaded = dateuploaded;
+            Host = host;
+            URL = url;
+        }
     }
 }

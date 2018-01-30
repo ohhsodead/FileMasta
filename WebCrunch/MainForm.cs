@@ -19,6 +19,7 @@ using Utilities;
 using Dialogs;
 using WebCrunch.Extensions;
 using WebCrunch.Utilities;
+using Models;
 
 namespace WebCrunch
 {
@@ -38,8 +39,6 @@ namespace WebCrunch
 
             lblAboutChangelogVersion.Text = String.Format(lblAboutChangelogVersion.Text, Application.ProductVersion);
 
-            imgSpinner.BringToFront(); // Hidden in Designer
-
             form = this;
 
             frmSplash = new SplashScreen();
@@ -51,7 +50,9 @@ namespace WebCrunch
             frmSplash.BringToFront();
             frmSplash.Show();
 
-            Program.log.Info("Tnitialized");
+            cmboBoxFilesSort.DropDownWidth = ControlExtensions.DropDownWidth(cmboBoxFilesSort);
+
+            Program.log.Info("Initialized");
         }
 
         public static ResourceManager rm = new ResourceManager("WebCrunch.Languages.misc-" + Properties.Settings.Default.userLanguage, Assembly.GetExecutingAssembly());
@@ -119,7 +120,7 @@ namespace WebCrunch
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            Program.log.Info("Loading");
+            Program.log.Info("Loading main form");
 
             loadSettings();
 
@@ -144,6 +145,8 @@ namespace WebCrunch
             {
                 showStatusTab(rm.GetString("errorNoInternetConnection"));
             }
+
+            Program.log.Info("Loaded main form");
         }
 
         void worker_DoWork(object sender, DoWorkEventArgs e)
@@ -169,8 +172,16 @@ namespace WebCrunch
                 Program.log.Info("open-files.json updated");
             }
 
+            foreach (var item in File.ReadAllLines(pathData + "open-files.json").Skip(1))
+            {
+                if (TextExtensions.isValidJSON(item))
+                {
+                    var jsonItem = JsonConvert.DeserializeObject<WebFile>(item);
+                    dataOpenFiles.Add(new WebFile(jsonItem.Type, jsonItem.Name, jsonItem.Size, jsonItem.DateUploaded, jsonItem.Host, jsonItem.URL));
+                }
+            }
+
             databaseInfo = File.ReadLines(pathData + "open-files.json").First();
-            dataOpenFiles.AddRange(File.ReadAllLines(pathData + "open-files.json").Skip(1));
             //
         }
 
@@ -183,8 +194,6 @@ namespace WebCrunch
 
         public void showStatusTab(string errorText) // Shows Message and Restart Button on Home tab if no connection established (WIP/TO-DO)
         {
-            imgSpinner.Visible = false;
-
             ErrorInfo a = new ErrorInfo
             {
                 BackColor = tabHome.BackColor,
@@ -200,13 +209,20 @@ namespace WebCrunch
             Controls.Remove(frmSplash);
         }
 
-        // Focus effect for Title Button
+        // Focus effect for Tab Title
+        Bitmap tmpImageTab = null;
         public void titleCButton_MouseEnter(object sender, EventArgs e)
         {
             CButton ctrl = sender as CButton;
-            ctrl.BackColor = Color.FromArgb(58, 69, 78);
-            ctrl.BorderColor = Color.FromArgb(58, 69, 78);
-            ctrl.ColorFillSolid = Color.FromArgb(58, 69, 78);
+
+            tmpImageTab = (Bitmap)ctrl.Image;
+            ctrl.Image = ImageExtensions.changeColor(tmpImageTab, Colors.uiColorOrange);
+
+            ctrl.ColorFillSolid = Colors.selectedTitleRGB;
+            ctrl.BackColor = Colors.selectedTitleRGB;
+            ctrl.BorderColor = Colors.selectedTitleRGB;
+
+            ctrl.ForeColor = Colors.uiColorOrange;
         }
 
         public void titleCButton_MouseLeave(object sender, EventArgs e)
@@ -215,100 +231,81 @@ namespace WebCrunch
 
             if (currentTabTitle == ctrl)
             {
-                ctrl.BackColor = selectedTitleRGB;
-                ctrl.BorderColor = selectedTitleRGB;
-                ctrl.ColorFillSolid = selectedTitleRGB;
+                ctrl.Image = tmpImageTab;
+                ctrl.ForeColor = Color.White;
+
+                ctrl.ColorFillSolid = Colors.selectedTitleRGB;
+                ctrl.BackColor = Colors.selectedTitleRGB;
+                ctrl.BorderColor = Colors.selectedTitleRGB;
             }
             else
             {
+                ctrl.Image = tmpImageTab;
+                ctrl.ForeColor = Color.White;
+
+                ctrl.ColorFillSolid = Color.Transparent;
                 ctrl.BackColor = Color.Transparent;
                 ctrl.BorderColor = Color.Transparent;
-                ctrl.ColorFillSolid = Color.Transparent;
             }
         }
 
-        // Focus effect for Button
+        // Focus effect for Combobox/Button
+        Bitmap tmpButtonImage = null;
+
         public void btnCButton_MouseEnter(object sender, EventArgs e)
         {
             CButton ctrl = sender as CButton;
-            ctrl.BorderColor = Color.FromArgb(58, 69, 78);
-            ctrl.ColorFillSolid = Color.FromArgb(58, 69, 78);
+            tmpButtonImage = (Bitmap)ctrl.Image;
+            if (ctrl.Image != null) { ctrl.Image = ImageExtensions.changeColor((Bitmap)ctrl.Image, Color.White); }
+            ctrl.BorderColor = Colors.uiColorOrange;
+            ctrl.ForeColor = Color.White;
+            ctrl.ColorFillSolid = Colors.uiColorOrange;
         }
 
         public void btnCButton_MouseLeave(object sender, EventArgs e)
         {
             CButton ctrl = sender as CButton;
-            ctrl.BorderColor = Color.FromArgb(51, 60, 67);
-            ctrl.ColorFillSolid = Color.FromArgb(51, 60, 67);
+            ctrl.Image = tmpButtonImage;
+            ctrl.BorderColor = Colors.uiColorOrange;
+            ctrl.ForeColor = Colors.uiColorOrange;
+            ctrl.ColorFillSolid = Color.Transparent;
         }
 
-        // Focus effect for Text Box
-        public void txtSearch_Enter(object sender, EventArgs e)
+        public void comboboxCButton_MouseEnter(object sender, EventArgs e)
         {
-            TextBox ctrl = sender as TextBox;
-            ctrl.BackColor = Color.FromArgb(58, 69, 78);
-
-            if (ctrl == txtSearchFiles)
-            {
-                bgSearchFiles.BorderColor = Color.FromArgb(58, 69, 78);
-                bgSearchFiles.ColorFillSolid = Color.FromArgb(58, 69, 78);
-            }
-            else if (ctrl == txtSearchFilesHome)
-            {
-                bgSearchFilesHome.BorderColor = Color.FromArgb(58, 69, 78);
-                bgSearchFilesHome.ColorFillSolid = Color.FromArgb(58, 69, 78);
-            }
-            else if (ctrl == txtSubmitLink)
-            {
-                bgSubmitLink.BorderColor = Color.FromArgb(58, 69, 78);
-                bgSubmitLink.ColorFillSolid = Color.FromArgb(58, 69, 78);
-            }
+            CButton ctrl = sender as CButton;
+            ctrl.BorderColor = Colors.uiColorOrange;
+            ctrl.ColorFillSolid = Colors.uiColorOrange;
         }
 
-        public void txtSearch_Leave(object sender, EventArgs e)
+        public void comboboxCButton_MouseLeave(object sender, EventArgs e)
         {
-            TextBox ctrl = sender as TextBox;
-            ctrl.BackColor = Color.FromArgb(51, 60, 67);
-
-            if (ctrl == txtSearchFiles)
-            {
-                bgSearchFiles.BorderColor = Color.FromArgb(51, 60, 67);
-                bgSearchFiles.ColorFillSolid = Color.FromArgb(51, 60, 67);
-            }
-            else if (ctrl == txtSearchFilesHome)
-            {
-                bgSearchFilesHome.BorderColor = Color.FromArgb(51, 60, 67);
-                bgSearchFilesHome.ColorFillSolid = Color.FromArgb(51, 60, 67);
-            }
-            else if (ctrl == txtSubmitLink)
-            {
-                bgSubmitLink.BorderColor = Color.FromArgb(51, 60, 67);
-                bgSubmitLink.ColorFillSolid = Color.FromArgb(51, 60, 67);
-            }
+            CButton ctrl = sender as CButton;
+            ctrl.BorderColor = Colors.uiColorBorder;
+            ctrl.ColorFillSolid = Color.Transparent;
         }
 
-        // Focus effect for Text Box
-        Bitmap tmpImage = null;
+        // Focus effect for Social images
+        Bitmap tmpSocialImage = null;
 
         public void image_MouseEnter(object sender, EventArgs e)
         {
             PictureBox ctrl = sender as PictureBox;
-            tmpImage = (Bitmap)ctrl.Image;
-            ctrl.Image = ImageExtensions.SetAlpha((Bitmap)ctrl.Image, 100);
+            tmpSocialImage = (Bitmap)ctrl.Image;
+            ctrl.Image = ImageExtensions.changeColor((Bitmap)ctrl.Image, Colors.uiColorOrange);
         }
 
         public void image_MouseLeave(object sender, EventArgs e)
         {
             PictureBox ctrl = sender as PictureBox;
-            ctrl.Image = ImageExtensions.SetAlpha(tmpImage, 255);
+            ctrl.Image = tmpSocialImage;
         }
 
         // Data, Movies, Files... and everything else
         public static List<string> dataOpenDirectories = new List<string>();
-        public static List<string> dataOpenFiles = new List<string>();
-        public static List<string> dataMovies = new List<string>();
-        public static List<string> dataFilesLocal = new List<string>();
-        public static List<string> dataFilesSaved = new List<string>();
+        public static List<WebFile> dataOpenFiles = new List<WebFile>();
+        public static List<WebFile> dataFilesLocal = new List<WebFile>();
+        public static List<WebFile> dataFilesSaved = new List<WebFile>();
         public static string databaseInfo;
 
         // Core Tabs
@@ -385,34 +382,30 @@ namespace WebCrunch
             }
         }
 
-        Color selectedTitleRGB = Color.FromArgb(51, 60, 67);
-        Color nonSelectedTitleRGB = Color.FromArgb(43, 52, 59);
-
         public void selectTabTitle(CButton cbtn)
         {
+            titleHome.ColorFillSolid = Colors.nonSelectedTitleRGB;
+            titleHome.BorderColor = Colors.nonSelectedTitleRGB;
+            titleHome.BackColor = Colors.nonSelectedTitleRGB;
+            titleSearch.ColorFillSolid = Colors.nonSelectedTitleRGB;
+            titleSearch.BorderColor = Colors.nonSelectedTitleRGB;
+            titleSearch.BackColor = Colors.nonSelectedTitleRGB;
+            titleDiscover.ColorFillSolid = Colors.nonSelectedTitleRGB;
+            titleDiscover.BorderColor = Colors.nonSelectedTitleRGB;
+            titleDiscover.BackColor = Colors.nonSelectedTitleRGB;
+            titleSubmit.ColorFillSolid = Colors.nonSelectedTitleRGB;
+            titleSubmit.BorderColor = Colors.nonSelectedTitleRGB;
+            titleSubmit.BackColor = Colors.nonSelectedTitleRGB;
+            titleSettings.ColorFillSolid = Colors.nonSelectedTitleRGB;
+            titleSettings.BorderColor = Colors.nonSelectedTitleRGB;
+            titleSettings.BackColor = Colors.nonSelectedTitleRGB;
+            titleInformation.ColorFillSolid = Colors.nonSelectedTitleRGB;
+            titleInformation.BorderColor = Colors.nonSelectedTitleRGB;
+            titleInformation.BackColor = Colors.nonSelectedTitleRGB;
 
-            titleHome.ColorFillSolid = nonSelectedTitleRGB;
-            titleHome.BorderColor = nonSelectedTitleRGB;
-            titleHome.BackColor = nonSelectedTitleRGB;
-            titleSearch.ColorFillSolid = nonSelectedTitleRGB;
-            titleSearch.BorderColor = nonSelectedTitleRGB;
-            titleSearch.BackColor = nonSelectedTitleRGB;
-            titleDiscover.ColorFillSolid = nonSelectedTitleRGB;
-            titleDiscover.BorderColor = nonSelectedTitleRGB;
-            titleDiscover.BackColor = nonSelectedTitleRGB;
-            titleSubmit.ColorFillSolid = nonSelectedTitleRGB;
-            titleSubmit.BorderColor = nonSelectedTitleRGB;
-            titleSubmit.BackColor = nonSelectedTitleRGB;
-            titleSettings.ColorFillSolid = nonSelectedTitleRGB;
-            titleSettings.BorderColor = nonSelectedTitleRGB;
-            titleSettings.BackColor = nonSelectedTitleRGB;
-            titleInformation.ColorFillSolid = nonSelectedTitleRGB;
-            titleInformation.BorderColor = nonSelectedTitleRGB;
-            titleInformation.BackColor = nonSelectedTitleRGB;
-
-            cbtn.ColorFillSolid = selectedTitleRGB;
-            cbtn.BorderColor = selectedTitleRGB;
-            cbtn.BackColor = selectedTitleRGB;
+            cbtn.ColorFillSolid = Colors.selectedTitleRGB;
+            cbtn.BorderColor = Colors.selectedTitleRGB;
+            cbtn.BackColor = Colors.selectedTitleRGB;
         }
 
         // Home tab
@@ -426,13 +419,9 @@ namespace WebCrunch
             {
                 Program.log.Info("Attempting to get absolute total size of all files");
 
-                foreach (string jsonData in dataOpenFiles)
+                foreach (var jsonData in dataOpenFiles)
                 {
-                    if (TextExtensions.isValidJSON(jsonData))
-                    {
-                        var dataJsonFile = JsonConvert.DeserializeObject<Models.WebFile>(jsonData);
-                        if (dataJsonFile.Size >= 0) { totalSize += dataJsonFile.Size; }
-                    }
+                    if (jsonData.Size >= 0) { totalSize += jsonData.Size; }
                 }
 
                 lblHomeStatsFiles.Text = String.Format(lblHomeStatsFiles.Text, TextExtensions.getFormattedNumber(dataOpenFiles.Count.ToString()), TextExtensions.bytesToString(totalSize), TextExtensions.getFormattedNumber(dataOpenDirectories.Count.ToString()));
@@ -455,10 +444,10 @@ namespace WebCrunch
                     var dataJsonInfo = JsonConvert.DeserializeObject<Models.DatabaseInfo>(databaseInfo);
                     if (TextExtensions.isDateTime(dataJsonInfo.LastUpdated)) { lblHomeStatsDatabaseUpdated.Text = String.Format(lblHomeStatsDatabaseUpdated.Text, Convert.ToDateTime(dataJsonInfo.LastUpdated).ToShortDateString()); }
 
-                    Program.log.Info("Latest database update date successful");
+                    Program.log.Info("Latest database update date successful" + dataJsonInfo.LastUpdated);
                 }
             }
-            catch (Exception ex) { lblHomeStatsDatabaseUpdated.Text = "Updated: n/a"; Program.log.Error("Error getting latest datebase update date"); }
+            catch (Exception ex) { lblHomeStatsDatabaseUpdated.Text = "Updated: n/a"; Program.log.Error("Error getting latest datebase update date", ex); }
         }
 
         public void loadTopSearches()
@@ -527,13 +516,13 @@ namespace WebCrunch
                 Font = new Font(btnHomeFileType.Font.Name, 9.25F, FontStyle.Regular),
                 Size = new Size(70, 24),
                 BackColor = Color.Transparent,
-                ForeColor = Color.White,
+                ForeColor = Colors.uiColorOrange,
                 TextMargin = new Padding(0, 2, 0, 2),
-                BorderColor = Color.FromArgb(51, 60, 67),
-                ColorFillSolid = Color.FromArgb(51, 60, 67),
-                FillType = CButtonLib.CButton.eFillType.Solid,
+                BorderColor = Colors.uiColorOrange,
+                ColorFillSolid = Color.Transparent,
+                FillType = CButton.eFillType.Solid,
                 TextShadowShow = false,
-                ShowFocus = CButtonLib.CButton.eFocus.None,
+                ShowFocus = CButton.eFocus.None,
                 Margin = new Padding(0, 3, 6, 3),
                 BorderShow = true,
                 DimFactorClick = 0,
@@ -606,7 +595,7 @@ namespace WebCrunch
         public static string exploreUrlSearx = "https://searx.me/?q=";
 
         // Files
-        public static List<string> selectedFiles = dataOpenFiles;
+        public static List<WebFile> selectedFiles = dataOpenFiles;
         public static List<string> allFileTypes = new List<string>();
         public static List<string> videoFileTypes = new List<string>() { "M2TS", "MP4", "MKV", "AVI", "MPEG", "MPG", "MOV" };
         public static List<string> audioFileTypes = new List<string>() { "MP3", "WMA", "WAV", "M3U", "APE", "AIF", "MPA", "CDA" };
@@ -629,18 +618,14 @@ namespace WebCrunch
 
             foreach (var pathFile in Directory.GetFiles(userDownloadsDirectory))
             {
-                var dataJson = new Models.WebFile
-                {
-                    URL = pathFile,
-                    Host = rm.GetString("local"),
-                    Name = Path.GetFileNameWithoutExtension(pathFile),
-                    Type = Path.GetExtension(pathFile).Replace(".", "").ToUpper(),
-                    Size = new FileInfo(pathFile).Length,
-                    DateUploaded = File.GetCreationTime(pathFile)
+                dataFilesLocal.Add(new WebFile(
+                    Path.GetExtension(pathFile).Replace(".", "").ToUpper(),
+                    Path.GetFileNameWithoutExtension(pathFile),
+                    new FileInfo(pathFile).Length,
+                    File.GetCreationTime(pathFile),
+                    rm.GetString("local"),
+                    pathFile));
             };
-
-                dataFilesLocal.Add(JsonConvert.SerializeObject(dataJson));
-            }
 
             Program.log.Info("Local files loading successful");
         }
@@ -657,7 +642,8 @@ namespace WebCrunch
                 {
                     while (!reader.EndOfStream)
                     {
-                        dataFilesSaved.Add(reader.ReadLine());
+                        var jsonData = JsonConvert.DeserializeObject<WebFile>(reader.ReadLine());
+                        dataFilesSaved.Add(new WebFile(jsonData.Type, jsonData.Name, jsonData.Size, jsonData.DateUploaded, jsonData.Host, jsonData.URL));
                     }
                 }
             }
@@ -667,47 +653,47 @@ namespace WebCrunch
 
         private void titleFilesAll_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            imgSpinner.Visible = true; selectedFilesFileType = allFileTypes; selectFilesTab(titleFilesAll); selectedFiles = dataOpenFiles; showFiles(selectedFiles);
+            selectedFilesFileType = allFileTypes; selectFilesTab(titleFilesAll); selectedFiles = dataOpenFiles; showFiles(selectedFiles);
         }
 
         private void titleFilesVideo_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            imgSpinner.Visible = true; selectedFilesFileType = videoFileTypes; selectFilesTab(titleFilesVideo); selectedFiles = dataOpenFiles; showFiles(selectedFiles);
+            selectedFilesFileType = videoFileTypes; selectFilesTab(titleFilesVideo); selectedFiles = dataOpenFiles; showFiles(selectedFiles);
         }
 
         private void titleFilesAudio_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            imgSpinner.Visible = true; selectedFilesFileType = audioFileTypes; selectFilesTab(titleFilesAudio); selectedFiles = dataOpenFiles; showFiles(selectedFiles);
+            selectedFilesFileType = audioFileTypes; selectFilesTab(titleFilesAudio); selectedFiles = dataOpenFiles; showFiles(selectedFiles);
         }
 
         private void titleFilesEbooks_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            imgSpinner.Visible = true; selectedFilesFileType = ebooksFileTypes; selectFilesTab(titleFilesEbooks); selectedFiles = dataOpenFiles; showFiles(selectedFiles);
+            selectedFilesFileType = ebooksFileTypes; selectFilesTab(titleFilesEbooks); selectedFiles = dataOpenFiles; showFiles(selectedFiles);
         }
 
         private void titleFilesSubtitles_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            imgSpinner.Visible = true; selectedFilesFileType = subtitleFileTypes; selectFilesTab(titleFilesSubtitles); selectedFiles = dataOpenFiles; showFiles(selectedFiles);
+            selectedFilesFileType = subtitleFileTypes; selectFilesTab(titleFilesSubtitles); selectedFiles = dataOpenFiles; showFiles(selectedFiles);
         }
         
         private void titleFilesMobile_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            imgSpinner.Visible = true; selectedFilesFileType = mobileFileTypes; selectFilesTab(titleFilesMobile); selectedFiles = dataOpenFiles; showFiles(selectedFiles);
+            selectedFilesFileType = mobileFileTypes; selectFilesTab(titleFilesMobile); selectedFiles = dataOpenFiles; showFiles(selectedFiles);
         }
 
         private void titleFilesTorrents_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            imgSpinner.Visible = true; selectedFilesFileType = torrentFileTypes; selectFilesTab(titleFilesTorrents); selectedFiles = dataOpenFiles; showFiles(selectedFiles);
+            selectedFilesFileType = torrentFileTypes; selectFilesTab(titleFilesTorrents); selectedFiles = dataOpenFiles; showFiles(selectedFiles);
         }
 
         private void titleFilesArchives_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            imgSpinner.Visible = true; selectedFilesFileType = archivesFileTypes; selectFilesTab(titleFilesArchives); selectedFiles = dataOpenFiles; showFiles(selectedFiles);
+            selectedFilesFileType = archivesFileTypes; selectFilesTab(titleFilesArchives); selectedFiles = dataOpenFiles; showFiles(selectedFiles);
         }
 
         private void titleFilesOther_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            imgSpinner.Visible = true; selectedFilesFileType = otherFileTypes; selectFilesTab(titleFilesOther); selectedFiles = dataOpenFiles; showFiles(selectedFiles);
+            selectedFilesFileType = otherFileTypes; selectFilesTab(titleFilesOther); selectedFiles = dataOpenFiles; showFiles(selectedFiles);
         }
         
         private void titleFilesCustom_ClickButtonArea(object Sender, MouseEventArgs e)
@@ -716,67 +702,49 @@ namespace WebCrunch
             string userResponse = getUserResponse.Replace(".", "");
             if (userResponse != "")
             {
-                imgSpinner.Visible = true; selectedFilesFileType = new List<string>() { userResponse.ToUpper() }; selectFilesTab(titleFilesCustom); selectedFiles = dataOpenFiles; showFiles(selectedFiles);
+                selectedFilesFileType = new List<string>() { userResponse.ToUpper() }; selectFilesTab(titleFilesCustom); selectedFiles = dataOpenFiles; showFiles(selectedFiles);
             }
         }
 
         private void titleFilesLocal_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            imgSpinner.Visible = true; selectedFilesFileType = allFileTypes; selectFilesTab(titleFilesLocal); loadLocalFiles(); selectedFiles = dataFilesLocal; showFiles(selectedFiles);
+            selectedFilesFileType = allFileTypes; selectFilesTab(titleFilesLocal); loadLocalFiles(); selectedFiles = dataFilesLocal; showFiles(selectedFiles);
         }
         
         private void titleFilesSaved_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            imgSpinner.Visible = true; selectedFilesFileType = allFileTypes; selectFilesTab(titleFilesSaved); loadSavedFiles(); selectedFiles = dataFilesSaved; showFiles(selectedFiles);
+            selectedFilesFileType = allFileTypes; selectFilesTab(titleFilesSaved); loadSavedFiles(); selectedFiles = dataFilesSaved; showFiles(selectedFiles);
         }
 
         public void selectFilesTab(CButton cbtn)
         {
-            Color selectedRGB = Color.FromArgb(51, 60, 67);
-            Color nonSelectedTitleRGB = Color.Transparent;
-            Color selectedForeRGB = Color.White;
-            Color nonSelectedForeRGB = Color.Silver;
+            titleFilesAll.ColorFillSolid = Color.Transparent;
+            titleFilesAll.BorderColor = Color.Transparent;
+            titleFilesVideo.ColorFillSolid = Color.Transparent;
+            titleFilesVideo.BorderColor = Color.Transparent;
+            titleFilesAudio.ColorFillSolid = Color.Transparent;
+            titleFilesAudio.BorderColor = Color.Transparent;
+            titleFilesEbooks.ColorFillSolid = Color.Transparent;
+            titleFilesEbooks.BorderColor = Color.Transparent;
+            titleFilesSubtitles.ColorFillSolid = Color.Transparent;
+            titleFilesSubtitles.BorderColor = Color.Transparent;
+            titleFilesTorrents.ColorFillSolid = Color.Transparent;
+            titleFilesTorrents.BorderColor = Color.Transparent;
+            titleFilesMobile.ColorFillSolid = Color.Transparent;
+            titleFilesMobile.BorderColor = Color.Transparent;
+            titleFilesArchives.ColorFillSolid = Color.Transparent;
+            titleFilesArchives.BorderColor = Color.Transparent;
+            titleFilesCustom.ColorFillSolid = Color.Transparent;
+            titleFilesCustom.BorderColor = Color.Transparent;
+            titleFilesOther.ColorFillSolid = Color.Transparent;
+            titleFilesOther.BorderColor = Color.Transparent;
+            titleFilesLocal.ColorFillSolid = Color.Transparent;
+            titleFilesLocal.BorderColor = Color.Transparent;
+            titleFilesSaved.ColorFillSolid = Color.Transparent;
+            titleFilesSaved.BorderColor = Color.Transparent;
 
-            titleFilesAll.ColorFillSolid = nonSelectedTitleRGB;
-            titleFilesAll.BorderColor = nonSelectedTitleRGB;
-            titleFilesAll.ForeColor = nonSelectedForeRGB;
-            titleFilesVideo.ColorFillSolid = nonSelectedTitleRGB;
-            titleFilesVideo.BorderColor = nonSelectedTitleRGB;
-            titleFilesVideo.ForeColor = nonSelectedForeRGB;
-            titleFilesAudio.ColorFillSolid = nonSelectedTitleRGB;
-            titleFilesAudio.BorderColor = nonSelectedTitleRGB;
-            titleFilesAudio.ForeColor = nonSelectedForeRGB;
-            titleFilesEbooks.ColorFillSolid = nonSelectedTitleRGB;
-            titleFilesEbooks.BorderColor = nonSelectedTitleRGB;
-            titleFilesEbooks.ForeColor = nonSelectedForeRGB;
-            titleFilesSubtitles.ColorFillSolid = nonSelectedTitleRGB;
-            titleFilesSubtitles.BorderColor = nonSelectedTitleRGB;
-            titleFilesSubtitles.ForeColor = nonSelectedForeRGB;
-            titleFilesTorrents.ColorFillSolid = nonSelectedTitleRGB;
-            titleFilesTorrents.BorderColor = nonSelectedTitleRGB;
-            titleFilesTorrents.ForeColor = nonSelectedForeRGB;
-            titleFilesMobile.ColorFillSolid = nonSelectedTitleRGB;
-            titleFilesMobile.BorderColor = nonSelectedTitleRGB;
-            titleFilesMobile.ForeColor = nonSelectedForeRGB;
-            titleFilesArchives.ColorFillSolid = nonSelectedTitleRGB;
-            titleFilesArchives.BorderColor = nonSelectedTitleRGB;
-            titleFilesArchives.ForeColor = nonSelectedForeRGB;
-            titleFilesCustom.ColorFillSolid = nonSelectedTitleRGB;
-            titleFilesCustom.BorderColor = nonSelectedTitleRGB;
-            titleFilesCustom.ForeColor = nonSelectedForeRGB;
-            titleFilesOther.ColorFillSolid = nonSelectedTitleRGB;
-            titleFilesOther.BorderColor = nonSelectedTitleRGB;
-            titleFilesOther.ForeColor = nonSelectedForeRGB;
-            titleFilesLocal.ColorFillSolid = nonSelectedTitleRGB;
-            titleFilesLocal.BorderColor = nonSelectedTitleRGB;
-            titleFilesLocal.ForeColor = nonSelectedForeRGB;
-            titleFilesSaved.ColorFillSolid = nonSelectedTitleRGB;
-            titleFilesSaved.BorderColor = nonSelectedTitleRGB;
-            titleFilesSaved.ForeColor = nonSelectedForeRGB;
-
-            cbtn.ColorFillSolid = selectedRGB;
-            cbtn.BorderColor = selectedRGB;
-            cbtn.ForeColor = selectedForeRGB;
+            cbtn.ColorFillSolid = Colors.uiColorOrange;
+            cbtn.BorderColor = Colors.uiColorOrange;
         }
 
         private void dataGridFiles_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
@@ -823,12 +791,14 @@ namespace WebCrunch
 
         public Stopwatch stopWatch = new Stopwatch();
 
-        delegate void loadFilesCallBack(List<string> dataFiles);
-        public void showFiles(List<string> dataFiles)
+        delegate void loadFilesCallBack(List<WebFile> dataFiles);
+        public void showFiles(List<WebFile> dataFiles)
         {
+            imgSearch.Image = Properties.Resources.loader;
+
             Program.log.Info("Searching files");
 
-            BackGroundWorker.RunWorkAsync<List<string>>(() => searchFiles(dataFiles), (data) =>
+            BackGroundWorker.RunWorkAsync<List<WebFile>>(() => searchFiles(dataFiles), (data) =>
             {
                 if (tabSearch.InvokeRequired)
                 {
@@ -838,20 +808,16 @@ namespace WebCrunch
                 else
                 {
                     ComponentResourceManager resources = new ComponentResourceManager(typeof(MainForm));
-                    cmboBoxFilesSort.SelectedIndex = 0; dataGridFiles.Rows.Clear();
+                    dataGridFiles.Rows.Clear();
                     cmboBoxFilesHost.Items.Clear(); cmboBoxFilesHost.Items.Add(resources.GetString("cmboBoxFilesHost.Items"));
 
                     stopWatch.Start();
 
-                    foreach (string jsonData in data)
+                    foreach (var jsonData in data)
                     {
-                        if (TextExtensions.isValidJSON(jsonData))
-                        {
-                            var dataJson = JsonConvert.DeserializeObject<Models.WebFile>(jsonData);
-                            dataGridFiles.Rows.Add(dataJson.Type, dataJson.Name, TextExtensions.bytesToString(dataJson.Size), TextExtensions.getTimeAgo(dataJson.DateUploaded), dataJson.Host, dataJson.URL);
+                        dataGridFiles.Rows.Add(jsonData.Type, jsonData.Name, TextExtensions.bytesToString(jsonData.Size), TextExtensions.getTimeAgo(jsonData.DateUploaded), jsonData.Host, jsonData.URL);
 
-                            if (!(cmboBoxFilesHost.Items.Contains(dataJson.Host))) { cmboBoxFilesHost.Items.Add(dataJson.Host); }
-                        }
+                        if (!(cmboBoxFilesHost.Items.Contains(jsonData.Host))) { cmboBoxFilesHost.Items.Add(jsonData.Host); }
                     }
 
                     stopWatch.Stop(); TimeSpan ts = stopWatch.Elapsed;
@@ -860,26 +826,24 @@ namespace WebCrunch
                     tab.SelectedTab = currentTab;
 
                     cmboBoxFilesHost.DropDownWidth = ControlExtensions.DropDownWidth(cmboBoxFilesHost);
-                    imgSpinner.Visible = false;
+                    imgSearch.Image = Properties.Resources.magnify_orange;
                 }
             });
             Program.log.Info("Successfully returned files");
         }
 
         object loadFilesLock = new object();
-        public List<string> searchFiles(List<string> dataFiles)
+        public List<WebFile> searchFiles(List<WebFile> dataFiles)
         {
             lock (loadFilesLock)
             {
-                List<string> urls = new List<string>();
+                List<WebFile> urls = new List<WebFile>();
 
-                foreach (string file in dataFiles)
+                foreach (var file in dataFiles)
                 {
-                    var dataJson = JsonConvert.DeserializeObject<Models.WebFile>(file);
-
-                    if (TextExtensions.ContainsAll(dataJson.Name.ToLower(), TextExtensions.GetWords(txtSearchFiles.Text.ToLower())) && selectedFilesFileType.Contains(dataJson.Type) && dataJson.Host.Contains(selectedFilesHost))
+                    if (TextExtensions.ContainsAll(file.Name.ToLower(), TextExtensions.GetWords(txtSearchFiles.Text.ToLower())) && selectedFilesFileType.Contains(file.Type) && file.Host.Contains(selectedFilesHost))
                     {
-                        urls.Add(JsonConvert.SerializeObject(dataJson));
+                        urls.Add(new WebFile(file.Type, file.Name, file.Size, file.DateUploaded, file.Host, file.URL));
                     }
 
                 }
@@ -887,11 +851,63 @@ namespace WebCrunch
             }
         }
 
-        public void showFileDetails(string Url, string Name, string Type, string Host, bool isLocal, string Size = "-", string Age = "-")
+        public void sortFilesByName(string type = "ascending")
+        {
+            if (type == "ascending")
+            {
+                dataOpenFiles.Sort(delegate (WebFile x, WebFile y)
+                {
+                    return x.Name.CompareTo(y.Name);
+                });
+            }
+            else if (type == "descending")
+            {
+                dataOpenFiles.Sort(delegate (WebFile x, WebFile y)
+                {
+                    return y.Name.CompareTo(x.Name);
+                });
+            }
+        }
+
+        public void sortFilesBySize(string type = "ascending")
+        {
+            if (type == "ascending")
+            {
+                dataOpenFiles.Sort(delegate (WebFile x, WebFile y)
+                {
+                    return x.Size.CompareTo(y.Size);
+                });
+            }
+            else if (type == "descending")
+            {
+                dataOpenFiles.Sort(delegate (WebFile x, WebFile y)
+                {
+                    return y.Size.CompareTo(x.Size);
+                });
+            }            
+        }
+
+        public void sortFilesByAge(string type = "ascending")
+        {
+            if (type == "ascending")
+            {
+                dataOpenFiles.Sort(delegate (WebFile x, WebFile y)
+                {
+                    return x.DateUploaded.CompareTo(y.DateUploaded);
+                });
+            }
+            else if (type == "descending")
+            {
+                dataOpenFiles.Sort(delegate (WebFile x, WebFile y)
+                {
+                    return y.DateUploaded.CompareTo(x.DateUploaded);
+                });
+            }
+        }
+
+        public void showFileDetails(string Url, string Name, string Type, string Host, bool isLocal, string Size = "0", string Age = "0 days")
         {
             Program.log.Info("Attempting to show file details dialog");
-
-            imgSpinner.Visible = true;
 
             FileDetails fileDetails = new FileDetails();
             fileDetails.infoFileName.Text = Name;
@@ -913,7 +929,6 @@ namespace WebCrunch
             fileDetails.Dock = DockStyle.Fill;
             tabBlank.Controls.Clear();
             tabBlank.Controls.Add(fileDetails);
-            imgSpinner.Visible = false;
             tab.SelectedTab = tabBlank;
 
             Program.log.Info("Successfully showed file details dialog");
@@ -932,6 +947,11 @@ namespace WebCrunch
             }
         }
 
+        private void imgSearch_Click(object sender, EventArgs e)
+        {
+            doSearchFiles();
+        }
+
         private void bgSearchFilesHome_ClickButtonArea(object Sender, MouseEventArgs e)
         {
             txtSearchFilesHome.Focus();
@@ -945,14 +965,19 @@ namespace WebCrunch
             }
         }
 
+        private void imgSearchHome_Click(object sender, EventArgs e)
+        {
+            doSearchFilesFromHome();
+        }
+
         public void doSearchFiles()
         {
-            imgSpinner.Visible = true; tab.SelectedTab = tabSearch; showFiles(selectedFiles);
+            imgSearch.Image = Properties.Resources.loader; tab.SelectedTab = tabSearch; showFiles(selectedFiles);
         }
 
         public void doSearchFilesFromHome()
         {
-            imgSpinner.Visible = true; txtSearchFiles.Text = txtSearchFilesHome.Text;
+            imgSearchHome.Image = Properties.Resources.loader; txtSearchFiles.Text = txtSearchFilesHome.Text;
 
             if (cmboBoxHomeEngine.SelectedIndex == -1 | cmboBoxHomeEngine.SelectedIndex == 0)
             {
@@ -969,7 +994,7 @@ namespace WebCrunch
             }
             else
             {
-                Process.Start(selectedFilesEngine + String.Format("{0}+({1}) -inurl:(jsp|pl|php|html|aspx|htm|cf|shtml) intitle:index.of -inurl:(listen77|mp3raid|mp3toss|mp3drug|index_of|index-of|wallywashis|downloadmana)", txtSearchFilesHome.Text, String.Join("|", selectedFilesFileType.ToArray()))); imgSpinner.Visible = false;
+                Process.Start(selectedFilesEngine + String.Format("{0}+({1}) -inurl:(jsp|pl|php|html|aspx|htm|cf|shtml) intitle:index.of -inurl:(listen77|mp3raid|mp3toss|mp3drug|index_of|index-of|wallywashis|downloadmana)", txtSearchFilesHome.Text, String.Join("|", selectedFilesFileType.ToArray()))); imgSearchHome.Image = Properties.Resources.magnify_orange;
             }
         }
 
@@ -981,14 +1006,23 @@ namespace WebCrunch
 
         private void cmboBoxFilesSort_SelectedIndexChanged(object sender, EventArgs e)
         {
-            imgSpinner.Visible = true;
+            imgSearch.Image = Properties.Resources.loader;
+
+            if (cmboBoxFilesSort.SelectedIndex == 0) { showFiles(selectedFiles); }
+            else if (cmboBoxFilesSort.SelectedIndex == 1) { sortFilesByName("ascending"); doSearchFiles(); }
+            else if (cmboBoxFilesSort.SelectedIndex == 2) { sortFilesByName("descending"); }
+            else if (cmboBoxFilesSort.SelectedIndex == 3) { sortFilesBySize("ascending"); }
+            else if (cmboBoxFilesSort.SelectedIndex == 4) { sortFilesBySize("descending"); }
+            else if (cmboBoxFilesSort.SelectedIndex == 5) { sortFilesByAge("ascending"); }
+            else if (cmboBoxFilesSort.SelectedIndex == 6) { sortFilesByAge("descending"); }
+
             var startText = btnFilesSort.Text.Split(':');
             btnFilesSort.Text = startText[0] + ": " + cmboBoxFilesSort.SelectedItem.ToString();
+            Font myFont = new Font(btnFilesSort.Font.FontFamily, btnFilesSort.Font.Size);
+            SizeF mySize = btnFilesSort.CreateGraphics().MeasureString(btnFilesSort.Text, myFont);
+            panelFilesSort.Width = (((int)(Math.Round(mySize.Width, 0))) + 26);
 
-            if (cmboBoxFilesSort.SelectedIndex == 0) { cmboBoxFilesSort.DropDownWidth = ControlExtensions.DropDownWidth(cmboBoxFilesSort); showFiles(selectedFiles); }
-            else if (cmboBoxFilesSort.SelectedIndex == 1) { dataGridFiles.Sort(dataGridFiles.Columns[1], ListSortDirection.Ascending); }
-            else if (cmboBoxFilesSort.SelectedIndex == 2) { dataGridFiles.Sort(dataGridFiles.Columns[1], ListSortDirection.Descending); }
-            imgSpinner.Visible = false;
+            imgSearch.Image = Properties.Resources.magnify_orange;
         }
 
         // Filter Files by Host
@@ -1004,7 +1038,7 @@ namespace WebCrunch
 
         private void cmboBoxFilesHost_SelectedIndexChanged(object sender, EventArgs e)
         {
-            imgSpinner.Visible = true;
+            imgSearch.Image = Properties.Resources.loader;
 
             var startText = btnFilesHost.Text.Split(':');
             btnFilesHost.Text = startText[0] + ": " + cmboBoxFilesHost.SelectedItem.ToString();
@@ -1032,8 +1066,6 @@ namespace WebCrunch
         {
             Program.log.Info("Attempting to load and file hosts/servers");
 
-            imgSpinner.Visible = true; 
-
             BackGroundWorker.RunWorkAsync<List<string>>(() => getFileHosts(), (data) =>
             {
                 if (tabDiscover.InvokeRequired)
@@ -1053,7 +1085,6 @@ namespace WebCrunch
                     }
 
                     tab.SelectedTab = currentTab;
-                    imgSpinner.Visible = false;
                 }
             });
 
@@ -1184,6 +1215,20 @@ namespace WebCrunch
             Thread.Sleep(500);
 
             Program.log.Info("Successfully restored all user settings");
+        }
+
+        Bitmap tmpImageSearch;
+        private void imgSearchHome_MouseEnter(object sender, EventArgs e)
+        {
+            PictureBox ctrl = sender as PictureBox;
+            tmpImageSearch = (Bitmap)ctrl.Image;
+            ctrl.Image = ImageExtensions.changeColor(tmpImageSearch, Colors.uiColorOrange);
+        }
+
+        private void imgSearchHome_MouseLeave(object sender, EventArgs e)
+        {
+            PictureBox ctrl = sender as PictureBox;
+            ctrl.Image = tmpImageSearch;
         }
     }
 }
