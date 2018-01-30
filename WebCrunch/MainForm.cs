@@ -444,7 +444,7 @@ namespace WebCrunch
                     var dataJsonInfo = JsonConvert.DeserializeObject<Models.DatabaseInfo>(databaseInfo);
                     if (TextExtensions.isDateTime(dataJsonInfo.LastUpdated)) { lblHomeStatsDatabaseUpdated.Text = String.Format(lblHomeStatsDatabaseUpdated.Text, Convert.ToDateTime(dataJsonInfo.LastUpdated).ToShortDateString()); }
 
-                    Program.log.Info("Latest database update date successful" + dataJsonInfo.LastUpdated);
+                    Program.log.Info("Latest database update date successful");
                 }
             }
             catch (Exception ex) { lblHomeStatsDatabaseUpdated.Text = "Updated: n/a"; Program.log.Error("Error getting latest datebase update date", ex); }
@@ -547,7 +547,7 @@ namespace WebCrunch
             CButton tagItem = Sender as CButton;
             txtSearchFilesHome.Text = tagItem.Text;
 
-            doSearchFiles();
+            doSearchFilesFromHome();
         }
 
         private void btnHomeFileType_ClickButtonArea(object Sender, MouseEventArgs e)
