@@ -30,7 +30,7 @@ namespace WebCrunch.Extensions
             ctrl.Text = text;
             Font myFont = new Font(ctrl.Font.FontFamily, ctrl.Font.Size);
             SizeF mySize = ctrl.CreateGraphics().MeasureString(ctrl.Text, myFont);
-            ctrl.Width = (((int)(Math.Round(mySize.Width, 0))) + 26);
+            ctrl.Width = (((int)(Math.Round(mySize.Width, 0))) + 46);
         }
     }
 }

@@ -77,7 +77,7 @@ namespace WebCrunch
         // Data/Downloads Directories
         public static string pathRoot = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\WebCrunch\";
         public static string pathData = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\WebCrunch\Data\";
-        public static string pathDataSaved = pathRoot + "saved-files.json";
+        public static string pathDataBookmarked = pathRoot + "bookmarked-files.json";
         public static string userDownloadsDirectory = KnownFolders.GetPath(KnownFolder.Downloads) + @"\";
 
         // Updates
@@ -305,7 +305,7 @@ namespace WebCrunch
         public static List<string> dataOpenDirectories = new List<string>();
         public static List<WebFile> dataOpenFiles = new List<WebFile>();
         public static List<WebFile> dataFilesLocal = new List<WebFile>();
-        public static List<WebFile> dataFilesSaved = new List<WebFile>();
+        public static List<WebFile> dataFilesBookmarked = new List<WebFile>();
         public static string databaseInfo;
 
         // Core Tabs
@@ -630,20 +630,20 @@ namespace WebCrunch
             Program.log.Info("Local files loading successful");
         }
 
-        private void loadSavedFiles()
+        private void loadBookmarkedFiles()
         {
-            Program.log.Info("Getting users saved filess");
+            Program.log.Info("Getting users bookmarks files");
 
-            dataFilesSaved.Clear();
+            dataFilesBookmarked.Clear();
 
-            if (File.Exists(pathDataSaved))
+            if (File.Exists(pathDataBookmarked))
             {
-                using (StreamReader reader = new StreamReader(pathDataSaved))
+                using (StreamReader reader = new StreamReader(pathDataBookmarked))
                 {
                     while (!reader.EndOfStream)
                     {
                         var jsonData = JsonConvert.DeserializeObject<WebFile>(reader.ReadLine());
-                        dataFilesSaved.Add(new WebFile(jsonData.Type, jsonData.Name, jsonData.Size, jsonData.DateUploaded, jsonData.Host, jsonData.URL));
+                        dataFilesBookmarked.Add(new WebFile(jsonData.Type, jsonData.Name, jsonData.Size, jsonData.DateUploaded, jsonData.Host, jsonData.URL));
                     }
                 }
             }
@@ -711,9 +711,9 @@ namespace WebCrunch
             selectedFilesFileType = allFileTypes; selectFilesTab(titleFilesLocal); loadLocalFiles(); selectedFiles = dataFilesLocal; showFiles(selectedFiles);
         }
         
-        private void titleFilesSaved_ClickButtonArea(object Sender, MouseEventArgs e)
+        private void titleFilesBookmarked_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            selectedFilesFileType = allFileTypes; selectFilesTab(titleFilesSaved); loadSavedFiles(); selectedFiles = dataFilesSaved; showFiles(selectedFiles);
+            selectedFilesFileType = allFileTypes; selectFilesTab(titleFilesBookmarked); loadBookmarkedFiles(); selectedFiles = dataFilesBookmarked; showFiles(selectedFiles);
         }
 
         public void selectFilesTab(CButton cbtn)
@@ -740,8 +740,8 @@ namespace WebCrunch
             titleFilesOther.BorderColor = Color.Transparent;
             titleFilesLocal.ColorFillSolid = Color.Transparent;
             titleFilesLocal.BorderColor = Color.Transparent;
-            titleFilesSaved.ColorFillSolid = Color.Transparent;
-            titleFilesSaved.BorderColor = Color.Transparent;
+            titleFilesBookmarked.ColorFillSolid = Color.Transparent;
+            titleFilesBookmarked.BorderColor = Color.Transparent;
 
             cbtn.ColorFillSolid = Colors.uiColorOrange;
             cbtn.BorderColor = Colors.uiColorOrange;
@@ -977,7 +977,7 @@ namespace WebCrunch
 
         public void doSearchFilesFromHome()
         {
-            imgSearchHome.Image = Properties.Resources.loader; txtSearchFiles.Text = txtSearchFilesHome.Text;
+            txtSearchFiles.Text = txtSearchFilesHome.Text;
 
             if (cmboBoxHomeEngine.SelectedIndex == -1 | cmboBoxHomeEngine.SelectedIndex == 0)
             {
@@ -994,7 +994,7 @@ namespace WebCrunch
             }
             else
             {
-                Process.Start(selectedFilesEngine + String.Format("{0}+({1}) -inurl:(jsp|pl|php|html|aspx|htm|cf|shtml) intitle:index.of -inurl:(listen77|mp3raid|mp3toss|mp3drug|index_of|index-of|wallywashis|downloadmana)", txtSearchFilesHome.Text, String.Join("|", selectedFilesFileType.ToArray()))); imgSearchHome.Image = Properties.Resources.magnify_orange;
+                Process.Start(selectedFilesEngine + String.Format("{0}+({1}) -inurl:(jsp|pl|php|html|aspx|htm|cf|shtml) intitle:index.of -inurl:(listen77|mp3raid|mp3toss|mp3drug|index_of|index-of|wallywashis|downloadmana)", txtSearchFilesHome.Text, String.Join("|", selectedFilesFileType.ToArray())));
             }
         }
 
@@ -1056,7 +1056,7 @@ namespace WebCrunch
         }
 
         // Discover tab
-        private void dataGridDiscover_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridDiscover_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             Process.Start(dataGridDiscover.CurrentRow.Cells[3].Value.ToString());
         }

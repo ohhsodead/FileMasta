@@ -171,9 +171,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Extensions\LocalExtensions.cs" />
     <Compile Include="Utilities\ReportTemplates.cs" />
-    <Compile Include="SavedFiles\Saved.cs" />
+    <Compile Include="Bookmarks\Bookmarked.cs" />
     <Compile Include="Extensions\TextExtensions.cs" />
-    <Compile Include="SavedFiles\TextLineRemover.cs" />
+    <Compile Include="Bookmarks\TextLineRemover.cs" />
     <Compile Include="Utilities\Updates.cs" />
     <EmbeddedResource Include="UserControls\FileDetails.resx">
       <DependentUpon>FileDetails.cs</DependentUpon>
@@ -359,6 +359,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\loader.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bookmark-orange.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

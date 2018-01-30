@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 
-namespace WebCrunch.SavedFiles
+namespace WebCrunch.Bookmarks
 {
     public static class TextLineRemover
     {

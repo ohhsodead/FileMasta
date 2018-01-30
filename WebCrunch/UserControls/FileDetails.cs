@@ -2,19 +2,14 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
-using System.Data;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
 using System.IO;
-using System.Net;
 using WebCrunch;
-using Utilities;
 using Dialogs;
 using WebCrunch.Extensions;
-using WebCrunch.SavedFiles;
+using WebCrunch.Bookmarks;
 using WebCrunch.Utilities;
 using CButtonLib;
 
@@ -34,6 +29,15 @@ namespace UserControls
 
         private void ctrlFileDetails_Load(object sender, EventArgs e)
         {
+            if (!Bookmarked.isBookmarked(Bookmarked.fileToJson(infoFileURL.Text, infoName.Text, infoType.Text, infoReferrer.Text)))
+            {
+                ControlExtensions.ChangeControlText(btnSaveFile, "Add to Bookmarks");
+            }
+            else
+            {
+                ControlExtensions.ChangeControlText(btnSaveFile, "Remove from Bookmarks");
+            }
+
             VLCToolStripMenuItem.Visible = File.Exists(MainForm.pathVLC);
             MPCToolStripMenuItem.Visible = File.Exists(MainForm.pathMPCCodec64) || File.Exists(MainForm.pathMPC64) || File.Exists(MainForm.pathMPC86);
 
@@ -224,14 +228,14 @@ namespace UserControls
 
         private void btnSaveFile_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            if (!Saved.isSaved(Saved.fileToJson(infoFileURL.Text, infoName.Text, infoType.Text, infoReferrer.Text)))
+            if (!Bookmarked.isBookmarked(Bookmarked.fileToJson(infoFileURL.Text, infoName.Text, infoType.Text, infoReferrer.Text)))
             {
-                Saved.saveFile(Saved.fileToJson(infoFileURL.Text, infoName.Text, infoType.Text, infoReferrer.Text));
+                Bookmarked.saveFile(Bookmarked.fileToJson(infoFileURL.Text, infoName.Text, infoType.Text, infoReferrer.Text));
                 ControlExtensions.ChangeControlText(btnSaveFile, "Remove from Bookmarks");
             }
             else
             {
-                Saved.unsaveFile(Saved.fileToJson(infoFileURL.Text, infoName.Text, infoType.Text, infoReferrer.Text));
+                Bookmarked.unsaveFile(Bookmarked.fileToJson(infoFileURL.Text, infoName.Text, infoType.Text, infoReferrer.Text));
                 ControlExtensions.ChangeControlText(btnSaveFile, "Add to Bookmarks");
             }
         }
@@ -276,8 +280,8 @@ namespace UserControls
         private void infoFileURL_SideImageClicked(object Sender, MouseEventArgs e)
         {
             Clipboard.SetText(infoFileURL.Text);
-            infoFileURL.Image = WebCrunch.Properties.Resources.clipboard_check_orange;
-            infoFileURL.ImageSize = new Size(24, 24);
+            infoFileURL.SideImage = WebCrunch.Properties.Resources.clipboard_check_orange;
+            infoFileURL.SideImageSize = new Size(24, 24);
         }
     }
 }

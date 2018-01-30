@@ -3,13 +3,10 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Windows.Forms;
-using Utilities;
-using WebCrunch.Extensions;
 
-namespace WebCrunch.SavedFiles
+namespace WebCrunch.Bookmarks
 {
-    class Saved
+    class Bookmarked
     {
         /// <summary>
         /// Returns string form of file objects
@@ -25,40 +22,40 @@ namespace WebCrunch.SavedFiles
         }
 
         /// <summary>
-        /// Remove json string from Saved Files
+        /// Remove json string from Bookmarks
         /// </summary>
         /// <param name="Json"></param>
         public static void unsaveFile(string Json)
         {
-            if (File.Exists(MainForm.pathDataSaved))
+            if (File.Exists(MainForm.pathDataBookmarked))
             {
-                TextLineRemover.RemoveTextLines(new List<string> { Json }, MainForm.pathDataSaved, MainForm.pathDataSaved + ".tmp");
+                TextLineRemover.RemoveTextLines(new List<string> { Json }, MainForm.pathDataBookmarked, MainForm.pathDataBookmarked + ".tmp");
             }
         }
 
         /// <summary>
-        /// Add json string from Saved Files
+        /// Add json string to Bookmarks
         /// </summary>
         /// <param name="Json"></param>
         public static void saveFile(string Json)
         {
-            using (StreamWriter saved = File.AppendText(MainForm.pathDataSaved))
+            using (StreamWriter Bookmarked = File.AppendText(MainForm.pathDataBookmarked))
             {
-                saved.WriteLine(Json);
-                saved.Flush();
+                Bookmarked.WriteLine(Json);
+                Bookmarked.Flush();
             }
         }
 
         /// <summary>
-        /// Checks if json string exists in Saved Files
+        /// Checks if json string exists in Bookmarked Files
         /// </summary>
         /// <param name="URL"></param>
         /// <returns></returns>
-        public static bool isSaved(string Json)
+        public static bool isBookmarked(string Json)
         {
-            if (File.Exists(MainForm.pathDataSaved))
+            if (File.Exists(MainForm.pathDataBookmarked))
             {
-                using (StreamReader reader = new StreamReader(MainForm.pathDataSaved))
+                using (StreamReader reader = new StreamReader(MainForm.pathDataBookmarked))
                 {
                     while (!reader.EndOfStream)
                     {

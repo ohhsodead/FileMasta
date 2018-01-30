@@ -132,10 +132,10 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="imgSearchHome.Location" type="System.Drawing.Point, System.Drawing">
-    <value>811, 271</value>
+    <value>811, 272</value>
   </data>
   <data name="imgSearchHome.Size" type="System.Drawing.Size, System.Drawing">
-    <value>22, 22</value>
+    <value>20, 20</value>
   </data>
   <data name="imgSearchHome.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>StretchImage</value>
@@ -367,19 +367,19 @@
     <value>True</value>
   </data>
   <data name="lblHeaderTopSearches.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 10.75pt</value>
+    <value>Segoe UI Semibold, 10pt</value>
   </data>
   <data name="lblHeaderTopSearches.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="lblHeaderTopSearches.Location" type="System.Drawing.Point, System.Drawing">
-    <value>206, 317</value>
+    <value>206, 314</value>
   </data>
   <data name="lblHeaderTopSearches.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="lblHeaderTopSearches.Size" type="System.Drawing.Size, System.Drawing">
-    <value>111, 20</value>
+    <value>106, 19</value>
   </data>
   <data name="lblHeaderTopSearches.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -406,13 +406,13 @@
     <value>Segoe UI Semibold, 13.25pt</value>
   </data>
   <data name="lineHomeTopSearchesSplitter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>210, 341</value>
+    <value>210, 335</value>
   </data>
   <data name="lineHomeTopSearchesSplitter.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 16, 3, 3</value>
   </data>
   <data name="lineHomeTopSearchesSplitter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>632, 2</value>
+    <value>632, 1</value>
   </data>
   <data name="lineHomeTopSearchesSplitter.TabIndex" type="System.Int32, mscorlib">
     <value>1103</value>
@@ -436,7 +436,7 @@
     <value>Left, Right</value>
   </data>
   <data name="panelTopSearches.Location" type="System.Drawing.Point, System.Drawing">
-    <value>210, 346</value>
+    <value>210, 340</value>
   </data>
   <data name="panelTopSearches.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
     <value>No</value>
@@ -958,13 +958,13 @@
     <value>NoControl</value>
   </data>
   <data name="lblFilesResultsInfo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>761, 64</value>
+    <value>803, 64</value>
   </data>
   <data name="lblFilesResultsInfo.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 9, 3, 9</value>
   </data>
   <data name="lblFilesResultsInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>275, 20</value>
+    <value>233, 20</value>
   </data>
   <data name="lblFilesResultsInfo.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
@@ -1074,37 +1074,37 @@
   <data name="&gt;&gt;dataGridFiles.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="titleFilesSplitter.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="splitterFilesTabs.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
-  <data name="titleFilesSplitter.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="splitterFilesTabs.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 8.25pt</value>
   </data>
-  <data name="titleFilesSplitter.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="splitterFilesTabs.Location" type="System.Drawing.Point, System.Drawing">
     <value>14, 87</value>
   </data>
-  <data name="titleFilesSplitter.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="splitterFilesTabs.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 0</value>
   </data>
-  <data name="titleFilesSplitter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1022, 2</value>
+  <data name="splitterFilesTabs.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1022, 1</value>
   </data>
-  <data name="titleFilesSplitter.TabIndex" type="System.Int32, mscorlib">
+  <data name="splitterFilesTabs.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="titleFilesSplitter.Text" xml:space="preserve">
+  <data name="splitterFilesTabs.Text" xml:space="preserve">
     <value />
   </data>
-  <data name="&gt;&gt;titleFilesSplitter.Name" xml:space="preserve">
-    <value>titleFilesSplitter</value>
+  <data name="&gt;&gt;splitterFilesTabs.Name" xml:space="preserve">
+    <value>splitterFilesTabs</value>
   </data>
-  <data name="&gt;&gt;titleFilesSplitter.Type" xml:space="preserve">
+  <data name="&gt;&gt;splitterFilesTabs.Type" xml:space="preserve">
     <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;titleFilesSplitter.Parent" xml:space="preserve">
+  <data name="&gt;&gt;splitterFilesTabs.Parent" xml:space="preserve">
     <value>tabSearch</value>
   </data>
-  <data name="&gt;&gt;titleFilesSplitter.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;splitterFilesTabs.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
   <data name="titleFilesArchives.Font" type="System.Drawing.Font, System.Drawing">
@@ -1377,34 +1377,34 @@
   <data name="&gt;&gt;titleFilesLocal.ZOrder" xml:space="preserve">
     <value>14</value>
   </data>
-  <data name="titleFilesSaved.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="titleFilesBookmarked.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Semibold, 9.75pt</value>
   </data>
-  <data name="titleFilesSaved.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="titleFilesBookmarked.Location" type="System.Drawing.Point, System.Drawing">
     <value>703, 61</value>
   </data>
-  <data name="titleFilesSaved.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="titleFilesBookmarked.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 3, 0, 3</value>
   </data>
-  <data name="titleFilesSaved.Size" type="System.Drawing.Size, System.Drawing">
-    <value>58, 27</value>
+  <data name="titleFilesBookmarked.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 27</value>
   </data>
-  <data name="titleFilesSaved.TabIndex" type="System.Int32, mscorlib">
+  <data name="titleFilesBookmarked.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
   </data>
-  <data name="titleFilesSaved.Text" xml:space="preserve">
-    <value>Saved</value>
+  <data name="titleFilesBookmarked.Text" xml:space="preserve">
+    <value>Bookmarked</value>
   </data>
-  <data name="&gt;&gt;titleFilesSaved.Name" xml:space="preserve">
-    <value>titleFilesSaved</value>
+  <data name="&gt;&gt;titleFilesBookmarked.Name" xml:space="preserve">
+    <value>titleFilesBookmarked</value>
   </data>
-  <data name="&gt;&gt;titleFilesSaved.Type" xml:space="preserve">
+  <data name="&gt;&gt;titleFilesBookmarked.Type" xml:space="preserve">
     <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;titleFilesSaved.Parent" xml:space="preserve">
+  <data name="&gt;&gt;titleFilesBookmarked.Parent" xml:space="preserve">
     <value>tabSearch</value>
   </data>
-  <data name="&gt;&gt;titleFilesSaved.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;titleFilesBookmarked.ZOrder" xml:space="preserve">
     <value>15</value>
   </data>
   <data name="titleFilesCustom.Font" type="System.Drawing.Font, System.Drawing">
@@ -1524,23 +1524,56 @@
   <data name="&gt;&gt;tabSearch.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="splitterHeaderDiscover.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="splitterHeaderDiscover.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 13.25pt</value>
+  </data>
+  <data name="splitterHeaderDiscover.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 45</value>
+  </data>
+  <data name="splitterHeaderDiscover.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>10, 16, 3, 3</value>
+  </data>
+  <data name="splitterHeaderDiscover.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1020, 1</value>
+  </data>
+  <data name="splitterHeaderDiscover.TabIndex" type="System.Int32, mscorlib">
+    <value>100047</value>
+  </data>
+  <data name="splitterHeaderDiscover.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;splitterHeaderDiscover.Name" xml:space="preserve">
+    <value>splitterHeaderDiscover</value>
+  </data>
+  <data name="&gt;&gt;splitterHeaderDiscover.Type" xml:space="preserve">
+    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;splitterHeaderDiscover.Parent" xml:space="preserve">
+    <value>tabDiscover</value>
+  </data>
+  <data name="&gt;&gt;splitterHeaderDiscover.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="lblHeaderDiscover.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
   <data name="lblHeaderDiscover.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 14pt</value>
+    <value>Segoe UI Semibold, 15.25pt</value>
   </data>
   <data name="lblHeaderDiscover.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="lblHeaderDiscover.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 9</value>
+    <value>9, 13</value>
   </data>
   <data name="lblHeaderDiscover.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="lblHeaderDiscover.Size" type="System.Drawing.Size, System.Drawing">
-    <value>850, 32</value>
+    <value>1020, 32</value>
   </data>
   <data name="lblHeaderDiscover.TabIndex" type="System.Int32, mscorlib">
     <value>100046</value>
@@ -1561,7 +1594,7 @@
     <value>tabDiscover</value>
   </data>
   <data name="&gt;&gt;lblHeaderDiscover.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="dataGridDiscover.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -1621,7 +1654,7 @@
     <value>tabDiscover</value>
   </data>
   <data name="&gt;&gt;dataGridDiscover.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="tabDiscover.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
@@ -1646,6 +1679,39 @@
   </data>
   <data name="tabSubmit.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Stretch</value>
+  </data>
+  <data name="splitterHeaderSubmit.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="splitterHeaderSubmit.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 13.25pt</value>
+  </data>
+  <data name="splitterHeaderSubmit.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 45</value>
+  </data>
+  <data name="splitterHeaderSubmit.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>10, 16, 3, 3</value>
+  </data>
+  <data name="splitterHeaderSubmit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1020, 1</value>
+  </data>
+  <data name="splitterHeaderSubmit.TabIndex" type="System.Int32, mscorlib">
+    <value>1105</value>
+  </data>
+  <data name="splitterHeaderSubmit.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;splitterHeaderSubmit.Name" xml:space="preserve">
+    <value>splitterHeaderSubmit</value>
+  </data>
+  <data name="&gt;&gt;splitterHeaderSubmit.Type" xml:space="preserve">
+    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;splitterHeaderSubmit.Parent" xml:space="preserve">
+    <value>tabSubmit</value>
+  </data>
+  <data name="&gt;&gt;splitterHeaderSubmit.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="panelSubmitDescription.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -1711,7 +1777,7 @@ Please keep in mind we are a search engine having strict policies, read the foll
     <value>Segoe UI, 9.75pt</value>
   </data>
   <data name="btnSubmitLink.Location" type="System.Drawing.Point, System.Drawing">
-    <value>419, 4</value>
+    <value>417, 4</value>
   </data>
   <data name="btnSubmitLink.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 3, 3, 3</value>
@@ -1816,10 +1882,10 @@ Please keep in mind we are a search engine having strict policies, read the foll
     <value>1</value>
   </data>
   <data name="panelSubmitDescription.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 53</value>
+    <value>10, 56</value>
   </data>
   <data name="panelSubmitDescription.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1037, 521</value>
+    <value>1036, 496</value>
   </data>
   <data name="panelSubmitDescription.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1834,25 +1900,25 @@ Please keep in mind we are a search engine having strict policies, read the foll
     <value>tabSubmit</value>
   </data>
   <data name="&gt;&gt;panelSubmitDescription.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="lblHeaderSubmit.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
   <data name="lblHeaderSubmit.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 14pt</value>
+    <value>Segoe UI Semibold, 15.25pt</value>
   </data>
   <data name="lblHeaderSubmit.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="lblHeaderSubmit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 9</value>
+    <value>9, 13</value>
   </data>
   <data name="lblHeaderSubmit.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="lblHeaderSubmit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>829, 32</value>
+    <value>1030, 32</value>
   </data>
   <data name="lblHeaderSubmit.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1873,7 +1939,7 @@ Please keep in mind we are a search engine having strict policies, read the foll
     <value>tabSubmit</value>
   </data>
   <data name="&gt;&gt;lblHeaderSubmit.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="tabSubmit.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
@@ -1904,6 +1970,39 @@ Please keep in mind we are a search engine having strict policies, read the foll
   </data>
   <data name="tabSettings.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Stretch</value>
+  </data>
+  <data name="splitterHeaderSettings.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="splitterHeaderSettings.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 13.25pt</value>
+  </data>
+  <data name="splitterHeaderSettings.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 45</value>
+  </data>
+  <data name="splitterHeaderSettings.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>10, 16, 3, 3</value>
+  </data>
+  <data name="splitterHeaderSettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1020, 1</value>
+  </data>
+  <data name="splitterHeaderSettings.TabIndex" type="System.Int32, mscorlib">
+    <value>1104</value>
+  </data>
+  <data name="splitterHeaderSettings.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;splitterHeaderSettings.Name" xml:space="preserve">
+    <value>splitterHeaderSettings</value>
+  </data>
+  <data name="&gt;&gt;splitterHeaderSettings.Type" xml:space="preserve">
+    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;splitterHeaderSettings.Parent" xml:space="preserve">
+    <value>tabSettings</value>
+  </data>
+  <data name="&gt;&gt;splitterHeaderSettings.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="btnSettingsGeneralLanguage.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -1978,7 +2077,7 @@ Please keep in mind we are a search engine having strict policies, read the foll
     <value>1</value>
   </data>
   <data name="panelGeneralSettingsLanguage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>238, 58</value>
+    <value>235, 59</value>
   </data>
   <data name="panelGeneralSettingsLanguage.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 7, 0</value>
@@ -1999,7 +2098,7 @@ Please keep in mind we are a search engine having strict policies, read the foll
     <value>tabSettings</value>
   </data>
   <data name="&gt;&gt;panelGeneralSettingsLanguage.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="lblSettingsGeneralLanguage.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2011,7 +2110,7 @@ Please keep in mind we are a search engine having strict policies, read the foll
     <value>NoControl</value>
   </data>
   <data name="lblSettingsGeneralLanguage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 66</value>
+    <value>11, 67</value>
   </data>
   <data name="lblSettingsGeneralLanguage.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 8, 3, 8</value>
@@ -2035,43 +2134,40 @@ Please keep in mind we are a search engine having strict policies, read the foll
     <value>tabSettings</value>
   </data>
   <data name="&gt;&gt;lblSettingsGeneralLanguage.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
-  <data name="titleSettingsGeneral.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="titleSettingsGeneral.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="lblHeaderSettingsGeneral.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Semibold, 15.25pt</value>
   </data>
-  <data name="titleSettingsGeneral.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="lblHeaderSettingsGeneral.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="titleSettingsGeneral.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 14</value>
+  <data name="lblHeaderSettingsGeneral.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 13</value>
   </data>
-  <data name="titleSettingsGeneral.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="lblHeaderSettingsGeneral.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 8, 3, 8</value>
   </data>
-  <data name="titleSettingsGeneral.Size" type="System.Drawing.Size, System.Drawing">
-    <value>86, 30</value>
+  <data name="lblHeaderSettingsGeneral.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1030, 32</value>
   </data>
-  <data name="titleSettingsGeneral.TabIndex" type="System.Int32, mscorlib">
+  <data name="lblHeaderSettingsGeneral.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="titleSettingsGeneral.Text" xml:space="preserve">
+  <data name="lblHeaderSettingsGeneral.Text" xml:space="preserve">
     <value>General</value>
   </data>
-  <data name="&gt;&gt;titleSettingsGeneral.Name" xml:space="preserve">
-    <value>titleSettingsGeneral</value>
+  <data name="&gt;&gt;lblHeaderSettingsGeneral.Name" xml:space="preserve">
+    <value>lblHeaderSettingsGeneral</value>
   </data>
-  <data name="&gt;&gt;titleSettingsGeneral.Type" xml:space="preserve">
+  <data name="&gt;&gt;lblHeaderSettingsGeneral.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;titleSettingsGeneral.Parent" xml:space="preserve">
+  <data name="&gt;&gt;lblHeaderSettingsGeneral.Parent" xml:space="preserve">
     <value>tabSettings</value>
   </data>
-  <data name="&gt;&gt;titleSettingsGeneral.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="&gt;&gt;lblHeaderSettingsGeneral.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="lblSettingsGeneralClearDataOnClose.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2083,7 +2179,7 @@ Please keep in mind we are a search engine having strict policies, read the foll
     <value>NoControl</value>
   </data>
   <data name="lblSettingsGeneralClearDataOnClose.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 102</value>
+    <value>11, 110</value>
   </data>
   <data name="lblSettingsGeneralClearDataOnClose.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 8, 3, 8</value>
@@ -2107,7 +2203,7 @@ Please keep in mind we are a search engine having strict policies, read the foll
     <value>tabSettings</value>
   </data>
   <data name="&gt;&gt;lblSettingsGeneralClearDataOnClose.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="chkSettingsClearData.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2119,7 +2215,7 @@ Please keep in mind we are a search engine having strict policies, read the foll
     <value>NoControl</value>
   </data>
   <data name="chkSettingsClearData.Location" type="System.Drawing.Point, System.Drawing">
-    <value>238, 104</value>
+    <value>235, 112</value>
   </data>
   <data name="chkSettingsClearData.Size" type="System.Drawing.Size, System.Drawing">
     <value>15, 14</value>
@@ -2137,13 +2233,13 @@ Please keep in mind we are a search engine having strict policies, read the foll
     <value>tabSettings</value>
   </data>
   <data name="&gt;&gt;chkSettingsClearData.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="btnSettingsSave.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Semibold, 9.75pt</value>
   </data>
   <data name="btnSettingsSave.Location" type="System.Drawing.Point, System.Drawing">
-    <value>153, 170</value>
+    <value>150, 178</value>
   </data>
   <data name="btnSettingsSave.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 1, 3, 0</value>
@@ -2167,13 +2263,13 @@ Please keep in mind we are a search engine having strict policies, read the foll
     <value>tabSettings</value>
   </data>
   <data name="&gt;&gt;btnSettingsSave.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="btnSettingsRestoreDefault.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Semibold, 9.75pt</value>
   </data>
   <data name="btnSettingsRestoreDefault.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 170</value>
+    <value>14, 178</value>
   </data>
   <data name="btnSettingsRestoreDefault.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 1, 3, 0</value>
@@ -2197,7 +2293,7 @@ Please keep in mind we are a search engine having strict policies, read the foll
     <value>tabSettings</value>
   </data>
   <data name="&gt;&gt;btnSettingsRestoreDefault.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="tabSettings.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
