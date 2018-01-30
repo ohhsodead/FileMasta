@@ -48,15 +48,6 @@ namespace UserControls
                     infoFileSubtitles = MainForm.userDownloadsDirectory + Path.GetFileNameWithoutExtension(infoFileURL.Text) + ".srt";
                 }
             }
-
-            if (Saved.isSaved(Saved.fileToJson(infoFileURL.Text, infoName.Text, infoType.Text, infoReferrer.Text))) // If user has this file saved
-            {
-                btnSaveFile.Image = WebCrunch.Properties.Resources.bookmark_remove_orange;
-            }
-            else
-            {
-                btnSaveFile.Image = WebCrunch.Properties.Resources.bookmark_plus_orange;
-            }
         }
 
         private void appClose_Click(object sender, EventArgs e)
@@ -236,10 +227,12 @@ namespace UserControls
             if (!Saved.isSaved(Saved.fileToJson(infoFileURL.Text, infoName.Text, infoType.Text, infoReferrer.Text)))
             {
                 Saved.saveFile(Saved.fileToJson(infoFileURL.Text, infoName.Text, infoType.Text, infoReferrer.Text));
+                ControlExtensions.ChangeControlText(btnSaveFile, "Remove from Bookmarks");
             }
             else
             {
                 Saved.unsaveFile(Saved.fileToJson(infoFileURL.Text, infoName.Text, infoType.Text, infoReferrer.Text));
+                ControlExtensions.ChangeControlText(btnSaveFile, "Add to Bookmarks");
             }
         }
 

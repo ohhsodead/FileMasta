@@ -1,4 +1,6 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace WebCrunch.Extensions
 {
@@ -21,6 +23,14 @@ namespace WebCrunch.Extensions
                 }
             }
             return maxWidth;
+        }
+
+        public static void ChangeControlText(CButtonLib.CButton ctrl, string text)
+        {
+            ctrl.Text = text;
+            Font myFont = new Font(ctrl.Font.FontFamily, ctrl.Font.Size);
+            SizeF mySize = ctrl.CreateGraphics().MeasureString(ctrl.Text, myFont);
+            ctrl.Width = (((int)(Math.Round(mySize.Width, 0))) + 26);
         }
     }
 }

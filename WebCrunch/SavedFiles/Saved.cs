@@ -1,8 +1,11 @@
-﻿using Newtonsoft.Json;
+﻿using Models;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Windows.Forms;
 using Utilities;
+using WebCrunch.Extensions;
 
 namespace WebCrunch.SavedFiles
 {
@@ -18,7 +21,7 @@ namespace WebCrunch.SavedFiles
         /// <returns></returns>
         public static string fileToJson(string Url, string Name, string Type, string Host)
         {
-            return JsonConvert.SerializeObject(new Models.WebFile(Type, Name, 0, default(DateTime), Host, Url));
+            return JsonConvert.SerializeObject(new WebFile(Type, Name, 0, default(DateTime), Host, Url));
         }
 
         /// <summary>
@@ -49,7 +52,7 @@ namespace WebCrunch.SavedFiles
         /// <summary>
         /// Checks if json string exists in Saved Files
         /// </summary>
-        /// <param name="Json"></param>
+        /// <param name="URL"></param>
         /// <returns></returns>
         public static bool isSaved(string Json)
         {
