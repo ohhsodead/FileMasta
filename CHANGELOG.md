@@ -1,3 +1,11 @@
+## 0.2.15.0
+- Refurbished the entire UI
+- Improved logging/code
+- Enhanced overall functionality
+- Added sort by file size (#79) 
+- Added sort by file age
+- Fixed bugs
+
 ## 0.2.14.8
 - Improved UI
 - Renamed Files tab to Search
