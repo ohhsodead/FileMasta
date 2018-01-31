@@ -47,7 +47,7 @@
             // 
             resources.ApplyResources(this.imgLogo, "imgLogo");
             this.imgLogo.BackColor = System.Drawing.Color.Transparent;
-            this.imgLogo.Image = global::WebCrunch.Properties.Resources.logo;
+            this.imgLogo.Image = global::WebCrunch.Properties.Resources.new_logo;
             this.imgLogo.Name = "imgLogo";
             this.imgLogo.TabStop = false;
             // 

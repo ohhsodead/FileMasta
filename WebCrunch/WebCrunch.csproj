@@ -50,7 +50,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Resources\logo.ico</ApplicationIcon>
+    <ApplicationIcon>new_logo.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>false</SignAssembly>
@@ -272,8 +272,6 @@
     <None Include="Resources\windows.png" />
     <None Include="Resources\vlc.png" />
     <None Include="Resources\dots-horizontal.png" />
-    <None Include="Resources\poster-default.png" />
-    <None Include="Resources\poster-glow.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.2">
@@ -362,6 +360,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\bookmark-orange.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="new_logo.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

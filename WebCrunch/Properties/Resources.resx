@@ -121,9 +121,6 @@
   <data name="home" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\home.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="poster_glow" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\poster-glow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="magnify" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\magnify.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -136,14 +133,14 @@
   <data name="facebook" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\facebook.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="link_variant" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\link-variant.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="settings" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\settings.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="web" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\web.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="alert-octagon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\alert-octagon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="local_movies" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\local_movies.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -156,9 +153,6 @@
   </data>
   <data name="bookmark_plus_orange" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bookmark-plus-orange.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="poster_default" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\poster-default.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="vlc" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\vlc.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -187,6 +181,9 @@
   <data name="menu_down" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\menu-down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="bookmark-orange" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bookmark-orange.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="dots_horizontal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dots-horizontal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -195,9 +192,6 @@
   </data>
   <data name="share_orange" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\share-orange.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="play-orange" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\play-orange.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -208,13 +202,13 @@
   <data name="clipboard_arrow_left_orange" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\clipboard-arrow-left-orange.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="link_variant" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\link-variant.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="alert-octagon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\alert-octagon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="file-find-orange" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\file-find-orange.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="bookmark-orange" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bookmark-orange.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="new_logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\new_logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
