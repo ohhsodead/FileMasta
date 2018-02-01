@@ -22,18 +22,6 @@ We host no content, we provide only access to already available files in a same 
 
 To contact the application owner and administrator you can send an e-mail to this address: bettercodes1@gmail.com, any comments or suggestions are welcome too, Thank you.
 
-## Some Features Available
- * User-friendly interface with searches at lightning speed
- * Multilingual support - contributions are welcome!
- * Discover direct download links for almost anything!
- * Filter files by format, host and sort alphabetically
- * Search external search engines for directories/files
- * Find movies by name, actor, year and genre
- * Collects metadeta from public APIs
- * Embedded VLC Media Player
- * Support for other players (WMP, MPC & VLC)
- * Automatic local cache updates
-
 ## Latest Build
 WebCrunch 2.15
 
