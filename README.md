@@ -9,8 +9,6 @@
 </div>
 <br />
 
-[![Report a bug](http://i.imgur.com/xSpw482.png)](https://github.com/ekkash/WebCrunch/issues/new) [![Feature request](http://i.imgur.com/mFO0OuX.png)](http://feathub.com/ekkash/WebCrunch)
-
 ## What is WebCrunch?
 WebCrunch is intended to provide a very powerful web server indexing and search service allowing you to find a file among millions of files located on public servers around the internet. 
 
@@ -20,19 +18,7 @@ All web addresses this app uses for indexing are submitted by users only, our cr
 
 We host no content, we provide only access to already available files in a same way Google and other search engines do.
 
-To contact the application owner and administrator you can send an e-mail to this address: bettercodes1@gmail.com, any comments or suggestions are welcome too, Thank you.
-
-## Some Features Available
- * User-friendly interface with searches at lightning speed
- * Multilingual support - contributions are welcome!
- * Discover direct download links for almost anything!
- * Filter files by format, host and sort alphabetically
- * Search external search engines for directories/files
- * Find movies by name, actor, year and genre
- * Collects metadeta from public APIs
- * Embedded VLC Media Player
- * Support for other players (WMP, MPC & VLC)
- * Automatic local cache updates
+[![Report a bug](http://i.imgur.com/xSpw482.png)](https://github.com/ekkash/WebCrunch/issues/new) [![Feature request](http://i.imgur.com/mFO0OuX.png)](http://feathub.com/ekkash/WebCrunch)
 
 ## Latest Build
 WebCrunch 2.15
@@ -43,7 +29,7 @@ WebCrunch 2.15
 ## Installation
 Download and run the latest version of the Windows installer, "WebCrunch.Installer.Windows.exe" from the [releases](https://github.com/ekkash/WebCrunch/releases/latest) page.
 
-## Creating an issue
+## Creating an Issue
 Please supply as much information about the problem you are experiencing as possible. Your issue has a much greater chance of being resolved if logs are supplied so that we can see what is going on. Creating an issue with '### isn't working' doesn't help anyone to fix the problem.
 
 ## Contributing
