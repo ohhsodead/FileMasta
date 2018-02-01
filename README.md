@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="/WebCrunch/Resources/logo.png" height="128" width="128" alt="Logo" />
+  <img src="/WebCrunch/Resources/new_logo.png" height="128" width="128" alt="Logo" />
   <br />
   WebCrunch
 </h1>
