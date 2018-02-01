@@ -571,29 +571,6 @@ namespace WebCrunch
             else if (cmboBoxHomeFileType.SelectedIndex == 8) { selectedFilesFileType = otherFileTypes; }
         }
 
-        private void btnExploreEngine_ClickButtonArea(object Sender, MouseEventArgs e)
-        {
-            cmboBoxHomeEngine.DroppedDown = true;
-        }
-
-        public static string selectedFilesEngine = exploreUrlGoogle;
-
-        private void cmboBoxExploreEngine_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            btnHomeEngine.Text = cmboBoxHomeEngine.SelectedItem.ToString();
-
-            if (cmboBoxHomeEngine.SelectedIndex == 0) { } // Doesn't matter, won't need this anyway
-            else if (cmboBoxHomeEngine.SelectedIndex == 1) { selectedFilesEngine = exploreUrlGoogle; }
-            else if (cmboBoxHomeEngine.SelectedIndex == 2) { selectedFilesEngine = exploreUrlGoogol; }
-            else if (cmboBoxHomeEngine.SelectedIndex == 3) { selectedFilesEngine = exploreUrlStartpage; }
-            else if (cmboBoxHomeEngine.SelectedIndex == 4) { selectedFilesEngine = exploreUrlSearx; }
-        }
-
-        public static string exploreUrlGoogle = "https://google.com/search?q=";
-        public static string exploreUrlGoogol = "https://googol.warriordudimanche.net/?q=";
-        public static string exploreUrlStartpage = "https://startpage.com/do/dsearch?query=";
-        public static string exploreUrlSearx = "https://searx.me/?q=";
-
         // Files
         public static List<WebFile> selectedFiles = dataOpenFiles;
         public static List<string> allFileTypes = new List<string>();
@@ -979,23 +956,16 @@ namespace WebCrunch
         {
             txtSearchFiles.Text = txtSearchFilesHome.Text;
 
-            if (cmboBoxHomeEngine.SelectedIndex == -1 | cmboBoxHomeEngine.SelectedIndex == 0)
-            {
-                if (cmboBoxHomeFileType.SelectedIndex == -1) { selectedFilesFileType = allFileTypes; selectFilesTab(titleFilesAll); selectedFiles = dataOpenFiles; tab.SelectedTab = tabSearch; showFiles(selectedFiles); }
-                else if (cmboBoxHomeFileType.SelectedIndex == 0) { selectedFilesFileType = allFileTypes; selectFilesTab(titleFilesAll); selectedFiles = dataOpenFiles; tab.SelectedTab = tabSearch; showFiles(selectedFiles); }
-                else if (cmboBoxHomeFileType.SelectedIndex == 1) { selectedFilesFileType = videoFileTypes; selectFilesTab(titleFilesVideo); selectedFiles = dataOpenFiles; tab.SelectedTab = tabSearch; showFiles(selectedFiles); }
-                else if (cmboBoxHomeFileType.SelectedIndex == 2) { selectedFilesFileType = audioFileTypes; selectFilesTab(titleFilesAudio); selectedFiles = dataOpenFiles; tab.SelectedTab = tabSearch; showFiles(selectedFiles); }
-                else if (cmboBoxHomeFileType.SelectedIndex == 3) { selectedFilesFileType = ebooksFileTypes; selectFilesTab(titleFilesEbooks); selectedFiles = dataOpenFiles; tab.SelectedTab = tabSearch; showFiles(selectedFiles); }
-                else if (cmboBoxHomeFileType.SelectedIndex == 4) { selectedFilesFileType = subtitleFileTypes; selectFilesTab(titleFilesSubtitles); selectedFiles = dataOpenFiles; tab.SelectedTab = tabSearch; showFiles(selectedFiles); }
-                else if (cmboBoxHomeFileType.SelectedIndex == 5) { selectedFilesFileType = torrentFileTypes; selectFilesTab(titleFilesTorrents); selectedFiles = dataOpenFiles; tab.SelectedTab = tabSearch; showFiles(selectedFiles); }
-                else if (cmboBoxHomeFileType.SelectedIndex == 6) { selectedFilesFileType = mobileFileTypes; selectFilesTab(titleFilesMobile); selectedFiles = dataOpenFiles; tab.SelectedTab = tabSearch; showFiles(selectedFiles); }
-                else if (cmboBoxHomeFileType.SelectedIndex == 7) { selectedFilesFileType = archivesFileTypes; selectFilesTab(titleFilesArchives); selectedFiles = dataOpenFiles; tab.SelectedTab = tabSearch; showFiles(selectedFiles); }
-                else if (cmboBoxHomeFileType.SelectedIndex == 8) { selectedFilesFileType = otherFileTypes; selectFilesTab(titleFilesOther); selectedFiles = dataOpenFiles; tab.SelectedTab = tabSearch; showFiles(selectedFiles); }
-            }
-            else
-            {
-                Process.Start(selectedFilesEngine + String.Format("{0}+({1}) -inurl:(jsp|pl|php|html|aspx|htm|cf|shtml) intitle:index.of -inurl:(listen77|mp3raid|mp3toss|mp3drug|index_of|index-of|wallywashis|downloadmana)", txtSearchFilesHome.Text, String.Join("|", selectedFilesFileType.ToArray())));
-            }
+            if (cmboBoxHomeFileType.SelectedIndex == -1) { selectedFilesFileType = allFileTypes; selectFilesTab(titleFilesAll); selectedFiles = dataOpenFiles; tab.SelectedTab = tabSearch; showFiles(selectedFiles); }
+            else if (cmboBoxHomeFileType.SelectedIndex == 0) { selectedFilesFileType = allFileTypes; selectFilesTab(titleFilesAll); selectedFiles = dataOpenFiles; tab.SelectedTab = tabSearch; showFiles(selectedFiles); }
+            else if (cmboBoxHomeFileType.SelectedIndex == 1) { selectedFilesFileType = videoFileTypes; selectFilesTab(titleFilesVideo); selectedFiles = dataOpenFiles; tab.SelectedTab = tabSearch; showFiles(selectedFiles); }
+            else if (cmboBoxHomeFileType.SelectedIndex == 2) { selectedFilesFileType = audioFileTypes; selectFilesTab(titleFilesAudio); selectedFiles = dataOpenFiles; tab.SelectedTab = tabSearch; showFiles(selectedFiles); }
+            else if (cmboBoxHomeFileType.SelectedIndex == 3) { selectedFilesFileType = ebooksFileTypes; selectFilesTab(titleFilesEbooks); selectedFiles = dataOpenFiles; tab.SelectedTab = tabSearch; showFiles(selectedFiles); }
+            else if (cmboBoxHomeFileType.SelectedIndex == 4) { selectedFilesFileType = subtitleFileTypes; selectFilesTab(titleFilesSubtitles); selectedFiles = dataOpenFiles; tab.SelectedTab = tabSearch; showFiles(selectedFiles); }
+            else if (cmboBoxHomeFileType.SelectedIndex == 5) { selectedFilesFileType = torrentFileTypes; selectFilesTab(titleFilesTorrents); selectedFiles = dataOpenFiles; tab.SelectedTab = tabSearch; showFiles(selectedFiles); }
+            else if (cmboBoxHomeFileType.SelectedIndex == 6) { selectedFilesFileType = mobileFileTypes; selectFilesTab(titleFilesMobile); selectedFiles = dataOpenFiles; tab.SelectedTab = tabSearch; showFiles(selectedFiles); }
+            else if (cmboBoxHomeFileType.SelectedIndex == 7) { selectedFilesFileType = archivesFileTypes; selectFilesTab(titleFilesArchives); selectedFiles = dataOpenFiles; tab.SelectedTab = tabSearch; showFiles(selectedFiles); }
+            else if (cmboBoxHomeFileType.SelectedIndex == 8) { selectedFilesFileType = otherFileTypes; selectFilesTab(titleFilesOther); selectedFiles = dataOpenFiles; tab.SelectedTab = tabSearch; showFiles(selectedFiles); }
         }
 
         // Sort Files 

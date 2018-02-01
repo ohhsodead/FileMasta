@@ -33,7 +33,6 @@
             CButtonLib.cBlendItems cBlendItems1 = new CButtonLib.cBlendItems();
             CButtonLib.cBlendItems cBlendItems2 = new CButtonLib.cBlendItems();
             CButtonLib.cBlendItems cBlendItems3 = new CButtonLib.cBlendItems();
-            CButtonLib.cBlendItems cBlendItems4 = new CButtonLib.cBlendItems();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -43,6 +42,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            CButtonLib.cBlendItems cBlendItems4 = new CButtonLib.cBlendItems();
             CButtonLib.cBlendItems cBlendItems5 = new CButtonLib.cBlendItems();
             CButtonLib.cBlendItems cBlendItems6 = new CButtonLib.cBlendItems();
             CButtonLib.cBlendItems cBlendItems7 = new CButtonLib.cBlendItems();
@@ -52,17 +52,12 @@
             CButtonLib.cBlendItems cBlendItems11 = new CButtonLib.cBlendItems();
             CButtonLib.cBlendItems cBlendItems12 = new CButtonLib.cBlendItems();
             CButtonLib.cBlendItems cBlendItems13 = new CButtonLib.cBlendItems();
-            CButtonLib.cBlendItems cBlendItems14 = new CButtonLib.cBlendItems();
-            CButtonLib.cBlendItems cBlendItems15 = new CButtonLib.cBlendItems();
             this.tab = new System.Windows.Forms.TabControl();
             this.tabHome = new System.Windows.Forms.TabPage();
             this.imgSearchHome = new System.Windows.Forms.PictureBox();
             this.imgLogo = new System.Windows.Forms.PictureBox();
             this.lblHomeStatsDatabaseUpdated = new System.Windows.Forms.Label();
             this.lblHomeStatsFiles = new System.Windows.Forms.Label();
-            this.panelHomeEngine = new System.Windows.Forms.Panel();
-            this.btnHomeEngine = new CButtonLib.CButton();
-            this.cmboBoxHomeEngine = new System.Windows.Forms.ComboBox();
             this.lblHeaderTopSearches = new System.Windows.Forms.Label();
             this.lineHomeTopSearchesSplitter = new CButtonLib.CButton();
             this.panelTopSearches = new System.Windows.Forms.FlowLayoutPanel();
@@ -141,7 +136,6 @@
             this.lblAboutText = new System.Windows.Forms.Label();
             this.tabBlank = new System.Windows.Forms.TabPage();
             this.panelTitles = new System.Windows.Forms.Panel();
-            this.titleWebCrunch = new CButtonLib.CButton();
             this.lblShareUsOn = new System.Windows.Forms.Label();
             this.imgShareFacebook = new System.Windows.Forms.PictureBox();
             this.imgShareTwitter = new System.Windows.Forms.PictureBox();
@@ -155,7 +149,6 @@
             this.tabHome.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgSearchHome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
-            this.panelHomeEngine.SuspendLayout();
             this.panelHomeFileType.SuspendLayout();
             this.tabSearch.SuspendLayout();
             this.panelFileFilters.SuspendLayout();
@@ -199,7 +192,6 @@
             this.tabHome.Controls.Add(this.imgLogo);
             this.tabHome.Controls.Add(this.lblHomeStatsDatabaseUpdated);
             this.tabHome.Controls.Add(this.lblHomeStatsFiles);
-            this.tabHome.Controls.Add(this.panelHomeEngine);
             this.tabHome.Controls.Add(this.lblHeaderTopSearches);
             this.tabHome.Controls.Add(this.lineHomeTopSearchesSplitter);
             this.tabHome.Controls.Add(this.panelTopSearches);
@@ -224,7 +216,6 @@
             // 
             resources.ApplyResources(this.imgLogo, "imgLogo");
             this.imgLogo.BackColor = System.Drawing.Color.Transparent;
-            this.imgLogo.Image = global::WebCrunch.Properties.Resources.new_logo;
             this.imgLogo.Name = "imgLogo";
             this.imgLogo.TabStop = false;
             // 
@@ -239,67 +230,6 @@
             resources.ApplyResources(this.lblHomeStatsFiles, "lblHomeStatsFiles");
             this.lblHomeStatsFiles.BackColor = System.Drawing.Color.Transparent;
             this.lblHomeStatsFiles.Name = "lblHomeStatsFiles";
-            // 
-            // panelHomeEngine
-            // 
-            resources.ApplyResources(this.panelHomeEngine, "panelHomeEngine");
-            this.panelHomeEngine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(50)))));
-            this.panelHomeEngine.Controls.Add(this.btnHomeEngine);
-            this.panelHomeEngine.Controls.Add(this.cmboBoxHomeEngine);
-            this.panelHomeEngine.Name = "panelHomeEngine";
-            // 
-            // btnHomeEngine
-            // 
-            resources.ApplyResources(this.btnHomeEngine, "btnHomeEngine");
-            this.btnHomeEngine.BackColor = System.Drawing.Color.Transparent;
-            this.btnHomeEngine.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(193)))), ((int)(((byte)(190)))));
-            cBlendItems1.iColor = new System.Drawing.Color[] {
-        System.Drawing.Color.White,
-        System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))))};
-            cBlendItems1.iPoint = new float[] {
-        0F,
-        1F};
-            this.btnHomeEngine.ColorFillBlend = cBlendItems1;
-            this.btnHomeEngine.ColorFillSolid = System.Drawing.Color.Transparent;
-            this.btnHomeEngine.Corners.All = 2;
-            this.btnHomeEngine.Corners.LowerLeft = 2;
-            this.btnHomeEngine.Corners.LowerRight = 2;
-            this.btnHomeEngine.Corners.UpperLeft = 2;
-            this.btnHomeEngine.Corners.UpperRight = 2;
-            this.btnHomeEngine.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnHomeEngine.DesignerSelected = false;
-            this.btnHomeEngine.DimFactorClick = 0;
-            this.btnHomeEngine.DimFactorHover = 0;
-            this.btnHomeEngine.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.btnHomeEngine.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(193)))), ((int)(((byte)(190)))));
-            this.btnHomeEngine.Image = global::WebCrunch.Properties.Resources.menu_down;
-            this.btnHomeEngine.ImageIndex = 0;
-            this.btnHomeEngine.Name = "btnHomeEngine";
-            this.btnHomeEngine.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.btnHomeEngine.SideImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnHomeEngine.SideImageSize = new System.Drawing.Size(22, 22);
-            this.btnHomeEngine.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnHomeEngine.TextMargin = new System.Windows.Forms.Padding(0);
-            this.btnHomeEngine.TextShadowShow = false;
-            this.btnHomeEngine.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnExploreEngine_ClickButtonArea);
-            this.btnHomeEngine.MouseEnter += new System.EventHandler(this.comboboxCButton_MouseEnter);
-            this.btnHomeEngine.MouseLeave += new System.EventHandler(this.comboboxCButton_MouseLeave);
-            // 
-            // cmboBoxHomeEngine
-            // 
-            resources.ApplyResources(this.cmboBoxHomeEngine, "cmboBoxHomeEngine");
-            this.cmboBoxHomeEngine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            this.cmboBoxHomeEngine.ForeColor = System.Drawing.Color.White;
-            this.cmboBoxHomeEngine.FormattingEnabled = true;
-            this.cmboBoxHomeEngine.Items.AddRange(new object[] {
-            resources.GetString("cmboBoxHomeEngine.Items"),
-            resources.GetString("cmboBoxHomeEngine.Items1"),
-            resources.GetString("cmboBoxHomeEngine.Items2"),
-            resources.GetString("cmboBoxHomeEngine.Items3"),
-            resources.GetString("cmboBoxHomeEngine.Items4")});
-            this.cmboBoxHomeEngine.Name = "cmboBoxHomeEngine";
-            this.cmboBoxHomeEngine.TabStop = false;
-            this.cmboBoxHomeEngine.SelectedIndexChanged += new System.EventHandler(this.cmboBoxExploreEngine_SelectedIndexChanged);
             // 
             // lblHeaderTopSearches
             // 
@@ -350,13 +280,13 @@
             resources.ApplyResources(this.btnHomeFileType, "btnHomeFileType");
             this.btnHomeFileType.BackColor = System.Drawing.Color.Transparent;
             this.btnHomeFileType.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(193)))), ((int)(((byte)(190)))));
-            cBlendItems2.iColor = new System.Drawing.Color[] {
+            cBlendItems1.iColor = new System.Drawing.Color[] {
         System.Drawing.Color.White,
         System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))))};
-            cBlendItems2.iPoint = new float[] {
+            cBlendItems1.iPoint = new float[] {
         0F,
         1F};
-            this.btnHomeFileType.ColorFillBlend = cBlendItems2;
+            this.btnHomeFileType.ColorFillBlend = cBlendItems1;
             this.btnHomeFileType.ColorFillSolid = System.Drawing.Color.Transparent;
             this.btnHomeFileType.Corners.All = 2;
             this.btnHomeFileType.Corners.LowerLeft = 2;
@@ -503,13 +433,13 @@
             resources.ApplyResources(this.btnFilesHost, "btnFilesHost");
             this.btnFilesHost.BackColor = System.Drawing.Color.Transparent;
             this.btnFilesHost.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(193)))), ((int)(((byte)(190)))));
-            cBlendItems3.iColor = new System.Drawing.Color[] {
+            cBlendItems2.iColor = new System.Drawing.Color[] {
         System.Drawing.Color.White,
         System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))))};
-            cBlendItems3.iPoint = new float[] {
+            cBlendItems2.iPoint = new float[] {
         0F,
         1F};
-            this.btnFilesHost.ColorFillBlend = cBlendItems3;
+            this.btnFilesHost.ColorFillBlend = cBlendItems2;
             this.btnFilesHost.ColorFillSolid = System.Drawing.Color.Transparent;
             this.btnFilesHost.Corners.All = 2;
             this.btnFilesHost.Corners.LowerLeft = 2;
@@ -558,13 +488,13 @@
             resources.ApplyResources(this.btnFilesSort, "btnFilesSort");
             this.btnFilesSort.BackColor = System.Drawing.Color.Transparent;
             this.btnFilesSort.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(193)))), ((int)(((byte)(190)))));
-            cBlendItems4.iColor = new System.Drawing.Color[] {
+            cBlendItems3.iColor = new System.Drawing.Color[] {
         System.Drawing.Color.White,
         System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))))};
-            cBlendItems4.iPoint = new float[] {
+            cBlendItems3.iPoint = new float[] {
         0F,
         1F};
-            this.btnFilesSort.ColorFillBlend = cBlendItems4;
+            this.btnFilesSort.ColorFillBlend = cBlendItems3;
             this.btnFilesSort.ColorFillSolid = System.Drawing.Color.Transparent;
             this.btnFilesSort.Corners.All = 2;
             this.btnFilesSort.Corners.LowerLeft = 2;
@@ -1173,13 +1103,13 @@
             // 
             this.btnSubmitLink.BackColor = System.Drawing.Color.Transparent;
             this.btnSubmitLink.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(105)))), ((int)(((byte)(26)))));
-            cBlendItems5.iColor = new System.Drawing.Color[] {
+            cBlendItems4.iColor = new System.Drawing.Color[] {
         System.Drawing.Color.White,
         System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))))};
-            cBlendItems5.iPoint = new float[] {
+            cBlendItems4.iPoint = new float[] {
         0F,
         1F};
-            this.btnSubmitLink.ColorFillBlend = cBlendItems5;
+            this.btnSubmitLink.ColorFillBlend = cBlendItems4;
             this.btnSubmitLink.ColorFillSolid = System.Drawing.Color.Transparent;
             this.btnSubmitLink.Corners.All = 2;
             this.btnSubmitLink.Corners.LowerLeft = 2;
@@ -1294,13 +1224,13 @@
             resources.ApplyResources(this.btnSettingsGeneralLanguage, "btnSettingsGeneralLanguage");
             this.btnSettingsGeneralLanguage.BackColor = System.Drawing.Color.Transparent;
             this.btnSettingsGeneralLanguage.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(50)))));
-            cBlendItems6.iColor = new System.Drawing.Color[] {
+            cBlendItems5.iColor = new System.Drawing.Color[] {
         System.Drawing.Color.White,
         System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))))};
-            cBlendItems6.iPoint = new float[] {
+            cBlendItems5.iPoint = new float[] {
         0F,
         1F};
-            this.btnSettingsGeneralLanguage.ColorFillBlend = cBlendItems6;
+            this.btnSettingsGeneralLanguage.ColorFillBlend = cBlendItems5;
             this.btnSettingsGeneralLanguage.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(50)))));
             this.btnSettingsGeneralLanguage.Corners.All = 2;
             this.btnSettingsGeneralLanguage.Corners.LowerLeft = 2;
@@ -1371,13 +1301,13 @@
             // 
             this.btnSettingsSave.BackColor = System.Drawing.Color.Transparent;
             this.btnSettingsSave.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(105)))), ((int)(((byte)(26)))));
-            cBlendItems7.iColor = new System.Drawing.Color[] {
+            cBlendItems6.iColor = new System.Drawing.Color[] {
         System.Drawing.Color.White,
         System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))))};
-            cBlendItems7.iPoint = new float[] {
+            cBlendItems6.iPoint = new float[] {
         0F,
         1F};
-            this.btnSettingsSave.ColorFillBlend = cBlendItems7;
+            this.btnSettingsSave.ColorFillBlend = cBlendItems6;
             this.btnSettingsSave.ColorFillSolid = System.Drawing.Color.Transparent;
             this.btnSettingsSave.Corners.All = 2;
             this.btnSettingsSave.Corners.LowerLeft = 2;
@@ -1404,13 +1334,13 @@
             // 
             this.btnSettingsRestoreDefault.BackColor = System.Drawing.Color.Transparent;
             this.btnSettingsRestoreDefault.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(105)))), ((int)(((byte)(26)))));
-            cBlendItems8.iColor = new System.Drawing.Color[] {
+            cBlendItems7.iColor = new System.Drawing.Color[] {
         System.Drawing.Color.White,
         System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))))};
-            cBlendItems8.iPoint = new float[] {
+            cBlendItems7.iPoint = new float[] {
         0F,
         1F};
-            this.btnSettingsRestoreDefault.ColorFillBlend = cBlendItems8;
+            this.btnSettingsRestoreDefault.ColorFillBlend = cBlendItems7;
             this.btnSettingsRestoreDefault.ColorFillSolid = System.Drawing.Color.Transparent;
             this.btnSettingsRestoreDefault.Corners.All = 2;
             this.btnSettingsRestoreDefault.Corners.LowerLeft = 2;
@@ -1502,7 +1432,6 @@
             // 
             resources.ApplyResources(this.panelTitles, "panelTitles");
             this.panelTitles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
-            this.panelTitles.Controls.Add(this.titleWebCrunch);
             this.panelTitles.Controls.Add(this.lblShareUsOn);
             this.panelTitles.Controls.Add(this.imgShareFacebook);
             this.panelTitles.Controls.Add(this.imgShareTwitter);
@@ -1514,33 +1443,6 @@
             this.panelTitles.Controls.Add(this.titleHome);
             this.panelTitles.ForeColor = System.Drawing.Color.White;
             this.panelTitles.Name = "panelTitles";
-            // 
-            // titleWebCrunch
-            // 
-            resources.ApplyResources(this.titleWebCrunch, "titleWebCrunch");
-            this.titleWebCrunch.BackColor = System.Drawing.Color.Transparent;
-            this.titleWebCrunch.BorderColor = System.Drawing.Color.Transparent;
-            cBlendItems9.iColor = new System.Drawing.Color[] {
-        System.Drawing.Color.White,
-        System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))))};
-            cBlendItems9.iPoint = new float[] {
-        0F,
-        1F};
-            this.titleWebCrunch.ColorFillBlend = cBlendItems9;
-            this.titleWebCrunch.ColorFillSolid = System.Drawing.Color.Transparent;
-            this.titleWebCrunch.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.titleWebCrunch.DesignerSelected = false;
-            this.titleWebCrunch.DimFactorClick = 0;
-            this.titleWebCrunch.DimFactorHover = 0;
-            this.titleWebCrunch.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.titleWebCrunch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(105)))), ((int)(((byte)(26)))));
-            this.titleWebCrunch.ImageIndex = 0;
-            this.titleWebCrunch.ImageSize = new System.Drawing.Size(18, 18);
-            this.titleWebCrunch.Name = "titleWebCrunch";
-            this.titleWebCrunch.ShowFocus = CButtonLib.CButton.eFocus.Dim;
-            this.titleWebCrunch.SideImageSize = new System.Drawing.Size(0, 0);
-            this.titleWebCrunch.TextMargin = new System.Windows.Forms.Padding(0);
-            this.titleWebCrunch.TextShadowShow = false;
             // 
             // lblShareUsOn
             // 
@@ -1577,13 +1479,13 @@
             resources.ApplyResources(this.titleInformation, "titleInformation");
             this.titleInformation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
             this.titleInformation.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
-            cBlendItems10.iColor = new System.Drawing.Color[] {
+            cBlendItems8.iColor = new System.Drawing.Color[] {
         System.Drawing.Color.White,
         System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))))};
-            cBlendItems10.iPoint = new float[] {
+            cBlendItems8.iPoint = new float[] {
         0F,
         1F};
-            this.titleInformation.ColorFillBlend = cBlendItems10;
+            this.titleInformation.ColorFillBlend = cBlendItems8;
             this.titleInformation.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
             this.titleInformation.Cursor = System.Windows.Forms.Cursors.Hand;
             this.titleInformation.DesignerSelected = false;
@@ -1607,13 +1509,13 @@
             resources.ApplyResources(this.titleSubmit, "titleSubmit");
             this.titleSubmit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
             this.titleSubmit.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
-            cBlendItems11.iColor = new System.Drawing.Color[] {
+            cBlendItems9.iColor = new System.Drawing.Color[] {
         System.Drawing.Color.White,
         System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))))};
-            cBlendItems11.iPoint = new float[] {
+            cBlendItems9.iPoint = new float[] {
         0F,
         1F};
-            this.titleSubmit.ColorFillBlend = cBlendItems11;
+            this.titleSubmit.ColorFillBlend = cBlendItems9;
             this.titleSubmit.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
             this.titleSubmit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.titleSubmit.DesignerSelected = false;
@@ -1637,13 +1539,13 @@
             resources.ApplyResources(this.titleSettings, "titleSettings");
             this.titleSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
             this.titleSettings.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
-            cBlendItems12.iColor = new System.Drawing.Color[] {
+            cBlendItems10.iColor = new System.Drawing.Color[] {
         System.Drawing.Color.White,
         System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))))};
-            cBlendItems12.iPoint = new float[] {
+            cBlendItems10.iPoint = new float[] {
         0F,
         1F};
-            this.titleSettings.ColorFillBlend = cBlendItems12;
+            this.titleSettings.ColorFillBlend = cBlendItems10;
             this.titleSettings.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
             this.titleSettings.Cursor = System.Windows.Forms.Cursors.Hand;
             this.titleSettings.DesignerSelected = false;
@@ -1667,13 +1569,13 @@
             resources.ApplyResources(this.titleDiscover, "titleDiscover");
             this.titleDiscover.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
             this.titleDiscover.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
-            cBlendItems13.iColor = new System.Drawing.Color[] {
+            cBlendItems11.iColor = new System.Drawing.Color[] {
         System.Drawing.Color.White,
         System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))))};
-            cBlendItems13.iPoint = new float[] {
+            cBlendItems11.iPoint = new float[] {
         0F,
         1F};
-            this.titleDiscover.ColorFillBlend = cBlendItems13;
+            this.titleDiscover.ColorFillBlend = cBlendItems11;
             this.titleDiscover.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
             this.titleDiscover.Cursor = System.Windows.Forms.Cursors.Hand;
             this.titleDiscover.DesignerSelected = false;
@@ -1697,13 +1599,13 @@
             resources.ApplyResources(this.titleSearch, "titleSearch");
             this.titleSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
             this.titleSearch.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
-            cBlendItems14.iColor = new System.Drawing.Color[] {
+            cBlendItems12.iColor = new System.Drawing.Color[] {
         System.Drawing.Color.White,
         System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))))};
-            cBlendItems14.iPoint = new float[] {
+            cBlendItems12.iPoint = new float[] {
         0F,
         1F};
-            this.titleSearch.ColorFillBlend = cBlendItems14;
+            this.titleSearch.ColorFillBlend = cBlendItems12;
             this.titleSearch.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
             this.titleSearch.Cursor = System.Windows.Forms.Cursors.Hand;
             this.titleSearch.DesignerSelected = false;
@@ -1727,13 +1629,13 @@
             resources.ApplyResources(this.titleHome, "titleHome");
             this.titleHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.titleHome.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            cBlendItems15.iColor = new System.Drawing.Color[] {
+            cBlendItems13.iColor = new System.Drawing.Color[] {
         System.Drawing.Color.White,
         System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))))};
-            cBlendItems15.iPoint = new float[] {
+            cBlendItems13.iPoint = new float[] {
         0F,
         1F};
-            this.titleHome.ColorFillBlend = cBlendItems15;
+            this.titleHome.ColorFillBlend = cBlendItems13;
             this.titleHome.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.titleHome.Cursor = System.Windows.Forms.Cursors.Hand;
             this.titleHome.DesignerSelected = false;
@@ -1773,7 +1675,6 @@
             this.tabHome.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgSearchHome)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).EndInit();
-            this.panelHomeEngine.ResumeLayout(false);
             this.panelHomeFileType.ResumeLayout(false);
             this.tabSearch.ResumeLayout(false);
             this.tabSearch.PerformLayout();
@@ -1871,9 +1772,6 @@
         internal System.Windows.Forms.Label lblHeaderTopSearches;
         public CButtonLib.CButton lineHomeTopSearchesSplitter;
         private System.Windows.Forms.Label lblFilesResultsInfo;
-        private System.Windows.Forms.Panel panelHomeEngine;
-        private CButtonLib.CButton btnHomeEngine;
-        private System.Windows.Forms.ComboBox cmboBoxHomeEngine;
         private System.Windows.Forms.Label lblHomeStatsFiles;
         private System.Windows.Forms.Label lblHomeStatsDatabaseUpdated;
         private System.Windows.Forms.Label btnAboutTermsOfUse;
@@ -1896,7 +1794,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn columnFilesReferrer;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnFilesURL;
         private System.Windows.Forms.PictureBox imgSearchHome;
-        private CButtonLib.CButton titleWebCrunch;
         private System.Windows.Forms.PictureBox imgSearch;
         public CButtonLib.CButton splitterHeaderSettings;
         public CButtonLib.CButton splitterHeaderDiscover;
