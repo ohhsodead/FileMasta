@@ -20,7 +20,7 @@ namespace WebCrunch.Utilities
                 Version newVersion = null;
                 WebClient client = new WebClient();
                 Stream stream = client.OpenRead(MainForm.urlLatestVersion);
-                stream.ReadTimeout = 10000;
+                stream.ReadTimeout = 60000;
                 using (StreamReader reader = new StreamReader(stream))
                 {
                     newVersion = new Version(reader.ReadToEnd());
@@ -35,7 +35,6 @@ namespace WebCrunch.Utilities
                         Program.log.Info("Installer downloaded successfully - opening installer...");
                         Directory.Delete(MainForm.pathData, true);
                         Process.Start(MainForm.userDownloadsDirectory + MainForm.pathInstallerFileName);
-                        Process.Start(Application.StartupPath + @"\AutoUpdater.exe");
                         Application.Exit();
                     }
                 }                    
