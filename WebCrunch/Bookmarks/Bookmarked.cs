@@ -51,7 +51,7 @@ namespace WebCrunch.Bookmarks
         /// </summary>
         /// <param name="URL"></param>
         /// <returns></returns>
-        public static bool isBookmarked(string Json)
+        public static bool isBookmarked(string URL)
         {
             if (File.Exists(MainForm.pathDataBookmarked))
             {
@@ -59,7 +59,9 @@ namespace WebCrunch.Bookmarks
                 {
                     while (!reader.EndOfStream)
                     {
-                        if (reader.ReadLine() == Json)
+                        var a = JsonConvert.DeserializeObject<WebFile>(reader.ReadLine());
+
+                        if (a.URL == URL)
                         {
                             return true;
                         }

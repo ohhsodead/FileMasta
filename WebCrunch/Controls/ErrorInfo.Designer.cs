@@ -1,4 +1,4 @@
-﻿namespace UserControls
+﻿namespace Controls
 {
     partial class ErrorInfo
     {

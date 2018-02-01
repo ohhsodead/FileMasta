@@ -55,7 +55,6 @@
             this.tab = new System.Windows.Forms.TabControl();
             this.tabHome = new System.Windows.Forms.TabPage();
             this.imgSearchHome = new System.Windows.Forms.PictureBox();
-            this.imgLogo = new System.Windows.Forms.PictureBox();
             this.lblHomeStatsDatabaseUpdated = new System.Windows.Forms.Label();
             this.lblHomeStatsFiles = new System.Windows.Forms.Label();
             this.lblHeaderTopSearches = new System.Windows.Forms.Label();
@@ -148,7 +147,6 @@
             this.tab.SuspendLayout();
             this.tabHome.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgSearchHome)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
             this.panelHomeFileType.SuspendLayout();
             this.tabSearch.SuspendLayout();
             this.panelFileFilters.SuspendLayout();
@@ -189,7 +187,6 @@
             this.tabHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             resources.ApplyResources(this.tabHome, "tabHome");
             this.tabHome.Controls.Add(this.imgSearchHome);
-            this.tabHome.Controls.Add(this.imgLogo);
             this.tabHome.Controls.Add(this.lblHomeStatsDatabaseUpdated);
             this.tabHome.Controls.Add(this.lblHomeStatsFiles);
             this.tabHome.Controls.Add(this.lblHeaderTopSearches);
@@ -211,13 +208,6 @@
             this.imgSearchHome.Click += new System.EventHandler(this.imgSearchHome_Click);
             this.imgSearchHome.MouseEnter += new System.EventHandler(this.imgSearchHome_MouseEnter);
             this.imgSearchHome.MouseLeave += new System.EventHandler(this.imgSearchHome_MouseLeave);
-            // 
-            // imgLogo
-            // 
-            resources.ApplyResources(this.imgLogo, "imgLogo");
-            this.imgLogo.BackColor = System.Drawing.Color.Transparent;
-            this.imgLogo.Name = "imgLogo";
-            this.imgLogo.TabStop = false;
             // 
             // lblHomeStatsDatabaseUpdated
             // 
@@ -610,8 +600,6 @@
             this.dataGridFiles.ShowEditingIcon = false;
             this.dataGridFiles.ShowRowErrors = false;
             this.dataGridFiles.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridFiles_CellClick);
-            this.dataGridFiles.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dataGridFiles_RowsAdded);
-            this.dataGridFiles.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dataGridFiles_RowsRemoved);
             // 
             // columnFilesType
             // 
@@ -1674,7 +1662,6 @@
             this.tabHome.ResumeLayout(false);
             this.tabHome.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgSearchHome)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).EndInit();
             this.panelHomeFileType.ResumeLayout(false);
             this.tabSearch.ResumeLayout(false);
             this.tabSearch.PerformLayout();
@@ -1786,7 +1773,6 @@
         private System.Windows.Forms.PictureBox imgShareTwitter;
         internal System.Windows.Forms.Label lblShareUsOn;
         private System.Windows.Forms.PictureBox imgShareFacebook;
-        private System.Windows.Forms.PictureBox imgLogo;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnFilesType;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnFilesName;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnFilesSize;

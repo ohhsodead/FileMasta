@@ -1,6 +1,6 @@
 ﻿using WebCrunch;
 
-namespace UserControls
+namespace Controls
 {
     partial class FileDetails
     {

@@ -93,16 +93,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="UI\Colors.cs" />
-    <Compile Include="UserControls\FileDetails.cs">
+    <Compile Include="Controls\FileDetails.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\FileDetails.Designer.cs">
+    <Compile Include="Controls\FileDetails.Designer.cs">
       <DependentUpon>FileDetails.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\ErrorInfo.cs">
+    <Compile Include="Controls\ErrorInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\ErrorInfo.Designer.cs">
+    <Compile Include="Controls\ErrorInfo.Designer.cs">
       <DependentUpon>ErrorInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\DatabaseInfo.cs" />
@@ -124,10 +124,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Utilities\BackGroundWorker.cs" />
-    <Compile Include="UserControls\SplashScreen.cs">
+    <Compile Include="Controls\SplashScreen.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\SplashScreen.Designer.cs">
+    <Compile Include="Controls\SplashScreen.Designer.cs">
       <DependentUpon>SplashScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\WebFile.cs" />
@@ -175,25 +175,25 @@
     <Compile Include="Extensions\TextExtensions.cs" />
     <Compile Include="Bookmarks\TextLineRemover.cs" />
     <Compile Include="Utilities\Updates.cs" />
-    <EmbeddedResource Include="UserControls\FileDetails.resx">
+    <EmbeddedResource Include="Controls\FileDetails.resx">
       <DependentUpon>FileDetails.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\SplashScreen.cs.resx">
+    <EmbeddedResource Include="Controls\SplashScreen.cs.resx">
       <DependentUpon>SplashScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\SplashScreen.de.resx">
+    <EmbeddedResource Include="Controls\SplashScreen.de.resx">
       <DependentUpon>SplashScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\SplashScreen.es.resx">
+    <EmbeddedResource Include="Controls\SplashScreen.es.resx">
       <DependentUpon>SplashScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\SplashScreen.fr.resx">
+    <EmbeddedResource Include="Controls\SplashScreen.fr.resx">
       <DependentUpon>SplashScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\SplashScreen.resx">
+    <EmbeddedResource Include="Controls\SplashScreen.resx">
       <DependentUpon>SplashScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\ErrorInfo.resx">
+    <EmbeddedResource Include="Controls\ErrorInfo.resx">
       <DependentUpon>ErrorInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\DataDialog.resx">

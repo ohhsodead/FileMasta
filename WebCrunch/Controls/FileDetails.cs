@@ -13,7 +13,7 @@ using WebCrunch.Bookmarks;
 using WebCrunch.Utilities;
 using CButtonLib;
 
-namespace UserControls
+namespace Controls
 {
     public partial class FileDetails : UserControl
     {
@@ -29,7 +29,7 @@ namespace UserControls
 
         private void ctrlFileDetails_Load(object sender, EventArgs e)
         {
-            if (!Bookmarked.isBookmarked(Bookmarked.fileToJson(infoFileURL.Text, infoName.Text, infoType.Text, infoReferrer.Text)))
+            if (!Bookmarked.isBookmarked(infoFileURL.Text))
             {
                 ControlExtensions.ChangeControlText(btnSaveFile, "Add to Bookmarks");
             }
@@ -228,7 +228,7 @@ namespace UserControls
 
         private void btnSaveFile_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            if (!Bookmarked.isBookmarked(Bookmarked.fileToJson(infoFileURL.Text, infoName.Text, infoType.Text, infoReferrer.Text)))
+            if (!Bookmarked.isBookmarked(infoFileURL.Text))
             {
                 Bookmarked.saveFile(Bookmarked.fileToJson(infoFileURL.Text, infoName.Text, infoType.Text, infoReferrer.Text));
                 ControlExtensions.ChangeControlText(btnSaveFile, "Remove from Bookmarks");
@@ -267,13 +267,15 @@ namespace UserControls
         {
             CButton ctrl = sender as CButton;
             ctrl.BorderColor = Colors.uiColorOrange;
+            ctrl.ForeColor = Color.White;
             ctrl.ColorFillSolid = Colors.uiColorOrange;
         }
 
         public void comboboxCButton_MouseLeave(object sender, EventArgs e)
         {
             CButton ctrl = sender as CButton;
-            ctrl.BorderColor = Colors.uiColorBorder;
+            ctrl.BorderColor = Colors.uiColorGray;
+            ctrl.ForeColor = Colors.uiColorGray;
             ctrl.ColorFillSolid = Color.Transparent;
         }
 

@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace UserControls
+namespace Controls
 {
     public partial class ErrorInfo : UserControl
     {

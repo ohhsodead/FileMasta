@@ -14,7 +14,7 @@ using System.Reflection;
 using System.Text;
 using Newtonsoft.Json;
 using CButtonLib;
-using UserControls;
+using Controls;
 using Utilities;
 using Dialogs;
 using WebCrunch.Extensions;
@@ -81,7 +81,7 @@ namespace WebCrunch
         public static string userDownloadsDirectory = KnownFolders.GetPath(KnownFolder.Downloads) + @"\";
 
         // Updates
-        public static string urlLatestVersion = "https://dl.dropbox.com/s/9v1cwjoj8bm5wf8/latest-version.txt?dl=0";
+        public static string urlLatestVersion = "https://raw.githubusercontent.com/ekkash/WebCrunch/master/WebCrunch/current-version.txt";
         public static string urlLatestDownload = "https://github.com/ekkash/WebCrunch/releases/";
         public static string getUrlLatestInstaller(Version newVersion) { return "https://github.com/ekkash/WebCrunch/releases/download/" + newVersion.ToString() + "/" + pathInstallerFileName; }
         public static string pathInstallerFileName = "WebCrunch.Installer.Windows.exe";
@@ -275,13 +275,15 @@ namespace WebCrunch
         {
             CButton ctrl = sender as CButton;
             ctrl.BorderColor = Colors.uiColorOrange;
+            ctrl.ForeColor = Color.White;
             ctrl.ColorFillSolid = Colors.uiColorOrange;
         }
 
         public void comboboxCButton_MouseLeave(object sender, EventArgs e)
         {
             CButton ctrl = sender as CButton;
-            ctrl.BorderColor = Colors.uiColorBorder;
+            ctrl.BorderColor = Colors.uiColorGray;
+            ctrl.ForeColor = Colors.uiColorGray;
             ctrl.ColorFillSolid = Color.Transparent;
         }
 
@@ -475,7 +477,7 @@ namespace WebCrunch
 
                 foreach (var tag in listTopSearches)
                 {
-                    if (count <= 40)
+                    if (count <= 70)
                     {
                         addTopSearchTag(tag, count);
                         count++;
@@ -724,16 +726,6 @@ namespace WebCrunch
             cbtn.BorderColor = Colors.uiColorOrange;
         }
 
-        private void dataGridFiles_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
-        {
-            if (dataGridFiles.Rows.Count == 0) emptyDataFiles.Visible = true; else emptyDataFiles.Visible = false;
-        }
-
-        private void dataGridFiles_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
-        {
-            if (dataGridFiles.Rows.Count == 0) emptyDataFiles.Visible = true; else emptyDataFiles.Visible = false;
-        }
-
         private void dataGridFiles_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
         {
             e.PaintParts &= ~DataGridViewPaintParts.Focus;
@@ -773,7 +765,7 @@ namespace WebCrunch
         {
             imgSearch.Image = Properties.Resources.loader;
 
-            Program.log.Info("Searching files");
+            Program.log.Info("Searching files started");
 
             BackGroundWorker.RunWorkAsync<List<WebFile>>(() => searchFiles(dataFiles), (data) =>
             {
@@ -804,9 +796,11 @@ namespace WebCrunch
 
                     cmboBoxFilesHost.DropDownWidth = ControlExtensions.DropDownWidth(cmboBoxFilesHost);
                     imgSearch.Image = Properties.Resources.magnify_orange;
+
+                    if (dataGridFiles.Rows.Count == 0) emptyDataFiles.Visible = true; else emptyDataFiles.Visible = false;
+                    Program.log.Info("Successfully returned search results");
                 }
             });
-            Program.log.Info("Successfully returned files");
         }
 
         object loadFilesLock = new object();

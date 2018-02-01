@@ -2,7 +2,7 @@
 using System.Windows.Forms;
 using WebCrunch;
 
-namespace UserControls
+namespace Controls
 {
     public partial class SplashScreen : UserControl
     {
