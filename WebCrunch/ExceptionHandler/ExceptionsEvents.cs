@@ -63,7 +63,6 @@ namespace ExceptionHandler
             int line = frame.GetFileLineNumber();
             int col = frame.GetFileColumnNumber();
 
-            //Program.log.Error("Unexpected Error", + e.Exception + " -File Name: " + Path.GetFileName(fileName) + " -Method Name: " + methodName + " -Line: " + line + " -Column: " + col);
             Program.log.Error("Unexpected Error", e.Exception);
 
             if (MessageBox.Show("An error has occurred. Would you like to report this issue on GitHub?", "Error", MessageBoxButtons.YesNo) == DialogResult.Yes)
