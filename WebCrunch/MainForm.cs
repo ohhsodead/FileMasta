@@ -82,7 +82,7 @@ namespace WebCrunch
 
         // Updates
         public static string urlLatestVersion = "https://raw.githubusercontent.com/ekkash/WebCrunch/master/WebCrunch/current-version.txt";
-        public static string urlLatestRelease = "https://github.com/ekkash/WebCrunch/releases/";
+        public static string urlLatestRelease = "https://github.com/ekkash/WebCrunch/releases/latest";
         public static string getUrlLatestUpdater(Version newVersion) { return "https://github.com/ekkash/WebCrunch/releases/download/" + newVersion.ToString() + "/Update.exe"; }
 
         // Misc
