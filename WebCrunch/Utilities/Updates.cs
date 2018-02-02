@@ -28,10 +28,10 @@ namespace WebCrunch.Utilities
 
                     if (curVersion.CompareTo(newVersion) < 0)
                     {
-                        Program.log.Info(@"Update found - starting \update.exe");
+                        Program.log.Info(@"Update found, starting Update.exe");
                         MessageBox.Show(MainForm.form, "WebCrunch " + newVersion.ToString() + " is ready to be installed.", "WebCrunch - Update Available");
-                        client.DownloadFile(MainForm.urlUpdater, Application.StartupPath + @"\");
-                        Process.Start(Application.StartupPath + @"\Update.exe");
+                        client.DownloadFile(MainForm.getUrlLatestUpdater(newVersion), MainForm.userDownloadsDirectory);
+                        Process.Start(MainForm.userDownloadsDirectory + @"\Update.exe");
                         Application.Exit();
                     }
                 }                    
@@ -40,7 +40,7 @@ namespace WebCrunch.Utilities
             {
                 Program.log.Error("Unable to update", ex);
                 MessageBox.Show("There was an error checking for update. You will be directed to the latest available version download page.");
-                Process.Start(MainForm.urlLatestDownload);
+                Process.Start(MainForm.urlLatestRelease);
                 Application.Exit();
             }
         }

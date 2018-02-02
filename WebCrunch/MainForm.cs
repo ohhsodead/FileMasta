@@ -82,8 +82,8 @@ namespace WebCrunch
 
         // Updates
         public static string urlLatestVersion = "https://raw.githubusercontent.com/ekkash/WebCrunch/master/Update/Version.txt";
-        public static string urlUpdater = "https://raw.githubusercontent.com/ekkash/WebCrunch/master/Update/Update.exe";
-        public static string urlLatestDownload = "https://github.com/ekkash/WebCrunch/releases/";
+        public static string urlLatestRelease = "https://github.com/ekkash/WebCrunch/releases/";
+        public static string getUrlLatestUpdater(Version newVersion) { return "https://github.com/ekkash/WebCrunch/releases/download/" + newVersion.ToString() + "/Update.exe"; }
 
         // Misc
         public static string urlChangelog = "https://raw.githubusercontent.com/ekkash/WebCrunch/master/CHANGELOG.md";
@@ -119,7 +119,7 @@ namespace WebCrunch
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            Program.log.Info("Loading main form");
+            Program.log.Info("Loading application");
 
             loadSettings();
 
@@ -145,7 +145,7 @@ namespace WebCrunch
                 showStatusTab(rm.GetString("errorNoInternetConnection"));
             }
 
-            Program.log.Info("Loaded main form");
+            Program.log.Info("Loaded application");
         }
 
         void worker_DoWork(object sender, DoWorkEventArgs e)
