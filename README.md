@@ -21,10 +21,10 @@ We host no content, we provide only access to already available files in a same 
 [![Report a bug](http://i.imgur.com/xSpw482.png)](https://github.com/ekkash/WebCrunch/issues/new) [![Feature request](http://i.imgur.com/mFO0OuX.png)](http://feathub.com/ekkash/WebCrunch)
 
 ## Latest Build
-WebCrunch 2.15
+WebCrunch 2.15.1
 
 ## Supported Systems
-* Windows 7 and above (Windows 7, 8, 8.1, 10) using .NET 4.7.1 [Download here](https://www.microsoft.com/net/download/dotnet-framework-runtime/net471).
+* Windows XP and above (Windows XP, Vista, 7, 8, 8.1, 10) using .NET 4.7.1 [Download here](https://www.microsoft.com/net/download/dotnet-framework-runtime/net471).
 
 ## Installation
 Download and run the latest version of the Windows installer, "WebCrunch.Installer.Windows.exe" from the [releases](https://github.com/ekkash/WebCrunch/releases/latest) page.
@@ -39,7 +39,7 @@ All contributions are welcome just send a pull request. WebCrunch's directory da
 <details>
 <summary>Is this application secure?</summary>
 <br>
-Yes. All communications between our servers and your client is 100% secure.
+Yes. All communications between our servers (FYI, we use Dropbox and GitHub) and your client is 100% secure.
 </details>
 <br>
 <details>
@@ -61,9 +61,9 @@ There could be several reasons for that:
 </details>
 <br>
 <details>
-<summary>How can I download files from WebCrunch? Do I need an special program?</summary>
+<summary>How can I download files from WebCrunch? Do I need any special program?</summary>
 <br>
-You don't need a special program but it is very recommended. For example if you just click on the file link from your browser you can't see what is happening exactly between you and the web server (see previous question). So I would recommend to use a good web client that supports queuing or your favorite download manager, when you located the file you want to download just copy the shortcut by right clicking on the link and paste it on your web client or whatever, that its.</details>
+You don't need a special program but it is very recommended. For example, if you just open the link in your web browser you can't see what is happening exactly between you and the web server (see previous question). So I would recommend to use a good web client that supports queuing or your favorite download manager, when you located the file you want to download just copy the link and paste it in your web client or whatever, that's it.</details>
 
 ## Prerequisites
 - [Material Design Icons (Powered by Google)](https://materialdesignicons.com/)
