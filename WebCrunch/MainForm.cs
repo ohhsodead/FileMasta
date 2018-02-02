@@ -81,10 +81,9 @@ namespace WebCrunch
         public static string userDownloadsDirectory = KnownFolders.GetPath(KnownFolder.Downloads) + @"\";
 
         // Updates
-        public static string urlLatestVersion = "https://raw.githubusercontent.com/ekkash/WebCrunch/master/WebCrunch/current-version.txt";
+        public static string urlLatestVersion = "https://raw.githubusercontent.com/ekkash/WebCrunch/master/Update/Version.txt";
+        public static string urlUpdater = "https://raw.githubusercontent.com/ekkash/WebCrunch/master/Update/Update.exe";
         public static string urlLatestDownload = "https://github.com/ekkash/WebCrunch/releases/";
-        public static string getUrlLatestInstaller(Version newVersion) { return "https://github.com/ekkash/WebCrunch/releases/download/" + newVersion.ToString() + "/" + pathInstallerFileName; }
-        public static string pathInstallerFileName = "WebCrunch.Installer.Windows.exe";
 
         // Misc
         public static string urlChangelog = "https://raw.githubusercontent.com/ekkash/WebCrunch/master/CHANGELOG.md";

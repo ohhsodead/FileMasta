@@ -28,13 +28,10 @@ namespace WebCrunch.Utilities
 
                     if (curVersion.CompareTo(newVersion) < 0)
                     {
-                        Program.log.Info("Update found - preparing to update");
+                        Program.log.Info(@"Update found - starting \update.exe");
                         MessageBox.Show(MainForm.form, "WebCrunch " + newVersion.ToString() + " is ready to be installed.", "WebCrunch - Update Available");
-
-                        client.DownloadFile(MainForm.getUrlLatestInstaller(newVersion), MainForm.userDownloadsDirectory + MainForm.pathInstallerFileName);
-                        Program.log.Info("Installer downloaded successfully - opening installer...");
-                        Directory.Delete(MainForm.pathData, true);
-                        Process.Start(MainForm.userDownloadsDirectory + MainForm.pathInstallerFileName);
+                        client.DownloadFile(MainForm.urlUpdater, Application.StartupPath + @"\");
+                        Process.Start(Application.StartupPath + @"\Update.exe");
                         Application.Exit();
                     }
                 }                    
