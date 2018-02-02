@@ -81,7 +81,7 @@ namespace WebCrunch
         public static string userDownloadsDirectory = KnownFolders.GetPath(KnownFolder.Downloads) + @"\";
 
         // Updates
-        public static string urlLatestVersion = "https://raw.githubusercontent.com/ekkash/WebCrunch/master/Update/Version.txt";
+        public static string urlLatestVersion = "https://raw.githubusercontent.com/ekkash/WebCrunch/master/WebCrunch/current-version.txt";
         public static string urlLatestRelease = "https://github.com/ekkash/WebCrunch/releases/";
         public static string getUrlLatestUpdater(Version newVersion) { return "https://github.com/ekkash/WebCrunch/releases/download/" + newVersion.ToString() + "/Update.exe"; }
 
