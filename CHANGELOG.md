@@ -1,3 +1,10 @@
+## 0.2.15.1
+- UI changes
+- Added auto updater (beta)
+- Removed external search engines
+- Renamed 'Saved' to 'Bookmarked'
+- Fixed some bugs, including #81 and #82
+
 ## 0.2.15.0
 - Refurbished the entire UI
 - Improved logging/code
