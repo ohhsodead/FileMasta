@@ -74,11 +74,11 @@ You don't need a special program but it is very recommended. For example, if you
 - [log4net](https://logging.apache.org/log4net/)
 
 ## Screenshots
-### Home
+### 🏡 Home
 ![Home](https://github.com/ekkash/WebCrunch/blob/master/Screenshots/Home.png?raw=true)
 
-### Files
+### 🔎 Search Files
 ![Files](https://github.com/ekkash/WebCrunch/blob/master/Screenshots/Files.png?raw=true)
 
-### File Details
+### 📂 File Details
 ![File Details](https://github.com/ekkash/WebCrunch/blob/master/Screenshots/File%20Details.png?raw=true)
