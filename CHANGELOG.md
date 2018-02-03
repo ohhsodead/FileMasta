@@ -1,6 +1,8 @@
 ## 0.2.15.1
 - UI changes
+- Improved stability and performance
 - Added auto updater (beta)
+- Increased number of top searches
 - Removed external search engines
 - Renamed 'Saved' to 'Bookmarked'
 - Fixed some bugs, including #81 and #82
