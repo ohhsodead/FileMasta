@@ -3,7 +3,7 @@ using System.Drawing.Imaging;
 using System.IO;
 using System.Net;
 
-namespace WebCrunch.Extensions
+namespace Extensions
 {
     class ImageExtensions
     {
@@ -84,7 +84,7 @@ namespace WebCrunch.Extensions
         /// <param name="scrBitmap"></param>
         /// <param name="newColor"></param>
         /// <returns></returns>
-        public static Bitmap changeColor(Bitmap scrBitmap, Color newColor)
+        public static Bitmap ChangeColor(Bitmap scrBitmap, Color newColor)
         {
             //You can change your new color here. Red,Green,LawnGreen any..
             Color actualColor;

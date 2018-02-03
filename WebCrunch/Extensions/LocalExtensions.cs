@@ -3,8 +3,9 @@ using System.Collections;
 using System.Diagnostics;
 using System.IO;
 using System.Net;
+using WebCrunch;
 
-namespace WebCrunch.Extensions
+namespace Extensions
 {
     class LocalExtensions
     {
@@ -12,7 +13,7 @@ namespace WebCrunch.Extensions
         /// Check for internet connection
         /// </summary>
         /// <returns></returns>
-        public static bool checkForInternetConnection()
+        public static bool CheckForInternetConnection()
         {
             try
             {
@@ -35,7 +36,7 @@ namespace WebCrunch.Extensions
         /// <param name="Filter"></param>
         /// <param name="searchOption"></param>
         /// <returns></returns>
-        public static string[] getFiles(string SourceFolder, string Filter, SearchOption searchOption)
+        public static string[] GetFiles(string SourceFolder, string Filter, SearchOption searchOption)
         {
             // ArrayList will hold all file names
             ArrayList alFiles = new ArrayList();
@@ -58,7 +59,7 @@ namespace WebCrunch.Extensions
         /// Open and select local file
         /// </summary>
         /// <param name="path"></param>
-        public static void openFile(string path)
+        public static void OpenFile(string path)
         {
             if (!File.Exists(path))
             {

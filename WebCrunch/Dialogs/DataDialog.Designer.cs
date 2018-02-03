@@ -44,7 +44,7 @@
             this.panelDataItems.Location = new System.Drawing.Point(12, 12);
             this.panelDataItems.Name = "panelDataItems";
             this.panelDataItems.Size = new System.Drawing.Size(435, 87);
-            this.panelDataItems.TabIndex = 100052;
+            this.panelDataItems.TabIndex = 0;
             // 
             // dataInfo
             // 
@@ -53,13 +53,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataInfo.AutoSize = true;
             this.dataInfo.BackColor = System.Drawing.Color.Transparent;
+            this.dataInfo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dataInfo.ForeColor = System.Drawing.Color.Black;
             this.dataInfo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.dataInfo.Location = new System.Drawing.Point(0, 0);
             this.dataInfo.Margin = new System.Windows.Forms.Padding(0);
             this.dataInfo.Name = "dataInfo";
-            this.dataInfo.Size = new System.Drawing.Size(31, 17);
-            this.dataInfo.TabIndex = 100046;
+            this.dataInfo.Size = new System.Drawing.Size(28, 15);
+            this.dataInfo.TabIndex = 0;
             this.dataInfo.Text = "Text";
             // 
             // DataDialog

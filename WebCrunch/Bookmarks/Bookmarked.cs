@@ -9,39 +9,27 @@ namespace WebCrunch.Bookmarks
     class Bookmarked
     {
         /// <summary>
-        /// Returns string form of file objects
+        /// Remove URL from Bookmarks
         /// </summary>
-        /// <param name="Url"></param>
-        /// <param name="Name"></param>
-        /// <param name="Type"></param>
-        /// <param name="Host"></param>
-        /// <returns></returns>
-        public static string fileToJson(string Url, string Name, string Type, string Host)
-        {
-            return JsonConvert.SerializeObject(new WebFile(Type, Name, 0, default(DateTime), Host, Url));
-        }
-
-        /// <summary>
-        /// Remove json string from Bookmarks
-        /// </summary>
-        /// <param name="Json"></param>
-        public static void unsaveFile(string Json)
+        /// <param name="URL"></param>
+        public static void UnsaveFile(string URL)
         {
             if (File.Exists(MainForm.pathDataBookmarked))
             {
-                TextLineRemover.RemoveTextLines(new List<string> { Json }, MainForm.pathDataBookmarked, MainForm.pathDataBookmarked + ".tmp");
+                TextLineRemover.RemoveTextLines(new List<string> { JsonConvert.SerializeObject(new Bookmark(URL)) }, MainForm.pathDataBookmarked, MainForm.pathDataBookmarked + ".tmp");
             }
         }
 
         /// <summary>
-        /// Add json string to Bookmarks
+        /// Add URL to Bookmarks
         /// </summary>
-        /// <param name="Json"></param>
-        public static void saveFile(string Json)
+        /// <param name="URL"></param>
+        public static void SaveFile(string URL)
         {
             using (StreamWriter Bookmarked = File.AppendText(MainForm.pathDataBookmarked))
             {
-                Bookmarked.WriteLine(Json);
+                var a = JsonConvert.SerializeObject(new Bookmark(URL));
+                Bookmarked.WriteLine(a);
                 Bookmarked.Flush();
             }
         }
@@ -51,7 +39,7 @@ namespace WebCrunch.Bookmarks
         /// </summary>
         /// <param name="URL"></param>
         /// <returns></returns>
-        public static bool isBookmarked(string URL)
+        public static bool IsBookmarked(string URL)
         {
             if (File.Exists(MainForm.pathDataBookmarked))
             {
@@ -59,7 +47,7 @@ namespace WebCrunch.Bookmarks
                 {
                     while (!reader.EndOfStream)
                     {
-                        var a = JsonConvert.DeserializeObject<WebFile>(reader.ReadLine());
+                        var a = JsonConvert.DeserializeObject<Bookmark>(reader.ReadLine());
 
                         if (a.URL == URL)
                         {
@@ -70,6 +58,24 @@ namespace WebCrunch.Bookmarks
             }
 
             return false;
+        }
+
+        /// <summary>
+        /// Get file info from local database
+        /// </summary>
+        /// <param name="URL"></param>
+        /// <returns></returns>
+        public static WebFile FileInfoFromURL(string URL)
+        {
+            foreach (var file in MainForm.dataOpenFiles)
+            {
+                if (file.URL == URL)
+                {
+                    return file;
+                }
+            }
+
+            return null;
         }
     }
 }

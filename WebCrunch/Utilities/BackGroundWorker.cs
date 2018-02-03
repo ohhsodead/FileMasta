@@ -59,11 +59,11 @@ namespace Utilities
         /// start a void method in backgroundworker 
         /// </summary>
         /// <param name="work">Method passed as argument</param>
-        public static void RunWorkAsync(Action work)
+        public static void RunWorkAsync(Action work, RunWorkerCompletedEventHandler completed = null)
         {
             BackgroundWorker worker = new BackgroundWorker();
             worker.StartWorker(work);
-
+            if (completed != null) { worker.RunWorkerCompleted += completed; }
             worker.RunWorkerAsync();
         }
     }

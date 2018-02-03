@@ -2,7 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace WebCrunch.Extensions
+namespace Extensions
 {
     class ControlExtensions
     {
@@ -25,6 +25,11 @@ namespace WebCrunch.Extensions
             return maxWidth;
         }
 
+        /// <summary>
+        /// Change button text and auto size
+        /// </summary>
+        /// <param name="ctrl"></param>
+        /// <param name="text"></param>
         public static void ChangeControlText(CButtonLib.CButton ctrl, string text)
         {
             ctrl.Text = text;

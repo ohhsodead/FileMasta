@@ -9,7 +9,7 @@ namespace Controls
             InitializeComponent();
         }
 
-        private void btnRestartApp_ClickButtonArea(object Sender, MouseEventArgs e)
+        private void btnRestart_ClickButtonArea(object Sender, MouseEventArgs e)
         {
             Application.Restart();
         }

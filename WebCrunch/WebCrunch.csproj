@@ -93,7 +93,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="UI\Colors.cs" />
+    <Compile Include="Controls\ctrlButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\ctrlTitleButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Extensions\Colors.cs" />
     <Compile Include="Controls\FileDetails.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -106,6 +112,7 @@
     <Compile Include="Controls\ErrorInfo.Designer.cs">
       <DependentUpon>ErrorInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Bookmark.cs" />
     <Compile Include="Models\DatabaseInfo.cs" />
     <Compile Include="Dialogs\DataDialog.cs">
       <SubType>Form</SubType>
@@ -315,9 +322,6 @@
     <None Include="Resources\link-variant.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\cloud-download.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\magnify-orange.png" />
   </ItemGroup>
   <ItemGroup>
@@ -328,12 +332,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\alert-octagon-orange.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\bookmark-plus-orange.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\bookmark-remove-orange.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\search-web-orange.png" />
@@ -367,6 +365,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="new_logo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="UI\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

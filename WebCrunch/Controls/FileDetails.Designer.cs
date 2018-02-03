@@ -1,6 +1,4 @@
-﻿using WebCrunch;
-
-namespace Controls
+﻿namespace Controls
 {
     partial class FileDetails
     {
@@ -36,10 +34,6 @@ namespace Controls
             CButtonLib.cBlendItems cBlendItems2 = new CButtonLib.cBlendItems();
             CButtonLib.cBlendItems cBlendItems3 = new CButtonLib.cBlendItems();
             CButtonLib.cBlendItems cBlendItems4 = new CButtonLib.cBlendItems();
-            CButtonLib.cBlendItems cBlendItems5 = new CButtonLib.cBlendItems();
-            CButtonLib.cBlendItems cBlendItems6 = new CButtonLib.cBlendItems();
-            CButtonLib.cBlendItems cBlendItems7 = new CButtonLib.cBlendItems();
-            CButtonLib.cBlendItems cBlendItems8 = new CButtonLib.cBlendItems();
             this.infoFileName = new System.Windows.Forms.Label();
             this.titleName = new System.Windows.Forms.Label();
             this.infoName = new System.Windows.Forms.Label();
@@ -63,9 +57,6 @@ namespace Controls
             this.panelReportFile = new System.Windows.Forms.Panel();
             this.btnReportFile = new CButtonLib.CButton();
             this.cmboboxReportFile = new System.Windows.Forms.ComboBox();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.btnViewDirectory = new CButtonLib.CButton();
-            this.btnSaveFile = new CButtonLib.CButton();
             this.btnShareFile = new CButtonLib.CButton();
             this.contextFileName = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.VLC2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -75,11 +66,13 @@ namespace Controls
             this.panelShareFile = new System.Windows.Forms.Panel();
             this.cmboBoxShareFile = new System.Windows.Forms.ComboBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnPlayMedia = new CButtonLib.CButton();
-            this.btnRequestFileSize = new CButtonLib.CButton();
+            this.btnViewDirectory = new Controls.CtrlButton();
+            this.btnBookmarkFile = new Controls.CtrlButton();
             this.infoFileURL = new CButtonLib.CButton();
             this.btnDirectLink = new CButtonLib.CButton();
             this.appClose = new System.Windows.Forms.PictureBox();
+            this.btnRequestFileSize = new Controls.CtrlButton();
+            this.btnPlayMedia = new Controls.CtrlButton();
             this.panelReportFile.SuspendLayout();
             this.contextFileName.SuspendLayout();
             this.panelShareFile.SuspendLayout();
@@ -100,7 +93,7 @@ namespace Controls
             this.infoFileName.Margin = new System.Windows.Forms.Padding(0);
             this.infoFileName.Name = "infoFileName";
             this.infoFileName.Size = new System.Drawing.Size(503, 34);
-            this.infoFileName.TabIndex = 100045;
+            this.infoFileName.TabIndex = 0;
             this.infoFileName.Text = "File Name";
             this.infoFileName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -483,16 +476,15 @@ namespace Controls
             this.btnReportFile.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnReportFile.SideImageSize = new System.Drawing.Size(16, 16);
             this.btnReportFile.Size = new System.Drawing.Size(78, 22);
-            this.btnReportFile.TabIndex = 3;
+            this.btnReportFile.TabIndex = 4;
             this.btnReportFile.Text = "Report";
             this.btnReportFile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnReportFile.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnReportFile.TextMargin = new System.Windows.Forms.Padding(2, 3, 2, 2);
             this.btnReportFile.TextShadow = System.Drawing.Color.Empty;
             this.btnReportFile.TextShadowShow = false;
-            this.toolTip1.SetToolTip(this.btnReportFile, "Report File");
             this.btnReportFile.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnReportFile_ClickButtonArea);
-            this.btnReportFile.MouseEnter += new System.EventHandler(this.comboboxCButton_MouseEnter);
+            this.btnReportFile.MouseEnter += new System.EventHandler(this.ComboboxCButton_MouseEnter);
             this.btnReportFile.MouseLeave += new System.EventHandler(this.comboboxCButton_MouseLeave);
             // 
             // cmboboxReportFile
@@ -513,97 +505,6 @@ namespace Controls
             this.cmboboxReportFile.TabStop = false;
             this.cmboboxReportFile.SelectedIndexChanged += new System.EventHandler(this.cmboboxReportFile_SelectedIndexChanged);
             // 
-            // btnViewDirectory
-            // 
-            this.btnViewDirectory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnViewDirectory.BackColor = System.Drawing.Color.Transparent;
-            this.btnViewDirectory.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(105)))), ((int)(((byte)(26)))));
-            cBlendItems2.iColor = new System.Drawing.Color[] {
-        System.Drawing.Color.White,
-        System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))))};
-            cBlendItems2.iPoint = new float[] {
-        0F,
-        1F};
-            this.btnViewDirectory.ColorFillBlend = cBlendItems2;
-            this.btnViewDirectory.ColorFillSolid = System.Drawing.Color.Transparent;
-            this.btnViewDirectory.Corners.All = 2;
-            this.btnViewDirectory.Corners.LowerLeft = 2;
-            this.btnViewDirectory.Corners.LowerRight = 2;
-            this.btnViewDirectory.Corners.UpperLeft = 2;
-            this.btnViewDirectory.Corners.UpperRight = 2;
-            this.btnViewDirectory.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnViewDirectory.DesignerSelected = false;
-            this.btnViewDirectory.DimFactorClick = 0;
-            this.btnViewDirectory.DimFactorHover = 0;
-            this.btnViewDirectory.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.btnViewDirectory.Font = new System.Drawing.Font("Segoe UI Semibold", 10.75F);
-            this.btnViewDirectory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(105)))), ((int)(((byte)(26)))));
-            this.btnViewDirectory.Image = global::WebCrunch.Properties.Resources.search_web_orange;
-            this.btnViewDirectory.ImageIndex = 0;
-            this.btnViewDirectory.ImageSize = new System.Drawing.Size(22, 22);
-            this.btnViewDirectory.Location = new System.Drawing.Point(237, 0);
-            this.btnViewDirectory.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.btnViewDirectory.Name = "btnViewDirectory";
-            this.btnViewDirectory.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.btnViewDirectory.SideImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnViewDirectory.SideImageSize = new System.Drawing.Size(0, 0);
-            this.btnViewDirectory.Size = new System.Drawing.Size(150, 38);
-            this.btnViewDirectory.TabIndex = 1;
-            this.btnViewDirectory.Text = "View Directory";
-            this.btnViewDirectory.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnViewDirectory.TextShadow = System.Drawing.Color.Empty;
-            this.btnViewDirectory.TextShadowShow = false;
-            this.toolTip1.SetToolTip(this.btnViewDirectory, "View Directory");
-            this.btnViewDirectory.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnViewDirectory_ClickButtonArea);
-            this.btnViewDirectory.MouseEnter += new System.EventHandler(this.btnCButton_MouseEnter);
-            this.btnViewDirectory.MouseLeave += new System.EventHandler(this.btnCButton_MouseLeave);
-            // 
-            // btnSaveFile
-            // 
-            this.btnSaveFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSaveFile.BackColor = System.Drawing.Color.Transparent;
-            this.btnSaveFile.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(105)))), ((int)(((byte)(26)))));
-            cBlendItems3.iColor = new System.Drawing.Color[] {
-        System.Drawing.Color.White,
-        System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))))};
-            cBlendItems3.iPoint = new float[] {
-        0F,
-        1F};
-            this.btnSaveFile.ColorFillBlend = cBlendItems3;
-            this.btnSaveFile.ColorFillSolid = System.Drawing.Color.Transparent;
-            this.btnSaveFile.Corners.All = 2;
-            this.btnSaveFile.Corners.LowerLeft = 2;
-            this.btnSaveFile.Corners.LowerRight = 2;
-            this.btnSaveFile.Corners.UpperLeft = 2;
-            this.btnSaveFile.Corners.UpperRight = 2;
-            this.btnSaveFile.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSaveFile.DesignerSelected = true;
-            this.btnSaveFile.DimFactorClick = 0;
-            this.btnSaveFile.DimFactorHover = 0;
-            this.btnSaveFile.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.btnSaveFile.Font = new System.Drawing.Font("Segoe UI Semibold", 10.75F);
-            this.btnSaveFile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(105)))), ((int)(((byte)(26)))));
-            this.btnSaveFile.Image = global::WebCrunch.Properties.Resources.bookmark_orange;
-            this.btnSaveFile.ImageIndex = 0;
-            this.btnSaveFile.ImageSize = new System.Drawing.Size(22, 22);
-            this.btnSaveFile.Location = new System.Drawing.Point(62, 0);
-            this.btnSaveFile.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.btnSaveFile.Name = "btnSaveFile";
-            this.btnSaveFile.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.btnSaveFile.SideImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnSaveFile.SideImageSize = new System.Drawing.Size(0, 0);
-            this.btnSaveFile.Size = new System.Drawing.Size(171, 38);
-            this.btnSaveFile.TabIndex = 0;
-            this.btnSaveFile.Text = "Add to Bookmarks";
-            this.btnSaveFile.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSaveFile.TextMargin = new System.Windows.Forms.Padding(7, 2, 0, 2);
-            this.btnSaveFile.TextShadow = System.Drawing.Color.Empty;
-            this.btnSaveFile.TextShadowShow = false;
-            this.toolTip1.SetToolTip(this.btnSaveFile, "Save File");
-            this.btnSaveFile.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnSaveFile_ClickButtonArea);
-            this.btnSaveFile.MouseEnter += new System.EventHandler(this.btnCButton_MouseEnter);
-            this.btnSaveFile.MouseLeave += new System.EventHandler(this.btnCButton_MouseLeave);
-            // 
             // btnShareFile
             // 
             this.btnShareFile.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -611,13 +512,13 @@ namespace Controls
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnShareFile.BackColor = System.Drawing.Color.Transparent;
             this.btnShareFile.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(193)))), ((int)(((byte)(190)))));
-            cBlendItems4.iColor = new System.Drawing.Color[] {
+            cBlendItems2.iColor = new System.Drawing.Color[] {
         System.Drawing.Color.White,
         System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))))};
-            cBlendItems4.iPoint = new float[] {
+            cBlendItems2.iPoint = new float[] {
         0F,
         1F};
-            this.btnShareFile.ColorFillBlend = cBlendItems4;
+            this.btnShareFile.ColorFillBlend = cBlendItems2;
             this.btnShareFile.ColorFillSolid = System.Drawing.Color.Transparent;
             this.btnShareFile.Corners.All = 2;
             this.btnShareFile.Corners.LowerLeft = 2;
@@ -648,9 +549,8 @@ namespace Controls
             this.btnShareFile.TextMargin = new System.Windows.Forms.Padding(2, 3, 2, 2);
             this.btnShareFile.TextShadow = System.Drawing.Color.Empty;
             this.btnShareFile.TextShadowShow = false;
-            this.toolTip1.SetToolTip(this.btnShareFile, "Report File");
             this.btnShareFile.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnShareFile_ClickButtonArea);
-            this.btnShareFile.MouseEnter += new System.EventHandler(this.comboboxCButton_MouseEnter);
+            this.btnShareFile.MouseEnter += new System.EventHandler(this.ComboboxCButton_MouseEnter);
             this.btnShareFile.MouseLeave += new System.EventHandler(this.comboboxCButton_MouseLeave);
             // 
             // contextFileName
@@ -736,96 +636,78 @@ namespace Controls
             // 
             this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutPanel1.Controls.Add(this.btnViewDirectory);
-            this.flowLayoutPanel1.Controls.Add(this.btnSaveFile);
+            this.flowLayoutPanel1.Controls.Add(this.btnBookmarkFile);
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(521, 19);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(521, 22);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(389, 38);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(389, 30);
             this.flowLayoutPanel1.TabIndex = 100075;
             // 
-            // btnPlayMedia
+            // btnViewDirectory
             // 
-            this.btnPlayMedia.BackColor = System.Drawing.Color.Transparent;
-            this.btnPlayMedia.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(105)))), ((int)(((byte)(26)))));
-            cBlendItems5.iColor = new System.Drawing.Color[] {
-        System.Drawing.Color.White,
-        System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))))};
-            cBlendItems5.iPoint = new float[] {
-        0F,
-        1F};
-            this.btnPlayMedia.ColorFillBlend = cBlendItems5;
-            this.btnPlayMedia.ColorFillSolid = System.Drawing.Color.Transparent;
-            this.btnPlayMedia.Corners.All = 2;
-            this.btnPlayMedia.Corners.LowerLeft = 2;
-            this.btnPlayMedia.Corners.LowerRight = 2;
-            this.btnPlayMedia.Corners.UpperLeft = 2;
-            this.btnPlayMedia.Corners.UpperRight = 2;
-            this.btnPlayMedia.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPlayMedia.DesignerSelected = false;
-            this.btnPlayMedia.DimFactorClick = 0;
-            this.btnPlayMedia.DimFactorHover = 0;
-            this.btnPlayMedia.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.btnPlayMedia.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.btnPlayMedia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(105)))), ((int)(((byte)(26)))));
-            this.btnPlayMedia.Image = global::WebCrunch.Properties.Resources.play_orange;
-            this.btnPlayMedia.ImageIndex = 0;
-            this.btnPlayMedia.ImageSize = new System.Drawing.Size(22, 22);
-            this.btnPlayMedia.Location = new System.Drawing.Point(20, 506);
-            this.btnPlayMedia.Name = "btnPlayMedia";
-            this.btnPlayMedia.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.btnPlayMedia.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnPlayMedia.SideImageSize = new System.Drawing.Size(21, 21);
-            this.btnPlayMedia.Size = new System.Drawing.Size(120, 38);
-            this.btnPlayMedia.TabIndex = 7;
-            this.btnPlayMedia.Text = "Play Media";
-            this.btnPlayMedia.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnPlayMedia.TextShadowShow = false;
-            this.btnPlayMedia.Visible = false;
-            this.btnPlayMedia.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnPlayMedia_ClickButtonArea);
-            this.btnPlayMedia.MouseEnter += new System.EventHandler(this.btnCButton_MouseEnter);
-            this.btnPlayMedia.MouseLeave += new System.EventHandler(this.btnCButton_MouseLeave);
+            this.btnViewDirectory.BackColor = System.Drawing.Color.Transparent;
+            this.btnViewDirectory.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(105)))), ((int)(((byte)(26)))));
+            this.btnViewDirectory.ColorFillSolid = System.Drawing.Color.Transparent;
+            this.btnViewDirectory.Corners.All = 2;
+            this.btnViewDirectory.Corners.LowerLeft = 2;
+            this.btnViewDirectory.Corners.LowerRight = 2;
+            this.btnViewDirectory.Corners.UpperLeft = 2;
+            this.btnViewDirectory.Corners.UpperRight = 2;
+            this.btnViewDirectory.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnViewDirectory.DesignerSelected = false;
+            this.btnViewDirectory.DimFactorClick = 0;
+            this.btnViewDirectory.DimFactorHover = 0;
+            this.btnViewDirectory.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.btnViewDirectory.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
+            this.btnViewDirectory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(105)))), ((int)(((byte)(26)))));
+            this.btnViewDirectory.Image = global::WebCrunch.Properties.Resources.search_web_orange;
+            this.btnViewDirectory.ImageIndex = 0;
+            this.btnViewDirectory.ImageSize = new System.Drawing.Size(18, 18);
+            this.btnViewDirectory.Location = new System.Drawing.Point(259, 0);
+            this.btnViewDirectory.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.btnViewDirectory.MaximumSize = new System.Drawing.Size(1000, 30);
+            this.btnViewDirectory.MinimumSize = new System.Drawing.Size(0, 30);
+            this.btnViewDirectory.Name = "btnViewDirectory";
+            this.btnViewDirectory.ShowFocus = CButtonLib.CButton.eFocus.None;
+            this.btnViewDirectory.Size = new System.Drawing.Size(130, 30);
+            this.btnViewDirectory.TabIndex = 1;
+            this.btnViewDirectory.Text = "View Directory";
+            this.btnViewDirectory.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnViewDirectory.TextShadowShow = false;
+            this.btnViewDirectory.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnViewDirectory_ClickButtonArea);
             // 
-            // btnRequestFileSize
+            // btnBookmarkFile
             // 
-            this.btnRequestFileSize.BackColor = System.Drawing.Color.Transparent;
-            this.btnRequestFileSize.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(105)))), ((int)(((byte)(26)))));
-            cBlendItems6.iColor = new System.Drawing.Color[] {
-        System.Drawing.Color.White,
-        System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))))};
-            cBlendItems6.iPoint = new float[] {
-        0F,
-        1F};
-            this.btnRequestFileSize.ColorFillBlend = cBlendItems6;
-            this.btnRequestFileSize.ColorFillSolid = System.Drawing.Color.Transparent;
-            this.btnRequestFileSize.Corners.All = 2;
-            this.btnRequestFileSize.Corners.LowerLeft = 2;
-            this.btnRequestFileSize.Corners.LowerRight = 2;
-            this.btnRequestFileSize.Corners.UpperLeft = 2;
-            this.btnRequestFileSize.Corners.UpperRight = 2;
-            this.btnRequestFileSize.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRequestFileSize.DesignerSelected = false;
-            this.btnRequestFileSize.DimFactorClick = 0;
-            this.btnRequestFileSize.DimFactorHover = 0;
-            this.btnRequestFileSize.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.btnRequestFileSize.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
-            this.btnRequestFileSize.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(105)))), ((int)(((byte)(26)))));
-            this.btnRequestFileSize.Image = global::WebCrunch.Properties.Resources.file_find_orange;
-            this.btnRequestFileSize.ImageIndex = 0;
-            this.btnRequestFileSize.Location = new System.Drawing.Point(155, 142);
-            this.btnRequestFileSize.Name = "btnRequestFileSize";
-            this.btnRequestFileSize.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.btnRequestFileSize.SideImageSize = new System.Drawing.Size(21, 21);
-            this.btnRequestFileSize.Size = new System.Drawing.Size(140, 28);
-            this.btnRequestFileSize.TabIndex = 4;
-            this.btnRequestFileSize.Text = "Request File Size";
-            this.btnRequestFileSize.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnRequestFileSize.TextMargin = new System.Windows.Forms.Padding(2, 3, 2, 2);
-            this.btnRequestFileSize.TextShadow = System.Drawing.Color.Empty;
-            this.btnRequestFileSize.TextShadowShow = false;
-            this.btnRequestFileSize.Visible = false;
-            this.btnRequestFileSize.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnRequestFileSize_ClickButtonArea);
-            this.btnRequestFileSize.MouseEnter += new System.EventHandler(this.btnCButton_MouseEnter);
-            this.btnRequestFileSize.MouseLeave += new System.EventHandler(this.btnCButton_MouseLeave);
+            this.btnBookmarkFile.BackColor = System.Drawing.Color.Transparent;
+            this.btnBookmarkFile.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(105)))), ((int)(((byte)(26)))));
+            this.btnBookmarkFile.ColorFillSolid = System.Drawing.Color.Transparent;
+            this.btnBookmarkFile.Corners.All = 2;
+            this.btnBookmarkFile.Corners.LowerLeft = 2;
+            this.btnBookmarkFile.Corners.LowerRight = 2;
+            this.btnBookmarkFile.Corners.UpperLeft = 2;
+            this.btnBookmarkFile.Corners.UpperRight = 2;
+            this.btnBookmarkFile.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBookmarkFile.DesignerSelected = false;
+            this.btnBookmarkFile.DimFactorClick = 0;
+            this.btnBookmarkFile.DimFactorHover = 0;
+            this.btnBookmarkFile.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.btnBookmarkFile.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
+            this.btnBookmarkFile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(105)))), ((int)(((byte)(26)))));
+            this.btnBookmarkFile.Image = global::WebCrunch.Properties.Resources.bookmark_orange;
+            this.btnBookmarkFile.ImageIndex = 0;
+            this.btnBookmarkFile.ImageSize = new System.Drawing.Size(18, 18);
+            this.btnBookmarkFile.Location = new System.Drawing.Point(99, 0);
+            this.btnBookmarkFile.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
+            this.btnBookmarkFile.MaximumSize = new System.Drawing.Size(1000, 30);
+            this.btnBookmarkFile.MinimumSize = new System.Drawing.Size(0, 30);
+            this.btnBookmarkFile.Name = "btnBookmarkFile";
+            this.btnBookmarkFile.ShowFocus = CButtonLib.CButton.eFocus.None;
+            this.btnBookmarkFile.Size = new System.Drawing.Size(154, 30);
+            this.btnBookmarkFile.TabIndex = 0;
+            this.btnBookmarkFile.Text = "Add to Bookmarks";
+            this.btnBookmarkFile.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnBookmarkFile.TextShadowShow = false;
+            this.btnBookmarkFile.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.BtnBookmarkFile_ClickButtonArea);
             // 
             // infoFileURL
             // 
@@ -833,13 +715,13 @@ namespace Controls
             | System.Windows.Forms.AnchorStyles.Right)));
             this.infoFileURL.BackColor = System.Drawing.Color.Transparent;
             this.infoFileURL.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(50)))));
-            cBlendItems7.iColor = new System.Drawing.Color[] {
+            cBlendItems3.iColor = new System.Drawing.Color[] {
         System.Drawing.Color.White,
         System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))))};
-            cBlendItems7.iPoint = new float[] {
+            cBlendItems3.iPoint = new float[] {
         0F,
         1F};
-            this.infoFileURL.ColorFillBlend = cBlendItems7;
+            this.infoFileURL.ColorFillBlend = cBlendItems3;
             this.infoFileURL.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(50)))));
             this.infoFileURL.Corners.All = 2;
             this.infoFileURL.Corners.LowerLeft = 2;
@@ -881,13 +763,13 @@ namespace Controls
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDirectLink.BackColor = System.Drawing.Color.Transparent;
             this.btnDirectLink.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(186)))), ((int)(((byte)(96)))));
-            cBlendItems8.iColor = new System.Drawing.Color[] {
+            cBlendItems4.iColor = new System.Drawing.Color[] {
         System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(186)))), ((int)(((byte)(96))))),
         System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(184)))), ((int)(((byte)(85)))))};
-            cBlendItems8.iPoint = new float[] {
+            cBlendItems4.iPoint = new float[] {
         0F,
         1F};
-            this.btnDirectLink.ColorFillBlend = cBlendItems8;
+            this.btnDirectLink.ColorFillBlend = cBlendItems4;
             this.btnDirectLink.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(186)))), ((int)(((byte)(96)))));
             this.btnDirectLink.Corners.All = 2;
             this.btnDirectLink.Corners.LowerLeft = 2;
@@ -909,8 +791,8 @@ namespace Controls
             this.btnDirectLink.SideImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnDirectLink.SideImageSize = new System.Drawing.Size(22, 22);
             this.btnDirectLink.Size = new System.Drawing.Size(924, 32);
-            this.btnDirectLink.TabIndex = 6;
-            this.btnDirectLink.Text = "Direct Link";
+            this.btnDirectLink.TabIndex = 5;
+            this.btnDirectLink.Text = "Direct Download Link";
             this.btnDirectLink.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDirectLink.TextShadow = System.Drawing.Color.Empty;
             this.btnDirectLink.TextShadowShow = false;
@@ -932,15 +814,83 @@ namespace Controls
             this.appClose.TabStop = false;
             this.appClose.Click += new System.EventHandler(this.appClose_Click);
             // 
+            // btnRequestFileSize
+            // 
+            this.btnRequestFileSize.BackColor = System.Drawing.Color.Transparent;
+            this.btnRequestFileSize.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(105)))), ((int)(((byte)(26)))));
+            this.btnRequestFileSize.ColorFillSolid = System.Drawing.Color.Transparent;
+            this.btnRequestFileSize.Corners.All = 2;
+            this.btnRequestFileSize.Corners.LowerLeft = 2;
+            this.btnRequestFileSize.Corners.LowerRight = 2;
+            this.btnRequestFileSize.Corners.UpperLeft = 2;
+            this.btnRequestFileSize.Corners.UpperRight = 2;
+            this.btnRequestFileSize.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRequestFileSize.DesignerSelected = false;
+            this.btnRequestFileSize.DimFactorClick = 0;
+            this.btnRequestFileSize.DimFactorHover = 0;
+            this.btnRequestFileSize.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.btnRequestFileSize.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
+            this.btnRequestFileSize.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(105)))), ((int)(((byte)(26)))));
+            this.btnRequestFileSize.Image = global::WebCrunch.Properties.Resources.file_find_orange;
+            this.btnRequestFileSize.ImageIndex = 0;
+            this.btnRequestFileSize.ImageSize = new System.Drawing.Size(18, 18);
+            this.btnRequestFileSize.Location = new System.Drawing.Point(155, 141);
+            this.btnRequestFileSize.Margin = new System.Windows.Forms.Padding(0, 3, 6, 3);
+            this.btnRequestFileSize.MaximumSize = new System.Drawing.Size(1000, 30);
+            this.btnRequestFileSize.MinimumSize = new System.Drawing.Size(0, 30);
+            this.btnRequestFileSize.Name = "btnRequestFileSize";
+            this.btnRequestFileSize.ShowFocus = CButtonLib.CButton.eFocus.None;
+            this.btnRequestFileSize.Size = new System.Drawing.Size(143, 30);
+            this.btnRequestFileSize.TabIndex = 2;
+            this.btnRequestFileSize.Text = "Request File Size";
+            this.btnRequestFileSize.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRequestFileSize.TextShadowShow = false;
+            this.btnRequestFileSize.Visible = false;
+            this.btnRequestFileSize.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnRequestFileSize_ClickButtonArea);
+            // 
+            // btnPlayMedia
+            // 
+            this.btnPlayMedia.BackColor = System.Drawing.Color.Transparent;
+            this.btnPlayMedia.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(105)))), ((int)(((byte)(26)))));
+            this.btnPlayMedia.ColorFillSolid = System.Drawing.Color.Transparent;
+            this.btnPlayMedia.Corners.All = 2;
+            this.btnPlayMedia.Corners.LowerLeft = 2;
+            this.btnPlayMedia.Corners.LowerRight = 2;
+            this.btnPlayMedia.Corners.UpperLeft = 2;
+            this.btnPlayMedia.Corners.UpperRight = 2;
+            this.btnPlayMedia.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPlayMedia.DesignerSelected = false;
+            this.btnPlayMedia.DimFactorClick = 0;
+            this.btnPlayMedia.DimFactorHover = 0;
+            this.btnPlayMedia.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.btnPlayMedia.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
+            this.btnPlayMedia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(105)))), ((int)(((byte)(26)))));
+            this.btnPlayMedia.Image = global::WebCrunch.Properties.Resources.play_orange;
+            this.btnPlayMedia.ImageIndex = 0;
+            this.btnPlayMedia.ImageSize = new System.Drawing.Size(18, 18);
+            this.btnPlayMedia.Location = new System.Drawing.Point(22, 510);
+            this.btnPlayMedia.Margin = new System.Windows.Forms.Padding(0, 3, 6, 3);
+            this.btnPlayMedia.MaximumSize = new System.Drawing.Size(1000, 30);
+            this.btnPlayMedia.MinimumSize = new System.Drawing.Size(0, 30);
+            this.btnPlayMedia.Name = "btnPlayMedia";
+            this.btnPlayMedia.ShowFocus = CButtonLib.CButton.eFocus.None;
+            this.btnPlayMedia.Size = new System.Drawing.Size(109, 30);
+            this.btnPlayMedia.TabIndex = 7;
+            this.btnPlayMedia.Text = "Play Media";
+            this.btnPlayMedia.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnPlayMedia.TextShadowShow = false;
+            this.btnPlayMedia.Visible = false;
+            this.btnPlayMedia.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnPlayMedia_ClickButtonArea);
+            // 
             // FileDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.Controls.Add(this.flowLayoutPanel1);
-            this.Controls.Add(this.panelShareFile);
             this.Controls.Add(this.btnPlayMedia);
             this.Controls.Add(this.btnRequestFileSize);
+            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.panelShareFile);
             this.Controls.Add(this.panelReportFile);
             this.Controls.Add(this.infoSplitter4);
             this.Controls.Add(this.titleType);
@@ -1008,19 +958,18 @@ namespace Controls
         private System.Windows.Forms.Panel panelReportFile;
         private CButtonLib.CButton btnReportFile;
         private System.Windows.Forms.ComboBox cmboboxReportFile;
-        private CButtonLib.CButton btnRequestFileSize;
-        public CButtonLib.CButton btnViewDirectory;
-        private System.Windows.Forms.ToolTip toolTip1;
-        private CButtonLib.CButton btnPlayMedia;
         public System.Windows.Forms.ContextMenuStrip contextFileName;
         private System.Windows.Forms.ToolStripMenuItem VLC2ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem WMPToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem VLCToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem MPCToolStripMenuItem;
-        public CButtonLib.CButton btnSaveFile;
         private System.Windows.Forms.Panel panelShareFile;
         private CButtonLib.CButton btnShareFile;
         private System.Windows.Forms.ComboBox cmboBoxShareFile;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private CtrlButton btnRequestFileSize;
+        private CtrlButton btnPlayMedia;
+        private CtrlButton btnBookmarkFile;
+        private CtrlButton btnViewDirectory;
     }
 }

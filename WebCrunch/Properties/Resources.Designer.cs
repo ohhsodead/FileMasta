@@ -93,26 +93,6 @@ namespace WebCrunch.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap bookmark_plus_orange {
-            get {
-                object obj = ResourceManager.GetObject("bookmark_plus_orange", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap bookmark_remove_orange {
-            get {
-                object obj = ResourceManager.GetObject("bookmark_remove_orange", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap clipboard_arrow_left_orange {
             get {
                 object obj = ResourceManager.GetObject("clipboard_arrow_left_orange", resourceCulture);

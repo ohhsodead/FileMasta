@@ -54,9 +54,8 @@ namespace Utilities
         private static string GetPath(KnownFolder knownFolder, KnownFolderFlags flags,
             bool defaultUser)
         {
-            IntPtr outPath;
             int result = SHGetKnownFolderPath(new Guid(_knownFolderGuids[(int)knownFolder]),
-                (uint)flags, new IntPtr(defaultUser ? -1 : 0), out outPath);
+                (uint)flags, new IntPtr(defaultUser ? -1 : 0), out IntPtr outPath);
             if (result >= 0)
             {
                 return Marshal.PtrToStringUni(outPath);

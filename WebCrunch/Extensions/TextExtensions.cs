@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 
-namespace WebCrunch.Extensions
+namespace Extensions
 {
     class TextExtensions
     {
@@ -63,7 +63,7 @@ namespace WebCrunch.Extensions
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
-        public static string getFormattedNumber(string value)
+        public static string GetFormattedNumber(string value)
         {
             return string.Format("{0:n0}", Convert.ToInt32(value));
         }
@@ -73,7 +73,7 @@ namespace WebCrunch.Extensions
         /// </summary>
         /// <param name="date"></param>
         /// <returns></returns>
-        public static string getTimeAgo(DateTime date)
+        public static string GetTimeAgo(DateTime date)
         {
             const int SECOND = 1;
             const int MINUTE = 60 * SECOND;
@@ -122,7 +122,7 @@ namespace WebCrunch.Extensions
         /// </summary>
         /// <param name="byteCount"></param>
         /// <returns></returns>
-        public static String bytesToString(long byteCount)
+        public static String BytesToString(long byteCount)
         {
             string[] suf = { "Bytes", "KB", "MB", "GB", "TB", "PB", "EB" }; // Longs run out around EB
             if (byteCount == 0)
@@ -138,7 +138,7 @@ namespace WebCrunch.Extensions
         /// </summary>
         /// <param name="txtDate"></param>
         /// <returns></returns>
-        public static bool isDateTime(string txtDate)
+        public static bool IsDateTime(string txtDate)
         {
             return DateTime.TryParse(txtDate, out DateTime tempDate);
         }
@@ -148,7 +148,7 @@ namespace WebCrunch.Extensions
         /// </summary>
         /// <param name="json"></param>
         /// <returns></returns>
-        public static bool isValidJSON(string json)
+        public static bool IsValidJSON(string json)
         {
             try
             {

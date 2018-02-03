@@ -3,7 +3,7 @@ using System.IO;
 using System.Net;
 using WebCrunch;
 
-namespace WebCrunch.Extensions
+namespace Extensions
 {
     class FileExtensions
     {
@@ -13,13 +13,13 @@ namespace WebCrunch.Extensions
         /// <param name="webFile"></param>
         /// <param name="fileName"></param>
         /// <returns></returns>
-        public static bool doUpdateFile(string webFile, string fileName)
+        public static bool IsSizeEqual(string webFile, string fileName)
         {
             try
             {
                 Program.log.Info("Checking if file '" + fileName + "' needs to be updated");
 
-                if (File.Exists(MainForm.pathData + fileName) == true)
+                if (File.Exists(MainForm.pathData + fileName))
                 {
                     WebRequest req = WebRequest.Create(webFile);
                     req.Method = "HEAD";
@@ -36,7 +36,7 @@ namespace WebCrunch.Extensions
                 }
                 else { return true; }
             }
-            catch (Exception ex) { Program.log.Error("Errro checking file '" + fileName + "' for update", ex); return true;  }
+            catch (Exception ex) { Program.log.Error("Error checking file '" + fileName + "' for update", ex); return true;  }
         }
 
         /// <summary>
@@ -44,7 +44,7 @@ namespace WebCrunch.Extensions
         /// </summary>
         /// <param name="webUrl"></param>
         /// <returns></returns>
-        public static DateTime getFileLastModified(string webUrl)
+        public static DateTime GetFileLastModified(string webUrl)
         {
             try
             {
@@ -72,7 +72,7 @@ namespace WebCrunch.Extensions
         /// </summary>
         /// <param name="webUrl"></param>
         /// <returns></returns>
-        public static int getFileSize(string webUrl)
+        public static int GetFileSize(string webUrl)
         {
             try
             {
@@ -99,7 +99,7 @@ namespace WebCrunch.Extensions
         /// </summary>
         /// <param name="fileURL"></param>
         /// <returns></returns>
-        public static bool hasExistingSubtitles(string fileURL)
+        public static bool HasExistingSubtitles(string fileURL)
         {
             if (File.Exists(MainForm.userDownloadsDirectory + Path.GetFileNameWithoutExtension(new Uri(fileURL).LocalPath) + ".srt"))
             {

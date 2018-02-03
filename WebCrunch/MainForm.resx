@@ -1613,7 +1613,7 @@
 
 The link you submit will go to our issue tracker on GitHub. Links are reviewed on a first-in, first-out basis. This could take anywhere from a few hours to a couple of weeks before your site is listed depending on number of submissions yet to be checked.
 
-Our crawler will scan the web server starting at the directory you specify, and, all the files that pass a set of filters will be added to our database, it will also check if a randomly chosen file can be downloaded, and ignore the whole web server if the download fails. So *ONLY* web serverswith downloadable content will be considered.
+Our crawler will scan the web server starting at the directory you specify, and, all the files that pass a set of filters will be added to our database, it will also check if a randomly chosen file can be downloaded, and ignore the whole web server if the download fails. So *ONLY* web servers with downloadable content will be considered.
 
 Please keep in mind we are a search engine having strict policies, read the following guidelines first before submitting a link/website.
 
@@ -1638,34 +1638,37 @@ Please keep in mind we are a search engine having strict policies, read the foll
   <data name="panelSubmitItems.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
-  <data name="btnSubmitLink.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="btnSubmitUrl.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9.75pt</value>
   </data>
-  <data name="btnSubmitLink.Location" type="System.Drawing.Point, System.Drawing">
-    <value>417, 4</value>
+  <data name="btnSubmitUrl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>414, 4</value>
   </data>
-  <data name="btnSubmitLink.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 3, 3, 3</value>
+  <data name="btnSubmitUrl.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>1000, 30</value>
   </data>
-  <data name="btnSubmitLink.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 30</value>
+  <data name="btnSubmitUrl.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>0, 30</value>
   </data>
-  <data name="btnSubmitLink.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="btnSubmitUrl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>66, 30</value>
   </data>
-  <data name="btnSubmitLink.Text" xml:space="preserve">
+  <data name="btnSubmitUrl.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="btnSubmitUrl.Text" xml:space="preserve">
     <value>Submit</value>
   </data>
-  <data name="&gt;&gt;btnSubmitLink.Name" xml:space="preserve">
-    <value>btnSubmitLink</value>
+  <data name="&gt;&gt;btnSubmitUrl.Name" xml:space="preserve">
+    <value>btnSubmitUrl</value>
   </data>
-  <data name="&gt;&gt;btnSubmitLink.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
+  <data name="&gt;&gt;btnSubmitUrl.Type" xml:space="preserve">
+    <value>Controls.CtrlButton, WebCrunch, Version=0.2.15.1, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;btnSubmitLink.Parent" xml:space="preserve">
+  <data name="&gt;&gt;btnSubmitUrl.Parent" xml:space="preserve">
     <value>panelSubmitItems</value>
   </data>
-  <data name="&gt;&gt;btnSubmitLink.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;btnSubmitUrl.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="txtSubmitLink.Font" type="System.Drawing.Font, System.Drawing">
@@ -1836,6 +1839,72 @@ Please keep in mind we are a search engine having strict policies, read the foll
   <data name="tabSettings.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Stretch</value>
   </data>
+  <data name="btnSettingsSave.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9.75pt</value>
+  </data>
+  <data name="btnSettingsSave.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 171</value>
+  </data>
+  <data name="btnSettingsSave.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>1000, 30</value>
+  </data>
+  <data name="btnSettingsSave.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>0, 30</value>
+  </data>
+  <data name="btnSettingsSave.Size" type="System.Drawing.Size, System.Drawing">
+    <value>52, 30</value>
+  </data>
+  <data name="btnSettingsSave.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="btnSettingsSave.Text" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="&gt;&gt;btnSettingsSave.Name" xml:space="preserve">
+    <value>btnSettingsSave</value>
+  </data>
+  <data name="&gt;&gt;btnSettingsSave.Type" xml:space="preserve">
+    <value>Controls.CtrlButton, WebCrunch, Version=0.2.15.1, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;btnSettingsSave.Parent" xml:space="preserve">
+    <value>tabSettings</value>
+  </data>
+  <data name="&gt;&gt;btnSettingsSave.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnSettingsRestoreDefault.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9.75pt</value>
+  </data>
+  <data name="btnSettingsRestoreDefault.Location" type="System.Drawing.Point, System.Drawing">
+    <value>72, 171</value>
+  </data>
+  <data name="btnSettingsRestoreDefault.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>1000, 30</value>
+  </data>
+  <data name="btnSettingsRestoreDefault.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>0, 30</value>
+  </data>
+  <data name="btnSettingsRestoreDefault.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 30</value>
+  </data>
+  <data name="btnSettingsRestoreDefault.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="btnSettingsRestoreDefault.Text" xml:space="preserve">
+    <value>Restore defaults</value>
+  </data>
+  <data name="&gt;&gt;btnSettingsRestoreDefault.Name" xml:space="preserve">
+    <value>btnSettingsRestoreDefault</value>
+  </data>
+  <data name="&gt;&gt;btnSettingsRestoreDefault.Type" xml:space="preserve">
+    <value>Controls.CtrlButton, WebCrunch, Version=0.2.15.1, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;btnSettingsRestoreDefault.Parent" xml:space="preserve">
+    <value>tabSettings</value>
+  </data>
+  <data name="&gt;&gt;btnSettingsRestoreDefault.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="splitterHeaderSettings.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
@@ -1867,7 +1936,7 @@ Please keep in mind we are a search engine having strict policies, read the foll
     <value>tabSettings</value>
   </data>
   <data name="&gt;&gt;splitterHeaderSettings.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="btnSettingsGeneralLanguage.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -1879,7 +1948,7 @@ Please keep in mind we are a search engine having strict policies, read the foll
     <value>0, 0</value>
   </data>
   <data name="btnSettingsGeneralLanguage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>335, 38</value>
+    <value>335, 30</value>
   </data>
   <data name="btnSettingsGeneralLanguage.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1921,7 +1990,7 @@ Please keep in mind we are a search engine having strict policies, read the foll
     <value>cs</value>
   </data>
   <data name="cmboBoxSettingsLanguage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 12</value>
+    <value>0, 8</value>
   </data>
   <data name="cmboBoxSettingsLanguage.Size" type="System.Drawing.Size, System.Drawing">
     <value>335, 25</value>
@@ -1942,13 +2011,13 @@ Please keep in mind we are a search engine having strict policies, read the foll
     <value>1</value>
   </data>
   <data name="panelGeneralSettingsLanguage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>235, 59</value>
+    <value>235, 63</value>
   </data>
   <data name="panelGeneralSettingsLanguage.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 7, 0</value>
   </data>
   <data name="panelGeneralSettingsLanguage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>335, 38</value>
+    <value>335, 30</value>
   </data>
   <data name="panelGeneralSettingsLanguage.TabIndex" type="System.Int32, mscorlib">
     <value>42</value>
@@ -1963,7 +2032,7 @@ Please keep in mind we are a search engine having strict policies, read the foll
     <value>tabSettings</value>
   </data>
   <data name="&gt;&gt;panelGeneralSettingsLanguage.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="lblSettingsGeneralLanguage.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1999,7 +2068,7 @@ Please keep in mind we are a search engine having strict policies, read the foll
     <value>tabSettings</value>
   </data>
   <data name="&gt;&gt;lblSettingsGeneralLanguage.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="lblHeaderSettingsGeneral.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Semibold, 15.25pt</value>
@@ -2032,7 +2101,7 @@ Please keep in mind we are a search engine having strict policies, read the foll
     <value>tabSettings</value>
   </data>
   <data name="&gt;&gt;lblHeaderSettingsGeneral.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="lblSettingsGeneralClearDataOnClose.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2068,7 +2137,7 @@ Please keep in mind we are a search engine having strict policies, read the foll
     <value>tabSettings</value>
   </data>
   <data name="&gt;&gt;lblSettingsGeneralClearDataOnClose.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="chkSettingsClearData.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2098,66 +2167,6 @@ Please keep in mind we are a search engine having strict policies, read the foll
     <value>tabSettings</value>
   </data>
   <data name="&gt;&gt;chkSettingsClearData.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="btnSettingsSave.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9.75pt</value>
-  </data>
-  <data name="btnSettingsSave.Location" type="System.Drawing.Point, System.Drawing">
-    <value>150, 178</value>
-  </data>
-  <data name="btnSettingsSave.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 1, 3, 0</value>
-  </data>
-  <data name="btnSettingsSave.Size" type="System.Drawing.Size, System.Drawing">
-    <value>114, 38</value>
-  </data>
-  <data name="btnSettingsSave.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="btnSettingsSave.Text" xml:space="preserve">
-    <value>Save settings</value>
-  </data>
-  <data name="&gt;&gt;btnSettingsSave.Name" xml:space="preserve">
-    <value>btnSettingsSave</value>
-  </data>
-  <data name="&gt;&gt;btnSettingsSave.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;btnSettingsSave.Parent" xml:space="preserve">
-    <value>tabSettings</value>
-  </data>
-  <data name="&gt;&gt;btnSettingsSave.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="btnSettingsRestoreDefault.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9.75pt</value>
-  </data>
-  <data name="btnSettingsRestoreDefault.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 178</value>
-  </data>
-  <data name="btnSettingsRestoreDefault.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 1, 3, 0</value>
-  </data>
-  <data name="btnSettingsRestoreDefault.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 38</value>
-  </data>
-  <data name="btnSettingsRestoreDefault.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="btnSettingsRestoreDefault.Text" xml:space="preserve">
-    <value>Restore defaults</value>
-  </data>
-  <data name="&gt;&gt;btnSettingsRestoreDefault.Name" xml:space="preserve">
-    <value>btnSettingsRestoreDefault</value>
-  </data>
-  <data name="&gt;&gt;btnSettingsRestoreDefault.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;btnSettingsRestoreDefault.Parent" xml:space="preserve">
-    <value>tabSettings</value>
-  </data>
-  <data name="&gt;&gt;btnSettingsRestoreDefault.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
   <data name="tabSettings.Location" type="System.Drawing.Point, System.Drawing">
@@ -2513,6 +2522,222 @@ To contact the application owner and administrator you can send an e-mail to thi
   <data name="panelTitles.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
+  <data name="titleInformation.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9.75pt</value>
+  </data>
+  <data name="titleInformation.Location" type="System.Drawing.Point, System.Drawing">
+    <value>444, 0</value>
+  </data>
+  <data name="titleInformation.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="titleInformation.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>1000, 34</value>
+  </data>
+  <data name="titleInformation.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>0, 34</value>
+  </data>
+  <data name="titleInformation.Size" type="System.Drawing.Size, System.Drawing">
+    <value>117, 34</value>
+  </data>
+  <data name="titleInformation.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="titleInformation.Text" xml:space="preserve">
+    <value>Information</value>
+  </data>
+  <data name="&gt;&gt;titleInformation.Name" xml:space="preserve">
+    <value>titleInformation</value>
+  </data>
+  <data name="&gt;&gt;titleInformation.Type" xml:space="preserve">
+    <value>Controls.CtrlTitleButton, WebCrunch, Version=0.2.15.1, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;titleInformation.Parent" xml:space="preserve">
+    <value>panelTitles</value>
+  </data>
+  <data name="&gt;&gt;titleInformation.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="titleSettings.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9.75pt</value>
+  </data>
+  <data name="titleSettings.Location" type="System.Drawing.Point, System.Drawing">
+    <value>350, 0</value>
+  </data>
+  <data name="titleSettings.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="titleSettings.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>1000, 34</value>
+  </data>
+  <data name="titleSettings.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>0, 34</value>
+  </data>
+  <data name="titleSettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 34</value>
+  </data>
+  <data name="titleSettings.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="titleSettings.Text" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="&gt;&gt;titleSettings.Name" xml:space="preserve">
+    <value>titleSettings</value>
+  </data>
+  <data name="&gt;&gt;titleSettings.Type" xml:space="preserve">
+    <value>Controls.CtrlTitleButton, WebCrunch, Version=0.2.15.1, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;titleSettings.Parent" xml:space="preserve">
+    <value>panelTitles</value>
+  </data>
+  <data name="&gt;&gt;titleSettings.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="titleSubmit.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9.75pt</value>
+  </data>
+  <data name="titleSubmit.Location" type="System.Drawing.Point, System.Drawing">
+    <value>262, 0</value>
+  </data>
+  <data name="titleSubmit.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="titleSubmit.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>1000, 34</value>
+  </data>
+  <data name="titleSubmit.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>0, 34</value>
+  </data>
+  <data name="titleSubmit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>88, 34</value>
+  </data>
+  <data name="titleSubmit.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="titleSubmit.Text" xml:space="preserve">
+    <value>Submit</value>
+  </data>
+  <data name="&gt;&gt;titleSubmit.Name" xml:space="preserve">
+    <value>titleSubmit</value>
+  </data>
+  <data name="&gt;&gt;titleSubmit.Type" xml:space="preserve">
+    <value>Controls.CtrlTitleButton, WebCrunch, Version=0.2.15.1, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;titleSubmit.Parent" xml:space="preserve">
+    <value>panelTitles</value>
+  </data>
+  <data name="&gt;&gt;titleSubmit.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="titleDiscover.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9.75pt</value>
+  </data>
+  <data name="titleDiscover.Location" type="System.Drawing.Point, System.Drawing">
+    <value>166, 0</value>
+  </data>
+  <data name="titleDiscover.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="titleDiscover.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>1000, 34</value>
+  </data>
+  <data name="titleDiscover.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>0, 34</value>
+  </data>
+  <data name="titleDiscover.Size" type="System.Drawing.Size, System.Drawing">
+    <value>96, 34</value>
+  </data>
+  <data name="titleDiscover.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="titleDiscover.Text" xml:space="preserve">
+    <value>Discover</value>
+  </data>
+  <data name="&gt;&gt;titleDiscover.Name" xml:space="preserve">
+    <value>titleDiscover</value>
+  </data>
+  <data name="&gt;&gt;titleDiscover.Type" xml:space="preserve">
+    <value>Controls.CtrlTitleButton, WebCrunch, Version=0.2.15.1, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;titleDiscover.Parent" xml:space="preserve">
+    <value>panelTitles</value>
+  </data>
+  <data name="&gt;&gt;titleDiscover.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="titleSearch.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9.75pt</value>
+  </data>
+  <data name="titleSearch.Location" type="System.Drawing.Point, System.Drawing">
+    <value>81, 0</value>
+  </data>
+  <data name="titleSearch.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="titleSearch.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>1000, 34</value>
+  </data>
+  <data name="titleSearch.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>0, 34</value>
+  </data>
+  <data name="titleSearch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 34</value>
+  </data>
+  <data name="titleSearch.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="titleSearch.Text" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="&gt;&gt;titleSearch.Name" xml:space="preserve">
+    <value>titleSearch</value>
+  </data>
+  <data name="&gt;&gt;titleSearch.Type" xml:space="preserve">
+    <value>Controls.CtrlTitleButton, WebCrunch, Version=0.2.15.1, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;titleSearch.Parent" xml:space="preserve">
+    <value>panelTitles</value>
+  </data>
+  <data name="&gt;&gt;titleSearch.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="titleHome.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9.75pt</value>
+  </data>
+  <data name="titleHome.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="titleHome.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="titleHome.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>1000, 34</value>
+  </data>
+  <data name="titleHome.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>0, 34</value>
+  </data>
+  <data name="titleHome.Size" type="System.Drawing.Size, System.Drawing">
+    <value>81, 34</value>
+  </data>
+  <data name="titleHome.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="titleHome.Text" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="&gt;&gt;titleHome.Name" xml:space="preserve">
+    <value>titleHome</value>
+  </data>
+  <data name="&gt;&gt;titleHome.Type" xml:space="preserve">
+    <value>Controls.CtrlTitleButton, WebCrunch, Version=0.2.15.1, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;titleHome.Parent" xml:space="preserve">
+    <value>panelTitles</value>
+  </data>
+  <data name="&gt;&gt;titleHome.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
   <data name="lblShareUsOn.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
   </data>
@@ -2550,7 +2775,7 @@ To contact the application owner and administrator you can send an e-mail to thi
     <value>panelTitles</value>
   </data>
   <data name="&gt;&gt;lblShareUsOn.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>6</value>
   </data>
   <data name="imgShareFacebook.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Right</value>
@@ -2583,7 +2808,7 @@ To contact the application owner and administrator you can send an e-mail to thi
     <value>panelTitles</value>
   </data>
   <data name="&gt;&gt;imgShareFacebook.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>7</value>
   </data>
   <data name="imgShareTwitter.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Right</value>
@@ -2616,215 +2841,6 @@ To contact the application owner and administrator you can send an e-mail to thi
     <value>panelTitles</value>
   </data>
   <data name="&gt;&gt;imgShareTwitter.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="titleInformation.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left</value>
-  </data>
-  <data name="titleInformation.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9.75pt</value>
-  </data>
-  <data name="titleInformation.Location" type="System.Drawing.Point, System.Drawing">
-    <value>448, 0</value>
-  </data>
-  <data name="titleInformation.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="titleInformation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>118, 34</value>
-  </data>
-  <data name="titleInformation.TabIndex" type="System.Int32, mscorlib">
-    <value>32</value>
-  </data>
-  <data name="titleInformation.Text" xml:space="preserve">
-    <value>Information</value>
-  </data>
-  <data name="&gt;&gt;titleInformation.Name" xml:space="preserve">
-    <value>titleInformation</value>
-  </data>
-  <data name="&gt;&gt;titleInformation.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;titleInformation.Parent" xml:space="preserve">
-    <value>panelTitles</value>
-  </data>
-  <data name="&gt;&gt;titleInformation.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="titleSubmit.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left</value>
-  </data>
-  <data name="titleSubmit.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9.75pt</value>
-  </data>
-  <data name="titleSubmit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>261, 0</value>
-  </data>
-  <data name="titleSubmit.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="titleSubmit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 34</value>
-  </data>
-  <data name="titleSubmit.TabIndex" type="System.Int32, mscorlib">
-    <value>31</value>
-  </data>
-  <data name="titleSubmit.Text" xml:space="preserve">
-    <value>Submit</value>
-  </data>
-  <data name="&gt;&gt;titleSubmit.Name" xml:space="preserve">
-    <value>titleSubmit</value>
-  </data>
-  <data name="&gt;&gt;titleSubmit.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;titleSubmit.Parent" xml:space="preserve">
-    <value>panelTitles</value>
-  </data>
-  <data name="&gt;&gt;titleSubmit.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="titleSettings.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left</value>
-  </data>
-  <data name="titleSettings.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9.75pt</value>
-  </data>
-  <data name="titleSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>351, 0</value>
-  </data>
-  <data name="titleSettings.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="titleSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>97, 34</value>
-  </data>
-  <data name="titleSettings.TabIndex" type="System.Int32, mscorlib">
-    <value>30</value>
-  </data>
-  <data name="titleSettings.Text" xml:space="preserve">
-    <value>Settings</value>
-  </data>
-  <data name="&gt;&gt;titleSettings.Name" xml:space="preserve">
-    <value>titleSettings</value>
-  </data>
-  <data name="&gt;&gt;titleSettings.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;titleSettings.Parent" xml:space="preserve">
-    <value>panelTitles</value>
-  </data>
-  <data name="&gt;&gt;titleSettings.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="titleDiscover.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left</value>
-  </data>
-  <data name="titleDiscover.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9.75pt</value>
-  </data>
-  <data name="titleDiscover.Location" type="System.Drawing.Point, System.Drawing">
-    <value>166, 0</value>
-  </data>
-  <data name="titleDiscover.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="titleDiscover.Size" type="System.Drawing.Size, System.Drawing">
-    <value>95, 34</value>
-  </data>
-  <data name="titleDiscover.TabIndex" type="System.Int32, mscorlib">
-    <value>29</value>
-  </data>
-  <data name="titleDiscover.Text" xml:space="preserve">
-    <value>Discover</value>
-  </data>
-  <data name="&gt;&gt;titleDiscover.Name" xml:space="preserve">
-    <value>titleDiscover</value>
-  </data>
-  <data name="&gt;&gt;titleDiscover.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;titleDiscover.Parent" xml:space="preserve">
-    <value>panelTitles</value>
-  </data>
-  <data name="&gt;&gt;titleDiscover.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="titleSearch.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left</value>
-  </data>
-  <data name="titleSearch.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9.75pt</value>
-  </data>
-  <data name="titleSearch.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABBklEQVRIS+2TTQrCMBSEuxC9hYgewoU/
-        N/MY4g1UvJOIqEdwoZv4TTOCQi2vBTfiB0PoJPPSpnnFn9aklGZoiy7ohs5og6Ze0g4KdNAK1bFEHUea
-        QfBZ/IoWaIi6HvUsXywdiUNonrNlkbHtN+R7XkxsxyCgMxcLW5VoPi9La1sxCOiHiqGtSpgf5WXpbCsG
-        Ad0W0bVVCfO9vCzdbMUg0PQLLrZiENA9F9F/sLUVg8A058K3aGY7DiE1kVARvamOQ32g8bUPdo40g6A6
-        +bnJJ3YeD2jgaDMITtAandAd6QKoT8pjYVRx0X6TOijaR3vtAEdUe/NaQdHf2+Q7GwgKDyQ//olSFA/6
-        CdwYbt77kgAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="titleSearch.Location" type="System.Drawing.Point, System.Drawing">
-    <value>80, 0</value>
-  </data>
-  <data name="titleSearch.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="titleSearch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>86, 34</value>
-  </data>
-  <data name="titleSearch.TabIndex" type="System.Int32, mscorlib">
-    <value>28</value>
-  </data>
-  <data name="titleSearch.Text" xml:space="preserve">
-    <value>Search</value>
-  </data>
-  <data name="&gt;&gt;titleSearch.Name" xml:space="preserve">
-    <value>titleSearch</value>
-  </data>
-  <data name="&gt;&gt;titleSearch.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;titleSearch.Parent" xml:space="preserve">
-    <value>panelTitles</value>
-  </data>
-  <data name="&gt;&gt;titleSearch.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="titleHome.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left</value>
-  </data>
-  <data name="titleHome.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9.75pt</value>
-  </data>
-  <data name="titleHome.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="titleHome.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="titleHome.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 34</value>
-  </data>
-  <data name="titleHome.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="titleHome.Text" xml:space="preserve">
-    <value>Home</value>
-  </data>
-  <data name="&gt;&gt;titleHome.Name" xml:space="preserve">
-    <value>titleHome</value>
-  </data>
-  <data name="&gt;&gt;titleHome.Type" xml:space="preserve">
-    <value>CButtonLib.CButton, CButtonLib, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;titleHome.Parent" xml:space="preserve">
-    <value>panelTitles</value>
-  </data>
-  <data name="&gt;&gt;titleHome.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
   <data name="panelTitles.Location" type="System.Drawing.Point, System.Drawing">

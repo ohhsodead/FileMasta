@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
@@ -8,10 +7,11 @@ using System.Diagnostics;
 using System.IO;
 using WebCrunch;
 using Dialogs;
-using WebCrunch.Extensions;
+using Extensions;
 using WebCrunch.Bookmarks;
-using WebCrunch.Utilities;
+using Utilities;
 using CButtonLib;
+using System.ComponentModel;
 
 namespace Controls
 {
@@ -29,13 +29,13 @@ namespace Controls
 
         private void ctrlFileDetails_Load(object sender, EventArgs e)
         {
-            if (!Bookmarked.isBookmarked(infoFileURL.Text))
+            if (!Bookmarked.IsBookmarked(infoFileURL.Text))
             {
-                ControlExtensions.ChangeControlText(btnSaveFile, "Add to Bookmarks");
+                ControlExtensions.ChangeControlText(btnBookmarkFile, "Add to Bookmarks");
             }
             else
             {
-                ControlExtensions.ChangeControlText(btnSaveFile, "Remove from Bookmarks");
+                ControlExtensions.ChangeControlText(btnBookmarkFile, "Remove from Bookmarks");
             }
 
             VLCToolStripMenuItem.Visible = File.Exists(MainForm.pathVLC);
@@ -47,7 +47,7 @@ namespace Controls
 
             if (infoFileSubtitles == null) // Add subtitle file to be played when opening external VLC
             {
-                if (FileExtensions.hasExistingSubtitles(infoFileURL.Text) == true) // If downloads folder contains file matching web file name
+                if (FileExtensions.HasExistingSubtitles(infoFileURL.Text) == true) // If downloads folder contains file matching web file name
                 {
                     infoFileSubtitles = MainForm.userDownloadsDirectory + Path.GetFileNameWithoutExtension(infoFileURL.Text) + ".srt";
                 }
@@ -74,7 +74,7 @@ namespace Controls
         {
             if (cmboboxReportFile.SelectedIndex == 0)
             {
-                ReportTemplates.openBrokenFileIssue(infoFileURL.Text);
+                ReportTemplates.OpenBrokenFileIssue(infoFileURL.Text);
             }
             else if (cmboboxReportFile.SelectedIndex == 1)
             {
@@ -82,7 +82,7 @@ namespace Controls
             }
             else if (cmboboxReportFile.SelectedIndex == 2)
             {
-                ReportTemplates.openPoorQualityFileIssue(infoFileURL.Text);
+                ReportTemplates.OpenPoorQualityFileIssue(infoFileURL.Text);
             }
         }
 
@@ -119,10 +119,7 @@ namespace Controls
         {
             Uri uri = new Uri(infoFileURL.Text);
             string parentName = GetParentUriString(uri).Remove(GetParentUriString(uri).Length - 1);
-
             Process browser = new Process();
-
-            // true is the default, but it is important not to set it to false
             browser.StartInfo.UseShellExecute = true;
             browser.StartInfo.FileName = parentName;
             browser.Start();
@@ -131,18 +128,9 @@ namespace Controls
         static string GetParentUriString(Uri uri)
         {
             StringBuilder parentName = new StringBuilder();
-
-            // Append the scheme: http, ftp etc.
             parentName.Append(uri.Scheme);
-
-            // Appned the '://' after the http, ftp etc.
             parentName.Append("://");
-
-            // Append the host name www.foo.com
             parentName.Append(uri.Host);
-
-            // Append each segment except the last one. The last one is the
-            // leaf and we will ignore it.
             for (int i = 0; i < uri.Segments.Length - 1; i++)
             {
                 parentName.Append(uri.Segments[i]);
@@ -163,7 +151,7 @@ namespace Controls
             try
             {
                 btnRequestFileSize.Visible = false;
-                infoSize.Text = TextExtensions.bytesToString(FileExtensions.getFileSize(infoFileURL.Text));
+                BackGroundWorker.RunWorkAsync<string>(() => TextExtensions.BytesToString(FileExtensions.GetFileSize(infoFileURL.Text)), (data) => { infoSize.Text = data; });
             }
             catch { infoSize.Text = "Error"; }
         }
@@ -226,44 +214,23 @@ namespace Controls
             catch { MessageBox.Show("Built-in player was unable to load. We are aware there are some issues with this function and are working to resolve this. For the time being, please install the VLC player on your computer and choose 'Play Media' > 'VLC' "); }
         }
 
-        private void btnSaveFile_ClickButtonArea(object Sender, MouseEventArgs e)
+        private void BtnBookmarkFile_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            if (!Bookmarked.isBookmarked(infoFileURL.Text))
+            if (Bookmarked.IsBookmarked(infoFileURL.Text))
             {
-                Bookmarked.saveFile(Bookmarked.fileToJson(infoFileURL.Text, infoName.Text, infoType.Text, infoReferrer.Text));
-                ControlExtensions.ChangeControlText(btnSaveFile, "Remove from Bookmarks");
+                Bookmarked.UnsaveFile(infoFileURL.Text);
+                ControlExtensions.ChangeControlText(btnBookmarkFile, "Add to Bookmarks");
             }
             else
             {
-                Bookmarked.unsaveFile(Bookmarked.fileToJson(infoFileURL.Text, infoName.Text, infoType.Text, infoReferrer.Text));
-                ControlExtensions.ChangeControlText(btnSaveFile, "Add to Bookmarks");
+                Bookmarked.SaveFile(infoFileURL.Text);
+                ControlExtensions.ChangeControlText(btnBookmarkFile, "Remove from Bookmarks");
             }
         }
 
 
         // Focus effect for Combobox/Button
-        Bitmap tmpButtonImage = null;
-
-        public void btnCButton_MouseEnter(object sender, EventArgs e)
-        {
-            CButton ctrl = sender as CButton;
-            tmpButtonImage = (Bitmap)ctrl.Image;
-            if (ctrl.Image != null) { ctrl.Image = ImageExtensions.changeColor((Bitmap)ctrl.Image, Color.White); }
-            ctrl.BorderColor = Colors.uiColorOrange;
-            ctrl.ForeColor = Color.White;
-            ctrl.ColorFillSolid = Colors.uiColorOrange;
-        }
-
-        public void btnCButton_MouseLeave(object sender, EventArgs e)
-        {
-            CButton ctrl = sender as CButton;
-            ctrl.Image = tmpButtonImage;
-            ctrl.BorderColor = Colors.uiColorOrange;
-            ctrl.ForeColor = Colors.uiColorOrange;
-            ctrl.ColorFillSolid = Color.Transparent;
-        }
-
-        public void comboboxCButton_MouseEnter(object sender, EventArgs e)
+        public void ComboboxCButton_MouseEnter(object sender, EventArgs e)
         {
             CButton ctrl = sender as CButton;
             ctrl.BorderColor = Colors.uiColorOrange;

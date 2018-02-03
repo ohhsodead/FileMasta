@@ -3,15 +3,16 @@ using System.Diagnostics;
 using System.IO;
 using System.Net;
 using System.Windows.Forms;
+using WebCrunch;
 
-namespace WebCrunch.Utilities
+namespace Utilities
 {
     class Updates
     {
         /// <summary>
         /// Check application for update. Installs latest installer to user downloads folder and opens it and closes this instance
         /// </summary>
-        public static void checkForUpdate()
+        public static void CheckForUpdate()
         {
             try
             {
