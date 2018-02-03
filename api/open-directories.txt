@@ -795,7 +795,6 @@ http://blogs.hatrix.fr/musiques/Ypsos/
 http://blogs.hatrix.fr/musiques/ZZ%20Top/
 http://blogs.hatrix.fr/musiques/suicideboys/
 http://dl.filmbaroon.com/
-http://dl.filmbaroon.com/
 http://dl.filmbaroon.com/Live/
 http://dl.filmbaroon.com/album/
 http://dl.filmbaroon.com/bestmusic/
@@ -1905,8 +1904,6 @@ http://artificial.duckdns.org/free/Books/English/RAR/
 http://artificial.duckdns.org/free/Books/English/PDF/
 http://artificial.duckdns.org/free/Books/English/FOLDER/
 http://91.121.176.61:8080/Release/
-http://dl.filmbaroon.com/
-http://dl.filmbaroon.com/musicvideo/
 http://dl.upload8.in/files/Serial/
 http://dl.upload8.in/files/Serial/Fear%20The%20Walking%20Dead/S01/
 http://dl.upload8.in/files/Serial/Fear%20The%20Walking%20Dead/S02/
