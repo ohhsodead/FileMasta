@@ -71,14 +71,12 @@ namespace WebCrunch.Bookmarks
 
         public static void InvokeOnFinished(FinishedArgs args)
         {
-            Finished handler = OnFinished;
-            if (handler != null) handler(null, args);
+            OnFinished?.Invoke(null, args);
         }
 
         public static void InvokeOnRemovedLine(RemovedLineArgs args)
         {
-            RemovedLine handler = OnRemovedLine;
-            if (handler != null) handler(null, args);
+            OnRemovedLine?.Invoke(null, args);
         }
     }
 
