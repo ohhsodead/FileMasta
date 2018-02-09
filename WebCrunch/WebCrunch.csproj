@@ -120,11 +120,6 @@
     <Compile Include="Dialogs\DataDialog.Designer.cs">
       <DependentUpon>DataDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="Languages\misc-cs.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>misc-cs.resx</DependentUpon>
-    </Compile>
     <Compile Include="ExceptionHandler\ExceptionsEvents.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -151,29 +146,10 @@
     <Compile Include="Dialogs\VLCPlayer.Designer.cs">
       <DependentUpon>VLCPlayer.cs</DependentUpon>
     </Compile>
-    <Compile Include="Languages\misc-de.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>misc-de.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Languages\misc-en.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>misc-en.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Languages\misc-es.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>misc-es.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Languages\misc-fr.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>misc-fr.resx</DependentUpon>
-    </Compile>
     <Compile Include="Extensions\ControlExtensions.cs" />
     <Compile Include="Extensions\FileExtensions.cs" />
     <Compile Include="Extensions\ImageExtensions.cs" />
+    <Compile Include="Utilities\Database.cs" />
     <Compile Include="Utilities\KnownFolder.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -207,16 +183,7 @@
     <EmbeddedResource Include="Dialogs\DataDialog.resx">
       <DependentUpon>DataDialog.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.cs.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.de.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.es.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.fr.resx">
+    <EmbeddedResource Include="MainForm.aa.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
@@ -224,26 +191,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\VLCPlayer.resx">
       <DependentUpon>VLCPlayer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Languages\misc-cs.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>misc-cs.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Languages\misc-de.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>misc-de.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Languages\misc-en.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>misc-en.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Languages\misc-es.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>misc-es.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Languages\misc-fr.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>misc-fr.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -365,8 +312,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="new_logo.ico" />
+    <None Include="Resources\chevron-right.png" />
+    <None Include="Resources\chevron-left.png" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Languages\" />
     <Folder Include="UI\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

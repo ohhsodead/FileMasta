@@ -117,48 +117,21 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="columnDiscoverCount.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="columnDiscoverSite.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="columnDiscoverType.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="columnDiscoverURL.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="lblSubSubmit.Text" xml:space="preserve">
-    <value>Submit your links to WebCrunch.
-
-The link you submit will go to our issue tracker on GitHub. Links are reviewed on a first-in, first-out basis. This could take anywhere from a few hours to a couple of weeks before your site is listed depending on number of submissions yet to be checked.
-
-Our crawler will scan the web server starting at the directory you specify, and, all the files that pass a set of filters will be added to our database, it will also check if a randomly chosen file can be downloaded, and ignore the whole web server if the download fails. So *ONLY* web servers with downloadable content will be considered.
-
-Please keep in mind we are a search engine having strict policies, read the following guidelines first before submitting a link/website.
-
-• Only open directory links are allowed e.g. https://website.com/ or https://website.com/public/
-• No site listings under multiple domain names
-• Do not submit incomplete or "Under Construction" web sites
-• Do not use URL shorteners in order to submit multiple similar links
-• No links to anything pornographic or in extremely bad taste</value>
-  </data>
-  <data name="lblAboutText.Text" xml:space="preserve">
-    <value>WebCrunch is intended to provide a very powerful web server indexing and search service allowing you to find a file among millions of files located on public servers around the internet.
-
-The search engine is powered by a database that holds information about all the files web servers have. The information about the files is gathered by an intelligent web crawler that runs every 2 to 4 days. It keeps the database clean and up-to-date with the previous contents and new entries for each web server address submitted by members.
-
-All web addresses this app uses for indexing are submitted by users only, our crawler also try to give more priority to the servers that have the most up-time, if a web server isn't checked successfully in a period of time, usually 10-15 days, it is automatically deleted from our database. A list of the servers we index are stored in our open directories. Also please check our Terms of Use statement for more information about what you have to take into consideration to use this application.
-
-We host no content, we provide only access to already available files in a same way Google and other search engines do.
-
-To contact the application owner and administrator you can send an e-mail to this address: bettercodes1@gmail.com, any comments or suggestions are welcome too, Thank you.</value>
-  </data>
-  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>25</value>
-  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnFilesHost.SideImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAF9JREFUaEPt
+        z0sKgDAQRMEc3ZurWTS4UPETSAJVMNvhdQEAAABeW/ZbG1391UWLEd3i48+I7vHxZcQw8fFmxHDx8WTE
+        sPFxN2L4+DgbMU18HEdMFx81fNp4AAAArpWyAccxY6cp/GORAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="btnFilesSort.SideImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAF9JREFUaEPt
+        z0sKgDAQRMEc3ZurWTS4UPETSAJVMNvhdQEAAABeW/ZbG1391UWLEd3i48+I7vHxZcQw8fFmxHDx8WTE
+        sPFxN2L4+DgbMU18HEdMFx81fNp4AAAArpWyAccxY6cp/GORAAAAAElFTkSuQmCC
+</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAYAAAAAAAEAIADDTQAAZgAAAICAAAABACAAKAgBAClOAABAQAAAAQAgAChCAABRVgEAMDAAAAEA
