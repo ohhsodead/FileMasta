@@ -22,25 +22,17 @@ namespace Extensions
             bmp = null;
             mystream = null;
             wresp = null;
-            try
-            {
+            try {
                 wreq = (HttpWebRequest)WebRequest.Create(url);
                 wreq.AllowWriteStreamBuffering = true;
-
                 wresp = (HttpWebResponse)wreq.GetResponse();
-
                 if ((mystream = wresp.GetResponseStream()) != null)
                     bmp = new Bitmap(mystream);
             }
-            catch
-            {
-                // Do nothing... 
-            }
-            finally
-            {
+            catch { }
+            finally {
                 if (mystream != null)
                     mystream.Close();
-
                 if (wresp != null)
                     wresp.Close();
             }
@@ -61,11 +53,11 @@ namespace Extensions
             Rectangle r = new Rectangle(0, 0, bmpIn.Width, bmpIn.Height);
 
             float[][] matrixItems = {
-        new float[] {1, 0, 0, 0, 0},
-        new float[] {0, 1, 0, 0, 0},
-        new float[] {0, 0, 1, 0, 0},
-        new float[] {0, 0, 0, a, 0},
-        new float[] {0, 0, 0, 0, 1}};
+                new float[] {1, 0, 0, 0, 0},
+                new float[] {0, 1, 0, 0, 0},
+                new float[] {0, 0, 1, 0, 0},
+                new float[] {0, 0, 0, a, 0},
+                new float[] {0, 0, 0, 0, 1}};
 
             ColorMatrix colorMatrix = new ColorMatrix(matrixItems);
 
@@ -86,12 +78,10 @@ namespace Extensions
         /// <returns></returns>
         public static Bitmap ChangeColor(Bitmap scrBitmap, Color newColor)
         {
-            //You can change your new color here. Red,Green,LawnGreen any..
             Color actualColor;
             //make an empty bitmap the same size as scrBitmap
             Bitmap newBitmap = new Bitmap(scrBitmap.Width, scrBitmap.Height);
             for (int i = 0; i < scrBitmap.Width; i++)
-            {
                 for (int j = 0; j < scrBitmap.Height; j++)
                 {
                     //get the pixel from the scrBitmap image
@@ -102,7 +92,6 @@ namespace Extensions
                     else
                         newBitmap.SetPixel(i, j, actualColor);
                 }
-            }
             return newBitmap;
         }
     }

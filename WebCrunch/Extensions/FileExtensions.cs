@@ -19,24 +19,21 @@ namespace Extensions
             {
                 Program.log.Info("Checking if file '" + fileName + "' needs to be updated");
 
-                if (File.Exists(MainForm.pathData + fileName))
-                {
+                if (File.Exists(MainForm.pathData + fileName)) {
                     WebRequest req = WebRequest.Create(webFile);
                     req.Method = "HEAD";
                     //req.Timeout = 1250;
-                    using (HttpWebResponse fileResponse = (HttpWebResponse)req.GetResponse())
-                    {
-                        if (int.TryParse(fileResponse.Headers.Get("Content-Length"), out int ContentLength))
-                        {
-                            if (new FileInfo(MainForm.pathData + fileName).Length == ContentLength) { return false; }
-                            else { return true; }
+                    using (HttpWebResponse fileResponse = (HttpWebResponse)req.GetResponse()) {
+                        if (int.TryParse(fileResponse.Headers.Get("Content-Length"), out int ContentLength)) {
+                            if (new FileInfo(MainForm.pathData + fileName).Length == ContentLength) { return true; }
+                            else { return false; }
                         }
-                        else { return true; }
+                        else { return false; }
                     }
                 }
-                else { return true; }
+                else { return false; }
             }
-            catch (Exception ex) { Program.log.Error("Error checking file '" + fileName + "' for update", ex); return true;  }
+            catch (Exception ex) { Program.log.Error("Error checking file '" + fileName + "' for update", ex); return false;  }
         }
 
         /// <summary>
@@ -46,22 +43,19 @@ namespace Extensions
         /// <returns></returns>
         public static DateTime GetFileLastModified(string webUrl)
         {
-            try
-            {
+            try {
                 Program.log.Info("Requesting file modified date from web file");
 
                 WebRequest req = WebRequest.Create(webUrl);
                 req.Method = "HEAD";
                 req.Timeout = -1;
-                using (HttpWebResponse fileResponse = (HttpWebResponse)req.GetResponse())
-                {
+                using (HttpWebResponse fileResponse = (HttpWebResponse)req.GetResponse()) {
                     DateTime fileModifiedTime = fileResponse.LastModified;
-                    if (fileModifiedTime != null)
-                    {
+                    if (fileModifiedTime != null) {
                         Program.log.Info("Succesffuly returned file modified date from web file");
                         return fileModifiedTime;
                     }
-                    else { return default(DateTime); ; }
+                    else { return default(DateTime); }
                 }
             }
             catch (Exception ex) { Program.log.Error("Error requesting file modified date from web file", ex); return default(DateTime); }
@@ -74,21 +68,18 @@ namespace Extensions
         /// <returns></returns>
         public static int GetFileSize(string webUrl)
         {
-            try
-            {
+            try {
                 Program.log.Info("Requesting file size from web file");
 
                 WebRequest req = WebRequest.Create(webUrl);
                 req.Method = "HEAD";
                 req.Timeout = 7000;
-                using (HttpWebResponse fileResponse = (HttpWebResponse)req.GetResponse())
-                {
-                    if (int.TryParse(fileResponse.Headers.Get("Content-Length"), out int ContentLength))
-                    {
-                        Program.log.Info("Successfully returned file size from web file");
-                        return ContentLength;
+                using (HttpWebResponse fileResponse = (HttpWebResponse)req.GetResponse()) {
+                    if (int.TryParse(fileResponse.Headers.Get("Content-Length"), out int ContentLength)) {
+                        Program.log.Info("Successfully returned file size from web file"); return ContentLength;
                     }
-                    else { return 0; }
+                    else
+                        return 0;
                 }
             }
             catch (Exception ex) { Program.log.Error("Error requesting file size from web file", ex); return 0; }
@@ -102,10 +93,9 @@ namespace Extensions
         public static bool HasExistingSubtitles(string fileURL)
         {
             if (File.Exists(MainForm.userDownloadsDirectory + Path.GetFileNameWithoutExtension(new Uri(fileURL).LocalPath) + ".srt"))
-            {
                 return true;
-            }
-            else return false;
+            else
+                return false;
         }
     }
 }

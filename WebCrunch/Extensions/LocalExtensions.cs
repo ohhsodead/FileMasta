@@ -18,10 +18,8 @@ namespace Extensions
             try
             {
                 Program.log.Info("Checking for internet connection");
-
                 using (var client = new WebClient())
-                using (var stream = client.OpenRead("https://google.com"))
-                {
+                using (var stream = client.OpenRead("https://google.com")) {
                     Program.log.Info("Internet connection detected");
                     return true;
                 }
@@ -39,20 +37,18 @@ namespace Extensions
         public static string[] GetFiles(string SourceFolder, string Filter, SearchOption searchOption)
         {
             // ArrayList will hold all file names
-            ArrayList alFiles = new ArrayList();
+            ArrayList allFiles = new ArrayList();
 
             // Create an array of filter string
             string[] MultipleFilters = Filter.Split('|');
 
             // for each filter find mathing file names
             foreach (string FileFilter in MultipleFilters)
-            {
                 // add found file names to array list
-                alFiles.AddRange(Directory.GetFiles(SourceFolder, FileFilter, searchOption));
-            }
+                allFiles.AddRange(Directory.GetFiles(SourceFolder, FileFilter, searchOption));
 
             // returns string array of relevant file names
-            return (string[])alFiles.ToArray(typeof(string));
+            return (string[])allFiles.ToArray(typeof(string));
         }
 
         /// <summary>
@@ -62,15 +58,9 @@ namespace Extensions
         public static void OpenFile(string path)
         {
             if (!File.Exists(path))
-            {
-                return;
-            }
+                return;            
 
-            // combine the arguments together
-            // it doesn't matter if there is a space after ','
-            string argument = "/select, \"" + path + "\"";
-
-            Process.Start("explorer.exe", argument);
+            Process.Start("explorer.exe", "/select, \"" + path + "\"");
         }
     }
 }
