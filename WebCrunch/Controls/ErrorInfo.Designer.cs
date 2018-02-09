@@ -43,6 +43,7 @@
             // 
             // btnRestart
             // 
+            resources.ApplyResources(this.btnRestart, "btnRestart");
             this.btnRestart.BackColor = System.Drawing.Color.Transparent;
             this.btnRestart.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(105)))), ((int)(((byte)(26)))));
             this.btnRestart.ColorFillSolid = System.Drawing.Color.Transparent;
@@ -56,7 +57,6 @@
             this.btnRestart.DimFactorClick = 0;
             this.btnRestart.DimFactorHover = 0;
             this.btnRestart.FillType = CButtonLib.CButton.eFillType.Solid;
-            resources.ApplyResources(this.btnRestart, "btnRestart");
             this.btnRestart.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(105)))), ((int)(((byte)(26)))));
             this.btnRestart.ImageIndex = 0;
             this.btnRestart.Name = "btnRestart";

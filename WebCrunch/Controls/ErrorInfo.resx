@@ -153,6 +153,9 @@
   <data name="&gt;&gt;titleStatus.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="btnRestart.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top</value>
+  </data>
   <data name="btnRestart.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9.75pt</value>
   </data>
@@ -181,7 +184,7 @@
     <value>btnRestart</value>
   </data>
   <data name="&gt;&gt;btnRestart.Type" xml:space="preserve">
-    <value>Controls.ctrlButton, WebCrunch, Version=0.2.15.1, Culture=neutral, PublicKeyToken=null</value>
+    <value>Controls.CtrlButton, WebCrunch, Version=0.2.15.1, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;btnRestart.Parent" xml:space="preserve">
     <value>$this</value>
