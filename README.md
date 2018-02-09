@@ -76,9 +76,14 @@ You don't need a special program but it is very recommended. For example, if you
 ## Screenshots
 ### 🏡 Home
 ![Home](https://github.com/ekkash/WebCrunch/blob/master/Screenshots/Home.png?raw=true)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fekkash%2FWebCrunch.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fekkash%2FWebCrunch?ref=badge_shield)
 
 ### 🔎 Search Files
 ![Files](https://github.com/ekkash/WebCrunch/blob/master/Screenshots/Files.png?raw=true)
 
 ### 📂 File Details
 ![File Details](https://github.com/ekkash/WebCrunch/blob/master/Screenshots/File%20Details.png?raw=true)
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fekkash%2FWebCrunch.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fekkash%2FWebCrunch?ref=badge_large)
