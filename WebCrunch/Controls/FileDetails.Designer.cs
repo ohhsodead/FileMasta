@@ -30,10 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FileDetails));
-            CButtonLib.cBlendItems cBlendItems1 = new CButtonLib.cBlendItems();
+            CButtonLib.cBlendItems cBlendItems5 = new CButtonLib.cBlendItems();
             CButtonLib.cBlendItems cBlendItems2 = new CButtonLib.cBlendItems();
+            CButtonLib.cBlendItems cBlendItems1 = new CButtonLib.cBlendItems();
             CButtonLib.cBlendItems cBlendItems3 = new CButtonLib.cBlendItems();
-            CButtonLib.cBlendItems cBlendItems4 = new CButtonLib.cBlendItems();
             this.infoFileName = new System.Windows.Forms.Label();
             this.titleName = new System.Windows.Forms.Label();
             this.infoName = new System.Windows.Forms.Label();
@@ -55,28 +55,32 @@
             this.titleType = new System.Windows.Forms.Label();
             this.infoType = new System.Windows.Forms.Label();
             this.panelReportFile = new System.Windows.Forms.Panel();
-            this.btnReportFile = new CButtonLib.CButton();
             this.cmboboxReportFile = new System.Windows.Forms.ComboBox();
-            this.btnShareFile = new CButtonLib.CButton();
             this.contextFileName = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.panelShareFile = new System.Windows.Forms.Panel();
+            this.cmboBoxShareFile = new System.Windows.Forms.ComboBox();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.imgNextFile = new System.Windows.Forms.PictureBox();
+            this.imgPreviousFile = new System.Windows.Forms.PictureBox();
+            this.btnPlayMedia = new Controls.CtrlButton();
+            this.btnRequestFileSize = new Controls.CtrlButton();
+            this.btnViewDirectory = new Controls.CtrlButton();
+            this.btnBookmarkFile = new Controls.CtrlButton();
+            this.btnShareFile = new CButtonLib.CButton();
+            this.btnReportFile = new CButtonLib.CButton();
+            this.infoFileURL = new CButtonLib.CButton();
+            this.btnDirectLink = new CButtonLib.CButton();
+            this.appClose = new System.Windows.Forms.PictureBox();
             this.VLC2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.WMPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.VLCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MPCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panelShareFile = new System.Windows.Forms.Panel();
-            this.cmboBoxShareFile = new System.Windows.Forms.ComboBox();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnViewDirectory = new Controls.CtrlButton();
-            this.btnBookmarkFile = new Controls.CtrlButton();
-            this.infoFileURL = new CButtonLib.CButton();
-            this.btnDirectLink = new CButtonLib.CButton();
-            this.appClose = new System.Windows.Forms.PictureBox();
-            this.btnRequestFileSize = new Controls.CtrlButton();
-            this.btnPlayMedia = new Controls.CtrlButton();
             this.panelReportFile.SuspendLayout();
             this.contextFileName.SuspendLayout();
             this.panelShareFile.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgNextFile)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgPreviousFile)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.appClose)).BeginInit();
             this.SuspendLayout();
             // 
@@ -89,10 +93,10 @@
             this.infoFileName.Cursor = System.Windows.Forms.Cursors.Default;
             this.infoFileName.Font = new System.Drawing.Font("Segoe UI Semibold", 16.25F);
             this.infoFileName.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.infoFileName.Location = new System.Drawing.Point(15, 20);
+            this.infoFileName.Location = new System.Drawing.Point(84, 19);
             this.infoFileName.Margin = new System.Windows.Forms.Padding(0);
             this.infoFileName.Name = "infoFileName";
-            this.infoFileName.Size = new System.Drawing.Size(503, 34);
+            this.infoFileName.Size = new System.Drawing.Size(430, 34);
             this.infoFileName.TabIndex = 0;
             this.infoFileName.Text = "File Name";
             this.infoFileName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -439,54 +443,6 @@
             this.panelReportFile.Size = new System.Drawing.Size(78, 22);
             this.panelReportFile.TabIndex = 100073;
             // 
-            // btnReportFile
-            // 
-            this.btnReportFile.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnReportFile.BackColor = System.Drawing.Color.Transparent;
-            this.btnReportFile.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(193)))), ((int)(((byte)(190)))));
-            cBlendItems1.iColor = new System.Drawing.Color[] {
-        System.Drawing.Color.White,
-        System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))))};
-            cBlendItems1.iPoint = new float[] {
-        0F,
-        1F};
-            this.btnReportFile.ColorFillBlend = cBlendItems1;
-            this.btnReportFile.ColorFillSolid = System.Drawing.Color.Transparent;
-            this.btnReportFile.Corners.All = 2;
-            this.btnReportFile.Corners.LowerLeft = 2;
-            this.btnReportFile.Corners.LowerRight = 2;
-            this.btnReportFile.Corners.UpperLeft = 2;
-            this.btnReportFile.Corners.UpperRight = 2;
-            this.btnReportFile.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnReportFile.DesignerSelected = false;
-            this.btnReportFile.DimFactorClick = 0;
-            this.btnReportFile.DimFactorHover = 0;
-            this.btnReportFile.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.btnReportFile.Font = new System.Drawing.Font("Segoe UI Semibold", 9.25F);
-            this.btnReportFile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(193)))), ((int)(((byte)(190)))));
-            this.btnReportFile.Image = ((System.Drawing.Image)(resources.GetObject("btnReportFile.Image")));
-            this.btnReportFile.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReportFile.ImageIndex = 0;
-            this.btnReportFile.Location = new System.Drawing.Point(0, 0);
-            this.btnReportFile.Name = "btnReportFile";
-            this.btnReportFile.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.btnReportFile.SideImage = global::WebCrunch.Properties.Resources.menu_down;
-            this.btnReportFile.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnReportFile.SideImageSize = new System.Drawing.Size(16, 16);
-            this.btnReportFile.Size = new System.Drawing.Size(78, 22);
-            this.btnReportFile.TabIndex = 4;
-            this.btnReportFile.Text = "Report";
-            this.btnReportFile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReportFile.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnReportFile.TextMargin = new System.Windows.Forms.Padding(2, 3, 2, 2);
-            this.btnReportFile.TextShadow = System.Drawing.Color.Empty;
-            this.btnReportFile.TextShadowShow = false;
-            this.btnReportFile.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnReportFile_ClickButtonArea);
-            this.btnReportFile.MouseEnter += new System.EventHandler(this.ComboboxCButton_MouseEnter);
-            this.btnReportFile.MouseLeave += new System.EventHandler(this.comboboxCButton_MouseLeave);
-            // 
             // cmboboxReportFile
             // 
             this.cmboboxReportFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -505,54 +461,6 @@
             this.cmboboxReportFile.TabStop = false;
             this.cmboboxReportFile.SelectedIndexChanged += new System.EventHandler(this.cmboboxReportFile_SelectedIndexChanged);
             // 
-            // btnShareFile
-            // 
-            this.btnShareFile.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnShareFile.BackColor = System.Drawing.Color.Transparent;
-            this.btnShareFile.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(193)))), ((int)(((byte)(190)))));
-            cBlendItems2.iColor = new System.Drawing.Color[] {
-        System.Drawing.Color.White,
-        System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))))};
-            cBlendItems2.iPoint = new float[] {
-        0F,
-        1F};
-            this.btnShareFile.ColorFillBlend = cBlendItems2;
-            this.btnShareFile.ColorFillSolid = System.Drawing.Color.Transparent;
-            this.btnShareFile.Corners.All = 2;
-            this.btnShareFile.Corners.LowerLeft = 2;
-            this.btnShareFile.Corners.LowerRight = 2;
-            this.btnShareFile.Corners.UpperLeft = 2;
-            this.btnShareFile.Corners.UpperRight = 2;
-            this.btnShareFile.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnShareFile.DesignerSelected = false;
-            this.btnShareFile.DimFactorClick = 0;
-            this.btnShareFile.DimFactorHover = 0;
-            this.btnShareFile.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.btnShareFile.Font = new System.Drawing.Font("Segoe UI Semibold", 9.25F);
-            this.btnShareFile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(193)))), ((int)(((byte)(190)))));
-            this.btnShareFile.Image = global::WebCrunch.Properties.Resources.share;
-            this.btnShareFile.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnShareFile.ImageIndex = 0;
-            this.btnShareFile.Location = new System.Drawing.Point(0, 0);
-            this.btnShareFile.Name = "btnShareFile";
-            this.btnShareFile.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.btnShareFile.SideImage = global::WebCrunch.Properties.Resources.menu_down;
-            this.btnShareFile.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnShareFile.SideImageSize = new System.Drawing.Size(16, 16);
-            this.btnShareFile.Size = new System.Drawing.Size(73, 22);
-            this.btnShareFile.TabIndex = 3;
-            this.btnShareFile.Text = "Share";
-            this.btnShareFile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnShareFile.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnShareFile.TextMargin = new System.Windows.Forms.Padding(2, 3, 2, 2);
-            this.btnShareFile.TextShadow = System.Drawing.Color.Empty;
-            this.btnShareFile.TextShadowShow = false;
-            this.btnShareFile.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnShareFile_ClickButtonArea);
-            this.btnShareFile.MouseEnter += new System.EventHandler(this.ComboboxCButton_MouseEnter);
-            this.btnShareFile.MouseLeave += new System.EventHandler(this.comboboxCButton_MouseLeave);
-            // 
             // contextFileName
             // 
             this.contextFileName.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -563,42 +471,6 @@
             this.contextFileName.Name = "contextMenuStrip1";
             this.contextFileName.ShowItemToolTips = false;
             this.contextFileName.Size = new System.Drawing.Size(146, 92);
-            // 
-            // VLC2ToolStripMenuItem
-            // 
-            this.VLC2ToolStripMenuItem.Image = global::WebCrunch.Properties.Resources.vlc;
-            this.VLC2ToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Transparent;
-            this.VLC2ToolStripMenuItem.Name = "VLC2ToolStripMenuItem";
-            this.VLC2ToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
-            this.VLC2ToolStripMenuItem.Text = "VLC (Built-in)";
-            this.VLC2ToolStripMenuItem.Click += new System.EventHandler(this.VLC2ToolStripMenuItem_Click);
-            // 
-            // WMPToolStripMenuItem
-            // 
-            this.WMPToolStripMenuItem.Image = global::WebCrunch.Properties.Resources.windows;
-            this.WMPToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Transparent;
-            this.WMPToolStripMenuItem.Name = "WMPToolStripMenuItem";
-            this.WMPToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
-            this.WMPToolStripMenuItem.Text = "WMP";
-            this.WMPToolStripMenuItem.Click += new System.EventHandler(this.WMPToolStripMenuItem_Click);
-            // 
-            // VLCToolStripMenuItem
-            // 
-            this.VLCToolStripMenuItem.Image = global::WebCrunch.Properties.Resources.vlc;
-            this.VLCToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Transparent;
-            this.VLCToolStripMenuItem.Name = "VLCToolStripMenuItem";
-            this.VLCToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
-            this.VLCToolStripMenuItem.Text = "VLC";
-            this.VLCToolStripMenuItem.Click += new System.EventHandler(this.VLCToolStripMenuItem_Click);
-            // 
-            // MPCToolStripMenuItem
-            // 
-            this.MPCToolStripMenuItem.Image = global::WebCrunch.Properties.Resources.dots_horizontal;
-            this.MPCToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Transparent;
-            this.MPCToolStripMenuItem.Name = "MPCToolStripMenuItem";
-            this.MPCToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
-            this.MPCToolStripMenuItem.Text = "MPC";
-            this.MPCToolStripMenuItem.Click += new System.EventHandler(this.MPCToolStripMenuItem_Click);
             // 
             // panelShareFile
             // 
@@ -642,6 +514,104 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(389, 30);
             this.flowLayoutPanel1.TabIndex = 100075;
+            // 
+            // imgNextFile
+            // 
+            this.imgNextFile.BackColor = System.Drawing.Color.Transparent;
+            this.imgNextFile.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imgNextFile.Image = global::WebCrunch.Properties.Resources.chevron_right;
+            this.imgNextFile.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.imgNextFile.Location = new System.Drawing.Point(49, 24);
+            this.imgNextFile.Margin = new System.Windows.Forms.Padding(2, 25, 2, 3);
+            this.imgNextFile.Name = "imgNextFile";
+            this.imgNextFile.Size = new System.Drawing.Size(28, 28);
+            this.imgNextFile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgNextFile.TabIndex = 100077;
+            this.imgNextFile.TabStop = false;
+            this.imgNextFile.Click += new System.EventHandler(this.imgNextFile_Click);
+            // 
+            // imgPreviousFile
+            // 
+            this.imgPreviousFile.BackColor = System.Drawing.Color.Transparent;
+            this.imgPreviousFile.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imgPreviousFile.Image = global::WebCrunch.Properties.Resources.chevron_left;
+            this.imgPreviousFile.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.imgPreviousFile.Location = new System.Drawing.Point(20, 24);
+            this.imgPreviousFile.Margin = new System.Windows.Forms.Padding(2, 25, 2, 3);
+            this.imgPreviousFile.Name = "imgPreviousFile";
+            this.imgPreviousFile.Size = new System.Drawing.Size(28, 28);
+            this.imgPreviousFile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgPreviousFile.TabIndex = 100076;
+            this.imgPreviousFile.TabStop = false;
+            this.imgPreviousFile.Click += new System.EventHandler(this.imgPreviousFile_Click);
+            // 
+            // btnPlayMedia
+            // 
+            this.btnPlayMedia.BackColor = System.Drawing.Color.Transparent;
+            this.btnPlayMedia.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(105)))), ((int)(((byte)(26)))));
+            this.btnPlayMedia.ColorFillSolid = System.Drawing.Color.Transparent;
+            this.btnPlayMedia.Corners.All = 2;
+            this.btnPlayMedia.Corners.LowerLeft = 2;
+            this.btnPlayMedia.Corners.LowerRight = 2;
+            this.btnPlayMedia.Corners.UpperLeft = 2;
+            this.btnPlayMedia.Corners.UpperRight = 2;
+            this.btnPlayMedia.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPlayMedia.DesignerSelected = false;
+            this.btnPlayMedia.DimFactorClick = 0;
+            this.btnPlayMedia.DimFactorHover = 0;
+            this.btnPlayMedia.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.btnPlayMedia.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
+            this.btnPlayMedia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(105)))), ((int)(((byte)(26)))));
+            this.btnPlayMedia.Image = global::WebCrunch.Properties.Resources.play_orange;
+            this.btnPlayMedia.ImageIndex = 0;
+            this.btnPlayMedia.ImageSize = new System.Drawing.Size(18, 18);
+            this.btnPlayMedia.Location = new System.Drawing.Point(22, 510);
+            this.btnPlayMedia.Margin = new System.Windows.Forms.Padding(0, 3, 6, 3);
+            this.btnPlayMedia.MaximumSize = new System.Drawing.Size(1000, 30);
+            this.btnPlayMedia.MinimumSize = new System.Drawing.Size(0, 30);
+            this.btnPlayMedia.Name = "btnPlayMedia";
+            this.btnPlayMedia.ShowFocus = CButtonLib.CButton.eFocus.None;
+            this.btnPlayMedia.Size = new System.Drawing.Size(109, 30);
+            this.btnPlayMedia.TabIndex = 7;
+            this.btnPlayMedia.Text = "Play Media";
+            this.btnPlayMedia.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnPlayMedia.TextShadowShow = false;
+            this.btnPlayMedia.Visible = false;
+            this.btnPlayMedia.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnPlayMedia_ClickButtonArea);
+            // 
+            // btnRequestFileSize
+            // 
+            this.btnRequestFileSize.BackColor = System.Drawing.Color.Transparent;
+            this.btnRequestFileSize.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(105)))), ((int)(((byte)(26)))));
+            this.btnRequestFileSize.ColorFillSolid = System.Drawing.Color.Transparent;
+            this.btnRequestFileSize.Corners.All = 2;
+            this.btnRequestFileSize.Corners.LowerLeft = 2;
+            this.btnRequestFileSize.Corners.LowerRight = 2;
+            this.btnRequestFileSize.Corners.UpperLeft = 2;
+            this.btnRequestFileSize.Corners.UpperRight = 2;
+            this.btnRequestFileSize.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRequestFileSize.DesignerSelected = false;
+            this.btnRequestFileSize.DimFactorClick = 0;
+            this.btnRequestFileSize.DimFactorHover = 0;
+            this.btnRequestFileSize.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.btnRequestFileSize.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
+            this.btnRequestFileSize.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(105)))), ((int)(((byte)(26)))));
+            this.btnRequestFileSize.Image = global::WebCrunch.Properties.Resources.file_find_orange;
+            this.btnRequestFileSize.ImageIndex = 0;
+            this.btnRequestFileSize.ImageSize = new System.Drawing.Size(18, 18);
+            this.btnRequestFileSize.Location = new System.Drawing.Point(155, 141);
+            this.btnRequestFileSize.Margin = new System.Windows.Forms.Padding(0, 3, 6, 3);
+            this.btnRequestFileSize.MaximumSize = new System.Drawing.Size(1000, 30);
+            this.btnRequestFileSize.MinimumSize = new System.Drawing.Size(0, 30);
+            this.btnRequestFileSize.Name = "btnRequestFileSize";
+            this.btnRequestFileSize.ShowFocus = CButtonLib.CButton.eFocus.None;
+            this.btnRequestFileSize.Size = new System.Drawing.Size(143, 30);
+            this.btnRequestFileSize.TabIndex = 2;
+            this.btnRequestFileSize.Text = "Request File Size";
+            this.btnRequestFileSize.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRequestFileSize.TextShadowShow = false;
+            this.btnRequestFileSize.Visible = false;
+            this.btnRequestFileSize.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnRequestFileSize_ClickButtonArea);
             // 
             // btnViewDirectory
             // 
@@ -709,19 +679,115 @@
             this.btnBookmarkFile.TextShadowShow = false;
             this.btnBookmarkFile.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.BtnBookmarkFile_ClickButtonArea);
             // 
+            // btnShareFile
+            // 
+            this.btnShareFile.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnShareFile.BackColor = System.Drawing.Color.Transparent;
+            this.btnShareFile.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(193)))), ((int)(((byte)(190)))));
+            cBlendItems5.iColor = new System.Drawing.Color[] {
+        System.Drawing.Color.White,
+        System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))))};
+            cBlendItems5.iPoint = new float[] {
+        0F,
+        1F};
+            this.btnShareFile.ColorFillBlend = cBlendItems5;
+            this.btnShareFile.ColorFillSolid = System.Drawing.Color.Transparent;
+            this.btnShareFile.Corners.All = 2;
+            this.btnShareFile.Corners.LowerLeft = 2;
+            this.btnShareFile.Corners.LowerRight = 2;
+            this.btnShareFile.Corners.UpperLeft = 2;
+            this.btnShareFile.Corners.UpperRight = 2;
+            this.btnShareFile.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnShareFile.DesignerSelected = false;
+            this.btnShareFile.DimFactorClick = 0;
+            this.btnShareFile.DimFactorHover = 0;
+            this.btnShareFile.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.btnShareFile.Font = new System.Drawing.Font("Segoe UI Semibold", 9.25F);
+            this.btnShareFile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(193)))), ((int)(((byte)(190)))));
+            this.btnShareFile.Image = global::WebCrunch.Properties.Resources.share;
+            this.btnShareFile.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnShareFile.ImageIndex = 0;
+            this.btnShareFile.Location = new System.Drawing.Point(0, 0);
+            this.btnShareFile.Name = "btnShareFile";
+            this.btnShareFile.ShowFocus = CButtonLib.CButton.eFocus.None;
+            this.btnShareFile.SideImage = global::WebCrunch.Properties.Resources.menu_down;
+            this.btnShareFile.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnShareFile.SideImageSize = new System.Drawing.Size(16, 16);
+            this.btnShareFile.Size = new System.Drawing.Size(73, 22);
+            this.btnShareFile.TabIndex = 3;
+            this.btnShareFile.Text = "Share";
+            this.btnShareFile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnShareFile.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnShareFile.TextMargin = new System.Windows.Forms.Padding(2, 3, 2, 2);
+            this.btnShareFile.TextShadow = System.Drawing.Color.Empty;
+            this.btnShareFile.TextShadowShow = false;
+            this.btnShareFile.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnShareFile_ClickButtonArea);
+            this.btnShareFile.MouseEnter += new System.EventHandler(this.ComboboxCButton_MouseEnter);
+            this.btnShareFile.MouseLeave += new System.EventHandler(this.ComboboxCButton_MouseLeave);
+            // 
+            // btnReportFile
+            // 
+            this.btnReportFile.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnReportFile.BackColor = System.Drawing.Color.Transparent;
+            this.btnReportFile.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(193)))), ((int)(((byte)(190)))));
+            cBlendItems2.iColor = new System.Drawing.Color[] {
+        System.Drawing.Color.White,
+        System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))))};
+            cBlendItems2.iPoint = new float[] {
+        0F,
+        1F};
+            this.btnReportFile.ColorFillBlend = cBlendItems2;
+            this.btnReportFile.ColorFillSolid = System.Drawing.Color.Transparent;
+            this.btnReportFile.Corners.All = 2;
+            this.btnReportFile.Corners.LowerLeft = 2;
+            this.btnReportFile.Corners.LowerRight = 2;
+            this.btnReportFile.Corners.UpperLeft = 2;
+            this.btnReportFile.Corners.UpperRight = 2;
+            this.btnReportFile.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReportFile.DesignerSelected = false;
+            this.btnReportFile.DimFactorClick = 0;
+            this.btnReportFile.DimFactorHover = 0;
+            this.btnReportFile.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.btnReportFile.Font = new System.Drawing.Font("Segoe UI Semibold", 9.25F);
+            this.btnReportFile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(193)))), ((int)(((byte)(190)))));
+            this.btnReportFile.Image = ((System.Drawing.Image)(resources.GetObject("btnReportFile.Image")));
+            this.btnReportFile.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReportFile.ImageIndex = 0;
+            this.btnReportFile.Location = new System.Drawing.Point(0, 0);
+            this.btnReportFile.Name = "btnReportFile";
+            this.btnReportFile.ShowFocus = CButtonLib.CButton.eFocus.None;
+            this.btnReportFile.SideImage = global::WebCrunch.Properties.Resources.menu_down;
+            this.btnReportFile.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnReportFile.SideImageSize = new System.Drawing.Size(16, 16);
+            this.btnReportFile.Size = new System.Drawing.Size(78, 22);
+            this.btnReportFile.TabIndex = 4;
+            this.btnReportFile.Text = "Report";
+            this.btnReportFile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReportFile.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnReportFile.TextMargin = new System.Windows.Forms.Padding(2, 3, 2, 2);
+            this.btnReportFile.TextShadow = System.Drawing.Color.Empty;
+            this.btnReportFile.TextShadowShow = false;
+            this.btnReportFile.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnReportFile_ClickButtonArea);
+            this.btnReportFile.MouseEnter += new System.EventHandler(this.ComboboxCButton_MouseEnter);
+            this.btnReportFile.MouseLeave += new System.EventHandler(this.ComboboxCButton_MouseLeave);
+            // 
             // infoFileURL
             // 
             this.infoFileURL.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.infoFileURL.BackColor = System.Drawing.Color.Transparent;
             this.infoFileURL.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(50)))));
-            cBlendItems3.iColor = new System.Drawing.Color[] {
+            cBlendItems1.iColor = new System.Drawing.Color[] {
         System.Drawing.Color.White,
         System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))))};
-            cBlendItems3.iPoint = new float[] {
+            cBlendItems1.iPoint = new float[] {
         0F,
         1F};
-            this.infoFileURL.ColorFillBlend = cBlendItems3;
+            this.infoFileURL.ColorFillBlend = cBlendItems1;
             this.infoFileURL.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(50)))));
             this.infoFileURL.Corners.All = 2;
             this.infoFileURL.Corners.LowerLeft = 2;
@@ -763,13 +829,13 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDirectLink.BackColor = System.Drawing.Color.Transparent;
             this.btnDirectLink.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(186)))), ((int)(((byte)(96)))));
-            cBlendItems4.iColor = new System.Drawing.Color[] {
+            cBlendItems3.iColor = new System.Drawing.Color[] {
         System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(186)))), ((int)(((byte)(96))))),
         System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(184)))), ((int)(((byte)(85)))))};
-            cBlendItems4.iPoint = new float[] {
+            cBlendItems3.iPoint = new float[] {
         0F,
         1F};
-            this.btnDirectLink.ColorFillBlend = cBlendItems4;
+            this.btnDirectLink.ColorFillBlend = cBlendItems3;
             this.btnDirectLink.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(186)))), ((int)(((byte)(96)))));
             this.btnDirectLink.Corners.All = 2;
             this.btnDirectLink.Corners.LowerLeft = 2;
@@ -814,79 +880,49 @@
             this.appClose.TabStop = false;
             this.appClose.Click += new System.EventHandler(this.appClose_Click);
             // 
-            // btnRequestFileSize
+            // VLC2ToolStripMenuItem
             // 
-            this.btnRequestFileSize.BackColor = System.Drawing.Color.Transparent;
-            this.btnRequestFileSize.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(105)))), ((int)(((byte)(26)))));
-            this.btnRequestFileSize.ColorFillSolid = System.Drawing.Color.Transparent;
-            this.btnRequestFileSize.Corners.All = 2;
-            this.btnRequestFileSize.Corners.LowerLeft = 2;
-            this.btnRequestFileSize.Corners.LowerRight = 2;
-            this.btnRequestFileSize.Corners.UpperLeft = 2;
-            this.btnRequestFileSize.Corners.UpperRight = 2;
-            this.btnRequestFileSize.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRequestFileSize.DesignerSelected = false;
-            this.btnRequestFileSize.DimFactorClick = 0;
-            this.btnRequestFileSize.DimFactorHover = 0;
-            this.btnRequestFileSize.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.btnRequestFileSize.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
-            this.btnRequestFileSize.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(105)))), ((int)(((byte)(26)))));
-            this.btnRequestFileSize.Image = global::WebCrunch.Properties.Resources.file_find_orange;
-            this.btnRequestFileSize.ImageIndex = 0;
-            this.btnRequestFileSize.ImageSize = new System.Drawing.Size(18, 18);
-            this.btnRequestFileSize.Location = new System.Drawing.Point(155, 141);
-            this.btnRequestFileSize.Margin = new System.Windows.Forms.Padding(0, 3, 6, 3);
-            this.btnRequestFileSize.MaximumSize = new System.Drawing.Size(1000, 30);
-            this.btnRequestFileSize.MinimumSize = new System.Drawing.Size(0, 30);
-            this.btnRequestFileSize.Name = "btnRequestFileSize";
-            this.btnRequestFileSize.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.btnRequestFileSize.Size = new System.Drawing.Size(143, 30);
-            this.btnRequestFileSize.TabIndex = 2;
-            this.btnRequestFileSize.Text = "Request File Size";
-            this.btnRequestFileSize.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnRequestFileSize.TextShadowShow = false;
-            this.btnRequestFileSize.Visible = false;
-            this.btnRequestFileSize.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnRequestFileSize_ClickButtonArea);
+            this.VLC2ToolStripMenuItem.Image = global::WebCrunch.Properties.Resources.vlc;
+            this.VLC2ToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Transparent;
+            this.VLC2ToolStripMenuItem.Name = "VLC2ToolStripMenuItem";
+            this.VLC2ToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.VLC2ToolStripMenuItem.Text = "VLC (Built-in)";
+            this.VLC2ToolStripMenuItem.Click += new System.EventHandler(this.VLC2ToolStripMenuItem_Click);
             // 
-            // btnPlayMedia
+            // WMPToolStripMenuItem
             // 
-            this.btnPlayMedia.BackColor = System.Drawing.Color.Transparent;
-            this.btnPlayMedia.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(105)))), ((int)(((byte)(26)))));
-            this.btnPlayMedia.ColorFillSolid = System.Drawing.Color.Transparent;
-            this.btnPlayMedia.Corners.All = 2;
-            this.btnPlayMedia.Corners.LowerLeft = 2;
-            this.btnPlayMedia.Corners.LowerRight = 2;
-            this.btnPlayMedia.Corners.UpperLeft = 2;
-            this.btnPlayMedia.Corners.UpperRight = 2;
-            this.btnPlayMedia.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPlayMedia.DesignerSelected = false;
-            this.btnPlayMedia.DimFactorClick = 0;
-            this.btnPlayMedia.DimFactorHover = 0;
-            this.btnPlayMedia.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.btnPlayMedia.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
-            this.btnPlayMedia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(105)))), ((int)(((byte)(26)))));
-            this.btnPlayMedia.Image = global::WebCrunch.Properties.Resources.play_orange;
-            this.btnPlayMedia.ImageIndex = 0;
-            this.btnPlayMedia.ImageSize = new System.Drawing.Size(18, 18);
-            this.btnPlayMedia.Location = new System.Drawing.Point(22, 510);
-            this.btnPlayMedia.Margin = new System.Windows.Forms.Padding(0, 3, 6, 3);
-            this.btnPlayMedia.MaximumSize = new System.Drawing.Size(1000, 30);
-            this.btnPlayMedia.MinimumSize = new System.Drawing.Size(0, 30);
-            this.btnPlayMedia.Name = "btnPlayMedia";
-            this.btnPlayMedia.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.btnPlayMedia.Size = new System.Drawing.Size(109, 30);
-            this.btnPlayMedia.TabIndex = 7;
-            this.btnPlayMedia.Text = "Play Media";
-            this.btnPlayMedia.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnPlayMedia.TextShadowShow = false;
-            this.btnPlayMedia.Visible = false;
-            this.btnPlayMedia.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnPlayMedia_ClickButtonArea);
+            this.WMPToolStripMenuItem.Image = global::WebCrunch.Properties.Resources.windows;
+            this.WMPToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Transparent;
+            this.WMPToolStripMenuItem.Name = "WMPToolStripMenuItem";
+            this.WMPToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.WMPToolStripMenuItem.Text = "WMP";
+            this.WMPToolStripMenuItem.Click += new System.EventHandler(this.WMPToolStripMenuItem_Click);
+            // 
+            // VLCToolStripMenuItem
+            // 
+            this.VLCToolStripMenuItem.Image = global::WebCrunch.Properties.Resources.vlc;
+            this.VLCToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Transparent;
+            this.VLCToolStripMenuItem.Name = "VLCToolStripMenuItem";
+            this.VLCToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.VLCToolStripMenuItem.Text = "VLC";
+            this.VLCToolStripMenuItem.Click += new System.EventHandler(this.VLCToolStripMenuItem_Click);
+            // 
+            // MPCToolStripMenuItem
+            // 
+            this.MPCToolStripMenuItem.Image = global::WebCrunch.Properties.Resources.dots_horizontal;
+            this.MPCToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Transparent;
+            this.MPCToolStripMenuItem.Name = "MPCToolStripMenuItem";
+            this.MPCToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.MPCToolStripMenuItem.Text = "MPC";
+            this.MPCToolStripMenuItem.Click += new System.EventHandler(this.MPCToolStripMenuItem_Click);
             // 
             // FileDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.Controls.Add(this.imgNextFile);
+            this.Controls.Add(this.imgPreviousFile);
             this.Controls.Add(this.btnPlayMedia);
             this.Controls.Add(this.btnRequestFileSize);
             this.Controls.Add(this.flowLayoutPanel1);
@@ -925,6 +961,8 @@
             this.contextFileName.ResumeLayout(false);
             this.panelShareFile.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.imgNextFile)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgPreviousFile)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.appClose)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -971,5 +1009,7 @@
         private CtrlButton btnPlayMedia;
         private CtrlButton btnBookmarkFile;
         private CtrlButton btnViewDirectory;
+        public System.Windows.Forms.PictureBox imgPreviousFile;
+        public System.Windows.Forms.PictureBox imgNextFile;
     }
 }

@@ -11,7 +11,7 @@ using Extensions;
 using WebCrunch.Bookmarks;
 using Utilities;
 using CButtonLib;
-using System.ComponentModel;
+using Models;
 
 namespace Controls
 {
@@ -22,47 +22,80 @@ namespace Controls
             InitializeComponent();
         }
 
+        public WebFile currentFile;
         string infoFileSubtitles;
 
+        /* Support file types for the players */
         public static List<string> videoFileTypes = new List<string>() { "M2TS", "MP4", "MKV", "AVI", "MPEG", "MPG", "MOV" };
         public static List<string> audioFileTypes = new List<string>() { "MP3", "WMA", "WAV", "M3U", "APE", "AIF", "MPA", "CDA" };
 
         private void ctrlFileDetails_Load(object sender, EventArgs e)
         {
-            if (!Bookmarked.IsBookmarked(infoFileURL.Text))
-            {
-                ControlExtensions.ChangeControlText(btnBookmarkFile, "Add to Bookmarks");
-            }
-            else
-            {
-                ControlExtensions.ChangeControlText(btnBookmarkFile, "Remove from Bookmarks");
-            }
+            CheckFileEvents();
+        }
 
+        public void CheckFileEvents()
+        {
+            /* Shows appropriate Bookmarks button text */
+            if (!Bookmarked.IsBookmarked(currentFile.URL))
+                ControlExtensions.ChangeControlText(btnBookmarkFile, "Add to Bookmarks");            
+            else
+                ControlExtensions.ChangeControlText(btnBookmarkFile, "Remove from Bookmarks");            
+
+            /* Support media players installed on users machine */
             VLCToolStripMenuItem.Visible = File.Exists(MainForm.pathVLC);
             MPCToolStripMenuItem.Visible = File.Exists(MainForm.pathMPCCodec64) || File.Exists(MainForm.pathMPC64) || File.Exists(MainForm.pathMPC86);
 
-            if (videoFileTypes.Contains(infoType.Text.ToUpper()) || audioFileTypes.Contains(infoType.Text.ToUpper())) { btnPlayMedia.Visible = true; } // Shows 'Play Media' button if is valid file extension
+            /* Shows 'Play Media' button if is valid file extension */
+            if (videoFileTypes.Contains(currentFile.Type) || audioFileTypes.Contains(currentFile.Type))
+                btnPlayMedia.Visible = true;
+            else
+                btnPlayMedia.Visible = false;
 
-            if (infoSize.Text == "0 Bytes") { btnRequestFileSize.Visible = true; } // Checks if file size isn't default
+            /* Checks if file size isn't default */
+            if (currentFile.Size == 0)
+                btnRequestFileSize.Visible = true;
+            else
+                btnRequestFileSize.Visible = false;
 
-            if (infoFileSubtitles == null) // Add subtitle file to be played when opening external VLC
-            {
-                if (FileExtensions.HasExistingSubtitles(infoFileURL.Text) == true) // If downloads folder contains file matching web file name
-                {
-                    infoFileSubtitles = MainForm.userDownloadsDirectory + Path.GetFileNameWithoutExtension(infoFileURL.Text) + ".srt";
-                }
+            /* Add subtitle file to be played when opening external VLC */
+            if (FileExtensions.HasExistingSubtitles(currentFile.URL) == true) /* If users downloads folder contains a subtitle file matching web file name */
+                infoFileSubtitles = MainForm.userDownloadsDirectory + Path.GetFileNameWithoutExtension(currentFile.URL) + ".srt";
+            else
+                infoFileSubtitles = null;
+
+            /* Displays appropriate scroll images */
+            ScrollButtonChecks();
+        }
+
+        private void ScrollButtonChecks()
+        {
+            if (MainForm.form.dataGridFiles.Rows.Count > 0) {
+                if (MainForm.form.dataGridFiles.SelectedCells[0].OwningRow.Index == 0)
+                    imgPreviousFile.Image = ImageExtensions.ChangeColor(WebCrunch.Properties.Resources.chevron_left, Color.Gray);
+                else
+                    imgPreviousFile.Image = WebCrunch.Properties.Resources.chevron_left;
+
+                if (MainForm.form.dataGridFiles.SelectedCells[0].OwningRow.Index == MainForm.form.dataGridFiles.Rows.Count - 1)
+                    imgNextFile.Image = ImageExtensions.ChangeColor(WebCrunch.Properties.Resources.chevron_right, Color.Gray);
+                else
+                    imgNextFile.Image = WebCrunch.Properties.Resources.chevron_right;
+            }
+            else {
+                imgPreviousFile.Image = ImageExtensions.ChangeColor(WebCrunch.Properties.Resources.chevron_left, Color.Gray);
+                imgNextFile.Image = ImageExtensions.ChangeColor(WebCrunch.Properties.Resources.chevron_right, Color.Gray);
             }
         }
 
         private void appClose_Click(object sender, EventArgs e)
         {
             MainForm.form.tab.SelectedTab = MainForm.form.currentTab;
-            Parent.Controls.Clear();
+            MainForm.form.fileDetails.Dispose();
         }
 
         private void btnDirectLink_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            Process.Start(infoFileURL.Text);
+            Process.Start(currentFile.URL);
         }
 
         private void btnReportFile_ClickButtonArea(object Sender, MouseEventArgs e)
@@ -73,17 +106,11 @@ namespace Controls
         private void cmboboxReportFile_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmboboxReportFile.SelectedIndex == 0)
-            {
-                ReportTemplates.OpenBrokenFileIssue(infoFileURL.Text);
-            }
+                ReportTemplates.OpenBrokenFileIssue(currentFile.URL);
             else if (cmboboxReportFile.SelectedIndex == 1)
-            {
                 MessageBox.Show(this, "Please write an email to the application administrator with your appropriate details at bettercodes1@gmail.com\n\n Thank you.");
-            }
             else if (cmboboxReportFile.SelectedIndex == 2)
-            {
-                ReportTemplates.OpenPoorQualityFileIssue(infoFileURL.Text);
-            }
+                ReportTemplates.OpenPoorQualityFileIssue(currentFile.URL);
         }
 
         private void btnShareFile_ClickButtonArea(object Sender, MouseEventArgs e)
@@ -94,30 +121,20 @@ namespace Controls
         private void cmboBoxShareFile_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmboBoxShareFile.SelectedIndex == 0)
-            {
-                Process.Start("https://www.facebook.com/sharer/sharer.php?u=" + infoFileURL.Text);
-            }
+                Process.Start("https://www.facebook.com/sharer/sharer.php?u=" + currentFile.URL);
             else if (cmboBoxShareFile.SelectedIndex == 1)
-            {
-                Process.Start("https://twitter.com/home?status=Check%20out%20this%20file%20I%20found%20on%20%40WebCrunch%20" + infoFileURL.Text);
-            }
+                Process.Start("https://twitter.com/home?status=Check%20out%20this%20file%20I%20found%20on%20%40WebCrunch%20" + currentFile.URL);
             else if (cmboBoxShareFile.SelectedIndex == 2)
-            {
-                Process.Start("https://plus.google.com/share?url=" + infoFileURL.Text);
-            }
+                Process.Start("https://plus.google.com/share?url=" + currentFile.URL);
             else if (cmboBoxShareFile.SelectedIndex == 3)
-            {
-                Process.Start("http://reddit.com/submit?url=" + infoFileURL.Text + "&title=" + Path.GetFileNameWithoutExtension(new Uri(infoFileURL.Text).LocalPath) + "%20%5BWebCrunch%5D");
-            }
+                Process.Start("http://reddit.com/submit?url=" + currentFile.URL + "&title=" + Path.GetFileNameWithoutExtension(new Uri(currentFile.URL).LocalPath) + "%20%5BWebCrunch%5D");
             else if (cmboBoxShareFile.SelectedIndex == 4)
-            {
-                Process.Start("mailto:?&body=Check%20out%20this%20awesome%20file%20I%20found%20on%20WebCrunch%20-%20" + infoFileURL.Text);
-            }
+                Process.Start("mailto:?&body=Check%20out%20this%20awesome%20file%20I%20found%20on%20WebCrunch%20-%20" + currentFile.URL);
         }
 
         private void infoDirectory_Click(object sender, EventArgs e)
         {
-            Uri uri = new Uri(infoFileURL.Text);
+            Uri uri = new Uri(currentFile.URL);
             string parentName = GetParentUriString(uri).Remove(GetParentUriString(uri).Length - 1);
             Process browser = new Process();
             browser.StartInfo.UseShellExecute = true;
@@ -132,9 +149,7 @@ namespace Controls
             parentName.Append("://");
             parentName.Append(uri.Host);
             for (int i = 0; i < uri.Segments.Length - 1; i++)
-            {
                 parentName.Append(uri.Segments[i]);
-            }
             return parentName.ToString();
         }
 
@@ -142,24 +157,22 @@ namespace Controls
         {
             Process browser = new Process();
             browser.StartInfo.UseShellExecute = true;
-            browser.StartInfo.FileName = new Uri(infoFileURL.Text).GetLeftPart(UriPartial.Authority).ToString();
+            browser.StartInfo.FileName = new Uri(currentFile.URL).GetLeftPart(UriPartial.Authority).ToString();
             browser.Start();
         }
 
         private void btnRequestFileSize_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            try
-            {
+            try {
                 btnRequestFileSize.Visible = false;
-                BackGroundWorker.RunWorkAsync<string>(() => TextExtensions.BytesToString(FileExtensions.GetFileSize(infoFileURL.Text)), (data) => { infoSize.Text = data; });
+                BackGroundWorker.RunWorkAsync<string>(() => TextExtensions.BytesToString(FileExtensions.GetFileSize(currentFile.URL)), (data) => { infoSize.Text = data; });
             }
             catch { infoSize.Text = "Error"; }
         }
 
         private void btnViewDirectory_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            Uri uri = new Uri(infoFileURL.Text);
-            string parentName = GetParentUriString(uri).Remove(GetParentUriString(uri).Length - 1);
+            string parentName = GetParentUriString(new Uri(currentFile.URL)).Remove(GetParentUriString(new Uri(currentFile.URL)).Length - 1);
 
             Process browser = new Process();
             browser.StartInfo.UseShellExecute = true;
@@ -174,7 +187,7 @@ namespace Controls
 
         private void WMPToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Process.Start("wmplayer.exe", infoFileURL.Text);
+            Process.Start("wmplayer.exe", currentFile.URL);
         }
 
         private void VLCToolStripMenuItem_Click(object sender, EventArgs e)
@@ -182,7 +195,7 @@ namespace Controls
             // Open source file in VLC with subtitles
             Process VLC = new Process();
             VLC.StartInfo.FileName = MainForm.pathVLC;
-            VLC.StartInfo.Arguments = ("-vvv " + infoFileURL.Text + " --sub-file=" + infoFileSubtitles);
+            VLC.StartInfo.Arguments = ("-vvv " + currentFile.URL + " --sub-file=" + infoFileSubtitles);
             VLC.Start();
         }
 
@@ -195,7 +208,7 @@ namespace Controls
                 MPC.StartInfo.FileName = MainForm.pathMPC64;
             else
                 MPC.StartInfo.FileName = MainForm.pathMPC86;
-            MPC.StartInfo.Arguments = (infoFileURL.Text);
+            MPC.StartInfo.Arguments = (currentFile.URL);
             MPC.Start();
         }
 
@@ -203,11 +216,8 @@ namespace Controls
         {
             try
             {
-                var a = new VLCPlayer
-                {
-                    Text = new Uri(infoFileURL.Text).LocalPath
-                };
-                a.axVLCPlugin21.playlist.add(infoFileURL.Text);
+                var a = new VLCPlayer { Text = new Uri(currentFile.URL).LocalPath };
+                a.axVLCPlugin21.playlist.add(currentFile.URL);
                 a.axVLCPlugin21.playlist.play();
                 a.Show();
             }
@@ -216,14 +226,12 @@ namespace Controls
 
         private void BtnBookmarkFile_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            if (Bookmarked.IsBookmarked(infoFileURL.Text))
-            {
-                Bookmarked.UnsaveFile(infoFileURL.Text);
+            if (Bookmarked.IsBookmarked(currentFile.URL)) {
+                Bookmarked.UnsaveFile(currentFile.URL);
                 ControlExtensions.ChangeControlText(btnBookmarkFile, "Add to Bookmarks");
             }
-            else
-            {
-                Bookmarked.SaveFile(infoFileURL.Text);
+            else {
+                Bookmarked.SaveFile(currentFile.URL);
                 ControlExtensions.ChangeControlText(btnBookmarkFile, "Remove from Bookmarks");
             }
         }
@@ -238,7 +246,7 @@ namespace Controls
             ctrl.ColorFillSolid = Colors.uiColorOrange;
         }
 
-        public void comboboxCButton_MouseLeave(object sender, EventArgs e)
+        public void ComboboxCButton_MouseLeave(object sender, EventArgs e)
         {
             CButton ctrl = sender as CButton;
             ctrl.BorderColor = Colors.uiColorGray;
@@ -248,9 +256,63 @@ namespace Controls
 
         private void infoFileURL_SideImageClicked(object Sender, MouseEventArgs e)
         {
-            Clipboard.SetText(infoFileURL.Text);
+            Clipboard.SetText(currentFile.URL);
             infoFileURL.SideImage = WebCrunch.Properties.Resources.clipboard_check_orange;
             infoFileURL.SideImageSize = new Size(24, 24);
+        }
+
+        private void SelectUpRow()
+        {
+            DataGridView dgv = MainForm.form.dataGridFiles;
+            if (dgv.Rows.Count > 0) {
+                int totalRows = dgv.Rows.Count;
+                int rowIndex = dgv.SelectedCells[0].OwningRow.Index;
+                if (rowIndex == 0)
+                    return;
+                int colIndex = dgv.SelectedCells[0].OwningColumn.Index;
+                DataGridViewRow selectedRow = dgv.Rows[rowIndex];
+                dgv.ClearSelection();
+                dgv.Rows[rowIndex - 1].Cells[colIndex].Selected = true;
+
+                if (MainForm.form.dataGridFiles.CurrentRow.Cells[4].Value.ToString() == "Local")
+                    MainForm.form.ShowFileDetails(Database.FileInfoFromURL(MainForm.form.dataGridFiles.CurrentRow.Cells[5].Value.ToString()), false);                
+                else 
+                    MainForm.form.ShowFileDetails(Database.FileInfoFromURL(MainForm.form.dataGridFiles.CurrentRow.Cells[5].Value.ToString()), false);
+
+                ScrollButtonChecks();
+            }
+        }
+
+        private void SelectDownRow()
+        {
+            DataGridView dgv = MainForm.form.dataGridFiles;
+            if (dgv.Rows.Count > 0) {
+                int totalRows = dgv.Rows.Count;
+                int rowIndex = dgv.SelectedCells[0].OwningRow.Index;
+                if (rowIndex == totalRows - 1)
+                    return;
+                int colIndex = dgv.SelectedCells[0].OwningColumn.Index;
+                DataGridViewRow selectedRow = dgv.Rows[rowIndex];
+                dgv.ClearSelection();
+                dgv.Rows[rowIndex + 1].Cells[colIndex].Selected = true;
+
+                if (MainForm.form.dataGridFiles.CurrentRow.Cells[4].Value.ToString() == "local")
+                    MainForm.form.ShowFileDetails(Database.FileInfoFromURL(MainForm.form.dataGridFiles.CurrentRow.Cells[5].Value.ToString()), false);
+                else
+                    MainForm.form.ShowFileDetails(Database.FileInfoFromURL(MainForm.form.dataGridFiles.CurrentRow.Cells[5].Value.ToString()), false);
+
+                ScrollButtonChecks();
+            }
+        }
+
+        private void imgPreviousFile_Click(object sender, EventArgs e)
+        {
+            SelectUpRow();
+        }
+
+        private void imgNextFile_Click(object sender, EventArgs e)
+        {
+            SelectDownRow();
         }
     }
 }
