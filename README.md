@@ -33,7 +33,7 @@ Download and run the latest version of the Windows installer, "WebCrunch.Install
 Please supply as much information about the problem you are experiencing as possible. Your issue has a much greater chance of being resolved if logs are supplied so that we can see what is going on. Creating an issue with '### isn't working' doesn't help anyone to fix the problem.
 
 ## Contributing
-All contributions are welcome just send a pull request. WebCrunch's directory database allows our team (and any other volunteering dev) to implement new indexers in a few seconds. If you'd like support for a new indexer but are not a developer then feel free to leave a request on the [issues page](https://github.com/ekkash/WebCrunch/issues). It is recommended to use Visual Studio 2017 when making code changes in this project. You can download the community version for free [here](https://www.visualstudio.com/downloads/).
+All contributions are welcome just send a pull request. WebCrunch's directory database allows our team (and any other volunteer) to implement new indexers in a few seconds. If you'd like support for a new indexer but are not sure how then feel free to leave a request on the [issues page](https://github.com/ekkash/WebCrunch/issues). It is recommended to use Visual Studio 2017 when making code changes in this project. You can download the community version for free [here](https://www.visualstudio.com/downloads/).
 
 ## Frequently Asked Questions
 <details>
