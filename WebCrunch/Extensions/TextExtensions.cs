@@ -131,16 +131,6 @@ namespace Extensions
         }
 
         /// <summary>
-        /// Checks if string is valid DateTime
-        /// </summary>
-        /// <param name="txtDate"></param>
-        /// <returns></returns>
-        public static bool IsDateTime(string txtDate)
-        {
-            return DateTime.TryParse(txtDate, out DateTime tempDate);
-        }
-
-        /// <summary>
         /// Checks if string is valid Json
         /// </summary>
         /// <param name="json"></param>

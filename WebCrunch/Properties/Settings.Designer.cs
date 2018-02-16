@@ -34,17 +34,5 @@ namespace WebCrunch.Properties {
                 this["clearDataOnClose"] = value;
             }
         }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("en")]
-        public string userLanguage {
-            get {
-                return ((string)(this["userLanguage"]));
-            }
-            set {
-                this["userLanguage"] = value;
-            }
-        }
     }
 }

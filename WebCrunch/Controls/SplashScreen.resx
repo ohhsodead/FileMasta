@@ -117,45 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="lblLoadingText.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left, Right</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="lblLoadingText.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 15.25pt</value>
-  </data>
-  <data name="lblLoadingText.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 362</value>
-  </data>
-  <data name="lblLoadingText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>694, 34</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="lblLoadingText.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lblLoadingText.Text" xml:space="preserve">
-    <value>Initializing WebCrunch, Please Wait...</value>
-  </data>
-  <data name="lblLoadingText.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="&gt;&gt;lblLoadingText.Name" xml:space="preserve">
-    <value>lblLoadingText</value>
-  </data>
-  <data name="&gt;&gt;lblLoadingText.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblLoadingText.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;lblLoadingText.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="imgLogo.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>None</value>
-  </data>
   <data name="imgLogo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAOgAAADrCAYAAABjPdrWAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
@@ -429,97 +391,10 @@
         w/9dmDmWvuP/A0fWHYUaHvzMAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="imgLogo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>238, 105</value>
-  </data>
-  <data name="imgLogo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 223</value>
-  </data>
-  <data name="imgLogo.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>StretchImage</value>
-  </data>
-  <data name="imgLogo.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;imgLogo.Name" xml:space="preserve">
-    <value>imgLogo</value>
-  </data>
-  <data name="&gt;&gt;imgLogo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;imgLogo.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;imgLogo.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="lblLoadingStuckRestart.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left, Right</value>
-  </data>
-  <data name="lblLoadingStuckRestart.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 10.75pt, style=Italic</value>
-  </data>
-  <data name="lblLoadingStuckRestart.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblLoadingStuckRestart.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 441</value>
-  </data>
-  <data name="lblLoadingStuckRestart.Size" type="System.Drawing.Size, System.Drawing">
-    <value>694, 25</value>
-  </data>
-  <data name="lblLoadingStuckRestart.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="lblLoadingStuckRestart.Text" xml:space="preserve">
-    <value>Loading stuck? Click here!</value>
-  </data>
-  <data name="lblLoadingStuckRestart.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="lblLoadingStuckRestart.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;lblLoadingStuckRestart.Name" xml:space="preserve">
-    <value>lblLoadingStuckRestart</value>
-  </data>
-  <data name="&gt;&gt;lblLoadingStuckRestart.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblLoadingStuckRestart.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;lblLoadingStuckRestart.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <metadata name="timerCount.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>2, 2</value>
-  </metadata>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>25</value>
   </metadata>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
-  </data>
-  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 8.25pt</value>
-  </data>
-  <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>700, 500</value>
-  </data>
-  <data name="&gt;&gt;timerCount.Name" xml:space="preserve">
-    <value>timerCount</value>
-  </data>
-  <data name="&gt;&gt;timerCount.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>SplashScreen</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.UserControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
 </root>

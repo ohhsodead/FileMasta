@@ -8,12 +8,12 @@ namespace Extensions
     class FileExtensions
     {
         /// <summary>
-        /// Checks if file exists, whether they're the same size and then returns the output
+        /// Checks if database file exists at users data directory, if so whether they're the same size, and downloads the latest one if either returns false
         /// </summary>
         /// <param name="webFile"></param>
         /// <param name="fileName"></param>
         /// <returns></returns>
-        public static bool IsSizeEqual(string webFile, string fileName)
+        public static bool IsLocalAndServerFileSizeEqual(string webFile, string fileName)
         {
             try
             {
@@ -25,13 +25,17 @@ namespace Extensions
                     //req.Timeout = 1250;
                     using (HttpWebResponse fileResponse = (HttpWebResponse)req.GetResponse()) {
                         if (int.TryParse(fileResponse.Headers.Get("Content-Length"), out int ContentLength)) {
-                            if (new FileInfo(MainForm.pathData + fileName).Length == ContentLength) { return true; }
-                            else { return false; }
+                            if (new FileInfo(MainForm.pathData + fileName).Length == ContentLength)
+                                return true;
+                            else
+                                return false;
                         }
-                        else { return false; }
+                        else
+                            return false;
                     }
                 }
-                else { return false; }
+                else
+                    return false;
             }
             catch (Exception ex) { Program.log.Error("Error checking file '" + fileName + "' for update", ex); return false;  }
         }
@@ -55,10 +59,10 @@ namespace Extensions
                         Program.log.Info("Succesffuly returned file modified date from web file");
                         return fileModifiedTime;
                     }
-                    else { return default(DateTime); }
+                    else { return DateTime.MinValue; }
                 }
             }
-            catch (Exception ex) { Program.log.Error("Error requesting file modified date from web file", ex); return default(DateTime); }
+            catch (Exception ex) { Program.log.Error("Error requesting file modified date from web file", ex); return DateTime.MinValue; }
         }
 
         /// <summary>
@@ -76,7 +80,8 @@ namespace Extensions
                 req.Timeout = 7000;
                 using (HttpWebResponse fileResponse = (HttpWebResponse)req.GetResponse()) {
                     if (int.TryParse(fileResponse.Headers.Get("Content-Length"), out int ContentLength)) {
-                        Program.log.Info("Successfully returned file size from web file"); return ContentLength;
+                        Program.log.Info("Successfully returned file size from web file");
+                        return ContentLength;
                     }
                     else
                         return 0;
@@ -90,7 +95,7 @@ namespace Extensions
         /// </summary>
         /// <param name="fileURL"></param>
         /// <returns></returns>
-        public static bool HasExistingSubtitles(string fileURL)
+        public static bool HasExistingLocalSubtitles(string fileURL)
         {
             if (File.Exists(MainForm.userDownloadsDirectory + Path.GetFileNameWithoutExtension(new Uri(fileURL).LocalPath) + ".srt"))
                 return true;

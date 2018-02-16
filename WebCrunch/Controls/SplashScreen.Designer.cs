@@ -39,23 +39,43 @@
             // 
             // lblLoadingText
             // 
-            resources.ApplyResources(this.lblLoadingText, "lblLoadingText");
+            this.lblLoadingText.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblLoadingText.BackColor = System.Drawing.Color.Transparent;
+            this.lblLoadingText.Font = new System.Drawing.Font("Segoe UI Semibold", 15.25F);
+            this.lblLoadingText.Location = new System.Drawing.Point(3, 362);
             this.lblLoadingText.Name = "lblLoadingText";
+            this.lblLoadingText.Size = new System.Drawing.Size(694, 34);
+            this.lblLoadingText.TabIndex = 0;
+            this.lblLoadingText.Text = "Initializing WebCrunch, Please Wait...";
+            this.lblLoadingText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // imgLogo
             // 
-            resources.ApplyResources(this.imgLogo, "imgLogo");
+            this.imgLogo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.imgLogo.BackColor = System.Drawing.Color.Transparent;
+            this.imgLogo.Image = ((System.Drawing.Image)(resources.GetObject("imgLogo.Image")));
+            this.imgLogo.Location = new System.Drawing.Point(238, 105);
             this.imgLogo.Name = "imgLogo";
+            this.imgLogo.Size = new System.Drawing.Size(224, 223);
+            this.imgLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgLogo.TabIndex = 1;
             this.imgLogo.TabStop = false;
             // 
             // lblLoadingStuckRestart
             // 
-            resources.ApplyResources(this.lblLoadingStuckRestart, "lblLoadingStuckRestart");
+            this.lblLoadingStuckRestart.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblLoadingStuckRestart.BackColor = System.Drawing.Color.Transparent;
             this.lblLoadingStuckRestart.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblLoadingStuckRestart.Font = new System.Drawing.Font("Segoe UI Semibold", 10.75F, System.Drawing.FontStyle.Italic);
+            this.lblLoadingStuckRestart.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lblLoadingStuckRestart.Location = new System.Drawing.Point(3, 441);
             this.lblLoadingStuckRestart.Name = "lblLoadingStuckRestart";
+            this.lblLoadingStuckRestart.Size = new System.Drawing.Size(694, 25);
+            this.lblLoadingStuckRestart.TabIndex = 2;
+            this.lblLoadingStuckRestart.Text = "Loading stuck? Click here!";
+            this.lblLoadingStuckRestart.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblLoadingStuckRestart.Visible = false;
             this.lblLoadingStuckRestart.Click += new System.EventHandler(this.lblLoadingStuckRestart_Click);
             // 
             // timerCount
@@ -66,15 +86,17 @@
             // 
             // SplashScreen
             // 
-            resources.ApplyResources(this, "$this");
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(52)))), ((int)(((byte)(59)))));
             this.Controls.Add(this.lblLoadingStuckRestart);
             this.Controls.Add(this.imgLogo);
             this.Controls.Add(this.lblLoadingText);
             this.DoubleBuffered = true;
+            this.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.ForeColor = System.Drawing.Color.White;
             this.Name = "SplashScreen";
+            this.Size = new System.Drawing.Size(700, 500);
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).EndInit();
             this.ResumeLayout(false);
 

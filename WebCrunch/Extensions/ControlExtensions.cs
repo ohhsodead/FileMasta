@@ -27,7 +27,7 @@ namespace Extensions
         /// </summary>
         /// <param name="ctrl"></param>
         /// <param name="text"></param>
-        public static void ChangeControlText(CButtonLib.CButton ctrl, string text)
+        public static void SetControlText(CButtonLib.CButton ctrl, string text)
         {
             ctrl.Text = text;
             Font myFont = new Font(ctrl.Font.FontFamily, ctrl.Font.Size);

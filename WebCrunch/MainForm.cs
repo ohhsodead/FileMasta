@@ -7,7 +7,6 @@ using System.Net;
 using System.Windows.Forms;
 using System.Diagnostics;
 using System.ComponentModel;
-using System.Globalization;
 using System.Threading;
 using System.Text;
 using Newtonsoft.Json;
@@ -25,9 +24,8 @@ namespace WebCrunch
         public MainForm()
         {
             Program.log.Info("Initializing");
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Properties.Settings.Default.userLanguage); /* Set to users language stored in App Settings */
-                                                                                                               /* This adds all the supported file types to one list (There must be a cleaner way, but oh well) */
-            allFileTypes.AddRange(videoFileTypes); allFileTypes.AddRange(audioFileTypes); allFileTypes.AddRange(ebooksFileTypes); allFileTypes.AddRange(subtitleFileTypes); allFileTypes.AddRange(torrentFileTypes); allFileTypes.AddRange(mobileFileTypes); allFileTypes.AddRange(archivesFileTypes); allFileTypes.AddRange(otherFileTypes);
+            /* This adds all the supported file types to one list (There must be a cleaner way, but oh well) */
+            allFileTypes.AddRange(videoFileTypes); allFileTypes.AddRange(audioFileTypes); allFileTypes.AddRange(bookFileTypes); allFileTypes.AddRange(subtitleFileTypes); allFileTypes.AddRange(torrentFileTypes); allFileTypes.AddRange(softwareFileTypes); allFileTypes.AddRange(otherFileTypes);
             selectedFilesFileType = allFileTypes; /* Set files filter to All */
             InitializeComponent(); /* Initialize */
             lblAboutChangelogVersion.Text = String.Format(lblAboutChangelogVersion.Text, Application.ProductVersion); /* Show this version in a Label on the About tab */
@@ -40,6 +38,7 @@ namespace WebCrunch
             frmSplash.ClientSize = ClientSize;
             frmSplash.BringToFront();
             frmSplash.Show();
+            cmboBoxHomeSearch.DropDownWidth = ControlExtensions.DropDownWidth(cmboBoxHomeSearch); /* Set search engine combobox to fit its contents */
             cmboBoxFilesSort.DropDownWidth = ControlExtensions.DropDownWidth(cmboBoxFilesSort); /* Set files sort combobox to fit its contents */
             Program.log.Info("Initialized");
         }
@@ -58,7 +57,7 @@ namespace WebCrunch
         /* Get URLs for databases */
         public static string urlOpenFiles = "https://dl.dropbox.com/s/charfmjveo2v1h3/open-files.json?dl=0";
         public static string urlTopSearches = "https://dl.dropbox.com/s/512qe4ogan92vea/top-searches.txt?dl=0";
-        public static string urlOpenDirectories = "https://raw.githubusercontent.com/ekkash/WebCrunch/master/api/open-directories.txt";
+        public static string urlOpenDirectories = "https://raw.githubusercontent.com/HerbL27/WebCrunch/master/api/open-directories.txt";
 
         /* Used directories */
         public static string pathRoot = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\WebCrunch\";
@@ -67,29 +66,29 @@ namespace WebCrunch
         public static string userDownloadsDirectory = KnownFolders.GetPath(KnownFolder.Downloads) + @"\";
 
         /* Update URLs */
-        public static string urlLatestVersion = "https://raw.githubusercontent.com/ekkash/WebCrunch/master/WebCrunch/current-version.txt";
-        public static string urlLatestRelease = "https://github.com/ekkash/WebCrunch/releases/latest";
-        public static string getUrlLatestUpdater(Version newVersion) { return "https://github.com/ekkash/WebCrunch/releases/download/" + newVersion.ToString() + "/Update.exe"; }
+        public static string urlLatestVersion = "https://raw.githubusercontent.com/HerbL27/WebCrunch/master/WebCrunch/current-version.txt";
+        public static string urlLatestRelease = "https://github.com/HerbL27/WebCrunch/releases/latest";
+        public static string getUrlLatestUpdater(Version newVersion) { return "https://github.com/HerbL27/WebCrunch/releases/download/" + newVersion.ToString() + "/Update.exe"; }
 
         /* Miscellaneous URLs */
-        public static string urlChangelog = "https://raw.githubusercontent.com/ekkash/WebCrunch/master/CHANGELOG.md";
-        public static string urlTermsOfUse = "https://raw.githubusercontent.com/ekkash/WebCrunch/master/TERMSOFUSE.md";
-        public static string urlPrivacyPolicy = "https://raw.githubusercontent.com/ekkash/WebCrunch/master/PRIVACYPOLICY.md";
-        public static string urlGitHubIssues = "https://github.com/ekkash/WebCrunch/issues/";
+        public static string urlChangelog = "https://raw.githubusercontent.com/HerbL27/WebCrunch/master/CHANGELOG.md";
+        public static string urlTermsOfUse = "https://raw.githubusercontent.com/HerbL27/WebCrunch/master/TERMSOFUSE.md";
+        public static string urlPrivacyPolicy = "https://raw.githubusercontent.com/HerbL27/WebCrunch/master/PRIVACYPOLICY.md";
+        public static string urlGitHubIssues = "https://github.com/HerbL27/WebCrunch/issues/";
 
         WebClient client = new WebClient(); // public reusable web client
 
         /* Share this app */
-        public string textMessage = "Hey%20guys%2C%20I%20found%20a%20brilliant%20way%20to%20find%20Direct%20download%20links%20for%20anything.";
+        public string shareMessage = "Hey%20guys%2C%20I%20found%20a%20brilliant%20way%20to%20find%20Direct%20download%20links%20for%20anything.";
 
         private void imgShareTwitter_Click(object sender, EventArgs e)
         {
-            Process.Start("https://twitter.com/intent/tweet?hashtags=WebCrunch&original_referer=https%3A%2F%2Fgithub.com/ekkash/WebCrunch%2F&ref_src=twsrc%5Etfw&text=" + textMessage + "&tw_p=tweetbutton&url=https%3A%2F%2Fgithub.com/ekkash/WebCrunch");
+            Process.Start("https://twitter.com/intent/tweet?hashtags=WebCrunch&original_referer=https%3A%2F%2Fgithub.com/HerbL27/WebCrunch%2F&ref_src=twsrc%5Etfw&text=" + shareMessage + "&tw_p=tweetbutton&url=https%3A%2F%2Fgithub.com/HerbL27/WebCrunch");
         }
 
         private void imgShareFacebook_Click(object sender, EventArgs e)
         {
-            Process.Start("https://facebook.com/sharer/sharer.php?app_id=248335808680372&kid_directed_site=0&sdk=joey&u=http%3A%2F%2Fgithub.com/ekkash/WebCrunch%2F&display=popup&ref=plugin&src=share_button");
+            Process.Start("https://facebook.com/sharer/sharer.php?app_id=248335808680372&kid_directed_site=0&sdk=joey&u=http%3A%2F%2Fgithub.com/HerbL27/WebCrunch%2F&display=popup&ref=plugin&src=share_button");
         }
 
         /* Form events */
@@ -97,7 +96,6 @@ namespace WebCrunch
         {
             if (e.CloseReason == CloseReason.UserClosing | e.CloseReason == CloseReason.ApplicationExitCall) {
                 Properties.Settings.Default.Save();
-
                 /* Delete Data directory */
                 if (Properties.Settings.Default.clearDataOnClose == true)
                     if (Directory.Exists(pathData))
@@ -116,7 +114,7 @@ namespace WebCrunch
         {
             Program.log.Info("Loading application");
 
-            loadSettings();
+            LoadSettings();
             currentTab = tabHome;
             currentTabTitle = titleHome;
 
@@ -147,14 +145,14 @@ namespace WebCrunch
         {
             Program.log.Info("Checking for database updates");
 
-            /* Checks if database file exists, if so whether they're the same size, and downloads the latest one if any of them returns false */
-            if (!FileExtensions.IsSizeEqual(urlOpenDirectories, "open-directories.txt")) {
+            /* Checks if database file exists at users data directory, if so whether they're the same size, and downloads the latest one if either returns false */
+            if (!FileExtensions.IsLocalAndServerFileSizeEqual(urlOpenDirectories, "open-directories.txt")) {
                 client.DownloadFile(new Uri(urlOpenDirectories), pathData + "open-directories.txt");
                 Program.log.Info("open-directories.txt updated");
             }
             dataOpenDirectories.AddRange(File.ReadAllLines(pathData + "open-directories.txt"));
 
-            if (!FileExtensions.IsSizeEqual(urlOpenFiles, "open-files.json")) {
+            if (!FileExtensions.IsLocalAndServerFileSizeEqual(urlOpenFiles, "open-files.json")) {
                 client.DownloadFile(new Uri(urlOpenFiles), pathData + "open-files.json");
                 Program.log.Info("open-files.json updated");
             }
@@ -162,7 +160,7 @@ namespace WebCrunch
             /* Adds all items in files list, except for the first one (It contains the database info) */
             foreach (var item in File.ReadAllLines(pathData + "open-files.json").Skip(1))
                 if (TextExtensions.IsValidJSON(item))
-                    dataOpenFiles.Add(JsonConvert.DeserializeObject<WebFile>(item));
+                    filesOpenDatabase.Add(JsonConvert.DeserializeObject<WebFile>(item));
 
             databaseInfo = File.ReadLines(pathData + "open-files.json").First(); /* Gets first line in database which contains info */
         }
@@ -239,9 +237,9 @@ namespace WebCrunch
 
         /* Declare new lists */
         public static List<string> dataOpenDirectories = new List<string>();
-        public static List<WebFile> dataOpenFiles = new List<WebFile>();
-        public static List<WebFile> dataLocalFiles = new List<WebFile>();
-        public static List<WebFile> dataBookmarkedFiles = new List<WebFile>();
+        public static List<WebFile> filesOpenDatabase = new List<WebFile>();
+        public static List<WebFile> filesLocal = new List<WebFile>();
+        public static List<WebFile> filesBookmarks = new List<WebFile>();
         public static string databaseInfo;
 
         /* Core Tabs */
@@ -260,7 +258,7 @@ namespace WebCrunch
 
         private void titleDiscover_ClickButtonArea(object sender, MouseEventArgs e)
         {
-            currentTabTitle = (CButton)sender; showHosts(); tab.SelectedTab = tabDiscover;
+            currentTabTitle = (CButton)sender; ShowHosts(); tab.SelectedTab = tabDiscover;
         }
 
         private void titleSubmit_ClickButtonArea(object sender, MouseEventArgs e)
@@ -270,7 +268,7 @@ namespace WebCrunch
 
         private void titleSettings_ClickButtonArea(object sender, MouseEventArgs e)
         {
-            loadSettings(); currentTabTitle = (CButton)sender; tab.SelectedTab = tabSettings;
+            LoadSettings(); currentTabTitle = (CButton)sender; tab.SelectedTab = tabSettings;
         }
 
         private void titleInformation_ClickButtonArea(object sender, MouseEventArgs e)
@@ -331,17 +329,17 @@ namespace WebCrunch
             try {
                 Program.log.Info("Attempting to get absolute total size of all files");
 
-                foreach (var jsonData in dataOpenFiles)
+                foreach (var jsonData in filesOpenDatabase)
                     if (jsonData.Size >= 0)
                         totalSize += jsonData.Size;
 
                 var lineCount = File.ReadLines(pathData + "open-directories.txt").Count();
-                lblHomeStatsFiles.Text = String.Format(lblHomeStatsFiles.Text, TextExtensions.GetFormattedNumber(dataOpenFiles.Count.ToString()), TextExtensions.BytesToString(totalSize), TextExtensions.GetFormattedNumber(lineCount.ToString()));
+                lblHomeStatsFiles.Text = String.Format(lblHomeStatsFiles.Text, TextExtensions.GetFormattedNumber(filesOpenDatabase.Count.ToString()), TextExtensions.BytesToString(totalSize), TextExtensions.GetFormattedNumber(lineCount.ToString()));
 
                 Program.log.Info("Total size of all files successful");
             }
             catch (Exception ex) {
-                lblHomeStatsFiles.Text = String.Format(lblHomeStatsFiles.Text, TextExtensions.GetFormattedNumber(dataOpenFiles.Count.ToString()), TextExtensions.BytesToString(totalSize), TextExtensions.GetFormattedNumber(dataOpenDirectories.Count.ToString()));
+                lblHomeStatsFiles.Text = String.Format(lblHomeStatsFiles.Text, TextExtensions.GetFormattedNumber(filesOpenDatabase.Count.ToString()), TextExtensions.BytesToString(totalSize), TextExtensions.GetFormattedNumber(dataOpenDirectories.Count.ToString()));
                 Program.log.Error("Unable to get absolute total size of all files", ex);
             }
 
@@ -350,10 +348,8 @@ namespace WebCrunch
                 /* Database Info */
                 if (TextExtensions.IsValidJSON(databaseInfo)) {
                     Program.log.Info("Attempting to get latest database update date");
-
-                    var dataJsonInfo = JsonConvert.DeserializeObject<Models.DatabaseInfo>(databaseInfo);
-                    if (TextExtensions.IsDateTime(dataJsonInfo.LastUpdated)) { lblHomeStatsDatabaseUpdated.Text = String.Format(lblHomeStatsDatabaseUpdated.Text, Convert.ToDateTime(dataJsonInfo.LastUpdated).ToShortDateString()); }
-
+                    var dataJsonInfo = JsonConvert.DeserializeObject<DatabaseInfo>(databaseInfo);
+                    lblHomeStatsDatabaseUpdated.Text = String.Format(lblHomeStatsDatabaseUpdated.Text, dataJsonInfo.LastUpdated.ToShortDateString());
                     Program.log.Info("Latest database update date successful");
                 }
             }
@@ -367,7 +363,7 @@ namespace WebCrunch
                 int itemCount = 0;
                 var addedHosts = new List<string>();
                 Program.log.Info("Attempting to get recently added files");
-                var copiedItems = new List<WebFile>(dataOpenFiles);
+                var copiedItems = new List<WebFile>(filesOpenDatabase);
                 copiedItems.Shuffle();
                 foreach (var jsonData in copiedItems.GetRange(2, 500))
                     if (DateTime.Today < jsonData.DateUploaded.Date.AddDays(14)) /* Check if file was uploaded in the last two weeks */
@@ -382,7 +378,7 @@ namespace WebCrunch
 
                 Program.log.Info("Recently added files successful");
             }
-            catch (Exception ex) { lblHeaderRecentlyAddedFiles.Visible = false; lineHomeRecentlyAddedFilesSplitter.Visible = false; dataGridRecentlyAddedFiles.Visible = false; Program.log.Error("Error getting recently added files", ex); } /* Error occurred, so hide controls/skip... */
+            catch (Exception ex) { lblHeaderRecentlyAddedFiles.Visible = false; splitterHeaderRecentlyAddedFiles.Visible = false; dataGridRecentlyAddedFiles.Visible = false; Program.log.Error("Error getting recently added files", ex); } /* Error occurred, so hide controls/skip... */
         }
 
         private void dataGridRecentlyAddedFiles_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -407,7 +403,7 @@ namespace WebCrunch
                 listTopSearches.Reverse();
                 int count = 0;
                 foreach (var tag in listTopSearches)
-                    if (count <= 44) {
+                    if (count <= 65) {
                         AddTopSearchTag(tag, count);
                         count++;
                     }
@@ -428,7 +424,7 @@ namespace WebCrunch
                 panelTopSearches.Controls.Add(a);
                 Program.log.Info("Top searches returned successful");
             }
-            catch (Exception ex) { lblHeaderTopSearches.Visible = false; lineHomeTopSearchesSplitter.Visible = false; panelTopSearches.Visible = false; Program.log.Error("Error getting top searches", ex); } /* Error occurred, so hide controls/skip... */
+            catch (Exception ex) { lblHeaderTopSearches.Visible = false; splitterHeaderTopSearches.Visible = false; panelTopSearches.Visible = false; Program.log.Error("Error getting top searches", ex); } /* Error occurred, so hide controls/skip... */
         }
 
         private void btnFileChef_Click(object Sender, EventArgs e)
@@ -474,7 +470,7 @@ namespace WebCrunch
         {
             var tagItem = Sender as CButton;
             txtSearchFilesHome.Text = tagItem.Text;
-            doSearchFilesFromHome();
+            DoSearchFilesFromHome();
         }
 
         private void btnHomeFileType_ClickButtonArea(object Sender, MouseEventArgs e)
@@ -490,38 +486,35 @@ namespace WebCrunch
             else if (cmboBoxHomeFileType.SelectedIndex == 0) selectedFilesFileType = allFileTypes;
             else if (cmboBoxHomeFileType.SelectedIndex == 1) selectedFilesFileType = videoFileTypes;
             else if (cmboBoxHomeFileType.SelectedIndex == 2) selectedFilesFileType = audioFileTypes;
-            else if (cmboBoxHomeFileType.SelectedIndex == 3) selectedFilesFileType = ebooksFileTypes;
+            else if (cmboBoxHomeFileType.SelectedIndex == 3) selectedFilesFileType = bookFileTypes;
             else if (cmboBoxHomeFileType.SelectedIndex == 4) selectedFilesFileType = subtitleFileTypes;
             else if (cmboBoxHomeFileType.SelectedIndex == 5) selectedFilesFileType = torrentFileTypes;
-            else if (cmboBoxHomeFileType.SelectedIndex == 6) selectedFilesFileType = mobileFileTypes;
-            else if (cmboBoxHomeFileType.SelectedIndex == 7) selectedFilesFileType = archivesFileTypes;
-            else if (cmboBoxHomeFileType.SelectedIndex == 8) selectedFilesFileType = otherFileTypes;
+            else if (cmboBoxHomeFileType.SelectedIndex == 6) selectedFilesFileType = softwareFileTypes;
+            else if (cmboBoxHomeFileType.SelectedIndex == 7) selectedFilesFileType = otherFileTypes;
         }
 
-        /* Files */
         /* Supported file extensions by type */
         public static List<string> allFileTypes = new List<string>();
         public static List<string> videoFileTypes = new List<string>() { "M2TS", "MP4", "MKV", "AVI", "MPEG", "MPG", "MOV" };
-        public static List<string> audioFileTypes = new List<string>() { "MP3", "WMA", "WAV", "M3U", "APE", "AIF", "MPA", "CDA" };
-        public static List<string> ebooksFileTypes = new List<string>() { "MOBI", "CBZ", "CBR", "CBC", "CHM", "EPUB", "FB2", "LIT", "LRF", "ODT", "PDF", "PRC", "PDB", "PML", "RB", "RTF", "TCR", "DOC", "DOCX" };
-        public static List<string> subtitleFileTypes = new List<string>() { "SRT", "SUB", "VTT" };
+        public static List<string> bookFileTypes = new List<string>() { "MOBI", "CBZ", "CBR", "CBC", "CHM", "EPUB", "FB2", "LIT", "LRF", "ODT", "PDF", "PRC", "PDB", "PML", "RB", "RTF", "TCR", "DOC", "DOCX" };
+        public static List<string> audioFileTypes = new List<string>() { "MP3", "WMA", "WAV", "M3U", "APE", "AIF", "MPA", "CDA", "AC3", "OGG", "FLAC", "M4A" };
+        public static List<string> softwareFileTypes = new List<string>() { "EXE", "VOB", "ZIP", "TAR", "RAR", "7Z", "ISO", "PKG", "TAR.GZ", "APK", "IPA", "APPX", "XAP" };
         public static List<string> torrentFileTypes = new List<string>() { "TORRENT" };
-        public static List<string> mobileFileTypes = new List<string>() { "APK", "IPA", "APPX", "XAP" };
-        public static List<string> archivesFileTypes = new List<string>() { "VOB", "ZIP", "RAR", "7Z", "ISO", "PKG", "TAR.GZ" };
-        public static List<string> otherFileTypes = new List<string>() { "EXE", "XML", "TXT", "SQL", "CSV" };
+        public static List<string> subtitleFileTypes = new List<string>() { "SRT", "SUB", "VTT" };
+        public static List<string> otherFileTypes = new List<string>() { "JSP", "PL", "PHP", "HTML", "ASPX", "XML", "TXT", "SQL", "CSV" };
 
         /* Filter Preferences */
-        public static List<WebFile> selectedFiles = dataOpenFiles;
+        public static List<WebFile> selectedFiles = filesOpenDatabase;
         public List<string> selectedFilesFileType = allFileTypes;
         public string selectedFilesHost = "";
 
-        private void loadLocalFiles()
+        private void LoadLocalFiles()
         {
             Program.log.Info("Loading local files");
 
-            dataLocalFiles.Clear();
+            filesLocal.Clear();
             foreach (var pathFile in Directory.GetFiles(userDownloadsDirectory))
-                dataLocalFiles.Add(new WebFile(
+                filesLocal.Add(new WebFile(
                     Path.GetExtension(pathFile).Replace(".", "").ToUpper(),
                     Path.GetFileNameWithoutExtension(pathFile),
                     new FileInfo(pathFile).Length,
@@ -537,13 +530,13 @@ namespace WebCrunch
         {
             Program.log.Info("Getting users bookmarks files");
 
-            dataBookmarkedFiles.Clear();
+            filesBookmarks.Clear();
             if (File.Exists(pathDataBookmarked))
                 using (StreamReader reader = new StreamReader(pathDataBookmarked))
                     while (!reader.EndOfStream)
                         try {
                             var jsonData = JsonConvert.DeserializeObject<Bookmark>(reader.ReadLine());
-                            dataBookmarkedFiles.Add(Database.FileInfoFromURL(jsonData.URL));
+                            filesBookmarks.Add(Database.FileInfoFromURL(jsonData.URL));
                         }
                         catch (Exception ex) {
                             Program.log.Error("Users saved files error", ex);
@@ -555,47 +548,42 @@ namespace WebCrunch
         /* Select file type */
         private void titleFilesAll_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            selectedFilesFileType = allFileTypes; SelectFilesTab(titleFilesAll); selectedFiles = dataOpenFiles; ShowFiles(selectedFiles);
+            selectedFilesFileType = allFileTypes; SelectFilesTab(titleFilesAll); selectedFiles = filesOpenDatabase; ShowFiles(selectedFiles);
         }
 
         private void titleFilesVideo_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            selectedFilesFileType = videoFileTypes; SelectFilesTab(titleFilesVideo); selectedFiles = dataOpenFiles; ShowFiles(selectedFiles);
+            selectedFilesFileType = videoFileTypes; SelectFilesTab(titleFilesVideo); selectedFiles = filesOpenDatabase; ShowFiles(selectedFiles);
         }
 
         private void titleFilesAudio_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            selectedFilesFileType = audioFileTypes; SelectFilesTab(titleFilesAudio); selectedFiles = dataOpenFiles; ShowFiles(selectedFiles);
+            selectedFilesFileType = audioFileTypes; SelectFilesTab(titleFilesAudio); selectedFiles = filesOpenDatabase; ShowFiles(selectedFiles);
         }
 
-        private void titleFilesEbooks_ClickButtonArea(object Sender, MouseEventArgs e)
+        private void titleFilesBooks_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            selectedFilesFileType = ebooksFileTypes; SelectFilesTab(titleFilesEbooks); selectedFiles = dataOpenFiles; ShowFiles(selectedFiles);
+            selectedFilesFileType = bookFileTypes; SelectFilesTab(titleFilesBooks); selectedFiles = filesOpenDatabase; ShowFiles(selectedFiles);
         }
 
         private void titleFilesSubtitles_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            selectedFilesFileType = subtitleFileTypes; SelectFilesTab(titleFilesSubtitles); selectedFiles = dataOpenFiles; ShowFiles(selectedFiles);
-        }
-
-        private void titleFilesMobile_ClickButtonArea(object Sender, MouseEventArgs e)
-        {
-            selectedFilesFileType = mobileFileTypes; SelectFilesTab(titleFilesMobile); selectedFiles = dataOpenFiles; ShowFiles(selectedFiles);
+            selectedFilesFileType = subtitleFileTypes; SelectFilesTab(titleFilesSubtitles); selectedFiles = filesOpenDatabase; ShowFiles(selectedFiles);
         }
 
         private void titleFilesTorrents_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            selectedFilesFileType = torrentFileTypes; SelectFilesTab(titleFilesTorrents); selectedFiles = dataOpenFiles; ShowFiles(selectedFiles);
+            selectedFilesFileType = torrentFileTypes; SelectFilesTab(titleFilesTorrents); selectedFiles = filesOpenDatabase; ShowFiles(selectedFiles);
         }
 
-        private void titleFilesArchives_ClickButtonArea(object Sender, MouseEventArgs e)
+        private void titleFilesSoftware_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            selectedFilesFileType = archivesFileTypes; SelectFilesTab(titleFilesArchives); selectedFiles = dataOpenFiles; ShowFiles(selectedFiles);
+            selectedFilesFileType = softwareFileTypes; SelectFilesTab(titleFilesSoftware); selectedFiles = filesOpenDatabase; ShowFiles(selectedFiles);
         }
 
         private void titleFilesOther_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            selectedFilesFileType = otherFileTypes; SelectFilesTab(titleFilesOther); selectedFiles = dataOpenFiles; ShowFiles(selectedFiles);
+            selectedFilesFileType = otherFileTypes; SelectFilesTab(titleFilesOther); selectedFiles = filesOpenDatabase; ShowFiles(selectedFiles);
         }
 
         private void titleFilesCustom_ClickButtonArea(object Sender, MouseEventArgs e)
@@ -603,17 +591,17 @@ namespace WebCrunch
             string getUserResponse = Microsoft.VisualBasic.Interaction.InputBox("File Type/Extensions (enter only one extension):", "Custom*", "e.g. MP4");
             string userResponse = getUserResponse.Replace(".", "");
             if (userResponse != "")
-                selectedFilesFileType = new List<string>() { userResponse.ToUpper() }; SelectFilesTab(titleFilesCustom); selectedFiles = dataOpenFiles; ShowFiles(selectedFiles);
+                selectedFilesFileType = new List<string>() { userResponse.ToUpper() }; SelectFilesTab(titleFilesCustom); selectedFiles = filesOpenDatabase; ShowFiles(selectedFiles);
         }
 
         private void titleFilesLocal_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            selectedFilesFileType = allFileTypes; SelectFilesTab(titleFilesLocal); loadLocalFiles(); selectedFiles = dataLocalFiles; ShowFiles(selectedFiles);
+            selectedFilesFileType = allFileTypes; SelectFilesTab(titleFilesLocal); LoadLocalFiles(); selectedFiles = filesLocal; ShowFiles(selectedFiles);
         }
 
-        private void titleFilesBookmarked_ClickButtonArea(object Sender, MouseEventArgs e)
+        private void titleFilesBookmarks_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            selectedFilesFileType = allFileTypes; SelectFilesTab(titleFilesBookmarked); selectedFiles = dataBookmarkedFiles; ShowFiles(selectedFiles);
+            selectedFilesFileType = allFileTypes; SelectFilesTab(titleFilesBookmarks); selectedFiles = filesBookmarks; ShowFiles(selectedFiles);
         }
 
         public void SelectFilesTab(CButton cbtn)
@@ -624,24 +612,22 @@ namespace WebCrunch
             titleFilesVideo.BorderColor = Color.Transparent;
             titleFilesAudio.ColorFillSolid = Color.Transparent;
             titleFilesAudio.BorderColor = Color.Transparent;
-            titleFilesEbooks.ColorFillSolid = Color.Transparent;
-            titleFilesEbooks.BorderColor = Color.Transparent;
+            titleFilesBooks.ColorFillSolid = Color.Transparent;
+            titleFilesBooks.BorderColor = Color.Transparent;
             titleFilesSubtitles.ColorFillSolid = Color.Transparent;
             titleFilesSubtitles.BorderColor = Color.Transparent;
             titleFilesTorrents.ColorFillSolid = Color.Transparent;
             titleFilesTorrents.BorderColor = Color.Transparent;
-            titleFilesMobile.ColorFillSolid = Color.Transparent;
-            titleFilesMobile.BorderColor = Color.Transparent;
-            titleFilesArchives.ColorFillSolid = Color.Transparent;
-            titleFilesArchives.BorderColor = Color.Transparent;
+            titleFilesSoftware.ColorFillSolid = Color.Transparent;
+            titleFilesSoftware.BorderColor = Color.Transparent;
             titleFilesCustom.ColorFillSolid = Color.Transparent;
             titleFilesCustom.BorderColor = Color.Transparent;
             titleFilesOther.ColorFillSolid = Color.Transparent;
             titleFilesOther.BorderColor = Color.Transparent;
             titleFilesLocal.ColorFillSolid = Color.Transparent;
             titleFilesLocal.BorderColor = Color.Transparent;
-            titleFilesBookmarked.ColorFillSolid = Color.Transparent;
-            titleFilesBookmarked.BorderColor = Color.Transparent;
+            titleFilesBookmarks.ColorFillSolid = Color.Transparent;
+            titleFilesBookmarks.BorderColor = Color.Transparent;
 
             cbtn.ColorFillSolid = Colors.uiColorOrange;
             cbtn.BorderColor = Colors.uiColorOrange;
@@ -668,7 +654,7 @@ namespace WebCrunch
         {
             Program.log.Info("Searching files started");
             imgSearch.Image = Properties.Resources.loader;
-            if (selectedFiles == dataBookmarkedFiles) { LoadBookmarkedFiles(); };
+            if (selectedFiles == filesBookmarks) { LoadBookmarkedFiles(); };
             BackGroundWorker.RunWorkAsync<List<WebFile>>(() => SearchFiles(dataFiles), (data) =>
             {
                 if (tabSearch.InvokeRequired) {
@@ -683,7 +669,8 @@ namespace WebCrunch
 
                     foreach (var jsonData in data) {
                         dataGridFiles.Rows.Add(jsonData.Type, jsonData.Name, TextExtensions.BytesToString(jsonData.Size), TextExtensions.GetTimeAgo(jsonData.DateUploaded), jsonData.Host, jsonData.URL);
-                        if (!(cmboBoxFilesHost.Items.Contains(jsonData.Host))) { cmboBoxFilesHost.Items.Add(jsonData.Host); }
+                        if (!(cmboBoxFilesHost.Items.Contains(jsonData.Host)))
+                            cmboBoxFilesHost.Items.Add(jsonData.Host);
                     }
 
                     stopWatch.Stop(); TimeSpan ts = stopWatch.Elapsed;
@@ -715,44 +702,38 @@ namespace WebCrunch
 
         public void SortFilesByName(string type = "ascending")
         {
-            if (type == "ascending") {
+            if (type == "ascending")
                 selectedFiles.Sort(delegate (WebFile x, WebFile y) {
                     return x.Name.CompareTo(y.Name);
                 });
-            }
-            else if (type == "descending") {
+            else if (type == "descending")
                 selectedFiles.Sort(delegate (WebFile x, WebFile y) {
                     return y.Name.CompareTo(x.Name);
                 });
-            }
         }
 
         public void SortFilesBySize(string type = "ascending")
         {
-            if (type == "ascending") {
+            if (type == "ascending")
                 selectedFiles.Sort(delegate (WebFile x, WebFile y) {
                     return x.Size.CompareTo(y.Size);
                 });
-            }
-            else if (type == "descending") {
+            else if (type == "descending")
                 selectedFiles.Sort(delegate (WebFile x, WebFile y) {
                     return y.Size.CompareTo(x.Size);
                 });
-            }
         }
 
         public void SortFilesByAge(string type = "ascending")
         {
-            if (type == "ascending") {
+            if (type == "ascending")
                 selectedFiles.Sort(delegate (WebFile x, WebFile y) {
                     return y.DateUploaded.CompareTo(x.DateUploaded);
-                });
-            }
-            else if (type == "descending") {
+                });            
+            else if (type == "descending")
                 selectedFiles.Sort(delegate (WebFile x, WebFile y) {
                     return x.DateUploaded.CompareTo(y.DateUploaded);
                 });
-            }
         }
 
         /* Show file details with the specified parameters */
@@ -766,6 +747,7 @@ namespace WebCrunch
             fileDetails.infoName.Text = File.Name;
             fileDetails.infoSize.Text = TextExtensions.BytesToString(File.Size);
             fileDetails.infoReferrer.Text = File.Host;
+
             /* Split parts of the url into a nice looking structure */
             var url = new Uri(File.URL);
             var directories = new StringBuilder(File.Host);
@@ -793,13 +775,13 @@ namespace WebCrunch
         private void txtSearchFiles_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter) {
-                doSearchFiles();
+                SearchFiles();
             }
         }
 
         private void imgSearch_Click(object sender, EventArgs e)
         {
-            doSearchFiles();
+            SearchFiles();
         }
 
         private void bgSearchFilesHome_ClickButtonArea(object Sender, MouseEventArgs e)
@@ -810,32 +792,54 @@ namespace WebCrunch
         private void txtSearchFilesHome_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
-                doSearchFilesFromHome();
+                DoSearchFilesFromHome();
         }
 
-        private void imgSearchHome_Click(object sender, EventArgs e)
+        private void btnSearchHome_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            doSearchFilesFromHome();
+            DoSearchFilesFromHome();
         }
 
-        public void doSearchFiles()
+        private void btnSearchHome_SideImageClicked(object Sender, MouseEventArgs e)
+        {
+            cmboBoxHomeSearch.DroppedDown = true;
+        }
+
+        public static string selectedFilesSearch = exploreUrlGoogle;
+
+        private void cmboBoxSearchHome_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmboBoxHomeSearch.SelectedIndex == 0) { selectedFilesSearch = exploreUrlGoogle; }
+            else if (cmboBoxHomeSearch.SelectedIndex == 1) { selectedFilesSearch = exploreUrlGoogol; }
+            else if (cmboBoxHomeSearch.SelectedIndex == 2) { selectedFilesSearch = exploreUrlStartpage; }
+            else if (cmboBoxHomeSearch.SelectedIndex == 3) { selectedFilesSearch = exploreUrlSearx; }
+
+            Process.Start(selectedFilesSearch + String.Format("{0} %2B({1}) %2Dinurl:(jsp|pl|php|html|aspx|htm|cf|shtml) intitle:index.of %2Dinurl:(listen77|mp3raid|mp3toss|mp3drug|index_of|index-of|wallywashis|downloadmana)", txtSearchFilesHome.Text, String.Join("|", selectedFilesFileType.ToArray()).ToLower()));
+        }
+
+        public static string exploreUrlGoogle = "https://google.com/search?q=";
+        public static string exploreUrlGoogol = "https://googol.warriordudimanche.net/?q=";
+        public static string exploreUrlStartpage = "https://startpage.com/do/dsearch?query=";
+        public static string exploreUrlSearx = "https://searx.me/?q=";
+
+        public void SearchFiles()
         {
             imgSearch.Image = Properties.Resources.loader; tab.SelectedTab = tabSearch; ShowFiles(selectedFiles);
         }
 
-        public void doSearchFilesFromHome()
+        public void DoSearchFilesFromHome()
         {
             txtSearchFiles.Text = txtSearchFilesHome.Text;
-            if (cmboBoxHomeFileType.SelectedIndex == -1) { selectedFilesFileType = allFileTypes; SelectFilesTab(titleFilesAll); selectedFiles = dataOpenFiles; tab.SelectedTab = tabSearch; ShowFiles(selectedFiles); }
-            else if (cmboBoxHomeFileType.SelectedIndex == 0) { selectedFilesFileType = allFileTypes; SelectFilesTab(titleFilesAll); selectedFiles = dataOpenFiles; tab.SelectedTab = tabSearch; ShowFiles(selectedFiles); }
-            else if (cmboBoxHomeFileType.SelectedIndex == 1) { selectedFilesFileType = videoFileTypes; SelectFilesTab(titleFilesVideo); selectedFiles = dataOpenFiles; tab.SelectedTab = tabSearch; ShowFiles(selectedFiles); }
-            else if (cmboBoxHomeFileType.SelectedIndex == 2) { selectedFilesFileType = audioFileTypes; SelectFilesTab(titleFilesAudio); selectedFiles = dataOpenFiles; tab.SelectedTab = tabSearch; ShowFiles(selectedFiles); }
-            else if (cmboBoxHomeFileType.SelectedIndex == 3) { selectedFilesFileType = ebooksFileTypes; SelectFilesTab(titleFilesEbooks); selectedFiles = dataOpenFiles; tab.SelectedTab = tabSearch; ShowFiles(selectedFiles); }
-            else if (cmboBoxHomeFileType.SelectedIndex == 4) { selectedFilesFileType = subtitleFileTypes; SelectFilesTab(titleFilesSubtitles); selectedFiles = dataOpenFiles; tab.SelectedTab = tabSearch; ShowFiles(selectedFiles); }
-            else if (cmboBoxHomeFileType.SelectedIndex == 5) { selectedFilesFileType = torrentFileTypes; SelectFilesTab(titleFilesTorrents); selectedFiles = dataOpenFiles; tab.SelectedTab = tabSearch; ShowFiles(selectedFiles); }
-            else if (cmboBoxHomeFileType.SelectedIndex == 6) { selectedFilesFileType = mobileFileTypes; SelectFilesTab(titleFilesMobile); selectedFiles = dataOpenFiles; tab.SelectedTab = tabSearch; ShowFiles(selectedFiles); }
-            else if (cmboBoxHomeFileType.SelectedIndex == 7) { selectedFilesFileType = archivesFileTypes; SelectFilesTab(titleFilesArchives); selectedFiles = dataOpenFiles; tab.SelectedTab = tabSearch; ShowFiles(selectedFiles); }
-            else if (cmboBoxHomeFileType.SelectedIndex == 8) { selectedFilesFileType = otherFileTypes; SelectFilesTab(titleFilesOther); selectedFiles = dataOpenFiles; tab.SelectedTab = tabSearch; ShowFiles(selectedFiles); }
+
+            if (cmboBoxHomeFileType.SelectedIndex == -1) { selectedFilesFileType = allFileTypes; SelectFilesTab(titleFilesAll); selectedFiles = filesOpenDatabase; tab.SelectedTab = tabSearch; ShowFiles(selectedFiles); }
+            else if (cmboBoxHomeFileType.SelectedIndex == 0) { selectedFilesFileType = allFileTypes; SelectFilesTab(titleFilesAll); selectedFiles = filesOpenDatabase; tab.SelectedTab = tabSearch; ShowFiles(selectedFiles); }
+            else if (cmboBoxHomeFileType.SelectedIndex == 1) { selectedFilesFileType = videoFileTypes; SelectFilesTab(titleFilesVideo); selectedFiles = filesOpenDatabase; tab.SelectedTab = tabSearch; ShowFiles(selectedFiles); }
+            else if (cmboBoxHomeFileType.SelectedIndex == 2) { selectedFilesFileType = audioFileTypes; SelectFilesTab(titleFilesAudio); selectedFiles = filesOpenDatabase; tab.SelectedTab = tabSearch; ShowFiles(selectedFiles); }
+            else if (cmboBoxHomeFileType.SelectedIndex == 3) { selectedFilesFileType = bookFileTypes; SelectFilesTab(titleFilesBooks); selectedFiles = filesOpenDatabase; tab.SelectedTab = tabSearch; ShowFiles(selectedFiles); }
+            else if (cmboBoxHomeFileType.SelectedIndex == 4) { selectedFilesFileType = subtitleFileTypes; SelectFilesTab(titleFilesSubtitles); selectedFiles = filesOpenDatabase; tab.SelectedTab = tabSearch; ShowFiles(selectedFiles); }
+            else if (cmboBoxHomeFileType.SelectedIndex == 5) { selectedFilesFileType = torrentFileTypes; SelectFilesTab(titleFilesTorrents); selectedFiles = filesOpenDatabase; tab.SelectedTab = tabSearch; ShowFiles(selectedFiles); }
+            else if (cmboBoxHomeFileType.SelectedIndex == 7) { selectedFilesFileType = softwareFileTypes; SelectFilesTab(titleFilesSoftware); selectedFiles = filesOpenDatabase; tab.SelectedTab = tabSearch; ShowFiles(selectedFiles); }
+            else if (cmboBoxHomeFileType.SelectedIndex == 8) { selectedFilesFileType = otherFileTypes; SelectFilesTab(titleFilesOther); selectedFiles = filesOpenDatabase; tab.SelectedTab = tabSearch; ShowFiles(selectedFiles); }
         }
 
         /* Sort Files */
@@ -857,7 +861,7 @@ namespace WebCrunch
             else if (cmboBoxFilesSort.SelectedIndex == 6) SortFilesByAge("descending");
 
             var startText = btnFilesSort.Text.Split(':');
-            btnFilesSort.Text = startText[0] + ": " + cmboBoxFilesSort.SelectedItem.ToString();
+            btnFilesSort.Text = startText[0] + ": " + cmboBoxFilesSort.GetItemText(cmboBoxFilesSort.SelectedItem);
             Font myFont = new Font(btnFilesSort.Font.FontFamily, btnFilesSort.Font.Size);
             SizeF mySize = btnFilesSort.CreateGraphics().MeasureString(btnFilesSort.Text, myFont);
             panelFilesSort.Width = (((int)(Math.Round(mySize.Width, 0))) + 26);
@@ -880,7 +884,7 @@ namespace WebCrunch
         {
             imgSearch.Image = Properties.Resources.loader;
             var startText = btnFilesHost.Text.Split(':');
-            btnFilesHost.Text = startText[0] + ": " + cmboBoxFilesHost.SelectedItem.ToString();
+            btnFilesHost.Text = startText[0] + ": " + cmboBoxFilesHost.GetItemText(cmboBoxFilesHost.SelectedItem);
             var myFont = new Font(btnFilesHost.Font.FontFamily, this.btnFilesHost.Font.Size);
             var mySize = btnFilesHost.CreateGraphics().MeasureString(btnFilesHost.Text, myFont);
             panelFilesHost.Width = (((int)(Math.Round(mySize.Width, 0))) + 26);
@@ -898,13 +902,13 @@ namespace WebCrunch
         }
 
         delegate void loadHostsCallBack();
-        void showHosts()
+        private void ShowHosts()
         {
             Program.log.Info("Attempting to load and file hosts/servers");
 
-            BackGroundWorker.RunWorkAsync<List<string>>(() => getFileHosts(), (data) => {
+            BackGroundWorker.RunWorkAsync<List<string>>(() => GetFileHosts(), (data) => {
                 if (tabDiscover.InvokeRequired) {
-                    loadHostsCallBack b = new loadHostsCallBack(showHosts);
+                    loadHostsCallBack b = new loadHostsCallBack(ShowHosts);
                     Invoke(b, new object[] { });
                 }
                 else {
@@ -924,7 +928,7 @@ namespace WebCrunch
         }
 
         object loadHostsLock = new object();
-        List<string> getFileHosts()
+        private List<string> GetFileHosts()
         {
             lock (loadHostsLock) {
                 List<string> urls = new List<string>();
@@ -943,7 +947,8 @@ namespace WebCrunch
                 if (!Path.HasExtension(txtSubmitLink.Text)) 
                     if (Uri.IsWellFormedUriString(txtSubmitLink.Text, UriKind.Absolute)) {
                         string formattedText = txtSubmitLink.Text;
-                        if (!txtSubmitLink.Text.EndsWith("/")) { formattedText = txtSubmitLink.Text + "/"; }
+                        if (!txtSubmitLink.Text.EndsWith("/"))
+                            formattedText = txtSubmitLink.Text + "/";
                         ReportTemplates.SubmitLink(formattedText); txtSubmitLink.Text = "";
                     }
                     else MessageBox.Show(this, "This isn't a public web directory.");                
@@ -958,36 +963,35 @@ namespace WebCrunch
 
         private void btnAboutTermsOfUse_Click(object sender, EventArgs e)
         {
-            var lbl = sender as Label; showInfo(lbl.Text, urlTermsOfUse);
+            var lbl = sender as Label; ShowInfo(lbl.Text, urlTermsOfUse);
         }
 
         private void btnAboutPrivacyPolicy_Click(object sender, EventArgs e)
         {
-            var lbl = sender as Label; showInfo(lbl.Text, urlPrivacyPolicy);
+            var lbl = sender as Label; ShowInfo(lbl.Text, urlPrivacyPolicy);
         }
 
         private void lblAboutChangelogVersion_Click(object sender, EventArgs e)
         {
-            var lbl = sender as Label; showInfo(lbl.Text, urlChangelog);
+            var lbl = sender as Label; ShowInfo(lbl.Text, urlChangelog);
         }
 
-        public void showInfo(string Title, string URL)
+        public void ShowInfo(string Title, string URL)
         {
             DataDialog frmInfo = new DataDialog {
                 Text = Title
             };
 
             using (var stream = client.OpenRead(URL))
-            using (var reader = new StreamReader(stream)) {
+            using (var reader = new StreamReader(stream))
                 frmInfo.dataInfo.Text = reader.ReadToEnd();
-            }
 
             frmInfo.MaximumSize = new Size(frmInfo.MaximumSize.Width, this.Height - 100);
             frmInfo.ShowDialog(form);
         }
 
         /* Settings tab */
-        public void loadSettings()
+        public void LoadSettings()
         {
             /* Set UI Properties */
             chkSettingsClearData.Checked = Properties.Settings.Default.clearDataOnClose;
@@ -1007,24 +1011,10 @@ namespace WebCrunch
         {
             Properties.Settings.Default.clearDataOnClose = false;
             Thread.Sleep(500);
-            loadSettings();
+            LoadSettings();
             Thread.Sleep(500);
 
             Program.log.Info("Successfully restored all user settings");
-        }
-
-        Bitmap tmpImageSearch;
-        private void imgSearchHome_MouseEnter(object sender, EventArgs e)
-        {
-            PictureBox ctrl = sender as PictureBox;
-            tmpImageSearch = (Bitmap)ctrl.Image;
-            ctrl.Image = ImageExtensions.ChangeColor(tmpImageSearch, Colors.uiColorOrange);
-        }
-
-        private void imgSearchHome_MouseLeave(object sender, EventArgs e)
-        {
-            PictureBox ctrl = sender as PictureBox;
-            ctrl.Image = tmpImageSearch;
         }
     }
 }

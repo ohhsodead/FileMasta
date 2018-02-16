@@ -99,6 +99,9 @@
     <Compile Include="Controls\ctrlTitleButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Controls\ctrlTitleFileType.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Extensions\Colors.cs" />
     <Compile Include="Controls\FileDetails.cs">
       <SubType>UserControl</SubType>
@@ -162,18 +165,6 @@
     <EmbeddedResource Include="Controls\FileDetails.resx">
       <DependentUpon>FileDetails.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\SplashScreen.cs.resx">
-      <DependentUpon>SplashScreen.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\SplashScreen.de.resx">
-      <DependentUpon>SplashScreen.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\SplashScreen.es.resx">
-      <DependentUpon>SplashScreen.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\SplashScreen.fr.resx">
-      <DependentUpon>SplashScreen.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Controls\SplashScreen.resx">
       <DependentUpon>SplashScreen.cs</DependentUpon>
     </EmbeddedResource>
@@ -182,9 +173,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\DataDialog.resx">
       <DependentUpon>DataDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.aa.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -316,7 +304,6 @@
     <None Include="Resources\chevron-left.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Languages\" />
     <Folder Include="UI\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

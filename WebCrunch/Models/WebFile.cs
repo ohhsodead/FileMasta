@@ -11,7 +11,7 @@ namespace Models
         public string Type { get; set; }
         public string Name { get; set; }
         public long Size { get; set; } = 0;
-        public DateTime DateUploaded { get; set; } = default(DateTime);
+        public DateTime DateUploaded { get; set; } = DateTime.MinValue;
         public string Host { get; set; }
         public string URL { get; set; }
 

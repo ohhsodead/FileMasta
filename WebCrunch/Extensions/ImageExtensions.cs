@@ -1,7 +1,9 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Net;
+using WebCrunch;
 
 namespace Extensions
 {
@@ -12,7 +14,7 @@ namespace Extensions
         /// </summary>
         /// <param name="url"></param>
         /// <returns></returns>
-        public static Bitmap LoadPicture(string url)
+        public static Bitmap LoadPictureFromURL(string url)
         {
             HttpWebRequest wreq;
             HttpWebResponse wresp;
@@ -78,21 +80,24 @@ namespace Extensions
         /// <returns></returns>
         public static Bitmap ChangeColor(Bitmap scrBitmap, Color newColor)
         {
-            Color actualColor;
-            //make an empty bitmap the same size as scrBitmap
-            Bitmap newBitmap = new Bitmap(scrBitmap.Width, scrBitmap.Height);
-            for (int i = 0; i < scrBitmap.Width; i++)
-                for (int j = 0; j < scrBitmap.Height; j++)
-                {
-                    //get the pixel from the scrBitmap image
-                    actualColor = scrBitmap.GetPixel(i, j);
-                    // > 150 because.. Images edges can be of low pixel colr. if we set all pixel color to new then there will be no smoothness left.
-                    if (actualColor.A > 150)
-                        newBitmap.SetPixel(i, j, newColor);
-                    else
-                        newBitmap.SetPixel(i, j, actualColor);
-                }
-            return newBitmap;
+            try
+            {
+                Color actualColor;
+                //make an empty bitmap the same size as scrBitmap
+                Bitmap newBitmap = new Bitmap(scrBitmap.Width, scrBitmap.Height);
+                for (int i = 0; i < scrBitmap.Width; i++)
+                    for (int j = 0; j < scrBitmap.Height; j++)
+                    {
+                        //get the pixel from the scrBitmap image
+                        actualColor = scrBitmap.GetPixel(i, j);
+                        // > 150 because.. Images edges can be of low pixel colr. if we set all pixel color to new then there will be no smoothness left.
+                        if (actualColor.A > 150)
+                            newBitmap.SetPixel(i, j, newColor);
+                        else
+                            newBitmap.SetPixel(i, j, actualColor);
+                    }
+                return newBitmap;
+            } catch (Exception ex) { Program.log.Error("Error changing image colour", ex); return null; }
         }
     }
 }

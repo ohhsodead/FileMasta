@@ -29,21 +29,27 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ErrorInfo));
             this.titleStatus = new System.Windows.Forms.Label();
             this.btnRestart = new Controls.CtrlButton();
             this.SuspendLayout();
             // 
             // titleStatus
             // 
-            resources.ApplyResources(this.titleStatus, "titleStatus");
+            this.titleStatus.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.titleStatus.BackColor = System.Drawing.Color.Transparent;
+            this.titleStatus.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
             this.titleStatus.ForeColor = System.Drawing.Color.Silver;
+            this.titleStatus.Location = new System.Drawing.Point(60, 0);
             this.titleStatus.Name = "titleStatus";
+            this.titleStatus.Size = new System.Drawing.Size(341, 155);
+            this.titleStatus.TabIndex = 0;
+            this.titleStatus.Text = "Unable to connect to the the Internet";
+            this.titleStatus.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // btnRestart
             // 
-            resources.ApplyResources(this.btnRestart, "btnRestart");
+            this.btnRestart.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnRestart.BackColor = System.Drawing.Color.Transparent;
             this.btnRestart.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(105)))), ((int)(((byte)(26)))));
             this.btnRestart.ColorFillSolid = System.Drawing.Color.Transparent;
@@ -57,22 +63,31 @@
             this.btnRestart.DimFactorClick = 0;
             this.btnRestart.DimFactorHover = 0;
             this.btnRestart.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.btnRestart.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.btnRestart.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(105)))), ((int)(((byte)(26)))));
             this.btnRestart.ImageIndex = 0;
+            this.btnRestart.Location = new System.Drawing.Point(197, 208);
+            this.btnRestart.Margin = new System.Windows.Forms.Padding(0, 3, 6, 3);
+            this.btnRestart.MaximumSize = new System.Drawing.Size(1000, 30);
+            this.btnRestart.MinimumSize = new System.Drawing.Size(0, 30);
             this.btnRestart.Name = "btnRestart";
             this.btnRestart.ShowFocus = CButtonLib.CButton.eFocus.None;
+            this.btnRestart.Size = new System.Drawing.Size(66, 30);
+            this.btnRestart.TabIndex = 2;
+            this.btnRestart.Text = "Restart";
             this.btnRestart.TextShadowShow = false;
             this.btnRestart.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnRestart_ClickButtonArea);
             // 
             // ErrorInfo
             // 
-            resources.ApplyResources(this, "$this");
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.btnRestart);
             this.Controls.Add(this.titleStatus);
             this.ForeColor = System.Drawing.Color.White;
             this.Name = "ErrorInfo";
+            this.Size = new System.Drawing.Size(460, 361);
             this.ResumeLayout(false);
 
         }

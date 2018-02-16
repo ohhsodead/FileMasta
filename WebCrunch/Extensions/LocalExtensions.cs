@@ -10,7 +10,7 @@ namespace Extensions
     class LocalExtensions
     {
         /// <summary>
-        /// Check for internet connection
+        /// Checks for internet connection by attempting to connect to Google.com
         /// </summary>
         /// <returns></returns>
         public static bool CheckForInternetConnection()

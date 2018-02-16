@@ -38,9 +38,9 @@ namespace Controls
         {
             /* Shows appropriate Bookmarks button text */
             if (!Bookmarked.IsBookmarked(currentFile.URL))
-                ControlExtensions.ChangeControlText(btnBookmarkFile, "Add to Bookmarks");            
+                ControlExtensions.SetControlText(btnBookmarkFile, "Add to Bookmarks");            
             else
-                ControlExtensions.ChangeControlText(btnBookmarkFile, "Remove from Bookmarks");            
+                ControlExtensions.SetControlText(btnBookmarkFile, "Remove from Bookmarks");            
 
             /* Support media players installed on users machine */
             VLCToolStripMenuItem.Visible = File.Exists(MainForm.pathVLC);
@@ -59,7 +59,7 @@ namespace Controls
                 btnRequestFileSize.Visible = false;
 
             /* Add subtitle file to be played when opening external VLC */
-            if (FileExtensions.HasExistingSubtitles(currentFile.URL) == true) /* If users downloads folder contains a subtitle file matching web file name */
+            if (FileExtensions.HasExistingLocalSubtitles(currentFile.URL) == true) /* If users downloads folder contains a subtitle file matching web file name */
                 infoFileSubtitles = MainForm.userDownloadsDirectory + Path.GetFileNameWithoutExtension(currentFile.URL) + ".srt";
             else
                 infoFileSubtitles = null;
@@ -228,11 +228,11 @@ namespace Controls
         {
             if (Bookmarked.IsBookmarked(currentFile.URL)) {
                 Bookmarked.UnsaveFile(currentFile.URL);
-                ControlExtensions.ChangeControlText(btnBookmarkFile, "Add to Bookmarks");
+                ControlExtensions.SetControlText(btnBookmarkFile, "Add to Bookmarks");
             }
             else {
                 Bookmarked.SaveFile(currentFile.URL);
-                ControlExtensions.ChangeControlText(btnBookmarkFile, "Remove from Bookmarks");
+                ControlExtensions.SetControlText(btnBookmarkFile, "Remove from Bookmarks");
             }
         }
 

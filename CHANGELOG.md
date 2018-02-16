@@ -1,3 +1,14 @@
+## 0.2.15.2
+- Updated UI
+- Scroll through search results in the details page
+- Added five randomly-generated recently added files to Home tab
+- Re-added external search engines
+- Changed file categories
+- Fixed issue causing Bookmarks not loading if one was no longer in the database
+- Removed languages, working on something easier for implementing new languages
+- Various improvements to code
+- Major fixes and improvements to web crawler
+
 ## 0.2.15.1
 - UI changes
 - Improved stability and performance
