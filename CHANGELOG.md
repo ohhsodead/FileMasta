@@ -1,79 +1,74 @@
 ## 0.2.15.1
-- UI changes
-- Improved stability and performance
+- Updates to the user interface
+- Improved performance and overall stability
 - Added auto updater (beta)
-- Increased number of top searches
-- Removed external search engines
-- Renamed 'Saved' to 'Bookmarked'
-- Fixed some bugs, including #81 and #82
+- Increased overall number of top searches shown
+- Removed external search engines, we're working on a multiple search option instead
+- Renamed 'Saved' files to 'Bookmarked' files
+- Fixed some minor bugs, including #81 and #82
 
 ## 0.2.15.0
-- Refurbished the entire UI
-- Improved logging/code
-- Enhanced overall functionality
-- Added sort by file size (#79) 
-- Added sort by file age
+- Refurbished the entire UI (user interface)
+- Enhanced functionality and performance
+- Improved app logging, using log4net now
+- Added sort files by size (#79) and date added
 - Fixed bugs
 
 ## 0.2.14.8
-- Improved UI
-- Renamed Files tab to Search
-- Database improvements
-- Several fixes
+- UI fixes
+- Web crawler database improvements
+- Several bug fixes
 
 ## 0.2.14.7
-- Responsive UI throughout
-- Code improvements
-- Added code/data validations
-- Fixed #68, #69, #70, #71,, #74, #75
-- Deflated Installer
-- Added support for Windows XP, Vista and Servers (2008-2012)
+- Improved UI responsiveness
+- Overall back-end code improvements
+- Added several data validations, as well as default variables
+- Fixed #68, #69, #70, #71, #74, #75
+- Deflated Installer for quicker downloads
+- Added support for Windows XP, Vista and Servers (2008-2012) to the Installer
 
 ## 0.2.14.6
-- Renamed project
+- Renamed project to WebCrunch
 
 ## 0.2.14.5
-- Somewhat responsive UI, to-do consistency
+- Somewhat responsive UI, to-do: consistency
 - Various code improvements
-- Fixed #65, #66 (hopefully)
+- Fixed #65, #66 (null values caused by DateTime)
 
 ## 0.2.14.4
 - Fixed total database file size
 
 ## 0.2.14.3
-- Improved UI, a lot more smooth and consistent (Dark UI)
-- Added Custom* Files section
-- Added 'Loading stuck?' button to splash screen, workaround for #64
+- Improved UI, smoother and consistent (dark elements)
+- Added Custom* Files section to search for specific file types
+- Added 'Loading stuck?' button to splash screen, workaround for long startups (#64)
 - Added search time in seconds
 - Renamed 'About' tab to 'Information'
-- Bug fixes
+- Several bug fixes
 
 ## 0.2.14.2
-- Improved UI
-- Added Info to database
-- Fixed data form not showing in parent
-- Fixed overall total size
-- Some code changes
+- Improvements UI elements
+- Added core database info
+- Fixed popup dialog not showing in parent form
+- Fixed total indexed files size
 
 ## 0.2.14.1
-- Improved UI
 - Added Files/Directories/Database stats
 - Added latest database update date
 - Added external search engines
 - Added Privacy Policy
 - Added Terms of Use
 - Added Change Log
-- Fixed #63, temporarily #62 
+- Fixed #63, (temporarily) #62 
 
 ## 0.2.14.0
 - Improved form/button UI consistency
 - Added Home tab
 - Added Top Search Results (Powered by FileChef.com)
-- Added Share WebCrunch on Facebook/Twitter
+- Added Share project on Facebook/Twitter
 - Moved latest version text to DropBox
 
 ## 0.2.13.0
-- Renamed project to 'WebCrunch'
 - Added localization strings
 - Bug fixes
 
