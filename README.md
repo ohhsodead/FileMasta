@@ -18,7 +18,7 @@ All web addresses this app uses for indexing are submitted by users only, our cr
 
 We host no content, we provide only access to already available files in a same way Google and other search engines do.
 
-[![Report a bug](http://i.imgur.com/xSpw482.png)](https://github.com/HerbL27/WebCrunch/issues/new) [![Feature request](http://i.imgur.com/mFO0OuX.png)](http://feathub.com/HerbL27/WebCrunch)
+[![Report a bug](http://i.imgur.com/xSpw482.png)](https://github.com/HerbL27/WebCrunch/issues/new) [![Feature request](http://i.imgur.com/mFO0OuX.png)](http://feathub.com/ekkash/WebCrunch)
 
 ## Latest Build
 WebCrunch 2.15.1
