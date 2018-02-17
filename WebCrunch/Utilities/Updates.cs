@@ -35,7 +35,7 @@ namespace Utilities
             catch (Exception ex) {
                 Program.log.Error("Unable to update", ex);
                 MessageBox.Show("There was an error checking for update. You will be directed to the latest available version download page.");
-                Process.Start(MainForm.urlLatestRelease);
+                Process.Start(MainForm.urlGitHub + "releases/latest");
                 Application.Exit();
             }
         }

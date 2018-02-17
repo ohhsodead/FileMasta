@@ -67,14 +67,13 @@ namespace WebCrunch
 
         /* Update URLs */
         public static string urlLatestVersion = "https://raw.githubusercontent.com/HerbL27/WebCrunch/master/WebCrunch/current-version.txt";
-        public static string urlLatestRelease = "https://github.com/HerbL27/WebCrunch/releases/latest";
-        public static string getUrlLatestUpdater(Version newVersion) { return "https://github.com/HerbL27/WebCrunch/releases/download/" + newVersion.ToString() + "/Update.exe"; }
+        public static string getUrlLatestUpdater(Version newVersion) { return urlGitHub + "releases/download/" + newVersion.ToString() + "/Update.exe"; }
 
         /* Miscellaneous URLs */
         public static string urlChangelog = "https://raw.githubusercontent.com/HerbL27/WebCrunch/master/CHANGELOG.md";
         public static string urlTermsOfUse = "https://raw.githubusercontent.com/HerbL27/WebCrunch/master/TERMSOFUSE.md";
         public static string urlPrivacyPolicy = "https://raw.githubusercontent.com/HerbL27/WebCrunch/master/PRIVACYPOLICY.md";
-        public static string urlGitHubIssues = "https://github.com/HerbL27/WebCrunch/issues/";
+        public static string urlGitHub = "https://github.com/HerbL27/WebCrunch/";
 
         WebClient client = new WebClient(); // public reusable web client
 
@@ -958,7 +957,7 @@ namespace WebCrunch
         /* About tab */
         private void lblAboutReportIssue_Click(object sender, EventArgs e)
         {
-            Process.Start(urlGitHubIssues + "new");
+            Process.Start(urlGitHub + "issues/new");
         }
 
         private void btnAboutTermsOfUse_Click(object sender, EventArgs e)
