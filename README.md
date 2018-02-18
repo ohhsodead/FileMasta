@@ -4,7 +4,7 @@
   WebCrunch
 </h1>
 
-<h3 align="center">Search the web for videos, audios, eBooks and much more </h3>
+<h3 align="center">Search the web for video, music, books, software, games, subtitles and much more</h3>
 <div align="center">
 </div>
 <br />
