@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Models
+namespace WebCrunch.Models
 {
     /// <summary>
     /// Represents a Web File

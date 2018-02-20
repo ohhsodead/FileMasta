@@ -1,7 +1,8 @@
-﻿using Models;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.IO;
+using WebCrunch.Models;
+using WebCrunch.Utilities;
 
 namespace WebCrunch.Bookmarks
 {

@@ -1,4 +1,4 @@
-﻿namespace Models
+﻿namespace WebCrunch.Models
 {
     /// <summary>
     /// Represents a Bookmark class

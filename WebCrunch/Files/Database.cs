@@ -1,19 +1,18 @@
-﻿using Extensions;
-using Models;
-using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.IO;
 using WebCrunch;
+using WebCrunch.Extensions;
+using WebCrunch.Models;
 
-namespace Utilities
+namespace WebCrunch.Files
 {
     class Database
     {
         /// <summary>
-        /// Get file info from local database
+        /// Get web file info from internal database, or creates a new object
         /// </summary>
         /// <param name="URL"></param>
-        /// <returns></returns>
+        /// <returns>WebFile object</returns>
         public static WebFile FileInfoFromURL(string URL)
         {
             /* Checks loaded files for a matching URL and returns the Web File object */

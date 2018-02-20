@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading;
 
-namespace Extensions
+namespace WebCrunch.Extensions
 {
     class TextExtensions
     {
@@ -16,7 +16,7 @@ namespace Extensions
         /// <returns></returns>
         public static string[] GetWords(string input)
         {
-            MatchCollection matches = Regex.Matches(input, @"\b[\w']*\b");
+            var matches = Regex.Matches(input, @"\b[\w']*\b");
 
             var words = from m in matches.Cast<Match>()
                         where !string.IsNullOrEmpty(m.Value)
@@ -52,8 +52,8 @@ namespace Extensions
         /// <returns></returns>
         public static string Random(ICollection<string> Items)
         {
-            Random Rndm = new Random();
-            List<string> StringList = new List<string>(Items);
+            var Rndm = new Random();
+            var StringList = new List<string>(Items);
             return StringList[Rndm.Next(0, Items.Count)];
         }
 

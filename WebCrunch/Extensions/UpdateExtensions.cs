@@ -5,7 +5,7 @@ using System.Net;
 using System.Windows.Forms;
 using WebCrunch;
 
-namespace Utilities
+namespace WebCrunch.Extensions
 {
     class Updates
     {
@@ -26,7 +26,7 @@ namespace Utilities
                     if (curVersion.CompareTo(newVersion) < 0) {
                         Program.log.Info(@"Update found, starting Update.exe");
                         MessageBox.Show(MainForm.form, "WebCrunch " + newVersion.ToString() + " is ready to be installed.", "WebCrunch - Update Available");
-                        client.DownloadFile(MainForm.getUrlLatestUpdater(newVersion), MainForm.userDownloadsDirectory + @"\Update.exe");
+                        client.DownloadFile(MainForm.GetUrlLatestUpdater(newVersion), MainForm.userDownloadsDirectory + @"\Update.exe");
                         Process.Start(MainForm.userDownloadsDirectory + @"\Update.exe");
                         Application.Exit();
                     }

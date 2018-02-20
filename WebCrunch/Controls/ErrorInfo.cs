@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace Controls
+namespace WebCrunch.Controls
 {
     public partial class ErrorInfo : UserControl
     {

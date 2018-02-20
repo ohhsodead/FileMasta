@@ -3,9 +3,9 @@ using System.Drawing;
 using System.Windows.Forms;
 using CButtonLib;
 using WebCrunch;
-using Extensions;
+using WebCrunch.Extensions;
 
-namespace Controls
+namespace WebCrunch.Controls
 {
     public partial class CtrlTitleButton : CButton
     {

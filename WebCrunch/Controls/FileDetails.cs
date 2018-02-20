@@ -5,15 +5,16 @@ using System.Text;
 using System.Windows.Forms;
 using System.Diagnostics;
 using System.IO;
-using WebCrunch;
-using Dialogs;
-using Extensions;
-using WebCrunch.Bookmarks;
-using Utilities;
 using CButtonLib;
-using Models;
+using WebCrunch.Bookmarks;
+using WebCrunch.Models;
+using WebCrunch.Extensions;
+using WebCrunch.GitHub;
+using WebCrunch.Asynchronous;
+using WebCrunch.Dialogs;
+using WebCrunch.Files;
 
-namespace Controls
+namespace WebCrunch.Controls
 {
     public partial class FileDetails : UserControl
     {
@@ -106,11 +107,11 @@ namespace Controls
         private void cmboboxReportFile_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmboboxReportFile.SelectedIndex == 0)
-                ReportTemplates.OpenBrokenFileIssue(currentFile.URL);
+                OpenLink.BrokenFileIssue(currentFile);
             else if (cmboboxReportFile.SelectedIndex == 1)
                 MessageBox.Show(this, "Please write an email to the application administrator with your appropriate details at bettercodes1@gmail.com\n\n Thank you.");
             else if (cmboboxReportFile.SelectedIndex == 2)
-                ReportTemplates.OpenPoorQualityFileIssue(currentFile.URL);
+                OpenLink.PoorQualityFileIssue(currentFile);
         }
 
         private void btnShareFile_ClickButtonArea(object Sender, MouseEventArgs e)
@@ -127,7 +128,7 @@ namespace Controls
             else if (cmboBoxShareFile.SelectedIndex == 2)
                 Process.Start("https://plus.google.com/share?url=" + currentFile.URL);
             else if (cmboBoxShareFile.SelectedIndex == 3)
-                Process.Start("http://reddit.com/submit?url=" + currentFile.URL + "&title=" + Path.GetFileNameWithoutExtension(new Uri(currentFile.URL).LocalPath) + "%20%5BWebCrunch%5D");
+                Process.Start("http://reddit.com/submit?url=" + currentFile.URL + "&title=" + currentFile.Name + "%20%5BWebCrunch%5D");
             else if (cmboBoxShareFile.SelectedIndex == 4)
                 Process.Start("mailto:?&body=Check%20out%20this%20awesome%20file%20I%20found%20on%20WebCrunch%20-%20" + currentFile.URL);
         }
@@ -235,7 +236,6 @@ namespace Controls
                 ControlExtensions.SetControlText(btnBookmarkFile, "Remove from Bookmarks");
             }
         }
-
 
         // Focus effect for Combobox/Button
         public void ComboboxCButton_MouseEnter(object sender, EventArgs e)

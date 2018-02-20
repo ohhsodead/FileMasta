@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Models
+namespace WebCrunch.Models
 {
     /// <summary>
     /// Represents the database information

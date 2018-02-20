@@ -5,7 +5,7 @@ using System.IO;
 using System.Net;
 using WebCrunch;
 
-namespace Extensions
+namespace WebCrunch.Extensions
 {
     class LocalExtensions
     {

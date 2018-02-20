@@ -1,6 +1,6 @@
 ﻿using System.Drawing;
 
-namespace Extensions
+namespace WebCrunch.Extensions
 {
     public class Colors
     {

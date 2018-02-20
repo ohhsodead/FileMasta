@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 
-namespace Utilities
+namespace WebCrunch.Asynchronous
 {
     public static class BackGroundWorker
     {
@@ -59,6 +59,7 @@ namespace Utilities
         /// start a void method in backgroundworker 
         /// </summary>
         /// <param name="work">Method passed as argument</param>
+        /// <param name="completed">the completed work event handler</param>
         public static void RunWorkAsync(Action work, RunWorkerCompletedEventHandler completed = null)
         {
             BackgroundWorker worker = new BackgroundWorker();

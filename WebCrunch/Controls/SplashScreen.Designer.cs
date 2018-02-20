@@ -1,4 +1,4 @@
-﻿namespace Controls
+﻿namespace WebCrunch.Controls
 {
     partial class SplashScreen
     {

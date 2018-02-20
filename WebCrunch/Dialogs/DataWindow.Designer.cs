@@ -1,6 +1,6 @@
-﻿namespace Dialogs
+﻿namespace WebCrunch.Dialogs
 {
-    partial class DataDialog
+    partial class DataWindow
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DataDialog));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DataWindow));
             this.panelDataItems = new System.Windows.Forms.FlowLayoutPanel();
             this.dataInfo = new System.Windows.Forms.Label();
             this.panelDataItems.SuspendLayout();
@@ -63,7 +63,7 @@
             this.dataInfo.TabIndex = 0;
             this.dataInfo.Text = "Text";
             // 
-            // DataDialog
+            // DataWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -79,7 +79,7 @@
             this.MaximumSize = new System.Drawing.Size(475, 650);
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(475, 40);
-            this.Name = "DataDialog";
+            this.Name = "DataWindow";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

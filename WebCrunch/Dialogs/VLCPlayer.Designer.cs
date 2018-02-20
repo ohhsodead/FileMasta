@@ -1,4 +1,4 @@
-﻿namespace Dialogs
+﻿namespace WebCrunch.Dialogs
 {
     partial class VLCPlayer
     {

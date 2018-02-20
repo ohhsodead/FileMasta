@@ -34,7 +34,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WebCrunch;
 
-namespace ExceptionHandler
+namespace WebCrunch.Extensions
 {
     public static class ExceptionEvents
     {

@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace Dialogs
+namespace WebCrunch.Dialogs
 {
     public partial class VLCPlayer : Form
     {

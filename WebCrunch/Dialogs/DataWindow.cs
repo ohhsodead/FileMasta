@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Dialogs
+namespace WebCrunch.Dialogs
 {
-    public partial class DataDialog : Form
+    public partial class DataWindow : Form
     {
-        public DataDialog()
+        public DataWindow()
         {
             InitializeComponent();
         }

@@ -3,7 +3,7 @@ using System.IO;
 using System.Net;
 using WebCrunch;
 
-namespace Extensions
+namespace WebCrunch.Extensions
 {
     class FileExtensions
     {
@@ -20,10 +20,10 @@ namespace Extensions
                 Program.log.Info("Checking if file '" + fileName + "' needs to be updated");
 
                 if (File.Exists(MainForm.pathData + fileName)) {
-                    WebRequest req = WebRequest.Create(webFile);
+                    var req = WebRequest.Create(webFile);
                     req.Method = "HEAD";
                     //req.Timeout = 1250;
-                    using (HttpWebResponse fileResponse = (HttpWebResponse)req.GetResponse()) {
+                    using (var fileResponse = (HttpWebResponse)req.GetResponse()) {
                         if (int.TryParse(fileResponse.Headers.Get("Content-Length"), out int ContentLength)) {
                             if (new FileInfo(MainForm.pathData + fileName).Length == ContentLength)
                                 return true;
@@ -52,14 +52,15 @@ namespace Extensions
 
                 WebRequest req = WebRequest.Create(webUrl);
                 req.Method = "HEAD";
-                req.Timeout = -1;
-                using (HttpWebResponse fileResponse = (HttpWebResponse)req.GetResponse()) {
-                    DateTime fileModifiedTime = fileResponse.LastModified;
+                req.Timeout = 7000;
+                using (var fileResponse = (HttpWebResponse)req.GetResponse()) {
+                    var fileModifiedTime = fileResponse.LastModified;
                     if (fileModifiedTime != null) {
-                        Program.log.Info("Succesffuly returned file modified date from web file");
+                        Program.log.Info("Successfully returned file modified date from web file");
                         return fileModifiedTime;
                     }
-                    else { return DateTime.MinValue; }
+                    else
+                        return DateTime.MinValue;
                 }
             }
             catch (Exception ex) { Program.log.Error("Error requesting file modified date from web file", ex); return DateTime.MinValue; }
@@ -75,10 +76,10 @@ namespace Extensions
             try {
                 Program.log.Info("Requesting file size from web file");
 
-                WebRequest req = WebRequest.Create(webUrl);
+                var req = WebRequest.Create(webUrl);
                 req.Method = "HEAD";
                 req.Timeout = 7000;
-                using (HttpWebResponse fileResponse = (HttpWebResponse)req.GetResponse()) {
+                using (var fileResponse = (HttpWebResponse)req.GetResponse()) {
                     if (int.TryParse(fileResponse.Headers.Get("Content-Length"), out int ContentLength)) {
                         Program.log.Info("Successfully returned file size from web file");
                         return ContentLength;

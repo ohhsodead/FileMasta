@@ -2,7 +2,7 @@
 using System.Diagnostics;
 using System.Threading;
 using System.Windows.Forms;
-using ExceptionHandler;
+using WebCrunch.Extensions;
 
 namespace WebCrunch
 {

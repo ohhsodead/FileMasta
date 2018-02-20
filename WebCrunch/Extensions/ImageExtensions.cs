@@ -5,7 +5,7 @@ using System.IO;
 using System.Net;
 using WebCrunch;
 
-namespace Extensions
+namespace WebCrunch.Extensions
 {
     class ImageExtensions
     {
@@ -17,13 +17,10 @@ namespace Extensions
         public static Bitmap LoadPictureFromURL(string url)
         {
             HttpWebRequest wreq;
-            HttpWebResponse wresp;
-            Stream mystream;
-            Bitmap bmp;
+            HttpWebResponse wresp = null;
+            Stream mystream = null ;
+            Bitmap bmp = null;
 
-            bmp = null;
-            mystream = null;
-            wresp = null;
             try {
                 wreq = (HttpWebRequest)WebRequest.Create(url);
                 wreq.AllowWriteStreamBuffering = true;
@@ -50,9 +47,9 @@ namespace Extensions
         /// <returns></returns>
         public static Bitmap SetAlpha(Bitmap bmpIn, int alpha)
         {
-            Bitmap bmpOut = new Bitmap(bmpIn.Width, bmpIn.Height);
+            var bmpOut = new Bitmap(bmpIn.Width, bmpIn.Height);
             float a = alpha / 255f;
-            Rectangle r = new Rectangle(0, 0, bmpIn.Width, bmpIn.Height);
+            var r = new Rectangle(0, 0, bmpIn.Width, bmpIn.Height);
 
             float[][] matrixItems = {
                 new float[] {1, 0, 0, 0, 0},
@@ -61,12 +58,12 @@ namespace Extensions
                 new float[] {0, 0, 0, a, 0},
                 new float[] {0, 0, 0, 0, 1}};
 
-            ColorMatrix colorMatrix = new ColorMatrix(matrixItems);
+            var colorMatrix = new ColorMatrix(matrixItems);
 
-            ImageAttributes imageAtt = new ImageAttributes();
+            var imageAtt = new ImageAttributes();
             imageAtt.SetColorMatrix(colorMatrix, ColorMatrixFlag.Default, ColorAdjustType.Bitmap);
 
-            using (Graphics g = Graphics.FromImage(bmpOut))
+            using (var g = Graphics.FromImage(bmpOut))
                 g.DrawImage(bmpIn, r, r.X, r.Y, r.Width, r.Height, GraphicsUnit.Pixel, imageAtt);
 
             return bmpOut;
@@ -84,7 +81,7 @@ namespace Extensions
             {
                 Color actualColor;
                 //make an empty bitmap the same size as scrBitmap
-                Bitmap newBitmap = new Bitmap(scrBitmap.Width, scrBitmap.Height);
+                var newBitmap = new Bitmap(scrBitmap.Width, scrBitmap.Height);
                 for (int i = 0; i < scrBitmap.Width; i++)
                     for (int j = 0; j < scrBitmap.Height; j++)
                     {
