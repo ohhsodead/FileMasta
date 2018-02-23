@@ -1,4 +1,6 @@
-﻿namespace WebCrunch
+﻿using WebCrunch.Extensions;
+
+namespace WebCrunch
 {
     partial class MainForm
     {
@@ -367,10 +369,10 @@
             this.panelHomeFileType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(50)))));
             this.panelHomeFileType.Controls.Add(this.btnHomeFileType);
             this.panelHomeFileType.Controls.Add(this.cmboBoxHomeFileType);
-            this.panelHomeFileType.Location = new System.Drawing.Point(215, 0);
+            this.panelHomeFileType.Location = new System.Drawing.Point(212, 0);
             this.panelHomeFileType.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.panelHomeFileType.Name = "panelHomeFileType";
-            this.panelHomeFileType.Size = new System.Drawing.Size(107, 22);
+            this.panelHomeFileType.Size = new System.Drawing.Size(110, 22);
             this.panelHomeFileType.TabIndex = 4;
             // 
             // btnHomeFileType
@@ -407,15 +409,13 @@
             this.btnHomeFileType.ShowFocus = CButtonLib.CButton.eFocus.None;
             this.btnHomeFileType.SideImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnHomeFileType.SideImageSize = new System.Drawing.Size(24, 24);
-            this.btnHomeFileType.Size = new System.Drawing.Size(107, 22);
+            this.btnHomeFileType.Size = new System.Drawing.Size(110, 22);
             this.btnHomeFileType.TabIndex = 2;
-            this.btnHomeFileType.Text = "Filetype: All";
+            this.btnHomeFileType.Text = "Filetype : All";
             this.btnHomeFileType.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnHomeFileType.TextMargin = new System.Windows.Forms.Padding(0);
             this.btnHomeFileType.TextShadowShow = false;
             this.btnHomeFileType.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnHomeFileType_ClickButtonArea);
-            this.btnHomeFileType.MouseEnter += new System.EventHandler(this.ComboboxCButton_MouseEnter);
-            this.btnHomeFileType.MouseLeave += new System.EventHandler(this.ComboboxCButton_MouseLeave);
             // 
             // cmboBoxHomeFileType
             // 
@@ -436,7 +436,7 @@
             "Other"});
             this.cmboBoxHomeFileType.Location = new System.Drawing.Point(0, -2);
             this.cmboBoxHomeFileType.Name = "cmboBoxHomeFileType";
-            this.cmboBoxHomeFileType.Size = new System.Drawing.Size(107, 23);
+            this.cmboBoxHomeFileType.Size = new System.Drawing.Size(110, 23);
             this.cmboBoxHomeFileType.TabIndex = 0;
             this.cmboBoxHomeFileType.TabStop = false;
             this.cmboBoxHomeFileType.SelectedIndexChanged += new System.EventHandler(this.cmboBoxHomeFileType_SelectedIndexChanged);
@@ -800,8 +800,6 @@
             this.btnFilesHost.TextMargin = new System.Windows.Forms.Padding(0);
             this.btnFilesHost.TextShadowShow = false;
             this.btnFilesHost.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnFilesHost_ClickButtonArea);
-            this.btnFilesHost.MouseEnter += new System.EventHandler(this.ComboboxCButton_MouseEnter);
-            this.btnFilesHost.MouseLeave += new System.EventHandler(this.ComboboxCButton_MouseLeave);
             // 
             // cmboBoxFilesHost
             // 
@@ -870,8 +868,6 @@
             this.btnFilesSort.TextMargin = new System.Windows.Forms.Padding(0);
             this.btnFilesSort.TextShadowShow = false;
             this.btnFilesSort.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnFilesSort_ClickButtonArea);
-            this.btnFilesSort.MouseEnter += new System.EventHandler(this.ComboboxCButton_MouseEnter);
-            this.btnFilesSort.MouseLeave += new System.EventHandler(this.ComboboxCButton_MouseLeave);
             // 
             // cmboBoxFilesSort
             // 
@@ -2201,8 +2197,6 @@
             this.imgShareFacebook.TabIndex = 34;
             this.imgShareFacebook.TabStop = false;
             this.imgShareFacebook.Click += new System.EventHandler(this.imgShareFacebook_Click);
-            this.imgShareFacebook.MouseEnter += new System.EventHandler(this.Image_MouseEnter);
-            this.imgShareFacebook.MouseLeave += new System.EventHandler(this.Image_MouseLeave);
             // 
             // imgShareTwitter
             // 
@@ -2216,8 +2210,6 @@
             this.imgShareTwitter.TabIndex = 33;
             this.imgShareTwitter.TabStop = false;
             this.imgShareTwitter.Click += new System.EventHandler(this.imgShareTwitter_Click);
-            this.imgShareTwitter.MouseEnter += new System.EventHandler(this.Image_MouseEnter);
-            this.imgShareTwitter.MouseLeave += new System.EventHandler(this.Image_MouseLeave);
             // 
             // MainForm
             // 
@@ -2281,7 +2273,6 @@
         private System.Windows.Forms.Label lblAboutText;
         private System.Windows.Forms.Label lblAboutChangelogVersion;
         private System.Windows.Forms.Label btnAboutReportIssue;
-        private System.Windows.Forms.Panel panelTitles;
         public System.Windows.Forms.TabControl tab;
         public System.Windows.Forms.TabPage tabBlank;
         private System.Windows.Forms.TabPage tabSettings;
@@ -2314,7 +2305,6 @@
         private CButtonLib.CButton bgSearchFiles;
         public System.Windows.Forms.TabPage tabHome;
         private System.Windows.Forms.Panel panelHomeFileType;
-        private CButtonLib.CButton btnHomeFileType;
         private System.Windows.Forms.ComboBox cmboBoxHomeFileType;
         private System.Windows.Forms.FlowLayoutPanel panelTopSearches;
         private System.Windows.Forms.Label lblFilesResultsInfo;
@@ -2338,27 +2328,10 @@
         private Controls.CtrlButton btnSubmitUrl;
         private Controls.CtrlButton btnSettingsSave;
         private Controls.CtrlButton btnSettingsRestoreDefault;
-        private Controls.CtrlTitleButton titleSearch;
-        private Controls.CtrlTitleButton titleHome;
-        private Controls.CtrlTitleButton titleSettings;
-        private Controls.CtrlTitleButton titleSubmit;
-        private Controls.CtrlTitleButton titleDiscover;
-        private Controls.CtrlTitleButton titleInformation;
         internal System.Windows.Forms.Label lblHeaderRecentlyAddedFiles;
         public CButtonLib.CButton splitterHeaderRecentlyAddedFiles;
         public System.Windows.Forms.DataGridView dataGridFiles;
         private System.Windows.Forms.Label lblAboutSubText;
-        private Controls.CtrlTitleFileType titleFilesVideo;
-        private Controls.CtrlTitleFileType titleFilesAudio;
-        private Controls.CtrlTitleFileType titleFilesBookmarks;
-        private Controls.CtrlTitleFileType titleFilesLocal;
-        private Controls.CtrlTitleFileType titleFilesTorrents;
-        private Controls.CtrlTitleFileType titleFilesOther;
-        private Controls.CtrlTitleFileType titleFilesSoftware;
-        private Controls.CtrlTitleFileType titleFilesCustom;
-        private Controls.CtrlTitleFileType titleFilesSubtitles;
-        private Controls.CtrlTitleFileType titleFilesAll;
-        private Controls.CtrlTitleFileType titleFilesBooks;
         private System.Windows.Forms.FlowLayoutPanel panelHomeFilters;
         private System.Windows.Forms.DataGridView dataGridRecentlyAddedFiles;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
@@ -2376,6 +2349,25 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn columnDiscoverSite;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnDiscoverType;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnDiscoverURL;
+        public System.Windows.Forms.Panel panelTitles;
+        public Controls.CtrlTitleButton titleSearch;
+        public Controls.CtrlTitleButton titleHome;
+        public Controls.CtrlTitleButton titleSettings;
+        public Controls.CtrlTitleButton titleSubmit;
+        public Controls.CtrlTitleButton titleDiscover;
+        public Controls.CtrlTitleButton titleInformation;
+        public CButtonLib.CButton btnHomeFileType;
+        public Controls.CtrlTitleFileType titleFilesVideo;
+        public Controls.CtrlTitleFileType titleFilesAudio;
+        public Controls.CtrlTitleFileType titleFilesBookmarks;
+        public Controls.CtrlTitleFileType titleFilesLocal;
+        public Controls.CtrlTitleFileType titleFilesTorrents;
+        public Controls.CtrlTitleFileType titleFilesOther;
+        public Controls.CtrlTitleFileType titleFilesSoftware;
+        public Controls.CtrlTitleFileType titleFilesCustom;
+        public Controls.CtrlTitleFileType titleFilesSubtitles;
+        public Controls.CtrlTitleFileType titleFilesAll;
+        public Controls.CtrlTitleFileType titleFilesBooks;
     }
 }
 

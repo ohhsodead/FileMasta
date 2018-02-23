@@ -1,6 +1,7 @@
 ﻿using System.IO;
 using System.Windows.Forms;
 using WebCrunch;
+using WebCrunch.Extensions;
 
 namespace WebCrunch.Controls
 {
@@ -18,7 +19,7 @@ namespace WebCrunch.Controls
 
         private void lblLoadingStuckRestart_Click(object sender, System.EventArgs e)
         {
-            if (Directory.Exists(MainForm.pathData)) { Directory.Delete(MainForm.pathData, true); } Application.Restart();
+            if (Directory.Exists(LocalExtensions.pathData)) { Directory.Delete(LocalExtensions.pathData, true); } Application.Restart();
         }
     }
 }

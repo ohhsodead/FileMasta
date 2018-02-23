@@ -65,7 +65,7 @@ namespace WebCrunch.Controls
         {
             base.OnMouseLeave(e);
 
-            if (MainForm.form.currentTabTitle == this)
+            if (MainForm.form.CurrentTabTitle == this)
             {
                 base.Image = tmpButtonImage;
                 base.ForeColor = Color.White;

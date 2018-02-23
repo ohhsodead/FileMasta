@@ -19,13 +19,13 @@ namespace WebCrunch.Extensions
             {
                 Program.log.Info("Checking if file '" + fileName + "' needs to be updated");
 
-                if (File.Exists(MainForm.pathData + fileName)) {
+                if (File.Exists(LocalExtensions.pathData + fileName)) {
                     var req = WebRequest.Create(webFile);
                     req.Method = "HEAD";
                     //req.Timeout = 1250;
                     using (var fileResponse = (HttpWebResponse)req.GetResponse()) {
                         if (int.TryParse(fileResponse.Headers.Get("Content-Length"), out int ContentLength)) {
-                            if (new FileInfo(MainForm.pathData + fileName).Length == ContentLength)
+                            if (new FileInfo(LocalExtensions.pathData + fileName).Length == ContentLength)
                                 return true;
                             else
                                 return false;
@@ -98,7 +98,7 @@ namespace WebCrunch.Extensions
         /// <returns></returns>
         public static bool HasExistingLocalSubtitles(string fileURL)
         {
-            if (File.Exists(MainForm.userDownloadsDirectory + Path.GetFileNameWithoutExtension(new Uri(fileURL).LocalPath) + ".srt"))
+            if (File.Exists(LocalExtensions.userDownloadsDirectory + Path.GetFileNameWithoutExtension(new Uri(fileURL).LocalPath) + ".srt"))
                 return true;
             else
                 return false;

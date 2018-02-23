@@ -1,6 +1,5 @@
 ﻿using System;
 using System.IO;
-using WebCrunch;
 using WebCrunch.Extensions;
 using WebCrunch.Models;
 
@@ -8,6 +7,13 @@ namespace WebCrunch.Files
 {
     class Database
     {
+        /// <summary>
+        /// URLs for file database
+        /// </summary>
+        public static string urlOpenFiles = "https://dl.dropbox.com/s/charfmjveo2v1h3/open-files.json?dl=0";
+        public static string urlTopSearches = "https://dl.dropbox.com/s/512qe4ogan92vea/top-searches.txt?dl=0";
+        public static string urlOpenDirectories = "https://raw.githubusercontent.com/HerbL27/WebCrunch/master/api/open-directories.txt";
+
         /// <summary>
         /// Get web file info from internal database, or creates a new object
         /// </summary>

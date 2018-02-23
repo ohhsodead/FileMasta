@@ -3,12 +3,28 @@ using System.Collections;
 using System.Diagnostics;
 using System.IO;
 using System.Net;
-using WebCrunch;
+using WebCrunch.Utilities;
 
 namespace WebCrunch.Extensions
 {
     class LocalExtensions
     {
+        /// <summary>
+        /// User's directories
+        /// </summary>
+        public static string pathRoot = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\WebCrunch\";
+        public static string pathData = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\WebCrunch\Data\";
+        public static string pathDataBookmarked = pathRoot + "bookmarked-files.json";
+        public static string userDownloadsDirectory = KnownFolders.GetPath(KnownFolder.Downloads) + @"\";
+
+        /// <summary>
+        /// Supported media players
+        /// </summary>
+        public static string pathVLC = @"C:\Program Files (x86)\VideoLAN\VLC\vlc.exe";
+        public static string pathMPCCodec64 = @"C:\Program Files(x86)\K-Lite Codec Pack\MPC-HC64\mpc-hc64.exe";
+        public static string pathMPC64 = @"C:\Program Files\MPC-HC\mpc-hc64.exe";
+        public static string pathMPC86 = @"C:\Program Files (x86)\MPC-HC\mpc-hc.exe";
+
         /// <summary>
         /// Checks for internet connection by attempting to connect to Google.com
         /// </summary>

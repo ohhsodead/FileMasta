@@ -9,12 +9,17 @@ namespace WebCrunch.GitHub
     class OpenLink
     {
         /// <summary>
+        /// GitHub Project URL
+        /// </summary>
+        public static string urlGitHub = "https://github.com/HerbL27/WebCrunch/";
+
+        /// <summary>
         /// Open GitHub submit web server template with the specified URL
         /// </summary>
         /// <param name="URL"></param>
         public static void SubmitLink(string URL)
         {
-            Process.Start(MainForm.urlGitHub + "issues/new?title=" + "[Indexer Request] " + new Uri(URL).Host + "&body=" +
+            Process.Start(OpenLink.urlGitHub + "issues/new?title=" + "[Indexer Request] " + new Uri(URL).Host + "&body=" +
                 "Website: " + new Uri(URL).AbsoluteUri + "%0A" +
                 "----------------------- %0A" +
                 "*Please include some information about this site e.g. What type of content is there? Are you the administrator?*");
@@ -26,7 +31,7 @@ namespace WebCrunch.GitHub
         /// <param name="file"></param>
         public static void BrokenFileIssue(WebFile file)
         {
-            Process.Start(MainForm.urlGitHub + "issues/new?title=" + "[Broken File] " + file.Name + "&body=" +
+            Process.Start(OpenLink.urlGitHub + "issues/new?title=" + "[Broken File] " + file.Name + "&body=" +
                 "Host: " + file.Host + "%0A" +
                 "URL: " + file.URL + "%0A" +
                 "----------------------- %0A" +
@@ -39,7 +44,7 @@ namespace WebCrunch.GitHub
         /// <param name="file"></param>
         public static void PoorQualityFileIssue(WebFile file)
         {
-            Process.Start(MainForm.urlGitHub + "issues/new?title=" + "[Poor Quality File] " + file.Name + "&body=" +
+            Process.Start(OpenLink.urlGitHub + "issues/new?title=" + "[Poor Quality File] " + file.Name + "&body=" +
                 "Host: " + file.Host + "%0A" +
                 "URL: " + file.URL + "%0A" +
                 "----------------------- %0A" +

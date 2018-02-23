@@ -44,8 +44,8 @@ namespace WebCrunch.Controls
                 ControlExtensions.SetControlText(btnBookmarkFile, "Remove from Bookmarks");            
 
             /* Support media players installed on users machine */
-            VLCToolStripMenuItem.Visible = File.Exists(MainForm.pathVLC);
-            MPCToolStripMenuItem.Visible = File.Exists(MainForm.pathMPCCodec64) || File.Exists(MainForm.pathMPC64) || File.Exists(MainForm.pathMPC86);
+            VLCToolStripMenuItem.Visible = File.Exists(LocalExtensions.pathVLC);
+            MPCToolStripMenuItem.Visible = File.Exists(LocalExtensions.pathMPCCodec64) || File.Exists(LocalExtensions.pathMPC64) || File.Exists(LocalExtensions.pathMPC86);
 
             /* Shows 'Play Media' button if is valid file extension */
             if (videoFileTypes.Contains(currentFile.Type) || audioFileTypes.Contains(currentFile.Type))
@@ -61,7 +61,7 @@ namespace WebCrunch.Controls
 
             /* Add subtitle file to be played when opening external VLC */
             if (FileExtensions.HasExistingLocalSubtitles(currentFile.URL) == true) /* If users downloads folder contains a subtitle file matching web file name */
-                infoFileSubtitles = MainForm.userDownloadsDirectory + Path.GetFileNameWithoutExtension(currentFile.URL) + ".srt";
+                infoFileSubtitles = LocalExtensions.userDownloadsDirectory + Path.GetFileNameWithoutExtension(currentFile.URL) + ".srt";
             else
                 infoFileSubtitles = null;
 
@@ -90,7 +90,7 @@ namespace WebCrunch.Controls
 
         private void appClose_Click(object sender, EventArgs e)
         {
-            MainForm.form.tab.SelectedTab = MainForm.form.currentTab;
+            MainForm.form.tab.SelectedTab = MainForm.form.CurrentTab;
             MainForm.form.fileDetails.Dispose();
         }
 
@@ -195,7 +195,7 @@ namespace WebCrunch.Controls
         {
             // Open source file in VLC with subtitles
             Process VLC = new Process();
-            VLC.StartInfo.FileName = MainForm.pathVLC;
+            VLC.StartInfo.FileName = LocalExtensions.pathVLC;
             VLC.StartInfo.Arguments = ("-vvv " + currentFile.URL + " --sub-file=" + infoFileSubtitles);
             VLC.Start();
         }
@@ -203,12 +203,12 @@ namespace WebCrunch.Controls
         private void MPCToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Process MPC = new Process();
-            if (File.Exists(MainForm.pathMPCCodec64))
-                MPC.StartInfo.FileName = MainForm.pathMPCCodec64;
-            else if (File.Exists(MainForm.pathMPC64))
-                MPC.StartInfo.FileName = MainForm.pathMPC64;
+            if (File.Exists(LocalExtensions.pathMPCCodec64))
+                MPC.StartInfo.FileName = LocalExtensions.pathMPCCodec64;
+            else if (File.Exists(LocalExtensions.pathMPC64))
+                MPC.StartInfo.FileName = LocalExtensions.pathMPC64;
             else
-                MPC.StartInfo.FileName = MainForm.pathMPC86;
+                MPC.StartInfo.FileName = LocalExtensions.pathMPC86;
             MPC.StartInfo.Arguments = (currentFile.URL);
             MPC.Start();
         }
