@@ -1,18 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using System.Diagnostics;
 using System.IO;
-using CButtonLib;
-using WebCrunch.Bookmarks;
-using WebCrunch.Models;
-using WebCrunch.Extensions;
-using WebCrunch.GitHub;
 using WebCrunch.Asynchronous;
+using WebCrunch.Bookmarks;
 using WebCrunch.Dialogs;
+using WebCrunch.Extensions;
 using WebCrunch.Files;
+using WebCrunch.GitHub;
+using WebCrunch.Models;
 
 namespace WebCrunch.Controls
 {
@@ -26,7 +24,7 @@ namespace WebCrunch.Controls
         public WebFile currentFile;
         string infoFileSubtitles;
 
-        /* Support file types for the players */
+        // Support file types for the players
         public static List<string> videoFileTypes = new List<string>() { "M2TS", "MP4", "MKV", "AVI", "MPEG", "MPG", "MOV" };
         public static List<string> audioFileTypes = new List<string>() { "MP3", "WMA", "WAV", "M3U", "APE", "AIF", "MPA", "CDA" };
 
@@ -37,35 +35,35 @@ namespace WebCrunch.Controls
 
         public void CheckFileEvents()
         {
-            /* Shows appropriate Bookmarks button text */
+            // Shows appropriate Bookmarks button text
             if (!Bookmarked.IsBookmarked(currentFile.URL))
                 ControlExtensions.SetControlText(btnBookmarkFile, "Add to Bookmarks");            
             else
                 ControlExtensions.SetControlText(btnBookmarkFile, "Remove from Bookmarks");            
 
-            /* Support media players installed on users machine */
+            // Support media players installed on users machine
             VLCToolStripMenuItem.Visible = File.Exists(LocalExtensions.pathVLC);
             MPCToolStripMenuItem.Visible = File.Exists(LocalExtensions.pathMPCCodec64) || File.Exists(LocalExtensions.pathMPC64) || File.Exists(LocalExtensions.pathMPC86);
 
-            /* Shows 'Play Media' button if is valid file extension */
+            // Shows 'Play Media' button if is valid file extension
             if (videoFileTypes.Contains(currentFile.Type) || audioFileTypes.Contains(currentFile.Type))
                 btnPlayMedia.Visible = true;
             else
                 btnPlayMedia.Visible = false;
 
-            /* Checks if file size isn't default */
+            // Checks if file size isn't default
             if (currentFile.Size == 0)
                 btnRequestFileSize.Visible = true;
             else
                 btnRequestFileSize.Visible = false;
 
-            /* Add subtitle file to be played when opening external VLC */
-            if (FileExtensions.HasExistingLocalSubtitles(currentFile.URL) == true) /* If users downloads folder contains a subtitle file matching web file name */
+            // Add subtitle file to be played when opening external VLC
+            if (FileExtensions.HasExistingLocalSubtitles(currentFile.URL) == true) // If users downloads folder contains a subtitle file matching web file name
                 infoFileSubtitles = LocalExtensions.userDownloadsDirectory + Path.GetFileNameWithoutExtension(currentFile.URL) + ".srt";
             else
                 infoFileSubtitles = null;
 
-            /* Displays appropriate scroll images */
+            // Displays appropriate scroll images
             ScrollButtonChecks();
         }
 
@@ -73,18 +71,18 @@ namespace WebCrunch.Controls
         {
             if (MainForm.form.dataGridFiles.Rows.Count > 0) {
                 if (MainForm.form.dataGridFiles.SelectedCells[0].OwningRow.Index == 0)
-                    imgPreviousFile.Image = ImageExtensions.ChangeColor(WebCrunch.Properties.Resources.chevron_left, Color.Gray);
+                    imgPreviousFile.Image = ImageExtensions.ChangeColor(Properties.Resources.chevron_left, Color.Gray);
                 else
-                    imgPreviousFile.Image = WebCrunch.Properties.Resources.chevron_left;
+                    imgPreviousFile.Image = Properties.Resources.chevron_left;
 
                 if (MainForm.form.dataGridFiles.SelectedCells[0].OwningRow.Index == MainForm.form.dataGridFiles.Rows.Count - 1)
-                    imgNextFile.Image = ImageExtensions.ChangeColor(WebCrunch.Properties.Resources.chevron_right, Color.Gray);
+                    imgNextFile.Image = ImageExtensions.ChangeColor(Properties.Resources.chevron_right, Color.Gray);
                 else
-                    imgNextFile.Image = WebCrunch.Properties.Resources.chevron_right;
+                    imgNextFile.Image = Properties.Resources.chevron_right;
             }
             else {
-                imgPreviousFile.Image = ImageExtensions.ChangeColor(WebCrunch.Properties.Resources.chevron_left, Color.Gray);
-                imgNextFile.Image = ImageExtensions.ChangeColor(WebCrunch.Properties.Resources.chevron_right, Color.Gray);
+                imgPreviousFile.Image = ImageExtensions.ChangeColor(Properties.Resources.chevron_left, Color.Gray);
+                imgNextFile.Image = ImageExtensions.ChangeColor(Properties.Resources.chevron_right, Color.Gray);
             }
         }
 
@@ -136,22 +134,11 @@ namespace WebCrunch.Controls
         private void infoDirectory_Click(object sender, EventArgs e)
         {
             Uri uri = new Uri(currentFile.URL);
-            string parentName = GetParentUriString(uri).Remove(GetParentUriString(uri).Length - 1);
+            string parentName = TextExtensions.GetParentUriString(uri).Remove(TextExtensions.GetParentUriString(uri).Length - 1);
             Process browser = new Process();
             browser.StartInfo.UseShellExecute = true;
             browser.StartInfo.FileName = parentName;
             browser.Start();
-        }
-
-        static string GetParentUriString(Uri uri)
-        {
-            StringBuilder parentName = new StringBuilder();
-            parentName.Append(uri.Scheme);
-            parentName.Append("://");
-            parentName.Append(uri.Host);
-            for (int i = 0; i < uri.Segments.Length - 1; i++)
-                parentName.Append(uri.Segments[i]);
-            return parentName.ToString();
         }
 
         private void infoReferrer_Click(object sender, EventArgs e)
@@ -164,16 +151,13 @@ namespace WebCrunch.Controls
 
         private void btnRequestFileSize_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            try {
-                btnRequestFileSize.Visible = false;
-                BackGroundWorker.RunWorkAsync<string>(() => TextExtensions.BytesToString(FileExtensions.GetFileSize(currentFile.URL)), (data) => { infoSize.Text = data; });
-            }
-            catch { infoSize.Text = "Error"; }
+            btnRequestFileSize.Visible = false;
+            BackGroundWorker.RunWorkAsync<string>(() => TextExtensions.BytesToString(FileExtensions.GetFileSize(currentFile.URL)), (data) => { infoSize.Text = data; });
         }
 
         private void btnViewDirectory_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            string parentName = GetParentUriString(new Uri(currentFile.URL)).Remove(GetParentUriString(new Uri(currentFile.URL)).Length - 1);
+            string parentName = TextExtensions.GetParentUriString(new Uri(currentFile.URL)).Remove(TextExtensions.GetParentUriString(new Uri(currentFile.URL)).Length - 1);
 
             Process browser = new Process();
             browser.StartInfo.UseShellExecute = true;
@@ -237,27 +221,10 @@ namespace WebCrunch.Controls
             }
         }
 
-        // Focus effect for Combobox/Button
-        public void ComboboxCButton_MouseEnter(object sender, EventArgs e)
-        {
-            CButton ctrl = sender as CButton;
-            ctrl.BorderColor = Colors.uiColorOrange;
-            ctrl.ForeColor = Color.White;
-            ctrl.ColorFillSolid = Colors.uiColorOrange;
-        }
-
-        public void ComboboxCButton_MouseLeave(object sender, EventArgs e)
-        {
-            CButton ctrl = sender as CButton;
-            ctrl.BorderColor = Colors.uiColorGray;
-            ctrl.ForeColor = Colors.uiColorGray;
-            ctrl.ColorFillSolid = Color.Transparent;
-        }
-
         private void infoFileURL_SideImageClicked(object Sender, MouseEventArgs e)
         {
             Clipboard.SetText(currentFile.URL);
-            infoFileURL.SideImage = WebCrunch.Properties.Resources.clipboard_check_orange;
+            infoFileURL.SideImage = Properties.Resources.clipboard_check_orange;
             infoFileURL.SideImageSize = new Size(24, 24);
         }
 

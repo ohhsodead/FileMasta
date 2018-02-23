@@ -224,7 +224,7 @@ namespace WebCrunch
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelTopSearches.AutoSize = true;
             this.panelTopSearches.BackColor = System.Drawing.Color.Transparent;
-            this.panelTopSearches.Location = new System.Drawing.Point(14, 93);
+            this.panelTopSearches.Location = new System.Drawing.Point(15, 93);
             this.panelTopSearches.Name = "panelTopSearches";
             this.panelTopSearches.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.panelTopSearches.Size = new System.Drawing.Size(1022, 139);
@@ -237,7 +237,7 @@ namespace WebCrunch
             this.lblHeaderTopSearches.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.lblHeaderTopSearches.ForeColor = System.Drawing.Color.White;
             this.lblHeaderTopSearches.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblHeaderTopSearches.Location = new System.Drawing.Point(10, 65);
+            this.lblHeaderTopSearches.Location = new System.Drawing.Point(11, 65);
             this.lblHeaderTopSearches.Margin = new System.Windows.Forms.Padding(0);
             this.lblHeaderTopSearches.Name = "lblHeaderTopSearches";
             this.lblHeaderTopSearches.Size = new System.Drawing.Size(106, 19);
@@ -260,13 +260,13 @@ namespace WebCrunch
             this.splitterHeaderTopSearches.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.splitterHeaderTopSearches.ImageIndex = 0;
             this.splitterHeaderTopSearches.ImageSize = new System.Drawing.Size(25, 36);
-            this.splitterHeaderTopSearches.Location = new System.Drawing.Point(14, 86);
+            this.splitterHeaderTopSearches.Location = new System.Drawing.Point(15, 86);
             this.splitterHeaderTopSearches.Margin = new System.Windows.Forms.Padding(10, 16, 3, 3);
             this.splitterHeaderTopSearches.Name = "splitterHeaderTopSearches";
             this.splitterHeaderTopSearches.ShowFocus = CButtonLib.CButton.eFocus.None;
             this.splitterHeaderTopSearches.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.splitterHeaderTopSearches.SideImageSize = new System.Drawing.Size(36, 36);
-            this.splitterHeaderTopSearches.Size = new System.Drawing.Size(1844, 1);
+            this.splitterHeaderTopSearches.Size = new System.Drawing.Size(1023, 1);
             this.splitterHeaderTopSearches.TabIndex = 1103;
             this.splitterHeaderTopSearches.Text = "";
             this.splitterHeaderTopSearches.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -279,7 +279,7 @@ namespace WebCrunch
             this.panelHomeFilters.Controls.Add(this.panelHomeSearch);
             this.panelHomeFilters.Controls.Add(this.panelHomeFileType);
             this.panelHomeFilters.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.panelHomeFilters.Location = new System.Drawing.Point(661, 22);
+            this.panelHomeFilters.Location = new System.Drawing.Point(660, 22);
             this.panelHomeFilters.Margin = new System.Windows.Forms.Padding(2, 3, 3, 3);
             this.panelHomeFilters.Name = "panelHomeFilters";
             this.panelHomeFilters.Size = new System.Drawing.Size(367, 22);
@@ -474,7 +474,7 @@ namespace WebCrunch
             this.dataGridViewTextBoxColumn6});
             this.dataGridRecentlyAddedFiles.EnableHeadersVisualStyles = false;
             this.dataGridRecentlyAddedFiles.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.dataGridRecentlyAddedFiles.Location = new System.Drawing.Point(14, 268);
+            this.dataGridRecentlyAddedFiles.Location = new System.Drawing.Point(15, 268);
             this.dataGridRecentlyAddedFiles.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
             this.dataGridRecentlyAddedFiles.MultiSelect = false;
             this.dataGridRecentlyAddedFiles.Name = "dataGridRecentlyAddedFiles";
@@ -569,7 +569,7 @@ namespace WebCrunch
             this.lblHeaderRecentlyAddedFiles.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.lblHeaderRecentlyAddedFiles.ForeColor = System.Drawing.Color.White;
             this.lblHeaderRecentlyAddedFiles.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblHeaderRecentlyAddedFiles.Location = new System.Drawing.Point(10, 240);
+            this.lblHeaderRecentlyAddedFiles.Location = new System.Drawing.Point(11, 240);
             this.lblHeaderRecentlyAddedFiles.Margin = new System.Windows.Forms.Padding(0);
             this.lblHeaderRecentlyAddedFiles.Name = "lblHeaderRecentlyAddedFiles";
             this.lblHeaderRecentlyAddedFiles.Size = new System.Drawing.Size(124, 19);
@@ -592,7 +592,7 @@ namespace WebCrunch
             this.splitterHeaderRecentlyAddedFiles.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.splitterHeaderRecentlyAddedFiles.ImageIndex = 0;
             this.splitterHeaderRecentlyAddedFiles.ImageSize = new System.Drawing.Size(25, 36);
-            this.splitterHeaderRecentlyAddedFiles.Location = new System.Drawing.Point(14, 261);
+            this.splitterHeaderRecentlyAddedFiles.Location = new System.Drawing.Point(15, 261);
             this.splitterHeaderRecentlyAddedFiles.Margin = new System.Windows.Forms.Padding(10, 16, 3, 3);
             this.splitterHeaderRecentlyAddedFiles.Name = "splitterHeaderRecentlyAddedFiles";
             this.splitterHeaderRecentlyAddedFiles.ShowFocus = CButtonLib.CButton.eFocus.None;
@@ -640,7 +640,7 @@ namespace WebCrunch
             this.txtSearchFilesHome.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSearchFilesHome.Font = new System.Drawing.Font("Segoe UI Semibold", 10.25F);
             this.txtSearchFilesHome.ForeColor = System.Drawing.Color.White;
-            this.txtSearchFilesHome.Location = new System.Drawing.Point(23, 22);
+            this.txtSearchFilesHome.Location = new System.Drawing.Point(22, 22);
             this.txtSearchFilesHome.Name = "txtSearchFilesHome";
             this.txtSearchFilesHome.Size = new System.Drawing.Size(640, 19);
             this.txtSearchFilesHome.TabIndex = 0;
@@ -668,7 +668,7 @@ namespace WebCrunch
             this.bgSearchFilesHome.FillType = CButtonLib.CButton.eFillType.Solid;
             this.bgSearchFilesHome.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.bgSearchFilesHome.ImageIndex = 0;
-            this.bgSearchFilesHome.Location = new System.Drawing.Point(14, 14);
+            this.bgSearchFilesHome.Location = new System.Drawing.Point(13, 14);
             this.bgSearchFilesHome.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.bgSearchFilesHome.Name = "bgSearchFilesHome";
             this.bgSearchFilesHome.ShowFocus = CButtonLib.CButton.eFocus.None;

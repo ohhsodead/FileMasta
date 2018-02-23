@@ -1,7 +1,6 @@
 ﻿using System;
 using System.IO;
 using System.Net;
-using WebCrunch;
 
 namespace WebCrunch.Extensions
 {
@@ -17,7 +16,7 @@ namespace WebCrunch.Extensions
         {
             try
             {
-                Program.log.Info("Checking if file '" + fileName + "' needs to be updated");
+                Program.log.Info($"Checking if file '{fileName}' needs to be updated");
 
                 if (File.Exists(LocalExtensions.pathData + fileName)) {
                     var req = WebRequest.Create(webFile);
@@ -37,7 +36,7 @@ namespace WebCrunch.Extensions
                 else
                     return false;
             }
-            catch (Exception ex) { Program.log.Error("Error checking file '" + fileName + "' for update", ex); return false;  }
+            catch (Exception ex) { Program.log.Error($"Error checking file '{fileName}' for update", ex); return false;  }
         }
 
         /// <summary>

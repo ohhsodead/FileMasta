@@ -1,6 +1,5 @@
 ﻿using System.IO;
 using System.Windows.Forms;
-using WebCrunch;
 using WebCrunch.Extensions;
 
 namespace WebCrunch.Controls

@@ -15,9 +15,9 @@ namespace WebCrunch.Controls
         }
 
         /// <summary>
-        /// Shows this control on Home tab if no connection established (WIP/TO-DO) */
+        /// Return this control on with error text */
         /// </summary>
-        /// <param name="errorText"></param>
+        /// <param name="errorText">Message to be displayed, usually an error</param>
         public static void ShowStartupError(string errorText)
         {
             ErrorInfo a = new ErrorInfo

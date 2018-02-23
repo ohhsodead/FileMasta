@@ -1,4 +1,6 @@
-﻿namespace WebCrunch.Controls
+﻿using WebCrunch.Extensions;
+
+namespace WebCrunch.Controls
 {
     partial class FileDetails
     {
@@ -724,8 +726,8 @@
             this.btnShareFile.TextShadow = System.Drawing.Color.Empty;
             this.btnShareFile.TextShadowShow = false;
             this.btnShareFile.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnShareFile_ClickButtonArea);
-            this.btnShareFile.MouseEnter += new System.EventHandler(this.ComboboxCButton_MouseEnter);
-            this.btnShareFile.MouseLeave += new System.EventHandler(this.ComboboxCButton_MouseLeave);
+            this.btnShareFile.MouseEnter += new System.EventHandler(ControlExtensions.ComboboxCButton_MouseEnter);
+            this.btnShareFile.MouseLeave += new System.EventHandler(ControlExtensions.ComboboxCButton_MouseLeave);
             // 
             // btnReportFile
             // 
@@ -772,8 +774,8 @@
             this.btnReportFile.TextShadow = System.Drawing.Color.Empty;
             this.btnReportFile.TextShadowShow = false;
             this.btnReportFile.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnReportFile_ClickButtonArea);
-            this.btnReportFile.MouseEnter += new System.EventHandler(this.ComboboxCButton_MouseEnter);
-            this.btnReportFile.MouseLeave += new System.EventHandler(this.ComboboxCButton_MouseLeave);
+            this.btnReportFile.MouseEnter += new System.EventHandler(ControlExtensions.ComboboxCButton_MouseEnter);
+            this.btnReportFile.MouseLeave += new System.EventHandler(ControlExtensions.ComboboxCButton_MouseLeave);
             // 
             // infoFileURL
             // 

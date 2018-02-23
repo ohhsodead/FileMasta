@@ -2,7 +2,6 @@
 using System.Drawing;
 using System.Windows.Forms;
 using CButtonLib;
-using WebCrunch;
 using WebCrunch.Extensions;
 
 namespace WebCrunch.Controls

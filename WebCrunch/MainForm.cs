@@ -1,29 +1,29 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using CButtonLib;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Net;
-using System.Windows.Forms;
-using System.Diagnostics;
-using System.ComponentModel;
 using System.Threading;
 using System.Text;
-using Newtonsoft.Json;
-using CButtonLib;
-using WebCrunch.Models;
-using WebCrunch.Controls;
-using WebCrunch.Files;
-using WebCrunch.Extensions;
+using System.Windows.Forms;
 using WebCrunch.Asynchronous;
+using WebCrunch.Controls;
+using WebCrunch.Extensions;
+using WebCrunch.Files;
 using WebCrunch.GitHub;
+using WebCrunch.Models;
 
 namespace WebCrunch
 {
     public partial class MainForm : Form
     {
-        public static MainForm form { get; set; } = null; // This is only instance of the form
-        public static SplashScreen frmSplashScreen { get; set; } = new SplashScreen; // Declare Splash Screen (one instance)
+        public static MainForm form { get; set; } = null; // This is only instance of the main form, set after InitializeComponent()
+        public static SplashScreen frmSplashScreen { get; set; } = new SplashScreen(); // Declare Splash Screen (one instance)
         public static FileDetails frmFileDetails { get; set; } = null; // Declare File Details (one instance)
 
         public MainForm()
@@ -41,7 +41,7 @@ namespace WebCrunch
 
             lblAboutChangelogVersion.Text = String.Format(lblAboutChangelogVersion.Text, Application.ProductVersion); // Show this version in a Label on the About tab
             
-            // Shows Splash Screen
+            // Show Splash Screen
             Controls.Add(frmSplashScreen);
             frmSplashScreen.Dock = DockStyle.Fill;
             frmSplashScreen.Location = new Point(0, 0);
@@ -139,22 +139,22 @@ namespace WebCrunch
             Program.log.Info("Checking for database updates");
 
             if (!FileExtensions.IsLocalAndServerFileSizeEqual(Database.urlOpenDirectories, "open-directories.txt")) {
-                using (var client = new WebClient()) { client.DownloadFile(new Uri(Database.urlOpenDirectories), LocalExtensions.pathData + "open-directories.txt"); }
+                using (var client = new WebClient()) { client.DownloadFile(new Uri(Database.urlOpenDirectories), $"{LocalExtensions.pathData}open-directories.txt"); }
                 Program.log.Info("open-directories.txt updated");
             }
-            dataOpenDirectories.AddRange(File.ReadAllLines(LocalExtensions.pathData + "open-directories.txt"));
+            dataOpenDirectories.AddRange(File.ReadAllLines($"{LocalExtensions.pathData}open-directories.txt"));
 
             if (!FileExtensions.IsLocalAndServerFileSizeEqual(Database.urlOpenFiles, "open-files.json")) {
-                using (var client = new WebClient()) { client.DownloadFile(new Uri(Database.urlOpenFiles), LocalExtensions.pathData + "open-files.json"); }
+                using (var client = new WebClient()) { client.DownloadFile(new Uri(Database.urlOpenFiles), $"{LocalExtensions.pathData}open-files.json"); }
                 Program.log.Info("open-files.json updated");
             }
 
             // Adds all items in files list, except for the first one (It contains the database info)
-            foreach (var item in File.ReadAllLines(LocalExtensions.pathData + "open-files.json").Skip(1))
+            foreach (var item in File.ReadAllLines($"{LocalExtensions.pathData}open-files.json").Skip(1))
                 if (TextExtensions.IsValidJSON(item))
                     filesOpenDatabase.Add(JsonConvert.DeserializeObject<WebFile>(item));
 
-            DatabaseInfo = File.ReadLines(LocalExtensions.pathData + "open-files.json").First(); // Gets first line in database which contains info
+            DatabaseInfo = File.ReadLines($"{LocalExtensions.pathData}open-files.json").First(); // Gets first line in database which contains info
         }
 
         /// <summary>
@@ -806,7 +806,7 @@ namespace WebCrunch
                         string formattedText = txtSubmitLink.Text;
                         if (!txtSubmitLink.Text.EndsWith("/"))
                             formattedText = txtSubmitLink.Text + "/";
-                        OpenLink.SubmitLink(formattedText); txtSubmitLink.Text = "";
+                        OpenLink.SubmitLink(new Uri(formattedText)); txtSubmitLink.Text = "";
                     }
                     else MessageBox.Show(this, "This isn't a public web directory.");
                 else MessageBox.Show(this, "This isn't a public web directory.");
@@ -817,7 +817,7 @@ namespace WebCrunch
 
         private void lblAboutReportIssue_Click(object sender, EventArgs e)
         {
-            Process.Start(OpenLink.urlGitHub + "issues/new");
+            Process.Start($"{OpenLink.urlGitHub}issues/new");
         }
 
         private void btnAboutTermsOfUse_Click(object sender, EventArgs e)

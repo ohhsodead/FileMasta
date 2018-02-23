@@ -208,7 +208,7 @@ namespace WebCrunch.Extensions
             return a;
         }
 
-        private static void btnTopSearchesTag_ClickButtonArea(object Sender, MouseEventArgs e)
+        public static void btnTopSearchesTag_ClickButtonArea(object Sender, MouseEventArgs e)
         {
             var tagItem = Sender as CButton;
             MainForm.form.txtSearchFilesHome.Text = tagItem.Text;

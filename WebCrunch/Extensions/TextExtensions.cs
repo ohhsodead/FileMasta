@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
 
@@ -115,10 +116,26 @@ namespace WebCrunch.Extensions
         }
 
         /// <summary>
+        /// Get link parent folder in the uri structure, used to get which folder a file is in
+        /// </summary>
+        /// <param name="uri"></param>
+        /// <returns>Parent folder url</returns>
+        public static string GetParentUriString(Uri uri)
+        {
+            StringBuilder parentName = new StringBuilder();
+            parentName.Append(uri.Scheme);
+            parentName.Append("://");
+            parentName.Append(uri.Host);
+            for (int i = 0; i < uri.Segments.Length - 1; i++)
+                parentName.Append(uri.Segments[i]);
+            return parentName.ToString();
+        }
+
+        /// <summary>
         /// Return file size with suffix e.g. Bytes, MB, GB
         /// </summary>
         /// <param name="byteCount"></param>
-        /// <returns></returns>
+        /// <returns>Bytes in string format</returns>
         public static String BytesToString(long byteCount)
         {
             string[] suf = { "Bytes", "KB", "MB", "GB", "TB", "PB", "EB" }; // Longs run out around EB
@@ -134,7 +151,7 @@ namespace WebCrunch.Extensions
         /// Checks if string is valid Json
         /// </summary>
         /// <param name="json"></param>
-        /// <returns></returns>
+        /// <returns>If valid json</returns>
         public static bool IsValidJSON(string json)
         {
             try {
@@ -158,6 +175,11 @@ namespace WebCrunch.Extensions
 
     static class ListExtensions
     {
+        /// <summary>
+        /// Shuffle array list items
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="list"></param>
         public static void Shuffle<T>(this IList<T> list)
         {
             int n = list.Count;

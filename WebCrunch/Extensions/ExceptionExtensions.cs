@@ -32,7 +32,6 @@ using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WebCrunch;
 using WebCrunch.GitHub;
 
 namespace WebCrunch.Extensions
@@ -68,7 +67,7 @@ namespace WebCrunch.Extensions
 
             if (MessageBox.Show("An error has occurred. Would you like to report this issue on GitHub?", "Error", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                Process.Start(OpenLink.urlGitHub + "issues/new?title=" + "[Exception] " + e.Exception.Message + "&body=" +
+                Process.Start($"{OpenLink.urlGitHub}issues/new?title=[Exception] {e.Exception.Message}&body=" +
                 "*Please explain the problem, be clear and not vague.*%0A%0A" +
                 "__Expected behavior__: %0A" +
                 "__Actual behavior__: %0A" +
@@ -94,12 +93,11 @@ namespace WebCrunch.Extensions
             int line = frame.GetFileLineNumber();
             int col = frame.GetFileColumnNumber();
 
-            //Program.log.Error("Unexpected Error: " + ((Exception)e.ExceptionObject).Message + " -File Name: " + Path.GetFileName(fileName) + " -Method Name: " + methodName + " -Line: " + line + " -Column: " + col);
             Program.log.Error("Unexpected Error", ((Exception)e.ExceptionObject));
 
             if (MessageBox.Show("An error has occurred. Would you like to report this issue on GitHub?", "Error", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                Process.Start(OpenLink.urlGitHub + "issues/new?title=" + "[Exception] " + ((Exception)e.ExceptionObject).Message + "&body=" +
+                Process.Start($"{OpenLink.urlGitHub}issues/new?title=[Exception] {((Exception)e.ExceptionObject).Message}&body=" +
                 "*Please explain the problem, be clear and not vague.*%0A%0A" +
                 "__Expected behavior__: %0A" +
                 "__Actual behavior__: %0A" +
