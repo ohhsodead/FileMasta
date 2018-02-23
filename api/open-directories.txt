@@ -1,8 +1,19 @@
+http://jhinter.ddns.net/Media/Movie/
 http://www.gagsnetwork.com/data/
 https://sb.mundus.xyz/public-files/
 https://computerarchive.org/files/
 http://media.fn-bd.com/english1/
 http://media.fn-bd.com/Tv%20Show/
+http://www.informatique16.com/Informatique/
+https://www.compuscan.co.za/downloads/
+https://cdn.netbsd.org/pub/
+http://tug.ctan.org/install/
+http://tug.ctan.org/fonts/
+http://gmsh.info/bin/
+http://www.libelium.com/v11-files/
+http://ftp.sas.com/
+https://repo.continuum.io/archive/
+http://download.gigabyte.cn/FileList/
 http://gameplay99dl.upfi.ir/files/
 http://dl.tehmovies.org/
 http://79.127.127.112/
@@ -62,7 +73,6 @@ http://www.exdrive.com/
 http://5.135.139.78/
 http://www.cabafx.com/trading-ebooks-collection/
 https://www.bassline.bg/podcasts/
-https://sv2.mybia2music.com/s2/Music/
 http://www.idreamofjimmy.com/episodes/
 http://feck.less.ly/dreaming/songs/
 http://nekit.sytes.net/files/
