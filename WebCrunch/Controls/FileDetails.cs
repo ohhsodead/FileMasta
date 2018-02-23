@@ -91,7 +91,7 @@ namespace WebCrunch.Controls
         private void appClose_Click(object sender, EventArgs e)
         {
             MainForm.form.tab.SelectedTab = MainForm.form.CurrentTab;
-            MainForm.form.fileDetails.Dispose();
+            MainForm.frmFileDetails.Dispose();
         }
 
         private void btnDirectLink_ClickButtonArea(object Sender, MouseEventArgs e)

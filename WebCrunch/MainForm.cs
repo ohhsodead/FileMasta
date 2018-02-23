@@ -15,18 +15,16 @@ using WebCrunch.Models;
 using WebCrunch.Controls;
 using WebCrunch.Files;
 using WebCrunch.Extensions;
-using WebCrunch.Utilities;
 using WebCrunch.Asynchronous;
 using WebCrunch.GitHub;
-using WebCrunch.Dialogs;
 
 namespace WebCrunch
 {
     public partial class MainForm : Form
     {
-        public static MainForm form = null; // For access in other classes
-        public SplashScreen frmSplash; // Declare Splash Screen (one instance)
-        public FileDetails fileDetails; // Declare File Details (one instance)
+        public static MainForm form { get; set; } = null; // This is only instance of the form
+        public static SplashScreen frmSplashScreen { get; set; } = new SplashScreen; // Declare Splash Screen (one instance)
+        public static FileDetails frmFileDetails { get; set; } = null; // Declare File Details (one instance)
 
         public MainForm()
         {
@@ -44,13 +42,12 @@ namespace WebCrunch
             lblAboutChangelogVersion.Text = String.Format(lblAboutChangelogVersion.Text, Application.ProductVersion); // Show this version in a Label on the About tab
             
             // Shows Splash Screen
-            frmSplash = new SplashScreen();
-            Controls.Add(frmSplash);
-            frmSplash.Dock = DockStyle.Fill;
-            frmSplash.Location = new Point(0, 0);
-            frmSplash.ClientSize = ClientSize;
-            frmSplash.BringToFront();
-            frmSplash.Show();
+            Controls.Add(frmSplashScreen);
+            frmSplashScreen.Dock = DockStyle.Fill;
+            frmSplashScreen.Location = new Point(0, 0);
+            frmSplashScreen.ClientSize = ClientSize;
+            frmSplashScreen.BringToFront();
+            frmSplashScreen.Show();
 
             cmboBoxHomeSearch.DropDownWidth = ControlExtensions.DropDownWidth(cmboBoxHomeSearch); // Set search engine combobox to fit its contents
             cmboBoxFilesSort.DropDownWidth = ControlExtensions.DropDownWidth(cmboBoxFilesSort); // Set files sort combobox to fit its contents
@@ -100,7 +97,7 @@ namespace WebCrunch
             }
             else
             {
-                Controls.Remove(frmSplash);
+                Controls.Remove(frmSplashScreen);
                 ErrorInfo.ShowStartupError("No Internet connection found. You need to be connected to the Internet to use WebCrunch. Please check your connection and try again.");
             }
 
@@ -111,7 +108,7 @@ namespace WebCrunch
         {
             LoadRecentlyAddedFiles(); // Gets ten of the recently added files
             GetDatabaseInfo(); // Get database info and show in form
-            Controls.Remove(frmSplash); // Everything's loaded, we're done with the splash screen
+            Controls.Remove(frmSplashScreen); // Everything's loaded, we're done with the splash screen
             Program.log.Info("Initiated");
         }
 
@@ -448,9 +445,9 @@ namespace WebCrunch
         public static List<string> otherFileTypes = new List<string>() { "JSP", "PL", "PHP", "HTML", "ASPX", "XML", "TXT", "SQL", "CSV" };
 
         // Filter Preferences
-        public static List<WebFile> SelectedFiles { get; set; }
-        public List<string> SelectedFilesFileType { get; set; }
-        public string SelectedFilesHost { get; set; }
+        public static List<WebFile> SelectedFiles { get; set; } = filesOpenDatabase;
+        public List<string> SelectedFilesFileType { get; set; } = allFileTypes;
+        public string SelectedFilesHost { get; set; } = "";
 
         /// <summary>
         /// Gets local files (supported in this app) from user's /Downloads directory
@@ -641,14 +638,14 @@ namespace WebCrunch
             Program.log.Info("Attempting to show file details dialog  : " + file.URL);
 
             if (createNewInstance)
-                fileDetails = new FileDetails();
+                frmFileDetails = new FileDetails();
 
-            fileDetails.currentFile = file;
-            fileDetails.infoFileName.Text = file.Name;
-            fileDetails.infoName.Text = file.Name;
-            fileDetails.infoReferrer.Text = file.Host;
-            fileDetails.infoType.Text = file.Type;
-            fileDetails.infoFileURL.Text = file.URL;
+            frmFileDetails.currentFile = file;
+            frmFileDetails.infoFileName.Text = file.Name;
+            frmFileDetails.infoName.Text = file.Name;
+            frmFileDetails.infoReferrer.Text = file.Host;
+            frmFileDetails.infoType.Text = file.Type;
+            frmFileDetails.infoFileURL.Text = file.URL;
 
             // Build all parts of the URL into a better looking string
             var url = new Uri(file.URL);
@@ -657,13 +654,13 @@ namespace WebCrunch
                 if (!Path.HasExtension(path))
                     directories.Append(path + "> ");
 
-            fileDetails.infoDirectory.Text = directories.ToString();
-            fileDetails.infoSize.Text = TextExtensions.BytesToString(file.Size);
-            fileDetails.infoAge.Text = TextExtensions.GetTimeAgo(file.DateUploaded);
+            frmFileDetails.infoDirectory.Text = directories.ToString();
+            frmFileDetails.infoSize.Text = TextExtensions.BytesToString(file.Size);
+            frmFileDetails.infoAge.Text = TextExtensions.GetTimeAgo(file.DateUploaded);
 
-            fileDetails.Dock = DockStyle.Fill;
-            if (!createNewInstance) fileDetails.CheckFileEvents();
-            if (createNewInstance) { tabBlank.Controls.Clear(); tabBlank.Controls.Add(fileDetails); }
+            frmFileDetails.Dock = DockStyle.Fill;
+            if (!createNewInstance) frmFileDetails.CheckFileEvents();
+            if (createNewInstance) { tabBlank.Controls.Clear(); tabBlank.Controls.Add(frmFileDetails); }
             tab.SelectedTab = tabBlank;
 
             Program.log.Info("Successfully loaded file details dialog");
