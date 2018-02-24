@@ -12,7 +12,7 @@ namespace WebCrunch.Files
         /// </summary>
         public static string urlOpenFiles = "https://dl.dropbox.com/s/charfmjveo2v1h3/open-files.json?dl=0";
         public static string urlTopSearches = "https://dl.dropbox.com/s/512qe4ogan92vea/top-searches.txt?dl=0";
-        public static string urlOpenDirectories = "https://raw.githubusercontent.com/HerbL27/WebCrunch/master/api/open-directories.txt";
+        public static string urlOpenDirectories = "https://raw.githubusercontent.com/HerbL27/WebCrunch/master/API/open-directories.txt";
 
         /// <summary>
         /// Get web file info from internal database, or creates a new object

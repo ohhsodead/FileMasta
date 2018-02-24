@@ -161,14 +161,14 @@ namespace WebCrunch.Extensions
         // Focus effect for Social images
         static Bitmap tmpSocialImage = null;
 
-        public static void Image_MouseEnter(object sender, EventArgs e)
+        public static void SocialImage_MouseEnter(object sender, EventArgs e)
         {
             PictureBox ctrl = sender as PictureBox;
             tmpSocialImage = (Bitmap)ctrl.Image;
             ctrl.Image = ImageExtensions.ChangeColor((Bitmap)ctrl.Image, Colors.uiColorOrange);
         }
 
-        public static void Image_MouseLeave(object sender, EventArgs e)
+        public static void SocialImage_MouseLeave(object sender, EventArgs e)
         {
             PictureBox ctrl = sender as PictureBox; ctrl.Image = tmpSocialImage;
         }

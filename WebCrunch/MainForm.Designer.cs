@@ -65,12 +65,12 @@ namespace WebCrunch
             this.btnHomeFileType = new CButtonLib.CButton();
             this.cmboBoxHomeFileType = new System.Windows.Forms.ComboBox();
             this.dataGridRecentlyAddedFiles = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnRecentlyAddedType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnRecentlyAddedName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnRecentlyAddedSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnRecentlyAddedAge = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnRecentlyAddedReferrer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnRecentlyAddedURL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblHeaderRecentlyAddedFiles = new System.Windows.Forms.Label();
             this.splitterHeaderRecentlyAddedFiles = new CButtonLib.CButton();
             this.lblHomeStatsDatabaseUpdated = new System.Windows.Forms.Label();
@@ -228,7 +228,7 @@ namespace WebCrunch
             this.panelTopSearches.Name = "panelTopSearches";
             this.panelTopSearches.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.panelTopSearches.Size = new System.Drawing.Size(1022, 139);
-            this.panelTopSearches.TabIndex = 6;
+            this.panelTopSearches.TabIndex = 2;
             // 
             // lblHeaderTopSearches
             // 
@@ -267,7 +267,8 @@ namespace WebCrunch
             this.splitterHeaderTopSearches.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.splitterHeaderTopSearches.SideImageSize = new System.Drawing.Size(36, 36);
             this.splitterHeaderTopSearches.Size = new System.Drawing.Size(1023, 1);
-            this.splitterHeaderTopSearches.TabIndex = 1103;
+            this.splitterHeaderTopSearches.TabIndex = 0;
+            this.splitterHeaderTopSearches.TabStop = false;
             this.splitterHeaderTopSearches.Text = "";
             this.splitterHeaderTopSearches.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.splitterHeaderTopSearches.TextShadowShow = false;
@@ -279,11 +280,11 @@ namespace WebCrunch
             this.panelHomeFilters.Controls.Add(this.panelHomeSearch);
             this.panelHomeFilters.Controls.Add(this.panelHomeFileType);
             this.panelHomeFilters.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.panelHomeFilters.Location = new System.Drawing.Point(660, 22);
+            this.panelHomeFilters.Location = new System.Drawing.Point(756, 22);
             this.panelHomeFilters.Margin = new System.Windows.Forms.Padding(2, 3, 3, 3);
             this.panelHomeFilters.Name = "panelHomeFilters";
-            this.panelHomeFilters.Size = new System.Drawing.Size(367, 22);
-            this.panelHomeFilters.TabIndex = 1114;
+            this.panelHomeFilters.Size = new System.Drawing.Size(271, 22);
+            this.panelHomeFilters.TabIndex = 1;
             // 
             // panelHomeSearch
             // 
@@ -291,7 +292,7 @@ namespace WebCrunch
             this.panelHomeSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(50)))));
             this.panelHomeSearch.Controls.Add(this.btnSearchHome);
             this.panelHomeSearch.Controls.Add(this.cmboBoxHomeSearch);
-            this.panelHomeSearch.Location = new System.Drawing.Point(328, 0);
+            this.panelHomeSearch.Location = new System.Drawing.Point(232, 0);
             this.panelHomeSearch.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.panelHomeSearch.Name = "panelHomeSearch";
             this.panelHomeSearch.Size = new System.Drawing.Size(39, 22);
@@ -317,6 +318,7 @@ namespace WebCrunch
             this.btnSearchHome.Corners.LowerRight = 2;
             this.btnSearchHome.Corners.UpperLeft = 2;
             this.btnSearchHome.Corners.UpperRight = 2;
+            this.btnSearchHome.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSearchHome.DesignerSelected = false;
             this.btnSearchHome.DimFactorClick = 0;
             this.btnSearchHome.DimFactorHover = 0;
@@ -369,7 +371,7 @@ namespace WebCrunch
             this.panelHomeFileType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(50)))));
             this.panelHomeFileType.Controls.Add(this.btnHomeFileType);
             this.panelHomeFileType.Controls.Add(this.cmboBoxHomeFileType);
-            this.panelHomeFileType.Location = new System.Drawing.Point(212, 0);
+            this.panelHomeFileType.Location = new System.Drawing.Point(116, 0);
             this.panelHomeFileType.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.panelHomeFileType.Name = "panelHomeFileType";
             this.panelHomeFileType.Size = new System.Drawing.Size(110, 22);
@@ -395,6 +397,7 @@ namespace WebCrunch
             this.btnHomeFileType.Corners.LowerRight = 2;
             this.btnHomeFileType.Corners.UpperLeft = 2;
             this.btnHomeFileType.Corners.UpperRight = 2;
+            this.btnHomeFileType.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnHomeFileType.DesignerSelected = false;
             this.btnHomeFileType.DimFactorClick = 0;
             this.btnHomeFileType.DimFactorHover = 0;
@@ -466,12 +469,13 @@ namespace WebCrunch
             this.dataGridRecentlyAddedFiles.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridRecentlyAddedFiles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridRecentlyAddedFiles.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6});
+            this.columnRecentlyAddedType,
+            this.columnRecentlyAddedName,
+            this.columnRecentlyAddedSize,
+            this.columnRecentlyAddedAge,
+            this.columnRecentlyAddedReferrer,
+            this.columnRecentlyAddedURL});
+            this.dataGridRecentlyAddedFiles.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dataGridRecentlyAddedFiles.EnableHeadersVisualStyles = false;
             this.dataGridRecentlyAddedFiles.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.dataGridRecentlyAddedFiles.Location = new System.Drawing.Point(15, 268);
@@ -499,68 +503,68 @@ namespace WebCrunch
             this.dataGridRecentlyAddedFiles.ShowEditingIcon = false;
             this.dataGridRecentlyAddedFiles.ShowRowErrors = false;
             this.dataGridRecentlyAddedFiles.Size = new System.Drawing.Size(1022, 244);
-            this.dataGridRecentlyAddedFiles.TabIndex = 1113;
+            this.dataGridRecentlyAddedFiles.TabIndex = 3;
             this.dataGridRecentlyAddedFiles.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridRecentlyAddedFiles_CellClick);
             // 
-            // dataGridViewTextBoxColumn1
+            // columnRecentlyAddedType
             // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn1.HeaderText = "Type";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dataGridViewTextBoxColumn1.Width = 43;
+            this.columnRecentlyAddedType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.columnRecentlyAddedType.HeaderText = "Type";
+            this.columnRecentlyAddedType.Name = "columnRecentlyAddedType";
+            this.columnRecentlyAddedType.ReadOnly = true;
+            this.columnRecentlyAddedType.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.columnRecentlyAddedType.Width = 43;
             // 
-            // dataGridViewTextBoxColumn2
+            // columnRecentlyAddedName
             // 
-            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.columnRecentlyAddedName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridViewTextBoxColumn2.HeaderText = "Name";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.columnRecentlyAddedName.DefaultCellStyle = dataGridViewCellStyle2;
+            this.columnRecentlyAddedName.HeaderText = "Name";
+            this.columnRecentlyAddedName.Name = "columnRecentlyAddedName";
+            this.columnRecentlyAddedName.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn3
+            // columnRecentlyAddedSize
             // 
-            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.columnRecentlyAddedSize.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridViewTextBoxColumn3.HeaderText = "Size";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dataGridViewTextBoxColumn3.Width = 41;
+            this.columnRecentlyAddedSize.DefaultCellStyle = dataGridViewCellStyle3;
+            this.columnRecentlyAddedSize.HeaderText = "Size";
+            this.columnRecentlyAddedSize.Name = "columnRecentlyAddedSize";
+            this.columnRecentlyAddedSize.ReadOnly = true;
+            this.columnRecentlyAddedSize.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.columnRecentlyAddedSize.Width = 41;
             // 
-            // dataGridViewTextBoxColumn4
+            // columnRecentlyAddedAge
             // 
-            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.columnRecentlyAddedAge.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridViewTextBoxColumn4.HeaderText = "Age";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dataGridViewTextBoxColumn4.Width = 41;
+            this.columnRecentlyAddedAge.DefaultCellStyle = dataGridViewCellStyle4;
+            this.columnRecentlyAddedAge.HeaderText = "Age";
+            this.columnRecentlyAddedAge.Name = "columnRecentlyAddedAge";
+            this.columnRecentlyAddedAge.ReadOnly = true;
+            this.columnRecentlyAddedAge.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.columnRecentlyAddedAge.Width = 41;
             // 
-            // dataGridViewTextBoxColumn5
+            // columnRecentlyAddedReferrer
             // 
-            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.columnRecentlyAddedReferrer.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle5;
-            this.dataGridViewTextBoxColumn5.HeaderText = "Referrer";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            this.dataGridViewTextBoxColumn5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dataGridViewTextBoxColumn5.Width = 62;
+            this.columnRecentlyAddedReferrer.DefaultCellStyle = dataGridViewCellStyle5;
+            this.columnRecentlyAddedReferrer.HeaderText = "Referrer";
+            this.columnRecentlyAddedReferrer.Name = "columnRecentlyAddedReferrer";
+            this.columnRecentlyAddedReferrer.ReadOnly = true;
+            this.columnRecentlyAddedReferrer.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.columnRecentlyAddedReferrer.Width = 62;
             // 
-            // dataGridViewTextBoxColumn6
+            // columnRecentlyAddedURL
             // 
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle6;
-            this.dataGridViewTextBoxColumn6.HeaderText = "URL";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            this.dataGridViewTextBoxColumn6.Visible = false;
+            this.columnRecentlyAddedURL.DefaultCellStyle = dataGridViewCellStyle6;
+            this.columnRecentlyAddedURL.HeaderText = "URL";
+            this.columnRecentlyAddedURL.Name = "columnRecentlyAddedURL";
+            this.columnRecentlyAddedURL.ReadOnly = true;
+            this.columnRecentlyAddedURL.Visible = false;
             // 
             // lblHeaderRecentlyAddedFiles
             // 
@@ -599,7 +603,8 @@ namespace WebCrunch
             this.splitterHeaderRecentlyAddedFiles.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.splitterHeaderRecentlyAddedFiles.SideImageSize = new System.Drawing.Size(36, 36);
             this.splitterHeaderRecentlyAddedFiles.Size = new System.Drawing.Size(1023, 1);
-            this.splitterHeaderRecentlyAddedFiles.TabIndex = 1112;
+            this.splitterHeaderRecentlyAddedFiles.TabIndex = 0;
+            this.splitterHeaderRecentlyAddedFiles.TabStop = false;
             this.splitterHeaderRecentlyAddedFiles.Text = "";
             this.splitterHeaderRecentlyAddedFiles.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.splitterHeaderRecentlyAddedFiles.TextShadowShow = false;
@@ -642,7 +647,7 @@ namespace WebCrunch
             this.txtSearchFilesHome.ForeColor = System.Drawing.Color.White;
             this.txtSearchFilesHome.Location = new System.Drawing.Point(22, 22);
             this.txtSearchFilesHome.Name = "txtSearchFilesHome";
-            this.txtSearchFilesHome.Size = new System.Drawing.Size(640, 19);
+            this.txtSearchFilesHome.Size = new System.Drawing.Size(729, 19);
             this.txtSearchFilesHome.TabIndex = 0;
             this.txtSearchFilesHome.WaterMark = "What are you looking for?";
             this.txtSearchFilesHome.WaterMarkActiveForeColor = System.Drawing.Color.White;
@@ -673,7 +678,7 @@ namespace WebCrunch
             this.bgSearchFilesHome.Name = "bgSearchFilesHome";
             this.bgSearchFilesHome.ShowFocus = CButtonLib.CButton.eFocus.None;
             this.bgSearchFilesHome.Size = new System.Drawing.Size(1022, 38);
-            this.bgSearchFilesHome.TabIndex = 2;
+            this.bgSearchFilesHome.TabIndex = 0;
             this.bgSearchFilesHome.TabStop = false;
             this.bgSearchFilesHome.Text = "";
             this.bgSearchFilesHome.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.bgSearchFilesHome_ClickButtonArea);
@@ -718,7 +723,7 @@ namespace WebCrunch
             this.emptyDataFiles.Location = new System.Drawing.Point(464, 180);
             this.emptyDataFiles.Name = "emptyDataFiles";
             this.emptyDataFiles.Size = new System.Drawing.Size(120, 19);
-            this.emptyDataFiles.TabIndex = 15;
+            this.emptyDataFiles.TabIndex = 0;
             this.emptyDataFiles.Text = "No Results Found";
             this.emptyDataFiles.Visible = false;
             // 
@@ -740,6 +745,7 @@ namespace WebCrunch
             // 
             this.imgSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.imgSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(50)))));
+            this.imgSearch.Cursor = System.Windows.Forms.Cursors.Hand;
             this.imgSearch.Image = global::WebCrunch.Properties.Resources.magnify_orange;
             this.imgSearch.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.imgSearch.Location = new System.Drawing.Point(347, 1);
@@ -782,6 +788,7 @@ namespace WebCrunch
             this.btnFilesHost.Corners.LowerRight = 2;
             this.btnFilesHost.Corners.UpperLeft = 2;
             this.btnFilesHost.Corners.UpperRight = 2;
+            this.btnFilesHost.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnFilesHost.DesignerSelected = false;
             this.btnFilesHost.DimFactorClick = 0;
             this.btnFilesHost.DimFactorHover = 0;
@@ -792,9 +799,8 @@ namespace WebCrunch
             this.btnFilesHost.ImageIndex = 0;
             this.btnFilesHost.Location = new System.Drawing.Point(0, 0);
             this.btnFilesHost.Name = "btnFilesHost";
-            this.btnFilesHost.ShowFocus = CButtonLib.CButton.eFocus.Dim;
             this.btnFilesHost.Size = new System.Drawing.Size(100, 22);
-            this.btnFilesHost.TabIndex = 3;
+            this.btnFilesHost.TabIndex = 2;
             this.btnFilesHost.Text = "Filter : Any";
             this.btnFilesHost.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnFilesHost.TextMargin = new System.Windows.Forms.Padding(0);
@@ -849,6 +855,7 @@ namespace WebCrunch
             this.btnFilesSort.Corners.LowerRight = 2;
             this.btnFilesSort.Corners.UpperLeft = 2;
             this.btnFilesSort.Corners.UpperRight = 2;
+            this.btnFilesSort.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnFilesSort.DesignerSelected = false;
             this.btnFilesSort.DimFactorClick = 0;
             this.btnFilesSort.DimFactorHover = 0;
@@ -859,10 +866,9 @@ namespace WebCrunch
             this.btnFilesSort.ImageIndex = 0;
             this.btnFilesSort.Location = new System.Drawing.Point(0, 0);
             this.btnFilesSort.Name = "btnFilesSort";
-            this.btnFilesSort.ShowFocus = CButtonLib.CButton.eFocus.Dim;
             this.btnFilesSort.SideImageSize = new System.Drawing.Size(24, 24);
             this.btnFilesSort.Size = new System.Drawing.Size(106, 22);
-            this.btnFilesSort.TabIndex = 2;
+            this.btnFilesSort.TabIndex = 1;
             this.btnFilesSort.Text = "Sort : Name";
             this.btnFilesSort.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnFilesSort.TextMargin = new System.Windows.Forms.Padding(0);
@@ -937,6 +943,7 @@ namespace WebCrunch
             this.columnFilesAge,
             this.columnFilesReferrer,
             this.columnFilesURL});
+            this.dataGridFiles.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dataGridFiles.EnableHeadersVisualStyles = false;
             this.dataGridFiles.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.dataGridFiles.Location = new System.Drawing.Point(0, 90);
@@ -945,6 +952,7 @@ namespace WebCrunch
             this.dataGridFiles.Name = "dataGridFiles";
             this.dataGridFiles.ReadOnly = true;
             this.dataGridFiles.RowHeadersVisible = false;
+            this.dataGridFiles.RowHeadersWidth = 40;
             dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI", 10.25F);
             dataGridViewCellStyle14.ForeColor = System.Drawing.Color.Silver;
@@ -963,7 +971,7 @@ namespace WebCrunch
             this.dataGridFiles.ShowEditingIcon = false;
             this.dataGridFiles.ShowRowErrors = false;
             this.dataGridFiles.Size = new System.Drawing.Size(1047, 516);
-            this.dataGridFiles.TabIndex = 26;
+            this.dataGridFiles.TabIndex = 14;
             this.dataGridFiles.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridFiles_CellClick);
             // 
             // columnFilesType
@@ -1086,7 +1094,7 @@ namespace WebCrunch
             this.lblFilesResultsInfo.Margin = new System.Windows.Forms.Padding(0, 9, 3, 9);
             this.lblFilesResultsInfo.Name = "lblFilesResultsInfo";
             this.lblFilesResultsInfo.Size = new System.Drawing.Size(168, 20);
-            this.lblFilesResultsInfo.TabIndex = 25;
+            this.lblFilesResultsInfo.TabIndex = 0;
             this.lblFilesResultsInfo.Text = "0 / 0 Files";
             this.lblFilesResultsInfo.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
@@ -1109,9 +1117,8 @@ namespace WebCrunch
             this.titleFilesAudio.MaximumSize = new System.Drawing.Size(1000, 27);
             this.titleFilesAudio.MinimumSize = new System.Drawing.Size(0, 27);
             this.titleFilesAudio.Name = "titleFilesAudio";
-            this.titleFilesAudio.ShowFocus = CButtonLib.CButton.eFocus.None;
             this.titleFilesAudio.Size = new System.Drawing.Size(60, 27);
-            this.titleFilesAudio.TabIndex = 37;
+            this.titleFilesAudio.TabIndex = 6;
             this.titleFilesAudio.Text = "Music";
             this.titleFilesAudio.TextShadowShow = false;
             this.titleFilesAudio.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.titleFilesAudio_ClickButtonArea);
@@ -1135,9 +1142,8 @@ namespace WebCrunch
             this.titleFilesBookmarks.MaximumSize = new System.Drawing.Size(1000, 27);
             this.titleFilesBookmarks.MinimumSize = new System.Drawing.Size(0, 27);
             this.titleFilesBookmarks.Name = "titleFilesBookmarks";
-            this.titleFilesBookmarks.ShowFocus = CButtonLib.CButton.eFocus.None;
             this.titleFilesBookmarks.Size = new System.Drawing.Size(92, 27);
-            this.titleFilesBookmarks.TabIndex = 36;
+            this.titleFilesBookmarks.TabIndex = 13;
             this.titleFilesBookmarks.Text = "Bookmarks";
             this.titleFilesBookmarks.TextShadowShow = false;
             this.titleFilesBookmarks.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.titleFilesBookmarks_ClickButtonArea);
@@ -1161,9 +1167,8 @@ namespace WebCrunch
             this.titleFilesLocal.MaximumSize = new System.Drawing.Size(1000, 27);
             this.titleFilesLocal.MinimumSize = new System.Drawing.Size(0, 27);
             this.titleFilesLocal.Name = "titleFilesLocal";
-            this.titleFilesLocal.ShowFocus = CButtonLib.CButton.eFocus.None;
             this.titleFilesLocal.Size = new System.Drawing.Size(56, 27);
-            this.titleFilesLocal.TabIndex = 35;
+            this.titleFilesLocal.TabIndex = 12;
             this.titleFilesLocal.Text = "Local";
             this.titleFilesLocal.TextShadowShow = false;
             this.titleFilesLocal.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.titleFilesLocal_ClickButtonArea);
@@ -1187,9 +1192,8 @@ namespace WebCrunch
             this.titleFilesTorrents.MaximumSize = new System.Drawing.Size(1000, 27);
             this.titleFilesTorrents.MinimumSize = new System.Drawing.Size(0, 27);
             this.titleFilesTorrents.Name = "titleFilesTorrents";
-            this.titleFilesTorrents.ShowFocus = CButtonLib.CButton.eFocus.None;
             this.titleFilesTorrents.Size = new System.Drawing.Size(75, 27);
-            this.titleFilesTorrents.TabIndex = 34;
+            this.titleFilesTorrents.TabIndex = 8;
             this.titleFilesTorrents.Text = "Torrents";
             this.titleFilesTorrents.TextShadowShow = false;
             this.titleFilesTorrents.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.titleFilesTorrents_ClickButtonArea);
@@ -1213,9 +1217,8 @@ namespace WebCrunch
             this.titleFilesOther.MaximumSize = new System.Drawing.Size(1000, 27);
             this.titleFilesOther.MinimumSize = new System.Drawing.Size(0, 27);
             this.titleFilesOther.Name = "titleFilesOther";
-            this.titleFilesOther.ShowFocus = CButtonLib.CButton.eFocus.None;
             this.titleFilesOther.Size = new System.Drawing.Size(59, 27);
-            this.titleFilesOther.TabIndex = 33;
+            this.titleFilesOther.TabIndex = 11;
             this.titleFilesOther.Text = "Other";
             this.titleFilesOther.TextShadowShow = false;
             this.titleFilesOther.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.titleFilesOther_ClickButtonArea);
@@ -1239,9 +1242,8 @@ namespace WebCrunch
             this.titleFilesSoftware.MaximumSize = new System.Drawing.Size(1000, 27);
             this.titleFilesSoftware.MinimumSize = new System.Drawing.Size(0, 27);
             this.titleFilesSoftware.Name = "titleFilesSoftware";
-            this.titleFilesSoftware.ShowFocus = CButtonLib.CButton.eFocus.None;
             this.titleFilesSoftware.Size = new System.Drawing.Size(125, 27);
-            this.titleFilesSoftware.TabIndex = 32;
+            this.titleFilesSoftware.TabIndex = 7;
             this.titleFilesSoftware.Text = "Software/Games";
             this.titleFilesSoftware.TextShadowShow = false;
             this.titleFilesSoftware.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.titleFilesSoftware_ClickButtonArea);
@@ -1265,9 +1267,8 @@ namespace WebCrunch
             this.titleFilesCustom.MaximumSize = new System.Drawing.Size(1000, 27);
             this.titleFilesCustom.MinimumSize = new System.Drawing.Size(0, 27);
             this.titleFilesCustom.Name = "titleFilesCustom";
-            this.titleFilesCustom.ShowFocus = CButtonLib.CButton.eFocus.None;
             this.titleFilesCustom.Size = new System.Drawing.Size(77, 27);
-            this.titleFilesCustom.TabIndex = 31;
+            this.titleFilesCustom.TabIndex = 10;
             this.titleFilesCustom.Text = "Custom*";
             this.titleFilesCustom.TextShadowShow = false;
             this.titleFilesCustom.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.titleFilesCustom_ClickButtonArea);
@@ -1291,9 +1292,8 @@ namespace WebCrunch
             this.titleFilesSubtitles.MaximumSize = new System.Drawing.Size(1000, 27);
             this.titleFilesSubtitles.MinimumSize = new System.Drawing.Size(0, 27);
             this.titleFilesSubtitles.Name = "titleFilesSubtitles";
-            this.titleFilesSubtitles.ShowFocus = CButtonLib.CButton.eFocus.None;
             this.titleFilesSubtitles.Size = new System.Drawing.Size(77, 27);
-            this.titleFilesSubtitles.TabIndex = 30;
+            this.titleFilesSubtitles.TabIndex = 9;
             this.titleFilesSubtitles.Text = "Subtitles";
             this.titleFilesSubtitles.TextShadowShow = false;
             this.titleFilesSubtitles.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.titleFilesSubtitles_ClickButtonArea);
@@ -1317,9 +1317,8 @@ namespace WebCrunch
             this.titleFilesAll.MaximumSize = new System.Drawing.Size(1000, 27);
             this.titleFilesAll.MinimumSize = new System.Drawing.Size(0, 27);
             this.titleFilesAll.Name = "titleFilesAll";
-            this.titleFilesAll.ShowFocus = CButtonLib.CButton.eFocus.None;
             this.titleFilesAll.Size = new System.Drawing.Size(40, 27);
-            this.titleFilesAll.TabIndex = 4;
+            this.titleFilesAll.TabIndex = 3;
             this.titleFilesAll.Text = "All";
             this.titleFilesAll.TextShadowShow = false;
             this.titleFilesAll.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.titleFilesAll_ClickButtonArea);
@@ -1343,9 +1342,8 @@ namespace WebCrunch
             this.titleFilesBooks.MaximumSize = new System.Drawing.Size(1000, 27);
             this.titleFilesBooks.MinimumSize = new System.Drawing.Size(0, 27);
             this.titleFilesBooks.Name = "titleFilesBooks";
-            this.titleFilesBooks.ShowFocus = CButtonLib.CButton.eFocus.None;
             this.titleFilesBooks.Size = new System.Drawing.Size(61, 27);
-            this.titleFilesBooks.TabIndex = 29;
+            this.titleFilesBooks.TabIndex = 5;
             this.titleFilesBooks.Text = "Books";
             this.titleFilesBooks.TextShadowShow = false;
             this.titleFilesBooks.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.titleFilesBooks_ClickButtonArea);
@@ -1369,9 +1367,8 @@ namespace WebCrunch
             this.titleFilesVideo.MaximumSize = new System.Drawing.Size(1000, 27);
             this.titleFilesVideo.MinimumSize = new System.Drawing.Size(0, 27);
             this.titleFilesVideo.Name = "titleFilesVideo";
-            this.titleFilesVideo.ShowFocus = CButtonLib.CButton.eFocus.None;
             this.titleFilesVideo.Size = new System.Drawing.Size(130, 27);
-            this.titleFilesVideo.TabIndex = 28;
+            this.titleFilesVideo.TabIndex = 4;
             this.titleFilesVideo.Text = "TV/Movies/Video";
             this.titleFilesVideo.TextShadowShow = false;
             this.titleFilesVideo.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.titleFilesVideo_ClickButtonArea);
@@ -1411,7 +1408,8 @@ namespace WebCrunch
             this.splitterHeaderDiscover.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.splitterHeaderDiscover.SideImageSize = new System.Drawing.Size(36, 36);
             this.splitterHeaderDiscover.Size = new System.Drawing.Size(1020, 1);
-            this.splitterHeaderDiscover.TabIndex = 100047;
+            this.splitterHeaderDiscover.TabIndex = 0;
+            this.splitterHeaderDiscover.TabStop = false;
             this.splitterHeaderDiscover.Text = "";
             this.splitterHeaderDiscover.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.splitterHeaderDiscover.TextShadowShow = false;
@@ -1428,7 +1426,7 @@ namespace WebCrunch
             this.lblHeaderDiscover.Margin = new System.Windows.Forms.Padding(0);
             this.lblHeaderDiscover.Name = "lblHeaderDiscover";
             this.lblHeaderDiscover.Size = new System.Drawing.Size(1020, 32);
-            this.lblHeaderDiscover.TabIndex = 100046;
+            this.lblHeaderDiscover.TabIndex = 0;
             this.lblHeaderDiscover.Text = "Every website/domain crawled by WebCrunch ready to be discovered.";
             this.lblHeaderDiscover.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -1487,7 +1485,7 @@ namespace WebCrunch
             this.dataGridDiscover.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridDiscover.ShowEditingIcon = false;
             this.dataGridDiscover.Size = new System.Drawing.Size(1048, 557);
-            this.dataGridDiscover.TabIndex = 3;
+            this.dataGridDiscover.TabIndex = 0;
             this.dataGridDiscover.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridDiscover_CellClick);
             // 
             // columnDiscoverCount
@@ -1555,7 +1553,8 @@ namespace WebCrunch
             this.splitterHeaderSubmit.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.splitterHeaderSubmit.SideImageSize = new System.Drawing.Size(36, 36);
             this.splitterHeaderSubmit.Size = new System.Drawing.Size(1020, 1);
-            this.splitterHeaderSubmit.TabIndex = 1105;
+            this.splitterHeaderSubmit.TabIndex = 0;
+            this.splitterHeaderSubmit.TabStop = false;
             this.splitterHeaderSubmit.Text = "";
             this.splitterHeaderSubmit.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.splitterHeaderSubmit.TextShadowShow = false;
@@ -1629,7 +1628,7 @@ namespace WebCrunch
             this.btnSubmitUrl.Name = "btnSubmitUrl";
             this.btnSubmitUrl.ShowFocus = CButtonLib.CButton.eFocus.None;
             this.btnSubmitUrl.Size = new System.Drawing.Size(66, 30);
-            this.btnSubmitUrl.TabIndex = 0;
+            this.btnSubmitUrl.TabIndex = 1;
             this.btnSubmitUrl.Text = "Submit";
             this.btnSubmitUrl.TextMargin = new System.Windows.Forms.Padding(0, 2, 0, 2);
             this.btnSubmitUrl.TextShadowShow = false;
@@ -1734,7 +1733,7 @@ namespace WebCrunch
             this.btnSettingsSave.Name = "btnSettingsSave";
             this.btnSettingsSave.ShowFocus = CButtonLib.CButton.eFocus.None;
             this.btnSettingsSave.Size = new System.Drawing.Size(52, 30);
-            this.btnSettingsSave.TabIndex = 0;
+            this.btnSettingsSave.TabIndex = 3;
             this.btnSettingsSave.Text = "Save";
             this.btnSettingsSave.TextMargin = new System.Windows.Forms.Padding(0, 2, 0, 2);
             this.btnSettingsSave.TextShadowShow = false;
@@ -1764,7 +1763,7 @@ namespace WebCrunch
             this.btnSettingsRestoreDefault.Name = "btnSettingsRestoreDefault";
             this.btnSettingsRestoreDefault.ShowFocus = CButtonLib.CButton.eFocus.None;
             this.btnSettingsRestoreDefault.Size = new System.Drawing.Size(69, 30);
-            this.btnSettingsRestoreDefault.TabIndex = 1;
+            this.btnSettingsRestoreDefault.TabIndex = 2;
             this.btnSettingsRestoreDefault.Text = "Restore";
             this.btnSettingsRestoreDefault.TextMargin = new System.Windows.Forms.Padding(0, 2, 0, 2);
             this.btnSettingsRestoreDefault.TextShadowShow = false;
@@ -1793,7 +1792,8 @@ namespace WebCrunch
             this.splitterHeaderSettings.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.splitterHeaderSettings.SideImageSize = new System.Drawing.Size(36, 36);
             this.splitterHeaderSettings.Size = new System.Drawing.Size(993, 1);
-            this.splitterHeaderSettings.TabIndex = 1104;
+            this.splitterHeaderSettings.TabIndex = 0;
+            this.splitterHeaderSettings.TabStop = false;
             this.splitterHeaderSettings.Text = "";
             this.splitterHeaderSettings.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.splitterHeaderSettings.TextShadowShow = false;
@@ -2188,6 +2188,8 @@ namespace WebCrunch
             // imgShareFacebook
             // 
             this.imgShareFacebook.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.imgShareFacebook.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imgShareFacebook.Image = global::WebCrunch.Properties.Resources.facebook;
             this.imgShareFacebook.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.imgShareFacebook.Location = new System.Drawing.Point(988, 7);
             this.imgShareFacebook.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -2201,6 +2203,8 @@ namespace WebCrunch
             // imgShareTwitter
             // 
             this.imgShareTwitter.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.imgShareTwitter.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imgShareTwitter.Image = global::WebCrunch.Properties.Resources.twitter;
             this.imgShareTwitter.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.imgShareTwitter.Location = new System.Drawing.Point(1016, 7);
             this.imgShareTwitter.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -2334,12 +2338,12 @@ namespace WebCrunch
         private System.Windows.Forms.Label lblAboutSubText;
         private System.Windows.Forms.FlowLayoutPanel panelHomeFilters;
         private System.Windows.Forms.DataGridView dataGridRecentlyAddedFiles;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnRecentlyAddedType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnRecentlyAddedName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnRecentlyAddedSize;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnRecentlyAddedAge;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnRecentlyAddedReferrer;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnRecentlyAddedURL;
         internal System.Windows.Forms.Label lblHeaderTopSearches;
         public CButtonLib.CButton splitterHeaderTopSearches;
         private System.Windows.Forms.Panel panelHomeSearch;

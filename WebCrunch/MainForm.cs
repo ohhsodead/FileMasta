@@ -98,7 +98,7 @@ namespace WebCrunch
             else
             {
                 Controls.Remove(frmSplashScreen);
-                ErrorInfo.ShowStartupError("No Internet connection found. You need to be connected to the Internet to use WebCrunch. Please check your connection and try again.");
+                MessageBox.Show(this, "No Internet connection found. You need to be connected to the Internet to use WebCrunch. Please check your connection and try again.", "Error",  MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             Program.log.Info("Loaded application");
@@ -273,16 +273,13 @@ namespace WebCrunch
                 Program.log.Info("Attempting to get recently added files");
                 var copiedItems = new List<WebFile>(filesOpenDatabase);
                 copiedItems.Shuffle();
-                foreach (var jsonData in copiedItems.GetRange(2, copiedItems.Count / 4))
-                    if (DateTime.Today < jsonData.DateUploaded.Date.AddDays(14))
-                        if (jsonData.Size > 0) // If file size isn't zero
-                            if (!addedHosts.Contains(jsonData.Host))
-                                if (itemCount <= 6)
-                                {
-                                    itemCount++;
-                                    addedHosts.Add(jsonData.Host);
-                                    dataGridRecentlyAddedFiles.Rows.Add(jsonData.Type, jsonData.Name, TextExtensions.BytesToString(jsonData.Size), TextExtensions.GetTimeAgo(jsonData.DateUploaded), jsonData.Host, jsonData.URL);
-                                }
+                foreach (var jsonData in copiedItems)
+                    if (DateTime.Today < jsonData.DateUploaded.Date.AddDays(14) && jsonData.Size > 0 && !addedHosts.Contains(jsonData.Host) && itemCount <= 6)
+                    {
+                        itemCount++;
+                        addedHosts.Add(jsonData.Host);
+                        dataGridRecentlyAddedFiles.Rows.Add(jsonData.Type, jsonData.Name, TextExtensions.BytesToString(jsonData.Size), TextExtensions.GetTimeAgo(jsonData.DateUploaded), jsonData.Host, jsonData.URL);
+                    }
 
                 Program.log.Info("Recently added files successful");
             }

@@ -56,7 +56,7 @@
             this.imgLogo.Image = ((System.Drawing.Image)(resources.GetObject("imgLogo.Image")));
             this.imgLogo.Location = new System.Drawing.Point(238, 105);
             this.imgLogo.Name = "imgLogo";
-            this.imgLogo.Size = new System.Drawing.Size(224, 223);
+            this.imgLogo.Size = new System.Drawing.Size(225, 225);
             this.imgLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imgLogo.TabIndex = 1;
             this.imgLogo.TabStop = false;

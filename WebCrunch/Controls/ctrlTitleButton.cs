@@ -1,7 +1,7 @@
-﻿using System;
+﻿using CButtonLib;
+using System;
 using System.Drawing;
 using System.Windows.Forms;
-using CButtonLib;
 using WebCrunch.Extensions;
 
 namespace WebCrunch.Controls
@@ -18,7 +18,7 @@ namespace WebCrunch.Controls
             base.Cursor = Cursors.Hand;
             base.MaximumSize = new Size(1000, 34);
             base.MinimumSize = new Size(0, 34);
-            Size = new Size(30, 30);
+            Size = new Size(34, 34);
             TextAlign = ContentAlignment.MiddleCenter;
             Corners = new CornersProperty(2);
             TextMargin = new Padding(2, 2, 2, 2);
@@ -41,6 +41,7 @@ namespace WebCrunch.Controls
             SizeF mySize = base.CreateGraphics().MeasureString(base.Text, myFont);
             base.Width = (((int)(Math.Round(mySize.Width, 0))) + increaseBy);
         }
+
         protected override void OnControlAdded(ControlEventArgs e)
         {
             base.OnControlAdded(e);
