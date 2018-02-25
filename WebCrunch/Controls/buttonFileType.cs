@@ -5,11 +5,11 @@ using CButtonLib;
 
 namespace WebCrunch.Controls
 {
-    public partial class CtrlTitleFileType : CButton
+    public partial class buttonFileType : CButton
     {
         private static Font _normalFont = new Font("Segoe UI Semibold", 9.75F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
 
-        public CtrlTitleFileType() : base()
+        public buttonFileType() : base()
         {
             base.Font = _normalFont;
             base.BackColor = Color.Transparent;

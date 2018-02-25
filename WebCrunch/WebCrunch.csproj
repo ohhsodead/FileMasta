@@ -93,13 +93,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controls\ctrlButton.cs">
+    <Compile Include="Controls\buttonCustom.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Controls\ctrlTitleButton.cs">
+    <Compile Include="Controls\buttonTabTitle.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Controls\ctrlTitleFileType.cs">
+    <Compile Include="Controls\buttonFileType.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Extensions\Colors.cs" />

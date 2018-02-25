@@ -129,7 +129,7 @@
   <metadata name="columnDiscoverURL.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="lblSubSubmit.Text" xml:space="preserve">
+  <data name="labelSubmitDescription.Text" xml:space="preserve">
     <value>Submit your links to WebCrunch.
 
 The link you submit will go to our issue tracker on GitHub. Links are reviewed on a first-in, first-out basis. This could take anywhere from a few hours to a couple of weeks before your site is listed depending on number of submissions yet to be checked.
@@ -144,7 +144,7 @@ Please keep in mind we are a search engine having strict policies, read the foll
 • Do not use URL shorteners in order to submit multiple similar links
 • No links to anything pornographic or in extremely bad taste</value>
   </data>
-  <data name="lblAboutText.Text" xml:space="preserve">
+  <data name="labelAboutApp.Text" xml:space="preserve">
     <value>WebCrunch is intended to provide a very powerful web server indexing and search service allowing you to find a file among millions of files located on public servers around the internet.
 
 The search engine is powered by a database that holds information about all the files web servers have. The information about the files is gathered by an intelligent web crawler that runs every 2 to 4 days. It keeps the database clean and up-to-date with the previous contents and new entries for each web server address submitted by members.

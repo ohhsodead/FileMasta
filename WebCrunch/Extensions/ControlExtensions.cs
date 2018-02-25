@@ -93,28 +93,28 @@ namespace WebCrunch.Extensions
         /// <param name="cbtn"></param>
         public static void SelectFilesTab(CButton cbtn)
         {
-            MainForm.form.titleFilesAll.ColorFillSolid = Color.Transparent;
-            MainForm.form.titleFilesAll.BorderColor = Color.Transparent;
-            MainForm.form.titleFilesVideo.ColorFillSolid = Color.Transparent;
-            MainForm.form.titleFilesVideo.BorderColor = Color.Transparent;
-            MainForm.form.titleFilesAudio.ColorFillSolid = Color.Transparent;
-            MainForm.form.titleFilesAudio.BorderColor = Color.Transparent;
-            MainForm.form.titleFilesBooks.ColorFillSolid = Color.Transparent;
-            MainForm.form.titleFilesBooks.BorderColor = Color.Transparent;
-            MainForm.form.titleFilesSubtitles.ColorFillSolid = Color.Transparent;
-            MainForm.form.titleFilesSubtitles.BorderColor = Color.Transparent;
-            MainForm.form.titleFilesTorrents.ColorFillSolid = Color.Transparent;
-            MainForm.form.titleFilesTorrents.BorderColor = Color.Transparent;
-            MainForm.form.titleFilesSoftware.ColorFillSolid = Color.Transparent;
-            MainForm.form.titleFilesSoftware.BorderColor = Color.Transparent;
-            MainForm.form.titleFilesCustom.ColorFillSolid = Color.Transparent;
-            MainForm.form.titleFilesCustom.BorderColor = Color.Transparent;
-            MainForm.form.titleFilesOther.ColorFillSolid = Color.Transparent;
-            MainForm.form.titleFilesOther.BorderColor = Color.Transparent;
-            MainForm.form.titleFilesLocal.ColorFillSolid = Color.Transparent;
-            MainForm.form.titleFilesLocal.BorderColor = Color.Transparent;
-            MainForm.form.titleFilesBookmarks.ColorFillSolid = Color.Transparent;
-            MainForm.form.titleFilesBookmarks.BorderColor = Color.Transparent;
+            MainForm.form.buttonFilesAll.ColorFillSolid = Color.Transparent;
+            MainForm.form.buttonFilesAll.BorderColor = Color.Transparent;
+            MainForm.form.buttonFilesVideo.ColorFillSolid = Color.Transparent;
+            MainForm.form.buttonFilesVideo.BorderColor = Color.Transparent;
+            MainForm.form.buttonFilesAudio.ColorFillSolid = Color.Transparent;
+            MainForm.form.buttonFilesAudio.BorderColor = Color.Transparent;
+            MainForm.form.buttonFilesBooks.ColorFillSolid = Color.Transparent;
+            MainForm.form.buttonFilesBooks.BorderColor = Color.Transparent;
+            MainForm.form.buttonFilesSubtitles.ColorFillSolid = Color.Transparent;
+            MainForm.form.buttonFilesSubtitles.BorderColor = Color.Transparent;
+            MainForm.form.buttonFilesTorrents.ColorFillSolid = Color.Transparent;
+            MainForm.form.buttonFilesTorrents.BorderColor = Color.Transparent;
+            MainForm.form.buttonFilesSoftware.ColorFillSolid = Color.Transparent;
+            MainForm.form.buttonFilesSoftware.BorderColor = Color.Transparent;
+            MainForm.form.buttonFilesCustom.ColorFillSolid = Color.Transparent;
+            MainForm.form.buttonFilesCustom.BorderColor = Color.Transparent;
+            MainForm.form.buttonFilesOther.ColorFillSolid = Color.Transparent;
+            MainForm.form.buttonFilesOther.BorderColor = Color.Transparent;
+            MainForm.form.buttonFilesLocal.ColorFillSolid = Color.Transparent;
+            MainForm.form.buttonFilesLocal.BorderColor = Color.Transparent;
+            MainForm.form.buttonFilesBookmarks.ColorFillSolid = Color.Transparent;
+            MainForm.form.buttonFilesBookmarks.BorderColor = Color.Transparent;
 
             cbtn.ColorFillSolid = Colors.uiColorOrange;
             cbtn.BorderColor = Colors.uiColorOrange;
@@ -211,7 +211,7 @@ namespace WebCrunch.Extensions
         public static void btnTopSearchesTag_ClickButtonArea(object Sender, MouseEventArgs e)
         {
             var tagItem = Sender as CButton;
-            MainForm.form.txtSearchFilesHome.Text = tagItem.Text;
+            MainForm.form.textBoxSearchHome.Text = tagItem.Text;
             MainForm.form.DoSearchFilesFromHome();
         }
     }

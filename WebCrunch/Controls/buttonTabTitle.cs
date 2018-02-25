@@ -6,11 +6,11 @@ using WebCrunch.Extensions;
 
 namespace WebCrunch.Controls
 {
-    public partial class CtrlTitleButton : CButton
+    public partial class buttonTabTitle : CButton
     {
         private static Font _normalFont = new Font("Segoe UI Semibold", 9.75F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
 
-        public CtrlTitleButton() : base()
+        public buttonTabTitle() : base()
         {
             base.Font = _normalFont;
             base.BackColor = Colors.nonSelectedTitleRGB;

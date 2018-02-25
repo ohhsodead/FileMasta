@@ -54,40 +54,40 @@ namespace WebCrunch
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.tab = new System.Windows.Forms.TabControl();
             this.tabHome = new System.Windows.Forms.TabPage();
-            this.panelTopSearches = new System.Windows.Forms.FlowLayoutPanel();
-            this.lblHeaderTopSearches = new System.Windows.Forms.Label();
+            this.flowLayoutTopSearches = new System.Windows.Forms.FlowLayoutPanel();
+            this.labelTopSearches = new System.Windows.Forms.Label();
             this.splitterHeaderTopSearches = new CButtonLib.CButton();
-            this.panelHomeFilters = new System.Windows.Forms.FlowLayoutPanel();
-            this.panelHomeSearch = new System.Windows.Forms.Panel();
-            this.btnSearchHome = new CButtonLib.CButton();
-            this.cmboBoxHomeSearch = new System.Windows.Forms.ComboBox();
-            this.panelHomeFileType = new System.Windows.Forms.Panel();
-            this.btnHomeFileType = new CButtonLib.CButton();
-            this.cmboBoxHomeFileType = new System.Windows.Forms.ComboBox();
-            this.dataGridRecentlyAddedFiles = new System.Windows.Forms.DataGridView();
+            this.flowLayoutSearchItems = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutSearchHome = new System.Windows.Forms.Panel();
+            this.buttonSearchHome = new CButtonLib.CButton();
+            this.comboBoxSearchHome = new System.Windows.Forms.ComboBox();
+            this.containerFileType = new System.Windows.Forms.Panel();
+            this.buttonFileType = new CButtonLib.CButton();
+            this.comboBoxFileType = new System.Windows.Forms.ComboBox();
+            this.dataGridRecentlyAdded = new System.Windows.Forms.DataGridView();
             this.columnRecentlyAddedType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnRecentlyAddedName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnRecentlyAddedSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnRecentlyAddedAge = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnRecentlyAddedReferrer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnRecentlyAddedURL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblHeaderRecentlyAddedFiles = new System.Windows.Forms.Label();
-            this.splitterHeaderRecentlyAddedFiles = new CButtonLib.CButton();
-            this.lblHomeStatsDatabaseUpdated = new System.Windows.Forms.Label();
-            this.lblHomeStatsFiles = new System.Windows.Forms.Label();
-            this.txtSearchFilesHome = new ChreneLib.Controls.TextBoxes.CTextBox();
-            this.bgSearchFilesHome = new CButtonLib.CButton();
+            this.labelRecentlyAdded = new System.Windows.Forms.Label();
+            this.splitterHeaderRecentlyAdded = new CButtonLib.CButton();
+            this.labelDatabaseUpdatedDate = new System.Windows.Forms.Label();
+            this.labelDatabaseStats = new System.Windows.Forms.Label();
+            this.textBoxSearchHome = new ChreneLib.Controls.TextBoxes.CTextBox();
+            this.textBoxBackgroundSearchHome = new CButtonLib.CButton();
             this.tabSearch = new System.Windows.Forms.TabPage();
-            this.emptyDataFiles = new System.Windows.Forms.Label();
-            this.panelFileFilters = new System.Windows.Forms.FlowLayoutPanel();
-            this.imgSearch = new System.Windows.Forms.PictureBox();
-            this.panelFilesHost = new System.Windows.Forms.Panel();
-            this.btnFilesHost = new CButtonLib.CButton();
-            this.cmboBoxFilesHost = new System.Windows.Forms.ComboBox();
-            this.panelFilesSort = new System.Windows.Forms.Panel();
-            this.btnFilesSort = new CButtonLib.CButton();
-            this.cmboBoxFilesSort = new System.Windows.Forms.ComboBox();
-            this.txtSearchFiles = new ChreneLib.Controls.TextBoxes.CTextBox();
+            this.labelNoResultsFound = new System.Windows.Forms.Label();
+            this.flowLayoutSearchFiles = new System.Windows.Forms.FlowLayoutPanel();
+            this.imageSearchFiles = new System.Windows.Forms.PictureBox();
+            this.flowLayoutFilterFiles = new System.Windows.Forms.Panel();
+            this.buttonFilterFiles = new CButtonLib.CButton();
+            this.comboBoxFilterFiles = new System.Windows.Forms.ComboBox();
+            this.flowLayoutSortFiles = new System.Windows.Forms.Panel();
+            this.buttonSortFiles = new CButtonLib.CButton();
+            this.comboBoxSortFiles = new System.Windows.Forms.ComboBox();
+            this.textBoxSearchFiles = new ChreneLib.Controls.TextBoxes.CTextBox();
             this.dataGridFiles = new System.Windows.Forms.DataGridView();
             this.columnFilesType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnFilesName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -95,23 +95,23 @@ namespace WebCrunch
             this.columnFilesAge = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnFilesReferrer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnFilesURL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.splitterFilesTabs = new CButtonLib.CButton();
-            this.bgSearchFiles = new CButtonLib.CButton();
-            this.lblFilesResultsInfo = new System.Windows.Forms.Label();
-            this.titleFilesAudio = new WebCrunch.Controls.CtrlTitleFileType();
-            this.titleFilesBookmarks = new WebCrunch.Controls.CtrlTitleFileType();
-            this.titleFilesLocal = new WebCrunch.Controls.CtrlTitleFileType();
-            this.titleFilesTorrents = new WebCrunch.Controls.CtrlTitleFileType();
-            this.titleFilesOther = new WebCrunch.Controls.CtrlTitleFileType();
-            this.titleFilesSoftware = new WebCrunch.Controls.CtrlTitleFileType();
-            this.titleFilesCustom = new WebCrunch.Controls.CtrlTitleFileType();
-            this.titleFilesSubtitles = new WebCrunch.Controls.CtrlTitleFileType();
-            this.titleFilesAll = new WebCrunch.Controls.CtrlTitleFileType();
-            this.titleFilesBooks = new WebCrunch.Controls.CtrlTitleFileType();
-            this.titleFilesVideo = new WebCrunch.Controls.CtrlTitleFileType();
+            this.splitterFilesType = new CButtonLib.CButton();
+            this.textBoxBackgroundSearchFiles = new CButtonLib.CButton();
+            this.labelResultsInfo = new System.Windows.Forms.Label();
+            this.buttonFilesAudio = new WebCrunch.Controls.buttonFileType();
+            this.buttonFilesBookmarks = new WebCrunch.Controls.buttonFileType();
+            this.buttonFilesLocal = new WebCrunch.Controls.buttonFileType();
+            this.buttonFilesTorrents = new WebCrunch.Controls.buttonFileType();
+            this.buttonFilesOther = new WebCrunch.Controls.buttonFileType();
+            this.buttonFilesSoftware = new WebCrunch.Controls.buttonFileType();
+            this.buttonFilesCustom = new WebCrunch.Controls.buttonFileType();
+            this.buttonFilesSubtitles = new WebCrunch.Controls.buttonFileType();
+            this.buttonFilesAll = new WebCrunch.Controls.buttonFileType();
+            this.buttonFilesBooks = new WebCrunch.Controls.buttonFileType();
+            this.buttonFilesVideo = new WebCrunch.Controls.buttonFileType();
             this.tabDiscover = new System.Windows.Forms.TabPage();
             this.splitterHeaderDiscover = new CButtonLib.CButton();
-            this.lblHeaderDiscover = new System.Windows.Forms.Label();
+            this.labelTitleDiscover = new System.Windows.Forms.Label();
             this.dataGridDiscover = new System.Windows.Forms.DataGridView();
             this.columnDiscoverCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnDiscoverSite = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -119,60 +119,59 @@ namespace WebCrunch
             this.columnDiscoverURL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabSubmit = new System.Windows.Forms.TabPage();
             this.splitterHeaderSubmit = new CButtonLib.CButton();
-            this.panelSubmitDescription = new System.Windows.Forms.FlowLayoutPanel();
-            this.lblSubSubmit = new System.Windows.Forms.Label();
-            this.panelSubmitItems = new System.Windows.Forms.Panel();
-            this.btnSubmitUrl = new WebCrunch.Controls.CtrlButton();
-            this.txtSubmitLink = new ChreneLib.Controls.TextBoxes.CTextBox();
-            this.bgSubmitLink = new CButtonLib.CButton();
-            this.lblHeaderSubmit = new System.Windows.Forms.Label();
+            this.flowLayoutSubmitControls = new System.Windows.Forms.FlowLayoutPanel();
+            this.labelSubmitDescription = new System.Windows.Forms.Label();
+            this.panelSubmitLink = new System.Windows.Forms.Panel();
+            this.buttonSubmitUrl = new WebCrunch.Controls.buttonCustom();
+            this.textBoxSubmitLink = new ChreneLib.Controls.TextBoxes.CTextBox();
+            this.textBoxBackgroundSubmitLink = new CButtonLib.CButton();
+            this.labelTitleSubmit = new System.Windows.Forms.Label();
             this.tabSettings = new System.Windows.Forms.TabPage();
-            this.btnSettingsSave = new WebCrunch.Controls.CtrlButton();
-            this.btnSettingsRestoreDefault = new WebCrunch.Controls.CtrlButton();
+            this.buttonSaveSettings = new WebCrunch.Controls.buttonCustom();
+            this.buttonRestoreSettings = new WebCrunch.Controls.buttonCustom();
             this.splitterHeaderSettings = new CButtonLib.CButton();
-            this.lblHeaderSettingsGeneral = new System.Windows.Forms.Label();
-            this.lblSettingsGeneralClearDataOnClose = new System.Windows.Forms.Label();
-            this.chkSettingsClearData = new System.Windows.Forms.CheckBox();
+            this.labelTitleGeneral = new System.Windows.Forms.Label();
+            this.labelClearDataOnClose = new System.Windows.Forms.Label();
+            this.checkBoxClearDataOnClose = new System.Windows.Forms.CheckBox();
             this.tabInformation = new System.Windows.Forms.TabPage();
-            this.btnAboutPrivacyPolicy = new System.Windows.Forms.Label();
-            this.btnAboutTermsOfUse = new System.Windows.Forms.Label();
-            this.lblAboutChangelogVersion = new System.Windows.Forms.Label();
-            this.btnAboutReportIssue = new System.Windows.Forms.Label();
-            this.lblAboutSubText = new System.Windows.Forms.Label();
-            this.lblAboutText = new System.Windows.Forms.Label();
+            this.labelPrivacyPolicy = new System.Windows.Forms.Label();
+            this.labelTermsOfUse = new System.Windows.Forms.Label();
+            this.labelChangeLog = new System.Windows.Forms.Label();
+            this.labelReportIssue = new System.Windows.Forms.Label();
+            this.labelMadeWithLove = new System.Windows.Forms.Label();
+            this.labelAboutApp = new System.Windows.Forms.Label();
             this.tabBlank = new System.Windows.Forms.TabPage();
-            this.panelTitles = new System.Windows.Forms.Panel();
-            this.titleInformation = new WebCrunch.Controls.CtrlTitleButton();
-            this.titleSettings = new WebCrunch.Controls.CtrlTitleButton();
-            this.titleSubmit = new WebCrunch.Controls.CtrlTitleButton();
-            this.titleDiscover = new WebCrunch.Controls.CtrlTitleButton();
-            this.titleSearch = new WebCrunch.Controls.CtrlTitleButton();
-            this.titleHome = new WebCrunch.Controls.CtrlTitleButton();
-            this.lblShareUsOn = new System.Windows.Forms.Label();
-            this.imgShareFacebook = new System.Windows.Forms.PictureBox();
-            this.imgShareTwitter = new System.Windows.Forms.PictureBox();
+            this.panelTabTitles = new System.Windows.Forms.Panel();
+            this.titleInformation = new WebCrunch.Controls.buttonTabTitle();
+            this.titleSettings = new WebCrunch.Controls.buttonTabTitle();
+            this.titleSubmit = new WebCrunch.Controls.buttonTabTitle();
+            this.titleDiscover = new WebCrunch.Controls.buttonTabTitle();
+            this.titleSearch = new WebCrunch.Controls.buttonTabTitle();
+            this.titleHome = new WebCrunch.Controls.buttonTabTitle();
+            this.imageFacebook = new System.Windows.Forms.PictureBox();
+            this.imageTwitter = new System.Windows.Forms.PictureBox();
             this.tab.SuspendLayout();
             this.tabHome.SuspendLayout();
-            this.panelHomeFilters.SuspendLayout();
-            this.panelHomeSearch.SuspendLayout();
-            this.panelHomeFileType.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridRecentlyAddedFiles)).BeginInit();
+            this.flowLayoutSearchItems.SuspendLayout();
+            this.flowLayoutSearchHome.SuspendLayout();
+            this.containerFileType.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridRecentlyAdded)).BeginInit();
             this.tabSearch.SuspendLayout();
-            this.panelFileFilters.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgSearch)).BeginInit();
-            this.panelFilesHost.SuspendLayout();
-            this.panelFilesSort.SuspendLayout();
+            this.flowLayoutSearchFiles.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imageSearchFiles)).BeginInit();
+            this.flowLayoutFilterFiles.SuspendLayout();
+            this.flowLayoutSortFiles.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridFiles)).BeginInit();
             this.tabDiscover.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridDiscover)).BeginInit();
             this.tabSubmit.SuspendLayout();
-            this.panelSubmitDescription.SuspendLayout();
-            this.panelSubmitItems.SuspendLayout();
+            this.flowLayoutSubmitControls.SuspendLayout();
+            this.panelSubmitLink.SuspendLayout();
             this.tabSettings.SuspendLayout();
             this.tabInformation.SuspendLayout();
-            this.panelTitles.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgShareFacebook)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgShareTwitter)).BeginInit();
+            this.panelTabTitles.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imageFacebook)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageTwitter)).BeginInit();
             this.SuspendLayout();
             // 
             // tab
@@ -201,48 +200,48 @@ namespace WebCrunch
             // 
             this.tabHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.tabHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.tabHome.Controls.Add(this.panelTopSearches);
-            this.tabHome.Controls.Add(this.lblHeaderTopSearches);
+            this.tabHome.Controls.Add(this.flowLayoutTopSearches);
+            this.tabHome.Controls.Add(this.labelTopSearches);
             this.tabHome.Controls.Add(this.splitterHeaderTopSearches);
-            this.tabHome.Controls.Add(this.panelHomeFilters);
-            this.tabHome.Controls.Add(this.dataGridRecentlyAddedFiles);
-            this.tabHome.Controls.Add(this.lblHeaderRecentlyAddedFiles);
-            this.tabHome.Controls.Add(this.splitterHeaderRecentlyAddedFiles);
-            this.tabHome.Controls.Add(this.lblHomeStatsDatabaseUpdated);
-            this.tabHome.Controls.Add(this.lblHomeStatsFiles);
-            this.tabHome.Controls.Add(this.txtSearchFilesHome);
-            this.tabHome.Controls.Add(this.bgSearchFilesHome);
+            this.tabHome.Controls.Add(this.flowLayoutSearchItems);
+            this.tabHome.Controls.Add(this.dataGridRecentlyAdded);
+            this.tabHome.Controls.Add(this.labelRecentlyAdded);
+            this.tabHome.Controls.Add(this.splitterHeaderRecentlyAdded);
+            this.tabHome.Controls.Add(this.labelDatabaseUpdatedDate);
+            this.tabHome.Controls.Add(this.labelDatabaseStats);
+            this.tabHome.Controls.Add(this.textBoxSearchHome);
+            this.tabHome.Controls.Add(this.textBoxBackgroundSearchHome);
             this.tabHome.Location = new System.Drawing.Point(4, 22);
             this.tabHome.Name = "tabHome";
             this.tabHome.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.tabHome.Size = new System.Drawing.Size(1048, 607);
             this.tabHome.TabIndex = 10;
             // 
-            // panelTopSearches
+            // flowLayoutTopSearches
             // 
-            this.panelTopSearches.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.flowLayoutTopSearches.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelTopSearches.AutoSize = true;
-            this.panelTopSearches.BackColor = System.Drawing.Color.Transparent;
-            this.panelTopSearches.Location = new System.Drawing.Point(15, 93);
-            this.panelTopSearches.Name = "panelTopSearches";
-            this.panelTopSearches.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.panelTopSearches.Size = new System.Drawing.Size(1022, 139);
-            this.panelTopSearches.TabIndex = 2;
+            this.flowLayoutTopSearches.AutoSize = true;
+            this.flowLayoutTopSearches.BackColor = System.Drawing.Color.Transparent;
+            this.flowLayoutTopSearches.Location = new System.Drawing.Point(15, 93);
+            this.flowLayoutTopSearches.Name = "flowLayoutTopSearches";
+            this.flowLayoutTopSearches.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.flowLayoutTopSearches.Size = new System.Drawing.Size(1022, 139);
+            this.flowLayoutTopSearches.TabIndex = 2;
             // 
-            // lblHeaderTopSearches
+            // labelTopSearches
             // 
-            this.lblHeaderTopSearches.AutoSize = true;
-            this.lblHeaderTopSearches.BackColor = System.Drawing.Color.Transparent;
-            this.lblHeaderTopSearches.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.lblHeaderTopSearches.ForeColor = System.Drawing.Color.White;
-            this.lblHeaderTopSearches.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblHeaderTopSearches.Location = new System.Drawing.Point(11, 65);
-            this.lblHeaderTopSearches.Margin = new System.Windows.Forms.Padding(0);
-            this.lblHeaderTopSearches.Name = "lblHeaderTopSearches";
-            this.lblHeaderTopSearches.Size = new System.Drawing.Size(106, 19);
-            this.lblHeaderTopSearches.TabIndex = 0;
-            this.lblHeaderTopSearches.Text = "TOP SEARCHES";
+            this.labelTopSearches.AutoSize = true;
+            this.labelTopSearches.BackColor = System.Drawing.Color.Transparent;
+            this.labelTopSearches.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.labelTopSearches.ForeColor = System.Drawing.Color.White;
+            this.labelTopSearches.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.labelTopSearches.Location = new System.Drawing.Point(11, 65);
+            this.labelTopSearches.Margin = new System.Windows.Forms.Padding(0);
+            this.labelTopSearches.Name = "labelTopSearches";
+            this.labelTopSearches.Size = new System.Drawing.Size(106, 19);
+            this.labelTopSearches.TabIndex = 0;
+            this.labelTopSearches.Text = "TOP SEARCHES";
             // 
             // splitterHeaderTopSearches
             // 
@@ -273,162 +272,160 @@ namespace WebCrunch
             this.splitterHeaderTopSearches.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.splitterHeaderTopSearches.TextShadowShow = false;
             // 
-            // panelHomeFilters
+            // flowLayoutSearchItems
             // 
-            this.panelHomeFilters.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelHomeFilters.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(50)))));
-            this.panelHomeFilters.Controls.Add(this.panelHomeSearch);
-            this.panelHomeFilters.Controls.Add(this.panelHomeFileType);
-            this.panelHomeFilters.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.panelHomeFilters.Location = new System.Drawing.Point(756, 22);
-            this.panelHomeFilters.Margin = new System.Windows.Forms.Padding(2, 3, 3, 3);
-            this.panelHomeFilters.Name = "panelHomeFilters";
-            this.panelHomeFilters.Size = new System.Drawing.Size(271, 22);
-            this.panelHomeFilters.TabIndex = 1;
+            this.flowLayoutSearchItems.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.flowLayoutSearchItems.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(50)))));
+            this.flowLayoutSearchItems.Controls.Add(this.flowLayoutSearchHome);
+            this.flowLayoutSearchItems.Controls.Add(this.containerFileType);
+            this.flowLayoutSearchItems.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.flowLayoutSearchItems.Location = new System.Drawing.Point(756, 22);
+            this.flowLayoutSearchItems.Margin = new System.Windows.Forms.Padding(2, 3, 3, 3);
+            this.flowLayoutSearchItems.Name = "flowLayoutSearchItems";
+            this.flowLayoutSearchItems.Size = new System.Drawing.Size(271, 22);
+            this.flowLayoutSearchItems.TabIndex = 1;
             // 
-            // panelHomeSearch
+            // flowLayoutSearchHome
             // 
-            this.panelHomeSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelHomeSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(50)))));
-            this.panelHomeSearch.Controls.Add(this.btnSearchHome);
-            this.panelHomeSearch.Controls.Add(this.cmboBoxHomeSearch);
-            this.panelHomeSearch.Location = new System.Drawing.Point(232, 0);
-            this.panelHomeSearch.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.panelHomeSearch.Name = "panelHomeSearch";
-            this.panelHomeSearch.Size = new System.Drawing.Size(39, 22);
-            this.panelHomeSearch.TabIndex = 5;
+            this.flowLayoutSearchHome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.flowLayoutSearchHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(50)))));
+            this.flowLayoutSearchHome.Controls.Add(this.buttonSearchHome);
+            this.flowLayoutSearchHome.Controls.Add(this.comboBoxSearchHome);
+            this.flowLayoutSearchHome.Location = new System.Drawing.Point(232, 0);
+            this.flowLayoutSearchHome.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.flowLayoutSearchHome.Name = "flowLayoutSearchHome";
+            this.flowLayoutSearchHome.Size = new System.Drawing.Size(39, 22);
+            this.flowLayoutSearchHome.TabIndex = 5;
             // 
-            // btnSearchHome
+            // buttonSearchHome
             // 
-            this.btnSearchHome.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.buttonSearchHome.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSearchHome.BackColor = System.Drawing.Color.Transparent;
-            this.btnSearchHome.BorderColor = System.Drawing.Color.Transparent;
+            this.buttonSearchHome.BackColor = System.Drawing.Color.Transparent;
+            this.buttonSearchHome.BorderColor = System.Drawing.Color.Transparent;
             cBlendItems1.iColor = new System.Drawing.Color[] {
         System.Drawing.Color.White,
         System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))))};
             cBlendItems1.iPoint = new float[] {
         0F,
         1F};
-            this.btnSearchHome.ColorFillBlend = cBlendItems1;
-            this.btnSearchHome.ColorFillSolid = System.Drawing.Color.Transparent;
-            this.btnSearchHome.Corners.All = 2;
-            this.btnSearchHome.Corners.LowerLeft = 2;
-            this.btnSearchHome.Corners.LowerRight = 2;
-            this.btnSearchHome.Corners.UpperLeft = 2;
-            this.btnSearchHome.Corners.UpperRight = 2;
-            this.btnSearchHome.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSearchHome.DesignerSelected = false;
-            this.btnSearchHome.DimFactorClick = 0;
-            this.btnSearchHome.DimFactorHover = 0;
-            this.btnSearchHome.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.btnSearchHome.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
-            this.btnSearchHome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(193)))), ((int)(((byte)(190)))));
-            this.btnSearchHome.Image = global::WebCrunch.Properties.Resources.magnify_orange;
-            this.btnSearchHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearchHome.ImageIndex = 0;
-            this.btnSearchHome.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnSearchHome.Location = new System.Drawing.Point(0, 0);
-            this.btnSearchHome.Margin = new System.Windows.Forms.Padding(0);
-            this.btnSearchHome.Name = "btnSearchHome";
-            this.btnSearchHome.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.btnSearchHome.SideImage = global::WebCrunch.Properties.Resources.menu_down;
-            this.btnSearchHome.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSearchHome.SideImageIsClickable = true;
-            this.btnSearchHome.SideImageSize = new System.Drawing.Size(16, 16);
-            this.btnSearchHome.Size = new System.Drawing.Size(39, 22);
-            this.btnSearchHome.TabIndex = 3;
-            this.btnSearchHome.Text = "";
-            this.btnSearchHome.TextMargin = new System.Windows.Forms.Padding(0);
-            this.btnSearchHome.TextShadowShow = false;
-            this.btnSearchHome.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnSearchHome_ClickButtonArea);
-            this.btnSearchHome.SideImageClicked += new CButtonLib.CButton.SideImageClickedEventHandler(this.btnSearchHome_SideImageClicked);
+            this.buttonSearchHome.ColorFillBlend = cBlendItems1;
+            this.buttonSearchHome.ColorFillSolid = System.Drawing.Color.Transparent;
+            this.buttonSearchHome.Corners.All = 2;
+            this.buttonSearchHome.Corners.LowerLeft = 2;
+            this.buttonSearchHome.Corners.LowerRight = 2;
+            this.buttonSearchHome.Corners.UpperLeft = 2;
+            this.buttonSearchHome.Corners.UpperRight = 2;
+            this.buttonSearchHome.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonSearchHome.DesignerSelected = false;
+            this.buttonSearchHome.DimFactorClick = 0;
+            this.buttonSearchHome.DimFactorHover = 0;
+            this.buttonSearchHome.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.buttonSearchHome.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
+            this.buttonSearchHome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(193)))), ((int)(((byte)(190)))));
+            this.buttonSearchHome.Image = global::WebCrunch.Properties.Resources.magnify_orange;
+            this.buttonSearchHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonSearchHome.ImageIndex = 0;
+            this.buttonSearchHome.ImageSize = new System.Drawing.Size(20, 20);
+            this.buttonSearchHome.Location = new System.Drawing.Point(0, 0);
+            this.buttonSearchHome.Margin = new System.Windows.Forms.Padding(0);
+            this.buttonSearchHome.Name = "buttonSearchHome";
+            this.buttonSearchHome.SideImage = global::WebCrunch.Properties.Resources.menu_down;
+            this.buttonSearchHome.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonSearchHome.SideImageIsClickable = true;
+            this.buttonSearchHome.SideImageSize = new System.Drawing.Size(16, 16);
+            this.buttonSearchHome.Size = new System.Drawing.Size(39, 22);
+            this.buttonSearchHome.TabIndex = 3;
+            this.buttonSearchHome.Text = "";
+            this.buttonSearchHome.TextMargin = new System.Windows.Forms.Padding(0);
+            this.buttonSearchHome.TextShadowShow = false;
+            this.buttonSearchHome.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnSearchHome_ClickButtonArea);
+            this.buttonSearchHome.SideImageClicked += new CButtonLib.CButton.SideImageClickedEventHandler(this.btnSearchHome_SideImageClicked);
             // 
-            // cmboBoxHomeSearch
+            // comboBoxSearchHome
             // 
-            this.cmboBoxHomeSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.comboBoxSearchHome.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmboBoxHomeSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            this.cmboBoxHomeSearch.Font = new System.Drawing.Font("Segoe UI Semibold", 9.25F);
-            this.cmboBoxHomeSearch.ForeColor = System.Drawing.Color.White;
-            this.cmboBoxHomeSearch.FormattingEnabled = true;
-            this.cmboBoxHomeSearch.Items.AddRange(new object[] {
+            this.comboBoxSearchHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            this.comboBoxSearchHome.Font = new System.Drawing.Font("Segoe UI Semibold", 9.25F);
+            this.comboBoxSearchHome.ForeColor = System.Drawing.Color.White;
+            this.comboBoxSearchHome.FormattingEnabled = true;
+            this.comboBoxSearchHome.Items.AddRange(new object[] {
             "Google",
             "Googol",
             "Startpage",
             "Searx"});
-            this.cmboBoxHomeSearch.Location = new System.Drawing.Point(0, -2);
-            this.cmboBoxHomeSearch.Name = "cmboBoxHomeSearch";
-            this.cmboBoxHomeSearch.Size = new System.Drawing.Size(39, 23);
-            this.cmboBoxHomeSearch.TabIndex = 0;
-            this.cmboBoxHomeSearch.TabStop = false;
-            this.cmboBoxHomeSearch.SelectedIndexChanged += new System.EventHandler(this.cmboBoxSearchHome_SelectedIndexChanged);
+            this.comboBoxSearchHome.Location = new System.Drawing.Point(0, -2);
+            this.comboBoxSearchHome.Name = "comboBoxSearchHome";
+            this.comboBoxSearchHome.Size = new System.Drawing.Size(39, 23);
+            this.comboBoxSearchHome.TabIndex = 0;
+            this.comboBoxSearchHome.TabStop = false;
+            this.comboBoxSearchHome.SelectedIndexChanged += new System.EventHandler(this.cmboBoxSearchHome_SelectedIndexChanged);
             // 
-            // panelHomeFileType
+            // containerFileType
             // 
-            this.panelHomeFileType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelHomeFileType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(50)))));
-            this.panelHomeFileType.Controls.Add(this.btnHomeFileType);
-            this.panelHomeFileType.Controls.Add(this.cmboBoxHomeFileType);
-            this.panelHomeFileType.Location = new System.Drawing.Point(116, 0);
-            this.panelHomeFileType.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.panelHomeFileType.Name = "panelHomeFileType";
-            this.panelHomeFileType.Size = new System.Drawing.Size(110, 22);
-            this.panelHomeFileType.TabIndex = 4;
+            this.containerFileType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.containerFileType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(50)))));
+            this.containerFileType.Controls.Add(this.buttonFileType);
+            this.containerFileType.Controls.Add(this.comboBoxFileType);
+            this.containerFileType.Location = new System.Drawing.Point(116, 0);
+            this.containerFileType.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.containerFileType.Name = "containerFileType";
+            this.containerFileType.Size = new System.Drawing.Size(110, 22);
+            this.containerFileType.TabIndex = 4;
             // 
-            // btnHomeFileType
+            // buttonFileType
             // 
-            this.btnHomeFileType.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.buttonFileType.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnHomeFileType.BackColor = System.Drawing.Color.Transparent;
-            this.btnHomeFileType.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(193)))), ((int)(((byte)(190)))));
+            this.buttonFileType.BackColor = System.Drawing.Color.Transparent;
+            this.buttonFileType.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(193)))), ((int)(((byte)(190)))));
             cBlendItems2.iColor = new System.Drawing.Color[] {
         System.Drawing.Color.White,
         System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))))};
             cBlendItems2.iPoint = new float[] {
         0F,
         1F};
-            this.btnHomeFileType.ColorFillBlend = cBlendItems2;
-            this.btnHomeFileType.ColorFillSolid = System.Drawing.Color.Transparent;
-            this.btnHomeFileType.Corners.All = 2;
-            this.btnHomeFileType.Corners.LowerLeft = 2;
-            this.btnHomeFileType.Corners.LowerRight = 2;
-            this.btnHomeFileType.Corners.UpperLeft = 2;
-            this.btnHomeFileType.Corners.UpperRight = 2;
-            this.btnHomeFileType.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnHomeFileType.DesignerSelected = false;
-            this.btnHomeFileType.DimFactorClick = 0;
-            this.btnHomeFileType.DimFactorHover = 0;
-            this.btnHomeFileType.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.btnHomeFileType.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
-            this.btnHomeFileType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(193)))), ((int)(((byte)(190)))));
-            this.btnHomeFileType.Image = global::WebCrunch.Properties.Resources.menu_down;
-            this.btnHomeFileType.ImageIndex = 0;
-            this.btnHomeFileType.Location = new System.Drawing.Point(0, 0);
-            this.btnHomeFileType.Margin = new System.Windows.Forms.Padding(0);
-            this.btnHomeFileType.Name = "btnHomeFileType";
-            this.btnHomeFileType.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.btnHomeFileType.SideImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnHomeFileType.SideImageSize = new System.Drawing.Size(24, 24);
-            this.btnHomeFileType.Size = new System.Drawing.Size(110, 22);
-            this.btnHomeFileType.TabIndex = 2;
-            this.btnHomeFileType.Text = "Filetype : All";
-            this.btnHomeFileType.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnHomeFileType.TextMargin = new System.Windows.Forms.Padding(0);
-            this.btnHomeFileType.TextShadowShow = false;
-            this.btnHomeFileType.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnHomeFileType_ClickButtonArea);
+            this.buttonFileType.ColorFillBlend = cBlendItems2;
+            this.buttonFileType.ColorFillSolid = System.Drawing.Color.Transparent;
+            this.buttonFileType.Corners.All = 2;
+            this.buttonFileType.Corners.LowerLeft = 2;
+            this.buttonFileType.Corners.LowerRight = 2;
+            this.buttonFileType.Corners.UpperLeft = 2;
+            this.buttonFileType.Corners.UpperRight = 2;
+            this.buttonFileType.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonFileType.DesignerSelected = false;
+            this.buttonFileType.DimFactorClick = 0;
+            this.buttonFileType.DimFactorHover = 0;
+            this.buttonFileType.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.buttonFileType.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
+            this.buttonFileType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(193)))), ((int)(((byte)(190)))));
+            this.buttonFileType.Image = global::WebCrunch.Properties.Resources.menu_down;
+            this.buttonFileType.ImageIndex = 0;
+            this.buttonFileType.Location = new System.Drawing.Point(0, 0);
+            this.buttonFileType.Margin = new System.Windows.Forms.Padding(0);
+            this.buttonFileType.Name = "buttonFileType";
+            this.buttonFileType.SideImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.buttonFileType.SideImageSize = new System.Drawing.Size(24, 24);
+            this.buttonFileType.Size = new System.Drawing.Size(110, 22);
+            this.buttonFileType.TabIndex = 2;
+            this.buttonFileType.Text = "Filetype : All";
+            this.buttonFileType.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.buttonFileType.TextMargin = new System.Windows.Forms.Padding(0);
+            this.buttonFileType.TextShadowShow = false;
+            this.buttonFileType.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnHomeFileType_ClickButtonArea);
             // 
-            // cmboBoxHomeFileType
+            // comboBoxFileType
             // 
-            this.cmboBoxHomeFileType.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.comboBoxFileType.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmboBoxHomeFileType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            this.cmboBoxHomeFileType.Font = new System.Drawing.Font("Segoe UI Semibold", 9.25F);
-            this.cmboBoxHomeFileType.ForeColor = System.Drawing.Color.White;
-            this.cmboBoxHomeFileType.FormattingEnabled = true;
-            this.cmboBoxHomeFileType.Items.AddRange(new object[] {
+            this.comboBoxFileType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            this.comboBoxFileType.Font = new System.Drawing.Font("Segoe UI Semibold", 9.25F);
+            this.comboBoxFileType.ForeColor = System.Drawing.Color.White;
+            this.comboBoxFileType.FormattingEnabled = true;
+            this.comboBoxFileType.Items.AddRange(new object[] {
             "All",
             "TV/Movies/Video",
             "Audio",
@@ -437,27 +434,27 @@ namespace WebCrunch
             "Torrents",
             "Software/Games",
             "Other"});
-            this.cmboBoxHomeFileType.Location = new System.Drawing.Point(0, -2);
-            this.cmboBoxHomeFileType.Name = "cmboBoxHomeFileType";
-            this.cmboBoxHomeFileType.Size = new System.Drawing.Size(110, 23);
-            this.cmboBoxHomeFileType.TabIndex = 0;
-            this.cmboBoxHomeFileType.TabStop = false;
-            this.cmboBoxHomeFileType.SelectedIndexChanged += new System.EventHandler(this.cmboBoxHomeFileType_SelectedIndexChanged);
+            this.comboBoxFileType.Location = new System.Drawing.Point(0, -2);
+            this.comboBoxFileType.Name = "comboBoxFileType";
+            this.comboBoxFileType.Size = new System.Drawing.Size(110, 23);
+            this.comboBoxFileType.TabIndex = 0;
+            this.comboBoxFileType.TabStop = false;
+            this.comboBoxFileType.SelectedIndexChanged += new System.EventHandler(this.cmboBoxHomeFileType_SelectedIndexChanged);
             // 
-            // dataGridRecentlyAddedFiles
+            // dataGridRecentlyAdded
             // 
-            this.dataGridRecentlyAddedFiles.AllowUserToAddRows = false;
-            this.dataGridRecentlyAddedFiles.AllowUserToDeleteRows = false;
-            this.dataGridRecentlyAddedFiles.AllowUserToResizeColumns = false;
-            this.dataGridRecentlyAddedFiles.AllowUserToResizeRows = false;
-            this.dataGridRecentlyAddedFiles.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dataGridRecentlyAdded.AllowUserToAddRows = false;
+            this.dataGridRecentlyAdded.AllowUserToDeleteRows = false;
+            this.dataGridRecentlyAdded.AllowUserToResizeColumns = false;
+            this.dataGridRecentlyAdded.AllowUserToResizeRows = false;
+            this.dataGridRecentlyAdded.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridRecentlyAddedFiles.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.dataGridRecentlyAddedFiles.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridRecentlyAddedFiles.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dataGridRecentlyAddedFiles.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
-            this.dataGridRecentlyAddedFiles.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dataGridRecentlyAdded.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.dataGridRecentlyAdded.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridRecentlyAdded.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dataGridRecentlyAdded.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
+            this.dataGridRecentlyAdded.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 8.25F);
@@ -466,45 +463,45 @@ namespace WebCrunch
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridRecentlyAddedFiles.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridRecentlyAddedFiles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridRecentlyAddedFiles.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridRecentlyAdded.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridRecentlyAdded.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridRecentlyAdded.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.columnRecentlyAddedType,
             this.columnRecentlyAddedName,
             this.columnRecentlyAddedSize,
             this.columnRecentlyAddedAge,
             this.columnRecentlyAddedReferrer,
             this.columnRecentlyAddedURL});
-            this.dataGridRecentlyAddedFiles.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dataGridRecentlyAddedFiles.EnableHeadersVisualStyles = false;
-            this.dataGridRecentlyAddedFiles.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.dataGridRecentlyAddedFiles.Location = new System.Drawing.Point(15, 268);
-            this.dataGridRecentlyAddedFiles.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
-            this.dataGridRecentlyAddedFiles.MultiSelect = false;
-            this.dataGridRecentlyAddedFiles.Name = "dataGridRecentlyAddedFiles";
-            this.dataGridRecentlyAddedFiles.ReadOnly = true;
-            this.dataGridRecentlyAddedFiles.RowHeadersVisible = false;
+            this.dataGridRecentlyAdded.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dataGridRecentlyAdded.EnableHeadersVisualStyles = false;
+            this.dataGridRecentlyAdded.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.dataGridRecentlyAdded.Location = new System.Drawing.Point(15, 268);
+            this.dataGridRecentlyAdded.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
+            this.dataGridRecentlyAdded.MultiSelect = false;
+            this.dataGridRecentlyAdded.Name = "dataGridRecentlyAdded";
+            this.dataGridRecentlyAdded.ReadOnly = true;
+            this.dataGridRecentlyAdded.RowHeadersVisible = false;
             dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Silver;
             dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGridRecentlyAddedFiles.RowsDefaultCellStyle = dataGridViewCellStyle7;
-            this.dataGridRecentlyAddedFiles.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.dataGridRecentlyAddedFiles.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 9.25F);
-            this.dataGridRecentlyAddedFiles.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Silver;
-            this.dataGridRecentlyAddedFiles.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.dataGridRecentlyAddedFiles.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.dataGridRecentlyAddedFiles.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGridRecentlyAddedFiles.RowTemplate.Height = 28;
-            this.dataGridRecentlyAddedFiles.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.dataGridRecentlyAddedFiles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridRecentlyAddedFiles.ShowCellErrors = false;
-            this.dataGridRecentlyAddedFiles.ShowEditingIcon = false;
-            this.dataGridRecentlyAddedFiles.ShowRowErrors = false;
-            this.dataGridRecentlyAddedFiles.Size = new System.Drawing.Size(1022, 244);
-            this.dataGridRecentlyAddedFiles.TabIndex = 3;
-            this.dataGridRecentlyAddedFiles.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridRecentlyAddedFiles_CellClick);
+            this.dataGridRecentlyAdded.RowsDefaultCellStyle = dataGridViewCellStyle7;
+            this.dataGridRecentlyAdded.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.dataGridRecentlyAdded.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.dataGridRecentlyAdded.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Silver;
+            this.dataGridRecentlyAdded.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.dataGridRecentlyAdded.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.dataGridRecentlyAdded.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridRecentlyAdded.RowTemplate.Height = 28;
+            this.dataGridRecentlyAdded.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.dataGridRecentlyAdded.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridRecentlyAdded.ShowCellErrors = false;
+            this.dataGridRecentlyAdded.ShowEditingIcon = false;
+            this.dataGridRecentlyAdded.ShowRowErrors = false;
+            this.dataGridRecentlyAdded.Size = new System.Drawing.Size(1022, 244);
+            this.dataGridRecentlyAdded.TabIndex = 3;
+            this.dataGridRecentlyAdded.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridRecentlyAddedFiles_CellClick);
             // 
             // columnRecentlyAddedType
             // 
@@ -566,144 +563,144 @@ namespace WebCrunch
             this.columnRecentlyAddedURL.ReadOnly = true;
             this.columnRecentlyAddedURL.Visible = false;
             // 
-            // lblHeaderRecentlyAddedFiles
+            // labelRecentlyAdded
             // 
-            this.lblHeaderRecentlyAddedFiles.AutoSize = true;
-            this.lblHeaderRecentlyAddedFiles.BackColor = System.Drawing.Color.Transparent;
-            this.lblHeaderRecentlyAddedFiles.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.lblHeaderRecentlyAddedFiles.ForeColor = System.Drawing.Color.White;
-            this.lblHeaderRecentlyAddedFiles.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblHeaderRecentlyAddedFiles.Location = new System.Drawing.Point(11, 240);
-            this.lblHeaderRecentlyAddedFiles.Margin = new System.Windows.Forms.Padding(0);
-            this.lblHeaderRecentlyAddedFiles.Name = "lblHeaderRecentlyAddedFiles";
-            this.lblHeaderRecentlyAddedFiles.Size = new System.Drawing.Size(124, 19);
-            this.lblHeaderRecentlyAddedFiles.TabIndex = 1110;
-            this.lblHeaderRecentlyAddedFiles.Text = "RECENTLY ADDED";
+            this.labelRecentlyAdded.AutoSize = true;
+            this.labelRecentlyAdded.BackColor = System.Drawing.Color.Transparent;
+            this.labelRecentlyAdded.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.labelRecentlyAdded.ForeColor = System.Drawing.Color.White;
+            this.labelRecentlyAdded.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.labelRecentlyAdded.Location = new System.Drawing.Point(11, 240);
+            this.labelRecentlyAdded.Margin = new System.Windows.Forms.Padding(0);
+            this.labelRecentlyAdded.Name = "labelRecentlyAdded";
+            this.labelRecentlyAdded.Size = new System.Drawing.Size(124, 19);
+            this.labelRecentlyAdded.TabIndex = 1110;
+            this.labelRecentlyAdded.Text = "RECENTLY ADDED";
             // 
-            // splitterHeaderRecentlyAddedFiles
+            // splitterHeaderRecentlyAdded
             // 
-            this.splitterHeaderRecentlyAddedFiles.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.splitterHeaderRecentlyAdded.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.splitterHeaderRecentlyAddedFiles.BackColor = System.Drawing.Color.Transparent;
-            this.splitterHeaderRecentlyAddedFiles.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(50)))));
-            this.splitterHeaderRecentlyAddedFiles.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(50)))));
-            this.splitterHeaderRecentlyAddedFiles.DesignerSelected = false;
-            this.splitterHeaderRecentlyAddedFiles.DimFactorClick = 0;
-            this.splitterHeaderRecentlyAddedFiles.DimFactorHover = 0;
-            this.splitterHeaderRecentlyAddedFiles.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.splitterHeaderRecentlyAddedFiles.Font = new System.Drawing.Font("Segoe UI Semibold", 13.25F);
-            this.splitterHeaderRecentlyAddedFiles.ForeColor = System.Drawing.Color.Silver;
-            this.splitterHeaderRecentlyAddedFiles.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.splitterHeaderRecentlyAddedFiles.ImageIndex = 0;
-            this.splitterHeaderRecentlyAddedFiles.ImageSize = new System.Drawing.Size(25, 36);
-            this.splitterHeaderRecentlyAddedFiles.Location = new System.Drawing.Point(15, 261);
-            this.splitterHeaderRecentlyAddedFiles.Margin = new System.Windows.Forms.Padding(10, 16, 3, 3);
-            this.splitterHeaderRecentlyAddedFiles.Name = "splitterHeaderRecentlyAddedFiles";
-            this.splitterHeaderRecentlyAddedFiles.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.splitterHeaderRecentlyAddedFiles.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.splitterHeaderRecentlyAddedFiles.SideImageSize = new System.Drawing.Size(36, 36);
-            this.splitterHeaderRecentlyAddedFiles.Size = new System.Drawing.Size(1023, 1);
-            this.splitterHeaderRecentlyAddedFiles.TabIndex = 0;
-            this.splitterHeaderRecentlyAddedFiles.TabStop = false;
-            this.splitterHeaderRecentlyAddedFiles.Text = "";
-            this.splitterHeaderRecentlyAddedFiles.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.splitterHeaderRecentlyAddedFiles.TextShadowShow = false;
+            this.splitterHeaderRecentlyAdded.BackColor = System.Drawing.Color.Transparent;
+            this.splitterHeaderRecentlyAdded.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(50)))));
+            this.splitterHeaderRecentlyAdded.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(50)))));
+            this.splitterHeaderRecentlyAdded.DesignerSelected = false;
+            this.splitterHeaderRecentlyAdded.DimFactorClick = 0;
+            this.splitterHeaderRecentlyAdded.DimFactorHover = 0;
+            this.splitterHeaderRecentlyAdded.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.splitterHeaderRecentlyAdded.Font = new System.Drawing.Font("Segoe UI Semibold", 13.25F);
+            this.splitterHeaderRecentlyAdded.ForeColor = System.Drawing.Color.Silver;
+            this.splitterHeaderRecentlyAdded.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.splitterHeaderRecentlyAdded.ImageIndex = 0;
+            this.splitterHeaderRecentlyAdded.ImageSize = new System.Drawing.Size(25, 36);
+            this.splitterHeaderRecentlyAdded.Location = new System.Drawing.Point(15, 261);
+            this.splitterHeaderRecentlyAdded.Margin = new System.Windows.Forms.Padding(10, 16, 3, 3);
+            this.splitterHeaderRecentlyAdded.Name = "splitterHeaderRecentlyAdded";
+            this.splitterHeaderRecentlyAdded.ShowFocus = CButtonLib.CButton.eFocus.None;
+            this.splitterHeaderRecentlyAdded.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.splitterHeaderRecentlyAdded.SideImageSize = new System.Drawing.Size(36, 36);
+            this.splitterHeaderRecentlyAdded.Size = new System.Drawing.Size(1023, 1);
+            this.splitterHeaderRecentlyAdded.TabIndex = 0;
+            this.splitterHeaderRecentlyAdded.TabStop = false;
+            this.splitterHeaderRecentlyAdded.Text = "";
+            this.splitterHeaderRecentlyAdded.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.splitterHeaderRecentlyAdded.TextShadowShow = false;
             // 
-            // lblHomeStatsDatabaseUpdated
+            // labelDatabaseUpdatedDate
             // 
-            this.lblHomeStatsDatabaseUpdated.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.labelDatabaseUpdatedDate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblHomeStatsDatabaseUpdated.BackColor = System.Drawing.Color.Transparent;
-            this.lblHomeStatsDatabaseUpdated.Font = new System.Drawing.Font("Segoe UI", 9.25F);
-            this.lblHomeStatsDatabaseUpdated.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblHomeStatsDatabaseUpdated.Location = new System.Drawing.Point(210, 569);
-            this.lblHomeStatsDatabaseUpdated.Name = "lblHomeStatsDatabaseUpdated";
-            this.lblHomeStatsDatabaseUpdated.Size = new System.Drawing.Size(632, 20);
-            this.lblHomeStatsDatabaseUpdated.TabIndex = 1107;
-            this.lblHomeStatsDatabaseUpdated.Text = "Updated: {0}";
-            this.lblHomeStatsDatabaseUpdated.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.labelDatabaseUpdatedDate.BackColor = System.Drawing.Color.Transparent;
+            this.labelDatabaseUpdatedDate.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.labelDatabaseUpdatedDate.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.labelDatabaseUpdatedDate.Location = new System.Drawing.Point(210, 569);
+            this.labelDatabaseUpdatedDate.Name = "labelDatabaseUpdatedDate";
+            this.labelDatabaseUpdatedDate.Size = new System.Drawing.Size(632, 20);
+            this.labelDatabaseUpdatedDate.TabIndex = 0;
+            this.labelDatabaseUpdatedDate.Text = "Updated: {0}";
+            this.labelDatabaseUpdatedDate.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // lblHomeStatsFiles
+            // labelDatabaseStats
             // 
-            this.lblHomeStatsFiles.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.labelDatabaseStats.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblHomeStatsFiles.BackColor = System.Drawing.Color.Transparent;
-            this.lblHomeStatsFiles.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.lblHomeStatsFiles.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblHomeStatsFiles.Location = new System.Drawing.Point(210, 545);
-            this.lblHomeStatsFiles.Name = "lblHomeStatsFiles";
-            this.lblHomeStatsFiles.Size = new System.Drawing.Size(632, 20);
-            this.lblHomeStatsFiles.TabIndex = 1106;
-            this.lblHomeStatsFiles.Text = "Searching {0} files ({1}+) in {2} web servers";
-            this.lblHomeStatsFiles.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.labelDatabaseStats.BackColor = System.Drawing.Color.Transparent;
+            this.labelDatabaseStats.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.labelDatabaseStats.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.labelDatabaseStats.Location = new System.Drawing.Point(210, 545);
+            this.labelDatabaseStats.Name = "labelDatabaseStats";
+            this.labelDatabaseStats.Size = new System.Drawing.Size(632, 20);
+            this.labelDatabaseStats.TabIndex = 1106;
+            this.labelDatabaseStats.Text = "Searching {0} files ({1}+) in {2} web servers";
+            this.labelDatabaseStats.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // txtSearchFilesHome
+            // textBoxSearchHome
             // 
-            this.txtSearchFilesHome.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.textBoxSearchHome.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSearchFilesHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(50)))));
-            this.txtSearchFilesHome.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtSearchFilesHome.Font = new System.Drawing.Font("Segoe UI Semibold", 10.25F);
-            this.txtSearchFilesHome.ForeColor = System.Drawing.Color.White;
-            this.txtSearchFilesHome.Location = new System.Drawing.Point(22, 22);
-            this.txtSearchFilesHome.Name = "txtSearchFilesHome";
-            this.txtSearchFilesHome.Size = new System.Drawing.Size(729, 19);
-            this.txtSearchFilesHome.TabIndex = 0;
-            this.txtSearchFilesHome.WaterMark = "What are you looking for?";
-            this.txtSearchFilesHome.WaterMarkActiveForeColor = System.Drawing.Color.White;
-            this.txtSearchFilesHome.WaterMarkFont = new System.Drawing.Font("Segoe UI Semibold", 10.25F);
-            this.txtSearchFilesHome.WaterMarkForeColor = System.Drawing.Color.DarkGray;
-            this.txtSearchFilesHome.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearchFilesHome_KeyDown);
+            this.textBoxSearchHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(50)))));
+            this.textBoxSearchHome.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxSearchHome.Font = new System.Drawing.Font("Segoe UI Semibold", 10.25F);
+            this.textBoxSearchHome.ForeColor = System.Drawing.Color.White;
+            this.textBoxSearchHome.Location = new System.Drawing.Point(22, 22);
+            this.textBoxSearchHome.Name = "textBoxSearchHome";
+            this.textBoxSearchHome.Size = new System.Drawing.Size(729, 19);
+            this.textBoxSearchHome.TabIndex = 0;
+            this.textBoxSearchHome.WaterMark = "What are you looking for?";
+            this.textBoxSearchHome.WaterMarkActiveForeColor = System.Drawing.Color.White;
+            this.textBoxSearchHome.WaterMarkFont = new System.Drawing.Font("Segoe UI Semibold", 10.25F);
+            this.textBoxSearchHome.WaterMarkForeColor = System.Drawing.Color.DarkGray;
+            this.textBoxSearchHome.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearchFilesHome_KeyDown);
             // 
-            // bgSearchFilesHome
+            // textBoxBackgroundSearchHome
             // 
-            this.bgSearchFilesHome.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.textBoxBackgroundSearchHome.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.bgSearchFilesHome.BackColor = System.Drawing.Color.Transparent;
-            this.bgSearchFilesHome.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(50)))));
-            this.bgSearchFilesHome.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(50)))));
-            this.bgSearchFilesHome.Corners.All = 2;
-            this.bgSearchFilesHome.Corners.LowerLeft = 2;
-            this.bgSearchFilesHome.Corners.LowerRight = 2;
-            this.bgSearchFilesHome.Corners.UpperLeft = 2;
-            this.bgSearchFilesHome.Corners.UpperRight = 2;
-            this.bgSearchFilesHome.DesignerSelected = false;
-            this.bgSearchFilesHome.DimFactorClick = 0;
-            this.bgSearchFilesHome.DimFactorHover = 0;
-            this.bgSearchFilesHome.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.bgSearchFilesHome.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.bgSearchFilesHome.ImageIndex = 0;
-            this.bgSearchFilesHome.Location = new System.Drawing.Point(13, 14);
-            this.bgSearchFilesHome.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.bgSearchFilesHome.Name = "bgSearchFilesHome";
-            this.bgSearchFilesHome.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.bgSearchFilesHome.Size = new System.Drawing.Size(1022, 38);
-            this.bgSearchFilesHome.TabIndex = 0;
-            this.bgSearchFilesHome.TabStop = false;
-            this.bgSearchFilesHome.Text = "";
-            this.bgSearchFilesHome.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.bgSearchFilesHome_ClickButtonArea);
+            this.textBoxBackgroundSearchHome.BackColor = System.Drawing.Color.Transparent;
+            this.textBoxBackgroundSearchHome.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(50)))));
+            this.textBoxBackgroundSearchHome.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(50)))));
+            this.textBoxBackgroundSearchHome.Corners.All = 2;
+            this.textBoxBackgroundSearchHome.Corners.LowerLeft = 2;
+            this.textBoxBackgroundSearchHome.Corners.LowerRight = 2;
+            this.textBoxBackgroundSearchHome.Corners.UpperLeft = 2;
+            this.textBoxBackgroundSearchHome.Corners.UpperRight = 2;
+            this.textBoxBackgroundSearchHome.DesignerSelected = false;
+            this.textBoxBackgroundSearchHome.DimFactorClick = 0;
+            this.textBoxBackgroundSearchHome.DimFactorHover = 0;
+            this.textBoxBackgroundSearchHome.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.textBoxBackgroundSearchHome.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.textBoxBackgroundSearchHome.ImageIndex = 0;
+            this.textBoxBackgroundSearchHome.Location = new System.Drawing.Point(13, 14);
+            this.textBoxBackgroundSearchHome.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.textBoxBackgroundSearchHome.Name = "textBoxBackgroundSearchHome";
+            this.textBoxBackgroundSearchHome.ShowFocus = CButtonLib.CButton.eFocus.None;
+            this.textBoxBackgroundSearchHome.Size = new System.Drawing.Size(1022, 38);
+            this.textBoxBackgroundSearchHome.TabIndex = 0;
+            this.textBoxBackgroundSearchHome.TabStop = false;
+            this.textBoxBackgroundSearchHome.Text = "";
+            this.textBoxBackgroundSearchHome.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.bgSearchFilesHome_ClickButtonArea);
             // 
             // tabSearch
             // 
             this.tabSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.tabSearch.Controls.Add(this.emptyDataFiles);
-            this.tabSearch.Controls.Add(this.panelFileFilters);
-            this.tabSearch.Controls.Add(this.txtSearchFiles);
+            this.tabSearch.Controls.Add(this.labelNoResultsFound);
+            this.tabSearch.Controls.Add(this.flowLayoutSearchFiles);
+            this.tabSearch.Controls.Add(this.textBoxSearchFiles);
             this.tabSearch.Controls.Add(this.dataGridFiles);
-            this.tabSearch.Controls.Add(this.splitterFilesTabs);
-            this.tabSearch.Controls.Add(this.bgSearchFiles);
-            this.tabSearch.Controls.Add(this.lblFilesResultsInfo);
-            this.tabSearch.Controls.Add(this.titleFilesAudio);
-            this.tabSearch.Controls.Add(this.titleFilesBookmarks);
-            this.tabSearch.Controls.Add(this.titleFilesLocal);
-            this.tabSearch.Controls.Add(this.titleFilesTorrents);
-            this.tabSearch.Controls.Add(this.titleFilesOther);
-            this.tabSearch.Controls.Add(this.titleFilesSoftware);
-            this.tabSearch.Controls.Add(this.titleFilesCustom);
-            this.tabSearch.Controls.Add(this.titleFilesSubtitles);
-            this.tabSearch.Controls.Add(this.titleFilesAll);
-            this.tabSearch.Controls.Add(this.titleFilesBooks);
-            this.tabSearch.Controls.Add(this.titleFilesVideo);
+            this.tabSearch.Controls.Add(this.splitterFilesType);
+            this.tabSearch.Controls.Add(this.textBoxBackgroundSearchFiles);
+            this.tabSearch.Controls.Add(this.labelResultsInfo);
+            this.tabSearch.Controls.Add(this.buttonFilesAudio);
+            this.tabSearch.Controls.Add(this.buttonFilesBookmarks);
+            this.tabSearch.Controls.Add(this.buttonFilesLocal);
+            this.tabSearch.Controls.Add(this.buttonFilesTorrents);
+            this.tabSearch.Controls.Add(this.buttonFilesOther);
+            this.tabSearch.Controls.Add(this.buttonFilesSoftware);
+            this.tabSearch.Controls.Add(this.buttonFilesCustom);
+            this.tabSearch.Controls.Add(this.buttonFilesSubtitles);
+            this.tabSearch.Controls.Add(this.buttonFilesAll);
+            this.tabSearch.Controls.Add(this.buttonFilesBooks);
+            this.tabSearch.Controls.Add(this.buttonFilesVideo);
             this.tabSearch.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
             this.tabSearch.ForeColor = System.Drawing.Color.White;
             this.tabSearch.Location = new System.Drawing.Point(4, 22);
@@ -712,205 +709,206 @@ namespace WebCrunch
             this.tabSearch.Size = new System.Drawing.Size(1048, 607);
             this.tabSearch.TabIndex = 9;
             // 
-            // emptyDataFiles
+            // labelNoResultsFound
             // 
-            this.emptyDataFiles.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.emptyDataFiles.AutoSize = true;
-            this.emptyDataFiles.BackColor = System.Drawing.Color.Transparent;
-            this.emptyDataFiles.Font = new System.Drawing.Font("Segoe UI Semibold", 10.25F, System.Drawing.FontStyle.Bold);
-            this.emptyDataFiles.ForeColor = System.Drawing.Color.Silver;
-            this.emptyDataFiles.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.emptyDataFiles.Location = new System.Drawing.Point(464, 180);
-            this.emptyDataFiles.Name = "emptyDataFiles";
-            this.emptyDataFiles.Size = new System.Drawing.Size(120, 19);
-            this.emptyDataFiles.TabIndex = 0;
-            this.emptyDataFiles.Text = "No Results Found";
-            this.emptyDataFiles.Visible = false;
+            this.labelNoResultsFound.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.labelNoResultsFound.AutoSize = true;
+            this.labelNoResultsFound.BackColor = System.Drawing.Color.Transparent;
+            this.labelNoResultsFound.Font = new System.Drawing.Font("Segoe UI Semibold", 10.25F, System.Drawing.FontStyle.Bold);
+            this.labelNoResultsFound.ForeColor = System.Drawing.Color.Silver;
+            this.labelNoResultsFound.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.labelNoResultsFound.Location = new System.Drawing.Point(464, 180);
+            this.labelNoResultsFound.Name = "labelNoResultsFound";
+            this.labelNoResultsFound.Size = new System.Drawing.Size(120, 19);
+            this.labelNoResultsFound.TabIndex = 0;
+            this.labelNoResultsFound.Text = "No Results Found";
+            this.labelNoResultsFound.Visible = false;
             // 
-            // panelFileFilters
+            // flowLayoutSearchFiles
             // 
-            this.panelFileFilters.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelFileFilters.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(50)))));
-            this.panelFileFilters.Controls.Add(this.imgSearch);
-            this.panelFileFilters.Controls.Add(this.panelFilesHost);
-            this.panelFileFilters.Controls.Add(this.panelFilesSort);
-            this.panelFileFilters.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.panelFileFilters.Location = new System.Drawing.Point(660, 22);
-            this.panelFileFilters.Margin = new System.Windows.Forms.Padding(2, 3, 3, 3);
-            this.panelFileFilters.Name = "panelFileFilters";
-            this.panelFileFilters.Size = new System.Drawing.Size(367, 22);
-            this.panelFileFilters.TabIndex = 3;
+            this.flowLayoutSearchFiles.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.flowLayoutSearchFiles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(50)))));
+            this.flowLayoutSearchFiles.Controls.Add(this.imageSearchFiles);
+            this.flowLayoutSearchFiles.Controls.Add(this.flowLayoutFilterFiles);
+            this.flowLayoutSearchFiles.Controls.Add(this.flowLayoutSortFiles);
+            this.flowLayoutSearchFiles.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.flowLayoutSearchFiles.Location = new System.Drawing.Point(660, 22);
+            this.flowLayoutSearchFiles.Margin = new System.Windows.Forms.Padding(2, 3, 3, 3);
+            this.flowLayoutSearchFiles.Name = "flowLayoutSearchFiles";
+            this.flowLayoutSearchFiles.Size = new System.Drawing.Size(367, 22);
+            this.flowLayoutSearchFiles.TabIndex = 1;
+            this.flowLayoutSearchFiles.TabStop = true;
             // 
-            // imgSearch
+            // imageSearchFiles
             // 
-            this.imgSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.imgSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(50)))));
-            this.imgSearch.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgSearch.Image = global::WebCrunch.Properties.Resources.magnify_orange;
-            this.imgSearch.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.imgSearch.Location = new System.Drawing.Point(347, 1);
-            this.imgSearch.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.imgSearch.Name = "imgSearch";
-            this.imgSearch.Size = new System.Drawing.Size(20, 20);
-            this.imgSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.imgSearch.TabIndex = 1110;
-            this.imgSearch.TabStop = false;
-            this.imgSearch.Click += new System.EventHandler(this.imgSearch_Click);
+            this.imageSearchFiles.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.imageSearchFiles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(50)))));
+            this.imageSearchFiles.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imageSearchFiles.Image = global::WebCrunch.Properties.Resources.magnify_orange;
+            this.imageSearchFiles.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.imageSearchFiles.Location = new System.Drawing.Point(347, 1);
+            this.imageSearchFiles.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.imageSearchFiles.Name = "imageSearchFiles";
+            this.imageSearchFiles.Size = new System.Drawing.Size(20, 20);
+            this.imageSearchFiles.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imageSearchFiles.TabIndex = 1110;
+            this.imageSearchFiles.TabStop = false;
+            this.imageSearchFiles.Click += new System.EventHandler(this.imgSearch_Click);
             // 
-            // panelFilesHost
+            // flowLayoutFilterFiles
             // 
-            this.panelFilesHost.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(50)))));
-            this.panelFilesHost.Controls.Add(this.btnFilesHost);
-            this.panelFilesHost.Controls.Add(this.cmboBoxFilesHost);
-            this.panelFilesHost.Location = new System.Drawing.Point(241, 0);
-            this.panelFilesHost.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.panelFilesHost.Name = "panelFilesHost";
-            this.panelFilesHost.Size = new System.Drawing.Size(100, 22);
-            this.panelFilesHost.TabIndex = 3;
+            this.flowLayoutFilterFiles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(50)))));
+            this.flowLayoutFilterFiles.Controls.Add(this.buttonFilterFiles);
+            this.flowLayoutFilterFiles.Controls.Add(this.comboBoxFilterFiles);
+            this.flowLayoutFilterFiles.Location = new System.Drawing.Point(241, 0);
+            this.flowLayoutFilterFiles.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.flowLayoutFilterFiles.Name = "flowLayoutFilterFiles";
+            this.flowLayoutFilterFiles.Size = new System.Drawing.Size(100, 22);
+            this.flowLayoutFilterFiles.TabIndex = 3;
             // 
-            // btnFilesHost
+            // buttonFilterFiles
             // 
-            this.btnFilesHost.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.buttonFilterFiles.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnFilesHost.BackColor = System.Drawing.Color.Transparent;
-            this.btnFilesHost.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(193)))), ((int)(((byte)(190)))));
+            this.buttonFilterFiles.BackColor = System.Drawing.Color.Transparent;
+            this.buttonFilterFiles.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(193)))), ((int)(((byte)(190)))));
             cBlendItems3.iColor = new System.Drawing.Color[] {
         System.Drawing.Color.White,
         System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))))};
             cBlendItems3.iPoint = new float[] {
         0F,
         1F};
-            this.btnFilesHost.ColorFillBlend = cBlendItems3;
-            this.btnFilesHost.ColorFillSolid = System.Drawing.Color.Transparent;
-            this.btnFilesHost.Corners.All = 2;
-            this.btnFilesHost.Corners.LowerLeft = 2;
-            this.btnFilesHost.Corners.LowerRight = 2;
-            this.btnFilesHost.Corners.UpperLeft = 2;
-            this.btnFilesHost.Corners.UpperRight = 2;
-            this.btnFilesHost.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFilesHost.DesignerSelected = false;
-            this.btnFilesHost.DimFactorClick = 0;
-            this.btnFilesHost.DimFactorHover = 0;
-            this.btnFilesHost.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.btnFilesHost.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
-            this.btnFilesHost.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(193)))), ((int)(((byte)(190)))));
-            this.btnFilesHost.Image = global::WebCrunch.Properties.Resources.menu_down;
-            this.btnFilesHost.ImageIndex = 0;
-            this.btnFilesHost.Location = new System.Drawing.Point(0, 0);
-            this.btnFilesHost.Name = "btnFilesHost";
-            this.btnFilesHost.Size = new System.Drawing.Size(100, 22);
-            this.btnFilesHost.TabIndex = 2;
-            this.btnFilesHost.Text = "Filter : Any";
-            this.btnFilesHost.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnFilesHost.TextMargin = new System.Windows.Forms.Padding(0);
-            this.btnFilesHost.TextShadowShow = false;
-            this.btnFilesHost.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnFilesHost_ClickButtonArea);
+            this.buttonFilterFiles.ColorFillBlend = cBlendItems3;
+            this.buttonFilterFiles.ColorFillSolid = System.Drawing.Color.Transparent;
+            this.buttonFilterFiles.Corners.All = 2;
+            this.buttonFilterFiles.Corners.LowerLeft = 2;
+            this.buttonFilterFiles.Corners.LowerRight = 2;
+            this.buttonFilterFiles.Corners.UpperLeft = 2;
+            this.buttonFilterFiles.Corners.UpperRight = 2;
+            this.buttonFilterFiles.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonFilterFiles.DesignerSelected = false;
+            this.buttonFilterFiles.DimFactorClick = 0;
+            this.buttonFilterFiles.DimFactorHover = 0;
+            this.buttonFilterFiles.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.buttonFilterFiles.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
+            this.buttonFilterFiles.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(193)))), ((int)(((byte)(190)))));
+            this.buttonFilterFiles.Image = global::WebCrunch.Properties.Resources.menu_down;
+            this.buttonFilterFiles.ImageIndex = 0;
+            this.buttonFilterFiles.Location = new System.Drawing.Point(0, 0);
+            this.buttonFilterFiles.Name = "buttonFilterFiles";
+            this.buttonFilterFiles.Size = new System.Drawing.Size(100, 22);
+            this.buttonFilterFiles.TabIndex = 2;
+            this.buttonFilterFiles.Text = "Filter : Any";
+            this.buttonFilterFiles.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.buttonFilterFiles.TextMargin = new System.Windows.Forms.Padding(0);
+            this.buttonFilterFiles.TextShadowShow = false;
+            this.buttonFilterFiles.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnFilesHost_ClickButtonArea);
             // 
-            // cmboBoxFilesHost
+            // comboBoxFilterFiles
             // 
-            this.cmboBoxFilesHost.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.comboBoxFilterFiles.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmboBoxFilesHost.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            this.cmboBoxFilesHost.Font = new System.Drawing.Font("Segoe UI Semibold", 9.25F);
-            this.cmboBoxFilesHost.ForeColor = System.Drawing.Color.White;
-            this.cmboBoxFilesHost.FormattingEnabled = true;
-            this.cmboBoxFilesHost.Items.AddRange(new object[] {
+            this.comboBoxFilterFiles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            this.comboBoxFilterFiles.Font = new System.Drawing.Font("Segoe UI Semibold", 9.25F);
+            this.comboBoxFilterFiles.ForeColor = System.Drawing.Color.White;
+            this.comboBoxFilterFiles.FormattingEnabled = true;
+            this.comboBoxFilterFiles.Items.AddRange(new object[] {
             "Any"});
-            this.cmboBoxFilesHost.Location = new System.Drawing.Point(0, -2);
-            this.cmboBoxFilesHost.Name = "cmboBoxFilesHost";
-            this.cmboBoxFilesHost.Size = new System.Drawing.Size(100, 23);
-            this.cmboBoxFilesHost.TabIndex = 0;
-            this.cmboBoxFilesHost.TabStop = false;
-            this.cmboBoxFilesHost.SelectedIndexChanged += new System.EventHandler(this.cmboBoxFilesHost_SelectedIndexChanged);
+            this.comboBoxFilterFiles.Location = new System.Drawing.Point(0, -2);
+            this.comboBoxFilterFiles.Name = "comboBoxFilterFiles";
+            this.comboBoxFilterFiles.Size = new System.Drawing.Size(100, 23);
+            this.comboBoxFilterFiles.TabIndex = 0;
+            this.comboBoxFilterFiles.TabStop = false;
+            this.comboBoxFilterFiles.SelectedIndexChanged += new System.EventHandler(this.cmboBoxFilesHost_SelectedIndexChanged);
             // 
-            // panelFilesSort
+            // flowLayoutSortFiles
             // 
-            this.panelFilesSort.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(50)))));
-            this.panelFilesSort.Controls.Add(this.btnFilesSort);
-            this.panelFilesSort.Controls.Add(this.cmboBoxFilesSort);
-            this.panelFilesSort.Location = new System.Drawing.Point(129, 0);
-            this.panelFilesSort.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.panelFilesSort.Name = "panelFilesSort";
-            this.panelFilesSort.Size = new System.Drawing.Size(106, 22);
-            this.panelFilesSort.TabIndex = 6;
+            this.flowLayoutSortFiles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(50)))));
+            this.flowLayoutSortFiles.Controls.Add(this.buttonSortFiles);
+            this.flowLayoutSortFiles.Controls.Add(this.comboBoxSortFiles);
+            this.flowLayoutSortFiles.Location = new System.Drawing.Point(129, 0);
+            this.flowLayoutSortFiles.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.flowLayoutSortFiles.Name = "flowLayoutSortFiles";
+            this.flowLayoutSortFiles.Size = new System.Drawing.Size(106, 22);
+            this.flowLayoutSortFiles.TabIndex = 6;
             // 
-            // btnFilesSort
+            // buttonSortFiles
             // 
-            this.btnFilesSort.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.buttonSortFiles.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnFilesSort.BackColor = System.Drawing.Color.Transparent;
-            this.btnFilesSort.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(193)))), ((int)(((byte)(190)))));
+            this.buttonSortFiles.BackColor = System.Drawing.Color.Transparent;
+            this.buttonSortFiles.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(193)))), ((int)(((byte)(190)))));
             cBlendItems4.iColor = new System.Drawing.Color[] {
         System.Drawing.Color.White,
         System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))))};
             cBlendItems4.iPoint = new float[] {
         0F,
         1F};
-            this.btnFilesSort.ColorFillBlend = cBlendItems4;
-            this.btnFilesSort.ColorFillSolid = System.Drawing.Color.Transparent;
-            this.btnFilesSort.Corners.All = 2;
-            this.btnFilesSort.Corners.LowerLeft = 2;
-            this.btnFilesSort.Corners.LowerRight = 2;
-            this.btnFilesSort.Corners.UpperLeft = 2;
-            this.btnFilesSort.Corners.UpperRight = 2;
-            this.btnFilesSort.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFilesSort.DesignerSelected = false;
-            this.btnFilesSort.DimFactorClick = 0;
-            this.btnFilesSort.DimFactorHover = 0;
-            this.btnFilesSort.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.btnFilesSort.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
-            this.btnFilesSort.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(193)))), ((int)(((byte)(190)))));
-            this.btnFilesSort.Image = global::WebCrunch.Properties.Resources.menu_down;
-            this.btnFilesSort.ImageIndex = 0;
-            this.btnFilesSort.Location = new System.Drawing.Point(0, 0);
-            this.btnFilesSort.Name = "btnFilesSort";
-            this.btnFilesSort.SideImageSize = new System.Drawing.Size(24, 24);
-            this.btnFilesSort.Size = new System.Drawing.Size(106, 22);
-            this.btnFilesSort.TabIndex = 1;
-            this.btnFilesSort.Text = "Sort : Name";
-            this.btnFilesSort.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnFilesSort.TextMargin = new System.Windows.Forms.Padding(0);
-            this.btnFilesSort.TextShadowShow = false;
-            this.btnFilesSort.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnFilesSort_ClickButtonArea);
+            this.buttonSortFiles.ColorFillBlend = cBlendItems4;
+            this.buttonSortFiles.ColorFillSolid = System.Drawing.Color.Transparent;
+            this.buttonSortFiles.Corners.All = 2;
+            this.buttonSortFiles.Corners.LowerLeft = 2;
+            this.buttonSortFiles.Corners.LowerRight = 2;
+            this.buttonSortFiles.Corners.UpperLeft = 2;
+            this.buttonSortFiles.Corners.UpperRight = 2;
+            this.buttonSortFiles.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonSortFiles.DesignerSelected = false;
+            this.buttonSortFiles.DimFactorClick = 0;
+            this.buttonSortFiles.DimFactorHover = 0;
+            this.buttonSortFiles.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.buttonSortFiles.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
+            this.buttonSortFiles.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(193)))), ((int)(((byte)(190)))));
+            this.buttonSortFiles.Image = global::WebCrunch.Properties.Resources.menu_down;
+            this.buttonSortFiles.ImageIndex = 0;
+            this.buttonSortFiles.Location = new System.Drawing.Point(0, 0);
+            this.buttonSortFiles.Name = "buttonSortFiles";
+            this.buttonSortFiles.SideImageSize = new System.Drawing.Size(24, 24);
+            this.buttonSortFiles.Size = new System.Drawing.Size(106, 22);
+            this.buttonSortFiles.TabIndex = 1;
+            this.buttonSortFiles.Text = "Sort : Name";
+            this.buttonSortFiles.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.buttonSortFiles.TextMargin = new System.Windows.Forms.Padding(0);
+            this.buttonSortFiles.TextShadowShow = false;
+            this.buttonSortFiles.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnFilesSort_ClickButtonArea);
             // 
-            // cmboBoxFilesSort
+            // comboBoxSortFiles
             // 
-            this.cmboBoxFilesSort.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.comboBoxSortFiles.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmboBoxFilesSort.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            this.cmboBoxFilesSort.Font = new System.Drawing.Font("Segoe UI Semibold", 9.25F);
-            this.cmboBoxFilesSort.ForeColor = System.Drawing.Color.White;
-            this.cmboBoxFilesSort.FormattingEnabled = true;
-            this.cmboBoxFilesSort.Items.AddRange(new object[] {
+            this.comboBoxSortFiles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            this.comboBoxSortFiles.Font = new System.Drawing.Font("Segoe UI Semibold", 9.25F);
+            this.comboBoxSortFiles.ForeColor = System.Drawing.Color.White;
+            this.comboBoxSortFiles.FormattingEnabled = true;
+            this.comboBoxSortFiles.Items.AddRange(new object[] {
             "Name",
             "Size",
             "Date"});
-            this.cmboBoxFilesSort.Location = new System.Drawing.Point(0, -2);
-            this.cmboBoxFilesSort.Name = "cmboBoxFilesSort";
-            this.cmboBoxFilesSort.Size = new System.Drawing.Size(106, 23);
-            this.cmboBoxFilesSort.TabIndex = 0;
-            this.cmboBoxFilesSort.TabStop = false;
-            this.cmboBoxFilesSort.SelectedIndexChanged += new System.EventHandler(this.cmboBoxFilesSort_SelectedIndexChanged);
+            this.comboBoxSortFiles.Location = new System.Drawing.Point(0, -2);
+            this.comboBoxSortFiles.Name = "comboBoxSortFiles";
+            this.comboBoxSortFiles.Size = new System.Drawing.Size(106, 23);
+            this.comboBoxSortFiles.TabIndex = 0;
+            this.comboBoxSortFiles.TabStop = false;
+            this.comboBoxSortFiles.SelectedIndexChanged += new System.EventHandler(this.cmboBoxFilesSort_SelectedIndexChanged);
             // 
-            // txtSearchFiles
+            // textBoxSearchFiles
             // 
-            this.txtSearchFiles.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.textBoxSearchFiles.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSearchFiles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(50)))));
-            this.txtSearchFiles.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtSearchFiles.Font = new System.Drawing.Font("Segoe UI Semibold", 10.25F);
-            this.txtSearchFiles.ForeColor = System.Drawing.Color.White;
-            this.txtSearchFiles.Location = new System.Drawing.Point(22, 22);
-            this.txtSearchFiles.Name = "txtSearchFiles";
-            this.txtSearchFiles.Size = new System.Drawing.Size(633, 19);
-            this.txtSearchFiles.TabIndex = 0;
-            this.txtSearchFiles.WaterMark = "Search for file names, add tags or insert a link...";
-            this.txtSearchFiles.WaterMarkActiveForeColor = System.Drawing.Color.White;
-            this.txtSearchFiles.WaterMarkFont = new System.Drawing.Font("Segoe UI Semibold", 10.25F);
-            this.txtSearchFiles.WaterMarkForeColor = System.Drawing.Color.DarkGray;
-            this.txtSearchFiles.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearchFiles_KeyDown);
+            this.textBoxSearchFiles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(50)))));
+            this.textBoxSearchFiles.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxSearchFiles.Font = new System.Drawing.Font("Segoe UI Semibold", 10.25F);
+            this.textBoxSearchFiles.ForeColor = System.Drawing.Color.White;
+            this.textBoxSearchFiles.Location = new System.Drawing.Point(22, 22);
+            this.textBoxSearchFiles.Name = "textBoxSearchFiles";
+            this.textBoxSearchFiles.Size = new System.Drawing.Size(633, 19);
+            this.textBoxSearchFiles.TabIndex = 0;
+            this.textBoxSearchFiles.WaterMark = "Search for file names, add tags or insert a link...";
+            this.textBoxSearchFiles.WaterMarkActiveForeColor = System.Drawing.Color.White;
+            this.textBoxSearchFiles.WaterMarkFont = new System.Drawing.Font("Segoe UI Semibold", 10.25F);
+            this.textBoxSearchFiles.WaterMarkForeColor = System.Drawing.Color.DarkGray;
+            this.textBoxSearchFiles.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearchFiles_KeyDown);
             // 
             // dataGridFiles
             // 
@@ -1034,350 +1032,361 @@ namespace WebCrunch
             this.columnFilesURL.ReadOnly = true;
             this.columnFilesURL.Visible = false;
             // 
-            // splitterFilesTabs
+            // splitterFilesType
             // 
-            this.splitterFilesTabs.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.splitterFilesType.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.splitterFilesTabs.BackColor = System.Drawing.Color.Transparent;
-            this.splitterFilesTabs.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(50)))));
-            this.splitterFilesTabs.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(50)))));
-            this.splitterFilesTabs.DesignerSelected = false;
-            this.splitterFilesTabs.DimFactorClick = 0;
-            this.splitterFilesTabs.DimFactorHover = 0;
-            this.splitterFilesTabs.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.splitterFilesTabs.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.splitterFilesTabs.ImageIndex = 0;
-            this.splitterFilesTabs.Location = new System.Drawing.Point(13, 87);
-            this.splitterFilesTabs.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
-            this.splitterFilesTabs.Name = "splitterFilesTabs";
-            this.splitterFilesTabs.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.splitterFilesTabs.Size = new System.Drawing.Size(1022, 1);
-            this.splitterFilesTabs.TabIndex = 0;
-            this.splitterFilesTabs.TabStop = false;
-            this.splitterFilesTabs.Text = "";
+            this.splitterFilesType.BackColor = System.Drawing.Color.Transparent;
+            this.splitterFilesType.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(50)))));
+            this.splitterFilesType.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(50)))));
+            this.splitterFilesType.DesignerSelected = false;
+            this.splitterFilesType.DimFactorClick = 0;
+            this.splitterFilesType.DimFactorHover = 0;
+            this.splitterFilesType.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.splitterFilesType.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.splitterFilesType.ImageIndex = 0;
+            this.splitterFilesType.Location = new System.Drawing.Point(13, 87);
+            this.splitterFilesType.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
+            this.splitterFilesType.Name = "splitterFilesType";
+            this.splitterFilesType.ShowFocus = CButtonLib.CButton.eFocus.None;
+            this.splitterFilesType.Size = new System.Drawing.Size(1022, 1);
+            this.splitterFilesType.TabIndex = 0;
+            this.splitterFilesType.TabStop = false;
+            this.splitterFilesType.Text = "";
             // 
-            // bgSearchFiles
+            // textBoxBackgroundSearchFiles
             // 
-            this.bgSearchFiles.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.textBoxBackgroundSearchFiles.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.bgSearchFiles.BackColor = System.Drawing.Color.Transparent;
-            this.bgSearchFiles.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(50)))));
-            this.bgSearchFiles.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(50)))));
-            this.bgSearchFiles.Corners.All = 2;
-            this.bgSearchFiles.Corners.LowerLeft = 2;
-            this.bgSearchFiles.Corners.LowerRight = 2;
-            this.bgSearchFiles.Corners.UpperLeft = 2;
-            this.bgSearchFiles.Corners.UpperRight = 2;
-            this.bgSearchFiles.DesignerSelected = false;
-            this.bgSearchFiles.DimFactorClick = 0;
-            this.bgSearchFiles.DimFactorHover = 0;
-            this.bgSearchFiles.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.bgSearchFiles.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.bgSearchFiles.ImageIndex = 0;
-            this.bgSearchFiles.Location = new System.Drawing.Point(13, 14);
-            this.bgSearchFiles.Name = "bgSearchFiles";
-            this.bgSearchFiles.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.bgSearchFiles.Size = new System.Drawing.Size(1022, 38);
-            this.bgSearchFiles.TabIndex = 0;
-            this.bgSearchFiles.TabStop = false;
-            this.bgSearchFiles.Text = "";
-            this.bgSearchFiles.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.bgSearchFiles_ClickButtonArea);
+            this.textBoxBackgroundSearchFiles.BackColor = System.Drawing.Color.Transparent;
+            this.textBoxBackgroundSearchFiles.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(50)))));
+            this.textBoxBackgroundSearchFiles.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(50)))));
+            this.textBoxBackgroundSearchFiles.Corners.All = 2;
+            this.textBoxBackgroundSearchFiles.Corners.LowerLeft = 2;
+            this.textBoxBackgroundSearchFiles.Corners.LowerRight = 2;
+            this.textBoxBackgroundSearchFiles.Corners.UpperLeft = 2;
+            this.textBoxBackgroundSearchFiles.Corners.UpperRight = 2;
+            this.textBoxBackgroundSearchFiles.DesignerSelected = false;
+            this.textBoxBackgroundSearchFiles.DimFactorClick = 0;
+            this.textBoxBackgroundSearchFiles.DimFactorHover = 0;
+            this.textBoxBackgroundSearchFiles.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.textBoxBackgroundSearchFiles.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.textBoxBackgroundSearchFiles.ImageIndex = 0;
+            this.textBoxBackgroundSearchFiles.Location = new System.Drawing.Point(13, 14);
+            this.textBoxBackgroundSearchFiles.Name = "textBoxBackgroundSearchFiles";
+            this.textBoxBackgroundSearchFiles.ShowFocus = CButtonLib.CButton.eFocus.None;
+            this.textBoxBackgroundSearchFiles.Size = new System.Drawing.Size(1022, 38);
+            this.textBoxBackgroundSearchFiles.TabIndex = 0;
+            this.textBoxBackgroundSearchFiles.TabStop = false;
+            this.textBoxBackgroundSearchFiles.Text = "";
+            this.textBoxBackgroundSearchFiles.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.bgSearchFiles_ClickButtonArea);
             // 
-            // lblFilesResultsInfo
+            // labelResultsInfo
             // 
-            this.lblFilesResultsInfo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.labelResultsInfo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblFilesResultsInfo.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
-            this.lblFilesResultsInfo.ForeColor = System.Drawing.Color.White;
-            this.lblFilesResultsInfo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblFilesResultsInfo.Location = new System.Drawing.Point(865, 65);
-            this.lblFilesResultsInfo.Margin = new System.Windows.Forms.Padding(0, 9, 3, 9);
-            this.lblFilesResultsInfo.Name = "lblFilesResultsInfo";
-            this.lblFilesResultsInfo.Size = new System.Drawing.Size(168, 20);
-            this.lblFilesResultsInfo.TabIndex = 0;
-            this.lblFilesResultsInfo.Text = "0 / 0 Files";
-            this.lblFilesResultsInfo.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.labelResultsInfo.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
+            this.labelResultsInfo.ForeColor = System.Drawing.Color.White;
+            this.labelResultsInfo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.labelResultsInfo.Location = new System.Drawing.Point(865, 65);
+            this.labelResultsInfo.Margin = new System.Windows.Forms.Padding(0, 9, 3, 9);
+            this.labelResultsInfo.Name = "labelResultsInfo";
+            this.labelResultsInfo.Size = new System.Drawing.Size(168, 20);
+            this.labelResultsInfo.TabIndex = 0;
+            this.labelResultsInfo.Text = "0 / 0 Files";
+            this.labelResultsInfo.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // titleFilesAudio
+            // buttonFilesAudio
             // 
-            this.titleFilesAudio.BackColor = System.Drawing.Color.Transparent;
-            this.titleFilesAudio.BorderColor = System.Drawing.Color.Transparent;
-            this.titleFilesAudio.ColorFillSolid = System.Drawing.Color.Transparent;
-            this.titleFilesAudio.Corners.UpperLeft = 2;
-            this.titleFilesAudio.Corners.UpperRight = 2;
-            this.titleFilesAudio.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.titleFilesAudio.DesignerSelected = false;
-            this.titleFilesAudio.DimFactorClick = 0;
-            this.titleFilesAudio.DimFactorHover = 0;
-            this.titleFilesAudio.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.titleFilesAudio.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleFilesAudio.ImageIndex = 0;
-            this.titleFilesAudio.Location = new System.Drawing.Point(244, 61);
-            this.titleFilesAudio.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
-            this.titleFilesAudio.MaximumSize = new System.Drawing.Size(1000, 27);
-            this.titleFilesAudio.MinimumSize = new System.Drawing.Size(0, 27);
-            this.titleFilesAudio.Name = "titleFilesAudio";
-            this.titleFilesAudio.Size = new System.Drawing.Size(60, 27);
-            this.titleFilesAudio.TabIndex = 6;
-            this.titleFilesAudio.Text = "Music";
-            this.titleFilesAudio.TextShadowShow = false;
-            this.titleFilesAudio.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.titleFilesAudio_ClickButtonArea);
+            this.buttonFilesAudio.BackColor = System.Drawing.Color.Transparent;
+            this.buttonFilesAudio.BorderColor = System.Drawing.Color.Transparent;
+            this.buttonFilesAudio.ColorFillSolid = System.Drawing.Color.Transparent;
+            this.buttonFilesAudio.Corners.UpperLeft = 2;
+            this.buttonFilesAudio.Corners.UpperRight = 2;
+            this.buttonFilesAudio.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonFilesAudio.DesignerSelected = false;
+            this.buttonFilesAudio.DimFactorClick = 0;
+            this.buttonFilesAudio.DimFactorHover = 0;
+            this.buttonFilesAudio.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.buttonFilesAudio.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonFilesAudio.ImageIndex = 0;
+            this.buttonFilesAudio.Location = new System.Drawing.Point(244, 61);
+            this.buttonFilesAudio.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
+            this.buttonFilesAudio.MaximumSize = new System.Drawing.Size(1000, 27);
+            this.buttonFilesAudio.MinimumSize = new System.Drawing.Size(0, 27);
+            this.buttonFilesAudio.Name = "buttonFilesAudio";
+            this.buttonFilesAudio.ShowFocus = CButtonLib.CButton.eFocus.None;
+            this.buttonFilesAudio.Size = new System.Drawing.Size(60, 27);
+            this.buttonFilesAudio.TabIndex = 6;
+            this.buttonFilesAudio.Text = "Music";
+            this.buttonFilesAudio.TextShadowShow = false;
+            this.buttonFilesAudio.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.titleFilesAudio_ClickButtonArea);
             // 
-            // titleFilesBookmarks
+            // buttonFilesBookmarks
             // 
-            this.titleFilesBookmarks.BackColor = System.Drawing.Color.Transparent;
-            this.titleFilesBookmarks.BorderColor = System.Drawing.Color.Transparent;
-            this.titleFilesBookmarks.ColorFillSolid = System.Drawing.Color.Transparent;
-            this.titleFilesBookmarks.Corners.UpperLeft = 2;
-            this.titleFilesBookmarks.Corners.UpperRight = 2;
-            this.titleFilesBookmarks.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.titleFilesBookmarks.DesignerSelected = false;
-            this.titleFilesBookmarks.DimFactorClick = 0;
-            this.titleFilesBookmarks.DimFactorHover = 0;
-            this.titleFilesBookmarks.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.titleFilesBookmarks.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleFilesBookmarks.ImageIndex = 0;
-            this.titleFilesBookmarks.Location = new System.Drawing.Point(773, 61);
-            this.titleFilesBookmarks.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
-            this.titleFilesBookmarks.MaximumSize = new System.Drawing.Size(1000, 27);
-            this.titleFilesBookmarks.MinimumSize = new System.Drawing.Size(0, 27);
-            this.titleFilesBookmarks.Name = "titleFilesBookmarks";
-            this.titleFilesBookmarks.Size = new System.Drawing.Size(92, 27);
-            this.titleFilesBookmarks.TabIndex = 13;
-            this.titleFilesBookmarks.Text = "Bookmarks";
-            this.titleFilesBookmarks.TextShadowShow = false;
-            this.titleFilesBookmarks.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.titleFilesBookmarks_ClickButtonArea);
+            this.buttonFilesBookmarks.BackColor = System.Drawing.Color.Transparent;
+            this.buttonFilesBookmarks.BorderColor = System.Drawing.Color.Transparent;
+            this.buttonFilesBookmarks.ColorFillSolid = System.Drawing.Color.Transparent;
+            this.buttonFilesBookmarks.Corners.UpperLeft = 2;
+            this.buttonFilesBookmarks.Corners.UpperRight = 2;
+            this.buttonFilesBookmarks.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonFilesBookmarks.DesignerSelected = false;
+            this.buttonFilesBookmarks.DimFactorClick = 0;
+            this.buttonFilesBookmarks.DimFactorHover = 0;
+            this.buttonFilesBookmarks.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.buttonFilesBookmarks.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonFilesBookmarks.ImageIndex = 0;
+            this.buttonFilesBookmarks.Location = new System.Drawing.Point(773, 61);
+            this.buttonFilesBookmarks.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
+            this.buttonFilesBookmarks.MaximumSize = new System.Drawing.Size(1000, 27);
+            this.buttonFilesBookmarks.MinimumSize = new System.Drawing.Size(0, 27);
+            this.buttonFilesBookmarks.Name = "buttonFilesBookmarks";
+            this.buttonFilesBookmarks.ShowFocus = CButtonLib.CButton.eFocus.None;
+            this.buttonFilesBookmarks.Size = new System.Drawing.Size(92, 27);
+            this.buttonFilesBookmarks.TabIndex = 13;
+            this.buttonFilesBookmarks.Text = "Bookmarks";
+            this.buttonFilesBookmarks.TextShadowShow = false;
+            this.buttonFilesBookmarks.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.titleFilesBookmarks_ClickButtonArea);
             // 
-            // titleFilesLocal
+            // buttonFilesLocal
             // 
-            this.titleFilesLocal.BackColor = System.Drawing.Color.Transparent;
-            this.titleFilesLocal.BorderColor = System.Drawing.Color.Transparent;
-            this.titleFilesLocal.ColorFillSolid = System.Drawing.Color.Transparent;
-            this.titleFilesLocal.Corners.UpperLeft = 2;
-            this.titleFilesLocal.Corners.UpperRight = 2;
-            this.titleFilesLocal.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.titleFilesLocal.DesignerSelected = false;
-            this.titleFilesLocal.DimFactorClick = 0;
-            this.titleFilesLocal.DimFactorHover = 0;
-            this.titleFilesLocal.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.titleFilesLocal.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleFilesLocal.ImageIndex = 0;
-            this.titleFilesLocal.Location = new System.Drawing.Point(717, 61);
-            this.titleFilesLocal.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
-            this.titleFilesLocal.MaximumSize = new System.Drawing.Size(1000, 27);
-            this.titleFilesLocal.MinimumSize = new System.Drawing.Size(0, 27);
-            this.titleFilesLocal.Name = "titleFilesLocal";
-            this.titleFilesLocal.Size = new System.Drawing.Size(56, 27);
-            this.titleFilesLocal.TabIndex = 12;
-            this.titleFilesLocal.Text = "Local";
-            this.titleFilesLocal.TextShadowShow = false;
-            this.titleFilesLocal.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.titleFilesLocal_ClickButtonArea);
+            this.buttonFilesLocal.BackColor = System.Drawing.Color.Transparent;
+            this.buttonFilesLocal.BorderColor = System.Drawing.Color.Transparent;
+            this.buttonFilesLocal.ColorFillSolid = System.Drawing.Color.Transparent;
+            this.buttonFilesLocal.Corners.UpperLeft = 2;
+            this.buttonFilesLocal.Corners.UpperRight = 2;
+            this.buttonFilesLocal.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonFilesLocal.DesignerSelected = false;
+            this.buttonFilesLocal.DimFactorClick = 0;
+            this.buttonFilesLocal.DimFactorHover = 0;
+            this.buttonFilesLocal.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.buttonFilesLocal.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonFilesLocal.ImageIndex = 0;
+            this.buttonFilesLocal.Location = new System.Drawing.Point(717, 61);
+            this.buttonFilesLocal.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
+            this.buttonFilesLocal.MaximumSize = new System.Drawing.Size(1000, 27);
+            this.buttonFilesLocal.MinimumSize = new System.Drawing.Size(0, 27);
+            this.buttonFilesLocal.Name = "buttonFilesLocal";
+            this.buttonFilesLocal.ShowFocus = CButtonLib.CButton.eFocus.None;
+            this.buttonFilesLocal.Size = new System.Drawing.Size(56, 27);
+            this.buttonFilesLocal.TabIndex = 12;
+            this.buttonFilesLocal.Text = "Local";
+            this.buttonFilesLocal.TextShadowShow = false;
+            this.buttonFilesLocal.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.titleFilesLocal_ClickButtonArea);
             // 
-            // titleFilesTorrents
+            // buttonFilesTorrents
             // 
-            this.titleFilesTorrents.BackColor = System.Drawing.Color.Transparent;
-            this.titleFilesTorrents.BorderColor = System.Drawing.Color.Transparent;
-            this.titleFilesTorrents.ColorFillSolid = System.Drawing.Color.Transparent;
-            this.titleFilesTorrents.Corners.UpperLeft = 2;
-            this.titleFilesTorrents.Corners.UpperRight = 2;
-            this.titleFilesTorrents.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.titleFilesTorrents.DesignerSelected = false;
-            this.titleFilesTorrents.DimFactorClick = 0;
-            this.titleFilesTorrents.DimFactorHover = 0;
-            this.titleFilesTorrents.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.titleFilesTorrents.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleFilesTorrents.ImageIndex = 0;
-            this.titleFilesTorrents.Location = new System.Drawing.Point(429, 61);
-            this.titleFilesTorrents.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
-            this.titleFilesTorrents.MaximumSize = new System.Drawing.Size(1000, 27);
-            this.titleFilesTorrents.MinimumSize = new System.Drawing.Size(0, 27);
-            this.titleFilesTorrents.Name = "titleFilesTorrents";
-            this.titleFilesTorrents.Size = new System.Drawing.Size(75, 27);
-            this.titleFilesTorrents.TabIndex = 8;
-            this.titleFilesTorrents.Text = "Torrents";
-            this.titleFilesTorrents.TextShadowShow = false;
-            this.titleFilesTorrents.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.titleFilesTorrents_ClickButtonArea);
+            this.buttonFilesTorrents.BackColor = System.Drawing.Color.Transparent;
+            this.buttonFilesTorrents.BorderColor = System.Drawing.Color.Transparent;
+            this.buttonFilesTorrents.ColorFillSolid = System.Drawing.Color.Transparent;
+            this.buttonFilesTorrents.Corners.UpperLeft = 2;
+            this.buttonFilesTorrents.Corners.UpperRight = 2;
+            this.buttonFilesTorrents.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonFilesTorrents.DesignerSelected = false;
+            this.buttonFilesTorrents.DimFactorClick = 0;
+            this.buttonFilesTorrents.DimFactorHover = 0;
+            this.buttonFilesTorrents.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.buttonFilesTorrents.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonFilesTorrents.ImageIndex = 0;
+            this.buttonFilesTorrents.Location = new System.Drawing.Point(429, 61);
+            this.buttonFilesTorrents.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
+            this.buttonFilesTorrents.MaximumSize = new System.Drawing.Size(1000, 27);
+            this.buttonFilesTorrents.MinimumSize = new System.Drawing.Size(0, 27);
+            this.buttonFilesTorrents.Name = "buttonFilesTorrents";
+            this.buttonFilesTorrents.ShowFocus = CButtonLib.CButton.eFocus.None;
+            this.buttonFilesTorrents.Size = new System.Drawing.Size(75, 27);
+            this.buttonFilesTorrents.TabIndex = 8;
+            this.buttonFilesTorrents.Text = "Torrents";
+            this.buttonFilesTorrents.TextShadowShow = false;
+            this.buttonFilesTorrents.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.titleFilesTorrents_ClickButtonArea);
             // 
-            // titleFilesOther
+            // buttonFilesOther
             // 
-            this.titleFilesOther.BackColor = System.Drawing.Color.Transparent;
-            this.titleFilesOther.BorderColor = System.Drawing.Color.Transparent;
-            this.titleFilesOther.ColorFillSolid = System.Drawing.Color.Transparent;
-            this.titleFilesOther.Corners.UpperLeft = 2;
-            this.titleFilesOther.Corners.UpperRight = 2;
-            this.titleFilesOther.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.titleFilesOther.DesignerSelected = false;
-            this.titleFilesOther.DimFactorClick = 0;
-            this.titleFilesOther.DimFactorHover = 0;
-            this.titleFilesOther.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.titleFilesOther.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleFilesOther.ImageIndex = 0;
-            this.titleFilesOther.Location = new System.Drawing.Point(658, 61);
-            this.titleFilesOther.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
-            this.titleFilesOther.MaximumSize = new System.Drawing.Size(1000, 27);
-            this.titleFilesOther.MinimumSize = new System.Drawing.Size(0, 27);
-            this.titleFilesOther.Name = "titleFilesOther";
-            this.titleFilesOther.Size = new System.Drawing.Size(59, 27);
-            this.titleFilesOther.TabIndex = 11;
-            this.titleFilesOther.Text = "Other";
-            this.titleFilesOther.TextShadowShow = false;
-            this.titleFilesOther.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.titleFilesOther_ClickButtonArea);
+            this.buttonFilesOther.BackColor = System.Drawing.Color.Transparent;
+            this.buttonFilesOther.BorderColor = System.Drawing.Color.Transparent;
+            this.buttonFilesOther.ColorFillSolid = System.Drawing.Color.Transparent;
+            this.buttonFilesOther.Corners.UpperLeft = 2;
+            this.buttonFilesOther.Corners.UpperRight = 2;
+            this.buttonFilesOther.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonFilesOther.DesignerSelected = false;
+            this.buttonFilesOther.DimFactorClick = 0;
+            this.buttonFilesOther.DimFactorHover = 0;
+            this.buttonFilesOther.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.buttonFilesOther.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonFilesOther.ImageIndex = 0;
+            this.buttonFilesOther.Location = new System.Drawing.Point(658, 61);
+            this.buttonFilesOther.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
+            this.buttonFilesOther.MaximumSize = new System.Drawing.Size(1000, 27);
+            this.buttonFilesOther.MinimumSize = new System.Drawing.Size(0, 27);
+            this.buttonFilesOther.Name = "buttonFilesOther";
+            this.buttonFilesOther.ShowFocus = CButtonLib.CButton.eFocus.None;
+            this.buttonFilesOther.Size = new System.Drawing.Size(59, 27);
+            this.buttonFilesOther.TabIndex = 11;
+            this.buttonFilesOther.Text = "Other";
+            this.buttonFilesOther.TextShadowShow = false;
+            this.buttonFilesOther.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.titleFilesOther_ClickButtonArea);
             // 
-            // titleFilesSoftware
+            // buttonFilesSoftware
             // 
-            this.titleFilesSoftware.BackColor = System.Drawing.Color.Transparent;
-            this.titleFilesSoftware.BorderColor = System.Drawing.Color.Transparent;
-            this.titleFilesSoftware.ColorFillSolid = System.Drawing.Color.Transparent;
-            this.titleFilesSoftware.Corners.UpperLeft = 2;
-            this.titleFilesSoftware.Corners.UpperRight = 2;
-            this.titleFilesSoftware.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.titleFilesSoftware.DesignerSelected = false;
-            this.titleFilesSoftware.DimFactorClick = 0;
-            this.titleFilesSoftware.DimFactorHover = 0;
-            this.titleFilesSoftware.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.titleFilesSoftware.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleFilesSoftware.ImageIndex = 0;
-            this.titleFilesSoftware.Location = new System.Drawing.Point(304, 61);
-            this.titleFilesSoftware.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
-            this.titleFilesSoftware.MaximumSize = new System.Drawing.Size(1000, 27);
-            this.titleFilesSoftware.MinimumSize = new System.Drawing.Size(0, 27);
-            this.titleFilesSoftware.Name = "titleFilesSoftware";
-            this.titleFilesSoftware.Size = new System.Drawing.Size(125, 27);
-            this.titleFilesSoftware.TabIndex = 7;
-            this.titleFilesSoftware.Text = "Software/Games";
-            this.titleFilesSoftware.TextShadowShow = false;
-            this.titleFilesSoftware.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.titleFilesSoftware_ClickButtonArea);
+            this.buttonFilesSoftware.BackColor = System.Drawing.Color.Transparent;
+            this.buttonFilesSoftware.BorderColor = System.Drawing.Color.Transparent;
+            this.buttonFilesSoftware.ColorFillSolid = System.Drawing.Color.Transparent;
+            this.buttonFilesSoftware.Corners.UpperLeft = 2;
+            this.buttonFilesSoftware.Corners.UpperRight = 2;
+            this.buttonFilesSoftware.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonFilesSoftware.DesignerSelected = false;
+            this.buttonFilesSoftware.DimFactorClick = 0;
+            this.buttonFilesSoftware.DimFactorHover = 0;
+            this.buttonFilesSoftware.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.buttonFilesSoftware.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonFilesSoftware.ImageIndex = 0;
+            this.buttonFilesSoftware.Location = new System.Drawing.Point(304, 61);
+            this.buttonFilesSoftware.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
+            this.buttonFilesSoftware.MaximumSize = new System.Drawing.Size(1000, 27);
+            this.buttonFilesSoftware.MinimumSize = new System.Drawing.Size(0, 27);
+            this.buttonFilesSoftware.Name = "buttonFilesSoftware";
+            this.buttonFilesSoftware.ShowFocus = CButtonLib.CButton.eFocus.None;
+            this.buttonFilesSoftware.Size = new System.Drawing.Size(125, 27);
+            this.buttonFilesSoftware.TabIndex = 7;
+            this.buttonFilesSoftware.Text = "Software/Games";
+            this.buttonFilesSoftware.TextShadowShow = false;
+            this.buttonFilesSoftware.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.titleFilesSoftware_ClickButtonArea);
             // 
-            // titleFilesCustom
+            // buttonFilesCustom
             // 
-            this.titleFilesCustom.BackColor = System.Drawing.Color.Transparent;
-            this.titleFilesCustom.BorderColor = System.Drawing.Color.Transparent;
-            this.titleFilesCustom.ColorFillSolid = System.Drawing.Color.Transparent;
-            this.titleFilesCustom.Corners.UpperLeft = 2;
-            this.titleFilesCustom.Corners.UpperRight = 2;
-            this.titleFilesCustom.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.titleFilesCustom.DesignerSelected = false;
-            this.titleFilesCustom.DimFactorClick = 0;
-            this.titleFilesCustom.DimFactorHover = 0;
-            this.titleFilesCustom.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.titleFilesCustom.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleFilesCustom.ImageIndex = 0;
-            this.titleFilesCustom.Location = new System.Drawing.Point(581, 61);
-            this.titleFilesCustom.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
-            this.titleFilesCustom.MaximumSize = new System.Drawing.Size(1000, 27);
-            this.titleFilesCustom.MinimumSize = new System.Drawing.Size(0, 27);
-            this.titleFilesCustom.Name = "titleFilesCustom";
-            this.titleFilesCustom.Size = new System.Drawing.Size(77, 27);
-            this.titleFilesCustom.TabIndex = 10;
-            this.titleFilesCustom.Text = "Custom*";
-            this.titleFilesCustom.TextShadowShow = false;
-            this.titleFilesCustom.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.titleFilesCustom_ClickButtonArea);
+            this.buttonFilesCustom.BackColor = System.Drawing.Color.Transparent;
+            this.buttonFilesCustom.BorderColor = System.Drawing.Color.Transparent;
+            this.buttonFilesCustom.ColorFillSolid = System.Drawing.Color.Transparent;
+            this.buttonFilesCustom.Corners.UpperLeft = 2;
+            this.buttonFilesCustom.Corners.UpperRight = 2;
+            this.buttonFilesCustom.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonFilesCustom.DesignerSelected = false;
+            this.buttonFilesCustom.DimFactorClick = 0;
+            this.buttonFilesCustom.DimFactorHover = 0;
+            this.buttonFilesCustom.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.buttonFilesCustom.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonFilesCustom.ImageIndex = 0;
+            this.buttonFilesCustom.Location = new System.Drawing.Point(581, 61);
+            this.buttonFilesCustom.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
+            this.buttonFilesCustom.MaximumSize = new System.Drawing.Size(1000, 27);
+            this.buttonFilesCustom.MinimumSize = new System.Drawing.Size(0, 27);
+            this.buttonFilesCustom.Name = "buttonFilesCustom";
+            this.buttonFilesCustom.ShowFocus = CButtonLib.CButton.eFocus.None;
+            this.buttonFilesCustom.Size = new System.Drawing.Size(77, 27);
+            this.buttonFilesCustom.TabIndex = 10;
+            this.buttonFilesCustom.Text = "Custom*";
+            this.buttonFilesCustom.TextShadowShow = false;
+            this.buttonFilesCustom.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.titleFilesCustom_ClickButtonArea);
             // 
-            // titleFilesSubtitles
+            // buttonFilesSubtitles
             // 
-            this.titleFilesSubtitles.BackColor = System.Drawing.Color.Transparent;
-            this.titleFilesSubtitles.BorderColor = System.Drawing.Color.Transparent;
-            this.titleFilesSubtitles.ColorFillSolid = System.Drawing.Color.Transparent;
-            this.titleFilesSubtitles.Corners.UpperLeft = 2;
-            this.titleFilesSubtitles.Corners.UpperRight = 2;
-            this.titleFilesSubtitles.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.titleFilesSubtitles.DesignerSelected = false;
-            this.titleFilesSubtitles.DimFactorClick = 0;
-            this.titleFilesSubtitles.DimFactorHover = 0;
-            this.titleFilesSubtitles.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.titleFilesSubtitles.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleFilesSubtitles.ImageIndex = 0;
-            this.titleFilesSubtitles.Location = new System.Drawing.Point(504, 61);
-            this.titleFilesSubtitles.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
-            this.titleFilesSubtitles.MaximumSize = new System.Drawing.Size(1000, 27);
-            this.titleFilesSubtitles.MinimumSize = new System.Drawing.Size(0, 27);
-            this.titleFilesSubtitles.Name = "titleFilesSubtitles";
-            this.titleFilesSubtitles.Size = new System.Drawing.Size(77, 27);
-            this.titleFilesSubtitles.TabIndex = 9;
-            this.titleFilesSubtitles.Text = "Subtitles";
-            this.titleFilesSubtitles.TextShadowShow = false;
-            this.titleFilesSubtitles.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.titleFilesSubtitles_ClickButtonArea);
+            this.buttonFilesSubtitles.BackColor = System.Drawing.Color.Transparent;
+            this.buttonFilesSubtitles.BorderColor = System.Drawing.Color.Transparent;
+            this.buttonFilesSubtitles.ColorFillSolid = System.Drawing.Color.Transparent;
+            this.buttonFilesSubtitles.Corners.UpperLeft = 2;
+            this.buttonFilesSubtitles.Corners.UpperRight = 2;
+            this.buttonFilesSubtitles.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonFilesSubtitles.DesignerSelected = false;
+            this.buttonFilesSubtitles.DimFactorClick = 0;
+            this.buttonFilesSubtitles.DimFactorHover = 0;
+            this.buttonFilesSubtitles.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.buttonFilesSubtitles.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonFilesSubtitles.ImageIndex = 0;
+            this.buttonFilesSubtitles.Location = new System.Drawing.Point(504, 61);
+            this.buttonFilesSubtitles.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
+            this.buttonFilesSubtitles.MaximumSize = new System.Drawing.Size(1000, 27);
+            this.buttonFilesSubtitles.MinimumSize = new System.Drawing.Size(0, 27);
+            this.buttonFilesSubtitles.Name = "buttonFilesSubtitles";
+            this.buttonFilesSubtitles.ShowFocus = CButtonLib.CButton.eFocus.None;
+            this.buttonFilesSubtitles.Size = new System.Drawing.Size(77, 27);
+            this.buttonFilesSubtitles.TabIndex = 9;
+            this.buttonFilesSubtitles.Text = "Subtitles";
+            this.buttonFilesSubtitles.TextShadowShow = false;
+            this.buttonFilesSubtitles.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.titleFilesSubtitles_ClickButtonArea);
             // 
-            // titleFilesAll
+            // buttonFilesAll
             // 
-            this.titleFilesAll.BackColor = System.Drawing.Color.Transparent;
-            this.titleFilesAll.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(105)))), ((int)(((byte)(26)))));
-            this.titleFilesAll.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(105)))), ((int)(((byte)(26)))));
-            this.titleFilesAll.Corners.UpperLeft = 2;
-            this.titleFilesAll.Corners.UpperRight = 2;
-            this.titleFilesAll.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.titleFilesAll.DesignerSelected = false;
-            this.titleFilesAll.DimFactorClick = 0;
-            this.titleFilesAll.DimFactorHover = 0;
-            this.titleFilesAll.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.titleFilesAll.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleFilesAll.ImageIndex = 0;
-            this.titleFilesAll.Location = new System.Drawing.Point(13, 61);
-            this.titleFilesAll.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
-            this.titleFilesAll.MaximumSize = new System.Drawing.Size(1000, 27);
-            this.titleFilesAll.MinimumSize = new System.Drawing.Size(0, 27);
-            this.titleFilesAll.Name = "titleFilesAll";
-            this.titleFilesAll.Size = new System.Drawing.Size(40, 27);
-            this.titleFilesAll.TabIndex = 3;
-            this.titleFilesAll.Text = "All";
-            this.titleFilesAll.TextShadowShow = false;
-            this.titleFilesAll.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.titleFilesAll_ClickButtonArea);
+            this.buttonFilesAll.BackColor = System.Drawing.Color.Transparent;
+            this.buttonFilesAll.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(105)))), ((int)(((byte)(26)))));
+            this.buttonFilesAll.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(105)))), ((int)(((byte)(26)))));
+            this.buttonFilesAll.Corners.UpperLeft = 2;
+            this.buttonFilesAll.Corners.UpperRight = 2;
+            this.buttonFilesAll.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonFilesAll.DesignerSelected = false;
+            this.buttonFilesAll.DimFactorClick = 0;
+            this.buttonFilesAll.DimFactorHover = 0;
+            this.buttonFilesAll.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.buttonFilesAll.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonFilesAll.ImageIndex = 0;
+            this.buttonFilesAll.Location = new System.Drawing.Point(13, 61);
+            this.buttonFilesAll.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
+            this.buttonFilesAll.MaximumSize = new System.Drawing.Size(1000, 27);
+            this.buttonFilesAll.MinimumSize = new System.Drawing.Size(0, 27);
+            this.buttonFilesAll.Name = "buttonFilesAll";
+            this.buttonFilesAll.ShowFocus = CButtonLib.CButton.eFocus.None;
+            this.buttonFilesAll.Size = new System.Drawing.Size(40, 27);
+            this.buttonFilesAll.TabIndex = 3;
+            this.buttonFilesAll.Text = "All";
+            this.buttonFilesAll.TextShadowShow = false;
+            this.buttonFilesAll.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.titleFilesAll_ClickButtonArea);
             // 
-            // titleFilesBooks
+            // buttonFilesBooks
             // 
-            this.titleFilesBooks.BackColor = System.Drawing.Color.Transparent;
-            this.titleFilesBooks.BorderColor = System.Drawing.Color.Transparent;
-            this.titleFilesBooks.ColorFillSolid = System.Drawing.Color.Transparent;
-            this.titleFilesBooks.Corners.UpperLeft = 2;
-            this.titleFilesBooks.Corners.UpperRight = 2;
-            this.titleFilesBooks.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.titleFilesBooks.DesignerSelected = false;
-            this.titleFilesBooks.DimFactorClick = 0;
-            this.titleFilesBooks.DimFactorHover = 0;
-            this.titleFilesBooks.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.titleFilesBooks.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleFilesBooks.ImageIndex = 0;
-            this.titleFilesBooks.Location = new System.Drawing.Point(183, 61);
-            this.titleFilesBooks.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
-            this.titleFilesBooks.MaximumSize = new System.Drawing.Size(1000, 27);
-            this.titleFilesBooks.MinimumSize = new System.Drawing.Size(0, 27);
-            this.titleFilesBooks.Name = "titleFilesBooks";
-            this.titleFilesBooks.Size = new System.Drawing.Size(61, 27);
-            this.titleFilesBooks.TabIndex = 5;
-            this.titleFilesBooks.Text = "Books";
-            this.titleFilesBooks.TextShadowShow = false;
-            this.titleFilesBooks.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.titleFilesBooks_ClickButtonArea);
+            this.buttonFilesBooks.BackColor = System.Drawing.Color.Transparent;
+            this.buttonFilesBooks.BorderColor = System.Drawing.Color.Transparent;
+            this.buttonFilesBooks.ColorFillSolid = System.Drawing.Color.Transparent;
+            this.buttonFilesBooks.Corners.UpperLeft = 2;
+            this.buttonFilesBooks.Corners.UpperRight = 2;
+            this.buttonFilesBooks.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonFilesBooks.DesignerSelected = false;
+            this.buttonFilesBooks.DimFactorClick = 0;
+            this.buttonFilesBooks.DimFactorHover = 0;
+            this.buttonFilesBooks.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.buttonFilesBooks.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonFilesBooks.ImageIndex = 0;
+            this.buttonFilesBooks.Location = new System.Drawing.Point(183, 61);
+            this.buttonFilesBooks.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
+            this.buttonFilesBooks.MaximumSize = new System.Drawing.Size(1000, 27);
+            this.buttonFilesBooks.MinimumSize = new System.Drawing.Size(0, 27);
+            this.buttonFilesBooks.Name = "buttonFilesBooks";
+            this.buttonFilesBooks.ShowFocus = CButtonLib.CButton.eFocus.None;
+            this.buttonFilesBooks.Size = new System.Drawing.Size(61, 27);
+            this.buttonFilesBooks.TabIndex = 5;
+            this.buttonFilesBooks.Text = "Books";
+            this.buttonFilesBooks.TextShadowShow = false;
+            this.buttonFilesBooks.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.titleFilesBooks_ClickButtonArea);
             // 
-            // titleFilesVideo
+            // buttonFilesVideo
             // 
-            this.titleFilesVideo.BackColor = System.Drawing.Color.Transparent;
-            this.titleFilesVideo.BorderColor = System.Drawing.Color.Transparent;
-            this.titleFilesVideo.ColorFillSolid = System.Drawing.Color.Transparent;
-            this.titleFilesVideo.Corners.UpperLeft = 2;
-            this.titleFilesVideo.Corners.UpperRight = 2;
-            this.titleFilesVideo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.titleFilesVideo.DesignerSelected = false;
-            this.titleFilesVideo.DimFactorClick = 0;
-            this.titleFilesVideo.DimFactorHover = 0;
-            this.titleFilesVideo.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.titleFilesVideo.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleFilesVideo.ImageIndex = 0;
-            this.titleFilesVideo.Location = new System.Drawing.Point(53, 61);
-            this.titleFilesVideo.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
-            this.titleFilesVideo.MaximumSize = new System.Drawing.Size(1000, 27);
-            this.titleFilesVideo.MinimumSize = new System.Drawing.Size(0, 27);
-            this.titleFilesVideo.Name = "titleFilesVideo";
-            this.titleFilesVideo.Size = new System.Drawing.Size(130, 27);
-            this.titleFilesVideo.TabIndex = 4;
-            this.titleFilesVideo.Text = "TV/Movies/Video";
-            this.titleFilesVideo.TextShadowShow = false;
-            this.titleFilesVideo.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.titleFilesVideo_ClickButtonArea);
+            this.buttonFilesVideo.BackColor = System.Drawing.Color.Transparent;
+            this.buttonFilesVideo.BorderColor = System.Drawing.Color.Transparent;
+            this.buttonFilesVideo.ColorFillSolid = System.Drawing.Color.Transparent;
+            this.buttonFilesVideo.Corners.UpperLeft = 2;
+            this.buttonFilesVideo.Corners.UpperRight = 2;
+            this.buttonFilesVideo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonFilesVideo.DesignerSelected = false;
+            this.buttonFilesVideo.DimFactorClick = 0;
+            this.buttonFilesVideo.DimFactorHover = 0;
+            this.buttonFilesVideo.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.buttonFilesVideo.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonFilesVideo.ImageIndex = 0;
+            this.buttonFilesVideo.Location = new System.Drawing.Point(53, 61);
+            this.buttonFilesVideo.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
+            this.buttonFilesVideo.MaximumSize = new System.Drawing.Size(1000, 27);
+            this.buttonFilesVideo.MinimumSize = new System.Drawing.Size(0, 27);
+            this.buttonFilesVideo.Name = "buttonFilesVideo";
+            this.buttonFilesVideo.ShowFocus = CButtonLib.CButton.eFocus.None;
+            this.buttonFilesVideo.Size = new System.Drawing.Size(130, 27);
+            this.buttonFilesVideo.TabIndex = 4;
+            this.buttonFilesVideo.Text = "TV/Movies/Video";
+            this.buttonFilesVideo.TextShadowShow = false;
+            this.buttonFilesVideo.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.titleFilesVideo_ClickButtonArea);
             // 
             // tabDiscover
             // 
             this.tabDiscover.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.tabDiscover.Controls.Add(this.splitterHeaderDiscover);
-            this.tabDiscover.Controls.Add(this.lblHeaderDiscover);
+            this.tabDiscover.Controls.Add(this.labelTitleDiscover);
             this.tabDiscover.Controls.Add(this.dataGridDiscover);
             this.tabDiscover.ForeColor = System.Drawing.Color.White;
             this.tabDiscover.Location = new System.Drawing.Point(4, 22);
@@ -1414,21 +1423,21 @@ namespace WebCrunch
             this.splitterHeaderDiscover.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.splitterHeaderDiscover.TextShadowShow = false;
             // 
-            // lblHeaderDiscover
+            // labelTitleDiscover
             // 
-            this.lblHeaderDiscover.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.labelTitleDiscover.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblHeaderDiscover.AutoEllipsis = true;
-            this.lblHeaderDiscover.BackColor = System.Drawing.Color.Transparent;
-            this.lblHeaderDiscover.Font = new System.Drawing.Font("Segoe UI Semibold", 15.25F);
-            this.lblHeaderDiscover.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblHeaderDiscover.Location = new System.Drawing.Point(9, 13);
-            this.lblHeaderDiscover.Margin = new System.Windows.Forms.Padding(0);
-            this.lblHeaderDiscover.Name = "lblHeaderDiscover";
-            this.lblHeaderDiscover.Size = new System.Drawing.Size(1020, 32);
-            this.lblHeaderDiscover.TabIndex = 0;
-            this.lblHeaderDiscover.Text = "Every website/domain crawled by WebCrunch ready to be discovered.";
-            this.lblHeaderDiscover.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelTitleDiscover.AutoEllipsis = true;
+            this.labelTitleDiscover.BackColor = System.Drawing.Color.Transparent;
+            this.labelTitleDiscover.Font = new System.Drawing.Font("Segoe UI Semibold", 15.25F);
+            this.labelTitleDiscover.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.labelTitleDiscover.Location = new System.Drawing.Point(9, 13);
+            this.labelTitleDiscover.Margin = new System.Windows.Forms.Padding(0);
+            this.labelTitleDiscover.Name = "labelTitleDiscover";
+            this.labelTitleDiscover.Size = new System.Drawing.Size(1020, 32);
+            this.labelTitleDiscover.TabIndex = 0;
+            this.labelTitleDiscover.Text = "Every website/domain crawled by WebCrunch ready to be discovered.";
+            this.labelTitleDiscover.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // dataGridDiscover
             // 
@@ -1522,8 +1531,8 @@ namespace WebCrunch
             this.tabSubmit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.tabSubmit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tabSubmit.Controls.Add(this.splitterHeaderSubmit);
-            this.tabSubmit.Controls.Add(this.panelSubmitDescription);
-            this.tabSubmit.Controls.Add(this.lblHeaderSubmit);
+            this.tabSubmit.Controls.Add(this.flowLayoutSubmitControls);
+            this.tabSubmit.Controls.Add(this.labelTitleSubmit);
             this.tabSubmit.ForeColor = System.Drawing.Color.White;
             this.tabSubmit.Location = new System.Drawing.Point(4, 22);
             this.tabSubmit.Name = "tabSubmit";
@@ -1559,137 +1568,136 @@ namespace WebCrunch
             this.splitterHeaderSubmit.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.splitterHeaderSubmit.TextShadowShow = false;
             // 
-            // panelSubmitDescription
+            // flowLayoutSubmitControls
             // 
-            this.panelSubmitDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.flowLayoutSubmitControls.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelSubmitDescription.AutoSize = true;
-            this.panelSubmitDescription.BackColor = System.Drawing.Color.Transparent;
-            this.panelSubmitDescription.Controls.Add(this.lblSubSubmit);
-            this.panelSubmitDescription.Controls.Add(this.panelSubmitItems);
-            this.panelSubmitDescription.Location = new System.Drawing.Point(10, 56);
-            this.panelSubmitDescription.Name = "panelSubmitDescription";
-            this.panelSubmitDescription.Size = new System.Drawing.Size(1036, 496);
-            this.panelSubmitDescription.TabIndex = 0;
-            this.panelSubmitDescription.TabStop = true;
+            this.flowLayoutSubmitControls.AutoSize = true;
+            this.flowLayoutSubmitControls.BackColor = System.Drawing.Color.Transparent;
+            this.flowLayoutSubmitControls.Controls.Add(this.labelSubmitDescription);
+            this.flowLayoutSubmitControls.Controls.Add(this.panelSubmitLink);
+            this.flowLayoutSubmitControls.Location = new System.Drawing.Point(10, 56);
+            this.flowLayoutSubmitControls.Name = "flowLayoutSubmitControls";
+            this.flowLayoutSubmitControls.Size = new System.Drawing.Size(1036, 496);
+            this.flowLayoutSubmitControls.TabIndex = 0;
+            this.flowLayoutSubmitControls.TabStop = true;
             // 
-            // lblSubSubmit
+            // labelSubmitDescription
             // 
-            this.lblSubSubmit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.labelSubmitDescription.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblSubSubmit.AutoEllipsis = true;
-            this.lblSubSubmit.AutoSize = true;
-            this.lblSubSubmit.BackColor = System.Drawing.Color.Transparent;
-            this.lblSubSubmit.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.lblSubSubmit.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblSubSubmit.Location = new System.Drawing.Point(0, 0);
-            this.lblSubSubmit.Margin = new System.Windows.Forms.Padding(0);
-            this.lblSubSubmit.Name = "lblSubSubmit";
-            this.lblSubSubmit.Size = new System.Drawing.Size(1033, 255);
-            this.lblSubSubmit.TabIndex = 0;
-            this.lblSubSubmit.Text = resources.GetString("lblSubSubmit.Text");
+            this.labelSubmitDescription.AutoEllipsis = true;
+            this.labelSubmitDescription.AutoSize = true;
+            this.labelSubmitDescription.BackColor = System.Drawing.Color.Transparent;
+            this.labelSubmitDescription.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.labelSubmitDescription.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.labelSubmitDescription.Location = new System.Drawing.Point(0, 0);
+            this.labelSubmitDescription.Margin = new System.Windows.Forms.Padding(0);
+            this.labelSubmitDescription.Name = "labelSubmitDescription";
+            this.labelSubmitDescription.Size = new System.Drawing.Size(1033, 255);
+            this.labelSubmitDescription.TabIndex = 0;
+            this.labelSubmitDescription.Text = resources.GetString("labelSubmitDescription.Text");
             // 
-            // panelSubmitItems
+            // panelSubmitLink
             // 
-            this.panelSubmitItems.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.panelSubmitLink.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelSubmitItems.BackColor = System.Drawing.Color.Transparent;
-            this.panelSubmitItems.Controls.Add(this.btnSubmitUrl);
-            this.panelSubmitItems.Controls.Add(this.txtSubmitLink);
-            this.panelSubmitItems.Controls.Add(this.bgSubmitLink);
-            this.panelSubmitItems.Location = new System.Drawing.Point(0, 280);
-            this.panelSubmitItems.Margin = new System.Windows.Forms.Padding(0, 25, 0, 3);
-            this.panelSubmitItems.Name = "panelSubmitItems";
-            this.panelSubmitItems.Size = new System.Drawing.Size(1036, 38);
-            this.panelSubmitItems.TabIndex = 0;
+            this.panelSubmitLink.BackColor = System.Drawing.Color.Transparent;
+            this.panelSubmitLink.Controls.Add(this.buttonSubmitUrl);
+            this.panelSubmitLink.Controls.Add(this.textBoxSubmitLink);
+            this.panelSubmitLink.Controls.Add(this.textBoxBackgroundSubmitLink);
+            this.panelSubmitLink.Location = new System.Drawing.Point(0, 280);
+            this.panelSubmitLink.Margin = new System.Windows.Forms.Padding(0, 25, 0, 3);
+            this.panelSubmitLink.Name = "panelSubmitLink";
+            this.panelSubmitLink.Size = new System.Drawing.Size(1036, 38);
+            this.panelSubmitLink.TabIndex = 0;
             // 
-            // btnSubmitUrl
+            // buttonSubmitUrl
             // 
-            this.btnSubmitUrl.BackColor = System.Drawing.Color.Transparent;
-            this.btnSubmitUrl.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(105)))), ((int)(((byte)(26)))));
-            this.btnSubmitUrl.ColorFillSolid = System.Drawing.Color.Transparent;
-            this.btnSubmitUrl.Corners.All = 2;
-            this.btnSubmitUrl.Corners.LowerLeft = 2;
-            this.btnSubmitUrl.Corners.LowerRight = 2;
-            this.btnSubmitUrl.Corners.UpperLeft = 2;
-            this.btnSubmitUrl.Corners.UpperRight = 2;
-            this.btnSubmitUrl.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSubmitUrl.DesignerSelected = false;
-            this.btnSubmitUrl.DimFactorClick = 0;
-            this.btnSubmitUrl.DimFactorHover = 0;
-            this.btnSubmitUrl.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.btnSubmitUrl.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.btnSubmitUrl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(105)))), ((int)(((byte)(26)))));
-            this.btnSubmitUrl.ImageIndex = 0;
-            this.btnSubmitUrl.Location = new System.Drawing.Point(414, 4);
-            this.btnSubmitUrl.MaximumSize = new System.Drawing.Size(1000, 30);
-            this.btnSubmitUrl.MinimumSize = new System.Drawing.Size(0, 30);
-            this.btnSubmitUrl.Name = "btnSubmitUrl";
-            this.btnSubmitUrl.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.btnSubmitUrl.Size = new System.Drawing.Size(66, 30);
-            this.btnSubmitUrl.TabIndex = 1;
-            this.btnSubmitUrl.Text = "Submit";
-            this.btnSubmitUrl.TextMargin = new System.Windows.Forms.Padding(0, 2, 0, 2);
-            this.btnSubmitUrl.TextShadowShow = false;
-            this.btnSubmitUrl.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnSubmitUrl_ClickButtonArea);
+            this.buttonSubmitUrl.BackColor = System.Drawing.Color.Transparent;
+            this.buttonSubmitUrl.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(105)))), ((int)(((byte)(26)))));
+            this.buttonSubmitUrl.ColorFillSolid = System.Drawing.Color.Transparent;
+            this.buttonSubmitUrl.Corners.All = 2;
+            this.buttonSubmitUrl.Corners.LowerLeft = 2;
+            this.buttonSubmitUrl.Corners.LowerRight = 2;
+            this.buttonSubmitUrl.Corners.UpperLeft = 2;
+            this.buttonSubmitUrl.Corners.UpperRight = 2;
+            this.buttonSubmitUrl.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonSubmitUrl.DesignerSelected = false;
+            this.buttonSubmitUrl.DimFactorClick = 0;
+            this.buttonSubmitUrl.DimFactorHover = 0;
+            this.buttonSubmitUrl.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.buttonSubmitUrl.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.buttonSubmitUrl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(105)))), ((int)(((byte)(26)))));
+            this.buttonSubmitUrl.ImageIndex = 0;
+            this.buttonSubmitUrl.Location = new System.Drawing.Point(414, 4);
+            this.buttonSubmitUrl.MaximumSize = new System.Drawing.Size(1000, 30);
+            this.buttonSubmitUrl.MinimumSize = new System.Drawing.Size(0, 30);
+            this.buttonSubmitUrl.Name = "buttonSubmitUrl";
+            this.buttonSubmitUrl.Size = new System.Drawing.Size(66, 30);
+            this.buttonSubmitUrl.TabIndex = 1;
+            this.buttonSubmitUrl.Text = "Submit";
+            this.buttonSubmitUrl.TextMargin = new System.Windows.Forms.Padding(0, 2, 0, 2);
+            this.buttonSubmitUrl.TextShadowShow = false;
+            this.buttonSubmitUrl.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnSubmitUrl_ClickButtonArea);
             // 
-            // txtSubmitLink
+            // textBoxSubmitLink
             // 
-            this.txtSubmitLink.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(50)))));
-            this.txtSubmitLink.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtSubmitLink.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.txtSubmitLink.ForeColor = System.Drawing.Color.White;
-            this.txtSubmitLink.Location = new System.Drawing.Point(13, 9);
-            this.txtSubmitLink.Name = "txtSubmitLink";
-            this.txtSubmitLink.Size = new System.Drawing.Size(386, 18);
-            this.txtSubmitLink.TabIndex = 0;
-            this.txtSubmitLink.WaterMark = "Link/website";
-            this.txtSubmitLink.WaterMarkActiveForeColor = System.Drawing.Color.White;
-            this.txtSubmitLink.WaterMarkFont = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.txtSubmitLink.WaterMarkForeColor = System.Drawing.Color.DarkGray;
+            this.textBoxSubmitLink.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(50)))));
+            this.textBoxSubmitLink.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxSubmitLink.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.textBoxSubmitLink.ForeColor = System.Drawing.Color.White;
+            this.textBoxSubmitLink.Location = new System.Drawing.Point(13, 9);
+            this.textBoxSubmitLink.Name = "textBoxSubmitLink";
+            this.textBoxSubmitLink.Size = new System.Drawing.Size(386, 18);
+            this.textBoxSubmitLink.TabIndex = 0;
+            this.textBoxSubmitLink.WaterMark = "Link/website";
+            this.textBoxSubmitLink.WaterMarkActiveForeColor = System.Drawing.Color.White;
+            this.textBoxSubmitLink.WaterMarkFont = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.textBoxSubmitLink.WaterMarkForeColor = System.Drawing.Color.DarkGray;
             // 
-            // bgSubmitLink
+            // textBoxBackgroundSubmitLink
             // 
-            this.bgSubmitLink.BackColor = System.Drawing.Color.Transparent;
-            this.bgSubmitLink.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(50)))));
-            this.bgSubmitLink.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(50)))));
-            this.bgSubmitLink.Corners.All = 2;
-            this.bgSubmitLink.Corners.LowerLeft = 2;
-            this.bgSubmitLink.Corners.LowerRight = 2;
-            this.bgSubmitLink.Corners.UpperLeft = 2;
-            this.bgSubmitLink.Corners.UpperRight = 2;
-            this.bgSubmitLink.DesignerSelected = false;
-            this.bgSubmitLink.DimFactorClick = 0;
-            this.bgSubmitLink.DimFactorHover = 0;
-            this.bgSubmitLink.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.bgSubmitLink.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.bgSubmitLink.ImageIndex = 0;
-            this.bgSubmitLink.Location = new System.Drawing.Point(4, 4);
-            this.bgSubmitLink.Margin = new System.Windows.Forms.Padding(3, 3, 2, 3);
-            this.bgSubmitLink.Name = "bgSubmitLink";
-            this.bgSubmitLink.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.bgSubmitLink.Size = new System.Drawing.Size(405, 30);
-            this.bgSubmitLink.TabIndex = 0;
-            this.bgSubmitLink.TabStop = false;
-            this.bgSubmitLink.Text = "";
-            this.bgSubmitLink.TextShadow = System.Drawing.Color.Empty;
+            this.textBoxBackgroundSubmitLink.BackColor = System.Drawing.Color.Transparent;
+            this.textBoxBackgroundSubmitLink.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(50)))));
+            this.textBoxBackgroundSubmitLink.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(50)))));
+            this.textBoxBackgroundSubmitLink.Corners.All = 2;
+            this.textBoxBackgroundSubmitLink.Corners.LowerLeft = 2;
+            this.textBoxBackgroundSubmitLink.Corners.LowerRight = 2;
+            this.textBoxBackgroundSubmitLink.Corners.UpperLeft = 2;
+            this.textBoxBackgroundSubmitLink.Corners.UpperRight = 2;
+            this.textBoxBackgroundSubmitLink.DesignerSelected = false;
+            this.textBoxBackgroundSubmitLink.DimFactorClick = 0;
+            this.textBoxBackgroundSubmitLink.DimFactorHover = 0;
+            this.textBoxBackgroundSubmitLink.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.textBoxBackgroundSubmitLink.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.textBoxBackgroundSubmitLink.ImageIndex = 0;
+            this.textBoxBackgroundSubmitLink.Location = new System.Drawing.Point(4, 4);
+            this.textBoxBackgroundSubmitLink.Margin = new System.Windows.Forms.Padding(3, 3, 2, 3);
+            this.textBoxBackgroundSubmitLink.Name = "textBoxBackgroundSubmitLink";
+            this.textBoxBackgroundSubmitLink.ShowFocus = CButtonLib.CButton.eFocus.None;
+            this.textBoxBackgroundSubmitLink.Size = new System.Drawing.Size(405, 30);
+            this.textBoxBackgroundSubmitLink.TabIndex = 0;
+            this.textBoxBackgroundSubmitLink.TabStop = false;
+            this.textBoxBackgroundSubmitLink.Text = "";
+            this.textBoxBackgroundSubmitLink.TextShadow = System.Drawing.Color.Empty;
             // 
-            // lblHeaderSubmit
+            // labelTitleSubmit
             // 
-            this.lblHeaderSubmit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.labelTitleSubmit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblHeaderSubmit.AutoEllipsis = true;
-            this.lblHeaderSubmit.BackColor = System.Drawing.Color.Transparent;
-            this.lblHeaderSubmit.Font = new System.Drawing.Font("Segoe UI Semibold", 15.25F);
-            this.lblHeaderSubmit.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblHeaderSubmit.Location = new System.Drawing.Point(9, 13);
-            this.lblHeaderSubmit.Margin = new System.Windows.Forms.Padding(0);
-            this.lblHeaderSubmit.Name = "lblHeaderSubmit";
-            this.lblHeaderSubmit.Size = new System.Drawing.Size(1030, 32);
-            this.lblHeaderSubmit.TabIndex = 0;
-            this.lblHeaderSubmit.Text = "Submit Link";
-            this.lblHeaderSubmit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelTitleSubmit.AutoEllipsis = true;
+            this.labelTitleSubmit.BackColor = System.Drawing.Color.Transparent;
+            this.labelTitleSubmit.Font = new System.Drawing.Font("Segoe UI Semibold", 15.25F);
+            this.labelTitleSubmit.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.labelTitleSubmit.Location = new System.Drawing.Point(9, 13);
+            this.labelTitleSubmit.Margin = new System.Windows.Forms.Padding(0);
+            this.labelTitleSubmit.Name = "labelTitleSubmit";
+            this.labelTitleSubmit.Size = new System.Drawing.Size(1030, 32);
+            this.labelTitleSubmit.TabIndex = 0;
+            this.labelTitleSubmit.Text = "Submit Link";
+            this.labelTitleSubmit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // tabSettings
             // 
@@ -1697,77 +1705,75 @@ namespace WebCrunch
             this.tabSettings.AutoScrollMargin = new System.Drawing.Size(0, 15);
             this.tabSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.tabSettings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.tabSettings.Controls.Add(this.btnSettingsSave);
-            this.tabSettings.Controls.Add(this.btnSettingsRestoreDefault);
+            this.tabSettings.Controls.Add(this.buttonSaveSettings);
+            this.tabSettings.Controls.Add(this.buttonRestoreSettings);
             this.tabSettings.Controls.Add(this.splitterHeaderSettings);
-            this.tabSettings.Controls.Add(this.lblHeaderSettingsGeneral);
-            this.tabSettings.Controls.Add(this.lblSettingsGeneralClearDataOnClose);
-            this.tabSettings.Controls.Add(this.chkSettingsClearData);
+            this.tabSettings.Controls.Add(this.labelTitleGeneral);
+            this.tabSettings.Controls.Add(this.labelClearDataOnClose);
+            this.tabSettings.Controls.Add(this.checkBoxClearDataOnClose);
             this.tabSettings.ForeColor = System.Drawing.Color.White;
             this.tabSettings.Location = new System.Drawing.Point(4, 22);
             this.tabSettings.Name = "tabSettings";
             this.tabSettings.Size = new System.Drawing.Size(1048, 607);
             this.tabSettings.TabIndex = 6;
             // 
-            // btnSettingsSave
+            // buttonSaveSettings
             // 
-            this.btnSettingsSave.BackColor = System.Drawing.Color.Transparent;
-            this.btnSettingsSave.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(105)))), ((int)(((byte)(26)))));
-            this.btnSettingsSave.ColorFillSolid = System.Drawing.Color.Transparent;
-            this.btnSettingsSave.Corners.All = 2;
-            this.btnSettingsSave.Corners.LowerLeft = 2;
-            this.btnSettingsSave.Corners.LowerRight = 2;
-            this.btnSettingsSave.Corners.UpperLeft = 2;
-            this.btnSettingsSave.Corners.UpperRight = 2;
-            this.btnSettingsSave.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSettingsSave.DesignerSelected = false;
-            this.btnSettingsSave.DimFactorClick = 0;
-            this.btnSettingsSave.DimFactorHover = 0;
-            this.btnSettingsSave.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.btnSettingsSave.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.btnSettingsSave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(105)))), ((int)(((byte)(26)))));
-            this.btnSettingsSave.ImageIndex = 0;
-            this.btnSettingsSave.Location = new System.Drawing.Point(89, 110);
-            this.btnSettingsSave.MaximumSize = new System.Drawing.Size(1000, 30);
-            this.btnSettingsSave.MinimumSize = new System.Drawing.Size(0, 30);
-            this.btnSettingsSave.Name = "btnSettingsSave";
-            this.btnSettingsSave.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.btnSettingsSave.Size = new System.Drawing.Size(52, 30);
-            this.btnSettingsSave.TabIndex = 3;
-            this.btnSettingsSave.Text = "Save";
-            this.btnSettingsSave.TextMargin = new System.Windows.Forms.Padding(0, 2, 0, 2);
-            this.btnSettingsSave.TextShadowShow = false;
-            this.btnSettingsSave.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnSettingsSave_ClickButtonArea);
+            this.buttonSaveSettings.BackColor = System.Drawing.Color.Transparent;
+            this.buttonSaveSettings.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(105)))), ((int)(((byte)(26)))));
+            this.buttonSaveSettings.ColorFillSolid = System.Drawing.Color.Transparent;
+            this.buttonSaveSettings.Corners.All = 2;
+            this.buttonSaveSettings.Corners.LowerLeft = 2;
+            this.buttonSaveSettings.Corners.LowerRight = 2;
+            this.buttonSaveSettings.Corners.UpperLeft = 2;
+            this.buttonSaveSettings.Corners.UpperRight = 2;
+            this.buttonSaveSettings.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonSaveSettings.DesignerSelected = false;
+            this.buttonSaveSettings.DimFactorClick = 0;
+            this.buttonSaveSettings.DimFactorHover = 0;
+            this.buttonSaveSettings.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.buttonSaveSettings.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.buttonSaveSettings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(105)))), ((int)(((byte)(26)))));
+            this.buttonSaveSettings.ImageIndex = 0;
+            this.buttonSaveSettings.Location = new System.Drawing.Point(89, 110);
+            this.buttonSaveSettings.MaximumSize = new System.Drawing.Size(1000, 30);
+            this.buttonSaveSettings.MinimumSize = new System.Drawing.Size(0, 30);
+            this.buttonSaveSettings.Name = "buttonSaveSettings";
+            this.buttonSaveSettings.Size = new System.Drawing.Size(52, 30);
+            this.buttonSaveSettings.TabIndex = 3;
+            this.buttonSaveSettings.Text = "Save";
+            this.buttonSaveSettings.TextMargin = new System.Windows.Forms.Padding(0, 2, 0, 2);
+            this.buttonSaveSettings.TextShadowShow = false;
+            this.buttonSaveSettings.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnSettingsSave_ClickButtonArea);
             // 
-            // btnSettingsRestoreDefault
+            // buttonRestoreSettings
             // 
-            this.btnSettingsRestoreDefault.BackColor = System.Drawing.Color.Transparent;
-            this.btnSettingsRestoreDefault.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(105)))), ((int)(((byte)(26)))));
-            this.btnSettingsRestoreDefault.ColorFillSolid = System.Drawing.Color.Transparent;
-            this.btnSettingsRestoreDefault.Corners.All = 2;
-            this.btnSettingsRestoreDefault.Corners.LowerLeft = 2;
-            this.btnSettingsRestoreDefault.Corners.LowerRight = 2;
-            this.btnSettingsRestoreDefault.Corners.UpperLeft = 2;
-            this.btnSettingsRestoreDefault.Corners.UpperRight = 2;
-            this.btnSettingsRestoreDefault.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSettingsRestoreDefault.DesignerSelected = false;
-            this.btnSettingsRestoreDefault.DimFactorClick = 0;
-            this.btnSettingsRestoreDefault.DimFactorHover = 0;
-            this.btnSettingsRestoreDefault.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.btnSettingsRestoreDefault.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.btnSettingsRestoreDefault.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(105)))), ((int)(((byte)(26)))));
-            this.btnSettingsRestoreDefault.ImageIndex = 0;
-            this.btnSettingsRestoreDefault.Location = new System.Drawing.Point(14, 110);
-            this.btnSettingsRestoreDefault.MaximumSize = new System.Drawing.Size(1000, 30);
-            this.btnSettingsRestoreDefault.MinimumSize = new System.Drawing.Size(0, 30);
-            this.btnSettingsRestoreDefault.Name = "btnSettingsRestoreDefault";
-            this.btnSettingsRestoreDefault.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.btnSettingsRestoreDefault.Size = new System.Drawing.Size(69, 30);
-            this.btnSettingsRestoreDefault.TabIndex = 2;
-            this.btnSettingsRestoreDefault.Text = "Restore";
-            this.btnSettingsRestoreDefault.TextMargin = new System.Windows.Forms.Padding(0, 2, 0, 2);
-            this.btnSettingsRestoreDefault.TextShadowShow = false;
-            this.btnSettingsRestoreDefault.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnSettingsRestoreDefault_ClickButtonArea);
+            this.buttonRestoreSettings.BackColor = System.Drawing.Color.Transparent;
+            this.buttonRestoreSettings.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(105)))), ((int)(((byte)(26)))));
+            this.buttonRestoreSettings.ColorFillSolid = System.Drawing.Color.Transparent;
+            this.buttonRestoreSettings.Corners.All = 2;
+            this.buttonRestoreSettings.Corners.LowerLeft = 2;
+            this.buttonRestoreSettings.Corners.LowerRight = 2;
+            this.buttonRestoreSettings.Corners.UpperLeft = 2;
+            this.buttonRestoreSettings.Corners.UpperRight = 2;
+            this.buttonRestoreSettings.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonRestoreSettings.DesignerSelected = false;
+            this.buttonRestoreSettings.DimFactorClick = 0;
+            this.buttonRestoreSettings.DimFactorHover = 0;
+            this.buttonRestoreSettings.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.buttonRestoreSettings.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.buttonRestoreSettings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(105)))), ((int)(((byte)(26)))));
+            this.buttonRestoreSettings.ImageIndex = 0;
+            this.buttonRestoreSettings.Location = new System.Drawing.Point(14, 110);
+            this.buttonRestoreSettings.MaximumSize = new System.Drawing.Size(1000, 30);
+            this.buttonRestoreSettings.MinimumSize = new System.Drawing.Size(0, 30);
+            this.buttonRestoreSettings.Name = "buttonRestoreSettings";
+            this.buttonRestoreSettings.Size = new System.Drawing.Size(69, 30);
+            this.buttonRestoreSettings.TabIndex = 2;
+            this.buttonRestoreSettings.Text = "Restore";
+            this.buttonRestoreSettings.TextMargin = new System.Windows.Forms.Padding(0, 2, 0, 2);
+            this.buttonRestoreSettings.TextShadowShow = false;
+            this.buttonRestoreSettings.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.btnSettingsRestoreDefault_ClickButtonArea);
             // 
             // splitterHeaderSettings
             // 
@@ -1798,152 +1804,157 @@ namespace WebCrunch
             this.splitterHeaderSettings.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.splitterHeaderSettings.TextShadowShow = false;
             // 
-            // lblHeaderSettingsGeneral
+            // labelTitleGeneral
             // 
-            this.lblHeaderSettingsGeneral.BackColor = System.Drawing.Color.Transparent;
-            this.lblHeaderSettingsGeneral.Font = new System.Drawing.Font("Segoe UI Semibold", 15.25F);
-            this.lblHeaderSettingsGeneral.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblHeaderSettingsGeneral.Location = new System.Drawing.Point(9, 13);
-            this.lblHeaderSettingsGeneral.Margin = new System.Windows.Forms.Padding(3, 8, 3, 8);
-            this.lblHeaderSettingsGeneral.Name = "lblHeaderSettingsGeneral";
-            this.lblHeaderSettingsGeneral.Size = new System.Drawing.Size(1030, 32);
-            this.lblHeaderSettingsGeneral.TabIndex = 0;
-            this.lblHeaderSettingsGeneral.Text = "General";
+            this.labelTitleGeneral.BackColor = System.Drawing.Color.Transparent;
+            this.labelTitleGeneral.Font = new System.Drawing.Font("Segoe UI Semibold", 15.25F);
+            this.labelTitleGeneral.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.labelTitleGeneral.Location = new System.Drawing.Point(9, 13);
+            this.labelTitleGeneral.Margin = new System.Windows.Forms.Padding(3, 8, 3, 8);
+            this.labelTitleGeneral.Name = "labelTitleGeneral";
+            this.labelTitleGeneral.Size = new System.Drawing.Size(1030, 32);
+            this.labelTitleGeneral.TabIndex = 0;
+            this.labelTitleGeneral.Text = "General";
             // 
-            // lblSettingsGeneralClearDataOnClose
+            // labelClearDataOnClose
             // 
-            this.lblSettingsGeneralClearDataOnClose.AutoSize = true;
-            this.lblSettingsGeneralClearDataOnClose.BackColor = System.Drawing.Color.Transparent;
-            this.lblSettingsGeneralClearDataOnClose.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.lblSettingsGeneralClearDataOnClose.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblSettingsGeneralClearDataOnClose.Location = new System.Drawing.Point(11, 61);
-            this.lblSettingsGeneralClearDataOnClose.Margin = new System.Windows.Forms.Padding(3, 8, 3, 8);
-            this.lblSettingsGeneralClearDataOnClose.Name = "lblSettingsGeneralClearDataOnClose";
-            this.lblSettingsGeneralClearDataOnClose.Size = new System.Drawing.Size(124, 17);
-            this.lblSettingsGeneralClearDataOnClose.TabIndex = 0;
-            this.lblSettingsGeneralClearDataOnClose.Text = "Clear data on close:";
+            this.labelClearDataOnClose.AutoSize = true;
+            this.labelClearDataOnClose.BackColor = System.Drawing.Color.Transparent;
+            this.labelClearDataOnClose.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.labelClearDataOnClose.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.labelClearDataOnClose.Location = new System.Drawing.Point(11, 61);
+            this.labelClearDataOnClose.Margin = new System.Windows.Forms.Padding(3, 8, 3, 8);
+            this.labelClearDataOnClose.Name = "labelClearDataOnClose";
+            this.labelClearDataOnClose.Size = new System.Drawing.Size(124, 17);
+            this.labelClearDataOnClose.TabIndex = 0;
+            this.labelClearDataOnClose.Text = "Clear data on close:";
             // 
-            // chkSettingsClearData
+            // checkBoxClearDataOnClose
             // 
-            this.chkSettingsClearData.AutoSize = true;
-            this.chkSettingsClearData.BackColor = System.Drawing.Color.Transparent;
-            this.chkSettingsClearData.Font = new System.Drawing.Font("Segoe UI", 10.75F);
-            this.chkSettingsClearData.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.chkSettingsClearData.Location = new System.Drawing.Point(275, 63);
-            this.chkSettingsClearData.Name = "chkSettingsClearData";
-            this.chkSettingsClearData.Size = new System.Drawing.Size(15, 14);
-            this.chkSettingsClearData.TabIndex = 1;
-            this.chkSettingsClearData.UseVisualStyleBackColor = false;
+            this.checkBoxClearDataOnClose.AutoSize = true;
+            this.checkBoxClearDataOnClose.BackColor = System.Drawing.Color.Transparent;
+            this.checkBoxClearDataOnClose.Font = new System.Drawing.Font("Segoe UI", 10.75F);
+            this.checkBoxClearDataOnClose.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.checkBoxClearDataOnClose.Location = new System.Drawing.Point(275, 63);
+            this.checkBoxClearDataOnClose.Name = "checkBoxClearDataOnClose";
+            this.checkBoxClearDataOnClose.Size = new System.Drawing.Size(15, 14);
+            this.checkBoxClearDataOnClose.TabIndex = 1;
+            this.checkBoxClearDataOnClose.UseVisualStyleBackColor = false;
             // 
             // tabInformation
             // 
             this.tabInformation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.tabInformation.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.tabInformation.Controls.Add(this.btnAboutPrivacyPolicy);
-            this.tabInformation.Controls.Add(this.btnAboutTermsOfUse);
-            this.tabInformation.Controls.Add(this.lblAboutChangelogVersion);
-            this.tabInformation.Controls.Add(this.btnAboutReportIssue);
-            this.tabInformation.Controls.Add(this.lblAboutSubText);
-            this.tabInformation.Controls.Add(this.lblAboutText);
+            this.tabInformation.Controls.Add(this.labelPrivacyPolicy);
+            this.tabInformation.Controls.Add(this.labelTermsOfUse);
+            this.tabInformation.Controls.Add(this.labelChangeLog);
+            this.tabInformation.Controls.Add(this.labelReportIssue);
+            this.tabInformation.Controls.Add(this.labelMadeWithLove);
+            this.tabInformation.Controls.Add(this.labelAboutApp);
             this.tabInformation.ForeColor = System.Drawing.Color.White;
             this.tabInformation.Location = new System.Drawing.Point(4, 22);
             this.tabInformation.Name = "tabInformation";
             this.tabInformation.Size = new System.Drawing.Size(1048, 607);
             this.tabInformation.TabIndex = 2;
             // 
-            // btnAboutPrivacyPolicy
+            // labelPrivacyPolicy
             // 
-            this.btnAboutPrivacyPolicy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnAboutPrivacyPolicy.AutoSize = true;
-            this.btnAboutPrivacyPolicy.BackColor = System.Drawing.Color.Transparent;
-            this.btnAboutPrivacyPolicy.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnAboutPrivacyPolicy.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnAboutPrivacyPolicy.Location = new System.Drawing.Point(170, 578);
-            this.btnAboutPrivacyPolicy.Margin = new System.Windows.Forms.Padding(3, 0, 3, 5);
-            this.btnAboutPrivacyPolicy.Name = "btnAboutPrivacyPolicy";
-            this.btnAboutPrivacyPolicy.Size = new System.Drawing.Size(80, 15);
-            this.btnAboutPrivacyPolicy.TabIndex = 14;
-            this.btnAboutPrivacyPolicy.Text = "Privacy Policy";
-            this.btnAboutPrivacyPolicy.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnAboutPrivacyPolicy.Click += new System.EventHandler(this.btnAboutPrivacyPolicy_Click);
+            this.labelPrivacyPolicy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.labelPrivacyPolicy.AutoSize = true;
+            this.labelPrivacyPolicy.BackColor = System.Drawing.Color.Transparent;
+            this.labelPrivacyPolicy.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.labelPrivacyPolicy.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.labelPrivacyPolicy.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.labelPrivacyPolicy.Location = new System.Drawing.Point(170, 578);
+            this.labelPrivacyPolicy.Margin = new System.Windows.Forms.Padding(3, 0, 3, 5);
+            this.labelPrivacyPolicy.Name = "labelPrivacyPolicy";
+            this.labelPrivacyPolicy.Size = new System.Drawing.Size(80, 15);
+            this.labelPrivacyPolicy.TabIndex = 14;
+            this.labelPrivacyPolicy.Text = "Privacy Policy";
+            this.labelPrivacyPolicy.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelPrivacyPolicy.Click += new System.EventHandler(this.btnAboutPrivacyPolicy_Click);
             // 
-            // btnAboutTermsOfUse
+            // labelTermsOfUse
             // 
-            this.btnAboutTermsOfUse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnAboutTermsOfUse.AutoSize = true;
-            this.btnAboutTermsOfUse.BackColor = System.Drawing.Color.Transparent;
-            this.btnAboutTermsOfUse.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnAboutTermsOfUse.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnAboutTermsOfUse.Location = new System.Drawing.Point(89, 578);
-            this.btnAboutTermsOfUse.Margin = new System.Windows.Forms.Padding(3, 0, 3, 5);
-            this.btnAboutTermsOfUse.Name = "btnAboutTermsOfUse";
-            this.btnAboutTermsOfUse.Size = new System.Drawing.Size(75, 15);
-            this.btnAboutTermsOfUse.TabIndex = 13;
-            this.btnAboutTermsOfUse.Text = "Terms of Use";
-            this.btnAboutTermsOfUse.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnAboutTermsOfUse.Click += new System.EventHandler(this.btnAboutTermsOfUse_Click);
+            this.labelTermsOfUse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.labelTermsOfUse.AutoSize = true;
+            this.labelTermsOfUse.BackColor = System.Drawing.Color.Transparent;
+            this.labelTermsOfUse.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.labelTermsOfUse.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.labelTermsOfUse.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.labelTermsOfUse.Location = new System.Drawing.Point(89, 578);
+            this.labelTermsOfUse.Margin = new System.Windows.Forms.Padding(3, 0, 3, 5);
+            this.labelTermsOfUse.Name = "labelTermsOfUse";
+            this.labelTermsOfUse.Size = new System.Drawing.Size(75, 15);
+            this.labelTermsOfUse.TabIndex = 13;
+            this.labelTermsOfUse.Text = "Terms of Use";
+            this.labelTermsOfUse.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelTermsOfUse.Click += new System.EventHandler(this.btnAboutTermsOfUse_Click);
             // 
-            // lblAboutChangelogVersion
+            // labelChangeLog
             // 
-            this.lblAboutChangelogVersion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblAboutChangelogVersion.BackColor = System.Drawing.Color.Transparent;
-            this.lblAboutChangelogVersion.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblAboutChangelogVersion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblAboutChangelogVersion.Location = new System.Drawing.Point(863, 578);
-            this.lblAboutChangelogVersion.Margin = new System.Windows.Forms.Padding(3, 0, 3, 5);
-            this.lblAboutChangelogVersion.Name = "lblAboutChangelogVersion";
-            this.lblAboutChangelogVersion.Size = new System.Drawing.Size(173, 15);
-            this.lblAboutChangelogVersion.TabIndex = 12;
-            this.lblAboutChangelogVersion.Text = "Change Log - v{0}";
-            this.lblAboutChangelogVersion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblAboutChangelogVersion.Click += new System.EventHandler(this.lblAboutChangelogVersion_Click);
+            this.labelChangeLog.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelChangeLog.BackColor = System.Drawing.Color.Transparent;
+            this.labelChangeLog.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.labelChangeLog.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.labelChangeLog.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.labelChangeLog.Location = new System.Drawing.Point(863, 578);
+            this.labelChangeLog.Margin = new System.Windows.Forms.Padding(3, 0, 3, 5);
+            this.labelChangeLog.Name = "labelChangeLog";
+            this.labelChangeLog.Size = new System.Drawing.Size(173, 15);
+            this.labelChangeLog.TabIndex = 12;
+            this.labelChangeLog.Text = "Change Log - v{0}";
+            this.labelChangeLog.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.labelChangeLog.Click += new System.EventHandler(this.lblAboutChangelogVersion_Click);
             // 
-            // btnAboutReportIssue
+            // labelReportIssue
             // 
-            this.btnAboutReportIssue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnAboutReportIssue.AutoSize = true;
-            this.btnAboutReportIssue.BackColor = System.Drawing.Color.Transparent;
-            this.btnAboutReportIssue.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnAboutReportIssue.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnAboutReportIssue.Location = new System.Drawing.Point(12, 578);
-            this.btnAboutReportIssue.Margin = new System.Windows.Forms.Padding(3, 0, 3, 5);
-            this.btnAboutReportIssue.Name = "btnAboutReportIssue";
-            this.btnAboutReportIssue.Size = new System.Drawing.Size(71, 15);
-            this.btnAboutReportIssue.TabIndex = 11;
-            this.btnAboutReportIssue.Text = "Report Issue";
-            this.btnAboutReportIssue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnAboutReportIssue.Click += new System.EventHandler(this.lblAboutReportIssue_Click);
+            this.labelReportIssue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.labelReportIssue.AutoSize = true;
+            this.labelReportIssue.BackColor = System.Drawing.Color.Transparent;
+            this.labelReportIssue.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.labelReportIssue.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.labelReportIssue.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.labelReportIssue.Location = new System.Drawing.Point(12, 578);
+            this.labelReportIssue.Margin = new System.Windows.Forms.Padding(3, 0, 3, 5);
+            this.labelReportIssue.Name = "labelReportIssue";
+            this.labelReportIssue.Size = new System.Drawing.Size(71, 15);
+            this.labelReportIssue.TabIndex = 11;
+            this.labelReportIssue.Text = "Report Issue";
+            this.labelReportIssue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelReportIssue.Click += new System.EventHandler(this.lblAboutReportIssue_Click);
             // 
-            // lblAboutSubText
+            // labelMadeWithLove
             // 
-            this.lblAboutSubText.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.lblAboutSubText.AutoSize = true;
-            this.lblAboutSubText.BackColor = System.Drawing.Color.Transparent;
-            this.lblAboutSubText.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.lblAboutSubText.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblAboutSubText.Location = new System.Drawing.Point(367, 539);
-            this.lblAboutSubText.Margin = new System.Windows.Forms.Padding(3, 0, 3, 5);
-            this.lblAboutSubText.Name = "lblAboutSubText";
-            this.lblAboutSubText.Size = new System.Drawing.Size(314, 20);
-            this.lblAboutSubText.TabIndex = 10;
-            this.lblAboutSubText.Text = "Made with ❤ by geeks from around the world";
-            this.lblAboutSubText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelMadeWithLove.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.labelMadeWithLove.AutoSize = true;
+            this.labelMadeWithLove.BackColor = System.Drawing.Color.Transparent;
+            this.labelMadeWithLove.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.labelMadeWithLove.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.labelMadeWithLove.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.labelMadeWithLove.Location = new System.Drawing.Point(367, 539);
+            this.labelMadeWithLove.Margin = new System.Windows.Forms.Padding(3, 0, 3, 5);
+            this.labelMadeWithLove.Name = "labelMadeWithLove";
+            this.labelMadeWithLove.Size = new System.Drawing.Size(314, 20);
+            this.labelMadeWithLove.TabIndex = 10;
+            this.labelMadeWithLove.Text = "Made with ❤ by geeks from around the world";
+            this.labelMadeWithLove.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblAboutText
+            // labelAboutApp
             // 
-            this.lblAboutText.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.labelAboutApp.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblAboutText.AutoEllipsis = true;
-            this.lblAboutText.BackColor = System.Drawing.Color.Transparent;
-            this.lblAboutText.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.lblAboutText.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblAboutText.Location = new System.Drawing.Point(128, 81);
-            this.lblAboutText.Name = "lblAboutText";
-            this.lblAboutText.Size = new System.Drawing.Size(792, 439);
-            this.lblAboutText.TabIndex = 0;
-            this.lblAboutText.Text = resources.GetString("lblAboutText.Text");
-            this.lblAboutText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelAboutApp.AutoEllipsis = true;
+            this.labelAboutApp.BackColor = System.Drawing.Color.Transparent;
+            this.labelAboutApp.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.labelAboutApp.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.labelAboutApp.Location = new System.Drawing.Point(128, 81);
+            this.labelAboutApp.Name = "labelAboutApp";
+            this.labelAboutApp.Size = new System.Drawing.Size(792, 439);
+            this.labelAboutApp.TabIndex = 0;
+            this.labelAboutApp.Text = resources.GetString("labelAboutApp.Text");
+            this.labelAboutApp.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tabBlank
             // 
@@ -1956,27 +1967,26 @@ namespace WebCrunch
             this.tabBlank.Size = new System.Drawing.Size(1048, 607);
             this.tabBlank.TabIndex = 3;
             // 
-            // panelTitles
+            // panelTabTitles
             // 
-            this.panelTitles.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.panelTabTitles.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelTitles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
-            this.panelTitles.Controls.Add(this.titleInformation);
-            this.panelTitles.Controls.Add(this.titleSettings);
-            this.panelTitles.Controls.Add(this.titleSubmit);
-            this.panelTitles.Controls.Add(this.titleDiscover);
-            this.panelTitles.Controls.Add(this.titleSearch);
-            this.panelTitles.Controls.Add(this.titleHome);
-            this.panelTitles.Controls.Add(this.lblShareUsOn);
-            this.panelTitles.Controls.Add(this.imgShareFacebook);
-            this.panelTitles.Controls.Add(this.imgShareTwitter);
-            this.panelTitles.ForeColor = System.Drawing.Color.White;
-            this.panelTitles.Location = new System.Drawing.Point(0, 0);
-            this.panelTitles.Margin = new System.Windows.Forms.Padding(0);
-            this.panelTitles.Name = "panelTitles";
-            this.panelTitles.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.panelTitles.Size = new System.Drawing.Size(1048, 34);
-            this.panelTitles.TabIndex = 1;
+            this.panelTabTitles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
+            this.panelTabTitles.Controls.Add(this.titleInformation);
+            this.panelTabTitles.Controls.Add(this.titleSettings);
+            this.panelTabTitles.Controls.Add(this.titleSubmit);
+            this.panelTabTitles.Controls.Add(this.titleDiscover);
+            this.panelTabTitles.Controls.Add(this.titleSearch);
+            this.panelTabTitles.Controls.Add(this.titleHome);
+            this.panelTabTitles.Controls.Add(this.imageFacebook);
+            this.panelTabTitles.Controls.Add(this.imageTwitter);
+            this.panelTabTitles.ForeColor = System.Drawing.Color.White;
+            this.panelTabTitles.Location = new System.Drawing.Point(0, 0);
+            this.panelTabTitles.Margin = new System.Windows.Forms.Padding(0);
+            this.panelTabTitles.Name = "panelTabTitles";
+            this.panelTabTitles.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.panelTabTitles.Size = new System.Drawing.Size(1048, 34);
+            this.panelTabTitles.TabIndex = 1;
             // 
             // titleInformation
             // 
@@ -2170,50 +2180,35 @@ namespace WebCrunch
             this.titleHome.TextShadowShow = false;
             this.titleHome.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.titleHome_ClickButtonArea);
             // 
-            // lblShareUsOn
+            // imageFacebook
             // 
-            this.lblShareUsOn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblShareUsOn.AutoSize = true;
-            this.lblShareUsOn.BackColor = System.Drawing.Color.Transparent;
-            this.lblShareUsOn.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
-            this.lblShareUsOn.ForeColor = System.Drawing.Color.White;
-            this.lblShareUsOn.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblShareUsOn.Location = new System.Drawing.Point(10, -18);
-            this.lblShareUsOn.Margin = new System.Windows.Forms.Padding(0);
-            this.lblShareUsOn.Name = "lblShareUsOn";
-            this.lblShareUsOn.Size = new System.Drawing.Size(69, 15);
-            this.lblShareUsOn.TabIndex = 35;
-            this.lblShareUsOn.Text = "Share us on";
+            this.imageFacebook.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.imageFacebook.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imageFacebook.Image = global::WebCrunch.Properties.Resources.facebook;
+            this.imageFacebook.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.imageFacebook.Location = new System.Drawing.Point(988, 7);
+            this.imageFacebook.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.imageFacebook.Name = "imageFacebook";
+            this.imageFacebook.Size = new System.Drawing.Size(20, 20);
+            this.imageFacebook.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imageFacebook.TabIndex = 34;
+            this.imageFacebook.TabStop = false;
+            this.imageFacebook.Click += new System.EventHandler(this.imgShareFacebook_Click);
             // 
-            // imgShareFacebook
+            // imageTwitter
             // 
-            this.imgShareFacebook.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.imgShareFacebook.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgShareFacebook.Image = global::WebCrunch.Properties.Resources.facebook;
-            this.imgShareFacebook.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.imgShareFacebook.Location = new System.Drawing.Point(988, 7);
-            this.imgShareFacebook.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.imgShareFacebook.Name = "imgShareFacebook";
-            this.imgShareFacebook.Size = new System.Drawing.Size(20, 20);
-            this.imgShareFacebook.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.imgShareFacebook.TabIndex = 34;
-            this.imgShareFacebook.TabStop = false;
-            this.imgShareFacebook.Click += new System.EventHandler(this.imgShareFacebook_Click);
-            // 
-            // imgShareTwitter
-            // 
-            this.imgShareTwitter.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.imgShareTwitter.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgShareTwitter.Image = global::WebCrunch.Properties.Resources.twitter;
-            this.imgShareTwitter.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.imgShareTwitter.Location = new System.Drawing.Point(1016, 7);
-            this.imgShareTwitter.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.imgShareTwitter.Name = "imgShareTwitter";
-            this.imgShareTwitter.Size = new System.Drawing.Size(20, 20);
-            this.imgShareTwitter.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.imgShareTwitter.TabIndex = 33;
-            this.imgShareTwitter.TabStop = false;
-            this.imgShareTwitter.Click += new System.EventHandler(this.imgShareTwitter_Click);
+            this.imageTwitter.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.imageTwitter.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imageTwitter.Image = global::WebCrunch.Properties.Resources.twitter;
+            this.imageTwitter.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.imageTwitter.Location = new System.Drawing.Point(1016, 7);
+            this.imageTwitter.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.imageTwitter.Name = "imageTwitter";
+            this.imageTwitter.Size = new System.Drawing.Size(20, 20);
+            this.imageTwitter.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imageTwitter.TabIndex = 33;
+            this.imageTwitter.TabStop = false;
+            this.imageTwitter.Click += new System.EventHandler(this.imgShareTwitter_Click);
             // 
             // MainForm
             // 
@@ -2222,7 +2217,7 @@ namespace WebCrunch
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.ClientSize = new System.Drawing.Size(1048, 641);
-            this.Controls.Add(this.panelTitles);
+            this.Controls.Add(this.panelTabTitles);
             this.Controls.Add(this.tab);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F);
@@ -2241,137 +2236,135 @@ namespace WebCrunch
             this.tab.ResumeLayout(false);
             this.tabHome.ResumeLayout(false);
             this.tabHome.PerformLayout();
-            this.panelHomeFilters.ResumeLayout(false);
-            this.panelHomeSearch.ResumeLayout(false);
-            this.panelHomeFileType.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridRecentlyAddedFiles)).EndInit();
+            this.flowLayoutSearchItems.ResumeLayout(false);
+            this.flowLayoutSearchHome.ResumeLayout(false);
+            this.containerFileType.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridRecentlyAdded)).EndInit();
             this.tabSearch.ResumeLayout(false);
             this.tabSearch.PerformLayout();
-            this.panelFileFilters.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.imgSearch)).EndInit();
-            this.panelFilesHost.ResumeLayout(false);
-            this.panelFilesSort.ResumeLayout(false);
+            this.flowLayoutSearchFiles.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.imageSearchFiles)).EndInit();
+            this.flowLayoutFilterFiles.ResumeLayout(false);
+            this.flowLayoutSortFiles.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridFiles)).EndInit();
             this.tabDiscover.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridDiscover)).EndInit();
             this.tabSubmit.ResumeLayout(false);
             this.tabSubmit.PerformLayout();
-            this.panelSubmitDescription.ResumeLayout(false);
-            this.panelSubmitDescription.PerformLayout();
-            this.panelSubmitItems.ResumeLayout(false);
-            this.panelSubmitItems.PerformLayout();
+            this.flowLayoutSubmitControls.ResumeLayout(false);
+            this.flowLayoutSubmitControls.PerformLayout();
+            this.panelSubmitLink.ResumeLayout(false);
+            this.panelSubmitLink.PerformLayout();
             this.tabSettings.ResumeLayout(false);
             this.tabSettings.PerformLayout();
             this.tabInformation.ResumeLayout(false);
             this.tabInformation.PerformLayout();
-            this.panelTitles.ResumeLayout(false);
-            this.panelTitles.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgShareFacebook)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgShareTwitter)).EndInit();
+            this.panelTabTitles.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.imageFacebook)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageTwitter)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.TabPage tabInformation;
-        private System.Windows.Forms.Label lblAboutText;
-        private System.Windows.Forms.Label lblAboutChangelogVersion;
-        private System.Windows.Forms.Label btnAboutReportIssue;
+        private System.Windows.Forms.Label labelAboutApp;
+        private System.Windows.Forms.Label labelChangeLog;
+        private System.Windows.Forms.Label labelReportIssue;
         public System.Windows.Forms.TabControl tab;
         public System.Windows.Forms.TabPage tabBlank;
         private System.Windows.Forms.TabPage tabSettings;
-        private System.Windows.Forms.Label lblSettingsGeneralClearDataOnClose;
-        private System.Windows.Forms.CheckBox chkSettingsClearData;
-        private System.Windows.Forms.Label lblHeaderSettingsGeneral;
-        public ChreneLib.Controls.TextBoxes.CTextBox txtSearchFilesHome;
-        private CButtonLib.CButton bgSearchFilesHome;
+        private System.Windows.Forms.Label labelClearDataOnClose;
+        private System.Windows.Forms.CheckBox checkBoxClearDataOnClose;
+        private System.Windows.Forms.Label labelTitleGeneral;
+        public ChreneLib.Controls.TextBoxes.CTextBox textBoxSearchHome;
+        private CButtonLib.CButton textBoxBackgroundSearchHome;
         public System.Windows.Forms.TabPage tabDiscover;
         private System.Windows.Forms.DataGridView dataGridDiscover;
-        public System.Windows.Forms.Label lblHeaderDiscover;
+        public System.Windows.Forms.Label labelTitleDiscover;
         public System.Windows.Forms.TabPage tabSubmit;
-        public ChreneLib.Controls.TextBoxes.CTextBox txtSubmitLink;
-        private CButtonLib.CButton bgSubmitLink;
-        public System.Windows.Forms.Label lblSubSubmit;
-        public System.Windows.Forms.Label lblHeaderSubmit;
-        private System.Windows.Forms.FlowLayoutPanel panelSubmitDescription;
-        private System.Windows.Forms.Panel panelSubmitItems;
+        public ChreneLib.Controls.TextBoxes.CTextBox textBoxSubmitLink;
+        private CButtonLib.CButton textBoxBackgroundSubmitLink;
+        public System.Windows.Forms.Label labelSubmitDescription;
+        public System.Windows.Forms.Label labelTitleSubmit;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutSubmitControls;
+        private System.Windows.Forms.Panel panelSubmitLink;
         public System.Windows.Forms.TabPage tabSearch;
-        public System.Windows.Forms.Label emptyDataFiles;
-        private System.Windows.Forms.FlowLayoutPanel panelFileFilters;
-        private System.Windows.Forms.Panel panelFilesSort;
-        private CButtonLib.CButton btnFilesSort;
-        private System.Windows.Forms.ComboBox cmboBoxFilesSort;
-        private System.Windows.Forms.Panel panelFilesHost;
-        private CButtonLib.CButton btnFilesHost;
-        private System.Windows.Forms.ComboBox cmboBoxFilesHost;
-        public ChreneLib.Controls.TextBoxes.CTextBox txtSearchFiles;
-        private CButtonLib.CButton splitterFilesTabs;
-        private CButtonLib.CButton bgSearchFiles;
+        public System.Windows.Forms.Label labelNoResultsFound;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutSearchFiles;
+        private System.Windows.Forms.Panel flowLayoutSortFiles;
+        private CButtonLib.CButton buttonSortFiles;
+        private System.Windows.Forms.ComboBox comboBoxSortFiles;
+        private System.Windows.Forms.Panel flowLayoutFilterFiles;
+        private CButtonLib.CButton buttonFilterFiles;
+        private System.Windows.Forms.ComboBox comboBoxFilterFiles;
+        public ChreneLib.Controls.TextBoxes.CTextBox textBoxSearchFiles;
+        private CButtonLib.CButton splitterFilesType;
+        private CButtonLib.CButton textBoxBackgroundSearchFiles;
         public System.Windows.Forms.TabPage tabHome;
-        private System.Windows.Forms.Panel panelHomeFileType;
-        private System.Windows.Forms.ComboBox cmboBoxHomeFileType;
-        private System.Windows.Forms.FlowLayoutPanel panelTopSearches;
-        private System.Windows.Forms.Label lblFilesResultsInfo;
-        private System.Windows.Forms.Label lblHomeStatsFiles;
-        private System.Windows.Forms.Label lblHomeStatsDatabaseUpdated;
-        private System.Windows.Forms.Label btnAboutTermsOfUse;
-        private System.Windows.Forms.Label btnAboutPrivacyPolicy;
-        private System.Windows.Forms.PictureBox imgShareTwitter;
-        internal System.Windows.Forms.Label lblShareUsOn;
-        private System.Windows.Forms.PictureBox imgShareFacebook;
+        private System.Windows.Forms.Panel containerFileType;
+        private System.Windows.Forms.ComboBox comboBoxFileType;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutTopSearches;
+        private System.Windows.Forms.Label labelResultsInfo;
+        private System.Windows.Forms.Label labelDatabaseStats;
+        private System.Windows.Forms.Label labelDatabaseUpdatedDate;
+        private System.Windows.Forms.Label labelTermsOfUse;
+        private System.Windows.Forms.Label labelPrivacyPolicy;
+        private System.Windows.Forms.PictureBox imageTwitter;
+        private System.Windows.Forms.PictureBox imageFacebook;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnFilesType;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnFilesName;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnFilesSize;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnFilesAge;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnFilesReferrer;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnFilesURL;
-        private System.Windows.Forms.PictureBox imgSearch;
+        private System.Windows.Forms.PictureBox imageSearchFiles;
         public CButtonLib.CButton splitterHeaderSettings;
         public CButtonLib.CButton splitterHeaderDiscover;
         public CButtonLib.CButton splitterHeaderSubmit;
-        private Controls.CtrlButton btnSubmitUrl;
-        private Controls.CtrlButton btnSettingsSave;
-        private Controls.CtrlButton btnSettingsRestoreDefault;
-        internal System.Windows.Forms.Label lblHeaderRecentlyAddedFiles;
-        public CButtonLib.CButton splitterHeaderRecentlyAddedFiles;
+        private Controls.buttonCustom buttonSubmitUrl;
+        private Controls.buttonCustom buttonSaveSettings;
+        private Controls.buttonCustom buttonRestoreSettings;
+        internal System.Windows.Forms.Label labelRecentlyAdded;
+        public CButtonLib.CButton splitterHeaderRecentlyAdded;
         public System.Windows.Forms.DataGridView dataGridFiles;
-        private System.Windows.Forms.Label lblAboutSubText;
-        private System.Windows.Forms.FlowLayoutPanel panelHomeFilters;
-        private System.Windows.Forms.DataGridView dataGridRecentlyAddedFiles;
+        private System.Windows.Forms.Label labelMadeWithLove;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutSearchItems;
+        private System.Windows.Forms.DataGridView dataGridRecentlyAdded;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnRecentlyAddedType;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnRecentlyAddedName;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnRecentlyAddedSize;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnRecentlyAddedAge;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnRecentlyAddedReferrer;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnRecentlyAddedURL;
-        internal System.Windows.Forms.Label lblHeaderTopSearches;
+        internal System.Windows.Forms.Label labelTopSearches;
         public CButtonLib.CButton splitterHeaderTopSearches;
-        private System.Windows.Forms.Panel panelHomeSearch;
-        private CButtonLib.CButton btnSearchHome;
-        private System.Windows.Forms.ComboBox cmboBoxHomeSearch;
+        private System.Windows.Forms.Panel flowLayoutSearchHome;
+        private CButtonLib.CButton buttonSearchHome;
+        private System.Windows.Forms.ComboBox comboBoxSearchHome;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnDiscoverCount;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnDiscoverSite;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnDiscoverType;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnDiscoverURL;
-        public System.Windows.Forms.Panel panelTitles;
-        public Controls.CtrlTitleButton titleSearch;
-        public Controls.CtrlTitleButton titleHome;
-        public Controls.CtrlTitleButton titleSettings;
-        public Controls.CtrlTitleButton titleSubmit;
-        public Controls.CtrlTitleButton titleDiscover;
-        public Controls.CtrlTitleButton titleInformation;
-        public CButtonLib.CButton btnHomeFileType;
-        public Controls.CtrlTitleFileType titleFilesVideo;
-        public Controls.CtrlTitleFileType titleFilesAudio;
-        public Controls.CtrlTitleFileType titleFilesBookmarks;
-        public Controls.CtrlTitleFileType titleFilesLocal;
-        public Controls.CtrlTitleFileType titleFilesTorrents;
-        public Controls.CtrlTitleFileType titleFilesOther;
-        public Controls.CtrlTitleFileType titleFilesSoftware;
-        public Controls.CtrlTitleFileType titleFilesCustom;
-        public Controls.CtrlTitleFileType titleFilesSubtitles;
-        public Controls.CtrlTitleFileType titleFilesAll;
-        public Controls.CtrlTitleFileType titleFilesBooks;
+        public System.Windows.Forms.Panel panelTabTitles;
+        public Controls.buttonTabTitle titleSearch;
+        public Controls.buttonTabTitle titleHome;
+        public Controls.buttonTabTitle titleSettings;
+        public Controls.buttonTabTitle titleSubmit;
+        public Controls.buttonTabTitle titleDiscover;
+        public Controls.buttonTabTitle titleInformation;
+        public CButtonLib.CButton buttonFileType;
+        public Controls.buttonFileType buttonFilesVideo;
+        public Controls.buttonFileType buttonFilesAudio;
+        public Controls.buttonFileType buttonFilesBookmarks;
+        public Controls.buttonFileType buttonFilesLocal;
+        public Controls.buttonFileType buttonFilesTorrents;
+        public Controls.buttonFileType buttonFilesOther;
+        public Controls.buttonFileType buttonFilesSoftware;
+        public Controls.buttonFileType buttonFilesCustom;
+        public Controls.buttonFileType buttonFilesSubtitles;
+        public Controls.buttonFileType buttonFilesAll;
+        public Controls.buttonFileType buttonFilesBooks;
     }
 }
 

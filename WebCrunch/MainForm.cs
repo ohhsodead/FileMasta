@@ -39,7 +39,7 @@ namespace WebCrunch
 
             form = this; // Set this instance
 
-            lblAboutChangelogVersion.Text = String.Format(lblAboutChangelogVersion.Text, Application.ProductVersion); // Show this version in a Label on the About tab
+            labelChangeLog.Text = String.Format(labelChangeLog.Text, Application.ProductVersion); // Show this version in a Label on the About tab
             
             // Show Splash Screen
             Controls.Add(frmSplashScreen);
@@ -49,8 +49,8 @@ namespace WebCrunch
             frmSplashScreen.BringToFront();
             frmSplashScreen.Show();
 
-            cmboBoxHomeSearch.DropDownWidth = ControlExtensions.DropDownWidth(cmboBoxHomeSearch); // Set search engine combobox to fit its contents
-            cmboBoxFilesSort.DropDownWidth = ControlExtensions.DropDownWidth(cmboBoxFilesSort); // Set files sort combobox to fit its contents
+            comboBoxSearchHome.DropDownWidth = ControlExtensions.DropDownWidth(comboBoxSearchHome); // Set search engine combobox to fit its contents
+            comboBoxSortFiles.DropDownWidth = ControlExtensions.DropDownWidth(comboBoxSortFiles); // Set files sort combobox to fit its contents
 
             Program.log.Info("Initialized");
         }
@@ -106,10 +106,10 @@ namespace WebCrunch
 
         private void CompletedChecks(object sender, RunWorkerCompletedEventArgs e)
         {
-            LoadRecentlyAddedFiles(); // Gets ten of the recently added files
+            LoadRecentlyAddedFiles(); // Load recently added files into form
             GetDatabaseInfo(); // Get database info and show in form
-            Controls.Remove(frmSplashScreen); // Everything's loaded, we're done with the splash screen
-            Program.log.Info("Initiated");
+            Controls.Remove(frmSplashScreen); // Remove splash screen
+            Program.log.Info("Successfully loaded everything");
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -138,13 +138,15 @@ namespace WebCrunch
         {
             Program.log.Info("Checking for database updates");
 
-            if (!FileExtensions.IsLocalAndServerFileSizeEqual(Database.urlOpenDirectories, "open-directories.txt")) {
+            if (!FileExtensions.IsLocalAndServerFileSizeEqual(Database.urlOpenDirectories, "open-directories.txt"))
+            {
                 using (var client = new WebClient()) { client.DownloadFile(new Uri(Database.urlOpenDirectories), $"{LocalExtensions.pathData}open-directories.txt"); }
                 Program.log.Info("open-directories.txt updated");
             }
             dataOpenDirectories.AddRange(File.ReadAllLines($"{LocalExtensions.pathData}open-directories.txt"));
 
-            if (!FileExtensions.IsLocalAndServerFileSizeEqual(Database.urlOpenFiles, "open-files.json")) {
+            if (!FileExtensions.IsLocalAndServerFileSizeEqual(Database.urlOpenFiles, "open-files.json"))
+            {
                 using (var client = new WebClient()) { client.DownloadFile(new Uri(Database.urlOpenFiles), $"{LocalExtensions.pathData}open-files.json"); }
                 Program.log.Info("open-files.json updated");
             }
@@ -237,13 +239,13 @@ namespace WebCrunch
                     if (jsonData.Size >= 0)
                         totalSize += jsonData.Size;
 
-                lblHomeStatsFiles.Text = String.Format(lblHomeStatsFiles.Text, TextExtensions.GetFormattedNumber(filesOpenDatabase.Count.ToString()), TextExtensions.BytesToString(totalSize), TextExtensions.GetFormattedNumber(dataOpenDirectories.Count.ToString()));
+                labelDatabaseStats.Text = String.Format(labelDatabaseStats.Text, TextExtensions.GetFormattedNumber(filesOpenDatabase.Count.ToString()), TextExtensions.BytesToString(totalSize), TextExtensions.GetFormattedNumber(dataOpenDirectories.Count.ToString()));
 
                 Program.log.Info("Total size of all files successful");
             }
             catch (Exception ex)
             {
-                lblHomeStatsFiles.Text = String.Format(lblHomeStatsFiles.Text, TextExtensions.GetFormattedNumber(filesOpenDatabase.Count.ToString()), TextExtensions.BytesToString(totalSize), TextExtensions.GetFormattedNumber(dataOpenDirectories.Count.ToString()));
+                labelDatabaseStats.Text = String.Format(labelDatabaseStats.Text, TextExtensions.GetFormattedNumber(filesOpenDatabase.Count.ToString()), TextExtensions.BytesToString(totalSize), TextExtensions.GetFormattedNumber(dataOpenDirectories.Count.ToString()));
                 Program.log.Error("Unable to get absolute total size of all files", ex);
             }
 
@@ -254,11 +256,11 @@ namespace WebCrunch
                 {
                     Program.log.Info("Attempting to get latest database update date");
                     var dataJsonInfo = JsonConvert.DeserializeObject<DatabaseInfo>(DatabaseInfo);
-                    lblHomeStatsDatabaseUpdated.Text = String.Format(lblHomeStatsDatabaseUpdated.Text, dataJsonInfo.LastUpdated.ToShortDateString());
+                    labelDatabaseUpdatedDate.Text = String.Format(labelDatabaseUpdatedDate.Text, dataJsonInfo.LastUpdated.ToShortDateString());
                     Program.log.Info("Latest database update date successful");
                 }
             }
-            catch (Exception ex) { lblHomeStatsDatabaseUpdated.Text = "Updated: n/a"; Program.log.Error("Error getting latest datebase update date", ex); }
+            catch (Exception ex) { labelDatabaseUpdatedDate.Text = "Updated: n/a"; Program.log.Error("Error getting latest datebase update date", ex); }
         }
 
         /// <summary>
@@ -278,18 +280,18 @@ namespace WebCrunch
                     {
                         itemCount++;
                         addedHosts.Add(jsonData.Host);
-                        dataGridRecentlyAddedFiles.Rows.Add(jsonData.Type, jsonData.Name, TextExtensions.BytesToString(jsonData.Size), TextExtensions.GetTimeAgo(jsonData.DateUploaded), jsonData.Host, jsonData.URL);
+                        dataGridRecentlyAdded.Rows.Add(jsonData.Type, jsonData.Name, TextExtensions.BytesToString(jsonData.Size), TextExtensions.GetTimeAgo(jsonData.DateUploaded), jsonData.Host, jsonData.URL);
                     }
 
                 Program.log.Info("Recently added files successful");
             }
-            catch (Exception ex) { lblHeaderRecentlyAddedFiles.Visible = false; splitterHeaderRecentlyAddedFiles.Visible = false; dataGridRecentlyAddedFiles.Visible = false; Program.log.Error("Error getting recently added files", ex); } /* Error occurred, so hide controls/skip... */
+            catch (Exception ex) { labelRecentlyAdded.Visible = false; splitterHeaderRecentlyAdded.Visible = false; dataGridRecentlyAdded.Visible = false; Program.log.Error("Error getting recently added files", ex); } /* Error occurred, so hide controls/skip... */
         }
 
         private void dataGridRecentlyAddedFiles_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex != -1)
-                ShowFileDetails(Database.FileInfoFromURL(dataGridRecentlyAddedFiles.CurrentRow.Cells[5].Value.ToString()));
+                ShowFileDetails(Database.FileInfoFromURL(dataGridRecentlyAdded.CurrentRow.Cells[5].Value.ToString()));
         }
 
         /// <summary>
@@ -312,14 +314,14 @@ namespace WebCrunch
                 int count = 0;
                 foreach (var tag in listTopSearches)
                     if (count <= 65) {
-                        panelTopSearches.Controls.Add(ControlExtensions.AddTopSearchTag(tag, count));
+                        flowLayoutTopSearches.Controls.Add(ControlExtensions.AddTopSearchTag(tag, count));
                         count++;
                     }
 
                 // Add Credits Label to end of Top Searches panel
                 var a = new Label {
                     Text = "Powered by FileChef",
-                    Font = new Font(btnHomeFileType.Font.Name, 9, FontStyle.Regular),
+                    Font = new Font(buttonFileType.Font.Name, 9, FontStyle.Regular),
                     BackColor = Color.Transparent,
                     ForeColor = Color.White,
                     Margin = new Padding(0, 8, 0, 3),
@@ -329,10 +331,10 @@ namespace WebCrunch
                 };
 
                 a.Click += btnFileChef_Click;
-                panelTopSearches.Controls.Add(a);
+                flowLayoutTopSearches.Controls.Add(a);
                 Program.log.Info("Top searches returned successful");
             }
-            catch (Exception ex) { lblHeaderTopSearches.Visible = false; splitterHeaderTopSearches.Visible = false; panelTopSearches.Visible = false; Program.log.Error("Error getting top searches", ex); } /* Error occurred, so hide controls/skip... */
+            catch (Exception ex) { labelTopSearches.Visible = false; splitterHeaderTopSearches.Visible = false; flowLayoutTopSearches.Visible = false; Program.log.Error("Error getting top searches", ex); } /* Error occurred, so hide controls/skip... */
         }
 
         private void btnFileChef_Click(object Sender, EventArgs e)
@@ -343,26 +345,26 @@ namespace WebCrunch
         // Filetype to search from Home tab
         private void btnHomeFileType_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            cmboBoxHomeFileType.DroppedDown = true;
+            comboBoxFileType.DroppedDown = true;
         }
 
         private void cmboBoxHomeFileType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmboBoxHomeFileType.SelectedIndex == -1) SelectedFilesFileType = allFileTypes;
-            else if (cmboBoxHomeFileType.SelectedIndex == 0) SelectedFilesFileType = allFileTypes;
-            else if (cmboBoxHomeFileType.SelectedIndex == 1) SelectedFilesFileType = videoFileTypes;
-            else if (cmboBoxHomeFileType.SelectedIndex == 2) SelectedFilesFileType = audioFileTypes;
-            else if (cmboBoxHomeFileType.SelectedIndex == 3) SelectedFilesFileType = bookFileTypes;
-            else if (cmboBoxHomeFileType.SelectedIndex == 4) SelectedFilesFileType = subtitleFileTypes;
-            else if (cmboBoxHomeFileType.SelectedIndex == 5) SelectedFilesFileType = torrentFileTypes;
-            else if (cmboBoxHomeFileType.SelectedIndex == 6) SelectedFilesFileType = softwareFileTypes;
-            else if (cmboBoxHomeFileType.SelectedIndex == 7) SelectedFilesFileType = otherFileTypes;
+            if (comboBoxFileType.SelectedIndex == -1) SelectedFilesFileType = allFileTypes;
+            else if (comboBoxFileType.SelectedIndex == 0) SelectedFilesFileType = allFileTypes;
+            else if (comboBoxFileType.SelectedIndex == 1) SelectedFilesFileType = videoFileTypes;
+            else if (comboBoxFileType.SelectedIndex == 2) SelectedFilesFileType = audioFileTypes;
+            else if (comboBoxFileType.SelectedIndex == 3) SelectedFilesFileType = bookFileTypes;
+            else if (comboBoxFileType.SelectedIndex == 4) SelectedFilesFileType = subtitleFileTypes;
+            else if (comboBoxFileType.SelectedIndex == 5) SelectedFilesFileType = torrentFileTypes;
+            else if (comboBoxFileType.SelectedIndex == 6) SelectedFilesFileType = softwareFileTypes;
+            else if (comboBoxFileType.SelectedIndex == 7) SelectedFilesFileType = otherFileTypes;
 
-            var startText = btnHomeFileType.Text.Split(':');
-            btnHomeFileType.Text = startText[0] + ": " + cmboBoxHomeFileType.GetItemText(cmboBoxHomeFileType.SelectedItem);
-            Font myFont = new Font(btnHomeFileType.Font.FontFamily, btnHomeFileType.Font.Size);
-            SizeF mySize = btnHomeFileType.CreateGraphics().MeasureString(btnHomeFileType.Text, myFont);
-            panelHomeFileType.Width = (((int)(Math.Round(mySize.Width, 0))) + 26);
+            var startText = buttonFileType.Text.Split(':');
+            buttonFileType.Text = startText[0] + ": " + comboBoxFileType.GetItemText(comboBoxFileType.SelectedItem);
+            Font myFont = new Font(buttonFileType.Font.FontFamily, buttonFileType.Font.Size);
+            SizeF mySize = buttonFileType.CreateGraphics().MeasureString(buttonFileType.Text, myFont);
+            containerFileType.Width = (((int)(Math.Round(mySize.Width, 0))) + 26);
         }
         
         /// <summary>
@@ -380,21 +382,21 @@ namespace WebCrunch
 
         private void cmboBoxSearchHome_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmboBoxHomeSearch.SelectedIndex == 0 | cmboBoxHomeSearch.SelectedIndex == -1)
+            if (comboBoxSearchHome.SelectedIndex == 0 | comboBoxSearchHome.SelectedIndex == -1)
                 SelectedFilesSearch = exploreUrlGoogle;
-            else if (cmboBoxHomeSearch.SelectedIndex == 1)
+            else if (comboBoxSearchHome.SelectedIndex == 1)
                 SelectedFilesSearch = exploreUrlGoogol;
-            else if (cmboBoxHomeSearch.SelectedIndex == 2)
+            else if (comboBoxSearchHome.SelectedIndex == 2)
                 SelectedFilesSearch = exploreUrlStartpage;
-            else if (cmboBoxHomeSearch.SelectedIndex == 3)
+            else if (comboBoxSearchHome.SelectedIndex == 3)
                 SelectedFilesSearch = exploreUrlSearx;
 
-            Process.Start(SelectedFilesSearch + String.Format("{0} %2B({1}) %2Dinurl:(jsp|pl|php|html|aspx|htm|cf|shtml) intitle:index.of %2Dinurl:(listen77|mp3raid|mp3toss|mp3drug|index_of|index-of|wallywashis|downloadmana)", txtSearchFilesHome.Text, String.Join("|", SelectedFilesFileType.ToArray()).ToLower()));
+            Process.Start(SelectedFilesSearch + String.Format("{0} %2B({1}) %2Dinurl:(jsp|pl|php|html|aspx|htm|cf|shtml) intitle:index.of %2Dinurl:(listen77|mp3raid|mp3toss|mp3drug|index_of|index-of|wallywashis|downloadmana)", textBoxSearchHome.Text, String.Join("|", SelectedFilesFileType.ToArray()).ToLower()));
         }
 
         private void bgSearchFilesHome_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            txtSearchFilesHome.Focus();
+            textBoxSearchHome.Focus();
         }
 
         private void txtSearchFilesHome_KeyDown(object sender, KeyEventArgs e)
@@ -410,22 +412,22 @@ namespace WebCrunch
 
         private void btnSearchHome_SideImageClicked(object Sender, MouseEventArgs e)
         {
-            cmboBoxHomeSearch.DroppedDown = true;
+            comboBoxSearchHome.DroppedDown = true;
         }
 
         public void DoSearchFilesFromHome()
         {
-            txtSearchFiles.Text = txtSearchFilesHome.Text;
+            textBoxSearchFiles.Text = textBoxSearchHome.Text;
 
-            if (cmboBoxHomeFileType.SelectedIndex == -1) { SelectedFilesFileType = allFileTypes; ControlExtensions.SelectFilesTab(titleFilesAll); SelectedFiles = filesOpenDatabase; tab.SelectedTab = tabSearch; ShowFiles(SelectedFiles); }
-            else if (cmboBoxHomeFileType.SelectedIndex == 0) { SelectedFilesFileType = allFileTypes; ControlExtensions.SelectFilesTab(titleFilesAll); SelectedFiles = filesOpenDatabase; tab.SelectedTab = tabSearch; ShowFiles(SelectedFiles); }
-            else if (cmboBoxHomeFileType.SelectedIndex == 1) { SelectedFilesFileType = videoFileTypes; ControlExtensions.SelectFilesTab(titleFilesVideo); SelectedFiles = filesOpenDatabase; tab.SelectedTab = tabSearch; ShowFiles(SelectedFiles); }
-            else if (cmboBoxHomeFileType.SelectedIndex == 2) { SelectedFilesFileType = audioFileTypes; ControlExtensions.SelectFilesTab(titleFilesAudio); SelectedFiles = filesOpenDatabase; tab.SelectedTab = tabSearch; ShowFiles(SelectedFiles); }
-            else if (cmboBoxHomeFileType.SelectedIndex == 3) { SelectedFilesFileType = bookFileTypes; ControlExtensions.SelectFilesTab(titleFilesBooks); SelectedFiles = filesOpenDatabase; tab.SelectedTab = tabSearch; ShowFiles(SelectedFiles); }
-            else if (cmboBoxHomeFileType.SelectedIndex == 4) { SelectedFilesFileType = subtitleFileTypes; ControlExtensions.SelectFilesTab(titleFilesSubtitles); SelectedFiles = filesOpenDatabase; tab.SelectedTab = tabSearch; ShowFiles(SelectedFiles); }
-            else if (cmboBoxHomeFileType.SelectedIndex == 5) { SelectedFilesFileType = torrentFileTypes; ControlExtensions.SelectFilesTab(titleFilesTorrents); SelectedFiles = filesOpenDatabase; tab.SelectedTab = tabSearch; ShowFiles(SelectedFiles); }
-            else if (cmboBoxHomeFileType.SelectedIndex == 7) { SelectedFilesFileType = softwareFileTypes; ControlExtensions.SelectFilesTab(titleFilesSoftware); SelectedFiles = filesOpenDatabase; tab.SelectedTab = tabSearch; ShowFiles(SelectedFiles); }
-            else if (cmboBoxHomeFileType.SelectedIndex == 8) { SelectedFilesFileType = otherFileTypes; ControlExtensions.SelectFilesTab(titleFilesOther); SelectedFiles = filesOpenDatabase; tab.SelectedTab = tabSearch; ShowFiles(SelectedFiles); }
+            if (comboBoxFileType.SelectedIndex == -1) { SelectedFilesFileType = allFileTypes; ControlExtensions.SelectFilesTab(buttonFilesAll); SelectedFiles = filesOpenDatabase; tab.SelectedTab = tabSearch; ShowFiles(SelectedFiles); }
+            else if (comboBoxFileType.SelectedIndex == 0) { SelectedFilesFileType = allFileTypes; ControlExtensions.SelectFilesTab(buttonFilesAll); SelectedFiles = filesOpenDatabase; tab.SelectedTab = tabSearch; ShowFiles(SelectedFiles); }
+            else if (comboBoxFileType.SelectedIndex == 1) { SelectedFilesFileType = videoFileTypes; ControlExtensions.SelectFilesTab(buttonFilesVideo); SelectedFiles = filesOpenDatabase; tab.SelectedTab = tabSearch; ShowFiles(SelectedFiles); }
+            else if (comboBoxFileType.SelectedIndex == 2) { SelectedFilesFileType = audioFileTypes; ControlExtensions.SelectFilesTab(buttonFilesAudio); SelectedFiles = filesOpenDatabase; tab.SelectedTab = tabSearch; ShowFiles(SelectedFiles); }
+            else if (comboBoxFileType.SelectedIndex == 3) { SelectedFilesFileType = bookFileTypes; ControlExtensions.SelectFilesTab(buttonFilesBooks); SelectedFiles = filesOpenDatabase; tab.SelectedTab = tabSearch; ShowFiles(SelectedFiles); }
+            else if (comboBoxFileType.SelectedIndex == 4) { SelectedFilesFileType = subtitleFileTypes; ControlExtensions.SelectFilesTab(buttonFilesSubtitles); SelectedFiles = filesOpenDatabase; tab.SelectedTab = tabSearch; ShowFiles(SelectedFiles); }
+            else if (comboBoxFileType.SelectedIndex == 5) { SelectedFilesFileType = torrentFileTypes; ControlExtensions.SelectFilesTab(buttonFilesTorrents); SelectedFiles = filesOpenDatabase; tab.SelectedTab = tabSearch; ShowFiles(SelectedFiles); }
+            else if (comboBoxFileType.SelectedIndex == 7) { SelectedFilesFileType = softwareFileTypes; ControlExtensions.SelectFilesTab(buttonFilesSoftware); SelectedFiles = filesOpenDatabase; tab.SelectedTab = tabSearch; ShowFiles(SelectedFiles); }
+            else if (comboBoxFileType.SelectedIndex == 8) { SelectedFilesFileType = otherFileTypes; ControlExtensions.SelectFilesTab(buttonFilesOther); SelectedFiles = filesOpenDatabase; tab.SelectedTab = tabSearch; ShowFiles(SelectedFiles); }
         }
 
 
@@ -493,42 +495,42 @@ namespace WebCrunch
         // Select file type category
         private void titleFilesAll_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            SelectedFilesFileType = allFileTypes; ControlExtensions.SelectFilesTab(titleFilesAll); SelectedFiles = filesOpenDatabase; ShowFiles(SelectedFiles);
+            SelectedFilesFileType = allFileTypes; ControlExtensions.SelectFilesTab(buttonFilesAll); SelectedFiles = filesOpenDatabase; ShowFiles(SelectedFiles);
         }
 
         private void titleFilesVideo_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            SelectedFilesFileType = videoFileTypes; ControlExtensions.SelectFilesTab(titleFilesVideo); SelectedFiles = filesOpenDatabase; ShowFiles(SelectedFiles);
+            SelectedFilesFileType = videoFileTypes; ControlExtensions.SelectFilesTab(buttonFilesVideo); SelectedFiles = filesOpenDatabase; ShowFiles(SelectedFiles);
         }
 
         private void titleFilesAudio_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            SelectedFilesFileType = audioFileTypes; ControlExtensions.SelectFilesTab(titleFilesAudio); SelectedFiles = filesOpenDatabase; ShowFiles(SelectedFiles);
+            SelectedFilesFileType = audioFileTypes; ControlExtensions.SelectFilesTab(buttonFilesAudio); SelectedFiles = filesOpenDatabase; ShowFiles(SelectedFiles);
         }
 
         private void titleFilesBooks_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            SelectedFilesFileType = bookFileTypes; ControlExtensions.SelectFilesTab(titleFilesBooks); SelectedFiles = filesOpenDatabase; ShowFiles(SelectedFiles);
+            SelectedFilesFileType = bookFileTypes; ControlExtensions.SelectFilesTab(buttonFilesBooks); SelectedFiles = filesOpenDatabase; ShowFiles(SelectedFiles);
         }
 
         private void titleFilesSubtitles_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            SelectedFilesFileType = subtitleFileTypes; ControlExtensions.SelectFilesTab(titleFilesSubtitles); SelectedFiles = filesOpenDatabase; ShowFiles(SelectedFiles);
+            SelectedFilesFileType = subtitleFileTypes; ControlExtensions.SelectFilesTab(buttonFilesSubtitles); SelectedFiles = filesOpenDatabase; ShowFiles(SelectedFiles);
         }
 
         private void titleFilesTorrents_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            SelectedFilesFileType = torrentFileTypes; ControlExtensions.SelectFilesTab(titleFilesTorrents); SelectedFiles = filesOpenDatabase; ShowFiles(SelectedFiles);
+            SelectedFilesFileType = torrentFileTypes; ControlExtensions.SelectFilesTab(buttonFilesTorrents); SelectedFiles = filesOpenDatabase; ShowFiles(SelectedFiles);
         }
 
         private void titleFilesSoftware_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            SelectedFilesFileType = softwareFileTypes; ControlExtensions.SelectFilesTab(titleFilesSoftware); SelectedFiles = filesOpenDatabase; ShowFiles(SelectedFiles);
+            SelectedFilesFileType = softwareFileTypes; ControlExtensions.SelectFilesTab(buttonFilesSoftware); SelectedFiles = filesOpenDatabase; ShowFiles(SelectedFiles);
         }
 
         private void titleFilesOther_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            SelectedFilesFileType = otherFileTypes; ControlExtensions.SelectFilesTab(titleFilesOther); SelectedFiles = filesOpenDatabase; ShowFiles(SelectedFiles);
+            SelectedFilesFileType = otherFileTypes; ControlExtensions.SelectFilesTab(buttonFilesOther); SelectedFiles = filesOpenDatabase; ShowFiles(SelectedFiles);
         }
 
         private void titleFilesCustom_ClickButtonArea(object Sender, MouseEventArgs e)
@@ -536,17 +538,17 @@ namespace WebCrunch
             string getUserResponse = Microsoft.VisualBasic.Interaction.InputBox("File Type/Extensions (enter only one extension):", "Custom*", "e.g. MP4");
             string userResponse = getUserResponse.Replace(".", "");
             if (userResponse != "")
-                SelectedFilesFileType = new List<string>() { userResponse.ToUpper() }; ControlExtensions.SelectFilesTab(titleFilesCustom); SelectedFiles = filesOpenDatabase; ShowFiles(SelectedFiles);
+                SelectedFilesFileType = new List<string>() { userResponse.ToUpper() }; ControlExtensions.SelectFilesTab(buttonFilesCustom); SelectedFiles = filesOpenDatabase; ShowFiles(SelectedFiles);
         }
 
         private void titleFilesLocal_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            SelectedFilesFileType = allFileTypes; ControlExtensions.SelectFilesTab(titleFilesLocal); SelectedFiles = LocalFiles(); ShowFiles(SelectedFiles);
+            SelectedFilesFileType = allFileTypes; ControlExtensions.SelectFilesTab(buttonFilesLocal); SelectedFiles = LocalFiles(); ShowFiles(SelectedFiles);
         }
 
         private void titleFilesBookmarks_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            SelectedFilesFileType = allFileTypes; ControlExtensions.SelectFilesTab(titleFilesBookmarks); SelectedFiles = BookmarkFiles(); ShowFiles(SelectedFiles);
+            SelectedFilesFileType = allFileTypes; ControlExtensions.SelectFilesTab(buttonFilesBookmarks); SelectedFiles = BookmarkFiles(); ShowFiles(SelectedFiles);
         }
 
         // Files dataGridView click event for item, will get the last (hidden) item (the URL) in the selected row and get WebFile from the URL
@@ -576,7 +578,7 @@ namespace WebCrunch
             else if (order == SortBy.Date) SortFiles.ByDate(dataFiles);
 
             Program.log.Info("Searching files started");
-            imgSearch.Image = Properties.Resources.loader;
+            imageSearchFiles.Image = Properties.Resources.loader;
             BackGroundWorker.RunWorkAsync<List<WebFile>>(() => SearchFiles(dataFiles), (data) =>
             {
                 if (tabSearch.InvokeRequired)
@@ -588,28 +590,28 @@ namespace WebCrunch
                 {
                     dataGridFiles.Rows.Clear();
 
-                    cmboBoxFilesHost.Items.Clear(); cmboBoxFilesHost.Items.Add("Any");
+                    comboBoxFilterFiles.Items.Clear(); comboBoxFilterFiles.Items.Add("Any");
 
                     stopWatch.Start();
 
                     foreach (var jsonData in data)
                     {
                         dataGridFiles.Rows.Add(jsonData.Type, jsonData.Name, TextExtensions.BytesToString(jsonData.Size), TextExtensions.GetTimeAgo(jsonData.DateUploaded), jsonData.Host, jsonData.URL);
-                        if (!(cmboBoxFilesHost.Items.Contains(jsonData.Host)))
-                            cmboBoxFilesHost.Items.Add(jsonData.Host);
+                        if (!(comboBoxFilterFiles.Items.Contains(jsonData.Host)))
+                            comboBoxFilterFiles.Items.Add(jsonData.Host);
                     }
 
                     stopWatch.Stop(); TimeSpan ts = stopWatch.Elapsed;
-                    lblFilesResultsInfo.Text = TextExtensions.GetFormattedNumber(dataGridFiles.Rows.Count.ToString()) + " / " + TextExtensions.GetFormattedNumber(dataFiles.Count.ToString()) + " Files (" + String.Format("{0:0.000}", ts.TotalSeconds) + " Seconds)"; stopWatch.Reset();
+                    labelResultsInfo.Text = TextExtensions.GetFormattedNumber(dataGridFiles.Rows.Count.ToString()) + " / " + TextExtensions.GetFormattedNumber(dataFiles.Count.ToString()) + " Files (" + String.Format("{0:0.000}", ts.TotalSeconds) + " Seconds)"; stopWatch.Reset();
 
                     tab.SelectedTab = CurrentTab;
 
-                    cmboBoxFilesHost.DropDownWidth = ControlExtensions.DropDownWidth(cmboBoxFilesHost);
+                    comboBoxFilterFiles.DropDownWidth = ControlExtensions.DropDownWidth(comboBoxFilterFiles);
 
-                    imgSearch.Image = Properties.Resources.magnify_orange;
+                    imageSearchFiles.Image = Properties.Resources.magnify_orange;
 
-                    if (dataGridFiles.Rows.Count == 0) emptyDataFiles.Visible = true;
-                    else emptyDataFiles.Visible = false;
+                    if (dataGridFiles.Rows.Count == 0) labelNoResultsFound.Visible = true;
+                    else labelNoResultsFound.Visible = false;
 
                     Program.log.Info("Successfully returned search results");
                 }
@@ -622,7 +624,7 @@ namespace WebCrunch
             lock (loadFilesLock) {
                 List<WebFile> urls = new List<WebFile>();
                 foreach (var file in dataFiles)
-                    if (TextExtensions.ContainsAll(file.Name.ToLower(), TextExtensions.GetWords(txtSearchFiles.Text.ToLower())) && SelectedFilesFileType.Contains(file.Type) && file.Host.Contains(SelectedFilesHost))
+                    if (TextExtensions.ContainsAll(file.Name.ToLower(), TextExtensions.GetWords(textBoxSearchFiles.Text.ToLower())) && SelectedFilesFileType.Contains(file.Type) && file.Host.Contains(SelectedFilesHost))
                         urls.Add(new WebFile(file.Type, file.Name, file.Size, file.DateUploaded, file.Host, file.URL));
 
                 return urls;
@@ -666,33 +668,33 @@ namespace WebCrunch
         // Sort Files
         private void btnFilesSort_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            cmboBoxFilesSort.DroppedDown = true;
+            comboBoxSortFiles.DroppedDown = true;
         }
 
         private void cmboBoxFilesSort_SelectedIndexChanged(object sender, EventArgs e)
         {
-            imgSearch.Image = Properties.Resources.loader;
+            imageSearchFiles.Image = Properties.Resources.loader;
 
-            if (cmboBoxFilesSort.SelectedIndex == 0)
+            if (comboBoxSortFiles.SelectedIndex == 0)
                 ShowFiles(SelectedFiles, SortBy.Name);
-            else if (cmboBoxFilesSort.SelectedIndex == 1)
+            else if (comboBoxSortFiles.SelectedIndex == 1)
                 ShowFiles(SelectedFiles, SortBy.Size);
-            else if (cmboBoxFilesSort.SelectedIndex == 2)
+            else if (comboBoxSortFiles.SelectedIndex == 2)
                 ShowFiles(SelectedFiles, SortBy.Date);
 
-            var startText = btnFilesSort.Text.Split(':');
-            btnFilesSort.Text = startText[0] + ": " + cmboBoxFilesSort.GetItemText(cmboBoxFilesSort.SelectedItem);
-            Font myFont = new Font(btnFilesSort.Font.FontFamily, btnFilesSort.Font.Size);
-            SizeF mySize = btnFilesSort.CreateGraphics().MeasureString(btnFilesSort.Text, myFont);
-            panelFilesSort.Width = (((int)(Math.Round(mySize.Width, 0))) + 26);
+            var startText = buttonSortFiles.Text.Split(':');
+            buttonSortFiles.Text = startText[0] + ": " + comboBoxSortFiles.GetItemText(comboBoxSortFiles.SelectedItem);
+            Font myFont = new Font(buttonSortFiles.Font.FontFamily, buttonSortFiles.Font.Size);
+            SizeF mySize = buttonSortFiles.CreateGraphics().MeasureString(buttonSortFiles.Text, myFont);
+            flowLayoutSortFiles.Width = (((int)(Math.Round(mySize.Width, 0))) + 26);
 
-            imgSearch.Image = Properties.Resources.magnify_orange;
+            imageSearchFiles.Image = Properties.Resources.magnify_orange;
         }
 
         // Filter Files by Host
         private void btnFilesHost_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            cmboBoxFilesHost.DroppedDown = true;
+            comboBoxFilterFiles.DroppedDown = true;
         }
 
         private void btnFilesBackToSearch_ClickButtonArea(object Sender, MouseEventArgs e)
@@ -702,22 +704,22 @@ namespace WebCrunch
 
         private void cmboBoxFilesHost_SelectedIndexChanged(object sender, EventArgs e)
         {
-            imgSearch.Image = Properties.Resources.loader;
-            var startText = btnFilesHost.Text.Split(':');
-            btnFilesHost.Text = startText[0] + ": " + cmboBoxFilesHost.GetItemText(cmboBoxFilesHost.SelectedItem);
-            var myFont = new Font(btnFilesHost.Font.FontFamily, this.btnFilesHost.Font.Size);
-            var mySize = btnFilesHost.CreateGraphics().MeasureString(btnFilesHost.Text, myFont);
-            panelFilesHost.Width = (((int)(Math.Round(mySize.Width, 0))) + 26);
+            imageSearchFiles.Image = Properties.Resources.loader;
+            var startText = buttonFilterFiles.Text.Split(':');
+            buttonFilterFiles.Text = startText[0] + ": " + comboBoxFilterFiles.GetItemText(comboBoxFilterFiles.SelectedItem);
+            var myFont = new Font(buttonFilterFiles.Font.FontFamily, this.buttonFilterFiles.Font.Size);
+            var mySize = buttonFilterFiles.CreateGraphics().MeasureString(buttonFilterFiles.Text, myFont);
+            flowLayoutFilterFiles.Width = (((int)(Math.Round(mySize.Width, 0))) + 26);
             Refresh();
-            if (cmboBoxFilesHost.SelectedIndex == 0) SelectedFilesHost = "";
-            else SelectedFilesHost = cmboBoxFilesHost.SelectedItem.ToString();
+            if (comboBoxFilterFiles.SelectedIndex == 0) SelectedFilesHost = "";
+            else SelectedFilesHost = comboBoxFilterFiles.SelectedItem.ToString();
             ShowFiles(SelectedFiles);
-            cmboBoxFilesHost.DropDownWidth = ControlExtensions.DropDownWidth(cmboBoxFilesHost);
+            comboBoxFilterFiles.DropDownWidth = ControlExtensions.DropDownWidth(comboBoxFilterFiles);
         }
 
         private void bgSearchFiles_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            txtSearchFiles.Focus();
+            textBoxSearchFiles.Focus();
         }
 
         private void txtSearchFiles_KeyDown(object sender, KeyEventArgs e)
@@ -733,13 +735,13 @@ namespace WebCrunch
 
         public void SearchFiles()
         {
-            imgSearch.Image = Properties.Resources.loader;
+            imageSearchFiles.Image = Properties.Resources.loader;
             tab.SelectedTab = tabSearch;
 
-            if (Path.HasExtension(txtSearchFiles.Text))
+            if (Path.HasExtension(textBoxSearchFiles.Text))
             {
-                ShowFileDetails(Database.FileInfoFromURL(txtSearchFiles.Text));
-                imgSearch.Image = Properties.Resources.magnify_orange;
+                ShowFileDetails(Database.FileInfoFromURL(textBoxSearchFiles.Text));
+                imageSearchFiles.Image = Properties.Resources.magnify_orange;
             }
             else
                 ShowFiles(SelectedFiles);
@@ -797,13 +799,13 @@ namespace WebCrunch
 
         private void btnSubmitUrl_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            if (txtSubmitLink.Text != "") 
-                if (!Path.HasExtension(txtSubmitLink.Text)) 
-                    if (Uri.IsWellFormedUriString(txtSubmitLink.Text, UriKind.Absolute)) {
-                        string formattedText = txtSubmitLink.Text;
-                        if (!txtSubmitLink.Text.EndsWith("/"))
-                            formattedText = txtSubmitLink.Text + "/";
-                        OpenLink.SubmitLink(new Uri(formattedText)); txtSubmitLink.Text = "";
+            if (textBoxSubmitLink.Text != "") 
+                if (!Path.HasExtension(textBoxSubmitLink.Text)) 
+                    if (Uri.IsWellFormedUriString(textBoxSubmitLink.Text, UriKind.Absolute)) {
+                        string formattedText = textBoxSubmitLink.Text;
+                        if (!textBoxSubmitLink.Text.EndsWith("/"))
+                            formattedText = textBoxSubmitLink.Text + "/";
+                        OpenLink.SubmitLink(new Uri(formattedText)); textBoxSubmitLink.Text = "";
                     }
                     else MessageBox.Show(this, "This isn't a public web directory.");
                 else MessageBox.Show(this, "This isn't a public web directory.");
@@ -838,12 +840,12 @@ namespace WebCrunch
         public void LoadSettings()
         {
             // Set UI Properties
-            chkSettingsClearData.Checked = Properties.Settings.Default.clearDataOnClose;
+            checkBoxClearDataOnClose.Checked = Properties.Settings.Default.clearDataOnClose;
         }
 
         private void btnSettingsSave_ClickButtonArea(object sender, MouseEventArgs e)
         {
-            Properties.Settings.Default.clearDataOnClose = chkSettingsClearData.Checked;
+            Properties.Settings.Default.clearDataOnClose = checkBoxClearDataOnClose.Checked;
             Thread.Sleep(500);
             Properties.Settings.Default.Save();
             Thread.Sleep(500);

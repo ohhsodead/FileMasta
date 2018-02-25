@@ -1,3 +1,11 @@
+## 0.2.15.3
+- Cleaned up code, a lot
+- Improved sorting and overall functionality
+- Improved file details panel
+- Merged home search and external search engines button
+- Improved web crawler to support most servers
+
+
 ## 0.2.15.2
 - Updated UI
 - Scroll through search results in the details page
@@ -9,6 +17,7 @@
 - Various improvements to code
 - Major fixes and improvements to web crawler
 
+
 ## 0.2.15.1
 - Updates to the user interface
 - Improved performance and overall stability
@@ -18,6 +27,7 @@
 - Renamed 'Saved' files to 'Bookmarked' files
 - Fixed some minor bugs, including #81 and #82
 
+
 ## 0.2.15.0
 - Refurbished the entire UI (user interface)
 - Enhanced functionality and performance
@@ -25,10 +35,12 @@
 - Added sort files by size (#79) and date added
 - Fixed bugs
 
+
 ## 0.2.14.8
 - UI fixes
 - Web crawler database improvements
 - Several bug fixes
+
 
 ## 0.2.14.7
 - Improved UI responsiveness
@@ -38,16 +50,20 @@
 - Deflated Installer for quicker downloads
 - Added support for Windows XP, Vista and Servers (2008-2012) to the Installer
 
+
 ## 0.2.14.6
 - Renamed project to WebCrunch
+
 
 ## 0.2.14.5
 - Somewhat responsive UI, to-do: consistency
 - Various code improvements
 - Fixed #65, #66 (null values caused by DateTime)
 
+
 ## 0.2.14.4
 - Fixed total database file size
+
 
 ## 0.2.14.3
 - Improved UI, smoother and consistent (dark elements)
@@ -57,11 +73,13 @@
 - Renamed 'About' tab to 'Information'
 - Several bug fixes
 
+
 ## 0.2.14.2
 - Improvements UI elements
 - Added core database info
 - Fixed popup dialog not showing in parent form
 - Fixed total indexed files size
+
 
 ## 0.2.14.1
 - Added Files/Directories/Database stats
@@ -72,6 +90,7 @@
 - Added Change Log
 - Fixed #63, (temporarily) #62 
 
+
 ## 0.2.14.0
 - Improved form/button UI consistency
 - Added Home tab
@@ -79,15 +98,19 @@
 - Added Share project on Facebook/Twitter
 - Moved latest version text to DropBox
 
+
 ## 0.2.13.0
 - Added localization strings
 - Bug fixes
 
+
 ## 0.2.12.2
 - Fixed Stream Info UI
 
+
 ## 0.2.12.1
 - Some minor bug fixes
+
 
 ## 0.2.12.0
 - UI/Database improvements (Now only one core database)
@@ -101,6 +124,7 @@
 - Added DMCA report info
 - Removed Filter Files by Format
 
+
 ## 0.2.11.0
 - UI improvements
 - Localization fixes (Thanks to @Martin005)
@@ -110,21 +134,26 @@
 - Removed download client, was unstable
 - Removed bookmarks, working on something very similar
 
+
 ## 0.2.10.0
 - Added video, audio and eBooks tab, replacing movies, series and anime
 - Added size and date to file metadeta
 - Other bug fixes and updates
 
+
 ## 0.2.9.3
 - Fixed #48, again
+
 
 ## 0.2.9.2
 - Fixed #47, #48, #50, #51
 - Internal VLC reference fixes
 
+
 ## 0.2.9.1
 - Fix README.md
 - Forgot to uncomment database download
+
 
 ## 0.2.9.0
 - Improved file details, now adds related files
@@ -137,14 +166,17 @@
 - Fixed #44
 - Cleaned up project files
 
+
 ## 0.2.8.2
 - Added German language
 - Fixed logging unhandled exceptions
 - Other minor fixes
 
+
 ## 0.2.8.1
 - Added YIFY API (yts.am) for Torrents/Magnets
 - Bug fixes
+
 
 ## 0.2.8.0
 - Optimised images further (Thanks to @StarSparkleNova)
@@ -158,6 +190,7 @@
 - Bookmark fixes
 - Other minor bug fixes
 
+
 ## 0.2.7.0
 - UI changes
 - Added random movie button
@@ -165,6 +198,7 @@
 - Trailer now opens in default web browser
 - Fixed displaying backgrounds for file
 - Some download fixes
+
 
 ## 0.2.0.6
 - UI/Icons enhancements (Thanks @google)
@@ -183,6 +217,7 @@
 - Database adjustments and fixes
 - Download protocol fixes
 
+
 ## 0.2.0.5
 - UI improvements
 - Optimized resources to lossless compression
@@ -191,6 +226,7 @@
 - Added sort files alphabetically
 - Fixed search results
 - Other bug fixes
+
 
 ## 0.2.0.4
 - Renamed project
@@ -201,10 +237,12 @@
 - Catch unhandled exceptions
 - Various bug fixes
 
+
 ## 0.2.0.3
 - Enabled search box and filter by genre
 - Fixed some issues with Json
 - Other minor fixes
+
 
 ## 0.2.0.2
 - Added background worker, thanks to @badrazizi
@@ -213,6 +251,7 @@
 - Hidden search features for Movies, temporarily (working on fixes)
 - Fixed loading bugs
 
+
 ## 0.2.0.1
 - Asynchronous tasks and threads, highest performance rate yet
 - Improved UI design
@@ -220,6 +259,7 @@
 - Added Downloads tab, instead of window
 - Added Report Broken button to streams
 - Fixed some bugs
+
 
 ## 0.2.0.0
 - Many UI changes
@@ -232,17 +272,20 @@
 - Added support for multiple streams
 - Removed Report Broken source button, for now
 
+
 ## 0.1.0.4
 - Tidied search results in dataGridView, displays host and file name
 - Search box focus after adding tag
 - Added report broken file button, pre-fills new issue
-- Removed app updater, now uses the Installer
+- Removed auto updater, now uses the Installer
+
 
 ## 0.1.0.3
 - Added auto updater, somewhat works
 - Removed Settings tab, lack of options (need some requests)
 - Updated database changes and production data fixes
 - Other various improvements
+
 
 ## 0.1.0.2
 - UI improvements
@@ -260,6 +303,7 @@
 - Improved search results
 - Various bug fixes
 
+
 ## 0.1.0.1
 - UI improvements
 - Added download client
@@ -268,6 +312,7 @@
 - Added some popular tags for queries
 - Added about tab
 - Added support for opening URL in external players (Windows Media Player & VLC)
+
 
 ## 0.1.0.0
 - Initial release

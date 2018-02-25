@@ -37,9 +37,9 @@ namespace WebCrunch.Controls
         {
             // Shows appropriate Bookmarks button text
             if (!Bookmarked.IsBookmarked(currentFile.URL))
-                ControlExtensions.SetControlText(btnBookmarkFile, "Add to Bookmarks");            
+                ControlExtensions.SetControlText(buttonBookmarkFile, "Add to Bookmarks");            
             else
-                ControlExtensions.SetControlText(btnBookmarkFile, "Remove from Bookmarks");            
+                ControlExtensions.SetControlText(buttonBookmarkFile, "Remove from Bookmarks");            
 
             // Support media players installed on users machine
             VLCToolStripMenuItem.Visible = File.Exists(LocalExtensions.pathVLC);
@@ -47,15 +47,15 @@ namespace WebCrunch.Controls
 
             // Shows 'Play Media' button if is valid file extension
             if (videoFileTypes.Contains(currentFile.Type) || audioFileTypes.Contains(currentFile.Type))
-                btnPlayMedia.Visible = true;
+                buttonPlayMedia.Visible = true;
             else
-                btnPlayMedia.Visible = false;
+                buttonPlayMedia.Visible = false;
 
             // Checks if file size isn't default
             if (currentFile.Size == 0)
-                btnRequestFileSize.Visible = true;
+                buttonRequestFileSize.Visible = true;
             else
-                btnRequestFileSize.Visible = false;
+                buttonRequestFileSize.Visible = false;
 
             // Add subtitle file to be played when opening external VLC
             if (FileExtensions.HasExistingLocalSubtitles(currentFile.URL) == true) // If users downloads folder contains a subtitle file matching web file name
@@ -71,18 +71,18 @@ namespace WebCrunch.Controls
         {
             if (MainForm.form.dataGridFiles.Rows.Count > 0) {
                 if (MainForm.form.dataGridFiles.SelectedCells[0].OwningRow.Index == 0)
-                    imgPreviousFile.Image = ImageExtensions.ChangeColor(Properties.Resources.chevron_left, Color.Gray);
+                    imagePreviousFile.Image = ImageExtensions.ChangeColor(Properties.Resources.chevron_left, Color.Gray);
                 else
-                    imgPreviousFile.Image = Properties.Resources.chevron_left;
+                    imagePreviousFile.Image = Properties.Resources.chevron_left;
 
                 if (MainForm.form.dataGridFiles.SelectedCells[0].OwningRow.Index == MainForm.form.dataGridFiles.Rows.Count - 1)
-                    imgNextFile.Image = ImageExtensions.ChangeColor(Properties.Resources.chevron_right, Color.Gray);
+                    imageNextFile.Image = ImageExtensions.ChangeColor(Properties.Resources.chevron_right, Color.Gray);
                 else
-                    imgNextFile.Image = Properties.Resources.chevron_right;
+                    imageNextFile.Image = Properties.Resources.chevron_right;
             }
             else {
-                imgPreviousFile.Image = ImageExtensions.ChangeColor(Properties.Resources.chevron_left, Color.Gray);
-                imgNextFile.Image = ImageExtensions.ChangeColor(Properties.Resources.chevron_right, Color.Gray);
+                imagePreviousFile.Image = ImageExtensions.ChangeColor(Properties.Resources.chevron_left, Color.Gray);
+                imageNextFile.Image = ImageExtensions.ChangeColor(Properties.Resources.chevron_right, Color.Gray);
             }
         }
 
@@ -151,7 +151,7 @@ namespace WebCrunch.Controls
 
         private void btnRequestFileSize_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            btnRequestFileSize.Visible = false;
+            buttonRequestFileSize.Visible = false;
             BackGroundWorker.RunWorkAsync<string>(() => TextExtensions.BytesToString(FileExtensions.GetFileSize(currentFile.URL)), (data) => { infoSize.Text = data; });
         }
 
@@ -167,7 +167,7 @@ namespace WebCrunch.Controls
 
         private void btnPlayMedia_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            contextFileName.Show(btnPlayMedia, btnPlayMedia.PointToClient(Cursor.Position));
+            contextFileName.Show(buttonPlayMedia, buttonPlayMedia.PointToClient(Cursor.Position));
         }
 
         private void WMPToolStripMenuItem_Click(object sender, EventArgs e)
@@ -213,11 +213,11 @@ namespace WebCrunch.Controls
         {
             if (Bookmarked.IsBookmarked(currentFile.URL)) {
                 Bookmarked.UnsaveFile(currentFile.URL);
-                ControlExtensions.SetControlText(btnBookmarkFile, "Add to Bookmarks");
+                ControlExtensions.SetControlText(buttonBookmarkFile, "Add to Bookmarks");
             }
             else {
                 Bookmarked.SaveFile(currentFile.URL);
-                ControlExtensions.SetControlText(btnBookmarkFile, "Remove from Bookmarks");
+                ControlExtensions.SetControlText(buttonBookmarkFile, "Remove from Bookmarks");
             }
         }
 

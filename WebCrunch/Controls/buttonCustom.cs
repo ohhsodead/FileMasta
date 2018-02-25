@@ -6,11 +6,11 @@ using WebCrunch.Extensions;
 
 namespace WebCrunch.Controls
 {
-    public partial class CtrlButton : CButton
+    public partial class buttonCustom : CButton
     {
         private static Font _normalFont = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
 
-        public CtrlButton() : base()
+        public buttonCustom() : base()
         {
             base.Font = _normalFont;
             base.BackColor = Color.Transparent;
@@ -42,6 +42,7 @@ namespace WebCrunch.Controls
             SizeF mySize = base.CreateGraphics().MeasureString(base.Text, myFont);
             base.Width = (((int)(Math.Round(mySize.Width, 0))) + increaseBy);
         }
+
         protected override void OnControlAdded(ControlEventArgs e)
         {
             base.OnControlAdded(e);
