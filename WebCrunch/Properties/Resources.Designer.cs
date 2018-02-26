@@ -233,6 +233,16 @@ namespace WebCrunch.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap logo {
+            get {
+                object obj = ResourceManager.GetObject("logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap magnify {
             get {
                 object obj = ResourceManager.GetObject("magnify", resourceCulture);
@@ -256,16 +266,6 @@ namespace WebCrunch.Properties {
         internal static System.Drawing.Bitmap menu_down {
             get {
                 object obj = ResourceManager.GetObject("menu_down", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap new_logo {
-            get {
-                object obj = ResourceManager.GetObject("new_logo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
