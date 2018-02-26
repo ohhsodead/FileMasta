@@ -4,7 +4,7 @@ using System.Drawing;
 using System.IO;
 using System.Net;
 using System.Windows.Forms;
-using WebCrunch.Dialogs;
+using WebCrunch.Windows;
 
 namespace WebCrunch.Extensions
 {
@@ -40,21 +40,21 @@ namespace WebCrunch.Extensions
         }
 
         /// <summary>
-        /// Shows raw text from the specified URL in a dialog box
+        /// Shows raw text from the specified URL in a window box
         /// </summary>
-        /// <param name="URL">URL to fetch string from</param>
+        /// <param name="URL">URL to fetch string data from</param>
         /// <param name="Title">Text to display in title bar</param>
-        public static void ShowTextFromURL(string URL, string Title)
+        public static void ShowDataWindow(string URL, string Title)
         {
             DataWindow frmInfo = new DataWindow { Text = Title };
 
             WebClient client = new WebClient();
             using (var stream = client.OpenRead(URL))
             using (var reader = new StreamReader(stream))
-                frmInfo.dataInfo.Text = reader.ReadToEnd();
+                frmInfo.labelData.Text = reader.ReadToEnd();
 
-            frmInfo.MaximumSize = new Size(frmInfo.MaximumSize.Width, MainForm.form.Height - 100);
-            frmInfo.ShowDialog(MainForm.form);
+            frmInfo.MaximumSize = new Size(frmInfo.MaximumSize.Width, MainForm.Form.Height - 100);
+            frmInfo.ShowDialog(MainForm.Form);
         }
 
         /// <summary>
@@ -63,28 +63,28 @@ namespace WebCrunch.Extensions
         /// <param name="ctrl">Tab title button to set as highlighted</param>
         public static void SelectTabTitle(CButton ctrl)
         {
-            MainForm.form.titleHome.ColorFillSolid = Colors.nonSelectedTitleRGB;
-            MainForm.form.titleHome.BorderColor = Colors.nonSelectedTitleRGB;
-            MainForm.form.titleHome.BackColor = Colors.nonSelectedTitleRGB;
-            MainForm.form.titleSearch.ColorFillSolid = Colors.nonSelectedTitleRGB;
-            MainForm.form.titleSearch.BorderColor = Colors.nonSelectedTitleRGB;
-            MainForm.form.titleSearch.BackColor = Colors.nonSelectedTitleRGB;
-            MainForm.form.titleDiscover.ColorFillSolid = Colors.nonSelectedTitleRGB;
-            MainForm.form.titleDiscover.BorderColor = Colors.nonSelectedTitleRGB;
-            MainForm.form.titleDiscover.BackColor = Colors.nonSelectedTitleRGB;
-            MainForm.form.titleSubmit.ColorFillSolid = Colors.nonSelectedTitleRGB;
-            MainForm.form.titleSubmit.BorderColor = Colors.nonSelectedTitleRGB;
-            MainForm.form.titleSubmit.BackColor = Colors.nonSelectedTitleRGB;
-            MainForm.form.titleSettings.ColorFillSolid = Colors.nonSelectedTitleRGB;
-            MainForm.form.titleSettings.BorderColor = Colors.nonSelectedTitleRGB;
-            MainForm.form.titleSettings.BackColor = Colors.nonSelectedTitleRGB;
-            MainForm.form.titleInformation.ColorFillSolid = Colors.nonSelectedTitleRGB;
-            MainForm.form.titleInformation.BorderColor = Colors.nonSelectedTitleRGB;
-            MainForm.form.titleInformation.BackColor = Colors.nonSelectedTitleRGB;
+            MainForm.Form.titleHome.ColorFillSolid = Colors.nonSelectedTitleRGB;
+            MainForm.Form.titleHome.BorderColor = Colors.nonSelectedTitleRGB;
+            MainForm.Form.titleHome.BackColor = Colors.nonSelectedTitleRGB;
+            MainForm.Form.titleSearch.ColorFillSolid = Colors.nonSelectedTitleRGB;
+            MainForm.Form.titleSearch.BorderColor = Colors.nonSelectedTitleRGB;
+            MainForm.Form.titleSearch.BackColor = Colors.nonSelectedTitleRGB;
+            MainForm.Form.titleDiscover.ColorFillSolid = Colors.nonSelectedTitleRGB;
+            MainForm.Form.titleDiscover.BorderColor = Colors.nonSelectedTitleRGB;
+            MainForm.Form.titleDiscover.BackColor = Colors.nonSelectedTitleRGB;
+            MainForm.Form.titleSubmit.ColorFillSolid = Colors.nonSelectedTitleRGB;
+            MainForm.Form.titleSubmit.BorderColor = Colors.nonSelectedTitleRGB;
+            MainForm.Form.titleSubmit.BackColor = Colors.nonSelectedTitleRGB;
+            MainForm.Form.titleSettings.ColorFillSolid = Colors.nonSelectedTitleRGB;
+            MainForm.Form.titleSettings.BorderColor = Colors.nonSelectedTitleRGB;
+            MainForm.Form.titleSettings.BackColor = Colors.nonSelectedTitleRGB;
+            MainForm.Form.titleInformation.ColorFillSolid = Colors.nonSelectedTitleRGB;
+            MainForm.Form.titleInformation.BorderColor = Colors.nonSelectedTitleRGB;
+            MainForm.Form.titleInformation.BackColor = Colors.nonSelectedTitleRGB;
 
-            ctrl.ColorFillSolid = Colors.selectedTitleRGB;
-            ctrl.BorderColor = Colors.selectedTitleRGB;
-            ctrl.BackColor = Colors.selectedTitleRGB;
+            ctrl.ColorFillSolid = Colors.SelectedTitleRGB;
+            ctrl.BorderColor = Colors.SelectedTitleRGB;
+            ctrl.BackColor = Colors.SelectedTitleRGB;
         }
 
         /// <summary>
@@ -93,31 +93,31 @@ namespace WebCrunch.Extensions
         /// <param name="cbtn"></param>
         public static void SelectFilesTab(CButton cbtn)
         {
-            MainForm.form.buttonFilesAll.ColorFillSolid = Color.Transparent;
-            MainForm.form.buttonFilesAll.BorderColor = Color.Transparent;
-            MainForm.form.buttonFilesVideo.ColorFillSolid = Color.Transparent;
-            MainForm.form.buttonFilesVideo.BorderColor = Color.Transparent;
-            MainForm.form.buttonFilesAudio.ColorFillSolid = Color.Transparent;
-            MainForm.form.buttonFilesAudio.BorderColor = Color.Transparent;
-            MainForm.form.buttonFilesBooks.ColorFillSolid = Color.Transparent;
-            MainForm.form.buttonFilesBooks.BorderColor = Color.Transparent;
-            MainForm.form.buttonFilesSubtitles.ColorFillSolid = Color.Transparent;
-            MainForm.form.buttonFilesSubtitles.BorderColor = Color.Transparent;
-            MainForm.form.buttonFilesTorrents.ColorFillSolid = Color.Transparent;
-            MainForm.form.buttonFilesTorrents.BorderColor = Color.Transparent;
-            MainForm.form.buttonFilesSoftware.ColorFillSolid = Color.Transparent;
-            MainForm.form.buttonFilesSoftware.BorderColor = Color.Transparent;
-            MainForm.form.buttonFilesCustom.ColorFillSolid = Color.Transparent;
-            MainForm.form.buttonFilesCustom.BorderColor = Color.Transparent;
-            MainForm.form.buttonFilesOther.ColorFillSolid = Color.Transparent;
-            MainForm.form.buttonFilesOther.BorderColor = Color.Transparent;
-            MainForm.form.buttonFilesLocal.ColorFillSolid = Color.Transparent;
-            MainForm.form.buttonFilesLocal.BorderColor = Color.Transparent;
-            MainForm.form.buttonFilesBookmarks.ColorFillSolid = Color.Transparent;
-            MainForm.form.buttonFilesBookmarks.BorderColor = Color.Transparent;
+            MainForm.Form.buttonFilesAll.ColorFillSolid = Color.Transparent;
+            MainForm.Form.buttonFilesAll.BorderColor = Color.Transparent;
+            MainForm.Form.buttonFilesVideo.ColorFillSolid = Color.Transparent;
+            MainForm.Form.buttonFilesVideo.BorderColor = Color.Transparent;
+            MainForm.Form.buttonFilesAudio.ColorFillSolid = Color.Transparent;
+            MainForm.Form.buttonFilesAudio.BorderColor = Color.Transparent;
+            MainForm.Form.buttonFilesBooks.ColorFillSolid = Color.Transparent;
+            MainForm.Form.buttonFilesBooks.BorderColor = Color.Transparent;
+            MainForm.Form.buttonFilesSubtitles.ColorFillSolid = Color.Transparent;
+            MainForm.Form.buttonFilesSubtitles.BorderColor = Color.Transparent;
+            MainForm.Form.buttonFilesTorrents.ColorFillSolid = Color.Transparent;
+            MainForm.Form.buttonFilesTorrents.BorderColor = Color.Transparent;
+            MainForm.Form.buttonFilesSoftware.ColorFillSolid = Color.Transparent;
+            MainForm.Form.buttonFilesSoftware.BorderColor = Color.Transparent;
+            MainForm.Form.buttonFilesCustom.ColorFillSolid = Color.Transparent;
+            MainForm.Form.buttonFilesCustom.BorderColor = Color.Transparent;
+            MainForm.Form.buttonFilesOther.ColorFillSolid = Color.Transparent;
+            MainForm.Form.buttonFilesOther.BorderColor = Color.Transparent;
+            MainForm.Form.buttonFilesLocal.ColorFillSolid = Color.Transparent;
+            MainForm.Form.buttonFilesLocal.BorderColor = Color.Transparent;
+            MainForm.Form.buttonFilesBookmarks.ColorFillSolid = Color.Transparent;
+            MainForm.Form.buttonFilesBookmarks.BorderColor = Color.Transparent;
 
-            cbtn.ColorFillSolid = Colors.uiColorOrange;
-            cbtn.BorderColor = Colors.uiColorOrange;
+            cbtn.ColorFillSolid = Colors.ColorOrange;
+            cbtn.BorderColor = Colors.ColorOrange;
         }
 
         /* Focus effect for Button/Combobox */
@@ -128,33 +128,33 @@ namespace WebCrunch.Extensions
             CButton ctrl = sender as CButton;
             tmpButtonImage = (Bitmap)ctrl.Image;
             if (ctrl.Image != null) { ctrl.Image = ImageExtensions.ChangeColor((Bitmap)ctrl.Image, Color.White); }
-            ctrl.BorderColor = Colors.uiColorOrange;
+            ctrl.BorderColor = Colors.ColorOrange;
             ctrl.ForeColor = Color.White;
-            ctrl.ColorFillSolid = Colors.uiColorOrange;
+            ctrl.ColorFillSolid = Colors.ColorOrange;
         }
 
         public static void BtnCButton_MouseLeave(object sender, EventArgs e)
         {
             CButton ctrl = sender as CButton;
             ctrl.Image = tmpButtonImage;
-            ctrl.BorderColor = Colors.uiColorOrange;
-            ctrl.ForeColor = Colors.uiColorOrange;
+            ctrl.BorderColor = Colors.ColorOrange;
+            ctrl.ForeColor = Colors.ColorOrange;
             ctrl.ColorFillSolid = Color.Transparent;
         }
 
         public static void ComboboxCButton_MouseEnter(object sender, EventArgs e)
         {
             CButton ctrl = sender as CButton;
-            ctrl.BorderColor = Colors.uiColorOrange;
+            ctrl.BorderColor = Colors.ColorOrange;
             ctrl.ForeColor = Color.White;
-            ctrl.ColorFillSolid = Colors.uiColorOrange;
+            ctrl.ColorFillSolid = Colors.ColorOrange;
         }
 
         public static void ComboboxCButton_MouseLeave(object sender, EventArgs e)
         {
             CButton ctrl = sender as CButton;
-            ctrl.BorderColor = Colors.uiColorGray;
-            ctrl.ForeColor = Colors.uiColorGray;
+            ctrl.BorderColor = Colors.ColorGray;
+            ctrl.ForeColor = Colors.ColorGray;
             ctrl.ColorFillSolid = Color.Transparent;
         }
 
@@ -165,7 +165,7 @@ namespace WebCrunch.Extensions
         {
             PictureBox ctrl = sender as PictureBox;
             tmpSocialImage = (Bitmap)ctrl.Image;
-            ctrl.Image = ImageExtensions.ChangeColor((Bitmap)ctrl.Image, Colors.uiColorOrange);
+            ctrl.Image = ImageExtensions.ChangeColor((Bitmap)ctrl.Image, Colors.ColorOrange);
         }
 
         public static void SocialImage_MouseLeave(object sender, EventArgs e)
@@ -183,9 +183,9 @@ namespace WebCrunch.Extensions
                 Font = new Font("Segoe UI Semibold", 9.25F, FontStyle.Regular),
                 Size = new Size(70, 24),
                 BackColor = Color.Transparent,
-                ForeColor = Colors.uiColorOrange,
+                ForeColor = Colors.ColorOrange,
                 TextMargin = new Padding(0, 2, 0, 2),
-                BorderColor = Colors.uiColorOrange,
+                BorderColor = Colors.ColorOrange,
                 ColorFillSolid = Color.Transparent,
                 FillType = CButton.eFillType.Solid,
                 TextShadowShow = false,
@@ -211,8 +211,8 @@ namespace WebCrunch.Extensions
         public static void btnTopSearchesTag_ClickButtonArea(object Sender, MouseEventArgs e)
         {
             var tagItem = Sender as CButton;
-            MainForm.form.textBoxSearchHome.Text = tagItem.Text;
-            MainForm.form.DoSearchFilesFromHome();
+            MainForm.Form.textBoxSearchHome.Text = tagItem.Text;
+            MainForm.Form.DoSearchFilesFromHome();
         }
     }
 }

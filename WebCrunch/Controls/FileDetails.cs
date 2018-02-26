@@ -6,7 +6,7 @@ using System.Diagnostics;
 using System.IO;
 using WebCrunch.Asynchronous;
 using WebCrunch.Bookmarks;
-using WebCrunch.Dialogs;
+using WebCrunch.Windows;
 using WebCrunch.Extensions;
 using WebCrunch.Files;
 using WebCrunch.GitHub;
@@ -69,13 +69,13 @@ namespace WebCrunch.Controls
 
         private void ScrollButtonChecks()
         {
-            if (MainForm.form.dataGridFiles.Rows.Count > 0) {
-                if (MainForm.form.dataGridFiles.SelectedCells[0].OwningRow.Index == 0)
+            if (MainForm.Form.dataGridFiles.Rows.Count > 0) {
+                if (MainForm.Form.dataGridFiles.SelectedCells[0].OwningRow.Index == 0)
                     imagePreviousFile.Image = ImageExtensions.ChangeColor(Properties.Resources.chevron_left, Color.Gray);
                 else
                     imagePreviousFile.Image = Properties.Resources.chevron_left;
 
-                if (MainForm.form.dataGridFiles.SelectedCells[0].OwningRow.Index == MainForm.form.dataGridFiles.Rows.Count - 1)
+                if (MainForm.Form.dataGridFiles.SelectedCells[0].OwningRow.Index == MainForm.Form.dataGridFiles.Rows.Count - 1)
                     imageNextFile.Image = ImageExtensions.ChangeColor(Properties.Resources.chevron_right, Color.Gray);
                 else
                     imageNextFile.Image = Properties.Resources.chevron_right;
@@ -88,8 +88,8 @@ namespace WebCrunch.Controls
 
         private void appClose_Click(object sender, EventArgs e)
         {
-            MainForm.form.tab.SelectedTab = MainForm.form.CurrentTab;
-            MainForm.frmFileDetails.Dispose();
+            MainForm.Form.tab.SelectedTab = MainForm.Form.CurrentTab;
+            MainForm.FrmFileDetails.Dispose();
         }
 
         private void btnDirectLink_ClickButtonArea(object Sender, MouseEventArgs e)
@@ -212,11 +212,11 @@ namespace WebCrunch.Controls
         private void BtnBookmarkFile_ClickButtonArea(object Sender, MouseEventArgs e)
         {
             if (Bookmarked.IsBookmarked(currentFile.URL)) {
-                Bookmarked.UnsaveFile(currentFile.URL);
+                Bookmarked.RemoveFile(currentFile.URL);
                 ControlExtensions.SetControlText(buttonBookmarkFile, "Add to Bookmarks");
             }
             else {
-                Bookmarked.SaveFile(currentFile.URL);
+                Bookmarked.AddFile(currentFile.URL);
                 ControlExtensions.SetControlText(buttonBookmarkFile, "Remove from Bookmarks");
             }
         }
@@ -230,7 +230,7 @@ namespace WebCrunch.Controls
 
         private void SelectUpRow()
         {
-            DataGridView dgv = MainForm.form.dataGridFiles;
+            DataGridView dgv = MainForm.Form.dataGridFiles;
             if (dgv.Rows.Count > 0) {
                 int totalRows = dgv.Rows.Count;
                 int rowIndex = dgv.SelectedCells[0].OwningRow.Index;
@@ -241,10 +241,10 @@ namespace WebCrunch.Controls
                 dgv.ClearSelection();
                 dgv.Rows[rowIndex - 1].Cells[colIndex].Selected = true;
 
-                if (MainForm.form.dataGridFiles.CurrentRow.Cells[4].Value.ToString() == "Local")
-                    MainForm.form.ShowFileDetails(Database.FileInfoFromURL(MainForm.form.dataGridFiles.CurrentRow.Cells[5].Value.ToString()), false);                
+                if (MainForm.Form.dataGridFiles.CurrentRow.Cells[4].Value.ToString() == "Local")
+                    MainForm.Form.ShowFileDetails(Database.FileInfoFromURL(MainForm.Form.dataGridFiles.CurrentRow.Cells[5].Value.ToString()), false);                
                 else 
-                    MainForm.form.ShowFileDetails(Database.FileInfoFromURL(MainForm.form.dataGridFiles.CurrentRow.Cells[5].Value.ToString()), false);
+                    MainForm.Form.ShowFileDetails(Database.FileInfoFromURL(MainForm.Form.dataGridFiles.CurrentRow.Cells[5].Value.ToString()), false);
 
                 ScrollButtonChecks();
             }
@@ -252,7 +252,7 @@ namespace WebCrunch.Controls
 
         private void SelectDownRow()
         {
-            DataGridView dgv = MainForm.form.dataGridFiles;
+            DataGridView dgv = MainForm.Form.dataGridFiles;
             if (dgv.Rows.Count > 0) {
                 int totalRows = dgv.Rows.Count;
                 int rowIndex = dgv.SelectedCells[0].OwningRow.Index;
@@ -263,10 +263,10 @@ namespace WebCrunch.Controls
                 dgv.ClearSelection();
                 dgv.Rows[rowIndex + 1].Cells[colIndex].Selected = true;
 
-                if (MainForm.form.dataGridFiles.CurrentRow.Cells[4].Value.ToString() == "local")
-                    MainForm.form.ShowFileDetails(Database.FileInfoFromURL(MainForm.form.dataGridFiles.CurrentRow.Cells[5].Value.ToString()), false);
+                if (MainForm.Form.dataGridFiles.CurrentRow.Cells[4].Value.ToString() == "local")
+                    MainForm.Form.ShowFileDetails(Database.FileInfoFromURL(MainForm.Form.dataGridFiles.CurrentRow.Cells[5].Value.ToString()), false);
                 else
-                    MainForm.form.ShowFileDetails(Database.FileInfoFromURL(MainForm.form.dataGridFiles.CurrentRow.Cells[5].Value.ToString()), false);
+                    MainForm.Form.ShowFileDetails(Database.FileInfoFromURL(MainForm.Form.dataGridFiles.CurrentRow.Cells[5].Value.ToString()), false);
 
                 ScrollButtonChecks();
             }
@@ -280,6 +280,45 @@ namespace WebCrunch.Controls
         private void imgNextFile_Click(object sender, EventArgs e)
         {
             SelectDownRow();
+        }
+
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            switch (keyData)
+            {
+                case Keys.Left:
+                    SelectUpRow();
+                    return true;
+                case Keys.Right:
+                    SelectDownRow();
+                    return true;
+                case Keys.B:
+                    buttonBookmarkFile.PerformClick();
+                    return true;
+                case Keys.V:
+                    buttonViewDirectory.PerformClick();
+                    return true;
+                case Keys.R:
+                    buttonRequestFileSize.PerformClick();
+                    return true;
+                case Keys.S:
+                    buttonShare.PerformClick();
+                    return true;
+                case Keys.E:
+                    buttonReport.PerformClick();
+                    return true;
+                case Keys.D:
+                    buttonDirectLink.PerformClick();
+                    return true;
+                case Keys.P:
+                    buttonPlayMedia.PerformClick();
+                    return true;
+                case Keys.Escape:
+                    MainForm.Form.tab.SelectedTab = MainForm.Form.CurrentTab;
+                    MainForm.FrmFileDetails.Dispose();
+                    return true;
+            }
+            return base.ProcessCmdKey(ref msg, keyData);
         }
     }
 }

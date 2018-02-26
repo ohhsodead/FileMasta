@@ -52,27 +52,27 @@ namespace WebCrunch.Controls
         {
             base.OnMouseEnter(e);
             tmpButtonImage = (Bitmap)base.Image;
-            base.Image = ImageExtensions.ChangeColor(tmpButtonImage, Colors.uiColorOrange);
+            base.Image = ImageExtensions.ChangeColor(tmpButtonImage, Colors.ColorOrange);
 
-            base.ColorFillSolid = Colors.selectedTitleRGB;
-            base.BackColor = Colors.selectedTitleRGB;
-            base.BorderColor = Colors.selectedTitleRGB;
+            base.ColorFillSolid = Colors.SelectedTitleRGB;
+            base.BackColor = Colors.SelectedTitleRGB;
+            base.BorderColor = Colors.SelectedTitleRGB;
 
-            base.ForeColor = Colors.uiColorOrange;
+            base.ForeColor = Colors.ColorOrange;
         }
 
         protected override void OnMouseLeave(EventArgs e)
         {
             base.OnMouseLeave(e);
 
-            if (MainForm.form.CurrentTabTitle == this)
+            if (MainForm.Form.CurrentTabTitle == this)
             {
                 base.Image = tmpButtonImage;
                 base.ForeColor = Color.White;
 
-                base.ColorFillSolid = Colors.selectedTitleRGB;
-                base.BackColor = Colors.selectedTitleRGB;
-                base.BorderColor = Colors.selectedTitleRGB;
+                base.ColorFillSolid = Colors.SelectedTitleRGB;
+                base.BackColor = Colors.SelectedTitleRGB;
+                base.BorderColor = Colors.SelectedTitleRGB;
             }
             else
             {

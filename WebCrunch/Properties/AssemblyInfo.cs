@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("WebCrunch")]
 [assembly: AssemblyDescription("Search the web for video, music, books, software, games, subtitles and much more")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("HerbL-27")]
+[assembly: AssemblyCompany("Herbify-27")]
 [assembly: AssemblyProduct("WebCrunch")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
@@ -32,6 +32,6 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("0.2.15.3")]
-[assembly: AssemblyFileVersion("0.2.15.3")]
+[assembly: AssemblyVersion("0.2.16.0")]
+[assembly: AssemblyFileVersion("0.2.16.0")]
 [assembly: log4net.Config.XmlConfigurator(ConfigFile = "log4net.config")]

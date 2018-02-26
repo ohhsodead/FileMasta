@@ -1,5 +1,5 @@
-﻿using Newtonsoft.Json;
-using CButtonLib;
+﻿using CButtonLib;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,54 +17,51 @@ using WebCrunch.Extensions;
 using WebCrunch.Files;
 using WebCrunch.GitHub;
 using WebCrunch.Models;
+using WebCrunch.Bookmarks;
+using System.Reflection;
 
 namespace WebCrunch
 {
     public partial class MainForm : Form
     {
-        public static MainForm form { get; set; } = null; // This is only instance of the main form, set after InitializeComponent()
-        public static SplashScreen frmSplashScreen { get; set; } = new SplashScreen(); // Declare Splash Screen (one instance)
-        public static FileDetails frmFileDetails { get; set; } = null; // Declare File Details (one instance)
+        public static MainForm Form { get; set; } = null; // This is only instance of the main form, set after InitializeComponent()
+        public static SplashScreen FrmSplashScreen { get; } = new SplashScreen(); // Splash Screen (one instance)
+        public static FileDetails FrmFileDetails { get; set; } = null; // File Details (one instance, but set when first shown)
 
         public MainForm()
         {
             Program.log.Info("Initializing");
 
-            // This adds all the supported file types to one list (There must be a cleaner way, but oh well)
+            // Add all the supported file types to one list (There must be a cleaner way, but oh well)
             allFileTypes.AddRange(videoFileTypes); allFileTypes.AddRange(audioFileTypes); allFileTypes.AddRange(bookFileTypes); allFileTypes.AddRange(subtitleFileTypes); allFileTypes.AddRange(torrentFileTypes); allFileTypes.AddRange(softwareFileTypes); allFileTypes.AddRange(otherFileTypes);
 
-            SelectedFilesFileType = allFileTypes; // Set files filter to All
+            SelectedFilesFileType = allFileTypes; // Set selected files type to All
 
             InitializeComponent(); // Initialize
 
-            form = this; // Set this instance
+            Form = this; // Set this instance
 
-            labelChangeLog.Text = String.Format(labelChangeLog.Text, Application.ProductVersion); // Show this version in a Label on the About tab
+            labelChangeLog.Text = String.Format(labelChangeLog.Text, Application.ProductVersion); // Set this version on Change Log label in the About tab
             
             // Show Splash Screen
-            Controls.Add(frmSplashScreen);
-            frmSplashScreen.Dock = DockStyle.Fill;
-            frmSplashScreen.Location = new Point(0, 0);
-            frmSplashScreen.ClientSize = ClientSize;
-            frmSplashScreen.BringToFront();
-            frmSplashScreen.Show();
+            Controls.Add(FrmSplashScreen);
+            FrmSplashScreen.Dock = DockStyle.Fill;
+            FrmSplashScreen.Location = new Point(0, 0);
+            FrmSplashScreen.ClientSize = ClientSize;
+            FrmSplashScreen.BringToFront();
+            FrmSplashScreen.Show();
 
-            comboBoxSearchHome.DropDownWidth = ControlExtensions.DropDownWidth(comboBoxSearchHome); // Set search engine combobox to fit its contents
+            comboBoxSearchHome.DropDownWidth = ControlExtensions.DropDownWidth(comboBoxSearchHome); // Set home search button combobox to fit its contents
             comboBoxSortFiles.DropDownWidth = ControlExtensions.DropDownWidth(comboBoxSortFiles); // Set files sort combobox to fit its contents
 
             Program.log.Info("Initialized");
         }
 
-        /// <summary>
-        /// Information URLs
-        /// </summary>
-        public static string urlChangelog = "https://raw.githubusercontent.com/HerbL27/WebCrunch/master/CHANGELOG.md";
-        public static string urlTermsOfUse = "https://raw.githubusercontent.com/HerbL27/WebCrunch/master/TERMSOFUSE.md";
-        public static string urlPrivacyPolicy = "https://raw.githubusercontent.com/HerbL27/WebCrunch/master/PRIVACYPOLICY.md";
 
-        /// <summary>
-        /// Share this app message
-        /// </summary>
+        /*************************************************************************/
+        /* Share on Social Media                                                 */
+        /*************************************************************************/
+
         public string shareMessage = "Hey%20guys%2C%20I%20found%20a%20brilliant%20way%20to%20find%20Direct%20download%20links%20for%20anything.";
 
         private void imgShareTwitter_Click(object sender, EventArgs e)
@@ -77,12 +74,17 @@ namespace WebCrunch
             Process.Start("https://facebook.com/sharer/sharer.php?app_id=248335808680372&kid_directed_site=0&sdk=joey&u=http%3A%2F%2Fgithub.com/HerbL27/WebCrunch%2F&display=popup&ref=plugin&src=share_button");
         }
 
-        // Form events 
+
+        /*************************************************************************/
+        /* Form Events                                                           */
+        /*************************************************************************/
+
         private void MainForm_Load(object sender, EventArgs e)
         {
             Program.log.Info("Loading application");
 
-            LoadSettings();
+            LoadUserSettings();
+
             CurrentTab = tabHome;
             CurrentTabTitle = titleHome;
 
@@ -97,7 +99,7 @@ namespace WebCrunch
             }
             else
             {
-                Controls.Remove(frmSplashScreen);
+                Controls.Remove(FrmSplashScreen);
                 MessageBox.Show(this, "No Internet connection found. You need to be connected to the Internet to use WebCrunch. Please check your connection and try again.", "Error",  MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
@@ -108,7 +110,7 @@ namespace WebCrunch
         {
             LoadRecentlyAddedFiles(); // Load recently added files into form
             GetDatabaseInfo(); // Get database info and show in form
-            Controls.Remove(frmSplashScreen); // Remove splash screen
+            Controls.Remove(FrmSplashScreen); // Remove splash screen
             Program.log.Info("Successfully loaded everything");
         }
 
@@ -132,7 +134,8 @@ namespace WebCrunch
 
         protected override void OnPaint(PaintEventArgs e) { } // Fix paint form 
 
-        /* Runs in the background on load event, Checks if database file exists at users data directory, if so whether they're
+        /* Runs in the background on load event.
+         * Checks if database file exists at users data directory, if so whether they're
          * the same size, and downloads the latest one if either returns false */
         private void DoDatabaseChecks()
         {
@@ -162,9 +165,14 @@ namespace WebCrunch
         /// <summary>
         /// Declare new lists to store database entries/info
         /// </summary>
-        public static List<string> dataOpenDirectories = new List<string>();
-        public static List<WebFile> filesOpenDatabase = new List<WebFile>();
+        public static List<string> dataOpenDirectories { get; set; } = new List<string>();
+        public static List<WebFile> filesOpenDatabase { get; set; } = new List<WebFile>();
         public static string DatabaseInfo { get; set; }
+
+
+        /*************************************************************************/
+        /* Navigation Events/Variables                                           */
+        /*************************************************************************/
 
         /// <summary>
         /// Get/Set current tab/title
@@ -194,7 +202,7 @@ namespace WebCrunch
 
         private void titleSettings_ClickButtonArea(object sender, MouseEventArgs e)
         {
-            LoadSettings(); CurrentTabTitle = (CButton)sender; tab.SelectedTab = tabSettings;
+            LoadUserSettings(); CurrentTabTitle = (CButton)sender; tab.SelectedTab = tabSettings;
         }
 
         private void titleInformation_ClickButtonArea(object sender, MouseEventArgs e)
@@ -220,7 +228,9 @@ namespace WebCrunch
         }
 
 
-        /* Home tab */
+        /*************************************************************************/
+        /* Home Tab                                                              */
+        /*************************************************************************/
 
         /// <summary>
         /// Get database info located on the first line of the file
@@ -233,11 +243,12 @@ namespace WebCrunch
 
             try
             {
+                // Total size of all files in database
+
                 Program.log.Info("Attempting to get absolute total size of all files");
 
                 foreach (var jsonData in filesOpenDatabase)
-                    if (jsonData.Size >= 0)
-                        totalSize += jsonData.Size;
+                    totalSize += jsonData.Size;
 
                 labelDatabaseStats.Text = String.Format(labelDatabaseStats.Text, TextExtensions.GetFormattedNumber(filesOpenDatabase.Count.ToString()), TextExtensions.BytesToString(totalSize), TextExtensions.GetFormattedNumber(dataOpenDirectories.Count.ToString()));
 
@@ -251,7 +262,8 @@ namespace WebCrunch
 
             try
             {
-                // Database Info 
+                // Get database stats
+
                 if (TextExtensions.IsValidJSON(DatabaseInfo))
                 {
                     Program.log.Info("Attempting to get latest database update date");
@@ -260,7 +272,11 @@ namespace WebCrunch
                     Program.log.Info("Latest database update date successful");
                 }
             }
-            catch (Exception ex) { labelDatabaseUpdatedDate.Text = "Updated: n/a"; Program.log.Error("Error getting latest datebase update date", ex); }
+            catch (Exception ex)
+            {
+                labelDatabaseUpdatedDate.Text = String.Format(labelDatabaseUpdatedDate.Text, "n/a");
+                Program.log.Error("Error getting latest datebase update date", ex);
+            }
         }
 
         /// <summary>
@@ -270,7 +286,7 @@ namespace WebCrunch
         {
             try
             {
-                int itemCount = 0;
+                int itemCount = 1;
                 var addedHosts = new List<string>();
                 Program.log.Info("Attempting to get recently added files");
                 var copiedItems = new List<WebFile>(filesOpenDatabase);
@@ -431,7 +447,9 @@ namespace WebCrunch
         }
 
 
-        /* Search files tab */
+        /*************************************************************************/
+        /* Search Tab                                                            */
+        /*************************************************************************/
 
         // Supported file extensions, must match the same as the ones in the crawler
         public static List<string> allFileTypes = new List<string>();
@@ -448,51 +466,7 @@ namespace WebCrunch
         public List<string> SelectedFilesFileType { get; set; } = allFileTypes;
         public string SelectedFilesHost { get; set; } = "";
 
-        /// <summary>
-        /// Gets local files (supported in this app) from user's /Downloads directory
-        /// </summary>
-        /// <returns>Local files from /Downloads as a WebFile</returns>
-        public List<WebFile> LocalFiles()
-        {
-            Program.log.Info("Getting users local files");
-            var filesLocal = new List<WebFile>();
-            foreach (var pathFile in Directory.GetFiles(LocalExtensions.userDownloadsDirectory))
-                filesLocal.Add(new WebFile(
-                    Path.GetExtension(pathFile).Replace(".", "").ToUpper(),
-                    Path.GetFileNameWithoutExtension(pathFile),
-                    new FileInfo(pathFile).Length,
-                    File.GetCreationTime(pathFile),
-                    "Local",
-                    pathFile));
-
-            Program.log.Info("Users local files successful");
-            return filesLocal;
-        }
-
-        /// <summary>
-        /// Load bookmarked files from file
-        /// </summary>
-        /// <returns>Bookmark item as a WebFile</returns>
-        public List<WebFile> BookmarkFiles()
-        {
-            Program.log.Info("Getting users bookmarks files");
-            var filesBookmarks = new List<WebFile>();
-            if (File.Exists(LocalExtensions.pathDataBookmarked))
-                using (StreamReader reader = new StreamReader(LocalExtensions.pathDataBookmarked))
-                    while (!reader.EndOfStream)
-                        try {
-                            var jsonData = JsonConvert.DeserializeObject<Bookmark>(reader.ReadLine());
-                            filesBookmarks.Add(Database.FileInfoFromURL(jsonData.URL));
-                        }
-                        catch (Exception ex) {
-                            Program.log.Error("Users saved files error", ex);
-                        }
-
-            Program.log.Info("Users bookmarks successful");
-            return filesBookmarks;
-        }
-
-        // Select file type category
+        // Select File Type category
         private void titleFilesAll_ClickButtonArea(object Sender, MouseEventArgs e)
         {
             SelectedFilesFileType = allFileTypes; ControlExtensions.SelectFilesTab(buttonFilesAll); SelectedFiles = filesOpenDatabase; ShowFiles(SelectedFiles);
@@ -543,12 +517,12 @@ namespace WebCrunch
 
         private void titleFilesLocal_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            SelectedFilesFileType = allFileTypes; ControlExtensions.SelectFilesTab(buttonFilesLocal); SelectedFiles = LocalFiles(); ShowFiles(SelectedFiles);
+            SelectedFilesFileType = allFileTypes; ControlExtensions.SelectFilesTab(buttonFilesLocal); SelectedFiles = LocalExtensions.GetLocalFiles(); ShowFiles(SelectedFiles);
         }
 
         private void titleFilesBookmarks_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            SelectedFilesFileType = allFileTypes; ControlExtensions.SelectFilesTab(buttonFilesBookmarks); SelectedFiles = BookmarkFiles(); ShowFiles(SelectedFiles);
+            SelectedFilesFileType = allFileTypes; ControlExtensions.SelectFilesTab(buttonFilesBookmarks); SelectedFiles = Bookmarked.GetBookmarks(); ShowFiles(SelectedFiles);
         }
 
         // Files dataGridView click event for item, will get the last (hidden) item (the URL) in the selected row and get WebFile from the URL
@@ -568,26 +542,26 @@ namespace WebCrunch
             e.PaintParts &= ~DataGridViewPaintParts.Focus;
         }
 
-        Stopwatch stopWatch = new Stopwatch();
-
         delegate void loadFilesCallBack(List<WebFile> dataFiles, SortBy order = SortBy.Name);
         public void ShowFiles(List<WebFile> dataFiles, SortBy order = SortBy.Name)
         {
-            if (order == SortBy.Name) SortFiles.ByName(dataFiles);
-            else if (order == SortBy.Size) SortFiles.BySize(dataFiles);
-            else if (order == SortBy.Date) SortFiles.ByDate(dataFiles);
+            var stopWatch = new Stopwatch();
 
             Program.log.Info("Searching files started");
             imageSearchFiles.Image = Properties.Resources.loader;
-            BackGroundWorker.RunWorkAsync<List<WebFile>>(() => SearchFiles(dataFiles), (data) =>
+            BackGroundWorker.RunWorkAsync<List<WebFile>>(() => SearchList(dataFiles, "URL", textBoxSearchFiles.Text), (data) =>
             {
                 if (tabSearch.InvokeRequired)
                 {
-                    loadFilesCallBack b = new loadFilesCallBack(ShowFiles);
+                    var b = new loadFilesCallBack(ShowFiles);
                     Invoke(b, new object[] { dataFiles });
                 }
                 else
                 {
+                    if (order == SortBy.Name) SortFiles.ByName(dataFiles);
+                    else if (order == SortBy.Size) SortFiles.BySize(dataFiles);
+                    else if (order == SortBy.Date) SortFiles.ByDate(dataFiles);
+
                     dataGridFiles.Rows.Clear();
 
                     comboBoxFilterFiles.Items.Clear(); comboBoxFilterFiles.Items.Add("Any");
@@ -618,16 +592,26 @@ namespace WebCrunch
             }); 
         }
 
-        object loadFilesLock = new object();
-        public List<WebFile> SearchFiles(List<WebFile> dataFiles)
+        object loadSearchListLock = new object();
+        public List<WebFile> SearchList<WebFile>(List<WebFile> list, string PropertyName, string SearchValue)
         {
-            lock (loadFilesLock) {
-                List<WebFile> urls = new List<WebFile>();
-                foreach (var file in dataFiles)
-                    if (TextExtensions.ContainsAll(file.Name.ToLower(), TextExtensions.GetWords(textBoxSearchFiles.Text.ToLower())) && SelectedFilesFileType.Contains(file.Type) && file.Host.Contains(SelectedFilesHost))
-                        urls.Add(new WebFile(file.Type, file.Name, file.Size, file.DateUploaded, file.Host, file.URL));
-
-                return urls;
+            lock (loadSearchListLock)
+            {
+                return list.Select(item =>
+                new
+                {
+                    i = item,
+                    Props = item.GetType().GetProperties(BindingFlags.Instance | BindingFlags.Public)
+                })
+                .Where(item => item.Props.Any(p =>
+                {
+                    var val = p.GetValue(item.i, null);
+                    return val != null
+                        && (p.Name.ToLower() == Uri.UnescapeDataString(PropertyName.ToLower()) || string.IsNullOrEmpty(PropertyName))
+                        && (TextExtensions.ContainsAll(val.ToString().ToLower(), TextExtensions.GetWords(SearchValue.ToLower())) || string.IsNullOrEmpty(SearchValue));
+                }))
+                .Select(item => item.i)
+                .ToList();
             }
         }
 
@@ -637,29 +621,29 @@ namespace WebCrunch
             Program.log.Info("Attempting to show file details dialog  : " + file.URL);
 
             if (createNewInstance)
-                frmFileDetails = new FileDetails();
+                FrmFileDetails = new FileDetails();
 
-            frmFileDetails.currentFile = file;
-            frmFileDetails.infoFileName.Text = file.Name;
-            frmFileDetails.infoName.Text = file.Name;
-            frmFileDetails.infoReferrer.Text = file.Host;
-            frmFileDetails.infoType.Text = file.Type;
-            frmFileDetails.infoFileURL.Text = file.URL;
+            FrmFileDetails.currentFile = file;
+            FrmFileDetails.infoFileName.Text = file.Name;
+            FrmFileDetails.infoName.Text = file.Name;
+            FrmFileDetails.infoReferrer.Text = file.Host;
+            FrmFileDetails.infoType.Text = file.Type;
+            FrmFileDetails.infoFileURL.Text = Uri.UnescapeDataString(file.URL);
 
-            // Build all parts of the URL into a better looking string
+            // Build all parts of the URL into a better presented string
             var url = new Uri(file.URL);
             var directories = new StringBuilder(file.Host);
             foreach (string path in url.LocalPath.Split('/'))
                 if (!Path.HasExtension(path))
                     directories.Append(path + "> ");
 
-            frmFileDetails.infoDirectory.Text = directories.ToString();
-            frmFileDetails.infoSize.Text = TextExtensions.BytesToString(file.Size);
-            frmFileDetails.infoAge.Text = TextExtensions.GetTimeAgo(file.DateUploaded);
+            FrmFileDetails.infoDirectory.Text = directories.ToString();
+            FrmFileDetails.infoSize.Text = TextExtensions.BytesToString(file.Size);
+            FrmFileDetails.infoAge.Text = TextExtensions.GetTimeAgo(file.DateUploaded);
 
-            frmFileDetails.Dock = DockStyle.Fill;
-            if (!createNewInstance) frmFileDetails.CheckFileEvents();
-            if (createNewInstance) { tabBlank.Controls.Clear(); tabBlank.Controls.Add(frmFileDetails); }
+            FrmFileDetails.Dock = DockStyle.Fill;
+            if (!createNewInstance) FrmFileDetails.CheckFileEvents();
+            if (createNewInstance) { tabBlank.Controls.Clear(); tabBlank.Controls.Add(FrmFileDetails); }
             tab.SelectedTab = tabBlank;
 
             Program.log.Info("Successfully loaded file details dialog");
@@ -684,8 +668,8 @@ namespace WebCrunch
 
             var startText = buttonSortFiles.Text.Split(':');
             buttonSortFiles.Text = startText[0] + ": " + comboBoxSortFiles.GetItemText(comboBoxSortFiles.SelectedItem);
-            Font myFont = new Font(buttonSortFiles.Font.FontFamily, buttonSortFiles.Font.Size);
-            SizeF mySize = buttonSortFiles.CreateGraphics().MeasureString(buttonSortFiles.Text, myFont);
+            var myFont = new Font(buttonSortFiles.Font.FontFamily, buttonSortFiles.Font.Size);
+            var mySize = buttonSortFiles.CreateGraphics().MeasureString(buttonSortFiles.Text, myFont);
             flowLayoutSortFiles.Width = (((int)(Math.Round(mySize.Width, 0))) + 26);
 
             imageSearchFiles.Image = Properties.Resources.magnify_orange;
@@ -707,7 +691,7 @@ namespace WebCrunch
             imageSearchFiles.Image = Properties.Resources.loader;
             var startText = buttonFilterFiles.Text.Split(':');
             buttonFilterFiles.Text = startText[0] + ": " + comboBoxFilterFiles.GetItemText(comboBoxFilterFiles.SelectedItem);
-            var myFont = new Font(buttonFilterFiles.Font.FontFamily, this.buttonFilterFiles.Font.Size);
+            var myFont = new Font(buttonFilterFiles.Font.FontFamily, buttonFilterFiles.Font.Size);
             var mySize = buttonFilterFiles.CreateGraphics().MeasureString(buttonFilterFiles.Text, myFont);
             flowLayoutFilterFiles.Width = (((int)(Math.Round(mySize.Width, 0))) + 26);
             Refresh();
@@ -725,15 +709,15 @@ namespace WebCrunch
         private void txtSearchFiles_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
-                SearchFiles();
+                SearchFilesFromTextBox();
         }
 
         private void imgSearch_Click(object sender, EventArgs e)
         {
-            SearchFiles();
+            SearchFilesFromTextBox();
         }
 
-        public void SearchFiles()
+        public void SearchFilesFromTextBox()
         {
             imageSearchFiles.Image = Properties.Resources.loader;
             tab.SelectedTab = tabSearch;
@@ -748,7 +732,9 @@ namespace WebCrunch
         }
 
 
-        /* Discover tab */
+        /*************************************************************************/
+        /* Discover Tab                                                          */
+        /*************************************************************************/
 
         private void dataGridDiscover_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -762,7 +748,7 @@ namespace WebCrunch
 
             BackGroundWorker.RunWorkAsync<List<string>>(() => GetFileHosts(), (data) => {
                 if (tabDiscover.InvokeRequired) {
-                    loadHostsCallBack b = new loadHostsCallBack(ShowHosts);
+                    var b = new loadHostsCallBack(ShowHosts);
                     Invoke(b, new object[] { });
                 }
                 else {
@@ -795,7 +781,9 @@ namespace WebCrunch
         }
 
 
-        /* Submit tab */
+        /*************************************************************************/
+        /* Submit Tab                                                            */
+        /*************************************************************************/
 
         private void btnSubmitUrl_ClickButtonArea(object Sender, MouseEventArgs e)
         {
@@ -812,7 +800,9 @@ namespace WebCrunch
         }
 
 
-        /* About tab */
+        /*************************************************************************/
+        /* About Tab                                                             */
+        /*************************************************************************/
 
         private void lblAboutReportIssue_Click(object sender, EventArgs e)
         {
@@ -821,23 +811,25 @@ namespace WebCrunch
 
         private void btnAboutTermsOfUse_Click(object sender, EventArgs e)
         {
-            var lbl = sender as Label; ControlExtensions.ShowTextFromURL(urlTermsOfUse, lbl.Text);
+            var lbl = sender as Label; ControlExtensions.ShowDataWindow(Resources.UrlTermsOfUse, lbl.Text);
         }
 
         private void btnAboutPrivacyPolicy_Click(object sender, EventArgs e)
         {
-            var lbl = sender as Label; ControlExtensions.ShowTextFromURL(urlPrivacyPolicy, lbl.Text);
+            var lbl = sender as Label; ControlExtensions.ShowDataWindow(Resources.UrlPrivacyPolicy, lbl.Text);
         }
 
         private void lblAboutChangelogVersion_Click(object sender, EventArgs e)
         {
-            var lbl = sender as Label; ControlExtensions.ShowTextFromURL(urlChangelog, lbl.Text);
+            var lbl = sender as Label; ControlExtensions.ShowDataWindow(Resources.UrlChangeLog, lbl.Text);
         }
 
 
-        /* Settings tab */
+        /*************************************************************************/
+        /* Settings Tab                                                          */
+        /*************************************************************************/
 
-        public void LoadSettings()
+        public void LoadUserSettings()
         {
             // Set UI Properties
             checkBoxClearDataOnClose.Checked = Properties.Settings.Default.clearDataOnClose;
@@ -857,10 +849,40 @@ namespace WebCrunch
         {
             Properties.Settings.Default.clearDataOnClose = false;
             Thread.Sleep(500);
-            LoadSettings();
+            LoadUserSettings();
             Thread.Sleep(500);
 
             Program.log.Info("Successfully restored all user settings");
+        }
+
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            switch (keyData)
+            {
+                case Keys.Control | Keys.W:
+                    Application.Exit();
+                    return true;
+                case Keys.Control | Keys.F:
+                    if (CurrentTab == tabHome) textBoxSearchHome.Focus();
+                    else if (CurrentTab == tabSearch) textBoxSearchFiles.Focus();
+                    return true;
+                case Keys.Escape:
+                    if (FrmFileDetails != null)
+                    {
+                        tab.SelectedTab = CurrentTab;
+                        FrmFileDetails.Dispose();
+                    }
+                    return true;
+                   
+                // Navigate Tabs
+                case Keys.Control | Keys.T:
+                    if (tab.SelectedIndex != tab.TabPages.Count - 2) tab.SelectedIndex++;
+                    return true;
+                case Keys.Control | Keys.R:
+                    if (tab.SelectedIndex != 0) tab.SelectedIndex--;
+                    return true;
+            }
+            return base.ProcessCmdKey(ref msg, keyData);
         }
     }
 }

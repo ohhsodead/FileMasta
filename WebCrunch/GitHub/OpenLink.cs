@@ -9,7 +9,7 @@ namespace WebCrunch.GitHub
         /// <summary>
         /// GitHub Project URL
         /// </summary>
-        public static string urlGitHub = "https://github.com/HerbL27/WebCrunch/";
+        public static string urlGitHub { get; } = "https://github.com/HerbL27/WebCrunch/";
 
         /// <summary>
         /// Open GitHub submit web server template with the specified URL

@@ -14,7 +14,7 @@ namespace WebCrunch.Extensions
         /// Returns all sub strings in string
         /// </summary>
         /// <param name="input"></param>
-        /// <returns></returns>
+        /// <returns>Sub strins in string</returns>
         public static string[] GetWords(string input)
         {
             var matches = Regex.Matches(input, @"\b[\w']*\b");

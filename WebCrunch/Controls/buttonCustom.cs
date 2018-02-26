@@ -14,7 +14,7 @@ namespace WebCrunch.Controls
         {
             base.Font = _normalFont;
             base.BackColor = Color.Transparent;
-            base.ForeColor = Colors.uiColorOrange;
+            base.ForeColor = Colors.ColorOrange;
             base.Cursor = Cursors.Hand;
             base.MaximumSize = new Size(1000, 30);
             base.MinimumSize = new Size(0, 30);
@@ -22,7 +22,7 @@ namespace WebCrunch.Controls
             TextAlign = ContentAlignment.MiddleCenter;
             Corners = new CornersProperty(2);
             TextMargin = new Padding(2, 2, 2, 2);
-            BorderColor = Colors.uiColorOrange;
+            BorderColor = Colors.ColorOrange;
             ColorFillSolid = Color.Transparent;
             FillType = eFillType.Solid;
             TextShadowShow = false;
@@ -55,16 +55,16 @@ namespace WebCrunch.Controls
             tmpButtonImage = (Bitmap)Image;
             if (Image != null) { Image = ImageExtensions.ChangeColor((Bitmap)Image, Color.White); }
             base.ForeColor = Color.White;
-            BorderColor = Colors.uiColorOrange;
-            ColorFillSolid = Colors.uiColorOrange;
+            BorderColor = Colors.ColorOrange;
+            ColorFillSolid = Colors.ColorOrange;
         }
 
         protected override void OnMouseLeave(EventArgs e)
         {
             base.OnMouseLeave(e);
-            base.ForeColor = Colors.uiColorOrange;
+            base.ForeColor = Colors.ColorOrange;
             Image = tmpButtonImage;
-            BorderColor = Colors.uiColorOrange;
+            BorderColor = Colors.ColorOrange;
             ColorFillSolid = Color.Transparent;
         }
     }

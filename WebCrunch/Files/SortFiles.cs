@@ -6,7 +6,7 @@ namespace WebCrunch.Files
     class SortFiles
     {
         /// <summary>
-        /// Sort Files data items by Name, Size or Date using these methods
+        /// Sort Files by Name, Size or Date using these methods
         /// </summary>
 
         static int switchName = 0;

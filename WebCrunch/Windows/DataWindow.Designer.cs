@@ -1,4 +1,4 @@
-﻿namespace WebCrunch.Dialogs
+﻿namespace WebCrunch.Windows
 {
     partial class DataWindow
     {
@@ -29,39 +29,39 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DataWindow));
-            this.panelDataItems = new System.Windows.Forms.FlowLayoutPanel();
-            this.dataInfo = new System.Windows.Forms.Label();
-            this.panelDataItems.SuspendLayout();
+            this.panelItems = new System.Windows.Forms.FlowLayoutPanel();
+            this.labelData = new System.Windows.Forms.Label();
+            this.panelItems.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panelDataItems
+            // panelItems
             // 
-            this.panelDataItems.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.panelItems.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelDataItems.AutoSize = true;
-            this.panelDataItems.Controls.Add(this.dataInfo);
-            this.panelDataItems.Font = new System.Drawing.Font("Segoe UI", 9.25F);
-            this.panelDataItems.Location = new System.Drawing.Point(12, 12);
-            this.panelDataItems.Name = "panelDataItems";
-            this.panelDataItems.Size = new System.Drawing.Size(435, 66);
-            this.panelDataItems.TabIndex = 0;
+            this.panelItems.AutoSize = true;
+            this.panelItems.Controls.Add(this.labelData);
+            this.panelItems.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.panelItems.Location = new System.Drawing.Point(12, 12);
+            this.panelItems.Name = "panelItems";
+            this.panelItems.Size = new System.Drawing.Size(435, 66);
+            this.panelItems.TabIndex = 0;
             // 
-            // dataInfo
+            // labelData
             // 
-            this.dataInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.labelData.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataInfo.AutoSize = true;
-            this.dataInfo.BackColor = System.Drawing.Color.Transparent;
-            this.dataInfo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataInfo.ForeColor = System.Drawing.Color.Black;
-            this.dataInfo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dataInfo.Location = new System.Drawing.Point(0, 0);
-            this.dataInfo.Margin = new System.Windows.Forms.Padding(0);
-            this.dataInfo.Name = "dataInfo";
-            this.dataInfo.Size = new System.Drawing.Size(28, 15);
-            this.dataInfo.TabIndex = 0;
-            this.dataInfo.Text = "Text";
+            this.labelData.AutoSize = true;
+            this.labelData.BackColor = System.Drawing.Color.Transparent;
+            this.labelData.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelData.ForeColor = System.Drawing.Color.Black;
+            this.labelData.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.labelData.Location = new System.Drawing.Point(0, 0);
+            this.labelData.Margin = new System.Windows.Forms.Padding(0);
+            this.labelData.Name = "labelData";
+            this.labelData.Size = new System.Drawing.Size(28, 15);
+            this.labelData.TabIndex = 0;
+            this.labelData.Text = "Text";
             // 
             // DataWindow
             // 
@@ -71,7 +71,7 @@
             this.AutoScrollMargin = new System.Drawing.Size(0, 12);
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(459, 90);
-            this.Controls.Add(this.panelDataItems);
+            this.Controls.Add(this.panelItems);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -85,8 +85,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Title";
             this.Scroll += new System.Windows.Forms.ScrollEventHandler(this.DataDialog_Scroll);
-            this.panelDataItems.ResumeLayout(false);
-            this.panelDataItems.PerformLayout();
+            this.panelItems.ResumeLayout(false);
+            this.panelItems.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -94,7 +94,7 @@
 
         #endregion
 
-        private System.Windows.Forms.FlowLayoutPanel panelDataItems;
-        public System.Windows.Forms.Label dataInfo;
+        private System.Windows.Forms.FlowLayoutPanel panelItems;
+        public System.Windows.Forms.Label labelData;
     }
 }

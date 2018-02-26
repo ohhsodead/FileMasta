@@ -110,12 +110,13 @@
       <DependentUpon>FileDetails.cs</DependentUpon>
     </Compile>
     <Compile Include="Files\SortFiles.cs" />
+    <Compile Include="GitHub\Resources.cs" />
     <Compile Include="Models\Bookmark.cs" />
     <Compile Include="Models\DatabaseInfo.cs" />
-    <Compile Include="Dialogs\DataWindow.cs">
+    <Compile Include="Windows\DataWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Dialogs\DataWindow.Designer.cs">
+    <Compile Include="Windows\DataWindow.Designer.cs">
       <DependentUpon>DataWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="Extensions\ExceptionExtensions.cs" />
@@ -139,10 +140,10 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Dialogs\VLCPlayer.cs">
+    <Compile Include="Windows\VLCPlayer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Dialogs\VLCPlayer.Designer.cs">
+    <Compile Include="Windows\VLCPlayer.Designer.cs">
       <DependentUpon>VLCPlayer.cs</DependentUpon>
     </Compile>
     <Compile Include="Extensions\ControlExtensions.cs" />
@@ -164,13 +165,13 @@
     <EmbeddedResource Include="Controls\SplashScreen.resx">
       <DependentUpon>SplashScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Dialogs\DataWindow.resx">
+    <EmbeddedResource Include="Windows\DataWindow.resx">
       <DependentUpon>DataWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Dialogs\VLCPlayer.resx">
+    <EmbeddedResource Include="Windows\VLCPlayer.resx">
       <DependentUpon>VLCPlayer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -292,8 +293,8 @@
     <None Include="Resources\new_logo.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="current-version.txt" />
     <Content Include="Icon.ico" />
-    <Content Include="new_logo.ico" />
     <None Include="Resources\chevron-right.png" />
     <None Include="Resources\chevron-left.png" />
   </ItemGroup>

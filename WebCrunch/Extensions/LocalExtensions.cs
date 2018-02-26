@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Net;
+using WebCrunch.Models;
 using WebCrunch.Utilities;
 
 namespace WebCrunch.Extensions
@@ -12,10 +14,10 @@ namespace WebCrunch.Extensions
         /// <summary>
         /// User's directories
         /// </summary>
-        public static string pathRoot = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\WebCrunch\";
-        public static string pathData = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\WebCrunch\Data\";
-        public static string pathDataBookmarked = pathRoot + "bookmarked-files.json";
-        public static string userDownloadsDirectory = KnownFolders.GetPath(KnownFolder.Downloads) + @"\";
+        public static string pathRoot = $@"{Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)}\WebCrunch\";
+        public static string pathData = $@"{pathRoot}Data\";
+        public static string pathDataBookmarked = $"{pathRoot}bookmarked-files.json";
+        public static string userDownloadsDirectory = $@"{KnownFolders.GetPath(KnownFolder.Downloads)}\";
 
         /// <summary>
         /// Supported media players
@@ -43,32 +45,32 @@ namespace WebCrunch.Extensions
             catch (Exception ex) { Program.log.Error("Error, no internet connection detected", ex); return false; }
         }
 
+
         /// <summary>
-        /// Returns local files from specified source/directory
+        /// Gets local files (supported in this app) from user's /Downloads directory
         /// </summary>
-        /// <param name="SourceFolder"></param>
-        /// <param name="Filter"></param>
-        /// <param name="searchOption"></param>
-        /// <returns></returns>
-        public static string[] GetFiles(string SourceFolder, string Filter, SearchOption searchOption)
+        /// <returns>Local files from /Downloads as a WebFile</returns>
+        public static List<WebFile> GetLocalFiles()
         {
-            // ArrayList will hold all file names
-            ArrayList allFiles = new ArrayList();
+            Program.log.Info("Getting users local files");
 
-            // Create an array of filter string
-            string[] MultipleFilters = Filter.Split('|');
+            var filesLocal = new List<WebFile>();
+            foreach (var pathFile in Directory.GetFiles(userDownloadsDirectory, "*.*", SearchOption.AllDirectories))
+                filesLocal.Add(new WebFile(
+                    Path.GetExtension(pathFile).Replace(".", "").ToUpper(),
+                    Path.GetFileNameWithoutExtension(pathFile),
+                    new FileInfo(pathFile).Length,
+                    File.GetCreationTime(pathFile),
+                    "Local",
+                    pathFile));
 
-            // for each filter find mathing file names
-            foreach (string FileFilter in MultipleFilters)
-                // add found file names to array list
-                allFiles.AddRange(Directory.GetFiles(SourceFolder, FileFilter, searchOption));
+            Program.log.Info("Users local files returned successful");
 
-            // returns string array of relevant file names
-            return (string[])allFiles.ToArray(typeof(string));
+            return filesLocal;
         }
 
         /// <summary>
-        /// Open and select local file
+        /// Open and select file in File Explorer
         /// </summary>
         /// <param name="path"></param>
         public static void OpenFile(string path)
