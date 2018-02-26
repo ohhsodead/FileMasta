@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="/WebCrunch/Resources/new_logo.png" height="128" width="128" alt="Logo" />
+  <img src="/WebCrunch/Resources/logo.png" height="128" width="128" alt="Logo" />
   <br />
   WebCrunch
 </h1>
@@ -68,17 +68,17 @@ You don't need a special program but it is very recommended. For example, if you
 ## Prerequisites
 - [Material Design Icons](https://materialdesignicons.com/)
 - [CButton for .NET](https://www.codeproject.com/Articles/26622/Custom-Button-Control-with-Gradient-Colors-and-Ext)
-- [FileChef.com Top Searches](https://filechef.com/searches)
+- [FileChef Top Searches](https://filechef.com/searches)
 - [Json.NET (Newtonsoft)](https://newtonsoft.com/json)
 - [VLC Player](https://videolan.org/vlc/)
 - [log4net](https://logging.apache.org/log4net/)
 
 ## Screenshots
-### 🏡 Home
+### Home
 ![Home](https://github.com/HerbL27/WebCrunch/blob/master/Screenshots/Home.png?raw=true)
 
-### 🔎 Search Files
+### Search Files
 ![Files](https://github.com/HerbL27/WebCrunch/blob/master/Screenshots/Files.png?raw=true)
 
-### 📂 File Details
+### File Details
 ![File Details](https://github.com/HerbL27/WebCrunch/blob/master/Screenshots/File%20Details.png?raw=true)
