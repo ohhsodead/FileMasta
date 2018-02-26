@@ -10,13 +10,13 @@
 <br />
 
 ## What is WebCrunch?
-WebCrunch is intended to provide a very powerful web server indexing and search service allowing you to find a file among millions of files located on public servers around the internet. 
+WebCrunch is intended to provide a very powerful web server indexing and search service allowing you to find a file among millions of files located on public servers around the internet.
 
-The search engine is powered by a [database](https://www.dropbox.com/s/charfmjveo2v1h3/open-files.json?dl=0) that holds information about all the files web servers have. The information about the files is gathered by an intelligent web crawler that runs every 2 to 4 days. It keeps the database clean and up-to-date with the previous contents and new entries for each web server address submitted by members. 
+The search engine is powered by a [database](https://www.dropbox.com/s/charfmjveo2v1h3/open-files.json?dl=0) that holds information about all the files web servers have. The information about the files is gathered by an intelligent web crawler that runs every 2 to 4 days. It keeps the database clean and up-to-date with the previous contents and new entries for each web server address submitted by users.
 
 All web addresses this app uses for indexing are submitted by users only, our crawler also try to give more priority to the servers that have the most up-time, if a web server isn't checked successfully in a period of time, usually 10-15 days, it is automatically deleted from our database. A list of the servers we index are stored in our [open directories](https://github.com/HerbL27/WebCrunch/blob/master/api/open-directories.txt). Also please check our [Terms of Use](https://github.com/HerbL27/WebCrunch/blob/master/TERMSOFUSE.md) statement for more information about what you have to take into consideration to use this application.
 
-We host no content, we provide only access to already available files in a same way Google and other search engines do.
+>We host no content, we provide only access to already available files in a same way Google and other search engines do.
 
 [![Report a bug](http://i.imgur.com/xSpw482.png)](https://github.com/HerbL27/WebCrunch/issues/new) [![Feature request](http://i.imgur.com/mFO0OuX.png)](http://feathub.com/ekkash/WebCrunch)
 
@@ -30,10 +30,12 @@ WebCrunch 2.15.3
 Download and run the latest version of the Windows installer, "WebCrunch.Installer.Windows.exe" from the [releases](https://github.com/HerbL27/WebCrunch/releases/latest) page.
 
 ## Creating an Issue
-Please supply as much information about the problem you are experiencing as possible. Your issue has a much greater chance of being resolved if logs are supplied so that we can see what is going on. Creating an issue with '### isn't working' doesn't help anyone to fix the problem.
+Please supply as much information about the problem you are experiencing as possible. Your issue has a much greater chance of being resolved if logs are supplied so that we can see what is going on.
 
 ## Contributing
-All contributions are welcome just send a pull request. WebCrunch's directory database allows our team (and any other volunteer) to implement new indexers in a few seconds. You can find more information on contributing to the database [here](https://github.com/HerbL27/WebCrunch/tree/master/api), it's really easy. If you'd like support for a new indexer but are not sure how then feel free to leave a request on the [issues page](https://github.com/HerbL27/WebCrunch/issues). It is recommended to use Visual Studio 2017 when making code changes in this project. You can download the community version for free [here](https://www.visualstudio.com/downloads/).
+All contributions are welcome just send a pull request. WebCrunch's directory database allows our team (and any other volunteer) to implement new indexers in a few seconds. You can find more information on contributing to the database [here](https://github.com/HerbL27/WebCrunch/tree/master/api), it's really easy. If you'd like support for a new indexer but are not sure how then feel free to leave a request on the [issues page](https://github.com/HerbL27/WebCrunch/issues). It is recommended to use Visual Studio 2017 when making code changes in this project.
+
+You can download the community version for free [here](https://www.visualstudio.com/downloads/).
 
 ## Frequently Asked Questions
 <details>
