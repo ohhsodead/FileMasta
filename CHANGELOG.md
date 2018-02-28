@@ -1,325 +1,454 @@
-## 0.2.16.0
-- Added keyboard shortcuts (Need somewhere to display them)
-- Improved performance and stability
-- Improved search function, much faster and returns more results
-- Bug fixes
-
-
-## 0.2.15.3
-- Cleaned up code, a lot
-- Improved sorting and overall functionality
-- Improved file details panel
-- Merged home search and external search engines button
-- Improved web crawler to support most servers
+2018.02.28   | FileMasta 3.0
 
+CHANGE: CORE | Renamed project to FileMasta
+CHANGE: CORE | Updated Logo
+CHANGE: CORE | Fixed issue not filtering when searching
+CHANGE: CORE | Organized code a little more
+CHANGE: UI   | Add keyboard shortcuts window
+CHANGE: UI   | Add enable/disable search controls when already searching
 
-## 0.2.15.2
-- Updated UI
-- Scroll through search results in the details page
-- Added five randomly-generated recently added files to Home tab
-- Re-added external search engines
-- Changed file categories
-- Fixed issue causing Bookmarks not loading if one was no longer in the database
-- Removed languages, working on something easier for implementing new languages
-- Various improvements to code
-- Major fixes and improvements to web crawler
 
 
-## 0.2.15.1
-- Updates to the user interface
-- Improved performance and overall stability
-- Added auto updater (beta)
-- Increased overall number of top searches shown
-- Removed external search engines, we're working on a multiple search option instead
-- Renamed 'Saved' files to 'Bookmarked' files
-- Fixed some minor bugs, including #81 and #82
 
+2018.02.26   | FileMasta 2.16
 
-## 0.2.15.0
-- Refurbished the entire UI (user interface)
-- Enhanced functionality and performance
-- Improved app logging, using log4net now
-- Added sort files by size (#79) and date added
-- Fixed bugs
+CHANGE: CORE | Added keyboard shortcuts (Need somewhere to display them)
+CHANGE: CORE | Improved performance and stability
+CHANGE: CORE | Improved search function, much faster and returns more results
+CHANGE: CORE | Bug fixes
 
 
-## 0.2.14.8
-- UI fixes
-- Web crawler database improvements
-- Several bug fixes
 
 
-## 0.2.14.7
-- Improved UI responsiveness
-- Overall back-end code improvements
-- Added several data validations, as well as default variables
-- Fixed #68, #69, #70, #71, #74, #75
-- Deflated Installer for quicker downloads
-- Added support for Windows XP, Vista and Servers (2008-2012) to the Installer
+2018.02.25   | FileMasta 2.15.3
 
+CHANGE: CORE | Cleaned up code, a lot
+CHANGE: CORE | Improved sorting and overall functionality
+CHANGE: CORE | Improved file details
+CHANGE: CORE | Improved web crawler to support most servers
+CHANGE: UI   | Merged home search and external search engines button
 
-## 0.2.14.6
-- Renamed project to WebCrunch
 
 
-## 0.2.14.5
-- Somewhat responsive UI, to-do: consistency
-- Various code improvements
-- Fixed #65, #66 (null values caused by DateTime)
 
+2018.02.16   | FileMasta 2.15.2
 
-## 0.2.14.4
-- Fixed total database file size
+CHANGE: CORE | Fixed issue causing Bookmarks not loading if one was no longer in the database
+CHANGE: CORE | Removed languages, working on something easier for implementing new languages
+CHANGE: CORE | Various improvements to code
+CHANGE: CORE | Major fixes and improvements to web crawler
+CHANGE: UI   | Updated UI
+CHANGE: UI   | Scroll through search results in the details page
+CHANGE: UI   | Added five randomly-generated recently added files to Home tab
+CHANGE: UI   | Re-added external search engines
+CHANGE: UI   | Changed file categories
 
 
-## 0.2.14.3
-- Improved UI, smoother and consistent (dark elements)
-- Added Custom* Files section to search for specific file types
-- Added 'Loading stuck?' button to splash screen, workaround for long startups (#64)
-- Added search time in seconds
-- Renamed 'About' tab to 'Information'
-- Several bug fixes
 
 
-## 0.2.14.2
-- Improvements UI elements
-- Added core database info
-- Fixed popup dialog not showing in parent form
-- Fixed total indexed files size
+2018.02.02   | FileMasta 2.15.1
 
+CHANGE: CORE | Improved performance and overall stability
+CHANGE: CORE | Added auto updater (beta)
+CHANGE: CORE | Renamed 'Saved' files to 'Bookmarked' files
+CHANGE: CORE | Fixed some minor bugs, including #81 and #82
+CHANGE: UI   | Updates to the user interface
+CHANGE: UI   | Increased overall number of top searches shown
+CHANGE: UI   | Removed external search engines, we're working on a multiple search option instead
 
-## 0.2.14.1
-- Added Files/Directories/Database stats
-- Added latest database update date
-- Added external search engines
-- Added Privacy Policy
-- Added Terms of Use
-- Added Change Log
-- Fixed #63, (temporarily) #62 
 
 
-## 0.2.14.0
-- Improved form/button UI consistency
-- Added Home tab
-- Added Top Search Results (Powered by FileChef.com)
-- Added Share project on Facebook/Twitter
-- Moved latest version text to DropBox
 
+2018.01.30   | FileMasta 2.15.0
 
-## 0.2.13.0
-- Added localization strings
-- Bug fixes
+CHANGE: CORE | Enhanced functionality and performance
+CHANGE: CORE | Improved app logging, using log4net now
+CHANGE: CORE | Fixed bugs
+CHANGE: UI   | Added sort files by size (#79) and date added
+CHANGE: UI   | Refurbished the entire UI (user interface)
 
 
-## 0.2.12.2
-- Fixed Stream Info UI
 
 
-## 0.2.12.1
-- Some minor bug fixes
+2018.01.27   | FileMasta 2.14.8
 
+CHANGE: CORE | Web crawler database improvements
+CHANGE: CORE | Several bug fixes
+CHANGE: UI   | UI fixes
 
-## 0.2.12.0
-- UI/Database improvements (Now only one core database)
-- Added Czech language (#53 Thanks to @Martin005)
-- Added Discover tab
-- Added All Files tab
-- Added Other Files tab
-- Added Saved Files tab (pathRoot / saved-files.json)
-- Added Play Media button
-- Added Submit tab, we're in-need of more sources
-- Added DMCA report info
-- Removed Filter Files by Format
-
-
-## 0.2.11.0
-- UI improvements
-- Localization fixes (Thanks to @Martin005)
-- Added file details page
-- Added request file size button
-- Added report poor quality template
-- Removed download client, was unstable
-- Removed bookmarks, working on something very similar
-
-
-## 0.2.10.0
-- Added video, audio and eBooks tab, replacing movies, series and anime
-- Added size and date to file metadeta
-- Other bug fixes and updates
-
-
-## 0.2.9.3
-- Fixed #48, again
-
-
-## 0.2.9.2
-- Fixed #47, #48, #50, #51
-- Internal VLC reference fixes
-
-
-## 0.2.9.1
-- Fix README.md
-- Forgot to uncomment database download
-
-
-## 0.2.9.0
-- Improved file details, now adds related files
-- Added drop and drop local files
-- Added search for similar files button
-- Added background worker for bookmarks
-- Added Popcorn Time magnets/torrents
-- Fixed spinner not showing constantly
-- Fixed not showing fan-art for random movie
-- Fixed #44
-- Cleaned up project files
-
-
-## 0.2.8.2
-- Added German language
-- Fixed logging unhandled exceptions
-- Other minor fixes
-
-
-## 0.2.8.1
-- Added YIFY API (yts.am) for Torrents/Magnets
-- Bug fixes
-
-
-## 0.2.8.0
-- Optimised images further (Thanks to @StarSparkleNova)
-- Uncaught exceptions writes to log file (Thanks to @badrazizi)
-- Revised local database updates
-- Improved stability during several processes
-- Added French and Spanish languages
-- Supports local files (must be in Downloads directory)
-- Handles no Internet connection detected before startup
-- Improved search result criteria for files
-- Bookmark fixes
-- Other minor bug fixes
-
-
-## 0.2.7.0
-- UI changes
-- Added random movie button
-- Added share file button
-- Trailer now opens in default web browser
-- Fixed displaying backgrounds for file
-- Some download fixes
-
-
-## 0.2.0.6
-- UI/Icons enhancements (Thanks @google)
-- Added support for archive files (.zip/.rar)
-- Added support for loading subtitles in VLC (external player only, file names must match)
-- Added catch download errors and retry button
-- Added trailer button
-- Added remaining download time
-- Added file size and added date to media details
-- Added copy file URL to clipboard
-- Added internal VLC player (wip, supports basic streaming)
-- Added Settings - #30
-- Added verify downloaded files by comparing info
-- Various back-end improvements, cleaned up code
-- Fixed bookmark issues
-- Database adjustments and fixes
-- Download protocol fixes
-
-
-## 0.2.0.5
-- UI improvements
-- Optimized resources to lossless compression
-- Added bookmarks
-- Added filter files by format, host and quality
-- Added sort files alphabetically
-- Fixed search results
-- Other bug fixes
-
-
-## 0.2.0.4
-- Renamed project
-- New and simpler file databases, uses open directories (file db updated manually by me)
-- Support for filtering movies by year
-- Support for series, subtitles, torrents and anime files
-- Added Spinner for loading posters
-- Catch unhandled exceptions
-- Various bug fixes
-
-
-## 0.2.0.3
-- Enabled search box and filter by genre
-- Fixed some issues with Json
-- Other minor fixes
-
-
-## 0.2.0.2
-- Added background worker, thanks to @badrazizi
-- Added file extension to datagrid
-- Added support for opening stream in MPC
-- Hidden search features for Movies, temporarily (working on fixes)
-- Fixed loading bugs
-
-
-## 0.2.0.1
-- Asynchronous tasks and threads, highest performance rate yet
-- Improved UI design
-- Enabled maximize form
-- Added Downloads tab, instead of window
-- Added Report Broken button to streams
-- Fixed some bugs
-
-
-## 0.2.0.0
-- Many UI changes
-- Added splash screen
-- Added background tasks and threads
-- Added Movies tab for posters
-- Added filter by genre, more coming soon
-- Added search movies by people and year
-- Added support for local cache, updates every 12 hours
-- Added support for multiple streams
-- Removed Report Broken source button, for now
-
-
-## 0.1.0.4
-- Tidied search results in dataGridView, displays host and file name
-- Search box focus after adding tag
-- Added report broken file button, pre-fills new issue
-- Removed auto updater, now uses the Installer
-
-
-## 0.1.0.3
-- Added auto updater, somewhat works
-- Removed Settings tab, lack of options (need some requests)
-- Updated database changes and production data fixes
-- Other various improvements
-
-
-## 0.1.0.2
-- UI improvements
-- Added support for extracting movie from file name (format e.g. title year pixelsize format formatsize filename extension)
-- Added movie details tab
-- Added Trailer button
-- Added OMDb API
-- Added Popcorn Time API
-- Added report issue button to about tab
-- Added current version to about tab
-- Added Cancel/Close button on download item
-- Added support for drag and drop files
-- Added copy links to clipboard
-- Added Settings tab
-- Improved search results
-- Various bug fixes
-
-
-## 0.1.0.1
-- UI improvements
-- Added download client
-- Added support for multiple tags
-- Added random backgrounds
-- Added some popular tags for queries
-- Added about tab
-- Added support for opening URL in external players (Windows Media Player & VLC)
-
-
-## 0.1.0.0
-- Initial release
+
+
+
+2018.01.26   | FileMasta 2.14.7
+
+CHANGE: CORE | Overall back-end code improvements
+CHANGE: CORE | Added several data validations, as well as default variables
+CHANGE: CORE | Fixed #68, #69, #70, #71, #74, #75
+CHANGE: CORE | Deflated Installer for quicker downloads
+CHANGE: CORE | Added support for Windows XP, Vista and Servers (2008-2012) to the Installer
+CHANGE: UI   | Improved UI responsiveness
+
+
+
+
+2018.01.25   | FileMasta 2.14.6
+
+CHANGE: CORE | Renamed project
+
+
+
+
+2018.01.25   | FileMasta 2.14.5
+
+CHANGE: CORE | Various code improvements
+CHANGE: CORE | Fixed #65, #66 (null values caused by DateTime)
+CHANGE: UI   | Somewhat responsive UI, to-do: consistency
+
+
+
+
+2018.01.24   | FileMasta 2.14.4
+
+CHANGE: UI   | Fixed total database file size
+
+
+
+
+2018.01.24   | FileMasta 2.14.3
+
+CHANGE: CORE | Several bug fixes
+CHANGE: UI   | Improved UI, smoother and consistent (dark elements)
+CHANGE: UI   | Added Custom* Files section to search for specific file types
+CHANGE: UI   | Added 'Loading stuck?' button to splash screen, workaround for long startups (#64)
+CHANGE: UI   | Added search time in seconds
+CHANGE: UI   | Renamed 'About' tab to 'Information'
+
+
+
+
+2018.01.17   | FileMasta 2.14.2
+
+CHANGE: CORE | Added database info
+CHANGE: UI   | Improvements UI elements
+CHANGE: UI   | Fixed popup dialog not showing in parent form
+CHANGE: UI   | Fixed total indexed files size
+
+
+
+
+2018.01.15   | FileMasta 2.14.1
+
+CHANGE: CORE | Fixed #63, (temporarily) #62 
+CHANGE: UI   | Added Files/Directories/Database stats
+CHANGE: UI   | Added latest database update date
+CHANGE: UI   | Added external search engines
+CHANGE: UI   | Added Privacy Policy
+CHANGE: UI   | Added Terms of Use
+CHANGE: UI   | Added Change Log
+
+
+
+
+2018.01.14   | FileMasta 2.14.0
+
+CHANGE: CORE | Moved latest version text to DropBox
+CHANGE: UI   | Improved form/button UI consistency
+CHANGE: UI   | Added Home tab
+CHANGE: UI   | Added Top Search Results (Powered by FileChef.com)
+CHANGE: UI   | Added Share project on Facebook/Twitter
+
+
+2018.01.11   | FileMasta 2.13.0
+
+CHANGE: CORE | Bug fixes
+CHANGE: UI   | Added localization strings
+
+
+
+
+2018.01.10   | FileMasta 2.12.2
+
+CHANGE: UI   | Fixed Stream Info UI
+
+
+
+
+2018.01.10   | FileMasta 2.12.1
+
+CHANGE: CORE | Some minor bug fixes
+
+
+
+
+2018.01.10   | FileMasta 2.12.0
+
+CHANGE: UI   | UI/Database improvements (Now only one core database)
+CHANGE: UI   | Added Czech language (#53 Thanks to @Martin005)
+CHANGE: UI   | Added Discover tab
+CHANGE: UI   | Added All Files tab
+CHANGE: UI   | Added Other Files tab
+CHANGE: UI   | Added Saved Files tab (pathRoot / saved-files.json)
+CHANGE: UI   | Added Play Media button
+CHANGE: UI   | Added Submit tab, we're in-need of more sources
+CHANGE: UI   | Added DMCA report info
+CHANGE: UI   | Removed Filter Files by Format
+
+
+
+
+2017.12.30   | FileMasta 2.11.0
+
+CHANGE: UI   | UI improvements
+CHANGE: UI   | Localization fixes (Thanks to @Martin005)
+CHANGE: UI   | Added file details page
+CHANGE: UI   | Added request file size button
+CHANGE: UI   | Added report poor quality template
+CHANGE: UI   | Removed download client, was unstable
+CHANGE: UI   | Removed bookmarks, working on something very similar
+
+
+
+
+2017.12.28   | FileMasta 2.10.0
+
+CHANGE: CORE | Added size and date to file metadeta
+CHANGE: CORE | Other bug fixes and updates
+CHANGE: UI   | Added video, audio and eBooks tab, replacing movies, series and anime
+
+
+
+
+2017.12.27   | FileMasta 2.9.3
+
+CHANGE: CORE | Fixed #48, again
+
+
+
+
+2017.12.27   | FileMasta 2.9.2
+
+CHANGE: CORE | Fixed #47, #48, #50, #51
+CHANGE: CORE | Internal VLC reference fixes
+
+
+
+
+2017.12.27   | FileMasta 2.9.1
+
+CHANGE: CORE | Fix README.md
+CHANGE: CORE | Forgot to uncomment database download
+
+
+
+
+2017.12.27   | FileMasta 2.9.0
+
+CHANGE: CORE | Added background worker for bookmarks
+CHANGE: CORE | Added Popcorn Time magnets/torrents
+CHANGE: CORE | Fixed #44
+CHANGE: CORE | Cleaned up project files
+CHANGE: UI   | Fixed spinner not showing constantly
+CHANGE: UI   | Fixed not showing fan-art for random movie
+CHANGE: UI   | Improved file details, now adds related files
+CHANGE: UI   | Added drop and drop local files
+CHANGE: UI   | Added search for similar files button
+
+
+
+
+2017.12.13   | FileMasta 2.8.2
+
+CHANGE: CORE | Fixed logging unhandled exceptions
+CHANGE: CORE | Other minor fixes
+CHANGE: UI   | Added German language
+
+
+
+
+2017.12.11   | FileMasta 2.8.1
+
+CHANGE: CORE | Added YIFY API (yts.am) for Torrents/Magnets
+CHANGE: CORE | Bug fixes
+
+
+
+
+2017.12.09   | FileMasta 2.8.0
+
+CHANGE: CORE | Optimised images further (Thanks to @StarSparkleNova)
+CHANGE: CORE | Uncaught exceptions writes to log file (Thanks to @badrazizi)
+CHANGE: CORE | Revised local database updates
+CHANGE: CORE | Improved stability during several processes
+CHANGE: CORE | Added French and Spanish languages
+CHANGE: CORE | Supports local files (must be in Downloads directory)
+CHANGE: CORE | Handles no Internet connection detected before startup
+CHANGE: CORE | Improved search result criteria for files
+CHANGE: CORE | Bookmark fixes
+CHANGE: CORE | Other minor bug fixes
+
+
+
+
+2017.12.02   | FileMasta 2.7.0
+
+CHANGE: CORE | UI changes
+CHANGE: CORE | Added random movie button
+CHANGE: CORE | Added share file button
+CHANGE: CORE | Trailer now opens in default web browser
+CHANGE: CORE | Fixed displaying backgrounds for file
+CHANGE: CORE | Some download fixes
+
+
+
+
+2017.11.27   | FileMasta 2.0.6
+
+CHANGE: CORE | UI/Icons enhancements (Thanks @google)
+CHANGE: CORE | Added support for archive files (.zip/.rar)
+CHANGE: CORE | Added support for loading subtitles in VLC (external player only, file names must match)
+CHANGE: CORE | Added catch download errors and retry button
+CHANGE: CORE | Added trailer button
+CHANGE: CORE | Added remaining download time
+CHANGE: CORE | Added file size and added date to media details
+CHANGE: CORE | Added copy file URL to clipboard
+CHANGE: CORE | Added internal VLC player (wip, supports basic streaming)
+CHANGE: CORE | Added Settings CHANGE: CORE | #30
+CHANGE: CORE | Added verify downloaded files by comparing info
+CHANGE: CORE | Various back-end improvements, cleaned up code
+CHANGE: CORE | Fixed bookmark issues
+CHANGE: CORE | Database adjustments and fixes
+CHANGE: CORE | Download protocol fixes
+
+
+
+
+2017.11.22   | FileMasta 2.0.5
+
+CHANGE: CORE | UI improvements
+CHANGE: CORE | Optimized resources to lossless compression
+CHANGE: CORE | Added bookmarks
+CHANGE: CORE | Added filter files by format, host and quality
+CHANGE: CORE | Added sort files alphabetically
+CHANGE: CORE | Fixed search results
+CHANGE: CORE | Other bug fixes
+
+
+
+
+2017.11.16   | FileMasta 2.0.4
+
+CHANGE: CORE | Renamed project
+CHANGE: CORE | New and simpler file databases, uses open directories (file db updated manually by me)
+CHANGE: CORE | Support for filtering movies by year
+CHANGE: CORE | Support for series, subtitles, torrents and anime files
+CHANGE: CORE | Added Spinner for loading posters
+CHANGE: CORE | Catch unhandled exceptions
+CHANGE: CORE | Various bug fixes
+
+
+
+
+2017.11.10   | FileMasta 2.0.3
+
+CHANGE: CORE | Enabled search box and filter by genre
+CHANGE: CORE | Fixed some issues with Json
+CHANGE: CORE | Other minor fixes
+
+
+
+
+2017.11.09  | FileMasta 2.0.2
+
+CHANGE: CORE | Added background worker, thanks to @badrazizi
+CHANGE: CORE | Added file extension to datagrid
+CHANGE: CORE | Added support for opening stream in MPC
+CHANGE: CORE | Hidden search features for Movies, temporarily (working on fixes)
+CHANGE: CORE | Fixed loading bugs
+
+
+
+
+2017.11.06   | FileMasta 2.0.1
+
+CHANGE: CORE | Asynchronous tasks and threads, highest performance rate yet
+CHANGE: CORE | Fixed some bugs
+CHANGE: UI   | Added Downloads tab, instead of window
+CHANGE: UI   | Added Report Broken button to streams
+CHANGE: UI   | Improved UI design
+CHANGE: UI   | Enabled maximize form
+
+
+
+
+2017.11.03   | FileMasta 2.0.0
+
+
+CHANGE: CORE | Added background tasks and threads
+CHANGE: CORE | Added support for local cache, updates every 12 hours
+CHANGE: CORE | Added support for multiple streams
+CHANGE: UI   | Many UI changes
+CHANGE: UI   | Added splash screen
+CHANGE: UI   | Added Movies tab for posters
+CHANGE: UI   | Added filter by genre, more coming soon
+CHANGE: UI   | Added search movies by people and year
+CHANGE: UI   | Removed Report Broken source button, for now
+
+
+
+
+2017.10.23   | FileMasta 1.0.4
+
+CHANGE: CORE | Removed auto updater, now uses the Installer
+CHANGE: UI   | Tidied search results in dataGridView, displays host and file name
+CHANGE: UI   | Search box focus after adding tag
+CHANGE: UI   | Added report broken file button, pre-fills new issue
+
+
+
+
+2017.10.22   | FileMasta 1.0.3
+
+CHANGE: CORE | Added auto updater, somewhat works
+CHANGE: CORE | Updated database changes and production data fixes
+CHANGE: CORE | Other various improvements
+CHANGE: UI   | Removed Settings tab, lack of options (need some requests)
+
+
+
+
+2017.10.20   | FileMasta 1.0.2
+
+CHANGE: CORE | Improved search results
+CHANGE: CORE | Various bug fixes
+CHANGE: CORE | Added support for extracting movie from file name (format e.g. title year pixelsize format formatsize filename extension)
+CHANGE: CORE | Added OMDb API
+CHANGE: CORE | Added Popcorn Time API
+CHANGE: UI   | UI improvements
+CHANGE: UI   | Added movie details tab
+CHANGE: UI   | Added Trailer button
+CHANGE: UI   | Added report issue button to about tab
+CHANGE: UI   | Added current version to about tab
+CHANGE: UI   | Added Cancel/Close button on download item
+CHANGE: UI   | Added support for drag and drop files
+CHANGE: UI   | Added copy links to clipboard
+CHANGE: UI   | Added Settings tab
+
+
+
+
+2017.10.19   | FileMasta 1.0.1
+
+CHANGE: CORE | Added support for opening URL in external players (Windows Media Player & VLC)
+CHANGE: UI   | UI improvements
+CHANGE: UI   | Added download client
+CHANGE: UI   | Added support for multiple tags
+CHANGE: UI   | Added random backgrounds
+CHANGE: UI   | Added some popular tags for queries
+CHANGE: UI   | Added about tab
+
+
+
+
+2017.10.18   | FileMasta 1.0.0
+
+CHANGE: CORE | Initial release

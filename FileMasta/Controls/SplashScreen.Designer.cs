@@ -29,54 +29,41 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SplashScreen));
-            this.lblLoadingText = new System.Windows.Forms.Label();
-            this.imgLogo = new System.Windows.Forms.PictureBox();
-            this.lblLoadingStuckRestart = new System.Windows.Forms.Label();
+            this.labelLoading = new System.Windows.Forms.Label();
+            this.labelRestart = new System.Windows.Forms.Label();
             this.timerCount = new System.Windows.Forms.Timer(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
+            this.imageLogo = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.imageLogo)).BeginInit();
             this.SuspendLayout();
             // 
-            // lblLoadingText
+            // labelLoading
             // 
-            this.lblLoadingText.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblLoadingText.BackColor = System.Drawing.Color.Transparent;
-            this.lblLoadingText.Font = new System.Drawing.Font("Segoe UI Semibold", 15.25F);
-            this.lblLoadingText.Location = new System.Drawing.Point(3, 362);
-            this.lblLoadingText.Name = "lblLoadingText";
-            this.lblLoadingText.Size = new System.Drawing.Size(694, 34);
-            this.lblLoadingText.TabIndex = 0;
-            this.lblLoadingText.Text = "Initializing FileMasta, Please Wait...";
-            this.lblLoadingText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelLoading.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelLoading.BackColor = System.Drawing.Color.Transparent;
+            this.labelLoading.Font = new System.Drawing.Font("Segoe UI Semibold", 14F);
+            this.labelLoading.Location = new System.Drawing.Point(3, 341);
+            this.labelLoading.Name = "labelLoading";
+            this.labelLoading.Size = new System.Drawing.Size(694, 34);
+            this.labelLoading.TabIndex = 0;
+            this.labelLoading.Text = "Initializing FileMasta, Please Wait...";
+            this.labelLoading.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // imgLogo
+            // labelRestart
             // 
-            this.imgLogo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.imgLogo.BackColor = System.Drawing.Color.Transparent;
-            this.imgLogo.Image = ((System.Drawing.Image)(resources.GetObject("imgLogo.Image")));
-            this.imgLogo.Location = new System.Drawing.Point(238, 105);
-            this.imgLogo.Name = "imgLogo";
-            this.imgLogo.Size = new System.Drawing.Size(225, 225);
-            this.imgLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.imgLogo.TabIndex = 1;
-            this.imgLogo.TabStop = false;
-            // 
-            // lblLoadingStuckRestart
-            // 
-            this.lblLoadingStuckRestart.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.labelRestart.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblLoadingStuckRestart.BackColor = System.Drawing.Color.Transparent;
-            this.lblLoadingStuckRestart.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblLoadingStuckRestart.Font = new System.Drawing.Font("Segoe UI Semibold", 10.75F, System.Drawing.FontStyle.Italic);
-            this.lblLoadingStuckRestart.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblLoadingStuckRestart.Location = new System.Drawing.Point(3, 441);
-            this.lblLoadingStuckRestart.Name = "lblLoadingStuckRestart";
-            this.lblLoadingStuckRestart.Size = new System.Drawing.Size(694, 25);
-            this.lblLoadingStuckRestart.TabIndex = 2;
-            this.lblLoadingStuckRestart.Text = "Loading stuck? Click here!";
-            this.lblLoadingStuckRestart.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblLoadingStuckRestart.Visible = false;
-            this.lblLoadingStuckRestart.Click += new System.EventHandler(this.lblLoadingStuckRestart_Click);
+            this.labelRestart.BackColor = System.Drawing.Color.Transparent;
+            this.labelRestart.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.labelRestart.Font = new System.Drawing.Font("Segoe UI Semibold", 10.75F, System.Drawing.FontStyle.Italic);
+            this.labelRestart.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.labelRestart.Location = new System.Drawing.Point(3, 441);
+            this.labelRestart.Name = "labelRestart";
+            this.labelRestart.Size = new System.Drawing.Size(694, 25);
+            this.labelRestart.TabIndex = 2;
+            this.labelRestart.Text = "Loading stuck? Click here!";
+            this.labelRestart.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelRestart.Visible = false;
+            this.labelRestart.Click += new System.EventHandler(this.lblLoadingStuckRestart_Click);
             // 
             // timerCount
             // 
@@ -84,29 +71,39 @@
             this.timerCount.Interval = 30000;
             this.timerCount.Tick += new System.EventHandler(this.timerCount_Tick);
             // 
+            // imageLogo
+            // 
+            this.imageLogo.Image = global::FileMasta.Properties.Resources.filemasta_logo;
+            this.imageLogo.Location = new System.Drawing.Point(248, 125);
+            this.imageLogo.Name = "imageLogo";
+            this.imageLogo.Size = new System.Drawing.Size(205, 205);
+            this.imageLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imageLogo.TabIndex = 3;
+            this.imageLogo.TabStop = false;
+            // 
             // SplashScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(52)))), ((int)(((byte)(59)))));
-            this.Controls.Add(this.lblLoadingStuckRestart);
-            this.Controls.Add(this.imgLogo);
-            this.Controls.Add(this.lblLoadingText);
+            this.Controls.Add(this.imageLogo);
+            this.Controls.Add(this.labelRestart);
+            this.Controls.Add(this.labelLoading);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.ForeColor = System.Drawing.Color.White;
             this.Name = "SplashScreen";
             this.Size = new System.Drawing.Size(700, 500);
-            ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageLogo)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        public System.Windows.Forms.Label lblLoadingText;
-        private System.Windows.Forms.PictureBox imgLogo;
-        public System.Windows.Forms.Label lblLoadingStuckRestart;
+        public System.Windows.Forms.Label labelLoading;
+        public System.Windows.Forms.Label labelRestart;
         private System.Windows.Forms.Timer timerCount;
+        private System.Windows.Forms.PictureBox imageLogo;
     }
 }

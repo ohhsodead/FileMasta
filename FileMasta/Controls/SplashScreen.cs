@@ -13,7 +13,7 @@ namespace FileMasta.Controls
 
         private void timerCount_Tick(object sender, System.EventArgs e)
         {
-            lblLoadingStuckRestart.Visible = true;
+            labelRestart.Visible = true;
         }
 
         private void lblLoadingStuckRestart_Click(object sender, System.EventArgs e)

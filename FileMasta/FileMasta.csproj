@@ -302,6 +302,7 @@
   <ItemGroup>
     <Content Include="current-version.txt" />
     <Content Include="filemasta-logo.ico" />
+    <Content Include="Resources\filemasta-logo.png" />
     <None Include="Resources\keyboard.png" />
     <None Include="Resources\chevron-right.png" />
     <None Include="Resources\chevron-left.png" />
