@@ -2,7 +2,7 @@
 using System.Diagnostics;
 using System.Threading;
 using System.Windows.Forms;
-using FileMasta.Extensions;
+using FileMasta.Utilities;
 
 namespace FileMasta
 {

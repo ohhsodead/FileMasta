@@ -63,24 +63,24 @@ namespace FileMasta.Extensions
         /// <param name="ctrl">Tab title button to set as highlighted</param>
         public static void SelectTabTitle(CButton ctrl)
         {
-            MainForm.Form.titleHome.ColorFillSolid = Colors.nonSelectedTitleRGB;
-            MainForm.Form.titleHome.BorderColor = Colors.nonSelectedTitleRGB;
-            MainForm.Form.titleHome.BackColor = Colors.nonSelectedTitleRGB;
-            MainForm.Form.titleSearch.ColorFillSolid = Colors.nonSelectedTitleRGB;
-            MainForm.Form.titleSearch.BorderColor = Colors.nonSelectedTitleRGB;
-            MainForm.Form.titleSearch.BackColor = Colors.nonSelectedTitleRGB;
-            MainForm.Form.titleDiscover.ColorFillSolid = Colors.nonSelectedTitleRGB;
-            MainForm.Form.titleDiscover.BorderColor = Colors.nonSelectedTitleRGB;
-            MainForm.Form.titleDiscover.BackColor = Colors.nonSelectedTitleRGB;
-            MainForm.Form.titleSubmit.ColorFillSolid = Colors.nonSelectedTitleRGB;
-            MainForm.Form.titleSubmit.BorderColor = Colors.nonSelectedTitleRGB;
-            MainForm.Form.titleSubmit.BackColor = Colors.nonSelectedTitleRGB;
-            MainForm.Form.titleSettings.ColorFillSolid = Colors.nonSelectedTitleRGB;
-            MainForm.Form.titleSettings.BorderColor = Colors.nonSelectedTitleRGB;
-            MainForm.Form.titleSettings.BackColor = Colors.nonSelectedTitleRGB;
-            MainForm.Form.titleInformation.ColorFillSolid = Colors.nonSelectedTitleRGB;
-            MainForm.Form.titleInformation.BorderColor = Colors.nonSelectedTitleRGB;
-            MainForm.Form.titleInformation.BackColor = Colors.nonSelectedTitleRGB;
+            MainForm.Form.titleHome.ColorFillSolid = Colors.NonSelectedTitleRGB;
+            MainForm.Form.titleHome.BorderColor = Colors.NonSelectedTitleRGB;
+            MainForm.Form.titleHome.BackColor = Colors.NonSelectedTitleRGB;
+            MainForm.Form.titleSearch.ColorFillSolid = Colors.NonSelectedTitleRGB;
+            MainForm.Form.titleSearch.BorderColor = Colors.NonSelectedTitleRGB;
+            MainForm.Form.titleSearch.BackColor = Colors.NonSelectedTitleRGB;
+            MainForm.Form.titleDiscover.ColorFillSolid = Colors.NonSelectedTitleRGB;
+            MainForm.Form.titleDiscover.BorderColor = Colors.NonSelectedTitleRGB;
+            MainForm.Form.titleDiscover.BackColor = Colors.NonSelectedTitleRGB;
+            MainForm.Form.titleSubmit.ColorFillSolid = Colors.NonSelectedTitleRGB;
+            MainForm.Form.titleSubmit.BorderColor = Colors.NonSelectedTitleRGB;
+            MainForm.Form.titleSubmit.BackColor = Colors.NonSelectedTitleRGB;
+            MainForm.Form.titleSettings.ColorFillSolid = Colors.NonSelectedTitleRGB;
+            MainForm.Form.titleSettings.BorderColor = Colors.NonSelectedTitleRGB;
+            MainForm.Form.titleSettings.BackColor = Colors.NonSelectedTitleRGB;
+            MainForm.Form.titleInformation.ColorFillSolid = Colors.NonSelectedTitleRGB;
+            MainForm.Form.titleInformation.BorderColor = Colors.NonSelectedTitleRGB;
+            MainForm.Form.titleInformation.BackColor = Colors.NonSelectedTitleRGB;
 
             ctrl.ColorFillSolid = Colors.SelectedTitleRGB;
             ctrl.BorderColor = Colors.SelectedTitleRGB;

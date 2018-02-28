@@ -3,9 +3,10 @@ using System.Diagnostics;
 using System.IO;
 using System.Net;
 using System.Windows.Forms;
+using FileMasta.Extensions;
 using FileMasta.GitHub;
 
-namespace FileMasta.Extensions
+namespace FileMasta.Utilities
 {
     class Updates
     {

@@ -20,6 +20,7 @@ using FileMasta.GitHub;
 using FileMasta.Models;
 using FileMasta.Bookmarks;
 using FileMasta.Windows;
+using FileMasta.Utilities;
 
 namespace FileMasta
 {
@@ -287,44 +288,65 @@ namespace FileMasta
         /// <summary>
         /// Powered by the HackerTarget API to get Top Searches from FileChef.com
         /// </summary>
-        public void LoadTopSearches()
+        delegate void LoadTopSearchesCallBack();
+        private void LoadTopSearches()
         {
             try
             {
                 Program.log.Info("Getting top searches");
-                List<string> listTopSearches = new List<string>();
-                var client = new WebClient();
-                using (var stream = client.OpenRead(Database.UrlTopSearches))
-                using (var reader = new StreamReader(stream)) {
-                    string line;
-                    while ((line = reader.ReadLine()) != null)
-                        listTopSearches.Add(line);
-                }
-                listTopSearches.Reverse();
-                int count = 0;
-                foreach (var tag in listTopSearches)
-                    if (count <= 65) {
-                        flowLayoutTopSearches.Controls.Add(ControlExtensions.AddTopSearchTag(tag, count));
-                        count++;
+
+                BackGroundWorker.RunWorkAsync<List<string>>(() => GetTopSearches(), (data) =>
+                {
+                    if (tabHome.InvokeRequired)
+                    {
+                        var b = new LoadTopSearchesCallBack(LoadTopSearches);
+                        Invoke(b, new object[] { });
                     }
+                    else
+                    {
+                        int count = 0;
+                        foreach (var tag in data)
+                            if (count <= 65)
+                            {
+                                flowLayoutTopSearches.Controls.Add(ControlExtensions.AddTopSearchTag(tag, count));
+                                count++;
+                            }
 
-                // Add Credits Label to end of Top Searches panel
-                var a = new Label {
-                    Text = "Powered by FileChef",
-                    Font = new Font(buttonFileType.Font.Name, 9, FontStyle.Regular),
-                    BackColor = Color.Transparent,
-                    ForeColor = Color.White,
-                    Margin = new Padding(0, 8, 0, 3),
-                    Cursor = Cursors.Hand,
-                    Name = "btnFileChef",
-                    AutoSize = true,
-                };
+                        // Add Credits Label to end of Top Searches panel
+                        var a = new Label
+                        {
+                            Text = "Powered by FileChef",
+                            Font = new Font(buttonFileType.Font.Name, 9, FontStyle.Regular),
+                            BackColor = Color.Transparent,
+                            ForeColor = Color.White,
+                            Margin = new Padding(0, 8, 0, 3),
+                            Cursor = Cursors.Hand,
+                            Name = "btnFileChef",
+                            AutoSize = true,
+                        };
 
-                a.Click += buttonFileChef_Click;
-                flowLayoutTopSearches.Controls.Add(a);
-                Program.log.Info("Top searches successful");
+                        a.Click += buttonFileChef_Click;
+                        flowLayoutTopSearches.Controls.Add(a);
+                        Program.log.Info("Top searches successful");
+                    }
+                });
             }
             catch (Exception ex) { labelTopSearches.Visible = false; splitterHeaderTopSearches.Visible = false; flowLayoutTopSearches.Visible = false; Program.log.Error("Error getting top searches", ex); } /* Error occurred, so hide controls/skip... */
+        }
+
+        private List<string> GetTopSearches()
+        {
+            List<string> listTopSearches = new List<string>();
+            var client = new WebClient();
+            using (var stream = client.OpenRead(Database.UrlTopSearches))
+            using (var reader = new StreamReader(stream))
+            {
+                string line;
+                while ((line = reader.ReadLine()) != null)
+                    listTopSearches.Add(line);
+            }
+            listTopSearches.Reverse();
+            return listTopSearches;
         }
 
         private void buttonFileChef_Click(object Sender, EventArgs e)
@@ -431,47 +453,47 @@ namespace FileMasta
         public string SelectedFilesHost { get; set; } = "";
 
         // Select File Type category
-        private void titleFilesAll_ClickButtonArea(object Sender, MouseEventArgs e)
+        private void buttonFilesAll_ClickButtonArea(object Sender, MouseEventArgs e)
         {
             SelectedFilesType = Types.All; ControlExtensions.SelectFilesTab(buttonFilesAll); SelectedFiles = FilesOpenDatabase; ShowFiles(SelectedFiles);
         }
 
-        private void titleFilesVideo_ClickButtonArea(object Sender, MouseEventArgs e)
+        private void buttonFilesVideo_ClickButtonArea(object Sender, MouseEventArgs e)
         {
             SelectedFilesType = Types.Video; ControlExtensions.SelectFilesTab(buttonFilesVideo); SelectedFiles = FilesOpenDatabase; ShowFiles(SelectedFiles);
         }
 
-        private void titleFilesAudio_ClickButtonArea(object Sender, MouseEventArgs e)
+        private void buttonFilesAudio_ClickButtonArea(object Sender, MouseEventArgs e)
         {
             SelectedFilesType = Types.Audio; ControlExtensions.SelectFilesTab(buttonFilesAudio); SelectedFiles = FilesOpenDatabase; ShowFiles(SelectedFiles);
         }
 
-        private void titleFilesBooks_ClickButtonArea(object Sender, MouseEventArgs e)
+        private void buttonFilesBooks_ClickButtonArea(object Sender, MouseEventArgs e)
         {
             SelectedFilesType = Types.Books; ControlExtensions.SelectFilesTab(buttonFilesBooks); SelectedFiles = FilesOpenDatabase; ShowFiles(SelectedFiles);
         }
 
-        private void titleFilesSubtitles_ClickButtonArea(object Sender, MouseEventArgs e)
+        private void buttonFilesSubtitles_ClickButtonArea(object Sender, MouseEventArgs e)
         {
             SelectedFilesType = Types.Subtitle; ControlExtensions.SelectFilesTab(buttonFilesSubtitles); SelectedFiles = FilesOpenDatabase; ShowFiles(SelectedFiles);
         }
 
-        private void titleFilesTorrents_ClickButtonArea(object Sender, MouseEventArgs e)
+        private void buttonFilesTorrents_ClickButtonArea(object Sender, MouseEventArgs e)
         {
             SelectedFilesType = Types.Torrent; ControlExtensions.SelectFilesTab(buttonFilesTorrents); SelectedFiles = FilesOpenDatabase; ShowFiles(SelectedFiles);
         }
 
-        private void titleFilesSoftware_ClickButtonArea(object Sender, MouseEventArgs e)
+        private void buttonFilesSoftware_ClickButtonArea(object Sender, MouseEventArgs e)
         {
             SelectedFilesType = Types.Software; ControlExtensions.SelectFilesTab(buttonFilesSoftware); SelectedFiles = FilesOpenDatabase; ShowFiles(SelectedFiles);
         }
 
-        private void titleFilesOther_ClickButtonArea(object Sender, MouseEventArgs e)
+        private void buttonFilesOther_ClickButtonArea(object Sender, MouseEventArgs e)
         {
             SelectedFilesType = Types.Other; ControlExtensions.SelectFilesTab(buttonFilesOther); SelectedFiles = FilesOpenDatabase; ShowFiles(SelectedFiles);
         }
 
-        private void titleFilesCustom_ClickButtonArea(object Sender, MouseEventArgs e)
+        private void buttonFilesCustom_ClickButtonArea(object Sender, MouseEventArgs e)
         {
             string getUserResponse = Microsoft.VisualBasic.Interaction.InputBox("File Type/Extensions (enter only one extension):", "Custom*", "e.g. MP4");
             string userResponse = getUserResponse.Replace(".", "");
@@ -479,14 +501,14 @@ namespace FileMasta
                 SelectedFilesType = new List<string>() { userResponse.ToUpper() }; ControlExtensions.SelectFilesTab(buttonFilesCustom); SelectedFiles = FilesOpenDatabase; ShowFiles(SelectedFiles);
         }
 
-        private void titleFilesLocal_ClickButtonArea(object Sender, MouseEventArgs e)
+        private void buttonFilesLocal_ClickButtonArea(object Sender, MouseEventArgs e)
         {
             SelectedFilesType = Types.All; ControlExtensions.SelectFilesTab(buttonFilesLocal); SelectedFiles = LocalExtensions.GetLocalFiles(); ShowFiles(SelectedFiles);
         }
 
-        private void titleFilesBookmarks_ClickButtonArea(object Sender, MouseEventArgs e)
+        private void buttonFilesBookmarks_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            SelectedFilesType = Types.All; ControlExtensions.SelectFilesTab(buttonFilesBookmarks); SelectedFiles = Bookmarked.GetBookmarks(); ShowFiles(SelectedFiles);
+            SelectedFilesType = Types.All; ControlExtensions.SelectFilesTab(buttonFilesBookmarks); SelectedFiles = UserBookmarks.GetBookmarks(); ShowFiles(SelectedFiles);
         }
 
         // Files dataGridView click event for item, will get the last (hidden) item (the URL) in the selected row and get WebFile from the URL
@@ -509,7 +531,11 @@ namespace FileMasta
         delegate void loadFilesCallBack(List<WebFile> dataFiles, SortBy order = SortBy.Name);
         public void ShowFiles(List<WebFile> dataFiles, SortBy order = SortBy.Name)
         {
-            EnableSearchControls(false); 
+            EnableSearchControls(false);
+            
+            if (order == SortBy.Name) SortFiles.ByName(dataFiles);
+            else if (order == SortBy.Size) SortFiles.BySize(dataFiles);
+            else if (order == SortBy.Date) SortFiles.ByDate(dataFiles);
 
             var stopWatch = new Stopwatch();
 
@@ -524,10 +550,6 @@ namespace FileMasta
                 }
                 else
                 {
-                    if (order == SortBy.Name) SortFiles.ByName(dataFiles);
-                    else if (order == SortBy.Size) SortFiles.BySize(dataFiles);
-                    else if (order == SortBy.Date) SortFiles.ByDate(dataFiles);
-
                     dataGridFiles.Rows.Clear();
 
                     comboBoxFilterFiles.Items.Clear(); comboBoxFilterFiles.Items.Add("Any");
@@ -595,6 +617,7 @@ namespace FileMasta
             textBoxSearchHome.Enabled = isEnabled;
             buttonFileType.Enabled = isEnabled;
             buttonSearchHome.Enabled = isEnabled;
+            comboBoxFileType.Enabled = isEnabled;
 
             foreach (var ctrl in flowLayoutTopSearches.Controls)
                 if (ctrl is CButton)
@@ -602,7 +625,9 @@ namespace FileMasta
 
             textBoxSearchFiles.Enabled = isEnabled;
             buttonSortFiles.Enabled = isEnabled;
+            comboBoxSortFiles.Enabled = isEnabled;
             buttonFilterFiles.Enabled = isEnabled;
+            comboBoxFilterFiles.Enabled = isEnabled;
             imageSearchFiles.Enabled = isEnabled;
 
             buttonFilesAll.Enabled = isEnabled;
@@ -705,7 +730,7 @@ namespace FileMasta
             if (comboBoxFilterFiles.SelectedIndex == 0) SelectedFilesHost = "";
             else SelectedFilesHost = comboBoxFilterFiles.SelectedItem.ToString();
             ShowFiles(SelectedFiles);
-            comboBoxFilterFiles.DropDownWidth = ControlExtensions.DropDownWidth(comboBoxFilterFiles);
+            comboBoxFilterFiles.DropDownWidth =ControlExtensions.DropDownWidth(comboBoxFilterFiles);
         }
 
         private void bgSearchFiles_ClickButtonArea(object Sender, MouseEventArgs e)
@@ -818,17 +843,17 @@ namespace FileMasta
 
         private void buttonTermsOfUse_Click(object sender, EventArgs e)
         {
-            ControlExtensions.ShowDataWindow(((Label)sender).Text, Resources.UrlTermsOfUse);
+           ControlExtensions.ShowDataWindow(((Label)sender).Text, Resources.UrlTermsOfUse);
         }
 
         private void buttonPrivacyPolicy_Click(object sender, EventArgs e)
         {
-            ControlExtensions.ShowDataWindow(((Label)sender).Text, Resources.UrlPrivacyPolicy);
+           ControlExtensions.ShowDataWindow(((Label)sender).Text, Resources.UrlPrivacyPolicy);
         }
 
         private void labelChangeLog_Click(object sender, EventArgs e)
         {
-            ControlExtensions.ShowDataWindow(((Label)sender).Text, Resources.UrlChangeLog);
+           ControlExtensions.ShowDataWindow(((Label)sender).Text, Resources.UrlChangeLog);
         }
 
 

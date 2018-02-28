@@ -102,7 +102,7 @@
     <Compile Include="Controls\buttonFileType.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Extensions\Colors.cs" />
+    <Compile Include="Controls\Colors.cs" />
     <Compile Include="Controls\FileDetails.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -125,7 +125,7 @@
     <Compile Include="Windows\DataWindow.Designer.cs">
       <DependentUpon>DataWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="Extensions\ExceptionExtensions.cs" />
+    <Compile Include="Utilities\ExceptionEvents.cs" />
     <Compile Include="Files\SortBy.cs" />
     <Compile Include="Asynchronous\BackGroundWorker.cs" />
     <Compile Include="Controls\SplashScreen.cs">
@@ -154,7 +154,7 @@
       <DependentUpon>VLCPlayer.cs</DependentUpon>
     </Compile>
     <Compile Include="Extensions\ControlExtensions.cs" />
-    <Compile Include="Extensions\FileExtensions.cs" />
+    <Compile Include="Extensions\WebFileExtensions.cs" />
     <Compile Include="Extensions\ImageExtensions.cs" />
     <Compile Include="Files\Database.cs" />
     <Compile Include="Utilities\KnownFolder.cs" />
@@ -162,10 +162,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Extensions\LocalExtensions.cs" />
     <Compile Include="GitHub\OpenLink.cs" />
-    <Compile Include="Bookmarks\Bookmarked.cs" />
+    <Compile Include="Bookmarks\UserBookmarks.cs" />
     <Compile Include="Extensions\TextExtensions.cs" />
     <Compile Include="Utilities\TextLineRemover.cs" />
-    <Compile Include="Extensions\UpdateExtensions.cs" />
+    <Compile Include="Utilities\Update.cs" />
     <EmbeddedResource Include="Controls\FileDetails.resx">
       <DependentUpon>FileDetails.cs</DependentUpon>
     </EmbeddedResource>

@@ -45,6 +45,18 @@ namespace FileMasta.Extensions
             catch (Exception ex) { Program.log.Error("Error, no internet connection detected", ex); return false; }
         }
 
+        /// <summary>
+        /// Checks for exact file name of a subtitle file that matches the web filename (e.g. File Name: 'Jigsaw.2017.mp4' > Subtitle File Name: 'Jigsaw.2017.srt' will be loaded)
+        /// </summary>
+        /// <param name="fileURL"></param>
+        /// <returns></returns>
+        public static bool HasExistingSubtitle(string fileURL)
+        {
+            if (File.Exists(userDownloadsDirectory + Path.GetFileNameWithoutExtension(new Uri(fileURL).LocalPath) + ".srt"))
+                return true;
+            else
+                return false;
+        }
 
         /// <summary>
         /// Gets local files (supported in this app) from user's /Downloads directory

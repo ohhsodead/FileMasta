@@ -668,6 +668,7 @@ namespace FileMasta.Controls
             this.buttonViewDirectory.MaximumSize = new System.Drawing.Size(1000, 30);
             this.buttonViewDirectory.MinimumSize = new System.Drawing.Size(0, 30);
             this.buttonViewDirectory.Name = "buttonViewDirectory";
+            this.buttonViewDirectory.ShowFocus = CButtonLib.CButton.eFocus.None;
             this.buttonViewDirectory.Size = new System.Drawing.Size(130, 30);
             this.buttonViewDirectory.TabIndex = 1;
             this.buttonViewDirectory.Text = "View Directory";
@@ -700,6 +701,7 @@ namespace FileMasta.Controls
             this.buttonBookmarkFile.MaximumSize = new System.Drawing.Size(1000, 30);
             this.buttonBookmarkFile.MinimumSize = new System.Drawing.Size(0, 30);
             this.buttonBookmarkFile.Name = "buttonBookmarkFile";
+            this.buttonBookmarkFile.ShowFocus = CButtonLib.CButton.eFocus.None;
             this.buttonBookmarkFile.Size = new System.Drawing.Size(154, 30);
             this.buttonBookmarkFile.TabIndex = 0;
             this.buttonBookmarkFile.Text = "Add to Bookmarks";
@@ -762,6 +764,7 @@ namespace FileMasta.Controls
             this.buttonPlayMedia.MaximumSize = new System.Drawing.Size(1000, 30);
             this.buttonPlayMedia.MinimumSize = new System.Drawing.Size(0, 30);
             this.buttonPlayMedia.Name = "buttonPlayMedia";
+            this.buttonPlayMedia.ShowFocus = CButtonLib.CButton.eFocus.None;
             this.buttonPlayMedia.Size = new System.Drawing.Size(109, 30);
             this.buttonPlayMedia.TabIndex = 7;
             this.buttonPlayMedia.Text = "Play Media";
@@ -795,6 +798,7 @@ namespace FileMasta.Controls
             this.buttonRequestFileSize.MaximumSize = new System.Drawing.Size(1000, 30);
             this.buttonRequestFileSize.MinimumSize = new System.Drawing.Size(0, 30);
             this.buttonRequestFileSize.Name = "buttonRequestFileSize";
+            this.buttonRequestFileSize.ShowFocus = CButtonLib.CButton.eFocus.None;
             this.buttonRequestFileSize.Size = new System.Drawing.Size(143, 30);
             this.buttonRequestFileSize.TabIndex = 3;
             this.buttonRequestFileSize.Text = "Request File Size";
@@ -823,7 +827,7 @@ namespace FileMasta.Controls
             this.infoFileURL.Corners.UpperLeft = 2;
             this.infoFileURL.Corners.UpperRight = 2;
             this.infoFileURL.Cursor = System.Windows.Forms.Cursors.Default;
-            this.infoFileURL.DesignerSelected = false;
+            this.infoFileURL.DesignerSelected = true;
             this.infoFileURL.DimFactorClick = 0;
             this.infoFileURL.DimFactorHover = 0;
             this.infoFileURL.FillType = CButtonLib.CButton.eFillType.Solid;

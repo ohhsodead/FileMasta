@@ -11,7 +11,7 @@ namespace FileMasta.Files
     class Database
     {
         /// <summary>
-        /// URLs for file database
+        /// URLs for database files
         /// </summary>
         public static string UrlOpenFiles { get; } = "https://dl.dropbox.com/s/charfmjveo2v1h3/open-files.json?dl=0";
         public static string UrlOpenDirectories { get; } = "https://raw.githubusercontent.com/HerbL27/FileMasta/master/API/open-directories.txt";
@@ -24,14 +24,14 @@ namespace FileMasta.Files
         {
             Program.log.Info("Checking for database updates");
 
-            if (!FileExtensions.IsLocalAndServerFileSizeEqual(UrlOpenDirectories, "open-directories.txt"))
+            if (UpdateLocalDatabaseFiles(UrlOpenDirectories, "open-directories.txt"))
             {
                 using (var client = new WebClient()) { client.DownloadFile(new Uri(UrlOpenDirectories), $"{LocalExtensions.pathData}open-directories.txt"); }
                 Program.log.Info("open-directories.txt updated");
             }
             MainForm.DataOpenDirectories.AddRange(File.ReadAllLines($"{LocalExtensions.pathData}open-directories.txt"));
 
-            if (!FileExtensions.IsLocalAndServerFileSizeEqual(UrlOpenFiles, "open-files.json"))
+            if (UpdateLocalDatabaseFiles(UrlOpenFiles, "open-files.json"))
             {
                 using (var client = new WebClient()) { client.DownloadFile(new Uri(UrlOpenFiles), $"{LocalExtensions.pathData}open-files.json"); }
                 Program.log.Info("open-files.json updated");
@@ -46,9 +46,42 @@ namespace FileMasta.Files
         }
 
         /// <summary>
-        /// Get web file info from internal database, or creates a new object
+        /// Checks if database file exists at users data directory, if so whether they're the same size, and downloads the latest one if either returns true
         /// </summary>
-        /// <param name="URL">WebFile.URL to return</param>
+        /// <param name="webFile"></param>
+        /// <param name="fileName"></param>
+        /// <returns></returns>
+        public static bool UpdateLocalDatabaseFiles(string webFile, string fileName)
+        {
+            try
+            {
+                Program.log.Info($"Checking if file '{fileName}' needs to be updated");
+
+                if (File.Exists(LocalExtensions.pathData + fileName))
+                {
+                    var req = WebRequest.Create(webFile);
+                    req.Method = "HEAD";
+                    using (var fileResponse = (HttpWebResponse)req.GetResponse())
+                    {
+                        if (int.TryParse(fileResponse.Headers.Get("Content-Length"), out int ContentLength))
+                            if (new FileInfo(LocalExtensions.pathData + fileName).Length == ContentLength)
+                                return false;
+                            else
+                                return true;
+                        else
+                            return true;
+                    }
+                }
+                else
+                    return true;
+            }
+            catch (Exception ex) { Program.log.Error($"Unable to check database file '{fileName}' for update, URL : {webFile}", ex); return true; }
+        }
+
+        /// <summary>
+        /// Get web file info from internal database, or creates a new object if it doesn't exist
+        /// </summary>
+        /// <param name="URL">Matches URL with WebFile.URL to return object</param>
         /// <returns>WebFile object</returns>
         public static WebFile FileInfoFromURL(string URL)
         {
@@ -58,7 +91,7 @@ namespace FileMasta.Files
                     return file;
         
             // Create a new Web File object as this URL doesn't exist in the database there anymore
-            var newWebFile = new WebFile(Path.GetExtension(URL).Replace(".", "").ToUpper(), Path.GetFileNameWithoutExtension(new Uri(URL).LocalPath), FileExtensions.GetFileSize(URL), FileExtensions.GetFileLastModified(URL), new Uri(URL).Host.Replace("www.", ""), new Uri(URL).AbsoluteUri);
+            var newWebFile = new WebFile(Path.GetExtension(URL).Replace(".", "").ToUpper(), Path.GetFileNameWithoutExtension(new Uri(URL).LocalPath), WebFileExtensions.GetFileSize(URL), WebFileExtensions.GetFileLastModified(URL), new Uri(URL).Host.Replace("www.", ""), new Uri(URL).AbsoluteUri);
 
             // Add the new Web File to current local database
             MainForm.FilesOpenDatabase.Add(newWebFile);

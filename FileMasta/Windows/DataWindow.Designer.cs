@@ -43,7 +43,7 @@
             this.panelItems.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.panelItems.Location = new System.Drawing.Point(12, 12);
             this.panelItems.Name = "panelItems";
-            this.panelItems.Size = new System.Drawing.Size(435, 66);
+            this.panelItems.Size = new System.Drawing.Size(455, 21);
             this.panelItems.TabIndex = 0;
             // 
             // labelData
@@ -53,13 +53,13 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelData.AutoSize = true;
             this.labelData.BackColor = System.Drawing.Color.Transparent;
-            this.labelData.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelData.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelData.ForeColor = System.Drawing.Color.Black;
             this.labelData.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.labelData.Location = new System.Drawing.Point(0, 0);
             this.labelData.Margin = new System.Windows.Forms.Padding(0);
             this.labelData.Name = "labelData";
-            this.labelData.Size = new System.Drawing.Size(28, 15);
+            this.labelData.Size = new System.Drawing.Size(35, 14);
             this.labelData.TabIndex = 0;
             this.labelData.Text = "Text";
             // 
@@ -70,15 +70,15 @@
             this.AutoScroll = true;
             this.AutoScrollMargin = new System.Drawing.Size(0, 12);
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(459, 91);
+            this.ClientSize = new System.Drawing.Size(479, 46);
             this.Controls.Add(this.panelItems);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(475, 650);
+            this.MaximumSize = new System.Drawing.Size(495, 650);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(475, 40);
+            this.MinimumSize = new System.Drawing.Size(495, 40);
             this.Name = "DataWindow";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;

@@ -36,7 +36,7 @@ namespace FileMasta.Controls
         public void CheckFileEvents()
         {
             // Shows appropriate Bookmarks button text
-            if (!Bookmarked.IsBookmarked(currentFile.URL))
+            if (!UserBookmarks.IsBookmarked(currentFile.URL))
                 ControlExtensions.SetControlText(buttonBookmarkFile, "Add to Bookmarks");            
             else
                 ControlExtensions.SetControlText(buttonBookmarkFile, "Remove from Bookmarks");            
@@ -58,7 +58,7 @@ namespace FileMasta.Controls
                 buttonRequestFileSize.Visible = false;
 
             // Add subtitle file to be played when opening external VLC
-            if (FileExtensions.HasExistingLocalSubtitles(currentFile.URL) == true) // If users downloads folder contains a subtitle file matching web file name
+            if (LocalExtensions.HasExistingSubtitle(currentFile.URL) == true) // If users downloads folder contains a subtitle file matching web file name
                 infoFileSubtitles = LocalExtensions.userDownloadsDirectory + Path.GetFileNameWithoutExtension(currentFile.URL) + ".srt";
             else
                 infoFileSubtitles = null;
@@ -152,7 +152,7 @@ namespace FileMasta.Controls
         private void btnRequestFileSize_ClickButtonArea(object Sender, MouseEventArgs e)
         {
             buttonRequestFileSize.Visible = false;
-            BackGroundWorker.RunWorkAsync<string>(() => TextExtensions.BytesToString(FileExtensions.GetFileSize(currentFile.URL)), (data) => { infoSize.Text = data; });
+            BackGroundWorker.RunWorkAsync<string>(() => TextExtensions.BytesToString(WebFileExtensions.GetFileSize(currentFile.URL)), (data) => { infoSize.Text = data; });
         }
 
         private void btnViewDirectory_ClickButtonArea(object Sender, MouseEventArgs e)
@@ -211,12 +211,12 @@ namespace FileMasta.Controls
 
         private void BtnBookmarkFile_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            if (Bookmarked.IsBookmarked(currentFile.URL)) {
-                Bookmarked.RemoveFile(currentFile.URL);
+            if (UserBookmarks.IsBookmarked(currentFile.URL)) {
+                UserBookmarks.RemoveFile(currentFile.URL);
                 ControlExtensions.SetControlText(buttonBookmarkFile, "Add to Bookmarks");
             }
             else {
-                Bookmarked.AddFile(currentFile.URL);
+                UserBookmarks.AddFile(currentFile.URL);
                 ControlExtensions.SetControlText(buttonBookmarkFile, "Remove from Bookmarks");
             }
         }

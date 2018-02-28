@@ -13,7 +13,7 @@ namespace FileMasta.Controls
         public buttonTabTitle() : base()
         {
             base.Font = _normalFont;
-            base.BackColor = Colors.nonSelectedTitleRGB;
+            base.BackColor = Colors.NonSelectedTitleRGB;
             base.ForeColor = Color.White;
             base.Cursor = Cursors.Hand;
             base.MaximumSize = new Size(1000, 34);
@@ -22,8 +22,8 @@ namespace FileMasta.Controls
             TextAlign = ContentAlignment.MiddleCenter;
             Corners = new CornersProperty(2);
             TextMargin = new Padding(2, 2, 2, 2);
-            BorderColor = Colors.nonSelectedTitleRGB;
-            ColorFillSolid = Colors.nonSelectedTitleRGB;
+            BorderColor = Colors.NonSelectedTitleRGB;
+            ColorFillSolid = Colors.NonSelectedTitleRGB;
             FillType = eFillType.Solid;
             TextShadowShow = false;
             ShowFocus = eFocus.None;

@@ -34,7 +34,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using FileMasta.GitHub;
 
-namespace FileMasta.Extensions
+namespace FileMasta.Utilities
 {
     public static class ExceptionEvents
     {

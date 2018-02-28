@@ -8,7 +8,7 @@ namespace FileMasta.Extensions
         /// Get UI Colors
         /// </summary>
         public static Color SelectedTitleRGB { get; } = Color.FromArgb(40, 40, 40);
-        public static Color nonSelectedTitleRGB { get; } = Color.FromArgb(10, 10, 10);
+        public static Color NonSelectedTitleRGB { get; } = Color.FromArgb(10, 10, 10);
         public static Color ColorOrange { get; } = Color.FromArgb(223, 105, 26);
         public static Color ColorGray { get; } = Color.FromArgb(190, 193, 190);
         public static Color SelectedRGB { get; } = ColorOrange;
