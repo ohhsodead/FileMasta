@@ -1,5 +1,4 @@
 <h1 align="center">
-  <img src="/FileMasta/Resources/filemasta-logo.png" height="128" width="128" alt="Logo" />
   <br />
   FileMasta
 </h1>
