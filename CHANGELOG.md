@@ -1,3 +1,10 @@
+## 0.2.16.0
+- Added keyboard shortcuts (Need somewhere to display them)
+- Improved performance and stability
+- Improved search function, much faster and returns more results
+- Bug fixes
+
+
 ## 0.2.15.3
 - Cleaned up code, a lot
 - Improved sorting and overall functionality
