@@ -9,7 +9,7 @@ using FileMasta.Utilities;
 
 namespace FileMasta.Bookmarks
 {
-    class Bookmarked
+    class UserBookmarks
     {
         /// <summary>
         /// Add File URL to Bookmarks
