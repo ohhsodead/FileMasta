@@ -1,5 +1,4 @@
 <h1 align="center">
-  <img src="/FileMasta/Resources/filemasta-logo.png" height="128" width="128" alt="Logo" />
   <br />
   FileMasta
 </h1>
@@ -27,13 +26,13 @@ FileMasta 2.16
 * Windows XP and above (Windows XP, Vista, 7, 8, 8.1, 10) using .NET 4.7.1 [Download here](https://www.microsoft.com/net/download/dotnet-framework-runtime/net471).
 
 ## Installation
-Download and run the latest version of the Windows installer, "WebCrunch.Installer.Windows.exe" from the [releases](https://github.com/HerbL27/FileMasta/releases/latest) page.
+Download and run the latest version of the Windows installer, "FileMasta.Installer.Windows.exe" from the [releases](https://github.com/HerbL27/FileMasta/releases/latest) page.
 
 ## Creating an Issue
 Please supply as much information about the problem you are experiencing as possible. Your issue has a much greater chance of being resolved if logs are supplied so that we can see what is going on.
 
 ## Contributing
-All contributions are welcome just send a pull request. WebCrunch's directory database allows our team (and any other volunteer) to implement new indexers in a few seconds. You can find more information on contributing to the database [here](https://github.com/HerbL27/FileMasta/tree/master/api), it's really easy. If you'd like support for a new indexer but are not sure how then feel free to leave a request on the [issues page](https://github.com/HerbL27/FileMasta/issues). It is recommended to use Visual Studio 2017 when making code changes in this project.
+All contributions are welcome just send a pull request. FileMasta's directory database allows our team (and any other volunteer) to implement new indexers in a few seconds. You can find more information on contributing to the database [here](https://github.com/HerbL27/FileMasta/tree/master/api), it's really easy. If you'd like support for a new indexer but are not sure how then feel free to leave a request on the [issues page](https://github.com/HerbL27/FileMasta/issues). It is recommended to use Visual Studio 2017 when making code changes in this project.
 
 You can download the community version for free [here](https://www.visualstudio.com/downloads/).
 
