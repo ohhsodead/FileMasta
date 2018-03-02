@@ -63,12 +63,12 @@
             this.labelRestart.Text = "Loading stuck? Click here!";
             this.labelRestart.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.labelRestart.Visible = false;
-            this.labelRestart.Click += new System.EventHandler(this.lblLoadingStuckRestart_Click);
+            this.labelRestart.Click += new System.EventHandler(this.labelRestart_Click);
             // 
             // timerCount
             // 
             this.timerCount.Enabled = true;
-            this.timerCount.Interval = 30000;
+            this.timerCount.Interval = 60000;
             this.timerCount.Tick += new System.EventHandler(this.timerCount_Tick);
             // 
             // imageLogo

@@ -109,7 +109,7 @@
     <Compile Include="Controls\FileDetails.Designer.cs">
       <DependentUpon>FileDetails.cs</DependentUpon>
     </Compile>
-    <Compile Include="Files\SortFiles.cs" />
+    <Compile Include="Files\Query.cs" />
     <Compile Include="Files\Types.cs" />
     <Compile Include="GitHub\Resources.cs" />
     <Compile Include="Models\Bookmark.cs" />
@@ -126,7 +126,6 @@
       <DependentUpon>DataWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="Utilities\ExceptionEvents.cs" />
-    <Compile Include="Files\SortBy.cs" />
     <Compile Include="Asynchronous\BackGroundWorker.cs" />
     <Compile Include="Controls\SplashScreen.cs">
       <SubType>UserControl</SubType>

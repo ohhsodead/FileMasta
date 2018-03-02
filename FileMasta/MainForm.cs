@@ -117,14 +117,20 @@ namespace FileMasta
             Program.log.Info("Successfully loaded everything");
         }
 
-        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        public bool deleteDataDirectory = false;
+        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            if (e.CloseReason == CloseReason.UserClosing | e.CloseReason == CloseReason.ApplicationExitCall) {
+            if (e.CloseReason == CloseReason.UserClosing | e.CloseReason == CloseReason.ApplicationExitCall)
+            {
                 Properties.Settings.Default.Save();
                 // Delete app Data directory if user settings is true
-                if (Properties.Settings.Default.clearDataOnClose)
+                if (Properties.Settings.Default.clearDataOnClose | deleteDataDirectory == true)
                     if (Directory.Exists(LocalExtensions.pathData))
                         Directory.Delete(LocalExtensions.pathData, true);
+
+                // Restart app, used when loading process is too long
+                if (deleteDataDirectory == true)
+                    Application.Restart();
             }
 
             Program.log.Info("Closing");
@@ -374,9 +380,7 @@ namespace FileMasta
 
             var startText = buttonFileType.Text.Split(':');
             buttonFileType.Text = startText[0] + ": " + comboBoxFileType.GetItemText(comboBoxFileType.SelectedItem);
-            Font myFont = new Font(buttonFileType.Font.FontFamily, buttonFileType.Font.Size);
-            SizeF mySize = buttonFileType.CreateGraphics().MeasureString(buttonFileType.Text, myFont);
-            containerFileType.Width = (((int)(Math.Round(mySize.Width, 0))) + 26);
+            containerFileType.Width = ControlExtensions.GetPanelComboBoxWidth(buttonFileType);
         }
         
         /// <summary>
@@ -449,6 +453,7 @@ namespace FileMasta
 
         // Filter Preferences
         public static List<WebFile> SelectedFiles { get; set; } = FilesOpenDatabase;
+        public Query.SortBy SelectedFilesSort { get; set; } = Query.SortBy.Name;
         public List<string> SelectedFilesType { get; set; } = Types.All;
         public string SelectedFilesHost { get; set; } = "";
 
@@ -528,20 +533,16 @@ namespace FileMasta
             e.PaintParts &= ~DataGridViewPaintParts.Focus;
         }
 
-        delegate void loadFilesCallBack(List<WebFile> dataFiles, SortBy order = SortBy.Name);
-        public void ShowFiles(List<WebFile> dataFiles, SortBy order = SortBy.Name)
+        delegate void loadFilesCallBack(List<WebFile> dataFiles);
+        public void ShowFiles(List<WebFile> dataFiles)
         {
             EnableSearchControls(false);
-            
-            if (order == SortBy.Name) SortFiles.ByName(dataFiles);
-            else if (order == SortBy.Size) SortFiles.BySize(dataFiles);
-            else if (order == SortBy.Date) SortFiles.ByDate(dataFiles);
 
             var stopWatch = new Stopwatch();
 
             Program.log.Info("Searching files started");
             imageSearchFiles.Image = Properties.Resources.loader;
-            BackGroundWorker.RunWorkAsync<List<WebFile>>(() => SearchList(dataFiles, "URL", textBoxSearchFiles.Text), (data) =>
+            BackGroundWorker.RunWorkAsync<List<WebFile>>(() => Query.Search(dataFiles, textBoxSearchFiles.Text, SelectedFilesSort), (data) =>
             {
                 if (tabSearch.InvokeRequired)
                 {
@@ -585,29 +586,6 @@ namespace FileMasta
             });
         }
 
-        object loadSearchListLock = new object();
-        public List<WebFile> SearchList<WebFile>(List<WebFile> list, string PropertyName, string SearchValue)
-        {
-            lock (loadSearchListLock)
-            {
-                return list.Select(item =>
-                new
-                {
-                    i = item,
-                    Props = item.GetType().GetProperties(BindingFlags.Instance | BindingFlags.Public)
-                })
-                .Where(item => item.Props.Any(p =>
-                {
-                    var val = p.GetValue(item.i, null);
-                    return val != null
-                        && (p.Name.ToLower() == Uri.UnescapeDataString(PropertyName.ToLower()) || string.IsNullOrEmpty(PropertyName))
-                        && (TextExtensions.ContainsAll(val.ToString().ToLower(), TextExtensions.GetWords(SearchValue.ToLower())) || string.IsNullOrEmpty(SearchValue));
-                }))
-                .Select(item => item.i)
-                .ToList();
-            }
-        }
-
         /// <summary>
         /// Enable/Disable search controls, to prevent another search process which causes a crash
         /// </summary>
@@ -628,7 +606,6 @@ namespace FileMasta
             comboBoxSortFiles.Enabled = isEnabled;
             buttonFilterFiles.Enabled = isEnabled;
             comboBoxFilterFiles.Enabled = isEnabled;
-            imageSearchFiles.Enabled = isEnabled;
 
             buttonFilesAll.Enabled = isEnabled;
             buttonFilesVideo.Enabled = isEnabled;
@@ -668,8 +645,8 @@ namespace FileMasta
             foreach (string path in url.LocalPath.Split('/'))
                 if (!Path.HasExtension(path))
                     directories.Append(path + "> ");
-
             FrmFileDetails.infoDirectory.Text = directories.ToString();
+
             FrmFileDetails.infoSize.Text = TextExtensions.BytesToString(file.Size);
             FrmFileDetails.infoAge.Text = TextExtensions.GetTimeAgo(file.DateUploaded);
 
@@ -688,23 +665,17 @@ namespace FileMasta
         }
 
         private void comboBoxFilesSort_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            imageSearchFiles.Image = Properties.Resources.loader;
-
+        {  
             if (comboBoxSortFiles.SelectedIndex == 0)
-                ShowFiles(SelectedFiles, SortBy.Name);
+                SelectedFilesSort = Query.SortBy.Name;
             else if (comboBoxSortFiles.SelectedIndex == 1)
-                ShowFiles(SelectedFiles, SortBy.Size);
+                SelectedFilesSort = Query.SortBy.Size;
             else if (comboBoxSortFiles.SelectedIndex == 2)
-                ShowFiles(SelectedFiles, SortBy.Date);
+                SelectedFilesSort = Query.SortBy.Date;
 
             var startText = buttonSortFiles.Text.Split(':');
             buttonSortFiles.Text = startText[0] + ": " + comboBoxSortFiles.GetItemText(comboBoxSortFiles.SelectedItem);
-            var myFont = new Font(buttonSortFiles.Font.FontFamily, buttonSortFiles.Font.Size);
-            var mySize = buttonSortFiles.CreateGraphics().MeasureString(buttonSortFiles.Text, myFont);
-            flowLayoutSortFiles.Width = (((int)(Math.Round(mySize.Width, 0))) + 26);
-
-            imageSearchFiles.Image = Properties.Resources.magnify_orange;
+            flowLayoutSortFiles.Width = ControlExtensions.GetPanelComboBoxWidth(buttonSortFiles);
         }
 
         // Filter Files by Host
@@ -713,24 +684,19 @@ namespace FileMasta
             comboBoxFilterFiles.DroppedDown = true;
         }
 
-        private void buttonFilesBackToSearch_ClickButtonArea(object Sender, MouseEventArgs e)
-        {
-            tab.SelectedTab = tabSearch;
-        }
-
         private void comboBoxFilesHost_SelectedIndexChanged(object sender, EventArgs e)
         {
-            imageSearchFiles.Image = Properties.Resources.loader;
             var startText = buttonFilterFiles.Text.Split(':');
             buttonFilterFiles.Text = startText[0] + ": " + comboBoxFilterFiles.GetItemText(comboBoxFilterFiles.SelectedItem);
-            var myFont = new Font(buttonFilterFiles.Font.FontFamily, buttonFilterFiles.Font.Size);
-            var mySize = buttonFilterFiles.CreateGraphics().MeasureString(buttonFilterFiles.Text, myFont);
-            flowLayoutFilterFiles.Width = (((int)(Math.Round(mySize.Width, 0))) + 26);
+            flowLayoutFilterFiles.Width = ControlExtensions.GetPanelComboBoxWidth(buttonFilterFiles);
             Refresh();
-            if (comboBoxFilterFiles.SelectedIndex == 0) SelectedFilesHost = "";
-            else SelectedFilesHost = comboBoxFilterFiles.SelectedItem.ToString();
-            ShowFiles(SelectedFiles);
-            comboBoxFilterFiles.DropDownWidth =ControlExtensions.DropDownWidth(comboBoxFilterFiles);
+
+            comboBoxFilterFiles.DropDownWidth = ControlExtensions.DropDownWidth(comboBoxFilterFiles);
+
+            if (comboBoxFilterFiles.SelectedIndex == 0)
+                SelectedFilesHost = "";
+            else
+                SelectedFilesHost = comboBoxFilterFiles.SelectedItem.ToString();
         }
 
         private void bgSearchFiles_ClickButtonArea(object Sender, MouseEventArgs e)

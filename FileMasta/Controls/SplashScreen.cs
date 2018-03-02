@@ -16,9 +16,9 @@ namespace FileMasta.Controls
             labelRestart.Visible = true;
         }
 
-        private void lblLoadingStuckRestart_Click(object sender, System.EventArgs e)
+        private void labelRestart_Click(object sender, System.EventArgs e)
         {
-            if (Directory.Exists(LocalExtensions.pathData)) { Directory.Delete(LocalExtensions.pathData, true); } Application.Restart();
+            MainForm.Form.deleteDataDirectory = true;
         }
     }
 }

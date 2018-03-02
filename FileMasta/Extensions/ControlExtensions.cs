@@ -27,6 +27,18 @@ namespace FileMasta.Extensions
         }
 
         /// <summary>
+        /// Returns max size to fit button text, plus some
+        /// </summary>
+        /// <param name="ctrl">CButton control to measure text from</param>
+        /// <returns>Int of the max size</returns>
+        public static int GetPanelComboBoxWidth(CButton ctrl)
+        {
+            var myFont = new Font(ctrl.Font.FontFamily, ctrl.Font.Size);
+            var mySize = ctrl.CreateGraphics().MeasureString(ctrl.Text, myFont);
+            return ((int)(Math.Round(mySize.Width, 0))) + 26;
+        }
+
+        /// <summary>
         /// Change button text and auto size
         /// </summary>
         /// <param name="ctrl">CButton control to set text</param>

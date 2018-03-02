@@ -48,8 +48,8 @@ namespace FileMasta.Files
         /// <summary>
         /// Checks if database file exists at users data directory, if so whether they're the same size, and downloads the latest one if either returns true
         /// </summary>
-        /// <param name="webFile"></param>
-        /// <param name="fileName"></param>
+        /// <param name="webFile">String URL of the file to check for update</param>
+        /// <param name="fileName">File name, used to check local directory</param>
         /// <returns></returns>
         public static bool UpdateLocalDatabaseFiles(string webFile, string fileName)
         {
