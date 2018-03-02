@@ -37,7 +37,7 @@ CHANGE: CORE | Fixed issue causing Bookmarks not loading if one was no longer in
 CHANGE: CORE | Removed languages, working on something easier for implementing new languages
 CHANGE: CORE | Various improvements to code
 CHANGE: CORE | Major fixes and improvements to web crawler
-CHANGE: UI   | Updated UI
+CHANGE: UI   | Fixes and updates
 CHANGE: UI   | Scroll through search results in the details page
 CHANGE: UI   | Added five randomly-generated recently added files to Home tab
 CHANGE: UI   | Re-added external search engines
@@ -65,7 +65,7 @@ CHANGE: CORE | Enhanced functionality and performance
 CHANGE: CORE | Improved app logging, using log4net now
 CHANGE: CORE | Fixed bugs
 CHANGE: UI   | Added sort files by size (#79) and date added
-CHANGE: UI   | Refurbished the entire UI (user interface)
+CHANGE: UI   | Refurbished the entire user interface
 
 
 
@@ -74,7 +74,7 @@ CHANGE: UI   | Refurbished the entire UI (user interface)
 
 CHANGE: CORE | Web crawler database improvements
 CHANGE: CORE | Several bug fixes
-CHANGE: UI   | UI fixes
+CHANGE: UI   | Fixes
 
 
 
@@ -86,7 +86,7 @@ CHANGE: CORE | Added several data validations, as well as default variables
 CHANGE: CORE | Fixed #68, #69, #70, #71, #74, #75
 CHANGE: CORE | Deflated Installer for quicker downloads
 CHANGE: CORE | Added support for Windows XP, Vista and Servers (2008-2012) to the Installer
-CHANGE: UI   | Improved UI responsiveness
+CHANGE: UI   | Improved responsiveness
 
 
 
@@ -102,7 +102,7 @@ CHANGE: CORE | Renamed project
 
 CHANGE: CORE | Various code improvements
 CHANGE: CORE | Fixed #65, #66 (null values caused by DateTime)
-CHANGE: UI   | Somewhat responsive UI, to-do: consistency
+CHANGE: UI   | Somewhat responsive, to-do: consistency
 
 
 
@@ -117,7 +117,7 @@ CHANGE: UI   | Fixed total database file size
 2018.01.24   | FileMasta 2.14.3
 
 CHANGE: CORE | Several bug fixes
-CHANGE: UI   | Improved UI, smoother and consistent (dark elements)
+CHANGE: UI   | Smoother and consistent colours (dark)
 CHANGE: UI   | Added Custom* Files section to search for specific file types
 CHANGE: UI   | Added 'Loading stuck?' button to splash screen, workaround for long startups (#64)
 CHANGE: UI   | Added search time in seconds
@@ -129,7 +129,7 @@ CHANGE: UI   | Renamed 'About' tab to 'Information'
 2018.01.17   | FileMasta 2.14.2
 
 CHANGE: CORE | Added database info
-CHANGE: UI   | Improvements UI elements
+CHANGE: UI   | Improvements to controls
 CHANGE: UI   | Fixed popup dialog not showing in parent form
 CHANGE: UI   | Fixed total indexed files size
 
@@ -152,7 +152,7 @@ CHANGE: UI   | Added Change Log
 2018.01.14   | FileMasta 2.14.0
 
 CHANGE: CORE | Moved latest version text to DropBox
-CHANGE: UI   | Improved form/button UI consistency
+CHANGE: UI   | Improved form/button consistency
 CHANGE: UI   | Added Home tab
 CHANGE: UI   | Added Top Search Results (Powered by FileChef.com)
 CHANGE: UI   | Added Share project on Facebook/Twitter
@@ -168,7 +168,7 @@ CHANGE: UI   | Added localization strings
 
 2018.01.10   | FileMasta 2.12.2
 
-CHANGE: UI   | Fixed Stream Info UI
+CHANGE: UI   | Fixed Stream info
 
 
 
@@ -182,7 +182,7 @@ CHANGE: CORE | Some minor bug fixes
 
 2018.01.10   | FileMasta 2.12.0
 
-CHANGE: UI   | UI/Database improvements (Now only one core database)
+CHANGE: CORE | Database improvements (Now only one core database)
 CHANGE: UI   | Added Czech language (#53 Thanks to @Martin005)
 CHANGE: UI   | Added Discover tab
 CHANGE: UI   | Added All Files tab
@@ -198,7 +198,7 @@ CHANGE: UI   | Removed Filter Files by Format
 
 2017.12.30   | FileMasta 2.11.0
 
-CHANGE: UI   | UI improvements
+CHANGE: UI   | Improvements
 CHANGE: UI   | Localization fixes (Thanks to @Martin005)
 CHANGE: UI   | Added file details page
 CHANGE: UI   | Added request file size button
@@ -386,7 +386,7 @@ CHANGE: UI   | Enabled maximize form
 CHANGE: CORE | Added background tasks and threads
 CHANGE: CORE | Added support for local cache, updates every 12 hours
 CHANGE: CORE | Added support for multiple streams
-CHANGE: UI   | Many UI changes
+CHANGE: UI   | Updates
 CHANGE: UI   | Added splash screen
 CHANGE: UI   | Added Movies tab for posters
 CHANGE: UI   | Added filter by genre, more coming soon
@@ -423,7 +423,7 @@ CHANGE: CORE | Various bug fixes
 CHANGE: CORE | Added support for extracting movie from file name (format e.g. title year pixelsize format formatsize filename extension)
 CHANGE: CORE | Added OMDb API
 CHANGE: CORE | Added Popcorn Time API
-CHANGE: UI   | UI improvements
+CHANGE: UI   | Improvements
 CHANGE: UI   | Added movie details tab
 CHANGE: UI   | Added Trailer button
 CHANGE: UI   | Added report issue button to about tab
@@ -439,7 +439,7 @@ CHANGE: UI   | Added Settings tab
 2017.10.19   | FileMasta 1.0.1
 
 CHANGE: CORE | Added support for opening URL in external players (Windows Media Player & VLC)
-CHANGE: UI   | UI improvements
+CHANGE: UI   | Improvements
 CHANGE: UI   | Added download client
 CHANGE: UI   | Added support for multiple tags
 CHANGE: UI   | Added random backgrounds
