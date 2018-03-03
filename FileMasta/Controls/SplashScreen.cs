@@ -1,6 +1,4 @@
-﻿using System.IO;
-using System.Windows.Forms;
-using FileMasta.Extensions;
+﻿using System.Windows.Forms;
 
 namespace FileMasta.Controls
 {

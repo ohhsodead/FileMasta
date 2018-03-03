@@ -6,9 +6,7 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Net;
-using System.Reflection;
 using System.Threading;
 using System.Text;
 using System.Windows.Forms;
@@ -97,7 +95,7 @@ namespace FileMasta
             if (LocalExtensions.CheckForInternetConnection())
             {
                 BackGroundWorker.RunWorkAsync(() => Updates.CheckForUpdate());
-                LoadTopSearches(); // Eventually make this async too
+                LoadTopSearches();
                 BackGroundWorker.RunWorkAsync(() => Database.UpdateLocalDatabase(), CompletedChecks);
             }
             else
@@ -519,13 +517,16 @@ namespace FileMasta
         // Files dataGridView click event for item, will get the last (hidden) item (the URL) in the selected row and get WebFile from the URL
         private void dataGridFiles_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            var URL = dataGridFiles.CurrentRow.Cells[5].Value.ToString();
 
             if (e.RowIndex != -1)
+            {
+                var URL = dataGridFiles.CurrentRow.Cells[5].Value.ToString();
+
                 if (dataGridFiles.CurrentRow.Cells[4].Value.ToString() == "Local")
                     ShowFileDetails(new WebFile(Path.GetExtension(URL).Replace(".", "").ToUpper(), Path.GetFileNameWithoutExtension(new Uri(URL).LocalPath), new FileInfo(URL).Length, File.GetCreationTime(URL), "Local", URL));
                 else
                     ShowFileDetails(Database.FileInfoFromURL(URL));
+            }
         }
 
         private void dataGridFiles_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
