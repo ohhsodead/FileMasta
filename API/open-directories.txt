@@ -150,7 +150,6 @@ http://www.gamers.org/pub/games/
 http://www.gamers.org/pub/mirrors/
 http://smashguide.ddns.net/repo/
 http://109.236.94.220/
-http://archive.scene.org/
 http://universalflowuniversity.com/Books/
 http://nesninja.com/public/
 https://www.rwilco12.com/Files/
