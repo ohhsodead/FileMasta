@@ -93,9 +93,9 @@ namespace FileMasta.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap chevron_left {
+        internal static System.Drawing.Bitmap chevron_down {
             get {
-                object obj = ResourceManager.GetObject("chevron-left", resourceCulture);
+                object obj = ResourceManager.GetObject("chevron-down", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,9 +103,9 @@ namespace FileMasta.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap chevron_right {
+        internal static System.Drawing.Bitmap chevron_up {
             get {
-                object obj = ResourceManager.GetObject("chevron-right", resourceCulture);
+                object obj = ResourceManager.GetObject("chevron-up", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -146,6 +146,16 @@ namespace FileMasta.Properties {
         internal static System.Drawing.Bitmap dots_horizontal {
             get {
                 object obj = ResourceManager.GetObject("dots_horizontal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap download {
+            get {
+                object obj = ResourceManager.GetObject("download", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

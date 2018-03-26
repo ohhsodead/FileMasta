@@ -13,15 +13,18 @@ namespace FileMasta.Extensions
         /// <returns></returns>
         public static DateTime GetFileLastModified(string WebFileURL)
         {
-            try {
+            try
+            {
                 Program.log.Info("Requesting file modified date from web file");
 
                 WebRequest req = WebRequest.Create(WebFileURL);
                 req.Method = "HEAD";
                 req.Timeout = 7000;
-                using (var fileResponse = (HttpWebResponse)req.GetResponse()) {
+                using (var fileResponse = (HttpWebResponse)req.GetResponse())
+                {
                     var fileModifiedTime = fileResponse.LastModified;
-                    if (fileModifiedTime != null) {
+                    if (fileModifiedTime != null)
+                    {
                         Program.log.Info("Successfully returned file modified date from web file");
                         return fileModifiedTime;
                     }
@@ -39,14 +42,17 @@ namespace FileMasta.Extensions
         /// <returns></returns>
         public static int GetFileSize(string WebFileURL)
         {
-            try {
+            try
+            {
                 Program.log.Info("Requesting file size from web file");
 
                 var req = WebRequest.Create(WebFileURL);
                 req.Method = "HEAD";
                 req.Timeout = 7000;
-                using (var fileResponse = (HttpWebResponse)req.GetResponse()) {
-                    if (int.TryParse(fileResponse.Headers.Get("Content-Length"), out int ContentLength)) {
+                using (var fileResponse = (HttpWebResponse)req.GetResponse())
+                {
+                    if (int.TryParse(fileResponse.Headers.Get("Content-Length"), out int ContentLength))
+                    {
                         Program.log.Info("Successfully returned file size from web file");
                         return ContentLength;
                     }

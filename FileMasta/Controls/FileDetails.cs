@@ -4,13 +4,13 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.Diagnostics;
 using System.IO;
-using FileMasta.Asynchronous;
 using FileMasta.Bookmarks;
-using FileMasta.Windows;
 using FileMasta.Extensions;
 using FileMasta.Files;
 using FileMasta.GitHub;
 using FileMasta.Models;
+using FileMasta.Windows;
+using FileMasta.Worker;
 
 namespace FileMasta.Controls
 {
@@ -39,19 +39,27 @@ namespace FileMasta.Controls
             if (!UserBookmarks.IsBookmarked(currentFile.URL))
                 ControlExtensions.SetControlText(buttonBookmarkFile, "Add to Bookmarks");            
             else
-                ControlExtensions.SetControlText(buttonBookmarkFile, "Remove from Bookmarks");            
+                ControlExtensions.SetControlText(buttonBookmarkFile, "Remove from Bookmarks");
 
-            // Support media players installed on users machine
-            VLCToolStripMenuItem.Visible = File.Exists(LocalExtensions.pathVLC);
-            MPCToolStripMenuItem.Visible = File.Exists(LocalExtensions.pathMPCCodec64) || File.Exists(LocalExtensions.pathMPC64) || File.Exists(LocalExtensions.pathMPC86);
-
-            // Shows 'Play Media' button if is valid file extension
+            // Shows 'Play Media' button if this file has a supported file extension
             if (videoFileTypes.Contains(currentFile.Type) || audioFileTypes.Contains(currentFile.Type))
-                buttonPlayMedia.Visible = true;
-            else
-                buttonPlayMedia.Visible = false;
+            {
+                // Support media players installed on users machine
+                VLC2ToolStripMenuItem.Visible = true;
+                WMPToolStripMenuItem.Visible = true;
+                VLCToolStripMenuItem.Visible = File.Exists(LocalExtensions.pathVLC);
+                MPCToolStripMenuItem.Visible = File.Exists(LocalExtensions.pathMPCCodec64) || File.Exists(LocalExtensions.pathMPC64) || File.Exists(LocalExtensions.pathMPC86);
+            }
 
-            // Checks if file size isn't default
+            // Support download manangers installed on users machine, shown if this isn't a local file
+            IDMToolStripMenuItem.Visible = File.Exists(LocalExtensions.pathIDMAN64) || File.Exists(LocalExtensions.pathIDMAN86) && !currentFile.URL.StartsWith(LocalExtensions.userDownloadsDirectory);
+
+            if (contextOpenFile.Items.Count != 0)
+            {
+                buttonOpenFile.Visible = true;
+            }
+
+            // Shows Request File Size button if size property returns 0
             if (currentFile.Size == 0)
                 buttonRequestFileSize.Visible = true;
             else
@@ -71,32 +79,43 @@ namespace FileMasta.Controls
         {
             if (MainForm.Form.dataGridFiles.Rows.Count > 0) {
                 if (MainForm.Form.dataGridFiles.SelectedCells[0].OwningRow.Index == 0)
-                    imagePreviousFile.Image = ImageExtensions.ChangeColor(Properties.Resources.chevron_left, Color.Gray);
+                    imagePreviousFile.Image = ImageExtensions.ChangeColor(Properties.Resources.chevron_up, Color.Gray);
                 else
-                    imagePreviousFile.Image = Properties.Resources.chevron_left;
+                    imagePreviousFile.Image = Properties.Resources.chevron_up;
 
                 if (MainForm.Form.dataGridFiles.SelectedCells[0].OwningRow.Index == MainForm.Form.dataGridFiles.Rows.Count - 1)
-                    imageNextFile.Image = ImageExtensions.ChangeColor(Properties.Resources.chevron_right, Color.Gray);
+                    imageNextFile.Image = ImageExtensions.ChangeColor(Properties.Resources.chevron_down, Color.Gray);
                 else
-                    imageNextFile.Image = Properties.Resources.chevron_right;
+                    imageNextFile.Image = Properties.Resources.chevron_down;
             }
             else {
-                imagePreviousFile.Image = ImageExtensions.ChangeColor(Properties.Resources.chevron_left, Color.Gray);
-                imageNextFile.Image = ImageExtensions.ChangeColor(Properties.Resources.chevron_right, Color.Gray);
+                imagePreviousFile.Image = ImageExtensions.ChangeColor(Properties.Resources.chevron_up, Color.Gray);
+                imageNextFile.Image = ImageExtensions.ChangeColor(Properties.Resources.chevron_down, Color.Gray);
             }
         }
 
         private void appClose_Click(object sender, EventArgs e)
         {
+            // Close file details
             MainForm.Form.tab.SelectedTab = MainForm.Form.CurrentTab;
             MainForm.FrmFileDetails.Dispose();
         }
 
         private void btnDirectLink_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            Process.Start(currentFile.URL);
+            try
+            {
+                // Open file in default web browser, or if local then default program
+                // Crashes when no application set for the extension, so I used Try to let the user know if this is the case
+                Process.Start(currentFile.URL);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Unable to open file\n\n" + ex.Message);
+            }
         }
 
+        // Report File button
         private void btnReportFile_ClickButtonArea(object Sender, MouseEventArgs e)
         {
             cmboboxReportFile.DroppedDown = true;
@@ -117,6 +136,7 @@ namespace FileMasta.Controls
             cmboBoxShareFile.DroppedDown = true;
         }
 
+        // Share File button
         private void cmboBoxShareFile_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmboBoxShareFile.SelectedIndex == 0)
@@ -133,16 +153,16 @@ namespace FileMasta.Controls
 
         private void infoDirectory_Click(object sender, EventArgs e)
         {
-            Uri uri = new Uri(currentFile.URL);
-            string parentName = TextExtensions.GetParentUriString(uri).Remove(TextExtensions.GetParentUriString(uri).Length - 1);
+            // Open file parent directory in default web browser
             Process browser = new Process();
             browser.StartInfo.UseShellExecute = true;
-            browser.StartInfo.FileName = parentName;
+            browser.StartInfo.FileName = TextExtensions.GetParentUriString(new Uri(currentFile.URL)).Remove(TextExtensions.GetParentUriString(new Uri(currentFile.URL)).Length - 1);;
             browser.Start();
         }
 
         private void infoReferrer_Click(object sender, EventArgs e)
         {
+            // Open file host in default web browser
             Process browser = new Process();
             browser.StartInfo.UseShellExecute = true;
             browser.StartInfo.FileName = new Uri(currentFile.URL).GetLeftPart(UriPartial.Authority).ToString();
@@ -151,33 +171,50 @@ namespace FileMasta.Controls
 
         private void btnRequestFileSize_ClickButtonArea(object Sender, MouseEventArgs e)
         {
+            // Request file size from URL
             buttonRequestFileSize.Visible = false;
             BackGroundWorker.RunWorkAsync<string>(() => TextExtensions.BytesToString(WebFileExtensions.GetFileSize(currentFile.URL)), (data) => { infoSize.Text = data; });
         }
 
         private void btnViewDirectory_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            string parentName = TextExtensions.GetParentUriString(new Uri(currentFile.URL)).Remove(TextExtensions.GetParentUriString(new Uri(currentFile.URL)).Length - 1);
-
+            // Open parent directory of file in default web browser
             Process browser = new Process();
             browser.StartInfo.UseShellExecute = true;
-            browser.StartInfo.FileName = parentName;
+            browser.StartInfo.FileName = TextExtensions.GetParentUriString(new Uri(currentFile.URL)).Remove(TextExtensions.GetParentUriString(new Uri(currentFile.URL)).Length - 1); ;
             browser.Start();            
         }
 
         private void btnPlayMedia_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            contextFileName.Show(buttonPlayMedia, buttonPlayMedia.PointToClient(Cursor.Position));
+            contextOpenFile.Show(buttonOpenFile, buttonOpenFile.PointToClient(Cursor.Position));
+        }
+
+
+        // Opening File...
+
+        private void VLC2ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Open file in built-in VLC player
+                var a = new VLCPlayer { Text = new Uri(currentFile.URL).LocalPath };
+                a.axVLCPlugin21.playlist.add(currentFile.URL);
+                a.axVLCPlugin21.playlist.play();
+                a.Show();
+            }
+            catch { MessageBox.Show("Built-in player was unable to load. We are aware there are some issues with this function and are working to resolve this. For the time being, please install the VLC player on your computer and choose 'Play Media' > 'VLC' "); }
         }
 
         private void WMPToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            // Open file in Windows Media Player
             Process.Start("wmplayer.exe", currentFile.URL);
         }
 
         private void VLCToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // Open source file in VLC with subtitles
+            // Open file in VLC player, with subtitles (if found)
             Process VLC = new Process();
             VLC.StartInfo.FileName = LocalExtensions.pathVLC;
             VLC.StartInfo.Arguments = ("-vvv " + currentFile.URL + " --sub-file=" + infoFileSubtitles);
@@ -186,6 +223,7 @@ namespace FileMasta.Controls
 
         private void MPCToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            // Open file in Media Player Classic
             Process MPC = new Process();
             if (File.Exists(LocalExtensions.pathMPCCodec64))
                 MPC.StartInfo.FileName = LocalExtensions.pathMPCCodec64;
@@ -197,20 +235,21 @@ namespace FileMasta.Controls
             MPC.Start();
         }
 
-        private void VLC2ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void IDMToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            try
-            {
-                var a = new VLCPlayer { Text = new Uri(currentFile.URL).LocalPath };
-                a.axVLCPlugin21.playlist.add(currentFile.URL);
-                a.axVLCPlugin21.playlist.play();
-                a.Show();
-            }
-            catch { MessageBox.Show("Built-in player was unable to load. We are aware there are some issues with this function and are working to resolve this. For the time being, please install the VLC player on your computer and choose 'Play Media' > 'VLC' "); }
+            // Open file in Internet Download Manager
+            Process IDM = new Process();
+            if (File.Exists(LocalExtensions.pathIDMAN64))
+                IDM.StartInfo.FileName = LocalExtensions.pathIDMAN64;
+            else
+                IDM.StartInfo.FileName = LocalExtensions.pathIDMAN86;
+            IDM.StartInfo.Arguments = ("-d " + currentFile.URL);
+            IDM.Start();
         }
 
         private void BtnBookmarkFile_ClickButtonArea(object Sender, MouseEventArgs e)
         {
+            // Add/Remove file from users Bookmarks
             if (UserBookmarks.IsBookmarked(currentFile.URL)) {
                 UserBookmarks.RemoveFile(currentFile.URL);
                 ControlExtensions.SetControlText(buttonBookmarkFile, "Add to Bookmarks");
@@ -223,11 +262,15 @@ namespace FileMasta.Controls
 
         private void infoFileURL_SideImageClicked(object Sender, MouseEventArgs e)
         {
+            // Set file URL to clipboard
             Clipboard.SetText(currentFile.URL);
             infoFileURL.SideImage = Properties.Resources.clipboard_check_orange;
             infoFileURL.SideImageSize = new Size(24, 24);
         }
 
+        /// <summary>
+        /// Go up a row on dataGridFiles and select it
+        /// </summary>
         private void SelectUpRow()
         {
             DataGridView dgv = MainForm.Form.dataGridFiles;
@@ -241,15 +284,20 @@ namespace FileMasta.Controls
                 dgv.ClearSelection();
                 dgv.Rows[rowIndex - 1].Cells[colIndex].Selected = true;
 
+                var URL = MainForm.Form.dataGridFiles.CurrentRow.Cells[5].Value.ToString();
+
                 if (MainForm.Form.dataGridFiles.CurrentRow.Cells[4].Value.ToString() == "Local")
-                    MainForm.Form.ShowFileDetails(Database.FileInfoFromURL(MainForm.Form.dataGridFiles.CurrentRow.Cells[5].Value.ToString()), false);                
+                    MainForm.Form.ShowFileDetails(new WebFile(Path.GetExtension(URL).Replace(".", "").ToUpper(), Path.GetFileNameWithoutExtension(new Uri(URL).LocalPath), new FileInfo(URL).Length, File.GetCreationTime(URL), "Local", URL), false);
                 else 
-                    MainForm.Form.ShowFileDetails(Database.FileInfoFromURL(MainForm.Form.dataGridFiles.CurrentRow.Cells[5].Value.ToString()), false);
+                    MainForm.Form.ShowFileDetails(Database.FileInfoFromURL(URL), false);
 
                 ScrollButtonChecks();
             }
         }
 
+        /// <summary>
+        /// Go down a row on dataGridFiles and select it
+        /// </summary>
         private void SelectDownRow()
         {
             DataGridView dgv = MainForm.Form.dataGridFiles;
@@ -263,15 +311,18 @@ namespace FileMasta.Controls
                 dgv.ClearSelection();
                 dgv.Rows[rowIndex + 1].Cells[colIndex].Selected = true;
 
-                if (MainForm.Form.dataGridFiles.CurrentRow.Cells[4].Value.ToString() == "local")
-                    MainForm.Form.ShowFileDetails(Database.FileInfoFromURL(MainForm.Form.dataGridFiles.CurrentRow.Cells[5].Value.ToString()), false);
+                var URL = MainForm.Form.dataGridFiles.CurrentRow.Cells[5].Value.ToString();
+
+                if (MainForm.Form.dataGridFiles.CurrentRow.Cells[4].Value.ToString() == "Local")
+                    MainForm.Form.ShowFileDetails(new WebFile(Path.GetExtension(URL).Replace(".", "").ToUpper(), Path.GetFileNameWithoutExtension(new Uri(URL).LocalPath), new FileInfo(URL).Length, File.GetCreationTime(URL), "Local", URL), false);
                 else
-                    MainForm.Form.ShowFileDetails(Database.FileInfoFromURL(MainForm.Form.dataGridFiles.CurrentRow.Cells[5].Value.ToString()), false);
+                    MainForm.Form.ShowFileDetails(Database.FileInfoFromURL(URL), false);
 
                 ScrollButtonChecks();
             }
         }
 
+        // Navigate Files with arrows
         private void imgPreviousFile_Click(object sender, EventArgs e)
         {
             SelectUpRow();
@@ -282,37 +333,50 @@ namespace FileMasta.Controls
             SelectDownRow();
         }
 
+        /*************************************************************************/
+        /* Keyboard Shortcuts                                                    */
+        /*************************************************************************/
+
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
             switch (keyData)
             {
-                case Keys.Left:
+                // Scroll through files with up/down arrow keys
+                case Keys.Up:
                     SelectUpRow();
                     return true;
-                case Keys.Right:
+                case Keys.Down:
                     SelectDownRow();
                     return true;
-                case Keys.B:
+                // Click Bookmarks button
+                case Keys.Control | Keys.B:
                     buttonBookmarkFile.PerformClick();
                     return true;
-                case Keys.V:
+                // Clicks View Directory button
+                case Keys.Control | Keys.V:
                     buttonViewDirectory.PerformClick();
                     return true;
-                case Keys.R:
-                    buttonRequestFileSize.PerformClick();
-                    return true;
-                case Keys.S:
-                    buttonShare.PerformClick();
-                    return true;
-                case Keys.E:
-                    buttonReport.PerformClick();
-                    return true;
-                case Keys.D:
+                // Clicks Direct Link button
+                case Keys.Control | Keys.D:
                     buttonDirectLink.PerformClick();
                     return true;
-                case Keys.P:
-                    buttonPlayMedia.PerformClick();
+                // Click Report File button
+                case Keys.Control | Keys.E:
+                    buttonReport.PerformClick();
                     return true;
+                // Click Share File button
+                case Keys.Control | Keys.S:
+                    buttonShare.PerformClick();
+                    return true;
+                // Click Request File Size button
+                case Keys.Control | Keys.R:
+                    buttonRequestFileSize.PerformClick();
+                    return true;
+                // Click Open File button
+                case Keys.Control | Keys.O:
+                    buttonOpenFile.PerformClick();
+                    return true;
+                // Close this instance
                 case Keys.Escape:
                     MainForm.Form.tab.SelectedTab = MainForm.Form.CurrentTab;
                     MainForm.FrmFileDetails.Dispose();

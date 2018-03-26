@@ -132,9 +132,7 @@
   <data name="labelSubmitDescription.Text" xml:space="preserve">
     <value>Submit your links to FileMasta.
 
-The link you submit will go to our issue tracker on GitHub. Links are reviewed on a first-in, first-out basis. This could take anywhere from a few hours to a couple of weeks before your site is listed depending on number of submissions yet to be checked.
-
-Our crawler will scan the web server starting at the directory you specify, and, all the files that pass a set of filters will be added to our database, it will also check if a randomly chosen file can be downloaded, and ignore the whole web server if the download fails. So *ONLY* web servers with downloadable content will be considered.
+The link you submit will go to our issue tracker on GitHub. Links are reviewed on a first-in, first-out basis. Our crawler will scan the web server starting at the directory you specify, and, all the files that pass a set of filters will be added to our database, it will also check if a randomly chosen file can be downloaded, and ignore the whole web server if the download fails. So *ONLY* web servers with downloadable content will be considered.
 
 Please keep in mind we are a search engine having strict policies, read the following guidelines first before submitting a link/website.
 

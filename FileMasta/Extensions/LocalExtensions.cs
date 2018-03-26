@@ -28,6 +28,12 @@ namespace FileMasta.Extensions
         public static string pathMPC86 = @"C:\Program Files (x86)\MPC-HC\mpc-hc.exe";
 
         /// <summary>
+        /// Supported download managers
+        /// </summary>
+        public static string pathIDMAN64 = @"C:\Program Files\Internet Download Manager\IDMan.exe";
+        public static string pathIDMAN86 = @"C:\Program Files (x86)\Internet Download Manager\IDMan.exe";
+
+        /// <summary>
         /// Checks for internet connection by attempting to connect to Google.com
         /// </summary>
         /// <returns></returns>

@@ -46,10 +46,10 @@ namespace FileMasta.Files
             }
         }
 
-        static int switchName = 0;
+        static int switchSort = 0;
         public static void SortFiles(List<WebFile> dataFiles, SortBy Property = SortBy.Name)
         {
-            if (switchName == 0)
+            if (switchSort == 0)
             {
                 dataFiles.Sort(delegate (WebFile x, WebFile y)
                 {
@@ -62,9 +62,9 @@ namespace FileMasta.Files
                     else
                         return x.Name.CompareTo(y.Name);
                 });
-                switchName = 1;
+                switchSort = 1;
             }
-            else if (switchName == 1)
+            else if (switchSort == 1)
             {
                 dataFiles.Sort(delegate (WebFile x, WebFile y)
                 {
@@ -77,7 +77,7 @@ namespace FileMasta.Files
                     else
                         return y.Name.CompareTo(x.Name);
                 });
-                switchName = 0;
+                switchSort = 0;
             }
         }
     }

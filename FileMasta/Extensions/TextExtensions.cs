@@ -116,7 +116,7 @@ namespace FileMasta.Extensions
         }
 
         /// <summary>
-        /// Get link parent folder in the uri structure, used to get which folder a file is in
+        /// Get parent folder path in the uri structure
         /// </summary>
         /// <param name="uri"></param>
         /// <returns>Parent folder url</returns>

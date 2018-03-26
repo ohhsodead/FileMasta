@@ -75,6 +75,8 @@ namespace FileMasta.Extensions
         /// <param name="ctrl">Tab title button to set as highlighted</param>
         public static void SelectTabTitle(CButton ctrl)
         {
+            MainForm.Form.CurrentTabTitle = ctrl;
+
             MainForm.Form.titleHome.ColorFillSolid = Colors.NonSelectedTitleRGB;
             MainForm.Form.titleHome.BorderColor = Colors.NonSelectedTitleRGB;
             MainForm.Form.titleHome.BackColor = Colors.NonSelectedTitleRGB;

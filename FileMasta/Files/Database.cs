@@ -5,6 +5,8 @@ using System.Linq;
 using System.Net;
 using FileMasta.Extensions;
 using FileMasta.Models;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace FileMasta.Files
 {
@@ -13,10 +15,10 @@ namespace FileMasta.Files
         /// <summary>
         /// URLs for database files
         /// </summary>
-        public static string UrlOpenFiles { get; } = "https://dl.dropbox.com/s/charfmjveo2v1h3/open-files.json?dl=0";
+        public static string UrlOpenFiles { get; } = "https://www.dropbox.com/s/charfmjveo2v1h3/open-files.json?raw=true";
+        public static string UrlTopSearches { get; } = "https://www.dropbox.com/s/512qe4ogan92vea/top-searches.txt?raw=true";
         public static string UrlOpenDirectories { get; } = "https://raw.githubusercontent.com/HerbL27/FileMasta/master/API/open-directories.txt";
-        public static string UrlTopSearches { get; } = "https://dl.dropbox.com/s/512qe4ogan92vea/top-searches.txt?dl=0";
-
+        
         /* Runs in the background on load event.
          * Checks if database file exists at users data directory, if so whether they're
          * the same size, and downloads the latest one if either return false */
@@ -77,6 +79,64 @@ namespace FileMasta.Files
             }
             catch (Exception ex) { Program.log.Error($"Unable to check database file '{fileName}' for update, URL : {webFile}", ex); return true; }
         }
+
+        /// <summary>
+        /// Total size of all files in database
+        /// </summary>
+        /// <returns>Total Size as Long</returns>
+        public static long GetTotalFileSize()
+        {
+            long totalSize = 0;
+
+            foreach (var jsonData in MainForm.FilesOpenDatabase)
+                totalSize += jsonData.Size;
+
+            return totalSize;
+        }
+
+        /// <summary>
+        /// Get database stats
+        /// </summary>
+        /// <returns></returns>
+        public static DateTime GetLastUpdateDate()
+        {
+            DateTime updateDate = DateTime.MinValue;
+
+            if (TextExtensions.IsValidJSON(MainForm.DatabaseInfo))
+            {
+                var dataJsonInfo = JsonConvert.DeserializeObject<DatabaseInfo>(MainForm.DatabaseInfo);
+                updateDate = dataJsonInfo.LastUpdated;
+            }
+
+            return updateDate;
+        }
+
+        /// <summary>
+        /// Gets some recently added files in the database by checking if file was uploaded in the last two weeks
+        /// </summary>
+        /// <returns></returns>
+        public static List<WebFile> GetRecentlyAddedFiles()
+        {
+            var recentlyAddedFiles = new List<WebFile>();
+
+            int itemCount = 1;
+            var addedHosts = new List<string>();
+            Program.log.Info("Getting recently added files");
+            var copiedItems = new List<WebFile>(MainForm.FilesOpenDatabase);
+            copiedItems.Shuffle();
+            foreach (var jsonData in copiedItems)
+                if (DateTime.Today < jsonData.DateUploaded.Date.AddDays(14) && jsonData.Size > 0 && !addedHosts.Contains(jsonData.Host) && itemCount <= 6)
+                {
+                    itemCount++;
+                    addedHosts.Add(jsonData.Host);
+                    recentlyAddedFiles.Add(jsonData);
+                }
+
+            Program.log.Info("Recently added files successful");
+
+            return recentlyAddedFiles;
+        }
+
 
         /// <summary>
         /// Get web file info from internal database, or creates a new object if it doesn't exist

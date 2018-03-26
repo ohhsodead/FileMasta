@@ -71,9 +71,8 @@
       <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
-    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -126,7 +125,7 @@
       <DependentUpon>DataWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="Utilities\ExceptionEvents.cs" />
-    <Compile Include="Asynchronous\BackGroundWorker.cs" />
+    <Compile Include="Worker\BackGroundWorker.cs" />
     <Compile Include="Controls\SplashScreen.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -301,10 +300,11 @@
   <ItemGroup>
     <Content Include="current-version.txt" />
     <Content Include="filemasta-logo.ico" />
+    <None Include="Resources\download.png" />
+    <None Include="Resources\chevron-down.png" />
+    <None Include="Resources\chevron-up.png" />
     <Content Include="Resources\filemasta-logo.png" />
     <None Include="Resources\keyboard.png" />
-    <None Include="Resources\chevron-right.png" />
-    <None Include="Resources\chevron-left.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

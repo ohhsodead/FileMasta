@@ -43,7 +43,7 @@
             this.panelItems.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.panelItems.Location = new System.Drawing.Point(12, 12);
             this.panelItems.Name = "panelItems";
-            this.panelItems.Size = new System.Drawing.Size(455, 50);
+            this.panelItems.Size = new System.Drawing.Size(455, 56);
             this.panelItems.TabIndex = 0;
             // 
             // labelData
@@ -70,7 +70,7 @@
             this.AutoScroll = true;
             this.AutoScrollMargin = new System.Drawing.Size(0, 12);
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(479, 75);
+            this.ClientSize = new System.Drawing.Size(479, 81);
             this.Controls.Add(this.panelItems);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;

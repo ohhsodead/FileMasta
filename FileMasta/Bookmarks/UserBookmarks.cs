@@ -31,7 +31,7 @@ namespace FileMasta.Bookmarks
         /// <param name="URL">URL to remove</param>
         public static void RemoveFile(string URL)
         {
-            if (File.Exists(LocalExtensions.pathDataBookmarked))            
+            if (File.Exists(LocalExtensions.pathDataBookmarked))
                 TextLineRemover.RemoveTextLines(new List<string> { JsonConvert.SerializeObject(new Bookmark(URL)) }, LocalExtensions.pathDataBookmarked, LocalExtensions.pathDataBookmarked + ".tmp");
         }
 
@@ -44,10 +44,11 @@ namespace FileMasta.Bookmarks
         {
             if (File.Exists(LocalExtensions.pathDataBookmarked))
                 using (StreamReader reader = new StreamReader(LocalExtensions.pathDataBookmarked))
-                    while (!reader.EndOfStream) {
+                    while (!reader.EndOfStream)
+                    {
                         var a = JsonConvert.DeserializeObject<Bookmark>(reader.ReadLine());
-                        if (a.URL == URL)                        
-                            return true;                    
+                        if (a.URL == URL)
+                            return true;
                     }
 
             return false;

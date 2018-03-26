@@ -31,26 +31,19 @@ namespace FileMasta
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            CButtonLib.cBlendItems cBlendItems5 = new CButtonLib.cBlendItems();
             CButtonLib.cBlendItems cBlendItems1 = new CButtonLib.cBlendItems();
             CButtonLib.cBlendItems cBlendItems2 = new CButtonLib.cBlendItems();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             CButtonLib.cBlendItems cBlendItems3 = new CButtonLib.cBlendItems();
-            CButtonLib.cBlendItems cBlendItems4 = new CButtonLib.cBlendItems();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.tab = new System.Windows.Forms.TabControl();
             this.tabHome = new System.Windows.Forms.TabPage();
@@ -64,15 +57,6 @@ namespace FileMasta
             this.containerFileType = new System.Windows.Forms.Panel();
             this.buttonFileType = new CButtonLib.CButton();
             this.comboBoxFileType = new System.Windows.Forms.ComboBox();
-            this.dataGridRecentlyAdded = new System.Windows.Forms.DataGridView();
-            this.columnRecentlyAddedType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnRecentlyAddedName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnRecentlyAddedSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnRecentlyAddedAge = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnRecentlyAddedReferrer = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnRecentlyAddedURL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.labelRecentlyAdded = new System.Windows.Forms.Label();
-            this.splitterHeaderRecentlyAdded = new CButtonLib.CButton();
             this.labelDatabaseUpdatedDate = new System.Windows.Forms.Label();
             this.labelDatabaseStats = new System.Windows.Forms.Label();
             this.textBoxSearchHome = new ChreneLib.Controls.TextBoxes.CTextBox();
@@ -156,7 +140,6 @@ namespace FileMasta
             this.flowLayoutSearchItems.SuspendLayout();
             this.flowLayoutSearchHome.SuspendLayout();
             this.containerFileType.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridRecentlyAdded)).BeginInit();
             this.tabSearch.SuspendLayout();
             this.flowLayoutSearchFiles.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imageSearchFiles)).BeginInit();
@@ -205,9 +188,6 @@ namespace FileMasta
             this.tabHome.Controls.Add(this.labelTopSearches);
             this.tabHome.Controls.Add(this.splitterHeaderTopSearches);
             this.tabHome.Controls.Add(this.flowLayoutSearchItems);
-            this.tabHome.Controls.Add(this.dataGridRecentlyAdded);
-            this.tabHome.Controls.Add(this.labelRecentlyAdded);
-            this.tabHome.Controls.Add(this.splitterHeaderRecentlyAdded);
             this.tabHome.Controls.Add(this.labelDatabaseUpdatedDate);
             this.tabHome.Controls.Add(this.labelDatabaseStats);
             this.tabHome.Controls.Add(this.textBoxSearchHome);
@@ -220,14 +200,14 @@ namespace FileMasta
             // 
             // flowLayoutTopSearches
             // 
-            this.flowLayoutTopSearches.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.flowLayoutTopSearches.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.flowLayoutTopSearches.AutoSize = true;
             this.flowLayoutTopSearches.BackColor = System.Drawing.Color.Transparent;
             this.flowLayoutTopSearches.Location = new System.Drawing.Point(15, 93);
             this.flowLayoutTopSearches.Name = "flowLayoutTopSearches";
             this.flowLayoutTopSearches.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.flowLayoutTopSearches.Size = new System.Drawing.Size(1022, 156);
+            this.flowLayoutTopSearches.Size = new System.Drawing.Size(1022, 432);
             this.flowLayoutTopSearches.TabIndex = 2;
             // 
             // labelTopSearches
@@ -305,13 +285,13 @@ namespace FileMasta
             | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonSearchHome.BackColor = System.Drawing.Color.Transparent;
             this.buttonSearchHome.BorderColor = System.Drawing.Color.Transparent;
-            cBlendItems1.iColor = new System.Drawing.Color[] {
+            cBlendItems5.iColor = new System.Drawing.Color[] {
         System.Drawing.Color.White,
         System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))))};
-            cBlendItems1.iPoint = new float[] {
+            cBlendItems5.iPoint = new float[] {
         0F,
         1F};
-            this.buttonSearchHome.ColorFillBlend = cBlendItems1;
+            this.buttonSearchHome.ColorFillBlend = cBlendItems5;
             this.buttonSearchHome.ColorFillSolid = System.Drawing.Color.Transparent;
             this.buttonSearchHome.Corners.All = 2;
             this.buttonSearchHome.Corners.LowerLeft = 2;
@@ -383,13 +363,13 @@ namespace FileMasta
             | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonFileType.BackColor = System.Drawing.Color.Transparent;
             this.buttonFileType.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(193)))), ((int)(((byte)(190)))));
-            cBlendItems2.iColor = new System.Drawing.Color[] {
+            cBlendItems1.iColor = new System.Drawing.Color[] {
         System.Drawing.Color.White,
         System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))))};
-            cBlendItems2.iPoint = new float[] {
+            cBlendItems1.iPoint = new float[] {
         0F,
         1F};
-            this.buttonFileType.ColorFillBlend = cBlendItems2;
+            this.buttonFileType.ColorFillBlend = cBlendItems1;
             this.buttonFileType.ColorFillSolid = System.Drawing.Color.Transparent;
             this.buttonFileType.Corners.All = 2;
             this.buttonFileType.Corners.LowerLeft = 2;
@@ -441,171 +421,6 @@ namespace FileMasta
             this.comboBoxFileType.TabIndex = 0;
             this.comboBoxFileType.TabStop = false;
             this.comboBoxFileType.SelectedIndexChanged += new System.EventHandler(this.comboBoxHomeFileType_SelectedIndexChanged);
-            // 
-            // dataGridRecentlyAdded
-            // 
-            this.dataGridRecentlyAdded.AllowUserToAddRows = false;
-            this.dataGridRecentlyAdded.AllowUserToDeleteRows = false;
-            this.dataGridRecentlyAdded.AllowUserToResizeColumns = false;
-            this.dataGridRecentlyAdded.AllowUserToResizeRows = false;
-            this.dataGridRecentlyAdded.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridRecentlyAdded.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.dataGridRecentlyAdded.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridRecentlyAdded.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dataGridRecentlyAdded.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
-            this.dataGridRecentlyAdded.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(10, 4, 0, 4);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridRecentlyAdded.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridRecentlyAdded.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridRecentlyAdded.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.columnRecentlyAddedType,
-            this.columnRecentlyAddedName,
-            this.columnRecentlyAddedSize,
-            this.columnRecentlyAddedAge,
-            this.columnRecentlyAddedReferrer,
-            this.columnRecentlyAddedURL});
-            this.dataGridRecentlyAdded.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dataGridRecentlyAdded.EnableHeadersVisualStyles = false;
-            this.dataGridRecentlyAdded.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.dataGridRecentlyAdded.Location = new System.Drawing.Point(15, 286);
-            this.dataGridRecentlyAdded.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
-            this.dataGridRecentlyAdded.MultiSelect = false;
-            this.dataGridRecentlyAdded.Name = "dataGridRecentlyAdded";
-            this.dataGridRecentlyAdded.ReadOnly = true;
-            this.dataGridRecentlyAdded.RowHeadersVisible = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 9.25F);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGridRecentlyAdded.RowsDefaultCellStyle = dataGridViewCellStyle7;
-            this.dataGridRecentlyAdded.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.dataGridRecentlyAdded.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 9.25F);
-            this.dataGridRecentlyAdded.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Silver;
-            this.dataGridRecentlyAdded.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.dataGridRecentlyAdded.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.dataGridRecentlyAdded.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGridRecentlyAdded.RowTemplate.Height = 28;
-            this.dataGridRecentlyAdded.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.dataGridRecentlyAdded.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridRecentlyAdded.ShowCellErrors = false;
-            this.dataGridRecentlyAdded.ShowEditingIcon = false;
-            this.dataGridRecentlyAdded.ShowRowErrors = false;
-            this.dataGridRecentlyAdded.Size = new System.Drawing.Size(1022, 248);
-            this.dataGridRecentlyAdded.TabIndex = 3;
-            this.dataGridRecentlyAdded.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridRecentlyAddedFiles_CellClick);
-            // 
-            // columnRecentlyAddedType
-            // 
-            this.columnRecentlyAddedType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.columnRecentlyAddedType.HeaderText = "Type";
-            this.columnRecentlyAddedType.Name = "columnRecentlyAddedType";
-            this.columnRecentlyAddedType.ReadOnly = true;
-            this.columnRecentlyAddedType.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.columnRecentlyAddedType.Width = 43;
-            // 
-            // columnRecentlyAddedName
-            // 
-            this.columnRecentlyAddedName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.columnRecentlyAddedName.DefaultCellStyle = dataGridViewCellStyle2;
-            this.columnRecentlyAddedName.HeaderText = "Name";
-            this.columnRecentlyAddedName.Name = "columnRecentlyAddedName";
-            this.columnRecentlyAddedName.ReadOnly = true;
-            // 
-            // columnRecentlyAddedSize
-            // 
-            this.columnRecentlyAddedSize.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.columnRecentlyAddedSize.DefaultCellStyle = dataGridViewCellStyle3;
-            this.columnRecentlyAddedSize.HeaderText = "Size";
-            this.columnRecentlyAddedSize.Name = "columnRecentlyAddedSize";
-            this.columnRecentlyAddedSize.ReadOnly = true;
-            this.columnRecentlyAddedSize.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.columnRecentlyAddedSize.Width = 41;
-            // 
-            // columnRecentlyAddedAge
-            // 
-            this.columnRecentlyAddedAge.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.columnRecentlyAddedAge.DefaultCellStyle = dataGridViewCellStyle4;
-            this.columnRecentlyAddedAge.HeaderText = "Age";
-            this.columnRecentlyAddedAge.Name = "columnRecentlyAddedAge";
-            this.columnRecentlyAddedAge.ReadOnly = true;
-            this.columnRecentlyAddedAge.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.columnRecentlyAddedAge.Width = 41;
-            // 
-            // columnRecentlyAddedReferrer
-            // 
-            this.columnRecentlyAddedReferrer.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.columnRecentlyAddedReferrer.DefaultCellStyle = dataGridViewCellStyle5;
-            this.columnRecentlyAddedReferrer.HeaderText = "Referrer";
-            this.columnRecentlyAddedReferrer.Name = "columnRecentlyAddedReferrer";
-            this.columnRecentlyAddedReferrer.ReadOnly = true;
-            this.columnRecentlyAddedReferrer.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.columnRecentlyAddedReferrer.Width = 62;
-            // 
-            // columnRecentlyAddedURL
-            // 
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.columnRecentlyAddedURL.DefaultCellStyle = dataGridViewCellStyle6;
-            this.columnRecentlyAddedURL.HeaderText = "URL";
-            this.columnRecentlyAddedURL.Name = "columnRecentlyAddedURL";
-            this.columnRecentlyAddedURL.ReadOnly = true;
-            this.columnRecentlyAddedURL.Visible = false;
-            // 
-            // labelRecentlyAdded
-            // 
-            this.labelRecentlyAdded.AutoSize = true;
-            this.labelRecentlyAdded.BackColor = System.Drawing.Color.Transparent;
-            this.labelRecentlyAdded.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.labelRecentlyAdded.ForeColor = System.Drawing.Color.White;
-            this.labelRecentlyAdded.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelRecentlyAdded.Location = new System.Drawing.Point(11, 258);
-            this.labelRecentlyAdded.Margin = new System.Windows.Forms.Padding(0);
-            this.labelRecentlyAdded.Name = "labelRecentlyAdded";
-            this.labelRecentlyAdded.Size = new System.Drawing.Size(124, 19);
-            this.labelRecentlyAdded.TabIndex = 1110;
-            this.labelRecentlyAdded.Text = "RECENTLY ADDED";
-            // 
-            // splitterHeaderRecentlyAdded
-            // 
-            this.splitterHeaderRecentlyAdded.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.splitterHeaderRecentlyAdded.BackColor = System.Drawing.Color.Transparent;
-            this.splitterHeaderRecentlyAdded.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(50)))));
-            this.splitterHeaderRecentlyAdded.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(50)))));
-            this.splitterHeaderRecentlyAdded.DesignerSelected = false;
-            this.splitterHeaderRecentlyAdded.DimFactorClick = 0;
-            this.splitterHeaderRecentlyAdded.DimFactorHover = 0;
-            this.splitterHeaderRecentlyAdded.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.splitterHeaderRecentlyAdded.Font = new System.Drawing.Font("Segoe UI Semibold", 13.25F);
-            this.splitterHeaderRecentlyAdded.ForeColor = System.Drawing.Color.Silver;
-            this.splitterHeaderRecentlyAdded.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.splitterHeaderRecentlyAdded.ImageIndex = 0;
-            this.splitterHeaderRecentlyAdded.ImageSize = new System.Drawing.Size(25, 36);
-            this.splitterHeaderRecentlyAdded.Location = new System.Drawing.Point(15, 279);
-            this.splitterHeaderRecentlyAdded.Margin = new System.Windows.Forms.Padding(10, 16, 3, 3);
-            this.splitterHeaderRecentlyAdded.Name = "splitterHeaderRecentlyAdded";
-            this.splitterHeaderRecentlyAdded.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.splitterHeaderRecentlyAdded.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.splitterHeaderRecentlyAdded.SideImageSize = new System.Drawing.Size(36, 36);
-            this.splitterHeaderRecentlyAdded.Size = new System.Drawing.Size(1023, 1);
-            this.splitterHeaderRecentlyAdded.TabIndex = 0;
-            this.splitterHeaderRecentlyAdded.TabStop = false;
-            this.splitterHeaderRecentlyAdded.Text = "";
-            this.splitterHeaderRecentlyAdded.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.splitterHeaderRecentlyAdded.TextShadowShow = false;
             // 
             // labelDatabaseUpdatedDate
             // 
@@ -774,13 +589,13 @@ namespace FileMasta
             | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonFilterFiles.BackColor = System.Drawing.Color.Transparent;
             this.buttonFilterFiles.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(193)))), ((int)(((byte)(190)))));
-            cBlendItems3.iColor = new System.Drawing.Color[] {
+            cBlendItems2.iColor = new System.Drawing.Color[] {
         System.Drawing.Color.White,
         System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))))};
-            cBlendItems3.iPoint = new float[] {
+            cBlendItems2.iPoint = new float[] {
         0F,
         1F};
-            this.buttonFilterFiles.ColorFillBlend = cBlendItems3;
+            this.buttonFilterFiles.ColorFillBlend = cBlendItems2;
             this.buttonFilterFiles.ColorFillSolid = System.Drawing.Color.Transparent;
             this.buttonFilterFiles.Corners.All = 2;
             this.buttonFilterFiles.Corners.LowerLeft = 2;
@@ -841,13 +656,13 @@ namespace FileMasta
             | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonSortFiles.BackColor = System.Drawing.Color.Transparent;
             this.buttonSortFiles.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(193)))), ((int)(((byte)(190)))));
-            cBlendItems4.iColor = new System.Drawing.Color[] {
+            cBlendItems3.iColor = new System.Drawing.Color[] {
         System.Drawing.Color.White,
         System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))))};
-            cBlendItems4.iPoint = new float[] {
+            cBlendItems3.iPoint = new float[] {
         0F,
         1F};
-            this.buttonSortFiles.ColorFillBlend = cBlendItems4;
+            this.buttonSortFiles.ColorFillBlend = cBlendItems3;
             this.buttonSortFiles.ColorFillSolid = System.Drawing.Color.Transparent;
             this.buttonSortFiles.Corners.All = 2;
             this.buttonSortFiles.Corners.LowerLeft = 2;
@@ -925,15 +740,15 @@ namespace FileMasta
             this.dataGridFiles.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridFiles.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             this.dataGridFiles.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(10, 4, 0, 4);
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridFiles.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.Padding = new System.Windows.Forms.Padding(10, 4, 0, 4);
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridFiles.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridFiles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridFiles.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.columnFilesType,
@@ -952,12 +767,12 @@ namespace FileMasta
             this.dataGridFiles.ReadOnly = true;
             this.dataGridFiles.RowHeadersVisible = false;
             this.dataGridFiles.RowHeadersWidth = 40;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI", 10.25F);
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGridFiles.RowsDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Segoe UI", 10.25F);
+            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridFiles.RowsDefaultCellStyle = dataGridViewCellStyle16;
             this.dataGridFiles.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.dataGridFiles.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.dataGridFiles.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Silver;
@@ -985,17 +800,18 @@ namespace FileMasta
             // columnFilesName
             // 
             this.columnFilesName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.columnFilesName.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.columnFilesName.DefaultCellStyle = dataGridViewCellStyle11;
             this.columnFilesName.HeaderText = "Name";
             this.columnFilesName.Name = "columnFilesName";
             this.columnFilesName.ReadOnly = true;
+            this.columnFilesName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // columnFilesSize
             // 
             this.columnFilesSize.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.columnFilesSize.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.columnFilesSize.DefaultCellStyle = dataGridViewCellStyle12;
             this.columnFilesSize.HeaderText = "Size";
             this.columnFilesSize.Name = "columnFilesSize";
             this.columnFilesSize.ReadOnly = true;
@@ -1005,8 +821,8 @@ namespace FileMasta
             // columnFilesAge
             // 
             this.columnFilesAge.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.columnFilesAge.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.columnFilesAge.DefaultCellStyle = dataGridViewCellStyle13;
             this.columnFilesAge.HeaderText = "Age";
             this.columnFilesAge.Name = "columnFilesAge";
             this.columnFilesAge.ReadOnly = true;
@@ -1016,8 +832,8 @@ namespace FileMasta
             // columnFilesReferrer
             // 
             this.columnFilesReferrer.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.columnFilesReferrer.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.columnFilesReferrer.DefaultCellStyle = dataGridViewCellStyle14;
             this.columnFilesReferrer.HeaderText = "Referrer";
             this.columnFilesReferrer.Name = "columnFilesReferrer";
             this.columnFilesReferrer.ReadOnly = true;
@@ -1026,8 +842,8 @@ namespace FileMasta
             // 
             // columnFilesURL
             // 
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.columnFilesURL.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.columnFilesURL.DefaultCellStyle = dataGridViewCellStyle15;
             this.columnFilesURL.HeaderText = "URL";
             this.columnFilesURL.Name = "columnFilesURL";
             this.columnFilesURL.ReadOnly = true;
@@ -1454,15 +1270,15 @@ namespace FileMasta
             this.dataGridDiscover.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridDiscover.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             this.dataGridDiscover.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle15.Padding = new System.Windows.Forms.Padding(10, 4, 0, 4);
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridDiscover.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle17.Padding = new System.Windows.Forms.Padding(10, 4, 0, 4);
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridDiscover.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
             this.dataGridDiscover.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridDiscover.ColumnHeadersVisible = false;
             this.dataGridDiscover.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1479,12 +1295,12 @@ namespace FileMasta
             this.dataGridDiscover.ReadOnly = true;
             this.dataGridDiscover.RowHeadersVisible = false;
             this.dataGridDiscover.RowHeadersWidth = 40;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Segoe UI", 10.25F);
-            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(69)))), ((int)(((byte)(78)))));
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGridDiscover.RowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Segoe UI", 10.25F);
+            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(69)))), ((int)(((byte)(78)))));
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridDiscover.RowsDefaultCellStyle = dataGridViewCellStyle18;
             this.dataGridDiscover.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.dataGridDiscover.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 10.25F);
             this.dataGridDiscover.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Silver;
@@ -1596,7 +1412,7 @@ namespace FileMasta
             this.labelSubmitDescription.Location = new System.Drawing.Point(0, 0);
             this.labelSubmitDescription.Margin = new System.Windows.Forms.Padding(0);
             this.labelSubmitDescription.Name = "labelSubmitDescription";
-            this.labelSubmitDescription.Size = new System.Drawing.Size(1033, 255);
+            this.labelSubmitDescription.Size = new System.Drawing.Size(1034, 221);
             this.labelSubmitDescription.TabIndex = 0;
             this.labelSubmitDescription.Text = resources.GetString("labelSubmitDescription.Text");
             // 
@@ -1608,7 +1424,7 @@ namespace FileMasta
             this.panelSubmitLink.Controls.Add(this.buttonSubmitUrl);
             this.panelSubmitLink.Controls.Add(this.textBoxSubmitLink);
             this.panelSubmitLink.Controls.Add(this.textBoxBackgroundSubmitLink);
-            this.panelSubmitLink.Location = new System.Drawing.Point(0, 280);
+            this.panelSubmitLink.Location = new System.Drawing.Point(0, 246);
             this.panelSubmitLink.Margin = new System.Windows.Forms.Padding(0, 25, 0, 3);
             this.panelSubmitLink.Name = "panelSubmitLink";
             this.panelSubmitLink.Size = new System.Drawing.Size(1036, 38);
@@ -2261,7 +2077,6 @@ namespace FileMasta
             this.flowLayoutSearchItems.ResumeLayout(false);
             this.flowLayoutSearchHome.ResumeLayout(false);
             this.containerFileType.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridRecentlyAdded)).EndInit();
             this.tabSearch.ResumeLayout(false);
             this.tabSearch.PerformLayout();
             this.flowLayoutSearchFiles.ResumeLayout(false);
@@ -2334,12 +2149,6 @@ namespace FileMasta
         private System.Windows.Forms.Label labelPrivacyPolicy;
         private System.Windows.Forms.PictureBox imageTwitter;
         private System.Windows.Forms.PictureBox imageFacebook;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnFilesType;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnFilesName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnFilesSize;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnFilesAge;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnFilesReferrer;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnFilesURL;
         private System.Windows.Forms.PictureBox imageSearchFiles;
         public CButtonLib.CButton splitterHeaderSettings;
         public CButtonLib.CButton splitterHeaderDiscover;
@@ -2347,18 +2156,9 @@ namespace FileMasta
         private Controls.buttonCustom buttonSubmitUrl;
         private Controls.buttonCustom buttonSaveSettings;
         private Controls.buttonCustom buttonRestoreSettings;
-        internal System.Windows.Forms.Label labelRecentlyAdded;
-        public CButtonLib.CButton splitterHeaderRecentlyAdded;
         public System.Windows.Forms.DataGridView dataGridFiles;
         private System.Windows.Forms.Label labelMadeWithLove;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutSearchItems;
-        private System.Windows.Forms.DataGridView dataGridRecentlyAdded;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnRecentlyAddedType;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnRecentlyAddedName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnRecentlyAddedSize;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnRecentlyAddedAge;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnRecentlyAddedReferrer;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnRecentlyAddedURL;
         internal System.Windows.Forms.Label labelTopSearches;
         public CButtonLib.CButton splitterHeaderTopSearches;
         private System.Windows.Forms.Panel flowLayoutSearchHome;
@@ -2388,6 +2188,12 @@ namespace FileMasta
         public Controls.buttonFileType buttonFilesAll;
         public Controls.buttonFileType buttonFilesBooks;
         private System.Windows.Forms.Label labelKeyboardShortcuts;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnFilesType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnFilesName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnFilesSize;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnFilesAge;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnFilesReferrer;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnFilesURL;
     }
 }
 

@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using FileMasta.Files;
+using System.Windows.Forms;
 
 namespace FileMasta.Controls
 {
@@ -16,7 +17,7 @@ namespace FileMasta.Controls
 
         private void labelRestart_Click(object sender, System.EventArgs e)
         {
-            MainForm.Form.deleteDataDirectory = true;
+            Application.Restart();
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 
-namespace FileMasta.Asynchronous
+namespace FileMasta.Worker
 {
     public static class BackGroundWorker
     {
