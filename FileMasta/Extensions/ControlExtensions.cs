@@ -11,6 +11,21 @@ namespace FileMasta.Extensions
     class ControlExtensions
     {
         /// <summary>
+        /// Show Control Window in Main Form as a Child
+        /// </summary>
+        /// <param name="window">UserControl to display</param>
+        public static void ShowControlWindow(UserControl window)
+        {
+            MainForm.Form.Controls.Add(window);
+            window.Dock = DockStyle.Fill;
+            window.Location = new Point(0, 0);
+            window.ClientSize = MainForm.Form.ClientSize;
+            window.BringToFront();
+            window.Show();
+            window.Focus();
+        }
+
+        /// <summary>
         /// Gets maximum width for ComboBox dropdown to fit its contents
         /// </summary>
         /// <param name="myCombo">ComboBox to get max item length</param>
