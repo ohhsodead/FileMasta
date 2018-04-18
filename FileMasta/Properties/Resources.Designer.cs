@@ -113,6 +113,16 @@ namespace FileMasta.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap chevron_up_orange {
+            get {
+                object obj = ResourceManager.GetObject("chevron_up_orange", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap clipboard_arrow_left_orange {
             get {
                 object obj = ResourceManager.GetObject("clipboard_arrow_left_orange", resourceCulture);
@@ -196,6 +206,16 @@ namespace FileMasta.Properties {
         internal static System.Drawing.Bitmap filemasta_logo {
             get {
                 object obj = ResourceManager.GetObject("filemasta-logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap folder {
+            get {
+                object obj = ResourceManager.GetObject("folder", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
