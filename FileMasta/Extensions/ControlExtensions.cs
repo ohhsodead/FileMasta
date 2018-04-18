@@ -11,15 +11,13 @@ namespace FileMasta.Extensions
     class ControlExtensions
     {
         /// <summary>
-        /// Show Control Window in Main Form as a Child
+        /// Show Filled Control Window docked inside TabPage
         /// </summary>
         /// <param name="window">UserControl to display</param>
         public static void ShowControlWindow(UserControl window)
         {
             MainForm.Form.Controls.Add(window);
             window.Dock = DockStyle.Fill;
-            window.Location = new Point(0, 0);
-            window.ClientSize = MainForm.Form.ClientSize;
             window.BringToFront();
             window.Show();
             window.Focus();
