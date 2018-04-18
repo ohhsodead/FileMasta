@@ -43,8 +43,6 @@ namespace FileMasta
             // Show Splash Screen
             Controls.Add(FrmSplashScreen);
             FrmSplashScreen.Dock = DockStyle.Fill;
-            FrmSplashScreen.Location = new Point(0, 0);
-            FrmSplashScreen.ClientSize = ClientSize;
             FrmSplashScreen.BringToFront();
             FrmSplashScreen.Show();
 
@@ -105,6 +103,7 @@ namespace FileMasta
 
         private void CompletedTasks(object sender, RunWorkerCompletedEventArgs e)
         {
+            ShowHosts(); // Load Hosts into Discover tab
             SetDatabaseInfo(); // Get database info and show in form
             Controls.Remove(FrmSplashScreen); // Remove splash screen
             Program.log.Info("All startup tasks completed");
@@ -184,17 +183,19 @@ namespace FileMasta
         {
             // Sets current tab and selects appropriate tab title
             if (tab.SelectedTab == tabHome)
-            { CurrentTab = tabHome; ControlExtensions.SelectTabTitle(titleHome); }
+            { ControlExtensions.SelectTabTitle(titleHome); }
             else if (tab.SelectedTab == tabSearch)
-            { CurrentTab = tabSearch; ControlExtensions.SelectTabTitle(titleSearch); }
+            { ControlExtensions.SelectTabTitle(titleSearch); }
             else if (tab.SelectedTab == tabDiscover)
-            { CurrentTab = tabDiscover; ControlExtensions.SelectTabTitle(titleDiscover); ShowHosts(); }
+            { ControlExtensions.SelectTabTitle(titleDiscover); }
             else if (tab.SelectedTab == tabSubmit)
-            { CurrentTab = tabDiscover; ControlExtensions.SelectTabTitle(titleSubmit); }
+            { ControlExtensions.SelectTabTitle(titleSubmit); }
             else if (tab.SelectedTab == tabSettings)
-            { CurrentTab = tabSettings; ControlExtensions.SelectTabTitle(titleSettings); LoadUserSettings(); }
+            { ControlExtensions.SelectTabTitle(titleSettings); LoadUserSettings(); }
             else if (tab.SelectedTab == tabInformation)
-            { CurrentTab = tabInformation; ControlExtensions.SelectTabTitle(titleInformation); tabBlank.Controls.Clear(); }
+            { ControlExtensions.SelectTabTitle(titleInformation); }
+
+            CurrentTab = tab.SelectedTab;
         }
 
         /*************************************************************************/
@@ -442,9 +443,9 @@ namespace FileMasta
                 var URL = dataGridFiles.CurrentRow.Cells[5].Value.ToString();
 
                 if (dataGridFiles.CurrentRow.Cells[4].Value.ToString() == "Local")
-                    ShowFileDetails(new WebFile(Path.GetExtension(URL).Replace(".", "").ToUpper(), Path.GetFileNameWithoutExtension(new Uri(URL).LocalPath), new FileInfo(URL).Length, File.GetCreationTime(URL), URL, URL));
+                    ShowFileDetails(new WebFile(Path.GetExtension(URL).Replace(".", "").ToUpper(), Path.GetFileNameWithoutExtension(new Uri(URL).LocalPath), new FileInfo(URL).Length, File.GetCreationTime(URL), URL, URL), dataGridFiles);
                 else
-                    ShowFileDetails(Database.FileInfoFromURL(URL));
+                    ShowFileDetails(Database.FileInfoFromURL(URL), dataGridFiles);
             }
         }
 
@@ -540,13 +541,14 @@ namespace FileMasta
         /// </summary>
         /// <param name="File">WebFile object</param>
         /// <param name="createNewInstance">Whether to create a new instance</param>
-        public void ShowFileDetails(WebFile File, bool createNewInstance = true)
+        public void ShowFileDetails(WebFile File, DataGridView parentDataGrid, bool createNewInstance = true)
         {
             Program.log.Info("Showing file details dialog : " + File.URL);
 
             if (createNewInstance)
                 FrmFileDetails = new FileDetails();
 
+            FrmFileDetails.parentDataGrid = parentDataGrid;
             FrmFileDetails.currentFile = File;
             FrmFileDetails.infoFileName.Text = File.Name;
             FrmFileDetails.infoName.Text = File.Name;
@@ -568,8 +570,7 @@ namespace FileMasta
 
             FrmFileDetails.Dock = DockStyle.Fill;
             if (!createNewInstance) FrmFileDetails.CheckFileEvents();
-            if (createNewInstance) { tabBlank.Controls.Clear(); tabBlank.Controls.Add(FrmFileDetails); }
-            tab.SelectedTab = tabBlank;
+            else ControlExtensions.ShowControlWindow(FrmFileDetails);
 
             Program.log.Info("Successfully loaded file details dialog");
         }
@@ -638,7 +639,7 @@ namespace FileMasta
 
             if (Path.HasExtension(textBoxSearchFiles.Text))
             {
-                ShowFileDetails(Database.FileInfoFromURL(textBoxSearchFiles.Text));
+                ShowFileDetails(Database.FileInfoFromURL(textBoxSearchFiles.Text), dataGridFiles);
                 imageSearchFiles.Image = Properties.Resources.magnify_orange;
             }
             else
@@ -651,7 +652,138 @@ namespace FileMasta
 
         private void dataGridDiscover_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            Process.Start(dataGridDiscover.CurrentRow.Cells[3].Value.ToString());
+            if (e.RowIndex != -1)
+            {
+                var discoverURL = dataGridDiscover.CurrentRow.Cells[3].Value.ToString() + "/";
+                currentHost = discoverURL;
+                ShowDirectoryListing(discoverURL);
+                tab.SelectedTab = tabDiscover;
+                tabsDiscover.SelectedTab = tabDiscoverListings;
+            }                
+        }
+
+        public string currentHost = ""; // Used as a root of web explorer
+        public string currentURL = ""; // Used to get directory listings
+
+        public void ShowDirectoryListing(string WebURL)
+        {
+            // Builds parts of the URL into a better presented string, simply replaces '/' with '>' and no filename
+            var url = new Uri(WebURL);
+            var directories = new StringBuilder().Append(url.Host);
+            foreach (string path in url.LocalPath.Split('/', '\\'))
+                if (!Path.HasExtension(path))
+                    directories.Append(path + "> ");
+            labelWebExplorerURL.Text = directories.ToString().Replace("> >", ">"); // Remove double arrow that occurs
+
+            currentURL = WebURL;
+            labelDirectoryStatus.Text = "Loading...";
+            labelDirectoryEmptyResults.Visible = false;
+            dataGridDirectoryListing.Rows.Clear();
+            GetDirectoryListing();
+        }
+
+        delegate void loadDirectoryListingCallBack();
+        public void GetDirectoryListing()
+        {
+            Program.log.InfoFormat("Processing directory listing for URL : " + currentURL);
+            BackGroundWorker.RunWorkAsync<List<WebFile>>(() => Query.SpecialSearch(currentURL), (data) =>
+            {
+                if (tabDiscover.InvokeRequired)
+                {
+                    var b = new loadDirectoryListingCallBack(GetDirectoryListing);
+                    Invoke(b, new object[] { });
+                }
+                else
+                {
+                    var foundItems = new List<string>();
+
+                    foreach (var jsonData in data)
+                    {
+                        var removedStart = jsonData.URL.Remove(0, currentURL.Length);
+                        var splitItems = removedStart.Split('/');
+                        var itemText = splitItems[0];
+
+                        if (itemText != null)
+                        {
+                            if (!foundItems.Contains(itemText))
+                            {
+                                var newItem = new List<string>();
+
+                                if (Path.HasExtension(itemText))
+                                {
+                                    // File
+                                    newItem.Add(jsonData.Type);
+                                    newItem.Add(jsonData.Name + "." + jsonData.Type.ToLower());
+                                    newItem.Add(TextExtensions.BytesToString(jsonData.Size));
+                                    newItem.Add(TextExtensions.GetTimeAgo(jsonData.DateUploaded));
+                                }
+                                else
+                                {
+                                    // Folder
+                                    newItem.Add("Folder");
+                                    newItem.Add(Uri.UnescapeDataString(itemText));
+                                    newItem.Add("-");
+                                    newItem.Add("-");
+                                }
+
+                                newItem.Add(jsonData.Host);
+                                newItem.Add(currentURL + itemText);
+                                dataGridDirectoryListing.Rows.Add(newItem.ToArray());
+                                foundItems.Add(itemText);
+                            }
+                        }
+                    }
+
+                    labelDirectoryStatus.Text = "Completed";
+
+                    if (dataGridDirectoryListing.Rows.Count == 0)
+                        labelDirectoryEmptyResults.Visible = true;
+                    else
+                        labelDirectoryEmptyResults.Visible = false;
+
+                    Program.log.Info("Successfully returned directory listing");
+                }
+            });
+        }
+
+        private void buttonCloseDiscoverListing_Click(object sender, EventArgs e)
+        {
+            tabsDiscover.SelectedTab = tabDiscoverHosts;
+        }
+
+        private void buttonViewDirectory_ClickButtonArea(object Sender, MouseEventArgs e)
+        {
+            Process.Start(currentURL);
+        }
+
+        private void dataGridDirectoryListing_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex != -1)
+            {
+                if (dataGridDirectoryListing.CurrentRow.Cells[0].Value.ToString() == "Folder")
+                {
+                    ShowDirectoryListing(currentURL + dataGridDirectoryListing.CurrentRow.Cells[1].Value.ToString() + "/");
+                }
+                else
+                {
+                    ShowFileDetails(Database.FileInfoFromURL(dataGridDirectoryListing.CurrentRow.Cells[5].Value.ToString()), dataGridDirectoryListing);
+                }
+            }                
+        }
+
+        private void buttonGoUp_ClickButtonArea(object Sender, MouseEventArgs e)
+        {
+            if (currentURL != currentHost)
+            {
+                var oldItem = currentURL.Split('/');
+                Array.Resize(ref oldItem, oldItem.Length - 2);
+                var newItem = String.Join("/", oldItem);
+                ShowDirectoryListing(newItem + "/");
+            }
+            else
+            {
+                tabsDiscover.SelectedTab = tabDiscoverHosts;
+            }
         }
 
         delegate void loadHostsCallBack();
@@ -808,17 +940,21 @@ namespace FileMasta
                     return true;
                 // Navigate Tabs
                 case Keys.Control | Keys.Right:
-                    if (tab.SelectedIndex != tab.TabPages.Count - 2) { if (tab.SelectedIndex == 6) { tab.SelectedIndex = 2; } else { tab.SelectedIndex++; } }
+                    if (tab.SelectedIndex != tab.TabPages.Count) { tab.SelectedIndex++; }
                     return true;
                 case Keys.Control | Keys.Left:
-                    if (tab.SelectedIndex != 0) { if (tab.SelectedIndex == 6) { tab.SelectedIndex = 0; } else { tab.SelectedIndex--; } }
+                    if (tab.SelectedIndex != 0) { tab.SelectedIndex--; }
                     return true;
-                // Close File Details if open
+                // Close File Details if open, and close web explorer tab if open
                 case Keys.Escape:
                     if (FrmFileDetails != null)
                     {
                         tab.SelectedTab = CurrentTab;
                         FrmFileDetails.Dispose();
+                    }
+                    if (tab.SelectedTab == tabDiscover && tabsDiscover.SelectedTab == tabDiscoverListings)
+                    {
+                        tabsDiscover.SelectedTab = tabDiscoverHosts;
                     }
                     return true;
                 // Close application
