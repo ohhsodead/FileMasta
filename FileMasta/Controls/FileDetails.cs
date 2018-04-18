@@ -22,6 +22,7 @@ namespace FileMasta.Controls
         }
 
         public WebFile currentFile;
+        public DataGridView parentDataGrid;
         string infoFileSubtitles;
 
         // Support file types for the players
@@ -77,13 +78,13 @@ namespace FileMasta.Controls
 
         private void ScrollButtonChecks()
         {
-            if (MainForm.Form.dataGridFiles.Rows.Count > 0) {
-                if (MainForm.Form.dataGridFiles.SelectedCells[0].OwningRow.Index == 0)
+            if (parentDataGrid.Rows.Count > 0) {
+                if (parentDataGrid.SelectedCells[0].OwningRow.Index == 0)
                     imagePreviousFile.Image = ImageExtensions.ChangeColor(Properties.Resources.chevron_up, Color.Gray);
                 else
                     imagePreviousFile.Image = Properties.Resources.chevron_up;
 
-                if (MainForm.Form.dataGridFiles.SelectedCells[0].OwningRow.Index == MainForm.Form.dataGridFiles.Rows.Count - 1)
+                if (parentDataGrid.SelectedCells[0].OwningRow.Index == parentDataGrid.Rows.Count - 1)
                     imageNextFile.Image = ImageExtensions.ChangeColor(Properties.Resources.chevron_down, Color.Gray);
                 else
                     imageNextFile.Image = Properties.Resources.chevron_down;
@@ -273,23 +274,22 @@ namespace FileMasta.Controls
         /// </summary>
         private void SelectUpRow()
         {
-            DataGridView dgv = MainForm.Form.dataGridFiles;
-            if (dgv.Rows.Count > 0) {
-                int totalRows = dgv.Rows.Count;
-                int rowIndex = dgv.SelectedCells[0].OwningRow.Index;
+            if (parentDataGrid.Rows.Count > 0) {
+                int totalRows = parentDataGrid.Rows.Count;
+                int rowIndex = parentDataGrid.SelectedCells[0].OwningRow.Index;
                 if (rowIndex == 0)
                     return;
-                int colIndex = dgv.SelectedCells[0].OwningColumn.Index;
-                DataGridViewRow selectedRow = dgv.Rows[rowIndex];
-                dgv.ClearSelection();
-                dgv.Rows[rowIndex - 1].Cells[colIndex].Selected = true;
+                int colIndex = parentDataGrid.SelectedCells[0].OwningColumn.Index;
+                DataGridViewRow selectedRow = parentDataGrid.Rows[rowIndex];
+                parentDataGrid.ClearSelection();
+                parentDataGrid.Rows[rowIndex - 1].Cells[colIndex].Selected = true;
 
-                var URL = MainForm.Form.dataGridFiles.CurrentRow.Cells[5].Value.ToString();
+                var URL = parentDataGrid.CurrentRow.Cells[5].Value.ToString();
 
-                if (MainForm.Form.dataGridFiles.CurrentRow.Cells[4].Value.ToString() == "Local")
-                    MainForm.Form.ShowFileDetails(new WebFile(Path.GetExtension(URL).Replace(".", "").ToUpper(), Path.GetFileNameWithoutExtension(new Uri(URL).LocalPath), new FileInfo(URL).Length, File.GetCreationTime(URL), "Local", URL), false);
+                if (parentDataGrid.CurrentRow.Cells[4].Value.ToString() == "Local")
+                    MainForm.Form.ShowFileDetails(new WebFile(Path.GetExtension(URL).Replace(".", "").ToUpper(), Path.GetFileNameWithoutExtension(new Uri(URL).LocalPath), new FileInfo(URL).Length, File.GetCreationTime(URL), "Local", URL), parentDataGrid, false);
                 else 
-                    MainForm.Form.ShowFileDetails(Database.FileInfoFromURL(URL), false);
+                    MainForm.Form.ShowFileDetails(Database.FileInfoFromURL(URL), parentDataGrid, false);
 
                 ScrollButtonChecks();
             }
@@ -300,23 +300,22 @@ namespace FileMasta.Controls
         /// </summary>
         private void SelectDownRow()
         {
-            DataGridView dgv = MainForm.Form.dataGridFiles;
-            if (dgv.Rows.Count > 0) {
-                int totalRows = dgv.Rows.Count;
-                int rowIndex = dgv.SelectedCells[0].OwningRow.Index;
+            if (parentDataGrid.Rows.Count > 0) {
+                int totalRows = parentDataGrid.Rows.Count;
+                int rowIndex = parentDataGrid.SelectedCells[0].OwningRow.Index;
                 if (rowIndex == totalRows - 1)
                     return;
-                int colIndex = dgv.SelectedCells[0].OwningColumn.Index;
-                DataGridViewRow selectedRow = dgv.Rows[rowIndex];
-                dgv.ClearSelection();
-                dgv.Rows[rowIndex + 1].Cells[colIndex].Selected = true;
+                int colIndex = parentDataGrid.SelectedCells[0].OwningColumn.Index;
+                DataGridViewRow selectedRow = parentDataGrid.Rows[rowIndex];
+                parentDataGrid.ClearSelection();
+                parentDataGrid.Rows[rowIndex + 1].Cells[colIndex].Selected = true;
 
-                var URL = MainForm.Form.dataGridFiles.CurrentRow.Cells[5].Value.ToString();
+                var URL = parentDataGrid.CurrentRow.Cells[5].Value.ToString();
 
-                if (MainForm.Form.dataGridFiles.CurrentRow.Cells[4].Value.ToString() == "Local")
-                    MainForm.Form.ShowFileDetails(new WebFile(Path.GetExtension(URL).Replace(".", "").ToUpper(), Path.GetFileNameWithoutExtension(new Uri(URL).LocalPath), new FileInfo(URL).Length, File.GetCreationTime(URL), "Local", URL), false);
+                if (parentDataGrid.CurrentRow.Cells[4].Value.ToString() == "Local")
+                    MainForm.Form.ShowFileDetails(new WebFile(Path.GetExtension(URL).Replace(".", "").ToUpper(), Path.GetFileNameWithoutExtension(new Uri(URL).LocalPath), new FileInfo(URL).Length, File.GetCreationTime(URL), "Local", URL), parentDataGrid, false);
                 else
-                    MainForm.Form.ShowFileDetails(Database.FileInfoFromURL(URL), false);
+                    MainForm.Form.ShowFileDetails(Database.FileInfoFromURL(URL), parentDataGrid, false);
 
                 ScrollButtonChecks();
             }
