@@ -19,10 +19,10 @@ namespace FileMasta.Files
         /// </summary>
         /// <param name="dataFiles"></param>
         /// <param name="SearchQuery"></param>
-        /// <param name="SortBy"></param>
+        /// <param name="SortBy"></param>        
         /// <returns></returns>
         static object loadSearchListLock = new object();
-        public static List<WebFile> Search(List<WebFile> dataFiles, string SearchQuery, SortBy SortBy)
+        public static List<WebFile> Search(List<WebFile> dataFiles, string SearchQuery, SortBy SortBy = SortBy.Name)
         {
             lock (loadSearchListLock)
             {
@@ -38,8 +38,38 @@ namespace FileMasta.Files
                 {
                     var val = p.GetValue(item.i, null);
                     return val != null
-                        && (p.Name.ToLower() == "URL".ToLower() || string.IsNullOrEmpty("URL"))
+                        && (p.Name == "URL" || string.IsNullOrEmpty("URL"))
                         && (TextExtensions.ContainsAll(Uri.UnescapeDataString(val.ToString().ToLower()), TextExtensions.GetWords(SearchQuery.ToLower())) || string.IsNullOrEmpty(SearchQuery));
+                }))
+                .Select(item => item.i)
+                .ToList();
+            }
+        }
+
+        /// <summary>
+        /// Search Files by using these methods
+        /// </summary>
+        /// <param name="dataFiles"></param>
+        /// <param name="SearchQuery"></param>
+        /// <param name="SortBy"></param>        
+        /// <returns></returns>
+        static object loadSpecialSearchListLock = new object();
+        public static List<WebFile> SpecialSearch(string WebURL)
+        {
+            lock (loadSpecialSearchListLock)
+            {
+                return MainForm.FilesOpenDatabase.Select(item =>
+                new
+                {
+                    i = item,
+                    Props = item.GetType().GetProperties(BindingFlags.Instance | BindingFlags.Public)
+                })
+                .Where(item => item.Props.Any(p =>
+                {
+                    var val = p.GetValue(item.i, null);
+                    return val != null
+                        && (p.Name == "URL" || string.IsNullOrEmpty("URL"))
+                        && (val.ToString().ToLower().StartsWith(WebURL.ToLower()) || string.IsNullOrEmpty(WebURL));
                 }))
                 .Select(item => item.i)
                 .ToList();
