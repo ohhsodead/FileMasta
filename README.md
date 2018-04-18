@@ -21,7 +21,7 @@ All web addresses this app uses for indexing are submitted by users only, our cr
 [![Report a bug](http://i.imgur.com/xSpw482.png)](https://github.com/HerbL27/FileMasta/issues/new) [![Feature request](http://i.imgur.com/mFO0OuX.png)](http://feathub.com/ekkash/WebCrunch)
 
 ## Latest Build
-FileMasta 3.1
+FileMasta 3.2
 
 ## Supported Systems
 * Windows XP and above (Windows XP, Vista, 7, 8, 8.1, 10) using .NET 4.7.1 [Download here](https://www.microsoft.com/net/download/dotnet-framework-runtime/net471).
@@ -81,6 +81,9 @@ You don't need a special program but it is very recommended. For example, if you
 
 ### Search Files
 ![Files](https://github.com/HerbL27/FileMasta/blob/master/Screenshots/Files.png?raw=true)
+
+### Discover (Web Explorer)
+![Discover (Web Explorer)](https://github.com/HerbL27/FileMasta/blob/master/Screenshots/Discover.png?raw=true)
 
 ### File Details
 ![File Details](https://github.com/HerbL27/FileMasta/blob/master/Screenshots/File%20Details.png?raw=true)

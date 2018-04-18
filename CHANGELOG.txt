@@ -1,3 +1,12 @@
+2018.04.18   | FileMasta 3.2
+
+CHANGE: CORE | Added Web Explorer - Browse/navigate through web directories in-app
+CHANGE: UI   | Added support for showing filled user control as window in main form
+CHANGE: UI   | Added bind parent dataGridView to File Details for scrolling
+
+
+
+
 2018.03.26   | FileMasta 3.1
 
 CHANGE: CORE | Functions, processes and logging improvements

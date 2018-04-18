@@ -300,9 +300,11 @@
   <ItemGroup>
     <Content Include="current-version.txt" />
     <Content Include="filemasta-logo.ico" />
+    <None Include="Resources\folder.png" />
     <None Include="Resources\download.png" />
     <None Include="Resources\chevron-down.png" />
     <None Include="Resources\chevron-up.png" />
+    <None Include="Resources\chevron-up-orange.png" />
     <Content Include="Resources\filemasta-logo.png" />
     <None Include="Resources\keyboard.png" />
   </ItemGroup>
