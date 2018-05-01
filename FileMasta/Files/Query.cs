@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Text.RegularExpressions;
 using FileMasta.Extensions;
 using FileMasta.Models;
 
@@ -28,6 +29,13 @@ namespace FileMasta.Files
             {
                 SortFiles(dataFiles, SortBy);
 
+                var queryExactStrings = new Regex("\"(.*?)\"").Matches(SearchQuery.ToLower());
+                var queryListExactStrings = new List<string>();
+                foreach (Match match in queryExactStrings) queryListExactStrings.Add(match.Groups[1].Value.ToLower());
+                var result = SearchQuery.ToLower();
+                queryListExactStrings.ToList().ForEach(o => result = result.Replace(o, string.Empty));
+                var queryWords = TextExtensions.GetWords(result);
+
                 return dataFiles.Select(item =>
                 new
                 {
@@ -39,7 +47,7 @@ namespace FileMasta.Files
                     var val = p.GetValue(item.i, null);
                     return val != null
                         && (p.Name == "URL" || string.IsNullOrEmpty("URL"))
-                        && (TextExtensions.ContainsAll(Uri.UnescapeDataString(val.ToString().ToLower()), TextExtensions.GetWords(SearchQuery.ToLower())) || string.IsNullOrEmpty(SearchQuery));
+                        && (TextExtensions.ContainsAll(Uri.UnescapeDataString(val.ToString().ToLower()), queryWords) && (TextExtensions.ContainsAll(Uri.UnescapeDataString(val.ToString().ToLower()), queryListExactStrings.ToArray())) || string.IsNullOrEmpty(SearchQuery));
                 }))
                 .Select(item => item.i)
                 .ToList();
@@ -47,12 +55,10 @@ namespace FileMasta.Files
         }
 
         /// <summary>
-        /// Search Files by using these methods
+        /// Search Files by Web URL
         /// </summary>
-        /// <param name="dataFiles"></param>
-        /// <param name="SearchQuery"></param>
-        /// <param name="SortBy"></param>        
-        /// <returns></returns>
+        /// <param name="WebURL"></param>     
+        /// <returns>a list of files that contains the <paramref name="WebURL"/></returns>
         static object loadSpecialSearchListLock = new object();
         public static List<WebFile> SpecialSearch(string WebURL)
         {

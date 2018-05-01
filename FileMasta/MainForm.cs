@@ -18,6 +18,7 @@ using System.Net;
 using System.Threading;
 using System.Text;
 using System.Windows.Forms;
+using System.Linq;
 
 namespace FileMasta
 {
@@ -495,10 +496,10 @@ namespace FileMasta
                     if (dataGridFiles.Rows.Count == 0) labelNoResultsFound.Visible = true;
                     else labelNoResultsFound.Visible = false;
 
-                    EnableSearchControls(true);
-
                     Program.log.Info("Successfully returned search results");
                 }
+
+                EnableSearchControls(true);
             });
         }
 
@@ -637,13 +638,15 @@ namespace FileMasta
             imageSearchFiles.Image = Properties.Resources.loader;
             tab.SelectedTab = tabSearch;
 
-            if (Path.HasExtension(textBoxSearchFiles.Text))
+            if (Types.All.Any(textBoxSearchFiles.Text.ToUpper().EndsWith))
             {
                 ShowFileDetails(Database.FileInfoFromURL(textBoxSearchFiles.Text), dataGridFiles);
                 imageSearchFiles.Image = Properties.Resources.magnify_orange;
+                textBoxSearchFiles.Text = null;
             }
             else
                 ShowFiles(SelectedFiles);
+
         }
 
         /*************************************************************************/
