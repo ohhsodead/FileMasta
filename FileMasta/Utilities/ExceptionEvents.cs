@@ -65,7 +65,7 @@ namespace FileMasta.Utilities
 
             Program.log.Error("Unexpected Error", e.Exception);
 
-            if (MessageBox.Show("An error has occurred. Would you like to report this issue on GitHub?", "Error", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("An error has occurred. Would you like to report this issue on GitHub? Your feedback helps us improve the quality of FileMasta, we appreciate that.", "Error", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 Process.Start($"{OpenLink.urlGitHub}issues/new?title=[Exception] {e.Exception.Message}&body=" +
                 "*Please explain the problem, be clear and not vague.*%0A%0A" +
@@ -95,7 +95,7 @@ namespace FileMasta.Utilities
 
             Program.log.Error("Unexpected Error", ((Exception)e.ExceptionObject));
 
-            if (MessageBox.Show("An error has occurred. Would you like to report this issue on GitHub?", "Error", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("An error has occurred. Would you like to report this issue on GitHub? Your feedback helps us improve the quality of FileMasta, we appreciate that.", "Error", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 Process.Start($"{OpenLink.urlGitHub}issues/new?title=[Exception] {((Exception)e.ExceptionObject).Message}&body=" +
                 "*Please explain the problem, be clear and not vague.*%0A%0A" +
