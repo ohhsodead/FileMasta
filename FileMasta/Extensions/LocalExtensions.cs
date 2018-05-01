@@ -34,7 +34,7 @@ namespace FileMasta.Extensions
         public static string pathIDMAN86 = @"C:\Program Files (x86)\Internet Download Manager\IDMan.exe";
 
         /// <summary>
-        /// Checks for internet connection by attempting to connect to Google.com
+        /// Checks for internet connection by attempting to access to Google.com
         /// </summary>
         /// <returns></returns>
         public static bool CheckForInternetConnection()
@@ -43,12 +43,13 @@ namespace FileMasta.Extensions
             {
                 Program.log.Info("Checking for internet connection");
                 using (var client = new WebClient())
-                using (var stream = client.OpenRead("https://google.com")) {
+                using (var stream = client.OpenRead("https://google.com"))
+                {
                     Program.log.Info("Internet connection detected");
                     return true;
                 }
             }
-            catch (Exception ex) { Program.log.Error("Error, no internet connection detected", ex); return false; }
+            catch (Exception ex) { Program.log.Error("Error, failed to connect to the web", ex); return false; }
         }
 
         /// <summary>
