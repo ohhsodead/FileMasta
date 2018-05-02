@@ -33,7 +33,7 @@ namespace FileMasta.Files
                 var queryListExactStrings = new List<string>();
                 foreach (Match match in queryExactStrings) queryListExactStrings.Add(match.Groups[1].Value.ToLower());
                 var result = SearchQuery.ToLower();
-                queryListExactStrings.ToList().ForEach(o => result = result.Replace(o, string.Empty));
+                queryListExactStrings.ToList().ForEach(o => result = result.Replace("\"" + o + "\"", string.Empty));
                 var queryWords = TextExtensions.GetWords(result);
 
                 return dataFiles.Select(item =>
