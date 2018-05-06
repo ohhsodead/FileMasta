@@ -1,3 +1,12 @@
+2018.05.06   | FileMasta 3.3
+
+CHANGE: CORE | Web crawler improvements
+CHANGE: CORE | Fixed issue using symbols when searching (#90)
+CHANGE: CORE | Added support for searching exact phrases using double quotes
+
+
+
+
 2018.04.18   | FileMasta 3.2
 
 CHANGE: CORE | Added Web Explorer - Browse/navigate through web directories in-app
