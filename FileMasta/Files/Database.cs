@@ -17,7 +17,7 @@ namespace FileMasta.Files
         /// </summary>
         public static string UrlOpenFiles { get; } = "https://www.dropbox.com/s/charfmjveo2v1h3/open-files.json?raw=true";
         public static string UrlTopSearches { get; } = "https://www.dropbox.com/s/512qe4ogan92vea/top-searches.txt?raw=true";
-        public static string UrlOpenDirectories { get; } = "https://raw.githubusercontent.com/HerbL27/FileMasta/master/API/open-directories.txt";
+        public static string UrlOpenDirectories { get; } = "https://raw.githubusercontent.com/HerbL27/FileMasta/master/Public/open-directories.txt";
         
         /* Runs in the background on load event.
          * Checks if database file exists at users data directory, if so whether they're
