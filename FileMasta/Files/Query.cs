@@ -29,11 +29,11 @@ namespace FileMasta.Files
             {
                 SortFiles(dataFiles, SortBy);
 
-                var queryExactStrings = new Regex("\"(.*?)\"").Matches(SearchQuery.ToLower());
+                var queryExactStrings = new Regex("\"(.*?)\"").Matches(SearchQuery.ToLower()); // Get strings wrapped in double quotes
                 var queryListExactStrings = new List<string>();
-                foreach (Match match in queryExactStrings) queryListExactStrings.Add(match.Groups[1].Value.ToLower());
-                var result = SearchQuery.ToLower();
-                queryListExactStrings.ToList().ForEach(o => result = result.Replace("\"" + o + "\"", string.Empty));
+                foreach (Match match in queryExactStrings) queryListExactStrings.Add(match.Groups[1].Value.ToLower()); // Adds exacts phrases
+                var result = SearchQuery.ToLower(); // Store exact phrases
+                queryListExactStrings.ToList().ForEach(o => result = result.Replace("\"" + o + "\"", string.Empty)); // Removes all occurrences of exact phrases wrapped with double quotes
                 var queryWords = TextExtensions.GetWords(result);
 
                 return dataFiles.Select(item =>
