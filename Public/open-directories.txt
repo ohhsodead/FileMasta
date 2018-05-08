@@ -86,7 +86,6 @@ http://d1.bi-seda.ir/
 http://d2.bi-seda.ir/
 http://dagwood.sandwich.net/docs/
 http://damschen.thegc.org/
-http://danielpeart.net/ebooks/
 http://dash.edgesuite.net/dash264/
 http://davfl70.org/movies/
 http://dev.uniforms4healthcare.com/
@@ -179,7 +178,6 @@ http://filefries.com/files/
 http://filefries.com/movies/
 http://filefries.com/music/
 http://files.afu.se/Downloads/
-http://files.anitalink.com/
 http://files.duspectacle.com/mp3/
 http://files.sq10.net/music/vaporwave/list/
 http://files.stardustarcade.com/
