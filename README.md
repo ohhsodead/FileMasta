@@ -33,7 +33,7 @@ Download and run the latest version of the Windows installer, "FileMasta.Install
 Please supply as much information about the problem you are experiencing as possible. Your issue has a much greater chance of being resolved if logs are supplied so that we can see what is going on. These are located in your application's installation path.
 
 ## Contributing
-Our open directories database allows any volunteer to implement new indexers in a few seconds. You can find more information on contributing to the list [here](https://github.com/HerbL27/FileMasta/blob/master/API/README.md). If you'd like support for a new indexer but are not sure how then feel free to leave a request on the [issues page](https://github.com/HerbL27/FileMasta/issues).
+Our open directories database allows any volunteer to implement new indexers in a few seconds. You can find more information on contributing to the list [here](https://github.com/HerbL27/FileMasta/blob/master/Public/README.md). If you'd like support for a new indexer but are not sure how then feel free to leave a request on the [issues page](https://github.com/HerbL27/FileMasta/issues).
 
 All contributions are welcome just send a pull request. It is recommended to use Visual Studio 2017 when making code changes in this project. You can download the community version for free [here](https://www.visualstudio.com/downloads/).
 
