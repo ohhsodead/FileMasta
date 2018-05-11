@@ -1,3 +1,15 @@
+2018.05.10   | FileMasta 3.4
+
+CHANGE: CORE | Added support for PotPlayer
+CHANGE: CORE | Added support for KMPlayer
+CHANGE: CORE | Added support for Free Download Manager
+CHANGE: CORE | Added support for Internet Download Accelerator
+CHANGE: CORE | Improved code-usability
+CHANGE: UI   | Some minor fixes/improvements
+
+
+
+
 2018.05.06   | FileMasta 3.3
 
 CHANGE: CORE | Web crawler improvements
