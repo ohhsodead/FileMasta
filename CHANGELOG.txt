@@ -13,8 +13,8 @@ CHANGE: UI   | Some minor fixes/improvements
 2018.05.06   | FileMasta 3.3
 
 CHANGE: CORE | Web crawler improvements
-CHANGE: CORE | Fixed issue using symbols when searching (#90)
-CHANGE: CORE | Added support for searching exact phrases using double quotes
+CHANGE: CORE | Fixed issue using symbols in queries (#90)
+CHANGE: CORE | Added support for exact phrases using double quotes
 
 
 
