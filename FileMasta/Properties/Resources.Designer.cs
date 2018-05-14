@@ -83,6 +83,16 @@ namespace FileMasta.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap book {
+            get {
+                object obj = ResourceManager.GetObject("book", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bookmark_orange {
             get {
                 object obj = ResourceManager.GetObject("bookmark-orange", resourceCulture);
@@ -296,6 +306,36 @@ namespace FileMasta.Properties {
         internal static System.Drawing.Bitmap menu_down {
             get {
                 object obj = ResourceManager.GetObject("menu_down", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap note_text {
+            get {
+                object obj = ResourceManager.GetObject("note-text", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap play_circle {
+            get {
+                object obj = ResourceManager.GetObject("play-circle", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap play_circle_outline {
+            get {
+                object obj = ResourceManager.GetObject("play-circle-outline", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

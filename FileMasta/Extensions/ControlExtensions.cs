@@ -24,11 +24,29 @@ namespace FileMasta.Extensions
         }
 
         /// <summary>
+        /// Shows raw text from the specified URL in a window box
+        /// </summary>
+        /// <param name="Title">Text to display in title</param>
+        /// <param name="URL">URL to fetch string data from</param>
+        public static void ShowDataWindow(string Title, string URL)
+        {
+            DataWindow frmInfo = new DataWindow { Text = Title };
+
+            var client = new WebClient();
+            using (var stream = client.OpenRead(URL))
+            using (var reader = new StreamReader(stream))
+                frmInfo.labelData.Text = reader.ReadToEnd();
+
+            frmInfo.MaximumSize = new Size(frmInfo.MaximumSize.Width, MainForm.Form.Height - 100);
+            frmInfo.ShowDialog(MainForm.Form);
+        }
+
+        /// <summary>
         /// Gets maximum width for ComboBox dropdown to fit its contents
         /// </summary>
         /// <param name="myCombo">ComboBox to get max item length</param>
         /// <returns>Integer of max size to fit contents</returns>
-        public static int DropDownWidth(ComboBox myCombo)
+        public static int GetMaxDropDownWidth(ComboBox myCombo)
         {
             int maxWidth = 0, temp = 0;
             foreach (var obj in myCombo.Items) {
@@ -44,7 +62,7 @@ namespace FileMasta.Extensions
         /// </summary>
         /// <param name="ctrl">CButton control to measure text from</param>
         /// <returns>Int of the max size</returns>
-        public static int GetPanelComboBoxWidth(CButton ctrl)
+        public static int GetMaxPanelWidth(CButton ctrl)
         {
             var myFont = new Font(ctrl.Font.FontFamily, ctrl.Font.Size);
             var mySize = ctrl.CreateGraphics().MeasureString(ctrl.Text, myFont);
@@ -62,24 +80,6 @@ namespace FileMasta.Extensions
             var myFont = new Font(ctrl.Font.FontFamily, ctrl.Font.Size);
             var mySize = ctrl.CreateGraphics().MeasureString(ctrl.Text, myFont);
             ctrl.Width = (((int)(Math.Round(mySize.Width, 0))) + 46);
-        }
-
-        /// <summary>
-        /// Shows raw text from the specified URL in a window box
-        /// </summary>
-        /// <param name="Title">Text to display in title</param>
-        /// <param name="URL">URL to fetch string data from</param>
-        public static void ShowDataWindow(string Title, string URL)
-        {
-            DataWindow frmInfo = new DataWindow { Text = Title };
-
-            var client = new WebClient();
-            using (var stream = client.OpenRead(URL))
-            using (var reader = new StreamReader(stream))
-                frmInfo.labelData.Text = reader.ReadToEnd();
-
-            frmInfo.MaximumSize = new Size(frmInfo.MaximumSize.Width, MainForm.Form.Height - 100);
-            frmInfo.ShowDialog(MainForm.Form);
         }
 
         /// <summary>
@@ -224,13 +224,13 @@ namespace FileMasta.Extensions
             var myFont = new Font(a.Font.FontFamily, a.Font.Size);
             var mySize = a.CreateGraphics().MeasureString(a.Text, myFont);
             a.Width = (((int)(Math.Round(mySize.Width, 0))) + 10);
-            a.ClickButtonArea += btnTopSearchesTag_ClickButtonArea;
+            a.ClickButtonArea += BtnTopSearchesTag_ClickButtonArea;
             a.MouseEnter += BtnCButton_MouseEnter;
             a.MouseLeave += BtnCButton_MouseLeave;
             return a;
         }
 
-        public static void btnTopSearchesTag_ClickButtonArea(object Sender, MouseEventArgs e)
+        public static void BtnTopSearchesTag_ClickButtonArea(object Sender, MouseEventArgs e)
         {
             MainForm.Form.textBoxSearchHome.Text = ((CButton)Sender).Text;
             MainForm.Form.DoSearchFilesFromHome();

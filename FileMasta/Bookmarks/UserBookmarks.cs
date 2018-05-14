@@ -1,11 +1,11 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using FileMasta.Extensions;
 using FileMasta.Files;
 using FileMasta.Models;
 using FileMasta.Utilities;
+using Newtonsoft.Json;
 
 namespace FileMasta.Bookmarks
 {
@@ -58,7 +58,7 @@ namespace FileMasta.Bookmarks
         /// Load bookmarked files
         /// </summary>
         /// <returns>Bookmark item as a WebFile</returns>
-        public static List<WebFile> GetBookmarks()
+        public static List<WebFile> Bookmarks()
         {
             Program.log.Info("Getting users bookmarks files");
 
@@ -69,7 +69,7 @@ namespace FileMasta.Bookmarks
                         try
                         {
                             var jsonData = JsonConvert.DeserializeObject<Bookmark>(reader.ReadLine());
-                            filesBookmarks.Add(Database.FileInfoFromURL(jsonData.URL));
+                            filesBookmarks.Add(Database.WebFile(jsonData.URL));
                         }
                         catch (Exception ex)
                         {

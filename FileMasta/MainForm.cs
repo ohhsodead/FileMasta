@@ -24,35 +24,57 @@ namespace FileMasta
 {
     public partial class MainForm : Form
     {
-        public static MainForm Form { get; set; } = null; // This is only instance of the main form, set after InitializeComponent()
-        public static SplashScreen FrmSplashScreen { get; } = new SplashScreen(); // Splash Screen (one instance)
-        public static FileDetails FrmFileDetails { get; set; } = null; // File Details Window (one instance, set when first shown)
-        public static ShortcutsWindow FrmKeyboardShortcuts { get; } = new ShortcutsWindow(); // Keyboard Shortcuts Window (one instance)
+        /// <summary>
+        /// This is only instance of the main form, set after InitializeComponent()
+        /// </summary>
+        public static MainForm Form { get; set; } = null;
+
+        /// <summary>
+        /// Splash Screen (one instance)
+        /// </summary>
+        public static SplashScreen FrmSplashScreen { get; } = new SplashScreen();
+
+        /// <summary>
+        /// Keyboard Shortcuts Window (one instance)
+        /// </summary>
+        public static ShortcutsWindow FrmKeyboardShortcuts { get; } = new ShortcutsWindow();
+
+        /// <summary>
+        /// File Details Window (one instance, set when first shown)
+        /// </summary>
+        public static FileDetails FrmFileDetails { get; set; } = null;
 
         public MainForm()
         {
             Program.log.Info("Initializing");
 
-            // Combines all supported file types into one array
+            // Adds all file types to one list
             Types.All.AddRange(Types.Video); Types.All.AddRange(Types.Audio); Types.All.AddRange(Types.Books); Types.All.AddRange(Types.Subtitle); Types.All.AddRange(Types.Torrent); Types.All.AddRange(Types.Software); Types.All.AddRange(Types.Other);
 
-            SelectedFilesType = Types.All; // Set selected files type to All
-            InitializeComponent(); // Initialize
-            Form = this; // Set this instance
-            labelChangeLog.Text = String.Format(labelChangeLog.Text, Application.ProductVersion); // Set this version on Change Log label in the About tab
+            // Set selected files type to All
+            SelectedFilesType = Types.All;
 
+            // Initialize
+            InitializeComponent();
+
+            // Set this instance
+            Form = this;
+            
             // Show Splash Screen
             Controls.Add(FrmSplashScreen);
             FrmSplashScreen.Dock = DockStyle.Fill;
             FrmSplashScreen.BringToFront();
             FrmSplashScreen.Show();
 
-            comboBoxSearchHome.DropDownWidth = ControlExtensions.DropDownWidth(comboBoxSearchHome); // Set home search button combobox to fit its contents
-            comboBoxSortFiles.DropDownWidth = ControlExtensions.DropDownWidth(comboBoxSortFiles); // Set files sort combobox to fit its contents
+            // Set this version on Change Log label in the About tab
+            labelChangeLog.Text = String.Format(labelChangeLog.Text, Application.ProductVersion);
+
+            // Set static combo dropdown width to max items size
+            comboBoxSearchHome.DropDownWidth = ControlExtensions.GetMaxDropDownWidth(comboBoxSearchHome);
+            comboBoxSortFiles.DropDownWidth = ControlExtensions.GetMaxDropDownWidth(comboBoxSortFiles);
 
             Program.log.Info("Initialized");
         }
-
 
         /*************************************************************************/
         /* Share on Social Media                                                 */
@@ -60,16 +82,15 @@ namespace FileMasta
 
         public string shareMessage = "Hey guys, I found a brilliant way to find Direct download links for anything.";
 
-        private void imageShareTwitter_Click(object sender, EventArgs e)
+        private void ImageShareTwitter_Click(object sender, EventArgs e)
         {
             Process.Start($"https://twitter.com/intent/tweet?hashtags=FileMasta&original_referer=https%3A%2F%2Fgithub.com/HerbL27/FileMasta%2F&ref_src=twsrc%5Etfw&text={shareMessage}&tw_p=tweetbutton&url=https%3A%2F%2Fgithub.com/HerbL27/FileMasta");
         }
 
-        private void imageShareFacebook_Click(object sender, EventArgs e)
+        private void ImageShareFacebook_Click(object sender, EventArgs e)
         {
             Process.Start("https://facebook.com/sharer/sharer.php?app_id=248335808680372&kid_directed_site=0&sdk=joey&u=http%3A%2F%2Fgithub.com/HerbL27/FileMasta%2F&display=popup&ref=plugin&src=share_button");
         }
-
 
         /*************************************************************************/
         /* Form / Startup Events                                                 */
@@ -87,11 +108,11 @@ namespace FileMasta
             Directory.CreateDirectory(LocalExtensions.pathRoot);
             Directory.CreateDirectory(LocalExtensions.pathData);
 
-            if (LocalExtensions.CheckForInternetConnection())
+            if (LocalExtensions.IsConnectionEnabled())
             {
                 BackGroundWorker.RunWorkAsync(() => Updates.CheckForUpdate());
                 LoadTopSearches();
-                BackGroundWorker.RunWorkAsync(() => Database.UpdateLocalDatabase(), CompletedTasks);
+                BackGroundWorker.RunWorkAsync(() => Database.UpdateLocalDatabase(), InitializeFinished);
             }
             else
             {
@@ -99,14 +120,15 @@ namespace FileMasta
                 MessageBox.Show(this, "No Internet connection found. You need to be connected to the Internet to use FileMasta. Please check your connection and try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            Program.log.Info("Completed load events");
+            Program.log.Info("Completed all load events");
         }
 
-        private void CompletedTasks(object sender, RunWorkerCompletedEventArgs e)
+        private void InitializeFinished(object sender, RunWorkerCompletedEventArgs e)
         {
-            ShowHosts(); // Load Hosts into Discover tab
-            SetDatabaseInfo(); // Get database info and show in form
-            Controls.Remove(FrmSplashScreen); // Remove splash screen
+            ShowHosts();
+            SetDatabaseInfo();
+            Controls.Remove(FrmSplashScreen);
+
             Program.log.Info("All startup tasks completed");
         }
 
@@ -116,7 +138,6 @@ namespace FileMasta
             {
                 Properties.Settings.Default.Save();
 
-                // Delete app Data directory if user settings is true
                 if (Properties.Settings.Default.clearDataOnClose)
                     if (Directory.Exists(LocalExtensions.pathData))
                         Directory.Delete(LocalExtensions.pathData, true);
@@ -130,7 +151,10 @@ namespace FileMasta
             Refresh();
         }
 
-        protected override void OnPaint(PaintEventArgs e) { } // Fix paint form 
+        /// <summary>
+        /// Fix paint form
+        /// </summary>
+        protected override void OnPaint(PaintEventArgs e) { }
 
         /// <summary>
         /// Declare new lists to store database info in variables
@@ -139,13 +163,12 @@ namespace FileMasta
         public static List<string> DataOpenDirectories { get; set; } = new List<string>();
         public static string DatabaseInfo { get; set; }
 
-
         /*************************************************************************/
         /* Navigation Events/Variables                                           */
         /*************************************************************************/
 
         /// <summary>
-        /// Get/Set current tab/title
+        /// Get/Set current TabPage/Title
         /// </summary>
         public TabPage CurrentTab { get; set; }
         public CButton CurrentTabTitle { get; set; }
@@ -180,9 +203,11 @@ namespace FileMasta
             tab.SelectedTab = tabInformation;
         }
 
+        /// <summary>
+        /// Sets current tab and selects appropriate tab title
+        /// </summary>
         private void tab_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Sets current tab and selects appropriate tab title
             if (tab.SelectedTab == tabHome)
             { ControlExtensions.SelectTabTitle(titleHome); }
             else if (tab.SelectedTab == tabSearch)
@@ -208,8 +233,8 @@ namespace FileMasta
         /// </summary>
         public void SetDatabaseInfo()
         {
-            labelDatabaseStats.Text = String.Format(labelDatabaseStats.Text, TextExtensions.GetFormattedNumber(FilesOpenDatabase.Count.ToString()), TextExtensions.BytesToString(Database.GetTotalFileSize()), TextExtensions.GetFormattedNumber(DataOpenDirectories.Count.ToString()));
-            labelDatabaseUpdatedDate.Text = String.Format(labelDatabaseUpdatedDate.Text, Database.GetLastUpdateDate().ToShortDateString());
+            labelDatabaseStats.Text = String.Format(labelDatabaseStats.Text, StringExtensions.FormatNumber(FilesOpenDatabase.Count.ToString()), StringExtensions.BytesToPrefix(Database.TotalFilesSize()), StringExtensions.FormatNumber(DataOpenDirectories.Count.ToString()));
+            labelDatabaseUpdatedDate.Text = String.Format(labelDatabaseUpdatedDate.Text, Database.LastUpdate().ToShortDateString());
         }
 
         /// <summary>
@@ -261,11 +286,15 @@ namespace FileMasta
             catch (Exception ex) { labelTopSearches.Visible = false; splitterHeaderTopSearches.Visible = false; flowLayoutTopSearches.Visible = false; Program.log.Error("Error getting top searches", ex); } /* Error occurred, so hide controls/skip... */
         }
 
+        /// <summary>
+        /// Get Top Searches from web database
+        /// </summary>
+        /// <returns></returns>
         private List<string> GetTopSearches()
         {
             List<string> listTopSearches = new List<string>();
             var client = new WebClient();
-            using (var stream = client.OpenRead(Database.UrlTopSearches))
+            using (var stream = client.OpenRead(Database.dbTopSearches))
             using (var reader = new StreamReader(stream))
             {
                 string line;
@@ -281,7 +310,9 @@ namespace FileMasta
             Process.Start("http://filechef.com/");
         }
 
-        // Filetype to search from Home tab
+        /// <summary>
+        /// Filetype to search from Home tab
+        /// </summary>
         private void buttonHomeFileType_ClickButtonArea(object Sender, MouseEventArgs e)
         {
             comboBoxFileType.DroppedDown = true;
@@ -301,7 +332,7 @@ namespace FileMasta
 
             var startText = buttonFileType.Text.Split(':');
             buttonFileType.Text = startText[0] + ": " + comboBoxFileType.GetItemText(comboBoxFileType.SelectedItem);
-            containerFileType.Width = ControlExtensions.GetPanelComboBoxWidth(buttonFileType);
+            containerFileType.Width = ControlExtensions.GetMaxPanelWidth(buttonFileType);
         }
 
         /// <summary>
@@ -371,10 +402,24 @@ namespace FileMasta
         /* Search Tab                                                            */
         /*************************************************************************/
 
-        // Filter Preferences
+        /// <summary>
+        /// User Preference: Files to search/query
+        /// </summary>
         public static List<WebFile> SelectedFiles { get; set; } = FilesOpenDatabase;
+
+        /// <summary>
+        /// User Preference: Sort Files By
+        /// </summary>
         public Query.SortBy SelectedFilesSort { get; set; } = Query.SortBy.Name;
+
+        /// <summary>
+        /// User Preference: Files Type
+        /// </summary>
         public List<string> SelectedFilesType { get; set; } = Types.All;
+
+        /// <summary>
+        /// User Preference: Files Host
+        /// </summary>
         public string SelectedFilesHost { get; set; } = "";
 
         // Select/Click File Type title
@@ -428,15 +473,15 @@ namespace FileMasta
 
         private void buttonFilesLocal_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            SelectedFilesType = Types.All; ControlExtensions.SelectFilesTab(buttonFilesLocal); SelectedFiles = LocalExtensions.GetLocalFiles(); ShowFiles(SelectedFiles);
+            SelectedFilesType = Types.All; ControlExtensions.SelectFilesTab(buttonFilesLocal); SelectedFiles = LocalExtensions.LocalFiles(); ShowFiles(SelectedFiles);
         }
 
         private void buttonFilesBookmarks_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            SelectedFilesType = Types.All; ControlExtensions.SelectFilesTab(buttonFilesBookmarks); SelectedFiles = UserBookmarks.GetBookmarks(); ShowFiles(SelectedFiles);
+            SelectedFilesType = Types.All; ControlExtensions.SelectFilesTab(buttonFilesBookmarks); SelectedFiles = UserBookmarks.Bookmarks(); ShowFiles(SelectedFiles);
         }
 
-        // Files dataGridView click event for row, will get the last (hidden) column (URL) in the selected row and use to get WebFile properties
+        // Files dataGridView row click, will get the last (hidden) column (URL) in the selected row and use to get WebFile properties
         private void dataGridFiles_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex != -1)
@@ -446,7 +491,7 @@ namespace FileMasta
                 if (dataGridFiles.CurrentRow.Cells[4].Value.ToString() == "Local")
                     ShowFileDetails(new WebFile(Path.GetExtension(URL).Replace(".", "").ToUpper(), Path.GetFileNameWithoutExtension(new Uri(URL).LocalPath), new FileInfo(URL).Length, File.GetCreationTime(URL), URL, URL), dataGridFiles);
                 else
-                    ShowFileDetails(Database.FileInfoFromURL(URL), dataGridFiles);
+                    ShowFileDetails(Database.WebFile(URL), dataGridFiles);
             }
         }
 
@@ -460,7 +505,7 @@ namespace FileMasta
         {
             EnableSearchControls(false);
             var stopWatch = new Stopwatch();
-            Program.log.InfoFormat("Processing files query. Preferences - Files: {0}, Sort: {1}, Type: {2}, Host: {3}", SelectedFiles.ToString(), SelectedFilesSort.ToString(), SelectedFilesType.ToString(), SelectedFilesHost);
+            Program.log.InfoFormat("Starting query. Preferences - Sort: {0}, Type: {1}, Host: {2}", SelectedFilesSort.ToString(), SelectedFilesType.ToString(), SelectedFilesHost);
             imageSearchFiles.Image = Properties.Resources.loader;
             BackGroundWorker.RunWorkAsync<List<WebFile>>(() => Query.Search(dataFiles, textBoxSearchFiles.Text, SelectedFilesSort), (data) =>
             {
@@ -475,28 +520,27 @@ namespace FileMasta
                     comboBoxFilterFiles.Items.Clear(); comboBoxFilterFiles.Items.Add("Any");
                     stopWatch.Start();
                     foreach (var jsonData in data)
-                    {
                         if (SelectedFilesType.Contains(jsonData.Type) && jsonData.Host.Contains(SelectedFilesHost))
                         {
-                            dataGridFiles.Rows.Add(jsonData.Type, jsonData.Name, TextExtensions.BytesToString(jsonData.Size), TextExtensions.GetTimeAgo(jsonData.DateUploaded), jsonData.Host, jsonData.URL);
+                            dataGridFiles.Rows.Add(jsonData.Type, jsonData.Name, StringExtensions.BytesToPrefix(jsonData.Size), StringExtensions.TimeSpanAge(jsonData.DateUploaded), jsonData.Host, jsonData.URL);
                             if (!(comboBoxFilterFiles.Items.Contains(jsonData.Host)))
                                 comboBoxFilterFiles.Items.Add(jsonData.Host);
                         }
-                    }
 
-                    stopWatch.Stop(); TimeSpan ts = stopWatch.Elapsed;
-                    labelResultsInfo.Text = TextExtensions.GetFormattedNumber(dataGridFiles.Rows.Count.ToString()) + " / " + TextExtensions.GetFormattedNumber(dataFiles.Count.ToString()) + " Files (" + String.Format("{0:0.000}", ts.TotalSeconds) + " Seconds)"; stopWatch.Reset();
+                    stopWatch.Stop();
+                    labelResultsInfo.Text = string.Format("{0} Results ({2} seconds)", StringExtensions.FormatNumber(dataGridFiles.Rows.Count.ToString()), StringExtensions.FormatNumber(dataFiles.Count.ToString()), String.Format("{0:0.000}", stopWatch.Elapsed.TotalSeconds));
+                    stopWatch.Reset();
 
                     tab.SelectedTab = CurrentTab;
 
-                    comboBoxFilterFiles.DropDownWidth = ControlExtensions.DropDownWidth(comboBoxFilterFiles);
+                    comboBoxFilterFiles.DropDownWidth = ControlExtensions.GetMaxDropDownWidth(comboBoxFilterFiles);
 
                     imageSearchFiles.Image = Properties.Resources.magnify_orange;
 
                     if (dataGridFiles.Rows.Count == 0) labelNoResultsFound.Visible = true;
                     else labelNoResultsFound.Visible = false;
 
-                    Program.log.Info("Successfully returned search results");
+                    Program.log.Info("Successfully returned search results - " + labelResultsInfo.Text);
                 }
 
                 EnableSearchControls(true);
@@ -551,23 +595,23 @@ namespace FileMasta
 
             FrmFileDetails.parentDataGrid = parentDataGrid;
             FrmFileDetails.currentFile = File;
-            FrmFileDetails.infoFileName.Text = File.Name;
-            FrmFileDetails.infoName.Text = File.Name;
-            FrmFileDetails.infoReferrer.Text = File.Host;
-            FrmFileDetails.infoType.Text = File.Type;
+            FrmFileDetails.labelFileName.Text = File.Name;
+            FrmFileDetails.labelValueName.Text = File.Name;
+            FrmFileDetails.labelValueRefferer.Text = File.Host;
+            FrmFileDetails.labelValueType.Text = File.Type;
             FrmFileDetails.infoFileURL.Text = Uri.UnescapeDataString(File.URL);
 
             // Builds parts of the URL into a better presented string, simply replaces '/' with '>' and no filename
             var url = new Uri(File.URL);
             var directories = new StringBuilder();
-            if (!File.URL.StartsWith(LocalExtensions.userDownloadsDirectory)) { directories.Append(File.Host); } else { FrmFileDetails.infoReferrer.Text = "Local"; }// Appends the Host at the start if not Local, else it will be named 'Local'
+            if (!File.URL.StartsWith(LocalExtensions.pathDownloadsDirectory)) { directories.Append(File.Host); } else { FrmFileDetails.labelValueRefferer.Text = "Local"; }// Appends the Host at the start if not Local, else it will be named 'Local'
                 foreach (string path in url.LocalPath.Split('/', '\\'))
                 if (!Path.HasExtension(path))
                     directories.Append(path + "> ");
-            FrmFileDetails.infoDirectory.Text = directories.ToString();
+            FrmFileDetails.labelValueDirectory.Text = directories.ToString();
 
-            FrmFileDetails.infoSize.Text = TextExtensions.BytesToString(File.Size);
-            FrmFileDetails.infoAge.Text = TextExtensions.GetTimeAgo(File.DateUploaded);
+            FrmFileDetails.labelValueSize.Text = StringExtensions.BytesToPrefix(File.Size);
+            FrmFileDetails.labelValueAge.Text = StringExtensions.TimeSpanAge(File.DateUploaded);
 
             FrmFileDetails.Dock = DockStyle.Fill;
             if (!createNewInstance) FrmFileDetails.CheckFileEvents();
@@ -593,7 +637,7 @@ namespace FileMasta
 
             var startText = buttonSortFiles.Text.Split(':');
             buttonSortFiles.Text = startText[0] + ": " + comboBoxSortFiles.GetItemText(comboBoxSortFiles.SelectedItem);
-            flowLayoutSortFiles.Width = ControlExtensions.GetPanelComboBoxWidth(buttonSortFiles);
+            flowLayoutSortFiles.Width = ControlExtensions.GetMaxPanelWidth(buttonSortFiles);
         }
 
         // Filter Files by Host
@@ -606,10 +650,10 @@ namespace FileMasta
         {
             var startText = buttonFilterFiles.Text.Split(':');
             buttonFilterFiles.Text = startText[0] + ": " + comboBoxFilterFiles.GetItemText(comboBoxFilterFiles.SelectedItem);
-            flowLayoutFilterFiles.Width = ControlExtensions.GetPanelComboBoxWidth(buttonFilterFiles);
+            flowLayoutFilterFiles.Width = ControlExtensions.GetMaxPanelWidth(buttonFilterFiles);
             Refresh();
 
-            comboBoxFilterFiles.DropDownWidth = ControlExtensions.DropDownWidth(comboBoxFilterFiles);
+            comboBoxFilterFiles.DropDownWidth = ControlExtensions.GetMaxDropDownWidth(comboBoxFilterFiles);
 
             if (comboBoxFilterFiles.SelectedIndex == 0)
                 SelectedFilesHost = "";
@@ -640,7 +684,7 @@ namespace FileMasta
 
             if (Types.All.Any(textBoxSearchFiles.Text.ToUpper().EndsWith))
             {
-                ShowFileDetails(Database.FileInfoFromURL(textBoxSearchFiles.Text), dataGridFiles);
+                ShowFileDetails(Database.WebFile(textBoxSearchFiles.Text), dataGridFiles);
                 imageSearchFiles.Image = Properties.Resources.magnify_orange;
                 textBoxSearchFiles.Text = null;
             }
@@ -717,8 +761,8 @@ namespace FileMasta
                                     // File
                                     newItem.Add(jsonData.Type);
                                     newItem.Add(jsonData.Name + "." + jsonData.Type.ToLower());
-                                    newItem.Add(TextExtensions.BytesToString(jsonData.Size));
-                                    newItem.Add(TextExtensions.GetTimeAgo(jsonData.DateUploaded));
+                                    newItem.Add(StringExtensions.BytesToPrefix(jsonData.Size));
+                                    newItem.Add(StringExtensions.TimeSpanAge(jsonData.DateUploaded));
                                 }
                                 else
                                 {
@@ -769,7 +813,7 @@ namespace FileMasta
                 }
                 else
                 {
-                    ShowFileDetails(Database.FileInfoFromURL(dataGridDirectoryListing.CurrentRow.Cells[5].Value.ToString()), dataGridDirectoryListing);
+                    ShowFileDetails(Database.WebFile(dataGridDirectoryListing.CurrentRow.Cells[5].Value.ToString()), dataGridDirectoryListing);
                 }
             }                
         }

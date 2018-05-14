@@ -1,12 +1,10 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.IO;
 using System.Linq;
 using System.Net;
 using FileMasta.Extensions;
 using FileMasta.Models;
-using System.Collections.Generic;
-using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace FileMasta.Files
 {
@@ -15,45 +13,50 @@ namespace FileMasta.Files
         /// <summary>
         /// URLs for database files
         /// </summary>
-        public static string UrlOpenFiles { get; } = "https://www.dropbox.com/s/charfmjveo2v1h3/open-files.json?raw=true";
-        public static string UrlTopSearches { get; } = "https://www.dropbox.com/s/512qe4ogan92vea/top-searches.txt?raw=true";
-        public static string UrlOpenDirectories { get; } = "https://raw.githubusercontent.com/HerbL27/FileMasta/master/Public/open-directories.txt";
-        
-        /* Runs in the background on load event.
-         * Checks if database file exists at users data directory, if so whether they're
+        public const string dbOpenFiles = "https://www.dropbox.com/s/charfmjveo2v1h3/open-files.json?raw=true";
+        public const string dbOpenDirectories = "https://raw.githubusercontent.com/HerbL27/FileMasta/master/Public/open-directories.txt";
+        public const string dbTopSearches = "https://www.dropbox.com/s/512qe4ogan92vea/top-searches.txt?raw=true";
+
+        /// <summary>
+        /// Database file names
+        /// </summary>
+        const string fileNameOpenFiles = "open-files.json";
+        const string fileNameOpenDirectories = "open-directories.txt";
+
+        /* Checks if database file exists at users data directory, if so whether they're
          * the same size, and downloads the latest one if either return false */
         public static void UpdateLocalDatabase()
         {
-            Program.log.Info("Checking for database updates");
+            Program.log.Info("Starting database updates");
 
-            if (UpdateLocalDatabaseFiles(UrlOpenDirectories, "open-directories.txt"))
+            if (IsFileOutOfDate(dbOpenFiles, fileNameOpenFiles))
             {
-                using (var client = new WebClient()) { client.DownloadFile(new Uri(UrlOpenDirectories), $"{LocalExtensions.pathData}open-directories.txt"); }
-                Program.log.Info("open-directories.txt updated");
-            }
-            MainForm.DataOpenDirectories.AddRange(File.ReadAllLines($"{LocalExtensions.pathData}open-directories.txt"));
-
-            if (UpdateLocalDatabaseFiles(UrlOpenFiles, "open-files.json"))
-            {
-                using (var client = new WebClient()) { client.DownloadFile(new Uri(UrlOpenFiles), $"{LocalExtensions.pathData}open-files.json"); }
-                Program.log.Info("open-files.json updated");
+                using (var client = new WebClient()) { client.DownloadFile(new Uri(dbOpenFiles), $"{LocalExtensions.pathData}{fileNameOpenFiles}"); }
+                Program.log.Info($"{fileNameOpenFiles} updated");
             }
 
-            // Retrieve database items, skipping the first line (contains the meta info)
-            foreach (var item in File.ReadAllLines($"{LocalExtensions.pathData}open-files.json").Skip(1))
-                if (TextExtensions.IsValidJSON(item))
+            if (IsFileOutOfDate(dbOpenDirectories, fileNameOpenDirectories))
+            {
+                using (var client = new WebClient()) { client.DownloadFile(new Uri(dbOpenDirectories), $"{LocalExtensions.pathData}{fileNameOpenDirectories}"); }
+                Program.log.Info($"{fileNameOpenDirectories} updated");
+            }
+            MainForm.DataOpenDirectories.AddRange(File.ReadAllLines($"{LocalExtensions.pathData}{fileNameOpenDirectories}"));
+
+            // Store files in the main form, skipping the first line as it contains the db metadata
+            foreach (var item in File.ReadAllLines($"{LocalExtensions.pathData}{fileNameOpenFiles}").Skip(1))
+                if (StringExtensions.IsValidJSON(item))
                     MainForm.FilesOpenDatabase.Add(JsonConvert.DeserializeObject<WebFile>(item));
 
-            MainForm.DatabaseInfo = File.ReadLines($"{LocalExtensions.pathData}open-files.json").First(); // Gets first line in database which contains info
+            MainForm.DatabaseInfo = File.ReadLines($"{LocalExtensions.pathData}{fileNameOpenFiles}").First(); // Gets first line in database which contains info
         }
 
         /// <summary>
-        /// Checks if database file exists at users data directory, if so whether they're the same size, and downloads the latest one if either returns true
+        /// Checks if local database needs to be updated
         /// </summary>
         /// <param name="webFile">String URL of the file to check for update</param>
         /// <param name="fileName">File name, used to check local directory</param>
         /// <returns></returns>
-        public static bool UpdateLocalDatabaseFiles(string webFile, string fileName)
+        public static bool IsFileOutOfDate(string webFile, string fileName)
         {
             try
             {
@@ -84,7 +87,7 @@ namespace FileMasta.Files
         /// Total size of all files in database
         /// </summary>
         /// <returns>Total Size as Long</returns>
-        public static long GetTotalFileSize()
+        public static long TotalFilesSize()
         {
             long totalSize = 0;
 
@@ -95,55 +98,23 @@ namespace FileMasta.Files
         }
 
         /// <summary>
-        /// Get database stats
+        /// Gets last database update time
         /// </summary>
         /// <returns></returns>
-        public static DateTime GetLastUpdateDate()
+        public static DateTime LastUpdate()
         {
-            DateTime updateDate = DateTime.MinValue;
+            if (StringExtensions.IsValidJSON(MainForm.DatabaseInfo))
+                return JsonConvert.DeserializeObject<DatabaseInfo>(MainForm.DatabaseInfo).LastUpdated;
 
-            if (TextExtensions.IsValidJSON(MainForm.DatabaseInfo))
-            {
-                var dataJsonInfo = JsonConvert.DeserializeObject<DatabaseInfo>(MainForm.DatabaseInfo);
-                updateDate = dataJsonInfo.LastUpdated;
-            }
-
-            return updateDate;
+            return DateTime.MinValue;
         }
-
-        /// <summary>
-        /// Gets some recently added files in the database by checking if file was uploaded in the last two weeks
-        /// </summary>
-        /// <returns></returns>
-        public static List<WebFile> GetRecentlyAddedFiles()
-        {
-            var recentlyAddedFiles = new List<WebFile>();
-
-            int itemCount = 1;
-            var addedHosts = new List<string>();
-            Program.log.Info("Getting recently added files");
-            var copiedItems = new List<WebFile>(MainForm.FilesOpenDatabase);
-            copiedItems.Shuffle();
-            foreach (var jsonData in copiedItems)
-                if (DateTime.Today < jsonData.DateUploaded.Date.AddDays(14) && jsonData.Size > 0 && !addedHosts.Contains(jsonData.Host) && itemCount <= 6)
-                {
-                    itemCount++;
-                    addedHosts.Add(jsonData.Host);
-                    recentlyAddedFiles.Add(jsonData);
-                }
-
-            Program.log.Info("Recently added files successful");
-
-            return recentlyAddedFiles;
-        }
-
 
         /// <summary>
         /// Get web file info from internal database, or creates a new object if it doesn't exist
         /// </summary>
-        /// <param name="URL">Matches URL with WebFile.URL to return object</param>
+        /// <param name="URL">Used to match with WebFile.URL to return class</param>
         /// <returns>WebFile object</returns>
-        public static WebFile FileInfoFromURL(string URL)
+        public static WebFile WebFile(string URL)
         {
             // Checks loaded files for a matching URL and returns the Web File object
             foreach (var file in MainForm.FilesOpenDatabase) 
@@ -151,9 +122,9 @@ namespace FileMasta.Files
                     return file;
         
             // Create a new Web File object as this URL doesn't exist in the database there anymore
-            var newWebFile = new WebFile(Path.GetExtension(URL).Replace(".", "").ToUpper(), Path.GetFileNameWithoutExtension(new Uri(URL).LocalPath), WebFileExtensions.GetFileSize(URL), WebFileExtensions.GetFileLastModified(URL), new Uri(URL).Host.Replace("www.", ""), new Uri(URL).AbsoluteUri);
+            var newWebFile = new WebFile(Path.GetExtension(URL).Replace(".", "").ToUpper(), Path.GetFileNameWithoutExtension(new Uri(URL).LocalPath), WebFileExtensions.FileSize(URL), WebFileExtensions.FileLastModified(URL), new Uri(URL).Host.Replace("www.", ""), new Uri(URL).AbsoluteUri);
 
-            // Add the new Web File to current local database
+            // Add the new Web File to this instance of application
             MainForm.FilesOpenDatabase.Add(newWebFile);
 
             // Return the new Web File

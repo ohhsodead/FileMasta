@@ -8,13 +8,13 @@ using System.Threading;
 
 namespace FileMasta.Extensions
 {
-    class TextExtensions
+    class StringExtensions
     {
         /// <summary>
         /// Returns all sub strings in string
         /// </summary>
         /// <param name="input"></param>
-        /// <returns>Sub strins in string</returns>
+        /// <returns>Sub strings in string</returns>
         public static string[] GetWords(string input)
         {
             var matches = Regex.Matches(input, @"\b[\w']*\b");
@@ -51,29 +51,45 @@ namespace FileMasta.Extensions
         /// </summary>
         /// <param name="Items"></param>
         /// <returns></returns>
-        public static string Random(ICollection<string> Items)
+        public static string Random(ICollection<string> items)
         {
             var Rndm = new Random();
-            var StringList = new List<string>(Items);
-            return StringList[Rndm.Next(0, Items.Count)];
+            var StringList = new List<string>(items);
+            return StringList[Rndm.Next(0, items.Count)];
         }
 
         /// <summary>
-        /// Return Number with Comma's for Thousands
+        /// Return number represented as string with comma's for thousands
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
-        public static string GetFormattedNumber(string value)
+        public static string FormatNumber(string value)
         {
             return string.Format("{0:n0}", Convert.ToInt32(value));
         }
+        
+        /// <summary>
+        /// Return file size with suffix e.g. Bytes, MB, GB
+        /// </summary>
+        /// <param name="byteCount"></param>
+        /// <returns>Bytes in string format</returns>
+        public static String BytesToPrefix(long byteCount)
+        {
+            string[] suf = { "Bytes", "KB", "MB", "GB", "TB", "PB", "EB" }; // Longs run out around EB
+            if (byteCount == 0)
+                return "0" + " " + suf[0];
+            long bytes = Math.Abs(byteCount);
+            int place = Convert.ToInt32(Math.Floor(Math.Log(bytes, 1024)));
+            double num = Math.Round(bytes / Math.Pow(1024, place), 1);
+            return (Math.Sign(byteCount) * num).ToString() + " " + suf[place];
+        }
 
         /// <summary>
-        /// Get 'Time' Ago from DateTime
+        /// Get age from DateTime
         /// </summary>
         /// <param name="date"></param>
         /// <returns></returns>
-        public static string GetTimeAgo(DateTime date)
+        public static string TimeSpanAge(DateTime date)
         {
             const int SECOND = 1;
             const int MINUTE = 60 * SECOND;
@@ -120,7 +136,7 @@ namespace FileMasta.Extensions
         /// </summary>
         /// <param name="uri"></param>
         /// <returns>Parent folder url</returns>
-        public static string GetParentUriString(Uri uri)
+        public static string ParentDirectory(Uri uri)
         {
             StringBuilder parentName = new StringBuilder();
             parentName.Append(uri.Scheme);
@@ -129,22 +145,6 @@ namespace FileMasta.Extensions
             for (int i = 0; i < uri.Segments.Length - 1; i++)
                 parentName.Append(uri.Segments[i]);
             return parentName.ToString();
-        }
-
-        /// <summary>
-        /// Return file size with suffix e.g. Bytes, MB, GB
-        /// </summary>
-        /// <param name="byteCount"></param>
-        /// <returns>Bytes in string format</returns>
-        public static String BytesToString(long byteCount)
-        {
-            string[] suf = { "Bytes", "KB", "MB", "GB", "TB", "PB", "EB" }; // Longs run out around EB
-            if (byteCount == 0)
-                return "0" + " " + suf[0];
-            long bytes = Math.Abs(byteCount);
-            int place = Convert.ToInt32(Math.Floor(Math.Log(bytes, 1024)));
-            double num = Math.Round(bytes / Math.Pow(1024, place), 1);
-            return (Math.Sign(byteCount) * num).ToString() + " " + suf[place];
         }
 
         /// <summary>
@@ -164,7 +164,7 @@ namespace FileMasta.Extensions
         }
     }
 
-    public static class ThreadSafeRandom
+    static class ThreadSafeRandom
     {
         [ThreadStatic] private static Random Local;
 

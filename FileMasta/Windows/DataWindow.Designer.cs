@@ -43,7 +43,7 @@
             this.panelItems.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.panelItems.Location = new System.Drawing.Point(12, 12);
             this.panelItems.Name = "panelItems";
-            this.panelItems.Size = new System.Drawing.Size(455, 56);
+            this.panelItems.Size = new System.Drawing.Size(480, 56);
             this.panelItems.TabIndex = 0;
             // 
             // labelData
@@ -70,15 +70,15 @@
             this.AutoScroll = true;
             this.AutoScrollMargin = new System.Drawing.Size(0, 12);
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(479, 81);
+            this.ClientSize = new System.Drawing.Size(504, 81);
             this.Controls.Add(this.panelItems);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(495, 650);
+            this.MaximumSize = new System.Drawing.Size(520, 650);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(495, 40);
+            this.MinimumSize = new System.Drawing.Size(520, 40);
             this.Name = "DataWindow";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;

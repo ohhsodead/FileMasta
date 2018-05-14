@@ -5,19 +5,18 @@ namespace FileMasta.Extensions
 {
     class WebFileExtensions
     {
-
         /// <summary>
         /// Gets web file last modified date
         /// </summary>
-        /// <param name="WebFileURL"></param>
+        /// <param name="FileURL"></param>
         /// <returns></returns>
-        public static DateTime GetFileLastModified(string WebFileURL)
+        public static DateTime FileLastModified(string FileURL)
         {
             try
             {
                 Program.log.Info("Requesting file modified date from web file");
 
-                WebRequest req = WebRequest.Create(WebFileURL);
+                WebRequest req = WebRequest.Create(FileURL);
                 req.Method = "HEAD";
                 req.Timeout = 7000;
                 using (var fileResponse = (HttpWebResponse)req.GetResponse())
@@ -38,15 +37,15 @@ namespace FileMasta.Extensions
         /// <summary>
         /// Gets web file size
         /// </summary>
-        /// <param name="WebFileURL"></param>
+        /// <param name="FileURL"></param>
         /// <returns></returns>
-        public static int GetFileSize(string WebFileURL)
+        public static int FileSize(string FileURL)
         {
             try
             {
                 Program.log.Info("Requesting file size from web file");
 
-                var req = WebRequest.Create(WebFileURL);
+                var req = WebRequest.Create(FileURL);
                 req.Method = "HEAD";
                 req.Timeout = 7000;
                 using (var fileResponse = (HttpWebResponse)req.GetResponse())

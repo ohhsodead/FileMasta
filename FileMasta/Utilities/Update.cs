@@ -36,8 +36,8 @@ namespace FileMasta.Utilities
                     {
                         Program.log.Info(@"Update found, starting Update.exe");
                         MessageBox.Show(MainForm.Form, $"FileMasta {newVersion.ToString()} is ready to be installed.", "FileMasta - Update Available");
-                        client.DownloadFile(GetUrlLatestUpdater(newVersion), $@"{LocalExtensions.userDownloadsDirectory}\Update.exe");
-                        Process.Start($@"{LocalExtensions.userDownloadsDirectory}\Update.exe");
+                        client.DownloadFile(GetUrlLatestUpdater(newVersion), $@"{LocalExtensions.pathDownloadsDirectory}\Update.exe");
+                        Process.Start($@"{LocalExtensions.pathDownloadsDirectory}\Update.exe");
                         Application.Exit();
                     }
                 }                    

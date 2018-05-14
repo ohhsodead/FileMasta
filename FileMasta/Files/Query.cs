@@ -34,7 +34,7 @@ namespace FileMasta.Files
                 foreach (Match match in queryExactStrings) queryListExactStrings.Add(match.Groups[1].Value.ToLower()); // Adds exacts phrases
                 var result = SearchQuery.ToLower(); // Store exact phrases
                 queryListExactStrings.ToList().ForEach(o => result = result.Replace("\"" + o + "\"", string.Empty)); // Removes all occurrences of exact phrases wrapped with double quotes
-                var queryWords = TextExtensions.GetWords(result);
+                var queryWords = StringExtensions.GetWords(result);
 
                 return dataFiles.Select(item =>
                 new
@@ -47,7 +47,7 @@ namespace FileMasta.Files
                     var val = p.GetValue(item.i, null);
                     return val != null
                         && (p.Name == "URL" || string.IsNullOrEmpty("URL"))
-                        && (TextExtensions.ContainsAll(Uri.UnescapeDataString(val.ToString().ToLower()), queryWords) && (TextExtensions.ContainsAll(Uri.UnescapeDataString(val.ToString().ToLower()), queryListExactStrings.ToArray())) || string.IsNullOrEmpty(SearchQuery));
+                        && (StringExtensions.ContainsAll(Uri.UnescapeDataString(val.ToString().ToLower()), queryWords) && (StringExtensions.ContainsAll(Uri.UnescapeDataString(val.ToString().ToLower()), queryListExactStrings.ToArray())) || string.IsNullOrEmpty(SearchQuery));
                 }))
                 .Select(item => item.i)
                 .ToList();

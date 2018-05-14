@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -16,28 +15,42 @@ namespace FileMasta.Extensions
         /// </summary>
         public static string pathRoot = $@"{Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)}\FileMasta\";
         public static string pathData = $@"{pathRoot}Data\";
+        public static string pathDownloadsDirectory = $@"{KnownFolders.GetPath(KnownFolder.Downloads)}\";
         public static string pathDataBookmarked = $"{pathRoot}bookmarked-files.json";
-        public static string userDownloadsDirectory = $@"{KnownFolders.GetPath(KnownFolder.Downloads)}\";
 
         /// <summary>
         /// Supported media players
         /// </summary>
-        public static string pathVLC = @"C:\Program Files (x86)\VideoLAN\VLC\vlc.exe";
-        public static string pathMPCCodec64 = @"C:\Program Files(x86)\K-Lite Codec Pack\MPC-HC64\mpc-hc64.exe";
-        public static string pathMPC64 = @"C:\Program Files\MPC-HC\mpc-hc64.exe";
-        public static string pathMPC86 = @"C:\Program Files (x86)\MPC-HC\mpc-hc.exe";
+        public const string pathVLC = @"C:\Program Files (x86)\VideoLAN\VLC\vlc.exe";
+        public const string pathMPCCodec64 = @"C:\Program Files(x86)\K-Lite Codec Pack\MPC-HC64\mpc-hc64.exe";
+        public const string pathMPC64 = @"C:\Program Files\MPC-HC\mpc-hc64.exe";
+        public const string pathMPC86 = @"C:\Program Files (x86)\MPC-HC\mpc-hc.exe";
+        public const string pathKMPlayer = @"C:\KMPlayer\KMPlayer.exe";
+        public const string pathPotPlayer = @"C:\Program Files\DAUM\PotPlayer\PotPlayerMini64.exe";
+
+        /// <summary>
+        /// Supported PDF viewers
+        /// </summary>
+        public const string pathNitroReader = @"C:\Program Files\Nitro\Reader 5\NitroPDFReader.exe";
+
+        /// <summary>
+        /// Supported Text viewers
+        /// </summary>
+        public const string pathEditPad = @"C:\Program Files\Just Great Software\EditPad Lite 7\EditPadLite7.exe";
 
         /// <summary>
         /// Supported download managers
         /// </summary>
-        public static string pathIDMAN64 = @"C:\Program Files\Internet Download Manager\IDMan.exe";
-        public static string pathIDMAN86 = @"C:\Program Files (x86)\Internet Download Manager\IDMan.exe";
+        public const string pathIDM64 = @"C:\Program Files\Internet Download Manager\IDMan.exe";
+        public const string pathIDM86 = @"C:\Program Files (x86)\Internet Download Manager\IDMan.exe";
+        public const string pathFDM = @"C:\Program Files\FreeDownloadManager.ORG\Free Download Manager\fdm.exe";
+        public const string pathIDA = @"C:\Program Files (x86)\IDA\ida.exe";
 
         /// <summary>
         /// Checks for internet connection by attempting to access to Google.com
         /// </summary>
         /// <returns></returns>
-        public static bool CheckForInternetConnection()
+        public static bool IsConnectionEnabled()
         {
             try
             {
@@ -57,9 +70,9 @@ namespace FileMasta.Extensions
         /// </summary>
         /// <param name="fileURL"></param>
         /// <returns></returns>
-        public static bool HasExistingSubtitle(string fileURL)
+        public static bool IsSubtitlesAvailable(string fileURL)
         {
-            if (File.Exists(userDownloadsDirectory + Path.GetFileNameWithoutExtension(new Uri(fileURL).LocalPath) + ".srt"))
+            if (File.Exists(pathDownloadsDirectory + Path.GetFileNameWithoutExtension(new Uri(fileURL).LocalPath) + ".srt"))
                 return true;
             else
                 return false;
@@ -68,13 +81,13 @@ namespace FileMasta.Extensions
         /// <summary>
         /// Gets local files (supported in this app) from user's /Downloads directory
         /// </summary>
-        /// <returns>Local files from /Downloads as a WebFile</returns>
-        public static List<WebFile> GetLocalFiles()
+        /// <returns>Local files from Downloads as a WebFile</returns>
+        public static List<WebFile> LocalFiles()
         {
             Program.log.Info("Getting users local files");
 
             var filesLocal = new List<WebFile>();
-            foreach (var pathFile in Directory.GetFiles(userDownloadsDirectory, "*.*", SearchOption.AllDirectories))
+            foreach (var pathFile in Directory.GetFiles(pathDownloadsDirectory, "*.*", SearchOption.AllDirectories))
                 filesLocal.Add(new WebFile(
                     Path.GetExtension(pathFile).Replace(".", "").ToUpper(),
                     Path.GetFileNameWithoutExtension(pathFile),

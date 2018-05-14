@@ -161,7 +161,7 @@
     <Compile Include="Extensions\LocalExtensions.cs" />
     <Compile Include="GitHub\OpenLink.cs" />
     <Compile Include="Bookmarks\UserBookmarks.cs" />
-    <Compile Include="Extensions\TextExtensions.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Utilities\TextLineRemover.cs" />
     <Compile Include="Utilities\Update.cs" />
     <EmbeddedResource Include="Controls\FileDetails.resx">
@@ -300,11 +300,14 @@
   <ItemGroup>
     <Content Include="current-version.txt" />
     <Content Include="filemasta-logo.ico" />
-    <None Include="Resources\folder.png" />
+    <None Include="Resources\note-text.png" />
+    <None Include="Resources\play-circle.png" />
+    <None Include="Resources\play-circle-outline.png" />
     <None Include="Resources\download.png" />
     <None Include="Resources\chevron-down.png" />
     <None Include="Resources\chevron-up.png" />
     <None Include="Resources\chevron-up-orange.png" />
+    <None Include="Resources\book.png" />
     <Content Include="Resources\filemasta-logo.png" />
     <None Include="Resources\keyboard.png" />
   </ItemGroup>

@@ -13,7 +13,7 @@ namespace FileMasta.Extensions
         /// </summary>
         /// <param name="url"></param>
         /// <returns></returns>
-        public static Bitmap LoadPictureFromURL(string url)
+        public static Bitmap ImageFromURL(string url)
         {
             HttpWebRequest wreq;
             HttpWebResponse wresp = null;
