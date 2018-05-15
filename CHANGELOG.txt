@@ -1,8 +1,9 @@
 2018.05.15   | FileMasta 3.4
 
+CHANGE: CORE | Added single running instance-only
 CHANGE: CORE | Added support for PotPlayer
 CHANGE: CORE | Added support for KMPlayer
-CHANGE: CORE | Added support for Free Download Manager NitroPDFReader
+CHANGE: CORE | Added support for Free Download Manager
 CHANGE: CORE | Added support for NitroPDF Reader
 CHANGE: CORE | Added support for Internet Download Accelerator
 CHANGE: CORE | Improved code-usability, documentation and comments
