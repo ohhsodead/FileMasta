@@ -34,11 +34,6 @@ namespace FileMasta.Extensions
         public const string pathNitroReader = @"C:\Program Files\Nitro\Reader 5\NitroPDFReader.exe";
 
         /// <summary>
-        /// Supported Text viewers
-        /// </summary>
-        public const string pathEditPad = @"C:\Program Files\Just Great Software\EditPad Lite 7\EditPadLite7.exe";
-
-        /// <summary>
         /// Supported download managers
         /// </summary>
         public const string pathIDM64 = @"C:\Program Files\Internet Download Manager\IDMan.exe";

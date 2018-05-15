@@ -518,17 +518,17 @@ namespace FileMasta.Controls
             this.contextOpenFile.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.NitroReaderToolStripMenuItem,
             this.VLC2ToolStripMenuItem,
-            this.WMPToolStripMenuItem,
             this.VLCToolStripMenuItem,
+            this.WMPToolStripMenuItem,
             this.MPCToolStripMenuItem,
             this.KMPlayerToolStripMenuItem,
             this.PotPlayerToolStripMenuItem,
             this.IDMToolStripMenuItem,
-            this.FDMToolStripMenuItem,
-            this.InternetDownloadAccelaratorToolStripMenuItem});
+            this.InternetDownloadAccelaratorToolStripMenuItem,
+            this.FDMToolStripMenuItem});
             this.contextOpenFile.Name = "contextMenuStrip1";
             this.contextOpenFile.ShowItemToolTips = false;
-            this.contextOpenFile.Size = new System.Drawing.Size(236, 224);
+            this.contextOpenFile.Size = new System.Drawing.Size(236, 246);
             // 
             // NitroReaderToolStripMenuItem
             // 

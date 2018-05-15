@@ -9,6 +9,7 @@ namespace FileMasta
     static class Program
     {
         public static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        private static Mutex mutex = null;
 
         /// <summary>
         /// The main entry point for the application.
@@ -16,6 +17,15 @@ namespace FileMasta
         [STAThread]
         static void Main()
         {
+            const string appName = "FileMasta";
+
+            mutex = new Mutex(true, appName, out bool createdNew);
+
+            if (!createdNew)
+            {
+                log.Warn("An instance of FileMasta is already running");  
+                return;
+            }
 
             if (Debugger.IsAttached)
             {

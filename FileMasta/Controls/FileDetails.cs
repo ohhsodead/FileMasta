@@ -40,6 +40,10 @@ namespace FileMasta.Controls
 
         public void CheckFileEvents()
         {
+            // Hides all open file items
+            foreach (ToolStripMenuItem item in contextOpenFile.Items)
+                item.Visible = false;
+
             // Shows appropriate Bookmarks button text
             if (!UserBookmarks.IsBookmarked(currentFile.URL))
                 ControlExtensions.SetControlText(buttonBookmarkFile, "Add to Bookmarks");            
