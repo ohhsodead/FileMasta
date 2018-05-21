@@ -397,7 +397,7 @@ http://seal.ics.uci.edu/projects/
 http://seedbox37.mjwebhosting.nl/
 http://serenitystreetnews.com/videos/
 http://server1.cegosbrasil.net/
-http://server1.timepassbd.com/ftpdata1/
+http://www.server1.timepassbd.com/ftpdata1/
 http://server4.xytune.ir/
 http://server417.seedhost.eu/
 http://service-gsm.eu/allegro/
@@ -476,7 +476,6 @@ http://ww1.pragana.net/Android/
 http://www.gagsnetwork.com/data/
 http://www.gizard.org/goother/
 http://www.hellmark.org/downloads/
-http://www.mandolintab.net/pdf/
 http://www.teamsullivan.net/
 http://www2.esm.vt.edu/~mark/files/
 http://xbmcmods.com/
