@@ -19,6 +19,8 @@ http://36.66.198.202/share/files/entertainment/
 http://3herosoft.com/downloads/
 http://3sf.joshw.info/
 http://45.120.114.222/ftp/
+http://54.36.48.70/Movies/
+http://54.36.48.70/TVShows/
 http://62.210.103.107/
 http://67.162.244.185:8887/mus/Music/
 http://67.162.244.185:8887/mus/RAP%20and%20HIPHOP/
@@ -33,6 +35,7 @@ http://95.211.186.214/Incoming/
 http://95.31.7.84/media/
 http://a.globcom.net/
 http://abcd.lk/sliit/
+http://ace-net.net/stream/Movies/
 http://acscricket.com/wp-content/uploads/
 http://admin.clubmovie.com.au/
 http://agrius.feralhosting.com/nirvblakr/
@@ -258,6 +261,7 @@ http://ipoderia.com/tracks/
 http://izt.ciens.ucv.ve/ecologia/Archivos/
 http://jakesallstarkaraoke.com/media/
 http://jamshaker.com/misc/
+http://jazz.balitech.com/
 http://jeff.tdrealms.com/Movies/
 http://jukebox.pierrevanlierop.nl/The80s/
 http://jvk.cz/install/
@@ -284,6 +288,7 @@ http://markostnetworking.com/apps/
 http://marsh.speedrunwiki.com/
 http://mascon.net/ebooks/
 http://maxivod.net/concert/
+http://maxivod.net/dual/
 http://mc1.dl3enter.in/files/d1/film/2004/
 http://mc1.dl3enter.in/files/d1/film/2012/
 http://mc1.dl3enter.in/files/d1/film/2015/
@@ -295,6 +300,7 @@ http://mediaset.sdasofia.org/MEDIA%20SET/LASTNEWS/
 http://medor.no-ip.org/
 http://mfrserver.net/up/music/
 http://milehighcomics.com/comicindex/nice/
+http://mirror.raatti.net/rpg/rpg.rem.uz/
 http://mirror.thelifeofkenneth.com/
 http://mirrors.ibiblio.org/
 http://mnhsk.homeftp.net/
@@ -316,6 +322,7 @@ http://ncourse.buu.ac.th/download/
 http://nekit.sytes.net/files/
 http://nesninja.com/public/
 http://newsking.com/movies/
+http://no-maj.com/eBooks/
 http://ns1.bucomsec.com/downloads/archivos/
 http://ns330929.ip-37-187-120.eu/
 http://ns502618.ip-192-99-8.net/
@@ -336,6 +343,7 @@ http://pauladaunt.com/books/
 http://pc.joshw.info/
 http://penzel.se/
 http://people.canonical.com/~ubuntu-archive/
+http://people.dm.unipi.it/caboara/
 http://people.vts.su.ac.rs/~pmiki/
 http://petticrows.co.uk/downloads/
 http://pics.yougave.me/
@@ -361,6 +369,7 @@ http://pw.onego.ru/client/
 http://quezako.com/files/
 http://raduga.net/download/
 http://razmovie.parsaspace.com/
+http://razorlan.info/files/
 http://redscarlet.paragonsigma.com/game%20stuff/
 http://relatos.in/FP/
 http://relay.pp.fi/Gamepatch/
@@ -427,9 +436,13 @@ http://thumbnailpacks.libretro.com/
 http://top.sinp.msu.ru/tema/data/
 http://torrentabi.com/torrent/
 http://torrentoyunindir.com/updates/
+http://torrents.rcks.ru/
 http://tug.ctan.org/fonts/
 http://tug.ctan.org/install/
 http://two66.com/mirrors/
+http://two66.com/mirrors/Documentaries/
+http://two66.com/mirrors/GTA-Radio-Stations/
+http://two66.com/mirrors/Tools/
 http://tzarsectus.com/tools/
 http://u.markus.org.ua/
 http://u168.ru/shares/
@@ -460,6 +473,11 @@ http://wordsbloom.com/uploads/
 http://worrydream.com/refs/
 http://wou.edu/~areinha/
 http://ww1.pragana.net/Android/
+http://www.gagsnetwork.com/data/
+http://www.gizard.org/goother/
+http://www.hellmark.org/downloads/
+http://www.mandolintab.net/pdf/
+http://www.teamsullivan.net/
 http://www2.esm.vt.edu/~mark/files/
 http://xbmcmods.com/
 http://xbypassfile.com/
@@ -483,7 +501,6 @@ https://download.lehongnam.com/
 https://download.nextcloud.com/server/
 https://download.videolan.org/
 https://ecmjournal.org/papers/
-https://files.danwin1210.me/uploads/
 https://ftp.dim13.org/pub/
 https://ftp.nsysu.edu.tw/Freeware/
 https://ftp.sunet.se/
