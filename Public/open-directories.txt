@@ -13,6 +13,10 @@ http://209.132.181.8/pub/
 http://212.0.151.238/soft/
 http://213.55.83.214:8181/
 http://216.144.234.41/
+http://89.163.255.42/
+http://213.32.113.82/
+http://videmoon.com/movies/
+https://storage.kanzaki.ru/
 http://23.241.118.207/~mike/vid/
 http://27.254.64.107/
 http://36.66.198.202/share/files/entertainment/
