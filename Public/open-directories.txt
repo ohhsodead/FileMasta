@@ -84,6 +84,7 @@ http://contents.meetbsd.ir/
 http://cpradof.darkwebrepo.gq/
 http://crypto.cs.mcgill.ca/~simonpie/Films/
 http://ctvod.run/
+http://d20.sabotender.com/
 http://dagwood.sandwich.net/docs/
 http://damschen.thegc.org/
 http://dash.edgesuite.net/dash264/
@@ -128,6 +129,7 @@ http://dl2.hexdownload.net/up/
 http://dl2.heyserver.in/
 http://dl2.lavinmovie.ir/
 http://dl2.mihanpix.com/Film/
+http://dl2.mihanpix.com/Serial/
 http://dl2.my98music.com/Data/
 http://dl2.nicedownload.org/
 http://dl2.pesfa.com/pesfa/
@@ -159,6 +161,7 @@ http://downloads.roidhub.com/android-app/
 http://dpfox.com/files/
 http://drummerdonnie.com/Archive/
 http://dthc.fi/dump/gondolat/
+http://ebooks.bharathuniv.ac.in/gdlc1/
 http://electrogic.com/descargas/
 http://empcraft.com/music/
 http://enetis.net/~jjuuls/
@@ -338,11 +341,23 @@ http://rootjunkysdl.com/files/Apps/
 http://rosaage.com/video/
 http://roushstudios.com/downloads/
 http://rq87.flyingomelette.com/RQ/
+http://s1.bitdownload.ir/
 http://s1.mmdl.xyz/
 http://s1.mymrmusic4.com/hmusic/
 http://s1.mymrmusic4.com/smusic/
+http://s10.bitdownload.ir/
+http://s11.bitdownload.ir/
+http://s12.bitdownload.ir/
+http://s2.bitdownload.ir/
+http://s3.bitdownload.ir/
 http://s3.dlrozane.com/
+http://s4.bitdownload.ir/
+http://s5.bitdownload.ir/
 http://s5.movies4star.com/load/
+http://s6.bitdownload.ir/
+http://s7.bitdownload.ir/
+http://s8.bitdownload.ir/
+http://s9.bitdownload.ir/
 http://saaya.ykmc.net/
 http://saibrad.dlinkddns.com/bt/
 http://sailormusic.net/music/
@@ -420,6 +435,8 @@ http://wordsbloom.com/uploads/
 http://worrydream.com/refs/
 http://wou.edu/~areinha/
 http://ww1.pragana.net/Android/
+http://www.certbibles.com/vce/
+http://www.cheeseheadhosting.us/downloads/
 http://www.gagsnetwork.com/data/
 http://www.hellmark.org/downloads/
 http://www.server1.timepassbd.com/ftpdata1/
@@ -476,6 +493,7 @@ https://ocf.berkeley.edu/~jakemix/
 https://olden.org.ua/~olden/
 https://opentorrent.ru/soft/
 https://playfungames.fr/contents/
+https://privatepages.co.uk/
 https://protoman.com/Music/Music/
 https://qgis.org/downloads/
 https://qiwichupa.net/8-beats/
@@ -492,7 +510,9 @@ https://thefpl.us/podcasts/
 https://theswissbay.ch/pdf/
 https://theyosh.nl/speeltuin/
 https://vgmusic.com/music/console/
+https://virtualmedia.online.net/
 https://vokalnow.com/static/
 https://wikileaks.org/sony/docs/07/
 https://ww2.chemistry.gatech.edu/software/
-https://zeus.feralhosting.com/matt07211/
+https://zeus.feralhosting.com/matt07211/Cartoons/
+https://zeus.feralhosting.com/matt07211/GDRIVE/
