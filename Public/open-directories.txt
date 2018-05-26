@@ -219,6 +219,7 @@ http://glosyoungcarers.org.uk/wp-content/uploads/
 http://gmsh.info/bin/
 http://gmts.kdsgroup.net/soft/
 http://guneshost.net/apps/
+http://hadm.net/%7Ekeith/tmp/
 http://halemo.net/tmp4/
 http://halomd.net/demo/
 http://home.ite.sfcollege.edu/software/
@@ -227,9 +228,11 @@ http://home.waterworld.com.hk/
 http://hybodus.free.fr/
 http://iabcentre.com/file/
 http://idreamofjimmy.com/episodes/
+http://ifocserv.net/ftp/
 http://illdave.com/downloads/
 http://imcs.dvfu.ru/lib.int/
 http://iming.org/download/
+http://index-of.es/Tools/
 http://informatique16.com/Informatique/
 http://integriswealth.com/pdf/
 http://intersci.ss.uci.edu/wiki/eBooks/BOOKS/
@@ -291,6 +294,7 @@ http://naughtybits.us/wp-content/uploads/
 http://ncourse.buu.ac.th/download/
 http://nesninja.com/public/
 http://newsking.com/movies/
+http://niels.xyz/
 http://ns1.bucomsec.com/downloads/archivos/
 http://ntslibrary.com/PDF%20Books/
 http://nvidiashieldzone.com/files/shieldtv/apk2tv/
@@ -330,6 +334,7 @@ http://pub.keikogi.ru/
 http://pub.paradev.ru/
 http://purei.org/downloads/
 http://pw.onego.ru/client/
+http://pz10093.parspack.net/Films/
 http://raduga.net/download/
 http://razmovie.parsaspace.com/
 http://razorlan.info/files/
@@ -339,6 +344,7 @@ http://relay.pp.fi/Gamepatch/
 http://repo.steampowered.com/
 http://resoo.org/docs/_textes/
 http://reznitsky.info/files/
+http://rochester.lib.ny.us/~digitized/
 http://rogerhardin.com/downloads/
 http://rootjunkysdl.com/files/Apps/
 http://roushstudios.com/downloads/
@@ -403,6 +409,7 @@ http://two66.com/mirrors/Tools/
 http://tzarsectus.com/tools/
 http://u.markus.org.ua/
 http://u168.ru/shares/
+http://ubuntu3.nuggetent.com/
 http://unhas.ac.id/rhiza/arsip/
 http://universalflowuniversity.com/Books/
 http://up.bia4music.com/Movie/
@@ -436,7 +443,9 @@ http://www.gtfo.org/books/
 http://www.hellmark.org/downloads/
 http://www.help4auto.com/download/opendoor/
 http://www.hugenaturalslovers.com/wp-content/uploads/
+http://www.hungry-ewok.ru/sw/
 http://www.jarnot.com/misc/
+http://www.lesatkins.com/books/epubfiles/
 http://www.mim.ac.mw/ebook/books/
 http://www.server1.timepassbd.com/ftpdata1/
 http://www.sexnerd.com.br/adulto/wp-content/uploads/
@@ -555,5 +564,6 @@ https://vokalnow.com/static/
 https://wikileaks.org/sony/docs/07/
 https://ww2.chemistry.gatech.edu/software/
 https://www.hotstreamers.com/wp-content/uploads/
+https://www.perturb.org/content/
 https://zeus.feralhosting.com/matt07211/Cartoons/
 https://zeus.feralhosting.com/matt07211/GDRIVE/
