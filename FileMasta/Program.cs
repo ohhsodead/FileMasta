@@ -1,8 +1,8 @@
-﻿using System;
+﻿using FileMasta.Utilities;
 using System.Diagnostics;
 using System.Threading;
 using System.Windows.Forms;
-using FileMasta.Utilities;
+using System;
 
 namespace FileMasta
 {

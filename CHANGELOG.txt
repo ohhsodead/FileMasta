@@ -1,11 +1,25 @@
+2018.05.23   | FileMasta 3.5
+
+CHANGE: CORE | Added support for images
+CHANGE: CORE | Added support for more file extensions
+CHANGE: CORE | Fixed database file issues
+CHANGE: CORE | Fixed local file issues
+CHANGE: CORE | Fixed issue using filetypes in query
+CHANGE: CORE | Fixes to database/updates
+CHANGE: UI   | Added custom proxy to settings
+CHANGE: UI   | Fixed minor issues
+
+
+
+
 2018.05.15   | FileMasta 3.4
 
 CHANGE: CORE | Added single running instance-only
 CHANGE: CORE | Added support for PotPlayer
 CHANGE: CORE | Added support for KMPlayer
-CHANGE: CORE | Added support for Free Download Manager
 CHANGE: CORE | Added support for NitroPDF Reader
 CHANGE: CORE | Added support for Internet Download Accelerator
+CHANGE: CORE | Added support for Free Download Manager
 CHANGE: CORE | Improved code-usability, documentation and comments
 CHANGE: UI   | Some minor fixes/improvements
 

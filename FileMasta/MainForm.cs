@@ -614,6 +614,7 @@ namespace FileMasta
             FrmFileDetails.IsLocalFile = isLocal;
             FrmFileDetails.ParentDataGrid = parentDataGrid;
             FrmFileDetails.CurrentFile = File;
+
             FrmFileDetails.labelFileName.Text = File.Name;
             FrmFileDetails.labelValueName.Text = File.Name;
             FrmFileDetails.labelValueRefferer.Text = File.Host;

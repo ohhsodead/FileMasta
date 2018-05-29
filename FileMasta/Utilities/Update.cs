@@ -25,22 +25,24 @@ namespace FileMasta.Utilities
             {
                 Program.log.Info("Checking for update");
                 var newVersion = new Version();
-                var client = new WebClient();
-                var stream = client.OpenRead(UrlLatestVersion);
-                stream.ReadTimeout = 60000;
-                using (var reader = new StreamReader(stream))
+                using (var client = MainForm._webClient)
                 {
-                    newVersion = new Version(reader.ReadToEnd());
-                    Version curVersion = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
-                    if (curVersion.CompareTo(newVersion) < 0)
+                    var stream = client.OpenRead(UrlLatestVersion);
+                    stream.ReadTimeout = 60000;
+                    using (var reader = new StreamReader(stream))
                     {
-                        Program.log.Info(@"Update found, starting Update.exe");
-                        MessageBox.Show(MainForm.Form, $"FileMasta {newVersion.ToString()} is ready to be installed.", "FileMasta - Update Available");
-                        client.DownloadFile(GetUrlLatestUpdater(newVersion), $@"{LocalExtensions.pathDownloadsDirectory}\Update.exe");
-                        Process.Start($@"{LocalExtensions.pathDownloadsDirectory}\Update.exe");
-                        Application.Exit();
+                        newVersion = new Version(reader.ReadToEnd());
+                        Version curVersion = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
+                        if (curVersion.CompareTo(newVersion) < 0)
+                        {
+                            Program.log.Info(@"Update found, starting Update.exe");
+                            MessageBox.Show(MainForm.Form, $"FileMasta {newVersion.ToString()} is ready to be installed.", "FileMasta - Update Available");
+                            client.DownloadFile(GetUrlLatestUpdater(newVersion), $@"{LocalExtensions.pathDownloadsDirectory}\Update.exe");
+                            Process.Start($@"{LocalExtensions.pathDownloadsDirectory}\Update.exe");
+                            Application.Exit();
+                        }
                     }
-                }                    
+                }
             } 
             catch (Exception ex)
             {
