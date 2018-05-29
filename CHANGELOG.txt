@@ -1,4 +1,4 @@
-2018.05.23   | FileMasta 3.5
+2018.05.29   | FileMasta 3.5
 
 CHANGE: CORE | Added support for images
 CHANGE: CORE | Added support for more file extensions
