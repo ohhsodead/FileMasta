@@ -31,13 +31,17 @@ namespace FileMasta.Files
 
             if (IsFileOutOfDate(dbOpenFiles, fileNameOpenFiles))
             {
-                using (var client = new WebClient()) { client.DownloadFile(new Uri(dbOpenFiles), $"{LocalExtensions.pathData}{fileNameOpenFiles}"); }
+                using (var client = MainForm._webClient)
+                    client.DownloadFile(new Uri(dbOpenFiles), $"{LocalExtensions.pathData}{fileNameOpenFiles}");
+
                 Program.log.Info($"{fileNameOpenFiles} updated");
             }
 
             if (IsFileOutOfDate(dbOpenDirectories, fileNameOpenDirectories))
             {
-                using (var client = new WebClient()) { client.DownloadFile(new Uri(dbOpenDirectories), $"{LocalExtensions.pathData}{fileNameOpenDirectories}"); }
+                using (var client = MainForm._webClient)
+                    client.DownloadFile(new Uri(dbOpenDirectories), $"{LocalExtensions.pathData}{fileNameOpenDirectories}");
+
                 Program.log.Info($"{fileNameOpenDirectories} updated");
             }
             MainForm.DataOpenDirectories.AddRange(File.ReadAllLines($"{LocalExtensions.pathData}{fileNameOpenDirectories}"));
@@ -63,20 +67,10 @@ namespace FileMasta.Files
                 Program.log.Info($"Checking if file '{fileName}' needs to be updated");
 
                 if (File.Exists(LocalExtensions.pathData + fileName))
-                {
-                    var req = WebRequest.Create(webFile);
-                    req.Method = "HEAD";
-                    using (var fileResponse = (HttpWebResponse)req.GetResponse())
-                    {
-                        if (int.TryParse(fileResponse.Headers.Get("Content-Length"), out int ContentLength))
-                            if (new FileInfo(LocalExtensions.pathData + fileName).Length == ContentLength)
-                                return false;
-                            else
-                                return true;
-                        else
-                            return true;
-                    }
-                }
+                    if (WebFileExtensions.FileSize($"{webFile}") == new FileInfo(LocalExtensions.pathData + fileName).Length)
+                        return false;
+                    else
+                        return true;
                 else
                     return true;
             }
