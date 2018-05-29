@@ -32,7 +32,7 @@ namespace FileMasta.Extensions
         {
             DataWindow frmInfo = new DataWindow { Text = Title };
 
-            var client = new WebClient();
+            using (var client = MainForm._webClient)
             using (var stream = client.OpenRead(URL))
             using (var reader = new StreamReader(stream))
                 frmInfo.labelData.Text = reader.ReadToEnd();
@@ -126,6 +126,8 @@ namespace FileMasta.Extensions
             MainForm.Form.buttonFilesVideo.BorderColor = Color.Transparent;
             MainForm.Form.buttonFilesAudio.ColorFillSolid = Color.Transparent;
             MainForm.Form.buttonFilesAudio.BorderColor = Color.Transparent;
+            MainForm.Form.buttonFilesImage.ColorFillSolid = Color.Transparent;
+            MainForm.Form.buttonFilesImage.BorderColor = Color.Transparent;
             MainForm.Form.buttonFilesBooks.ColorFillSolid = Color.Transparent;
             MainForm.Form.buttonFilesBooks.BorderColor = Color.Transparent;
             MainForm.Form.buttonFilesSubtitles.ColorFillSolid = Color.Transparent;
