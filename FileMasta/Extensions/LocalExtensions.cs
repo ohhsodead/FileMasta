@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Net;
+using FileMasta.Files;
 using FileMasta.Models;
 using FileMasta.Utilities;
 
@@ -16,6 +17,10 @@ namespace FileMasta.Extensions
         public static string pathRoot = $@"{Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)}\FileMasta\";
         public static string pathData = $@"{pathRoot}Data\";
         public static string pathDownloadsDirectory = $@"{KnownFolders.GetPath(KnownFolder.Downloads)}\";
+        public static string pathVideosDirectory = $@"{KnownFolders.GetPath(KnownFolder.Videos)}\";
+        public static string pathMusicDirectory = $@"{KnownFolders.GetPath(KnownFolder.Music)}\";
+        public static string pathDocumentsDirectory = $@"{KnownFolders.GetPath(KnownFolder.Documents)}\";
+        public static string pathDesktopDirectory = $@"{KnownFolders.GetPath(KnownFolder.Desktop)}\";
         public static string pathDataBookmarked = $"{pathRoot}bookmarked-files.json";
 
         /// <summary>
@@ -42,7 +47,7 @@ namespace FileMasta.Extensions
         public const string pathIDA = @"C:\Program Files (x86)\IDA\ida.exe";
 
         /// <summary>
-        /// Checks for internet connection by attempting to access to Google.com
+        /// Checks for internet connection by attempting to access to Dropbox.com (our server hosting)
         /// </summary>
         /// <returns></returns>
         public static bool IsConnectionEnabled()
@@ -50,8 +55,8 @@ namespace FileMasta.Extensions
             try
             {
                 Program.log.Info("Checking for internet connection");
-                using (var client = new WebClient())
-                using (var stream = client.OpenRead("https://google.com"))
+                using (var client = MainForm._webClient)
+                using (var stream = client.OpenRead("https://www.dropbox.com/"))
                 {
                     Program.log.Info("Internet connection detected");
                     return true;
@@ -74,7 +79,7 @@ namespace FileMasta.Extensions
         }
 
         /// <summary>
-        /// Gets local files (supported in this app) from user's /Downloads directory
+        /// Gets local files (supported in this app) from user's Downloads, Videos and Desktop directories (Music not supported, very strange...)
         /// </summary>
         /// <returns>Local files from Downloads as a WebFile</returns>
         public static List<WebFile> LocalFiles()
@@ -83,7 +88,28 @@ namespace FileMasta.Extensions
 
             var filesLocal = new List<WebFile>();
             foreach (var pathFile in Directory.GetFiles(pathDownloadsDirectory, "*.*", SearchOption.AllDirectories))
-                filesLocal.Add(new WebFile(
+                if (Types.All.Contains(Path.GetExtension(pathFile).Replace(".", "").ToUpper()))
+                    filesLocal.Add(new WebFile(
+                    Path.GetExtension(pathFile).Replace(".", "").ToUpper(),
+                    Path.GetFileNameWithoutExtension(pathFile),
+                    new FileInfo(pathFile).Length,
+                    File.GetCreationTime(pathFile),
+                    "Local",
+                    pathFile));
+
+            foreach (var pathFile in Directory.GetFiles(pathVideosDirectory, "*.*", SearchOption.AllDirectories))
+                if (Types.All.Contains(Path.GetExtension(pathFile).Replace(".", "").ToUpper()))
+                    filesLocal.Add(new WebFile(
+                    Path.GetExtension(pathFile).Replace(".", "").ToUpper(),
+                    Path.GetFileNameWithoutExtension(pathFile),
+                    new FileInfo(pathFile).Length,
+                    File.GetCreationTime(pathFile),
+                    "Local",
+                    pathFile));
+
+            foreach (var pathFile in Directory.GetFiles(pathDesktopDirectory, "*.*", SearchOption.AllDirectories))
+                if (Types.All.Contains(Path.GetExtension(pathFile).Replace(".", "").ToUpper()))
+                    filesLocal.Add(new WebFile(
                     Path.GetExtension(pathFile).Replace(".", "").ToUpper(),
                     Path.GetFileNameWithoutExtension(pathFile),
                     new FileInfo(pathFile).Length,
