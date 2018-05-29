@@ -8,17 +8,17 @@ using FileMasta.Models;
 using FileMasta.Utilities;
 using FileMasta.Windows;
 using FileMasta.Worker;
-using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
-using System.Net;
-using System.Threading;
-using System.Text;
-using System.Windows.Forms;
 using System.Linq;
+using System.Net;
+using System.Text;
+using System.Threading;
+using System.Windows.Forms;
+using System;
 
 namespace FileMasta
 {
@@ -44,12 +44,22 @@ namespace FileMasta
         /// </summary>
         public static FileDetails FrmFileDetails { get; set; } = null;
 
+        /// <summary>
+        /// 
+        /// </summary>
+        public static WebClient _webClient { get; set; } = new WebClient();
+
+        /// <summary>
+        /// Proxy Connection Settings
+        /// </summary>
+        public static bool UserWebProxyCustom { get; set; } = Properties.Settings.Default.proxyUseCustom;
+
         public MainForm()
         {
             Program.log.Info("Initializing");
 
             // Adds all file types to one list
-            Types.All.AddRange(Types.Video); Types.All.AddRange(Types.Audio); Types.All.AddRange(Types.Books); Types.All.AddRange(Types.Subtitle); Types.All.AddRange(Types.Torrent); Types.All.AddRange(Types.Software); Types.All.AddRange(Types.Other);
+            Types.All.AddRange(Types.Image); Types.All.AddRange(Types.Video); Types.All.AddRange(Types.Audio); Types.All.AddRange(Types.Book); Types.All.AddRange(Types.Subtitle); Types.All.AddRange(Types.Torrent); Types.All.AddRange(Types.Software); Types.All.AddRange(Types.Other);
 
             // Set selected files type to All
             SelectedFilesType = Types.All;
@@ -110,7 +120,7 @@ namespace FileMasta
 
             if (LocalExtensions.IsConnectionEnabled())
             {
-                BackGroundWorker.RunWorkAsync(() => Updates.CheckForUpdate());
+                Updates.CheckForUpdate();
                 LoadTopSearches();
                 BackGroundWorker.RunWorkAsync(() => Database.UpdateLocalDatabase(), InitializeFinished);
             }
@@ -136,8 +146,6 @@ namespace FileMasta
         {
             if (e.CloseReason == CloseReason.UserClosing | e.CloseReason == CloseReason.ApplicationExitCall)
             {
-                Properties.Settings.Default.Save();
-
                 if (Properties.Settings.Default.clearDataOnClose)
                     if (Directory.Exists(LocalExtensions.pathData))
                         Directory.Delete(LocalExtensions.pathData, true);
@@ -209,17 +217,17 @@ namespace FileMasta
         private void tab_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (tab.SelectedTab == tabHome)
-            { ControlExtensions.SelectTabTitle(titleHome); }
+                ControlExtensions.SelectTabTitle(titleHome);
             else if (tab.SelectedTab == tabSearch)
-            { ControlExtensions.SelectTabTitle(titleSearch); }
+                ControlExtensions.SelectTabTitle(titleSearch);
             else if (tab.SelectedTab == tabDiscover)
-            { ControlExtensions.SelectTabTitle(titleDiscover); }
+                ControlExtensions.SelectTabTitle(titleDiscover);
             else if (tab.SelectedTab == tabSubmit)
-            { ControlExtensions.SelectTabTitle(titleSubmit); }
+                ControlExtensions.SelectTabTitle(titleSubmit);
             else if (tab.SelectedTab == tabSettings)
             { ControlExtensions.SelectTabTitle(titleSettings); LoadUserSettings(); }
             else if (tab.SelectedTab == tabInformation)
-            { ControlExtensions.SelectTabTitle(titleInformation); }
+                ControlExtensions.SelectTabTitle(titleInformation);
 
             CurrentTab = tab.SelectedTab;
         }
@@ -233,8 +241,11 @@ namespace FileMasta
         /// </summary>
         public void SetDatabaseInfo()
         {
-            labelDatabaseStats.Text = String.Format(labelDatabaseStats.Text, StringExtensions.FormatNumber(FilesOpenDatabase.Count.ToString()), StringExtensions.BytesToPrefix(Database.TotalFilesSize()), StringExtensions.FormatNumber(DataOpenDirectories.Count.ToString()));
-            labelDatabaseUpdatedDate.Text = String.Format(labelDatabaseUpdatedDate.Text, Database.LastUpdate().ToShortDateString());
+            labelDatabaseStats.Text = String.Format(labelDatabaseStats.Text, 
+                StringExtensions.FormatNumber(FilesOpenDatabase.Count.ToString()), 
+                StringExtensions.BytesToPrefix(Database.TotalFilesSize()), 
+                StringExtensions.FormatNumber(DataOpenDirectories.Count.ToString()), 
+                Database.LastUpdate().ToShortDateString());
         }
 
         /// <summary>
@@ -293,7 +304,7 @@ namespace FileMasta
         private List<string> GetTopSearches()
         {
             List<string> listTopSearches = new List<string>();
-            var client = new WebClient();
+            using (var client = _webClient)
             using (var stream = client.OpenRead(Database.dbTopSearches))
             using (var reader = new StreamReader(stream))
             {
@@ -324,11 +335,12 @@ namespace FileMasta
             else if (comboBoxFileType.SelectedIndex == 0) SelectedFilesType = Types.All;
             else if (comboBoxFileType.SelectedIndex == 1) SelectedFilesType = Types.Video;
             else if (comboBoxFileType.SelectedIndex == 2) SelectedFilesType = Types.Audio;
-            else if (comboBoxFileType.SelectedIndex == 3) SelectedFilesType = Types.Books;
-            else if (comboBoxFileType.SelectedIndex == 4) SelectedFilesType = Types.Subtitle;
-            else if (comboBoxFileType.SelectedIndex == 5) SelectedFilesType = Types.Torrent;
-            else if (comboBoxFileType.SelectedIndex == 6) SelectedFilesType = Types.Software;
-            else if (comboBoxFileType.SelectedIndex == 7) SelectedFilesType = Types.Other;
+            else if (comboBoxFileType.SelectedIndex == 3) SelectedFilesType = Types.Image;
+            else if (comboBoxFileType.SelectedIndex == 4) SelectedFilesType = Types.Book;
+            else if (comboBoxFileType.SelectedIndex == 5) SelectedFilesType = Types.Subtitle;
+            else if (comboBoxFileType.SelectedIndex == 6) SelectedFilesType = Types.Torrent;
+            else if (comboBoxFileType.SelectedIndex == 7) SelectedFilesType = Types.Software;
+            else if (comboBoxFileType.SelectedIndex == 8) SelectedFilesType = Types.Other;
 
             var startText = buttonFileType.Text.Split(':');
             buttonFileType.Text = startText[0] + ": " + comboBoxFileType.GetItemText(comboBoxFileType.SelectedItem);
@@ -391,9 +403,10 @@ namespace FileMasta
             else if (comboBoxFileType.SelectedIndex == 0) { SelectedFilesType = Types.All; ControlExtensions.SelectFilesTab(buttonFilesAll); SelectedFiles = FilesOpenDatabase; tab.SelectedTab = tabSearch; ShowFiles(SelectedFiles); }
             else if (comboBoxFileType.SelectedIndex == 1) { SelectedFilesType = Types.Video; ControlExtensions.SelectFilesTab(buttonFilesVideo); SelectedFiles = FilesOpenDatabase; tab.SelectedTab = tabSearch; ShowFiles(SelectedFiles); }
             else if (comboBoxFileType.SelectedIndex == 2) { SelectedFilesType = Types.Audio; ControlExtensions.SelectFilesTab(buttonFilesAudio); SelectedFiles = FilesOpenDatabase; tab.SelectedTab = tabSearch; ShowFiles(SelectedFiles); }
-            else if (comboBoxFileType.SelectedIndex == 3) { SelectedFilesType = Types.Books; ControlExtensions.SelectFilesTab(buttonFilesBooks); SelectedFiles = FilesOpenDatabase; tab.SelectedTab = tabSearch; ShowFiles(SelectedFiles); }
-            else if (comboBoxFileType.SelectedIndex == 4) { SelectedFilesType = Types.Subtitle; ControlExtensions.SelectFilesTab(buttonFilesSubtitles); SelectedFiles = FilesOpenDatabase; tab.SelectedTab = tabSearch; ShowFiles(SelectedFiles); }
-            else if (comboBoxFileType.SelectedIndex == 5) { SelectedFilesType = Types.Torrent; ControlExtensions.SelectFilesTab(buttonFilesTorrents); SelectedFiles = FilesOpenDatabase; tab.SelectedTab = tabSearch; ShowFiles(SelectedFiles); }
+            else if (comboBoxFileType.SelectedIndex == 3) { SelectedFilesType = Types.Image; ControlExtensions.SelectFilesTab(buttonFilesImage); SelectedFiles = FilesOpenDatabase; tab.SelectedTab = tabSearch; ShowFiles(SelectedFiles); }
+            else if (comboBoxFileType.SelectedIndex == 4) { SelectedFilesType = Types.Book; ControlExtensions.SelectFilesTab(buttonFilesBooks); SelectedFiles = FilesOpenDatabase; tab.SelectedTab = tabSearch; ShowFiles(SelectedFiles); }
+            else if (comboBoxFileType.SelectedIndex == 5) { SelectedFilesType = Types.Subtitle; ControlExtensions.SelectFilesTab(buttonFilesSubtitles); SelectedFiles = FilesOpenDatabase; tab.SelectedTab = tabSearch; ShowFiles(SelectedFiles); }
+            else if (comboBoxFileType.SelectedIndex == 6) { SelectedFilesType = Types.Torrent; ControlExtensions.SelectFilesTab(buttonFilesTorrents); SelectedFiles = FilesOpenDatabase; tab.SelectedTab = tabSearch; ShowFiles(SelectedFiles); }
             else if (comboBoxFileType.SelectedIndex == 7) { SelectedFilesType = Types.Software; ControlExtensions.SelectFilesTab(buttonFilesSoftware); SelectedFiles = FilesOpenDatabase; tab.SelectedTab = tabSearch; ShowFiles(SelectedFiles); }
             else if (comboBoxFileType.SelectedIndex == 8) { SelectedFilesType = Types.Other; ControlExtensions.SelectFilesTab(buttonFilesOther); SelectedFiles = FilesOpenDatabase; tab.SelectedTab = tabSearch; ShowFiles(SelectedFiles); }
         }
@@ -438,9 +451,14 @@ namespace FileMasta
             SelectedFilesType = Types.Audio; ControlExtensions.SelectFilesTab(buttonFilesAudio); SelectedFiles = FilesOpenDatabase; ShowFiles(SelectedFiles);
         }
 
+        private void buttonFilesImage_ClickButtonArea(object Sender, MouseEventArgs e)
+        {
+            SelectedFilesType = Types.Image; ControlExtensions.SelectFilesTab(buttonFilesImage); SelectedFiles = FilesOpenDatabase; ShowFiles(SelectedFiles);
+        }
+
         private void buttonFilesBooks_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            SelectedFilesType = Types.Books; ControlExtensions.SelectFilesTab(buttonFilesBooks); SelectedFiles = FilesOpenDatabase; ShowFiles(SelectedFiles);
+            SelectedFilesType = Types.Book; ControlExtensions.SelectFilesTab(buttonFilesBooks); SelectedFiles = FilesOpenDatabase; ShowFiles(SelectedFiles);
         }
 
         private void buttonFilesSubtitles_ClickButtonArea(object Sender, MouseEventArgs e)
@@ -489,7 +507,7 @@ namespace FileMasta
                 var URL = dataGridFiles.CurrentRow.Cells[5].Value.ToString();
 
                 if (dataGridFiles.CurrentRow.Cells[4].Value.ToString() == "Local")
-                    ShowFileDetails(new WebFile(Path.GetExtension(URL).Replace(".", "").ToUpper(), Path.GetFileNameWithoutExtension(new Uri(URL).LocalPath), new FileInfo(URL).Length, File.GetCreationTime(URL), URL, URL), dataGridFiles);
+                    ShowFileDetails(new WebFile(Path.GetExtension(URL).Replace(".", "").ToUpper(), Path.GetFileNameWithoutExtension(new Uri(URL).LocalPath), new FileInfo(URL).Length, File.GetCreationTime(URL), URL, URL), dataGridFiles, true);
                 else
                     ShowFileDetails(Database.WebFile(URL), dataGridFiles);
             }
@@ -505,7 +523,7 @@ namespace FileMasta
         {
             EnableSearchControls(false);
             var stopWatch = new Stopwatch();
-            Program.log.InfoFormat("Starting query. Preferences - Sort: {0}, Type: {1}, Host: {2}", SelectedFilesSort.ToString(), SelectedFilesType.ToString(), SelectedFilesHost);
+            Program.log.InfoFormat("Starting query. Preferences - Sort: {0}, Type: {1}, Host: {2}", SelectedFilesSort.ToString(), SelectedFilesType.ToList(), SelectedFilesHost);
             imageSearchFiles.Image = Properties.Resources.loader;
             BackGroundWorker.RunWorkAsync<List<WebFile>>(() => Query.Search(dataFiles, textBoxSearchFiles.Text, SelectedFilesSort), (data) =>
             {
@@ -586,15 +604,16 @@ namespace FileMasta
         /// </summary>
         /// <param name="File">WebFile object</param>
         /// <param name="createNewInstance">Whether to create a new instance</param>
-        public void ShowFileDetails(WebFile File, DataGridView parentDataGrid, bool createNewInstance = true)
+        public void ShowFileDetails(WebFile File, DataGridView parentDataGrid, bool isLocal = false, bool createNewInstance = true)
         {
             Program.log.Info("Showing file details dialog : " + File.URL);
 
             if (createNewInstance)
                 FrmFileDetails = new FileDetails();
 
-            FrmFileDetails.parentDataGrid = parentDataGrid;
-            FrmFileDetails.currentFile = File;
+            FrmFileDetails.IsLocalFile = isLocal;
+            FrmFileDetails.ParentDataGrid = parentDataGrid;
+            FrmFileDetails.CurrentFile = File;
             FrmFileDetails.labelFileName.Text = File.Name;
             FrmFileDetails.labelValueName.Text = File.Name;
             FrmFileDetails.labelValueRefferer.Text = File.Host;
@@ -604,7 +623,7 @@ namespace FileMasta
             // Builds parts of the URL into a better presented string, simply replaces '/' with '>' and no filename
             var url = new Uri(File.URL);
             var directories = new StringBuilder();
-            if (!File.URL.StartsWith(LocalExtensions.pathDownloadsDirectory)) { directories.Append(File.Host); } else { FrmFileDetails.labelValueRefferer.Text = "Local"; }// Appends the Host at the start if not Local, else it will be named 'Local'
+            if (!File.URL.StartsWith(@"C:\")) { directories.Append(File.Host); } else { FrmFileDetails.labelValueRefferer.Text = "Local"; } // Appends the Host at the start if not Local, else it will be named 'Local'
                 foreach (string path in url.LocalPath.Split('/', '\\'))
                 if (!Path.HasExtension(path))
                     directories.Append(path + "> ");
@@ -682,15 +701,23 @@ namespace FileMasta
             imageSearchFiles.Image = Properties.Resources.loader;
             tab.SelectedTab = tabSearch;
 
-            if (Types.All.Any(textBoxSearchFiles.Text.ToUpper().EndsWith))
+            if (Uri.TryCreate(textBoxSearchFiles.Text, UriKind.Absolute, out Uri uriResult) && (uriResult.Scheme == Uri.UriSchemeHttp || uriResult.Scheme == Uri.UriSchemeHttps) && uriResult != null)
             {
-                ShowFileDetails(Database.WebFile(textBoxSearchFiles.Text), dataGridFiles);
-                imageSearchFiles.Image = Properties.Resources.magnify_orange;
-                textBoxSearchFiles.Text = null;
+                if (WebFileExtensions.FileExists(uriResult.ToString()))
+                {
+                    try
+                    {
+                        ShowFileDetails(Database.WebFile(textBoxSearchFiles.Text), dataGridFiles);
+                        imageSearchFiles.Image = Properties.Resources.magnify_orange;
+                        textBoxSearchFiles.Text = null;
+                    }
+                    catch (Exception ex) { MessageBox.Show("There was an issue requesting this file. Make sure it exists on the server you're trying to access.\n\n" + ex.Message); }
+                }
+                else
+                    MessageBox.Show(this, "There was an issue requesting this file. Make sure it exists on the server you're trying to access.");
             }
             else
                 ShowFiles(SelectedFiles);
-
         }
 
         /*************************************************************************/
@@ -723,7 +750,7 @@ namespace FileMasta
             labelWebExplorerURL.Text = directories.ToString().Replace("> >", ">"); // Remove double arrow that occurs
 
             currentURL = WebURL;
-            labelDirectoryStatus.Text = "Loading...";
+            labelDirectoryStatus.Text = "Getting results...";
             labelDirectoryEmptyResults.Visible = false;
             dataGridDirectoryListing.Rows.Clear();
             GetDirectoryListing();
@@ -781,7 +808,7 @@ namespace FileMasta
                         }
                     }
 
-                    labelDirectoryStatus.Text = "Completed";
+                    labelDirectoryStatus.Text = foundItems.Count.ToString() + " results returned.";
 
                     if (dataGridDirectoryListing.Rows.Count == 0)
                         labelDirectoryEmptyResults.Visible = true;
@@ -903,30 +930,94 @@ namespace FileMasta
         /*************************************************************************/
 
         /// <summary>
-        /// Set UI Properties
+        /// Enables/Disables Proxy Settings
+        /// </summary>
+        private void checkBoxConnectionDefault_CheckedChanged(object sender, EventArgs e)
+        {
+            // Connection (Enabled/Disabled)
+            textBoxConnectionAddress.Enabled = Properties.Settings.Default.proxyUseCustom;
+            textBoxConnectionPort.Enabled = Properties.Settings.Default.proxyUseCustom;
+            textBoxConnectionUsername.Enabled = Properties.Settings.Default.proxyUseCustom;
+            textBoxConnectionPassword.Enabled = Properties.Settings.Default.proxyUseCustom;
+        }
+
+        /// <summary>
+        /// Set UI/WebClient/WebRequest Properties
         /// </summary>
         public void LoadUserSettings()
         {
-            checkBoxClearDataOnClose.Checked = Properties.Settings.Default.clearDataOnClose;
+            // General
+            checkBoxGeneralClearDataOnClose.Checked = Properties.Settings.Default.clearDataOnClose;
+            
+            // Connection (Enabled/Disabled)
+            textBoxConnectionAddress.Enabled = Properties.Settings.Default.proxyUseCustom;
+            textBoxConnectionPort.Enabled = Properties.Settings.Default.proxyUseCustom;
+            textBoxConnectionUsername.Enabled = Properties.Settings.Default.proxyUseCustom;
+            textBoxConnectionPassword.Enabled = Properties.Settings.Default.proxyUseCustom;
+
+            // Connection
+            checkBoxConnectionDefault.Checked = Properties.Settings.Default.proxyUseCustom;
+            textBoxConnectionAddress.Text = Properties.Settings.Default.proxyAddress;
+            textBoxConnectionPort.Text = Convert.ToString(Properties.Settings.Default.proxyPort);
+            textBoxConnectionUsername.Text = Properties.Settings.Default.proxyUsername;
+            textBoxConnectionPassword.Text = Properties.Settings.Default.proxyPassword;
+
+            // Set Proxy Settings
+            if (UserWebProxyCustom)
+            {
+                if (Uri.TryCreate(Properties.Settings.Default.proxyAddress + ":" + Properties.Settings.Default.proxyPort, UriKind.RelativeOrAbsolute, out Uri result))
+                {
+                    _webClient.Proxy = new WebProxy(result);
+
+                    if (Properties.Settings.Default.proxyUsername == "" && Properties.Settings.Default.proxyPassword == "")
+                        _webClient.UseDefaultCredentials = true;
+                    else
+                    {
+                        _webClient.UseDefaultCredentials = false;
+                        _webClient.Credentials = new NetworkCredential(Properties.Settings.Default.proxyUsername, Properties.Settings.Default.proxyPassword);
+                    }
+                }
+                else
+                    MessageBox.Show(this, "Invalid Address/Port");
+            }
+            else
+            {
+                _webClient.UseDefaultCredentials = true;
+#pragma warning disable CS0618 // Type or member is obsolete
+                _webClient.Proxy = WebProxy.GetDefaultProxy();
+#pragma warning restore CS0618 // Type or member is obsolete
+                _webClient.Credentials = CredentialCache.DefaultCredentials;
+            }
         }
 
         // Save settings button
         private void buttonSettingsSave_ClickButtonArea(object sender, MouseEventArgs e)
         {
-            // Save users settings to Properties.Settings.Default
-            Properties.Settings.Default.clearDataOnClose = checkBoxClearDataOnClose.Checked;
+            // General
+            Properties.Settings.Default.clearDataOnClose = checkBoxGeneralClearDataOnClose.Checked;
+
+            // Connection
+            Properties.Settings.Default.proxyUseCustom = checkBoxConnectionDefault.Checked;
+            Properties.Settings.Default.proxyAddress = textBoxConnectionAddress.Text;
+            Properties.Settings.Default.proxyPort = Convert.ToInt32(textBoxConnectionPort.Text);
+            Properties.Settings.Default.proxyUsername = textBoxConnectionUsername.Text;
+            Properties.Settings.Default.proxyPassword = textBoxConnectionPassword.Text;
+
+            UserWebProxyCustom = Properties.Settings.Default.proxyUseCustom;
+
             Thread.Sleep(500);
             Properties.Settings.Default.Save();
             Thread.Sleep(500);
+            LoadUserSettings();
 
-            Program.log.Info("Saaved user settings");
+            Program.log.Info("Saved user settings");
         }
 
         // Restore settings button
         private void buttonSettingsRestoreDefault_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            // Set the default settings manually here
-            Properties.Settings.Default.clearDataOnClose = false;
+            Properties.Settings.Default.Reset();
+
             Thread.Sleep(500);
             LoadUserSettings();
             Thread.Sleep(500);
@@ -1000,9 +1091,8 @@ namespace FileMasta
                         FrmFileDetails.Dispose();
                     }
                     if (tab.SelectedTab == tabDiscover && tabsDiscover.SelectedTab == tabDiscoverListings)
-                    {
                         tabsDiscover.SelectedTab = tabDiscoverHosts;
-                    }
+
                     return true;
                 // Close application
                 case Keys.Control | Keys.W:
