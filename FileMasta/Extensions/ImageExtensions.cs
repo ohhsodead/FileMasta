@@ -9,36 +9,6 @@ namespace FileMasta.Extensions
     class ImageExtensions
     {
         /// <summary>
-        /// Return a Bitmap from a Image Url
-        /// </summary>
-        /// <param name="url"></param>
-        /// <returns></returns>
-        public static Bitmap ImageFromURL(string url)
-        {
-            HttpWebRequest wreq;
-            HttpWebResponse wresp = null;
-            Stream mystream = null ;
-            Bitmap bmp = null;
-
-            try {
-                wreq = (HttpWebRequest)WebRequest.Create(url);
-                wreq.AllowWriteStreamBuffering = true;
-                wresp = (HttpWebResponse)wreq.GetResponse();
-                if ((mystream = wresp.GetResponseStream()) != null)
-                    bmp = new Bitmap(mystream);
-            }
-            catch { }
-            finally {
-                if (mystream != null)
-                    mystream.Close();
-                if (wresp != null)
-                    wresp.Close();
-            }
-
-            return (bmp);
-        }
-
-        /// <summary>
         /// Set Bitmap Alpha (255-Visible 0-Invisible)
         /// </summary>
         /// <param name="bmpIn"></param>
