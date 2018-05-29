@@ -7,7 +7,7 @@ CHANGE: CORE | Fixed local file issues
 CHANGE: CORE | Fixed issue using filetypes in query
 CHANGE: CORE | Fixes to database/updates
 CHANGE: UI   | Added custom proxy to settings
-CHANGE: UI   | Fixed minor issues
+CHANGE: UI   | Fixed minor issues throughout
 
 
 
