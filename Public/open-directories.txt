@@ -377,6 +377,7 @@ http://sp.lolfile.com/
 http://sprott.physics.wisc.edu/wop/
 http://spumonte.com/files/
 http://staff.osuosl.org/~bkero/
+http://static.allfearthesentinel.net/
 http://studioro.org/Muzica/
 http://support.j2rs.com/Utilities/
 http://support.wizcon.com/Data/
@@ -400,6 +401,8 @@ http://top.sinp.msu.ru/tema/data/
 http://torrentabi.com/torrent/
 http://torrentoyunindir.com/updates/
 http://torrents.rcks.ru/
+http://trackmakers.com/trackmakers.com/DRMOVER/
+http://trackmakers.com/trackmakers.com/LIBRARY/
 http://tug.ctan.org/fonts/
 http://tug.ctan.org/install/
 http://two66.com/mirrors/
@@ -566,4 +569,3 @@ https://ww2.chemistry.gatech.edu/software/
 https://www.hotstreamers.com/wp-content/uploads/
 https://www.perturb.org/content/
 https://zeus.feralhosting.com/matt07211/Cartoons/
-https://zeus.feralhosting.com/matt07211/GDRIVE/
