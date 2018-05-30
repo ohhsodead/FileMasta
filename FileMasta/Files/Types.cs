@@ -15,6 +15,6 @@ namespace FileMasta.Files
         public static List<string> Software { get; } = new List<string>() { "EXE", "VOB", "ZIP", "TAR", "RAR", "7Z", "ISO", "PKG", "TAR.GZ", "APK", "IPA", "APPX", "XAP" };
         public static List<string> Torrent { get; } = new List<string>() { "TORRENT" };
         public static List<string> Subtitle { get; } = new List<string>() { "SRT", "SUB", "VTT" };
-        public static List<string> Other { get; } = new List<string>() { "JSP", "SWF", "PS", "RTF", "BAS", "CC", "C", "CPP", "CXX", "H", "HPP", "CS", "JAVA", "PY", "PL", "PHP", "HTML", "ASPX", "XML", "TXT", "SQL", "CSV" };
+        public static List<string> Other { get; } = new List<string>() { "JSP", "SWF", "PS", "RTF", "BAS", "CC", "C", "CPP", "CXX", "H", "HPP", "CS", "JAVA", "PY", "PL", "PHP", "HTML", "ASPX", "XML", "TXT", "SQL", "CSV", "PSD", "GZ", "BIN", "PAR", "PAR2", "PYK", "PK3", "PK4", "SKB", "IMG", "HGZ", "AI", "OTF", "TTF" };
     }
 }
