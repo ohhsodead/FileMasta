@@ -163,6 +163,16 @@ namespace FileMasta.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap database_search {
+            get {
+                object obj = ResourceManager.GetObject("database_search", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap dots_horizontal {
             get {
                 object obj = ResourceManager.GetObject("dots_horizontal", resourceCulture);

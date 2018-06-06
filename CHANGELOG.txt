@@ -1,3 +1,15 @@
+2018.06.06   | FileMasta 3.6
+
+CHANGE: CORE | Improved overall performance
+CHANGE: CORE | Added several more file extensions
+CHANGE: CORE | Added more exception handling
+CHANGE: CORE | Fixed database file issues (#103/#104)
+CHANGE: UI   | Added dropdown for files (Db, Local and Bookmark)
+CHANGE: UI   | Minor fixes and changes
+
+
+
+
 2018.05.29   | FileMasta 3.5
 
 CHANGE: CORE | Added support for images

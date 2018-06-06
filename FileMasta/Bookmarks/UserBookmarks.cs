@@ -58,7 +58,7 @@ namespace FileMasta.Bookmarks
         /// Load bookmarked files
         /// </summary>
         /// <returns>Bookmark item as a WebFile</returns>
-        public static List<WebFile> Bookmarks()
+        public static List<WebFile> BookmarkedFiles()
         {
             Program.log.Info("Getting users bookmarks files");
 

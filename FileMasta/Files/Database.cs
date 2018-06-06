@@ -2,6 +2,7 @@
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Windows.Forms;
 using FileMasta.Extensions;
 using FileMasta.Models;
 using Newtonsoft.Json;
@@ -23,35 +24,64 @@ namespace FileMasta.Files
         const string fileNameOpenFiles = "open-files.json";
         const string fileNameOpenDirectories = "open-directories.txt";
 
-        /* Checks if database file exists at users data directory, if so whether they're
+        /* Checks if database files exists at users data directory, if so whether they're
          * the same size, and downloads the latest one if either return false */
         public static void UpdateLocalDatabase()
         {
             Program.log.Info("Starting database updates");
 
-            if (IsFileOutOfDate(dbOpenFiles, fileNameOpenFiles))
+            try
             {
-                using (var client = MainForm._webClient)
-                    client.DownloadFile(new Uri(dbOpenFiles), $"{LocalExtensions.pathData}{fileNameOpenFiles}");
+                if (IsFileOutOfDate(dbOpenFiles, fileNameOpenFiles))
+                {
+                    using (var client = new WebClient())
+                        client.DownloadFile(new Uri(dbOpenFiles), $"{LocalExtensions.pathData}{fileNameOpenFiles}");
+                    Program.log.Info($"{fileNameOpenFiles} updated");
+                }
+            }
+            catch (WebException webEx)
+            {
+                Program.log.Error($"UPDATE FAILED {fileNameOpenFiles}", webEx);
+                MessageBox.Show(MainForm.Form, "Unable to update database.\n\n" + webEx.Message);
+            }
+            catch (Exception ex)
+            {
+                Program.log.Error($"UPDATE FAILED {fileNameOpenFiles}", ex);
+                MessageBox.Show(MainForm.Form, "Unable to update database.\n\n" + ex.Message);
+            }
+            finally
+            {
+                // Store files in the main form, skipping the first line as it contains the db metadata
+                foreach (var item in File.ReadAllLines($"{LocalExtensions.pathData}{fileNameOpenFiles}").Skip(1))
+                    if (StringExtensions.IsValidJSON(item))
+                        MainForm.FilesOpenDatabase.Add(JsonConvert.DeserializeObject<WebFile>(item));
 
-                Program.log.Info($"{fileNameOpenFiles} updated");
+                MainForm.DatabaseInfo = File.ReadLines($"{LocalExtensions.pathData}{fileNameOpenFiles}").First(); // Gets first line in database which contains info
             }
 
-            if (IsFileOutOfDate(dbOpenDirectories, fileNameOpenDirectories))
+            try
             {
-                using (var client = MainForm._webClient)
-                    client.DownloadFile(new Uri(dbOpenDirectories), $"{LocalExtensions.pathData}{fileNameOpenDirectories}");
-
-                Program.log.Info($"{fileNameOpenDirectories} updated");
+                if (IsFileOutOfDate(dbOpenDirectories, fileNameOpenDirectories))
+                {
+                    using (var client = new WebClient())
+                        client.DownloadFile(new Uri(dbOpenDirectories), $"{LocalExtensions.pathData}{fileNameOpenDirectories}");
+                    Program.log.Info($"{fileNameOpenDirectories} updated");
+                }
             }
-            MainForm.DataOpenDirectories.AddRange(File.ReadAllLines($"{LocalExtensions.pathData}{fileNameOpenDirectories}"));
-
-            // Store files in the main form, skipping the first line as it contains the db metadata
-            foreach (var item in File.ReadAllLines($"{LocalExtensions.pathData}{fileNameOpenFiles}").Skip(1))
-                if (StringExtensions.IsValidJSON(item))
-                    MainForm.FilesOpenDatabase.Add(JsonConvert.DeserializeObject<WebFile>(item));
-
-            MainForm.DatabaseInfo = File.ReadLines($"{LocalExtensions.pathData}{fileNameOpenFiles}").First(); // Gets first line in database which contains info
+            catch (WebException webEx)
+            {
+                Program.log.Error($"UPDATE FAILED {fileNameOpenDirectories}", webEx);
+                MessageBox.Show(MainForm.Form, "Unable to update database.\n\n" + webEx.Message);
+            }
+            catch (Exception ex)
+            {
+                Program.log.Error($"UPDATE FAILED {fileNameOpenDirectories}", ex);
+                MessageBox.Show(MainForm.Form, "Unable to update database.\n\n" + ex.Message);
+            }
+            finally
+            {
+                MainForm.DataOpenDirectories.AddRange(File.ReadAllLines($"{LocalExtensions.pathData}{fileNameOpenDirectories}"));
+            }            
         }
 
         /// <summary>

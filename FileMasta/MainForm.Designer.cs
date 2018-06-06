@@ -35,6 +35,7 @@ namespace FileMasta
             CButtonLib.cBlendItems cBlendItems2 = new CButtonLib.cBlendItems();
             CButtonLib.cBlendItems cBlendItems3 = new CButtonLib.cBlendItems();
             CButtonLib.cBlendItems cBlendItems4 = new CButtonLib.cBlendItems();
+            CButtonLib.cBlendItems cBlendItems5 = new CButtonLib.cBlendItems();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -60,24 +61,26 @@ namespace FileMasta
             this.flowLayoutSearchItems = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutSearchHome = new System.Windows.Forms.Panel();
             this.buttonSearchHome = new CButtonLib.CButton();
-            this.comboBoxSearchHome = new System.Windows.Forms.ComboBox();
+            this.comboBoxHomeSearchExternal = new System.Windows.Forms.ComboBox();
             this.containerFileType = new System.Windows.Forms.Panel();
             this.buttonFileType = new CButtonLib.CButton();
-            this.comboBoxFileType = new System.Windows.Forms.ComboBox();
+            this.comboBoxHomeFileType = new System.Windows.Forms.ComboBox();
             this.labelDatabaseStats = new System.Windows.Forms.Label();
             this.textBoxSearchHome = new ChreneLib.Controls.TextBoxes.CTextBox();
             this.textBoxBackgroundSearchHome = new CButtonLib.CButton();
-            this.tabSearch = new System.Windows.Forms.TabPage();
-            this.buttonFilesImage = new FileMasta.Controls.buttonFileType();
+            this.tabDatabase = new System.Windows.Forms.TabPage();
+            this.imageDbSearch = new System.Windows.Forms.PictureBox();
             this.labelNoResultsFound = new System.Windows.Forms.Label();
             this.flowLayoutSearchFiles = new System.Windows.Forms.FlowLayoutPanel();
-            this.imageSearchFiles = new System.Windows.Forms.PictureBox();
-            this.flowLayoutFilterFiles = new System.Windows.Forms.Panel();
-            this.buttonFilterFiles = new CButtonLib.CButton();
-            this.comboBoxFilterFiles = new System.Windows.Forms.ComboBox();
-            this.flowLayoutSortFiles = new System.Windows.Forms.Panel();
-            this.buttonSortFiles = new CButtonLib.CButton();
-            this.comboBoxSortFiles = new System.Windows.Forms.ComboBox();
+            this.panelDbFilter = new System.Windows.Forms.Panel();
+            this.buttonDbFilter = new CButtonLib.CButton();
+            this.comboBoxDbFilter = new System.Windows.Forms.ComboBox();
+            this.panelDbSort = new System.Windows.Forms.Panel();
+            this.buttonDbSort = new CButtonLib.CButton();
+            this.comboBoxDbSort = new System.Windows.Forms.ComboBox();
+            this.panelDbFiles = new System.Windows.Forms.Panel();
+            this.buttonDbFiles = new CButtonLib.CButton();
+            this.comboBoxDbFiles = new System.Windows.Forms.ComboBox();
             this.textBoxSearchFiles = new ChreneLib.Controls.TextBoxes.CTextBox();
             this.dataGridFiles = new System.Windows.Forms.DataGridView();
             this.columnFilesType = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -90,8 +93,6 @@ namespace FileMasta
             this.textBoxBackgroundSearchFiles = new CButtonLib.CButton();
             this.labelResultsInfo = new System.Windows.Forms.Label();
             this.buttonFilesAudio = new FileMasta.Controls.buttonFileType();
-            this.buttonFilesBookmarks = new FileMasta.Controls.buttonFileType();
-            this.buttonFilesLocal = new FileMasta.Controls.buttonFileType();
             this.buttonFilesTorrents = new FileMasta.Controls.buttonFileType();
             this.buttonFilesOther = new FileMasta.Controls.buttonFileType();
             this.buttonFilesSoftware = new FileMasta.Controls.buttonFileType();
@@ -100,6 +101,7 @@ namespace FileMasta
             this.buttonFilesAll = new FileMasta.Controls.buttonFileType();
             this.buttonFilesBooks = new FileMasta.Controls.buttonFileType();
             this.buttonFilesVideo = new FileMasta.Controls.buttonFileType();
+            this.buttonFilesImage = new FileMasta.Controls.buttonFileType();
             this.tabDiscover = new System.Windows.Forms.TabPage();
             this.tabsDiscover = new System.Windows.Forms.TabControl();
             this.tabDiscoverHosts = new System.Windows.Forms.TabPage();
@@ -169,7 +171,7 @@ namespace FileMasta
             this.titleSettings = new FileMasta.Controls.buttonTabTitle();
             this.titleSubmit = new FileMasta.Controls.buttonTabTitle();
             this.titleDiscover = new FileMasta.Controls.buttonTabTitle();
-            this.titleSearch = new FileMasta.Controls.buttonTabTitle();
+            this.titleDatabase = new FileMasta.Controls.buttonTabTitle();
             this.titleHome = new FileMasta.Controls.buttonTabTitle();
             this.imageFacebook = new System.Windows.Forms.PictureBox();
             this.imageTwitter = new System.Windows.Forms.PictureBox();
@@ -178,11 +180,12 @@ namespace FileMasta
             this.flowLayoutSearchItems.SuspendLayout();
             this.flowLayoutSearchHome.SuspendLayout();
             this.containerFileType.SuspendLayout();
-            this.tabSearch.SuspendLayout();
+            this.tabDatabase.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imageDbSearch)).BeginInit();
             this.flowLayoutSearchFiles.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imageSearchFiles)).BeginInit();
-            this.flowLayoutFilterFiles.SuspendLayout();
-            this.flowLayoutSortFiles.SuspendLayout();
+            this.panelDbFilter.SuspendLayout();
+            this.panelDbSort.SuspendLayout();
+            this.panelDbFiles.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridFiles)).BeginInit();
             this.tabDiscover.SuspendLayout();
             this.tabsDiscover.SuspendLayout();
@@ -207,7 +210,7 @@ namespace FileMasta
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tab.Controls.Add(this.tabHome);
-            this.tab.Controls.Add(this.tabSearch);
+            this.tab.Controls.Add(this.tabDatabase);
             this.tab.Controls.Add(this.tabDiscover);
             this.tab.Controls.Add(this.tabSubmit);
             this.tab.Controls.Add(this.tabSettings);
@@ -312,7 +315,7 @@ namespace FileMasta
             this.flowLayoutSearchHome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutSearchHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(50)))));
             this.flowLayoutSearchHome.Controls.Add(this.buttonSearchHome);
-            this.flowLayoutSearchHome.Controls.Add(this.comboBoxSearchHome);
+            this.flowLayoutSearchHome.Controls.Add(this.comboBoxHomeSearchExternal);
             this.flowLayoutSearchHome.Location = new System.Drawing.Point(232, 0);
             this.flowLayoutSearchHome.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.flowLayoutSearchHome.Name = "flowLayoutSearchHome";
@@ -365,32 +368,32 @@ namespace FileMasta
             this.buttonSearchHome.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.buttonSearchHome_ClickButtonArea);
             this.buttonSearchHome.SideImageClicked += new CButtonLib.CButton.SideImageClickedEventHandler(this.buttonSearchHome_SideImageClicked);
             // 
-            // comboBoxSearchHome
+            // comboBoxHomeSearchExternal
             // 
-            this.comboBoxSearchHome.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.comboBoxHomeSearchExternal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxSearchHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            this.comboBoxSearchHome.Font = new System.Drawing.Font("Segoe UI Semibold", 9.25F);
-            this.comboBoxSearchHome.ForeColor = System.Drawing.Color.White;
-            this.comboBoxSearchHome.FormattingEnabled = true;
-            this.comboBoxSearchHome.Items.AddRange(new object[] {
+            this.comboBoxHomeSearchExternal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            this.comboBoxHomeSearchExternal.Font = new System.Drawing.Font("Segoe UI Semibold", 9.25F);
+            this.comboBoxHomeSearchExternal.ForeColor = System.Drawing.Color.White;
+            this.comboBoxHomeSearchExternal.FormattingEnabled = true;
+            this.comboBoxHomeSearchExternal.Items.AddRange(new object[] {
             "Google",
             "Googol",
             "Startpage",
             "Searx"});
-            this.comboBoxSearchHome.Location = new System.Drawing.Point(0, -2);
-            this.comboBoxSearchHome.Name = "comboBoxSearchHome";
-            this.comboBoxSearchHome.Size = new System.Drawing.Size(39, 23);
-            this.comboBoxSearchHome.TabIndex = 0;
-            this.comboBoxSearchHome.TabStop = false;
-            this.comboBoxSearchHome.SelectedIndexChanged += new System.EventHandler(this.comboBoxSearchHome_SelectedIndexChanged);
+            this.comboBoxHomeSearchExternal.Location = new System.Drawing.Point(0, -2);
+            this.comboBoxHomeSearchExternal.Name = "comboBoxHomeSearchExternal";
+            this.comboBoxHomeSearchExternal.Size = new System.Drawing.Size(39, 23);
+            this.comboBoxHomeSearchExternal.TabIndex = 0;
+            this.comboBoxHomeSearchExternal.TabStop = false;
+            this.comboBoxHomeSearchExternal.SelectedIndexChanged += new System.EventHandler(this.comboBoxSearchHome_SelectedIndexChanged);
             // 
             // containerFileType
             // 
             this.containerFileType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.containerFileType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(50)))));
             this.containerFileType.Controls.Add(this.buttonFileType);
-            this.containerFileType.Controls.Add(this.comboBoxFileType);
+            this.containerFileType.Controls.Add(this.comboBoxHomeFileType);
             this.containerFileType.Location = new System.Drawing.Point(116, 0);
             this.containerFileType.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.containerFileType.Name = "containerFileType";
@@ -439,15 +442,15 @@ namespace FileMasta
             this.buttonFileType.TextShadowShow = false;
             this.buttonFileType.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.buttonHomeFileType_ClickButtonArea);
             // 
-            // comboBoxFileType
+            // comboBoxHomeFileType
             // 
-            this.comboBoxFileType.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.comboBoxHomeFileType.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxFileType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            this.comboBoxFileType.Font = new System.Drawing.Font("Segoe UI Semibold", 9.25F);
-            this.comboBoxFileType.ForeColor = System.Drawing.Color.White;
-            this.comboBoxFileType.FormattingEnabled = true;
-            this.comboBoxFileType.Items.AddRange(new object[] {
+            this.comboBoxHomeFileType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            this.comboBoxHomeFileType.Font = new System.Drawing.Font("Segoe UI Semibold", 9.25F);
+            this.comboBoxHomeFileType.ForeColor = System.Drawing.Color.White;
+            this.comboBoxHomeFileType.FormattingEnabled = true;
+            this.comboBoxHomeFileType.Items.AddRange(new object[] {
             "All",
             "TV/Movies/Video",
             "Audio",
@@ -456,12 +459,12 @@ namespace FileMasta
             "Torrents",
             "Software/Games",
             "Other"});
-            this.comboBoxFileType.Location = new System.Drawing.Point(0, -2);
-            this.comboBoxFileType.Name = "comboBoxFileType";
-            this.comboBoxFileType.Size = new System.Drawing.Size(110, 23);
-            this.comboBoxFileType.TabIndex = 0;
-            this.comboBoxFileType.TabStop = false;
-            this.comboBoxFileType.SelectedIndexChanged += new System.EventHandler(this.comboBoxHomeFileType_SelectedIndexChanged);
+            this.comboBoxHomeFileType.Location = new System.Drawing.Point(0, -2);
+            this.comboBoxHomeFileType.Name = "comboBoxHomeFileType";
+            this.comboBoxHomeFileType.Size = new System.Drawing.Size(110, 23);
+            this.comboBoxHomeFileType.TabIndex = 0;
+            this.comboBoxHomeFileType.TabStop = false;
+            this.comboBoxHomeFileType.SelectedIndexChanged += new System.EventHandler(this.comboBoxHomeFileType_SelectedIndexChanged);
             // 
             // labelDatabaseStats
             // 
@@ -523,61 +526,50 @@ namespace FileMasta
             this.textBoxBackgroundSearchHome.Text = "";
             this.textBoxBackgroundSearchHome.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.bgSearchFilesHome_ClickButtonArea);
             // 
-            // tabSearch
+            // tabDatabase
             // 
-            this.tabSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.tabSearch.Controls.Add(this.labelNoResultsFound);
-            this.tabSearch.Controls.Add(this.flowLayoutSearchFiles);
-            this.tabSearch.Controls.Add(this.textBoxSearchFiles);
-            this.tabSearch.Controls.Add(this.dataGridFiles);
-            this.tabSearch.Controls.Add(this.splitterFilesType);
-            this.tabSearch.Controls.Add(this.textBoxBackgroundSearchFiles);
-            this.tabSearch.Controls.Add(this.labelResultsInfo);
-            this.tabSearch.Controls.Add(this.buttonFilesAudio);
-            this.tabSearch.Controls.Add(this.buttonFilesBookmarks);
-            this.tabSearch.Controls.Add(this.buttonFilesLocal);
-            this.tabSearch.Controls.Add(this.buttonFilesTorrents);
-            this.tabSearch.Controls.Add(this.buttonFilesOther);
-            this.tabSearch.Controls.Add(this.buttonFilesSoftware);
-            this.tabSearch.Controls.Add(this.buttonFilesCustom);
-            this.tabSearch.Controls.Add(this.buttonFilesSubtitles);
-            this.tabSearch.Controls.Add(this.buttonFilesAll);
-            this.tabSearch.Controls.Add(this.buttonFilesBooks);
-            this.tabSearch.Controls.Add(this.buttonFilesVideo);
-            this.tabSearch.Controls.Add(this.buttonFilesImage);
-            this.tabSearch.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
-            this.tabSearch.ForeColor = System.Drawing.Color.White;
-            this.tabSearch.Location = new System.Drawing.Point(4, 22);
-            this.tabSearch.Name = "tabSearch";
-            this.tabSearch.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSearch.Size = new System.Drawing.Size(1048, 607);
-            this.tabSearch.TabIndex = 9;
+            this.tabDatabase.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.tabDatabase.Controls.Add(this.imageDbSearch);
+            this.tabDatabase.Controls.Add(this.labelNoResultsFound);
+            this.tabDatabase.Controls.Add(this.flowLayoutSearchFiles);
+            this.tabDatabase.Controls.Add(this.textBoxSearchFiles);
+            this.tabDatabase.Controls.Add(this.dataGridFiles);
+            this.tabDatabase.Controls.Add(this.splitterFilesType);
+            this.tabDatabase.Controls.Add(this.textBoxBackgroundSearchFiles);
+            this.tabDatabase.Controls.Add(this.labelResultsInfo);
+            this.tabDatabase.Controls.Add(this.buttonFilesAudio);
+            this.tabDatabase.Controls.Add(this.buttonFilesTorrents);
+            this.tabDatabase.Controls.Add(this.buttonFilesOther);
+            this.tabDatabase.Controls.Add(this.buttonFilesSoftware);
+            this.tabDatabase.Controls.Add(this.buttonFilesCustom);
+            this.tabDatabase.Controls.Add(this.buttonFilesSubtitles);
+            this.tabDatabase.Controls.Add(this.buttonFilesAll);
+            this.tabDatabase.Controls.Add(this.buttonFilesBooks);
+            this.tabDatabase.Controls.Add(this.buttonFilesVideo);
+            this.tabDatabase.Controls.Add(this.buttonFilesImage);
+            this.tabDatabase.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
+            this.tabDatabase.ForeColor = System.Drawing.Color.White;
+            this.tabDatabase.Location = new System.Drawing.Point(4, 22);
+            this.tabDatabase.Name = "tabDatabase";
+            this.tabDatabase.Padding = new System.Windows.Forms.Padding(3);
+            this.tabDatabase.Size = new System.Drawing.Size(1048, 607);
+            this.tabDatabase.TabIndex = 9;
             // 
-            // buttonFilesImage
+            // imageDbSearch
             // 
-            this.buttonFilesImage.BackColor = System.Drawing.Color.Transparent;
-            this.buttonFilesImage.BorderColor = System.Drawing.Color.Transparent;
-            this.buttonFilesImage.ColorFillSolid = System.Drawing.Color.Transparent;
-            this.buttonFilesImage.Corners.UpperLeft = 2;
-            this.buttonFilesImage.Corners.UpperRight = 2;
-            this.buttonFilesImage.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonFilesImage.DesignerSelected = false;
-            this.buttonFilesImage.DimFactorClick = 0;
-            this.buttonFilesImage.DimFactorHover = 0;
-            this.buttonFilesImage.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.buttonFilesImage.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonFilesImage.ImageIndex = 0;
-            this.buttonFilesImage.Location = new System.Drawing.Point(285, 61);
-            this.buttonFilesImage.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
-            this.buttonFilesImage.MaximumSize = new System.Drawing.Size(1000, 27);
-            this.buttonFilesImage.MinimumSize = new System.Drawing.Size(0, 27);
-            this.buttonFilesImage.Name = "buttonFilesImage";
-            this.buttonFilesImage.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.buttonFilesImage.Size = new System.Drawing.Size(68, 27);
-            this.buttonFilesImage.TabIndex = 15;
-            this.buttonFilesImage.Text = "Images";
-            this.buttonFilesImage.TextShadowShow = false;
-            this.buttonFilesImage.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.buttonFilesImage_ClickButtonArea);
+            this.imageDbSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.imageDbSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(50)))));
+            this.imageDbSearch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imageDbSearch.Image = global::FileMasta.Properties.Resources.magnify_orange;
+            this.imageDbSearch.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.imageDbSearch.Location = new System.Drawing.Point(1007, 23);
+            this.imageDbSearch.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.imageDbSearch.Name = "imageDbSearch";
+            this.imageDbSearch.Size = new System.Drawing.Size(20, 20);
+            this.imageDbSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imageDbSearch.TabIndex = 1110;
+            this.imageDbSearch.TabStop = false;
+            this.imageDbSearch.Click += new System.EventHandler(this.imgSearch_Click);
             // 
             // labelNoResultsFound
             // 
@@ -598,169 +590,223 @@ namespace FileMasta
             // 
             this.flowLayoutSearchFiles.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutSearchFiles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(50)))));
-            this.flowLayoutSearchFiles.Controls.Add(this.imageSearchFiles);
-            this.flowLayoutSearchFiles.Controls.Add(this.flowLayoutFilterFiles);
-            this.flowLayoutSearchFiles.Controls.Add(this.flowLayoutSortFiles);
+            this.flowLayoutSearchFiles.Controls.Add(this.panelDbFilter);
+            this.flowLayoutSearchFiles.Controls.Add(this.panelDbSort);
+            this.flowLayoutSearchFiles.Controls.Add(this.panelDbFiles);
             this.flowLayoutSearchFiles.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutSearchFiles.Location = new System.Drawing.Point(640, 22);
+            this.flowLayoutSearchFiles.Location = new System.Drawing.Point(567, 22);
             this.flowLayoutSearchFiles.Margin = new System.Windows.Forms.Padding(2, 3, 3, 3);
             this.flowLayoutSearchFiles.Name = "flowLayoutSearchFiles";
-            this.flowLayoutSearchFiles.Size = new System.Drawing.Size(387, 22);
+            this.flowLayoutSearchFiles.Size = new System.Drawing.Size(433, 22);
             this.flowLayoutSearchFiles.TabIndex = 1;
             this.flowLayoutSearchFiles.TabStop = true;
             // 
-            // imageSearchFiles
+            // panelDbFilter
             // 
-            this.imageSearchFiles.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.imageSearchFiles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(50)))));
-            this.imageSearchFiles.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imageSearchFiles.Image = global::FileMasta.Properties.Resources.magnify_orange;
-            this.imageSearchFiles.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.imageSearchFiles.Location = new System.Drawing.Point(367, 1);
-            this.imageSearchFiles.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.imageSearchFiles.Name = "imageSearchFiles";
-            this.imageSearchFiles.Size = new System.Drawing.Size(20, 20);
-            this.imageSearchFiles.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.imageSearchFiles.TabIndex = 1110;
-            this.imageSearchFiles.TabStop = false;
-            this.imageSearchFiles.Click += new System.EventHandler(this.imgSearch_Click);
+            this.panelDbFilter.BackColor = System.Drawing.Color.Transparent;
+            this.panelDbFilter.Controls.Add(this.buttonDbFilter);
+            this.panelDbFilter.Controls.Add(this.comboBoxDbFilter);
+            this.panelDbFilter.Location = new System.Drawing.Point(330, 0);
+            this.panelDbFilter.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.panelDbFilter.Name = "panelDbFilter";
+            this.panelDbFilter.Size = new System.Drawing.Size(100, 22);
+            this.panelDbFilter.TabIndex = 3;
             // 
-            // flowLayoutFilterFiles
+            // buttonDbFilter
             // 
-            this.flowLayoutFilterFiles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(50)))));
-            this.flowLayoutFilterFiles.Controls.Add(this.buttonFilterFiles);
-            this.flowLayoutFilterFiles.Controls.Add(this.comboBoxFilterFiles);
-            this.flowLayoutFilterFiles.Location = new System.Drawing.Point(261, 0);
-            this.flowLayoutFilterFiles.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.flowLayoutFilterFiles.Name = "flowLayoutFilterFiles";
-            this.flowLayoutFilterFiles.Size = new System.Drawing.Size(100, 22);
-            this.flowLayoutFilterFiles.TabIndex = 3;
-            // 
-            // buttonFilterFiles
-            // 
-            this.buttonFilterFiles.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.buttonDbFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonFilterFiles.BackColor = System.Drawing.Color.Transparent;
-            this.buttonFilterFiles.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(193)))), ((int)(((byte)(190)))));
+            this.buttonDbFilter.BackColor = System.Drawing.Color.Transparent;
+            this.buttonDbFilter.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(193)))), ((int)(((byte)(190)))));
             cBlendItems3.iColor = new System.Drawing.Color[] {
         System.Drawing.Color.White,
         System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))))};
             cBlendItems3.iPoint = new float[] {
         0F,
         1F};
-            this.buttonFilterFiles.ColorFillBlend = cBlendItems3;
-            this.buttonFilterFiles.ColorFillSolid = System.Drawing.Color.Transparent;
-            this.buttonFilterFiles.Corners.All = 2;
-            this.buttonFilterFiles.Corners.LowerLeft = 2;
-            this.buttonFilterFiles.Corners.LowerRight = 2;
-            this.buttonFilterFiles.Corners.UpperLeft = 2;
-            this.buttonFilterFiles.Corners.UpperRight = 2;
-            this.buttonFilterFiles.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonFilterFiles.DesignerSelected = false;
-            this.buttonFilterFiles.DimFactorClick = 0;
-            this.buttonFilterFiles.DimFactorHover = 0;
-            this.buttonFilterFiles.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.buttonFilterFiles.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
-            this.buttonFilterFiles.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(193)))), ((int)(((byte)(190)))));
-            this.buttonFilterFiles.Image = global::FileMasta.Properties.Resources.menu_down;
-            this.buttonFilterFiles.ImageIndex = 0;
-            this.buttonFilterFiles.Location = new System.Drawing.Point(0, 0);
-            this.buttonFilterFiles.Name = "buttonFilterFiles";
-            this.buttonFilterFiles.Size = new System.Drawing.Size(100, 22);
-            this.buttonFilterFiles.TabIndex = 2;
-            this.buttonFilterFiles.Text = "Filter : Any";
-            this.buttonFilterFiles.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.buttonFilterFiles.TextMargin = new System.Windows.Forms.Padding(0);
-            this.buttonFilterFiles.TextShadowShow = false;
-            this.buttonFilterFiles.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.buttonFilesHost_ClickButtonArea);
+            this.buttonDbFilter.ColorFillBlend = cBlendItems3;
+            this.buttonDbFilter.ColorFillSolid = System.Drawing.Color.Transparent;
+            this.buttonDbFilter.Corners.All = 2;
+            this.buttonDbFilter.Corners.LowerLeft = 2;
+            this.buttonDbFilter.Corners.LowerRight = 2;
+            this.buttonDbFilter.Corners.UpperLeft = 2;
+            this.buttonDbFilter.Corners.UpperRight = 2;
+            this.buttonDbFilter.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonDbFilter.DesignerSelected = false;
+            this.buttonDbFilter.DimFactorClick = 0;
+            this.buttonDbFilter.DimFactorHover = 0;
+            this.buttonDbFilter.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.buttonDbFilter.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
+            this.buttonDbFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(193)))), ((int)(((byte)(190)))));
+            this.buttonDbFilter.Image = global::FileMasta.Properties.Resources.menu_down;
+            this.buttonDbFilter.ImageIndex = 0;
+            this.buttonDbFilter.Location = new System.Drawing.Point(0, 0);
+            this.buttonDbFilter.Name = "buttonDbFilter";
+            this.buttonDbFilter.Size = new System.Drawing.Size(100, 22);
+            this.buttonDbFilter.TabIndex = 2;
+            this.buttonDbFilter.Text = "Filter : Any";
+            this.buttonDbFilter.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.buttonDbFilter.TextMargin = new System.Windows.Forms.Padding(0);
+            this.buttonDbFilter.TextShadowShow = false;
+            this.buttonDbFilter.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.buttonFilesHost_ClickButtonArea);
             // 
-            // comboBoxFilterFiles
+            // comboBoxDbFilter
             // 
-            this.comboBoxFilterFiles.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.comboBoxDbFilter.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxFilterFiles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            this.comboBoxFilterFiles.Font = new System.Drawing.Font("Segoe UI Semibold", 9.25F);
-            this.comboBoxFilterFiles.ForeColor = System.Drawing.Color.White;
-            this.comboBoxFilterFiles.FormattingEnabled = true;
-            this.comboBoxFilterFiles.Items.AddRange(new object[] {
+            this.comboBoxDbFilter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            this.comboBoxDbFilter.Font = new System.Drawing.Font("Segoe UI Semibold", 9.25F);
+            this.comboBoxDbFilter.ForeColor = System.Drawing.Color.White;
+            this.comboBoxDbFilter.FormattingEnabled = true;
+            this.comboBoxDbFilter.Items.AddRange(new object[] {
             "Any"});
-            this.comboBoxFilterFiles.Location = new System.Drawing.Point(0, -2);
-            this.comboBoxFilterFiles.Name = "comboBoxFilterFiles";
-            this.comboBoxFilterFiles.Size = new System.Drawing.Size(100, 23);
-            this.comboBoxFilterFiles.TabIndex = 0;
-            this.comboBoxFilterFiles.TabStop = false;
-            this.comboBoxFilterFiles.SelectedIndexChanged += new System.EventHandler(this.comboBoxFilesHost_SelectedIndexChanged);
+            this.comboBoxDbFilter.Location = new System.Drawing.Point(0, -2);
+            this.comboBoxDbFilter.Name = "comboBoxDbFilter";
+            this.comboBoxDbFilter.Size = new System.Drawing.Size(100, 23);
+            this.comboBoxDbFilter.TabIndex = 0;
+            this.comboBoxDbFilter.TabStop = false;
+            this.comboBoxDbFilter.SelectedIndexChanged += new System.EventHandler(this.comboBoxFilesHost_SelectedIndexChanged);
             // 
-            // flowLayoutSortFiles
+            // panelDbSort
             // 
-            this.flowLayoutSortFiles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(50)))));
-            this.flowLayoutSortFiles.Controls.Add(this.buttonSortFiles);
-            this.flowLayoutSortFiles.Controls.Add(this.comboBoxSortFiles);
-            this.flowLayoutSortFiles.Location = new System.Drawing.Point(149, 0);
-            this.flowLayoutSortFiles.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.flowLayoutSortFiles.Name = "flowLayoutSortFiles";
-            this.flowLayoutSortFiles.Size = new System.Drawing.Size(106, 22);
-            this.flowLayoutSortFiles.TabIndex = 6;
+            this.panelDbSort.BackColor = System.Drawing.Color.Transparent;
+            this.panelDbSort.Controls.Add(this.buttonDbSort);
+            this.panelDbSort.Controls.Add(this.comboBoxDbSort);
+            this.panelDbSort.Location = new System.Drawing.Point(218, 0);
+            this.panelDbSort.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.panelDbSort.Name = "panelDbSort";
+            this.panelDbSort.Size = new System.Drawing.Size(106, 22);
+            this.panelDbSort.TabIndex = 6;
             // 
-            // buttonSortFiles
+            // buttonDbSort
             // 
-            this.buttonSortFiles.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.buttonDbSort.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonSortFiles.BackColor = System.Drawing.Color.Transparent;
-            this.buttonSortFiles.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(193)))), ((int)(((byte)(190)))));
+            this.buttonDbSort.BackColor = System.Drawing.Color.Transparent;
+            this.buttonDbSort.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(193)))), ((int)(((byte)(190)))));
             cBlendItems4.iColor = new System.Drawing.Color[] {
         System.Drawing.Color.White,
         System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))))};
             cBlendItems4.iPoint = new float[] {
         0F,
         1F};
-            this.buttonSortFiles.ColorFillBlend = cBlendItems4;
-            this.buttonSortFiles.ColorFillSolid = System.Drawing.Color.Transparent;
-            this.buttonSortFiles.Corners.All = 2;
-            this.buttonSortFiles.Corners.LowerLeft = 2;
-            this.buttonSortFiles.Corners.LowerRight = 2;
-            this.buttonSortFiles.Corners.UpperLeft = 2;
-            this.buttonSortFiles.Corners.UpperRight = 2;
-            this.buttonSortFiles.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonSortFiles.DesignerSelected = false;
-            this.buttonSortFiles.DimFactorClick = 0;
-            this.buttonSortFiles.DimFactorHover = 0;
-            this.buttonSortFiles.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.buttonSortFiles.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
-            this.buttonSortFiles.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(193)))), ((int)(((byte)(190)))));
-            this.buttonSortFiles.Image = global::FileMasta.Properties.Resources.menu_down;
-            this.buttonSortFiles.ImageIndex = 0;
-            this.buttonSortFiles.Location = new System.Drawing.Point(0, 0);
-            this.buttonSortFiles.Name = "buttonSortFiles";
-            this.buttonSortFiles.SideImageSize = new System.Drawing.Size(24, 24);
-            this.buttonSortFiles.Size = new System.Drawing.Size(106, 22);
-            this.buttonSortFiles.TabIndex = 1;
-            this.buttonSortFiles.Text = "Sort : Name";
-            this.buttonSortFiles.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.buttonSortFiles.TextMargin = new System.Windows.Forms.Padding(0);
-            this.buttonSortFiles.TextShadowShow = false;
-            this.buttonSortFiles.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.buttonFilesSort_ClickButtonArea);
+            this.buttonDbSort.ColorFillBlend = cBlendItems4;
+            this.buttonDbSort.ColorFillSolid = System.Drawing.Color.Transparent;
+            this.buttonDbSort.Corners.All = 2;
+            this.buttonDbSort.Corners.LowerLeft = 2;
+            this.buttonDbSort.Corners.LowerRight = 2;
+            this.buttonDbSort.Corners.UpperLeft = 2;
+            this.buttonDbSort.Corners.UpperRight = 2;
+            this.buttonDbSort.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonDbSort.DesignerSelected = false;
+            this.buttonDbSort.DimFactorClick = 0;
+            this.buttonDbSort.DimFactorHover = 0;
+            this.buttonDbSort.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.buttonDbSort.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
+            this.buttonDbSort.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(193)))), ((int)(((byte)(190)))));
+            this.buttonDbSort.Image = global::FileMasta.Properties.Resources.menu_down;
+            this.buttonDbSort.ImageIndex = 0;
+            this.buttonDbSort.Location = new System.Drawing.Point(0, 0);
+            this.buttonDbSort.Name = "buttonDbSort";
+            this.buttonDbSort.SideImageSize = new System.Drawing.Size(24, 24);
+            this.buttonDbSort.Size = new System.Drawing.Size(106, 22);
+            this.buttonDbSort.TabIndex = 1;
+            this.buttonDbSort.Text = "Sort : Name";
+            this.buttonDbSort.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.buttonDbSort.TextMargin = new System.Windows.Forms.Padding(0);
+            this.buttonDbSort.TextShadowShow = false;
+            this.buttonDbSort.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.buttonFilesSort_ClickButtonArea);
             // 
-            // comboBoxSortFiles
+            // comboBoxDbSort
             // 
-            this.comboBoxSortFiles.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.comboBoxDbSort.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxSortFiles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            this.comboBoxSortFiles.Font = new System.Drawing.Font("Segoe UI Semibold", 9.25F);
-            this.comboBoxSortFiles.ForeColor = System.Drawing.Color.White;
-            this.comboBoxSortFiles.FormattingEnabled = true;
-            this.comboBoxSortFiles.Items.AddRange(new object[] {
+            this.comboBoxDbSort.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            this.comboBoxDbSort.Font = new System.Drawing.Font("Segoe UI Semibold", 9.25F);
+            this.comboBoxDbSort.ForeColor = System.Drawing.Color.White;
+            this.comboBoxDbSort.FormattingEnabled = true;
+            this.comboBoxDbSort.Items.AddRange(new object[] {
             "Name",
             "Size",
             "Date"});
-            this.comboBoxSortFiles.Location = new System.Drawing.Point(0, -2);
-            this.comboBoxSortFiles.Name = "comboBoxSortFiles";
-            this.comboBoxSortFiles.Size = new System.Drawing.Size(106, 23);
-            this.comboBoxSortFiles.TabIndex = 0;
-            this.comboBoxSortFiles.TabStop = false;
-            this.comboBoxSortFiles.SelectedIndexChanged += new System.EventHandler(this.comboBoxFilesSort_SelectedIndexChanged);
+            this.comboBoxDbSort.Location = new System.Drawing.Point(0, -2);
+            this.comboBoxDbSort.Name = "comboBoxDbSort";
+            this.comboBoxDbSort.Size = new System.Drawing.Size(106, 23);
+            this.comboBoxDbSort.TabIndex = 0;
+            this.comboBoxDbSort.TabStop = false;
+            this.comboBoxDbSort.SelectedIndexChanged += new System.EventHandler(this.comboBoxFilesSort_SelectedIndexChanged);
+            // 
+            // panelDbFiles
+            // 
+            this.panelDbFiles.BackColor = System.Drawing.Color.Transparent;
+            this.panelDbFiles.Controls.Add(this.buttonDbFiles);
+            this.panelDbFiles.Controls.Add(this.comboBoxDbFiles);
+            this.panelDbFiles.Location = new System.Drawing.Point(84, 0);
+            this.panelDbFiles.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.panelDbFiles.Name = "panelDbFiles";
+            this.panelDbFiles.Size = new System.Drawing.Size(128, 22);
+            this.panelDbFiles.TabIndex = 7;
+            // 
+            // buttonDbFiles
+            // 
+            this.buttonDbFiles.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonDbFiles.BackColor = System.Drawing.Color.Transparent;
+            this.buttonDbFiles.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(193)))), ((int)(((byte)(190)))));
+            cBlendItems5.iColor = new System.Drawing.Color[] {
+        System.Drawing.Color.White,
+        System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))))};
+            cBlendItems5.iPoint = new float[] {
+        0F,
+        1F};
+            this.buttonDbFiles.ColorFillBlend = cBlendItems5;
+            this.buttonDbFiles.ColorFillSolid = System.Drawing.Color.Transparent;
+            this.buttonDbFiles.Corners.All = 2;
+            this.buttonDbFiles.Corners.LowerLeft = 2;
+            this.buttonDbFiles.Corners.LowerRight = 2;
+            this.buttonDbFiles.Corners.UpperLeft = 2;
+            this.buttonDbFiles.Corners.UpperRight = 2;
+            this.buttonDbFiles.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonDbFiles.DesignerSelected = false;
+            this.buttonDbFiles.DimFactorClick = 0;
+            this.buttonDbFiles.DimFactorHover = 0;
+            this.buttonDbFiles.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.buttonDbFiles.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
+            this.buttonDbFiles.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(193)))), ((int)(((byte)(190)))));
+            this.buttonDbFiles.Image = global::FileMasta.Properties.Resources.menu_down;
+            this.buttonDbFiles.ImageIndex = 0;
+            this.buttonDbFiles.Location = new System.Drawing.Point(0, 0);
+            this.buttonDbFiles.Name = "buttonDbFiles";
+            this.buttonDbFiles.SideImageSize = new System.Drawing.Size(24, 24);
+            this.buttonDbFiles.Size = new System.Drawing.Size(128, 22);
+            this.buttonDbFiles.TabIndex = 1;
+            this.buttonDbFiles.Text = "Files : Database";
+            this.buttonDbFiles.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.buttonDbFiles.TextMargin = new System.Windows.Forms.Padding(0);
+            this.buttonDbFiles.TextShadowShow = false;
+            this.buttonDbFiles.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.buttonDbFiles_ClickButtonArea);
+            // 
+            // comboBoxDbFiles
+            // 
+            this.comboBoxDbFiles.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBoxDbFiles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
+            this.comboBoxDbFiles.Font = new System.Drawing.Font("Segoe UI Semibold", 9.25F);
+            this.comboBoxDbFiles.ForeColor = System.Drawing.Color.White;
+            this.comboBoxDbFiles.FormattingEnabled = true;
+            this.comboBoxDbFiles.Items.AddRange(new object[] {
+            "Database",
+            "Bookmarked",
+            "Local"});
+            this.comboBoxDbFiles.Location = new System.Drawing.Point(0, -2);
+            this.comboBoxDbFiles.Name = "comboBoxDbFiles";
+            this.comboBoxDbFiles.Size = new System.Drawing.Size(128, 23);
+            this.comboBoxDbFiles.TabIndex = 0;
+            this.comboBoxDbFiles.TabStop = false;
+            this.comboBoxDbFiles.SelectedIndexChanged += new System.EventHandler(this.comboBoxDbFiles_SelectedIndexChanged);
             // 
             // textBoxSearchFiles
             // 
@@ -772,7 +818,7 @@ namespace FileMasta
             this.textBoxSearchFiles.ForeColor = System.Drawing.Color.White;
             this.textBoxSearchFiles.Location = new System.Drawing.Point(22, 22);
             this.textBoxSearchFiles.Name = "textBoxSearchFiles";
-            this.textBoxSearchFiles.Size = new System.Drawing.Size(613, 19);
+            this.textBoxSearchFiles.Size = new System.Drawing.Size(540, 19);
             this.textBoxSearchFiles.TabIndex = 0;
             this.textBoxSearchFiles.WaterMark = "Search for file names, add tags or insert a link...";
             this.textBoxSearchFiles.WaterMarkActiveForeColor = System.Drawing.Color.White;
@@ -993,58 +1039,6 @@ namespace FileMasta
             this.buttonFilesAudio.TextShadowShow = false;
             this.buttonFilesAudio.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.buttonFilesAudio_ClickButtonArea);
             // 
-            // buttonFilesBookmarks
-            // 
-            this.buttonFilesBookmarks.BackColor = System.Drawing.Color.Transparent;
-            this.buttonFilesBookmarks.BorderColor = System.Drawing.Color.Transparent;
-            this.buttonFilesBookmarks.ColorFillSolid = System.Drawing.Color.Transparent;
-            this.buttonFilesBookmarks.Corners.UpperLeft = 2;
-            this.buttonFilesBookmarks.Corners.UpperRight = 2;
-            this.buttonFilesBookmarks.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonFilesBookmarks.DesignerSelected = false;
-            this.buttonFilesBookmarks.DimFactorClick = 0;
-            this.buttonFilesBookmarks.DimFactorHover = 0;
-            this.buttonFilesBookmarks.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.buttonFilesBookmarks.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonFilesBookmarks.ImageIndex = 0;
-            this.buttonFilesBookmarks.Location = new System.Drawing.Point(883, 61);
-            this.buttonFilesBookmarks.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
-            this.buttonFilesBookmarks.MaximumSize = new System.Drawing.Size(1000, 27);
-            this.buttonFilesBookmarks.MinimumSize = new System.Drawing.Size(0, 27);
-            this.buttonFilesBookmarks.Name = "buttonFilesBookmarks";
-            this.buttonFilesBookmarks.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.buttonFilesBookmarks.Size = new System.Drawing.Size(92, 27);
-            this.buttonFilesBookmarks.TabIndex = 13;
-            this.buttonFilesBookmarks.Text = "Bookmarks";
-            this.buttonFilesBookmarks.TextShadowShow = false;
-            this.buttonFilesBookmarks.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.buttonFilesBookmarks_ClickButtonArea);
-            // 
-            // buttonFilesLocal
-            // 
-            this.buttonFilesLocal.BackColor = System.Drawing.Color.Transparent;
-            this.buttonFilesLocal.BorderColor = System.Drawing.Color.Transparent;
-            this.buttonFilesLocal.ColorFillSolid = System.Drawing.Color.Transparent;
-            this.buttonFilesLocal.Corners.UpperLeft = 2;
-            this.buttonFilesLocal.Corners.UpperRight = 2;
-            this.buttonFilesLocal.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonFilesLocal.DesignerSelected = false;
-            this.buttonFilesLocal.DimFactorClick = 0;
-            this.buttonFilesLocal.DimFactorHover = 0;
-            this.buttonFilesLocal.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.buttonFilesLocal.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonFilesLocal.ImageIndex = 0;
-            this.buttonFilesLocal.Location = new System.Drawing.Point(827, 61);
-            this.buttonFilesLocal.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
-            this.buttonFilesLocal.MaximumSize = new System.Drawing.Size(1000, 27);
-            this.buttonFilesLocal.MinimumSize = new System.Drawing.Size(0, 27);
-            this.buttonFilesLocal.Name = "buttonFilesLocal";
-            this.buttonFilesLocal.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.buttonFilesLocal.Size = new System.Drawing.Size(56, 27);
-            this.buttonFilesLocal.TabIndex = 12;
-            this.buttonFilesLocal.Text = "Local";
-            this.buttonFilesLocal.TextShadowShow = false;
-            this.buttonFilesLocal.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.buttonFilesLocal_ClickButtonArea);
-            // 
             // buttonFilesTorrents
             // 
             this.buttonFilesTorrents.BackColor = System.Drawing.Color.Transparent;
@@ -1252,6 +1246,32 @@ namespace FileMasta
             this.buttonFilesVideo.Text = "TV/Movies/Video";
             this.buttonFilesVideo.TextShadowShow = false;
             this.buttonFilesVideo.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.buttonFilesVideo_ClickButtonArea);
+            // 
+            // buttonFilesImage
+            // 
+            this.buttonFilesImage.BackColor = System.Drawing.Color.Transparent;
+            this.buttonFilesImage.BorderColor = System.Drawing.Color.Transparent;
+            this.buttonFilesImage.ColorFillSolid = System.Drawing.Color.Transparent;
+            this.buttonFilesImage.Corners.UpperLeft = 2;
+            this.buttonFilesImage.Corners.UpperRight = 2;
+            this.buttonFilesImage.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonFilesImage.DesignerSelected = false;
+            this.buttonFilesImage.DimFactorClick = 0;
+            this.buttonFilesImage.DimFactorHover = 0;
+            this.buttonFilesImage.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.buttonFilesImage.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonFilesImage.ImageIndex = 0;
+            this.buttonFilesImage.Location = new System.Drawing.Point(285, 61);
+            this.buttonFilesImage.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
+            this.buttonFilesImage.MaximumSize = new System.Drawing.Size(1000, 27);
+            this.buttonFilesImage.MinimumSize = new System.Drawing.Size(0, 27);
+            this.buttonFilesImage.Name = "buttonFilesImage";
+            this.buttonFilesImage.ShowFocus = CButtonLib.CButton.eFocus.None;
+            this.buttonFilesImage.Size = new System.Drawing.Size(68, 27);
+            this.buttonFilesImage.TabIndex = 15;
+            this.buttonFilesImage.Text = "Images";
+            this.buttonFilesImage.TextShadowShow = false;
+            this.buttonFilesImage.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.buttonFilesImage_ClickButtonArea);
             // 
             // tabDiscover
             // 
@@ -2446,7 +2466,7 @@ namespace FileMasta
             this.panelTabTitles.Controls.Add(this.titleSettings);
             this.panelTabTitles.Controls.Add(this.titleSubmit);
             this.panelTabTitles.Controls.Add(this.titleDiscover);
-            this.panelTabTitles.Controls.Add(this.titleSearch);
+            this.panelTabTitles.Controls.Add(this.titleDatabase);
             this.panelTabTitles.Controls.Add(this.titleHome);
             this.panelTabTitles.Controls.Add(this.imageFacebook);
             this.panelTabTitles.Controls.Add(this.imageTwitter);
@@ -2476,7 +2496,7 @@ namespace FileMasta
             this.titleInformation.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
             this.titleInformation.Image = global::FileMasta.Properties.Resources.info;
             this.titleInformation.ImageIndex = 0;
-            this.titleInformation.Location = new System.Drawing.Point(444, 0);
+            this.titleInformation.Location = new System.Drawing.Point(460, 0);
             this.titleInformation.Margin = new System.Windows.Forms.Padding(0);
             this.titleInformation.MaximumSize = new System.Drawing.Size(1000, 34);
             this.titleInformation.MinimumSize = new System.Drawing.Size(0, 34);
@@ -2508,7 +2528,7 @@ namespace FileMasta
             this.titleSettings.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
             this.titleSettings.Image = global::FileMasta.Properties.Resources.settings;
             this.titleSettings.ImageIndex = 0;
-            this.titleSettings.Location = new System.Drawing.Point(350, 0);
+            this.titleSettings.Location = new System.Drawing.Point(366, 0);
             this.titleSettings.Margin = new System.Windows.Forms.Padding(0);
             this.titleSettings.MaximumSize = new System.Drawing.Size(1000, 34);
             this.titleSettings.MinimumSize = new System.Drawing.Size(0, 34);
@@ -2540,7 +2560,7 @@ namespace FileMasta
             this.titleSubmit.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
             this.titleSubmit.Image = global::FileMasta.Properties.Resources.send;
             this.titleSubmit.ImageIndex = 0;
-            this.titleSubmit.Location = new System.Drawing.Point(262, 0);
+            this.titleSubmit.Location = new System.Drawing.Point(278, 0);
             this.titleSubmit.Margin = new System.Windows.Forms.Padding(0);
             this.titleSubmit.MaximumSize = new System.Drawing.Size(1000, 34);
             this.titleSubmit.MinimumSize = new System.Drawing.Size(0, 34);
@@ -2572,7 +2592,7 @@ namespace FileMasta
             this.titleDiscover.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
             this.titleDiscover.Image = global::FileMasta.Properties.Resources.web;
             this.titleDiscover.ImageIndex = 0;
-            this.titleDiscover.Location = new System.Drawing.Point(166, 0);
+            this.titleDiscover.Location = new System.Drawing.Point(182, 0);
             this.titleDiscover.Margin = new System.Windows.Forms.Padding(0);
             this.titleDiscover.MaximumSize = new System.Drawing.Size(1000, 34);
             this.titleDiscover.MinimumSize = new System.Drawing.Size(0, 34);
@@ -2586,37 +2606,37 @@ namespace FileMasta
             this.titleDiscover.TextShadowShow = false;
             this.titleDiscover.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.titleDiscover_ClickButtonArea);
             // 
-            // titleSearch
+            // titleDatabase
             // 
-            this.titleSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
-            this.titleSearch.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
-            this.titleSearch.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
-            this.titleSearch.Corners.All = 2;
-            this.titleSearch.Corners.LowerLeft = 2;
-            this.titleSearch.Corners.LowerRight = 2;
-            this.titleSearch.Corners.UpperLeft = 2;
-            this.titleSearch.Corners.UpperRight = 2;
-            this.titleSearch.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.titleSearch.DesignerSelected = false;
-            this.titleSearch.DimFactorClick = 0;
-            this.titleSearch.DimFactorHover = 0;
-            this.titleSearch.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.titleSearch.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
-            this.titleSearch.Image = global::FileMasta.Properties.Resources.magnify;
-            this.titleSearch.ImageIndex = 0;
-            this.titleSearch.Location = new System.Drawing.Point(81, 0);
-            this.titleSearch.Margin = new System.Windows.Forms.Padding(0);
-            this.titleSearch.MaximumSize = new System.Drawing.Size(1000, 34);
-            this.titleSearch.MinimumSize = new System.Drawing.Size(0, 34);
-            this.titleSearch.Name = "titleSearch";
-            this.titleSearch.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.titleSearch.Size = new System.Drawing.Size(85, 34);
-            this.titleSearch.TabIndex = 4;
-            this.titleSearch.Text = "Search";
-            this.titleSearch.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.titleSearch.TextMargin = new System.Windows.Forms.Padding(0);
-            this.titleSearch.TextShadowShow = false;
-            this.titleSearch.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.titleSearch_ClickButtonArea);
+            this.titleDatabase.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
+            this.titleDatabase.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
+            this.titleDatabase.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
+            this.titleDatabase.Corners.All = 2;
+            this.titleDatabase.Corners.LowerLeft = 2;
+            this.titleDatabase.Corners.LowerRight = 2;
+            this.titleDatabase.Corners.UpperLeft = 2;
+            this.titleDatabase.Corners.UpperRight = 2;
+            this.titleDatabase.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.titleDatabase.DesignerSelected = false;
+            this.titleDatabase.DimFactorClick = 0;
+            this.titleDatabase.DimFactorHover = 0;
+            this.titleDatabase.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.titleDatabase.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
+            this.titleDatabase.Image = global::FileMasta.Properties.Resources.database_search;
+            this.titleDatabase.ImageIndex = 0;
+            this.titleDatabase.Location = new System.Drawing.Point(81, 0);
+            this.titleDatabase.Margin = new System.Windows.Forms.Padding(0);
+            this.titleDatabase.MaximumSize = new System.Drawing.Size(1000, 34);
+            this.titleDatabase.MinimumSize = new System.Drawing.Size(0, 34);
+            this.titleDatabase.Name = "titleDatabase";
+            this.titleDatabase.ShowFocus = CButtonLib.CButton.eFocus.None;
+            this.titleDatabase.Size = new System.Drawing.Size(101, 34);
+            this.titleDatabase.TabIndex = 4;
+            this.titleDatabase.Text = "Database";
+            this.titleDatabase.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.titleDatabase.TextMargin = new System.Windows.Forms.Padding(0);
+            this.titleDatabase.TextShadowShow = false;
+            this.titleDatabase.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.titleSearch_ClickButtonArea);
             // 
             // titleHome
             // 
@@ -2709,12 +2729,13 @@ namespace FileMasta
             this.flowLayoutSearchItems.ResumeLayout(false);
             this.flowLayoutSearchHome.ResumeLayout(false);
             this.containerFileType.ResumeLayout(false);
-            this.tabSearch.ResumeLayout(false);
-            this.tabSearch.PerformLayout();
+            this.tabDatabase.ResumeLayout(false);
+            this.tabDatabase.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imageDbSearch)).EndInit();
             this.flowLayoutSearchFiles.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.imageSearchFiles)).EndInit();
-            this.flowLayoutFilterFiles.ResumeLayout(false);
-            this.flowLayoutSortFiles.ResumeLayout(false);
+            this.panelDbFilter.ResumeLayout(false);
+            this.panelDbSort.ResumeLayout(false);
+            this.panelDbFiles.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridFiles)).EndInit();
             this.tabDiscover.ResumeLayout(false);
             this.tabsDiscover.ResumeLayout(false);
@@ -2763,21 +2784,21 @@ namespace FileMasta
         public System.Windows.Forms.Label labelTitleSubmit;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutSubmitControls;
         private System.Windows.Forms.Panel panelSubmitLink;
-        public System.Windows.Forms.TabPage tabSearch;
+        public System.Windows.Forms.TabPage tabDatabase;
         public System.Windows.Forms.Label labelNoResultsFound;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutSearchFiles;
-        private System.Windows.Forms.Panel flowLayoutSortFiles;
-        private CButtonLib.CButton buttonSortFiles;
-        private System.Windows.Forms.ComboBox comboBoxSortFiles;
-        private System.Windows.Forms.Panel flowLayoutFilterFiles;
-        private CButtonLib.CButton buttonFilterFiles;
-        private System.Windows.Forms.ComboBox comboBoxFilterFiles;
+        private System.Windows.Forms.Panel panelDbSort;
+        private CButtonLib.CButton buttonDbSort;
+        private System.Windows.Forms.ComboBox comboBoxDbSort;
+        private System.Windows.Forms.Panel panelDbFilter;
+        private CButtonLib.CButton buttonDbFilter;
+        private System.Windows.Forms.ComboBox comboBoxDbFilter;
         public ChreneLib.Controls.TextBoxes.CTextBox textBoxSearchFiles;
         private CButtonLib.CButton splitterFilesType;
         private CButtonLib.CButton textBoxBackgroundSearchFiles;
         public System.Windows.Forms.TabPage tabHome;
         private System.Windows.Forms.Panel containerFileType;
-        private System.Windows.Forms.ComboBox comboBoxFileType;
+        private System.Windows.Forms.ComboBox comboBoxHomeFileType;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutTopSearches;
         private System.Windows.Forms.Label labelResultsInfo;
         private System.Windows.Forms.Label labelDatabaseStats;
@@ -2785,7 +2806,7 @@ namespace FileMasta
         private System.Windows.Forms.Label labelPrivacyPolicy;
         private System.Windows.Forms.PictureBox imageTwitter;
         private System.Windows.Forms.PictureBox imageFacebook;
-        private System.Windows.Forms.PictureBox imageSearchFiles;
+        private System.Windows.Forms.PictureBox imageDbSearch;
         public CButtonLib.CButton splitterHeaderGeneral;
         public CButtonLib.CButton splitterHeaderDiscover;
         public CButtonLib.CButton splitterHeaderSubmit;
@@ -2799,13 +2820,13 @@ namespace FileMasta
         public CButtonLib.CButton splitterHeaderTopSearches;
         private System.Windows.Forms.Panel flowLayoutSearchHome;
         private CButtonLib.CButton buttonSearchHome;
-        private System.Windows.Forms.ComboBox comboBoxSearchHome;
+        private System.Windows.Forms.ComboBox comboBoxHomeSearchExternal;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnDiscoverCount;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnDiscoverSite;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnDiscoverType;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnDiscoverURL;
         public System.Windows.Forms.Panel panelTabTitles;
-        public Controls.buttonTabTitle titleSearch;
+        public Controls.buttonTabTitle titleDatabase;
         public Controls.buttonTabTitle titleHome;
         public Controls.buttonTabTitle titleSettings;
         public Controls.buttonTabTitle titleSubmit;
@@ -2814,8 +2835,6 @@ namespace FileMasta
         public CButtonLib.CButton buttonFileType;
         public Controls.buttonFileType buttonFilesVideo;
         public Controls.buttonFileType buttonFilesAudio;
-        public Controls.buttonFileType buttonFilesBookmarks;
-        public Controls.buttonFileType buttonFilesLocal;
         public Controls.buttonFileType buttonFilesTorrents;
         public Controls.buttonFileType buttonFilesOther;
         public Controls.buttonFileType buttonFilesSoftware;
@@ -2863,6 +2882,9 @@ namespace FileMasta
         private CButtonLib.CButton textBoxBackgroundConnectionAddress;
         private System.Windows.Forms.Label labelConnectionAddress;
         public Controls.buttonFileType buttonFilesImage;
+        private System.Windows.Forms.Panel panelDbFiles;
+        private CButtonLib.CButton buttonDbFiles;
+        private System.Windows.Forms.ComboBox comboBoxDbFiles;
     }
 }
 

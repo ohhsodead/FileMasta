@@ -80,8 +80,8 @@ namespace FileMasta
             labelChangeLog.Text = String.Format(labelChangeLog.Text, Application.ProductVersion);
 
             // Set static combo dropdown width to max items size
-            comboBoxSearchHome.DropDownWidth = ControlExtensions.GetMaxDropDownWidth(comboBoxSearchHome);
-            comboBoxSortFiles.DropDownWidth = ControlExtensions.GetMaxDropDownWidth(comboBoxSortFiles);
+            comboBoxHomeSearchExternal.DropDownWidth = ControlExtensions.GetMaxDropDownWidth(comboBoxHomeSearchExternal);
+            comboBoxDbSort.DropDownWidth = ControlExtensions.GetMaxDropDownWidth(comboBoxDbSort);
 
             Program.log.Info("Initialized");
         }
@@ -188,7 +188,7 @@ namespace FileMasta
 
         private void titleSearch_ClickButtonArea(object sender, MouseEventArgs e)
         {
-            tab.SelectedTab = tabSearch;
+            tab.SelectedTab = tabDatabase;
         }
 
         private void titleDiscover_ClickButtonArea(object sender, MouseEventArgs e)
@@ -218,8 +218,8 @@ namespace FileMasta
         {
             if (tab.SelectedTab == tabHome)
                 ControlExtensions.SelectTabTitle(titleHome);
-            else if (tab.SelectedTab == tabSearch)
-                ControlExtensions.SelectTabTitle(titleSearch);
+            else if (tab.SelectedTab == tabDatabase)
+                ControlExtensions.SelectTabTitle(titleDatabase);
             else if (tab.SelectedTab == tabDiscover)
                 ControlExtensions.SelectTabTitle(titleDiscover);
             else if (tab.SelectedTab == tabSubmit)
@@ -326,24 +326,24 @@ namespace FileMasta
         /// </summary>
         private void buttonHomeFileType_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            comboBoxFileType.DroppedDown = true;
+            comboBoxHomeFileType.DroppedDown = true;
         }
 
         private void comboBoxHomeFileType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBoxFileType.SelectedIndex == -1) SelectedFilesType = Types.All;
-            else if (comboBoxFileType.SelectedIndex == 0) SelectedFilesType = Types.All;
-            else if (comboBoxFileType.SelectedIndex == 1) SelectedFilesType = Types.Video;
-            else if (comboBoxFileType.SelectedIndex == 2) SelectedFilesType = Types.Audio;
-            else if (comboBoxFileType.SelectedIndex == 3) SelectedFilesType = Types.Image;
-            else if (comboBoxFileType.SelectedIndex == 4) SelectedFilesType = Types.Book;
-            else if (comboBoxFileType.SelectedIndex == 5) SelectedFilesType = Types.Subtitle;
-            else if (comboBoxFileType.SelectedIndex == 6) SelectedFilesType = Types.Torrent;
-            else if (comboBoxFileType.SelectedIndex == 7) SelectedFilesType = Types.Software;
-            else if (comboBoxFileType.SelectedIndex == 8) SelectedFilesType = Types.Other;
+            if (comboBoxHomeFileType.SelectedIndex == -1) SelectedFilesType = Types.All;
+            else if (comboBoxHomeFileType.SelectedIndex == 0) SelectedFilesType = Types.All;
+            else if (comboBoxHomeFileType.SelectedIndex == 1) SelectedFilesType = Types.Video;
+            else if (comboBoxHomeFileType.SelectedIndex == 2) SelectedFilesType = Types.Audio;
+            else if (comboBoxHomeFileType.SelectedIndex == 3) SelectedFilesType = Types.Image;
+            else if (comboBoxHomeFileType.SelectedIndex == 4) SelectedFilesType = Types.Book;
+            else if (comboBoxHomeFileType.SelectedIndex == 5) SelectedFilesType = Types.Subtitle;
+            else if (comboBoxHomeFileType.SelectedIndex == 6) SelectedFilesType = Types.Torrent;
+            else if (comboBoxHomeFileType.SelectedIndex == 7) SelectedFilesType = Types.Software;
+            else if (comboBoxHomeFileType.SelectedIndex == 8) SelectedFilesType = Types.Other;
 
             var startText = buttonFileType.Text.Split(':');
-            buttonFileType.Text = startText[0] + ": " + comboBoxFileType.GetItemText(comboBoxFileType.SelectedItem);
+            buttonFileType.Text = startText[0] + ": " + comboBoxHomeFileType.GetItemText(comboBoxHomeFileType.SelectedItem);
             containerFileType.Width = ControlExtensions.GetMaxPanelWidth(buttonFileType);
         }
 
@@ -362,13 +362,13 @@ namespace FileMasta
 
         private void comboBoxSearchHome_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBoxSearchHome.SelectedIndex == 0 | comboBoxSearchHome.SelectedIndex == -1)
+            if (comboBoxHomeSearchExternal.SelectedIndex == 0 | comboBoxHomeSearchExternal.SelectedIndex == -1)
                 SelectedFilesSearch = exploreUrlGoogle;
-            else if (comboBoxSearchHome.SelectedIndex == 1)
+            else if (comboBoxHomeSearchExternal.SelectedIndex == 1)
                 SelectedFilesSearch = exploreUrlGoogol;
-            else if (comboBoxSearchHome.SelectedIndex == 2)
+            else if (comboBoxHomeSearchExternal.SelectedIndex == 2)
                 SelectedFilesSearch = exploreUrlStartpage;
-            else if (comboBoxSearchHome.SelectedIndex == 3)
+            else if (comboBoxHomeSearchExternal.SelectedIndex == 3)
                 SelectedFilesSearch = exploreUrlSearx;
 
             Process.Start(SelectedFilesSearch + String.Format("{0} %2B({1}) %2Dinurl:(jsp|pl|php|html|aspx|htm|cf|shtml) intitle:index.of %2Dinurl:(listen77|mp3raid|mp3toss|mp3drug|index_of|index-of|wallywashis|downloadmana)", textBoxSearchHome.Text, String.Join("|", SelectedFilesType.ToArray()).ToLower()));
@@ -392,23 +392,23 @@ namespace FileMasta
 
         private void buttonSearchHome_SideImageClicked(object Sender, MouseEventArgs e)
         {
-            comboBoxSearchHome.DroppedDown = true;
+            comboBoxHomeSearchExternal.DroppedDown = true;
         }
 
         public void DoSearchFilesFromHome()
         {
             textBoxSearchFiles.Text = textBoxSearchHome.Text;
 
-            if (comboBoxFileType.SelectedIndex == -1) { SelectedFilesType = Types.All; ControlExtensions.SelectFilesTab(buttonFilesAll); SelectedFiles = FilesOpenDatabase; tab.SelectedTab = tabSearch; ShowFiles(SelectedFiles); }
-            else if (comboBoxFileType.SelectedIndex == 0) { SelectedFilesType = Types.All; ControlExtensions.SelectFilesTab(buttonFilesAll); SelectedFiles = FilesOpenDatabase; tab.SelectedTab = tabSearch; ShowFiles(SelectedFiles); }
-            else if (comboBoxFileType.SelectedIndex == 1) { SelectedFilesType = Types.Video; ControlExtensions.SelectFilesTab(buttonFilesVideo); SelectedFiles = FilesOpenDatabase; tab.SelectedTab = tabSearch; ShowFiles(SelectedFiles); }
-            else if (comboBoxFileType.SelectedIndex == 2) { SelectedFilesType = Types.Audio; ControlExtensions.SelectFilesTab(buttonFilesAudio); SelectedFiles = FilesOpenDatabase; tab.SelectedTab = tabSearch; ShowFiles(SelectedFiles); }
-            else if (comboBoxFileType.SelectedIndex == 3) { SelectedFilesType = Types.Image; ControlExtensions.SelectFilesTab(buttonFilesImage); SelectedFiles = FilesOpenDatabase; tab.SelectedTab = tabSearch; ShowFiles(SelectedFiles); }
-            else if (comboBoxFileType.SelectedIndex == 4) { SelectedFilesType = Types.Book; ControlExtensions.SelectFilesTab(buttonFilesBooks); SelectedFiles = FilesOpenDatabase; tab.SelectedTab = tabSearch; ShowFiles(SelectedFiles); }
-            else if (comboBoxFileType.SelectedIndex == 5) { SelectedFilesType = Types.Subtitle; ControlExtensions.SelectFilesTab(buttonFilesSubtitles); SelectedFiles = FilesOpenDatabase; tab.SelectedTab = tabSearch; ShowFiles(SelectedFiles); }
-            else if (comboBoxFileType.SelectedIndex == 6) { SelectedFilesType = Types.Torrent; ControlExtensions.SelectFilesTab(buttonFilesTorrents); SelectedFiles = FilesOpenDatabase; tab.SelectedTab = tabSearch; ShowFiles(SelectedFiles); }
-            else if (comboBoxFileType.SelectedIndex == 7) { SelectedFilesType = Types.Software; ControlExtensions.SelectFilesTab(buttonFilesSoftware); SelectedFiles = FilesOpenDatabase; tab.SelectedTab = tabSearch; ShowFiles(SelectedFiles); }
-            else if (comboBoxFileType.SelectedIndex == 8) { SelectedFilesType = Types.Other; ControlExtensions.SelectFilesTab(buttonFilesOther); SelectedFiles = FilesOpenDatabase; tab.SelectedTab = tabSearch; ShowFiles(SelectedFiles); }
+            if (comboBoxHomeFileType.SelectedIndex == -1) { SelectedFilesType = Types.All; ControlExtensions.SelectFilesTab(buttonFilesAll); SelectedFiles = FilesOpenDatabase; tab.SelectedTab = tabDatabase; ShowFiles(SelectedFiles); }
+            else if (comboBoxHomeFileType.SelectedIndex == 0) { SelectedFilesType = Types.All; ControlExtensions.SelectFilesTab(buttonFilesAll); SelectedFiles = FilesOpenDatabase; tab.SelectedTab = tabDatabase; ShowFiles(SelectedFiles); }
+            else if (comboBoxHomeFileType.SelectedIndex == 1) { SelectedFilesType = Types.Video; ControlExtensions.SelectFilesTab(buttonFilesVideo); SelectedFiles = FilesOpenDatabase; tab.SelectedTab = tabDatabase; ShowFiles(SelectedFiles); }
+            else if (comboBoxHomeFileType.SelectedIndex == 2) { SelectedFilesType = Types.Audio; ControlExtensions.SelectFilesTab(buttonFilesAudio); SelectedFiles = FilesOpenDatabase; tab.SelectedTab = tabDatabase; ShowFiles(SelectedFiles); }
+            else if (comboBoxHomeFileType.SelectedIndex == 3) { SelectedFilesType = Types.Image; ControlExtensions.SelectFilesTab(buttonFilesImage); SelectedFiles = FilesOpenDatabase; tab.SelectedTab = tabDatabase; ShowFiles(SelectedFiles); }
+            else if (comboBoxHomeFileType.SelectedIndex == 4) { SelectedFilesType = Types.Book; ControlExtensions.SelectFilesTab(buttonFilesBooks); SelectedFiles = FilesOpenDatabase; tab.SelectedTab = tabDatabase; ShowFiles(SelectedFiles); }
+            else if (comboBoxHomeFileType.SelectedIndex == 5) { SelectedFilesType = Types.Subtitle; ControlExtensions.SelectFilesTab(buttonFilesSubtitles); SelectedFiles = FilesOpenDatabase; tab.SelectedTab = tabDatabase; ShowFiles(SelectedFiles); }
+            else if (comboBoxHomeFileType.SelectedIndex == 6) { SelectedFilesType = Types.Torrent; ControlExtensions.SelectFilesTab(buttonFilesTorrents); SelectedFiles = FilesOpenDatabase; tab.SelectedTab = tabDatabase; ShowFiles(SelectedFiles); }
+            else if (comboBoxHomeFileType.SelectedIndex == 7) { SelectedFilesType = Types.Software; ControlExtensions.SelectFilesTab(buttonFilesSoftware); SelectedFiles = FilesOpenDatabase; tab.SelectedTab = tabDatabase; ShowFiles(SelectedFiles); }
+            else if (comboBoxHomeFileType.SelectedIndex == 8) { SelectedFilesType = Types.Other; ControlExtensions.SelectFilesTab(buttonFilesOther); SelectedFiles = FilesOpenDatabase; tab.SelectedTab = tabDatabase; ShowFiles(SelectedFiles); }
         }
 
         /*************************************************************************/
@@ -438,47 +438,47 @@ namespace FileMasta
         // Select/Click File Type title
         private void buttonFilesAll_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            SelectedFilesType = Types.All; ControlExtensions.SelectFilesTab(buttonFilesAll); SelectedFiles = FilesOpenDatabase; ShowFiles(SelectedFiles);
+            SelectedFilesType = Types.All; ControlExtensions.SelectFilesTab(buttonFilesAll); ShowFiles(SelectedFiles);
         }
 
         private void buttonFilesVideo_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            SelectedFilesType = Types.Video; ControlExtensions.SelectFilesTab(buttonFilesVideo); SelectedFiles = FilesOpenDatabase; ShowFiles(SelectedFiles);
+            SelectedFilesType = Types.Video; ControlExtensions.SelectFilesTab(buttonFilesVideo); ShowFiles(SelectedFiles);
         }
 
         private void buttonFilesAudio_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            SelectedFilesType = Types.Audio; ControlExtensions.SelectFilesTab(buttonFilesAudio); SelectedFiles = FilesOpenDatabase; ShowFiles(SelectedFiles);
+            SelectedFilesType = Types.Audio; ControlExtensions.SelectFilesTab(buttonFilesAudio); ShowFiles(SelectedFiles);
         }
 
         private void buttonFilesImage_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            SelectedFilesType = Types.Image; ControlExtensions.SelectFilesTab(buttonFilesImage); SelectedFiles = FilesOpenDatabase; ShowFiles(SelectedFiles);
+            SelectedFilesType = Types.Image; ControlExtensions.SelectFilesTab(buttonFilesImage); ShowFiles(SelectedFiles);
         }
 
         private void buttonFilesBooks_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            SelectedFilesType = Types.Book; ControlExtensions.SelectFilesTab(buttonFilesBooks); SelectedFiles = FilesOpenDatabase; ShowFiles(SelectedFiles);
+            SelectedFilesType = Types.Book; ControlExtensions.SelectFilesTab(buttonFilesBooks); ShowFiles(SelectedFiles);
         }
 
         private void buttonFilesSubtitles_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            SelectedFilesType = Types.Subtitle; ControlExtensions.SelectFilesTab(buttonFilesSubtitles); SelectedFiles = FilesOpenDatabase; ShowFiles(SelectedFiles);
+            SelectedFilesType = Types.Subtitle; ControlExtensions.SelectFilesTab(buttonFilesSubtitles); ShowFiles(SelectedFiles);
         }
 
         private void buttonFilesTorrents_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            SelectedFilesType = Types.Torrent; ControlExtensions.SelectFilesTab(buttonFilesTorrents); SelectedFiles = FilesOpenDatabase; ShowFiles(SelectedFiles);
+            SelectedFilesType = Types.Torrent; ControlExtensions.SelectFilesTab(buttonFilesTorrents); ShowFiles(SelectedFiles);
         }
 
         private void buttonFilesSoftware_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            SelectedFilesType = Types.Software; ControlExtensions.SelectFilesTab(buttonFilesSoftware); SelectedFiles = FilesOpenDatabase; ShowFiles(SelectedFiles);
+            SelectedFilesType = Types.Software; ControlExtensions.SelectFilesTab(buttonFilesSoftware); ShowFiles(SelectedFiles);
         }
 
         private void buttonFilesOther_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            SelectedFilesType = Types.Other; ControlExtensions.SelectFilesTab(buttonFilesOther); SelectedFiles = FilesOpenDatabase; ShowFiles(SelectedFiles);
+            SelectedFilesType = Types.Other; ControlExtensions.SelectFilesTab(buttonFilesOther); ShowFiles(SelectedFiles);
         }
 
         private void buttonFilesCustom_ClickButtonArea(object Sender, MouseEventArgs e)
@@ -486,17 +486,7 @@ namespace FileMasta
             string getUserResponse = Microsoft.VisualBasic.Interaction.InputBox("File Type/Extensions (enter only one extension):", "Custom*", "e.g. MP4");
             string userResponse = getUserResponse.Replace(".", "");
             if (userResponse != "")
-                SelectedFilesType = new List<string>() { userResponse.ToUpper() }; ControlExtensions.SelectFilesTab(buttonFilesCustom); SelectedFiles = FilesOpenDatabase; ShowFiles(SelectedFiles);
-        }
-
-        private void buttonFilesLocal_ClickButtonArea(object Sender, MouseEventArgs e)
-        {
-            SelectedFilesType = Types.All; ControlExtensions.SelectFilesTab(buttonFilesLocal); SelectedFiles = LocalExtensions.LocalFiles(); ShowFiles(SelectedFiles);
-        }
-
-        private void buttonFilesBookmarks_ClickButtonArea(object Sender, MouseEventArgs e)
-        {
-            SelectedFilesType = Types.All; ControlExtensions.SelectFilesTab(buttonFilesBookmarks); SelectedFiles = UserBookmarks.Bookmarks(); ShowFiles(SelectedFiles);
+                SelectedFilesType = new List<string>() { userResponse.ToUpper() }; ControlExtensions.SelectFilesTab(buttonFilesCustom); ShowFiles(SelectedFiles);
         }
 
         // Files dataGridView row click, will get the last (hidden) column (URL) in the selected row and use to get WebFile properties
@@ -524,10 +514,10 @@ namespace FileMasta
             EnableSearchControls(false);
             var stopWatch = new Stopwatch();
             Program.log.InfoFormat("Starting query. Preferences - Sort: {0}, Type: {1}, Host: {2}", SelectedFilesSort.ToString(), SelectedFilesType.ToList(), SelectedFilesHost);
-            imageSearchFiles.Image = Properties.Resources.loader;
+            imageDbSearch.Image = Properties.Resources.loader;
             BackGroundWorker.RunWorkAsync<List<WebFile>>(() => Query.Search(dataFiles, textBoxSearchFiles.Text, SelectedFilesSort), (data) =>
             {
-                if (tabSearch.InvokeRequired)
+                if (tabDatabase.InvokeRequired)
                 {
                     var b = new loadFilesCallBack(ShowFiles);
                     Invoke(b, new object[] { dataFiles });
@@ -535,14 +525,14 @@ namespace FileMasta
                 else
                 {
                     dataGridFiles.Rows.Clear();
-                    comboBoxFilterFiles.Items.Clear(); comboBoxFilterFiles.Items.Add("Any");
+                    comboBoxDbFilter.Items.Clear(); comboBoxDbFilter.Items.Add("Any");
                     stopWatch.Start();
                     foreach (var jsonData in data)
                         if (SelectedFilesType.Contains(jsonData.Type) && jsonData.Host.Contains(SelectedFilesHost))
                         {
                             dataGridFiles.Rows.Add(jsonData.Type, jsonData.Name, StringExtensions.BytesToPrefix(jsonData.Size), StringExtensions.TimeSpanAge(jsonData.DateUploaded), jsonData.Host, jsonData.URL);
-                            if (!(comboBoxFilterFiles.Items.Contains(jsonData.Host)))
-                                comboBoxFilterFiles.Items.Add(jsonData.Host);
+                            if (!(comboBoxDbFilter.Items.Contains(jsonData.Host)))
+                                comboBoxDbFilter.Items.Add(jsonData.Host);
                         }
 
                     stopWatch.Stop();
@@ -551,17 +541,17 @@ namespace FileMasta
 
                     tab.SelectedTab = CurrentTab;
 
-                    comboBoxFilterFiles.DropDownWidth = ControlExtensions.GetMaxDropDownWidth(comboBoxFilterFiles);
+                    comboBoxDbFilter.DropDownWidth = ControlExtensions.GetMaxDropDownWidth(comboBoxDbFilter);
 
-                    imageSearchFiles.Image = Properties.Resources.magnify_orange;
+                    imageDbSearch.Image = Properties.Resources.magnify_orange;
 
                     if (dataGridFiles.Rows.Count == 0) labelNoResultsFound.Visible = true;
                     else labelNoResultsFound.Visible = false;
 
                     Program.log.Info("Successfully returned search results - " + labelResultsInfo.Text);
-                }
 
-                EnableSearchControls(true);
+                    EnableSearchControls(true);
+                }
             });
         }
 
@@ -574,17 +564,17 @@ namespace FileMasta
             textBoxSearchHome.Enabled = isEnabled;
             buttonFileType.Enabled = isEnabled;
             buttonSearchHome.Enabled = isEnabled;
-            comboBoxFileType.Enabled = isEnabled;
+            comboBoxHomeFileType.Enabled = isEnabled;
 
             foreach (var ctrl in flowLayoutTopSearches.Controls)
                 if (ctrl is CButton)
                     ((CButton)ctrl).Enabled = isEnabled;
 
             textBoxSearchFiles.Enabled = isEnabled;
-            buttonSortFiles.Enabled = isEnabled;
-            comboBoxSortFiles.Enabled = isEnabled;
-            buttonFilterFiles.Enabled = isEnabled;
-            comboBoxFilterFiles.Enabled = isEnabled;
+            buttonDbSort.Enabled = isEnabled;
+            comboBoxDbSort.Enabled = isEnabled;
+            buttonDbFilter.Enabled = isEnabled;
+            comboBoxDbFilter.Enabled = isEnabled;
 
             buttonFilesAll.Enabled = isEnabled;
             buttonFilesVideo.Enabled = isEnabled;
@@ -595,8 +585,6 @@ namespace FileMasta
             buttonFilesSubtitles.Enabled = isEnabled;
             buttonFilesOther.Enabled = isEnabled;
             buttonFilesCustom.Enabled = isEnabled;
-            buttonFilesLocal.Enabled = isEnabled;
-            buttonFilesBookmarks.Enabled = isEnabled;
         }
 
         /// <summary>
@@ -640,45 +628,65 @@ namespace FileMasta
             Program.log.Info("Successfully loaded file details dialog");
         }
 
+        // Files
+        private void buttonDbFiles_ClickButtonArea(object Sender, MouseEventArgs e)
+        {
+            comboBoxDbFiles.DroppedDown = true;
+        }
+
+        private void comboBoxDbFiles_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBoxDbFiles.SelectedIndex == 0)
+                SelectedFiles = FilesOpenDatabase;
+            else if (comboBoxDbFiles.SelectedIndex == 1)
+                SelectedFiles = UserBookmarks.BookmarkedFiles();
+            else if (comboBoxDbFiles.SelectedIndex == 2)
+                SelectedFiles = LocalExtensions.LocalFiles();
+
+            var startText = buttonDbFiles.Text.Split(':');
+            buttonDbFiles.Text = startText[0] + ": " + comboBoxDbSort.GetItemText(comboBoxDbFiles.SelectedItem);
+            panelDbFiles.Width = ControlExtensions.GetMaxPanelWidth(buttonDbFiles);
+        }
+
         // Sort Files
         private void buttonFilesSort_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            comboBoxSortFiles.DroppedDown = true;
+            comboBoxDbSort.DroppedDown = true;
         }
 
         private void comboBoxFilesSort_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBoxSortFiles.SelectedIndex == 0)
+            if (comboBoxDbSort.SelectedIndex == 0)
                 SelectedFilesSort = Query.SortBy.Name;
-            else if (comboBoxSortFiles.SelectedIndex == 1)
+            else if (comboBoxDbSort.SelectedIndex == 1)
                 SelectedFilesSort = Query.SortBy.Size;
-            else if (comboBoxSortFiles.SelectedIndex == 2)
+            else if (comboBoxDbSort.SelectedIndex == 2)
                 SelectedFilesSort = Query.SortBy.Date;
 
-            var startText = buttonSortFiles.Text.Split(':');
-            buttonSortFiles.Text = startText[0] + ": " + comboBoxSortFiles.GetItemText(comboBoxSortFiles.SelectedItem);
-            flowLayoutSortFiles.Width = ControlExtensions.GetMaxPanelWidth(buttonSortFiles);
+            var startText = buttonDbSort.Text.Split(':');
+            buttonDbSort.Text = startText[0] + ": " + comboBoxDbSort.GetItemText(comboBoxDbSort.SelectedItem);
+            panelDbSort.Width = ControlExtensions.GetMaxPanelWidth(buttonDbSort);
         }
 
         // Filter Files by Host
         private void buttonFilesHost_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            comboBoxFilterFiles.DroppedDown = true;
+            comboBoxDbFilter.DroppedDown = true;
         }
 
         private void comboBoxFilesHost_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var startText = buttonFilterFiles.Text.Split(':');
-            buttonFilterFiles.Text = startText[0] + ": " + comboBoxFilterFiles.GetItemText(comboBoxFilterFiles.SelectedItem);
-            flowLayoutFilterFiles.Width = ControlExtensions.GetMaxPanelWidth(buttonFilterFiles);
+            var startText = buttonDbFilter.Text.Split(':');
+            buttonDbFilter.Text = startText[0] + ": " + comboBoxDbFilter.GetItemText(comboBoxDbFilter.SelectedItem);
+            panelDbFilter.Width = ControlExtensions.GetMaxPanelWidth(buttonDbFilter);
             Refresh();
 
-            comboBoxFilterFiles.DropDownWidth = ControlExtensions.GetMaxDropDownWidth(comboBoxFilterFiles);
+            comboBoxDbFilter.DropDownWidth = ControlExtensions.GetMaxDropDownWidth(comboBoxDbFilter);
 
-            if (comboBoxFilterFiles.SelectedIndex == 0)
+            if (comboBoxDbFilter.SelectedIndex == 0)
                 SelectedFilesHost = "";
             else
-                SelectedFilesHost = comboBoxFilterFiles.SelectedItem.ToString();
+                SelectedFilesHost = comboBoxDbFilter.SelectedItem.ToString();
         }
 
         private void bgSearchFiles_ClickButtonArea(object Sender, MouseEventArgs e)
@@ -699,8 +707,8 @@ namespace FileMasta
 
         public void SearchFilesFromTextBox()
         {
-            imageSearchFiles.Image = Properties.Resources.loader;
-            tab.SelectedTab = tabSearch;
+            imageDbSearch.Image = Properties.Resources.loader;
+            tab.SelectedTab = tabDatabase;
 
             if (Uri.TryCreate(textBoxSearchFiles.Text, UriKind.Absolute, out Uri uriResult) && (uriResult.Scheme == Uri.UriSchemeHttp || uriResult.Scheme == Uri.UriSchemeHttps) && uriResult != null)
             {
@@ -709,7 +717,7 @@ namespace FileMasta
                     try
                     {
                         ShowFileDetails(Database.WebFile(textBoxSearchFiles.Text), dataGridFiles);
-                        imageSearchFiles.Image = Properties.Resources.magnify_orange;
+                        imageDbSearch.Image = Properties.Resources.magnify_orange;
                         textBoxSearchFiles.Text = null;
                     }
                     catch (Exception ex) { MessageBox.Show("There was an issue requesting this file. Make sure it exists on the server you're trying to access.\n\n" + ex.Message); }
@@ -1071,7 +1079,7 @@ namespace FileMasta
                 // Focus on Search Box
                 case Keys.Control | Keys.F:
                     if (CurrentTab == tabHome) textBoxSearchHome.Focus();
-                    else tab.SelectedTab = tabSearch; textBoxSearchFiles.Focus();
+                    else tab.SelectedTab = tabDatabase; textBoxSearchFiles.Focus();
                     return true;
                 // Show Shortcuts Window
                 case Keys.Control | Keys.OemQuestion:

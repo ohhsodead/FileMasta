@@ -309,6 +309,7 @@
     <None Include="Resources\chevron-up-orange.png" />
     <None Include="Resources\book.png" />
     <None Include="Resources\file-send-orange.png" />
+    <None Include="Resources\database-search.png" />
     <Content Include="Resources\filemasta-logo.png" />
     <None Include="Resources\keyboard.png" />
   </ItemGroup>

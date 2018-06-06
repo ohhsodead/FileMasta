@@ -93,9 +93,9 @@ namespace FileMasta.Extensions
             MainForm.Form.titleHome.ColorFillSolid = Colors.NonSelectedTitleRGB;
             MainForm.Form.titleHome.BorderColor = Colors.NonSelectedTitleRGB;
             MainForm.Form.titleHome.BackColor = Colors.NonSelectedTitleRGB;
-            MainForm.Form.titleSearch.ColorFillSolid = Colors.NonSelectedTitleRGB;
-            MainForm.Form.titleSearch.BorderColor = Colors.NonSelectedTitleRGB;
-            MainForm.Form.titleSearch.BackColor = Colors.NonSelectedTitleRGB;
+            MainForm.Form.titleDatabase.ColorFillSolid = Colors.NonSelectedTitleRGB;
+            MainForm.Form.titleDatabase.BorderColor = Colors.NonSelectedTitleRGB;
+            MainForm.Form.titleDatabase.BackColor = Colors.NonSelectedTitleRGB;
             MainForm.Form.titleDiscover.ColorFillSolid = Colors.NonSelectedTitleRGB;
             MainForm.Form.titleDiscover.BorderColor = Colors.NonSelectedTitleRGB;
             MainForm.Form.titleDiscover.BackColor = Colors.NonSelectedTitleRGB;
@@ -140,10 +140,6 @@ namespace FileMasta.Extensions
             MainForm.Form.buttonFilesCustom.BorderColor = Color.Transparent;
             MainForm.Form.buttonFilesOther.ColorFillSolid = Color.Transparent;
             MainForm.Form.buttonFilesOther.BorderColor = Color.Transparent;
-            MainForm.Form.buttonFilesLocal.ColorFillSolid = Color.Transparent;
-            MainForm.Form.buttonFilesLocal.BorderColor = Color.Transparent;
-            MainForm.Form.buttonFilesBookmarks.ColorFillSolid = Color.Transparent;
-            MainForm.Form.buttonFilesBookmarks.BorderColor = Color.Transparent;
 
             cbtn.ColorFillSolid = Colors.ColorOrange;
             cbtn.BorderColor = Colors.ColorOrange;
