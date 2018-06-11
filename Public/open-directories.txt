@@ -55,6 +55,7 @@ http://archive.debian.org/
 http://artificial.duckdns.org/free/
 http://atmosferix.net/audio/
 http://avadl.uploadt.com/DL4/
+http://avadl.uploadt.com/DL7/
 http://avadl.uploadt.com/Movie/
 http://avadl.uploadt.com/New/
 http://axstvdoble.mine.nu/peliculas%20agui/
@@ -343,6 +344,7 @@ http://intersci.ss.uci.edu/~drwhite/pdf/
 http://ipoderia.com/tracks/
 http://isida.pp.ru/music/
 http://itaqulaah.com/wp-content/plugins/fwdmsp/content/
+http://iunradio.com/media/gallery/
 http://izt.ciens.ucv.ve/ecologia/Archivos/
 http://jaguda.com/audio/
 http://jakesallstarkaraoke.com/media/
@@ -388,6 +390,7 @@ http://library.uniteddiversity.coop/
 http://licensing.chaostheorymusic.net/audio/Ambient/
 http://licensing.chaostheorymusic.net/audio/Rock/
 http://likecool.com/Gear/
+http://linzeestyle.com/sharing/
 http://lovehentaimanga.com/hentai-manga/
 http://lpb.etllao.com/software/
 http://macrinabakery.com/blog/wp-content/uploads/
@@ -601,6 +604,7 @@ http://sv7.uploadet.ir/Movie/
 http://sv7.uploadt.com/Movie/
 http://synapse.persiangig.com/
 http://tannerv.ddns.net:12345/SpotiFree/files/music/
+http://tartarus.feralhosting.com/firepig/
 http://teknosophy.com/episodes/
 http://tely.kabel1.cz/
 http://temp.xogogo.com/
@@ -647,6 +651,7 @@ http://vertigofx.com/public/images/
 http://vertigofx.com/public/ss/
 http://vertigofx.com/public/video/
 http://vijayacollege.ac.in/Content/
+http://vintagesleaze.com/vsimages-mags-adult-glossy-70s/
 http://vip.aersia.net/mu/
 http://virtual.tehinterweb.net/
 http://virtualpanic.com/anonymousftplistings/
@@ -702,6 +707,7 @@ http://www.foxtm.com/
 http://www.gagsnetwork.com/data/
 http://www.geocities.ws/b/i/biro-d/
 http://www.gtfo.org/books/
+http://www.happysedegg.store/
 http://www.hellmark.org/downloads/
 http://www.help4auto.com/download/opendoor/
 http://www.hugenaturalslovers.com/wp-content/uploads/
@@ -733,6 +739,7 @@ http://www.pauladaunt.com/books/
 http://www.pinkasimov.com/
 http://www.rmsproductions.co.uk/
 http://www.sexnerd.com.br/adulto/wp-content/uploads/
+http://www.siamcostumes.com/cutters_guides/
 http://www.teamsullivan.net/
 http://www.users.on.net/~alexical/
 http://www.users.on.net/~jarkoh/
@@ -752,9 +759,12 @@ https://apkapps.com/upload/apps/
 https://archive.lib.msu.edu/DMC/
 https://b.goeswhere.com/
 https://bassline.bg/podcasts/
+https://brunner.ninja/roms/
 https://bubt.edu.bd/assets/
 https://ch0c.com/
 https://computerarchive.org/files/
+https://curiousmindmagazine.com/wp-content/uploads/
+https://cyber.rms.moe/books/
 https://cyberside.net.ee/docs/
 https://czyborra.com/pedofiles/
 https://diagramas.000webhostapp.com/subido%20por%20:%20ramon%20taveras,%20solo%20usuarios%20premium,%20la%20persona%20que%20pase%20la%20clave%20sera%20bloqueado/
@@ -764,6 +774,7 @@ https://download.lehongnam.com/
 https://download.nextcloud.com/server/
 https://download.videolan.org/
 https://ecmjournal.org/papers/
+https://elmayorportaldegerencia.com/Musica/
 https://entropy.soldierx.com/~kayin/archive/
 https://ftp.dim13.org/pub/
 https://ftp.nsysu.edu.tw/Freeware/
@@ -781,6 +792,7 @@ https://keisari.net/videos/
 https://kod1help.com/apps/
 https://lexs.blasux.ru/music/
 https://linuxbbq.org/PDF/
+https://loveline.phil21.net/archive/
 https://lutris.net/releases/
 https://media.codeweavers.com/pub/
 https://mirror.umd.edu/ubuntu-iso/
@@ -828,6 +840,7 @@ https://nightlies.videolan.org/build/
 https://nightly.odoo.com/7.0/
 https://ocf.berkeley.edu/~jakemix/
 https://olden.org.ua/~olden/
+https://oss.jfrog.org/artifactory/libs-snapshot/
 https://playfungames.fr/contents/
 https://privatepages.co.uk/
 https://protoman.com/Music/Music/
@@ -851,10 +864,13 @@ https://virtualmedia.online.net/
 https://vokalnow.com/static/
 https://wikileaks.org/sony/docs/07/
 https://ww2.chemistry.gatech.edu/software/
+https://www.ausleisure.com.au/images/sized/images/
 https://www.fredericopeter.com.br/musicblog/files-singles/
 https://www.hotstreamers.com/wp-content/uploads/
 https://www.lehigh.edu/imi/Opportunities/
 https://www.perturb.org/content/
 https://www.retromags.com/tor/
 https://www.vgmusic.com/music/console/
+https://www.wankitnow.com/wp-content/uploads/
+https://www.whoozl.com/tracks/
 https://zeus.feralhosting.com/matt07211/Cartoons/
