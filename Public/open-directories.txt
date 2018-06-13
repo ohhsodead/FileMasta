@@ -54,8 +54,12 @@ http://arcarc.xmission.com/PDF_Arcade_Manuals_and_Schematics/
 http://archive.debian.org/
 http://artificial.duckdns.org/free/
 http://atmosferix.net/audio/
+http://avadl.uploadt.com/DL2/
 http://avadl.uploadt.com/DL4/
+http://avadl.uploadt.com/DL6/
 http://avadl.uploadt.com/DL7/
+http://avadl.uploadt.com/DL8/
+http://avadl.uploadt.com/DL9/
 http://avadl.uploadt.com/Movie/
 http://avadl.uploadt.com/New/
 http://axstvdoble.mine.nu/peliculas%20agui/
@@ -391,6 +395,7 @@ http://licensing.chaostheorymusic.net/audio/Ambient/
 http://licensing.chaostheorymusic.net/audio/Rock/
 http://likecool.com/Gear/
 http://linzeestyle.com/sharing/
+http://lolicore.org/
 http://lovehentaimanga.com/hentai-manga/
 http://lpb.etllao.com/software/
 http://macrinabakery.com/blog/wp-content/uploads/
@@ -416,6 +421,7 @@ http://mfrserver.net/up/music/
 http://midlight.co.uk/sasha/
 http://milehighcomics.com/comicindex/nice/
 http://miroslawdabrowski.com/downloads/
+http://mirror.koodaus.net/puek.pp.fi/
 http://mirror.thelifeofkenneth.com/
 http://mirrors.ibiblio.org/
 http://mnhsk.homeftp.net/
@@ -437,6 +443,7 @@ http://naughtybits.us/wp-content/uploads/
 http://ncd.joshw.info/
 http://ncourse.buu.ac.th/download/
 http://nekit.tk/files/
+http://neptunjs.xyz/roms/
 http://nesninja.com/public/
 http://nesrom.neoplane.net/
 http://newsking.com/movies/
@@ -552,6 +559,7 @@ http://server1.cegosbrasil.net/
 http://server4.xytune.ir/
 http://server417.seedhost.eu/
 http://sexpornerotica.com/wp-content/uploads/2016/04/
+http://shadsoft.no-ip.org/Emulation/
 http://shan.tek13.com/
 http://share.soupwhale.com/
 http://share724.com/user1/
@@ -679,6 +687,7 @@ http://wou.edu/~areinha/
 http://wsr.joshw.info/
 http://ww1.pragana.net/Android/
 http://wwmmd.net/tunes/
+http://www.4newmum.com/pdf/
 http://www.allserv.fr/
 http://www.amerlit.com/poems/
 http://www.armchairpatriot.com/Cookbooks/
@@ -776,6 +785,7 @@ https://download.videolan.org/
 https://ecmjournal.org/papers/
 https://elmayorportaldegerencia.com/Musica/
 https://entropy.soldierx.com/~kayin/archive/
+https://frenchy.ga/
 https://ftp.dim13.org/pub/
 https://ftp.nsysu.edu.tw/Freeware/
 https://ftp.sunet.se/
