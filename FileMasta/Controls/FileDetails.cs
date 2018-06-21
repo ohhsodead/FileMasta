@@ -48,9 +48,9 @@ namespace FileMasta.Controls
 
             // Shows appropriate Bookmarks button text
             if (!UserBookmarks.IsBookmarked(CurrentFile.URL))
-                ControlExtensions.SetControlText(buttonBookmarkFile, "Add to Bookmarks");            
+                ControlExtensions.SetControlText(buttonBookmark, "Add to Bookmarks");            
             else
-                ControlExtensions.SetControlText(buttonBookmarkFile, "Remove from Bookmarks");
+                ControlExtensions.SetControlText(buttonBookmark, "Remove from Bookmarks");
 
             // Shows supported pdf readers installed on users machine
             if (BookFileTypes.Contains(CurrentFile.Type))
@@ -90,16 +90,15 @@ namespace FileMasta.Controls
 
             // Shows Request File Size button if size property returns 0
             if (CurrentFile.Size == 0)
-                buttonRequestFileSize.Visible = true;
+                buttonRequestSize.Visible = true;
             else
-                buttonRequestFileSize.Visible = false;
+                buttonRequestSize.Visible = false;
 
             // Hides features that aren't needed for local files (Bookmark, Share & Report)
             if (IsLocalFile)
             {
-                buttonBookmarkFile.Visible = false;
+                buttonBookmark.Visible = false;
                 panelShare.Visible = false;
-                panelReport.Visible = false;
             }
 
             // Add subtitle file to be played when opening external VLC
@@ -135,8 +134,48 @@ namespace FileMasta.Controls
         private void ImageClose_Click(object sender, EventArgs e)
         {
             // Close file details
-            MainForm.Form.tab.SelectedTab = MainForm.Form.CurrentTab;
             MainForm.FrmFileDetails.Dispose();
+        }
+
+        // Bookmark Button
+        private void buttonBookmark_Click(object sender, EventArgs e)
+        {
+            // Add/Remove file from users Bookmarks
+            if (UserBookmarks.IsBookmarked(CurrentFile.URL))
+            {
+                UserBookmarks.RemoveFile(CurrentFile.URL);
+                ControlExtensions.SetControlText(buttonBookmark, "Add to Bookmarks");
+            }
+            else
+            {
+                UserBookmarks.AddFile(CurrentFile.URL);
+                ControlExtensions.SetControlText(buttonBookmark, "Remove from Bookmarks");
+            }
+        }
+        
+        private void BtnViewDirectory_ClickButtonArea(object Sender, MouseEventArgs e)
+        {
+            // Open parent directory of file in default web browser
+            Process browser = new Process();
+            browser.StartInfo.UseShellExecute = true;
+            browser.StartInfo.FileName = StringExtensions.ParentDirectory(new Uri(CurrentFile.URL)).Remove(StringExtensions.ParentDirectory(new Uri(CurrentFile.URL)).Length - 1); ;
+            browser.Start();
+        }
+
+        private void BtnRequestFileSize_ClickButtonArea(object Sender, MouseEventArgs e)
+        {
+            // Request file size from URL
+            buttonRequestSize.Visible = false;
+            BackGroundWorker.RunWorkAsync<string>(() => StringExtensions.BytesToPrefix(WebFileExtensions.FileSize(CurrentFile.URL)), (data) => { labelValueSize.Text = data; });
+        }
+        
+        private void InfoDirectory_Click(object sender, EventArgs e)
+        {
+            // Open file parent directory in default web browser
+            Process browser = new Process();
+            browser.StartInfo.UseShellExecute = true;
+            browser.StartInfo.FileName = StringExtensions.ParentDirectory(new Uri(CurrentFile.URL)).Remove(StringExtensions.ParentDirectory(new Uri(CurrentFile.URL)).Length - 1); ;
+            browser.Start();
         }
 
         private void BtnDirectLink_ClickButtonArea(object Sender, MouseEventArgs e)
@@ -152,66 +191,25 @@ namespace FileMasta.Controls
                 MessageBox.Show("Unable to open file\n\n" + ex.Message);
             }
         }
-        
-        // Bookmark Button
-        private void BtnBookmarkFile_ClickButtonArea(object Sender, MouseEventArgs e)
-        {
-            // Add/Remove file from users Bookmarks
-            if (UserBookmarks.IsBookmarked(CurrentFile.URL))
-            {
-                UserBookmarks.RemoveFile(CurrentFile.URL);
-                ControlExtensions.SetControlText(buttonBookmarkFile, "Add to Bookmarks");
-            }
-            else
-            {
-                UserBookmarks.AddFile(CurrentFile.URL);
-                ControlExtensions.SetControlText(buttonBookmarkFile, "Remove from Bookmarks");
-            }
-        }
 
-        // Report File button
-        private void BtnReportFile_ClickButtonArea(object Sender, MouseEventArgs e)
-        {
-            comboReportFile.DroppedDown = true;
-        }
-
-        private void ComboboxReportFile_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (comboReportFile.SelectedIndex == 0)
-                OpenLink.BrokenFileIssue(CurrentFile);
-            else if (comboReportFile.SelectedIndex == 1)
-                MessageBox.Show(this, "Please write an email to the application administrator with your appropriate details at bettercodes1@gmail.com\n\n Thank you.");
-            else if (comboReportFile.SelectedIndex == 2)
-                OpenLink.PoorQualityFileIssue(CurrentFile);
-        }
-
+        // Share File
         private void BtnShareFile_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            comboShareFile.DroppedDown = true;
+            comboBoxShare.DroppedDown = true;
         }
 
-        // Share File button
         private void ComboBoxShareFile_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboShareFile.SelectedIndex == 0)
+            if (comboBoxShare.SelectedIndex == 0)
                 Process.Start("https://www.facebook.com/sharer/sharer.php?u=" + CurrentFile.URL);
-            else if (comboShareFile.SelectedIndex == 1)
+            else if (comboBoxShare.SelectedIndex == 1)
                 Process.Start("https://twitter.com/home?status=Check%20out%20this%20file%20I%20found%20on%20%40FileMasta%20" + CurrentFile.URL);
-            else if (comboShareFile.SelectedIndex == 2)
+            else if (comboBoxShare.SelectedIndex == 2)
                 Process.Start("https://plus.google.com/share?url=" + CurrentFile.URL);
-            else if (comboShareFile.SelectedIndex == 3)
+            else if (comboBoxShare.SelectedIndex == 3)
                 Process.Start("http://reddit.com/submit?url=" + CurrentFile.URL + "&title=" + CurrentFile.Name + "%20%5BFileMasta%5D");
-            else if (comboShareFile.SelectedIndex == 4)
+            else if (comboBoxShare.SelectedIndex == 4)
                 Process.Start("mailto:?&body=Check%20out%20this%20awesome%20file%20I%20found%20on%20FileMasta%20-%20" + CurrentFile.URL);
-        }
-
-        private void InfoDirectory_Click(object sender, EventArgs e)
-        {
-            // Open file parent directory in default web browser
-            Process browser = new Process();
-            browser.StartInfo.UseShellExecute = true;
-            browser.StartInfo.FileName = StringExtensions.ParentDirectory(new Uri(CurrentFile.URL)).Remove(StringExtensions.ParentDirectory(new Uri(CurrentFile.URL)).Length - 1);;
-            browser.Start();
         }
 
         private void InfoReferrer_Click(object sender, EventArgs e)
@@ -224,22 +222,6 @@ namespace FileMasta.Controls
                 browser.StartInfo.FileName = new Uri(CurrentFile.URL).GetLeftPart(UriPartial.Authority).ToString();
                 browser.Start();
             }            
-        }
-
-        private void BtnRequestFileSize_ClickButtonArea(object Sender, MouseEventArgs e)
-        {
-            // Request file size from URL
-            buttonRequestFileSize.Visible = false;
-            BackGroundWorker.RunWorkAsync<string>(() => StringExtensions.BytesToPrefix(WebFileExtensions.FileSize(CurrentFile.URL)), (data) => { labelValueSize.Text = data; });
-        }
-
-        private void BtnViewDirectory_ClickButtonArea(object Sender, MouseEventArgs e)
-        {
-            // Open parent directory of file in default web browser
-            Process browser = new Process();
-            browser.StartInfo.UseShellExecute = true;
-            browser.StartInfo.FileName = StringExtensions.ParentDirectory(new Uri(CurrentFile.URL)).Remove(StringExtensions.ParentDirectory(new Uri(CurrentFile.URL)).Length - 1); ;
-            browser.Start();            
         }
 
         // Opening File...
@@ -352,7 +334,7 @@ namespace FileMasta.Controls
         {
             // Set file URL to clipboard
             Clipboard.SetText(CurrentFile.URL);
-            infoFileURL.SideImage = Properties.Resources.clipboard_check_orange;
+            infoFileURL.SideImage = Properties.Resources.clipboard_check;
             infoFileURL.SideImageSize = new Size(24, 24);
         }
 
@@ -438,7 +420,7 @@ namespace FileMasta.Controls
                     return true;
                 // Click Bookmarks button
                 case Keys.Control | Keys.B:
-                    buttonBookmarkFile.PerformClick();
+                    buttonBookmark.PerformClick();
                     return true;
                 // Clicks View Directory button
                 case Keys.Control | Keys.V:
@@ -448,17 +430,13 @@ namespace FileMasta.Controls
                 case Keys.Control | Keys.D:
                     buttonDirectLink.PerformClick();
                     return true;
-                // Click Report File button
-                case Keys.Control | Keys.E:
-                    buttonReport.PerformClick();
-                    return true;
                 // Click Share File button
                 case Keys.Control | Keys.S:
                     buttonShare.PerformClick();
                     return true;
                 // Click Request File Size button
                 case Keys.Control | Keys.R:
-                    buttonRequestFileSize.PerformClick();
+                    buttonRequestSize.PerformClick();
                     return true;
                 // Click Open File button
                 case Keys.Control | Keys.O:
@@ -466,7 +444,6 @@ namespace FileMasta.Controls
                     return true;
                 // Close this instance
                 case Keys.Escape:
-                    MainForm.Form.tab.SelectedTab = MainForm.Form.CurrentTab;
                     MainForm.FrmFileDetails.Dispose();
                     return true;
             }

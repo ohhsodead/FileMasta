@@ -92,16 +92,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controls\buttonCustom.cs">
-      <SubType>Component</SubType>
+    <Compile Include="Windows\AboutWindow.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Controls\buttonTabTitle.cs">
-      <SubType>Component</SubType>
+    <Compile Include="Windows\AboutWindow.Designer.cs">
+      <DependentUpon>AboutWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\buttonFileType.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls\Colors.cs" />
     <Compile Include="Controls\FileDetails.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -113,10 +109,28 @@
     <Compile Include="GitHub\Resources.cs" />
     <Compile Include="Models\Bookmark.cs" />
     <Compile Include="Models\DatabaseInfo.cs" />
+    <Compile Include="Windows\OptionsWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\OptionsWindow.Designer.cs">
+      <DependentUpon>OptionsWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\SubmitWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\SubmitWindow.Designer.cs">
+      <DependentUpon>SubmitWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ServersWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\ServersWindow.Designer.cs">
+      <DependentUpon>ServersWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="Windows\DataWindow.cs">
       <SubType>Form</SubType>
@@ -164,11 +178,23 @@
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Utilities\TextLineRemover.cs" />
     <Compile Include="Utilities\Update.cs" />
+    <EmbeddedResource Include="Windows\AboutWindow.resx">
+      <DependentUpon>AboutWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\FileDetails.resx">
       <DependentUpon>FileDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\SplashScreen.resx">
       <DependentUpon>SplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\OptionsWindow.resx">
+      <DependentUpon>OptionsWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\SubmitWindow.resx">
+      <DependentUpon>SubmitWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\ServersWindow.resx">
+      <DependentUpon>ServersWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\DataWindow.resx">
       <DependentUpon>DataWindow.cs</DependentUpon>
@@ -205,15 +231,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\twitter.png" />
-    <None Include="Resources\facebook.png" />
-    <None Include="Resources\send.png" />
-    <None Include="Resources\web.png" />
-    <None Include="Resources\file.png" />
-    <None Include="Resources\home.png" />
-    <None Include="Resources\settings.png" />
-    <None Include="Resources\local_movies.png" />
-    <None Include="Resources\info.png" />
     <None Include="Resources\windows.png" />
     <None Include="Resources\vlc.png" />
     <None Include="Resources\dots-horizontal.png" />
@@ -250,68 +267,27 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\menu-down.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\close.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\link-variant.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\magnify-orange.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\clipboard-arrow-left-orange.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\clipboard-check-orange.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\alert-octagon-orange.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\search-web-orange.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\share-orange.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\file-find-orange.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\play-orange.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\magnify.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\share.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\alert-octagon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\loader.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\bookmark-orange.png" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="current-version.txt" />
     <Content Include="filemasta-logo.ico" />
-    <None Include="Resources\note-text.png" />
+    <None Include="Resources\share.png" />
+    <None Include="Resources\menu-down.png" />
+    <None Include="Resources\search-web.png" />
     <None Include="Resources\play-circle.png" />
     <None Include="Resources\play-circle-outline.png" />
     <None Include="Resources\download.png" />
+    <None Include="Resources\bookmark.png" />
+    <None Include="Resources\content-copy.png" />
+    <None Include="Resources\file-find.png" />
+    <None Include="Resources\file-send.png" />
     <None Include="Resources\chevron-down.png" />
     <None Include="Resources\chevron-up.png" />
-    <None Include="Resources\chevron-up-orange.png" />
+    <None Include="Resources\close.png" />
+    <None Include="Resources\clipboard-check.png" />
     <None Include="Resources\book.png" />
-    <None Include="Resources\file-send-orange.png" />
-    <None Include="Resources\database-search.png" />
     <Content Include="Resources\filemasta-logo.png" />
-    <None Include="Resources\keyboard.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

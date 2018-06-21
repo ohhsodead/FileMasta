@@ -34,7 +34,6 @@ namespace FileMasta.Controls
             CButtonLib.cBlendItems cBlendItems1 = new CButtonLib.cBlendItems();
             CButtonLib.cBlendItems cBlendItems2 = new CButtonLib.cBlendItems();
             CButtonLib.cBlendItems cBlendItems3 = new CButtonLib.cBlendItems();
-            CButtonLib.cBlendItems cBlendItems4 = new CButtonLib.cBlendItems();
             this.labelFileName = new System.Windows.Forms.Label();
             this.labelTitleName = new System.Windows.Forms.Label();
             this.labelValueName = new System.Windows.Forms.Label();
@@ -55,9 +54,6 @@ namespace FileMasta.Controls
             this.infoSplitter4 = new CButtonLib.CButton();
             this.labelTitleType = new System.Windows.Forms.Label();
             this.labelValueType = new System.Windows.Forms.Label();
-            this.panelReport = new System.Windows.Forms.Panel();
-            this.buttonReport = new CButtonLib.CButton();
-            this.comboReportFile = new System.Windows.Forms.ComboBox();
             this.contextOpenFile = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.NitroReaderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.VLC2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -71,18 +67,17 @@ namespace FileMasta.Controls
             this.FDMToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelShare = new System.Windows.Forms.Panel();
             this.buttonShare = new CButtonLib.CButton();
-            this.comboShareFile = new System.Windows.Forms.ComboBox();
+            this.comboBoxShare = new System.Windows.Forms.ComboBox();
             this.flowPanelActions = new System.Windows.Forms.FlowLayoutPanel();
-            this.buttonViewDirectory = new FileMasta.Controls.buttonCustom();
-            this.buttonBookmarkFile = new FileMasta.Controls.buttonCustom();
+            this.buttonViewDirectory = new System.Windows.Forms.Button();
+            this.buttonBookmark = new System.Windows.Forms.Button();
+            this.buttonOpenWith = new System.Windows.Forms.Button();
+            this.buttonRequestSize = new System.Windows.Forms.Button();
             this.imageNextFile = new System.Windows.Forms.PictureBox();
             this.imagePreviousFile = new System.Windows.Forms.PictureBox();
             this.infoFileURL = new CButtonLib.CButton();
             this.buttonDirectLink = new CButtonLib.CButton();
             this.ImageClose = new System.Windows.Forms.PictureBox();
-            this.buttonOpenWith = new FileMasta.Controls.buttonCustom();
-            this.buttonRequestFileSize = new FileMasta.Controls.buttonCustom();
-            this.panelReport.SuspendLayout();
             this.contextOpenFile.SuspendLayout();
             this.panelShare.SuspendLayout();
             this.flowPanelActions.SuspendLayout();
@@ -98,12 +93,12 @@ namespace FileMasta.Controls
             this.labelFileName.AutoEllipsis = true;
             this.labelFileName.BackColor = System.Drawing.Color.Transparent;
             this.labelFileName.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelFileName.Font = new System.Drawing.Font("Segoe UI Semibold", 16.25F);
+            this.labelFileName.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelFileName.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelFileName.Location = new System.Drawing.Point(86, 19);
+            this.labelFileName.Location = new System.Drawing.Point(79, 22);
             this.labelFileName.Margin = new System.Windows.Forms.Padding(0);
             this.labelFileName.Name = "labelFileName";
-            this.labelFileName.Size = new System.Drawing.Size(468, 34);
+            this.labelFileName.Size = new System.Drawing.Size(492, 28);
             this.labelFileName.TabIndex = 0;
             this.labelFileName.Text = "File Name";
             this.labelFileName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -114,7 +109,7 @@ namespace FileMasta.Controls
             this.labelTitleName.BackColor = System.Drawing.Color.Transparent;
             this.labelTitleName.Font = new System.Drawing.Font("Segoe UI Semibold", 10.75F);
             this.labelTitleName.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelTitleName.Location = new System.Drawing.Point(17, 102);
+            this.labelTitleName.Location = new System.Drawing.Point(17, 87);
             this.labelTitleName.Margin = new System.Windows.Forms.Padding(0, 8, 0, 8);
             this.labelTitleName.Name = "labelTitleName";
             this.labelTitleName.Size = new System.Drawing.Size(54, 20);
@@ -127,7 +122,7 @@ namespace FileMasta.Controls
             this.labelValueName.BackColor = System.Drawing.Color.Transparent;
             this.labelValueName.Font = new System.Drawing.Font("Segoe UI Semibold", 10.75F);
             this.labelValueName.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelValueName.Location = new System.Drawing.Point(151, 102);
+            this.labelValueName.Location = new System.Drawing.Point(151, 87);
             this.labelValueName.Margin = new System.Windows.Forms.Padding(0, 8, 0, 8);
             this.labelValueName.Name = "labelValueName";
             this.labelValueName.Size = new System.Drawing.Size(15, 20);
@@ -139,8 +134,8 @@ namespace FileMasta.Controls
             this.infoSplitter0.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.infoSplitter0.BackColor = System.Drawing.Color.Transparent;
-            this.infoSplitter0.BorderColor = System.Drawing.Color.White;
-            this.infoSplitter0.ColorFillSolid = System.Drawing.Color.White;
+            this.infoSplitter0.BorderColor = System.Drawing.Color.Silver;
+            this.infoSplitter0.ColorFillSolid = System.Drawing.Color.Silver;
             this.infoSplitter0.Cursor = System.Windows.Forms.Cursors.Default;
             this.infoSplitter0.DesignerSelected = false;
             this.infoSplitter0.DimFactorClick = 0;
@@ -148,7 +143,7 @@ namespace FileMasta.Controls
             this.infoSplitter0.FillType = CButtonLib.CButton.eFillType.Solid;
             this.infoSplitter0.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.infoSplitter0.ImageIndex = 0;
-            this.infoSplitter0.Location = new System.Drawing.Point(21, 90);
+            this.infoSplitter0.Location = new System.Drawing.Point(21, 75);
             this.infoSplitter0.Name = "infoSplitter0";
             this.infoSplitter0.ShowFocus = CButtonLib.CButton.eFocus.None;
             this.infoSplitter0.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -165,8 +160,8 @@ namespace FileMasta.Controls
             this.infoSplitter1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.infoSplitter1.BackColor = System.Drawing.Color.Transparent;
-            this.infoSplitter1.BorderColor = System.Drawing.Color.White;
-            this.infoSplitter1.ColorFillSolid = System.Drawing.Color.White;
+            this.infoSplitter1.BorderColor = System.Drawing.Color.Silver;
+            this.infoSplitter1.ColorFillSolid = System.Drawing.Color.Silver;
             this.infoSplitter1.Cursor = System.Windows.Forms.Cursors.Default;
             this.infoSplitter1.DesignerSelected = false;
             this.infoSplitter1.DimFactorClick = 0;
@@ -174,7 +169,7 @@ namespace FileMasta.Controls
             this.infoSplitter1.FillType = CButtonLib.CButton.eFillType.Solid;
             this.infoSplitter1.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.infoSplitter1.ImageIndex = 0;
-            this.infoSplitter1.Location = new System.Drawing.Point(21, 133);
+            this.infoSplitter1.Location = new System.Drawing.Point(21, 118);
             this.infoSplitter1.Name = "infoSplitter1";
             this.infoSplitter1.ShowFocus = CButtonLib.CButton.eFocus.None;
             this.infoSplitter1.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -192,7 +187,7 @@ namespace FileMasta.Controls
             this.labelTitleSize.BackColor = System.Drawing.Color.Transparent;
             this.labelTitleSize.Font = new System.Drawing.Font("Segoe UI", 10.75F);
             this.labelTitleSize.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelTitleSize.Location = new System.Drawing.Point(17, 146);
+            this.labelTitleSize.Location = new System.Drawing.Point(17, 131);
             this.labelTitleSize.Margin = new System.Windows.Forms.Padding(0, 8, 0, 8);
             this.labelTitleSize.Name = "labelTitleSize";
             this.labelTitleSize.Size = new System.Drawing.Size(39, 20);
@@ -205,7 +200,7 @@ namespace FileMasta.Controls
             this.labelValueSize.BackColor = System.Drawing.Color.Transparent;
             this.labelValueSize.Font = new System.Drawing.Font("Segoe UI", 10.75F);
             this.labelValueSize.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelValueSize.Location = new System.Drawing.Point(151, 146);
+            this.labelValueSize.Location = new System.Drawing.Point(151, 131);
             this.labelValueSize.Margin = new System.Windows.Forms.Padding(0, 8, 0, 8);
             this.labelValueSize.Name = "labelValueSize";
             this.labelValueSize.Size = new System.Drawing.Size(15, 20);
@@ -218,7 +213,7 @@ namespace FileMasta.Controls
             this.labelTitleReferrer.BackColor = System.Drawing.Color.Transparent;
             this.labelTitleReferrer.Font = new System.Drawing.Font("Segoe UI", 10.75F);
             this.labelTitleReferrer.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelTitleReferrer.Location = new System.Drawing.Point(17, 189);
+            this.labelTitleReferrer.Location = new System.Drawing.Point(17, 174);
             this.labelTitleReferrer.Margin = new System.Windows.Forms.Padding(0, 8, 0, 8);
             this.labelTitleReferrer.Name = "labelTitleReferrer";
             this.labelTitleReferrer.Size = new System.Drawing.Size(65, 20);
@@ -232,7 +227,7 @@ namespace FileMasta.Controls
             this.labelValueRefferer.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelValueRefferer.Font = new System.Drawing.Font("Segoe UI", 10.75F);
             this.labelValueRefferer.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelValueRefferer.Location = new System.Drawing.Point(151, 189);
+            this.labelValueRefferer.Location = new System.Drawing.Point(151, 174);
             this.labelValueRefferer.Margin = new System.Windows.Forms.Padding(0, 8, 0, 8);
             this.labelValueRefferer.Name = "labelValueRefferer";
             this.labelValueRefferer.Size = new System.Drawing.Size(15, 20);
@@ -245,8 +240,8 @@ namespace FileMasta.Controls
             this.infoSplitter2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.infoSplitter2.BackColor = System.Drawing.Color.Transparent;
-            this.infoSplitter2.BorderColor = System.Drawing.Color.White;
-            this.infoSplitter2.ColorFillSolid = System.Drawing.Color.White;
+            this.infoSplitter2.BorderColor = System.Drawing.Color.Silver;
+            this.infoSplitter2.ColorFillSolid = System.Drawing.Color.Silver;
             this.infoSplitter2.Cursor = System.Windows.Forms.Cursors.Default;
             this.infoSplitter2.DesignerSelected = false;
             this.infoSplitter2.DimFactorClick = 0;
@@ -254,7 +249,7 @@ namespace FileMasta.Controls
             this.infoSplitter2.FillType = CButtonLib.CButton.eFillType.Solid;
             this.infoSplitter2.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.infoSplitter2.ImageIndex = 0;
-            this.infoSplitter2.Location = new System.Drawing.Point(21, 177);
+            this.infoSplitter2.Location = new System.Drawing.Point(21, 162);
             this.infoSplitter2.Name = "infoSplitter2";
             this.infoSplitter2.ShowFocus = CButtonLib.CButton.eFocus.None;
             this.infoSplitter2.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -273,7 +268,7 @@ namespace FileMasta.Controls
             this.labelValueDirectory.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelValueDirectory.Font = new System.Drawing.Font("Segoe UI", 10.75F);
             this.labelValueDirectory.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelValueDirectory.Location = new System.Drawing.Point(151, 232);
+            this.labelValueDirectory.Location = new System.Drawing.Point(151, 217);
             this.labelValueDirectory.Margin = new System.Windows.Forms.Padding(0, 8, 0, 8);
             this.labelValueDirectory.Name = "labelValueDirectory";
             this.labelValueDirectory.Size = new System.Drawing.Size(15, 20);
@@ -287,7 +282,7 @@ namespace FileMasta.Controls
             this.labelTitleDirectory.BackColor = System.Drawing.Color.Transparent;
             this.labelTitleDirectory.Font = new System.Drawing.Font("Segoe UI", 10.75F);
             this.labelTitleDirectory.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelTitleDirectory.Location = new System.Drawing.Point(17, 232);
+            this.labelTitleDirectory.Location = new System.Drawing.Point(17, 217);
             this.labelTitleDirectory.Margin = new System.Windows.Forms.Padding(0, 8, 0, 8);
             this.labelTitleDirectory.Name = "labelTitleDirectory";
             this.labelTitleDirectory.Size = new System.Drawing.Size(73, 20);
@@ -299,8 +294,8 @@ namespace FileMasta.Controls
             this.infoSplitter3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.infoSplitter3.BackColor = System.Drawing.Color.Transparent;
-            this.infoSplitter3.BorderColor = System.Drawing.Color.White;
-            this.infoSplitter3.ColorFillSolid = System.Drawing.Color.White;
+            this.infoSplitter3.BorderColor = System.Drawing.Color.Silver;
+            this.infoSplitter3.ColorFillSolid = System.Drawing.Color.Silver;
             this.infoSplitter3.Cursor = System.Windows.Forms.Cursors.Default;
             this.infoSplitter3.DesignerSelected = false;
             this.infoSplitter3.DimFactorClick = 0;
@@ -308,7 +303,7 @@ namespace FileMasta.Controls
             this.infoSplitter3.FillType = CButtonLib.CButton.eFillType.Solid;
             this.infoSplitter3.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.infoSplitter3.ImageIndex = 0;
-            this.infoSplitter3.Location = new System.Drawing.Point(21, 220);
+            this.infoSplitter3.Location = new System.Drawing.Point(21, 205);
             this.infoSplitter3.Name = "infoSplitter3";
             this.infoSplitter3.ShowFocus = CButtonLib.CButton.eFocus.None;
             this.infoSplitter3.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -325,8 +320,8 @@ namespace FileMasta.Controls
             this.infoSplitter5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.infoSplitter5.BackColor = System.Drawing.Color.Transparent;
-            this.infoSplitter5.BorderColor = System.Drawing.Color.White;
-            this.infoSplitter5.ColorFillSolid = System.Drawing.Color.White;
+            this.infoSplitter5.BorderColor = System.Drawing.Color.Silver;
+            this.infoSplitter5.ColorFillSolid = System.Drawing.Color.Silver;
             this.infoSplitter5.Cursor = System.Windows.Forms.Cursors.Default;
             this.infoSplitter5.DesignerSelected = false;
             this.infoSplitter5.DimFactorClick = 0;
@@ -334,7 +329,7 @@ namespace FileMasta.Controls
             this.infoSplitter5.FillType = CButtonLib.CButton.eFillType.Solid;
             this.infoSplitter5.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.infoSplitter5.ImageIndex = 0;
-            this.infoSplitter5.Location = new System.Drawing.Point(21, 306);
+            this.infoSplitter5.Location = new System.Drawing.Point(21, 291);
             this.infoSplitter5.Name = "infoSplitter5";
             this.infoSplitter5.ShowFocus = CButtonLib.CButton.eFocus.None;
             this.infoSplitter5.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -352,7 +347,7 @@ namespace FileMasta.Controls
             this.labelTitleAge.BackColor = System.Drawing.Color.Transparent;
             this.labelTitleAge.Font = new System.Drawing.Font("Segoe UI", 10.75F);
             this.labelTitleAge.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelTitleAge.Location = new System.Drawing.Point(17, 318);
+            this.labelTitleAge.Location = new System.Drawing.Point(17, 303);
             this.labelTitleAge.Margin = new System.Windows.Forms.Padding(0, 8, 0, 8);
             this.labelTitleAge.Name = "labelTitleAge";
             this.labelTitleAge.Size = new System.Drawing.Size(39, 20);
@@ -365,7 +360,7 @@ namespace FileMasta.Controls
             this.labelValueAge.BackColor = System.Drawing.Color.Transparent;
             this.labelValueAge.Font = new System.Drawing.Font("Segoe UI", 10.75F);
             this.labelValueAge.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelValueAge.Location = new System.Drawing.Point(151, 318);
+            this.labelValueAge.Location = new System.Drawing.Point(151, 303);
             this.labelValueAge.Margin = new System.Windows.Forms.Padding(0, 8, 0, 8);
             this.labelValueAge.Name = "labelValueAge";
             this.labelValueAge.Size = new System.Drawing.Size(15, 20);
@@ -379,7 +374,7 @@ namespace FileMasta.Controls
             this.labelDisclaimer.BackColor = System.Drawing.Color.Transparent;
             this.labelDisclaimer.Font = new System.Drawing.Font("Segoe UI", 7F);
             this.labelDisclaimer.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelDisclaimer.Location = new System.Drawing.Point(20, 464);
+            this.labelDisclaimer.Location = new System.Drawing.Point(20, 449);
             this.labelDisclaimer.Margin = new System.Windows.Forms.Padding(0, 5, 0, 5);
             this.labelDisclaimer.Name = "labelDisclaimer";
             this.labelDisclaimer.Size = new System.Drawing.Size(924, 38);
@@ -391,8 +386,8 @@ namespace FileMasta.Controls
             this.infoSplitter4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.infoSplitter4.BackColor = System.Drawing.Color.Transparent;
-            this.infoSplitter4.BorderColor = System.Drawing.Color.White;
-            this.infoSplitter4.ColorFillSolid = System.Drawing.Color.White;
+            this.infoSplitter4.BorderColor = System.Drawing.Color.Silver;
+            this.infoSplitter4.ColorFillSolid = System.Drawing.Color.Silver;
             this.infoSplitter4.Cursor = System.Windows.Forms.Cursors.Default;
             this.infoSplitter4.DesignerSelected = false;
             this.infoSplitter4.DimFactorClick = 0;
@@ -400,7 +395,7 @@ namespace FileMasta.Controls
             this.infoSplitter4.FillType = CButtonLib.CButton.eFillType.Solid;
             this.infoSplitter4.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.infoSplitter4.ImageIndex = 0;
-            this.infoSplitter4.Location = new System.Drawing.Point(21, 263);
+            this.infoSplitter4.Location = new System.Drawing.Point(21, 248);
             this.infoSplitter4.Name = "infoSplitter4";
             this.infoSplitter4.ShowFocus = CButtonLib.CButton.eFocus.None;
             this.infoSplitter4.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -418,7 +413,7 @@ namespace FileMasta.Controls
             this.labelTitleType.BackColor = System.Drawing.Color.Transparent;
             this.labelTitleType.Font = new System.Drawing.Font("Segoe UI", 10.75F);
             this.labelTitleType.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelTitleType.Location = new System.Drawing.Point(17, 275);
+            this.labelTitleType.Location = new System.Drawing.Point(17, 260);
             this.labelTitleType.Margin = new System.Windows.Forms.Padding(0, 8, 0, 8);
             this.labelTitleType.Name = "labelTitleType";
             this.labelTitleType.Size = new System.Drawing.Size(43, 20);
@@ -431,88 +426,12 @@ namespace FileMasta.Controls
             this.labelValueType.BackColor = System.Drawing.Color.Transparent;
             this.labelValueType.Font = new System.Drawing.Font("Segoe UI", 10.75F);
             this.labelValueType.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelValueType.Location = new System.Drawing.Point(151, 275);
+            this.labelValueType.Location = new System.Drawing.Point(151, 260);
             this.labelValueType.Margin = new System.Windows.Forms.Padding(0, 8, 0, 8);
             this.labelValueType.Name = "labelValueType";
             this.labelValueType.Size = new System.Drawing.Size(15, 20);
             this.labelValueType.TabIndex = 0;
             this.labelValueType.Text = "-";
-            // 
-            // panelReport
-            // 
-            this.panelReport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelReport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(50)))));
-            this.panelReport.Controls.Add(this.buttonReport);
-            this.panelReport.Controls.Add(this.comboReportFile);
-            this.panelReport.Location = new System.Drawing.Point(835, 379);
-            this.panelReport.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.panelReport.Name = "panelReport";
-            this.panelReport.Size = new System.Drawing.Size(78, 22);
-            this.panelReport.TabIndex = 100073;
-            // 
-            // buttonReport
-            // 
-            this.buttonReport.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonReport.BackColor = System.Drawing.Color.Transparent;
-            this.buttonReport.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(193)))), ((int)(((byte)(190)))));
-            cBlendItems1.iColor = new System.Drawing.Color[] {
-        System.Drawing.Color.White,
-        System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))))};
-            cBlendItems1.iPoint = new float[] {
-        0F,
-        1F};
-            this.buttonReport.ColorFillBlend = cBlendItems1;
-            this.buttonReport.ColorFillSolid = System.Drawing.Color.Transparent;
-            this.buttonReport.Corners.All = 2;
-            this.buttonReport.Corners.LowerLeft = 2;
-            this.buttonReport.Corners.LowerRight = 2;
-            this.buttonReport.Corners.UpperLeft = 2;
-            this.buttonReport.Corners.UpperRight = 2;
-            this.buttonReport.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonReport.DesignerSelected = false;
-            this.buttonReport.DimFactorClick = 0;
-            this.buttonReport.DimFactorHover = 0;
-            this.buttonReport.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.buttonReport.Font = new System.Drawing.Font("Segoe UI Semibold", 9.25F);
-            this.buttonReport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(193)))), ((int)(((byte)(190)))));
-            this.buttonReport.Image = ((System.Drawing.Image)(resources.GetObject("buttonReport.Image")));
-            this.buttonReport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonReport.ImageIndex = 0;
-            this.buttonReport.Location = new System.Drawing.Point(0, 0);
-            this.buttonReport.Name = "buttonReport";
-            this.buttonReport.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.buttonReport.SideImage = global::FileMasta.Properties.Resources.menu_down;
-            this.buttonReport.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonReport.SideImageSize = new System.Drawing.Size(16, 16);
-            this.buttonReport.Size = new System.Drawing.Size(78, 22);
-            this.buttonReport.TabIndex = 5;
-            this.buttonReport.Text = "Report";
-            this.buttonReport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonReport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonReport.TextMargin = new System.Windows.Forms.Padding(2, 3, 2, 2);
-            this.buttonReport.TextShadow = System.Drawing.Color.Empty;
-            this.buttonReport.TextShadowShow = false;
-            this.buttonReport.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.BtnReportFile_ClickButtonArea);
-            // 
-            // comboReportFile
-            // 
-            this.comboReportFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboReportFile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            this.comboReportFile.Font = new System.Drawing.Font("Segoe UI Semibold", 9.25F);
-            this.comboReportFile.ForeColor = System.Drawing.Color.White;
-            this.comboReportFile.FormattingEnabled = true;
-            this.comboReportFile.Items.AddRange(new object[] {
-            "Broken Link",
-            "DMCA",
-            "Poor Quality"});
-            this.comboReportFile.Location = new System.Drawing.Point(0, -2);
-            this.comboReportFile.Name = "comboReportFile";
-            this.comboReportFile.Size = new System.Drawing.Size(78, 23);
-            this.comboReportFile.TabIndex = 0;
-            this.comboReportFile.TabStop = false;
-            this.comboReportFile.SelectedIndexChanged += new System.EventHandler(this.ComboboxReportFile_SelectedIndexChanged);
             // 
             // contextOpenFile
             // 
@@ -533,7 +452,7 @@ namespace FileMasta.Controls
             // 
             // NitroReaderToolStripMenuItem
             // 
-            this.NitroReaderToolStripMenuItem.Image = global::FileMasta.Properties.Resources.book;
+            this.NitroReaderToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("NitroReaderToolStripMenuItem.Image")));
             this.NitroReaderToolStripMenuItem.Name = "NitroReaderToolStripMenuItem";
             this.NitroReaderToolStripMenuItem.Size = new System.Drawing.Size(235, 22);
             this.NitroReaderToolStripMenuItem.Text = "Nitro Reader";
@@ -628,10 +547,10 @@ namespace FileMasta.Controls
             // panelShare
             // 
             this.panelShare.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelShare.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(50)))));
+            this.panelShare.BackColor = System.Drawing.Color.Silver;
             this.panelShare.Controls.Add(this.buttonShare);
-            this.panelShare.Controls.Add(this.comboShareFile);
-            this.panelShare.Location = new System.Drawing.Point(757, 379);
+            this.panelShare.Controls.Add(this.comboBoxShare);
+            this.panelShare.Location = new System.Drawing.Point(841, 364);
             this.panelShare.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.panelShare.Name = "panelShare";
             this.panelShare.Size = new System.Drawing.Size(73, 22);
@@ -643,15 +562,14 @@ namespace FileMasta.Controls
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonShare.BackColor = System.Drawing.Color.Transparent;
-            this.buttonShare.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(193)))), ((int)(((byte)(190)))));
-            cBlendItems2.iColor = new System.Drawing.Color[] {
+            this.buttonShare.BorderColor = System.Drawing.SystemColors.Control;
+            cBlendItems1.iColor = new System.Drawing.Color[] {
         System.Drawing.Color.White,
         System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))))};
-            cBlendItems2.iPoint = new float[] {
+            cBlendItems1.iPoint = new float[] {
         0F,
         1F};
-            this.buttonShare.ColorFillBlend = cBlendItems2;
-            this.buttonShare.ColorFillSolid = System.Drawing.Color.Transparent;
+            this.buttonShare.ColorFillBlend = cBlendItems1;
             this.buttonShare.Corners.All = 2;
             this.buttonShare.Corners.LowerLeft = 2;
             this.buttonShare.Corners.LowerRight = 2;
@@ -663,8 +581,8 @@ namespace FileMasta.Controls
             this.buttonShare.DimFactorHover = 0;
             this.buttonShare.FillType = CButtonLib.CButton.eFillType.Solid;
             this.buttonShare.Font = new System.Drawing.Font("Segoe UI Semibold", 9.25F);
-            this.buttonShare.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(193)))), ((int)(((byte)(190)))));
-            this.buttonShare.Image = global::FileMasta.Properties.Resources.share;
+            this.buttonShare.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.buttonShare.Image = ((System.Drawing.Image)(resources.GetObject("buttonShare.Image")));
             this.buttonShare.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonShare.ImageIndex = 0;
             this.buttonShare.Location = new System.Drawing.Point(0, 0);
@@ -683,114 +601,112 @@ namespace FileMasta.Controls
             this.buttonShare.TextShadowShow = false;
             this.buttonShare.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.BtnShareFile_ClickButtonArea);
             // 
-            // comboShareFile
+            // comboBoxShare
             // 
-            this.comboShareFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboShareFile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(60)))), ((int)(((byte)(67)))));
-            this.comboShareFile.Font = new System.Drawing.Font("Segoe UI Semibold", 9.25F);
-            this.comboShareFile.ForeColor = System.Drawing.Color.White;
-            this.comboShareFile.FormattingEnabled = true;
-            this.comboShareFile.Items.AddRange(new object[] {
+            this.comboBoxShare.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBoxShare.BackColor = System.Drawing.SystemColors.Control;
+            this.comboBoxShare.Font = new System.Drawing.Font("Segoe UI Semibold", 9.25F);
+            this.comboBoxShare.FormattingEnabled = true;
+            this.comboBoxShare.Items.AddRange(new object[] {
             "Facebook",
             "Twitter",
             "Google+",
             "Reddit",
             "Email"});
-            this.comboShareFile.Location = new System.Drawing.Point(0, -2);
-            this.comboShareFile.Name = "comboShareFile";
-            this.comboShareFile.Size = new System.Drawing.Size(73, 23);
-            this.comboShareFile.TabIndex = 0;
-            this.comboShareFile.TabStop = false;
-            this.comboShareFile.SelectedIndexChanged += new System.EventHandler(this.ComboBoxShareFile_SelectedIndexChanged);
+            this.comboBoxShare.Location = new System.Drawing.Point(0, -2);
+            this.comboBoxShare.Name = "comboBoxShare";
+            this.comboBoxShare.Size = new System.Drawing.Size(73, 23);
+            this.comboBoxShare.TabIndex = 0;
+            this.comboBoxShare.TabStop = false;
+            this.comboBoxShare.SelectedIndexChanged += new System.EventHandler(this.ComboBoxShareFile_SelectedIndexChanged);
             // 
             // flowPanelActions
             // 
             this.flowPanelActions.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.flowPanelActions.Controls.Add(this.buttonViewDirectory);
-            this.flowPanelActions.Controls.Add(this.buttonBookmarkFile);
+            this.flowPanelActions.Controls.Add(this.buttonBookmark);
             this.flowPanelActions.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowPanelActions.Location = new System.Drawing.Point(557, 22);
+            this.flowPanelActions.Location = new System.Drawing.Point(578, 22);
             this.flowPanelActions.Name = "flowPanelActions";
-            this.flowPanelActions.Size = new System.Drawing.Size(353, 30);
+            this.flowPanelActions.Size = new System.Drawing.Size(332, 28);
             this.flowPanelActions.TabIndex = 0;
             this.flowPanelActions.TabStop = true;
             // 
             // buttonViewDirectory
             // 
-            this.buttonViewDirectory.BackColor = System.Drawing.Color.Transparent;
-            this.buttonViewDirectory.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(105)))), ((int)(((byte)(26)))));
-            this.buttonViewDirectory.ColorFillSolid = System.Drawing.Color.Transparent;
-            this.buttonViewDirectory.Corners.All = 2;
-            this.buttonViewDirectory.Corners.LowerLeft = 2;
-            this.buttonViewDirectory.Corners.LowerRight = 2;
-            this.buttonViewDirectory.Corners.UpperLeft = 2;
-            this.buttonViewDirectory.Corners.UpperRight = 2;
-            this.buttonViewDirectory.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonViewDirectory.DesignerSelected = false;
-            this.buttonViewDirectory.DimFactorClick = 0;
-            this.buttonViewDirectory.DimFactorHover = 0;
-            this.buttonViewDirectory.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.buttonViewDirectory.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
-            this.buttonViewDirectory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(105)))), ((int)(((byte)(26)))));
-            this.buttonViewDirectory.Image = global::FileMasta.Properties.Resources.search_web_orange;
-            this.buttonViewDirectory.ImageIndex = 0;
-            this.buttonViewDirectory.ImageSize = new System.Drawing.Size(18, 18);
-            this.buttonViewDirectory.Location = new System.Drawing.Point(223, 0);
-            this.buttonViewDirectory.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.buttonViewDirectory.MaximumSize = new System.Drawing.Size(1000, 30);
-            this.buttonViewDirectory.MinimumSize = new System.Drawing.Size(0, 30);
+            this.buttonViewDirectory.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonViewDirectory.Image = ((System.Drawing.Image)(resources.GetObject("buttonViewDirectory.Image")));
+            this.buttonViewDirectory.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonViewDirectory.Location = new System.Drawing.Point(208, 0);
+            this.buttonViewDirectory.Margin = new System.Windows.Forms.Padding(2, 0, 0, 0);
             this.buttonViewDirectory.Name = "buttonViewDirectory";
-            this.buttonViewDirectory.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.buttonViewDirectory.Size = new System.Drawing.Size(130, 30);
-            this.buttonViewDirectory.TabIndex = 1;
+            this.buttonViewDirectory.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            this.buttonViewDirectory.Size = new System.Drawing.Size(124, 28);
+            this.buttonViewDirectory.TabIndex = 100080;
             this.buttonViewDirectory.Text = "View Directory";
+            this.buttonViewDirectory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonViewDirectory.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonViewDirectory.TextShadowShow = false;
-            this.buttonViewDirectory.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.BtnViewDirectory_ClickButtonArea);
+            this.buttonViewDirectory.UseVisualStyleBackColor = true;
             // 
-            // buttonBookmarkFile
+            // buttonBookmark
             // 
-            this.buttonBookmarkFile.BackColor = System.Drawing.Color.Transparent;
-            this.buttonBookmarkFile.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(105)))), ((int)(((byte)(26)))));
-            this.buttonBookmarkFile.ColorFillSolid = System.Drawing.Color.Transparent;
-            this.buttonBookmarkFile.Corners.All = 2;
-            this.buttonBookmarkFile.Corners.LowerLeft = 2;
-            this.buttonBookmarkFile.Corners.LowerRight = 2;
-            this.buttonBookmarkFile.Corners.UpperLeft = 2;
-            this.buttonBookmarkFile.Corners.UpperRight = 2;
-            this.buttonBookmarkFile.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonBookmarkFile.DesignerSelected = false;
-            this.buttonBookmarkFile.DimFactorClick = 0;
-            this.buttonBookmarkFile.DimFactorHover = 0;
-            this.buttonBookmarkFile.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.buttonBookmarkFile.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
-            this.buttonBookmarkFile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(105)))), ((int)(((byte)(26)))));
-            this.buttonBookmarkFile.Image = global::FileMasta.Properties.Resources.bookmark_orange;
-            this.buttonBookmarkFile.ImageIndex = 0;
-            this.buttonBookmarkFile.ImageSize = new System.Drawing.Size(18, 18);
-            this.buttonBookmarkFile.Location = new System.Drawing.Point(63, 0);
-            this.buttonBookmarkFile.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
-            this.buttonBookmarkFile.MaximumSize = new System.Drawing.Size(1000, 30);
-            this.buttonBookmarkFile.MinimumSize = new System.Drawing.Size(0, 30);
-            this.buttonBookmarkFile.Name = "buttonBookmarkFile";
-            this.buttonBookmarkFile.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.buttonBookmarkFile.Size = new System.Drawing.Size(154, 30);
-            this.buttonBookmarkFile.TabIndex = 0;
-            this.buttonBookmarkFile.Text = "Add to Bookmarks";
-            this.buttonBookmarkFile.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonBookmarkFile.TextShadowShow = false;
-            this.buttonBookmarkFile.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.BtnBookmarkFile_ClickButtonArea);
+            this.buttonBookmark.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBookmark.Image = global::FileMasta.Properties.Resources.bookmark;
+            this.buttonBookmark.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonBookmark.Location = new System.Drawing.Point(56, 0);
+            this.buttonBookmark.Margin = new System.Windows.Forms.Padding(0, 0, 2, 0);
+            this.buttonBookmark.Name = "buttonBookmark";
+            this.buttonBookmark.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            this.buttonBookmark.Size = new System.Drawing.Size(148, 28);
+            this.buttonBookmark.TabIndex = 100078;
+            this.buttonBookmark.Text = "Add to Bookmarks";
+            this.buttonBookmark.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonBookmark.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonBookmark.UseVisualStyleBackColor = true;
+            this.buttonBookmark.Click += new System.EventHandler(this.buttonBookmark_Click);
+            // 
+            // buttonOpenWith
+            // 
+            this.buttonOpenWith.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonOpenWith.Image = global::FileMasta.Properties.Resources.file_send;
+            this.buttonOpenWith.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonOpenWith.Location = new System.Drawing.Point(21, 492);
+            this.buttonOpenWith.Margin = new System.Windows.Forms.Padding(0, 0, 2, 0);
+            this.buttonOpenWith.Name = "buttonOpenWith";
+            this.buttonOpenWith.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            this.buttonOpenWith.Size = new System.Drawing.Size(114, 28);
+            this.buttonOpenWith.TabIndex = 100080;
+            this.buttonOpenWith.Text = "Open With...";
+            this.buttonOpenWith.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonOpenWith.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonOpenWith.UseVisualStyleBackColor = true;
+            // 
+            // buttonRequestSize
+            // 
+            this.buttonRequestSize.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonRequestSize.Image = ((System.Drawing.Image)(resources.GetObject("buttonRequestSize.Image")));
+            this.buttonRequestSize.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonRequestSize.Location = new System.Drawing.Point(155, 126);
+            this.buttonRequestSize.Margin = new System.Windows.Forms.Padding(0, 0, 2, 0);
+            this.buttonRequestSize.Name = "buttonRequestSize";
+            this.buttonRequestSize.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            this.buttonRequestSize.Size = new System.Drawing.Size(137, 28);
+            this.buttonRequestSize.TabIndex = 100079;
+            this.buttonRequestSize.Text = "Request File Size";
+            this.buttonRequestSize.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonRequestSize.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonRequestSize.UseVisualStyleBackColor = true;
             // 
             // imageNextFile
             // 
             this.imageNextFile.BackColor = System.Drawing.Color.Transparent;
             this.imageNextFile.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imageNextFile.Image = global::FileMasta.Properties.Resources.chevron_down;
+            this.imageNextFile.Image = ((System.Drawing.Image)(resources.GetObject("imageNextFile.Image")));
             this.imageNextFile.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.imageNextFile.Location = new System.Drawing.Point(54, 22);
+            this.imageNextFile.Location = new System.Drawing.Point(48, 26);
             this.imageNextFile.Margin = new System.Windows.Forms.Padding(2, 25, 2, 3);
             this.imageNextFile.Name = "imageNextFile";
-            this.imageNextFile.Size = new System.Drawing.Size(30, 30);
+            this.imageNextFile.Size = new System.Drawing.Size(24, 24);
             this.imageNextFile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imageNextFile.TabIndex = 100077;
             this.imageNextFile.TabStop = false;
@@ -800,12 +716,12 @@ namespace FileMasta.Controls
             // 
             this.imagePreviousFile.BackColor = System.Drawing.Color.Transparent;
             this.imagePreviousFile.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imagePreviousFile.Image = global::FileMasta.Properties.Resources.chevron_up;
+            this.imagePreviousFile.Image = ((System.Drawing.Image)(resources.GetObject("imagePreviousFile.Image")));
             this.imagePreviousFile.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.imagePreviousFile.Location = new System.Drawing.Point(22, 22);
+            this.imagePreviousFile.Location = new System.Drawing.Point(22, 26);
             this.imagePreviousFile.Margin = new System.Windows.Forms.Padding(2, 25, 2, 3);
             this.imagePreviousFile.Name = "imagePreviousFile";
-            this.imagePreviousFile.Size = new System.Drawing.Size(30, 30);
+            this.imagePreviousFile.Size = new System.Drawing.Size(24, 24);
             this.imagePreviousFile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imagePreviousFile.TabIndex = 100076;
             this.imagePreviousFile.TabStop = false;
@@ -816,15 +732,15 @@ namespace FileMasta.Controls
             this.infoFileURL.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.infoFileURL.BackColor = System.Drawing.Color.Transparent;
-            this.infoFileURL.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(50)))));
-            cBlendItems3.iColor = new System.Drawing.Color[] {
+            this.infoFileURL.BorderColor = System.Drawing.Color.Silver;
+            cBlendItems2.iColor = new System.Drawing.Color[] {
         System.Drawing.Color.White,
         System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))))};
-            cBlendItems3.iPoint = new float[] {
+            cBlendItems2.iPoint = new float[] {
         0F,
         1F};
-            this.infoFileURL.ColorFillBlend = cBlendItems3;
-            this.infoFileURL.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(50)))));
+            this.infoFileURL.ColorFillBlend = cBlendItems2;
+            this.infoFileURL.ColorFillSolid = System.Drawing.Color.Silver;
             this.infoFileURL.Corners.All = 2;
             this.infoFileURL.Corners.LowerLeft = 2;
             this.infoFileURL.Corners.LowerRight = 2;
@@ -838,18 +754,19 @@ namespace FileMasta.Controls
             this.infoFileURL.FocalPoints.CenterPtX = 0F;
             this.infoFileURL.FocalPoints.CenterPtY = 0F;
             this.infoFileURL.Font = new System.Drawing.Font("Segoe UI Semibold", 10.75F);
+            this.infoFileURL.ForeColor = System.Drawing.SystemColors.ControlText;
             this.infoFileURL.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.infoFileURL.ImageIndex = 0;
             this.infoFileURL.ImageSize = new System.Drawing.Size(24, 24);
-            this.infoFileURL.Location = new System.Drawing.Point(20, 373);
+            this.infoFileURL.Location = new System.Drawing.Point(21, 358);
             this.infoFileURL.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.infoFileURL.Name = "infoFileURL";
             this.infoFileURL.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.infoFileURL.SideImage = global::FileMasta.Properties.Resources.clipboard_arrow_left_orange;
+            this.infoFileURL.SideImage = global::FileMasta.Properties.Resources.content_copy;
             this.infoFileURL.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.infoFileURL.SideImageIsClickable = true;
-            this.infoFileURL.SideImageSize = new System.Drawing.Size(24, 24);
-            this.infoFileURL.Size = new System.Drawing.Size(924, 34);
+            this.infoFileURL.SideImageSize = new System.Drawing.Size(20, 20);
+            this.infoFileURL.Size = new System.Drawing.Size(923, 34);
             this.infoFileURL.TabIndex = 0;
             this.infoFileURL.TabStop = false;
             this.infoFileURL.Text = "URL";
@@ -864,13 +781,13 @@ namespace FileMasta.Controls
             | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonDirectLink.BackColor = System.Drawing.Color.Transparent;
             this.buttonDirectLink.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(186)))), ((int)(((byte)(96)))));
-            cBlendItems4.iColor = new System.Drawing.Color[] {
+            cBlendItems3.iColor = new System.Drawing.Color[] {
         System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(186)))), ((int)(((byte)(96))))),
         System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(184)))), ((int)(((byte)(85)))))};
-            cBlendItems4.iPoint = new float[] {
+            cBlendItems3.iPoint = new float[] {
         0F,
         1F};
-            this.buttonDirectLink.ColorFillBlend = cBlendItems4;
+            this.buttonDirectLink.ColorFillBlend = cBlendItems3;
             this.buttonDirectLink.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(186)))), ((int)(((byte)(96)))));
             this.buttonDirectLink.Corners.All = 2;
             this.buttonDirectLink.Corners.LowerLeft = 2;
@@ -886,12 +803,12 @@ namespace FileMasta.Controls
             this.buttonDirectLink.Image = global::FileMasta.Properties.Resources.link_variant;
             this.buttonDirectLink.ImageIndex = 0;
             this.buttonDirectLink.ImageSize = new System.Drawing.Size(20, 20);
-            this.buttonDirectLink.Location = new System.Drawing.Point(20, 425);
+            this.buttonDirectLink.Location = new System.Drawing.Point(21, 410);
             this.buttonDirectLink.Name = "buttonDirectLink";
             this.buttonDirectLink.ShowFocus = CButtonLib.CButton.eFocus.None;
             this.buttonDirectLink.SideImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.buttonDirectLink.SideImageSize = new System.Drawing.Size(22, 22);
-            this.buttonDirectLink.Size = new System.Drawing.Size(924, 32);
+            this.buttonDirectLink.Size = new System.Drawing.Size(923, 32);
             this.buttonDirectLink.TabIndex = 6;
             this.buttonDirectLink.Text = "Direct Download Link";
             this.buttonDirectLink.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -904,97 +821,27 @@ namespace FileMasta.Controls
             this.ImageClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ImageClose.BackColor = System.Drawing.Color.Transparent;
             this.ImageClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ImageClose.Image = global::FileMasta.Properties.Resources.close;
+            this.ImageClose.Image = ((System.Drawing.Image)(resources.GetObject("ImageClose.Image")));
             this.ImageClose.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.ImageClose.Location = new System.Drawing.Point(915, 22);
             this.ImageClose.Margin = new System.Windows.Forms.Padding(3, 25, 25, 3);
             this.ImageClose.Name = "ImageClose";
-            this.ImageClose.Size = new System.Drawing.Size(30, 30);
+            this.ImageClose.Size = new System.Drawing.Size(28, 28);
             this.ImageClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ImageClose.TabIndex = 100027;
             this.ImageClose.TabStop = false;
             this.ImageClose.Click += new System.EventHandler(this.ImageClose_Click);
             // 
-            // buttonOpenWith
-            // 
-            this.buttonOpenWith.BackColor = System.Drawing.Color.Transparent;
-            this.buttonOpenWith.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(105)))), ((int)(((byte)(26)))));
-            this.buttonOpenWith.ColorFillSolid = System.Drawing.Color.Transparent;
-            this.buttonOpenWith.Corners.All = 2;
-            this.buttonOpenWith.Corners.LowerLeft = 2;
-            this.buttonOpenWith.Corners.LowerRight = 2;
-            this.buttonOpenWith.Corners.UpperLeft = 2;
-            this.buttonOpenWith.Corners.UpperRight = 2;
-            this.buttonOpenWith.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonOpenWith.DesignerSelected = false;
-            this.buttonOpenWith.DimFactorClick = 0;
-            this.buttonOpenWith.DimFactorHover = 0;
-            this.buttonOpenWith.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.buttonOpenWith.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
-            this.buttonOpenWith.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(105)))), ((int)(((byte)(26)))));
-            this.buttonOpenWith.Image = global::FileMasta.Properties.Resources.file_send_orange;
-            this.buttonOpenWith.ImageIndex = 0;
-            this.buttonOpenWith.ImageSize = new System.Drawing.Size(18, 18);
-            this.buttonOpenWith.Location = new System.Drawing.Point(22, 510);
-            this.buttonOpenWith.Margin = new System.Windows.Forms.Padding(0, 3, 6, 3);
-            this.buttonOpenWith.MaximumSize = new System.Drawing.Size(1000, 30);
-            this.buttonOpenWith.MinimumSize = new System.Drawing.Size(0, 30);
-            this.buttonOpenWith.Name = "buttonOpenWith";
-            this.buttonOpenWith.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.buttonOpenWith.Size = new System.Drawing.Size(117, 30);
-            this.buttonOpenWith.TabIndex = 7;
-            this.buttonOpenWith.Text = "Open With...";
-            this.buttonOpenWith.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonOpenWith.TextShadowShow = false;
-            this.buttonOpenWith.Visible = false;
-            this.buttonOpenWith.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.BtnOpenFile_ClickButtonArea);
-            // 
-            // buttonRequestFileSize
-            // 
-            this.buttonRequestFileSize.BackColor = System.Drawing.Color.Transparent;
-            this.buttonRequestFileSize.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(105)))), ((int)(((byte)(26)))));
-            this.buttonRequestFileSize.ColorFillSolid = System.Drawing.Color.Transparent;
-            this.buttonRequestFileSize.Corners.All = 2;
-            this.buttonRequestFileSize.Corners.LowerLeft = 2;
-            this.buttonRequestFileSize.Corners.LowerRight = 2;
-            this.buttonRequestFileSize.Corners.UpperLeft = 2;
-            this.buttonRequestFileSize.Corners.UpperRight = 2;
-            this.buttonRequestFileSize.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonRequestFileSize.DesignerSelected = false;
-            this.buttonRequestFileSize.DimFactorClick = 0;
-            this.buttonRequestFileSize.DimFactorHover = 0;
-            this.buttonRequestFileSize.FillType = CButtonLib.CButton.eFillType.Solid;
-            this.buttonRequestFileSize.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
-            this.buttonRequestFileSize.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(105)))), ((int)(((byte)(26)))));
-            this.buttonRequestFileSize.Image = global::FileMasta.Properties.Resources.file_find_orange;
-            this.buttonRequestFileSize.ImageIndex = 0;
-            this.buttonRequestFileSize.ImageSize = new System.Drawing.Size(18, 18);
-            this.buttonRequestFileSize.Location = new System.Drawing.Point(155, 141);
-            this.buttonRequestFileSize.Margin = new System.Windows.Forms.Padding(0, 3, 6, 3);
-            this.buttonRequestFileSize.MaximumSize = new System.Drawing.Size(1000, 30);
-            this.buttonRequestFileSize.MinimumSize = new System.Drawing.Size(0, 30);
-            this.buttonRequestFileSize.Name = "buttonRequestFileSize";
-            this.buttonRequestFileSize.ShowFocus = CButtonLib.CButton.eFocus.None;
-            this.buttonRequestFileSize.Size = new System.Drawing.Size(143, 30);
-            this.buttonRequestFileSize.TabIndex = 3;
-            this.buttonRequestFileSize.Text = "Request File Size";
-            this.buttonRequestFileSize.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonRequestFileSize.TextShadowShow = false;
-            this.buttonRequestFileSize.Visible = false;
-            this.buttonRequestFileSize.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.BtnRequestFileSize_ClickButtonArea);
-            // 
             // FileDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.Controls.Add(this.buttonOpenWith);
+            this.Controls.Add(this.buttonRequestSize);
             this.Controls.Add(this.imageNextFile);
             this.Controls.Add(this.imagePreviousFile);
-            this.Controls.Add(this.buttonOpenWith);
-            this.Controls.Add(this.buttonRequestFileSize);
             this.Controls.Add(this.flowPanelActions);
             this.Controls.Add(this.panelShare);
-            this.Controls.Add(this.panelReport);
             this.Controls.Add(this.infoSplitter4);
             this.Controls.Add(this.labelTitleType);
             this.Controls.Add(this.labelValueType);
@@ -1020,11 +867,9 @@ namespace FileMasta.Controls
             this.Controls.Add(this.ImageClose);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.ForeColor = System.Drawing.Color.White;
             this.Name = "FileDetails";
             this.Size = new System.Drawing.Size(967, 565);
             this.Load += new System.EventHandler(this.FileDetails_Load);
-            this.panelReport.ResumeLayout(false);
             this.contextOpenFile.ResumeLayout(false);
             this.panelShare.ResumeLayout(false);
             this.flowPanelActions.ResumeLayout(false);
@@ -1060,9 +905,6 @@ namespace FileMasta.Controls
         public CButtonLib.CButton infoSplitter4;
         public System.Windows.Forms.Label labelTitleType;
         public System.Windows.Forms.Label labelValueType;
-        private System.Windows.Forms.Panel panelReport;
-        private CButtonLib.CButton buttonReport;
-        private System.Windows.Forms.ComboBox comboReportFile;
         public System.Windows.Forms.ContextMenuStrip contextOpenFile;
         private System.Windows.Forms.ToolStripMenuItem VLC2ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem WMPToolStripMenuItem;
@@ -1070,12 +912,8 @@ namespace FileMasta.Controls
         private System.Windows.Forms.ToolStripMenuItem MPCToolStripMenuItem;
         private System.Windows.Forms.Panel panelShare;
         private CButtonLib.CButton buttonShare;
-        private System.Windows.Forms.ComboBox comboShareFile;
+        private System.Windows.Forms.ComboBox comboBoxShare;
         private System.Windows.Forms.FlowLayoutPanel flowPanelActions;
-        private buttonCustom buttonRequestFileSize;
-        private buttonCustom buttonOpenWith;
-        private buttonCustom buttonBookmarkFile;
-        private buttonCustom buttonViewDirectory;
         public System.Windows.Forms.PictureBox imagePreviousFile;
         public System.Windows.Forms.PictureBox imageNextFile;
         private System.Windows.Forms.ToolStripMenuItem IDMToolStripMenuItem;
@@ -1084,5 +922,9 @@ namespace FileMasta.Controls
         private System.Windows.Forms.ToolStripMenuItem KMPlayerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem NitroReaderToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem InternetDownloadAccelaratorToolStripMenuItem;
+        private System.Windows.Forms.Button buttonBookmark;
+        private System.Windows.Forms.Button buttonViewDirectory;
+        private System.Windows.Forms.Button buttonRequestSize;
+        private System.Windows.Forms.Button buttonOpenWith;
     }
 }

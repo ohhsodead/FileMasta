@@ -86,13 +86,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.Controls.Add(this.imageLogo);
             this.Controls.Add(this.labelRestart);
             this.Controls.Add(this.labelLoading);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.ForeColor = System.Drawing.Color.White;
             this.Name = "SplashScreen";
             this.Size = new System.Drawing.Size(700, 500);
             ((System.ComponentModel.ISupportInitialize)(this.imageLogo)).EndInit();

@@ -55,65 +55,40 @@ namespace FileMasta.Files
         }
 
         /// <summary>
-        /// Search Files by Web URL
+        /// Sorts the list of files by Name, Date or Size - used before searching the list
         /// </summary>
-        /// <param name="WebURL"></param>     
-        /// <returns>a list of files that contains the <paramref name="WebURL"/></returns>
-        static object loadSpecialSearchListLock = new object();
-        public static List<WebFile> SpecialSearch(string WebURL)
+        /// <param name="dataFiles">List of WebFile</param>
+        /// <param name="sortProperty">SortBy Name, Date or Size</param>
+        /// <param name="sortReverse">Reverse the sort order</param>
+        public static void SortFiles(List<WebFile> dataFiles, SortBy sortProperty = SortBy.Name, bool sortReverse = false)
         {
-            lock (loadSpecialSearchListLock)
-            {
-                return MainForm.FilesOpenDatabase.Select(item =>
-                new
-                {
-                    i = item,
-                    Props = item.GetType().GetProperties(BindingFlags.Instance | BindingFlags.Public)
-                })
-                .Where(item => item.Props.Any(p =>
-                {
-                    var val = p.GetValue(item.i, null);
-                    return val != null
-                        && (p.Name == "URL" || string.IsNullOrEmpty("URL"))
-                        && (val.ToString().ToLower().StartsWith(WebURL.ToLower()) || string.IsNullOrEmpty(WebURL));
-                }))
-                .Select(item => item.i)
-                .ToList();
-            }
-        }
-
-        static int switchSort = 0;
-        public static void SortFiles(List<WebFile> dataFiles, SortBy Property = SortBy.Name)
-        {
-            if (switchSort == 0)
+            if (!sortReverse)
             {
                 dataFiles.Sort(delegate (WebFile x, WebFile y)
                 {
-                    if (Property == SortBy.Name)
+                    if (sortProperty == SortBy.Name)
                         return x.Name.CompareTo(y.Name);
-                    else if (Property == SortBy.Date)
+                    else if (sortProperty == SortBy.Date)
                         return x.DateUploaded.CompareTo(y.DateUploaded);
-                    else if (Property == SortBy.Size)
+                    else if (sortProperty == SortBy.Size)
                         return x.Size.CompareTo(y.Size);
                     else
                         return x.Name.CompareTo(y.Name);
                 });
-                switchSort = 1;
             }
-            else if (switchSort == 1)
+            else if (sortReverse)
             {
                 dataFiles.Sort(delegate (WebFile x, WebFile y)
                 {
-                    if (Property == SortBy.Name)
+                    if (sortProperty == SortBy.Name)
                         return y.Name.CompareTo(x.Name);
-                    else if (Property == SortBy.Date)
+                    else if (sortProperty == SortBy.Date)
                         return y.DateUploaded.CompareTo(x.DateUploaded);
-                    else if (Property == SortBy.Size)
+                    else if (sortProperty == SortBy.Size)
                         return y.Size.CompareTo(x.Size);
                     else
                         return y.Name.CompareTo(x.Name);
                 });
-                switchSort = 0;
             }
         }
     }

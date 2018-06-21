@@ -5,6 +5,7 @@ http://124.158.108.137/ebooks/
 http://149.56.24.133/
 http://158.255.1.111/
 http://176.158.31.43:1234/
+http://185.12.45.93/origami/
 http://185.12.45.93/scripts/
 http://195.122.253.112/public/
 http://209.132.181.8/pub/
@@ -864,6 +865,7 @@ https://murdercube.com/files/Videos/
 https://murdercube.com/files/Workshop/
 https://nightlies.videolan.org/build/
 https://nightly.odoo.com/7.0/
+https://notendur.hi.is/~oi/Historical%20Geology%20pdf/
 https://ocf.berkeley.edu/~jakemix/
 https://olden.org.ua/~olden/
 https://oss.jfrog.org/artifactory/libs-snapshot/
@@ -885,6 +887,7 @@ https://storage.kanzaki.ru/
 https://suavizinha.com/wp-content/uploads/
 https://thefpl.us/podcasts/
 https://theyosh.nl/speeltuin/
+https://uncoolfiles-baguette.dm4uz3.pt/
 https://vgmusic.com/music/console/
 https://virtualmedia.online.net/
 https://vokalnow.com/static/

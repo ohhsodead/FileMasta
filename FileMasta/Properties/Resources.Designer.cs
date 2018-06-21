@@ -63,26 +63,6 @@ namespace FileMasta.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap alert_octagon {
-            get {
-                object obj = ResourceManager.GetObject("alert-octagon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap alert_octagon_orange {
-            get {
-                object obj = ResourceManager.GetObject("alert_octagon_orange", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap book {
             get {
                 object obj = ResourceManager.GetObject("book", resourceCulture);
@@ -93,9 +73,9 @@ namespace FileMasta.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap bookmark_orange {
+        internal static System.Drawing.Bitmap bookmark {
             get {
-                object obj = ResourceManager.GetObject("bookmark-orange", resourceCulture);
+                object obj = ResourceManager.GetObject("bookmark", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -105,7 +85,7 @@ namespace FileMasta.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap chevron_down {
             get {
-                object obj = ResourceManager.GetObject("chevron-down", resourceCulture);
+                object obj = ResourceManager.GetObject("chevron_down", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -115,7 +95,7 @@ namespace FileMasta.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap chevron_up {
             get {
-                object obj = ResourceManager.GetObject("chevron-up", resourceCulture);
+                object obj = ResourceManager.GetObject("chevron_up", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,29 +103,9 @@ namespace FileMasta.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap chevron_up_orange {
+        internal static System.Drawing.Bitmap clipboard_check {
             get {
-                object obj = ResourceManager.GetObject("chevron_up_orange", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap clipboard_arrow_left_orange {
-            get {
-                object obj = ResourceManager.GetObject("clipboard_arrow_left_orange", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap clipboard_check_orange {
-            get {
-                object obj = ResourceManager.GetObject("clipboard_check_orange", resourceCulture);
+                object obj = ResourceManager.GetObject("clipboard_check", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -163,9 +123,9 @@ namespace FileMasta.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap database_search {
+        internal static System.Drawing.Bitmap content_copy {
             get {
-                object obj = ResourceManager.GetObject("database_search", resourceCulture);
+                object obj = ResourceManager.GetObject("content-copy", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -193,9 +153,9 @@ namespace FileMasta.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap facebook {
+        internal static System.Drawing.Bitmap file_find {
             get {
-                object obj = ResourceManager.GetObject("facebook", resourceCulture);
+                object obj = ResourceManager.GetObject("file-find", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -203,29 +163,9 @@ namespace FileMasta.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap file {
+        internal static System.Drawing.Bitmap file_send {
             get {
-                object obj = ResourceManager.GetObject("file", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap file_find_orange {
-            get {
-                object obj = ResourceManager.GetObject("file-find-orange", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap file_send_orange {
-            get {
-                object obj = ResourceManager.GetObject("file-send-orange", resourceCulture);
+                object obj = ResourceManager.GetObject("file-send", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -243,36 +183,6 @@ namespace FileMasta.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap home {
-            get {
-                object obj = ResourceManager.GetObject("home", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap info {
-            get {
-                object obj = ResourceManager.GetObject("info", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap keyboard {
-            get {
-                object obj = ResourceManager.GetObject("keyboard", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap link_variant {
             get {
                 object obj = ResourceManager.GetObject("link_variant", resourceCulture);
@@ -283,59 +193,9 @@ namespace FileMasta.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap loader {
-            get {
-                object obj = ResourceManager.GetObject("loader", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap local_movies {
-            get {
-                object obj = ResourceManager.GetObject("local_movies", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap magnify {
-            get {
-                object obj = ResourceManager.GetObject("magnify", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap magnify_orange {
-            get {
-                object obj = ResourceManager.GetObject("magnify_orange", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap menu_down {
             get {
                 object obj = ResourceManager.GetObject("menu_down", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap note_text {
-            get {
-                object obj = ResourceManager.GetObject("note-text", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -363,39 +223,9 @@ namespace FileMasta.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap play_orange {
+        internal static System.Drawing.Bitmap search_web {
             get {
-                object obj = ResourceManager.GetObject("play-orange", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap search_web_orange {
-            get {
-                object obj = ResourceManager.GetObject("search_web_orange", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap send {
-            get {
-                object obj = ResourceManager.GetObject("send", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap settings {
-            get {
-                object obj = ResourceManager.GetObject("settings", resourceCulture);
+                object obj = ResourceManager.GetObject("search-web", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -413,39 +243,9 @@ namespace FileMasta.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap share_orange {
-            get {
-                object obj = ResourceManager.GetObject("share_orange", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap twitter {
-            get {
-                object obj = ResourceManager.GetObject("twitter", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap vlc {
             get {
                 object obj = ResourceManager.GetObject("vlc", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap web {
-            get {
-                object obj = ResourceManager.GetObject("web", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
