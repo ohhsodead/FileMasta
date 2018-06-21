@@ -51,6 +51,7 @@ http://app.tresorpublic.mg/outils/antivirus/
 http://apps.goodereader.com/wp-content/uploads/
 http://arborfamilycounseling.com/pdf/
 http://arcarc.xmission.com/PDF_Arcade_Manuals_and_Schematics/
+http://archive.cfru.ca/show/
 http://archive.debian.org/
 http://artificial.duckdns.org/free/
 http://atmosferix.net/audio/
@@ -118,6 +119,7 @@ http://customers.hbci.com/~rpopp/
 http://d20.sabotender.com/
 http://dagwood.sandwich.net/docs/
 http://damschen.thegc.org/
+http://danielardley.com/ebay/
 http://dash.edgesuite.net/dash264/
 http://davfl70.org/movies/
 http://dev.uniforms4healthcare.com/
@@ -283,6 +285,7 @@ http://ftp.urc.ac.ru/
 http://ftp.wsisiz.edu.pl/pub/
 http://funeralrecording.com/____files/
 http://funkyfiles.com/music/
+http://fuzzcast6.menoetius.feralhosting.com/Cartoons/
 http://gagsnetwork.com/data/
 http://galactic.to/download/
 http://game.askad.net/
@@ -437,6 +440,7 @@ http://mrclancy.ca/Film%20and%20TV/Projects/
 http://mrderp.xyz/
 http://mrv6.co.uk/forumstuff/
 http://mrv6.co.uk/software/
+http://music.mvfolkdancers.com/
 http://musicpophits.com/MainPages/Music/
 http://nas.danys.ro/
 http://naughtybits.us/wp-content/uploads/
@@ -451,10 +455,12 @@ http://ngtech.co.il/software/
 http://niels.xyz/
 http://nochederock.com/programas/
 http://noufors.com/Documents/
+http://ns330929.ip-37-187-120.eu/
 http://nsf.joshw.info/
 http://ntslibrary.com/PDF%20Books/
 http://nvidiashieldzone.com/files/shieldtv/apk2tv/
 http://oaprendizverde.com.br/wp-content/uploads/
+http://ocny.oroszwn.com/MP3/
 http://ojbmusic.com/sounds/
 http://oldgames.0wnz.at/
 http://oldskoolanthemz.com/media/
@@ -490,6 +496,7 @@ http://pixsoriginadventures.co.uk/PCZone/
 http://playpen.meraka.csir.co.za/~acdc/education/
 http://playurbanomp3.com/Albums/
 http://plouffe.fr/simon/
+http://podcasts.neptunefm.com/
 http://pokharainternet.com.np/downloads/
 http://poladi.com/Krishna/
 http://pomsintoon.com/
@@ -703,6 +710,7 @@ http://www.catherinepang.com/ebook/
 http://www.certbibles.com/vce/
 http://www.cheeseheadhosting.us/downloads/
 http://www.chrishaga.com/jodi/
+http://www.circuitodorock.com/Circuito%20do%20Rock/
 http://www.classiccmp.org/cini/pdf/
 http://www.compexit.co.uk/downloads/
 http://www.courses.coreservlets.com/Course-Materials/pdf/
@@ -750,6 +758,7 @@ http://www.nshitradio.com/wp-content/uploads/
 http://www.oldradioworld.com/media/
 http://www.ozcott.com/thevault/09/
 http://www.pauladaunt.com/books/
+http://www.perthpianolessons.com.au/songs/
 http://www.pinkasimov.com/
 http://www.rmsproductions.co.uk/
 http://www.sexnerd.com.br/adulto/wp-content/uploads/
@@ -778,6 +787,7 @@ https://bubt.edu.bd/assets/
 https://cdaweb.sci.gsfc.nasa.gov/pub/
 https://ch0c.com/
 https://computerarchive.org/files/
+https://crit.home.xs4all.nl/
 https://curiousmindmagazine.com/wp-content/uploads/
 https://cyber.rms.moe/books/
 https://cyberside.net.ee/docs/
