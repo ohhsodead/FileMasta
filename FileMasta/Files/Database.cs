@@ -14,15 +14,15 @@ namespace FileMasta.Files
         /// <summary>
         /// URLs for database files
         /// </summary>
-        public const string dbOpenFiles = "https://www.dropbox.com/s/charfmjveo2v1h3/open-files.json?raw=true";
-        public const string dbOpenDirectories = "https://raw.githubusercontent.com/HerbL27/FileMasta/master/Public/open-directories.txt";
+        public const string dbOpenFiles = "https://www.dropbox.com/s/0dwmqk1pkj2ndkz/ftp-files.json?raw=true";
+        public const string dbOpenServers = "https://raw.githubusercontent.com/HerbL27/FileMasta/version-4/Public/ftp-servers.txt";
         public const string dbTopSearches = "https://www.dropbox.com/s/512qe4ogan92vea/top-searches.txt?raw=true";
 
         /// <summary>
         /// Database file names
         /// </summary>
-        const string fileNameOpenFiles = "open-files.json";
-        const string fileNameOpenDirectories = "open-directories.txt";
+        const string fileNameFiles = "ftp-files.json";
+        const string fileNameServers = "ftp-servers.txt";
 
         /* Checks if database files exists at users data directory, if so whether they're
          * the same size, and downloads the latest one if either return false */
@@ -32,55 +32,57 @@ namespace FileMasta.Files
 
             try
             {
-                if (IsFileOutOfDate(dbOpenFiles, fileNameOpenFiles))
+                if (IsFileOutOfDate(dbOpenFiles, fileNameFiles))
                 {
+                    Program.log.Info($"Updating {fileNameFiles}...");
                     using (var client = new WebClient())
-                        client.DownloadFile(new Uri(dbOpenFiles), $"{LocalExtensions.pathData}{fileNameOpenFiles}");
-                    Program.log.Info($"{fileNameOpenFiles} updated");
+                        client.DownloadFile(new Uri(dbOpenFiles), $"{LocalExtensions.pathData}{fileNameFiles}");
+                    Program.log.Info($"{fileNameFiles} updated");
                 }
             }
             catch (WebException webEx)
             {
-                Program.log.Error($"UPDATE FAILED {fileNameOpenFiles}", webEx);
+                Program.log.Error($"UPDATE FAILED {fileNameFiles}", webEx);
                 MessageBox.Show(MainForm.Form, "Unable to update database.\n\n" + webEx.Message);
             }
             catch (Exception ex)
             {
-                Program.log.Error($"UPDATE FAILED {fileNameOpenFiles}", ex);
+                Program.log.Error($"UPDATE FAILED {fileNameFiles}", ex);
                 MessageBox.Show(MainForm.Form, "Unable to update database.\n\n" + ex.Message);
             }
             finally
             {
                 // Store files in the main form, skipping the first line as it contains the db metadata
-                foreach (var item in File.ReadAllLines($"{LocalExtensions.pathData}{fileNameOpenFiles}").Skip(1))
+                foreach (var item in File.ReadAllLines($"{LocalExtensions.pathData}{fileNameFiles}").Skip(1))
                     if (StringExtensions.IsValidJSON(item))
-                        MainForm.FilesOpenDatabase.Add(JsonConvert.DeserializeObject<WebFile>(item));
+                        MainForm.DbOpenFiles.Add(JsonConvert.DeserializeObject<WebFile>(item));
 
-                MainForm.DatabaseInfo = File.ReadLines($"{LocalExtensions.pathData}{fileNameOpenFiles}").First(); // Gets first line in database which contains info
+                MainForm.DatabaseInfo = File.ReadLines($"{LocalExtensions.pathData}{fileNameFiles}").First(); // Gets first line in database which contains info
             }
 
             try
             {
-                if (IsFileOutOfDate(dbOpenDirectories, fileNameOpenDirectories))
+                if (IsFileOutOfDate(dbOpenServers, fileNameServers))
                 {
+                    Program.log.Info($"Updating {fileNameServers}...");
                     using (var client = new WebClient())
-                        client.DownloadFile(new Uri(dbOpenDirectories), $"{LocalExtensions.pathData}{fileNameOpenDirectories}");
-                    Program.log.Info($"{fileNameOpenDirectories} updated");
+                        client.DownloadFile(new Uri(dbOpenServers), $"{LocalExtensions.pathData}{fileNameServers}");
+                    Program.log.Info($"{fileNameServers} updated");
                 }
             }
             catch (WebException webEx)
             {
-                Program.log.Error($"UPDATE FAILED {fileNameOpenDirectories}", webEx);
+                Program.log.Error($"UPDATE FAILED {fileNameServers}", webEx);
                 MessageBox.Show(MainForm.Form, "Unable to update database.\n\n" + webEx.Message);
             }
             catch (Exception ex)
             {
-                Program.log.Error($"UPDATE FAILED {fileNameOpenDirectories}", ex);
+                Program.log.Error($"UPDATE FAILED {fileNameServers}", ex);
                 MessageBox.Show(MainForm.Form, "Unable to update database.\n\n" + ex.Message);
             }
             finally
             {
-                MainForm.DataOpenDirectories.AddRange(File.ReadAllLines($"{LocalExtensions.pathData}{fileNameOpenDirectories}"));
+                MainForm.DbOpenServers.AddRange(File.ReadAllLines($"{LocalExtensions.pathData}{fileNameServers}"));
             }            
         }
 
@@ -96,8 +98,8 @@ namespace FileMasta.Files
             {
                 Program.log.Info($"Checking if file '{fileName}' needs to be updated");
 
-                if (File.Exists(LocalExtensions.pathData + fileName))
-                    if (WebFileExtensions.FileSize($"{webFile}") == new FileInfo(LocalExtensions.pathData + fileName).Length)
+                if (File.Exists($"{LocalExtensions.pathData}{fileName}"))
+                    if (WebFileExtensions.WebFileSize($"{webFile}") == new FileInfo($"{LocalExtensions.pathData}{fileName}").Length)
                         return false;
                     else
                         return true;
@@ -115,7 +117,7 @@ namespace FileMasta.Files
         {
             long totalSize = 0;
 
-            foreach (var jsonData in MainForm.FilesOpenDatabase)
+            foreach (var jsonData in MainForm.DbOpenFiles)
                 totalSize += jsonData.Size;
 
             return totalSize;
@@ -128,7 +130,7 @@ namespace FileMasta.Files
         public static DateTime LastUpdate()
         {
             if (StringExtensions.IsValidJSON(MainForm.DatabaseInfo))
-                return JsonConvert.DeserializeObject<DatabaseInfo>(MainForm.DatabaseInfo).LastUpdated;
+                return JsonConvert.DeserializeObject<DatabaseInfo>(MainForm.DatabaseInfo).Updated;
 
             return DateTime.MinValue;
         }
@@ -141,15 +143,15 @@ namespace FileMasta.Files
         public static WebFile WebFile(string URL)
         {
             // Checks loaded files for a matching URL and returns the Web File object
-            foreach (var file in MainForm.FilesOpenDatabase) 
+            foreach (var file in MainForm.DbOpenFiles) 
                 if (file.URL == URL)
                     return file;
         
             // Create a new Web File object as this URL doesn't exist in the database there anymore
-            var newWebFile = new WebFile(Path.GetExtension(URL).Replace(".", "").ToUpper(), Path.GetFileNameWithoutExtension(new Uri(URL).LocalPath), WebFileExtensions.FileSize(URL), WebFileExtensions.FileLastModified(URL), new Uri(URL).Host.Replace("www.", ""), new Uri(URL).AbsoluteUri);
+            var newWebFile = new WebFile(Path.GetExtension(URL).Replace(".", "").ToUpper(), Path.GetFileNameWithoutExtension(new Uri(URL).LocalPath), WebFileExtensions.FtpFileSize(URL), WebFileExtensions.FtpFileTimestamp(URL), new Uri(URL).Host.Replace("www.", ""), new Uri(URL).AbsoluteUri);
 
             // Add the new Web File to this instance of application
-            MainForm.FilesOpenDatabase.Add(newWebFile);
+            MainForm.DbOpenFiles.Add(newWebFile);
 
             // Return the new Web File
             return newWebFile;

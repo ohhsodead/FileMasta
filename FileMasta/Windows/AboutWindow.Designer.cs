@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutWindow));
             this.labelAboutApp = new System.Windows.Forms.Label();
-            this.labelMadeWithLove = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // labelAboutApp
@@ -42,42 +42,41 @@
             this.labelAboutApp.BackColor = System.Drawing.Color.Transparent;
             this.labelAboutApp.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelAboutApp.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelAboutApp.Location = new System.Drawing.Point(12, 9);
+            this.labelAboutApp.Location = new System.Drawing.Point(12, 18);
             this.labelAboutApp.Name = "labelAboutApp";
-            this.labelAboutApp.Size = new System.Drawing.Size(416, 351);
+            this.labelAboutApp.Size = new System.Drawing.Size(279, 151);
             this.labelAboutApp.TabIndex = 1;
             this.labelAboutApp.Text = resources.GetString("labelAboutApp.Text");
-            this.labelAboutApp.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelAboutApp.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // labelMadeWithLove
+            // label1
             // 
-            this.labelMadeWithLove.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.labelMadeWithLove.AutoSize = true;
-            this.labelMadeWithLove.BackColor = System.Drawing.Color.Transparent;
-            this.labelMadeWithLove.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelMadeWithLove.Font = new System.Drawing.Font("Segoe UI", 10.25F);
-            this.labelMadeWithLove.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelMadeWithLove.Location = new System.Drawing.Point(74, 362);
-            this.labelMadeWithLove.Margin = new System.Windows.Forms.Padding(3, 0, 3, 5);
-            this.labelMadeWithLove.Name = "labelMadeWithLove";
-            this.labelMadeWithLove.Size = new System.Drawing.Size(293, 19);
-            this.labelMadeWithLove.TabIndex = 16;
-            this.labelMadeWithLove.Text = "Made with ❤ by geeks from around the world";
-            this.labelMadeWithLove.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label1.Location = new System.Drawing.Point(12, 169);
+            this.label1.Margin = new System.Windows.Forms.Padding(3, 0, 3, 5);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(99, 15);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Created by HerbL";
             // 
-            // AboutDialog
+            // AboutWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(440, 413);
-            this.Controls.Add(this.labelMadeWithLove);
+            this.ClientSize = new System.Drawing.Size(303, 198);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.labelAboutApp);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "AboutDialog";
+            this.Name = "AboutWindow";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
@@ -91,6 +90,6 @@
         #endregion
 
         private System.Windows.Forms.Label labelAboutApp;
-        private System.Windows.Forms.Label labelMadeWithLove;
+        private System.Windows.Forms.Label label1;
     }
 }

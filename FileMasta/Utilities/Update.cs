@@ -13,7 +13,7 @@ namespace FileMasta.Utilities
         /// <summary>
         /// Update URLs
         /// </summary>
-        public static string UrlLatestVersion { get; } = "https://raw.githubusercontent.com/HerbL27/FileMasta/master/FileMasta/current-version.txt";
+        public static string UrlLatestVersion { get; } = "https://raw.githubusercontent.com/HerbL27/FileMasta/version-4/FileMasta/current-version.txt";
         public static string GetUrlLatestUpdater(Version newVersion) { return OpenLink.urlGitHub + $"releases/download/{newVersion.ToString()}/Update.exe"; }
 
         /// <summary>

@@ -27,7 +27,8 @@ namespace FileMasta.Files
         {
             lock (loadSearchListLock)
             {
-                SortFiles(dataFiles, SortBy);
+                bool reverseSort = SortBy == MainForm.Form.SelectedFilesSort;
+                SortFiles(dataFiles, SortBy, reverseSort);
 
                 var queryExactStrings = new Regex("\"(.*?)\"").Matches(SearchQuery.ToLower()); // Get strings wrapped in double quotes
                 var queryListExactStrings = new List<string>();
@@ -57,7 +58,7 @@ namespace FileMasta.Files
         /// <summary>
         /// Sorts the list of files by Name, Date or Size - used before searching the list
         /// </summary>
-        /// <param name="dataFiles">List of WebFile</param>
+        /// <param name="dataFiles">List of WebFile to sort</param>
         /// <param name="sortProperty">SortBy Name, Date or Size</param>
         /// <param name="sortReverse">Reverse the sort order</param>
         public static void SortFiles(List<WebFile> dataFiles, SortBy sortProperty = SortBy.Name, bool sortReverse = false)

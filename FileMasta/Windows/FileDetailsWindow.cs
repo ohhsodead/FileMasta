@@ -1,22 +1,20 @@
 ﻿using FileMasta.Bookmarks;
 using FileMasta.Extensions;
 using FileMasta.Files;
-using FileMasta.GitHub;
 using FileMasta.Models;
-using FileMasta.Windows;
 using FileMasta.Worker;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
-using System;
 
-namespace FileMasta.Controls
+namespace FileMasta.Windows
 {
-    public partial class FileDetails : UserControl
+    public partial class FileDetailsWindow : Form
     {
-        public FileDetails()
+        public FileDetailsWindow()
         {
             InitializeComponent();
         }
@@ -33,9 +31,8 @@ namespace FileMasta.Controls
         public static List<string> AudioFileTypes { get; } = new List<string>() { "MP3", "WMA", "WAV", "M3U", "APE", "AIF", "MPA", "CDA" };
         public static List<string> ImageFileTypes { get; } = new List<string>() { "TIFF", "TIF", "JPEG", "JPG", "BMP", "GIF", "PNG", "EPS", "RAW", "SVG" };
         public static List<string> BookFileTypes { get; } = new List<string>() { "MOBI", "CBZ", "CBR", "CBC", "CHM", "EPUB", "FB2", "LIT", "LRF", "ODT", "PDF", "PRC", "PDB", "PML", "RB", "RTF", "TCR", "DOC", "DOCX" };
-        public static List<string> TextFileTypes { get; } = new List<string>() { "JSP", "PL", "PHP", "HTML", "ASPX", "XML", "TXT", "SQL", "CSV" };
-
-        private void FileDetails_Load(object sender, EventArgs e)
+        
+        private void FileDetailsWindow_Load(object sender, EventArgs e)
         {
             CheckFileEvents();
         }
@@ -48,20 +45,14 @@ namespace FileMasta.Controls
 
             // Shows appropriate Bookmarks button text
             if (!UserBookmarks.IsBookmarked(CurrentFile.URL))
-                ControlExtensions.SetControlText(buttonBookmark, "Add to Bookmarks");            
+                ControlExtensions.SetControlText(ButtonBookmark, "Add to Bookmarks");
             else
-                ControlExtensions.SetControlText(buttonBookmark, "Remove from Bookmarks");
+                ControlExtensions.SetControlText(ButtonBookmark, "Remove from Bookmarks");
 
             // Shows supported pdf readers installed on users machine
             if (BookFileTypes.Contains(CurrentFile.Type))
             {
                 NitroReaderToolStripMenuItem.Visible = File.Exists(LocalExtensions.pathNitroReader);
-            }
-
-            // Shows supported pdf readers installed on users machine
-            if (TextFileTypes.Contains(CurrentFile.Type))
-            {
-
             }
 
             // Shows supported media players installed on users machine
@@ -85,20 +76,20 @@ namespace FileMasta.Controls
             // Shows Open File button if context menu has items
             if (contextOpenFile.Items.Count > 0)
             {
-                buttonOpenWith.Visible = true;
+                ButtonOpenWith.Visible = true;
             }
 
             // Shows Request File Size button if size property returns 0
             if (CurrentFile.Size == 0)
-                buttonRequestSize.Visible = true;
+                ButtonRequestSize.Visible = true;
             else
-                buttonRequestSize.Visible = false;
+                ButtonRequestSize.Visible = false;
 
             // Hides features that aren't needed for local files (Bookmark, Share & Report)
             if (IsLocalFile)
             {
-                buttonBookmark.Visible = false;
-                panelShare.Visible = false;
+                ButtonBookmark.Visible = false;
+                PanelShare.Visible = false;
             }
 
             // Add subtitle file to be played when opening external VLC
@@ -113,47 +104,105 @@ namespace FileMasta.Controls
 
         private void ScrollButtonChecks()
         {
-            if (ParentDataGrid.Rows.Count > 0) {
+            if (ParentDataGrid.Rows.Count > 0)
+            {
                 if (ParentDataGrid.SelectedCells[0].OwningRow.Index == 0)
-                    imagePreviousFile.Image = ImageExtensions.ChangeColor(Properties.Resources.chevron_up, Color.Gray);
+                    ImagePreviousFile.Image = ImageExtensions.ChangeColor(Properties.Resources.chevron_up, Color.Gray);
                 else
-                    imagePreviousFile.Image = Properties.Resources.chevron_up;
+                    ImagePreviousFile.Image = Properties.Resources.chevron_up;
 
                 if (ParentDataGrid.SelectedCells[0].OwningRow.Index == ParentDataGrid.Rows.Count - 1)
-                    imageNextFile.Image = ImageExtensions.ChangeColor(Properties.Resources.chevron_down, Color.Gray);
+                    ImageNextFile.Image = ImageExtensions.ChangeColor(Properties.Resources.chevron_down, Color.Gray);
                 else
-                    imageNextFile.Image = Properties.Resources.chevron_down;
+                    ImageNextFile.Image = Properties.Resources.chevron_down;
             }
             else
             {
-                imagePreviousFile.Image = ImageExtensions.ChangeColor(Properties.Resources.chevron_up, Color.Gray);
-                imageNextFile.Image = ImageExtensions.ChangeColor(Properties.Resources.chevron_down, Color.Gray);
+                ImagePreviousFile.Image = ImageExtensions.ChangeColor(Properties.Resources.chevron_up, Color.Gray);
+                ImageNextFile.Image = ImageExtensions.ChangeColor(Properties.Resources.chevron_down, Color.Gray);
             }
         }
 
-        private void ImageClose_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Go up a row on dataGridFiles and select it
+        /// </summary>
+        private void SelectUpRow()
         {
-            // Close file details
-            MainForm.FrmFileDetails.Dispose();
+            if (ParentDataGrid.Rows.Count > 0)
+            {
+                int totalRows = ParentDataGrid.Rows.Count;
+                int rowIndex = ParentDataGrid.SelectedCells[0].OwningRow.Index;
+                if (rowIndex == 0)
+                    return;
+                int colIndex = ParentDataGrid.SelectedCells[0].OwningColumn.Index;
+                DataGridViewRow selectedRow = ParentDataGrid.Rows[rowIndex];
+                ParentDataGrid.ClearSelection();
+                ParentDataGrid.Rows[rowIndex - 1].Cells[colIndex].Selected = true;
+
+                var URL = ParentDataGrid.CurrentRow.Cells[5].Value.ToString();
+
+                if (ParentDataGrid.CurrentRow.Cells[4].Value.ToString() == "Local")
+                    MainForm.Form.ShowFileDetails(new WebFile(Path.GetExtension(URL).Replace(".", "").ToUpper(), Path.GetFileNameWithoutExtension(new Uri(URL).LocalPath), new FileInfo(URL).Length, File.GetCreationTime(URL), "Local", URL), ParentDataGrid, IsLocalFile, false);
+                else 
+                    MainForm.Form.ShowFileDetails(Database.WebFile(URL), ParentDataGrid, IsLocalFile, false);
+
+                ScrollButtonChecks();
+            }
         }
 
-        // Bookmark Button
-        private void buttonBookmark_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Go down a row on dataGridFiles and select it
+        /// </summary>
+        private void SelectDownRow()
+        {
+            if (ParentDataGrid.Rows.Count > 0)
+            {
+                int totalRows = ParentDataGrid.Rows.Count;
+                int rowIndex = ParentDataGrid.SelectedCells[0].OwningRow.Index;
+                if (rowIndex == totalRows - 1)
+                    return;
+                int colIndex = ParentDataGrid.SelectedCells[0].OwningColumn.Index;
+                DataGridViewRow selectedRow = ParentDataGrid.Rows[rowIndex];
+                ParentDataGrid.ClearSelection();
+                ParentDataGrid.Rows[rowIndex + 1].Cells[colIndex].Selected = true;
+
+                var URL = ParentDataGrid.CurrentRow.Cells[5].Value.ToString();
+
+                if (ParentDataGrid.CurrentRow.Cells[4].Value.ToString() == "Local")
+                    MainForm.Form.ShowFileDetails(new WebFile(Path.GetExtension(URL).Replace(".", "").ToUpper(), Path.GetFileNameWithoutExtension(new Uri(URL).LocalPath), new FileInfo(URL).Length, File.GetCreationTime(URL), "Local", URL), ParentDataGrid, IsLocalFile, false);
+                else
+                    MainForm.Form.ShowFileDetails(Database.WebFile(URL), ParentDataGrid, IsLocalFile, false);
+
+                ScrollButtonChecks();
+            }
+        }
+
+        private void ImagePreviousFile_Click(object sender, EventArgs e)
+        {
+            SelectUpRow();
+        }
+
+        private void ImageNextFile_Click(object sender, EventArgs e)
+        {
+            SelectDownRow();
+        }
+
+        private void ButtonBookmark_Click(object sender, EventArgs e)
         {
             // Add/Remove file from users Bookmarks
             if (UserBookmarks.IsBookmarked(CurrentFile.URL))
             {
                 UserBookmarks.RemoveFile(CurrentFile.URL);
-                ControlExtensions.SetControlText(buttonBookmark, "Add to Bookmarks");
+                ControlExtensions.SetControlText(ButtonBookmark, "Add to Bookmarks");
             }
             else
             {
                 UserBookmarks.AddFile(CurrentFile.URL);
-                ControlExtensions.SetControlText(buttonBookmark, "Remove from Bookmarks");
+                ControlExtensions.SetControlText(ButtonBookmark, "Remove from Bookmarks");
             }
         }
-        
-        private void BtnViewDirectory_Click(object sender, EventArgs e)
+
+        private void ButtonViewDirectory_Click(object sender, EventArgs e)
         {
             // Open parent directory of file in default web browser
             Process browser = new Process();
@@ -162,23 +211,33 @@ namespace FileMasta.Controls
             browser.Start();
         }
 
-        private void BtnRequestSize_Click(object sender, EventArgs e)
+        private void ButtonRequestSize_Click(object sender, EventArgs e)
         {
             // Request file size from URL
-            buttonRequestSize.Visible = false;
-            BackGroundWorker.RunWorkAsync<string>(() => StringExtensions.BytesToPrefix(WebFileExtensions.FtpFileSize(CurrentFile.URL)), (data) => { labelValueSize.Text = data; });
+            ButtonRequestSize.Visible = false;
+            BackGroundWorker.RunWorkAsync<string>(() => StringExtensions.BytesToPrefix(WebFileExtensions.FtpFileSize(CurrentFile.URL)), (data) => { LabelValueSize.Text = data; });
         }
         
-        private void InfoDirectory_Click(object sender, EventArgs e)
+        private void ButtonShare_ClickButtonArea(object Sender, MouseEventArgs e)
         {
-            // Open file parent directory in default web browser
-            Process browser = new Process();
-            browser.StartInfo.UseShellExecute = true;
-            browser.StartInfo.FileName = StringExtensions.ParentDirectory(new Uri(CurrentFile.URL)).Remove(StringExtensions.ParentDirectory(new Uri(CurrentFile.URL)).Length - 1); ;
-            browser.Start();
+            ComboBoxShare.DroppedDown = true;
         }
 
-        private void BtnDirectLink_ClickButtonArea(object Sender, MouseEventArgs e)
+        private void ComboBoxShare_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ComboBoxShare.SelectedIndex == 0)
+                Process.Start("https://www.facebook.com/sharer/sharer.php?u=" + CurrentFile.URL);
+            else if (ComboBoxShare.SelectedIndex == 1)
+                Process.Start("https://twitter.com/home?status=Check%20out%20this%20file%20I%20found%20on%20%40FileMasta%20" + CurrentFile.URL);
+            else if (ComboBoxShare.SelectedIndex == 2)
+                Process.Start("https://plus.google.com/share?url=" + CurrentFile.URL);
+            else if (ComboBoxShare.SelectedIndex == 3)
+                Process.Start("http://reddit.com/submit?url=" + CurrentFile.URL + "&title=" + CurrentFile.Name + "%20%5BFileMasta%5D");
+            else if (ComboBoxShare.SelectedIndex == 4)
+                Process.Start("mailto:?&body=Check%20out%20this%20awesome%20file%20I%20found%20on%20FileMasta%20-%20" + CurrentFile.URL);
+        }
+
+        private void ButtonDirectLink_ClickButtonArea(object Sender, MouseEventArgs e)
         {
             try
             {
@@ -192,43 +251,9 @@ namespace FileMasta.Controls
             }
         }
 
-        // Share File
-        private void BtnShareFile_ClickButtonArea(object Sender, MouseEventArgs e)
+        private void ButtonOpenWith_Click(object sender, EventArgs e)
         {
-            comboBoxShare.DroppedDown = true;
-        }
-
-        private void ComboBoxShareFile_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (comboBoxShare.SelectedIndex == 0)
-                Process.Start("https://www.facebook.com/sharer/sharer.php?u=" + CurrentFile.URL);
-            else if (comboBoxShare.SelectedIndex == 1)
-                Process.Start("https://twitter.com/home?status=Check%20out%20this%20file%20I%20found%20on%20%40FileMasta%20" + CurrentFile.URL);
-            else if (comboBoxShare.SelectedIndex == 2)
-                Process.Start("https://plus.google.com/share?url=" + CurrentFile.URL);
-            else if (comboBoxShare.SelectedIndex == 3)
-                Process.Start("http://reddit.com/submit?url=" + CurrentFile.URL + "&title=" + CurrentFile.Name + "%20%5BFileMasta%5D");
-            else if (comboBoxShare.SelectedIndex == 4)
-                Process.Start("mailto:?&body=Check%20out%20this%20awesome%20file%20I%20found%20on%20FileMasta%20-%20" + CurrentFile.URL);
-        }
-
-        private void InfoReferrer_Click(object sender, EventArgs e)
-        {
-            if (!IsLocalFile)
-            {
-                // Open file host in default web browser
-                Process browser = new Process();
-                browser.StartInfo.UseShellExecute = true;
-                browser.StartInfo.FileName = new Uri(CurrentFile.URL).GetLeftPart(UriPartial.Authority).ToString();
-                browser.Start();
-            }            
-        }
-
-        // Open With...
-
-        private void BtnOpenWith_Click(object sender, EventArgs e)
-        {
-            contextOpenFile.Show(buttonOpenWith, buttonOpenWith.PointToClient(Cursor.Position));
+            contextOpenFile.Show(ButtonOpenWith, ButtonOpenWith.PointToClient(Cursor.Position));
         }
 
         private void NitroPDFToolStripMenuItem_Click(object sender, EventArgs e)
@@ -329,80 +354,7 @@ namespace FileMasta.Controls
             FDM.StartInfo.Arguments = (CurrentFile.URL);
             FDM.Start();
         }
-
-        private void InfoFileURL_SideImageClicked(object Sender, MouseEventArgs e)
-        {
-            // Set file URL to clipboard
-            Clipboard.SetText(CurrentFile.URL);
-            infoFileURL.SideImage = Properties.Resources.clipboard_check;
-            infoFileURL.SideImageSize = new Size(24, 24);
-        }
-
-        /// <summary>
-        /// Go up a row on dataGridFiles and select it
-        /// </summary>
-        private void SelectUpRow()
-        {
-            if (ParentDataGrid.Rows.Count > 0)
-            {
-                int totalRows = ParentDataGrid.Rows.Count;
-                int rowIndex = ParentDataGrid.SelectedCells[0].OwningRow.Index;
-                if (rowIndex == 0)
-                    return;
-                int colIndex = ParentDataGrid.SelectedCells[0].OwningColumn.Index;
-                DataGridViewRow selectedRow = ParentDataGrid.Rows[rowIndex];
-                ParentDataGrid.ClearSelection();
-                ParentDataGrid.Rows[rowIndex - 1].Cells[colIndex].Selected = true;
-
-                var URL = ParentDataGrid.CurrentRow.Cells[5].Value.ToString();
-
-                if (ParentDataGrid.CurrentRow.Cells[4].Value.ToString() == "Local")
-                    MainForm.Form.ShowFileDetails(new WebFile(Path.GetExtension(URL).Replace(".", "").ToUpper(), Path.GetFileNameWithoutExtension(new Uri(URL).LocalPath), new FileInfo(URL).Length, File.GetCreationTime(URL), "Local", URL), ParentDataGrid, IsLocalFile, false);
-                else 
-                    MainForm.Form.ShowFileDetails(Database.WebFile(URL), ParentDataGrid, IsLocalFile, false);
-
-                ScrollButtonChecks();
-            }
-        }
-
-        /// <summary>
-        /// Go down a row on dataGridFiles and select it
-        /// </summary>
-        private void SelectDownRow()
-        {
-            if (ParentDataGrid.Rows.Count > 0)
-            {
-                int totalRows = ParentDataGrid.Rows.Count;
-                int rowIndex = ParentDataGrid.SelectedCells[0].OwningRow.Index;
-                if (rowIndex == totalRows - 1)
-                    return;
-                int colIndex = ParentDataGrid.SelectedCells[0].OwningColumn.Index;
-                DataGridViewRow selectedRow = ParentDataGrid.Rows[rowIndex];
-                ParentDataGrid.ClearSelection();
-                ParentDataGrid.Rows[rowIndex + 1].Cells[colIndex].Selected = true;
-
-                var URL = ParentDataGrid.CurrentRow.Cells[5].Value.ToString();
-
-                if (ParentDataGrid.CurrentRow.Cells[4].Value.ToString() == "Local")
-                    MainForm.Form.ShowFileDetails(new WebFile(Path.GetExtension(URL).Replace(".", "").ToUpper(), Path.GetFileNameWithoutExtension(new Uri(URL).LocalPath), new FileInfo(URL).Length, File.GetCreationTime(URL), "Local", URL), ParentDataGrid, IsLocalFile, false);
-                else
-                    MainForm.Form.ShowFileDetails(Database.WebFile(URL), ParentDataGrid, IsLocalFile, false);
-
-                ScrollButtonChecks();
-            }
-        }
-
-        // Navigate Files with arrows
-        private void ImagePreviousFile_Click(object sender, EventArgs e)
-        {
-            SelectUpRow();
-        }
-
-        private void ImageNextFile_Click(object sender, EventArgs e)
-        {
-            SelectDownRow();
-        }
-
+        
         /*************************************************************************/
         /* Keyboard Shortcuts                                                    */
         /*************************************************************************/
@@ -420,27 +372,27 @@ namespace FileMasta.Controls
                     return true;
                 // Click Bookmarks button
                 case Keys.Control | Keys.B:
-                    buttonBookmark.PerformClick();
+                    ButtonBookmark.PerformClick();
                     return true;
                 // Clicks View Directory button
                 case Keys.Control | Keys.V:
-                    buttonViewDirectory.PerformClick();
+                    ButtonViewDirectory.PerformClick();
                     return true;
                 // Clicks Direct Link button
                 case Keys.Control | Keys.D:
-                    buttonDirectLink.PerformClick();
+                    ButtonDirectLink.PerformClick();
                     return true;
                 // Click Share File button
                 case Keys.Control | Keys.S:
-                    buttonShare.PerformClick();
+                    ButtonShare.PerformClick();
                     return true;
                 // Click Request File Size button
                 case Keys.Control | Keys.R:
-                    buttonRequestSize.PerformClick();
+                    ButtonRequestSize.PerformClick();
                     return true;
                 // Click Open File button
                 case Keys.Control | Keys.O:
-                    buttonOpenWith.PerformClick();
+                    ButtonOpenWith.PerformClick();
                     return true;
                 // Close this instance
                 case Keys.Escape:

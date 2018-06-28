@@ -51,7 +51,7 @@ namespace FileMasta.Windows
             textBoxConnectionPassword.Text = Properties.Settings.Default.proxyPassword;
 
             // Set Proxy Settings
-            if (MainForm.UserWebProxyCustom)
+            if (MainForm.UseWebProxyCustom)
             {
                 if (Uri.TryCreate(Properties.Settings.Default.proxyAddress + ":" + Properties.Settings.Default.proxyPort, UriKind.RelativeOrAbsolute, out Uri result))
                 {
@@ -101,7 +101,7 @@ namespace FileMasta.Windows
             Properties.Settings.Default.proxyUsername = textBoxConnectionUsername.Text;
             Properties.Settings.Default.proxyPassword = textBoxConnectionPassword.Text;
 
-            MainForm.UserWebProxyCustom = Properties.Settings.Default.proxyUseCustom;
+            MainForm.UseWebProxyCustom = Properties.Settings.Default.proxyUseCustom;
 
             Thread.Sleep(500);
             Properties.Settings.Default.Save();

@@ -31,9 +31,9 @@ namespace FileMasta.Controls
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FileDetails));
-            CButtonLib.cBlendItems cBlendItems1 = new CButtonLib.cBlendItems();
             CButtonLib.cBlendItems cBlendItems2 = new CButtonLib.cBlendItems();
             CButtonLib.cBlendItems cBlendItems3 = new CButtonLib.cBlendItems();
+            CButtonLib.cBlendItems cBlendItems4 = new CButtonLib.cBlendItems();
             this.labelFileName = new System.Windows.Forms.Label();
             this.labelTitleName = new System.Windows.Forms.Label();
             this.labelValueName = new System.Windows.Forms.Label();
@@ -563,13 +563,13 @@ namespace FileMasta.Controls
             | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonShare.BackColor = System.Drawing.Color.Transparent;
             this.buttonShare.BorderColor = System.Drawing.SystemColors.Control;
-            cBlendItems1.iColor = new System.Drawing.Color[] {
+            cBlendItems2.iColor = new System.Drawing.Color[] {
         System.Drawing.Color.White,
         System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))))};
-            cBlendItems1.iPoint = new float[] {
+            cBlendItems2.iPoint = new float[] {
         0F,
         1F};
-            this.buttonShare.ColorFillBlend = cBlendItems1;
+            this.buttonShare.ColorFillBlend = cBlendItems2;
             this.buttonShare.Corners.All = 2;
             this.buttonShare.Corners.LowerLeft = 2;
             this.buttonShare.Corners.LowerRight = 2;
@@ -647,6 +647,7 @@ namespace FileMasta.Controls
             this.buttonViewDirectory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonViewDirectory.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonViewDirectory.UseVisualStyleBackColor = true;
+            this.buttonViewDirectory.Click += new System.EventHandler(this.BtnViewDirectory_Click);
             // 
             // buttonBookmark
             // 
@@ -680,6 +681,7 @@ namespace FileMasta.Controls
             this.buttonOpenWith.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonOpenWith.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonOpenWith.UseVisualStyleBackColor = true;
+            this.buttonOpenWith.Click += new System.EventHandler(this.BtnOpenWith_Click);
             // 
             // buttonRequestSize
             // 
@@ -696,6 +698,7 @@ namespace FileMasta.Controls
             this.buttonRequestSize.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonRequestSize.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonRequestSize.UseVisualStyleBackColor = true;
+            this.buttonRequestSize.Click += new System.EventHandler(this.BtnRequestSize_Click);
             // 
             // imageNextFile
             // 
@@ -703,7 +706,7 @@ namespace FileMasta.Controls
             this.imageNextFile.Cursor = System.Windows.Forms.Cursors.Hand;
             this.imageNextFile.Image = ((System.Drawing.Image)(resources.GetObject("imageNextFile.Image")));
             this.imageNextFile.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.imageNextFile.Location = new System.Drawing.Point(48, 26);
+            this.imageNextFile.Location = new System.Drawing.Point(48, 25);
             this.imageNextFile.Margin = new System.Windows.Forms.Padding(2, 25, 2, 3);
             this.imageNextFile.Name = "imageNextFile";
             this.imageNextFile.Size = new System.Drawing.Size(24, 24);
@@ -718,7 +721,7 @@ namespace FileMasta.Controls
             this.imagePreviousFile.Cursor = System.Windows.Forms.Cursors.Hand;
             this.imagePreviousFile.Image = ((System.Drawing.Image)(resources.GetObject("imagePreviousFile.Image")));
             this.imagePreviousFile.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.imagePreviousFile.Location = new System.Drawing.Point(22, 26);
+            this.imagePreviousFile.Location = new System.Drawing.Point(22, 25);
             this.imagePreviousFile.Margin = new System.Windows.Forms.Padding(2, 25, 2, 3);
             this.imagePreviousFile.Name = "imagePreviousFile";
             this.imagePreviousFile.Size = new System.Drawing.Size(24, 24);
@@ -733,13 +736,13 @@ namespace FileMasta.Controls
             | System.Windows.Forms.AnchorStyles.Right)));
             this.infoFileURL.BackColor = System.Drawing.Color.Transparent;
             this.infoFileURL.BorderColor = System.Drawing.Color.Silver;
-            cBlendItems2.iColor = new System.Drawing.Color[] {
+            cBlendItems3.iColor = new System.Drawing.Color[] {
         System.Drawing.Color.White,
         System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))))};
-            cBlendItems2.iPoint = new float[] {
+            cBlendItems3.iPoint = new float[] {
         0F,
         1F};
-            this.infoFileURL.ColorFillBlend = cBlendItems2;
+            this.infoFileURL.ColorFillBlend = cBlendItems3;
             this.infoFileURL.ColorFillSolid = System.Drawing.Color.Silver;
             this.infoFileURL.Corners.All = 2;
             this.infoFileURL.Corners.LowerLeft = 2;
@@ -781,13 +784,13 @@ namespace FileMasta.Controls
             | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonDirectLink.BackColor = System.Drawing.Color.Transparent;
             this.buttonDirectLink.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(186)))), ((int)(((byte)(96)))));
-            cBlendItems3.iColor = new System.Drawing.Color[] {
+            cBlendItems4.iColor = new System.Drawing.Color[] {
         System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(186)))), ((int)(((byte)(96))))),
         System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(184)))), ((int)(((byte)(85)))))};
-            cBlendItems3.iPoint = new float[] {
+            cBlendItems4.iPoint = new float[] {
         0F,
         1F};
-            this.buttonDirectLink.ColorFillBlend = cBlendItems3;
+            this.buttonDirectLink.ColorFillBlend = cBlendItems4;
             this.buttonDirectLink.ColorFillSolid = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(186)))), ((int)(((byte)(96)))));
             this.buttonDirectLink.Corners.All = 2;
             this.buttonDirectLink.Corners.LowerLeft = 2;

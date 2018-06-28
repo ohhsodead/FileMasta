@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using System.Net;
 using FileMasta.Files;
 using FileMasta.Models;
 using FileMasta.Utilities;
@@ -21,7 +20,7 @@ namespace FileMasta.Extensions
         public static string pathMusicDirectory = $@"{KnownFolders.GetPath(KnownFolder.Music)}\";
         public static string pathDocumentsDirectory = $@"{KnownFolders.GetPath(KnownFolder.Documents)}\";
         public static string pathDesktopDirectory = $@"{KnownFolders.GetPath(KnownFolder.Desktop)}\";
-        public static string pathDataBookmarked = $"{pathRoot}bookmarked-files.json";
+        public static string pathBookmarks = $@"{pathRoot}bookmarked.json";
 
         /// <summary>
         /// Supported media players

@@ -15,7 +15,9 @@ namespace FileMasta.Extensions
         public static void ShowControlWindow(UserControl window)
         {
             MainForm.Form.Controls.Add(window);
-            window.Dock = DockStyle.Fill;
+            window.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom;
+            window.Location = new Point(0, 0);
+            window.Size = MainForm.Form.ClientSize;
             window.BringToFront();
             window.Show();
             window.Focus();
@@ -40,22 +42,6 @@ namespace FileMasta.Extensions
         }
 
         /// <summary>
-        /// Gets maximum width for ComboBox dropdown to fit its contents
-        /// </summary>
-        /// <param name="myCombo">ComboBox to get max item length</param>
-        /// <returns>Integer of max size to fit contents</returns>
-        public static int GetMaxDropDownWidth(ComboBox myCombo)
-        {
-            int maxWidth = 0, temp = 0;
-            foreach (var obj in myCombo.Items) {
-                temp = TextRenderer.MeasureText(obj.ToString(), myCombo.Font).Width;
-                if (temp > maxWidth)
-                    maxWidth = temp;                
-            }
-            return maxWidth;
-        }
-
-        /// <summary>
         /// Change button text and auto size
         /// </summary>
         /// <param name="ctrl">CButton control to set text</param>
@@ -65,7 +51,7 @@ namespace FileMasta.Extensions
             ctrl.Text = text;
             var myFont = new Font(ctrl.Font.FontFamily, ctrl.Font.Size);
             var mySize = ctrl.CreateGraphics().MeasureString(ctrl.Text, myFont);
-            ctrl.Width = (((int)(Math.Round(mySize.Width, 0))) + 46);
+            ctrl.Width = (((int)(Math.Round(mySize.Width, 0))) + 34);
         }
 
         // Add top search item to panel
@@ -75,18 +61,15 @@ namespace FileMasta.Extensions
             {
                 Text = text,
                 TextAlign = ContentAlignment.MiddleCenter,
-                Font = new Font("Segoe UI Semibold", 9.25F, FontStyle.Regular | FontStyle.Underline),
+                Font = new Font("Segoe UI Semibold", 9F, FontStyle.Regular | FontStyle.Underline),
                 AutoSize = true,
                 BackColor = Color.Transparent,
-                ForeColor = Color.DimGray,
+                ForeColor = Color.Black,
                 Margin = new Padding(0, 0, 1, 1),
                 Cursor = Cursors.Hand,
                 Name = "tagItem" + count,
             };
 
-            //var myFont = new Font(a.Font.FontFamily, a.Font.Size);
-            //var mySize = a.CreateGraphics().MeasureString(a.Text, myFont);
-            //a.Width = (((int)(Math.Round(mySize.Width, 0))) + 13);
             a.Click += buttonMostSearches_Click;
             return a;
         }

@@ -7,6 +7,6 @@ namespace FileMasta.Models
     /// </summary>
     public partial class DatabaseInfo
     {
-        public DateTime LastUpdated { get; set; } = DateTime.MinValue;
+        public DateTime Updated { get; set; } = DateTime.MinValue;
     }
 }

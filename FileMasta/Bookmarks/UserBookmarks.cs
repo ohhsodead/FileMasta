@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Windows.Forms;
 using FileMasta.Extensions;
 using FileMasta.Files;
 using FileMasta.Models;
@@ -17,7 +18,7 @@ namespace FileMasta.Bookmarks
         /// <param name="URL">URL to add</param>
         public static void AddFile(string URL)
         {
-            using (StreamWriter Bookmarked = File.AppendText(LocalExtensions.pathDataBookmarked))
+            using (StreamWriter Bookmarked = File.AppendText(LocalExtensions.pathBookmarks))
             {
                 var a = JsonConvert.SerializeObject(new Bookmark(URL));
                 Bookmarked.WriteLine(a);
@@ -31,8 +32,8 @@ namespace FileMasta.Bookmarks
         /// <param name="URL">URL to remove</param>
         public static void RemoveFile(string URL)
         {
-            if (File.Exists(LocalExtensions.pathDataBookmarked))
-                TextLineRemover.RemoveTextLines(new List<string> { JsonConvert.SerializeObject(new Bookmark(URL)) }, LocalExtensions.pathDataBookmarked, LocalExtensions.pathDataBookmarked + ".tmp");
+            if (File.Exists(LocalExtensions.pathBookmarks))
+                TextLineRemover.RemoveTextLines(new List<string> { JsonConvert.SerializeObject(new Bookmark(URL)) }, LocalExtensions.pathBookmarks, LocalExtensions.pathBookmarks + ".tmp");
         }
 
         /// <summary>
@@ -42,8 +43,8 @@ namespace FileMasta.Bookmarks
         /// <returns>Whether URL is bookmarked</returns>
         public static bool IsBookmarked(string URL)
         {
-            if (File.Exists(LocalExtensions.pathDataBookmarked))
-                using (StreamReader reader = new StreamReader(LocalExtensions.pathDataBookmarked))
+            if (File.Exists(LocalExtensions.pathBookmarks))
+                using (StreamReader reader = new StreamReader(LocalExtensions.pathBookmarks))
                     while (!reader.EndOfStream)
                     {
                         var a = JsonConvert.DeserializeObject<Bookmark>(reader.ReadLine());
@@ -63,8 +64,8 @@ namespace FileMasta.Bookmarks
             Program.log.Info("Getting users bookmarks files");
 
             var filesBookmarks = new List<WebFile>();
-            if (File.Exists(LocalExtensions.pathDataBookmarked))
-                using (StreamReader reader = new StreamReader(LocalExtensions.pathDataBookmarked))
+            if (File.Exists(LocalExtensions.pathBookmarks))
+                using (StreamReader reader = new StreamReader(LocalExtensions.pathBookmarks))
                     while (!reader.EndOfStream)
                         try
                         {
@@ -79,6 +80,21 @@ namespace FileMasta.Bookmarks
             Program.log.Info("Users bookmarks returned successful");
 
             return filesBookmarks;
+        }
+
+        /// <summary>
+        /// Removes all items in bookmarks
+        /// </summary>
+        public static void ClearBookmarks()
+        {
+            Program.log.Info("Clearing all bookmarks");
+
+            var filesBookmarks = new List<WebFile>();
+            if (File.Exists(LocalExtensions.pathBookmarks))
+                using (StreamWriter stream = File.CreateText(LocalExtensions.pathBookmarks))
+                    stream.Flush();
+
+            Program.log.Info("Bookmarks cleared successfully");
         }
     }
 }

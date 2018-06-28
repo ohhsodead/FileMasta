@@ -92,6 +92,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Windows\FileDetailsWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\FileDetailsWindow.Designer.cs">
+      <DependentUpon>FileDetailsWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Extensions\ImageExtensions.cs" />
     <Compile Include="Windows\AboutWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +116,12 @@
     <Compile Include="GitHub\Resources.cs" />
     <Compile Include="Models\Bookmark.cs" />
     <Compile Include="Models\DatabaseInfo.cs" />
+    <Compile Include="Windows\BookmarksWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\BookmarksWindow.Designer.cs">
+      <DependentUpon>BookmarksWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="Windows\OptionsWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -167,7 +180,6 @@
     </Compile>
     <Compile Include="Extensions\ControlExtensions.cs" />
     <Compile Include="Extensions\WebFileExtensions.cs" />
-    <Compile Include="Extensions\ImageExtensions.cs" />
     <Compile Include="Files\Database.cs" />
     <Compile Include="Utilities\KnownFolder.cs" />
     <Compile Include="Program.cs" />
@@ -178,6 +190,9 @@
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Utilities\TextLineRemover.cs" />
     <Compile Include="Utilities\Update.cs" />
+    <EmbeddedResource Include="Windows\FileDetailsWindow.resx">
+      <DependentUpon>FileDetailsWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Windows\AboutWindow.resx">
       <DependentUpon>AboutWindow.cs</DependentUpon>
     </EmbeddedResource>
@@ -186,6 +201,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\SplashScreen.resx">
       <DependentUpon>SplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\BookmarksWindow.resx">
+      <DependentUpon>BookmarksWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\OptionsWindow.resx">
       <DependentUpon>OptionsWindow.cs</DependentUpon>

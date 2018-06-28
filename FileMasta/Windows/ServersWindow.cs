@@ -1,6 +1,7 @@
 ﻿using FileMasta.Worker;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace FileMasta.Windows
@@ -12,18 +13,21 @@ namespace FileMasta.Windows
             InitializeComponent();
         }
 
-
-        // Loads Host into Grid
-        delegate void loadHostsCallBack();
-        private void ShowHosts()
+        private void ServersWindow_Load(object sender, EventArgs e)
         {
-            Program.log.Info("Getting file hosts for Discover tab");
+            LoadServers();
+        }
+        
+        // Loads Servers into DataGrid
+        delegate void loadHostsCallBack();
+        private void LoadServers()
+        {
+            Program.log.Info("Loading ftp servers");
 
-            BackGroundWorker.RunWorkAsync<List<string>>(() => GetFileHosts(), (data) => {
+            BackGroundWorker.RunWorkAsync<List<string>>(() => GetServers(), (data) => {
                 if (this.InvokeRequired)
                 {
-                    var b = new loadHostsCallBack(ShowHosts);
-                    Invoke(b, new object[] { });
+                    Invoke(new loadHostsCallBack(LoadServers), new object[] { });
                 }
                 else
                 {
@@ -32,27 +36,32 @@ namespace FileMasta.Windows
                     int count = 1;
                     foreach (string url in data)
                     {
-                        dataGridDiscover.Rows.Add(count.ToString(), url, "Web", url);
+                        dataGridDiscover.Rows.Add(count.ToString(), url, "FTP", url);
                         count += 1;
                     }
                 }
             });
 
-            Program.log.Info("Successfully loaded hosts/servers");
+            Program.log.Info("Successfully loaded servers");
         }
 
         object loadHostsLock = new object();
-        private List<string> GetFileHosts()
+        private List<string> GetServers()
         {
             lock (loadHostsLock)
             {
                 List<string> urls = new List<string>();
-                foreach (string file in MainForm.DataOpenDirectories)
-                    if (!urls.Contains(new Uri(file.Replace("www.", "")).GetLeftPart(UriPartial.Scheme) + new Uri(file.Replace("www.", "")).Authority))
-                        urls.Add(new Uri(file.Replace("www.", "")).GetLeftPart(UriPartial.Scheme) + new Uri(file.Replace("www.", "")).Authority);
+                foreach (string file in MainForm.DbOpenServers)
+                    urls.Add(new Uri(file).GetLeftPart(UriPartial.Scheme) + new Uri(file).Authority);
 
                 return urls;
             }
+        }
+
+        private void dataGridDiscover_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex != -1)
+                Process.Start(dataGridDiscover.CurrentRow.Cells[3].Value.ToString());
         }
     }
 }
