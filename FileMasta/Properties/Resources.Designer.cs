@@ -173,9 +173,9 @@ namespace FileMasta.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap filemasta_logo {
+        internal static System.Drawing.Bitmap filemasta_logo_v4 {
             get {
-                object obj = ResourceManager.GetObject("filemasta-logo", resourceCulture);
+                object obj = ResourceManager.GetObject("filemasta-logo-v4", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

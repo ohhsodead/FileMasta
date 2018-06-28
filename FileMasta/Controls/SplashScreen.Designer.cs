@@ -74,7 +74,7 @@
             // imageLogo
             // 
             this.imageLogo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.imageLogo.Image = global::FileMasta.Properties.Resources.filemasta_logo;
+            this.imageLogo.Image = global::FileMasta.Properties.Resources.filemasta_logo_v4;
             this.imageLogo.Location = new System.Drawing.Point(248, 125);
             this.imageLogo.Name = "imageLogo";
             this.imageLogo.Size = new System.Drawing.Size(205, 205);

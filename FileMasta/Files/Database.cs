@@ -15,7 +15,7 @@ namespace FileMasta.Files
         /// URLs for database files
         /// </summary>
         public const string dbOpenFiles = "https://www.dropbox.com/s/0dwmqk1pkj2ndkz/ftp-files.json?raw=true";
-        public const string dbOpenServers = "https://raw.githubusercontent.com/HerbL27/FileMasta/version-4/Public/ftp-servers.txt";
+        public const string dbOpenServers = "https://raw.githubusercontent.com/HerbL27/FileMasta/master/Public/ftp-servers.txt";
         public const string dbTopSearches = "https://www.dropbox.com/s/512qe4ogan92vea/top-searches.txt?raw=true";
 
         /// <summary>
