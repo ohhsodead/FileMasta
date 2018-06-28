@@ -76,14 +76,11 @@ You don't need a special program but it is very recommended. For example, if you
 - [log4net](https://logging.apache.org/log4net/)
 
 ## Screenshots
-### Home
-![Home](https://github.com/HerbL27/FileMasta/blob/master/Screenshots/Home.png?raw=true)
-
 ### Search Files
-![Files](https://github.com/HerbL27/FileMasta/blob/master/Screenshots/Files.png?raw=true)
-
-### Discover (Web Explorer)
-![Discover (Web Explorer)](https://github.com/HerbL27/FileMasta/blob/master/Screenshots/Discover.png?raw=true)
+![Search Files](https://github.com/HerbL27/FileMasta/blob/master/Screenshots/Search%20Files.png?raw=true)
 
 ### File Details
 ![File Details](https://github.com/HerbL27/FileMasta/blob/master/Screenshots/File%20Details.png?raw=true)
+
+### Bookmarks
+![Bookmarks)](https://github.com/HerbL27/FileMasta/blob/master/Screenshots/Bookmarks.png?raw=true)
