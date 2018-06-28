@@ -53,9 +53,9 @@
             this.ComboBoxType = new System.Windows.Forms.ComboBox();
             this.TextBoxSearchQuery = new ChreneLib.Controls.TextBoxes.CTextBox();
             this.PanelBookmarkControls = new System.Windows.Forms.Panel();
-            this.ButtonClearAll = new System.Windows.Forms.Button();
-            this.ButtonRemoveFile = new System.Windows.Forms.Button();
             this.LabelStatus = new System.Windows.Forms.Label();
+            this.ButtonRemoveFile = new System.Windows.Forms.Button();
+            this.ButtonClearAll = new System.Windows.Forms.Button();
             this.labelNoResultsFound = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridFiles)).BeginInit();
             this.PanelSearchControls.SuspendLayout();
@@ -328,16 +328,15 @@
             this.PanelBookmarkControls.Size = new System.Drawing.Size(811, 43);
             this.PanelBookmarkControls.TabIndex = 1113;
             // 
-            // ButtonClearAll
+            // LabelStatus
             // 
-            this.ButtonClearAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonClearAll.Location = new System.Drawing.Point(755, 9);
-            this.ButtonClearAll.Name = "ButtonClearAll";
-            this.ButtonClearAll.Size = new System.Drawing.Size(45, 23);
-            this.ButtonClearAll.TabIndex = 6;
-            this.ButtonClearAll.Text = "Clear";
-            this.ButtonClearAll.UseVisualStyleBackColor = true;
-            this.ButtonClearAll.Click += new System.EventHandler(this.ButtonClearAll_Click);
+            this.LabelStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.LabelStatus.AutoSize = true;
+            this.LabelStatus.Location = new System.Drawing.Point(12, 19);
+            this.LabelStatus.Name = "LabelStatus";
+            this.LabelStatus.Size = new System.Drawing.Size(118, 13);
+            this.LabelStatus.TabIndex = 1114;
+            this.LabelStatus.Text = "Loading bookmarks...";
             // 
             // ButtonRemoveFile
             // 
@@ -350,15 +349,16 @@
             this.ButtonRemoveFile.Text = "Remove File";
             this.ButtonRemoveFile.UseVisualStyleBackColor = true;
             // 
-            // LabelStatus
+            // ButtonClearAll
             // 
-            this.LabelStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.LabelStatus.AutoSize = true;
-            this.LabelStatus.Location = new System.Drawing.Point(12, 19);
-            this.LabelStatus.Name = "LabelStatus";
-            this.LabelStatus.Size = new System.Drawing.Size(118, 13);
-            this.LabelStatus.TabIndex = 1114;
-            this.LabelStatus.Text = "Loading bookmarks...";
+            this.ButtonClearAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.ButtonClearAll.Location = new System.Drawing.Point(755, 9);
+            this.ButtonClearAll.Name = "ButtonClearAll";
+            this.ButtonClearAll.Size = new System.Drawing.Size(45, 23);
+            this.ButtonClearAll.TabIndex = 6;
+            this.ButtonClearAll.Text = "Clear";
+            this.ButtonClearAll.UseVisualStyleBackColor = true;
+            this.ButtonClearAll.Click += new System.EventHandler(this.ButtonClearAll_Click);
             // 
             // labelNoResultsFound
             // 

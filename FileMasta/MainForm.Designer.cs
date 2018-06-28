@@ -57,6 +57,7 @@ namespace FileMasta
             this.menuStripHeader = new System.Windows.Forms.MenuStrip();
             this.menuStripToolsFile = new System.Windows.Forms.ToolStripMenuItem();
             this.menuFileExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuFileBookmarks = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripTools = new System.Windows.Forms.ToolStripMenuItem();
             this.menuToolsFtpServerList = new System.Windows.Forms.ToolStripMenuItem();
             this.menuToolsSubmitFtpServer = new System.Windows.Forms.ToolStripMenuItem();
@@ -68,7 +69,6 @@ namespace FileMasta
             this.menuHelpTermsOfUse = new System.Windows.Forms.ToolStripMenuItem();
             this.menuHelpPrivacyPolicy = new System.Windows.Forms.ToolStripMenuItem();
             this.menuHelpChangeLog = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuFileBookmarks = new System.Windows.Forms.ToolStripMenuItem();
             this.panelSearchControls = new System.Windows.Forms.Panel();
             this.flowPanelMostSearches = new System.Windows.Forms.FlowLayoutPanel();
             this.labelMostSearches = new System.Windows.Forms.Label();
@@ -311,6 +311,13 @@ namespace FileMasta
             this.menuFileExit.Text = "Exit";
             this.menuFileExit.Click += new System.EventHandler(this.menuFileExit_Click);
             // 
+            // menuFileBookmarks
+            // 
+            this.menuFileBookmarks.Name = "menuFileBookmarks";
+            this.menuFileBookmarks.Size = new System.Drawing.Size(78, 20);
+            this.menuFileBookmarks.Text = "Bookmarks";
+            this.menuFileBookmarks.Click += new System.EventHandler(this.menuFileBookmarks_Click);
+            // 
             // menuStripTools
             // 
             this.menuStripTools.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -323,14 +330,14 @@ namespace FileMasta
             // menuToolsFtpServerList
             // 
             this.menuToolsFtpServerList.Name = "menuToolsFtpServerList";
-            this.menuToolsFtpServerList.Size = new System.Drawing.Size(180, 22);
+            this.menuToolsFtpServerList.Size = new System.Drawing.Size(170, 22);
             this.menuToolsFtpServerList.Text = "FTP Server List";
             this.menuToolsFtpServerList.Click += new System.EventHandler(this.menuToolsWebServerList_Click);
             // 
             // menuToolsSubmitFtpServer
             // 
             this.menuToolsSubmitFtpServer.Name = "menuToolsSubmitFtpServer";
-            this.menuToolsSubmitFtpServer.Size = new System.Drawing.Size(180, 22);
+            this.menuToolsSubmitFtpServer.Size = new System.Drawing.Size(170, 22);
             this.menuToolsSubmitFtpServer.Text = "Submit FTP Server";
             this.menuToolsSubmitFtpServer.Click += new System.EventHandler(this.menuToolsSubmitWebsite_Click);
             // 
@@ -357,51 +364,44 @@ namespace FileMasta
             // menuHelpAbout
             // 
             this.menuHelpAbout.Name = "menuHelpAbout";
-            this.menuHelpAbout.Size = new System.Drawing.Size(180, 22);
+            this.menuHelpAbout.Size = new System.Drawing.Size(177, 22);
             this.menuHelpAbout.Text = "About";
             this.menuHelpAbout.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // menuHelpReportIssue
             // 
             this.menuHelpReportIssue.Name = "menuHelpReportIssue";
-            this.menuHelpReportIssue.Size = new System.Drawing.Size(180, 22);
+            this.menuHelpReportIssue.Size = new System.Drawing.Size(177, 22);
             this.menuHelpReportIssue.Text = "Report Issue";
             this.menuHelpReportIssue.Click += new System.EventHandler(this.reportIssueToolStripMenuItem_Click);
             // 
             // menuHelpKeyboardShortcuts
             // 
             this.menuHelpKeyboardShortcuts.Name = "menuHelpKeyboardShortcuts";
-            this.menuHelpKeyboardShortcuts.Size = new System.Drawing.Size(180, 22);
+            this.menuHelpKeyboardShortcuts.Size = new System.Drawing.Size(177, 22);
             this.menuHelpKeyboardShortcuts.Text = "Keyboard Shortcuts";
             this.menuHelpKeyboardShortcuts.Click += new System.EventHandler(this.keyboardShortcutsToolStripMenuItem_Click);
             // 
             // menuHelpTermsOfUse
             // 
             this.menuHelpTermsOfUse.Name = "menuHelpTermsOfUse";
-            this.menuHelpTermsOfUse.Size = new System.Drawing.Size(180, 22);
+            this.menuHelpTermsOfUse.Size = new System.Drawing.Size(177, 22);
             this.menuHelpTermsOfUse.Text = "Terms of Use";
             this.menuHelpTermsOfUse.Click += new System.EventHandler(this.termsOfUseToolStripMenuItem_Click);
             // 
             // menuHelpPrivacyPolicy
             // 
             this.menuHelpPrivacyPolicy.Name = "menuHelpPrivacyPolicy";
-            this.menuHelpPrivacyPolicy.Size = new System.Drawing.Size(180, 22);
+            this.menuHelpPrivacyPolicy.Size = new System.Drawing.Size(177, 22);
             this.menuHelpPrivacyPolicy.Text = "Privacy Policy";
             this.menuHelpPrivacyPolicy.Click += new System.EventHandler(this.privacyPolicyToolStripMenuItem_Click);
             // 
             // menuHelpChangeLog
             // 
             this.menuHelpChangeLog.Name = "menuHelpChangeLog";
-            this.menuHelpChangeLog.Size = new System.Drawing.Size(180, 22);
+            this.menuHelpChangeLog.Size = new System.Drawing.Size(177, 22);
             this.menuHelpChangeLog.Text = "Change Log - {0}";
             this.menuHelpChangeLog.Click += new System.EventHandler(this.changeLogToolStripMenuItem_Click);
-            // 
-            // menuFileBookmarks
-            // 
-            this.menuFileBookmarks.Name = "menuFileBookmarks";
-            this.menuFileBookmarks.Size = new System.Drawing.Size(78, 20);
-            this.menuFileBookmarks.Text = "Bookmarks";
-            this.menuFileBookmarks.Click += new System.EventHandler(this.menuFileBookmarks_Click);
             // 
             // panelSearchControls
             // 

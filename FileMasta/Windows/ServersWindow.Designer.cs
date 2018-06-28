@@ -32,11 +32,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ServersWindow));
             this.dataGridDiscover = new System.Windows.Forms.DataGridView();
-            this.labelTitleDiscover = new System.Windows.Forms.Label();
             this.columnDiscoverCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnDiscoverServer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnDiscoverType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnDiscoverURL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.labelTitleDiscover = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridDiscover)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,7 +57,6 @@
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Empty;
             dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(10, 4, 0, 4);
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.WindowText;
@@ -97,23 +96,6 @@
             this.dataGridDiscover.TabIndex = 1;
             this.dataGridDiscover.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridDiscover_CellClick);
             // 
-            // labelTitleDiscover
-            // 
-            this.labelTitleDiscover.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelTitleDiscover.AutoEllipsis = true;
-            this.labelTitleDiscover.AutoSize = true;
-            this.labelTitleDiscover.BackColor = System.Drawing.Color.Transparent;
-            this.labelTitleDiscover.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTitleDiscover.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelTitleDiscover.Location = new System.Drawing.Point(9, 9);
-            this.labelTitleDiscover.Margin = new System.Windows.Forms.Padding(0);
-            this.labelTitleDiscover.Name = "labelTitleDiscover";
-            this.labelTitleDiscover.Size = new System.Drawing.Size(275, 20);
-            this.labelTitleDiscover.TabIndex = 3;
-            this.labelTitleDiscover.Text = "Every FTP server crawled by FileMasta.";
-            this.labelTitleDiscover.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // columnDiscoverCount
             // 
             this.columnDiscoverCount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
@@ -142,6 +124,23 @@
             this.columnDiscoverURL.Name = "columnDiscoverURL";
             this.columnDiscoverURL.ReadOnly = true;
             this.columnDiscoverURL.Visible = false;
+            // 
+            // labelTitleDiscover
+            // 
+            this.labelTitleDiscover.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelTitleDiscover.AutoEllipsis = true;
+            this.labelTitleDiscover.AutoSize = true;
+            this.labelTitleDiscover.BackColor = System.Drawing.Color.Transparent;
+            this.labelTitleDiscover.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitleDiscover.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.labelTitleDiscover.Location = new System.Drawing.Point(9, 9);
+            this.labelTitleDiscover.Margin = new System.Windows.Forms.Padding(0);
+            this.labelTitleDiscover.Name = "labelTitleDiscover";
+            this.labelTitleDiscover.Size = new System.Drawing.Size(275, 20);
+            this.labelTitleDiscover.TabIndex = 3;
+            this.labelTitleDiscover.Text = "Every FTP server crawled by FileMasta.";
+            this.labelTitleDiscover.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // ServersWindow
             // 

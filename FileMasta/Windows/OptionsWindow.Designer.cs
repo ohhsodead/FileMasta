@@ -254,7 +254,7 @@
             this.buttonRestore.UseVisualStyleBackColor = true;
             this.buttonRestore.Click += new System.EventHandler(this.buttonRestore_Click);
             // 
-            // Options
+            // OptionsWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -278,7 +278,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Options";
+            this.Name = "OptionsWindow";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;

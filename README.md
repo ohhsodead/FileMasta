@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="/FileMasta/Resources/filemasta-logo.png" height="200" width="200" alt="Logo" />
+  <img src="/FileMasta/Resources/filemasta-logo-v4.png" height="200" width="200" alt="Logo" />
   <br />
   FileMasta
 </h1>
@@ -77,13 +77,13 @@ You don't need a special program but it is very recommended. For example, if you
 
 ## Screenshots
 ### Home
-![Home](https://github.com/HerbL27/FileMasta/blob/version-4/Screenshots/Home.png?raw=true)
+![Home](https://github.com/HerbL27/FileMasta/blob/master/Screenshots/Home.png?raw=true)
 
 ### Search Files
-![Files](https://github.com/HerbL27/FileMasta/blob/version-4/Screenshots/Files.png?raw=true)
+![Files](https://github.com/HerbL27/FileMasta/blob/master/Screenshots/Files.png?raw=true)
 
 ### Discover (Web Explorer)
-![Discover (Web Explorer)](https://github.com/HerbL27/FileMasta/blob/version-4/Screenshots/Discover.png?raw=true)
+![Discover (Web Explorer)](https://github.com/HerbL27/FileMasta/blob/master/Screenshots/Discover.png?raw=true)
 
 ### File Details
-![File Details](https://github.com/HerbL27/FileMasta/blob/version-4/Screenshots/File%20Details.png?raw=true)
+![File Details](https://github.com/HerbL27/FileMasta/blob/master/Screenshots/File%20Details.png?raw=true)

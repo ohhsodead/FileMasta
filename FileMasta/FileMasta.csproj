@@ -50,7 +50,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>filemasta-logo.ico</ApplicationIcon>
+    <ApplicationIcon>filemasta-logo-v4.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>false</SignAssembly>
@@ -104,12 +104,6 @@
     </Compile>
     <Compile Include="Windows\AboutWindow.Designer.cs">
       <DependentUpon>AboutWindow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\FileDetails.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\FileDetails.Designer.cs">
-      <DependentUpon>FileDetails.cs</DependentUpon>
     </Compile>
     <Compile Include="Files\Query.cs" />
     <Compile Include="Files\Types.cs" />
@@ -195,9 +189,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\AboutWindow.resx">
       <DependentUpon>AboutWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\FileDetails.resx">
-      <DependentUpon>FileDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\SplashScreen.resx">
       <DependentUpon>SplashScreen.cs</DependentUpon>
@@ -289,7 +280,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="current-version.txt" />
-    <Content Include="filemasta-logo.ico" />
+    <Content Include="filemasta-logo-v4.ico" />
+    <Content Include="Resources\filemasta-logo-v4.png" />
     <None Include="Resources\share.png" />
     <None Include="Resources\menu-down.png" />
     <None Include="Resources\search-web.png" />
@@ -305,7 +297,6 @@
     <None Include="Resources\close.png" />
     <None Include="Resources\clipboard-check.png" />
     <None Include="Resources\book.png" />
-    <Content Include="Resources\filemasta-logo.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
