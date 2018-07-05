@@ -16,6 +16,9 @@ The search engine is powered by a [public database](https://www.dropbox.com/s/0d
 
 All servers this app uses for indexing are submitted by users only, open a PR and add yours. A list of the servers we index are stored in our [ftp servers list](https://github.com/HerbL27/FileMasta/blob/master/Public/ftp-servers.txt). Also please check our [Terms of Use](https://github.com/HerbL27/FileMasta/blob/master/TERMSOFUSE.txt) statement for more information about what you have to take into consideration to use this application.
 
+*Note: I'm working on refactoring the code and interface (version 4.0). I've also created a new database, using FTP files rather than parsing html content. The database will take a few weeks to be updated so I can't release an update until its completed. For now, version 3.6 somewhat works. 
+*
+
 >We host no content, we provide only access to already available files in a same way Google and other search engines do.
 
 [![Report a bug](http://i.imgur.com/xSpw482.png)](https://github.com/HerbL27/FileMasta/issues/new) [![Feature request](http://i.imgur.com/mFO0OuX.png)](http://feathub.com/ekkash/WebCrunch)
