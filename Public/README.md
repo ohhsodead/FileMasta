@@ -1,10 +1,9 @@
 # Contributing Servers to the Database
 
-The *ftp-servers.txt* file is a list of every server crawled by FileMasta ready to be discovered. To add links, edit the file and add your link to a new line somewhere, click 'Commit' and we'll verify the request as soon as we can. All files will be available upon our next automatic scan by the robots crawler.
+We store all our indexed servers in *ftp-servers.txt* so it's easy to implement new servers as time goes on. To add links, edit the file and add your server in the format below to a new line somewhere, click 'Commit' and we'll verify the request as soon as we can. All files will be available upon our next automatic scan by the [Web crawler](https://github.com/HerbL27/Web-Crawler)
 
-- Only server links are allowed e.g. *ftp://domain.com/* or *ftp://192.0.2.64/pub/*
-- Username/Passwords are allowed, just use this format e.g. *ftp://username:password@192.0.2.64/*
+- Only FTP servers are allowed e.g. *domain.com* or *192.0.2.64:52/pub* (default port is used if not specified) 
+- Username/Passwords are allowed, just use hh default format e.g. *username:password@192.0.2.64*
 - No site listings under multiple domain names
-- Do not submit incomplete or "Under Construction" web sites
-- Do not use URL shorteners in order to submit multiple similar links
+- Do not use URL shorteners in order to submit multiple links
 - No links to anything pornographic or in extremely bad taste
