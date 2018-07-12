@@ -20,7 +20,7 @@ namespace FileMasta.Windows
         /// <summary>
         /// Enables/Disables Proxy Settings
         /// </summary>
-        private void checkBoxConnectionDefault_CheckedChanged(object sender, EventArgs e)
+        private void CheckBoxConnectionDefault_CheckedChanged(object sender, EventArgs e)
         {
             // Connection (Enabled/Disabled)
             textBoxConnectionAddress.Enabled = Properties.Settings.Default.proxyUseCustom;
@@ -78,7 +78,7 @@ namespace FileMasta.Windows
             }
         }
 
-        private void buttonRestore_Click(object sender, EventArgs e)
+        private void ButtonRestore_Click(object sender, EventArgs e)
         {
             Properties.Settings.Default.Reset();
 
@@ -89,7 +89,7 @@ namespace FileMasta.Windows
             Program.log.Info("Restored user settings");
         }
 
-        private void buttonSave_Click(object sender, EventArgs e)
+        private void ButtonSave_Click(object sender, EventArgs e)
         {
             // General
             Properties.Settings.Default.clearDataOnClose = checkBoxGeneralClearDataOnClose.Checked;
@@ -109,6 +109,22 @@ namespace FileMasta.Windows
             LoadUserSettings();
             MessageBox.Show("Settings saved.");
             Program.log.Info("Saved user settings");
+        }
+
+        /*************************************************************************/
+        /* Keyboard Shortcuts                                                    */
+        /*************************************************************************/
+
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            switch (keyData)
+            {
+                // Close this instance
+                case Keys.Escape:
+                    Close();
+                    return true;
+            }
+            return base.ProcessCmdKey(ref msg, keyData);
         }
     }
 }

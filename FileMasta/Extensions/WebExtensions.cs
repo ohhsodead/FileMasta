@@ -1,10 +1,9 @@
 ﻿using System;
-using System.IO;
 using System.Net;
 
 namespace FileMasta.Extensions
 {
-    class WebFileExtensions
+    class WebExtensions
     {
         /// <summary>
         /// Gets size of ftp file in bytes
@@ -96,41 +95,29 @@ namespace FileMasta.Extensions
         {
             try
             {
-                var request = (FtpWebRequest)WebRequest.Create(URL);
-                request.Timeout = 300000;
-
-                using (var fileResponse = (FtpWebResponse)request.GetResponse())
-                    return true;
+                GetRequest(URL);
+                return true;
             }
             catch { return false; }
         }
 
         /// <summary>
-        /// Checks if path is a local file and exists on machine
+        /// Initialize new http web request
         /// </summary>
-        /// <param name="filePath"></param>
-        /// <returns></returns>
-        public static bool IsLocalFile(string filePath)
+        /// <param name="requestUriString">File URL</param>
+        /// <param name="httpMethod">Method for the request</param>
+        /// <param name="allowAutoRedirect">Whether request should follow redirection responses</param>
+        /// <param name="contentType">Sets content-type http header</param>
+        /// <returns>Returns a new HTTP Web Request to Get Response from file</returns>
+        public static HttpWebRequest GetRequest(string requestUriString, string httpMethod = "GET", bool allowAutoRedirect = true, string contentType = "text/plain")
         {
-            return File.Exists(filePath);
-        }
-
-        /// <summary>
-        /// Checks if path is valid
-        /// </summary>
-        /// <param name="url"></param>
-        /// <returns></returns>
-        public static bool IsUri(string uriString)
-        {
-            try
-            {
-                Uri uri = new Uri(uriString);
-                return true;
-            }
-            catch
-            {
-                return false;
-            }
+            var request = (HttpWebRequest)WebRequest.Create(requestUriString);
+            request.UserAgent = @"Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko";
+            request.ContentType = contentType;
+            request.Timeout = Convert.ToInt32(new TimeSpan(0, 5, 0).TotalMilliseconds);
+            request.AllowAutoRedirect = allowAutoRedirect;
+            request.Method = httpMethod;
+            return request;
         }
     }
 }

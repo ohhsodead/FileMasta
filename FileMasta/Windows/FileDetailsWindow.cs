@@ -19,7 +19,7 @@ namespace FileMasta.Windows
             InitializeComponent();
         }
 
-        public WebFile CurrentFile { get; set; }
+        public FtpFile CurrentFile { get; set; }
         public DataGridView ParentDataGrid { get; set; }
         public bool IsLocalFile { get; set; }
         string FileSubtitles { get; set; }
@@ -50,15 +50,14 @@ namespace FileMasta.Windows
                 ControlExtensions.SetControlText(ButtonBookmark, "Remove from Bookmarks");
 
             // Shows supported pdf readers installed on users machine
-            if (BookFileTypes.Contains(CurrentFile.Type))
+            if (BookFileTypes.Contains(Path.GetExtension(CurrentFile.URL)))
             {
                 NitroReaderToolStripMenuItem.Visible = File.Exists(LocalExtensions.pathNitroReader);
             }
 
             // Shows supported media players installed on users machine
-            if (VideoFileTypes.Contains(CurrentFile.Type) || AudioFileTypes.Contains(CurrentFile.Type))
+            if (VideoFileTypes.Contains(Path.GetExtension(CurrentFile.URL)) || AudioFileTypes.Contains(Path.GetExtension(CurrentFile.URL)))
             {
-                VLC2ToolStripMenuItem.Visible = true;
                 WMPToolStripMenuItem.Visible = true;
                 VLCToolStripMenuItem.Visible = File.Exists(LocalExtensions.pathVLC);
                 MPCToolStripMenuItem.Visible = File.Exists(LocalExtensions.pathMPCCodec64) || File.Exists(LocalExtensions.pathMPC64) || File.Exists(LocalExtensions.pathMPC86);
@@ -107,19 +106,19 @@ namespace FileMasta.Windows
             if (ParentDataGrid.Rows.Count > 0)
             {
                 if (ParentDataGrid.SelectedCells[0].OwningRow.Index == 0)
-                    ImagePreviousFile.Image = ImageExtensions.ChangeColor(Properties.Resources.chevron_up, Color.Gray);
+                    ImagePreviousFile.Image = ImageExtensions.ChangeColor(Properties.Resources.chevron_up, Color.DimGray);
                 else
                     ImagePreviousFile.Image = Properties.Resources.chevron_up;
 
                 if (ParentDataGrid.SelectedCells[0].OwningRow.Index == ParentDataGrid.Rows.Count - 1)
-                    ImageNextFile.Image = ImageExtensions.ChangeColor(Properties.Resources.chevron_down, Color.Gray);
+                    ImageNextFile.Image = ImageExtensions.ChangeColor(Properties.Resources.chevron_down, Color.DimGray);
                 else
                     ImageNextFile.Image = Properties.Resources.chevron_down;
             }
             else
             {
-                ImagePreviousFile.Image = ImageExtensions.ChangeColor(Properties.Resources.chevron_up, Color.Gray);
-                ImageNextFile.Image = ImageExtensions.ChangeColor(Properties.Resources.chevron_down, Color.Gray);
+                ImagePreviousFile.Image = ImageExtensions.ChangeColor(Properties.Resources.chevron_up, Color.DimGray);
+                ImageNextFile.Image = ImageExtensions.ChangeColor(Properties.Resources.chevron_down, Color.DimGray);
             }
         }
 
@@ -138,13 +137,9 @@ namespace FileMasta.Windows
                 DataGridViewRow selectedRow = ParentDataGrid.Rows[rowIndex];
                 ParentDataGrid.ClearSelection();
                 ParentDataGrid.Rows[rowIndex - 1].Cells[colIndex].Selected = true;
+                ParentDataGrid.Rows[rowIndex - 1].Selected = true;
 
-                var URL = ParentDataGrid.CurrentRow.Cells[5].Value.ToString();
-
-                if (ParentDataGrid.CurrentRow.Cells[4].Value.ToString() == "Local")
-                    MainForm.Form.ShowFileDetails(new WebFile(Path.GetExtension(URL).Replace(".", "").ToUpper(), Path.GetFileNameWithoutExtension(new Uri(URL).LocalPath), new FileInfo(URL).Length, File.GetCreationTime(URL), "Local", URL), ParentDataGrid, IsLocalFile, false);
-                else 
-                    MainForm.Form.ShowFileDetails(Database.WebFile(URL), ParentDataGrid, IsLocalFile, false);
+                MainForm.Form.ShowFileDetails(Database.FtpFile(ParentDataGrid.CurrentRow.Cells[4].Value.ToString()), ParentDataGrid, IsLocalFile, false);
 
                 ScrollButtonChecks();
             }
@@ -165,13 +160,9 @@ namespace FileMasta.Windows
                 DataGridViewRow selectedRow = ParentDataGrid.Rows[rowIndex];
                 ParentDataGrid.ClearSelection();
                 ParentDataGrid.Rows[rowIndex + 1].Cells[colIndex].Selected = true;
+                ParentDataGrid.Rows[rowIndex + 1].Selected = true;
 
-                var URL = ParentDataGrid.CurrentRow.Cells[5].Value.ToString();
-
-                if (ParentDataGrid.CurrentRow.Cells[4].Value.ToString() == "Local")
-                    MainForm.Form.ShowFileDetails(new WebFile(Path.GetExtension(URL).Replace(".", "").ToUpper(), Path.GetFileNameWithoutExtension(new Uri(URL).LocalPath), new FileInfo(URL).Length, File.GetCreationTime(URL), "Local", URL), ParentDataGrid, IsLocalFile, false);
-                else
-                    MainForm.Form.ShowFileDetails(Database.WebFile(URL), ParentDataGrid, IsLocalFile, false);
+                MainForm.Form.ShowFileDetails(Database.FtpFile(ParentDataGrid.CurrentRow.Cells[4].Value.ToString()), ParentDataGrid, IsLocalFile, false);
 
                 ScrollButtonChecks();
             }
@@ -215,7 +206,7 @@ namespace FileMasta.Windows
         {
             // Request file size from URL
             ButtonRequestSize.Visible = false;
-            BackGroundWorker.RunWorkAsync<string>(() => StringExtensions.BytesToPrefix(WebFileExtensions.FtpFileSize(CurrentFile.URL)), (data) => { LabelValueSize.Text = data; });
+            BackGroundWorker.RunWorkAsync<string>(() => StringExtensions.BytesToPrefix(WebExtensions.FtpFileSize(CurrentFile.URL)), (data) => { LabelValueSize.Text = data; });
         }
         
         private void ButtonShare_ClickButtonArea(object Sender, MouseEventArgs e)
@@ -263,19 +254,6 @@ namespace FileMasta.Windows
             NitroReader.StartInfo.FileName = LocalExtensions.pathNitroReader;
             NitroReader.StartInfo.Arguments = (CurrentFile.URL);
             NitroReader.Start();
-        }
-
-        private void VLC2ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                // Open file in built-in VLC player
-                var a = new VLCPlayer { Text = new Uri(CurrentFile.URL).LocalPath };
-                a.axVLCPlugin21.playlist.add(CurrentFile.URL);
-                a.axVLCPlugin21.playlist.play();
-                a.Show();
-            }
-            catch { MessageBox.Show("Built-in player was unable to load. We are aware there are some issues with this function and are working to resolve this. For the time being, please install the VLC player on your computer and choose 'Play Media' > 'VLC' "); }
         }
 
         private void WMPToolStripMenuItem_Click(object sender, EventArgs e)
@@ -396,7 +374,7 @@ namespace FileMasta.Windows
                     return true;
                 // Close this instance
                 case Keys.Escape:
-                    MainForm.FrmFileDetails.Dispose();
+                    MainForm.FormFileDetails.Dispose();
                     return true;
             }
             return base.ProcessCmdKey(ref msg, keyData);

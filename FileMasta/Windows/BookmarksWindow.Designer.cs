@@ -37,12 +37,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BookmarksWindow));
             this.DataGridFiles = new System.Windows.Forms.DataGridView();
-            this.ColumnFileType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnFileName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnFileSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnFileAge = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnFileReferrer = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnFileURL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PanelSearchControls = new System.Windows.Forms.Panel();
             this.ButtonSearchFiles = new System.Windows.Forms.Button();
             this.LabelHost = new System.Windows.Forms.Label();
@@ -53,10 +47,16 @@
             this.ComboBoxType = new System.Windows.Forms.ComboBox();
             this.TextBoxSearchQuery = new ChreneLib.Controls.TextBoxes.CTextBox();
             this.PanelBookmarkControls = new System.Windows.Forms.Panel();
+            this.ButtonViewDetails = new System.Windows.Forms.Button();
             this.LabelStatus = new System.Windows.Forms.Label();
             this.ButtonRemoveFile = new System.Windows.Forms.Button();
             this.ButtonClearAll = new System.Windows.Forms.Button();
             this.labelNoResultsFound = new System.Windows.Forms.Label();
+            this.ColumnFileName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnFileSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnFileAge = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnFileReferrer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnFileURL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridFiles)).BeginInit();
             this.PanelSearchControls.SuspendLayout();
             this.PanelBookmarkControls.SuspendLayout();
@@ -84,7 +84,6 @@
             this.DataGridFiles.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DataGridFiles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DataGridFiles.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ColumnFileType,
             this.ColumnFileName,
             this.ColumnFileSize,
             this.ColumnFileAge,
@@ -121,20 +120,208 @@
             this.DataGridFiles.ShowCellErrors = false;
             this.DataGridFiles.ShowEditingIcon = false;
             this.DataGridFiles.ShowRowErrors = false;
-            this.DataGridFiles.Size = new System.Drawing.Size(811, 388);
+            this.DataGridFiles.Size = new System.Drawing.Size(847, 388);
             this.DataGridFiles.TabIndex = 15;
-            this.DataGridFiles.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridFiles_CellClick);
             this.DataGridFiles.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.DataGridFiles_RowPrePaint);
             this.DataGridFiles.SelectionChanged += new System.EventHandler(this.DataGridFiles_SelectionChanged);
             // 
-            // ColumnFileType
+            // PanelSearchControls
             // 
-            this.ColumnFileType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.ColumnFileType.HeaderText = "Type";
-            this.ColumnFileType.Name = "ColumnFileType";
-            this.ColumnFileType.ReadOnly = true;
-            this.ColumnFileType.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.ColumnFileType.Width = 56;
+            this.PanelSearchControls.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(246)))));
+            this.PanelSearchControls.Controls.Add(this.ButtonSearchFiles);
+            this.PanelSearchControls.Controls.Add(this.LabelHost);
+            this.PanelSearchControls.Controls.Add(this.ComboBoxHost);
+            this.PanelSearchControls.Controls.Add(this.LabelSort);
+            this.PanelSearchControls.Controls.Add(this.ComboBoxSort);
+            this.PanelSearchControls.Controls.Add(this.LabelType);
+            this.PanelSearchControls.Controls.Add(this.ComboBoxType);
+            this.PanelSearchControls.Controls.Add(this.TextBoxSearchQuery);
+            this.PanelSearchControls.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PanelSearchControls.Location = new System.Drawing.Point(0, 0);
+            this.PanelSearchControls.Margin = new System.Windows.Forms.Padding(0);
+            this.PanelSearchControls.Name = "PanelSearchControls";
+            this.PanelSearchControls.Size = new System.Drawing.Size(847, 43);
+            this.PanelSearchControls.TabIndex = 1112;
+            // 
+            // ButtonSearchFiles
+            // 
+            this.ButtonSearchFiles.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ButtonSearchFiles.Location = new System.Drawing.Point(782, 9);
+            this.ButtonSearchFiles.Name = "ButtonSearchFiles";
+            this.ButtonSearchFiles.Size = new System.Drawing.Size(54, 23);
+            this.ButtonSearchFiles.TabIndex = 4;
+            this.ButtonSearchFiles.Text = "Search";
+            this.ButtonSearchFiles.UseVisualStyleBackColor = true;
+            this.ButtonSearchFiles.Click += new System.EventHandler(this.ButtonSearchFiles_Click);
+            // 
+            // LabelHost
+            // 
+            this.LabelHost.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.LabelHost.AutoSize = true;
+            this.LabelHost.Location = new System.Drawing.Point(581, 13);
+            this.LabelHost.Name = "LabelHost";
+            this.LabelHost.Size = new System.Drawing.Size(34, 13);
+            this.LabelHost.TabIndex = 7;
+            this.LabelHost.Text = "Host:";
+            // 
+            // ComboBoxHost
+            // 
+            this.ComboBoxHost.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ComboBoxHost.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComboBoxHost.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.ComboBoxHost.FormattingEnabled = true;
+            this.ComboBoxHost.Items.AddRange(new object[] {
+            "Any"});
+            this.ComboBoxHost.Location = new System.Drawing.Point(621, 10);
+            this.ComboBoxHost.Name = "ComboBoxHost";
+            this.ComboBoxHost.Size = new System.Drawing.Size(155, 21);
+            this.ComboBoxHost.TabIndex = 3;
+            this.ComboBoxHost.SelectedIndexChanged += new System.EventHandler(this.ComboBoxHost_SelectedIndexChanged);
+            // 
+            // LabelSort
+            // 
+            this.LabelSort.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.LabelSort.AutoSize = true;
+            this.LabelSort.Location = new System.Drawing.Point(467, 13);
+            this.LabelSort.Name = "LabelSort";
+            this.LabelSort.Size = new System.Drawing.Size(31, 13);
+            this.LabelSort.TabIndex = 5;
+            this.LabelSort.Text = "Sort:";
+            // 
+            // ComboBoxSort
+            // 
+            this.ComboBoxSort.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ComboBoxSort.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComboBoxSort.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.ComboBoxSort.FormattingEnabled = true;
+            this.ComboBoxSort.Items.AddRange(new object[] {
+            "Name",
+            "Size",
+            "Date"});
+            this.ComboBoxSort.Location = new System.Drawing.Point(504, 10);
+            this.ComboBoxSort.Name = "ComboBoxSort";
+            this.ComboBoxSort.Size = new System.Drawing.Size(74, 21);
+            this.ComboBoxSort.TabIndex = 2;
+            this.ComboBoxSort.SelectedIndexChanged += new System.EventHandler(this.ComboBoxSort_SelectedIndexChanged);
+            // 
+            // LabelType
+            // 
+            this.LabelType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.LabelType.AutoSize = true;
+            this.LabelType.Location = new System.Drawing.Point(325, 13);
+            this.LabelType.Name = "LabelType";
+            this.LabelType.Size = new System.Drawing.Size(32, 13);
+            this.LabelType.TabIndex = 2;
+            this.LabelType.Text = "Type:";
+            // 
+            // ComboBoxType
+            // 
+            this.ComboBoxType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ComboBoxType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComboBoxType.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.ComboBoxType.FormattingEnabled = true;
+            this.ComboBoxType.Items.AddRange(new object[] {
+            "Any",
+            "Audio",
+            "Compressed",
+            "Document",
+            "Executable",
+            "Picture",
+            "Video"});
+            this.ComboBoxType.Location = new System.Drawing.Point(363, 10);
+            this.ComboBoxType.Name = "ComboBoxType";
+            this.ComboBoxType.Size = new System.Drawing.Size(98, 21);
+            this.ComboBoxType.TabIndex = 1;
+            this.ComboBoxType.SelectedIndexChanged += new System.EventHandler(this.ComboBoxType_SelectedIndexChanged);
+            // 
+            // TextBoxSearchQuery
+            // 
+            this.TextBoxSearchQuery.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TextBoxSearchQuery.BackColor = System.Drawing.SystemColors.Window;
+            this.TextBoxSearchQuery.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextBoxSearchQuery.Location = new System.Drawing.Point(12, 10);
+            this.TextBoxSearchQuery.Name = "TextBoxSearchQuery";
+            this.TextBoxSearchQuery.Size = new System.Drawing.Size(307, 22);
+            this.TextBoxSearchQuery.TabIndex = 0;
+            this.TextBoxSearchQuery.WaterMark = "Search your bookmarks...";
+            this.TextBoxSearchQuery.WaterMarkActiveForeColor = System.Drawing.Color.White;
+            this.TextBoxSearchQuery.WaterMarkFont = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.TextBoxSearchQuery.WaterMarkForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.TextBoxSearchQuery.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBoxSearchQuery_KeyDown);
+            // 
+            // PanelBookmarkControls
+            // 
+            this.PanelBookmarkControls.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(246)))));
+            this.PanelBookmarkControls.Controls.Add(this.ButtonViewDetails);
+            this.PanelBookmarkControls.Controls.Add(this.LabelStatus);
+            this.PanelBookmarkControls.Controls.Add(this.ButtonRemoveFile);
+            this.PanelBookmarkControls.Controls.Add(this.ButtonClearAll);
+            this.PanelBookmarkControls.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.PanelBookmarkControls.Location = new System.Drawing.Point(0, 431);
+            this.PanelBookmarkControls.Margin = new System.Windows.Forms.Padding(0);
+            this.PanelBookmarkControls.Name = "PanelBookmarkControls";
+            this.PanelBookmarkControls.Size = new System.Drawing.Size(847, 43);
+            this.PanelBookmarkControls.TabIndex = 1113;
+            // 
+            // ButtonViewDetails
+            // 
+            this.ButtonViewDetails.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.ButtonViewDetails.Enabled = false;
+            this.ButtonViewDetails.Location = new System.Drawing.Point(608, 9);
+            this.ButtonViewDetails.Name = "ButtonViewDetails";
+            this.ButtonViewDetails.Size = new System.Drawing.Size(88, 23);
+            this.ButtonViewDetails.TabIndex = 1115;
+            this.ButtonViewDetails.Text = "View Details";
+            this.ButtonViewDetails.UseVisualStyleBackColor = true;
+            this.ButtonViewDetails.Click += new System.EventHandler(this.ButtonViewDetails_Click);
+            // 
+            // LabelStatus
+            // 
+            this.LabelStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.LabelStatus.AutoSize = true;
+            this.LabelStatus.Location = new System.Drawing.Point(12, 19);
+            this.LabelStatus.Name = "LabelStatus";
+            this.LabelStatus.Size = new System.Drawing.Size(118, 13);
+            this.LabelStatus.TabIndex = 1114;
+            this.LabelStatus.Text = "Loading bookmarks...";
+            // 
+            // ButtonRemoveFile
+            // 
+            this.ButtonRemoveFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.ButtonRemoveFile.Enabled = false;
+            this.ButtonRemoveFile.Location = new System.Drawing.Point(702, 9);
+            this.ButtonRemoveFile.Name = "ButtonRemoveFile";
+            this.ButtonRemoveFile.Size = new System.Drawing.Size(83, 23);
+            this.ButtonRemoveFile.TabIndex = 5;
+            this.ButtonRemoveFile.Text = "Remove File";
+            this.ButtonRemoveFile.UseVisualStyleBackColor = true;
+            this.ButtonRemoveFile.Click += new System.EventHandler(this.ButtonRemoveFile_Click);
+            // 
+            // ButtonClearAll
+            // 
+            this.ButtonClearAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.ButtonClearAll.Location = new System.Drawing.Point(791, 9);
+            this.ButtonClearAll.Name = "ButtonClearAll";
+            this.ButtonClearAll.Size = new System.Drawing.Size(45, 23);
+            this.ButtonClearAll.TabIndex = 6;
+            this.ButtonClearAll.Text = "Clear";
+            this.ButtonClearAll.UseVisualStyleBackColor = true;
+            this.ButtonClearAll.Click += new System.EventHandler(this.ButtonClearAll_Click);
+            // 
+            // labelNoResultsFound
+            // 
+            this.labelNoResultsFound.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.labelNoResultsFound.AutoSize = true;
+            this.labelNoResultsFound.BackColor = System.Drawing.SystemColors.Control;
+            this.labelNoResultsFound.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.labelNoResultsFound.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.labelNoResultsFound.Location = new System.Drawing.Point(373, 139);
+            this.labelNoResultsFound.Name = "labelNoResultsFound";
+            this.labelNoResultsFound.Size = new System.Drawing.Size(100, 15);
+            this.labelNoResultsFound.TabIndex = 1116;
+            this.labelNoResultsFound.Text = "No Results Found";
+            this.labelNoResultsFound.Visible = false;
             // 
             // ColumnFileName
             // 
@@ -188,197 +375,11 @@
             this.ColumnFileURL.ReadOnly = true;
             this.ColumnFileURL.Visible = false;
             // 
-            // PanelSearchControls
-            // 
-            this.PanelSearchControls.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(246)))));
-            this.PanelSearchControls.Controls.Add(this.ButtonSearchFiles);
-            this.PanelSearchControls.Controls.Add(this.LabelHost);
-            this.PanelSearchControls.Controls.Add(this.ComboBoxHost);
-            this.PanelSearchControls.Controls.Add(this.LabelSort);
-            this.PanelSearchControls.Controls.Add(this.ComboBoxSort);
-            this.PanelSearchControls.Controls.Add(this.LabelType);
-            this.PanelSearchControls.Controls.Add(this.ComboBoxType);
-            this.PanelSearchControls.Controls.Add(this.TextBoxSearchQuery);
-            this.PanelSearchControls.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PanelSearchControls.Location = new System.Drawing.Point(0, 0);
-            this.PanelSearchControls.Margin = new System.Windows.Forms.Padding(0);
-            this.PanelSearchControls.Name = "PanelSearchControls";
-            this.PanelSearchControls.Size = new System.Drawing.Size(811, 43);
-            this.PanelSearchControls.TabIndex = 1112;
-            // 
-            // ButtonSearchFiles
-            // 
-            this.ButtonSearchFiles.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonSearchFiles.Location = new System.Drawing.Point(746, 9);
-            this.ButtonSearchFiles.Name = "ButtonSearchFiles";
-            this.ButtonSearchFiles.Size = new System.Drawing.Size(54, 23);
-            this.ButtonSearchFiles.TabIndex = 4;
-            this.ButtonSearchFiles.Text = "Search";
-            this.ButtonSearchFiles.UseVisualStyleBackColor = true;
-            this.ButtonSearchFiles.Click += new System.EventHandler(this.ButtonSearchFiles_Click);
-            // 
-            // LabelHost
-            // 
-            this.LabelHost.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.LabelHost.AutoSize = true;
-            this.LabelHost.Location = new System.Drawing.Point(545, 13);
-            this.LabelHost.Name = "LabelHost";
-            this.LabelHost.Size = new System.Drawing.Size(34, 13);
-            this.LabelHost.TabIndex = 7;
-            this.LabelHost.Text = "Host:";
-            // 
-            // ComboBoxHost
-            // 
-            this.ComboBoxHost.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ComboBoxHost.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ComboBoxHost.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.ComboBoxHost.FormattingEnabled = true;
-            this.ComboBoxHost.Items.AddRange(new object[] {
-            "Any"});
-            this.ComboBoxHost.Location = new System.Drawing.Point(585, 10);
-            this.ComboBoxHost.Name = "ComboBoxHost";
-            this.ComboBoxHost.Size = new System.Drawing.Size(155, 21);
-            this.ComboBoxHost.TabIndex = 3;
-            this.ComboBoxHost.SelectedIndexChanged += new System.EventHandler(this.ComboBoxHost_SelectedIndexChanged);
-            // 
-            // LabelSort
-            // 
-            this.LabelSort.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.LabelSort.AutoSize = true;
-            this.LabelSort.Location = new System.Drawing.Point(431, 13);
-            this.LabelSort.Name = "LabelSort";
-            this.LabelSort.Size = new System.Drawing.Size(31, 13);
-            this.LabelSort.TabIndex = 5;
-            this.LabelSort.Text = "Sort:";
-            // 
-            // ComboBoxSort
-            // 
-            this.ComboBoxSort.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ComboBoxSort.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ComboBoxSort.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.ComboBoxSort.FormattingEnabled = true;
-            this.ComboBoxSort.Items.AddRange(new object[] {
-            "Name",
-            "Size",
-            "Date"});
-            this.ComboBoxSort.Location = new System.Drawing.Point(468, 10);
-            this.ComboBoxSort.Name = "ComboBoxSort";
-            this.ComboBoxSort.Size = new System.Drawing.Size(74, 21);
-            this.ComboBoxSort.TabIndex = 2;
-            this.ComboBoxSort.SelectedIndexChanged += new System.EventHandler(this.ComboBoxSort_SelectedIndexChanged);
-            // 
-            // LabelType
-            // 
-            this.LabelType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.LabelType.AutoSize = true;
-            this.LabelType.Location = new System.Drawing.Point(289, 13);
-            this.LabelType.Name = "LabelType";
-            this.LabelType.Size = new System.Drawing.Size(32, 13);
-            this.LabelType.TabIndex = 2;
-            this.LabelType.Text = "Type:";
-            // 
-            // ComboBoxType
-            // 
-            this.ComboBoxType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ComboBoxType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ComboBoxType.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.ComboBoxType.FormattingEnabled = true;
-            this.ComboBoxType.Items.AddRange(new object[] {
-            "Any",
-            "Video",
-            "Audio",
-            "Image",
-            "eBook",
-            "Software",
-            "Torrent",
-            "Subtitle",
-            "Other"});
-            this.ComboBoxType.Location = new System.Drawing.Point(327, 10);
-            this.ComboBoxType.Name = "ComboBoxType";
-            this.ComboBoxType.Size = new System.Drawing.Size(98, 21);
-            this.ComboBoxType.TabIndex = 1;
-            this.ComboBoxType.SelectedIndexChanged += new System.EventHandler(this.ComboBoxType_SelectedIndexChanged);
-            // 
-            // TextBoxSearchQuery
-            // 
-            this.TextBoxSearchQuery.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.TextBoxSearchQuery.BackColor = System.Drawing.SystemColors.Window;
-            this.TextBoxSearchQuery.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TextBoxSearchQuery.Location = new System.Drawing.Point(12, 10);
-            this.TextBoxSearchQuery.Name = "TextBoxSearchQuery";
-            this.TextBoxSearchQuery.Size = new System.Drawing.Size(271, 22);
-            this.TextBoxSearchQuery.TabIndex = 0;
-            this.TextBoxSearchQuery.WaterMark = "Search your bookmarks...";
-            this.TextBoxSearchQuery.WaterMarkActiveForeColor = System.Drawing.Color.White;
-            this.TextBoxSearchQuery.WaterMarkFont = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.TextBoxSearchQuery.WaterMarkForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.TextBoxSearchQuery.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBoxSearchQuery_KeyDown);
-            // 
-            // PanelBookmarkControls
-            // 
-            this.PanelBookmarkControls.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(246)))));
-            this.PanelBookmarkControls.Controls.Add(this.LabelStatus);
-            this.PanelBookmarkControls.Controls.Add(this.ButtonRemoveFile);
-            this.PanelBookmarkControls.Controls.Add(this.ButtonClearAll);
-            this.PanelBookmarkControls.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.PanelBookmarkControls.Location = new System.Drawing.Point(0, 431);
-            this.PanelBookmarkControls.Margin = new System.Windows.Forms.Padding(0);
-            this.PanelBookmarkControls.Name = "PanelBookmarkControls";
-            this.PanelBookmarkControls.Size = new System.Drawing.Size(811, 43);
-            this.PanelBookmarkControls.TabIndex = 1113;
-            // 
-            // LabelStatus
-            // 
-            this.LabelStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.LabelStatus.AutoSize = true;
-            this.LabelStatus.Location = new System.Drawing.Point(12, 19);
-            this.LabelStatus.Name = "LabelStatus";
-            this.LabelStatus.Size = new System.Drawing.Size(118, 13);
-            this.LabelStatus.TabIndex = 1114;
-            this.LabelStatus.Text = "Loading bookmarks...";
-            // 
-            // ButtonRemoveFile
-            // 
-            this.ButtonRemoveFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonRemoveFile.Enabled = false;
-            this.ButtonRemoveFile.Location = new System.Drawing.Point(666, 9);
-            this.ButtonRemoveFile.Name = "ButtonRemoveFile";
-            this.ButtonRemoveFile.Size = new System.Drawing.Size(83, 23);
-            this.ButtonRemoveFile.TabIndex = 5;
-            this.ButtonRemoveFile.Text = "Remove File";
-            this.ButtonRemoveFile.UseVisualStyleBackColor = true;
-            // 
-            // ButtonClearAll
-            // 
-            this.ButtonClearAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonClearAll.Location = new System.Drawing.Point(755, 9);
-            this.ButtonClearAll.Name = "ButtonClearAll";
-            this.ButtonClearAll.Size = new System.Drawing.Size(45, 23);
-            this.ButtonClearAll.TabIndex = 6;
-            this.ButtonClearAll.Text = "Clear";
-            this.ButtonClearAll.UseVisualStyleBackColor = true;
-            this.ButtonClearAll.Click += new System.EventHandler(this.ButtonClearAll_Click);
-            // 
-            // labelNoResultsFound
-            // 
-            this.labelNoResultsFound.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.labelNoResultsFound.AutoSize = true;
-            this.labelNoResultsFound.BackColor = System.Drawing.SystemColors.Control;
-            this.labelNoResultsFound.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.labelNoResultsFound.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelNoResultsFound.Location = new System.Drawing.Point(355, 139);
-            this.labelNoResultsFound.Name = "labelNoResultsFound";
-            this.labelNoResultsFound.Size = new System.Drawing.Size(100, 15);
-            this.labelNoResultsFound.TabIndex = 1116;
-            this.labelNoResultsFound.Text = "No Results Found";
-            this.labelNoResultsFound.Visible = false;
-            // 
             // BookmarksWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(811, 474);
+            this.ClientSize = new System.Drawing.Size(847, 474);
             this.Controls.Add(this.labelNoResultsFound);
             this.Controls.Add(this.DataGridFiles);
             this.Controls.Add(this.PanelBookmarkControls);
@@ -408,12 +409,6 @@
         #endregion
 
         public System.Windows.Forms.DataGridView DataGridFiles;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFileType;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFileName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFileSize;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFileAge;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFileReferrer;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFileURL;
         private System.Windows.Forms.Panel PanelSearchControls;
         public System.Windows.Forms.Button ButtonSearchFiles;
         private System.Windows.Forms.Label LabelHost;
@@ -428,5 +423,11 @@
         public System.Windows.Forms.Button ButtonClearAll;
         private System.Windows.Forms.Label LabelStatus;
         public System.Windows.Forms.Label labelNoResultsFound;
+        public System.Windows.Forms.Button ButtonViewDetails;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFileName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFileSize;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFileAge;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFileReferrer;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFileURL;
     }
 }

@@ -8,7 +8,7 @@ namespace FileMasta.Utilities
     /// </summary>
     public static class KnownFolders
     {
-        private static string[] _knownFolderGuids = new string[]
+        private static readonly string[] _knownFolderGuids = new string[]
         {
         "{56784854-C6CB-462B-8169-88E350ACB882}", // Contacts
         "{B4BFCC3A-DB2C-424C-B029-7FE99A87C641}", // Desktop
@@ -29,7 +29,7 @@ namespace FileMasta.Utilities
         /// </summary>
         /// <param name="knownFolder">The known folder which current path will be returned.</param>
         /// <returns>The default path of the known folder.</returns>
-        /// <exception cref="System.Runtime.InteropServices.ExternalException">Thrown if the path
+        /// <exception cref="ExternalException">Thrown if the path
         ///     could not be retrieved.</exception>
         public static string GetPath(KnownFolder knownFolder)
         {

@@ -1,6 +1,5 @@
-﻿using FileMasta.Worker;
+﻿using FileMasta.Extensions;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.Windows.Forms;
 
@@ -19,49 +18,42 @@ namespace FileMasta.Windows
         }
         
         // Loads Servers into DataGrid
-        delegate void loadHostsCallBack();
         private void LoadServers()
         {
             Program.log.Info("Loading ftp servers");
 
-            BackGroundWorker.RunWorkAsync<List<string>>(() => GetServers(), (data) => {
-                if (this.InvokeRequired)
-                {
-                    Invoke(new loadHostsCallBack(LoadServers), new object[] { });
-                }
-                else
-                {
-                    dataGridDiscover.Rows.Clear();
+            DataGridDiscover.Rows.Clear();
 
-                    int count = 1;
-                    foreach (string url in data)
-                    {
-                        dataGridDiscover.Rows.Add(count.ToString(), url, "FTP", url);
-                        count += 1;
-                    }
-                }
-            });
-
-            Program.log.Info("Successfully loaded servers");
-        }
-
-        object loadHostsLock = new object();
-        private List<string> GetServers()
-        {
-            lock (loadHostsLock)
+            int count = 0;
+            foreach (string ftpServer in MainForm.DbOpenServers)
             {
-                List<string> urls = new List<string>();
-                foreach (string file in MainForm.DbOpenServers)
-                    urls.Add(new Uri(file).GetLeftPart(UriPartial.Scheme) + new Uri(file).Authority);
-
-                return urls;
+                DataGridDiscover.Rows.Add(StringExtensions.FormatNumber(count.ToString()), ftpServer, "FTP", ftpServer);
+                count += 1;
             }
+
+            Program.log.Info("Successfully loaded ftp servers");
         }
 
-        private void dataGridDiscover_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void DataGridDiscover_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex != -1)
-                Process.Start(dataGridDiscover.CurrentRow.Cells[3].Value.ToString());
+                Process.Start(DataGridDiscover.CurrentRow.Cells[3].Value.ToString());
+        }
+
+        /*************************************************************************/
+        /* Keyboard Shortcuts                                                    */
+        /*************************************************************************/
+
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            switch (keyData)
+            {
+                // Close this instance
+                case Keys.Escape:
+                    Close();
+                    return true;
+            }
+            return base.ProcessCmdKey(ref msg, keyData);
         }
     }
 }

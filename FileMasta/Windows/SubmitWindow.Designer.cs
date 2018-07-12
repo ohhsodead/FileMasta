@@ -37,12 +37,12 @@
             // 
             this.buttonSubmit.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.buttonSubmit.Location = new System.Drawing.Point(310, 11);
-            this.buttonSubmit.Name = "buttonSubmit";
+            this.buttonSubmit.Name = "ButtonSubmit";
             this.buttonSubmit.Size = new System.Drawing.Size(50, 24);
             this.buttonSubmit.TabIndex = 10;
             this.buttonSubmit.Text = "Submit";
             this.buttonSubmit.UseVisualStyleBackColor = true;
-            this.buttonSubmit.Click += new System.EventHandler(this.buttonSubmit_Click);
+            this.buttonSubmit.Click += new System.EventHandler(this.ButtonSubmit_Click);
             // 
             // textBoxWebsite
             // 

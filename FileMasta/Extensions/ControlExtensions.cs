@@ -70,13 +70,13 @@ namespace FileMasta.Extensions
                 Name = "tagItem" + count,
             };
 
-            a.Click += buttonMostSearches_Click;
+            a.Click += ButtonMostSearches_Click;
             return a;
         }
 
-        public static void buttonMostSearches_Click(object sender, EventArgs e)
+        public static void ButtonMostSearches_Click(object sender, EventArgs e)
         {
-            MainForm.Form.textBoxSearchQuery.Text = ((Label)sender).Text;
+            MainForm.Form.TextBoxSearchQuery.Text = ((Label)sender).Text;
             MainForm.Form.SearchFiles();
         }
     }

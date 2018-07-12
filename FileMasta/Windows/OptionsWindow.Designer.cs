@@ -49,16 +49,17 @@
             // 
             // textBoxConnectionPassword
             // 
+            this.textBoxConnectionPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxConnectionPassword.BackColor = System.Drawing.SystemColors.Control;
-            this.textBoxConnectionPassword.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.textBoxConnectionPassword.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.textBoxConnectionPassword.ForeColor = System.Drawing.Color.Black;
-            this.textBoxConnectionPassword.Location = new System.Drawing.Point(250, 223);
+            this.textBoxConnectionPassword.Location = new System.Drawing.Point(225, 219);
             this.textBoxConnectionPassword.Name = "textBoxConnectionPassword";
-            this.textBoxConnectionPassword.Size = new System.Drawing.Size(226, 25);
+            this.textBoxConnectionPassword.Size = new System.Drawing.Size(229, 24);
             this.textBoxConnectionPassword.TabIndex = 38;
             this.textBoxConnectionPassword.WaterMark = "Password";
             this.textBoxConnectionPassword.WaterMarkActiveForeColor = System.Drawing.Color.White;
-            this.textBoxConnectionPassword.WaterMarkFont = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.textBoxConnectionPassword.WaterMarkFont = new System.Drawing.Font("Segoe UI", 9.25F);
             this.textBoxConnectionPassword.WaterMarkForeColor = System.Drawing.SystemColors.WindowFrame;
             // 
             // label4
@@ -67,7 +68,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.label4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label4.Location = new System.Drawing.Point(13, 228);
+            this.label4.Location = new System.Drawing.Point(12, 222);
             this.label4.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(60, 15);
@@ -76,16 +77,17 @@
             // 
             // textBoxConnectionUsername
             // 
+            this.textBoxConnectionUsername.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxConnectionUsername.BackColor = System.Drawing.SystemColors.Control;
-            this.textBoxConnectionUsername.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.textBoxConnectionUsername.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.textBoxConnectionUsername.ForeColor = System.Drawing.Color.Black;
-            this.textBoxConnectionUsername.Location = new System.Drawing.Point(250, 194);
+            this.textBoxConnectionUsername.Location = new System.Drawing.Point(225, 190);
             this.textBoxConnectionUsername.Name = "textBoxConnectionUsername";
-            this.textBoxConnectionUsername.Size = new System.Drawing.Size(226, 25);
+            this.textBoxConnectionUsername.Size = new System.Drawing.Size(229, 24);
             this.textBoxConnectionUsername.TabIndex = 35;
             this.textBoxConnectionUsername.WaterMark = "Username";
             this.textBoxConnectionUsername.WaterMarkActiveForeColor = System.Drawing.Color.White;
-            this.textBoxConnectionUsername.WaterMarkFont = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.textBoxConnectionUsername.WaterMarkFont = new System.Drawing.Font("Segoe UI", 9.25F);
             this.textBoxConnectionUsername.WaterMarkForeColor = System.Drawing.SystemColors.WindowFrame;
             // 
             // label3
@@ -94,7 +96,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.label3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label3.Location = new System.Drawing.Point(13, 199);
+            this.label3.Location = new System.Drawing.Point(12, 193);
             this.label3.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 15);
@@ -103,16 +105,17 @@
             // 
             // textBoxConnectionPort
             // 
+            this.textBoxConnectionPort.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxConnectionPort.BackColor = System.Drawing.SystemColors.Control;
-            this.textBoxConnectionPort.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.textBoxConnectionPort.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.textBoxConnectionPort.ForeColor = System.Drawing.Color.Black;
-            this.textBoxConnectionPort.Location = new System.Drawing.Point(250, 165);
+            this.textBoxConnectionPort.Location = new System.Drawing.Point(225, 161);
             this.textBoxConnectionPort.Name = "textBoxConnectionPort";
-            this.textBoxConnectionPort.Size = new System.Drawing.Size(226, 25);
+            this.textBoxConnectionPort.Size = new System.Drawing.Size(229, 24);
             this.textBoxConnectionPort.TabIndex = 32;
             this.textBoxConnectionPort.WaterMark = "Port";
             this.textBoxConnectionPort.WaterMarkActiveForeColor = System.Drawing.Color.White;
-            this.textBoxConnectionPort.WaterMarkFont = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.textBoxConnectionPort.WaterMarkFont = new System.Drawing.Font("Segoe UI", 9.25F);
             this.textBoxConnectionPort.WaterMarkForeColor = System.Drawing.SystemColors.WindowFrame;
             // 
             // label2
@@ -121,7 +124,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label2.Location = new System.Drawing.Point(13, 170);
+            this.label2.Location = new System.Drawing.Point(12, 166);
             this.label2.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(32, 15);
@@ -130,16 +133,17 @@
             // 
             // textBoxConnectionAddress
             // 
+            this.textBoxConnectionAddress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxConnectionAddress.BackColor = System.Drawing.SystemColors.Control;
-            this.textBoxConnectionAddress.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.textBoxConnectionAddress.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.textBoxConnectionAddress.ForeColor = System.Drawing.Color.Black;
-            this.textBoxConnectionAddress.Location = new System.Drawing.Point(250, 136);
+            this.textBoxConnectionAddress.Location = new System.Drawing.Point(225, 132);
             this.textBoxConnectionAddress.Name = "textBoxConnectionAddress";
-            this.textBoxConnectionAddress.Size = new System.Drawing.Size(226, 25);
+            this.textBoxConnectionAddress.Size = new System.Drawing.Size(229, 24);
             this.textBoxConnectionAddress.TabIndex = 29;
             this.textBoxConnectionAddress.WaterMark = "Address";
             this.textBoxConnectionAddress.WaterMarkActiveForeColor = System.Drawing.Color.White;
-            this.textBoxConnectionAddress.WaterMarkFont = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.textBoxConnectionAddress.WaterMarkFont = new System.Drawing.Font("Segoe UI", 9.25F);
             this.textBoxConnectionAddress.WaterMarkForeColor = System.Drawing.SystemColors.WindowFrame;
             // 
             // labelConnectionAddress
@@ -148,7 +152,7 @@
             this.labelConnectionAddress.BackColor = System.Drawing.Color.Transparent;
             this.labelConnectionAddress.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.labelConnectionAddress.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelConnectionAddress.Location = new System.Drawing.Point(13, 141);
+            this.labelConnectionAddress.Location = new System.Drawing.Point(12, 139);
             this.labelConnectionAddress.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.labelConnectionAddress.Name = "labelConnectionAddress";
             this.labelConnectionAddress.Size = new System.Drawing.Size(52, 15);
@@ -159,12 +163,12 @@
             // 
             this.labelTitleSettings.AutoSize = true;
             this.labelTitleSettings.BackColor = System.Drawing.Color.Transparent;
-            this.labelTitleSettings.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitleSettings.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
             this.labelTitleSettings.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelTitleSettings.Location = new System.Drawing.Point(12, 79);
-            this.labelTitleSettings.Margin = new System.Windows.Forms.Padding(3, 8, 3, 8);
+            this.labelTitleSettings.Location = new System.Drawing.Point(11, 76);
+            this.labelTitleSettings.Margin = new System.Windows.Forms.Padding(2, 8, 3, 8);
             this.labelTitleSettings.Name = "labelTitleSettings";
-            this.labelTitleSettings.Size = new System.Drawing.Size(94, 21);
+            this.labelTitleSettings.Size = new System.Drawing.Size(87, 20);
             this.labelTitleSettings.TabIndex = 25;
             this.labelTitleSettings.Text = "Connection";
             // 
@@ -174,7 +178,7 @@
             this.labelConnectionDefault.BackColor = System.Drawing.Color.Transparent;
             this.labelConnectionDefault.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.labelConnectionDefault.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelConnectionDefault.Location = new System.Drawing.Point(12, 114);
+            this.labelConnectionDefault.Location = new System.Drawing.Point(12, 110);
             this.labelConnectionDefault.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.labelConnectionDefault.Name = "labelConnectionDefault";
             this.labelConnectionDefault.Size = new System.Drawing.Size(52, 15);
@@ -183,27 +187,28 @@
             // 
             // checkBoxConnectionDefault
             // 
+            this.checkBoxConnectionDefault.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBoxConnectionDefault.AutoSize = true;
             this.checkBoxConnectionDefault.BackColor = System.Drawing.Color.Transparent;
-            this.checkBoxConnectionDefault.Font = new System.Drawing.Font("Segoe UI", 10.75F);
+            this.checkBoxConnectionDefault.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.checkBoxConnectionDefault.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.checkBoxConnectionDefault.Location = new System.Drawing.Point(251, 114);
-            this.checkBoxConnectionDefault.Name = "checkBoxConnectionDefault";
+            this.checkBoxConnectionDefault.Location = new System.Drawing.Point(226, 110);
+            this.checkBoxConnectionDefault.Name = "CheckBoxConnectionDefault";
             this.checkBoxConnectionDefault.Size = new System.Drawing.Size(15, 14);
             this.checkBoxConnectionDefault.TabIndex = 27;
             this.checkBoxConnectionDefault.UseVisualStyleBackColor = false;
-            this.checkBoxConnectionDefault.CheckedChanged += new System.EventHandler(this.checkBoxConnectionDefault_CheckedChanged);
+            this.checkBoxConnectionDefault.CheckedChanged += new System.EventHandler(this.CheckBoxConnectionDefault_CheckedChanged);
             // 
             // labelTitleGeneral
             // 
             this.labelTitleGeneral.AutoSize = true;
             this.labelTitleGeneral.BackColor = System.Drawing.Color.Transparent;
-            this.labelTitleGeneral.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitleGeneral.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
             this.labelTitleGeneral.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelTitleGeneral.Location = new System.Drawing.Point(12, 13);
-            this.labelTitleGeneral.Margin = new System.Windows.Forms.Padding(3, 8, 3, 8);
+            this.labelTitleGeneral.Location = new System.Drawing.Point(11, 13);
+            this.labelTitleGeneral.Margin = new System.Windows.Forms.Padding(2, 6, 3, 8);
             this.labelTitleGeneral.Name = "labelTitleGeneral";
-            this.labelTitleGeneral.Size = new System.Drawing.Size(66, 21);
+            this.labelTitleGeneral.Size = new System.Drawing.Size(62, 20);
             this.labelTitleGeneral.TabIndex = 20;
             this.labelTitleGeneral.Text = "General";
             // 
@@ -213,7 +218,7 @@
             this.labelGeneralClearDataOnClose.BackColor = System.Drawing.Color.Transparent;
             this.labelGeneralClearDataOnClose.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.labelGeneralClearDataOnClose.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelGeneralClearDataOnClose.Location = new System.Drawing.Point(13, 48);
+            this.labelGeneralClearDataOnClose.Location = new System.Drawing.Point(12, 47);
             this.labelGeneralClearDataOnClose.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.labelGeneralClearDataOnClose.Name = "labelGeneralClearDataOnClose";
             this.labelGeneralClearDataOnClose.Size = new System.Drawing.Size(110, 15);
@@ -222,11 +227,12 @@
             // 
             // checkBoxGeneralClearDataOnClose
             // 
+            this.checkBoxGeneralClearDataOnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBoxGeneralClearDataOnClose.AutoSize = true;
             this.checkBoxGeneralClearDataOnClose.BackColor = System.Drawing.Color.Transparent;
-            this.checkBoxGeneralClearDataOnClose.Font = new System.Drawing.Font("Segoe UI", 10.75F);
+            this.checkBoxGeneralClearDataOnClose.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.checkBoxGeneralClearDataOnClose.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.checkBoxGeneralClearDataOnClose.Location = new System.Drawing.Point(251, 48);
+            this.checkBoxGeneralClearDataOnClose.Location = new System.Drawing.Point(226, 47);
             this.checkBoxGeneralClearDataOnClose.Name = "checkBoxGeneralClearDataOnClose";
             this.checkBoxGeneralClearDataOnClose.Size = new System.Drawing.Size(15, 14);
             this.checkBoxGeneralClearDataOnClose.TabIndex = 22;
@@ -234,31 +240,33 @@
             // 
             // buttonSave
             // 
+            this.buttonSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonSave.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSave.Location = new System.Drawing.Point(84, 281);
-            this.buttonSave.Name = "buttonSave";
+            this.buttonSave.Location = new System.Drawing.Point(406, 256);
+            this.buttonSave.Name = "ButtonSave";
             this.buttonSave.Size = new System.Drawing.Size(48, 23);
             this.buttonSave.TabIndex = 40;
             this.buttonSave.Text = "Save";
             this.buttonSave.UseVisualStyleBackColor = true;
-            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
+            this.buttonSave.Click += new System.EventHandler(this.ButtonSave_Click);
             // 
             // buttonRestore
             // 
+            this.buttonRestore.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonRestore.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonRestore.Location = new System.Drawing.Point(16, 281);
-            this.buttonRestore.Name = "buttonRestore";
+            this.buttonRestore.Location = new System.Drawing.Point(338, 256);
+            this.buttonRestore.Name = "ButtonRestore";
             this.buttonRestore.Size = new System.Drawing.Size(62, 23);
             this.buttonRestore.TabIndex = 41;
             this.buttonRestore.Text = "Restore";
             this.buttonRestore.UseVisualStyleBackColor = true;
-            this.buttonRestore.Click += new System.EventHandler(this.buttonRestore_Click);
+            this.buttonRestore.Click += new System.EventHandler(this.ButtonRestore_Click);
             // 
             // OptionsWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(491, 319);
+            this.ClientSize = new System.Drawing.Size(466, 291);
             this.Controls.Add(this.buttonRestore);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.textBoxConnectionPassword);

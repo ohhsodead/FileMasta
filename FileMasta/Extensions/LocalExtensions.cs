@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
-using FileMasta.Files;
-using FileMasta.Models;
 using FileMasta.Utilities;
 
 namespace FileMasta.Extensions
@@ -46,25 +42,6 @@ namespace FileMasta.Extensions
         public const string pathIDA = @"C:\Program Files (x86)\IDA\ida.exe";
 
         /// <summary>
-        /// Checks for internet connection by attempting to access to Dropbox.com (our server hosting)
-        /// </summary>
-        /// <returns></returns>
-        public static bool IsConnectionEnabled()
-        {
-            try
-            {
-                Program.log.Info("Checking for internet connection");
-                using (var client = MainForm._webClient)
-                using (var stream = client.OpenRead("https://www.dropbox.com/"))
-                {
-                    Program.log.Info("Internet connection detected");
-                    return true;
-                }
-            }
-            catch (Exception ex) { Program.log.Error("Error, failed to connect to the web", ex); return false; }
-        }
-
-        /// <summary>
         /// Checks for exact file name of a subtitle file that matches the web filename (e.g. File Name: 'Jigsaw.2017.mp4' > Subtitle File Name: 'Jigsaw.2017.srt' will be loaded)
         /// </summary>
         /// <param name="fileURL"></param>
@@ -75,62 +52,6 @@ namespace FileMasta.Extensions
                 return true;
             else
                 return false;
-        }
-
-        /// <summary>
-        /// Gets local files (supported in this app) from user's Downloads, Videos and Desktop directories (Music not supported, very strange...)
-        /// </summary>
-        /// <returns>Local files from Downloads as a WebFile</returns>
-        public static List<WebFile> LocalFiles()
-        {
-            Program.log.Info("Getting users local files");
-
-            var filesLocal = new List<WebFile>();
-            foreach (var pathFile in Directory.GetFiles(pathDownloadsDirectory, "*.*", SearchOption.AllDirectories))
-                if (Types.All.Contains(Path.GetExtension(pathFile).Replace(".", "").ToUpper()))
-                    filesLocal.Add(new WebFile(
-                    Path.GetExtension(pathFile).Replace(".", "").ToUpper(),
-                    Path.GetFileNameWithoutExtension(pathFile),
-                    new FileInfo(pathFile).Length,
-                    File.GetCreationTime(pathFile),
-                    "Local",
-                    pathFile));
-
-            foreach (var pathFile in Directory.GetFiles(pathVideosDirectory, "*.*", SearchOption.AllDirectories))
-                if (Types.All.Contains(Path.GetExtension(pathFile).Replace(".", "").ToUpper()))
-                    filesLocal.Add(new WebFile(
-                    Path.GetExtension(pathFile).Replace(".", "").ToUpper(),
-                    Path.GetFileNameWithoutExtension(pathFile),
-                    new FileInfo(pathFile).Length,
-                    File.GetCreationTime(pathFile),
-                    "Local",
-                    pathFile));
-
-            foreach (var pathFile in Directory.GetFiles(pathDesktopDirectory, "*.*", SearchOption.AllDirectories))
-                if (Types.All.Contains(Path.GetExtension(pathFile).Replace(".", "").ToUpper()))
-                    filesLocal.Add(new WebFile(
-                    Path.GetExtension(pathFile).Replace(".", "").ToUpper(),
-                    Path.GetFileNameWithoutExtension(pathFile),
-                    new FileInfo(pathFile).Length,
-                    File.GetCreationTime(pathFile),
-                    "Local",
-                    pathFile));
-
-            Program.log.Info("Users local files returned successful");
-
-            return filesLocal;
-        }
-
-        /// <summary>
-        /// Open and select file in File Explorer
-        /// </summary>
-        /// <param name="path"></param>
-        public static void OpenFile(string path)
-        {
-            if (!File.Exists(path))
-                return;            
-
-            Process.Start("explorer.exe", "/select, \"" + path + "\"");
         }
     }
 }

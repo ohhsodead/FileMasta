@@ -14,10 +14,16 @@ namespace FileMasta.Windows
             panelItems.Update(); // Stops 'Lag/Bad Drawing' when scrolling
         }
 
+
+        /*************************************************************************/
+        /* Keyboard Shortcuts                                                    */
+        /*************************************************************************/
+
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
             switch (keyData)
             {
+                // Close this instance
                 case Keys.Escape:
                     Close();
                     return true;

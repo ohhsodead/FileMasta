@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Windows.Forms;
 using FileMasta.Extensions;
 using FileMasta.Files;
 using FileMasta.Models;
@@ -59,18 +58,18 @@ namespace FileMasta.Bookmarks
         /// Load bookmarked files
         /// </summary>
         /// <returns>Bookmark item as a WebFile</returns>
-        public static List<WebFile> BookmarkedFiles()
+        public static List<FtpFile> BookmarkedFiles()
         {
             Program.log.Info("Getting users bookmarks files");
 
-            var filesBookmarks = new List<WebFile>();
+            var filesBookmarks = new List<FtpFile>();
             if (File.Exists(LocalExtensions.pathBookmarks))
                 using (StreamReader reader = new StreamReader(LocalExtensions.pathBookmarks))
                     while (!reader.EndOfStream)
                         try
                         {
                             var jsonData = JsonConvert.DeserializeObject<Bookmark>(reader.ReadLine());
-                            filesBookmarks.Add(Database.WebFile(jsonData.URL));
+                            filesBookmarks.Add(Database.FtpFile(jsonData.URL));
                         }
                         catch (Exception ex)
                         {
@@ -89,7 +88,7 @@ namespace FileMasta.Bookmarks
         {
             Program.log.Info("Clearing all bookmarks");
 
-            var filesBookmarks = new List<WebFile>();
+            var filesBookmarks = new List<FtpFile>();
             if (File.Exists(LocalExtensions.pathBookmarks))
                 using (StreamWriter stream = File.CreateText(LocalExtensions.pathBookmarks))
                     stream.Flush();

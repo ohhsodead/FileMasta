@@ -12,7 +12,7 @@ namespace FileMasta.Windows
             InitializeComponent();
         }
 
-        private void buttonSubmit_Click(object sender, EventArgs e)
+        private void ButtonSubmit_Click(object sender, EventArgs e)
         {
             if (!Path.HasExtension(textBoxWebsite.Text))
                 if (Uri.IsWellFormedUriString(textBoxWebsite.Text, UriKind.Absolute))
@@ -26,6 +26,22 @@ namespace FileMasta.Windows
                 }
                 else MessageBox.Show(this, "This isn't a public web directory.");
             else MessageBox.Show(this, "This isn't a public web directory.");
+        }
+
+        /*************************************************************************/
+        /* Keyboard Shortcuts                                                    */
+        /*************************************************************************/
+
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            switch (keyData)
+            {
+                // Close this instance
+                case Keys.Escape:
+                    Close();
+                    return true;
+            }
+            return base.ProcessCmdKey(ref msg, keyData);
         }
     }
 }

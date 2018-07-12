@@ -44,8 +44,8 @@
             this.ButtonShare = new CButtonLib.CButton();
             this.ComboBoxShare = new System.Windows.Forms.ComboBox();
             this.InfoSplitter4 = new CButtonLib.CButton();
-            this.labelTitleType = new System.Windows.Forms.Label();
-            this.LabelValueType = new System.Windows.Forms.Label();
+            this.labelTitleExtension = new System.Windows.Forms.Label();
+            this.LabelValueExtension = new System.Windows.Forms.Label();
             this.LabelDisclaimer = new System.Windows.Forms.Label();
             this.InfoFileURL = new CButtonLib.CButton();
             this.InfoSplitter5 = new CButtonLib.CButton();
@@ -67,7 +67,6 @@
             this.ButtonDirectLink = new CButtonLib.CButton();
             this.contextOpenFile = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.NitroReaderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.VLC2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.VLCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.WMPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MPCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -153,7 +152,7 @@
             this.FlowPanelActions.Controls.Add(this.ButtonViewDirectory);
             this.FlowPanelActions.Controls.Add(this.ButtonBookmark);
             this.FlowPanelActions.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.FlowPanelActions.Location = new System.Drawing.Point(592, 14);
+            this.FlowPanelActions.Location = new System.Drawing.Point(622, 14);
             this.FlowPanelActions.Name = "FlowPanelActions";
             this.FlowPanelActions.Size = new System.Drawing.Size(332, 28);
             this.FlowPanelActions.TabIndex = 100096;
@@ -199,7 +198,7 @@
             this.PanelShare.BackColor = System.Drawing.Color.Silver;
             this.PanelShare.Controls.Add(this.ButtonShare);
             this.PanelShare.Controls.Add(this.ComboBoxShare);
-            this.PanelShare.Location = new System.Drawing.Point(844, 350);
+            this.PanelShare.Location = new System.Drawing.Point(874, 350);
             this.PanelShare.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.PanelShare.Name = "PanelShare";
             this.PanelShare.Size = new System.Drawing.Size(73, 22);
@@ -288,38 +287,38 @@
             this.InfoSplitter4.ShowFocus = CButtonLib.CButton.eFocus.None;
             this.InfoSplitter4.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.InfoSplitter4.SideImageSize = new System.Drawing.Size(21, 21);
-            this.InfoSplitter4.Size = new System.Drawing.Size(913, 1);
+            this.InfoSplitter4.Size = new System.Drawing.Size(943, 1);
             this.InfoSplitter4.TabIndex = 100094;
             this.InfoSplitter4.TabStop = false;
             this.InfoSplitter4.Text = "";
             this.InfoSplitter4.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.InfoSplitter4.TextShadowShow = false;
             // 
-            // labelTitleType
+            // labelTitleExtension
             // 
-            this.labelTitleType.AutoSize = true;
-            this.labelTitleType.BackColor = System.Drawing.Color.Transparent;
-            this.labelTitleType.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.labelTitleType.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelTitleType.Location = new System.Drawing.Point(16, 246);
-            this.labelTitleType.Margin = new System.Windows.Forms.Padding(0, 8, 0, 8);
-            this.labelTitleType.Name = "labelTitleType";
-            this.labelTitleType.Size = new System.Drawing.Size(40, 19);
-            this.labelTitleType.TabIndex = 100093;
-            this.labelTitleType.Text = "Type:";
+            this.labelTitleExtension.AutoSize = true;
+            this.labelTitleExtension.BackColor = System.Drawing.Color.Transparent;
+            this.labelTitleExtension.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.labelTitleExtension.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.labelTitleExtension.Location = new System.Drawing.Point(16, 246);
+            this.labelTitleExtension.Margin = new System.Windows.Forms.Padding(0, 8, 0, 8);
+            this.labelTitleExtension.Name = "labelTitleExtension";
+            this.labelTitleExtension.Size = new System.Drawing.Size(70, 19);
+            this.labelTitleExtension.TabIndex = 100093;
+            this.labelTitleExtension.Text = "Extension:";
             // 
-            // LabelValueType
+            // LabelValueExtension
             // 
-            this.LabelValueType.AutoSize = true;
-            this.LabelValueType.BackColor = System.Drawing.Color.Transparent;
-            this.LabelValueType.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.LabelValueType.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelValueType.Location = new System.Drawing.Point(176, 246);
-            this.LabelValueType.Margin = new System.Windows.Forms.Padding(0, 8, 0, 8);
-            this.LabelValueType.Name = "LabelValueType";
-            this.LabelValueType.Size = new System.Drawing.Size(15, 19);
-            this.LabelValueType.TabIndex = 100092;
-            this.LabelValueType.Text = "-";
+            this.LabelValueExtension.AutoSize = true;
+            this.LabelValueExtension.BackColor = System.Drawing.Color.Transparent;
+            this.LabelValueExtension.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.LabelValueExtension.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelValueExtension.Location = new System.Drawing.Point(176, 246);
+            this.LabelValueExtension.Margin = new System.Windows.Forms.Padding(0, 8, 0, 8);
+            this.LabelValueExtension.Name = "LabelValueExtension";
+            this.LabelValueExtension.Size = new System.Drawing.Size(15, 19);
+            this.LabelValueExtension.TabIndex = 100092;
+            this.LabelValueExtension.Text = "-";
             // 
             // LabelDisclaimer
             // 
@@ -331,7 +330,7 @@
             this.LabelDisclaimer.Location = new System.Drawing.Point(9, 435);
             this.LabelDisclaimer.Margin = new System.Windows.Forms.Padding(0, 5, 0, 5);
             this.LabelDisclaimer.Name = "LabelDisclaimer";
-            this.LabelDisclaimer.Size = new System.Drawing.Size(915, 38);
+            this.LabelDisclaimer.Size = new System.Drawing.Size(945, 38);
             this.LabelDisclaimer.TabIndex = 100103;
             this.LabelDisclaimer.Text = resources.GetString("LabelDisclaimer.Text");
             // 
@@ -371,7 +370,7 @@
             this.InfoFileURL.Name = "InfoFileURL";
             this.InfoFileURL.ShowFocus = CButtonLib.CButton.eFocus.None;
             this.InfoFileURL.SideImageSize = new System.Drawing.Size(24, 24);
-            this.InfoFileURL.Size = new System.Drawing.Size(912, 34);
+            this.InfoFileURL.Size = new System.Drawing.Size(942, 34);
             this.InfoFileURL.TabIndex = 100091;
             this.InfoFileURL.TabStop = false;
             this.InfoFileURL.Text = "URL";
@@ -398,7 +397,7 @@
             this.InfoSplitter5.ShowFocus = CButtonLib.CButton.eFocus.None;
             this.InfoSplitter5.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.InfoSplitter5.SideImageSize = new System.Drawing.Size(21, 21);
-            this.InfoSplitter5.Size = new System.Drawing.Size(913, 1);
+            this.InfoSplitter5.Size = new System.Drawing.Size(943, 1);
             this.InfoSplitter5.TabIndex = 100089;
             this.InfoSplitter5.TabStop = false;
             this.InfoSplitter5.Text = "";
@@ -450,7 +449,7 @@
             this.InfoSplitter3.ShowFocus = CButtonLib.CButton.eFocus.None;
             this.InfoSplitter3.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.InfoSplitter3.SideImageSize = new System.Drawing.Size(21, 21);
-            this.InfoSplitter3.Size = new System.Drawing.Size(913, 1);
+            this.InfoSplitter3.Size = new System.Drawing.Size(943, 1);
             this.InfoSplitter3.TabIndex = 100086;
             this.InfoSplitter3.TabStop = false;
             this.InfoSplitter3.Text = "";
@@ -503,7 +502,7 @@
             this.InfoSplitter2.ShowFocus = CButtonLib.CButton.eFocus.None;
             this.InfoSplitter2.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.InfoSplitter2.SideImageSize = new System.Drawing.Size(21, 21);
-            this.InfoSplitter2.Size = new System.Drawing.Size(913, 1);
+            this.InfoSplitter2.Size = new System.Drawing.Size(943, 1);
             this.InfoSplitter2.TabIndex = 100083;
             this.InfoSplitter2.TabStop = false;
             this.InfoSplitter2.Text = "";
@@ -582,7 +581,7 @@
             this.InfoSplitter1.ShowFocus = CButtonLib.CButton.eFocus.None;
             this.InfoSplitter1.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.InfoSplitter1.SideImageSize = new System.Drawing.Size(21, 21);
-            this.InfoSplitter1.Size = new System.Drawing.Size(913, 2);
+            this.InfoSplitter1.Size = new System.Drawing.Size(943, 2);
             this.InfoSplitter1.TabIndex = 100095;
             this.InfoSplitter1.TabStop = false;
             this.InfoSplitter1.Text = "";
@@ -608,7 +607,7 @@
             this.InfoSplitter0.ShowFocus = CButtonLib.CButton.eFocus.None;
             this.InfoSplitter0.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.InfoSplitter0.SideImageSize = new System.Drawing.Size(21, 21);
-            this.InfoSplitter0.Size = new System.Drawing.Size(913, 1);
+            this.InfoSplitter0.Size = new System.Drawing.Size(943, 1);
             this.InfoSplitter0.TabIndex = 100097;
             this.InfoSplitter0.TabStop = false;
             this.InfoSplitter0.Text = "";
@@ -627,7 +626,7 @@
             this.LabelFileName.Location = new System.Drawing.Point(72, 13);
             this.LabelFileName.Margin = new System.Windows.Forms.Padding(0);
             this.LabelFileName.Name = "LabelFileName";
-            this.LabelFileName.Size = new System.Drawing.Size(517, 30);
+            this.LabelFileName.Size = new System.Drawing.Size(547, 30);
             this.LabelFileName.TabIndex = 100098;
             this.LabelFileName.Text = "File Name";
             this.LabelFileName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -691,7 +690,7 @@
             this.ButtonDirectLink.ShowFocus = CButtonLib.CButton.eFocus.None;
             this.ButtonDirectLink.SideImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.ButtonDirectLink.SideImageSize = new System.Drawing.Size(22, 22);
-            this.ButtonDirectLink.Size = new System.Drawing.Size(912, 32);
+            this.ButtonDirectLink.Size = new System.Drawing.Size(942, 32);
             this.ButtonDirectLink.TabIndex = 100102;
             this.ButtonDirectLink.Text = "Direct Download Link";
             this.ButtonDirectLink.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -703,7 +702,6 @@
             // 
             this.contextOpenFile.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.NitroReaderToolStripMenuItem,
-            this.VLC2ToolStripMenuItem,
             this.VLCToolStripMenuItem,
             this.WMPToolStripMenuItem,
             this.MPCToolStripMenuItem,
@@ -714,7 +712,7 @@
             this.FDMToolStripMenuItem});
             this.contextOpenFile.Name = "contextMenuStrip1";
             this.contextOpenFile.ShowItemToolTips = false;
-            this.contextOpenFile.Size = new System.Drawing.Size(236, 224);
+            this.contextOpenFile.Size = new System.Drawing.Size(236, 202);
             // 
             // NitroReaderToolStripMenuItem
             // 
@@ -724,16 +722,6 @@
             this.NitroReaderToolStripMenuItem.Text = "Nitro Reader";
             this.NitroReaderToolStripMenuItem.Visible = false;
             this.NitroReaderToolStripMenuItem.Click += new System.EventHandler(this.NitroPDFToolStripMenuItem_Click);
-            // 
-            // VLC2ToolStripMenuItem
-            // 
-            this.VLC2ToolStripMenuItem.Image = global::FileMasta.Properties.Resources.vlc;
-            this.VLC2ToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Transparent;
-            this.VLC2ToolStripMenuItem.Name = "VLC2ToolStripMenuItem";
-            this.VLC2ToolStripMenuItem.Size = new System.Drawing.Size(235, 22);
-            this.VLC2ToolStripMenuItem.Text = "VLC Player (Built-in)";
-            this.VLC2ToolStripMenuItem.Visible = false;
-            this.VLC2ToolStripMenuItem.Click += new System.EventHandler(this.VLC2ToolStripMenuItem_Click);
             // 
             // VLCToolStripMenuItem
             // 
@@ -815,7 +803,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(937, 519);
+            this.ClientSize = new System.Drawing.Size(967, 519);
             this.Controls.Add(this.ButtonOpenWith);
             this.Controls.Add(this.ButtonRequestSize);
             this.Controls.Add(this.ImageNextFile);
@@ -823,8 +811,8 @@
             this.Controls.Add(this.FlowPanelActions);
             this.Controls.Add(this.PanelShare);
             this.Controls.Add(this.InfoSplitter4);
-            this.Controls.Add(this.labelTitleType);
-            this.Controls.Add(this.LabelValueType);
+            this.Controls.Add(this.labelTitleExtension);
+            this.Controls.Add(this.LabelValueExtension);
             this.Controls.Add(this.LabelDisclaimer);
             this.Controls.Add(this.InfoFileURL);
             this.Controls.Add(this.InfoSplitter5);
@@ -875,8 +863,8 @@
         private CButtonLib.CButton ButtonShare;
         private System.Windows.Forms.ComboBox ComboBoxShare;
         public CButtonLib.CButton InfoSplitter4;
-        public System.Windows.Forms.Label labelTitleType;
-        public System.Windows.Forms.Label LabelValueType;
+        public System.Windows.Forms.Label labelTitleExtension;
+        public System.Windows.Forms.Label LabelValueExtension;
         public System.Windows.Forms.Label LabelDisclaimer;
         public CButtonLib.CButton InfoFileURL;
         public CButtonLib.CButton InfoSplitter5;
@@ -898,7 +886,6 @@
         public CButtonLib.CButton ButtonDirectLink;
         public System.Windows.Forms.ContextMenuStrip contextOpenFile;
         private System.Windows.Forms.ToolStripMenuItem NitroReaderToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem VLC2ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem VLCToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem WMPToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem MPCToolStripMenuItem;

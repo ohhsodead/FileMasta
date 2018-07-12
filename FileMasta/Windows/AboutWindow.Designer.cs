@@ -29,50 +29,82 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutWindow));
-            this.labelAboutApp = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.LabelDescription = new System.Windows.Forms.Label();
+            this.LabelVersion = new System.Windows.Forms.Label();
+            this.LinkProjectURL = new System.Windows.Forms.LinkLabel();
+            this.LabelCopyrightCredit = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // labelAboutApp
+            // LabelDescription
             // 
-            this.labelAboutApp.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.LabelDescription.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelAboutApp.AutoEllipsis = true;
-            this.labelAboutApp.BackColor = System.Drawing.Color.Transparent;
-            this.labelAboutApp.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAboutApp.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelAboutApp.Location = new System.Drawing.Point(12, 18);
-            this.labelAboutApp.Name = "labelAboutApp";
-            this.labelAboutApp.Size = new System.Drawing.Size(279, 151);
-            this.labelAboutApp.TabIndex = 1;
-            this.labelAboutApp.Text = resources.GetString("labelAboutApp.Text");
-            this.labelAboutApp.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.LabelDescription.AutoEllipsis = true;
+            this.LabelDescription.BackColor = System.Drawing.Color.Transparent;
+            this.LabelDescription.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelDescription.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelDescription.Location = new System.Drawing.Point(12, 13);
+            this.LabelDescription.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.LabelDescription.Name = "LabelDescription";
+            this.LabelDescription.Size = new System.Drawing.Size(368, 96);
+            this.LabelDescription.TabIndex = 1;
+            this.LabelDescription.Text = resources.GetString("LabelDescription.Text");
             // 
-            // label1
+            // LabelVersion
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label1.Location = new System.Drawing.Point(12, 169);
-            this.label1.Margin = new System.Windows.Forms.Padding(3, 0, 3, 5);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(99, 15);
-            this.label1.TabIndex = 17;
-            this.label1.Text = "Created by HerbL";
+            this.LabelVersion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.LabelVersion.AutoSize = true;
+            this.LabelVersion.BackColor = System.Drawing.Color.Transparent;
+            this.LabelVersion.Cursor = System.Windows.Forms.Cursors.Default;
+            this.LabelVersion.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LabelVersion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelVersion.Location = new System.Drawing.Point(12, 120);
+            this.LabelVersion.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
+            this.LabelVersion.Name = "LabelVersion";
+            this.LabelVersion.Size = new System.Drawing.Size(81, 15);
+            this.LabelVersion.TabIndex = 17;
+            this.LabelVersion.Text = "Version 0.0.0.0";
+            // 
+            // LinkProjectURL
+            // 
+            this.LinkProjectURL.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.LinkProjectURL.AutoSize = true;
+            this.LinkProjectURL.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LinkProjectURL.Location = new System.Drawing.Point(12, 174);
+            this.LinkProjectURL.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
+            this.LinkProjectURL.Name = "LinkProjectURL";
+            this.LinkProjectURL.Size = new System.Drawing.Size(206, 15);
+            this.LinkProjectURL.TabIndex = 19;
+            this.LinkProjectURL.TabStop = true;
+            this.LinkProjectURL.Text = "https://github.com/herbl27/filemasta";
+            this.LinkProjectURL.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkProjectURL_LinkClicked);
+            // 
+            // LabelCopyrightCredit
+            // 
+            this.LabelCopyrightCredit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.LabelCopyrightCredit.AutoSize = true;
+            this.LabelCopyrightCredit.BackColor = System.Drawing.Color.Transparent;
+            this.LabelCopyrightCredit.Cursor = System.Windows.Forms.Cursors.Default;
+            this.LabelCopyrightCredit.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LabelCopyrightCredit.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelCopyrightCredit.Location = new System.Drawing.Point(12, 147);
+            this.LabelCopyrightCredit.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
+            this.LabelCopyrightCredit.Name = "LabelCopyrightCredit";
+            this.LabelCopyrightCredit.Size = new System.Drawing.Size(219, 15);
+            this.LabelCopyrightCredit.TabIndex = 21;
+            this.LabelCopyrightCredit.Text = "Copyright © 2018 Ashley Davies (HerbL)";
             // 
             // AboutWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(303, 198);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.labelAboutApp);
-            this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.ClientSize = new System.Drawing.Size(392, 205);
+            this.Controls.Add(this.LabelCopyrightCredit);
+            this.Controls.Add(this.LinkProjectURL);
+            this.Controls.Add(this.LabelVersion);
+            this.Controls.Add(this.LabelDescription);
+            this.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -82,6 +114,7 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "About";
+            this.Load += new System.EventHandler(this.AboutWindow_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -89,7 +122,9 @@
 
         #endregion
 
-        private System.Windows.Forms.Label labelAboutApp;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label LabelDescription;
+        private System.Windows.Forms.Label LabelVersion;
+        private System.Windows.Forms.LinkLabel LinkProjectURL;
+        private System.Windows.Forms.Label LabelCopyrightCredit;
     }
 }

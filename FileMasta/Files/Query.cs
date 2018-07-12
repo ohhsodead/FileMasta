@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text.RegularExpressions;
@@ -11,33 +12,34 @@ namespace FileMasta.Files
     public class Query
     {
         /// <summary>
-        /// Sort By Web File Properties
+        /// Sort Web File by Properties
         /// </summary>
-        public enum SortBy { Name, Size, Date }
+        public enum Sort { Name, Size, Date }
 
         /// <summary>
-        /// Search Files by using these methods
+        /// Search Files using selected params
         /// </summary>
         /// <param name="dataFiles"></param>
-        /// <param name="SearchQuery"></param>
-        /// <param name="SortBy"></param>        
-        /// <returns></returns>
-        static object loadSearchListLock = new object();
-        public static List<WebFile> Search(List<WebFile> dataFiles, string SearchQuery, SortBy SortBy = SortBy.Name)
+        /// <param name="search"></param>
+        /// <param name="sort"></param>
+        /// <param name="type"></param>
+        /// <param name="host"></param>
+        /// <returns>Returns list of files matching selected preferences</returns>
+        static readonly object LoadSearchListLock = new object();
+        public static List<FtpFile> Search(List<FtpFile> dataFiles, string search, Sort sort, string[] type, string host)
         {
-            lock (loadSearchListLock)
+            lock (LoadSearchListLock)
             {
-                bool reverseSort = SortBy == MainForm.Form.SelectedFilesSort;
-                SortFiles(dataFiles, SortBy, reverseSort);
+                bool reverseSort = sort == MainForm.Form.SelectedFilesSort;
+                SortFiles(dataFiles, sort, reverseSort);
 
-                var queryExactStrings = new Regex("\"(.*?)\"").Matches(SearchQuery.ToLower()); // Get strings wrapped in double quotes
+                var queryExactStrings = new Regex("\"(.*?)\"").Matches(search.ToLower()); // Get strings wrapped in double quotes
                 var queryListExactStrings = new List<string>();
                 foreach (Match match in queryExactStrings) queryListExactStrings.Add(match.Groups[1].Value.ToLower()); // Adds exacts phrases
-                var result = SearchQuery.ToLower(); // Store exact phrases
+                var result = search.ToLower(); // Store exact phrases
                 queryListExactStrings.ToList().ForEach(o => result = result.Replace("\"" + o + "\"", string.Empty)); // Removes all occurrences of exact phrases wrapped with double quotes
                 var queryWords = StringExtensions.GetWords(result);
-
-                return dataFiles.Select(item =>
+                return dataFiles.Select(item => 
                 new
                 {
                     i = item,
@@ -48,30 +50,46 @@ namespace FileMasta.Files
                     var val = p.GetValue(item.i, null);
                     return val != null
                         && (p.Name == "URL" || string.IsNullOrEmpty("URL"))
-                        && (StringExtensions.ContainsAll(Uri.UnescapeDataString(val.ToString().ToLower()), queryWords) && (StringExtensions.ContainsAll(Uri.UnescapeDataString(val.ToString().ToLower()), queryListExactStrings.ToArray())) || string.IsNullOrEmpty(SearchQuery));
+                        && HasFileExtension(type, val.ToString()) && HasFileHost(host, val.ToString()) && (StringExtensions.ContainsAll(Uri.UnescapeDataString(val.ToString().ToLower()), queryWords) && (StringExtensions.ContainsAll(Uri.UnescapeDataString(val.ToString().ToLower()), queryListExactStrings.ToArray())) || string.IsNullOrEmpty(search));
                 }))
                 .Select(item => item.i)
                 .ToList();
             }
         }
 
+        public static bool HasFileExtension(string[] type, string webFile)
+        {
+            if (type == Types.Any)
+                return true;
+            else
+                return type.Contains(Path.GetExtension(webFile.ToUpper()).Replace(".", ""));
+        }
+
+        public static bool HasFileHost(string host, string webFile)
+        {
+            if (host == "")
+                return true;
+            else
+                return host.Contains(new Uri(webFile.ToUpper()).Host);
+        }
+
         /// <summary>
         /// Sorts the list of files by Name, Date or Size - used before searching the list
         /// </summary>
         /// <param name="dataFiles">List of WebFile to sort</param>
-        /// <param name="sortProperty">SortBy Name, Date or Size</param>
+        /// <param name="sortProperty">Sort Name, Date or Size</param>
         /// <param name="sortReverse">Reverse the sort order</param>
-        public static void SortFiles(List<WebFile> dataFiles, SortBy sortProperty = SortBy.Name, bool sortReverse = false)
+        public static void SortFiles(List<FtpFile> dataFiles, Sort sortProperty = Sort.Name, bool sortReverse = false)
         {
             if (!sortReverse)
             {
-                dataFiles.Sort(delegate (WebFile x, WebFile y)
+                dataFiles.Sort(delegate (FtpFile x, FtpFile y)
                 {
-                    if (sortProperty == SortBy.Name)
+                    if (sortProperty == Sort.Name)
                         return x.Name.CompareTo(y.Name);
-                    else if (sortProperty == SortBy.Date)
-                        return x.DateUploaded.CompareTo(y.DateUploaded);
-                    else if (sortProperty == SortBy.Size)
+                    else if (sortProperty == Sort.Date)
+                        return x.DateModified.CompareTo(y.DateModified);
+                    else if (sortProperty == Sort.Size)
                         return x.Size.CompareTo(y.Size);
                     else
                         return x.Name.CompareTo(y.Name);
@@ -79,13 +97,13 @@ namespace FileMasta.Files
             }
             else if (sortReverse)
             {
-                dataFiles.Sort(delegate (WebFile x, WebFile y)
+                dataFiles.Sort(delegate (FtpFile x, FtpFile y)
                 {
-                    if (sortProperty == SortBy.Name)
+                    if (sortProperty == Sort.Name)
                         return y.Name.CompareTo(x.Name);
-                    else if (sortProperty == SortBy.Date)
-                        return y.DateUploaded.CompareTo(x.DateUploaded);
-                    else if (sortProperty == SortBy.Size)
+                    else if (sortProperty == Sort.Date)
+                        return y.DateModified.CompareTo(x.DateModified);
+                    else if (sortProperty == Sort.Size)
                         return y.Size.CompareTo(x.Size);
                     else
                         return y.Name.CompareTo(x.Name);

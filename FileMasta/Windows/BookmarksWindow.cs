@@ -5,6 +5,7 @@ using FileMasta.Models;
 using FileMasta.Worker;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Windows.Forms;
 
 namespace FileMasta.Windows
@@ -28,12 +29,12 @@ namespace FileMasta.Windows
         /// <summary>
         /// User Preference: Files Type
         /// </summary>
-        public List<string> SelectedFilesType { get; set; } = Types.All;
+        public string[] SelectedFilesType { get; set; } = Types.Any;
 
         /// <summary>
         /// User Preference: Sort Files By
         /// </summary>
-        public Query.SortBy SelectedFilesSort { get; set; } = Query.SortBy.Name;
+        public Query.Sort SelectedFilesSort { get; set; } = Query.Sort.Name;
 
         /// <summary>
         /// User Preference: Files Host
@@ -51,7 +52,7 @@ namespace FileMasta.Windows
                 Program.log.Info("Loading users bookmarks");
                 LabelStatus.Text = "Loading bookmarks...";
 
-                BackGroundWorker.RunWorkAsync<List<WebFile>>(() => Query.Search(UserBookmarks.BookmarkedFiles(), TextBoxSearchQuery.Text, SelectedFilesSort), (data) =>
+                BackGroundWorker.RunWorkAsync<List<FtpFile>>(() => Query.Search(UserBookmarks.BookmarkedFiles(), TextBoxSearchQuery.Text, SelectedFilesSort, SelectedFilesType, SelectedFilesHost), (data) =>
                 {
                     if (this.InvokeRequired)
                     {
@@ -63,15 +64,14 @@ namespace FileMasta.Windows
                         DataGridFiles.Rows.Clear();
                         ComboBoxHost.Items.Clear(); ComboBoxHost.Items.Add("Any");
 
-                        foreach (var webFile in data)
-                            if (SelectedFilesType.Contains(webFile.Type) && webFile.Host.Contains(SelectedFilesHost))
-                            {
-                                DataGridFiles.Rows.Add(webFile.Type, webFile.Name, StringExtensions.BytesToPrefix(webFile.Size), StringExtensions.TimeSpanAge(webFile.DateUploaded), webFile.Host, webFile.URL);
-                                if (!(ComboBoxHost.Items.Contains(webFile.Host)))
-                                    ComboBoxHost.Items.Add(webFile.Host);
-                            }
+                        foreach (var ftpFile in data)
+                        {
+                            DataGridFiles.Rows.Add(ftpFile.Name, StringExtensions.BytesToPrefix(ftpFile.Size), StringExtensions.TimeSpanAge(ftpFile.DateModified), new Uri(ftpFile.URL).Host, ftpFile.URL);
+                            if (!(ComboBoxHost.Items.Contains(new Uri(ftpFile.URL).Host)))
+                                ComboBoxHost.Items.Add(new Uri(ftpFile.URL).Host);
+                        }
 
-                        LabelStatus.Text = "Loaded";
+                        LabelStatus.Text = string.Format("{0} Files", StringExtensions.FormatNumber(DataGridFiles.Rows.Count.ToString()));
 
                         if (DataGridFiles.Rows.Count == 0) labelNoResultsFound.Visible = true;
                         else labelNoResultsFound.Visible = false;
@@ -97,23 +97,21 @@ namespace FileMasta.Windows
 
         private void ComboBoxType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (ComboBoxType.SelectedIndex == -1) SelectedFilesType = Types.All;
-            else if (ComboBoxType.SelectedIndex == 0) SelectedFilesType = Types.All;
-            else if (ComboBoxType.SelectedIndex == 1) SelectedFilesType = Types.Video;
-            else if (ComboBoxType.SelectedIndex == 2) SelectedFilesType = Types.Audio;
-            else if (ComboBoxType.SelectedIndex == 3) SelectedFilesType = Types.Image;
-            else if (ComboBoxType.SelectedIndex == 4) SelectedFilesType = Types.Book;
-            else if (ComboBoxType.SelectedIndex == 5) SelectedFilesType = Types.Subtitle;
-            else if (ComboBoxType.SelectedIndex == 6) SelectedFilesType = Types.Torrent;
-            else if (ComboBoxType.SelectedIndex == 7) SelectedFilesType = Types.Software;
-            else if (ComboBoxType.SelectedIndex == 8) SelectedFilesType = Types.Other;
+            if (ComboBoxType.SelectedIndex == -1) SelectedFilesType = Types.Any;
+            else if (ComboBoxType.SelectedIndex == 0) SelectedFilesType = Types.Any;
+            else if (ComboBoxType.SelectedIndex == 1) SelectedFilesType = Types.Audio;
+            else if (ComboBoxType.SelectedIndex == 2) SelectedFilesType = Types.Compressed;
+            else if (ComboBoxType.SelectedIndex == 3) SelectedFilesType = Types.Document;
+            else if (ComboBoxType.SelectedIndex == 4) SelectedFilesType = Types.Executable;
+            else if (ComboBoxType.SelectedIndex == 5) SelectedFilesType = Types.Picture;
+            else if (ComboBoxType.SelectedIndex == 6) SelectedFilesType = Types.Video;
         }
 
         private void ComboBoxSort_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (ComboBoxSort.SelectedIndex == 0) SelectedFilesSort = Query.SortBy.Name;
-            else if (ComboBoxSort.SelectedIndex == 1) SelectedFilesSort = Query.SortBy.Size;
-            else if (ComboBoxSort.SelectedIndex == 2) SelectedFilesSort = Query.SortBy.Date;
+            if (ComboBoxSort.SelectedIndex == 0) SelectedFilesSort = Query.Sort.Name;
+            else if (ComboBoxSort.SelectedIndex == 1) SelectedFilesSort = Query.Sort.Size;
+            else if (ComboBoxSort.SelectedIndex == 2) SelectedFilesSort = Query.Sort.Date;
         }
 
         private void ComboBoxHost_SelectedIndexChanged(object sender, EventArgs e)
@@ -127,20 +125,26 @@ namespace FileMasta.Windows
             LoadBookmarks();
         }
 
-        private void DataGridFiles_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex != -1)
-                MainForm.Form.ShowFileDetails(Database.WebFile(DataGridFiles.CurrentRow.Cells[5].Value.ToString()), DataGridFiles);
-        }
-
         private void DataGridFiles_SelectionChanged(object sender, EventArgs e)
         {
             ButtonRemoveFile.Enabled = (DataGridFiles.SelectedRows.Count > 0);
+            ButtonViewDetails.Enabled = (DataGridFiles.SelectedRows.Count > 0);
         }
 
         private void DataGridFiles_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
         {
             e.PaintParts &= ~DataGridViewPaintParts.Focus;
+        }
+        
+        private void ButtonViewDetails_Click(object sender, EventArgs e)
+        {
+            MainForm.Form.ShowFileDetails(Database.FtpFile(DataGridFiles.CurrentRow.Cells[5].Value.ToString()), DataGridFiles);
+        }
+
+        private void ButtonRemoveFile_Click(object sender, EventArgs e)
+        {
+            UserBookmarks.RemoveFile(DataGridFiles.CurrentRow.Cells[5].Value.ToString());
+            LoadBookmarks();
         }
 
         private void ButtonClearAll_Click(object sender, EventArgs e)
@@ -150,6 +154,22 @@ namespace FileMasta.Windows
                 UserBookmarks.ClearBookmarks();
                 LoadBookmarks();
             }
+        }
+
+        /*************************************************************************/
+        /* Keyboard Shortcuts                                                    */
+        /*************************************************************************/
+
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            switch (keyData)
+            {
+                // Close this instance
+                case Keys.Escape:
+                    Close();
+                    return true;
+            }
+            return base.ProcessCmdKey(ref msg, keyData);
         }
     }
 }
