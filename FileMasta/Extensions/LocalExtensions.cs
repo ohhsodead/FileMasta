@@ -1,5 +1,4 @@
 ﻿using System;
-using System.IO;
 using FileMasta.Utilities;
 
 namespace FileMasta.Extensions
@@ -9,49 +8,41 @@ namespace FileMasta.Extensions
         /// <summary>
         /// User's directories
         /// </summary>
-        public static string pathRoot = $@"{Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)}\FileMasta\";
-        public static string pathData = $@"{pathRoot}Data\";
-        public static string pathDownloadsDirectory = $@"{KnownFolders.GetPath(KnownFolder.Downloads)}\";
-        public static string pathVideosDirectory = $@"{KnownFolders.GetPath(KnownFolder.Videos)}\";
-        public static string pathMusicDirectory = $@"{KnownFolders.GetPath(KnownFolder.Music)}\";
-        public static string pathDocumentsDirectory = $@"{KnownFolders.GetPath(KnownFolder.Documents)}\";
-        public static string pathDesktopDirectory = $@"{KnownFolders.GetPath(KnownFolder.Desktop)}\";
-        public static string pathBookmarks = $@"{pathRoot}bookmarked.json";
+        public static string PathRoot { get; } = $@"{Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)}\FileMasta\";
+        public static string PathData { get; } = $@"{PathRoot}Data\";
+        public static string PathDownloadsDirectory { get; } = $@"{KnownFolders.GetPath(KnownFolder.Downloads)}\";
+        public static string PathVideosDirectory { get; } = $@"{KnownFolders.GetPath(KnownFolder.Videos)}\";
+        public static string PathMusicDirectory { get; } = $@"{KnownFolders.GetPath(KnownFolder.Music)}\";
+        public static string PathDocumentsDirectory { get; } = $@"{KnownFolders.GetPath(KnownFolder.Documents)}\";
+        public static string PathDesktopDirectory { get; } = $@"{KnownFolders.GetPath(KnownFolder.Desktop)}\";
+        public static string PathBookmarks { get; } = $@"{PathRoot}bookmarked.json";
 
         /// <summary>
         /// Supported media players
         /// </summary>
-        public const string pathVLC = @"C:\Program Files (x86)\VideoLAN\VLC\vlc.exe";
-        public const string pathMPCCodec64 = @"C:\Program Files(x86)\K-Lite Codec Pack\MPC-HC64\mpc-hc64.exe";
-        public const string pathMPC64 = @"C:\Program Files\MPC-HC\mpc-hc64.exe";
-        public const string pathMPC86 = @"C:\Program Files (x86)\MPC-HC\mpc-hc.exe";
-        public const string pathKMPlayer = @"C:\KMPlayer\KMPlayer.exe";
-        public const string pathPotPlayer = @"C:\Program Files\DAUM\PotPlayer\PotPlayerMini64.exe";
+        public const string _pathVLC = @"C:\Program Files (x86)\VideoLAN\VLC\vlc.exe";
+        public const string _pathMPCCodec64 = @"C:\Program Files(x86)\K-Lite Codec Pack\MPC-HC64\mpc-hc64.exe";
+        public const string _pathMPC64 = @"C:\Program Files\MPC-HC\mpc-hc64.exe";
+        public const string _pathMPC86 = @"C:\Program Files (x86)\MPC-HC\mpc-hc.exe";
+        public const string _pathKMPlayer = @"C:\KMPlayer\KMPlayer.exe";
+        public const string _pathPotPlayer = @"C:\Program Files\DAUM\PotPlayer\PotPlayerMini64.exe";
 
         /// <summary>
         /// Supported PDF viewers
         /// </summary>
-        public const string pathNitroReader = @"C:\Program Files\Nitro\Reader 5\NitroPDFReader.exe";
+        public const string _pathNitroReader = @"C:\Program Files\Nitro\Reader 5\NitroPDFReader.exe";
 
         /// <summary>
         /// Supported download managers
         /// </summary>
-        public const string pathIDM64 = @"C:\Program Files\Internet Download Manager\IDMan.exe";
-        public const string pathIDM86 = @"C:\Program Files (x86)\Internet Download Manager\IDMan.exe";
-        public const string pathFDM = @"C:\Program Files\FreeDownloadManager.ORG\Free Download Manager\fdm.exe";
-        public const string pathIDA = @"C:\Program Files (x86)\IDA\ida.exe";
+        public const string _pathIDM64 = @"C:\Program Files\Internet Download Manager\IDMan.exe";
+        public const string _pathIDM86 = @"C:\Program Files (x86)\Internet Download Manager\IDMan.exe";
+        public const string _pathFDM = @"C:\Program Files\FreeDownloadManager.ORG\Free Download Manager\fdm.exe";
+        public const string _pathIDA = @"C:\Program Files (x86)\IDA\ida.exe";
 
         /// <summary>
-        /// Checks for exact file name of a subtitle file that matches the web filename (e.g. File Name: 'Jigsaw.2017.mp4' > Subtitle File Name: 'Jigsaw.2017.srt' will be loaded)
+        /// Supported FTP clients
         /// </summary>
-        /// <param name="fileURL"></param>
-        /// <returns></returns>
-        public static bool IsSubtitlesAvailable(string fileURL)
-        {
-            if (File.Exists(pathDownloadsDirectory + Path.GetFileNameWithoutExtension(new Uri(fileURL).LocalPath) + ".srt"))
-                return true;
-            else
-                return false;
-        }
+        public const string _pathFileZilla = @"C:\Program Files\FileZilla FTP Client\filezilla.exe";
     }
 }

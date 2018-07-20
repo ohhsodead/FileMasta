@@ -1,6 +1,7 @@
 ﻿using FileMasta.Extensions;
 using System;
 using System.Diagnostics;
+using System.IO;
 using System.Windows.Forms;
 
 namespace FileMasta.Windows
@@ -22,12 +23,13 @@ namespace FileMasta.Windows
         {
             Program.log.Info("Loading ftp servers");
 
-            DataGridDiscover.Rows.Clear();
+            DataGridServers.Rows.Clear();
 
             int count = 0;
             foreach (string ftpServer in MainForm.DbOpenServers)
             {
-                DataGridDiscover.Rows.Add(StringExtensions.FormatNumber(count.ToString()), ftpServer, "FTP", ftpServer);
+                var serverUri = new Uri(ftpServer);
+                DataGridServers.Rows.Add(StringExtensions.FormatNumber(count.ToString()), serverUri.Host, serverUri.Scheme, ftpServer);
                 count += 1;
             }
 
@@ -37,7 +39,7 @@ namespace FileMasta.Windows
         private void DataGridDiscover_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex != -1)
-                Process.Start(DataGridDiscover.CurrentRow.Cells[3].Value.ToString());
+                Process.Start(DataGridServers.CurrentRow.Cells[3].Value.ToString());
         }
 
         /*************************************************************************/
@@ -54,6 +56,16 @@ namespace FileMasta.Windows
                     return true;
             }
             return base.ProcessCmdKey(ref msg, keyData);
+        }
+
+        private void MenuFileZilla_Click(object sender, EventArgs e)
+        {
+            string URL = DataGridServers.CurrentRow.Cells[4].Value.ToString();
+
+            Process FileZilla = new Process();
+            FileZilla.StartInfo.FileName = LocalExtensions._pathFileZilla;
+            FileZilla.StartInfo.Arguments = ("-d " + URL);
+            FileZilla.Start();
         }
     }
 }

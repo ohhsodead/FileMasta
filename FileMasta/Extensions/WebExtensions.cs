@@ -8,7 +8,7 @@ namespace FileMasta.Extensions
         /// <summary>
         /// Gets size of ftp file in bytes
         /// </summary>
-        /// <param name="fileURL">FTP File</param>
+        /// <param name="fileURL">FTP File URL</param>
         /// <returns></returns>
         public static long FtpFileSize(string fileURL)
         {
@@ -27,7 +27,7 @@ namespace FileMasta.Extensions
         /// <summary>
         /// Gets file DateTimestamp of ftp file
         /// </summary>
-        /// <param name="fileURL">FTP File</param>
+        /// <param name="fileURL">FTP File URL</param>
         /// <returns></returns>
         public static DateTime FtpFileTimestamp(string fileURL)
         {
@@ -47,13 +47,13 @@ namespace FileMasta.Extensions
         /// <summary>
         /// Gets web file size in bytes
         /// </summary>
-        /// <param name="FileURL"></param>
+        /// <param name="fileURL">FTP File URL</param>
         /// <returns></returns>
-        public static int WebFileSize(string FileURL)
+        public static int WebFileSize(string fileURL)
         {
             try
             {
-                var request = WebRequest.Create(FileURL);
+                var request = WebRequest.Create(fileURL);
                 request.Method = "HEAD";
                 request.Timeout = 300000;
                 using (var responese = (HttpWebResponse)request.GetResponse())
@@ -68,13 +68,13 @@ namespace FileMasta.Extensions
         /// <summary>
         /// Gets web file last modified date
         /// </summary>
-        /// <param name="FileURL"></param>
+        /// <param name="fileURL">FTP File URL</param>
         /// <returns></returns>
-        public static DateTime WebFileTimestamp(string FileURL)
+        public static DateTime WebFileTimestamp(string fileURL)
         {
             try
             {
-                var request = WebRequest.Create(FileURL);
+                var request = WebRequest.Create(fileURL);
                 request.Method = "HEAD";
                 request.Timeout = 300000;
                 using (var responese = (HttpWebResponse)request.GetResponse())
@@ -87,18 +87,14 @@ namespace FileMasta.Extensions
         }
 
         /// <summary>
-        /// Checks if web file exists on server
+        /// Checks if URL exists on the server by requesting file size
         /// </summary>
-        /// <param name="URL"></param>
+        /// <param name="url"></param>
         /// <returns></returns>
-        public static bool URLExists(string URL)
+        public static bool URLExists(string url)
         {
-            try
-            {
-                GetRequest(URL);
-                return true;
-            }
-            catch { return false; }
+            if (FtpFileSize(url) == 0) { return true; }
+            else { return false; }
         }
 
         /// <summary>

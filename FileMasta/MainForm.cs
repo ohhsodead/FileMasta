@@ -1,21 +1,20 @@
-﻿using FileMasta.Controls;
-using FileMasta.Extensions;
-using FileMasta.Files;
-using FileMasta.GitHub;
-using FileMasta.Models;
-using FileMasta.Utilities;
-using FileMasta.Windows;
-using FileMasta.Worker;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Diagnostics;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Net;
-using System.Text;
+﻿using System;
 using System.Windows.Forms;
-using System;
+using System.Text;
+using System.Net;
+using System.Linq;
+using System.IO;
+using System.Drawing;
+using System.Diagnostics;
+using System.ComponentModel;
+using System.Collections.Generic;
+using FileMasta.Windows;
+using FileMasta.Utilities;
+using FileMasta.Models;
+using FileMasta.GitHub;
+using FileMasta.Files;
+using FileMasta.Extensions;
+using FileMasta.Controls;
 
 namespace FileMasta
 {
@@ -94,31 +93,29 @@ namespace FileMasta
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            Program.log.Info("Starting load events");
+            Program.log.Info("Loading application tasks beginning");
 
-            Directory.CreateDirectory(LocalExtensions.pathRoot);
-            Directory.CreateDirectory(LocalExtensions.pathData);
+            Directory.CreateDirectory(LocalExtensions.PathRoot);
+            Directory.CreateDirectory(LocalExtensions.PathData);
 
             Updates.CheckForUpdate();
             LoadTopSearches();
             BackGroundWorker.RunWorkAsync(() => Database.UpdateLocalDatabase(), InitializeFinished);
-
-            Program.log.Info("Completed all load events");
         }
 
         private void InitializeFinished(object sender, RunWorkerCompletedEventArgs e)
         {
-            SetDatabaseInfo();
+            SetDatabaseMetadata();
             Controls.Remove(FormSplashScreen);
-            Program.log.Info("All startup tasks completed");
+            Program.log.Info("Loading tasks completed");
         }
 
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             if (e.CloseReason == CloseReason.UserClosing | e.CloseReason == CloseReason.ApplicationExitCall)
                 if (Properties.Settings.Default.clearDataOnClose)
-                    if (Directory.Exists(LocalExtensions.pathData))
-                        Directory.Delete(LocalExtensions.pathData, true);
+                    if (Directory.Exists(LocalExtensions.PathData))
+                        Directory.Delete(LocalExtensions.PathData, true);
 
             Program.log.Info("Closing application");
         }
@@ -196,21 +193,6 @@ namespace FileMasta
             var shortcutsWindow = new ShortcutsWindow();
             shortcutsWindow.ShowDialog(this);
         }
-        
-        private void MenuHelpTermsOfUse_Click(object sender, EventArgs e)
-        {
-            ControlExtensions.ShowDataWindow(((ToolStripMenuItem)sender).Text, Resources.UrlTermsOfUse);
-        }
-
-        private void MenuHelpPrivacyPolicy_Click(object sender, EventArgs e)
-        {
-            ControlExtensions.ShowDataWindow(((ToolStripMenuItem)sender).Text, Resources.UrlPrivacyPolicy);
-        }
-
-        private void MenuHelpChangeLog_Click(object sender, EventArgs e)
-        {
-            ControlExtensions.ShowDataWindow(((ToolStripMenuItem)sender).Text, Resources.UrlChangeLog);
-        }
 
         private void MenuHelpReportIssue_Click(object sender, EventArgs e)
         {
@@ -226,10 +208,10 @@ namespace FileMasta
         /// <summary>
         /// Set database meta data to be shown in UI
         /// </summary>
-        public void SetDatabaseInfo()
+        public void SetDatabaseMetadata()
         {
             StatusStripDatabaseInfo.Text = string.Format(StatusStripDatabaseInfo.Text,
-                StringExtensions.FormatNumber(DbMetaData.Files.ToString()),
+                StringExtensions.FormatNumber(DbOpenFiles.Count.ToString()),
                 StringExtensions.BytesToPrefix(Database.TotalFilesSize()),
                 StringExtensions.FormatNumber(DbOpenServers.Count.ToString()),
                 DbMetaData.Updated.ToShortDateString());
@@ -243,7 +225,7 @@ namespace FileMasta
         {
             try
             {
-                Program.log.Info("Getting most searches");
+                Program.log.Info("Loading most searches");
 
                 BackGroundWorker.RunWorkAsync<List<string>>(() => GetTopSearches(), (data) =>
                 {
@@ -257,15 +239,15 @@ namespace FileMasta
                         foreach (var tag in data)
                             if (count <= 100)
                             {
-                                FlowPanelMostSearches.Controls.Add(ControlExtensions.GetMostSearchTag(tag, count));
+                                FlowPanelMostSearches.Controls.Add(ControlExtensions.LabelMostSearch(tag, count));
                                 count++;
                             }
 
-                        Program.log.Info("Most searches returned successfully");
+                        Program.log.Info("Loaded most searches");
                     }
                 });
             }
-            catch (Exception ex) { LabelMostSearches.Visible = false; FlowPanelMostSearches.Visible = false; Program.log.Error("Error getting top searches", ex); } /* Error occurred, so hide controls/skip... */
+            catch (Exception ex) { LabelMostSearches.Visible = false; FlowPanelMostSearches.Visible = false; Program.log.Error("Unable to get most searches", ex); } // Error occurred, so hide controls and skip...
         }
 
         /// <summary>
@@ -274,6 +256,8 @@ namespace FileMasta
         /// <returns></returns>
         private List<string> GetTopSearches()
         {
+            Program.log.Info("Requesting most searches");
+
             List<string> listTopSearches = new List<string>();
 
             ServicePointManager.ServerCertificateValidationCallback = (sender, cert, chain, sslPolicyErrors) => true;
@@ -286,6 +270,7 @@ namespace FileMasta
                     listTopSearches.Add(line);
             }
 
+            Program.log.Info("Most searches returned");
             return listTopSearches;
         }
 
@@ -296,7 +281,7 @@ namespace FileMasta
         /// <summary>
         /// User Preference: Type
         /// </summary>
-        public string[] SelectedFilesType { get; set; } = Types.Any;
+        public string[] SelectedFilesType { get; set; } = Types.Everything;
 
         /// <summary>
         /// User Preference: Sort
@@ -326,8 +311,8 @@ namespace FileMasta
         // Files Type
         private void ComboBoxType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (ComboBoxType.SelectedIndex == -1) SelectedFilesType = Types.Any;
-            else if (ComboBoxType.SelectedIndex == 0) SelectedFilesType = Types.Any;
+            if (ComboBoxType.SelectedIndex == -1) SelectedFilesType = Types.Everything;
+            else if (ComboBoxType.SelectedIndex == 0) SelectedFilesType = Types.Everything;
             else if (ComboBoxType.SelectedIndex == 1) SelectedFilesType = Types.Audio;
             else if (ComboBoxType.SelectedIndex == 2) SelectedFilesType = Types.Compressed;
             else if (ComboBoxType.SelectedIndex == 3) SelectedFilesType = Types.Document;
@@ -353,20 +338,13 @@ namespace FileMasta
 
         public void SearchFiles()
         {
-            SetStatus("Searching files..");
-
-            if (Uri.TryCreate(TextBoxSearchQuery.Text, UriKind.Absolute, out Uri uriResult) && (uriResult.Scheme == Uri.UriSchemeHttp || uriResult.Scheme == Uri.UriSchemeHttps) && uriResult != null)
-                if (WebExtensions.URLExists(uriResult.ToString()))
+            if (Uri.TryCreate(TextBoxSearchQuery.Text, UriKind.Absolute, out Uri uriResult) && (uriResult.Scheme == Uri.UriSchemeFtp ) && uriResult != null)
+                try
                 {
-                    try
-                    {
-                        ShowFileDetails(Database.FtpFile(TextBoxSearchQuery.Text), DataGridFiles);
-                        TextBoxSearchQuery.Text = null;
-                    }
-                    catch (Exception ex) { MessageBox.Show(this, "There was an issue requesting this file. Make sure it exists on the server you're trying to access.\n\n" + ex.Message); }
+                    ShowFileDetails(Database.FtpFile(TextBoxSearchQuery.Text), DataGridFiles);
+                    TextBoxSearchQuery.Text = null;
                 }
-                else
-                    MessageBox.Show(this, "There was an issue requesting this file. Make sure it exists on the server you're trying to access.");
+                catch (Exception ex) { MessageBox.Show(this, "There was an issue requesting the file information. Make sure the server/files allows for anonymous authentication access.\n\n" + ex.Message); }
             else
                 QueryFiles();
         }
@@ -376,7 +354,7 @@ namespace FileMasta
             if (e.RowIndex != -1)
             {
                 var webFile = Database.FtpFile(DataGridFiles.CurrentRow.Cells[4].Value.ToString());
-                SetStatus(string.Format("Size: {0}, Date Modified: {1}, URL: {2}", webFile.Size, webFile.DateModified.ToString("MM/dd/yyyy HH:mm"), Uri.UnescapeDataString(webFile.URL)));
+                SetStatus(string.Format("Size: {0}, Last Modified: {1}, URL: {2}", webFile.Size, webFile.DateModified.ToString("MM/dd/yyyy HH:mm"), Uri.UnescapeDataString(webFile.URL)));
             }
             else
                 SetStatus(string.Format("{0} Files", StringExtensions.FormatNumber(DataGridFiles.Rows.Count.ToString())));
@@ -384,28 +362,34 @@ namespace FileMasta
         
         private void DataGridFiles_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            // Show file details window
-            var webFile = Database.FtpFile(DataGridFiles.CurrentRow.Cells[4].Value.ToString());
-            ShowFileDetails(webFile, DataGridFiles);
+            if (e.RowIndex != -1)
+            {
+                ShowFileDetails(Database.FtpFile(DataGridFiles.CurrentRow.Cells[4].Value.ToString()), DataGridFiles);
+            }               
+        }
+        
+        private void DataGridFiles_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            e.Paint(e.CellBounds, DataGridViewPaintParts.All & ~DataGridViewPaintParts.Focus);
+            e.Handled = true;
         }
 
         private void DataGridFiles_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
         {
-            e.PaintParts &= ~DataGridViewPaintParts.Focus;
+            e.PaintParts &= DataGridViewPaintParts.All & ~DataGridViewPaintParts.Focus;
         }
 
         delegate void QueryFilesCallBack();
         public void QueryFiles()
         {
-            Program.log.InfoFormat("Starting query for {0}. Preferences - Sort: {1}, Type: {2}, Host: {3}", TextBoxSearchQuery.Text, SelectedFilesSort.ToString(), SelectedFilesType.ToArray(), SelectedFilesHost);
+            SetStatus("Searching files...");
+            Program.log.InfoFormat("Search files beginning. Preferences - Query: {0}, Sort: {1}, Type: {2}, Host: {3}", TextBoxSearchQuery.Text, SelectedFilesSort.ToString(), SelectedFilesType.ToArray(), SelectedFilesHost);
             Stopwatch stopWatch = new Stopwatch();
             EnableSearchControls(false);
             BackGroundWorker.RunWorkAsync(() => Query.Search(DbOpenFiles, TextBoxSearchQuery.Text, SelectedFilesSort, SelectedFilesType, SelectedFilesHost), (data) =>
             {
                 if (InvokeRequired)
-                {
                     Invoke(new QueryFilesCallBack(QueryFiles), new object[] { });
-                }
                 else
                 {
                     DataGridFiles.Rows.Clear();
@@ -419,19 +403,16 @@ namespace FileMasta
                     }
 
                     stopWatch.Stop();
-                    SetStatus(string.Format("Successfully returned files - {0} Files ({1} seconds)", StringExtensions.FormatNumber(DataGridFiles.Rows.Count.ToString()), String.Format("{0:0.000}", stopWatch.Elapsed.TotalSeconds)));
+                    SetStatus(string.Format("{0} Files ({1} seconds)", StringExtensions.FormatNumber(DataGridFiles.Rows.Count.ToString()), String.Format("{0:0.000}", stopWatch.Elapsed.TotalSeconds)));
                     stopWatch.Reset();
-                    
-                    if (DataGridFiles.Rows.Count == 0) LabelNoResultsFound.Visible = true;
-                    else LabelNoResultsFound.Visible = false;
-
-                    Program.log.Info(StatusStripStatus.Text);
-
-                    EnableSearchControls(true);
 
                     // Sets selected item to host
                     if (SelectedFilesHost == "") ComboBoxHost.SelectedIndex = 0;
                     else ComboBoxHost.SelectedItem = SelectedFilesHost;
+
+                    EnableSearchControls(true);
+
+                    Program.log.Info(StatusStripStatus.Text);
                 }
             }); 
         }
@@ -485,44 +466,47 @@ namespace FileMasta
         /// </summary>
         /// <param name="File">WebFile object</param>
         /// <param name="createNewInstance">Whether to create a new instance</param>
-        public void ShowFileDetails(FtpFile File, DataGridView parentDataGrid, bool isLocal = false, bool createNewInstance = true)
+        public void ShowFileDetails(FtpFile File, DataGridView parentDataGrid, bool createNewInstance = true)
         {
-            Program.log.Info("Showing file details dialog : " + File.URL);
+            Program.log.Info("Loading file details : " + File.URL);
 
             if (createNewInstance)
                 FormFileDetails = new FileDetailsWindow();
 
-            FormFileDetails.IsLocalFile = isLocal;
+            FormFileDetails.FileExtension = Path.GetExtension(File.URL).Replace(".", "").ToUpper();
             FormFileDetails.ParentDataGrid = parentDataGrid;
             FormFileDetails.CurrentFile = File;
 
             FormFileDetails.LabelFileName.Text = File.Name;
             FormFileDetails.LabelValueName.Text = File.Name;
+            FormFileDetails.LabelValueSize.Text = StringExtensions.BytesToPrefix(File.Size);
             FormFileDetails.LabelValueRefferer.Text = new Uri(File.URL).Host;
-            FormFileDetails.InfoFileURL.Text = Uri.UnescapeDataString(File.URL);
 
             // Builds parts of the URL into a better presented string, simply replaces '/' with '>' and no filename
             var url = new Uri(File.URL);
             var directories = new StringBuilder();
-            if (!File.URL.StartsWith(@"C:\")) { directories.Append(new Uri(File.URL).Host); } else { FormFileDetails.LabelValueRefferer.Text = "Local"; } // Appends the Host at the start if not Local, else it will be named 'Local'
-                foreach (string path in url.LocalPath.Split('/', '\\'))
+            directories.Append(new Uri(File.URL).Host);
+            foreach (var path in url.LocalPath.Split('/', '\\'))
                 if (!Path.HasExtension(path))
                     directories.Append(path + "> ");
             FormFileDetails.LabelValueDirectory.Text = directories.ToString();
 
-            FormFileDetails.LabelValueSize.Text = StringExtensions.BytesToPrefix(File.Size);
+            FormFileDetails.LabelValueExtension.Text = Path.GetExtension(File.URL).Replace(".", "").ToUpper();
             FormFileDetails.LabelValueAge.Text = StringExtensions.TimeSpanAge(File.DateModified);
+            FormFileDetails.InfoFileURL.Text = Uri.UnescapeDataString(File.URL);
 
-            if (!createNewInstance) FormFileDetails.CheckFileEvents();
-            else FormFileDetails.ShowDialog(this);
+            if (!createNewInstance)
+                FormFileDetails.CheckFileEvents();
+            else
+                FormFileDetails.ShowDialog(this);
 
-            Program.log.Info("Successfully loaded file details dialog");
+            Program.log.Info("File details loaded");
         }
 
         /// <summary>
         /// Set Status Text of ToolStrip
         /// </summary>
-        /// <param name="message">Message to be displayed, duh</param>
+        /// <param name="message">Message/status to be displayed</param>
         public static void SetStatus(string message)
         {
             Form.StatusStripStatus.Text = message;

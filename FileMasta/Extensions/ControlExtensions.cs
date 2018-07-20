@@ -26,14 +26,14 @@ namespace FileMasta.Extensions
         /// <summary>
         /// Shows raw text from the specified URL in a window box
         /// </summary>
-        /// <param name="Title">Text to display in title</param>
-        /// <param name="URL">URL to fetch string data from</param>
-        public static void ShowDataWindow(string Title, string URL)
+        /// <param name="title">Text to display in title</param>
+        /// <param name="url">URL to fetch string data from</param>
+        public static void ShowDataWindow(string title, string url)
         {
-            DataWindow frmInfo = new DataWindow { Text = Title };
+            DataWindow frmInfo = new DataWindow { Text = title };
 
             using (var client = MainForm._webClient)
-            using (var stream = client.OpenRead(URL))
+            using (var stream = client.OpenRead(url))
             using (var reader = new StreamReader(stream))
                 frmInfo.labelData.Text = reader.ReadToEnd();
 
@@ -46,16 +46,21 @@ namespace FileMasta.Extensions
         /// </summary>
         /// <param name="ctrl">CButton control to set text</param>
         /// <param name="text">Text to set to control</param>
-        public static void SetControlText(Button ctrl, string text)
+        public static void SetControlText(Button control, string text)
         {
-            ctrl.Text = text;
-            var myFont = new Font(ctrl.Font.FontFamily, ctrl.Font.Size);
-            var mySize = ctrl.CreateGraphics().MeasureString(ctrl.Text, myFont);
-            ctrl.Width = (((int)(Math.Round(mySize.Width, 0))) + 34);
+            control.Text = text;
+            var myFont = new Font(control.Font.FontFamily, control.Font.Size);
+            var mySize = control.CreateGraphics().MeasureString(control.Text, myFont);
+            control.Width = (((int)(Math.Round(mySize.Width, 0))) + 34);
         }
 
-        // Add top search item to panel
-        public static Label GetMostSearchTag(string text, int count)
+        /// <summary>
+        /// Creates a nw most search label
+        /// </summary>
+        /// <param name="text">Most Search text/value</param>
+        /// <param name="count">Number of the control, used for naming</param>
+        /// <returns></returns>
+        public static Label LabelMostSearch(string text, int count)
         {
             var a = new Label
             {
@@ -67,17 +72,17 @@ namespace FileMasta.Extensions
                 ForeColor = Color.Black,
                 Margin = new Padding(0, 0, 1, 1),
                 Cursor = Cursors.Hand,
-                Name = "tagItem" + count,
+                Name = "MostSearch" + count,
             };
 
-            a.Click += ButtonMostSearches_Click;
-            return a;
-        }
+            // Click event performs a search in main form
+            a.Click += delegate
+            {
+                MainForm.Form.TextBoxSearchQuery.Text = a.Text;
+                MainForm.Form.SearchFiles();
+            };
 
-        public static void ButtonMostSearches_Click(object sender, EventArgs e)
-        {
-            MainForm.Form.TextBoxSearchQuery.Text = ((Label)sender).Text;
-            MainForm.Form.SearchFiles();
+            return a;
         }
     }
 }

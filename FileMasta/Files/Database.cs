@@ -38,7 +38,7 @@ namespace FileMasta.Files
                 {
                     Program.log.Info($"Updating {fileNameFiles}...");
                     using (var client = new WebClient())
-                        client.DownloadFile(new Uri(dbOpenFiles), $"{LocalExtensions.pathData}{fileNameFiles}");              
+                        client.DownloadFile(new Uri(dbOpenFiles), $"{LocalExtensions.PathData}{fileNameFiles}");              
                     Program.log.Info($"{fileNameFiles} updated");
                 }
             }
@@ -50,10 +50,10 @@ namespace FileMasta.Files
             finally
             { 
                 // Deserializes database first line containing meta info
-                MainForm.DbMetaData = JsonConvert.DeserializeObject<Metadata>(File.ReadLines($"{LocalExtensions.pathData}{fileNameFiles}").First());
+                MainForm.DbMetaData = JsonConvert.DeserializeObject<Metadata>(File.ReadLines($"{LocalExtensions.PathData}{fileNameFiles}").First());
 
                 // Store files in the main form, skipping the first line as it contains the db metadata
-                foreach (var item in File.ReadAllLines($"{LocalExtensions.pathData}{fileNameFiles}").Skip(1))
+                foreach (var item in File.ReadAllLines($"{LocalExtensions.PathData}{fileNameFiles}").Skip(1))
                     if (StringExtensions.IsValidJSON(item))
                         MainForm.DbOpenFiles.Add(JsonConvert.DeserializeObject<FtpFile>(item));
             }
@@ -64,7 +64,7 @@ namespace FileMasta.Files
                 {
                     Program.log.Info($"Updating {fileNameServers}...");
                     using (var client = new WebClient())
-                        client.DownloadFile(new Uri(dbOpenServers), $"{LocalExtensions.pathData}{fileNameServers}");
+                        client.DownloadFile(new Uri(dbOpenServers), $"{LocalExtensions.PathData}{fileNameServers}");
                     Program.log.Info($"{fileNameServers} updated");
                 }
             }
@@ -75,7 +75,7 @@ namespace FileMasta.Files
             }
             finally
             {
-                MainForm.DbOpenServers.AddRange(File.ReadAllLines($"{LocalExtensions.pathData}{fileNameServers}"));
+                MainForm.DbOpenServers.AddRange(File.ReadAllLines($"{LocalExtensions.PathData}{fileNameServers}"));
             }            
         }
 
@@ -91,8 +91,8 @@ namespace FileMasta.Files
             {
                 Program.log.Info($"Checking if '{fileName}' needs to be updated");
 
-                if (File.Exists($"{LocalExtensions.pathData}{fileName}"))
-                    if (WebExtensions.WebFileSize($"{webFile}") == new FileInfo($"{LocalExtensions.pathData}{fileName}").Length)
+                if (File.Exists($"{LocalExtensions.PathData}{fileName}"))
+                    if (WebExtensions.WebFileSize($"{webFile}") == new FileInfo($"{LocalExtensions.PathData}{fileName}").Length)
                         return false;
                     else
                         return true;

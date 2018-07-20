@@ -148,7 +148,7 @@
       <DependentUpon>DataWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="Utilities\ExceptionEvents.cs" />
-    <Compile Include="Worker\BackGroundWorker.cs" />
+    <Compile Include="Utilities\BackGroundWorker.cs" />
     <Compile Include="Controls\SplashScreen.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -176,7 +176,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Extensions\LocalExtensions.cs" />
     <Compile Include="GitHub\OpenLink.cs" />
-    <Compile Include="Bookmarks\UserBookmarks.cs" />
+    <Compile Include="Files\Bookmarks.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Utilities\TextLineRemover.cs" />
     <Compile Include="Utilities\Update.cs" />

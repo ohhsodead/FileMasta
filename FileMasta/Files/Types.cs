@@ -1,13 +1,11 @@
-﻿using System.Collections.Generic;
-
-namespace FileMasta.Files
+﻿namespace FileMasta.Files
 {
     class Types
     {
         /// <summary>
-        /// Supported file extensions by type/category, matches the ones used in the crawler
+        /// Supported file extensions by type/category
         /// </summary>
-        public static string[] Any { get; } = new string[] { null };
+        public static string[] Everything { get; } = new string[] { };
         public static string[] Audio { get; } = new string[] { "AAC", "AC3", "AIF", "AIFC", "AIFF", "AU", "CDA", "DTS", "FLA", "FLAC", "IT", "M1A", "M2A", "M3U", "M4A", "MID", "MIDI", "MKA", "MOD", "MP2", "MP3", "MPA", "OGG", "RA", "RMI", "SPC", "RMI", "SND", "UMX", "VOC", "WAV", "WMA", "XM" };
         public static string[] Compressed { get; } = new string[] { "7Z", "ACE", "ARJ", "BZ2", "CAB", "GZ", "GZIP", "JAR", "R00", "R01", "R02", "R03", "R04", "R05", "R06", "R07", "R08", "R09", "R10", "R11", "R12", "R13", "R14", "R15", "R16", "R17", "R18", "R19", "R20", "R21", "R22", "R23", "R24", "R25", "R26", "R27", "R28", "R29", "RAR", "TAR", "TGZ", "Z", "ZIP" };
         public static string[] Document { get; } = new string[] { "C", "CHM", "CPP", "CSV", "CXX", "DOC", "DOCM", "DOCX", "DOT", "DOTM", "DOTX", "H", "HPP", "HTM", "HTML", "HXX", "INI", "JAVA", "LUA", "MHT", "MHTML", "ODT", "PDF", "POTX", "POTM", "PPAM", "PPSM", "PPSX", "PPS", "PPT", "PPTM", "PPTX", "RTF", "SLDM", "SLDX", "THMX", "TXT", "VSD", "WPD", "WPS", "WRI", "XLAM", "XLS", "XLSB", "XLSM", "XLSX", "XLTM", "XLTX", "XML" };

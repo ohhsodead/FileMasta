@@ -37,7 +37,7 @@
             // 
             this.buttonSubmit.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.buttonSubmit.Location = new System.Drawing.Point(310, 11);
-            this.buttonSubmit.Name = "ButtonSubmit";
+            this.buttonSubmit.Name = "buttonSubmit";
             this.buttonSubmit.Size = new System.Drawing.Size(50, 24);
             this.buttonSubmit.TabIndex = 10;
             this.buttonSubmit.Text = "Submit";
@@ -65,6 +65,7 @@
             this.ClientSize = new System.Drawing.Size(372, 46);
             this.Controls.Add(this.buttonSubmit);
             this.Controls.Add(this.textBoxWebsite);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;

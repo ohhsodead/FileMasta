@@ -1,8 +1,7 @@
-﻿using FileMasta.Bookmarks;
-using FileMasta.Extensions;
+﻿using FileMasta.Extensions;
 using FileMasta.Files;
 using FileMasta.Models;
-using FileMasta.Worker;
+using FileMasta.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -20,9 +19,8 @@ namespace FileMasta.Windows
         }
 
         public FtpFile CurrentFile { get; set; }
+        public string FileExtension { get; set; }
         public DataGridView ParentDataGrid { get; set; }
-        public bool IsLocalFile { get; set; }
-        string FileSubtitles { get; set; }
 
         /// <summary>
         /// Supported file types for all the external applications
@@ -40,64 +38,43 @@ namespace FileMasta.Windows
         public void CheckFileEvents()
         {
             // Hides all open file items
-            foreach (ToolStripMenuItem item in contextOpenFile.Items)
+            foreach (ToolStripMenuItem item in ContextOpenFile.Items)
                 item.Visible = false;
 
-            // Shows appropriate Bookmarks button text
-            if (!UserBookmarks.IsBookmarked(CurrentFile.URL))
-                ControlExtensions.SetControlText(ButtonBookmark, "Add to Bookmarks");
-            else
+            // Shows Add/Remove Bookmarks button text
+            if (Bookmarks.IsBookmarked(CurrentFile.URL))
                 ControlExtensions.SetControlText(ButtonBookmark, "Remove from Bookmarks");
+            else
+                ControlExtensions.SetControlText(ButtonBookmark, "Add to Bookmarks");
 
-            // Shows supported pdf readers installed on users machine
-            if (BookFileTypes.Contains(Path.GetExtension(CurrentFile.URL)))
+            // Shows supported PDF readers installed on users machine
+            if (BookFileTypes.Contains(FileExtension))
             {
-                NitroReaderToolStripMenuItem.Visible = File.Exists(LocalExtensions.pathNitroReader);
+                NitroReaderToolStripMenuItem.Visible = File.Exists(LocalExtensions._pathNitroReader);
             }
 
             // Shows supported media players installed on users machine
-            if (VideoFileTypes.Contains(Path.GetExtension(CurrentFile.URL)) || AudioFileTypes.Contains(Path.GetExtension(CurrentFile.URL)))
+            if (VideoFileTypes.Contains(FileExtension) || AudioFileTypes.Contains(FileExtension))
             {
                 WMPToolStripMenuItem.Visible = true;
-                VLCToolStripMenuItem.Visible = File.Exists(LocalExtensions.pathVLC);
-                MPCToolStripMenuItem.Visible = File.Exists(LocalExtensions.pathMPCCodec64) || File.Exists(LocalExtensions.pathMPC64) || File.Exists(LocalExtensions.pathMPC86);
-                KMPlayerToolStripMenuItem.Visible = File.Exists(LocalExtensions.pathKMPlayer);
-                PotPlayerToolStripMenuItem.Visible = File.Exists(LocalExtensions.pathPotPlayer);
+                VLCToolStripMenuItem.Visible = File.Exists(LocalExtensions._pathVLC);
+                MPCToolStripMenuItem.Visible = File.Exists(LocalExtensions._pathMPCCodec64) || File.Exists(LocalExtensions._pathMPC64) || File.Exists(LocalExtensions._pathMPC86);
+                KMPlayerToolStripMenuItem.Visible = File.Exists(LocalExtensions._pathKMPlayer);
+                PotPlayerToolStripMenuItem.Visible = File.Exists(LocalExtensions._pathPotPlayer);
             }
 
-            // Support download manangers installed on users machine, only shown if this isn't a local file
-            if (!IsLocalFile)
-            {
-                IDMToolStripMenuItem.Visible = File.Exists(LocalExtensions.pathIDM64) || File.Exists(LocalExtensions.pathIDM86) && !CurrentFile.URL.StartsWith(LocalExtensions.pathDownloadsDirectory);
-                FDMToolStripMenuItem.Visible = File.Exists(LocalExtensions.pathFDM) && !CurrentFile.URL.StartsWith(LocalExtensions.pathDownloadsDirectory);
-            }
+            // Support download manangers installed on users machine
+            IDMToolStripMenuItem.Visible = File.Exists(LocalExtensions._pathIDM64) || File.Exists(LocalExtensions._pathIDM86);
+            IDAToolStripMenuItem.Visible = File.Exists(LocalExtensions._pathIDA);
+            FDMToolStripMenuItem.Visible = File.Exists(LocalExtensions._pathFDM);
 
             // Shows Open File button if context menu has items
-            if (contextOpenFile.Items.Count > 0)
-            {
-                ButtonOpenWith.Visible = true;
-            }
+            ButtonOpenWith.Visible = ContextOpenFile.Items.Count > 0;
 
             // Shows Request File Size button if size property returns 0
-            if (CurrentFile.Size == 0)
-                ButtonRequestSize.Visible = true;
-            else
-                ButtonRequestSize.Visible = false;
+            ButtonRequestSize.Visible = CurrentFile.Size == 0;
 
-            // Hides features that aren't needed for local files (Bookmark, Share & Report)
-            if (IsLocalFile)
-            {
-                ButtonBookmark.Visible = false;
-                PanelShare.Visible = false;
-            }
-
-            // Add subtitle file to be played when opening external VLC
-            if (LocalExtensions.IsSubtitlesAvailable(CurrentFile.URL)) // If users downloads folder contains a subtitle file matching web file name
-                FileSubtitles = LocalExtensions.pathDownloadsDirectory + Path.GetFileNameWithoutExtension(CurrentFile.URL) + ".srt";
-            else
-                FileSubtitles = null;
-
-            // Displays appropriate scroll images
+            // Displays appropriate scrolling images
             ScrollButtonChecks();
         }
 
@@ -139,7 +116,7 @@ namespace FileMasta.Windows
                 ParentDataGrid.Rows[rowIndex - 1].Cells[colIndex].Selected = true;
                 ParentDataGrid.Rows[rowIndex - 1].Selected = true;
 
-                MainForm.Form.ShowFileDetails(Database.FtpFile(ParentDataGrid.CurrentRow.Cells[4].Value.ToString()), ParentDataGrid, IsLocalFile, false);
+                MainForm.Form.ShowFileDetails(Database.FtpFile(ParentDataGrid.CurrentRow.Cells[4].Value.ToString()), ParentDataGrid, false);
 
                 ScrollButtonChecks();
             }
@@ -162,7 +139,7 @@ namespace FileMasta.Windows
                 ParentDataGrid.Rows[rowIndex + 1].Cells[colIndex].Selected = true;
                 ParentDataGrid.Rows[rowIndex + 1].Selected = true;
 
-                MainForm.Form.ShowFileDetails(Database.FtpFile(ParentDataGrid.CurrentRow.Cells[4].Value.ToString()), ParentDataGrid, IsLocalFile, false);
+                MainForm.Form.ShowFileDetails(Database.FtpFile(ParentDataGrid.CurrentRow.Cells[4].Value.ToString()), ParentDataGrid, false);
 
                 ScrollButtonChecks();
             }
@@ -181,14 +158,14 @@ namespace FileMasta.Windows
         private void ButtonBookmark_Click(object sender, EventArgs e)
         {
             // Add/Remove file from users Bookmarks
-            if (UserBookmarks.IsBookmarked(CurrentFile.URL))
+            if (Bookmarks.IsBookmarked(CurrentFile.URL))
             {
-                UserBookmarks.RemoveFile(CurrentFile.URL);
+                Bookmarks.RemoveFile(CurrentFile.URL);
                 ControlExtensions.SetControlText(ButtonBookmark, "Add to Bookmarks");
             }
             else
             {
-                UserBookmarks.AddFile(CurrentFile.URL);
+                Bookmarks.AddFile(CurrentFile.URL);
                 ControlExtensions.SetControlText(ButtonBookmark, "Remove from Bookmarks");
             }
         }
@@ -233,7 +210,7 @@ namespace FileMasta.Windows
             try
             {
                 // Open file in default web browser, or if local then default program
-                // Crashes when no application set for the extension, so I used Try to let the user know if this is the case
+                // Crashes when no application set for the extension, so I used Try statement to catch and show these errors
                 Process.Start(CurrentFile.URL);
             }
             catch (Exception ex)
@@ -244,14 +221,14 @@ namespace FileMasta.Windows
 
         private void ButtonOpenWith_Click(object sender, EventArgs e)
         {
-            contextOpenFile.Show(ButtonOpenWith, ButtonOpenWith.PointToClient(Cursor.Position));
+            ContextOpenFile.Show(ButtonOpenWith, ButtonOpenWith.PointToClient(Cursor.Position));
         }
 
         private void NitroPDFToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // Open file in Nitro Reader
             Process NitroReader = new Process();
-            NitroReader.StartInfo.FileName = LocalExtensions.pathNitroReader;
+            NitroReader.StartInfo.FileName = LocalExtensions._pathNitroReader;
             NitroReader.StartInfo.Arguments = (CurrentFile.URL);
             NitroReader.Start();
         }
@@ -266,8 +243,8 @@ namespace FileMasta.Windows
         {
             // Open file in VLC player, with subtitles (if found)
             Process VLC = new Process();
-            VLC.StartInfo.FileName = LocalExtensions.pathVLC;
-            VLC.StartInfo.Arguments = ("-vvv " + CurrentFile.URL + " --sub-file=" + FileSubtitles);
+            VLC.StartInfo.FileName = LocalExtensions._pathVLC;
+            VLC.StartInfo.Arguments = ("-vvv " + CurrentFile.URL);
             VLC.Start();
         }
 
@@ -275,12 +252,12 @@ namespace FileMasta.Windows
         {
             // Open file in Media Player Classic
             Process MPC = new Process();
-            if (File.Exists(LocalExtensions.pathMPCCodec64))
-                MPC.StartInfo.FileName = LocalExtensions.pathMPCCodec64;
-            else if (File.Exists(LocalExtensions.pathMPC64))
-                MPC.StartInfo.FileName = LocalExtensions.pathMPC64;
+            if (File.Exists(LocalExtensions._pathMPCCodec64))
+                MPC.StartInfo.FileName = LocalExtensions._pathMPCCodec64;
+            else if (File.Exists(LocalExtensions._pathMPC64))
+                MPC.StartInfo.FileName = LocalExtensions._pathMPC64;
             else
-                MPC.StartInfo.FileName = LocalExtensions.pathMPC86;
+                MPC.StartInfo.FileName = LocalExtensions._pathMPC86;
             MPC.StartInfo.Arguments = (CurrentFile.URL);
             MPC.Start();
         }
@@ -289,7 +266,7 @@ namespace FileMasta.Windows
         {
             // Open file in KM Player
             Process KMP = new Process();
-            KMP.StartInfo.FileName = LocalExtensions.pathKMPlayer;
+            KMP.StartInfo.FileName = LocalExtensions._pathKMPlayer;
             KMP.StartInfo.Arguments = (CurrentFile.URL);
             KMP.Start();
         }
@@ -298,7 +275,7 @@ namespace FileMasta.Windows
         {
             // Open file in Pot Player
             Process PP = new Process();
-            PP.StartInfo.FileName = LocalExtensions.pathPotPlayer;
+            PP.StartInfo.FileName = LocalExtensions._pathPotPlayer;
             PP.StartInfo.Arguments = (CurrentFile.URL);
             PP.Start();
         }
@@ -307,10 +284,10 @@ namespace FileMasta.Windows
         {
             // Open file in Internet Download Manager
             Process IDM = new Process();
-            if (File.Exists(LocalExtensions.pathIDM64))
-                IDM.StartInfo.FileName = LocalExtensions.pathIDM64;
+            if (File.Exists(LocalExtensions._pathIDM64))
+                IDM.StartInfo.FileName = LocalExtensions._pathIDM64;
             else
-                IDM.StartInfo.FileName = LocalExtensions.pathIDM86;
+                IDM.StartInfo.FileName = LocalExtensions._pathIDM86;
             IDM.StartInfo.Arguments = ("-d " + CurrentFile.URL);
             IDM.Start();
         }
@@ -319,7 +296,7 @@ namespace FileMasta.Windows
         {
             // Open file in Internet Download Accelerator
             Process FDM = new Process();
-            FDM.StartInfo.FileName = LocalExtensions.pathIDA;
+            FDM.StartInfo.FileName = LocalExtensions._pathIDA;
             FDM.StartInfo.Arguments = (CurrentFile.URL);
             FDM.Start();
         }
@@ -328,7 +305,7 @@ namespace FileMasta.Windows
         {
             // Open file in Free Download Manger
             Process FDM = new Process();
-            FDM.StartInfo.FileName = LocalExtensions.pathFDM;
+            FDM.StartInfo.FileName = LocalExtensions._pathFDM;
             FDM.StartInfo.Arguments = (CurrentFile.URL);
             FDM.Start();
         }

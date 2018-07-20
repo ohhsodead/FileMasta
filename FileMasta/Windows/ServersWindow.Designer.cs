@@ -28,32 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ServersWindow));
-            this.DataGridDiscover = new System.Windows.Forms.DataGridView();
+            this.DataGridServers = new System.Windows.Forms.DataGridView();
             this.labelTitleDiscover = new System.Windows.Forms.Label();
-            this.columnDiscoverCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnDiscoverServer = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnDiscoverType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnDiscoverURL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.DataGridDiscover)).BeginInit();
+            this.ContextMenuServer = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.MenuFileZilla = new System.Windows.Forms.ToolStripMenuItem();
+            this.columnDiscoverNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnDiscoverHostname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnDiscoverProtocol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnDiscoverURI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridServers)).BeginInit();
+            this.ContextMenuServer.SuspendLayout();
             this.SuspendLayout();
             // 
-            // DataGridDiscover
+            // DataGridServers
             // 
-            this.DataGridDiscover.AllowUserToAddRows = false;
-            this.DataGridDiscover.AllowUserToDeleteRows = false;
-            this.DataGridDiscover.AllowUserToResizeColumns = false;
-            this.DataGridDiscover.AllowUserToResizeRows = false;
-            this.DataGridDiscover.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.DataGridServers.AllowUserToAddRows = false;
+            this.DataGridServers.AllowUserToDeleteRows = false;
+            this.DataGridServers.AllowUserToResizeColumns = false;
+            this.DataGridServers.AllowUserToResizeRows = false;
+            this.DataGridServers.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.DataGridDiscover.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.DataGridDiscover.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DataGridDiscover.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.DataGridDiscover.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
-            this.DataGridDiscover.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.DataGridServers.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.DataGridServers.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DataGridServers.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.DataGridServers.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
+            this.DataGridServers.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(246)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -62,40 +66,41 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DodgerBlue;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGridDiscover.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.DataGridDiscover.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DataGridDiscover.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.columnDiscoverCount,
-            this.columnDiscoverServer,
-            this.columnDiscoverType,
-            this.columnDiscoverURL});
-            this.DataGridDiscover.EnableHeadersVisualStyles = false;
-            this.DataGridDiscover.GridColor = System.Drawing.SystemColors.Control;
-            this.DataGridDiscover.Location = new System.Drawing.Point(0, 37);
-            this.DataGridDiscover.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
-            this.DataGridDiscover.MultiSelect = false;
-            this.DataGridDiscover.Name = "DataGridDiscover";
-            this.DataGridDiscover.ReadOnly = true;
-            this.DataGridDiscover.RowHeadersVisible = false;
-            this.DataGridDiscover.RowHeadersWidth = 40;
+            this.DataGridServers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.DataGridServers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DataGridServers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.columnDiscoverNo,
+            this.columnDiscoverHostname,
+            this.columnDiscoverProtocol,
+            this.columnDiscoverURI});
+            this.DataGridServers.ContextMenuStrip = this.ContextMenuServer;
+            this.DataGridServers.EnableHeadersVisualStyles = false;
+            this.DataGridServers.GridColor = System.Drawing.SystemColors.Control;
+            this.DataGridServers.Location = new System.Drawing.Point(0, 37);
+            this.DataGridServers.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
+            this.DataGridServers.MultiSelect = false;
+            this.DataGridServers.Name = "DataGridServers";
+            this.DataGridServers.ReadOnly = true;
+            this.DataGridServers.RowHeadersVisible = false;
+            this.DataGridServers.RowHeadersWidth = 40;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(246)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DodgerBlue;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            this.DataGridDiscover.RowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.DataGridDiscover.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(246)))));
-            this.DataGridDiscover.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.DataGridDiscover.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
-            this.DataGridDiscover.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.DataGridDiscover.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            this.DataGridDiscover.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.White;
-            this.DataGridDiscover.RowTemplate.Height = 24;
-            this.DataGridDiscover.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DataGridDiscover.ShowEditingIcon = false;
-            this.DataGridDiscover.Size = new System.Drawing.Size(424, 413);
-            this.DataGridDiscover.TabIndex = 1;
-            this.DataGridDiscover.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridDiscover_CellClick);
+            this.DataGridServers.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.DataGridServers.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(246)))));
+            this.DataGridServers.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.DataGridServers.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
+            this.DataGridServers.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.DataGridServers.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            this.DataGridServers.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.DataGridServers.RowTemplate.Height = 24;
+            this.DataGridServers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DataGridServers.ShowEditingIcon = false;
+            this.DataGridServers.Size = new System.Drawing.Size(494, 415);
+            this.DataGridServers.TabIndex = 1;
+            this.DataGridServers.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridDiscover_CellClick);
             // 
             // labelTitleDiscover
             // 
@@ -109,48 +114,63 @@
             this.labelTitleDiscover.Location = new System.Drawing.Point(9, 9);
             this.labelTitleDiscover.Margin = new System.Windows.Forms.Padding(0);
             this.labelTitleDiscover.Name = "labelTitleDiscover";
-            this.labelTitleDiscover.Size = new System.Drawing.Size(275, 20);
+            this.labelTitleDiscover.Size = new System.Drawing.Size(250, 20);
             this.labelTitleDiscover.TabIndex = 3;
-            this.labelTitleDiscover.Text = "Every FTP server crawled by FileMasta.";
+            this.labelTitleDiscover.Text = "Every Server Crawled by FileMasta.";
             this.labelTitleDiscover.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // columnDiscoverCount
+            // ContextMenuServer
             // 
-            this.columnDiscoverCount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
-            this.columnDiscoverCount.HeaderText = "Count";
-            this.columnDiscoverCount.Name = "columnDiscoverCount";
-            this.columnDiscoverCount.ReadOnly = true;
-            this.columnDiscoverCount.Width = 5;
+            this.ContextMenuServer.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MenuFileZilla});
+            this.ContextMenuServer.Name = "contextMenuFileItem";
+            this.ContextMenuServer.Size = new System.Drawing.Size(115, 26);
             // 
-            // columnDiscoverServer
+            // MenuFileZilla
             // 
-            this.columnDiscoverServer.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.columnDiscoverServer.HeaderText = "Server";
-            this.columnDiscoverServer.Name = "columnDiscoverServer";
-            this.columnDiscoverServer.ReadOnly = true;
+            this.MenuFileZilla.Name = "MenuFileZilla";
+            this.MenuFileZilla.Size = new System.Drawing.Size(114, 22);
+            this.MenuFileZilla.Text = "FileZilla";
+            this.MenuFileZilla.Click += new System.EventHandler(this.MenuFileZilla_Click);
             // 
-            // columnDiscoverType
+            // columnDiscoverNo
             // 
-            this.columnDiscoverType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.columnDiscoverType.HeaderText = "Type";
-            this.columnDiscoverType.Name = "columnDiscoverType";
-            this.columnDiscoverType.ReadOnly = true;
-            this.columnDiscoverType.Width = 56;
+            this.columnDiscoverNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.columnDiscoverNo.HeaderText = "No.";
+            this.columnDiscoverNo.Name = "columnDiscoverNo";
+            this.columnDiscoverNo.ReadOnly = true;
+            this.columnDiscoverNo.Width = 58;
             // 
-            // columnDiscoverURL
+            // columnDiscoverHostname
             // 
-            this.columnDiscoverURL.HeaderText = "URL";
-            this.columnDiscoverURL.Name = "columnDiscoverURL";
-            this.columnDiscoverURL.ReadOnly = true;
-            this.columnDiscoverURL.Visible = false;
+            this.columnDiscoverHostname.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.columnDiscoverHostname.HeaderText = "Hostname";
+            this.columnDiscoverHostname.Name = "columnDiscoverHostname";
+            this.columnDiscoverHostname.ReadOnly = true;
+            // 
+            // columnDiscoverProtocol
+            // 
+            this.columnDiscoverProtocol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.columnDiscoverProtocol.HeaderText = "Protocol";
+            this.columnDiscoverProtocol.Name = "columnDiscoverProtocol";
+            this.columnDiscoverProtocol.ReadOnly = true;
+            this.columnDiscoverProtocol.Width = 83;
+            // 
+            // columnDiscoverURI
+            // 
+            this.columnDiscoverURI.HeaderText = "URL";
+            this.columnDiscoverURI.Name = "columnDiscoverURI";
+            this.columnDiscoverURI.ReadOnly = true;
+            this.columnDiscoverURI.Visible = false;
             // 
             // ServersWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(424, 450);
-            this.Controls.Add(this.DataGridDiscover);
+            this.ClientSize = new System.Drawing.Size(494, 452);
+            this.Controls.Add(this.DataGridServers);
             this.Controls.Add(this.labelTitleDiscover);
+            this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -163,7 +183,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Server List";
             this.Load += new System.EventHandler(this.ServersWindow_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.DataGridDiscover)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridServers)).EndInit();
+            this.ContextMenuServer.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -171,11 +192,13 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView DataGridDiscover;
+        private System.Windows.Forms.DataGridView DataGridServers;
         public System.Windows.Forms.Label labelTitleDiscover;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnDiscoverCount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnDiscoverServer;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnDiscoverType;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnDiscoverURL;
+        private System.Windows.Forms.ContextMenuStrip ContextMenuServer;
+        private System.Windows.Forms.ToolStripMenuItem MenuFileZilla;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnDiscoverNo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnDiscoverHostname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnDiscoverProtocol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnDiscoverURI;
     }
 }

@@ -1,12 +1,12 @@
-﻿using FileMasta.Bookmarks;
-using FileMasta.Extensions;
-using FileMasta.Files;
-using FileMasta.Models;
-using FileMasta.Worker;
-using System;
-using System.Collections.Generic;
-using System.IO;
+﻿using System;
 using System.Windows.Forms;
+using System.Linq;
+using System.Diagnostics;
+using System.Collections.Generic;
+using FileMasta.Utilities;
+using FileMasta.Models;
+using FileMasta.Files;
+using FileMasta.Extensions;
 
 namespace FileMasta.Windows
 {
@@ -29,7 +29,7 @@ namespace FileMasta.Windows
         /// <summary>
         /// User Preference: Files Type
         /// </summary>
-        public string[] SelectedFilesType { get; set; } = Types.Any;
+        public string[] SelectedFilesType { get; set; } = Types.Everything;
 
         /// <summary>
         /// User Preference: Sort Files By
@@ -52,13 +52,10 @@ namespace FileMasta.Windows
                 Program.log.Info("Loading users bookmarks");
                 LabelStatus.Text = "Loading bookmarks...";
 
-                BackGroundWorker.RunWorkAsync<List<FtpFile>>(() => Query.Search(UserBookmarks.BookmarkedFiles(), TextBoxSearchQuery.Text, SelectedFilesSort, SelectedFilesType, SelectedFilesHost), (data) =>
+                BackGroundWorker.RunWorkAsync<List<FtpFile>>(() => Query.Search(Bookmarks.BookmarkedFiles(), TextBoxSearchQuery.Text, SelectedFilesSort, SelectedFilesType, SelectedFilesHost), (List<FtpFile> data) =>
                 {
-                    if (this.InvokeRequired)
-                    {
-                        var b = new LoadBookmarksCallBack(LoadBookmarks);
-                        Invoke(b, new object[] { });
-                    }
+                    if (InvokeRequired)
+                        Invoke(new LoadBookmarksCallBack(LoadBookmarks), new object[] { });
                     else
                     {
                         DataGridFiles.Rows.Clear();
@@ -71,10 +68,7 @@ namespace FileMasta.Windows
                                 ComboBoxHost.Items.Add(new Uri(ftpFile.URL).Host);
                         }
 
-                        LabelStatus.Text = string.Format("{0} Files", StringExtensions.FormatNumber(DataGridFiles.Rows.Count.ToString()));
-
-                        if (DataGridFiles.Rows.Count == 0) labelNoResultsFound.Visible = true;
-                        else labelNoResultsFound.Visible = false;
+                        LabelStatus.Text = string.Format("{0} Bookmarks", StringExtensions.FormatNumber(DataGridFiles.Rows.Count.ToString()));
 
                         // Sets selected item to host
                         if (SelectedFilesHost == "") ComboBoxHost.SelectedIndex = 0;
@@ -97,8 +91,8 @@ namespace FileMasta.Windows
 
         private void ComboBoxType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (ComboBoxType.SelectedIndex == -1) SelectedFilesType = Types.Any;
-            else if (ComboBoxType.SelectedIndex == 0) SelectedFilesType = Types.Any;
+            if (ComboBoxType.SelectedIndex == -1) SelectedFilesType = Types.Everything;
+            else if (ComboBoxType.SelectedIndex == 0) SelectedFilesType = Types.Everything;
             else if (ComboBoxType.SelectedIndex == 1) SelectedFilesType = Types.Audio;
             else if (ComboBoxType.SelectedIndex == 2) SelectedFilesType = Types.Compressed;
             else if (ComboBoxType.SelectedIndex == 3) SelectedFilesType = Types.Document;
@@ -138,12 +132,12 @@ namespace FileMasta.Windows
         
         private void ButtonViewDetails_Click(object sender, EventArgs e)
         {
-            MainForm.Form.ShowFileDetails(Database.FtpFile(DataGridFiles.CurrentRow.Cells[5].Value.ToString()), DataGridFiles);
+            MainForm.Form.ShowFileDetails(Database.FtpFile(DataGridFiles.CurrentRow.Cells[4].Value.ToString()), DataGridFiles);
         }
 
         private void ButtonRemoveFile_Click(object sender, EventArgs e)
         {
-            UserBookmarks.RemoveFile(DataGridFiles.CurrentRow.Cells[5].Value.ToString());
+            Bookmarks.RemoveFile(DataGridFiles.CurrentRow.Cells[4].Value.ToString());
             LoadBookmarks();
         }
 
@@ -151,9 +145,35 @@ namespace FileMasta.Windows
         {
             if (MessageBox.Show(this, "Note: This will remove all of your bookmarked files. You can't undo this. Continue?", "Clear Bookmarks", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                UserBookmarks.ClearBookmarks();
+                Bookmarks.ClearBookmarks();
                 LoadBookmarks();
             }
+        }
+
+        // Context Menu Items
+        private void MenuFileOpen_Click(object sender, EventArgs e)
+        {
+            string URL = DataGridFiles.CurrentRow.Cells[4].Value.ToString();
+            Process.Start(URL);
+        }
+
+        private void MenuFileViewDetails_Click(object sender, EventArgs e)
+        {
+            string URL = DataGridFiles.CurrentRow.Cells[4].Value.ToString();
+            MainForm.Form.ShowFileDetails(Database.FtpFile(URL), DataGridFiles);
+        }
+
+        private void MenuFileViewWebPage_Click(object sender, EventArgs e)
+        {
+            Uri URL = new Uri(DataGridFiles.CurrentRow.Cells[4].Value.ToString());
+            Process.Start(URL.AbsoluteUri.Remove(URL.AbsoluteUri.Length - URL.Segments.Last().Length));
+        }
+
+        private void MenuFileCopyURL_Click(object sender, EventArgs e)
+        {
+            string URL = DataGridFiles.CurrentRow.Cells[4].Value.ToString();
+            Clipboard.SetText(URL);
+            MessageBox.Show("Clipboard set to : " + URL);
         }
 
         /*************************************************************************/

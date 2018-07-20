@@ -12,18 +12,18 @@ namespace FileMasta.Files
     public class Query
     {
         /// <summary>
-        /// Sort Web File by Properties
+        /// Sort File by Property
         /// </summary>
         public enum Sort { Name, Size, Date }
 
         /// <summary>
         /// Search Files using selected params
         /// </summary>
-        /// <param name="dataFiles"></param>
-        /// <param name="search"></param>
-        /// <param name="sort"></param>
-        /// <param name="type"></param>
-        /// <param name="host"></param>
+        /// <param name="dataFiles">Files to search through</param>
+        /// <param name="search">Query search, supports exact phrases</param>
+        /// <param name="sort">Sort files by name, size or date before searching</param>
+        /// <param name="type">Filter by type</param>
+        /// <param name="host">Filter by FTP host</param>
         /// <returns>Returns list of files matching selected preferences</returns>
         static readonly object LoadSearchListLock = new object();
         public static List<FtpFile> Search(List<FtpFile> dataFiles, string search, Sort sort, string[] type, string host)
@@ -59,7 +59,7 @@ namespace FileMasta.Files
 
         public static bool HasFileExtension(string[] type, string webFile)
         {
-            if (type == Types.Any)
+            if (type == Types.Everything)
                 return true;
             else
                 return type.Contains(Path.GetExtension(webFile.ToUpper()).Replace(".", ""));

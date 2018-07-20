@@ -193,7 +193,7 @@
             this.checkBoxConnectionDefault.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.checkBoxConnectionDefault.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.checkBoxConnectionDefault.Location = new System.Drawing.Point(226, 110);
-            this.checkBoxConnectionDefault.Name = "CheckBoxConnectionDefault";
+            this.checkBoxConnectionDefault.Name = "checkBoxConnectionDefault";
             this.checkBoxConnectionDefault.Size = new System.Drawing.Size(15, 14);
             this.checkBoxConnectionDefault.TabIndex = 27;
             this.checkBoxConnectionDefault.UseVisualStyleBackColor = false;
@@ -243,7 +243,7 @@
             this.buttonSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonSave.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSave.Location = new System.Drawing.Point(406, 256);
-            this.buttonSave.Name = "ButtonSave";
+            this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(48, 23);
             this.buttonSave.TabIndex = 40;
             this.buttonSave.Text = "Save";
@@ -255,7 +255,7 @@
             this.buttonRestore.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonRestore.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonRestore.Location = new System.Drawing.Point(338, 256);
-            this.buttonRestore.Name = "ButtonRestore";
+            this.buttonRestore.Name = "buttonRestore";
             this.buttonRestore.Size = new System.Drawing.Size(62, 23);
             this.buttonRestore.TabIndex = 41;
             this.buttonRestore.Text = "Restore";
@@ -283,6 +283,7 @@
             this.Controls.Add(this.labelTitleGeneral);
             this.Controls.Add(this.labelGeneralClearDataOnClose);
             this.Controls.Add(this.checkBoxGeneralClearDataOnClose);
+            this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;

@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="LabelDescription.Text" xml:space="preserve">
-    <value>FileMasta is intended to provide a very powerful ftp  server indexing and search service allowing you to find a file among millions of files located on public servers around the internet.
+    <value>FileMasta is intended to provide a very powerful server indexing and search service allowing you to find a file among millions of files located on public servers around the internet.
 
 We host no content, we provide only access to already available files in a same way Google and other search engines do.</value>
   </data>

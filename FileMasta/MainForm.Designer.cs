@@ -56,6 +56,7 @@ namespace FileMasta
             this.MenuStrip = new System.Windows.Forms.MenuStrip();
             this.MenuStripFile = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuFileMinimizeToTray = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.MenuFileExit = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuStripBookmarks = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuStripTools = new System.Windows.Forms.ToolStripMenuItem();
@@ -66,12 +67,7 @@ namespace FileMasta
             this.MenuStripHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuHelpKeyboardShortcuts = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuStripFileSeperator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.MenuHelpTermsOfUse = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuHelpPrivacyPolicy = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuHelpChangeLog = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuStripFileSeperator2 = new System.Windows.Forms.ToolStripSeparator();
             this.MenuHelpReportIssue = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuStripFileSeperator3 = new System.Windows.Forms.ToolStripSeparator();
             this.MenuHelpAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.PanelSearchControls = new System.Windows.Forms.Panel();
             this.FlowPanelMostSearches = new System.Windows.Forms.FlowLayoutPanel();
@@ -87,9 +83,7 @@ namespace FileMasta
             this.StatusStripStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.StatusStripSpring = new System.Windows.Forms.ToolStripStatusLabel();
             this.StatusStripDatabaseInfo = new System.Windows.Forms.ToolStripStatusLabel();
-            this.LabelNoResultsFound = new System.Windows.Forms.Label();
             this.NotifyTrayIcon = new System.Windows.Forms.NotifyIcon(this.components);
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridFiles)).BeginInit();
             this.ContextMenuFile.SuspendLayout();
             this.MenuStrip.SuspendLayout();
@@ -152,14 +146,14 @@ namespace FileMasta
             this.DataGridFiles.RowHeadersVisible = false;
             this.DataGridFiles.RowHeadersWidth = 40;
             dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(246)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 10.25F);
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 9F);
             dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.DodgerBlue;
             dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
             this.DataGridFiles.RowsDefaultCellStyle = dataGridViewCellStyle7;
             this.DataGridFiles.RowTemplate.ContextMenuStrip = this.ContextMenuFile;
             this.DataGridFiles.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(246)))));
-            this.DataGridFiles.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.DataGridFiles.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.DataGridFiles.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
             this.DataGridFiles.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.DataGridFiles.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.DodgerBlue;
@@ -176,6 +170,7 @@ namespace FileMasta
             this.DataGridFiles.TabIndex = 14;
             this.DataGridFiles.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridFiles_CellClick);
             this.DataGridFiles.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridFiles_CellDoubleClick);
+            this.DataGridFiles.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.DataGridFiles_CellPainting);
             // 
             // ColumnFileName
             // 
@@ -305,14 +300,19 @@ namespace FileMasta
             // MenuFileMinimizeToTray
             // 
             this.MenuFileMinimizeToTray.Name = "MenuFileMinimizeToTray";
-            this.MenuFileMinimizeToTray.Size = new System.Drawing.Size(180, 22);
+            this.MenuFileMinimizeToTray.Size = new System.Drawing.Size(162, 22);
             this.MenuFileMinimizeToTray.Text = "Minimize to Tray";
             this.MenuFileMinimizeToTray.Click += new System.EventHandler(this.MenuFileMinimizeToTray_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(159, 6);
             // 
             // MenuFileExit
             // 
             this.MenuFileExit.Name = "MenuFileExit";
-            this.MenuFileExit.Size = new System.Drawing.Size(180, 22);
+            this.MenuFileExit.Size = new System.Drawing.Size(162, 22);
             this.MenuFileExit.Text = "Exit";
             this.MenuFileExit.Click += new System.EventHandler(this.MenuFileExit_Click);
             // 
@@ -337,26 +337,26 @@ namespace FileMasta
             // MenuToolsFtpServerList
             // 
             this.MenuToolsFtpServerList.Name = "MenuToolsFtpServerList";
-            this.MenuToolsFtpServerList.Size = new System.Drawing.Size(180, 22);
+            this.MenuToolsFtpServerList.Size = new System.Drawing.Size(170, 22);
             this.MenuToolsFtpServerList.Text = "FTP Servers...";
             this.MenuToolsFtpServerList.Click += new System.EventHandler(this.MenuToolsFtpServerList_Click);
             // 
             // MenuToolsSubmitFtpServer
             // 
             this.MenuToolsSubmitFtpServer.Name = "MenuToolsSubmitFtpServer";
-            this.MenuToolsSubmitFtpServer.Size = new System.Drawing.Size(180, 22);
+            this.MenuToolsSubmitFtpServer.Size = new System.Drawing.Size(170, 22);
             this.MenuToolsSubmitFtpServer.Text = "Submit FTP Server";
             this.MenuToolsSubmitFtpServer.Click += new System.EventHandler(this.MenuToolsSubmitFtpServer_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(167, 6);
             // 
             // MenuToolsOptions
             // 
             this.MenuToolsOptions.Name = "MenuToolsOptions";
-            this.MenuToolsOptions.Size = new System.Drawing.Size(180, 22);
+            this.MenuToolsOptions.Size = new System.Drawing.Size(170, 22);
             this.MenuToolsOptions.Text = "Options...";
             this.MenuToolsOptions.Click += new System.EventHandler(this.MenuToolsOptions_Click);
             // 
@@ -365,13 +365,8 @@ namespace FileMasta
             this.MenuStripHelp.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MenuHelpKeyboardShortcuts,
             this.MenuStripFileSeperator1,
-            this.MenuHelpTermsOfUse,
-            this.MenuHelpPrivacyPolicy,
-            this.MenuHelpChangeLog,
-            this.MenuStripFileSeperator2,
-            this.MenuHelpReportIssue,
-            this.MenuStripFileSeperator3,
-            this.MenuHelpAbout});
+            this.MenuHelpAbout,
+            this.MenuHelpReportIssue});
             this.MenuStripHelp.Name = "MenuStripHelp";
             this.MenuStripHelp.Size = new System.Drawing.Size(44, 20);
             this.MenuStripHelp.Text = "Help";
@@ -388,43 +383,12 @@ namespace FileMasta
             this.MenuStripFileSeperator1.Name = "MenuStripFileSeperator1";
             this.MenuStripFileSeperator1.Size = new System.Drawing.Size(177, 6);
             // 
-            // MenuHelpTermsOfUse
-            // 
-            this.MenuHelpTermsOfUse.Name = "MenuHelpTermsOfUse";
-            this.MenuHelpTermsOfUse.Size = new System.Drawing.Size(180, 22);
-            this.MenuHelpTermsOfUse.Text = "Terms of Use";
-            this.MenuHelpTermsOfUse.Click += new System.EventHandler(this.MenuHelpTermsOfUse_Click);
-            // 
-            // MenuHelpPrivacyPolicy
-            // 
-            this.MenuHelpPrivacyPolicy.Name = "MenuHelpPrivacyPolicy";
-            this.MenuHelpPrivacyPolicy.Size = new System.Drawing.Size(180, 22);
-            this.MenuHelpPrivacyPolicy.Text = "Privacy Policy";
-            this.MenuHelpPrivacyPolicy.Click += new System.EventHandler(this.MenuHelpPrivacyPolicy_Click);
-            // 
-            // MenuHelpChangeLog
-            // 
-            this.MenuHelpChangeLog.Name = "MenuHelpChangeLog";
-            this.MenuHelpChangeLog.Size = new System.Drawing.Size(180, 22);
-            this.MenuHelpChangeLog.Text = "Change Log";
-            this.MenuHelpChangeLog.Click += new System.EventHandler(this.MenuHelpChangeLog_Click);
-            // 
-            // MenuStripFileSeperator2
-            // 
-            this.MenuStripFileSeperator2.Name = "MenuStripFileSeperator2";
-            this.MenuStripFileSeperator2.Size = new System.Drawing.Size(177, 6);
-            // 
             // MenuHelpReportIssue
             // 
             this.MenuHelpReportIssue.Name = "MenuHelpReportIssue";
             this.MenuHelpReportIssue.Size = new System.Drawing.Size(180, 22);
             this.MenuHelpReportIssue.Text = "Report Issue...";
             this.MenuHelpReportIssue.Click += new System.EventHandler(this.MenuHelpReportIssue_Click);
-            // 
-            // MenuStripFileSeperator3
-            // 
-            this.MenuStripFileSeperator3.Name = "MenuStripFileSeperator3";
-            this.MenuStripFileSeperator3.Size = new System.Drawing.Size(177, 6);
             // 
             // MenuHelpAbout
             // 
@@ -604,20 +568,6 @@ namespace FileMasta
             this.StatusStripDatabaseInfo.Size = new System.Drawing.Size(318, 17);
             this.StatusStripDatabaseInfo.Text = "Files: {0} - Total Size: {1} - FTP Servers {2} - Last Updated: {3}";
             // 
-            // LabelNoResultsFound
-            // 
-            this.LabelNoResultsFound.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.LabelNoResultsFound.AutoSize = true;
-            this.LabelNoResultsFound.BackColor = System.Drawing.SystemColors.Control;
-            this.LabelNoResultsFound.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.LabelNoResultsFound.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelNoResultsFound.Location = new System.Drawing.Point(446, 279);
-            this.LabelNoResultsFound.Name = "LabelNoResultsFound";
-            this.LabelNoResultsFound.Size = new System.Drawing.Size(100, 15);
-            this.LabelNoResultsFound.TabIndex = 1115;
-            this.LabelNoResultsFound.Text = "No Results Found";
-            this.LabelNoResultsFound.Visible = false;
-            // 
             // NotifyTrayIcon
             // 
             this.NotifyTrayIcon.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info;
@@ -628,11 +578,6 @@ namespace FileMasta
             this.NotifyTrayIcon.Visible = true;
             this.NotifyTrayIcon.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.NotifyTrayIcon_MouseDoubleClick);
             // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -640,7 +585,6 @@ namespace FileMasta
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(246)))));
             this.ClientSize = new System.Drawing.Size(992, 494);
-            this.Controls.Add(this.LabelNoResultsFound);
             this.Controls.Add(this.DataGridFiles);
             this.Controls.Add(this.StatusStripFooter);
             this.Controls.Add(this.PanelSearchControls);
@@ -696,9 +640,6 @@ namespace FileMasta
         private System.Windows.Forms.ToolStripMenuItem MenuFileExit;
         private System.Windows.Forms.ToolStripMenuItem MenuToolsSubmitFtpServer;
         private System.Windows.Forms.ToolStripMenuItem MenuHelpAbout;
-        private System.Windows.Forms.ToolStripMenuItem MenuHelpChangeLog;
-        private System.Windows.Forms.ToolStripMenuItem MenuHelpTermsOfUse;
-        private System.Windows.Forms.ToolStripMenuItem MenuHelpPrivacyPolicy;
         private System.Windows.Forms.ToolStripMenuItem MenuHelpKeyboardShortcuts;
         private System.Windows.Forms.ToolStripMenuItem MenuHelpReportIssue;
         private System.Windows.Forms.ContextMenuStrip ContextMenuFile;
@@ -708,14 +649,11 @@ namespace FileMasta
         private System.Windows.Forms.ToolStripMenuItem MenuFileViewWebPage;
         private System.Windows.Forms.ToolStripSeparator MenuFileSeperator2;
         private System.Windows.Forms.ToolStripMenuItem MenuFileCopyURL;
-        public System.Windows.Forms.Label LabelNoResultsFound;
         public System.Windows.Forms.Button ButtonSearchFiles;
         private System.Windows.Forms.ToolStripMenuItem MenuStripBookmarks;
         private System.Windows.Forms.ToolStripMenuItem MenuFileMinimizeToTray;
         private System.Windows.Forms.NotifyIcon NotifyTrayIcon;
         private System.Windows.Forms.ToolStripSeparator MenuStripFileSeperator1;
-        private System.Windows.Forms.ToolStripSeparator MenuStripFileSeperator3;
-        private System.Windows.Forms.ToolStripSeparator MenuStripFileSeperator2;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFileName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFileSize;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFileAge;

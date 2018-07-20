@@ -2,24 +2,23 @@
 using System.Collections.Generic;
 using System.IO;
 using FileMasta.Extensions;
-using FileMasta.Files;
 using FileMasta.Models;
 using FileMasta.Utilities;
 using Newtonsoft.Json;
 
-namespace FileMasta.Bookmarks
+namespace FileMasta.Files
 {
-    class UserBookmarks
+    class Bookmarks
     {
         /// <summary>
         /// Add File URL to Bookmarks
         /// </summary>
-        /// <param name="URL">URL to add</param>
-        public static void AddFile(string URL)
+        /// <param name="url">URL to add</param>
+        public static void AddFile(string url)
         {
-            using (StreamWriter Bookmarked = File.AppendText(LocalExtensions.pathBookmarks))
+            using (StreamWriter Bookmarked = File.AppendText(LocalExtensions.PathBookmarks))
             {
-                var a = JsonConvert.SerializeObject(new Bookmark(URL));
+                var a = JsonConvert.SerializeObject(new Bookmark(url));
                 Bookmarked.WriteLine(a);
                 Bookmarked.Flush();
             }
@@ -28,26 +27,26 @@ namespace FileMasta.Bookmarks
         /// <summary>
         /// Remove File URL from Bookmarks
         /// </summary>
-        /// <param name="URL">URL to remove</param>
-        public static void RemoveFile(string URL)
+        /// <param name="url">URL to remove</param>
+        public static void RemoveFile(string url)
         {
-            if (File.Exists(LocalExtensions.pathBookmarks))
-                TextLineRemover.RemoveTextLines(new List<string> { JsonConvert.SerializeObject(new Bookmark(URL)) }, LocalExtensions.pathBookmarks, LocalExtensions.pathBookmarks + ".tmp");
+            if (File.Exists(LocalExtensions.PathBookmarks))
+                TextLineRemover.RemoveTextLines(new List<string> { JsonConvert.SerializeObject(new Bookmark(url)) }, LocalExtensions.PathBookmarks, LocalExtensions.PathBookmarks + ".tmp");
         }
 
         /// <summary>
         /// Checks if json string exists in Bookmarked Files
         /// </summary>
-        /// <param name="URL">URL to check for</param>
+        /// <param name="url">URL of the File</param>
         /// <returns>Whether URL is bookmarked</returns>
-        public static bool IsBookmarked(string URL)
+        public static bool IsBookmarked(string url)
         {
-            if (File.Exists(LocalExtensions.pathBookmarks))
-                using (StreamReader reader = new StreamReader(LocalExtensions.pathBookmarks))
+            if (File.Exists(LocalExtensions.PathBookmarks))
+                using (StreamReader reader = new StreamReader(LocalExtensions.PathBookmarks))
                     while (!reader.EndOfStream)
                     {
                         var a = JsonConvert.DeserializeObject<Bookmark>(reader.ReadLine());
-                        if (a.URL == URL)
+                        if (a.URL == url)
                             return true;
                     }
 
@@ -63,8 +62,8 @@ namespace FileMasta.Bookmarks
             Program.log.Info("Getting users bookmarks files");
 
             var filesBookmarks = new List<FtpFile>();
-            if (File.Exists(LocalExtensions.pathBookmarks))
-                using (StreamReader reader = new StreamReader(LocalExtensions.pathBookmarks))
+            if (File.Exists(LocalExtensions.PathBookmarks))
+                using (StreamReader reader = new StreamReader(LocalExtensions.PathBookmarks))
                     while (!reader.EndOfStream)
                         try
                         {
@@ -89,8 +88,8 @@ namespace FileMasta.Bookmarks
             Program.log.Info("Clearing all bookmarks");
 
             var filesBookmarks = new List<FtpFile>();
-            if (File.Exists(LocalExtensions.pathBookmarks))
-                using (StreamWriter stream = File.CreateText(LocalExtensions.pathBookmarks))
+            if (File.Exists(LocalExtensions.PathBookmarks))
+                using (StreamWriter stream = File.CreateText(LocalExtensions.PathBookmarks))
                     stream.Flush();
 
             Program.log.Info("Bookmarks cleared successfully");

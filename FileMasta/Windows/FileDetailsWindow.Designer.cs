@@ -65,7 +65,7 @@
             this.LabelTitleName = new System.Windows.Forms.Label();
             this.LabelValueName = new System.Windows.Forms.Label();
             this.ButtonDirectLink = new CButtonLib.CButton();
-            this.contextOpenFile = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.ContextOpenFile = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.NitroReaderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.VLCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.WMPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -73,13 +73,13 @@
             this.KMPlayerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.PotPlayerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.IDMToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.InternetDownloadAccelaratorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.IDAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.FDMToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.ImageNextFile)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImagePreviousFile)).BeginInit();
             this.FlowPanelActions.SuspendLayout();
             this.PanelShare.SuspendLayout();
-            this.contextOpenFile.SuspendLayout();
+            this.ContextOpenFile.SuspendLayout();
             this.SuspendLayout();
             // 
             // ButtonOpenWith
@@ -698,9 +698,9 @@
             this.ButtonDirectLink.TextShadowShow = false;
             this.ButtonDirectLink.ClickButtonArea += new CButtonLib.CButton.ClickButtonAreaEventHandler(this.ButtonDirectLink_ClickButtonArea);
             // 
-            // contextOpenFile
+            // ContextOpenFile
             // 
-            this.contextOpenFile.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ContextOpenFile.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.NitroReaderToolStripMenuItem,
             this.VLCToolStripMenuItem,
             this.WMPToolStripMenuItem,
@@ -708,11 +708,11 @@
             this.KMPlayerToolStripMenuItem,
             this.PotPlayerToolStripMenuItem,
             this.IDMToolStripMenuItem,
-            this.InternetDownloadAccelaratorToolStripMenuItem,
+            this.IDAToolStripMenuItem,
             this.FDMToolStripMenuItem});
-            this.contextOpenFile.Name = "contextMenuStrip1";
-            this.contextOpenFile.ShowItemToolTips = false;
-            this.contextOpenFile.Size = new System.Drawing.Size(236, 202);
+            this.ContextOpenFile.Name = "contextMenuStrip1";
+            this.ContextOpenFile.ShowItemToolTips = false;
+            this.ContextOpenFile.Size = new System.Drawing.Size(236, 224);
             // 
             // NitroReaderToolStripMenuItem
             // 
@@ -780,14 +780,14 @@
             this.IDMToolStripMenuItem.Visible = false;
             this.IDMToolStripMenuItem.Click += new System.EventHandler(this.IDMToolStripMenuItem_Click);
             // 
-            // InternetDownloadAccelaratorToolStripMenuItem
+            // IDAToolStripMenuItem
             // 
-            this.InternetDownloadAccelaratorToolStripMenuItem.Image = global::FileMasta.Properties.Resources.download;
-            this.InternetDownloadAccelaratorToolStripMenuItem.Name = "InternetDownloadAccelaratorToolStripMenuItem";
-            this.InternetDownloadAccelaratorToolStripMenuItem.Size = new System.Drawing.Size(235, 22);
-            this.InternetDownloadAccelaratorToolStripMenuItem.Text = "Internet Download Accelerator";
-            this.InternetDownloadAccelaratorToolStripMenuItem.Visible = false;
-            this.InternetDownloadAccelaratorToolStripMenuItem.Click += new System.EventHandler(this.InternetDownloadAccelaratorToolStripMenuItem_Click);
+            this.IDAToolStripMenuItem.Image = global::FileMasta.Properties.Resources.download;
+            this.IDAToolStripMenuItem.Name = "IDAToolStripMenuItem";
+            this.IDAToolStripMenuItem.Size = new System.Drawing.Size(235, 22);
+            this.IDAToolStripMenuItem.Text = "Internet Download Accelerator";
+            this.IDAToolStripMenuItem.Visible = false;
+            this.IDAToolStripMenuItem.Click += new System.EventHandler(this.InternetDownloadAccelaratorToolStripMenuItem_Click);
             // 
             // FDMToolStripMenuItem
             // 
@@ -844,7 +844,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ImagePreviousFile)).EndInit();
             this.FlowPanelActions.ResumeLayout(false);
             this.PanelShare.ResumeLayout(false);
-            this.contextOpenFile.ResumeLayout(false);
+            this.ContextOpenFile.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -884,7 +884,7 @@
         public System.Windows.Forms.Label LabelTitleName;
         public System.Windows.Forms.Label LabelValueName;
         public CButtonLib.CButton ButtonDirectLink;
-        public System.Windows.Forms.ContextMenuStrip contextOpenFile;
+        public System.Windows.Forms.ContextMenuStrip ContextOpenFile;
         private System.Windows.Forms.ToolStripMenuItem NitroReaderToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem VLCToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem WMPToolStripMenuItem;
@@ -892,7 +892,7 @@
         private System.Windows.Forms.ToolStripMenuItem KMPlayerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem PotPlayerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem IDMToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem InternetDownloadAccelaratorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem IDAToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem FDMToolStripMenuItem;
     }
 }

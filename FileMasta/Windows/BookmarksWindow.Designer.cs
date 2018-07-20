@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -37,6 +38,18 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BookmarksWindow));
             this.DataGridFiles = new System.Windows.Forms.DataGridView();
+            this.ColumnFileName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnFileSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnFileAge = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnFileReferrer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnFileURL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ContextMenuFile = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.MenuFileOpen = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuFileSeperator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.MenuFileViewDetails = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuFileViewWebPage = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuFileSeperator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.MenuFileCopyURL = new System.Windows.Forms.ToolStripMenuItem();
             this.PanelSearchControls = new System.Windows.Forms.Panel();
             this.ButtonSearchFiles = new System.Windows.Forms.Button();
             this.LabelHost = new System.Windows.Forms.Label();
@@ -51,13 +64,8 @@
             this.LabelStatus = new System.Windows.Forms.Label();
             this.ButtonRemoveFile = new System.Windows.Forms.Button();
             this.ButtonClearAll = new System.Windows.Forms.Button();
-            this.labelNoResultsFound = new System.Windows.Forms.Label();
-            this.ColumnFileName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnFileSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnFileAge = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnFileReferrer = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnFileURL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridFiles)).BeginInit();
+            this.ContextMenuFile.SuspendLayout();
             this.PanelSearchControls.SuspendLayout();
             this.PanelBookmarkControls.SuspendLayout();
             this.SuspendLayout();
@@ -89,6 +97,7 @@
             this.ColumnFileAge,
             this.ColumnFileReferrer,
             this.ColumnFileURL});
+            this.DataGridFiles.ContextMenuStrip = this.ContextMenuFile;
             this.DataGridFiles.Cursor = System.Windows.Forms.Cursors.Hand;
             this.DataGridFiles.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DataGridFiles.EnableHeadersVisualStyles = false;
@@ -101,13 +110,13 @@
             this.DataGridFiles.RowHeadersVisible = false;
             this.DataGridFiles.RowHeadersWidth = 40;
             dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(246)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 10.25F);
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 9F);
             dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.DodgerBlue;
             dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
             this.DataGridFiles.RowsDefaultCellStyle = dataGridViewCellStyle7;
             this.DataGridFiles.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(246)))));
-            this.DataGridFiles.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.DataGridFiles.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.DataGridFiles.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
             this.DataGridFiles.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.DataGridFiles.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.DodgerBlue;
@@ -124,6 +133,108 @@
             this.DataGridFiles.TabIndex = 15;
             this.DataGridFiles.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.DataGridFiles_RowPrePaint);
             this.DataGridFiles.SelectionChanged += new System.EventHandler(this.DataGridFiles_SelectionChanged);
+            // 
+            // ColumnFileName
+            // 
+            this.ColumnFileName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.ColumnFileName.DefaultCellStyle = dataGridViewCellStyle2;
+            this.ColumnFileName.HeaderText = "Name";
+            this.ColumnFileName.Name = "ColumnFileName";
+            this.ColumnFileName.ReadOnly = true;
+            this.ColumnFileName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // ColumnFileSize
+            // 
+            this.ColumnFileSize.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.ColumnFileSize.DefaultCellStyle = dataGridViewCellStyle3;
+            this.ColumnFileSize.HeaderText = "Size";
+            this.ColumnFileSize.Name = "ColumnFileSize";
+            this.ColumnFileSize.ReadOnly = true;
+            this.ColumnFileSize.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.ColumnFileSize.Width = 105;
+            // 
+            // ColumnFileAge
+            // 
+            this.ColumnFileAge.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.ColumnFileAge.DefaultCellStyle = dataGridViewCellStyle4;
+            this.ColumnFileAge.HeaderText = "Age";
+            this.ColumnFileAge.Name = "ColumnFileAge";
+            this.ColumnFileAge.ReadOnly = true;
+            this.ColumnFileAge.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.ColumnFileAge.Width = 80;
+            // 
+            // ColumnFileReferrer
+            // 
+            this.ColumnFileReferrer.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.ColumnFileReferrer.DefaultCellStyle = dataGridViewCellStyle5;
+            this.ColumnFileReferrer.HeaderText = "Referrer";
+            this.ColumnFileReferrer.Name = "ColumnFileReferrer";
+            this.ColumnFileReferrer.ReadOnly = true;
+            this.ColumnFileReferrer.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.ColumnFileReferrer.Width = 165;
+            // 
+            // ColumnFileURL
+            // 
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.ColumnFileURL.DefaultCellStyle = dataGridViewCellStyle6;
+            this.ColumnFileURL.HeaderText = "URL";
+            this.ColumnFileURL.Name = "ColumnFileURL";
+            this.ColumnFileURL.ReadOnly = true;
+            this.ColumnFileURL.Visible = false;
+            // 
+            // ContextMenuFile
+            // 
+            this.ContextMenuFile.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MenuFileOpen,
+            this.MenuFileSeperator1,
+            this.MenuFileViewDetails,
+            this.MenuFileViewWebPage,
+            this.MenuFileSeperator2,
+            this.MenuFileCopyURL});
+            this.ContextMenuFile.Name = "contextMenuFileItem";
+            this.ContextMenuFile.Size = new System.Drawing.Size(183, 104);
+            // 
+            // MenuFileOpen
+            // 
+            this.MenuFileOpen.Name = "MenuFileOpen";
+            this.MenuFileOpen.Size = new System.Drawing.Size(182, 22);
+            this.MenuFileOpen.Text = "Open File...";
+            this.MenuFileOpen.Click += new System.EventHandler(this.MenuFileOpen_Click);
+            // 
+            // MenuFileSeperator1
+            // 
+            this.MenuFileSeperator1.Name = "MenuFileSeperator1";
+            this.MenuFileSeperator1.Size = new System.Drawing.Size(179, 6);
+            // 
+            // MenuFileViewDetails
+            // 
+            this.MenuFileViewDetails.Name = "MenuFileViewDetails";
+            this.MenuFileViewDetails.Size = new System.Drawing.Size(182, 22);
+            this.MenuFileViewDetails.Text = "View File Details...";
+            this.MenuFileViewDetails.Click += new System.EventHandler(this.MenuFileViewDetails_Click);
+            // 
+            // MenuFileViewWebPage
+            // 
+            this.MenuFileViewWebPage.Name = "MenuFileViewWebPage";
+            this.MenuFileViewWebPage.Size = new System.Drawing.Size(182, 22);
+            this.MenuFileViewWebPage.Text = "View Web Page...";
+            this.MenuFileViewWebPage.Click += new System.EventHandler(this.MenuFileViewWebPage_Click);
+            // 
+            // MenuFileSeperator2
+            // 
+            this.MenuFileSeperator2.Name = "MenuFileSeperator2";
+            this.MenuFileSeperator2.Size = new System.Drawing.Size(179, 6);
+            // 
+            // MenuFileCopyURL
+            // 
+            this.MenuFileCopyURL.Name = "MenuFileCopyURL";
+            this.MenuFileCopyURL.Size = new System.Drawing.Size(182, 22);
+            this.MenuFileCopyURL.Text = "File URL > Clipboard";
+            this.MenuFileCopyURL.Click += new System.EventHandler(this.MenuFileCopyURL_Click);
             // 
             // PanelSearchControls
             // 
@@ -280,7 +391,7 @@
             // 
             this.LabelStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.LabelStatus.AutoSize = true;
-            this.LabelStatus.Location = new System.Drawing.Point(12, 19);
+            this.LabelStatus.Location = new System.Drawing.Point(12, 15);
             this.LabelStatus.Name = "LabelStatus";
             this.LabelStatus.Size = new System.Drawing.Size(118, 13);
             this.LabelStatus.TabIndex = 1114;
@@ -309,81 +420,15 @@
             this.ButtonClearAll.UseVisualStyleBackColor = true;
             this.ButtonClearAll.Click += new System.EventHandler(this.ButtonClearAll_Click);
             // 
-            // labelNoResultsFound
-            // 
-            this.labelNoResultsFound.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.labelNoResultsFound.AutoSize = true;
-            this.labelNoResultsFound.BackColor = System.Drawing.SystemColors.Control;
-            this.labelNoResultsFound.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.labelNoResultsFound.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelNoResultsFound.Location = new System.Drawing.Point(373, 139);
-            this.labelNoResultsFound.Name = "labelNoResultsFound";
-            this.labelNoResultsFound.Size = new System.Drawing.Size(100, 15);
-            this.labelNoResultsFound.TabIndex = 1116;
-            this.labelNoResultsFound.Text = "No Results Found";
-            this.labelNoResultsFound.Visible = false;
-            // 
-            // ColumnFileName
-            // 
-            this.ColumnFileName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.ColumnFileName.DefaultCellStyle = dataGridViewCellStyle2;
-            this.ColumnFileName.HeaderText = "Name";
-            this.ColumnFileName.Name = "ColumnFileName";
-            this.ColumnFileName.ReadOnly = true;
-            this.ColumnFileName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // ColumnFileSize
-            // 
-            this.ColumnFileSize.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.ColumnFileSize.DefaultCellStyle = dataGridViewCellStyle3;
-            this.ColumnFileSize.HeaderText = "Size";
-            this.ColumnFileSize.Name = "ColumnFileSize";
-            this.ColumnFileSize.ReadOnly = true;
-            this.ColumnFileSize.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.ColumnFileSize.Width = 105;
-            // 
-            // ColumnFileAge
-            // 
-            this.ColumnFileAge.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.ColumnFileAge.DefaultCellStyle = dataGridViewCellStyle4;
-            this.ColumnFileAge.HeaderText = "Age";
-            this.ColumnFileAge.Name = "ColumnFileAge";
-            this.ColumnFileAge.ReadOnly = true;
-            this.ColumnFileAge.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.ColumnFileAge.Width = 80;
-            // 
-            // ColumnFileReferrer
-            // 
-            this.ColumnFileReferrer.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.ColumnFileReferrer.DefaultCellStyle = dataGridViewCellStyle5;
-            this.ColumnFileReferrer.HeaderText = "Referrer";
-            this.ColumnFileReferrer.Name = "ColumnFileReferrer";
-            this.ColumnFileReferrer.ReadOnly = true;
-            this.ColumnFileReferrer.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.ColumnFileReferrer.Width = 165;
-            // 
-            // ColumnFileURL
-            // 
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.ColumnFileURL.DefaultCellStyle = dataGridViewCellStyle6;
-            this.ColumnFileURL.HeaderText = "URL";
-            this.ColumnFileURL.Name = "ColumnFileURL";
-            this.ColumnFileURL.ReadOnly = true;
-            this.ColumnFileURL.Visible = false;
-            // 
             // BookmarksWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(847, 474);
-            this.Controls.Add(this.labelNoResultsFound);
             this.Controls.Add(this.DataGridFiles);
             this.Controls.Add(this.PanelBookmarkControls);
             this.Controls.Add(this.PanelSearchControls);
+            this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -397,12 +442,12 @@
             this.Text = "Bookmarks";
             this.Load += new System.EventHandler(this.BookmarksWindow_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DataGridFiles)).EndInit();
+            this.ContextMenuFile.ResumeLayout(false);
             this.PanelSearchControls.ResumeLayout(false);
             this.PanelSearchControls.PerformLayout();
             this.PanelBookmarkControls.ResumeLayout(false);
             this.PanelBookmarkControls.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -422,12 +467,18 @@
         public System.Windows.Forms.Button ButtonRemoveFile;
         public System.Windows.Forms.Button ButtonClearAll;
         private System.Windows.Forms.Label LabelStatus;
-        public System.Windows.Forms.Label labelNoResultsFound;
         public System.Windows.Forms.Button ButtonViewDetails;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFileName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFileSize;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFileAge;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFileReferrer;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFileURL;
+        private System.Windows.Forms.ContextMenuStrip ContextMenuFile;
+        private System.Windows.Forms.ToolStripMenuItem MenuFileOpen;
+        private System.Windows.Forms.ToolStripSeparator MenuFileSeperator1;
+        private System.Windows.Forms.ToolStripMenuItem MenuFileViewDetails;
+        private System.Windows.Forms.ToolStripMenuItem MenuFileViewWebPage;
+        private System.Windows.Forms.ToolStripSeparator MenuFileSeperator2;
+        private System.Windows.Forms.ToolStripMenuItem MenuFileCopyURL;
     }
 }
