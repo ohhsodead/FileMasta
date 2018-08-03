@@ -12,14 +12,12 @@
 ## What is FileMasta?
 FileMasta is a search engine allowing you to find a file among millions of files located on FTP-servers. The search engine database contains the regularly updated information on the contents of thousands FTP-servers worldwide. We don't search the contents of the files. 
 
->Note: I'm working on refactoring the code and interface. A new release will be coming in the few weeks.
-
 >We host no content, we provide only access to already available files in the same way Google and other search engines do.
 
 [![Report a bug](http://i.imgur.com/xSpw482.png)](https://github.com/HerbL27/FileMasta/issues/new) [![Feature request](http://i.imgur.com/mFO0OuX.png)](http://feathub.com/ekkash/WebCrunch)
 
 ## Latest Build
-FileMasta 4.0 - Ureleased, development in progress
+FileMasta Beta 4.0 
 
 ## Supported Systems
 * Windows XP and above (Windows XP, Vista, 7, 8, 8.1, 10) using .NET 4.7.1 [Download here](https://www.microsoft.com/net/download/dotnet-framework-runtime/net471).
@@ -52,10 +50,10 @@ We don't use cookies, store sessions, userid's or IP addresses. See our <a href=
 <summary>I have found the files I need, but I cannot download them, the link does not work. Why?</summary>
 <br>
 There could be several reasons for that:
- * These files were recently removed from the server they were located, by the owner of the files or by the owner of the server. 
- * The server that contains the files has a limit of maximum number of concurrent users, and the limit has been reached. You can try to download the files later when some users are disconnected. 
- * The server where the files are is turned off or is not connected to the Internet at the moment.
- * The owner of the server has put a restriction on downloading these files.
+- These files were recently removed from the server they were located, by the owner of the files or by the owner of the server. 
+- The server that contains the files has a limit of maximum number of concurrent users, and the limit has been reached. You can try to download the files later when some users are disconnected. 
+- The server where the files are is turned off or is not connected to the Internet at the moment.
+- The owner of the server has put a restriction on downloading these files.
 </details>
 <br>
 <details>
