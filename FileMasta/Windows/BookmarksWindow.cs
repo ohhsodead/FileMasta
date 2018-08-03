@@ -150,6 +150,14 @@ namespace FileMasta.Windows
             }
         }
 
+        private void DataGridFiles_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex != -1)
+            {
+                MainForm.Form.ShowFileDetails(Database.FtpFile(DataGridFiles.CurrentRow.Cells[4].Value.ToString()), DataGridFiles);
+            }
+        }
+
         // Context Menu Items
         private void MenuFileOpen_Click(object sender, EventArgs e)
         {

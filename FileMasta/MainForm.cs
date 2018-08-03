@@ -354,7 +354,7 @@ namespace FileMasta
             if (e.RowIndex != -1)
             {
                 var webFile = Database.FtpFile(DataGridFiles.CurrentRow.Cells[4].Value.ToString());
-                SetStatus(string.Format("Size: {0}, Last Modified: {1}, URL: {2}", webFile.Size, webFile.DateModified.ToString("MM/dd/yyyy HH:mm"), Uri.UnescapeDataString(webFile.URL)));
+                SetStatus(string.Format("Size: {0}, Last Modified: {1}, URL: {2}", StringExtensions.BytesToPrefix(webFile.Size), webFile.DateModified.ToString("MM/dd/yyyy HH:mm"), Uri.UnescapeDataString(webFile.URL)));
             }
             else
                 SetStatus(string.Format("{0} Files", StringExtensions.FormatNumber(DataGridFiles.Rows.Count.ToString())));
@@ -365,7 +365,7 @@ namespace FileMasta
             if (e.RowIndex != -1)
             {
                 ShowFileDetails(Database.FtpFile(DataGridFiles.CurrentRow.Cells[4].Value.ToString()), DataGridFiles);
-            }               
+            }
         }
         
         private void DataGridFiles_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)

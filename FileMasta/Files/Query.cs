@@ -20,25 +20,19 @@ namespace FileMasta.Files
         /// Search Files using selected params
         /// </summary>
         /// <param name="dataFiles">Files to search through</param>
-        /// <param name="search">Query search, supports exact phrases</param>
+        /// <param name="phrase">Query phrase</param>
         /// <param name="sort">Sort files by name, size or date before searching</param>
         /// <param name="type">Filter by type</param>
         /// <param name="host">Filter by FTP host</param>
         /// <returns>Returns list of files matching selected preferences</returns>
         static readonly object LoadSearchListLock = new object();
-        public static List<FtpFile> Search(List<FtpFile> dataFiles, string search, Sort sort, string[] type, string host)
+        public static List<FtpFile> Search(List<FtpFile> dataFiles, string phrase, Sort sort, string[] type, string host)
         {
             lock (LoadSearchListLock)
             {
                 bool reverseSort = sort == MainForm.Form.SelectedFilesSort;
                 SortFiles(dataFiles, sort, reverseSort);
 
-                var queryExactStrings = new Regex("\"(.*?)\"").Matches(search.ToLower()); // Get strings wrapped in double quotes
-                var queryListExactStrings = new List<string>();
-                foreach (Match match in queryExactStrings) queryListExactStrings.Add(match.Groups[1].Value.ToLower()); // Adds exacts phrases
-                var result = search.ToLower(); // Store exact phrases
-                queryListExactStrings.ToList().ForEach(o => result = result.Replace("\"" + o + "\"", string.Empty)); // Removes all occurrences of exact phrases wrapped with double quotes
-                var queryWords = StringExtensions.GetWords(result);
                 return dataFiles.Select(item => 
                 new
                 {
@@ -50,27 +44,29 @@ namespace FileMasta.Files
                     var val = p.GetValue(item.i, null);
                     return val != null
                         && (p.Name == "URL" || string.IsNullOrEmpty("URL"))
-                        && HasFileExtension(type, val.ToString()) && HasFileHost(host, val.ToString()) && (StringExtensions.ContainsAll(Uri.UnescapeDataString(val.ToString().ToLower()), queryWords) && (StringExtensions.ContainsAll(Uri.UnescapeDataString(val.ToString().ToLower()), queryListExactStrings.ToArray())) || string.IsNullOrEmpty(search));
+                        && HasFileExtension(type, val.ToString())
+                        && HasFileHost(host, val.ToString())
+                        && StringExtensions.ContainsAll(Uri.UnescapeDataString(val.ToString()), StringExtensions.GetWords(phrase.ToLower()));
                 }))
                 .Select(item => item.i)
                 .ToList();
             }
         }
 
-        public static bool HasFileExtension(string[] type, string webFile)
+        public static bool HasFileExtension(string[] type, string fileUrl)
         {
             if (type == Types.Everything)
                 return true;
             else
-                return type.Contains(Path.GetExtension(webFile.ToUpper()).Replace(".", ""));
+                return type.Any(x => Path.GetExtension(fileUrl).Replace(".", "").ToLower().Contains(x.ToLower()));
         }
 
-        public static bool HasFileHost(string host, string webFile)
+        public static bool HasFileHost(string host, string fileUrl)
         {
             if (host == "")
                 return true;
             else
-                return host.Contains(new Uri(webFile.ToUpper()).Host);
+                return host.ToLower() == new Uri(fileUrl).Host.ToLower();
         }
 
         /// <summary>

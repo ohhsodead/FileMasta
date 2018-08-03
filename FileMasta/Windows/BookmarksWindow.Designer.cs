@@ -131,6 +131,7 @@
             this.DataGridFiles.ShowRowErrors = false;
             this.DataGridFiles.Size = new System.Drawing.Size(847, 388);
             this.DataGridFiles.TabIndex = 15;
+            this.DataGridFiles.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridFiles_CellDoubleClick);
             this.DataGridFiles.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.DataGridFiles_RowPrePaint);
             this.DataGridFiles.SelectionChanged += new System.EventHandler(this.DataGridFiles_SelectionChanged);
             // 

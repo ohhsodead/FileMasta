@@ -100,7 +100,7 @@
             this.DataGridServers.ShowEditingIcon = false;
             this.DataGridServers.Size = new System.Drawing.Size(494, 415);
             this.DataGridServers.TabIndex = 1;
-            this.DataGridServers.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridDiscover_CellClick);
+            this.DataGridServers.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridServers_CellDoubleClick);
             // 
             // labelTitleDiscover
             // 

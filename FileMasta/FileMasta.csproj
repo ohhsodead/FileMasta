@@ -62,7 +62,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CButtonLib">
-      <HintPath>..\..\..\- Plugins\CButtonLib.dll</HintPath>
+      <HintPath>..\..\..\- Plugins\CButton\bin\Debug\CButtonLib.dll</HintPath>
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="ChreneLib">
