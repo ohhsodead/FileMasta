@@ -1,12 +1,13 @@
 2018.06.28   | FileMasta 4.0
 
 CHANGE: CORE | Datatabase now uses FTP servers/files
-CHANGE: CORE | Improved crawler, find at HerbL27/Web-Crawler
-CHANGE: CORE | Bunch more of extensions supported
-CHANGE: UI   | Using default winforms UI, why not? xD
-CHANGE: UI   | Added right-click options to files results
-CHANGE: UI   | Added more dialogs/windows
-CHANGE: UI   | Added status bar
+CHANGE: CORE | Improved crawler, faster and more efficient
+CHANGE: CORE | All file extensions/types supported
+CHANGE: UI   | Standard winform interface
+CHANGE: UI   | Added right-click options to files
+CHANGE: UI   | Added boomarks window, 
+CHANGE: UI   | Added menu and status toolbar
+CHANGE: UI   | Added browsers to external apps
 
 
 
