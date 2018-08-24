@@ -311,10 +311,10 @@ namespace FileMasta
         /// <summary>
         /// External search engine URLs
         /// </summary>
-        public static string UrlSearchGoogle =      "https://google.com/search?q=";
-        public static string UrlSearchGoogol =      "https://googol.warriordudimanche.net/?q=";
-        public static string UrlSearchStartPage =   "https://startpage.com/do/dsearch?query=";
-        public static string UrlSearchSearx =       "https://searx.me/?q=";
+        static string UrlSearchGoogle =      "https://google.com/search?q=";
+        static string UrlSearchGoogol =      "https://googol.warriordudimanche.net/?q=";
+        static string UrlSearchStartPage =   "https://startpage.com/do/dsearch?query=";
+        static string UrlSearchSearx =       "https://searx.me/?q=";
 
         // Files Type
         private void ComboBoxType_SelectedIndexChanged(object sender, EventArgs e)
