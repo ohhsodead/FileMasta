@@ -11,10 +11,6 @@ namespace FileMasta.Extensions
         public static string PathRoot { get; } = $@"{Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)}\FileMasta\";
         public static string PathData { get; } = $@"{PathRoot}Data\";
         public static string PathDownloadsDirectory { get; } = $@"{KnownFolders.GetPath(KnownFolder.Downloads)}\";
-        public static string PathVideosDirectory { get; } = $@"{KnownFolders.GetPath(KnownFolder.Videos)}\";
-        public static string PathMusicDirectory { get; } = $@"{KnownFolders.GetPath(KnownFolder.Music)}\";
-        public static string PathDocumentsDirectory { get; } = $@"{KnownFolders.GetPath(KnownFolder.Documents)}\";
-        public static string PathDesktopDirectory { get; } = $@"{KnownFolders.GetPath(KnownFolder.Desktop)}\";
         public static string PathBookmarks { get; } = $@"{PathRoot}bookmarked.json";
 
         /// <summary>

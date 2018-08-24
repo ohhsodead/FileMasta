@@ -49,7 +49,7 @@ namespace FileMasta.Windows
         {
             try
             {
-                Program.log.Info("Loading users bookmarks");
+                Program.Log.Info("Loading users bookmarks");
                 LabelStatus.Text = "Loading bookmarks...";
 
                 BackGroundWorker.RunWorkAsync<List<FtpFile>>(() => Query.Search(Bookmarks.BookmarkedFiles(), TextBoxSearchQuery.Text, SelectedFilesSort, SelectedFilesType, SelectedFilesHost), (List<FtpFile> data) =>
@@ -74,11 +74,11 @@ namespace FileMasta.Windows
                         if (SelectedFilesHost == "") ComboBoxHost.SelectedIndex = 0;
                         else ComboBoxHost.SelectedItem = SelectedFilesHost;
 
-                        Program.log.Info("Successfully loaded users bookmarks");
+                        Program.Log.Info("Successfully loaded users bookmarks");
                     }
                 });
             }
-            catch (Exception ex) { Program.log.Error("Error getting users bookmarks", ex); }
+            catch (Exception ex) { Program.Log.Error("Error getting users bookmarks", ex); }
         }
         
         private void TextBoxSearchQuery_KeyDown(object sender, KeyEventArgs e)
@@ -161,27 +161,39 @@ namespace FileMasta.Windows
         // Context Menu Items
         private void MenuFileOpen_Click(object sender, EventArgs e)
         {
-            string URL = DataGridFiles.CurrentRow.Cells[4].Value.ToString();
-            Process.Start(URL);
+            if (DataGridFiles.SelectedRows.Count > 0)
+            {
+                string URL = DataGridFiles.CurrentRow.Cells[4].Value.ToString();
+                Process.Start(URL);
+            }
         }
 
         private void MenuFileViewDetails_Click(object sender, EventArgs e)
         {
-            string URL = DataGridFiles.CurrentRow.Cells[4].Value.ToString();
-            MainForm.Form.ShowFileDetails(Database.FtpFile(URL), DataGridFiles);
+            if (DataGridFiles.SelectedRows.Count > 0)
+            {
+                string URL = DataGridFiles.CurrentRow.Cells[4].Value.ToString();
+                MainForm.Form.ShowFileDetails(Database.FtpFile(URL), DataGridFiles);
+            }
         }
 
         private void MenuFileViewWebPage_Click(object sender, EventArgs e)
         {
-            Uri URL = new Uri(DataGridFiles.CurrentRow.Cells[4].Value.ToString());
-            Process.Start(URL.AbsoluteUri.Remove(URL.AbsoluteUri.Length - URL.Segments.Last().Length));
+            if (DataGridFiles.SelectedRows.Count > 0)
+            {
+                Uri URL = new Uri(DataGridFiles.CurrentRow.Cells[4].Value.ToString());
+                Process.Start(URL.AbsoluteUri.Remove(URL.AbsoluteUri.Length - URL.Segments.Last().Length));
+            }
         }
 
         private void MenuFileCopyURL_Click(object sender, EventArgs e)
         {
-            string URL = DataGridFiles.CurrentRow.Cells[4].Value.ToString();
-            Clipboard.SetText(URL);
-            MessageBox.Show("Clipboard set to : " + URL);
+            if (DataGridFiles.SelectedRows.Count > 0)
+            {
+                string URL = DataGridFiles.CurrentRow.Cells[4].Value.ToString();
+                Clipboard.SetText(URL);
+                MessageBox.Show("Clipboard set to : " + URL);
+            }
         }
 
         /*************************************************************************/

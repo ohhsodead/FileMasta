@@ -23,7 +23,7 @@ namespace FileMasta.Utilities
         {
             try
             {
-                Program.log.Info("Checking for update");
+                Program.Log.Info("Checking for update");
                 var newVersion = new Version();
 
                 ServicePointManager.ServerCertificateValidationCallback = (sender, cert, chain, sslPolicyErrors) => true;
@@ -35,19 +35,19 @@ namespace FileMasta.Utilities
                     Version curVersion = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
                     if (curVersion.CompareTo(newVersion) < 0)
                     {
-                        Program.log.Info(@"Update found, starting Updater.exe");
+                        Program.Log.Info(@"Update found, starting Updater.exe");
                         MessageBox.Show(MainForm.Form, $"FileMasta {newVersion.ToString()} update is ready to be installed. Click OK to download and run the updater.", "FileMasta - Update Available");
                         MainForm._webClient.DownloadFile(GetUrlLatestUpdater(newVersion), $@"{LocalExtensions.PathDownloadsDirectory}\Updater.exe");
                         Process.Start($@"{LocalExtensions.PathDownloadsDirectory}\Updater.exe");
                         Application.Exit();
                     }
                     else
-                        Program.log.InfoFormat("Already running the latest version ({0})", newVersion.ToString());
+                        Program.Log.InfoFormat("Already running the latest version ({0})", newVersion.ToString());
                 }
             } 
             catch (Exception ex)
             {
-                Program.log.Error("Unable to update", ex);
+                Program.Log.Error("Unable to update", ex);
                 MessageBox.Show("There was an error checking for update. You will be redirected to the latest available version download page.");
                 Process.Start($"{OpenLink.UrlGitHub}releases/latest");
                 Application.Exit();

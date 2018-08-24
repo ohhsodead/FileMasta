@@ -31,13 +31,13 @@ namespace FileMasta
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.TextBoxSearchQuery = new ChreneLib.Controls.TextBoxes.CTextBox();
             this.DataGridFiles = new System.Windows.Forms.DataGridView();
@@ -70,6 +70,7 @@ namespace FileMasta
             this.MenuHelpAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuHelpReportIssue = new System.Windows.Forms.ToolStripMenuItem();
             this.PanelSearchControls = new System.Windows.Forms.Panel();
+            this.ButtonSearchEngine = new System.Windows.Forms.Button();
             this.FlowPanelMostSearches = new System.Windows.Forms.FlowLayoutPanel();
             this.LabelMostSearches = new System.Windows.Forms.Label();
             this.ButtonSearchFiles = new System.Windows.Forms.Button();
@@ -84,11 +85,17 @@ namespace FileMasta
             this.StatusStripSpring = new System.Windows.Forms.ToolStripStatusLabel();
             this.StatusStripDatabaseInfo = new System.Windows.Forms.ToolStripStatusLabel();
             this.NotifyTrayIcon = new System.Windows.Forms.NotifyIcon(this.components);
+            this.ContextMenuSearchEngine = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.MenuSearchGoogle = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuSearchGoogol = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuSearchStartPage = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuSearchSearx = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridFiles)).BeginInit();
             this.ContextMenuFile.SuspendLayout();
             this.MenuStrip.SuspendLayout();
             this.PanelSearchControls.SuspendLayout();
             this.StatusStripFooter.SuspendLayout();
+            this.ContextMenuSearchEngine.SuspendLayout();
             this.SuspendLayout();
             // 
             // TextBoxSearchQuery
@@ -98,7 +105,7 @@ namespace FileMasta
             this.TextBoxSearchQuery.BackColor = System.Drawing.SystemColors.Window;
             this.TextBoxSearchQuery.Location = new System.Drawing.Point(12, 10);
             this.TextBoxSearchQuery.Name = "TextBoxSearchQuery";
-            this.TextBoxSearchQuery.Size = new System.Drawing.Size(452, 22);
+            this.TextBoxSearchQuery.Size = new System.Drawing.Size(432, 22);
             this.TextBoxSearchQuery.TabIndex = 0;
             this.TextBoxSearchQuery.WaterMark = "Search for file names, add tags or insert a link...";
             this.TextBoxSearchQuery.WaterMarkActiveForeColor = System.Drawing.Color.White;
@@ -117,15 +124,15 @@ namespace FileMasta
             this.DataGridFiles.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.DataGridFiles.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             this.DataGridFiles.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(246)))));
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle15.Padding = new System.Windows.Forms.Padding(10, 4, 0, 4);
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DataGridFiles.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(246)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(10, 4, 0, 4);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DataGridFiles.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DataGridFiles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DataGridFiles.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnFileName,
@@ -133,6 +140,7 @@ namespace FileMasta
             this.ColumnFileAge,
             this.ColumnFileReferrer,
             this.ColumnFilesURL});
+            this.DataGridFiles.ContextMenuStrip = this.ContextMenuFile;
             this.DataGridFiles.Cursor = System.Windows.Forms.Cursors.Hand;
             this.DataGridFiles.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DataGridFiles.EnableHeadersVisualStyles = false;
@@ -144,12 +152,12 @@ namespace FileMasta
             this.DataGridFiles.ReadOnly = true;
             this.DataGridFiles.RowHeadersVisible = false;
             this.DataGridFiles.RowHeadersWidth = 40;
-            dataGridViewCellStyle21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(246)))));
-            dataGridViewCellStyle21.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle21.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.Color.White;
-            this.DataGridFiles.RowsDefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle29.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(246)))));
+            dataGridViewCellStyle29.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle29.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.Color.White;
+            this.DataGridFiles.RowsDefaultCellStyle = dataGridViewCellStyle29;
             this.DataGridFiles.RowTemplate.ContextMenuStrip = this.ContextMenuFile;
             this.DataGridFiles.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(246)))));
             this.DataGridFiles.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 9F);
@@ -174,8 +182,8 @@ namespace FileMasta
             // ColumnFileName
             // 
             this.ColumnFileName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.ColumnFileName.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.ColumnFileName.DefaultCellStyle = dataGridViewCellStyle19;
             this.ColumnFileName.HeaderText = "Name";
             this.ColumnFileName.Name = "ColumnFileName";
             this.ColumnFileName.ReadOnly = true;
@@ -184,8 +192,8 @@ namespace FileMasta
             // ColumnFileSize
             // 
             this.ColumnFileSize.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.ColumnFileSize.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle25.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.ColumnFileSize.DefaultCellStyle = dataGridViewCellStyle25;
             this.ColumnFileSize.HeaderText = "Size";
             this.ColumnFileSize.Name = "ColumnFileSize";
             this.ColumnFileSize.ReadOnly = true;
@@ -195,8 +203,8 @@ namespace FileMasta
             // ColumnFileAge
             // 
             this.ColumnFileAge.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.ColumnFileAge.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle26.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.ColumnFileAge.DefaultCellStyle = dataGridViewCellStyle26;
             this.ColumnFileAge.HeaderText = "Age";
             this.ColumnFileAge.Name = "ColumnFileAge";
             this.ColumnFileAge.ReadOnly = true;
@@ -206,8 +214,8 @@ namespace FileMasta
             // ColumnFileReferrer
             // 
             this.ColumnFileReferrer.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.ColumnFileReferrer.DefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle27.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.ColumnFileReferrer.DefaultCellStyle = dataGridViewCellStyle27;
             this.ColumnFileReferrer.HeaderText = "Referrer";
             this.ColumnFileReferrer.Name = "ColumnFileReferrer";
             this.ColumnFileReferrer.ReadOnly = true;
@@ -216,8 +224,8 @@ namespace FileMasta
             // 
             // ColumnFilesURL
             // 
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.ColumnFilesURL.DefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle28.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.ColumnFilesURL.DefaultCellStyle = dataGridViewCellStyle28;
             this.ColumnFilesURL.HeaderText = "URL";
             this.ColumnFilesURL.Name = "ColumnFilesURL";
             this.ColumnFilesURL.ReadOnly = true;
@@ -225,6 +233,7 @@ namespace FileMasta
             // 
             // ContextMenuFile
             // 
+            this.ContextMenuFile.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.ContextMenuFile.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MenuFileOpen,
             this.MenuFileSeperator1,
@@ -233,43 +242,43 @@ namespace FileMasta
             this.MenuFileSeperator2,
             this.MenuFileCopyURL});
             this.ContextMenuFile.Name = "contextMenuFileItem";
-            this.ContextMenuFile.Size = new System.Drawing.Size(183, 104);
+            this.ContextMenuFile.Size = new System.Drawing.Size(181, 104);
             // 
             // MenuFileOpen
             // 
             this.MenuFileOpen.Name = "MenuFileOpen";
-            this.MenuFileOpen.Size = new System.Drawing.Size(182, 22);
+            this.MenuFileOpen.Size = new System.Drawing.Size(180, 22);
             this.MenuFileOpen.Text = "Open File...";
             this.MenuFileOpen.Click += new System.EventHandler(this.MenuFileOpen_Click);
             // 
             // MenuFileSeperator1
             // 
             this.MenuFileSeperator1.Name = "MenuFileSeperator1";
-            this.MenuFileSeperator1.Size = new System.Drawing.Size(179, 6);
+            this.MenuFileSeperator1.Size = new System.Drawing.Size(177, 6);
             // 
             // MenuFileViewDetails
             // 
             this.MenuFileViewDetails.Name = "MenuFileViewDetails";
-            this.MenuFileViewDetails.Size = new System.Drawing.Size(182, 22);
+            this.MenuFileViewDetails.Size = new System.Drawing.Size(180, 22);
             this.MenuFileViewDetails.Text = "View File Details...";
             this.MenuFileViewDetails.Click += new System.EventHandler(this.MenuFileViewDetails_Click);
             // 
             // MenuFileViewWebPage
             // 
             this.MenuFileViewWebPage.Name = "MenuFileViewWebPage";
-            this.MenuFileViewWebPage.Size = new System.Drawing.Size(182, 22);
+            this.MenuFileViewWebPage.Size = new System.Drawing.Size(180, 22);
             this.MenuFileViewWebPage.Text = "View Web Page...";
             this.MenuFileViewWebPage.Click += new System.EventHandler(this.MenuFileViewWebPage_Click);
             // 
             // MenuFileSeperator2
             // 
             this.MenuFileSeperator2.Name = "MenuFileSeperator2";
-            this.MenuFileSeperator2.Size = new System.Drawing.Size(179, 6);
+            this.MenuFileSeperator2.Size = new System.Drawing.Size(177, 6);
             // 
             // MenuFileCopyURL
             // 
             this.MenuFileCopyURL.Name = "MenuFileCopyURL";
-            this.MenuFileCopyURL.Size = new System.Drawing.Size(182, 22);
+            this.MenuFileCopyURL.Size = new System.Drawing.Size(180, 22);
             this.MenuFileCopyURL.Text = "File URL > Clipboard";
             this.MenuFileCopyURL.Click += new System.EventHandler(this.MenuFileCopyURL_Click);
             // 
@@ -400,6 +409,7 @@ namespace FileMasta
             // PanelSearchControls
             // 
             this.PanelSearchControls.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(246)))));
+            this.PanelSearchControls.Controls.Add(this.ButtonSearchEngine);
             this.PanelSearchControls.Controls.Add(this.FlowPanelMostSearches);
             this.PanelSearchControls.Controls.Add(this.LabelMostSearches);
             this.PanelSearchControls.Controls.Add(this.ButtonSearchFiles);
@@ -416,6 +426,18 @@ namespace FileMasta
             this.PanelSearchControls.Name = "PanelSearchControls";
             this.PanelSearchControls.Size = new System.Drawing.Size(992, 146);
             this.PanelSearchControls.TabIndex = 1111;
+            // 
+            // ButtonSearchEngine
+            // 
+            this.ButtonSearchEngine.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ButtonSearchEngine.Font = new System.Drawing.Font("Segoe UI", 6.25F);
+            this.ButtonSearchEngine.Location = new System.Drawing.Point(964, 9);
+            this.ButtonSearchEngine.Name = "ButtonSearchEngine";
+            this.ButtonSearchEngine.Size = new System.Drawing.Size(20, 23);
+            this.ButtonSearchEngine.TabIndex = 11;
+            this.ButtonSearchEngine.Text = "▼";
+            this.ButtonSearchEngine.UseVisualStyleBackColor = true;
+            this.ButtonSearchEngine.Click += new System.EventHandler(this.ButtonSearchEngine_Click);
             // 
             // FlowPanelMostSearches
             // 
@@ -444,9 +466,9 @@ namespace FileMasta
             // ButtonSearchFiles
             // 
             this.ButtonSearchFiles.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonSearchFiles.Location = new System.Drawing.Point(927, 9);
+            this.ButtonSearchFiles.Location = new System.Drawing.Point(907, 9);
             this.ButtonSearchFiles.Name = "ButtonSearchFiles";
-            this.ButtonSearchFiles.Size = new System.Drawing.Size(54, 23);
+            this.ButtonSearchFiles.Size = new System.Drawing.Size(56, 23);
             this.ButtonSearchFiles.TabIndex = 8;
             this.ButtonSearchFiles.Text = "Search";
             this.ButtonSearchFiles.UseVisualStyleBackColor = true;
@@ -456,7 +478,7 @@ namespace FileMasta
             // 
             this.LabelHost.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.LabelHost.AutoSize = true;
-            this.LabelHost.Location = new System.Drawing.Point(726, 13);
+            this.LabelHost.Location = new System.Drawing.Point(706, 13);
             this.LabelHost.Name = "LabelHost";
             this.LabelHost.Size = new System.Drawing.Size(34, 13);
             this.LabelHost.TabIndex = 7;
@@ -469,7 +491,7 @@ namespace FileMasta
             this.ComboBoxHost.FormattingEnabled = true;
             this.ComboBoxHost.Items.AddRange(new object[] {
             "Any"});
-            this.ComboBoxHost.Location = new System.Drawing.Point(766, 10);
+            this.ComboBoxHost.Location = new System.Drawing.Point(746, 10);
             this.ComboBoxHost.Name = "ComboBoxHost";
             this.ComboBoxHost.Size = new System.Drawing.Size(155, 21);
             this.ComboBoxHost.TabIndex = 6;
@@ -480,7 +502,7 @@ namespace FileMasta
             // 
             this.LabelSort.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.LabelSort.AutoSize = true;
-            this.LabelSort.Location = new System.Drawing.Point(612, 13);
+            this.LabelSort.Location = new System.Drawing.Point(592, 13);
             this.LabelSort.Name = "LabelSort";
             this.LabelSort.Size = new System.Drawing.Size(31, 13);
             this.LabelSort.TabIndex = 5;
@@ -495,7 +517,7 @@ namespace FileMasta
             "Name",
             "Size",
             "Age"});
-            this.ComboBoxSort.Location = new System.Drawing.Point(649, 10);
+            this.ComboBoxSort.Location = new System.Drawing.Point(629, 10);
             this.ComboBoxSort.Name = "ComboBoxSort";
             this.ComboBoxSort.Size = new System.Drawing.Size(74, 21);
             this.ComboBoxSort.TabIndex = 4;
@@ -506,7 +528,7 @@ namespace FileMasta
             // 
             this.LabelType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.LabelType.AutoSize = true;
-            this.LabelType.Location = new System.Drawing.Point(470, 13);
+            this.LabelType.Location = new System.Drawing.Point(450, 13);
             this.LabelType.Name = "LabelType";
             this.LabelType.Size = new System.Drawing.Size(32, 13);
             this.LabelType.TabIndex = 2;
@@ -525,7 +547,7 @@ namespace FileMasta
             "Executable",
             "Picture",
             "Video"});
-            this.ComboBoxType.Location = new System.Drawing.Point(508, 10);
+            this.ComboBoxType.Location = new System.Drawing.Point(488, 10);
             this.ComboBoxType.Name = "ComboBoxType";
             this.ComboBoxType.Size = new System.Drawing.Size(98, 21);
             this.ComboBoxType.TabIndex = 1;
@@ -534,6 +556,7 @@ namespace FileMasta
             // 
             // StatusStripFooter
             // 
+            this.StatusStripFooter.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.StatusStripFooter.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.StatusStripStatus,
             this.StatusStripSpring,
@@ -555,25 +578,64 @@ namespace FileMasta
             // 
             this.StatusStripSpring.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.StatusStripSpring.Name = "StatusStripSpring";
-            this.StatusStripSpring.Size = new System.Drawing.Size(602, 17);
+            this.StatusStripSpring.Size = new System.Drawing.Size(620, 17);
             this.StatusStripSpring.Spring = true;
             // 
             // StatusStripDatabaseInfo
             // 
             this.StatusStripDatabaseInfo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.StatusStripDatabaseInfo.Name = "StatusStripDatabaseInfo";
-            this.StatusStripDatabaseInfo.Size = new System.Drawing.Size(318, 17);
+            this.StatusStripDatabaseInfo.Size = new System.Drawing.Size(300, 17);
             this.StatusStripDatabaseInfo.Text = "Files: {0} - Total Size: {1} - FTP Servers {2} - Last Updated: {3}";
             // 
             // NotifyTrayIcon
             // 
             this.NotifyTrayIcon.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info;
-            this.NotifyTrayIcon.BalloonTipText = "Double click app icon to restore...";
+            this.NotifyTrayIcon.BalloonTipText = "Double click tray icon to restore...";
             this.NotifyTrayIcon.BalloonTipTitle = "FileMasta Minimized to Tray";
             this.NotifyTrayIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("NotifyTrayIcon.Icon")));
             this.NotifyTrayIcon.Text = "FileMasta";
             this.NotifyTrayIcon.Visible = true;
             this.NotifyTrayIcon.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.NotifyTrayIcon_MouseDoubleClick);
+            // 
+            // ContextMenuSearchEngine
+            // 
+            this.ContextMenuSearchEngine.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.ContextMenuSearchEngine.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MenuSearchGoogle,
+            this.MenuSearchGoogol,
+            this.MenuSearchStartPage,
+            this.MenuSearchSearx});
+            this.ContextMenuSearchEngine.Name = "contextMenuFileItem";
+            this.ContextMenuSearchEngine.Size = new System.Drawing.Size(181, 114);
+            // 
+            // MenuSearchGoogle
+            // 
+            this.MenuSearchGoogle.Name = "MenuSearchGoogle";
+            this.MenuSearchGoogle.Size = new System.Drawing.Size(180, 22);
+            this.MenuSearchGoogle.Text = "Google";
+            this.MenuSearchGoogle.Click += new System.EventHandler(this.MenuSearchGoogle_Click);
+            // 
+            // MenuSearchGoogol
+            // 
+            this.MenuSearchGoogol.Name = "MenuSearchGoogol";
+            this.MenuSearchGoogol.Size = new System.Drawing.Size(180, 22);
+            this.MenuSearchGoogol.Text = "Googol";
+            this.MenuSearchGoogol.Click += new System.EventHandler(this.MenuSearchGoogol_Click);
+            // 
+            // MenuSearchStartPage
+            // 
+            this.MenuSearchStartPage.Name = "MenuSearchStartPage";
+            this.MenuSearchStartPage.Size = new System.Drawing.Size(180, 22);
+            this.MenuSearchStartPage.Text = "StartPage";
+            this.MenuSearchStartPage.Click += new System.EventHandler(this.MenuSearchStartPage_Click);
+            // 
+            // MenuSearchSearx
+            // 
+            this.MenuSearchSearx.Name = "MenuSearchSearx";
+            this.MenuSearchSearx.Size = new System.Drawing.Size(180, 22);
+            this.MenuSearchSearx.Text = "Searx";
+            this.MenuSearchSearx.Click += new System.EventHandler(this.MenuSearchSearx_Click);
             // 
             // MainForm
             // 
@@ -608,6 +670,7 @@ namespace FileMasta
             this.PanelSearchControls.PerformLayout();
             this.StatusStripFooter.ResumeLayout(false);
             this.StatusStripFooter.PerformLayout();
+            this.ContextMenuSearchEngine.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -659,6 +722,12 @@ namespace FileMasta
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem MenuToolsOptions;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        public System.Windows.Forms.Button ButtonSearchEngine;
+        private System.Windows.Forms.ContextMenuStrip ContextMenuSearchEngine;
+        private System.Windows.Forms.ToolStripMenuItem MenuSearchGoogle;
+        private System.Windows.Forms.ToolStripMenuItem MenuSearchGoogol;
+        private System.Windows.Forms.ToolStripMenuItem MenuSearchStartPage;
+        private System.Windows.Forms.ToolStripMenuItem MenuSearchSearx;
     }
 }
 

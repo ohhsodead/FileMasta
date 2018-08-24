@@ -21,7 +21,7 @@ namespace FileMasta.Windows
         // Loads Servers into DataGrid
         private void LoadServers()
         {
-            Program.log.Info("Loading servers");
+            Program.Log.Info("Loading servers");
 
             DataGridServers.Rows.Clear();
 
@@ -33,7 +33,7 @@ namespace FileMasta.Windows
                 count += 1;
             }
 
-            Program.log.Info("Successfully loaded servers");
+            Program.Log.Info("Successfully loaded servers");
         }
 
         private void DataGridServers_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

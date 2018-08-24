@@ -1,3 +1,15 @@
+2018.08.24   | FileMasta 4.1
+
+CHANGE: CORE | Fixed #114
+CHANGE: CORE | Fixed #112
+CHANGE: CORE | Improved code efficiency
+CHANGE: CORE | Added error retry attempts
+CHANGE: UI   | Re-added external search engines
+CHANGE: UI   | Minor interface adjustments
+
+
+
+
 2018.06.28   | FileMasta 4.0
 
 CHANGE: CORE | Datatabase now uses FTP servers/files
@@ -5,7 +17,7 @@ CHANGE: CORE | Improved crawler, faster and more efficient
 CHANGE: CORE | All file extensions/types supported
 CHANGE: UI   | Standard winform interface
 CHANGE: UI   | Added right-click options to files
-CHANGE: UI   | Added boomarks window, 
+CHANGE: UI   | Added boomarks window
 CHANGE: UI   | Added menu and status toolbar
 CHANGE: UI   | Added browsers to external apps
 

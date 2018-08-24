@@ -86,7 +86,7 @@ namespace FileMasta.Windows
             LoadUserSettings();
             Thread.Sleep(500);
             MessageBox.Show("Settings restored to default.");
-            Program.log.Info("Restored user settings");
+            Program.Log.Info("Restored user settings");
         }
 
         private void ButtonSave_Click(object sender, EventArgs e)
@@ -108,7 +108,7 @@ namespace FileMasta.Windows
             Thread.Sleep(500);
             LoadUserSettings();
             MessageBox.Show("Settings saved.");
-            Program.log.Info("Saved user settings");
+            Program.Log.Info("Saved user settings");
         }
 
         /*************************************************************************/

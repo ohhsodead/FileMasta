@@ -47,7 +47,7 @@ namespace FileMasta
 
         public MainForm()
         {
-            Program.log.Info("Initializing");
+            Program.Log.Info("Initializing");
 
             // Initialize
             InitializeComponent();
@@ -68,23 +68,7 @@ namespace FileMasta
             ComboBoxSort.SelectedIndex = 0;
             ComboBoxHost.SelectedIndex = 0;
 
-            Program.log.Info("Initialized");
-        }
-
-        /*************************************************************************/
-        /* Share on Social Media                                                 */
-        /*************************************************************************/
-
-        public string shareMessage = "Hey guys, I found a brilliant way to find direct download links for anything.";
-
-        private void ImageShareTwitter_Click(object sender, EventArgs e)
-        {
-            Process.Start($"https://twitter.com/intent/tweet?hashtags=FileMasta&original_referer=https%3A%2F%2Fgithub.com/HerbL27/FileMasta%2F&ref_src=twsrc%5Etfw&text={shareMessage}&tw_p=tweetbutton&url=https%3A%2F%2Fgithub.com/HerbL27/FileMasta");
-        }
-
-        private void ImageShareFacebook_Click(object sender, EventArgs e)
-        {
-            Process.Start("https://facebook.com/sharer/sharer.php?app_id=248335808680372&kid_directed_site=0&sdk=joey&u=http%3A%2F%2Fgithub.com/HerbL27/FileMasta%2F&display=popup&ref=plugin&src=share_button");
+            Program.Log.Info("Initialized");
         }
 
         /*************************************************************************/
@@ -93,13 +77,13 @@ namespace FileMasta
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            Program.log.Info("Loading application tasks beginning");
+            Program.Log.Info("Loading application tasks beginning");
 
             Directory.CreateDirectory(LocalExtensions.PathRoot);
             Directory.CreateDirectory(LocalExtensions.PathData);
 
             Updates.CheckForUpdate();
-            LoadTopSearches();
+            LoadMostSearches();
             BackGroundWorker.RunWorkAsync(() => Database.UpdateLocalDatabase(), InitializeFinished);
         }
 
@@ -107,7 +91,7 @@ namespace FileMasta
         {
             SetDatabaseMetadata();
             Controls.Remove(FormSplashScreen);
-            Program.log.Info("Loading tasks completed");
+            Program.Log.Info("Loading tasks completed");
         }
 
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
@@ -117,7 +101,7 @@ namespace FileMasta
                     if (Directory.Exists(LocalExtensions.PathData))
                         Directory.Delete(LocalExtensions.PathData, true);
 
-            Program.log.Info("Closing application");
+            Program.Log.Info("Closing application");
         }
 
         private void MainForm_SizeChanged(object sender, EventArgs e)
@@ -218,50 +202,46 @@ namespace FileMasta
         }
 
         /// <summary>
-        /// Get Top Searches from FileChef.com
+        /// Get Most Searches from FileChef.com
         /// </summary>
-        delegate void LoadTopSearchesCallBack();
-        private void LoadTopSearches()
+        delegate void LoadMostSearchesCallBack();
+        private void LoadMostSearches()
         {
             try
             {
-                Program.log.Info("Loading most searches");
+                ExceptionEvents.RetryOnException(3, TimeSpan.FromSeconds(2), () => {
+                    Program.Log.Info("Loading most searches");
 
-                BackGroundWorker.RunWorkAsync<List<string>>(() => GetTopSearches(), (data) =>
-                {
-                    if (InvokeRequired)
-                    {
-                        Invoke(new LoadTopSearchesCallBack(LoadTopSearches), new object[] { });
-                    }
-                    else
-                    {
-                        int count = 0;
-                        foreach (var tag in data)
-                            if (count <= 100)
-                            {
-                                FlowPanelMostSearches.Controls.Add(ControlExtensions.LabelMostSearch(tag, count));
-                                count++;
-                            }
+                    BackGroundWorker.RunWorkAsync<List<string>>(() => GetMostSearches(), (data) => {
+                        if (InvokeRequired)
+                            Invoke(new LoadMostSearchesCallBack(LoadMostSearches), new object[] { });
+                        else
+                        {
+                            int count = 0;
+                            foreach (var tag in data)
+                                if (count <= 100)
+                                    FlowPanelMostSearches.Controls.Add(ControlExtensions.LabelMostSearch(tag, count)); count++;
 
-                        Program.log.Info("Loaded most searches");
-                    }
+                            Program.Log.Info("Loaded most searches");
+                        }
+                    });
                 });
             }
-            catch (Exception ex) { LabelMostSearches.Visible = false; FlowPanelMostSearches.Visible = false; Program.log.Error("Unable to get most searches", ex); } // Error occurred, so hide controls and skip...
+            catch (Exception ex) { LabelMostSearches.Visible = false; FlowPanelMostSearches.Visible = false; Program.Log.Error("Unable to get most searches", ex); } // Error occurred, so hide controls and skip...
         }
 
         /// <summary>
-        /// Get Top Searches from web database
+        /// Get Most Searches from web database
         /// </summary>
-        /// <returns></returns>
-        private List<string> GetTopSearches()
+        /// <returns>List containg all most searches returned</returns>
+        private List<string> GetMostSearches()
         {
-            Program.log.Info("Requesting most searches");
+            Program.Log.Info("Requesting most searches");
 
             List<string> listTopSearches = new List<string>();
 
             ServicePointManager.ServerCertificateValidationCallback = (sender, cert, chain, sslPolicyErrors) => true;
-            var request = WebExtensions.GetRequest(Database.dbTopSearches);
+            var request = WebExtensions.GetRequest(Database.DbTopSearches);
             using (WebResponse webResponse = request.GetResponse())
             using (var reader = new StreamReader(webResponse.GetResponseStream()))
             {
@@ -270,7 +250,7 @@ namespace FileMasta
                     listTopSearches.Add(line);
             }
 
-            Program.log.Info("Most searches returned");
+            Program.Log.Info("Most searches returned");
             return listTopSearches;
         }
 
@@ -307,6 +287,34 @@ namespace FileMasta
                 SearchFiles();
             else SetStatus("Minimum 3 characters.");
         }
+
+        private void MenuSearchGoogle_Click(object sender, EventArgs e)
+        {
+            Process.Start(UrlSearchGoogle + string.Format("{0} %2B({1}) %2Dinurl:(jsp|pl|php|html|aspx|htm|cf|shtml) intitle:index.of %2Dinurl:(listen77|mp3raid|mp3toss|mp3drug|index_of|index-of|wallywashis|downloadmana)", TextBoxSearchQuery.Text, string.Join("|", SelectedFilesType.ToArray()).ToLower()));
+        }
+
+        private void MenuSearchGoogol_Click(object sender, EventArgs e)
+        {
+            Process.Start(UrlSearchGoogol + string.Format("{0} %2B({1}) %2Dinurl:(jsp|pl|php|html|aspx|htm|cf|shtml) intitle:index.of %2Dinurl:(listen77|mp3raid|mp3toss|mp3drug|index_of|index-of|wallywashis|downloadmana)", TextBoxSearchQuery.Text, string.Join("|", SelectedFilesType.ToArray()).ToLower()));
+        }
+
+        private void MenuSearchStartPage_Click(object sender, EventArgs e)
+        {
+            Process.Start(UrlSearchStartPage + string.Format("{0} %2B({1}) %2Dinurl:(jsp|pl|php|html|aspx|htm|cf|shtml) intitle:index.of %2Dinurl:(listen77|mp3raid|mp3toss|mp3drug|index_of|index-of|wallywashis|downloadmana)", TextBoxSearchQuery.Text, string.Join("|", SelectedFilesType.ToArray()).ToLower()));
+        }
+
+        private void MenuSearchSearx_Click(object sender, EventArgs e)
+        {
+            Process.Start(UrlSearchSearx + string.Format("{0} %2B({1}) %2Dinurl:(jsp|pl|php|html|aspx|htm|cf|shtml) intitle:index.of %2Dinurl:(listen77|mp3raid|mp3toss|mp3drug|index_of|index-of|wallywashis|downloadmana)", TextBoxSearchQuery.Text, string.Join("|", SelectedFilesType.ToArray()).ToLower()));
+        }
+
+        /// <summary>
+        /// External search engine URLs
+        /// </summary>
+        public static string UrlSearchGoogle =      "https://google.com/search?q=";
+        public static string UrlSearchGoogol =      "https://googol.warriordudimanche.net/?q=";
+        public static string UrlSearchStartPage =   "https://startpage.com/do/dsearch?query=";
+        public static string UrlSearchSearx =       "https://searx.me/?q=";
 
         // Files Type
         private void ComboBoxType_SelectedIndexChanged(object sender, EventArgs e)
@@ -383,10 +391,11 @@ namespace FileMasta
         public void QueryFiles()
         {
             SetStatus("Searching files...");
-            Program.log.InfoFormat("Search files beginning. Preferences - Query: {0}, Sort: {1}, Type: {2}, Host: {3}", TextBoxSearchQuery.Text, SelectedFilesSort.ToString(), SelectedFilesType.ToArray(), SelectedFilesHost);
+            Program.Log.InfoFormat("Search files beginning. Preferences - Query: {0}, Sort: {1}, Type: {2}, Host: {3}", TextBoxSearchQuery.Text, SelectedFilesSort.ToString(), SelectedFilesType.ToArray(), SelectedFilesHost);
             Stopwatch stopWatch = new Stopwatch();
             EnableSearchControls(false);
-            BackGroundWorker.RunWorkAsync(() => Query.Search(DbOpenFiles, TextBoxSearchQuery.Text, SelectedFilesSort, SelectedFilesType, SelectedFilesHost), (data) =>
+            stopWatch.Start();
+            BackGroundWorker.RunWorkAsync(() => Query.Search(DbOpenFiles, TextBoxSearchQuery.Text, SelectedFilesSort, SelectedFilesType, SelectedFilesHost), (ftpFiles) =>
             {
                 if (InvokeRequired)
                     Invoke(new QueryFilesCallBack(QueryFiles), new object[] { });
@@ -394,13 +403,25 @@ namespace FileMasta
                 {
                     DataGridFiles.Rows.Clear();
                     ComboBoxHost.Items.Clear(); ComboBoxHost.Items.Add("Any");
-                    stopWatch.Start();
-                    foreach (var ftpFile in data)
+                    //foreach (var ftpFile in data)
+                    //{
+                    //    DataGridFiles.Rows.Add(ftpFile.Name, StringExtensions.BytesToPrefix(ftpFile.Size), StringExtensions.TimeSpanAge(ftpFile.DateModified), new Uri(ftpFile.URL).Host, ftpFile.URL);
+                    //    if (!(ComboBoxHost.Items.Contains(new Uri(ftpFile.URL).Host)))
+                    //        ComboBoxHost.Items.Add(new Uri(ftpFile.URL).Host);
+                    //}
+
+                    ftpFiles.ForEach(ftpFile => 
                     {
                         DataGridFiles.Rows.Add(ftpFile.Name, StringExtensions.BytesToPrefix(ftpFile.Size), StringExtensions.TimeSpanAge(ftpFile.DateModified), new Uri(ftpFile.URL).Host, ftpFile.URL);
-                        if (!(ComboBoxHost.Items.Contains(new Uri(ftpFile.URL).Host)))
-                            ComboBoxHost.Items.Add(new Uri(ftpFile.URL).Host);
-                    }
+                        if (!(ComboBoxHost.Items.Contains(new Uri(ftpFile.URL).Host))) ComboBoxHost.Items.Add(new Uri(ftpFile.URL).Host);
+                    });
+
+                    //for (int i = 0; i < ftpFiles.Count; ++i)
+                    //{
+                    //    var ftpFile = ftpFiles[i];
+                    //    DataGridFiles.Rows.Add(ftpFile.Name, StringExtensions.BytesToPrefix(ftpFile.Size), StringExtensions.TimeSpanAge(ftpFile.DateModified), new Uri(ftpFile.URL).Host, ftpFile.URL);
+                    //    if (!(ComboBoxHost.Items.Contains(new Uri(ftpFile.URL).Host))) ComboBoxHost.Items.Add(new Uri(ftpFile.URL).Host);
+                    //}
 
                     stopWatch.Stop();
                     SetStatus(string.Format("{0} Files ({1} seconds)", StringExtensions.FormatNumber(DataGridFiles.Rows.Count.ToString()), String.Format("{0:0.000}", stopWatch.Elapsed.TotalSeconds)));
@@ -412,7 +433,7 @@ namespace FileMasta
 
                     EnableSearchControls(true);
 
-                    Program.log.Info(StatusStripStatus.Text);
+                    Program.Log.Info(StatusStripStatus.Text);
                 }
             }); 
         }
@@ -420,27 +441,39 @@ namespace FileMasta
         // Context Menu Items
         private void MenuFileOpen_Click(object sender, EventArgs e)
         {
-            string URL = DataGridFiles.CurrentRow.Cells[4].Value.ToString();
-            Process.Start(URL);
+            if (DataGridFiles.SelectedRows.Count > 0)
+            {
+                string URL = DataGridFiles.CurrentRow.Cells[4].Value.ToString();
+                Process.Start(URL);
+            }
         }
 
         private void MenuFileViewDetails_Click(object sender, EventArgs e)
         {
-            string URL = DataGridFiles.CurrentRow.Cells[4].Value.ToString();
-            ShowFileDetails(Database.FtpFile(URL), DataGridFiles);
+            if (DataGridFiles.SelectedRows.Count > 0)
+            {
+                string URL = DataGridFiles.CurrentRow.Cells[4].Value.ToString();
+                ShowFileDetails(Database.FtpFile(URL), DataGridFiles);
+            }
         }
 
         private void MenuFileViewWebPage_Click(object sender, EventArgs e)
         {
-            Uri URL = new Uri(DataGridFiles.CurrentRow.Cells[4].Value.ToString());
-            Process.Start(URL.AbsoluteUri.Remove(URL.AbsoluteUri.Length - URL.Segments.Last().Length));
+            if (DataGridFiles.SelectedRows.Count > 0)
+            {
+                Uri URL = new Uri(DataGridFiles.CurrentRow.Cells[4].Value.ToString());
+                Process.Start(URL.AbsoluteUri.Remove(URL.AbsoluteUri.Length - URL.Segments.Last().Length));
+            }
         }
 
         private void MenuFileCopyURL_Click(object sender, EventArgs e)
         {
-            string URL = DataGridFiles.CurrentRow.Cells[4].Value.ToString();
-            Clipboard.SetText(URL);
-            MessageBox.Show("Clipboard set to : " + URL);
+            if (DataGridFiles.SelectedRows.Count > 0)
+            {
+                string URL = DataGridFiles.CurrentRow.Cells[4].Value.ToString();
+                Clipboard.SetText(URL);
+                MessageBox.Show("Clipboard set to : " + URL);
+            }
         }
 
         /// <summary>
@@ -468,7 +501,7 @@ namespace FileMasta
         /// <param name="createNewInstance">Whether to create a new instance</param>
         public void ShowFileDetails(FtpFile File, DataGridView parentDataGrid, bool createNewInstance = true)
         {
-            Program.log.Info("Loading file details : " + File.URL);
+            Program.Log.Info("Loading file details : " + File.URL);
 
             if (createNewInstance)
                 FormFileDetails = new FileDetailsWindow();
@@ -500,7 +533,7 @@ namespace FileMasta
             else
                 FormFileDetails.ShowDialog(this);
 
-            Program.log.Info("File details loaded");
+            Program.Log.Info("File details loaded");
         }
 
         /// <summary>
@@ -539,6 +572,11 @@ namespace FileMasta
                     return true;
             }
             return base.ProcessCmdKey(ref msg, keyData);
+        }
+
+        private void ButtonSearchEngine_Click(object sender, EventArgs e)
+        {
+            ContextMenuSearchEngine.Show(ButtonSearchEngine, PointToClient(ButtonSearchEngine.Location));
         }
     }
 }

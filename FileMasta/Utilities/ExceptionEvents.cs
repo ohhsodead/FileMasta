@@ -63,7 +63,7 @@ namespace FileMasta.Utilities
             int line = frame.GetFileLineNumber();
             int col = frame.GetFileColumnNumber();
 
-            Program.log.Error("Unexpected Error", e.Exception);
+            Program.Log.Error("Unexpected Error", e.Exception);
 
             if (MessageBox.Show("An error has occurred. Would you like to report this issue on GitHub? Your feedback helps us improve the quality of FileMasta, we appreciate that.", "Error", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
@@ -93,7 +93,7 @@ namespace FileMasta.Utilities
             int line = frame.GetFileLineNumber();
             int col = frame.GetFileColumnNumber();
 
-            Program.log.Error("Unexpected Error", ((Exception)e.ExceptionObject));
+            Program.Log.Error("Unexpected Error", ((Exception)e.ExceptionObject));
 
             if (MessageBox.Show("An error has occurred. Would you like to report this issue on GitHub? Your feedback helps us improve the quality of FileMasta, we appreciate that.", "Error", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
@@ -111,6 +111,32 @@ namespace FileMasta.Utilities
                 "%0A ----------------------- %0A" +
                 (Exception)e.ExceptionObject);
             }
+        }
+
+        /// <summary>
+        /// Retries a process multiple times on an exception, with a time delay
+        /// </summary>
+        /// <param name="times"></param>
+        /// <param name="delay"></param>
+        /// <param name="operation"></param>
+        public static void RetryOnException(int times, TimeSpan delay, Action operation)
+        {
+            var attempts = 0;
+            do
+            {
+                try
+                {
+                    attempts++;
+                    operation();
+                    break;
+                }
+                catch (Exception ex)
+                {
+                    if (attempts == times) throw;
+                    Program.Log.Error($"Exception caught on attempt {attempts} - will retry after delay {delay}", ex);
+                    Task.Delay(delay).Wait();
+                }
+            } while (true);
         }
     }
 }

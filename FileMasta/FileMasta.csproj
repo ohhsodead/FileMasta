@@ -94,13 +94,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extensions\ImageExtensions.cs" />
     <Compile Include="Windows\FileDetailsWindow.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Windows\FileDetailsWindow.Designer.cs">
       <DependentUpon>FileDetailsWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="Extensions\ImageExtensions.cs" />
     <Compile Include="Windows\AboutWindow.cs">
       <SubType>Form</SubType>
     </Compile>

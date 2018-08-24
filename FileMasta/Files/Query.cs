@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Reflection;
-using System.Text.RegularExpressions;
 using FileMasta.Extensions;
 using FileMasta.Models;
 
@@ -25,35 +23,26 @@ namespace FileMasta.Files
         /// <param name="type">Filter by type</param>
         /// <param name="host">Filter by FTP host</param>
         /// <returns>Returns list of files matching selected preferences</returns>
-        static readonly object LoadSearchListLock = new object();
+        static readonly object SearchLock = new object();
         public static List<FtpFile> Search(List<FtpFile> dataFiles, string phrase, Sort sort, string[] type, string host)
         {
-            lock (LoadSearchListLock)
+            lock (SearchLock)
             {
-                bool reverseSort = sort == MainForm.Form.SelectedFilesSort;
-                SortFiles(dataFiles, sort, reverseSort);
-
-                return dataFiles.Select(item => 
-                new
-                {
-                    i = item,
-                    Props = item.GetType().GetProperties(BindingFlags.Instance | BindingFlags.Public)
-                })
-                .Where(item => item.Props.Any(p =>
-                {
-                    var val = p.GetValue(item.i, null);
-                    return val != null
-                        && (p.Name == "URL" || string.IsNullOrEmpty("URL"))
-                        && HasFileExtension(type, val.ToString())
-                        && HasFileHost(host, val.ToString())
-                        && StringExtensions.ContainsAll(Uri.UnescapeDataString(val.ToString()), StringExtensions.GetWords(phrase.ToLower()));
-                }))
-                .Select(item => item.i)
-                .ToList();
+                SortFiles(dataFiles, sort, sort == MainForm.Form.SelectedFilesSort);
+                return dataFiles.Where(x =>
+                    HasFileType(type, x.URL) &&
+                    HasFileHost(host, x.URL) &&
+                    StringExtensions.ContainsAll(Uri.UnescapeDataString(x.URL), StringExtensions.GetWords(phrase.ToLower()))).ToList();
             }
         }
 
-        public static bool HasFileExtension(string[] type, string fileUrl)
+        /// <summary>
+        /// Returns bool to determine if file URL contains file type
+        /// </summary>
+        /// <param name="type">Filetypes to check for</param>
+        /// <param name="fileUrl">File URL</param>
+        /// <returns>Returns true if is filetype</returns>
+        public static bool HasFileType(string[] type, string fileUrl)
         {
             if (type == Types.Everything)
                 return true;
@@ -61,6 +50,12 @@ namespace FileMasta.Files
                 return type.Any(x => Path.GetExtension(fileUrl).Replace(".", "").ToLower().Contains(x.ToLower()));
         }
 
+        /// <summary>
+        /// Returns bool to determine if file URL has file host
+        /// </summary>
+        /// <param name="host">Host to check for</param>
+        /// <param name="fileUrl">File URL</param>
+        /// <returns></returns>
         public static bool HasFileHost(string host, string fileUrl)
         {
             if (host == "")

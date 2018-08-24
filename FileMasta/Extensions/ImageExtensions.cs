@@ -31,7 +31,7 @@ namespace FileMasta.Extensions
                     }
                 return newBitmap;
             }
-            catch (Exception ex) { Program.log.Error("Error changing image colour", ex); return null; }
+            catch (Exception ex) { Program.Log.Error("Error changing image colour", ex); return null; }
         }
     }
 }

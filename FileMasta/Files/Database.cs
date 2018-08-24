@@ -14,15 +14,15 @@ namespace FileMasta.Files
         /// <summary>
         /// URLs for database files
         /// </summary>
-        const string dbOpenFiles = "https://www.dropbox.com/s/0dwmqk1pkj2ndkz/ftp-files.json?raw=true";
-        const string dbOpenServers = "https://raw.githubusercontent.com/HerbL27/FileMasta/master/Public/ftp-servers.txt";
-        public const string dbTopSearches = "https://www.dropbox.com/s/512qe4ogan92vea/top-searches.txt?raw=true";
+        const string DbOpenFiles = "https://www.dropbox.com/s/0dwmqk1pkj2ndkz/ftp-files.json?raw=true";
+        const string DbOpenServers = "https://raw.githubusercontent.com/HerbL27/FileMasta/master/Public/ftp-servers.txt";
+        public const string DbTopSearches = "https://www.dropbox.com/s/512qe4ogan92vea/top-searches.txt?raw=true";
 
         /// <summary>
         /// Database file names
         /// </summary>
-        const string fileNameFiles = "ftp-files.json";
-        const string fileNameServers = "ftp-servers.txt";
+        const string FileNameFiles = "ftp-files.json";
+        const string FileNameServers = "ftp-servers.txt";
 
         /// <summary>
         /// Checks if database files exists at users data directory, if so whether they're 
@@ -30,52 +30,52 @@ namespace FileMasta.Files
         /// </summary>
         public static void UpdateLocalDatabase()
         {
-            Program.log.Info("Starting database updates");
+            Program.Log.Info("Starting database updates");
 
             try
             {
-                if (IsFileOutOfDate(dbOpenFiles, fileNameFiles))
+                if (IsFileOutOfDate(DbOpenFiles, FileNameFiles))
                 {
-                    Program.log.Info($"Updating {fileNameFiles}...");
+                    Program.Log.Info($"Updating {FileNameFiles}...");
                     using (var client = new WebClient())
-                        client.DownloadFile(new Uri(dbOpenFiles), $"{LocalExtensions.PathData}{fileNameFiles}");              
-                    Program.log.Info($"{fileNameFiles} updated");
+                        client.DownloadFile(new Uri(DbOpenFiles), $"{LocalExtensions.PathData}{FileNameFiles}");              
+                    Program.Log.Info($"{FileNameFiles} updated");
                 }
             }
             catch (Exception ex)
             {
-                Program.log.Error($"Failed to update {fileNameFiles}", ex);
+                Program.Log.Error($"Failed to update {FileNameFiles}", ex);
                 MessageBox.Show(MainForm.Form, "Unable to update database.\n\n" + ex.Message);
             }
             finally
             { 
                 // Deserializes database first line containing meta info
-                MainForm.DbMetaData = JsonConvert.DeserializeObject<Metadata>(File.ReadLines($"{LocalExtensions.PathData}{fileNameFiles}").First());
+                MainForm.DbMetaData = JsonConvert.DeserializeObject<Metadata>(File.ReadLines($"{LocalExtensions.PathData}{FileNameFiles}").First());
 
                 // Store files in the main form, skipping the first line as it contains the db metadata
-                foreach (var item in File.ReadAllLines($"{LocalExtensions.PathData}{fileNameFiles}").Skip(1))
+                foreach (var item in File.ReadLines($"{LocalExtensions.PathData}{FileNameFiles}").Skip(1))
                     if (StringExtensions.IsValidJSON(item))
                         MainForm.DbOpenFiles.Add(JsonConvert.DeserializeObject<FtpFile>(item));
             }
 
             try
             {
-                if (IsFileOutOfDate(dbOpenServers, fileNameServers))
+                if (IsFileOutOfDate(DbOpenServers, FileNameServers))
                 {
-                    Program.log.Info($"Updating {fileNameServers}...");
+                    Program.Log.Info($"Updating {FileNameServers}...");
                     using (var client = new WebClient())
-                        client.DownloadFile(new Uri(dbOpenServers), $"{LocalExtensions.PathData}{fileNameServers}");
-                    Program.log.Info($"{fileNameServers} updated");
+                        client.DownloadFile(new Uri(DbOpenServers), $"{LocalExtensions.PathData}{FileNameServers}");
+                    Program.Log.Info($"{FileNameServers} updated");
                 }
             }
             catch (Exception ex)
             {
-                Program.log.Error($"UPDATE FAILED {fileNameServers}", ex);
+                Program.Log.Error($"UPDATE FAILED {FileNameServers}", ex);
                 MessageBox.Show(MainForm.Form, "Unable to update database.\n\n" + ex.Message);
             }
             finally
             {
-                MainForm.DbOpenServers.AddRange(File.ReadAllLines($"{LocalExtensions.PathData}{fileNameServers}"));
+                MainForm.DbOpenServers.AddRange(File.ReadLines($"{LocalExtensions.PathData}{FileNameServers}"));
             }            
         }
 
@@ -89,7 +89,7 @@ namespace FileMasta.Files
         {
             try
             {
-                Program.log.Info($"Checking if '{fileName}' needs to be updated");
+                Program.Log.Info($"Checking if '{fileName}' needs to be updated");
 
                 if (File.Exists($"{LocalExtensions.PathData}{fileName}"))
                     if (WebExtensions.WebFileSize($"{webFile}") == new FileInfo($"{LocalExtensions.PathData}{fileName}").Length)
@@ -99,7 +99,7 @@ namespace FileMasta.Files
                 else
                     return true;
             }
-            catch (Exception ex) { Program.log.Error($"Unable to check '{fileName}' for update, URL : {webFile}", ex); return true; }
+            catch (Exception ex) { Program.Log.Error($"Unable to check '{fileName}' for update, URL : {webFile}", ex); return true; }
         }
 
         /// <summary>

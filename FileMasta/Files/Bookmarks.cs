@@ -59,7 +59,7 @@ namespace FileMasta.Files
         /// <returns>Bookmark item as a WebFile</returns>
         public static List<FtpFile> BookmarkedFiles()
         {
-            Program.log.Info("Getting users bookmarks files");
+            Program.Log.Info("Getting users bookmarks files");
 
             var filesBookmarks = new List<FtpFile>();
             if (File.Exists(LocalExtensions.PathBookmarks))
@@ -72,10 +72,10 @@ namespace FileMasta.Files
                         }
                         catch (Exception ex)
                         {
-                            Program.log.Error("Unable to get bookmarks", ex);
+                            Program.Log.Error("Unable to get bookmarks", ex);
                         }
 
-            Program.log.Info("Users bookmarks returned successful");
+            Program.Log.Info("Users bookmarks returned successful");
 
             return filesBookmarks;
         }
@@ -85,14 +85,14 @@ namespace FileMasta.Files
         /// </summary>
         public static void ClearBookmarks()
         {
-            Program.log.Info("Clearing all bookmarks");
+            Program.Log.Info("Clearing all bookmarks");
 
             var filesBookmarks = new List<FtpFile>();
             if (File.Exists(LocalExtensions.PathBookmarks))
                 using (StreamWriter stream = File.CreateText(LocalExtensions.PathBookmarks))
                     stream.Flush();
 
-            Program.log.Info("Bookmarks cleared successfully");
+            Program.Log.Info("Bookmarks cleared successfully");
         }
     }
 }
