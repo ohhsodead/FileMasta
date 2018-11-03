@@ -1,3 +1,12 @@
+2018.11.03   | FileMasta 4.1
+
+CHANGE: CORE | Fixed issue caused by recent database changes (#116)
+CHANGE: CORE | Cleaned up code and resources
+CHANGE: CORE | Improved logging messages
+
+
+
+
 2018.08.24   | FileMasta 4.1
 
 CHANGE: CORE | Fixed #114
