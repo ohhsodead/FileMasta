@@ -60,8 +60,8 @@ namespace FileMasta
             this.MenuFileExit = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuStripBookmarks = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuStripTools = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuToolsFtpServerList = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuToolsSubmitFtpServer = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuToolsServerList = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuToolsSubmitServer = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.MenuToolsOptions = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuStripHelp = new System.Windows.Forms.ToolStripMenuItem();
@@ -105,9 +105,9 @@ namespace FileMasta
             this.TextBoxSearchQuery.BackColor = System.Drawing.SystemColors.Window;
             this.TextBoxSearchQuery.Location = new System.Drawing.Point(12, 10);
             this.TextBoxSearchQuery.Name = "TextBoxSearchQuery";
-            this.TextBoxSearchQuery.Size = new System.Drawing.Size(432, 22);
+            this.TextBoxSearchQuery.Size = new System.Drawing.Size(430, 22);
             this.TextBoxSearchQuery.TabIndex = 0;
-            this.TextBoxSearchQuery.WaterMark = "Search for file names, add tags or insert a link...";
+            this.TextBoxSearchQuery.WaterMark = "Search file names, servers or insert a link...";
             this.TextBoxSearchQuery.WaterMarkActiveForeColor = System.Drawing.Color.White;
             this.TextBoxSearchQuery.WaterMarkFont = new System.Drawing.Font("Segoe UI", 8.25F);
             this.TextBoxSearchQuery.WaterMarkForeColor = System.Drawing.SystemColors.WindowFrame;
@@ -174,7 +174,7 @@ namespace FileMasta
             this.DataGridFiles.ShowEditingIcon = false;
             this.DataGridFiles.ShowRowErrors = false;
             this.DataGridFiles.Size = new System.Drawing.Size(992, 302);
-            this.DataGridFiles.TabIndex = 14;
+            this.DataGridFiles.TabIndex = 7;
             this.DataGridFiles.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridFiles_CellClick);
             this.DataGridFiles.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridFiles_CellDoubleClick);
             this.DataGridFiles.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.DataGridFiles_CellPainting);
@@ -334,27 +334,27 @@ namespace FileMasta
             // MenuStripTools
             // 
             this.MenuStripTools.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MenuToolsFtpServerList,
-            this.MenuToolsSubmitFtpServer,
+            this.MenuToolsServerList,
+            this.MenuToolsSubmitServer,
             this.toolStripSeparator1,
             this.MenuToolsOptions});
             this.MenuStripTools.Name = "MenuStripTools";
             this.MenuStripTools.Size = new System.Drawing.Size(45, 20);
             this.MenuStripTools.Text = "Tools";
             // 
-            // MenuToolsFtpServerList
+            // MenuToolsServerList
             // 
-            this.MenuToolsFtpServerList.Name = "MenuToolsFtpServerList";
-            this.MenuToolsFtpServerList.Size = new System.Drawing.Size(180, 22);
-            this.MenuToolsFtpServerList.Text = "FTP Servers...";
-            this.MenuToolsFtpServerList.Click += new System.EventHandler(this.MenuToolsFtpServerList_Click);
+            this.MenuToolsServerList.Name = "MenuToolsServerList";
+            this.MenuToolsServerList.Size = new System.Drawing.Size(180, 22);
+            this.MenuToolsServerList.Text = "Servers...";
+            this.MenuToolsServerList.Click += new System.EventHandler(this.MenuToolsFtpServerList_Click);
             // 
-            // MenuToolsSubmitFtpServer
+            // MenuToolsSubmitServer
             // 
-            this.MenuToolsSubmitFtpServer.Name = "MenuToolsSubmitFtpServer";
-            this.MenuToolsSubmitFtpServer.Size = new System.Drawing.Size(180, 22);
-            this.MenuToolsSubmitFtpServer.Text = "Submit FTP Server";
-            this.MenuToolsSubmitFtpServer.Click += new System.EventHandler(this.MenuToolsSubmitFtpServer_Click);
+            this.MenuToolsSubmitServer.Name = "MenuToolsSubmitServer";
+            this.MenuToolsSubmitServer.Size = new System.Drawing.Size(180, 22);
+            this.MenuToolsSubmitServer.Text = "Submit Server";
+            this.MenuToolsSubmitServer.Click += new System.EventHandler(this.MenuToolsSubmitFtpServer_Click);
             // 
             // toolStripSeparator1
             // 
@@ -382,26 +382,26 @@ namespace FileMasta
             // MenuHelpKeyboardShortcuts
             // 
             this.MenuHelpKeyboardShortcuts.Name = "MenuHelpKeyboardShortcuts";
-            this.MenuHelpKeyboardShortcuts.Size = new System.Drawing.Size(180, 22);
+            this.MenuHelpKeyboardShortcuts.Size = new System.Drawing.Size(174, 22);
             this.MenuHelpKeyboardShortcuts.Text = "Keyboard Shortcuts";
             this.MenuHelpKeyboardShortcuts.Click += new System.EventHandler(this.MenuHelpKeyboardShortcuts_Click);
             // 
             // MenuStripFileSeperator1
             // 
             this.MenuStripFileSeperator1.Name = "MenuStripFileSeperator1";
-            this.MenuStripFileSeperator1.Size = new System.Drawing.Size(177, 6);
+            this.MenuStripFileSeperator1.Size = new System.Drawing.Size(171, 6);
             // 
             // MenuHelpAbout
             // 
             this.MenuHelpAbout.Name = "MenuHelpAbout";
-            this.MenuHelpAbout.Size = new System.Drawing.Size(180, 22);
+            this.MenuHelpAbout.Size = new System.Drawing.Size(174, 22);
             this.MenuHelpAbout.Text = "About FileMasta...";
             this.MenuHelpAbout.Click += new System.EventHandler(this.MenuHelpAbout_Click);
             // 
             // MenuHelpReportIssue
             // 
             this.MenuHelpReportIssue.Name = "MenuHelpReportIssue";
-            this.MenuHelpReportIssue.Size = new System.Drawing.Size(180, 22);
+            this.MenuHelpReportIssue.Size = new System.Drawing.Size(174, 22);
             this.MenuHelpReportIssue.Text = "Report Issue...";
             this.MenuHelpReportIssue.Click += new System.EventHandler(this.MenuHelpReportIssue_Click);
             // 
@@ -430,10 +430,10 @@ namespace FileMasta
             // 
             this.ButtonSearchEngine.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ButtonSearchEngine.Font = new System.Drawing.Font("Segoe UI", 6.25F);
-            this.ButtonSearchEngine.Location = new System.Drawing.Point(964, 9);
+            this.ButtonSearchEngine.Location = new System.Drawing.Point(962, 9);
             this.ButtonSearchEngine.Name = "ButtonSearchEngine";
             this.ButtonSearchEngine.Size = new System.Drawing.Size(20, 23);
-            this.ButtonSearchEngine.TabIndex = 11;
+            this.ButtonSearchEngine.TabIndex = 5;
             this.ButtonSearchEngine.Text = "▼";
             this.ButtonSearchEngine.UseVisualStyleBackColor = true;
             this.ButtonSearchEngine.Click += new System.EventHandler(this.ButtonSearchEngine_Click);
@@ -448,7 +448,8 @@ namespace FileMasta
             this.FlowPanelMostSearches.Name = "FlowPanelMostSearches";
             this.FlowPanelMostSearches.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.FlowPanelMostSearches.Size = new System.Drawing.Size(970, 78);
-            this.FlowPanelMostSearches.TabIndex = 10;
+            this.FlowPanelMostSearches.TabIndex = 6;
+            this.FlowPanelMostSearches.TabStop = true;
             // 
             // LabelMostSearches
             // 
@@ -465,10 +466,10 @@ namespace FileMasta
             // ButtonSearchFiles
             // 
             this.ButtonSearchFiles.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonSearchFiles.Location = new System.Drawing.Point(907, 9);
+            this.ButtonSearchFiles.Location = new System.Drawing.Point(905, 9);
             this.ButtonSearchFiles.Name = "ButtonSearchFiles";
             this.ButtonSearchFiles.Size = new System.Drawing.Size(56, 23);
-            this.ButtonSearchFiles.TabIndex = 8;
+            this.ButtonSearchFiles.TabIndex = 4;
             this.ButtonSearchFiles.Text = "Search";
             this.ButtonSearchFiles.UseVisualStyleBackColor = true;
             this.ButtonSearchFiles.Click += new System.EventHandler(this.ButtonSearchFiles_Click);
@@ -477,7 +478,7 @@ namespace FileMasta
             // 
             this.LabelHost.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.LabelHost.AutoSize = true;
-            this.LabelHost.Location = new System.Drawing.Point(706, 13);
+            this.LabelHost.Location = new System.Drawing.Point(707, 13);
             this.LabelHost.Name = "LabelHost";
             this.LabelHost.Size = new System.Drawing.Size(34, 13);
             this.LabelHost.TabIndex = 7;
@@ -490,18 +491,17 @@ namespace FileMasta
             this.ComboBoxHost.FormattingEnabled = true;
             this.ComboBoxHost.Items.AddRange(new object[] {
             "Any"});
-            this.ComboBoxHost.Location = new System.Drawing.Point(746, 10);
+            this.ComboBoxHost.Location = new System.Drawing.Point(747, 10);
             this.ComboBoxHost.Name = "ComboBoxHost";
-            this.ComboBoxHost.Size = new System.Drawing.Size(155, 21);
-            this.ComboBoxHost.TabIndex = 6;
-            this.ComboBoxHost.TabStop = false;
+            this.ComboBoxHost.Size = new System.Drawing.Size(152, 21);
+            this.ComboBoxHost.TabIndex = 3;
             this.ComboBoxHost.SelectedIndexChanged += new System.EventHandler(this.ComboBoxHost_SelectedIndexChanged);
             // 
             // LabelSort
             // 
             this.LabelSort.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.LabelSort.AutoSize = true;
-            this.LabelSort.Location = new System.Drawing.Point(592, 13);
+            this.LabelSort.Location = new System.Drawing.Point(590, 13);
             this.LabelSort.Name = "LabelSort";
             this.LabelSort.Size = new System.Drawing.Size(31, 13);
             this.LabelSort.TabIndex = 5;
@@ -516,18 +516,17 @@ namespace FileMasta
             "Name",
             "Size",
             "Age"});
-            this.ComboBoxSort.Location = new System.Drawing.Point(629, 10);
+            this.ComboBoxSort.Location = new System.Drawing.Point(627, 10);
             this.ComboBoxSort.Name = "ComboBoxSort";
             this.ComboBoxSort.Size = new System.Drawing.Size(74, 21);
-            this.ComboBoxSort.TabIndex = 4;
-            this.ComboBoxSort.TabStop = false;
+            this.ComboBoxSort.TabIndex = 2;
             this.ComboBoxSort.SelectedIndexChanged += new System.EventHandler(this.ComboBoxSort_SelectedIndexChanged);
             // 
             // LabelType
             // 
             this.LabelType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.LabelType.AutoSize = true;
-            this.LabelType.Location = new System.Drawing.Point(450, 13);
+            this.LabelType.Location = new System.Drawing.Point(448, 13);
             this.LabelType.Name = "LabelType";
             this.LabelType.Size = new System.Drawing.Size(32, 13);
             this.LabelType.TabIndex = 2;
@@ -546,11 +545,10 @@ namespace FileMasta
             "Executable",
             "Picture",
             "Video"});
-            this.ComboBoxType.Location = new System.Drawing.Point(488, 10);
+            this.ComboBoxType.Location = new System.Drawing.Point(486, 10);
             this.ComboBoxType.Name = "ComboBoxType";
             this.ComboBoxType.Size = new System.Drawing.Size(98, 21);
             this.ComboBoxType.TabIndex = 1;
-            this.ComboBoxType.TabStop = false;
             this.ComboBoxType.SelectedIndexChanged += new System.EventHandler(this.ComboBoxType_SelectedIndexChanged);
             // 
             // StatusStripFooter
@@ -563,8 +561,7 @@ namespace FileMasta
             this.StatusStripFooter.Location = new System.Drawing.Point(0, 472);
             this.StatusStripFooter.Name = "StatusStripFooter";
             this.StatusStripFooter.Size = new System.Drawing.Size(992, 22);
-            this.StatusStripFooter.TabIndex = 1112;
-            this.StatusStripFooter.Text = "statusStrip1";
+            this.StatusStripFooter.TabIndex = 0;
             // 
             // StatusStripStatus
             // 
@@ -577,15 +574,15 @@ namespace FileMasta
             // 
             this.StatusStripSpring.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.StatusStripSpring.Name = "StatusStripSpring";
-            this.StatusStripSpring.Size = new System.Drawing.Size(620, 17);
+            this.StatusStripSpring.Size = new System.Drawing.Size(629, 17);
             this.StatusStripSpring.Spring = true;
             // 
             // StatusStripDatabaseInfo
             // 
             this.StatusStripDatabaseInfo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.StatusStripDatabaseInfo.Name = "StatusStripDatabaseInfo";
-            this.StatusStripDatabaseInfo.Size = new System.Drawing.Size(300, 17);
-            this.StatusStripDatabaseInfo.Text = "Files: {0} - Total Size: {1} - FTP Servers {2} - Last Updated: {3}";
+            this.StatusStripDatabaseInfo.Size = new System.Drawing.Size(291, 17);
+            this.StatusStripDatabaseInfo.Text = "{0} Files Totalling ~{1} From {2} Servers - Last Updated {3}";
             // 
             // NotifyTrayIcon
             // 
@@ -695,9 +692,9 @@ namespace FileMasta
         private System.Windows.Forms.FlowLayoutPanel FlowPanelMostSearches;
         internal System.Windows.Forms.Label LabelMostSearches;
         private System.Windows.Forms.ToolStripStatusLabel StatusStripSpring;
-        private System.Windows.Forms.ToolStripMenuItem MenuToolsFtpServerList;
+        private System.Windows.Forms.ToolStripMenuItem MenuToolsServerList;
         private System.Windows.Forms.ToolStripMenuItem MenuFileExit;
-        private System.Windows.Forms.ToolStripMenuItem MenuToolsSubmitFtpServer;
+        private System.Windows.Forms.ToolStripMenuItem MenuToolsSubmitServer;
         private System.Windows.Forms.ToolStripMenuItem MenuHelpAbout;
         private System.Windows.Forms.ToolStripMenuItem MenuHelpKeyboardShortcuts;
         private System.Windows.Forms.ToolStripMenuItem MenuHelpReportIssue;

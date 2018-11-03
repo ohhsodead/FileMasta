@@ -14,13 +14,13 @@ namespace FileMasta.Windows
 
         private void ButtonSubmit_Click(object sender, EventArgs e)
         {
-            if (!Path.HasExtension(textBoxWebsite.Text))
-                if (Uri.IsWellFormedUriString(textBoxWebsite.Text, UriKind.Absolute))
+            if (!Path.HasExtension(TextBoxServer.Text))
+                if (Uri.IsWellFormedUriString(TextBoxServer.Text, UriKind.Absolute))
                 {
                     // Add a '/' if not present
-                    var formattedText = textBoxWebsite.Text;
-                    if (!textBoxWebsite.Text.EndsWith("/"))
-                        formattedText = textBoxWebsite.Text + "/";
+                    var formattedText = TextBoxServer.Text;
+                    if (!TextBoxServer.Text.EndsWith("/"))
+                        formattedText = TextBoxServer.Text + "/";
                     OpenLink.SubmitLink(new Uri(formattedText));
                     Close();
                 }

@@ -48,11 +48,7 @@ namespace FileMasta
         public MainForm()
         {
             Program.Log.Info("Initializing");
-
-            // Initialize
             InitializeComponent();
-
-            // Set this instance
             Form = this;
             
             // Show Splash Screen
@@ -78,10 +74,8 @@ namespace FileMasta
         private void MainForm_Load(object sender, EventArgs e)
         {
             Program.Log.Info("Loading application tasks beginning");
-
             Directory.CreateDirectory(LocalExtensions.PathRoot);
             Directory.CreateDirectory(LocalExtensions.PathData);
-
             Updates.CheckForUpdate();
             LoadMostSearches();
             BackGroundWorker.RunWorkAsync(() => Database.UpdateLocalDatabase(), InitializeFinished);
@@ -100,7 +94,6 @@ namespace FileMasta
                 if (Properties.Settings.Default.clearDataOnClose)
                     if (Directory.Exists(LocalExtensions.PathData))
                         Directory.Delete(LocalExtensions.PathData, true);
-
             Program.Log.Info("Closing application");
         }
 
@@ -149,14 +142,14 @@ namespace FileMasta
         private void MenuStripBookmarks_Click(object sender, EventArgs e)
         {
             var bookmarksWindow = new BookmarksWindow();
-            bookmarksWindow.ShowDialog(this);
+            bookmarksWindow.Show(this);
         }
 
         // Tools
         private void MenuToolsFtpServerList_Click(object sender, EventArgs e)
         {
             var serversWindow = new ServersWindow();
-            serversWindow.ShowDialog(this);
+            serversWindow.Show(this);
         }
 
         private void MenuToolsSubmitFtpServer_Click(object sender, EventArgs e)
@@ -202,7 +195,7 @@ namespace FileMasta
         }
 
         /// <summary>
-        /// Get Most Searches from FileChef.com
+        /// Get and load Most Searches to the interface
         /// </summary>
         delegate void LoadMostSearchesCallBack();
         private void LoadMostSearches()
@@ -210,7 +203,7 @@ namespace FileMasta
             try
             {
                 ExceptionEvents.RetryOnException(3, TimeSpan.FromSeconds(2), () => {
-                    Program.Log.Info("Loading most searches");
+                    Program.Log.Info("Preparing to display most searches");
 
                     BackGroundWorker.RunWorkAsync<List<string>>(() => GetMostSearches(), (data) => {
                         if (InvokeRequired)
@@ -222,7 +215,7 @@ namespace FileMasta
                                 if (count <= 100)
                                     FlowPanelMostSearches.Controls.Add(ControlExtensions.LabelMostSearch(tag, count)); count++;
 
-                            Program.Log.Info("Loaded most searches");
+                            Program.Log.Info("Completed most searches");
                         }
                     });
                 });
@@ -231,15 +224,13 @@ namespace FileMasta
         }
 
         /// <summary>
-        /// Get Most Searches from web database
+        /// Retrieve Most Searches from database
         /// </summary>
         /// <returns>List containg all most searches returned</returns>
         private List<string> GetMostSearches()
         {
-            Program.Log.Info("Requesting most searches");
-
+            Program.Log.Info("Requesting most searches from database");
             List<string> listTopSearches = new List<string>();
-
             ServicePointManager.ServerCertificateValidationCallback = (sender, cert, chain, sslPolicyErrors) => true;
             var request = WebExtensions.GetRequest(Database.DbTopSearches);
             using (WebResponse webResponse = request.GetResponse())
@@ -249,8 +240,7 @@ namespace FileMasta
                 while ((line = reader.ReadLine()) != null)
                     listTopSearches.Add(line);
             }
-
-            Program.Log.Info("Most searches returned");
+            Program.Log.Info("Returned most searches");
             return listTopSearches;
         }
 
@@ -278,14 +268,16 @@ namespace FileMasta
             if (e.KeyCode == Keys.Enter)
                 if (TextBoxSearchQuery.Text.Length > 2)
                     SearchFiles();
-                else SetStatus("Minimum 3 characters.");
+                else
+                    SetStatus("Minimum 3 characters.");
         }
 
         private void ButtonSearchFiles_Click(object sender, EventArgs e)
         {
             if (TextBoxSearchQuery.Text.Length > 2)
                 SearchFiles();
-            else SetStatus("Minimum 3 characters.");
+            else
+                SetStatus("Minimum 3 characters.");
         }
 
         private void MenuSearchGoogle_Click(object sender, EventArgs e)
@@ -311,10 +303,10 @@ namespace FileMasta
         /// <summary>
         /// External search engine URLs
         /// </summary>
-        static string UrlSearchGoogle =      "https://google.com/search?q=";
-        static string UrlSearchGoogol =      "https://googol.warriordudimanche.net/?q=";
-        static string UrlSearchStartPage =   "https://startpage.com/do/dsearch?query=";
-        static string UrlSearchSearx =       "https://searx.me/?q=";
+        static string UrlSearchGoogle =         "https://google.com/search?q=";
+        static string UrlSearchGoogol =         "https://googol.warriordudimanche.net/?q=";
+        static string UrlSearchStartPage =      "https://startpage.com/do/dsearch?query=";
+        static string UrlSearchSearx =          "https://searx.me/?q=";
 
         // Files Type
         private void ComboBoxType_SelectedIndexChanged(object sender, EventArgs e)
@@ -352,7 +344,7 @@ namespace FileMasta
                     ShowFileDetails(Database.FtpFile(TextBoxSearchQuery.Text), DataGridFiles);
                     TextBoxSearchQuery.Text = null;
                 }
-                catch (Exception ex) { MessageBox.Show(this, "There was an issue requesting the file information. Make sure the server/files allows for anonymous authentication access.\n\n" + ex.Message); }
+                catch (Exception ex) { MessageBox.Show(this, "There was an issue requesting file information. Make sure the server/files allows for anonymous authentication access, otherwise make sure sure there's no typos.\n\n" + ex.Message); }
             else
                 QueryFiles();
         }
@@ -391,7 +383,7 @@ namespace FileMasta
         public void QueryFiles()
         {
             SetStatus("Searching files...");
-            Program.Log.InfoFormat("Search files beginning. Preferences - Query: {0}, Sort: {1}, Type: {2}, Host: {3}", TextBoxSearchQuery.Text, SelectedFilesSort.ToString(), SelectedFilesType.ToArray(), SelectedFilesHost);
+            Program.Log.InfoFormat("Starting to search files. Preferences - Query: {0}, Sort: {1}, Type: {2}, Host: {3}", TextBoxSearchQuery.Text, SelectedFilesSort.ToString(), SelectedFilesType.ToArray(), SelectedFilesHost);
             Stopwatch stopWatch = new Stopwatch();
             EnableSearchControls(false);
             stopWatch.Start();
@@ -432,7 +424,6 @@ namespace FileMasta
                     else ComboBoxHost.SelectedItem = SelectedFilesHost;
 
                     EnableSearchControls(true);
-
                     Program.Log.Info(StatusStripStatus.Text);
                 }
             }); 
@@ -484,11 +475,10 @@ namespace FileMasta
         {
             TextBoxSearchQuery.Enabled = isEnabled;
             ButtonSearchFiles.Enabled = isEnabled;
-
+            ButtonSearchEngine.Enabled = isEnabled;
             ComboBoxSort.Enabled = isEnabled;
             ComboBoxHost.Enabled = isEnabled;
             ComboBoxType.Enabled = isEnabled;
-
             foreach (var searchItem in FlowPanelMostSearches.Controls)
                 if (searchItem is Label)
                     ((Label)searchItem).Enabled = isEnabled;
@@ -498,6 +488,7 @@ namespace FileMasta
         /// Show details/info for a WebFile
         /// </summary>
         /// <param name="File">WebFile object</param>
+        /// <param name="parentDataGrid">Parent data grid to scroll</param>
         /// <param name="createNewInstance">Whether to create a new instance</param>
         public void ShowFileDetails(FtpFile File, DataGridView parentDataGrid, bool createNewInstance = true)
         {
@@ -533,7 +524,8 @@ namespace FileMasta
             else
                 FormFileDetails.ShowDialog(this);
 
-            Program.Log.Info("File details loaded");
+            FormFileDetails.Text = File.Name + " - File Details";
+            Program.Log.Info("Completed file details");
         }
 
         /// <summary>

@@ -121,7 +121,7 @@ namespace FileMasta.Windows
 
         private void DataGridFiles_SelectionChanged(object sender, EventArgs e)
         {
-            ButtonRemoveFile.Enabled = (DataGridFiles.SelectedRows.Count > 0);
+            ButtonRemove.Enabled = (DataGridFiles.SelectedRows.Count > 0);
             ButtonViewDetails.Enabled = (DataGridFiles.SelectedRows.Count > 0);
         }
 

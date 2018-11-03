@@ -13,11 +13,11 @@ namespace FileMasta.Utilities
         /// <summary>
         /// Update URLs
         /// </summary>
-        public static string UrlLatestVersion { get; } = "https://raw.githubusercontent.com/HerbL27/FileMasta/master/FileMasta/current-version.txt";
+        public static string UrlLatestVersion { get; } = "https://www.dropbox.com/s/ioiu8vwxxc9r430/app-version.txt?raw=true";
         public static string GetUrlLatestUpdater(Version newVersion) { return OpenLink.UrlGitHub + $"releases/download/{newVersion.ToString()}/Updater.exe"; }
 
         /// <summary>
-        /// Check application for update. Installs latest installer to user downloads and open is folder before closing this instance
+        /// Check application for update. Installs latest installer to users downloads folder and opens the file before closing this instance
         /// </summary>
         public static void CheckForUpdate()
         {

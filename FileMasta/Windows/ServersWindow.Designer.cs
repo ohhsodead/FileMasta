@@ -33,13 +33,13 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ServersWindow));
             this.DataGridServers = new System.Windows.Forms.DataGridView();
-            this.labelTitleDiscover = new System.Windows.Forms.Label();
-            this.ContextMenuServer = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.MenuFileZilla = new System.Windows.Forms.ToolStripMenuItem();
             this.columnDiscoverNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnDiscoverHostname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnDiscoverProtocol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnDiscoverURI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ContextMenuServer = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.MenuFileZilla = new System.Windows.Forms.ToolStripMenuItem();
+            this.labelTitleDiscover = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridServers)).BeginInit();
             this.ContextMenuServer.SuspendLayout();
             this.SuspendLayout();
@@ -98,40 +98,9 @@
             this.DataGridServers.RowTemplate.Height = 24;
             this.DataGridServers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DataGridServers.ShowEditingIcon = false;
-            this.DataGridServers.Size = new System.Drawing.Size(494, 415);
+            this.DataGridServers.Size = new System.Drawing.Size(472, 428);
             this.DataGridServers.TabIndex = 1;
             this.DataGridServers.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridServers_CellDoubleClick);
-            // 
-            // labelTitleDiscover
-            // 
-            this.labelTitleDiscover.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelTitleDiscover.AutoEllipsis = true;
-            this.labelTitleDiscover.AutoSize = true;
-            this.labelTitleDiscover.BackColor = System.Drawing.Color.Transparent;
-            this.labelTitleDiscover.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTitleDiscover.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelTitleDiscover.Location = new System.Drawing.Point(9, 9);
-            this.labelTitleDiscover.Margin = new System.Windows.Forms.Padding(0);
-            this.labelTitleDiscover.Name = "labelTitleDiscover";
-            this.labelTitleDiscover.Size = new System.Drawing.Size(250, 20);
-            this.labelTitleDiscover.TabIndex = 3;
-            this.labelTitleDiscover.Text = "Every Server Crawled by FileMasta.";
-            this.labelTitleDiscover.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // ContextMenuServer
-            // 
-            this.ContextMenuServer.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MenuFileZilla});
-            this.ContextMenuServer.Name = "contextMenuFileItem";
-            this.ContextMenuServer.Size = new System.Drawing.Size(115, 26);
-            // 
-            // MenuFileZilla
-            // 
-            this.MenuFileZilla.Name = "MenuFileZilla";
-            this.MenuFileZilla.Size = new System.Drawing.Size(114, 22);
-            this.MenuFileZilla.Text = "FileZilla";
-            this.MenuFileZilla.Click += new System.EventHandler(this.MenuFileZilla_Click);
             // 
             // columnDiscoverNo
             // 
@@ -163,11 +132,43 @@
             this.columnDiscoverURI.ReadOnly = true;
             this.columnDiscoverURI.Visible = false;
             // 
+            // ContextMenuServer
+            // 
+            this.ContextMenuServer.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MenuFileZilla});
+            this.ContextMenuServer.Name = "contextMenuFileItem";
+            this.ContextMenuServer.Size = new System.Drawing.Size(115, 26);
+            // 
+            // MenuFileZilla
+            // 
+            this.MenuFileZilla.Name = "MenuFileZilla";
+            this.MenuFileZilla.Size = new System.Drawing.Size(114, 22);
+            this.MenuFileZilla.Text = "FileZilla";
+            this.MenuFileZilla.Click += new System.EventHandler(this.MenuFileZilla_Click);
+            // 
+            // labelTitleDiscover
+            // 
+            this.labelTitleDiscover.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelTitleDiscover.AutoEllipsis = true;
+            this.labelTitleDiscover.AutoSize = true;
+            this.labelTitleDiscover.BackColor = System.Drawing.Color.Transparent;
+            this.labelTitleDiscover.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitleDiscover.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.labelTitleDiscover.Location = new System.Drawing.Point(9, 9);
+            this.labelTitleDiscover.Margin = new System.Windows.Forms.Padding(0);
+            this.labelTitleDiscover.Name = "labelTitleDiscover";
+            this.labelTitleDiscover.Size = new System.Drawing.Size(250, 20);
+            this.labelTitleDiscover.TabIndex = 3;
+            this.labelTitleDiscover.Text = "Every Server Crawled by FileMasta.";
+            this.labelTitleDiscover.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // ServersWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(494, 452);
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(472, 465);
             this.Controls.Add(this.DataGridServers);
             this.Controls.Add(this.labelTitleDiscover);
             this.DoubleBuffered = true;
@@ -175,7 +176,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "ServersWindow";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;

@@ -62,7 +62,7 @@
             this.PanelBookmarkControls = new System.Windows.Forms.Panel();
             this.ButtonViewDetails = new System.Windows.Forms.Button();
             this.LabelStatus = new System.Windows.Forms.Label();
-            this.ButtonRemoveFile = new System.Windows.Forms.Button();
+            this.ButtonRemove = new System.Windows.Forms.Button();
             this.ButtonClearAll = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridFiles)).BeginInit();
             this.ContextMenuFile.SuspendLayout();
@@ -367,7 +367,7 @@
             this.PanelBookmarkControls.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(246)))));
             this.PanelBookmarkControls.Controls.Add(this.ButtonViewDetails);
             this.PanelBookmarkControls.Controls.Add(this.LabelStatus);
-            this.PanelBookmarkControls.Controls.Add(this.ButtonRemoveFile);
+            this.PanelBookmarkControls.Controls.Add(this.ButtonRemove);
             this.PanelBookmarkControls.Controls.Add(this.ButtonClearAll);
             this.PanelBookmarkControls.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.PanelBookmarkControls.Location = new System.Drawing.Point(0, 431);
@@ -380,7 +380,7 @@
             // 
             this.ButtonViewDetails.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.ButtonViewDetails.Enabled = false;
-            this.ButtonViewDetails.Location = new System.Drawing.Point(608, 9);
+            this.ButtonViewDetails.Location = new System.Drawing.Point(626, 9);
             this.ButtonViewDetails.Name = "ButtonViewDetails";
             this.ButtonViewDetails.Size = new System.Drawing.Size(88, 23);
             this.ButtonViewDetails.TabIndex = 1115;
@@ -398,24 +398,24 @@
             this.LabelStatus.TabIndex = 1114;
             this.LabelStatus.Text = "Loading bookmarks...";
             // 
-            // ButtonRemoveFile
+            // ButtonRemove
             // 
-            this.ButtonRemoveFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonRemoveFile.Enabled = false;
-            this.ButtonRemoveFile.Location = new System.Drawing.Point(702, 9);
-            this.ButtonRemoveFile.Name = "ButtonRemoveFile";
-            this.ButtonRemoveFile.Size = new System.Drawing.Size(83, 23);
-            this.ButtonRemoveFile.TabIndex = 5;
-            this.ButtonRemoveFile.Text = "Remove File";
-            this.ButtonRemoveFile.UseVisualStyleBackColor = true;
-            this.ButtonRemoveFile.Click += new System.EventHandler(this.ButtonRemoveFile_Click);
+            this.ButtonRemove.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.ButtonRemove.Enabled = false;
+            this.ButtonRemove.Location = new System.Drawing.Point(720, 9);
+            this.ButtonRemove.Name = "ButtonRemove";
+            this.ButtonRemove.Size = new System.Drawing.Size(62, 23);
+            this.ButtonRemove.TabIndex = 5;
+            this.ButtonRemove.Text = "Remove";
+            this.ButtonRemove.UseVisualStyleBackColor = true;
+            this.ButtonRemove.Click += new System.EventHandler(this.ButtonRemoveFile_Click);
             // 
             // ButtonClearAll
             // 
             this.ButtonClearAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonClearAll.Location = new System.Drawing.Point(791, 9);
+            this.ButtonClearAll.Location = new System.Drawing.Point(788, 9);
             this.ButtonClearAll.Name = "ButtonClearAll";
-            this.ButtonClearAll.Size = new System.Drawing.Size(45, 23);
+            this.ButtonClearAll.Size = new System.Drawing.Size(48, 23);
             this.ButtonClearAll.TabIndex = 6;
             this.ButtonClearAll.Text = "Clear";
             this.ButtonClearAll.UseVisualStyleBackColor = true;
@@ -425,6 +425,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(847, 474);
             this.Controls.Add(this.DataGridFiles);
             this.Controls.Add(this.PanelBookmarkControls);
@@ -433,12 +434,9 @@
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "BookmarksWindow";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
-            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Bookmarks";
             this.Load += new System.EventHandler(this.BookmarksWindow_Load);
@@ -465,7 +463,7 @@
         private System.Windows.Forms.ComboBox ComboBoxType;
         public ChreneLib.Controls.TextBoxes.CTextBox TextBoxSearchQuery;
         private System.Windows.Forms.Panel PanelBookmarkControls;
-        public System.Windows.Forms.Button ButtonRemoveFile;
+        public System.Windows.Forms.Button ButtonRemove;
         public System.Windows.Forms.Button ButtonClearAll;
         private System.Windows.Forms.Label LabelStatus;
         public System.Windows.Forms.Button ButtonViewDetails;

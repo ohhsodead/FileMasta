@@ -179,7 +179,7 @@
     <Compile Include="Files\Bookmarks.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Utilities\TextLineRemover.cs" />
-    <Compile Include="Utilities\Update.cs" />
+    <Compile Include="Utilities\Updates.cs" />
     <EmbeddedResource Include="Windows\FileDetailsWindow.resx">
       <DependentUpon>FileDetailsWindow.cs</DependentUpon>
     </EmbeddedResource>

@@ -133,7 +133,7 @@ namespace FileMasta.Utilities
                 catch (Exception ex)
                 {
                     if (attempts == times) throw;
-                    Program.Log.Error($"Exception caught on attempt {attempts} - will retry after delay {delay}", ex);
+                    Program.Log.Error($"Exception caught on attempt {attempts} - retrying after a delay of {delay} seconds...", ex);
                     Task.Delay(delay).Wait();
                 }
             } while (true);
