@@ -17,7 +17,7 @@ FileMasta is a search engine allowing you to find a file among millions of files
 [![Report a bug](http://i.imgur.com/xSpw482.png)](https://github.com/HerbL27/FileMasta/issues/new) [![Feature request](http://i.imgur.com/mFO0OuX.png)](http://feathub.com/ekkash/WebCrunch)
 
 ## Latest Build
-FileMasta Beta 4.1
+FileMasta Beta 4.2
 
 ## Supported Systems
 * Windows XP and above (Windows XP, Vista, 7, 8, 8.1, 10) using .NET 4.7.1 [Download here](https://www.microsoft.com/net/download/dotnet-framework-runtime/net471).
