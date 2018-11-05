@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("FileMasta")]
 [assembly: AssemblyDescription("Search the web for video, music, books, software, games, subtitles and much more")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("HerbL-27")]
+[assembly: AssemblyCompany("HerbL27")]
 [assembly: AssemblyProduct("FileMasta")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]

@@ -231,7 +231,6 @@ namespace FileMasta
         {
             Program.Log.Info("Requesting most searches from database");
             List<string> listTopSearches = new List<string>();
-            ServicePointManager.ServerCertificateValidationCallback = (sender, cert, chain, sslPolicyErrors) => true;
             var request = WebExtensions.GetRequest(Database.DbTopSearches);
             using (WebResponse webResponse = request.GetResponse())
             using (var reader = new StreamReader(webResponse.GetResponseStream()))

@@ -1,9 +1,9 @@
-2018.11.03   | FileMasta 4.1
+2018.11.05   | FileMasta 4.2
 
 CHANGE: CORE | Fixed issue caused by recent database changes (#116)
 CHANGE: CORE | Cleaned up code and resources
 CHANGE: CORE | Improved logging messages
-
+CHANGE: CORE | Removed auto-updater due to many issues
 
 
 

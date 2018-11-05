@@ -12,7 +12,7 @@ namespace FileMasta.GitHub
         public static string UrlGitHub { get; } = "https://github.com/HerbL27/FileMasta/";
 
         /// <summary>
-        /// Open GitHub submit web server template with the specified URL
+        /// Open GitHub submission server template with the specified URL
         /// </summary>
         /// <param name="URL">URL to submit</param>
         public static void SubmitLink(Uri URL)

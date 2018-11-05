@@ -253,7 +253,6 @@
     <None Include="Resources\link-variant.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="current-version.txt" />
     <Content Include="filemasta-logo-v4.ico" />
     <Content Include="Resources\filemasta-logo-v4.png" />
     <None Include="Resources\share.png" />

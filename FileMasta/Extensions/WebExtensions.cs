@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Net;
-using System.Net.Http;
-using System.Threading.Tasks;
 
 namespace FileMasta.Extensions
 {
@@ -10,59 +8,36 @@ namespace FileMasta.Extensions
         /// <summary>
         /// Gets size of ftp file in bytes
         /// </summary>
-        /// <param name="fileURL">FTP File URL</param>
+        /// <param name="fileUrl">FTP File URL</param>
         /// <returns></returns>
-        public static long FtpFileSize(string fileURL)
+        public static long FtpFileSize(string fileUrl)
         {
-            try
-            {
-                var request = (FtpWebRequest)WebRequest.Create(fileURL);
-                request.Timeout = 300000;
-                request.Credentials = new NetworkCredential("anonymous", "password");
-                request.Method = WebRequestMethods.Ftp.GetFileSize;
-                using (FtpWebResponse response = (FtpWebResponse)request.GetResponse())
-                    return response.ContentLength;
-            }
+            try { return GetFtpReponse(fileUrl).ContentLength; }
             catch { return 0; }
         }
 
         /// <summary>
-        /// Gets file DateTimestamp of ftp file
+        /// Gets the last modified DateTime of ftp file
         /// </summary>
-        /// <param name="fileURL">FTP File URL</param>
+        /// <param name="fileUrl">FTP File URL</param>
         /// <returns></returns>
-        public static DateTime FtpFileTimestamp(string fileURL)
+        public static DateTime FtpFileTimestamp(string fileUrl)
         {
-            try
-            {
-                FtpWebRequest request = (FtpWebRequest)WebRequest.Create(fileURL);
-                request.Timeout = 300000;
-                request.Credentials = new NetworkCredential("anonymous", "password");
-                request.Method = WebRequestMethods.Ftp.GetDateTimestamp;
-                using (FtpWebResponse response = (FtpWebResponse)request.GetResponse())
-                    return response.LastModified;
-            }
+            try { return GetFtpReponse(fileUrl).LastModified; }
             catch { return DateTime.MinValue; }
         }
-
 
         /// <summary>
         /// Gets web file size in bytes
         /// </summary>
-        /// <param name="fileURL">FTP File URL</param>
+        /// <param name="fileUrl">FTP File URL</param>
         /// <returns></returns>
-        public static int WebFileSize(string fileURL)
+        public static long WebFileSize(string fileUrl)
         {
             try
             {
-                var request = WebRequest.Create(fileURL);
-                request.Method = "HEAD";
-                request.Timeout = 300000;
-                using (var responese = (HttpWebResponse)request.GetResponse())
-                    if (int.TryParse(responese.Headers.Get("Content-Length"), out int ContentLength))
-                        return ContentLength;
-                    else
-                        return 0;
+                if (int.TryParse(GetWebReponse(fileUrl).Headers.Get("Content-Length"), out int ContentLength)) return ContentLength;
+                else return 0;
             }
             catch { return 0; }
         }
@@ -70,21 +45,11 @@ namespace FileMasta.Extensions
         /// <summary>
         /// Gets web file last modified date
         /// </summary>
-        /// <param name="fileURL">FTP File URL</param>
+        /// <param name="fileUrl">FTP File URL</param>
         /// <returns></returns>
-        public static DateTime WebFileTimestamp(string fileURL)
+        public static DateTime WebFileTimestamp(string fileUrl)
         {
-            try
-            {
-                var request = WebRequest.Create(fileURL);
-                request.Method = "HEAD";
-                request.Timeout = 300000;
-                using (var responese = (HttpWebResponse)request.GetResponse())
-                    if (responese.LastModified != null)
-                        return responese.LastModified;
-                    else
-                        return DateTime.MinValue;
-            }
+            try { return GetWebReponse(fileUrl).LastModified; }
             catch { return DateTime.MinValue; }
         }
 
@@ -97,6 +62,32 @@ namespace FileMasta.Extensions
         {
             if (FtpFileSize(url) == 0) { return true; }
             else { return false; }
+        }
+
+        /// <summary>
+        /// Initialize new ftp web response
+        /// </summary>
+        /// <param name="url">URL to request</param>
+        /// <returns>Returns a ftp response from the URL</returns>
+        static FtpWebResponse GetFtpReponse(string url)
+        {
+            var request = WebRequest.Create(url);
+            request.Method = "HEAD";
+            request.Timeout = 300000;
+            return (FtpWebResponse)request.GetResponse();
+        }
+
+        /// <summary>
+        /// Initialize new http web response
+        /// </summary>
+        /// <param name="url">URL to request</param>
+        /// <returns>Returns a web response from the URL</returns>
+        static HttpWebResponse GetWebReponse(string url)
+        {
+            var request = WebRequest.Create(url);
+            request.Method = "HEAD";
+            request.Timeout = 300000;
+            return (HttpWebResponse)request.GetResponse();
         }
 
         /// <summary>
