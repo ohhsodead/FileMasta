@@ -17,7 +17,7 @@ FileMasta is a search engine allowing you to find a file among millions of files
 [![Report a bug](http://i.imgur.com/xSpw482.png)](https://github.com/HerbL27/FileMasta/issues/new) [![Feature request](http://i.imgur.com/mFO0OuX.png)](http://feathub.com/ekkash/WebCrunch)
 
 ## Latest Build
-FileMasta Beta 4.1
+FileMasta Beta 4.2
 
 ## Supported Systems
 * Windows XP and above (Windows XP, Vista, 7, 8, 8.1, 10) using .NET 4.7.1 [Download here](https://www.microsoft.com/net/download/dotnet-framework-runtime/net471).
@@ -25,13 +25,13 @@ FileMasta Beta 4.1
 ## Installation
 Download and run the latest version of the Windows installer, "FileMasta.Installer.Windows.exe" from the [releases](https://github.com/HerbL27/FileMasta/releases/latest) page.
 
-## Creating an Issue
-Please supply as much information about the problem you are experiencing as possible. Your issue has a much greater chance of being resolved if logs are supplied so that we can see what is going on, which will be found in your application's installation path.
-
 ## Contributing
 Our server list allows anyone to implement new servers with ease. You can find more information on contributing to the list [here](https://github.com/HerbL27/FileMasta/blob/master/Public/README.md). If you'd like support for a new server but are not sure how then feel free to open a request on the [issues page](https://github.com/HerbL27/FileMasta/issues).
 
 All contributions are welcome just send a pull request :-) It is recommended to use Visual Studio 2017 when making code changes in this project. You can download the community version for free [here](https://www.visualstudio.com/downloads/).
+
+## Creating an Issue
+Please supply as much information about the problem you are experiencing as possible. Your issue has a much greater chance of being resolved if logs are supplied so that we can see what is going on, which will be found in your application's installation path.
 
 ## Frequently Asked Questions
 <details>
