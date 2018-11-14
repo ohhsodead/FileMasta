@@ -1,4 +1,4 @@
-<h1>FileMasta</h1>
+<h1 align="center">FileMasta</h1>
 
 <h3 align="center">Search servers for video, music, books, software, games, subtitles and much more</h3>
 <div align="center">
