@@ -1,8 +1,4 @@
-<h1 align="center">
-  <img src="/FileMasta/Resources/filemasta-logo-v4.png" height="200" width="200" alt="Logo" />
-  <br />
-  FileMasta
-</h1>
+<h1 align="center">FileMasta</h1>
 
 <h3 align="center">Search servers for video, music, books, software, games, subtitles and much more</h3>
 <div align="center">
