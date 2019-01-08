@@ -1,19 +1,15 @@
 <h1 align="center">FileMasta</h1>
 
-<h3 align="center">Search servers for video, music, books, software, games, subtitles and much more</h3>
+<h3 align="center">A search application to discover and download online files</h3>
 <div align="center">
 </div>
 <br />
 
-## What is FileMasta?
-FileMasta is a search engine allowing you to find a file among millions of files located on FTP-servers. The search engine database contains the regularly updated information on the contents of thousands FTP-servers worldwide. We don't search the contents of the files. 
+A federated search application for discovering interesting files that are being shared online, such as video, music, books, software, games, subtitles and much more. Our web crawler keeps our database maintained which regularly updates file information on the contents of thousands of servers worldwide. We don't search file contents.
 
 >We host no content, we provide only access to already available files in the same way Google and other search engines do.
 
 [![Report a bug](http://i.imgur.com/xSpw482.png)](https://github.com/HerbL27/FileMasta/issues/new) [![Feature request](http://i.imgur.com/mFO0OuX.png)](http://feathub.com/ekkash/WebCrunch)
-
-## Latest Build
-FileMasta Beta 4.2
 
 ## Supported Systems
 * Windows XP and above (Windows XP, Vista, 7, 8, 8.1, 10) using .NET 4.7.1 [Download here](https://www.microsoft.com/net/download/dotnet-framework-runtime/net471).
@@ -22,12 +18,12 @@ FileMasta Beta 4.2
 Download and run the latest version of the Windows installer, "FileMasta.Installer.Windows.exe" from the [releases](https://github.com/HerbL27/FileMasta/releases/latest) page.
 
 ## Contributing
-Our server list allows anyone to implement new servers with ease. You can find more information on contributing to the list [here](https://github.com/HerbL27/FileMasta/blob/master/Public/README.md). If you'd like support for a new server but are not sure how then feel free to open a request on the [issues page](https://github.com/HerbL27/FileMasta/issues).
+Our database structure allows everyone to easily implement new servers. More information on contributing [here](https://github.com/HerbL27/FileMasta/blob/master/Public/README.md). Otherwise feel free to [open an issue](https://github.com/HerbL27/FileMasta/issues) and I'll be sure to add it.
 
-All contributions are welcome just send a pull request :-) It is recommended to use Visual Studio 2017 when making code changes in this project. You can download the community version for free [here](https://www.visualstudio.com/downloads/).
+All contributions are welcome just send a pull request :-)
 
 ## Creating an Issue
-Please supply as much information about the problem you are experiencing as possible. Your issue has a much greater chance of being resolved if logs are supplied so that we can see what is going on, which will be found in your application's installation path.
+Please supply as much information about the problem you are experiencing as possible. Your issue has a much greater chance of being resolved if logs are supplied so that we can see what is going on, which is found in your application's startup folder.
 
 ## Frequently Asked Questions
 <details>
