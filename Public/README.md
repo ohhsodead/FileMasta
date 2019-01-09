@@ -1,6 +1,6 @@
 # Server List
 
-Adding severs is very easy, locate and edit *ftp-servers.txt* from this repo directory, insert your server link on a new line, that's it. Just open a pull request and the files crawled from the server will be available once updated.
+Implementing new servers is easy, navigate and edit the file *ftp-servers.txt* from this directory, insert your server link on a new line, that's it. Just open a pull request and the files crawled from the server will be available once updated.
 
 - Only direct server links are allowed e.g. *ftp://domain.com* or *ftp://192.0.2.64/pub*
 - Credentials for authentication is supported e.g. *ftp://user:pass@192.0.2.64*

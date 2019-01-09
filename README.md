@@ -15,13 +15,12 @@ A federated search application for discovering interesting files that are being 
 ## Installation
 Download and run the latest version of the Windows installer, "FileMasta.Installer.Windows.exe" from the [releases](https://github.com/HerbL27/FileMasta/releases/latest) page.
 
-## Contributing
-Our database allows everyone to easily implement new servers. More information on contributing [here](https://github.com/HerbL27/FileMasta/blob/master/Public/README.md). Otherwise feel free to [open an issue](https://github.com/HerbL27/FileMasta/issues) and I'll be sure to add it.
+## Issues & Contributions
+If you find a bug or have a feature request, please [create an issue](https://github.com/HerbL27/FileMasta/releases/new).
 
-All contributions are welcome just send a pull request :-)
+Contributions are highly welcome, however, except for very small changes, kindly file an issue and let's have a discussion before you open a pull request.
 
-## Creating an Issue
-Please supply as much information about the problem you are experiencing as possible. Your issue has a much greater chance of being resolved if logs are supplied so that we can see what is going on, which is found in your application's startup folder.
+Got a server you'd like to share? We've curated a huge collection of public servers being hosted across the web, so it's really simple to keep the list updated as more are discovered. Read more information on contributing [here](https://github.com/HerbL27/FileMasta/blob/master/Public/README.md)
 
 ## Frequently Asked Questions
 <details>
