@@ -1,6 +1,6 @@
-# Contributing to the Database
+# Server List
 
-We store a list of every server that we crawl for everyone to access. Adding severs is very easy, locate and edit *ftp-servers.txt* from this repo, add your server somewhere on a new line, and open a pull request. Your server will be added to the list and files will be available upon our next automatic scan by the robots crawler.
+Adding severs is very easy, locate and edit *ftp-servers.txt* from this repo directory, insert your server link on a new line, that's it. Just open a pull request and the files crawled from the server will be available once updated.
 
 - Only direct server links are allowed e.g. *ftp://domain.com* or *ftp://192.0.2.64/pub*
 - Credentials for authentication is supported e.g. *ftp://user:pass@192.0.2.64*

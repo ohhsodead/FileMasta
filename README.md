@@ -1,6 +1,6 @@
 <h1 align="center">FileMasta</h1>
 
-<h3 align="center">A search application to discover and download online files</h3>
+<h3 align="center">A search application to explore, discover and share online files</h3>
 <div align="center">
 </div>
 <br />
@@ -9,8 +9,6 @@ A federated search application for discovering interesting files that are being 
 
 >We host no content, we provide only access to already available files in the same way Google and other search engines do.
 
-[![Report a bug](http://i.imgur.com/xSpw482.png)](https://github.com/HerbL27/FileMasta/issues/new) [![Feature request](http://i.imgur.com/mFO0OuX.png)](http://feathub.com/ekkash/WebCrunch)
-
 ## Supported Systems
 * Windows XP and above (Windows XP, Vista, 7, 8, 8.1, 10) using .NET 4.7.1 [Download here](https://www.microsoft.com/net/download/dotnet-framework-runtime/net471).
 
@@ -18,7 +16,7 @@ A federated search application for discovering interesting files that are being 
 Download and run the latest version of the Windows installer, "FileMasta.Installer.Windows.exe" from the [releases](https://github.com/HerbL27/FileMasta/releases/latest) page.
 
 ## Contributing
-Our database structure allows everyone to easily implement new servers. More information on contributing [here](https://github.com/HerbL27/FileMasta/blob/master/Public/README.md). Otherwise feel free to [open an issue](https://github.com/HerbL27/FileMasta/issues) and I'll be sure to add it.
+Our database allows everyone to easily implement new servers. More information on contributing [here](https://github.com/HerbL27/FileMasta/blob/master/Public/README.md). Otherwise feel free to [open an issue](https://github.com/HerbL27/FileMasta/issues) and I'll be sure to add it.
 
 All contributions are welcome just send a pull request :-)
 
