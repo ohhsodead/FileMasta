@@ -1,3 +1,10 @@
+2019.01.10   | FileMasta 4.3
+CHANGE: CORE | Improved data update performance
+CHANGE: CORE | Improved file search performance
+CHANGE: UI   | Simplified user interface
+
+
+
 2018.11.05   | FileMasta 4.2
 
 CHANGE: CORE | Fixed issue caused by recent database changes (#116)
