@@ -4,11 +4,11 @@ A federated search application for discovering interesting files that are being 
 
 >We host no content, we provide only access to already available files in the same way Google and other search engines do.
 
-## Supported Systems
-* Windows XP and above (Windows XP, Vista, 7, 8, 8.1, 10) using .NET 4.7.1 [Download here](https://www.microsoft.com/net/download/dotnet-framework-runtime/net471).
-
 ## Installation
 Download and run the latest version of the Windows installer, "FileMasta.Installer.Windows.exe" from the [releases](https://github.com/HerbL27/FileMasta/releases/latest) page.
+
+### Supported Systems
+* Windows XP and above (Windows XP, Vista, 7, 8, 8.1, 10) using .NET 4.7.1 [Download here](https://www.microsoft.com/net/download/dotnet-framework-runtime/net471).
 
 ## Issues & Contributions
 If you find a bug or have a feature request, please [create an issue](https://github.com/HerbL27/FileMasta/releases/new).
