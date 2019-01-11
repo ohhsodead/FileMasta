@@ -5,17 +5,14 @@ A federated search application for discovering interesting files that are being 
 >We host no content, we provide only access to already available files in the same way Google and other search engines do.
 
 ## Installation
-Download and run the latest version of the Windows installer, "FileMasta.Installer.Windows.exe" from the [releases](https://github.com/HerbL27/FileMasta/releases/latest) page.
-
-### Supported Systems
-* Windows XP and above (Windows XP, Vista, 7, 8, 8.1, 10) using .NET 4.7.1 [Download here](https://www.microsoft.com/net/download/dotnet-framework-runtime/net471).
+Download and run the latest version of the installer from the [releases](https://github.com/HerbL27/FileMasta/releases/latest) page.
 
 ## Issues & Contributions
 If you find a bug or have a feature request, please [create an issue](https://github.com/HerbL27/FileMasta/releases/new).
 
 Contributions are highly welcome, however, except for very small changes, kindly file an issue and let's have a discussion before you open a pull request.
 
-Got a server you'd like to share? We've curated a huge collection of public servers being hosted across the web, so it's really simple to keep the list updated as more are discovered. Read more information on contributing [here](https://github.com/HerbL27/FileMasta/blob/master/Public/README.md)
+Have a server you'd like to share? We've curated a huge collection of public servers being hosted across the web, so it's really simple to keep the list updated as more are discovered. Read more information on contributing [here](https://github.com/HerbL27/FileMasta/blob/master/Public/README.md)
 
 ## Frequently Asked Questions
 ### Is this application secure?
@@ -35,8 +32,9 @@ There could be several reasons for that:
 You don't need a special program but it is very recommended. For example, if you just open the link in your web browser you can't see what is happening exactly between you and the web server (see previous question). So I would recommend to use a good web client that supports queuing or your favorite download manager, when you located the file you want to download just copy the link and paste it in your web client or whatever, that's it.
 
 ## Resources
-* [Material Design Icons](https://materialdesignicons.com/)
-* [CButton for .NET](https://codeproject.com/Articles/26622/Custom-Button-Control-with-Gradient-Colors-and-Ext)
 * [FileChef](https://filechef.com/searches)
 * [Json.NET (Newtonsoft)](https://newtonsoft.com/json)
 * [log4net](https://logging.apache.org/log4net/)
+
+## License
+This project is licensed under the General Public License v3.
