@@ -2,6 +2,8 @@
 CHANGE: CORE | Improved data update performance
 CHANGE: CORE | Improved file search performance
 CHANGE: UI   | Simplified user interface
+CHANGE: CORE | Added search more than/equal to file size
+CHANGE: CORE | Added search between last modifed date
 
 
 
