@@ -32,8 +32,8 @@ namespace FileMasta.Extensions
         {
             DataWindow frmInfo = new DataWindow { Text = title };
 
-            using (var client = MainForm._webClient)
-            using (var stream = client.OpenRead(url))
+            //using (var client = Program._webClient)
+            using (var stream = Program._webClient.OpenRead(url))
             using (var reader = new StreamReader(stream))
                 frmInfo.labelData.Text = reader.ReadToEnd();
 
@@ -44,14 +44,15 @@ namespace FileMasta.Extensions
         /// <summary>
         /// Change button text and auto size
         /// </summary>
-        /// <param name="ctrl">CButton control to set text</param>
+        /// <param name="ctrl">Control to set text</param>
         /// <param name="text">Text to set to control</param>
-        public static void SetControlText(Button control, string text)
+        public static void SetControlTextWidth(Button ctrl, string text)
         {
-            control.Text = text;
-            var myFont = new Font(control.Font.FontFamily, control.Font.Size);
-            var mySize = control.CreateGraphics().MeasureString(control.Text, myFont);
-            control.Width = (((int)(Math.Round(mySize.Width, 0))) + 34);
+            ctrl.Text = text;
+            var myFont = new Font(ctrl.Font.FontFamily, ctrl.Font.Size);
+            var mySize = ctrl.CreateGraphics().MeasureString(ctrl.Text, myFont);
+            ctrl.Width = (int)Math.Round(mySize.Width, 0) + 22;
+            ctrl.Refresh();
         }
 
         /// <summary>
@@ -66,11 +67,11 @@ namespace FileMasta.Extensions
             {
                 Text = text,
                 TextAlign = ContentAlignment.MiddleCenter,
-                Font = new Font("Segoe UI Semibold", 9F, FontStyle.Regular | FontStyle.Underline),
+                Font = new Font("Verdana", 8.25F, FontStyle.Regular | FontStyle.Underline),
                 AutoSize = true,
                 BackColor = Color.Transparent,
                 ForeColor = Color.Black,
-                Margin = new Padding(0, 0, 1, 1),
+                Margin = new Padding(0, 0, 0, 1),
                 Cursor = Cursors.Hand,
                 Name = "MostSearch" + count,
             };
@@ -78,7 +79,7 @@ namespace FileMasta.Extensions
             // Click event performs a search in main form
             a.Click += delegate
             {
-                MainForm.Form.TextBoxSearchQuery.Text = a.Text;
+                MainForm.Form.TextboxSearchName.Text = a.Text;
                 MainForm.Form.SearchFiles();
             };
 
