@@ -1,4 +1,4 @@
-﻿using FileMasta.GitHub;
+﻿using FileMasta.Utilities;
 using System;
 using System.IO;
 using System.Windows.Forms;
@@ -21,7 +21,7 @@ namespace FileMasta.Windows
                     var formattedText = TextBoxServer.Text;
                     if (!TextBoxServer.Text.EndsWith("/"))
                         formattedText = TextBoxServer.Text + "/";
-                    OpenLink.SubmitLink(new Uri(formattedText));
+                    GitHub.RequestServer(new Uri(formattedText));
                     Close();
                 }
                 else MessageBox.Show(this, "This isn't a public web directory.");

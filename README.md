@@ -1,5 +1,7 @@
 # FileMasta
 
+![FileMasta](https://github.com/HerbL27/FileMasta/blob/master/Screenshots/screenshot1.png?raw=true)
+
 A federated search application for discovering interesting files that are being shared online, such as video, music, books, software, games, subtitles and much more. Our web crawler keeps our database maintained which regularly updates file information on the contents of thousands of servers worldwide. We don't search file contents.
 
 >We host no content, we provide only access to already available files in the same way Google and other search engines do.

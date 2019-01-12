@@ -1,6 +1,4 @@
-﻿using FileMasta.Extensions;
-using FileMasta.GitHub;
-using System;
+﻿using System;
 using System.Diagnostics;
 using System.Windows.Forms;
 
@@ -27,21 +25,6 @@ namespace FileMasta.Windows
         private void LinkProjectURL_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Process.Start(LinkProjectURL.Text);
-        }
-
-        private void LinkTermsOfUse_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            Process.Start(Resources.UrlTermsOfUse);
-        }
-
-        private void LinkPrivacyPolicy_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            Process.Start(Resources.UrlPrivacyPolicy);
-        }
-
-        private void ButtonChangeLog_Click(object sender, EventArgs e)
-        {
-            ControlExtensions.ShowDataWindow("Change Log", Resources.UrlChangeLog);
         }
 
         /*************************************************************************/

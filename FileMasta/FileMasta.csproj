@@ -95,6 +95,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Extensions\ImageExtensions.cs" />
+    <Compile Include="Utilities\ExternalSearch.cs" />
     <Compile Include="Windows\FileDetailsWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,17 +108,8 @@
     <Compile Include="Windows\AboutWindow.Designer.cs">
       <DependentUpon>AboutWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="Files\Query.cs" />
-    <Compile Include="Files\Types.cs" />
-    <Compile Include="GitHub\Resources.cs" />
-    <Compile Include="Models\Bookmark.cs" />
+    <Compile Include="Files\Type.cs" />
     <Compile Include="Models\Metadata.cs" />
-    <Compile Include="Windows\BookmarksWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Windows\BookmarksWindow.Designer.cs">
-      <DependentUpon>BookmarksWindow.cs</DependentUpon>
-    </Compile>
     <Compile Include="Windows\OptionsWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,12 +126,6 @@
     </Compile>
     <Compile Include="Windows\SubmitWindow.Designer.cs">
       <DependentUpon>SubmitWindow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Windows\ServersWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Windows\ServersWindow.Designer.cs">
-      <DependentUpon>ServersWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="Windows\DataWindow.cs">
       <SubType>Form</SubType>
@@ -175,8 +161,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Extensions\LocalExtensions.cs" />
-    <Compile Include="GitHub\OpenLink.cs" />
-    <Compile Include="Files\Bookmarks.cs" />
+    <Compile Include="Utilities\GitHub.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Utilities\TextLineRemover.cs" />
     <Compile Include="Utilities\Updates.cs" />
@@ -189,17 +174,11 @@
     <EmbeddedResource Include="Controls\SplashScreen.resx">
       <DependentUpon>SplashScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Windows\BookmarksWindow.resx">
-      <DependentUpon>BookmarksWindow.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Windows\OptionsWindow.resx">
       <DependentUpon>OptionsWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\SubmitWindow.resx">
       <DependentUpon>SubmitWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Windows\ServersWindow.resx">
-      <DependentUpon>ServersWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\DataWindow.resx">
       <DependentUpon>DataWindow.cs</DependentUpon>

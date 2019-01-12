@@ -1,119 +1,112 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Net;
-using System.Windows.Forms;
 using FileMasta.Extensions;
 using FileMasta.Models;
 using Newtonsoft.Json;
 
 namespace FileMasta.Files
 {
-    class Database
+    public class Database
     {
         /// <summary>
         /// URLs for database files
         /// </summary>
-        const string DbOpenFiles = "https://www.dropbox.com/s/0dwmqk1pkj2ndkz/ftp-files.json?raw=true";
-        const string DbOpenServers = "https://raw.githubusercontent.com/HerbL27/FileMasta/master/Public/ftp-servers.txt";
-        public const string DbTopSearches = "https://www.dropbox.com/s/4x2nypfiyuoyxjj/searches.txt?raw=true";
+        const string URL_DATABASE                        = "https://www.dropbox.com/s/0dwmqk1pkj2ndkz/ftp-files.json?raw=true";
+        const string URL_KEYWORDS                        = "https://www.dropbox.com/s/4x2nypfiyuoyxjj/searches.txt?raw=true";
+        
+        /// <summary>
+        /// Database file name
+        /// </summary>
+        const string LocalFileName                       = "ftp-files.json";
 
         /// <summary>
-        /// Database file names
+        /// Contains the database information, date, version, etc.
         /// </summary>
-        const string FileNameFiles = "ftp-files.json";
-        const string FileNameServers = "ftp-servers.txt";
+        public Metadata MetaData = null;
 
         /// <summary>
-        /// Checks if database files exists at users data directory, if so whether they're 
-        /// the same size, and downloads the latest one if either return false 
+        /// Stores a list of files retrieved from the database
         /// </summary>
-        public static void UpdateLocalDatabase()
+        static List<FtpFile> Files { get; set; } = new List<FtpFile>();
+
+        /// <summary>
+        /// 
+        /// </summary>
+        static List<FtpFile> Bookmarks { get; set; } = new List<FtpFile>();
+        
+        /// <summary>
+        /// Download latest database files for ftp file then load them into memory for usage
+        /// </summary>
+        public Database()
         {
-            Program.Log.Info("Starting database updates");
+            Directory.CreateDirectory(LocalExtensions.PathRoot);
+            Directory.CreateDirectory(LocalExtensions.PathData);
 
             try
             {
-                if (IsFileOutOfDate(DbOpenFiles, FileNameFiles))
-                {
-                    Program.Log.Info($"Updating {FileNameFiles}...");
-                    using (var client = new WebClient())
-                        client.DownloadFile(new Uri(DbOpenFiles), $"{LocalExtensions.PathData}{FileNameFiles}");              
-                    Program.Log.Info($"{FileNameFiles} updated");
-                }
+                if (WebExtensions.IsLocalFileOld(URL_DATABASE, LocalFileName))
+                    WebExtensions.DownloadFile(URL_DATABASE, $"{LocalExtensions.PathData}{LocalFileName}");
             }
             catch (Exception ex)
             {
-                Program.Log.Error($"Failed to update {FileNameFiles}", ex);
-                MessageBox.Show(MainForm.Form, "Unable to update database.\n\n" + ex.Message);
+                throw new Exception("Unable to update file database.\n\n" + ex.Message);
             }
             finally
-            { 
+            {
                 // Deserializes database first line containing meta info
-                MainForm.DbMetaData = JsonConvert.DeserializeObject<Metadata>(File.ReadLines($"{LocalExtensions.PathData}{FileNameFiles}").First());
+                MetaData = JsonConvert.DeserializeObject<Metadata>(File.ReadLines($"{LocalExtensions.PathData}{LocalFileName}").First());
 
-                // Store files in the main form, skipping the first line as it contains the db metadata
-                foreach (var item in File.ReadLines($"{LocalExtensions.PathData}{FileNameFiles}").Skip(1))
-                    if (StringExtensions.IsValidJSON(item))
-                        MainForm.DbOpenFiles.Add(JsonConvert.DeserializeObject<FtpFile>(item));
-            }
-
-            try
-            {
-                if (IsFileOutOfDate(DbOpenServers, FileNameServers))
+                using (FileStream fs = File.Open($"{LocalExtensions.PathData}{LocalFileName}", FileMode.Open, FileAccess.Read, FileShare.Read))
+                using (BufferedStream bs = new BufferedStream(fs))
+                using (StreamReader sr = new StreamReader(bs))
                 {
-                    Program.Log.Info($"Updating {FileNameServers}...");
-                    using (var client = new WebClient())
-                        client.DownloadFile(new Uri(DbOpenServers), $"{LocalExtensions.PathData}{FileNameServers}");
-                    Program.Log.Info($"{FileNameServers} updated");
+                    MetaData = JsonConvert.DeserializeObject<Metadata>(sr.ReadLine());
+                    string line;
+                    while ((line = sr.ReadLine()) != null)
+                        if (StringExtensions.IsValidJSON(line))
+                            Files.Add(JsonConvert.DeserializeObject<FtpFile>(line));
+                }
+
+                using (FileStream fs = File.Open(LocalExtensions.PathBookmarks, FileMode.Open, FileAccess.Read, FileShare.Read))
+                using (BufferedStream bs = new BufferedStream(fs))
+                using (StreamReader sr = new StreamReader(bs))
+                {
+                    string line;
+                    while ((line = sr.ReadLine()) != null)
+                        if (StringExtensions.IsValidJSON(line))
+                            Bookmarks.Add(JsonConvert.DeserializeObject<FtpFile>(line));
                 }
             }
-            catch (Exception ex)
-            {
-                Program.Log.Error($"UPDATE FAILED {FileNameServers}", ex);
-                MessageBox.Show(MainForm.Form, "Unable to update database.\n\n" + ex.Message);
-            }
-            finally
-            {
-                MainForm.DbOpenServers.AddRange(File.ReadLines($"{LocalExtensions.PathData}{FileNameServers}"));
-            }            
         }
 
         /// <summary>
-        /// Checks if local file needs to be updated
+        /// Sort File by Property
         /// </summary>
-        /// <param name="webFile">String URL of the file to check for update</param>
-        /// <param name="fileName">File name, used to check local directory</param>
-        /// <returns></returns>
-        public static bool IsFileOutOfDate(string webFile, string fileName)
-        {
-            try
-            {
-                Program.Log.Info($"Checking if '{fileName}' needs to be updated");
-
-                if (File.Exists($"{LocalExtensions.PathData}{fileName}"))
-                    if (WebExtensions.WebFileSize($"{webFile}") == new FileInfo($"{LocalExtensions.PathData}{fileName}").Length)
-                        return false;
-                    else
-                        return true;
-                else
-                    return true;
-            }
-            catch (Exception ex) { Program.Log.Error($"Unable to check '{fileName}' for update, URL : {webFile}", ex); return true; }
-        }
-
+        public enum Sort { Name, Size, Date }
+        
         /// <summary>
         /// Total size of all files in database
         /// </summary>
         /// <returns>Total size in bytes</returns>
-        public static long TotalFilesSize()
+        public long TotalFileSize()
         {
             long totalSize = 0;
 
-            foreach (var jsonData in MainForm.DbOpenFiles)
+            foreach (var jsonData in Files)
                 totalSize += jsonData.Size;
 
             return totalSize;
+        }
+
+        /// <summary>
+        /// Returns the total number of files
+        /// </summary>
+        /// <returns>Total size in bytes</returns>
+        public long NoOfFiles()
+        {
+            return Files.Count();
         }
 
         /// <summary>
@@ -121,21 +114,147 @@ namespace FileMasta.Files
         /// </summary>
         /// <param name="URL">Used to match with WebFile.URL to return class</param>
         /// <returns>WebFile object</returns>
-        public static FtpFile FtpFile(string URL)
+        public FtpFile GetFile(string url)
         {
             // Checks loaded files for a matching URL and returns the Web File object
-            foreach (var file in MainForm.DbOpenFiles) 
-                if (file.URL == URL)
+            foreach (var file in Files) 
+                if (file.URL == url)
                     return file;
         
             // Create a new Web File object as this URL doesn't exist in the database there anymore
-            var newWebFile = new FtpFile(Path.GetFileName(new Uri(URL).LocalPath), WebExtensions.FtpFileSize(URL), WebExtensions.FtpFileTimestamp(URL), new Uri(URL).AbsoluteUri);
+            var newWebFile = new FtpFile(Path.GetFileName(new Uri(url).LocalPath), WebExtensions.FtpFileSize(url), WebExtensions.FtpFileTimestamp(url), new Uri(url).AbsoluteUri);
 
             // Add the new Web File to this instance of application
-            MainForm.DbOpenFiles.Add(newWebFile);
+            Files.Add(newWebFile);
 
             // Return the new Web File
             return newWebFile;
+        }
+
+        /// <summary>
+        /// Search files and bookmarks from the database
+        /// </summary>
+        /// <param name="bookmarks">Search bookmarks</param>
+        /// <param name="sort">Sort results by property</param>
+        /// <param name="name">File name to match words/terms</param>
+        /// <param name="type">File type to filter</param>
+        /// <param name="moreThanSize">More than or equal to file size in bytes</param>
+        /// <param name="lastModifiedMin">Last modified minimum file date</param>
+        /// <param name="lastModifiedMax">Last modified maximum file date</param>
+        /// <returns>Returns a list of matching files with the specified parameters</returns>
+        static readonly object SearchFilesLock = new object();
+        public IEnumerable<FtpFile> Search(bool bookmarks, Sort sort, string name, string[] type, long moreThanSize, DateTime lastModifiedMin, DateTime lastModifiedMax)
+        {
+            lock (SearchFilesLock)
+            {
+                var data = Files;
+                if (bookmarks) data = Bookmarks;
+                var searchTerms = StringExtensions.GetWords(name.ToLower());
+                IEnumerable<FtpFile> search = from file in data
+                                              where StringExtensions.ContainsAll(Uri.UnescapeDataString(file.URL.ToLower()), searchTerms)
+                                              where file.IsType(type)
+                                              where file.Size >= moreThanSize
+                                              where file.DateModified > lastModifiedMin
+                                              where file.DateModified < lastModifiedMax
+                                              select file;
+                return search;
+            }
+        }
+
+        /// <summary>
+        /// Retrieve keywords from database
+        /// </summary>
+        /// <returns>List containg all keywords returned</returns>
+        public List<string> GetKeywords()
+        {
+            return WebExtensions.GetFileContents(URL_KEYWORDS);
+        }
+
+        /// <summary>
+        /// Add File URL to Bookmarks
+        /// </summary>
+        /// <param name="url">URL to add</param>
+        public void AddFile(FtpFile ftpFile)
+        {
+            Bookmarks.Add(ftpFile);
+        }
+
+        /// <summary>
+        /// Remove File URL from Bookmarks
+        /// </summary>
+        /// <param name="url">URL to remove</param>
+        public void RemoveFile(FtpFile ftpFile)
+        {
+            Bookmarks.Remove(ftpFile);
+        }
+
+        /// <summary>
+        /// Checks if json string exists in Bookmarked Files
+        /// </summary>
+        /// <param name="url">URL of the File</param>
+        /// <returns>Whether URL is bookmarked</returns>
+        public bool IsBookmarked(FtpFile ftpFile)
+        {
+            foreach (var file in Bookmarks)
+                if (file.URL == ftpFile.URL)
+                    return true;
+            return false;
+        }
+
+        /// <summary>
+        /// Removes all items in bookmarks
+        /// </summary>
+        public void ClearBookmarks()
+        {
+            Bookmarks.Clear();
+        }
+
+        public void SaveBookmarks()
+        {
+            if (File.Exists($"{LocalExtensions.PathBookmarks}{LocalFileName}"))
+                File.Delete($"{LocalExtensions.PathBookmarks}{LocalFileName}");
+            using (FileStream fs = File.OpenWrite($"{LocalExtensions.PathBookmarks}{LocalFileName}"))
+            using (BufferedStream bs = new BufferedStream(fs))
+            using (StreamWriter sw = new StreamWriter(bs))
+                foreach (var file in Bookmarks)
+                    sw.WriteLine(JsonConvert.SerializeObject(file));
+        }
+
+        /// <summary>
+        /// Sort all files in list by Name, Date or Size
+        /// </summary>
+        /// <param name="sortProperty">Sort Name, Date or Size</param>
+        /// <param name="sortReverse">Reverse the sort order</param>
+        public void SortFiles(Sort sortProperty = Sort.Name, bool sortReverse = false)
+        {
+            if (!sortReverse)
+            {
+                Files.Sort(delegate (FtpFile x, FtpFile y)
+                {
+                    if (sortProperty == Sort.Name)
+                        return x.Name.CompareTo(y.Name);
+                    else if (sortProperty == Sort.Date)
+                        return x.DateModified.CompareTo(y.DateModified);
+                    else if (sortProperty == Sort.Size)
+                        return x.Size.CompareTo(y.Size);
+                    else
+                        return x.Name.CompareTo(y.Name);
+                });
+            }
+            else if (sortReverse)
+            {
+                Files.Sort(delegate (FtpFile x, FtpFile y)
+                {
+                    if (sortProperty == Sort.Name)
+                        return y.Name.CompareTo(x.Name);
+                    else if (sortProperty == Sort.Date)
+                        return y.DateModified.CompareTo(x.DateModified);
+                    else if (sortProperty == Sort.Size)
+                        return y.Size.CompareTo(x.Size);
+                    else
+                        return y.Name.CompareTo(x.Name);
+                });
+            }
         }
     }
 }

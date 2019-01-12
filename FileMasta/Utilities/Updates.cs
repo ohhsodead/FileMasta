@@ -4,7 +4,6 @@ using System.IO;
 using System.Net;
 using System.Windows.Forms;
 using FileMasta.Extensions;
-using FileMasta.GitHub;
 
 namespace FileMasta.Utilities
 {
@@ -16,7 +15,7 @@ namespace FileMasta.Utilities
         public static string UrlLatestVersion { get; } = "https://dl.dropbox.com/s/ioiu8vwxxc9r430/app-version.txt?raw=true";
 
         /// <summary>
-        /// Check application for update. Installs the latest installer to user downloads folder and opens the file before closing this instance
+        /// Check application for update. Installs the latest installer and runs the file before closing this instance
         /// </summary>
         public static void CheckForUpdate()
         {
@@ -33,14 +32,12 @@ namespace FileMasta.Utilities
                     if (curVersion.CompareTo(newVersion) < 0)
                         RunLatestInstaller(newVersion);
                     else
-                        Program.Log.InfoFormat("Running the latest version: {0}", newVersion.ToString());
+                        Program.Log.InfoFormat("Using the latest version: {0}", newVersion.ToString());
                 }
             } 
             catch (Exception ex)
             {
-                Program.Log.Error("Failed ", ex);
-                MessageBox.Show("There was an issue checking for update. You will be redirected to the latest available version download page.");
-                Process.Start($"{OpenLink.UrlGitHub}releases/latest");
+                Program.Log.Error("Failed: ", ex);
                 Application.Exit();
             }
         }
@@ -53,17 +50,17 @@ namespace FileMasta.Utilities
         {
             try
             {
-                Program.Log.Info(@"New update found - Downloading and starting the Installer");
+                Program.Log.Info(@"New update available - Downloading and starting the Installer");
                 MessageBox.Show(MainForm.Form, $"FileMasta v{newVersion.ToString()} is now available. Click OK to run the installer.", "FileMasta - Update Available");
-                MainForm._webClient.DownloadFile(OpenLink.UrlGitHub + $"releases/download/{newVersion.ToString()}/FileMasta.Installer.Windows.exe", $@"{LocalExtensions.PathDownloadsDirectory}\FileMasta.Installer.Windows.exe.exe");
+                Program._webClient.DownloadFile($"{GitHub.URL_PROJECT}releases/download/{newVersion.ToString()}/FileMasta.Installer.Windows.exe", $@"{LocalExtensions.PathDownloadsDirectory}\FileMasta.Installer.Windows.exe.exe");
                 Process.Start($@"{LocalExtensions.PathDownloadsDirectory}\FileMasta.Installer.Windows.exe.exe");
                 Application.Exit();
             }
             catch (Exception ex)
             {
-                Program.Log.Error("Failed ", ex);
+                Program.Log.Error("Failed: ", ex);
                 MessageBox.Show("There was an issue downloading and running the installer. You will need to manually install the latest available update from GitHub.");
-                Process.Start($"{OpenLink.UrlGitHub}releases/latest");
+                Process.Start($"{GitHub.URL_PROJECT}releases/latest");
                 Application.Exit();
             }
         }

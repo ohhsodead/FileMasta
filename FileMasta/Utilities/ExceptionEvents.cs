@@ -32,7 +32,6 @@ using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using FileMasta.GitHub;
 
 namespace FileMasta.Utilities
 {
@@ -67,7 +66,7 @@ namespace FileMasta.Utilities
 
             if (MessageBox.Show("An error has occurred. Would you like to report this issue on GitHub? Your feedback helps us improve the quality of FileMasta, we appreciate that.", "Error", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                Process.Start($"{OpenLink.UrlGitHub}issues/new?title=[Exception] {e.Exception.Message}&body=" +
+                Process.Start($"{GitHub.URL_PROJECT}issues/new?title=[Exception] {e.Exception.Message}&body=" +
                 "*Please explain the problem, be clear and not vague.*%0A%0A" +
                 "__Expected behavior__: %0A" +
                 "__Actual behavior__: %0A" +
@@ -97,7 +96,7 @@ namespace FileMasta.Utilities
 
             if (MessageBox.Show("An error has occurred. Would you like to report this issue on GitHub? Your feedback helps us improve the quality of FileMasta, we appreciate that.", "Error", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                Process.Start($"{OpenLink.UrlGitHub}issues/new?title=[Exception] {((Exception)e.ExceptionObject).Message}&body=" +
+                Process.Start($"{GitHub.URL_PROJECT}issues/new?title=[Exception] {((Exception)e.ExceptionObject).Message}&body=" +
                 "*Please explain the problem, be clear and not vague.*%0A%0A" +
                 "__Expected behavior__: %0A" +
                 "__Actual behavior__: %0A" +

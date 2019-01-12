@@ -2183,9 +2183,21 @@
         AQAAgAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAEAAIABAADAAwAA8A8AAA==
 </value>
   </data>
-  <metadata name="ContextMenuSearchEngine.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="ContextMenuSearchExternal.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>586, 3</value>
   </metadata>
+  <metadata name="ContextFileOpenWith.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>785, 3</value>
+  </metadata>
+  <data name="NitroReaderToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAmklEQVRIS92VSwrCUBAE39abRYIHyOHd
+        aO6hMyFCExvKdpmCIp+ZSpZvnJK5XMvX9vRNv3c+y2uJ9OIncuhHjz5KRAOHzp0ILevcidCyzp3IcflS
+        Lvu10bkT0eVbed/v+9rPOnciLkpEXJSIuCgRcVEi4qJExEWJiIsSERclIi5KRFyUiLgoEdEDJ/WnA6eP
+        vX9+0h+fylMxxhumIBv4rrAWegAAAABJRU5ErkJggg==
+</value>
+  </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>25</value>
   </metadata>

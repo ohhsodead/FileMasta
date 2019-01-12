@@ -3,13 +3,15 @@ using System.Diagnostics;
 using System.Threading;
 using System.Windows.Forms;
 using System;
+using System.Net;
 
 namespace FileMasta
 {
     static class Program
     {
         public static readonly log4net.ILog Log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-        private static Mutex MutexInstance = null;
+        public static WebClient _webClient = new WebClient();
+        private static Mutex _MutexInstance = null;
 
         /// <summary>
         /// The main entry point for the application.
@@ -17,7 +19,7 @@ namespace FileMasta
         [STAThread]
         static void Main()
         {
-            MutexInstance = new Mutex(true, "FileMasta", out bool createdNew);
+            _MutexInstance = new Mutex(true, "FileMasta", out bool createdNew);
 
             if (!createdNew)
             {

@@ -1,6 +1,6 @@
 ﻿namespace FileMasta.Files
 {
-    class Types
+    class Type
     {
         /// <summary>
         /// Supported file extensions by type/category

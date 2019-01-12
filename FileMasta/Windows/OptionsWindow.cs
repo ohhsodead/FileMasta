@@ -30,7 +30,7 @@ namespace FileMasta.Windows
         }
 
         /// <summary>
-        /// Set UI/WebClient/WebRequest Properties
+        /// Set UI/_webClient/WebRequest Properties
         /// </summary>
         public void LoadUserSettings()
         {
@@ -55,14 +55,14 @@ namespace FileMasta.Windows
             {
                 if (Uri.TryCreate(Properties.Settings.Default.proxyAddress + ":" + Properties.Settings.Default.proxyPort, UriKind.RelativeOrAbsolute, out Uri result))
                 {
-                    MainForm._webClient.Proxy = new WebProxy(result);
+                    Program._webClient.Proxy = new WebProxy(result);
 
                     if (Properties.Settings.Default.proxyUsername == "" && Properties.Settings.Default.proxyPassword == "")
-                        MainForm._webClient.UseDefaultCredentials = true;
+                        Program._webClient.UseDefaultCredentials = true;
                     else
                     {
-                        MainForm._webClient.UseDefaultCredentials = false;
-                        MainForm._webClient.Credentials = new NetworkCredential(Properties.Settings.Default.proxyUsername, Properties.Settings.Default.proxyPassword);
+                        Program._webClient.UseDefaultCredentials = false;
+                        Program._webClient.Credentials = new NetworkCredential(Properties.Settings.Default.proxyUsername, Properties.Settings.Default.proxyPassword);
                     }
                 }
                 else
@@ -70,11 +70,11 @@ namespace FileMasta.Windows
             }
             else
             {
-                MainForm._webClient.UseDefaultCredentials = true;
+                Program._webClient.UseDefaultCredentials = true;
 #pragma warning disable CS0618 // Type or member is obsolete
-                MainForm._webClient.Proxy = WebProxy.GetDefaultProxy();
+                Program._webClient.Proxy = WebProxy.GetDefaultProxy();
 #pragma warning restore CS0618 // Type or member is obsolete
-                MainForm._webClient.Credentials = CredentialCache.DefaultCredentials;
+                Program._webClient.Credentials = CredentialCache.DefaultCredentials;
             }
         }
 

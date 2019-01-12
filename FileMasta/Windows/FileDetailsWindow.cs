@@ -42,10 +42,10 @@ namespace FileMasta.Windows
                 item.Visible = false;
 
             // Shows Add/Remove Bookmarks button text
-            if (Bookmarks.IsBookmarked(CurrentFile.URL))
-                ControlExtensions.SetControlText(ButtonBookmark, "Remove from Bookmarks");
+            if (MainForm.LocalData.IsBookmarked(CurrentFile))
+                ControlExtensions.SetControlTextWidth(ButtonBookmark, "Remove from Bookmarks");
             else
-                ControlExtensions.SetControlText(ButtonBookmark, "Add to Bookmarks");
+                ControlExtensions.SetControlTextWidth(ButtonBookmark, "Add to Bookmarks");
 
             // Shows supported PDF readers installed on users machine
             if (BookFileTypes.Contains(FileExtension))
@@ -116,7 +116,7 @@ namespace FileMasta.Windows
                 ParentDataGrid.Rows[rowIndex - 1].Cells[colIndex].Selected = true;
                 ParentDataGrid.Rows[rowIndex - 1].Selected = true;
 
-                MainForm.Form.ShowFileDetails(Database.FtpFile(ParentDataGrid.CurrentRow.Cells[4].Value.ToString()), ParentDataGrid, false);
+                MainForm.Form.DisplayFileDetails(MainForm.LocalData.GetFile(ParentDataGrid.CurrentRow.Cells[4].Value.ToString()));
 
                 ScrollButtonChecks();
             }
@@ -139,7 +139,7 @@ namespace FileMasta.Windows
                 ParentDataGrid.Rows[rowIndex + 1].Cells[colIndex].Selected = true;
                 ParentDataGrid.Rows[rowIndex + 1].Selected = true;
 
-                MainForm.Form.ShowFileDetails(Database.FtpFile(ParentDataGrid.CurrentRow.Cells[4].Value.ToString()), ParentDataGrid, false);
+                MainForm.Form.DisplayFileDetails(MainForm.LocalData.GetFile(ParentDataGrid.CurrentRow.Cells[4].Value.ToString()));
 
                 ScrollButtonChecks();
             }
@@ -158,15 +158,15 @@ namespace FileMasta.Windows
         private void ButtonBookmark_Click(object sender, EventArgs e)
         {
             // Add/Remove file from users Bookmarks
-            if (Bookmarks.IsBookmarked(CurrentFile.URL))
+            if (MainForm.LocalData.IsBookmarked(CurrentFile))
             {
-                Bookmarks.RemoveFile(CurrentFile.URL);
-                ControlExtensions.SetControlText(ButtonBookmark, "Add to Bookmarks");
+                MainForm.LocalData.RemoveFile(CurrentFile);
+                ControlExtensions.SetControlTextWidth(ButtonBookmark, "Add to Bookmarks");
             }
             else
             {
-                Bookmarks.AddFile(CurrentFile.URL);
-                ControlExtensions.SetControlText(ButtonBookmark, "Remove from Bookmarks");
+                MainForm.LocalData.AddFile(CurrentFile);
+                ControlExtensions.SetControlTextWidth(ButtonBookmark, "Remove from Bookmarks");
             }
         }
 
@@ -348,10 +348,6 @@ namespace FileMasta.Windows
                 // Click Open File button
                 case Keys.Control | Keys.O:
                     ButtonOpenWith.PerformClick();
-                    return true;
-                // Close this instance
-                case Keys.Escape:
-                    MainForm.FormFileDetails.Dispose();
                     return true;
             }
             return base.ProcessCmdKey(ref msg, keyData);
