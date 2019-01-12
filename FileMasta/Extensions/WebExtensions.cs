@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.IO;
 using System.Net;
 
 namespace FileMasta.Extensions
@@ -65,6 +67,29 @@ namespace FileMasta.Extensions
         }
 
         /// <summary>
+        /// Checks if local file is older than the one stored on the database
+        /// </summary>
+        /// <param name="webFile">String URL of the file to check for update</param>
+        /// <param name="fileName">File name, used to check local directory</param>
+        /// <returns></returns>
+        public static bool IsLocalFileOld(string webFile, string fileName)
+        {
+            try
+            {
+                Program.Log.Info($"Checking if '{fileName}' needs to be updated");
+
+                if (File.Exists($"{LocalExtensions.PathData}{fileName}"))
+                    if (WebFileSize($"{webFile}") == new FileInfo($"{LocalExtensions.PathData}{fileName}").Length)
+                        return false;
+                    else
+                        return true;
+                else
+                    return true;
+            }
+            catch (Exception ex) { Program.Log.Error($"Unable to check '{fileName}' for update, URL : {webFile}", ex); return true; }
+        }
+
+        /// <summary>
         /// Initialize new ftp web response
         /// </summary>
         /// <param name="url">URL to request</param>
@@ -82,12 +107,26 @@ namespace FileMasta.Extensions
         /// </summary>
         /// <param name="url">URL to request</param>
         /// <returns>Returns a web response from the URL</returns>
-        static HttpWebResponse GetWebReponse(string url)
+        public static HttpWebResponse GetWebReponse(string url)
         {
             var request = WebRequest.Create(url);
             request.Method = "HEAD";
             request.Timeout = 300000;
             return (HttpWebResponse)request.GetResponse();
+        }
+
+        public static List<string> GetFileContents(string url)
+        {
+            var items = new List<string>();
+            var request = GetRequest(url);
+            using (WebResponse webResponse = request.GetResponse())
+            using (var reader = new StreamReader(webResponse.GetResponseStream()))
+            {
+                string line;
+                while ((line = reader.ReadLine()) != null)
+                    items.Add(line);
+            }
+            return items;
         }
 
         /// <summary>
@@ -107,6 +146,21 @@ namespace FileMasta.Extensions
             request.AllowAutoRedirect = allowAutoRedirect;
             request.Method = httpMethod;
             return request;
+        }
+
+        /// <summary>
+        /// Download a web file using given URL to users local hard disk
+        /// </summary>
+        /// <param name="url"></param>
+        /// <param name="path"></param>
+        public static void DownloadFile(string url, string path)
+        {
+            using (var wc = new WebClient())
+            {
+                wc.Headers.Add("Accept: text/plain");
+                wc.Headers.Add("User-Agent: Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)");
+                wc.DownloadFile(new Uri(url), path);
+            }
         }
     }
 }
