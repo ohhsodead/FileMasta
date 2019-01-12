@@ -34,9 +34,9 @@ There could be several reasons for that:
 You don't need a special program but it is very recommended. For example, if you just open the link in your web browser you can't see what is happening exactly between you and the web server (see previous question). So I would recommend to use a good web client that supports queuing or your favorite download manager, when you located the file you want to download just copy the link and paste it in your web client or whatever, that's it.
 
 ## Resources
-* [FileChef](https://filechef.com/searches)
-* [Json.NET (Newtonsoft)](https://newtonsoft.com/json)
+* [Newtonsoft.Json](https://newtonsoft.com/json)
 * [log4net](https://logging.apache.org/log4net/)
+* [FileChef](https://filechef.com/searches)
 
 ## License
 This project is licensed under the General Public License v3.
