@@ -66,21 +66,84 @@ namespace FileMasta.Extensions
         {
             return string.Format("{0:n0}", Convert.ToInt32(value));
         }
-        
+
+        private static string[] SizeSuffixes = { "Bytes", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB" };
+
         /// <summary>
         /// Return file size with suffix e.g. Bytes, MB, GB
         /// </summary>
         /// <param name="byteCount"></param>
         /// <returns>Bytes in string format</returns>
-        public static String BytesToPrefix(long byteCount)
+        public static string BytesToPrefix(long byteCount)
         {
-            string[] suf = { "Bytes", "KB", "MB", "GB", "TB", "PB", "EB" }; // Longs run out around EB
             if (byteCount == 0)
-                return "0" + " " + suf[0];
+                return "0" + " " + SizeSuffixes[0];
             long bytes = Math.Abs(byteCount);
             int place = Convert.ToInt32(Math.Floor(Math.Log(bytes, 1024)));
             double num = Math.Round(bytes / Math.Pow(1024, place), 1);
-            return (Math.Sign(byteCount) * num).ToString() + " " + suf[place];
+            return (Math.Sign(byteCount) * num).ToString() + " " + SizeSuffixes[place];
+        }
+        
+        /// <summary>
+        /// Returns the total number of bytes from parsing the size prefix
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static long ParseFileSize(string prefixSize)
+        {
+            // Remove leading and trailing spaces.
+            prefixSize = prefixSize.Trim();
+
+            try
+            {
+                // Find the last non-alphabetic character.
+                int ext_start = 0;
+                for (int i = prefixSize.Length - 1; i >= 0; i--)
+                {
+                    // Stop if we find something other than a letter.
+                    if (!char.IsLetter(prefixSize, i))
+                    {
+                        ext_start = i + 1;
+                        break;
+                    }
+                }
+
+                // Get the numeric part.
+                double number = double.Parse(prefixSize.Substring(0, ext_start));
+
+                // Get the extension.
+                string suffix;
+                if (ext_start < prefixSize.Length)
+                {
+                    suffix = prefixSize.Substring(ext_start).Trim();
+                    if (suffix == "BYTES") suffix = "Bytes";
+                }
+                else
+                {
+                    suffix = "Bytes";
+                }
+
+                // Find the extension in the list.
+                int suffix_index = -1;
+                for (int i = 0; i < SizeSuffixes.Length; i++)
+                {
+                    if (SizeSuffixes[i] == suffix)
+                    {
+                        suffix_index = i;
+                        break;
+                    }
+                }
+                if (suffix_index < 0)
+                    throw new FormatException(
+                        "Unknown file size prefix " + suffix + ".");
+
+                // Return the result.
+                return (long)Math.Round(number * Math.Pow(1024, suffix_index));
+            }
+            catch (Exception ex)
+            {
+                throw new FormatException("Invalid file size format", ex);
+            }
         }
 
         /// <summary>
