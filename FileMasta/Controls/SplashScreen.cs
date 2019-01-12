@@ -12,7 +12,7 @@ namespace FileMasta.Controls
 
         private void timerCount_Tick(object sender, System.EventArgs e)
         {
-            labelRestart.Visible = true;
+            LabelRestart.Visible = true;
         }
 
         private void labelRestart_Click(object sender, System.EventArgs e)
