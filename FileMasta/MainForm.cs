@@ -1,33 +1,33 @@
 ﻿using System;
-using System.Windows.Forms;
-using System.Linq;
-using System.IO;
-using System.Drawing;
-using System.Diagnostics;
 using System.ComponentModel;
-using FileMasta.Windows;
-using FileMasta.Utilities;
-using FileMasta.Models;
-using FileMasta.Files;
-using FileMasta.Extensions;
+using System.Diagnostics;
+using System.Drawing;
+using System.IO;
+using System.Linq;
+using System.Windows.Forms;
 using FileMasta.Controls;
+using FileMasta.Data;
+using FileMasta.Extensions;
+using FileMasta.Forms;
+using FileMasta.Models;
+using FileMasta.Utilities;
 
 namespace FileMasta
 {
     public partial class MainForm : Form
     {
         /// <summary>
-        /// This is only instance of the main form, set after InitializeComponent()
+        /// Store the instance of the this application
         /// </summary>
         public static MainForm Form { get; set; } = null;
 
         /// <summary>
-        /// Stores the current instance of the database
+        /// Store the current instance of the database
         /// </summary>
-        public static Database LocalData { get; set; } = null;
+        public static OpenFiles LocalData { get; set; } = null;
 
         /// <summary>
-        /// Splash Screen (one instance)
+        /// Create an instance of the splash screen
         /// </summary>
         public static SplashScreen FormSplashScreen { get; } = new SplashScreen();
 
@@ -42,7 +42,7 @@ namespace FileMasta
             InitializeComponent();
             Form = this;
             
-            // Show Splash Screen
+            // Show splash window inside form
             Controls.Add(FormSplashScreen);
             FormSplashScreen.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom;
             FormSplashScreen.Location = new Point(0, 0);
@@ -50,7 +50,7 @@ namespace FileMasta
             FormSplashScreen.BringToFront();
             FormSplashScreen.Show();
 
-            // Set default control properties
+            // Set default search control properties
             ListboxSearchType.SelectedIndex = 0;
             DropdownSearchSort.SelectedIndex = 0;
             DropdownSearchSizePrefix.SelectedIndex = 0;
@@ -66,8 +66,8 @@ namespace FileMasta
         private void MainForm_Load(object sender, EventArgs e)
         {
             Program.Log.Info("Load events starting");
-            Updates.CheckForUpdate();
-            BackGroundWorker.RunWorkAsync(() => { LocalData = new Database(); }, InitializeFinished);
+            Utilities.Update.CheckUpdate();
+            WorkerExt.RunWorkAsync(() => { LocalData = new OpenFiles(); }, InitializeFinished);
         }
 
         private void InitializeFinished(object sender, RunWorkerCompletedEventArgs e)
@@ -75,18 +75,24 @@ namespace FileMasta
             int noKeywords = 0;
             foreach (var keyword in LocalData.GetKeywords())
                 if (noKeywords <= 100)
-                    FlowpanelKeywords.Controls.Add(ControlExtensions.LabelMostSearch(keyword, noKeywords)); noKeywords++;
+                    FlowpanelKeywords.Controls.Add(ControlExt.LabelKeyword(keyword, noKeywords)); noKeywords++;
             SetMetadata();
             Controls.Remove(FormSplashScreen);
             Program.Log.Info("Startup events completed");
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            LocalData.SaveBookmarked();
+            Program.Log.Info("Bookmarked file saved");
         }
 
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             if (e.CloseReason == CloseReason.UserClosing | e.CloseReason == CloseReason.ApplicationExitCall)
                 if (Properties.Settings.Default.clearDataOnClose)
-                    if (Directory.Exists(LocalExtensions.PathData))
-                        Directory.Delete(LocalExtensions.PathData, true);
+                    if (Directory.Exists(LocalExt.PathData))
+                        Directory.Delete(LocalExt.PathData, true);
             Program.Log.Info("Exited");
         }
 
@@ -122,15 +128,9 @@ namespace FileMasta
         }
 
         // Bookmarks
-        private void MenuStripBookmarksShow_Click(object sender, EventArgs e)
-        {
-            CheckboxSearchBookmarks.Checked = true;
-            SearchFiles();
-        }
-
         private void MenuStripBookmarksClear_Click(object sender, EventArgs e)
         {
-            LocalData.ClearBookmarks();
+            LocalData.ClearBookmarked();
         }
 
         // Tools
@@ -141,13 +141,13 @@ namespace FileMasta
 
         private void MenuToolsSubmitFtpServer_Click(object sender, EventArgs e)
         {
-            var submitWindow = new SubmitWindow();
+            var submitWindow = new SubmitDialog();
             submitWindow.ShowDialog(this);
         }
 
         private void MenuToolsOptions_Click(object sender, EventArgs e)
         {
-            var optionsWindow = new OptionsWindow();
+            var optionsWindow = new OptionsDialog();
             optionsWindow.ShowDialog(this);
         }
 
@@ -164,15 +164,9 @@ namespace FileMasta
 
         private void MenuHelpChangelog_Click(object sender, EventArgs e)
         {
-            ControlExtensions.ShowDataWindow("Changelog", GitHub.URL_CHANGELOG);
+            ControlExt.ShowDataWindow("Change Log", GitHub.URL_CHANGELOG);
         }
-
-        private void MenuHelpKeyboardShortcuts_Click(object sender, EventArgs e)
-        {
-            var shortcutsWindow = new ShortcutsWindow();
-            shortcutsWindow.ShowDialog(this);
-        }
-
+        
         private void MenuHelpReportIssue_Click(object sender, EventArgs e)
         {
             Process.Start($"{GitHub.URL_PROJECT}issues/new");
@@ -180,13 +174,13 @@ namespace FileMasta
 
         private void MenuHelpAbout_Click(object sender, EventArgs e)
         {
-            var aboutWindow = new AboutWindow();
+            var aboutWindow = new AboutDialog();
             aboutWindow.ShowDialog(this);
         }
 
         private void MenuHelpCheckForUpdate_Click(object sender, EventArgs e)
         {
-            Updates.CheckForUpdate();
+            Utilities.Update.CheckUpdate();
         }
 
         /// <summary>
@@ -195,8 +189,8 @@ namespace FileMasta
         public void SetMetadata()
         {
             StatusStripDatabaseInfo.Text = string.Format(StatusStripDatabaseInfo.Text,
-                StringExtensions.FormatNumber(LocalData.NoOfFiles().ToString()),
-                StringExtensions.BytesToPrefix(LocalData.TotalFileSize()),
+                StringExt.FormatNumber(LocalData.TotalFiles().ToString()),
+                StringExt.BytesToPrefix(LocalData.TotalFileSize()),
                 LocalData.MetaData.Updated.ToShortDateString());
         }
         
@@ -207,7 +201,7 @@ namespace FileMasta
         /// <summary>
         /// Search preference: Type
         /// </summary>
-        public string[] SearchFileType { get; set; } = Files.Type.Everything;
+        public string[] SearchFileType { get; set; } = FileType.All.ToArray();
 
         /// <summary>
         /// Search preference: Type
@@ -217,12 +211,7 @@ namespace FileMasta
         /// <summary>
         /// Search preference: Sort
         /// </summary>
-        public Database.Sort SearchSortBy { get; set; } = Database.Sort.Name;
-
-        /// <summary>
-        /// Search preference: Search Bookmarks
-        /// </summary>
-        public bool SearchBookmarks { get; set; } = false;
+        public OpenFiles.SortBy SearchSortBy { get; set; } = OpenFiles.SortBy.Name;
 
         private void TextBoxSearchQuery_KeyDown(object sender, KeyEventArgs e)
         {
@@ -245,51 +234,46 @@ namespace FileMasta
         {
             ContextMenuSearchExternal.Show(ButtonSearchExternal, PointToScreen(ButtonSearchExternal.Location));
         }
-
-        private void CheckboxSearchBookmarks_CheckedChanged(object sender, EventArgs e)
-        {
-            SearchBookmarks = CheckboxSearchBookmarks.Checked;
-        }
         
         // External Searches
         private void MenuSearchGoogle_Click(object sender, EventArgs e)
         {
-            Process.Start(string.Format("{0}{1} %2B({2}) %2Dinurl:(jsp|pl|php|html|aspx|htm|cf|shtml) intitle:index.of %2Dinurl:(listen77|mp3raid|mp3toss|mp3drug|index_of|index-of|wallywashis|downloadmana)", ExternalSearch.URL_GOOGLE, TextboxSearchName.Text, string.Join("|", SearchFileType.ToArray()).ToLower()));
+            Process.Start(string.Format("{0}{1} %2B({2}) %2Dinurl:(jsp|pl|php|html|aspx|htm|cf|shtml) intitle:index.of %2Dinurl:(listen77|mp3raid|mp3toss|mp3drug|index_of|index-of|wallywashis|downloadmana)", ExternalEngine.URL_GOOGLE, TextboxSearchName.Text, string.Join("|", SearchFileType.ToArray()).ToLower()));
         }
 
         private void MenuSearchGoogol_Click(object sender, EventArgs e)
         {
-            Process.Start(string.Format("{0}{1} %2B({2}) %2Dinurl:(jsp|pl|php|html|aspx|htm|cf|shtml) intitle:index.of %2Dinurl:(listen77|mp3raid|mp3toss|mp3drug|index_of|index-of|wallywashis|downloadmana)", ExternalSearch.URL_GOOGOL, TextboxSearchName.Text, string.Join("|", SearchFileType.ToArray()).ToLower()));
+            Process.Start(string.Format("{0}{1} %2B({2}) %2Dinurl:(jsp|pl|php|html|aspx|htm|cf|shtml) intitle:index.of %2Dinurl:(listen77|mp3raid|mp3toss|mp3drug|index_of|index-of|wallywashis|downloadmana)", ExternalEngine.URL_GOOGOL, TextboxSearchName.Text, string.Join("|", SearchFileType.ToArray()).ToLower()));
         }
 
         private void MenuSearchStartPage_Click(object sender, EventArgs e)
         {
-            Process.Start(string.Format("{0}{1} %2B({2}) %2Dinurl:(jsp|pl|php|html|aspx|htm|cf|shtml) intitle:index.of %2Dinurl:(listen77|mp3raid|mp3toss|mp3drug|index_of|index-of|wallywashis|downloadmana)", ExternalSearch.URL_STARTPAGE, TextboxSearchName.Text, string.Join("|", SearchFileType.ToArray()).ToLower()));
+            Process.Start(string.Format("{0}{1} %2B({2}) %2Dinurl:(jsp|pl|php|html|aspx|htm|cf|shtml) intitle:index.of %2Dinurl:(listen77|mp3raid|mp3toss|mp3drug|index_of|index-of|wallywashis|downloadmana)", ExternalEngine.URL_STARTPAGE, TextboxSearchName.Text, string.Join("|", SearchFileType.ToArray()).ToLower()));
         }
 
         private void MenuSearchSearx_Click(object sender, EventArgs e)
         {
-            Process.Start(string.Format("{0}{1} %2B({2}) %2Dinurl:(jsp|pl|php|html|aspx|htm|cf|shtml) intitle:index.of %2Dinurl:(listen77|mp3raid|mp3toss|mp3drug|index_of|index-of|wallywashis|downloadmana)", ExternalSearch.URL_SEARX, TextboxSearchName.Text, string.Join("|", SearchFileType.ToArray()).ToLower()));
+            Process.Start(string.Format("{0}{1} %2B({2}) %2Dinurl:(jsp|pl|php|html|aspx|htm|cf|shtml) intitle:index.of %2Dinurl:(listen77|mp3raid|mp3toss|mp3drug|index_of|index-of|wallywashis|downloadmana)", ExternalEngine.URL_SEARX, TextboxSearchName.Text, string.Join("|", SearchFileType.ToArray()).ToLower()));
         }        
 
         private void ListboxType_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (ListboxSearchType.SelectedIndex == -1)
-                SearchFileType = Files.Type.Everything;
+                SearchFileType = FileType.All;
             else if (ListboxSearchType.SelectedIndex == 0)
-                SearchFileType = Files.Type.Everything;
+                SearchFileType = FileType.All;
             else if (ListboxSearchType.SelectedIndex == 1)
-                SearchFileType = Files.Type.Audio;
+                SearchFileType = FileType.Audio;
             else if (ListboxSearchType.SelectedIndex == 2)
-                SearchFileType = Files.Type.Compressed;
+                SearchFileType = FileType.Compressed;
             else if (ListboxSearchType.SelectedIndex == 3)
-                SearchFileType = Files.Type.Document;
+                SearchFileType = FileType.Document;
             else if (ListboxSearchType.SelectedIndex == 4)
-                SearchFileType = Files.Type.Executable;
+                SearchFileType = FileType.Executable;
             else if (ListboxSearchType.SelectedIndex == 5)
-                SearchFileType = Files.Type.Picture;
+                SearchFileType = FileType.Picture;
             else if (ListboxSearchType.SelectedIndex == 6)
-                SearchFileType = Files.Type.Video;
+                SearchFileType = FileType.Video;
         }
 
         private void DropdownSearchSizePrefix_SelectedIndexChanged(object sender, EventArgs e)
@@ -300,11 +284,11 @@ namespace FileMasta
         private void ComboBoxSort_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (DropdownSearchSort.SelectedIndex == 0)
-                SearchSortBy = Database.Sort.Name;
+                SearchSortBy = OpenFiles.SortBy.Name;
             else if (DropdownSearchSort.SelectedIndex == 1)
-                SearchSortBy = Database.Sort.Size;
+                SearchSortBy = OpenFiles.SortBy.Size;
             else if (DropdownSearchSort.SelectedIndex == 2)
-                SearchSortBy = Database.Sort.Date;
+                SearchSortBy = OpenFiles.SortBy.Date;
         }
 
         /// <summary>
@@ -319,7 +303,7 @@ namespace FileMasta
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("There was an issue requesting file information.Make sure the server / files allows for anonymous authentication access, otherwise make sure sure there's no typo.\n\n" + ex.Message);
+                    MessageBox.Show("There was an issue requesting file information. Make sure the server / files allows for anonymous authentication access, otherwise make sure sure there's no typo.\n\n" + ex.Message);
                 }
             else
                  SearchFiles();
@@ -329,11 +313,11 @@ namespace FileMasta
         public void SearchFiles()
         {
             SetStatus("Searching...");
-            Program.Log.InfoFormat("Searching. Filters: Name: {0}, Sort: {1}, Type: {2}, Size : {3}, Last Modified : {3} to {4}", TextboxSearchName.Text, SearchSortBy.ToString(), SearchFileType.ToArray(), NumericSearchGreaterThan, DatetimeSearchLastModifiedMin, DatetimeSearchLastModifiedMax);
+            Program.Log.InfoFormat("Searching. Filters: Name: {0}, Sort: {1}, Type: {2}, Size : {3}, Last Modified : {4} to {5}", TextboxSearchName.Text, SearchSortBy.ToString(), SearchFileType.ToArray(), NumericSearchGreaterThan.Value, DatetimeSearchLastModifiedMin.Value, DatetimeSearchLastModifiedMax.Value);
             EnableSearchControls(false);
             Stopwatch stopWatch = new Stopwatch();
             stopWatch.Start();
-            BackGroundWorker.RunWorkAsync(() => LocalData.Search(SearchBookmarks, SearchSortBy, TextboxSearchName.Text, SearchFileType, StringExtensions.ParseFileSize(string.Format("{0} {1}", (long)NumericSearchGreaterThan.Value, SearchSizePrefix)), DatetimeSearchLastModifiedMin.Value, DatetimeSearchLastModifiedMax.Value), (files) =>
+            WorkerExt.RunWorkAsync(() => LocalData.Search(MenuStripBookmarkedShowHide.Checked, SearchSortBy, TextboxSearchName.Text, SearchFileType, StringExt.ParseFileSize(string.Format("{0} {1}", (long)NumericSearchGreaterThan.Value, SearchSizePrefix)), DatetimeSearchLastModifiedMin.Value, DatetimeSearchLastModifiedMax.Value), (files) =>
             {
                 if (InvokeRequired)
                     Invoke(new SearchFilesCallBack(SearchFiles), new object[] { });
@@ -343,11 +327,11 @@ namespace FileMasta
 
                     foreach (var file in files)
                     {
-                        DatagridFileItems.Rows.Add(file.Name + "." + file.GetExtension(), StringExtensions.BytesToPrefix(file.Size), file.DateModified, new Uri(file.URL).Host, file.URL);
+                        DatagridFileItems.Rows.Add(file.Name + "." + file.GetExtension().ToLower(), StringExt.BytesToPrefix(file.Size), file.DateModified, new Uri(file.URL).Host, file.URL);
                     }
 
                     stopWatch.Stop();
-                    SetStatus(string.Format("{0} Results ({1} seconds)", StringExtensions.FormatNumber(DatagridFileItems.Rows.Count.ToString()), String.Format("{0:0.000}", stopWatch.Elapsed.TotalSeconds)));
+                    SetStatus(string.Format("{0} Results ({1} seconds)", StringExt.FormatNumber(DatagridFileItems.Rows.Count.ToString()), string.Format("{0:0.000}", stopWatch.Elapsed.TotalSeconds)));
                     stopWatch.Reset();
 
                     EnableSearchControls(true);
@@ -420,38 +404,39 @@ namespace FileMasta
             Program.Log.Info("Selected file properties " + file.URL);
             SelectedGridFile = file;
             LabelFileValueName.Text = file.Name;
-            LabelFileValueSize.Text = StringExtensions.BytesToPrefix(file.Size);
-            LabelFileValueReferrer.Text = new Uri(file.URL).Host;
+            LabelFileValueSize.Text = StringExt.BytesToPrefix(file.Size);
+            LabelFileValueDomain.Text = new Uri(file.URL).Host;
+            LabelFileValueModified.Text = file.DateModified.ToString("dd MMMM yyyy");
+            LabelFileValueAge.Text = StringExt.TimeSpanAge(file.DateModified);
             LabelFileValueExtension.Text = file.GetExtension();
-            LabelFileValueLastModified.Text = string.Format("{0} ({1})", file.DateModified.ToString("dddd, dd MMMM yyyy"), StringExtensions.TimeSpanAge(file.DateModified));
             LabelFileValueURL.Text =  Uri.UnescapeDataString(file.URL);
-            LabelFileUrlBG.Height = LabelFileValueURL.Height + 18;
+            LabelFileUrlBG.Height = LabelFileValueURL.Height + 17;
 
             foreach (ToolStripMenuItem item in ContextFileOpenWith.Items)
                 item.Visible = false;
 
-            if (Files.Type.Document.Contains(file.GetExtension()))
+            if (FileType.Document.Contains(file.GetExtension()))
             {
-                NitroReaderToolStripMenuItem.Visible = File.Exists(LocalExtensions._pathNitroReader);
+                NitroReaderToolStripMenuItem.Visible = File.Exists(LocalExt._pathNitroReader);
             }
 
-            if (Files.Type.Video.Contains(file.GetExtension()) || Files.Type.Audio.Contains(file.GetExtension()))
+            if (FileType.Video.Contains(file.GetExtension()) || FileType.Audio.Contains(file.GetExtension()))
             {
                 WMPToolStripMenuItem.Visible = true;
-                VLCToolStripMenuItem.Visible = File.Exists(LocalExtensions._pathVLC);
-                MPCToolStripMenuItem.Visible = File.Exists(LocalExtensions._pathMPCCodec64) || File.Exists(LocalExtensions._pathMPC64) || File.Exists(LocalExtensions._pathMPC86);
-                KMPlayerToolStripMenuItem.Visible = File.Exists(LocalExtensions._pathKMPlayer);
-                PotPlayerToolStripMenuItem.Visible = File.Exists(LocalExtensions._pathPotPlayer);
+                VLCToolStripMenuItem.Visible = File.Exists(LocalExt._pathVLC);
+                MPCToolStripMenuItem.Visible = File.Exists(LocalExt._pathMPCCodec64) || File.Exists(LocalExt._pathMPC64) || File.Exists(LocalExt._pathMPC86);
+                KMPlayerToolStripMenuItem.Visible = File.Exists(LocalExt._pathKMPlayer);
+                PotPlayerToolStripMenuItem.Visible = File.Exists(LocalExt._pathPotPlayer);
             }
 
-            IDMToolStripMenuItem.Visible = File.Exists(LocalExtensions._pathIDM64) || File.Exists(LocalExtensions._pathIDM86);
-            IDAToolStripMenuItem.Visible = File.Exists(LocalExtensions._pathIDA);
-            FDMToolStripMenuItem.Visible = File.Exists(LocalExtensions._pathFDM);
+            IDMToolStripMenuItem.Visible = File.Exists(LocalExt._pathIDM64) || File.Exists(LocalExt._pathIDM86);
+            IDAToolStripMenuItem.Visible = File.Exists(LocalExt._pathIDA);
+            FDMToolStripMenuItem.Visible = File.Exists(LocalExt._pathFDM);
 
             if (LocalData.IsBookmarked(file))
-                ControlExtensions.SetControlTextWidth(ButtonFileBookmark, "Unbookmark");
+                ControlExt.SetControlTextWidth(ButtonFileBookmark, "Unbookmark");
             else
-                ControlExtensions.SetControlTextWidth(ButtonFileBookmark, "Bookmark");
+                ControlExt.SetControlTextWidth(ButtonFileBookmark, "Bookmark");
 
             ButtonFileRequestSize.Visible = file.Size == 0;
             ButtonFileOpenWith.Visible = ContextFileOpenWith.Items.Count > 0;
@@ -460,22 +445,21 @@ namespace FileMasta
         private void ButtonFileRequestSize_Click(object sender, EventArgs e)
         {
             ButtonFileRequestSize.Visible = false;
-            BackGroundWorker.RunWorkAsync(() => StringExtensions.BytesToPrefix(WebExtensions.FtpFileSize(SelectedGridFile.URL)), (data) => { LabelFileValueSize.Text = data; });
+            WorkerExt.RunWorkAsync(() => StringExt.BytesToPrefix(WebExt.FtpFileSize(SelectedGridFile.URL)), (data) => { LabelFileValueSize.Text = data; });
         }
 
         private void MenuFileBookmark_Click(object sender, EventArgs e)
         {
             if (LocalData.IsBookmarked(SelectedGridFile))
             {
-                LocalData.RemoveFile(SelectedGridFile);
-                ControlExtensions.SetControlTextWidth(ButtonFileBookmark, "Bookmark");
+                LocalData.Unbookmark(SelectedGridFile);
+                ControlExt.SetControlTextWidth(ButtonFileBookmark, "Bookmark");
             }
             else
             {
-                LocalData.AddFile(SelectedGridFile);
-                ControlExtensions.SetControlTextWidth(ButtonFileBookmark, "Unbookmark");
+                LocalData.Bookmark(SelectedGridFile);
+                ControlExt.SetControlTextWidth(ButtonFileBookmark, "Unbookmark");
             }
-            LocalData.SaveBookmarks();
         }
 
         private void ButtonFileDownload_Click(object sender, EventArgs e)
@@ -499,15 +483,14 @@ namespace FileMasta
         {
             if (LocalData.IsBookmarked(SelectedGridFile))
             {
-                LocalData.RemoveFile(SelectedGridFile);
-                ControlExtensions.SetControlTextWidth(ButtonFileBookmark, "Bookmark");
+                LocalData.Unbookmark(SelectedGridFile);
+                ControlExt.SetControlTextWidth(ButtonFileBookmark, "Bookmark");
             }
             else
             {
-                LocalData.AddFile(SelectedGridFile);
-                ControlExtensions.SetControlTextWidth(ButtonFileBookmark, "Unbookmark");
+                LocalData.Bookmark(SelectedGridFile);
+                ControlExt.SetControlTextWidth(ButtonFileBookmark, "Unbookmark");
             }
-            LocalData.SaveBookmarks();
         }       
 
         /// <summary>
@@ -550,10 +533,6 @@ namespace FileMasta
                 // Focus on Search Box
                 case Keys.Control | Keys.F:
                     TextboxSearchName.Focus();
-                    return true;
-                // Show Shortcuts Window
-                case Keys.Control | Keys.OemQuestion:
-                    MenuHelpShortcutKeys.PerformClick();
                     return true;
                 // Close application
                 case Keys.Control | Keys.W:

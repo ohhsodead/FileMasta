@@ -14,17 +14,17 @@ namespace FileMasta.Utilities
         /// <summary>
         /// List of servers
         /// </summary>
-        public const string URL_SERVERS                 = "https://github.com/HerbL27/FileMasta/tree/master/Public";
+        public const string URL_SERVERS                 = "https://github.com/herbl27/filemasta/tree/master/Public";
 
         /// <summary>
         /// Project changelog file
         /// </summary>
-        public const string URL_CHANGELOG               = "https://raw.githubusercontent.com/herbl27/filemasta/master/CHANGELOG.txt";
+        public const string URL_CHANGELOG               = "https://raw.githubusercontent.com/herbl27/filemasta/master/CHANGELOG.md";
 
         /// <summary>
         /// Project terms of use file
         /// </summary>
-        public const string URL_TERMSOFUSE              = "https://raw.githubusercontent.com/herbl27/filemasta/master/TERMSOFUSE.txt";
+        public const string URL_TERMSOFUSE              = "https://raw.githubusercontent.com/herbl27/filemasta/master/TERMSOFUSE.md";
 
         /// <summary>
         /// Open a new issue template for requesting a server to the project

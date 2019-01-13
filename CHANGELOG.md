@@ -1,6 +1,32 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
-## [0.4.3] 2019-01-12
-* Improved local data updates stability 
-* Improved memory storage 
+## [0.4.3] 2019-01-13
+* Improved local data storage stability 
+* Improved speed and efficiency by improved buffer handling (#128)
+* Improved the opening of files in system applications
+* Simplified user interface
+* Added ability to search minimimum file size
+* Added ability to search start/end file modified date
+* Added ability to email file download links
+
+
+## [0.4.2] 2018.11.05
+* Fixed issue with recent database changes (#116)
+* Clean up code and resources
+* Improved logging messages
+* Removed auto updater, now uses installer
+
+## [0.4.1] 2018.08.24
+* Attempted to improve startup and search time (#114)
+* Enable custom location installer (#112)
+* Improved database error handling
+* Improved user interface
+* Added ability to search external engines
+
+## [0.4.0] 2018.06.28
+* Updated database to use ftp file
+* Added support for more file extensions
+* User interface now uses default winform style
+* Added context menu to data table
+* Added menu and status tool strip

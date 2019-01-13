@@ -2,7 +2,7 @@
 
 A federated search application for discovering interesting files that are being shared online, such as video, music, books, software, games, subtitles and much more. Our web crawler keeps our database maintained which regularly updates file information on the contents of thousands of servers worldwide. We don't search file contents.
 
-![FileMasta](https://github.com/HerbL27/FileMasta/blob/master/Screenshots/screenshot1.png?raw=true)
+![FileMasta](https://github.com/HerbL27/FileMasta/blob/master/screenshot1.png?raw=true)
 
 >We host no content, we provide only access to already available files in the same way Google and other search engines do.
 
@@ -14,7 +14,7 @@ If you find a bug or have a feature request, please [create an issue](https://gi
 
 Contributions are highly welcome, however, except for very small changes, kindly file an issue and let's have a discussion before you open a pull request.
 
-Have a server you'd like to share? We've curated a huge collection of public servers being hosted across the web, so it's really simple to keep the list updated as more are discovered. Read more information on contributing [here](https://github.com/HerbL27/FileMasta/blob/master/Public/README.md)
+Have a server you'd like to share? We've curated a huge collection of public servers being hosted across the web, so it's really simple to keep the list updated as more are discovered. Read more information on contributing [here](https://github.com/HerbL27/FileMasta/blob/master/data/README.md)
 
 ## Frequently Asked Questions
 ### Is this application secure?
@@ -35,8 +35,8 @@ You don't need a special program but it is very recommended. For example, if you
 
 ## Resources
 * [Newtonsoft.Json](https://newtonsoft.com/json)
-* [log4net](https://logging.apache.org/log4net/)
 * [FileChef](https://filechef.com/searches)
+* [log4net](https://logging.apache.org/log4net/)
 
 ## License
 This project is licensed under the General Public License v3.

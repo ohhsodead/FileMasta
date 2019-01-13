@@ -35,8 +35,8 @@ namespace FileMasta
             }
 
             Application.SetUnhandledExceptionMode(UnhandledExceptionMode.CatchException);
-            Application.ThreadException += ExceptionEvents.ApplicationThreadException;
-            AppDomain.CurrentDomain.UnhandledException += ExceptionEvents.CurrentDomainUnhandledException;
+            Application.ThreadException += ExceptionHandler.ApplicationThreadException;
+            AppDomain.CurrentDomain.UnhandledException += ExceptionHandler.CurrentDomainUnhandledException;
 
             Run();
         }

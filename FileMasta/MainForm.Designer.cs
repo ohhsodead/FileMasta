@@ -1,6 +1,4 @@
-﻿using FileMasta.Extensions;
-
-namespace FileMasta
+﻿namespace FileMasta
 {
     partial class MainForm
     {
@@ -32,22 +30,23 @@ namespace FileMasta
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle54 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle50 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle51 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle52 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle53 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             CButtonLib.cBlendItems cBlendItems2 = new CButtonLib.cBlendItems();
             this.DatagridFileItems = new System.Windows.Forms.DataGridView();
             this.ColumnFileName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnFileSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnFileLastModified = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnFileReferrer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnFileDomain = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnFilesURL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ContextMenuFile = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.MenuFileViewDetails = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuFileBookmark = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuFileSeperator0 = new System.Windows.Forms.ToolStripSeparator();
             this.MenuFileOpen = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuFileSeperator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -58,10 +57,10 @@ namespace FileMasta
             this.MenuFileMinimizeToTray = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.MenuFileExit = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuStripBookmarks = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuStripBookmarksShow = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuStripBookmarked = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuStripBookmarkedShowHide = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuStripBookmarksSeperator0 = new System.Windows.Forms.ToolStripSeparator();
-            this.MenuStripBookmarksClear = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuStripBookmarkedClearAll = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuStripTools = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuToolsServerList = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuToolsRequestServer = new System.Windows.Forms.ToolStripMenuItem();
@@ -69,8 +68,9 @@ namespace FileMasta
             this.MenuToolsOptions = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuStripHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuHelpFAQ = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuHelpTermsOfUse = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuHelpChangelog = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuStripHelpSeperator0 = new System.Windows.Forms.ToolStripSeparator();
-            this.MenuHelpShortcutKeys = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuHelpCheckForUpdate = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuHelpReportIssue = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuStripHelpSeperator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -86,6 +86,9 @@ namespace FileMasta
             this.MenuSearchStartPage = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuSearchSearx = new System.Windows.Forms.ToolStripMenuItem();
             this.PanelFileDetails = new System.Windows.Forms.Panel();
+            this.cButton1 = new CButtonLib.CButton();
+            this.LabelFileAge = new System.Windows.Forms.Label();
+            this.LabelFileValueAge = new System.Windows.Forms.Label();
             this.LabelFileValueURL = new System.Windows.Forms.Label();
             this.FlowpanelFileButtons = new System.Windows.Forms.FlowLayoutPanel();
             this.ButtonFileDownload = new System.Windows.Forms.Button();
@@ -97,12 +100,12 @@ namespace FileMasta
             this.labelTitleExtension = new System.Windows.Forms.Label();
             this.LabelFileValueExtension = new System.Windows.Forms.Label();
             this.InfoSplitter5 = new CButtonLib.CButton();
-            this.LabelFileLastModified = new System.Windows.Forms.Label();
-            this.LabelFileValueLastModified = new System.Windows.Forms.Label();
+            this.LabelFileDateModified = new System.Windows.Forms.Label();
+            this.LabelFileValueModified = new System.Windows.Forms.Label();
             this.InfoSplitter3 = new CButtonLib.CButton();
             this.InfoSplitter2 = new CButtonLib.CButton();
             this.LabelFileReferrer = new System.Windows.Forms.Label();
-            this.LabelFileValueReferrer = new System.Windows.Forms.Label();
+            this.LabelFileValueDomain = new System.Windows.Forms.Label();
             this.labelTitleSize = new System.Windows.Forms.Label();
             this.LabelFileValueSize = new System.Windows.Forms.Label();
             this.LabelFileValueName = new System.Windows.Forms.Label();
@@ -134,10 +137,7 @@ namespace FileMasta
             this.LabelSearchModifiedTo = new System.Windows.Forms.Label();
             this.DropdownSearchSizePrefix = new System.Windows.Forms.ComboBox();
             this.PanelSearchControls = new System.Windows.Forms.Panel();
-            this.CheckboxSearchBookmarks = new System.Windows.Forms.CheckBox();
-            this.MenuFileBookmark = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuHelpChangelog = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuHelpTermsOfUse = new System.Windows.Forms.ToolStripMenuItem();
+            this.metadataBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.DatagridFileItems)).BeginInit();
             this.ContextMenuFile.SuspendLayout();
             this.MenuStrip.SuspendLayout();
@@ -149,6 +149,7 @@ namespace FileMasta
             this.FlowpanelKeywords.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NumericSearchGreaterThan)).BeginInit();
             this.PanelSearchControls.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.metadataBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // DatagridFileItems
@@ -174,7 +175,7 @@ namespace FileMasta
             this.ColumnFileName,
             this.ColumnFileSize,
             this.ColumnFileLastModified,
-            this.ColumnFileReferrer,
+            this.ColumnFileDomain,
             this.ColumnFilesURL});
             this.DatagridFileItems.ContextMenuStrip = this.ContextMenuFile;
             this.DatagridFileItems.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -187,12 +188,12 @@ namespace FileMasta
             this.DatagridFileItems.ReadOnly = true;
             this.DatagridFileItems.RowHeadersVisible = false;
             this.DatagridFileItems.RowHeadersWidth = 40;
-            dataGridViewCellStyle54.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(246)))));
-            dataGridViewCellStyle54.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle54.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle54.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle54.SelectionForeColor = System.Drawing.Color.White;
-            this.DatagridFileItems.RowsDefaultCellStyle = dataGridViewCellStyle54;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(246)))));
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.White;
+            this.DatagridFileItems.RowsDefaultCellStyle = dataGridViewCellStyle14;
             this.DatagridFileItems.RowTemplate.ContextMenuStrip = this.ContextMenuFile;
             this.DatagridFileItems.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(246)))));
             this.DatagridFileItems.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Verdana", 8.25F);
@@ -206,7 +207,7 @@ namespace FileMasta
             this.DatagridFileItems.ShowCellErrors = false;
             this.DatagridFileItems.ShowEditingIcon = false;
             this.DatagridFileItems.ShowRowErrors = false;
-            this.DatagridFileItems.Size = new System.Drawing.Size(725, 373);
+            this.DatagridFileItems.Size = new System.Drawing.Size(722, 373);
             this.DatagridFileItems.TabIndex = 7;
             this.DatagridFileItems.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DatagridFileItems_CellDoubleClick);
             this.DatagridFileItems.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.DatagridFileItems_CellPainting);
@@ -216,8 +217,8 @@ namespace FileMasta
             // ColumnFileName
             // 
             this.ColumnFileName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle44.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.ColumnFileName.DefaultCellStyle = dataGridViewCellStyle44;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.ColumnFileName.DefaultCellStyle = dataGridViewCellStyle9;
             this.ColumnFileName.HeaderText = "Name";
             this.ColumnFileName.Name = "ColumnFileName";
             this.ColumnFileName.ReadOnly = true;
@@ -226,40 +227,40 @@ namespace FileMasta
             // ColumnFileSize
             // 
             this.ColumnFileSize.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle50.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.ColumnFileSize.DefaultCellStyle = dataGridViewCellStyle50;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.ColumnFileSize.DefaultCellStyle = dataGridViewCellStyle10;
             this.ColumnFileSize.HeaderText = "Size";
             this.ColumnFileSize.Name = "ColumnFileSize";
             this.ColumnFileSize.ReadOnly = true;
-            this.ColumnFileSize.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.ColumnFileSize.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             this.ColumnFileSize.Width = 98;
             // 
             // ColumnFileLastModified
             // 
             this.ColumnFileLastModified.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridViewCellStyle51.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.ColumnFileLastModified.DefaultCellStyle = dataGridViewCellStyle51;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.ColumnFileLastModified.DefaultCellStyle = dataGridViewCellStyle11;
             this.ColumnFileLastModified.HeaderText = "Last Modified";
             this.ColumnFileLastModified.Name = "ColumnFileLastModified";
             this.ColumnFileLastModified.ReadOnly = true;
-            this.ColumnFileLastModified.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.ColumnFileLastModified.Width = 94;
+            this.ColumnFileLastModified.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.ColumnFileLastModified.Width = 113;
             // 
-            // ColumnFileReferrer
+            // ColumnFileDomain
             // 
-            this.ColumnFileReferrer.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle52.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.ColumnFileReferrer.DefaultCellStyle = dataGridViewCellStyle52;
-            this.ColumnFileReferrer.HeaderText = "Referrer";
-            this.ColumnFileReferrer.Name = "ColumnFileReferrer";
-            this.ColumnFileReferrer.ReadOnly = true;
-            this.ColumnFileReferrer.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.ColumnFileReferrer.Width = 165;
+            this.ColumnFileDomain.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.ColumnFileDomain.DefaultCellStyle = dataGridViewCellStyle12;
+            this.ColumnFileDomain.HeaderText = "Domain";
+            this.ColumnFileDomain.Name = "ColumnFileDomain";
+            this.ColumnFileDomain.ReadOnly = true;
+            this.ColumnFileDomain.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.ColumnFileDomain.Width = 165;
             // 
             // ColumnFilesURL
             // 
-            dataGridViewCellStyle53.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.ColumnFilesURL.DefaultCellStyle = dataGridViewCellStyle53;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.ColumnFilesURL.DefaultCellStyle = dataGridViewCellStyle13;
             this.ColumnFilesURL.HeaderText = "URL";
             this.ColumnFilesURL.Name = "ColumnFilesURL";
             this.ColumnFilesURL.ReadOnly = true;
@@ -269,8 +270,8 @@ namespace FileMasta
             // 
             this.ContextMenuFile.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.ContextMenuFile.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MenuFileBookmark,
             this.MenuFileViewDetails,
+            this.MenuFileBookmark,
             this.MenuFileSeperator0,
             this.MenuFileOpen,
             this.MenuFileSeperator1,
@@ -285,6 +286,13 @@ namespace FileMasta
             this.MenuFileViewDetails.Size = new System.Drawing.Size(137, 22);
             this.MenuFileViewDetails.Text = "View Details";
             this.MenuFileViewDetails.Click += new System.EventHandler(this.MenuFileViewDetails_Click);
+            // 
+            // MenuFileBookmark
+            // 
+            this.MenuFileBookmark.Name = "MenuFileBookmark";
+            this.MenuFileBookmark.Size = new System.Drawing.Size(137, 22);
+            this.MenuFileBookmark.Text = "Bookmark";
+            this.MenuFileBookmark.Click += new System.EventHandler(this.MenuFileBookmark_Click);
             // 
             // MenuFileSeperator0
             // 
@@ -322,13 +330,13 @@ namespace FileMasta
             this.MenuStrip.Font = new System.Drawing.Font("Verdana", 8.25F);
             this.MenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MenuStripFile,
-            this.MenuStripBookmarks,
+            this.MenuStripBookmarked,
             this.MenuStripTools,
             this.MenuStripHelp});
             this.MenuStrip.Location = new System.Drawing.Point(0, 0);
             this.MenuStrip.Name = "MenuStrip";
             this.MenuStrip.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
-            this.MenuStrip.Size = new System.Drawing.Size(1095, 24);
+            this.MenuStrip.Size = new System.Drawing.Size(1084, 24);
             this.MenuStrip.TabIndex = 3;
             // 
             // MenuStripFile
@@ -360,34 +368,34 @@ namespace FileMasta
             this.MenuFileExit.Text = "Exit";
             this.MenuFileExit.Click += new System.EventHandler(this.MenuFileExit_Click);
             // 
-            // MenuStripBookmarks
+            // MenuStripBookmarked
             // 
-            this.MenuStripBookmarks.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MenuStripBookmarksShow,
+            this.MenuStripBookmarked.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MenuStripBookmarkedShowHide,
             this.MenuStripBookmarksSeperator0,
-            this.MenuStripBookmarksClear});
-            this.MenuStripBookmarks.Name = "MenuStripBookmarks";
-            this.MenuStripBookmarks.Size = new System.Drawing.Size(84, 20);
-            this.MenuStripBookmarks.Text = "Bookmarks";
+            this.MenuStripBookmarkedClearAll});
+            this.MenuStripBookmarked.Name = "MenuStripBookmarked";
+            this.MenuStripBookmarked.Size = new System.Drawing.Size(92, 20);
+            this.MenuStripBookmarked.Text = "Bookmarked";
             // 
-            // MenuStripBookmarksShow
+            // MenuStripBookmarkedShowHide
             // 
-            this.MenuStripBookmarksShow.Name = "MenuStripBookmarksShow";
-            this.MenuStripBookmarksShow.Size = new System.Drawing.Size(105, 22);
-            this.MenuStripBookmarksShow.Text = "Show";
-            this.MenuStripBookmarksShow.Click += new System.EventHandler(this.MenuStripBookmarksShow_Click);
+            this.MenuStripBookmarkedShowHide.CheckOnClick = true;
+            this.MenuStripBookmarkedShowHide.Name = "MenuStripBookmarkedShowHide";
+            this.MenuStripBookmarkedShowHide.Size = new System.Drawing.Size(135, 22);
+            this.MenuStripBookmarkedShowHide.Text = "Show/Hide";
             // 
             // MenuStripBookmarksSeperator0
             // 
             this.MenuStripBookmarksSeperator0.Name = "MenuStripBookmarksSeperator0";
-            this.MenuStripBookmarksSeperator0.Size = new System.Drawing.Size(102, 6);
+            this.MenuStripBookmarksSeperator0.Size = new System.Drawing.Size(132, 6);
             // 
-            // MenuStripBookmarksClear
+            // MenuStripBookmarkedClearAll
             // 
-            this.MenuStripBookmarksClear.Name = "MenuStripBookmarksClear";
-            this.MenuStripBookmarksClear.Size = new System.Drawing.Size(105, 22);
-            this.MenuStripBookmarksClear.Text = "Clear";
-            this.MenuStripBookmarksClear.Click += new System.EventHandler(this.MenuStripBookmarksClear_Click);
+            this.MenuStripBookmarkedClearAll.Name = "MenuStripBookmarkedClearAll";
+            this.MenuStripBookmarkedClearAll.Size = new System.Drawing.Size(135, 22);
+            this.MenuStripBookmarkedClearAll.Text = "Clear All";
+            this.MenuStripBookmarkedClearAll.Click += new System.EventHandler(this.MenuStripBookmarksClear_Click);
             // 
             // MenuStripTools
             // 
@@ -403,26 +411,26 @@ namespace FileMasta
             // MenuToolsServerList
             // 
             this.MenuToolsServerList.Name = "MenuToolsServerList";
-            this.MenuToolsServerList.Size = new System.Drawing.Size(180, 22);
+            this.MenuToolsServerList.Size = new System.Drawing.Size(163, 22);
             this.MenuToolsServerList.Text = "Server List";
             this.MenuToolsServerList.Click += new System.EventHandler(this.MenuToolsFtpServerList_Click);
             // 
             // MenuToolsRequestServer
             // 
             this.MenuToolsRequestServer.Name = "MenuToolsRequestServer";
-            this.MenuToolsRequestServer.Size = new System.Drawing.Size(180, 22);
+            this.MenuToolsRequestServer.Size = new System.Drawing.Size(163, 22);
             this.MenuToolsRequestServer.Text = "Request Server";
             this.MenuToolsRequestServer.Click += new System.EventHandler(this.MenuToolsSubmitFtpServer_Click);
             // 
             // MenuStripToolsSeperator0
             // 
             this.MenuStripToolsSeperator0.Name = "MenuStripToolsSeperator0";
-            this.MenuStripToolsSeperator0.Size = new System.Drawing.Size(177, 6);
+            this.MenuStripToolsSeperator0.Size = new System.Drawing.Size(160, 6);
             // 
             // MenuToolsOptions
             // 
             this.MenuToolsOptions.Name = "MenuToolsOptions";
-            this.MenuToolsOptions.Size = new System.Drawing.Size(180, 22);
+            this.MenuToolsOptions.Size = new System.Drawing.Size(163, 22);
             this.MenuToolsOptions.Text = "Options";
             this.MenuToolsOptions.Click += new System.EventHandler(this.MenuToolsOptions_Click);
             // 
@@ -433,7 +441,6 @@ namespace FileMasta
             this.MenuHelpTermsOfUse,
             this.MenuHelpChangelog,
             this.MenuStripHelpSeperator0,
-            this.MenuHelpShortcutKeys,
             this.MenuHelpCheckForUpdate,
             this.MenuHelpReportIssue,
             this.MenuStripHelpSeperator1,
@@ -445,45 +452,52 @@ namespace FileMasta
             // MenuHelpFAQ
             // 
             this.MenuHelpFAQ.Name = "MenuHelpFAQ";
-            this.MenuHelpFAQ.Size = new System.Drawing.Size(180, 22);
+            this.MenuHelpFAQ.Size = new System.Drawing.Size(174, 22);
             this.MenuHelpFAQ.Text = "FAQ";
             this.MenuHelpFAQ.Click += new System.EventHandler(this.MenuHelpFAQ_Click);
+            // 
+            // MenuHelpTermsOfUse
+            // 
+            this.MenuHelpTermsOfUse.Name = "MenuHelpTermsOfUse";
+            this.MenuHelpTermsOfUse.Size = new System.Drawing.Size(174, 22);
+            this.MenuHelpTermsOfUse.Text = "Terms of Use";
+            this.MenuHelpTermsOfUse.Click += new System.EventHandler(this.MenuHelpTermsOfUse_Click);
+            // 
+            // MenuHelpChangelog
+            // 
+            this.MenuHelpChangelog.Name = "MenuHelpChangelog";
+            this.MenuHelpChangelog.Size = new System.Drawing.Size(174, 22);
+            this.MenuHelpChangelog.Text = "Changelog";
+            this.MenuHelpChangelog.Click += new System.EventHandler(this.MenuHelpChangelog_Click);
             // 
             // MenuStripHelpSeperator0
             // 
             this.MenuStripHelpSeperator0.Name = "MenuStripHelpSeperator0";
-            this.MenuStripHelpSeperator0.Size = new System.Drawing.Size(177, 6);
-            // 
-            // MenuHelpShortcutKeys
-            // 
-            this.MenuHelpShortcutKeys.Name = "MenuHelpShortcutKeys";
-            this.MenuHelpShortcutKeys.Size = new System.Drawing.Size(180, 22);
-            this.MenuHelpShortcutKeys.Text = "Shortcut Keys";
-            this.MenuHelpShortcutKeys.Click += new System.EventHandler(this.MenuHelpKeyboardShortcuts_Click);
+            this.MenuStripHelpSeperator0.Size = new System.Drawing.Size(171, 6);
             // 
             // MenuHelpCheckForUpdate
             // 
             this.MenuHelpCheckForUpdate.Name = "MenuHelpCheckForUpdate";
-            this.MenuHelpCheckForUpdate.Size = new System.Drawing.Size(180, 22);
+            this.MenuHelpCheckForUpdate.Size = new System.Drawing.Size(174, 22);
             this.MenuHelpCheckForUpdate.Text = "Check for Update";
             this.MenuHelpCheckForUpdate.Click += new System.EventHandler(this.MenuHelpCheckForUpdate_Click);
             // 
             // MenuHelpReportIssue
             // 
             this.MenuHelpReportIssue.Name = "MenuHelpReportIssue";
-            this.MenuHelpReportIssue.Size = new System.Drawing.Size(180, 22);
+            this.MenuHelpReportIssue.Size = new System.Drawing.Size(174, 22);
             this.MenuHelpReportIssue.Text = "Report an Issue";
             this.MenuHelpReportIssue.Click += new System.EventHandler(this.MenuHelpReportIssue_Click);
             // 
             // MenuStripHelpSeperator1
             // 
             this.MenuStripHelpSeperator1.Name = "MenuStripHelpSeperator1";
-            this.MenuStripHelpSeperator1.Size = new System.Drawing.Size(177, 6);
+            this.MenuStripHelpSeperator1.Size = new System.Drawing.Size(171, 6);
             // 
             // MenuHelpAbout
             // 
             this.MenuHelpAbout.Name = "MenuHelpAbout";
-            this.MenuHelpAbout.Size = new System.Drawing.Size(180, 22);
+            this.MenuHelpAbout.Size = new System.Drawing.Size(174, 22);
             this.MenuHelpAbout.Text = "About";
             this.MenuHelpAbout.Click += new System.EventHandler(this.MenuHelpAbout_Click);
             // 
@@ -497,7 +511,7 @@ namespace FileMasta
             this.StatusStripFooter.Location = new System.Drawing.Point(0, 539);
             this.StatusStripFooter.Name = "StatusStripFooter";
             this.StatusStripFooter.Padding = new System.Windows.Forms.Padding(1, 0, 16, 0);
-            this.StatusStripFooter.Size = new System.Drawing.Size(1095, 22);
+            this.StatusStripFooter.Size = new System.Drawing.Size(1084, 22);
             this.StatusStripFooter.TabIndex = 0;
             // 
             // StatusStripStatus
@@ -511,7 +525,7 @@ namespace FileMasta
             // 
             this.StatusStripSpring.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.StatusStripSpring.Name = "StatusStripSpring";
-            this.StatusStripSpring.Size = new System.Drawing.Size(796, 17);
+            this.StatusStripSpring.Size = new System.Drawing.Size(785, 17);
             this.StatusStripSpring.Spring = true;
             // 
             // StatusStripDatabaseInfo
@@ -573,6 +587,9 @@ namespace FileMasta
             // PanelFileDetails
             // 
             this.PanelFileDetails.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PanelFileDetails.Controls.Add(this.cButton1);
+            this.PanelFileDetails.Controls.Add(this.LabelFileAge);
+            this.PanelFileDetails.Controls.Add(this.LabelFileValueAge);
             this.PanelFileDetails.Controls.Add(this.LabelFileValueURL);
             this.PanelFileDetails.Controls.Add(this.FlowpanelFileButtons);
             this.PanelFileDetails.Controls.Add(this.LabelFileUrlBG);
@@ -581,21 +598,74 @@ namespace FileMasta
             this.PanelFileDetails.Controls.Add(this.labelTitleExtension);
             this.PanelFileDetails.Controls.Add(this.LabelFileValueExtension);
             this.PanelFileDetails.Controls.Add(this.InfoSplitter5);
-            this.PanelFileDetails.Controls.Add(this.LabelFileLastModified);
-            this.PanelFileDetails.Controls.Add(this.LabelFileValueLastModified);
+            this.PanelFileDetails.Controls.Add(this.LabelFileDateModified);
+            this.PanelFileDetails.Controls.Add(this.LabelFileValueModified);
             this.PanelFileDetails.Controls.Add(this.InfoSplitter3);
             this.PanelFileDetails.Controls.Add(this.InfoSplitter2);
             this.PanelFileDetails.Controls.Add(this.LabelFileReferrer);
-            this.PanelFileDetails.Controls.Add(this.LabelFileValueReferrer);
+            this.PanelFileDetails.Controls.Add(this.LabelFileValueDomain);
             this.PanelFileDetails.Controls.Add(this.labelTitleSize);
             this.PanelFileDetails.Controls.Add(this.LabelFileValueSize);
             this.PanelFileDetails.Controls.Add(this.LabelFileValueName);
             this.PanelFileDetails.Dock = System.Windows.Forms.DockStyle.Right;
             this.PanelFileDetails.Enabled = false;
-            this.PanelFileDetails.Location = new System.Drawing.Point(725, 166);
+            this.PanelFileDetails.Location = new System.Drawing.Point(722, 166);
             this.PanelFileDetails.Name = "PanelFileDetails";
-            this.PanelFileDetails.Size = new System.Drawing.Size(370, 373);
+            this.PanelFileDetails.Size = new System.Drawing.Size(362, 373);
             this.PanelFileDetails.TabIndex = 1114;
+            // 
+            // cButton1
+            // 
+            this.cButton1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cButton1.BackColor = System.Drawing.Color.Transparent;
+            this.cButton1.BorderColor = System.Drawing.Color.LightGray;
+            this.cButton1.ColorFillSolid = System.Drawing.Color.LightGray;
+            this.cButton1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.cButton1.DesignerSelected = false;
+            this.cButton1.DimFactorClick = 0;
+            this.cButton1.DimFactorHover = 0;
+            this.cButton1.FillType = CButtonLib.CButton.eFillType.Solid;
+            this.cButton1.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cButton1.ImageIndex = 0;
+            this.cButton1.Location = new System.Drawing.Point(13, 146);
+            this.cButton1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cButton1.Name = "cButton1";
+            this.cButton1.ShowFocus = CButtonLib.CButton.eFocus.None;
+            this.cButton1.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.cButton1.SideImageSize = new System.Drawing.Size(21, 21);
+            this.cButton1.Size = new System.Drawing.Size(334, 1);
+            this.cButton1.TabIndex = 100128;
+            this.cButton1.TabStop = false;
+            this.cButton1.Text = "";
+            this.cButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.cButton1.TextShadowShow = false;
+            // 
+            // LabelFileAge
+            // 
+            this.LabelFileAge.AutoSize = true;
+            this.LabelFileAge.BackColor = System.Drawing.Color.Transparent;
+            this.LabelFileAge.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
+            this.LabelFileAge.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelFileAge.Location = new System.Drawing.Point(10, 122);
+            this.LabelFileAge.Margin = new System.Windows.Forms.Padding(0, 6, 0, 6);
+            this.LabelFileAge.Name = "LabelFileAge";
+            this.LabelFileAge.Size = new System.Drawing.Size(36, 13);
+            this.LabelFileAge.TabIndex = 100127;
+            this.LabelFileAge.Text = "Age:";
+            // 
+            // LabelFileValueAge
+            // 
+            this.LabelFileValueAge.AutoSize = true;
+            this.LabelFileValueAge.BackColor = System.Drawing.Color.Transparent;
+            this.LabelFileValueAge.Font = new System.Drawing.Font("Verdana", 8.25F);
+            this.LabelFileValueAge.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelFileValueAge.Location = new System.Drawing.Point(143, 122);
+            this.LabelFileValueAge.Margin = new System.Windows.Forms.Padding(0, 6, 0, 6);
+            this.LabelFileValueAge.Name = "LabelFileValueAge";
+            this.LabelFileValueAge.Size = new System.Drawing.Size(12, 13);
+            this.LabelFileValueAge.TabIndex = 100126;
+            this.LabelFileValueAge.Text = "-";
             // 
             // LabelFileValueURL
             // 
@@ -604,13 +674,13 @@ namespace FileMasta
             this.LabelFileValueURL.Cursor = System.Windows.Forms.Cursors.Default;
             this.LabelFileValueURL.Font = new System.Drawing.Font("Verdana", 8.25F);
             this.LabelFileValueURL.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelFileValueURL.Location = new System.Drawing.Point(22, 198);
+            this.LabelFileValueURL.Location = new System.Drawing.Point(22, 230);
             this.LabelFileValueURL.Margin = new System.Windows.Forms.Padding(0, 6, 0, 6);
             this.LabelFileValueURL.MaximumSize = new System.Drawing.Size(322, 0);
             this.LabelFileValueURL.MinimumSize = new System.Drawing.Size(324, 0);
             this.LabelFileValueURL.Name = "LabelFileValueURL";
-            this.LabelFileValueURL.Padding = new System.Windows.Forms.Padding(0, 0, 0, 2);
-            this.LabelFileValueURL.Size = new System.Drawing.Size(324, 15);
+            this.LabelFileValueURL.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
+            this.LabelFileValueURL.Size = new System.Drawing.Size(324, 17);
             this.LabelFileValueURL.TabIndex = 100125;
             this.LabelFileValueURL.Text = "-";
             // 
@@ -621,17 +691,18 @@ namespace FileMasta
             this.FlowpanelFileButtons.Controls.Add(this.ButtonFileDownload);
             this.FlowpanelFileButtons.Controls.Add(this.ButtonFileOpenWith);
             this.FlowpanelFileButtons.Controls.Add(this.ButtonFileBookmark);
-            this.FlowpanelFileButtons.Location = new System.Drawing.Point(10, 329);
+            this.FlowpanelFileButtons.Location = new System.Drawing.Point(13, 329);
             this.FlowpanelFileButtons.Name = "FlowpanelFileButtons";
-            this.FlowpanelFileButtons.Size = new System.Drawing.Size(348, 32);
+            this.FlowpanelFileButtons.Size = new System.Drawing.Size(337, 28);
             this.FlowpanelFileButtons.TabIndex = 23;
             // 
             // ButtonFileDownload
             // 
             this.ButtonFileDownload.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.ButtonFileDownload.Location = new System.Drawing.Point(3, 3);
+            this.ButtonFileDownload.Location = new System.Drawing.Point(0, 0);
+            this.ButtonFileDownload.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.ButtonFileDownload.Name = "ButtonFileDownload";
-            this.ButtonFileDownload.Size = new System.Drawing.Size(120, 26);
+            this.ButtonFileDownload.Size = new System.Drawing.Size(120, 28);
             this.ButtonFileDownload.TabIndex = 100128;
             this.ButtonFileDownload.Text = "Direct Download";
             this.ButtonFileDownload.UseVisualStyleBackColor = true;
@@ -640,9 +711,10 @@ namespace FileMasta
             // ButtonFileOpenWith
             // 
             this.ButtonFileOpenWith.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.ButtonFileOpenWith.Location = new System.Drawing.Point(129, 3);
+            this.ButtonFileOpenWith.Location = new System.Drawing.Point(126, 0);
+            this.ButtonFileOpenWith.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.ButtonFileOpenWith.Name = "ButtonFileOpenWith";
-            this.ButtonFileOpenWith.Size = new System.Drawing.Size(96, 26);
+            this.ButtonFileOpenWith.Size = new System.Drawing.Size(96, 28);
             this.ButtonFileOpenWith.TabIndex = 100130;
             this.ButtonFileOpenWith.Text = "Open with...";
             this.ButtonFileOpenWith.UseVisualStyleBackColor = true;
@@ -651,9 +723,10 @@ namespace FileMasta
             // ButtonFileBookmark
             // 
             this.ButtonFileBookmark.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.ButtonFileBookmark.Location = new System.Drawing.Point(231, 3);
+            this.ButtonFileBookmark.Location = new System.Drawing.Point(228, 0);
+            this.ButtonFileBookmark.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.ButtonFileBookmark.Name = "ButtonFileBookmark";
-            this.ButtonFileBookmark.Size = new System.Drawing.Size(86, 26);
+            this.ButtonFileBookmark.Size = new System.Drawing.Size(86, 28);
             this.ButtonFileBookmark.TabIndex = 100129;
             this.ButtonFileBookmark.Text = "Bookmark";
             this.ButtonFileBookmark.UseVisualStyleBackColor = true;
@@ -689,12 +762,12 @@ namespace FileMasta
             this.LabelFileUrlBG.ForeColor = System.Drawing.SystemColors.ControlText;
             this.LabelFileUrlBG.ImageIndex = 0;
             this.LabelFileUrlBG.ImageSize = new System.Drawing.Size(24, 24);
-            this.LabelFileUrlBG.Location = new System.Drawing.Point(13, 190);
+            this.LabelFileUrlBG.Location = new System.Drawing.Point(13, 222);
             this.LabelFileUrlBG.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.LabelFileUrlBG.Name = "LabelFileUrlBG";
             this.LabelFileUrlBG.ShowFocus = CButtonLib.CButton.eFocus.None;
             this.LabelFileUrlBG.SideImageSize = new System.Drawing.Size(24, 24);
-            this.LabelFileUrlBG.Size = new System.Drawing.Size(342, 30);
+            this.LabelFileUrlBG.Size = new System.Drawing.Size(334, 36);
             this.LabelFileUrlBG.TabIndex = 100124;
             this.LabelFileUrlBG.TabStop = false;
             this.LabelFileUrlBG.Text = "";
@@ -716,13 +789,13 @@ namespace FileMasta
             this.InfoSplitter1.FillType = CButtonLib.CButton.eFillType.Solid;
             this.InfoSplitter1.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.InfoSplitter1.ImageIndex = 0;
-            this.InfoSplitter1.Location = new System.Drawing.Point(13, 39);
+            this.InfoSplitter1.Location = new System.Drawing.Point(13, 37);
             this.InfoSplitter1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.InfoSplitter1.Name = "InfoSplitter1";
             this.InfoSplitter1.ShowFocus = CButtonLib.CButton.eFocus.None;
             this.InfoSplitter1.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.InfoSplitter1.SideImageSize = new System.Drawing.Size(21, 21);
-            this.InfoSplitter1.Size = new System.Drawing.Size(342, 2);
+            this.InfoSplitter1.Size = new System.Drawing.Size(334, 2);
             this.InfoSplitter1.TabIndex = 100123;
             this.InfoSplitter1.TabStop = false;
             this.InfoSplitter1.Text = "";
@@ -731,7 +804,7 @@ namespace FileMasta
             // 
             // ButtonFileRequestSize
             // 
-            this.ButtonFileRequestSize.Location = new System.Drawing.Point(149, 46);
+            this.ButtonFileRequestSize.Location = new System.Drawing.Point(146, 44);
             this.ButtonFileRequestSize.Name = "ButtonFileRequestSize";
             this.ButtonFileRequestSize.Size = new System.Drawing.Size(100, 26);
             this.ButtonFileRequestSize.TabIndex = 100122;
@@ -745,7 +818,7 @@ namespace FileMasta
             this.labelTitleExtension.BackColor = System.Drawing.Color.Transparent;
             this.labelTitleExtension.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
             this.labelTitleExtension.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelTitleExtension.Location = new System.Drawing.Point(10, 160);
+            this.labelTitleExtension.Location = new System.Drawing.Point(10, 191);
             this.labelTitleExtension.Margin = new System.Windows.Forms.Padding(0, 6, 0, 6);
             this.labelTitleExtension.Name = "labelTitleExtension";
             this.labelTitleExtension.Size = new System.Drawing.Size(43, 13);
@@ -758,7 +831,7 @@ namespace FileMasta
             this.LabelFileValueExtension.BackColor = System.Drawing.Color.Transparent;
             this.LabelFileValueExtension.Font = new System.Drawing.Font("Verdana", 8.25F);
             this.LabelFileValueExtension.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelFileValueExtension.Location = new System.Drawing.Point(146, 160);
+            this.LabelFileValueExtension.Location = new System.Drawing.Point(143, 191);
             this.LabelFileValueExtension.Margin = new System.Windows.Forms.Padding(0, 6, 0, 6);
             this.LabelFileValueExtension.Name = "LabelFileValueExtension";
             this.LabelFileValueExtension.Size = new System.Drawing.Size(12, 13);
@@ -779,44 +852,44 @@ namespace FileMasta
             this.InfoSplitter5.FillType = CButtonLib.CButton.eFillType.Solid;
             this.InfoSplitter5.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.InfoSplitter5.ImageIndex = 0;
-            this.InfoSplitter5.Location = new System.Drawing.Point(13, 113);
+            this.InfoSplitter5.Location = new System.Drawing.Point(13, 111);
             this.InfoSplitter5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.InfoSplitter5.Name = "InfoSplitter5";
             this.InfoSplitter5.ShowFocus = CButtonLib.CButton.eFocus.None;
             this.InfoSplitter5.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.InfoSplitter5.SideImageSize = new System.Drawing.Size(21, 21);
-            this.InfoSplitter5.Size = new System.Drawing.Size(342, 1);
+            this.InfoSplitter5.Size = new System.Drawing.Size(334, 1);
             this.InfoSplitter5.TabIndex = 100115;
             this.InfoSplitter5.TabStop = false;
             this.InfoSplitter5.Text = "";
             this.InfoSplitter5.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.InfoSplitter5.TextShadowShow = false;
             // 
-            // LabelFileLastModified
+            // LabelFileDateModified
             // 
-            this.LabelFileLastModified.AutoSize = true;
-            this.LabelFileLastModified.BackColor = System.Drawing.Color.Transparent;
-            this.LabelFileLastModified.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
-            this.LabelFileLastModified.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelFileLastModified.Location = new System.Drawing.Point(10, 89);
-            this.LabelFileLastModified.Margin = new System.Windows.Forms.Padding(0, 6, 0, 6);
-            this.LabelFileLastModified.Name = "LabelFileLastModified";
-            this.LabelFileLastModified.Size = new System.Drawing.Size(97, 13);
-            this.LabelFileLastModified.TabIndex = 100114;
-            this.LabelFileLastModified.Text = "Last Modified:";
+            this.LabelFileDateModified.AutoSize = true;
+            this.LabelFileDateModified.BackColor = System.Drawing.Color.Transparent;
+            this.LabelFileDateModified.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
+            this.LabelFileDateModified.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelFileDateModified.Location = new System.Drawing.Point(10, 87);
+            this.LabelFileDateModified.Margin = new System.Windows.Forms.Padding(0, 6, 0, 6);
+            this.LabelFileDateModified.Name = "LabelFileDateModified";
+            this.LabelFileDateModified.Size = new System.Drawing.Size(66, 13);
+            this.LabelFileDateModified.TabIndex = 100114;
+            this.LabelFileDateModified.Text = "Modified:";
             // 
-            // LabelFileValueLastModified
+            // LabelFileValueModified
             // 
-            this.LabelFileValueLastModified.AutoSize = true;
-            this.LabelFileValueLastModified.BackColor = System.Drawing.Color.Transparent;
-            this.LabelFileValueLastModified.Font = new System.Drawing.Font("Verdana", 8.25F);
-            this.LabelFileValueLastModified.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelFileValueLastModified.Location = new System.Drawing.Point(146, 89);
-            this.LabelFileValueLastModified.Margin = new System.Windows.Forms.Padding(0, 6, 0, 6);
-            this.LabelFileValueLastModified.Name = "LabelFileValueLastModified";
-            this.LabelFileValueLastModified.Size = new System.Drawing.Size(12, 13);
-            this.LabelFileValueLastModified.TabIndex = 100108;
-            this.LabelFileValueLastModified.Text = "-";
+            this.LabelFileValueModified.AutoSize = true;
+            this.LabelFileValueModified.BackColor = System.Drawing.Color.Transparent;
+            this.LabelFileValueModified.Font = new System.Drawing.Font("Verdana", 8.25F);
+            this.LabelFileValueModified.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelFileValueModified.Location = new System.Drawing.Point(143, 87);
+            this.LabelFileValueModified.Margin = new System.Windows.Forms.Padding(0, 6, 0, 6);
+            this.LabelFileValueModified.Name = "LabelFileValueModified";
+            this.LabelFileValueModified.Size = new System.Drawing.Size(12, 13);
+            this.LabelFileValueModified.TabIndex = 100108;
+            this.LabelFileValueModified.Text = "-";
             // 
             // InfoSplitter3
             // 
@@ -832,13 +905,13 @@ namespace FileMasta
             this.InfoSplitter3.FillType = CButtonLib.CButton.eFillType.Solid;
             this.InfoSplitter3.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.InfoSplitter3.ImageIndex = 0;
-            this.InfoSplitter3.Location = new System.Drawing.Point(13, 149);
+            this.InfoSplitter3.Location = new System.Drawing.Point(13, 180);
             this.InfoSplitter3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.InfoSplitter3.Name = "InfoSplitter3";
             this.InfoSplitter3.ShowFocus = CButtonLib.CButton.eFocus.None;
             this.InfoSplitter3.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.InfoSplitter3.SideImageSize = new System.Drawing.Size(21, 21);
-            this.InfoSplitter3.Size = new System.Drawing.Size(342, 1);
+            this.InfoSplitter3.Size = new System.Drawing.Size(334, 1);
             this.InfoSplitter3.TabIndex = 100113;
             this.InfoSplitter3.TabStop = false;
             this.InfoSplitter3.Text = "";
@@ -859,13 +932,13 @@ namespace FileMasta
             this.InfoSplitter2.FillType = CButtonLib.CButton.eFillType.Solid;
             this.InfoSplitter2.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.InfoSplitter2.ImageIndex = 0;
-            this.InfoSplitter2.Location = new System.Drawing.Point(13, 77);
+            this.InfoSplitter2.Location = new System.Drawing.Point(13, 75);
             this.InfoSplitter2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.InfoSplitter2.Name = "InfoSplitter2";
             this.InfoSplitter2.ShowFocus = CButtonLib.CButton.eFocus.None;
             this.InfoSplitter2.SideImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.InfoSplitter2.SideImageSize = new System.Drawing.Size(21, 21);
-            this.InfoSplitter2.Size = new System.Drawing.Size(342, 1);
+            this.InfoSplitter2.Size = new System.Drawing.Size(334, 1);
             this.InfoSplitter2.TabIndex = 100110;
             this.InfoSplitter2.TabStop = false;
             this.InfoSplitter2.Text = "";
@@ -878,26 +951,26 @@ namespace FileMasta
             this.LabelFileReferrer.BackColor = System.Drawing.Color.Transparent;
             this.LabelFileReferrer.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
             this.LabelFileReferrer.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelFileReferrer.Location = new System.Drawing.Point(10, 125);
+            this.LabelFileReferrer.Location = new System.Drawing.Point(10, 156);
             this.LabelFileReferrer.Margin = new System.Windows.Forms.Padding(0, 6, 0, 6);
             this.LabelFileReferrer.Name = "LabelFileReferrer";
-            this.LabelFileReferrer.Size = new System.Drawing.Size(66, 13);
+            this.LabelFileReferrer.Size = new System.Drawing.Size(60, 13);
             this.LabelFileReferrer.TabIndex = 100109;
-            this.LabelFileReferrer.Text = "Referrer:";
+            this.LabelFileReferrer.Text = "Domain:";
             // 
-            // LabelFileValueReferrer
+            // LabelFileValueDomain
             // 
-            this.LabelFileValueReferrer.AutoSize = true;
-            this.LabelFileValueReferrer.BackColor = System.Drawing.Color.Transparent;
-            this.LabelFileValueReferrer.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LabelFileValueReferrer.Font = new System.Drawing.Font("Verdana", 8.25F);
-            this.LabelFileValueReferrer.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelFileValueReferrer.Location = new System.Drawing.Point(146, 125);
-            this.LabelFileValueReferrer.Margin = new System.Windows.Forms.Padding(0, 6, 0, 6);
-            this.LabelFileValueReferrer.Name = "LabelFileValueReferrer";
-            this.LabelFileValueReferrer.Size = new System.Drawing.Size(12, 13);
-            this.LabelFileValueReferrer.TabIndex = 100116;
-            this.LabelFileValueReferrer.Text = "-";
+            this.LabelFileValueDomain.AutoSize = true;
+            this.LabelFileValueDomain.BackColor = System.Drawing.Color.Transparent;
+            this.LabelFileValueDomain.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LabelFileValueDomain.Font = new System.Drawing.Font("Verdana", 8.25F);
+            this.LabelFileValueDomain.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelFileValueDomain.Location = new System.Drawing.Point(143, 156);
+            this.LabelFileValueDomain.Margin = new System.Windows.Forms.Padding(0, 6, 0, 6);
+            this.LabelFileValueDomain.Name = "LabelFileValueDomain";
+            this.LabelFileValueDomain.Size = new System.Drawing.Size(12, 13);
+            this.LabelFileValueDomain.TabIndex = 100116;
+            this.LabelFileValueDomain.Text = "-";
             // 
             // labelTitleSize
             // 
@@ -905,7 +978,7 @@ namespace FileMasta
             this.labelTitleSize.BackColor = System.Drawing.Color.Transparent;
             this.labelTitleSize.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold);
             this.labelTitleSize.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelTitleSize.Location = new System.Drawing.Point(10, 52);
+            this.labelTitleSize.Location = new System.Drawing.Point(10, 50);
             this.labelTitleSize.Margin = new System.Windows.Forms.Padding(0, 6, 0, 6);
             this.labelTitleSize.Name = "labelTitleSize";
             this.labelTitleSize.Size = new System.Drawing.Size(38, 13);
@@ -918,7 +991,7 @@ namespace FileMasta
             this.LabelFileValueSize.BackColor = System.Drawing.Color.Transparent;
             this.LabelFileValueSize.Font = new System.Drawing.Font("Verdana", 8.25F);
             this.LabelFileValueSize.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelFileValueSize.Location = new System.Drawing.Point(146, 52);
+            this.LabelFileValueSize.Location = new System.Drawing.Point(143, 50);
             this.LabelFileValueSize.Margin = new System.Windows.Forms.Padding(0, 6, 0, 6);
             this.LabelFileValueSize.Name = "LabelFileValueSize";
             this.LabelFileValueSize.Size = new System.Drawing.Size(12, 13);
@@ -934,10 +1007,10 @@ namespace FileMasta
             this.LabelFileValueName.Cursor = System.Windows.Forms.Cursors.Default;
             this.LabelFileValueName.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelFileValueName.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelFileValueName.Location = new System.Drawing.Point(10, 10);
+            this.LabelFileValueName.Location = new System.Drawing.Point(10, 8);
             this.LabelFileValueName.Margin = new System.Windows.Forms.Padding(0);
             this.LabelFileValueName.Name = "LabelFileValueName";
-            this.LabelFileValueName.Size = new System.Drawing.Size(349, 21);
+            this.LabelFileValueName.Size = new System.Drawing.Size(341, 21);
             this.LabelFileValueName.TabIndex = 100099;
             this.LabelFileValueName.Text = "File Name";
             this.LabelFileValueName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1040,9 +1113,9 @@ namespace FileMasta
             this.TextboxSearchName.BackColor = System.Drawing.SystemColors.Window;
             this.TextboxSearchName.Location = new System.Drawing.Point(58, 10);
             this.TextboxSearchName.Name = "TextboxSearchName";
-            this.TextboxSearchName.Size = new System.Drawing.Size(682, 21);
+            this.TextboxSearchName.Size = new System.Drawing.Size(671, 21);
             this.TextboxSearchName.TabIndex = 0;
-            this.TextboxSearchName.WaterMark = "Search file names, servers or insert a link...";
+            this.TextboxSearchName.WaterMark = "Search for anything...";
             this.TextboxSearchName.WaterMarkActiveForeColor = System.Drawing.Color.White;
             this.TextboxSearchName.WaterMarkFont = new System.Drawing.Font("Verdana", 8.25F);
             this.TextboxSearchName.WaterMarkForeColor = System.Drawing.SystemColors.WindowFrame;
@@ -1053,7 +1126,7 @@ namespace FileMasta
             this.LabelSearchType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.LabelSearchType.AutoSize = true;
             this.LabelSearchType.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelSearchType.Location = new System.Drawing.Point(749, 14);
+            this.LabelSearchType.Location = new System.Drawing.Point(738, 14);
             this.LabelSearchType.Margin = new System.Windows.Forms.Padding(6, 0, 0, 0);
             this.LabelSearchType.Name = "LabelSearchType";
             this.LabelSearchType.Size = new System.Drawing.Size(39, 13);
@@ -1067,10 +1140,10 @@ namespace FileMasta
             this.DropdownSearchSort.Items.AddRange(new object[] {
             "Name",
             "Size",
-            "Age"});
-            this.DropdownSearchSort.Location = new System.Drawing.Point(646, 42);
+            "Modified"});
+            this.DropdownSearchSort.Location = new System.Drawing.Point(628, 42);
             this.DropdownSearchSort.Name = "DropdownSearchSort";
-            this.DropdownSearchSort.Size = new System.Drawing.Size(84, 21);
+            this.DropdownSearchSort.Size = new System.Drawing.Size(72, 21);
             this.DropdownSearchSort.TabIndex = 2;
             this.DropdownSearchSort.SelectedIndexChanged += new System.EventHandler(this.ComboBoxSort_SelectedIndexChanged);
             // 
@@ -1078,7 +1151,7 @@ namespace FileMasta
             // 
             this.LabelSort.AutoSize = true;
             this.LabelSort.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelSort.Location = new System.Drawing.Point(607, 46);
+            this.LabelSort.Location = new System.Drawing.Point(589, 46);
             this.LabelSort.Margin = new System.Windows.Forms.Padding(6, 0, 0, 0);
             this.LabelSort.Name = "LabelSort";
             this.LabelSort.Size = new System.Drawing.Size(36, 13);
@@ -1088,7 +1161,7 @@ namespace FileMasta
             // ButtonSearch
             // 
             this.ButtonSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonSearch.Location = new System.Drawing.Point(992, 10);
+            this.ButtonSearch.Location = new System.Drawing.Point(981, 10);
             this.ButtonSearch.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
             this.ButtonSearch.Name = "ButtonSearch";
             this.ButtonSearch.Size = new System.Drawing.Size(71, 26);
@@ -1107,7 +1180,7 @@ namespace FileMasta
             this.FlowpanelKeywords.Location = new System.Drawing.Point(10, 73);
             this.FlowpanelKeywords.Name = "FlowpanelKeywords";
             this.FlowpanelKeywords.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.FlowpanelKeywords.Size = new System.Drawing.Size(1075, 58);
+            this.FlowpanelKeywords.Size = new System.Drawing.Size(1064, 58);
             this.FlowpanelKeywords.TabIndex = 6;
             this.FlowpanelKeywords.TabStop = true;
             // 
@@ -1127,7 +1200,7 @@ namespace FileMasta
             // 
             this.ButtonSearchExternal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ButtonSearchExternal.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonSearchExternal.Location = new System.Drawing.Point(1063, 10);
+            this.ButtonSearchExternal.Location = new System.Drawing.Point(1052, 10);
             this.ButtonSearchExternal.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.ButtonSearchExternal.Name = "ButtonSearchExternal";
             this.ButtonSearchExternal.Size = new System.Drawing.Size(20, 26);
@@ -1159,7 +1232,7 @@ namespace FileMasta
             "Executable",
             "Picture",
             "Video"});
-            this.ListboxSearchType.Location = new System.Drawing.Point(791, 10);
+            this.ListboxSearchType.Location = new System.Drawing.Point(780, 10);
             this.ListboxSearchType.Name = "ListboxSearchType";
             this.ListboxSearchType.Size = new System.Drawing.Size(192, 56);
             this.ListboxSearchType.TabIndex = 11;
@@ -1185,25 +1258,25 @@ namespace FileMasta
             0,
             0});
             this.NumericSearchGreaterThan.Name = "NumericSearchGreaterThan";
-            this.NumericSearchGreaterThan.Size = new System.Drawing.Size(106, 21);
+            this.NumericSearchGreaterThan.Size = new System.Drawing.Size(88, 21);
             this.NumericSearchGreaterThan.TabIndex = 14;
             // 
             // LabelSearchLastModified
             // 
             this.LabelSearchLastModified.AutoSize = true;
             this.LabelSearchLastModified.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelSearchLastModified.Location = new System.Drawing.Point(241, 46);
+            this.LabelSearchLastModified.Location = new System.Drawing.Point(223, 46);
             this.LabelSearchLastModified.Margin = new System.Windows.Forms.Padding(6, 0, 0, 0);
             this.LabelSearchLastModified.Name = "LabelSearchLastModified";
-            this.LabelSearchLastModified.Size = new System.Drawing.Size(88, 13);
+            this.LabelSearchLastModified.Size = new System.Drawing.Size(86, 13);
             this.LabelSearchLastModified.TabIndex = 17;
-            this.LabelSearchLastModified.Text = "Last modified:";
+            this.LabelSearchLastModified.Text = "Last Modified:";
             // 
             // DatetimeSearchLastModifiedMin
             // 
             this.DatetimeSearchLastModifiedMin.CustomFormat = "MMMd, yyyy";
             this.DatetimeSearchLastModifiedMin.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DatetimeSearchLastModifiedMin.Location = new System.Drawing.Point(333, 42);
+            this.DatetimeSearchLastModifiedMin.Location = new System.Drawing.Point(315, 42);
             this.DatetimeSearchLastModifiedMin.Name = "DatetimeSearchLastModifiedMin";
             this.DatetimeSearchLastModifiedMin.Size = new System.Drawing.Size(120, 21);
             this.DatetimeSearchLastModifiedMin.TabIndex = 19;
@@ -1213,7 +1286,7 @@ namespace FileMasta
             // 
             this.DatetimeSearchLastModifiedMax.CustomFormat = "MMMd, yyyy";
             this.DatetimeSearchLastModifiedMax.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DatetimeSearchLastModifiedMax.Location = new System.Drawing.Point(478, 42);
+            this.DatetimeSearchLastModifiedMax.Location = new System.Drawing.Point(460, 42);
             this.DatetimeSearchLastModifiedMax.Name = "DatetimeSearchLastModifiedMax";
             this.DatetimeSearchLastModifiedMax.Size = new System.Drawing.Size(120, 21);
             this.DatetimeSearchLastModifiedMax.TabIndex = 20;
@@ -1223,7 +1296,7 @@ namespace FileMasta
             // 
             this.LabelSearchModifiedTo.AutoSize = true;
             this.LabelSearchModifiedTo.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelSearchModifiedTo.Location = new System.Drawing.Point(457, 46);
+            this.LabelSearchModifiedTo.Location = new System.Drawing.Point(439, 46);
             this.LabelSearchModifiedTo.Name = "LabelSearchModifiedTo";
             this.LabelSearchModifiedTo.Size = new System.Drawing.Size(18, 13);
             this.LabelSearchModifiedTo.TabIndex = 21;
@@ -1240,7 +1313,7 @@ namespace FileMasta
             "GB",
             "TB",
             "PB"});
-            this.DropdownSearchSizePrefix.Location = new System.Drawing.Point(171, 42);
+            this.DropdownSearchSizePrefix.Location = new System.Drawing.Point(153, 42);
             this.DropdownSearchSizePrefix.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.DropdownSearchSizePrefix.Name = "DropdownSearchSizePrefix";
             this.DropdownSearchSizePrefix.Size = new System.Drawing.Size(61, 21);
@@ -1250,7 +1323,6 @@ namespace FileMasta
             // PanelSearchControls
             // 
             this.PanelSearchControls.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(246)))));
-            this.PanelSearchControls.Controls.Add(this.CheckboxSearchBookmarks);
             this.PanelSearchControls.Controls.Add(this.DropdownSearchSizePrefix);
             this.PanelSearchControls.Controls.Add(this.LabelSearchModifiedTo);
             this.PanelSearchControls.Controls.Add(this.DatetimeSearchLastModifiedMax);
@@ -1270,41 +1342,8 @@ namespace FileMasta
             this.PanelSearchControls.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelSearchControls.Location = new System.Drawing.Point(0, 24);
             this.PanelSearchControls.Name = "PanelSearchControls";
-            this.PanelSearchControls.Size = new System.Drawing.Size(1095, 142);
+            this.PanelSearchControls.Size = new System.Drawing.Size(1084, 142);
             this.PanelSearchControls.TabIndex = 1;
-            // 
-            // CheckboxSearchBookmarks
-            // 
-            this.CheckboxSearchBookmarks.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CheckboxSearchBookmarks.AutoSize = true;
-            this.CheckboxSearchBookmarks.Location = new System.Drawing.Point(993, 43);
-            this.CheckboxSearchBookmarks.Name = "CheckboxSearchBookmarks";
-            this.CheckboxSearchBookmarks.Size = new System.Drawing.Size(91, 17);
-            this.CheckboxSearchBookmarks.TabIndex = 1116;
-            this.CheckboxSearchBookmarks.Text = "Bookmarks";
-            this.CheckboxSearchBookmarks.UseVisualStyleBackColor = true;
-            this.CheckboxSearchBookmarks.CheckedChanged += new System.EventHandler(this.CheckboxSearchBookmarks_CheckedChanged);
-            // 
-            // MenuFileBookmark
-            // 
-            this.MenuFileBookmark.Name = "MenuFileBookmark";
-            this.MenuFileBookmark.Size = new System.Drawing.Size(137, 22);
-            this.MenuFileBookmark.Text = "Bookmark";
-            this.MenuFileBookmark.Click += new System.EventHandler(this.MenuFileBookmark_Click);
-            // 
-            // MenuHelpChangelog
-            // 
-            this.MenuHelpChangelog.Name = "MenuHelpChangelog";
-            this.MenuHelpChangelog.Size = new System.Drawing.Size(180, 22);
-            this.MenuHelpChangelog.Text = "Changelog";
-            this.MenuHelpChangelog.Click += new System.EventHandler(this.MenuHelpChangelog_Click);
-            // 
-            // MenuHelpTermsOfUse
-            // 
-            this.MenuHelpTermsOfUse.Name = "MenuHelpTermsOfUse";
-            this.MenuHelpTermsOfUse.Size = new System.Drawing.Size(180, 22);
-            this.MenuHelpTermsOfUse.Text = "Terms of Use";
-            this.MenuHelpTermsOfUse.Click += new System.EventHandler(this.MenuHelpTermsOfUse_Click);
             // 
             // MainForm
             // 
@@ -1312,7 +1351,7 @@ namespace FileMasta
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(246)))));
-            this.ClientSize = new System.Drawing.Size(1095, 561);
+            this.ClientSize = new System.Drawing.Size(1084, 561);
             this.Controls.Add(this.DatagridFileItems);
             this.Controls.Add(this.PanelFileDetails);
             this.Controls.Add(this.StatusStripFooter);
@@ -1328,6 +1367,7 @@ namespace FileMasta
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FileMasta";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.SizeChanged += new System.EventHandler(this.MainForm_SizeChanged);
@@ -1347,6 +1387,7 @@ namespace FileMasta
             ((System.ComponentModel.ISupportInitialize)(this.NumericSearchGreaterThan)).EndInit();
             this.PanelSearchControls.ResumeLayout(false);
             this.PanelSearchControls.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.metadataBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1365,7 +1406,6 @@ namespace FileMasta
         private System.Windows.Forms.ToolStripMenuItem MenuFileExit;
         private System.Windows.Forms.ToolStripMenuItem MenuToolsRequestServer;
         private System.Windows.Forms.ToolStripMenuItem MenuHelpAbout;
-        private System.Windows.Forms.ToolStripMenuItem MenuHelpShortcutKeys;
         private System.Windows.Forms.ToolStripMenuItem MenuHelpReportIssue;
         private System.Windows.Forms.ContextMenuStrip ContextMenuFile;
         private System.Windows.Forms.ToolStripMenuItem MenuFileOpen;
@@ -1373,7 +1413,7 @@ namespace FileMasta
         private System.Windows.Forms.ToolStripMenuItem MenuFileViewDetails;
         private System.Windows.Forms.ToolStripSeparator MenuFileSeperator1;
         private System.Windows.Forms.ToolStripMenuItem MenuFileCopyURL;
-        private System.Windows.Forms.ToolStripMenuItem MenuStripBookmarks;
+        private System.Windows.Forms.ToolStripMenuItem MenuStripBookmarked;
         private System.Windows.Forms.ToolStripMenuItem MenuFileMinimizeToTray;
         private System.Windows.Forms.NotifyIcon NotifyTrayIcon;
         private System.Windows.Forms.ToolStripSeparator MenuStripHelpSeperator0;
@@ -1394,12 +1434,12 @@ namespace FileMasta
         public System.Windows.Forms.Label labelTitleExtension;
         public System.Windows.Forms.Label LabelFileValueExtension;
         public CButtonLib.CButton InfoSplitter5;
-        public System.Windows.Forms.Label LabelFileLastModified;
-        public System.Windows.Forms.Label LabelFileValueLastModified;
+        public System.Windows.Forms.Label LabelFileDateModified;
+        public System.Windows.Forms.Label LabelFileValueModified;
         public CButtonLib.CButton InfoSplitter3;
         public CButtonLib.CButton InfoSplitter2;
         public System.Windows.Forms.Label LabelFileReferrer;
-        public System.Windows.Forms.Label LabelFileValueReferrer;
+        public System.Windows.Forms.Label LabelFileValueDomain;
         public System.Windows.Forms.Label labelTitleSize;
         public System.Windows.Forms.Label LabelFileValueSize;
         public CButtonLib.CButton InfoSplitter1;
@@ -1417,11 +1457,6 @@ namespace FileMasta
         private System.Windows.Forms.ToolStripMenuItem IDMToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem IDAToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem FDMToolStripMenuItem;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFileName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFileSize;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFileLastModified;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFileReferrer;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFilesURL;
         public ChreneLib.Controls.TextBoxes.CTextBox TextboxSearchName;
         private System.Windows.Forms.Label LabelSearchType;
         private System.Windows.Forms.ComboBox DropdownSearchSort;
@@ -1442,15 +1477,23 @@ namespace FileMasta
         private System.Windows.Forms.Panel PanelSearchControls;
         private System.Windows.Forms.FlowLayoutPanel FlowpanelFileButtons;
         public System.Windows.Forms.Label LabelFileValueURL;
-        private System.Windows.Forms.CheckBox CheckboxSearchBookmarks;
         private System.Windows.Forms.ToolStripSeparator MenuStripBookmarksSeperator0;
-        private System.Windows.Forms.ToolStripMenuItem MenuStripBookmarksClear;
+        private System.Windows.Forms.ToolStripMenuItem MenuStripBookmarkedClearAll;
         private System.Windows.Forms.ToolStripMenuItem MenuFileEmail;
-        private System.Windows.Forms.ToolStripMenuItem MenuStripBookmarksShow;
+        private System.Windows.Forms.ToolStripMenuItem MenuStripBookmarkedShowHide;
         private System.Windows.Forms.ToolStripMenuItem MenuToolsServerList;
         private System.Windows.Forms.ToolStripMenuItem MenuFileBookmark;
         private System.Windows.Forms.ToolStripMenuItem MenuHelpChangelog;
         private System.Windows.Forms.ToolStripMenuItem MenuHelpTermsOfUse;
+        public CButtonLib.CButton cButton1;
+        public System.Windows.Forms.Label LabelFileAge;
+        public System.Windows.Forms.Label LabelFileValueAge;
+        private System.Windows.Forms.BindingSource metadataBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFileName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFileSize;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFileLastModified;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFileDomain;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFilesURL;
     }
 }
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using FileMasta.Utilities;
 
 namespace FileMasta.Models
 {
@@ -23,15 +24,15 @@ namespace FileMasta.Models
 
         public string GetExtension()
         {
-            return System.IO.Path.GetExtension(URL).Replace(".", "").ToLower();
+            return System.IO.Path.GetExtension(URL).Replace(".", "").ToUpper();
         }
 
         public bool IsType(string[] type)
         {
-            if (type == Files.Type.Everything)
+            if (type == FileType.All)
                 return true;
             else
-                return type.Any(x => GetExtension().ToLower().Contains(x.ToLower()));
+                return type.Any(x => GetExtension().Contains(x.ToUpper()));
         }
     }
 }
