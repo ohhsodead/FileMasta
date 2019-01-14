@@ -8,7 +8,7 @@ All notable changes to this project will be documented in this file.
 * Improved the overall performance
 * Improved logging and status messages
 * Simplified user interface
-* Added ability to search minimimum file size
+* Added ability to search minimum file size
 * Added ability to search start/end file modified date
 * Added ability to email file download links
 
