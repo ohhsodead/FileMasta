@@ -3,13 +3,14 @@ All notable changes to this project will be documented in this file.
 
 ## [0.4.3] 2019-01-13
 * Improved local data storage stability 
-* Improved speed and efficiency by improved buffer handling (#128)
-* Improved the opening of files in system applications
+* Improved efficiency by refactoring search (#128)
+* Improved the speed of buffering data
+* Improved the overall performance
+* Improved logging and status messages
 * Simplified user interface
 * Added ability to search minimimum file size
 * Added ability to search start/end file modified date
 * Added ability to email file download links
-
 
 ## [0.4.2] 2018.11.05
 * Fixed issue with recent database changes (#116)
