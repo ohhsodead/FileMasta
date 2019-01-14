@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -251,10 +251,12 @@ namespace FileMasta.Data
         }
 
         /// <summary>
-        /// Save file containing bookmarked files
+        /// Save/update bookmarked files to a local file
         /// </summary>
         public void SaveBookmarked()
         {
+            if (Bookmarked != null) 
+{
             if (File.Exists($"{LocalExt.PathBookmarked}"))
                 File.Delete($"{LocalExt.PathBookmarked}");
             using (FileStream fs = File.OpenWrite($"{LocalExt.PathBookmarked}"))
@@ -262,6 +264,7 @@ namespace FileMasta.Data
             using (StreamWriter sw = new StreamWriter(bs))
                 foreach (var file in Bookmarked)
                     sw.WriteLine(JsonConvert.SerializeObject(file));
+}
         }
     }
 }
