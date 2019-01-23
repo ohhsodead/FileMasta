@@ -1,6 +1,6 @@
 # FileMasta
 
-A federated search application for discovering interesting files that are being shared online, such as video, music, books, software, games, subtitles and much more. Our database is owned and maintained by [od-database](https://github.com/simon987/od-database) which contains the contents of servers worldwide. We don't search file contents.
+A federated search application for discovering interesting files that are being shared online, such as video, music, books, software, games, subtitles and much more. The database is maintained by [od-database](https://github.com/simon987/od-database) which contains the contents of servers worldwide. We don't search file contents.
 
 ![FileMasta](https://github.com/HerbL27/FileMasta/blob/master/screenshot1.png?raw=true)
 
@@ -14,9 +14,11 @@ If you find a bug or have a feature request, please [create an issue](https://gi
 
 Contributions are highly welcome, however, except for very small changes, kindly file an issue and let's have a discussion before you open a pull request.
 
+Have a server you'd like to share? We've curated a huge collection of public servers being hosted across the web, so it's really simple to keep the list updated as more are discovered. Read more information on contributing [here](https://github.com/HerbL27/FileMasta/blob/master/data/README.md)
+
 ## Frequently Asked Questions
 ### Is this application secure?
-Yes. All communications between our servers (Using Dropbox & GitHub) and your client is 100% secure. None other connections are made to files, unless specifically downloaded by you. 
+Yes. All communications between our servers (Using Dropbox & GitHub) and your client is 100% secure.
 
 ### How do you handle my privacy?
 We don't use cookies, store sessions, userid's or IP addresses.
