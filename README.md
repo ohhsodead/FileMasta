@@ -1,6 +1,6 @@
 # FileMasta
 
-A federated search application for discovering interesting files that are being shared online, such as video, music, books, software, games, subtitles and much more. Our web crawler keeps our database maintained which regularly updates file information on the contents of thousands of servers worldwide. We don't search file contents.
+A federated search application for discovering interesting files that are being shared online, such as video, music, books, software, games, subtitles and much more. Our database is owned and maintained by [od-database](https://github.com/simon987/od-database) which contains the contents of servers worldwide. We don't search file contents.
 
 ![FileMasta](https://github.com/HerbL27/FileMasta/blob/master/screenshot1.png?raw=true)
 
