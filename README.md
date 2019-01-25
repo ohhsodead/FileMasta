@@ -1,24 +1,22 @@
 # FileMasta
 
-A federated search application for discovering interesting files that are being shared online, such as video, music, books, software, games, subtitles and much more. Our web crawler keeps our database maintained which regularly updates file information on the contents of thousands of servers worldwide. We don't search file contents.
+A federated search application for discovering interesting files that are being shared online, such as video, music, books, software, games, subtitles and much more. All data is crawled by [od-database](https://github.com/simon987/od-database) which collects information about the contents of servers worldwide. We don't search file contents.
 
 ![FileMasta](https://github.com/HerbL27/FileMasta/blob/master/screenshot1.png?raw=true)
 
 >We host no content, we provide only access to already available files in the same way Google and other search engines do.
 
 ## Installation
-Download and run the latest version of the installer from the [releases](https://github.com/HerbL27/FileMasta/releases/latest) page.
+Download and run the latest version of the installer from the [releases](https://github.com/mostlyash/FileMasta/releases/latest) page.
 
 ## Issues & Contributions
-If you find a bug or have a feature request, please [create an issue](https://github.com/HerbL27/FileMasta/releases/new).
+If you find a bug or have a feature request, please [create an issue](https://github.com/mostlyash/FileMasta/releases/new).
 
 Contributions are highly welcome, however, except for very small changes, kindly file an issue and let's have a discussion before you open a pull request.
 
-Have a server you'd like to share? We've curated a huge collection of public servers being hosted across the web, so it's really simple to keep the list updated as more are discovered. Read more information on contributing [here](https://github.com/HerbL27/FileMasta/blob/master/data/README.md)
-
 ## Frequently Asked Questions
 ### Is this application secure?
-Yes. All communications between our servers (Using Dropbox & GitHub) and your client is 100% secure.
+Yes. All communications between our servers (Using Dropbox & GitHub) and your client is 100% secure. No other connections are made to severs where the files are hosted, unless they're chosen to be downloaded. 
 
 ### How do you handle my privacy?
 We don't use cookies, store sessions, userid's or IP addresses.
