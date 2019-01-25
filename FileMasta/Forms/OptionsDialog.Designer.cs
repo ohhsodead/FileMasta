@@ -41,8 +41,7 @@
             this.labelConnectionDefault = new System.Windows.Forms.Label();
             this.checkBoxConnectionDefault = new System.Windows.Forms.CheckBox();
             this.labelTitleGeneral = new System.Windows.Forms.Label();
-            this.labelGeneralClearDataOnClose = new System.Windows.Forms.Label();
-            this.checkBoxGeneralClearDataOnClose = new System.Windows.Forms.CheckBox();
+            this.LabelWorkInProgress = new System.Windows.Forms.Label();
             this.buttonSave = new System.Windows.Forms.Button();
             this.buttonRestore = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -212,31 +211,18 @@
             this.labelTitleGeneral.TabIndex = 20;
             this.labelTitleGeneral.Text = "General";
             // 
-            // labelGeneralClearDataOnClose
+            // LabelWorkInProgress
             // 
-            this.labelGeneralClearDataOnClose.AutoSize = true;
-            this.labelGeneralClearDataOnClose.BackColor = System.Drawing.Color.Transparent;
-            this.labelGeneralClearDataOnClose.Font = new System.Drawing.Font("Verdana", 8.25F);
-            this.labelGeneralClearDataOnClose.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelGeneralClearDataOnClose.Location = new System.Drawing.Point(14, 47);
-            this.labelGeneralClearDataOnClose.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
-            this.labelGeneralClearDataOnClose.Name = "labelGeneralClearDataOnClose";
-            this.labelGeneralClearDataOnClose.Size = new System.Drawing.Size(123, 13);
-            this.labelGeneralClearDataOnClose.TabIndex = 21;
-            this.labelGeneralClearDataOnClose.Text = "Clear data on close:";
-            // 
-            // checkBoxGeneralClearDataOnClose
-            // 
-            this.checkBoxGeneralClearDataOnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkBoxGeneralClearDataOnClose.AutoSize = true;
-            this.checkBoxGeneralClearDataOnClose.BackColor = System.Drawing.Color.Transparent;
-            this.checkBoxGeneralClearDataOnClose.Font = new System.Drawing.Font("Verdana", 8.25F);
-            this.checkBoxGeneralClearDataOnClose.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.checkBoxGeneralClearDataOnClose.Location = new System.Drawing.Point(266, 47);
-            this.checkBoxGeneralClearDataOnClose.Name = "checkBoxGeneralClearDataOnClose";
-            this.checkBoxGeneralClearDataOnClose.Size = new System.Drawing.Size(15, 14);
-            this.checkBoxGeneralClearDataOnClose.TabIndex = 22;
-            this.checkBoxGeneralClearDataOnClose.UseVisualStyleBackColor = false;
+            this.LabelWorkInProgress.AutoSize = true;
+            this.LabelWorkInProgress.BackColor = System.Drawing.Color.Transparent;
+            this.LabelWorkInProgress.Font = new System.Drawing.Font("Verdana", 8.25F);
+            this.LabelWorkInProgress.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelWorkInProgress.Location = new System.Drawing.Point(14, 47);
+            this.LabelWorkInProgress.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
+            this.LabelWorkInProgress.Name = "LabelWorkInProgress";
+            this.LabelWorkInProgress.Size = new System.Drawing.Size(110, 13);
+            this.LabelWorkInProgress.TabIndex = 21;
+            this.LabelWorkInProgress.Text = "*work in progress";
             // 
             // buttonSave
             // 
@@ -262,7 +248,7 @@
             this.buttonRestore.UseVisualStyleBackColor = true;
             this.buttonRestore.Click += new System.EventHandler(this.ButtonRestore_Click);
             // 
-            // OptionsWindow
+            // OptionsDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -281,14 +267,13 @@
             this.Controls.Add(this.labelConnectionDefault);
             this.Controls.Add(this.checkBoxConnectionDefault);
             this.Controls.Add(this.labelTitleGeneral);
-            this.Controls.Add(this.labelGeneralClearDataOnClose);
-            this.Controls.Add(this.checkBoxGeneralClearDataOnClose);
+            this.Controls.Add(this.LabelWorkInProgress);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "OptionsWindow";
+            this.Name = "OptionsDialog";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
@@ -314,8 +299,7 @@
         private System.Windows.Forms.Label labelConnectionDefault;
         private System.Windows.Forms.CheckBox checkBoxConnectionDefault;
         private System.Windows.Forms.Label labelTitleGeneral;
-        private System.Windows.Forms.Label labelGeneralClearDataOnClose;
-        private System.Windows.Forms.CheckBox checkBoxGeneralClearDataOnClose;
+        private System.Windows.Forms.Label LabelWorkInProgress;
         private System.Windows.Forms.Button buttonSave;
         private System.Windows.Forms.Button buttonRestore;
     }

@@ -14,7 +14,7 @@ namespace FileMasta.Forms
 
         private void Options_Load(object sender, EventArgs e)
         {
-            LoadUserSettings();
+            LoadSettings();
         }
 
         /// <summary>
@@ -30,12 +30,12 @@ namespace FileMasta.Forms
         }
 
         /// <summary>
-        /// Set UI/_webClient/WebRequest Properties
+        /// Set UI/Web Properties
         /// </summary>
-        public void LoadUserSettings()
+        private void LoadSettings()
         {
             // General
-            checkBoxGeneralClearDataOnClose.Checked = Properties.Settings.Default.clearDataOnClose;
+            // todo
 
             // Connection (Enabled/Disabled)
             textBoxConnectionAddress.Enabled = Properties.Settings.Default.proxyUseCustom;
@@ -51,30 +51,28 @@ namespace FileMasta.Forms
             textBoxConnectionPassword.Text = Properties.Settings.Default.proxyPassword;
 
             // Set Proxy Settings
-            if (MainForm.UseWebProxyCustom)
+            if (Properties.Settings.Default.proxyUseCustom)
             {
-                if (Uri.TryCreate(Properties.Settings.Default.proxyAddress + ":" + Properties.Settings.Default.proxyPort, UriKind.RelativeOrAbsolute, out Uri result))
+                if (Uri.TryCreate(Properties.Settings.Default.proxyAddress + ":" + Properties.Settings.Default.proxyPort, UriKind.RelativeOrAbsolute, out var result))
                 {
-                    Program._webClient.Proxy = new WebProxy(result);
+                    Program.WebClient.Proxy = new WebProxy(result);
 
                     if (Properties.Settings.Default.proxyUsername == "" && Properties.Settings.Default.proxyPassword == "")
-                        Program._webClient.UseDefaultCredentials = true;
+                        Program.WebClient.UseDefaultCredentials = true;
                     else
                     {
-                        Program._webClient.UseDefaultCredentials = false;
-                        Program._webClient.Credentials = new NetworkCredential(Properties.Settings.Default.proxyUsername, Properties.Settings.Default.proxyPassword);
+                        Program.WebClient.UseDefaultCredentials = false;
+                        Program.WebClient.Credentials = new NetworkCredential(Properties.Settings.Default.proxyUsername, Properties.Settings.Default.proxyPassword);
                     }
                 }
                 else
-                    MessageBox.Show(this, "Invalid Address/Port");
+                    MessageBox.Show(this, @"Invalid Address/Port");
             }
             else
             {
-                Program._webClient.UseDefaultCredentials = true;
-#pragma warning disable CS0618 // Type or member is obsolete
-                Program._webClient.Proxy = WebProxy.GetDefaultProxy();
-#pragma warning restore CS0618 // Type or member is obsolete
-                Program._webClient.Credentials = CredentialCache.DefaultCredentials;
+                Program.WebClient.UseDefaultCredentials = true;
+                Program.WebClient.Proxy = new WebProxy( /* can't present value of type System.Net.WebProxy */);
+                Program.WebClient.Credentials = CredentialCache.DefaultCredentials;
             }
         }
 
@@ -83,16 +81,15 @@ namespace FileMasta.Forms
             Properties.Settings.Default.Reset();
 
             Thread.Sleep(500);
-            LoadUserSettings();
-            Thread.Sleep(500);
-            MessageBox.Show("Settings restored to default.");
+            LoadSettings();
+            MessageBox.Show(@"Settings restored to default.");
             Program.Log.Info("Restored user settings");
         }
 
         private void ButtonSave_Click(object sender, EventArgs e)
         {
             // General
-            Properties.Settings.Default.clearDataOnClose = checkBoxGeneralClearDataOnClose.Checked;
+            // todo
 
             // Connection
             Properties.Settings.Default.proxyUseCustom = checkBoxConnectionDefault.Checked;
@@ -101,13 +98,10 @@ namespace FileMasta.Forms
             Properties.Settings.Default.proxyUsername = textBoxConnectionUsername.Text;
             Properties.Settings.Default.proxyPassword = textBoxConnectionPassword.Text;
 
-            MainForm.UseWebProxyCustom = Properties.Settings.Default.proxyUseCustom;
-
             Thread.Sleep(500);
             Properties.Settings.Default.Save();
-            Thread.Sleep(500);
-            LoadUserSettings();
-            MessageBox.Show("Settings saved.");
+            LoadSettings();
+            MessageBox.Show(@"Settings Saved.");
             Program.Log.Info("Saved user settings");
         }
 
@@ -117,14 +111,9 @@ namespace FileMasta.Forms
 
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
-            switch (keyData)
-            {
-                // Close this instance
-                case Keys.Escape:
-                    Close();
-                    return true;
-            }
-            return base.ProcessCmdKey(ref msg, keyData);
+            if (keyData != Keys.Escape) return base.ProcessCmdKey(ref msg, keyData);
+            Close();
+            return true;
         }
     }
 }

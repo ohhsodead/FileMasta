@@ -15,9 +15,9 @@ namespace FileMasta.Data
         private readonly List<WebFile> _dbFiles = new List<WebFile>();
         
         /// <summary>
-        /// Contains the users bookmarked files url
+        /// Contains the users saved files url
         /// </summary>
-        private readonly List<string> _bookmarkedFiles = new List<string>();
+        private readonly List<string> _savedFiles = new List<string>();
 
         /// <summary>
         /// Contains the metadata of the database
@@ -32,26 +32,22 @@ namespace FileMasta.Data
             if (!HttpExtensions.IsFileSizeEqual(DataHelper.DatabaseFilePath, AppExtensions.DatabaseUrl))
                 HttpExtensions.DownloadFile(AppExtensions.DatabaseUrl, DataHelper.DatabaseFilePath);
 
-            var totalNoFiles = 0;
-            long totalFileSize = 0;
-
-            if (!File.Exists(DataHelper.BookmarkedFilePath))
-                File.Create(DataHelper.BookmarkedFilePath);
-
-            if (!string.IsNullOrEmpty(File.ReadAllText(DataHelper.BookmarkedFilePath)))
+            if (File.Exists(DataHelper.SavedFilePath))
             {
-                using (var fs = File.Open(DataHelper.BookmarkedFilePath, FileMode.Open, FileAccess.Read, FileShare.Read))
+                using (var fs = File.Open(DataHelper.SavedFilePath, FileMode.Open, FileAccess.Read, FileShare.Read))
                 using (var bs = new BufferedStream(fs))
                 using (var sr = new StreamReader(bs))
                 {
                     string s;
                     while ((s = sr.ReadLine()) != null)
                     {
-                        _bookmarkedFiles.Add(s);
+                        _savedFiles.Add(s);
                     }
                 }
             }
-
+            
+            var totalNoFiles = 0;
+            long totalFileSize = 0;
             using (var fs = File.Open(DataHelper.DatabaseFilePath, FileMode.Open, FileAccess.Read, FileShare.Read))
             using (var bs = new BufferedStream(fs))
             using (var sr = new StreamReader(bs))
@@ -60,6 +56,7 @@ namespace FileMasta.Data
                 string s;
                 while ((s = sr.ReadLine()) != null)
                 {
+                    // Messy way to split csv into a file object
                     var lineParts = s.Split(',');
                     var fileSize = long.Parse(lineParts[0]);
                     var fileLastModified = DateTime.Parse(lineParts[1]);
@@ -117,16 +114,16 @@ namespace FileMasta.Data
         private static readonly object SearchLock = new object();
 
         /// <summary>
-        /// Search files and Bookmarked from the database
+        /// Search files from the database
         /// </summary>
         /// <param name="sort">Sort results by property</param>
         /// <param name="name">File name to match words/terms</param>
         /// <param name="type">File type to filter</param>
-        /// <param name="minimumSize">More than or equal to file size in bytes</param>
-        /// <param name="lastModifiedMin">Last modified minimum file date</param>
-        /// <param name="lastModifiedMax">Last modified maximum file date</param>
+        /// <param name="minSize">More than or equal to file size in bytes</param>
+        /// <param name="minDateModified">Last modified minimum file date</param>
+        /// <param name="maxDateModified">Last modified maximum file date</param>
         /// <returns>Returns a list of matching files with the specified parameters</returns>
-        public List<WebFile> Search(Sort sort, string name, string[] type, long minimumSize, DateTime lastModifiedMin, DateTime lastModifiedMax)
+        public List<WebFile> Search(Sort sort, string name, string[] type, long minSize, DateTime minDateModified, DateTime maxDateModified)
         {
             lock (SearchLock)
             {
@@ -135,10 +132,10 @@ namespace FileMasta.Data
                     where StringExtensions.ContainsAll(Uri.UnescapeDataString(webFile.Url.ToLower()),
                               StringExtensions.GetWords(name.ToLower())) &&
                           webFile.IsType(type) &&
-                          webFile.Size >= minimumSize &&
-                          webFile.LastModified > lastModifiedMin &&
-                          webFile.LastModified < lastModifiedMax
-                    select webFile).ToList();
+                          webFile.Size >= minSize &&
+                          webFile.LastModified > minDateModified &&
+                          webFile.LastModified < maxDateModified
+                        select webFile).ToList();
             }
         }
 
@@ -183,6 +180,72 @@ namespace FileMasta.Data
                     }
                 });
             }
+        }
+
+        /// <summary>
+        /// Search files from the database
+        /// </summary>
+        /// <returns>Returns a list of matching files with the specified parameters</returns>
+        public List<WebFile> SavedFiles()
+        {
+            lock (SearchLock)
+            {
+                return (from webFile in _savedFiles
+                    let file = GetFile(webFile)
+                    select file).ToList();
+            }
+        }
+
+        /// <summary>
+        /// Save the specified file to users the saved list
+        /// </summary>
+        /// <param name="fileUrl">URL to add</param>
+        public void AddToSaved(string fileUrl)
+        {
+            _savedFiles.Add(fileUrl);
+        }
+
+        /// <summary>
+        /// Remove the specified file from the users saved list
+        /// </summary>
+        /// <param name="fileUrl">URL to remove</param>
+        public void RemoveFromSaved(string fileUrl)
+        {
+            _savedFiles.Remove(fileUrl);
+        }
+
+        /// <summary>
+        /// Check if user has saved the specified file
+        /// </summary>
+        /// <param name="fileUrl">URL of the File</param>
+        /// <returns>True if exists</returns>
+        public bool IsFileSaved(string fileUrl)
+        {
+            foreach (var file in _savedFiles)
+                if (file == fileUrl)
+                    return true;
+            return false;
+        }
+
+        /// <summary>
+        /// Remove all saved file urls
+        /// </summary>
+        public void ClearSaved()
+        {
+            _savedFiles.Clear();
+        }
+
+        /// <summary>
+        /// Save/update saved files to a local file
+        /// </summary>
+        public void UpdateSavedFile()
+        {
+            if (_savedFiles.Count == 0) { DataHelper.RemoveSavedFile(); return; }
+            using (var fs = File.OpenWrite(DataHelper.SavedFilePath))
+            using (var bs = new BufferedStream(fs))
+            using (var sw = new StreamWriter(bs))
+                foreach (var fileUrl in _savedFiles)
+                    sw.WriteLine(fileUrl);
         }
     }
 }

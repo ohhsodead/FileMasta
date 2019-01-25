@@ -1,25 +1,25 @@
-﻿using FileMasta.Utilities;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.Threading;
 using System.Windows.Forms;
 using System;
 using System.Net;
+using FileMasta.Extensions;
 
 namespace FileMasta
 {
-    static class Program
+    internal static class Program
     {
         public static readonly log4net.ILog Log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-        public static WebClient _webClient = new WebClient();
-        private static Mutex _MutexInstance = null;
+        public static readonly WebClient WebClient = new WebClient();
+        private static Mutex _mutexInstance;
 
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main()
+        private static void Main()
         {
-            _MutexInstance = new Mutex(true, "FileMasta", out bool createdNew);
+            _mutexInstance = new Mutex(true, "FileMasta", createdNew: out var createdNew);
 
             if (!createdNew)
             {
@@ -35,27 +35,17 @@ namespace FileMasta
             }
 
             Application.SetUnhandledExceptionMode(UnhandledExceptionMode.CatchException);
-            Application.ThreadException += ExceptionHandler.ApplicationThreadException;
-            AppDomain.CurrentDomain.UnhandledException += ExceptionHandler.CurrentDomainUnhandledException;
+            Application.ThreadException += ExceptionExtensions.ApplicationThreadException;
+            AppDomain.CurrentDomain.UnhandledException += ExceptionExtensions.CurrentDomainUnhandledException;
 
             Run();
         }
 
-        static void Run()
+        private static void Run()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainForm());
         }
-        private static void ThreadException(object sender, ThreadExceptionEventArgs e)
-        {
-            MessageBox.Show(e.Exception.ToString());
-        }
-
-        private static void UnhandledException(object sender, UnhandledExceptionEventArgs e)
-        {
-            MessageBox.Show(e.ExceptionObject.ToString());
-        }
-
     }
 }

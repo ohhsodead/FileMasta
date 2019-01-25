@@ -77,6 +77,7 @@
       <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.IO.Compression, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL" />
     <Reference Include="System.Net.Http.WebRequest" />
@@ -94,15 +95,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data\OpenFiles.cs" />
-    <Compile Include="Utilities\ExternalEngine.cs" />
+    <Compile Include="Data\Bookmark.cs" />
+    <Compile Include="Data\Database.cs" />
+    <Compile Include="Data\DataHelper.cs" />
+    <Compile Include="Data\Sort.cs" />
+    <Compile Include="Extensions\FtpExtensions.cs" />
+    <Compile Include="Extensions\HttpExtensions.cs" />
+    <Compile Include="Utils\Engines.cs" />
     <Compile Include="Forms\AboutDialog.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\AboutDialog.Designer.cs">
       <DependentUpon>AboutDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="Utilities\FileType.cs" />
+    <Compile Include="Data\Types.cs" />
     <Compile Include="Models\Metadata.cs" />
     <Compile Include="Forms\OptionsDialog.cs">
       <SubType>Form</SubType>
@@ -115,41 +121,34 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Forms\SubmitDialog.cs">
+    <Compile Include="Forms\DataViewDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\SubmitDialog.Designer.cs">
-      <DependentUpon>SubmitDialog.cs</DependentUpon>
+    <Compile Include="Forms\DataViewDialog.Designer.cs">
+      <DependentUpon>DataViewDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\DataDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\DataDialog.Designer.cs">
-      <DependentUpon>DataDialog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Utilities\ExceptionHandler.cs" />
-    <Compile Include="Extensions\WorkerExt.cs" />
+    <Compile Include="Extensions\ExceptionExtensions.cs" />
+    <Compile Include="Extensions\WorkerExtensions.cs" />
     <Compile Include="Controls\SplashScreen.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Controls\SplashScreen.Designer.cs">
       <DependentUpon>SplashScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\FtpFile.cs" />
+    <Compile Include="Models\WebFile.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Extensions\ControlExt.cs" />
-    <Compile Include="Extensions\WebExt.cs" />
+    <Compile Include="Extensions\ControlExtensions.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Extensions\LocalExt.cs" />
-    <Compile Include="Utilities\GitHub.cs" />
-    <Compile Include="Extensions\StringExt.cs" />
-    <Compile Include="Utilities\Update.cs" />
+    <Compile Include="Extensions\LocalExtensions.cs" />
+    <Compile Include="Extensions\AppExtensions.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="Utils\Update.cs" />
     <EmbeddedResource Include="Forms\AboutDialog.resx">
       <DependentUpon>AboutDialog.cs</DependentUpon>
     </EmbeddedResource>
@@ -159,11 +158,8 @@
     <EmbeddedResource Include="Forms\OptionsDialog.resx">
       <DependentUpon>OptionsDialog.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SubmitDialog.resx">
-      <DependentUpon>SubmitDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DataDialog.resx">
-      <DependentUpon>DataDialog.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\DataViewDialog.resx">
+      <DependentUpon>DataViewDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

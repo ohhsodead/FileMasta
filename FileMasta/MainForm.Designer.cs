@@ -29,20 +29,18 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            CButtonLib.cBlendItems cBlendItems2 = new CButtonLib.cBlendItems();
-            this.DatagridFileItems = new System.Windows.Forms.DataGridView();
+            CButtonLib.cBlendItems cBlendItems1 = new CButtonLib.cBlendItems();
+            this.DataGridFiles = new System.Windows.Forms.DataGridView();
             this.ColumnFileName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnFileSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnFileLastModified = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnFileDomain = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnFilesURL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ContextMenuFile = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.MenuFileViewDetails = new System.Windows.Forms.ToolStripMenuItem();
@@ -62,13 +60,8 @@
             this.MenuStripBookmarksSeperator0 = new System.Windows.Forms.ToolStripSeparator();
             this.MenuStripBookmarkedClearAll = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuStripTools = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuToolsServerList = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuToolsRequestServer = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuStripToolsSeperator0 = new System.Windows.Forms.ToolStripSeparator();
             this.MenuToolsOptions = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuStripHelp = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuHelpFAQ = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuHelpTermsOfUse = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuHelpChangelog = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuStripHelpSeperator0 = new System.Windows.Forms.ToolStripSeparator();
             this.MenuHelpCheckForUpdate = new System.Windows.Forms.ToolStripMenuItem();
@@ -93,7 +86,7 @@
             this.FlowpanelFileButtons = new System.Windows.Forms.FlowLayoutPanel();
             this.ButtonFileDownload = new System.Windows.Forms.Button();
             this.ButtonFileOpenWith = new System.Windows.Forms.Button();
-            this.ButtonFileBookmark = new System.Windows.Forms.Button();
+            this.ButtonFileSave = new System.Windows.Forms.Button();
             this.LabelFileUrlBG = new CButtonLib.CButton();
             this.InfoSplitter1 = new CButtonLib.CButton();
             this.ButtonFileRequestSize = new System.Windows.Forms.Button();
@@ -138,7 +131,7 @@
             this.DropdownSearchSizePrefix = new System.Windows.Forms.ComboBox();
             this.PanelSearchControls = new System.Windows.Forms.Panel();
             this.metadataBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.DatagridFileItems)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridFiles)).BeginInit();
             this.ContextMenuFile.SuspendLayout();
             this.MenuStrip.SuspendLayout();
             this.StatusStripFooter.SuspendLayout();
@@ -152,73 +145,72 @@
             ((System.ComponentModel.ISupportInitialize)(this.metadataBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // DatagridFileItems
+            // DataGridFiles
             // 
-            this.DatagridFileItems.AllowUserToAddRows = false;
-            this.DatagridFileItems.AllowUserToDeleteRows = false;
-            this.DatagridFileItems.AllowUserToResizeColumns = false;
-            this.DatagridFileItems.AllowUserToResizeRows = false;
-            this.DatagridFileItems.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(246)))));
-            this.DatagridFileItems.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.DatagridFileItems.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(246)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(5, 2, 2, 2);
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DatagridFileItems.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
-            this.DatagridFileItems.ColumnHeadersHeight = 26;
-            this.DatagridFileItems.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DataGridFiles.AllowUserToAddRows = false;
+            this.DataGridFiles.AllowUserToDeleteRows = false;
+            this.DataGridFiles.AllowUserToResizeColumns = false;
+            this.DataGridFiles.AllowUserToResizeRows = false;
+            this.DataGridFiles.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(246)))));
+            this.DataGridFiles.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.DataGridFiles.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(246)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(5, 2, 2, 2);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DataGridFiles.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.DataGridFiles.ColumnHeadersHeight = 26;
+            this.DataGridFiles.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnFileName,
             this.ColumnFileSize,
             this.ColumnFileLastModified,
-            this.ColumnFileDomain,
             this.ColumnFilesURL});
-            this.DatagridFileItems.ContextMenuStrip = this.ContextMenuFile;
-            this.DatagridFileItems.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DatagridFileItems.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DatagridFileItems.EnableHeadersVisualStyles = false;
-            this.DatagridFileItems.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(246)))));
-            this.DatagridFileItems.Location = new System.Drawing.Point(0, 166);
-            this.DatagridFileItems.MultiSelect = false;
-            this.DatagridFileItems.Name = "DatagridFileItems";
-            this.DatagridFileItems.ReadOnly = true;
-            this.DatagridFileItems.RowHeadersVisible = false;
-            this.DatagridFileItems.RowHeadersWidth = 40;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(246)))));
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.White;
-            this.DatagridFileItems.RowsDefaultCellStyle = dataGridViewCellStyle14;
-            this.DatagridFileItems.RowTemplate.ContextMenuStrip = this.ContextMenuFile;
-            this.DatagridFileItems.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(246)))));
-            this.DatagridFileItems.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Verdana", 8.25F);
-            this.DatagridFileItems.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
-            this.DatagridFileItems.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.DatagridFileItems.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            this.DatagridFileItems.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.White;
-            this.DatagridFileItems.RowTemplate.ReadOnly = true;
-            this.DatagridFileItems.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.DatagridFileItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DatagridFileItems.ShowCellErrors = false;
-            this.DatagridFileItems.ShowEditingIcon = false;
-            this.DatagridFileItems.ShowRowErrors = false;
-            this.DatagridFileItems.Size = new System.Drawing.Size(722, 373);
-            this.DatagridFileItems.TabIndex = 7;
-            this.DatagridFileItems.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DatagridFileItems_CellDoubleClick);
-            this.DatagridFileItems.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.DatagridFileItems_CellPainting);
-            this.DatagridFileItems.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.DatagridFileItems_RowPrePaint);
-            this.DatagridFileItems.SelectionChanged += new System.EventHandler(this.DatagridFileItems_SelectionChanged);
+            this.DataGridFiles.ContextMenuStrip = this.ContextMenuFile;
+            this.DataGridFiles.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DataGridFiles.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DataGridFiles.EnableHeadersVisualStyles = false;
+            this.DataGridFiles.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(246)))));
+            this.DataGridFiles.Location = new System.Drawing.Point(0, 166);
+            this.DataGridFiles.MultiSelect = false;
+            this.DataGridFiles.Name = "DataGridFiles";
+            this.DataGridFiles.ReadOnly = true;
+            this.DataGridFiles.RowHeadersVisible = false;
+            this.DataGridFiles.RowHeadersWidth = 40;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(246)))));
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.White;
+            this.DataGridFiles.RowsDefaultCellStyle = dataGridViewCellStyle16;
+            this.DataGridFiles.RowTemplate.ContextMenuStrip = this.ContextMenuFile;
+            this.DataGridFiles.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(246)))));
+            this.DataGridFiles.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Verdana", 8.25F);
+            this.DataGridFiles.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
+            this.DataGridFiles.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.DataGridFiles.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            this.DataGridFiles.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.DataGridFiles.RowTemplate.ReadOnly = true;
+            this.DataGridFiles.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.DataGridFiles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DataGridFiles.ShowCellErrors = false;
+            this.DataGridFiles.ShowEditingIcon = false;
+            this.DataGridFiles.ShowRowErrors = false;
+            this.DataGridFiles.Size = new System.Drawing.Size(722, 373);
+            this.DataGridFiles.TabIndex = 7;
+            this.DataGridFiles.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridFileItems_CellDoubleClick);
+            this.DataGridFiles.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.DataGridFileItems_CellPainting);
+            this.DataGridFiles.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.DataGridFileItems_RowPrePaint);
+            this.DataGridFiles.SelectionChanged += new System.EventHandler(this.DataGridFileItems_SelectionChanged);
             // 
             // ColumnFileName
             // 
             this.ColumnFileName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.ColumnFileName.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.ColumnFileName.DefaultCellStyle = dataGridViewCellStyle6;
             this.ColumnFileName.HeaderText = "Name";
             this.ColumnFileName.Name = "ColumnFileName";
             this.ColumnFileName.ReadOnly = true;
@@ -227,8 +219,8 @@
             // ColumnFileSize
             // 
             this.ColumnFileSize.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.ColumnFileSize.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.ColumnFileSize.DefaultCellStyle = dataGridViewCellStyle13;
             this.ColumnFileSize.HeaderText = "Size";
             this.ColumnFileSize.Name = "ColumnFileSize";
             this.ColumnFileSize.ReadOnly = true;
@@ -237,30 +229,19 @@
             // 
             // ColumnFileLastModified
             // 
-            this.ColumnFileLastModified.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.ColumnFileLastModified.DefaultCellStyle = dataGridViewCellStyle11;
+            this.ColumnFileLastModified.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.ColumnFileLastModified.DefaultCellStyle = dataGridViewCellStyle14;
             this.ColumnFileLastModified.HeaderText = "Last Modified";
             this.ColumnFileLastModified.Name = "ColumnFileLastModified";
             this.ColumnFileLastModified.ReadOnly = true;
             this.ColumnFileLastModified.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.ColumnFileLastModified.Width = 113;
-            // 
-            // ColumnFileDomain
-            // 
-            this.ColumnFileDomain.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.ColumnFileDomain.DefaultCellStyle = dataGridViewCellStyle12;
-            this.ColumnFileDomain.HeaderText = "Domain";
-            this.ColumnFileDomain.Name = "ColumnFileDomain";
-            this.ColumnFileDomain.ReadOnly = true;
-            this.ColumnFileDomain.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.ColumnFileDomain.Width = 165;
+            this.ColumnFileLastModified.Width = 175;
             // 
             // ColumnFilesURL
             // 
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.ColumnFilesURL.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.ColumnFilesURL.DefaultCellStyle = dataGridViewCellStyle15;
             this.ColumnFilesURL.HeaderText = "URL";
             this.ColumnFilesURL.Name = "ColumnFilesURL";
             this.ColumnFilesURL.ReadOnly = true;
@@ -269,6 +250,7 @@
             // ContextMenuFile
             // 
             this.ContextMenuFile.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.ContextMenuFile.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.ContextMenuFile.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MenuFileViewDetails,
             this.MenuFileBookmark,
@@ -291,8 +273,8 @@
             // 
             this.MenuFileBookmark.Name = "MenuFileBookmark";
             this.MenuFileBookmark.Size = new System.Drawing.Size(137, 22);
-            this.MenuFileBookmark.Text = "Bookmark";
-            this.MenuFileBookmark.Click += new System.EventHandler(this.MenuFileBookmark_Click);
+            this.MenuFileBookmark.Text = "Save";
+            this.MenuFileBookmark.Click += new System.EventHandler(this.MenuFileSaved_Click);
             // 
             // MenuFileSeperator0
             // 
@@ -328,6 +310,7 @@
             // MenuStrip
             // 
             this.MenuStrip.Font = new System.Drawing.Font("Verdana", 8.25F);
+            this.MenuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.MenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MenuStripFile,
             this.MenuStripBookmarked,
@@ -375,15 +358,16 @@
             this.MenuStripBookmarksSeperator0,
             this.MenuStripBookmarkedClearAll});
             this.MenuStripBookmarked.Name = "MenuStripBookmarked";
-            this.MenuStripBookmarked.Size = new System.Drawing.Size(92, 20);
-            this.MenuStripBookmarked.Text = "Bookmarked";
+            this.MenuStripBookmarked.Size = new System.Drawing.Size(55, 20);
+            this.MenuStripBookmarked.Text = "Saved";
             // 
             // MenuStripBookmarkedShowHide
             // 
             this.MenuStripBookmarkedShowHide.CheckOnClick = true;
             this.MenuStripBookmarkedShowHide.Name = "MenuStripBookmarkedShowHide";
-            this.MenuStripBookmarkedShowHide.Size = new System.Drawing.Size(135, 22);
+            this.MenuStripBookmarkedShowHide.Size = new System.Drawing.Size(180, 22);
             this.MenuStripBookmarkedShowHide.Text = "Show/Hide";
+            this.MenuStripBookmarkedShowHide.Click += new System.EventHandler(this.MenuStripBookmarkedShowHide_Click);
             // 
             // MenuStripBookmarksSeperator0
             // 
@@ -395,50 +379,26 @@
             this.MenuStripBookmarkedClearAll.Name = "MenuStripBookmarkedClearAll";
             this.MenuStripBookmarkedClearAll.Size = new System.Drawing.Size(135, 22);
             this.MenuStripBookmarkedClearAll.Text = "Clear All";
-            this.MenuStripBookmarkedClearAll.Click += new System.EventHandler(this.MenuStripBookmarksClear_Click);
+            this.MenuStripBookmarkedClearAll.Click += new System.EventHandler(this.MenuStripSavedClear_Click);
             // 
             // MenuStripTools
             // 
             this.MenuStripTools.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MenuToolsServerList,
-            this.MenuToolsRequestServer,
-            this.MenuStripToolsSeperator0,
             this.MenuToolsOptions});
             this.MenuStripTools.Name = "MenuStripTools";
             this.MenuStripTools.Size = new System.Drawing.Size(48, 20);
             this.MenuStripTools.Text = "Tools";
             // 
-            // MenuToolsServerList
-            // 
-            this.MenuToolsServerList.Name = "MenuToolsServerList";
-            this.MenuToolsServerList.Size = new System.Drawing.Size(163, 22);
-            this.MenuToolsServerList.Text = "Server List";
-            this.MenuToolsServerList.Click += new System.EventHandler(this.MenuToolsFtpServerList_Click);
-            // 
-            // MenuToolsRequestServer
-            // 
-            this.MenuToolsRequestServer.Name = "MenuToolsRequestServer";
-            this.MenuToolsRequestServer.Size = new System.Drawing.Size(163, 22);
-            this.MenuToolsRequestServer.Text = "Request Server";
-            this.MenuToolsRequestServer.Click += new System.EventHandler(this.MenuToolsSubmitFtpServer_Click);
-            // 
-            // MenuStripToolsSeperator0
-            // 
-            this.MenuStripToolsSeperator0.Name = "MenuStripToolsSeperator0";
-            this.MenuStripToolsSeperator0.Size = new System.Drawing.Size(160, 6);
-            // 
             // MenuToolsOptions
             // 
             this.MenuToolsOptions.Name = "MenuToolsOptions";
-            this.MenuToolsOptions.Size = new System.Drawing.Size(163, 22);
+            this.MenuToolsOptions.Size = new System.Drawing.Size(117, 22);
             this.MenuToolsOptions.Text = "Options";
             this.MenuToolsOptions.Click += new System.EventHandler(this.MenuToolsOptions_Click);
             // 
             // MenuStripHelp
             // 
             this.MenuStripHelp.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MenuHelpFAQ,
-            this.MenuHelpTermsOfUse,
             this.MenuHelpChangelog,
             this.MenuStripHelpSeperator0,
             this.MenuHelpCheckForUpdate,
@@ -449,25 +409,11 @@
             this.MenuStripHelp.Size = new System.Drawing.Size(44, 20);
             this.MenuStripHelp.Text = "Help";
             // 
-            // MenuHelpFAQ
-            // 
-            this.MenuHelpFAQ.Name = "MenuHelpFAQ";
-            this.MenuHelpFAQ.Size = new System.Drawing.Size(174, 22);
-            this.MenuHelpFAQ.Text = "FAQ";
-            this.MenuHelpFAQ.Click += new System.EventHandler(this.MenuHelpFAQ_Click);
-            // 
-            // MenuHelpTermsOfUse
-            // 
-            this.MenuHelpTermsOfUse.Name = "MenuHelpTermsOfUse";
-            this.MenuHelpTermsOfUse.Size = new System.Drawing.Size(174, 22);
-            this.MenuHelpTermsOfUse.Text = "Terms of Use";
-            this.MenuHelpTermsOfUse.Click += new System.EventHandler(this.MenuHelpTermsOfUse_Click);
-            // 
             // MenuHelpChangelog
             // 
             this.MenuHelpChangelog.Name = "MenuHelpChangelog";
             this.MenuHelpChangelog.Size = new System.Drawing.Size(174, 22);
-            this.MenuHelpChangelog.Text = "Changelog";
+            this.MenuHelpChangelog.Text = "Change Log";
             this.MenuHelpChangelog.Click += new System.EventHandler(this.MenuHelpChangelog_Click);
             // 
             // MenuStripHelpSeperator0
@@ -486,7 +432,7 @@
             // 
             this.MenuHelpReportIssue.Name = "MenuHelpReportIssue";
             this.MenuHelpReportIssue.Size = new System.Drawing.Size(174, 22);
-            this.MenuHelpReportIssue.Text = "Report an Issue";
+            this.MenuHelpReportIssue.Text = "Report Issue";
             this.MenuHelpReportIssue.Click += new System.EventHandler(this.MenuHelpReportIssue_Click);
             // 
             // MenuStripHelpSeperator1
@@ -504,6 +450,7 @@
             // StatusStripFooter
             // 
             this.StatusStripFooter.Font = new System.Drawing.Font("Verdana", 7.5F);
+            this.StatusStripFooter.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.StatusStripFooter.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.StatusStripStatus,
             this.StatusStripSpring,
@@ -525,15 +472,15 @@
             // 
             this.StatusStripSpring.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.StatusStripSpring.Name = "StatusStripSpring";
-            this.StatusStripSpring.Size = new System.Drawing.Size(785, 17);
+            this.StatusStripSpring.Size = new System.Drawing.Size(873, 17);
             this.StatusStripSpring.Spring = true;
             // 
             // StatusStripDatabaseInfo
             // 
             this.StatusStripDatabaseInfo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.StatusStripDatabaseInfo.Name = "StatusStripDatabaseInfo";
-            this.StatusStripDatabaseInfo.Size = new System.Drawing.Size(223, 17);
-            this.StatusStripDatabaseInfo.Text = "{0} Files Totalling ~{1} - Updated: {2}";
+            this.StatusStripDatabaseInfo.Size = new System.Drawing.Size(135, 17);
+            this.StatusStripDatabaseInfo.Text = "{0} Files Totalling ~{1}";
             // 
             // NotifyTrayIcon
             // 
@@ -548,6 +495,7 @@
             // ContextMenuSearchExternal
             // 
             this.ContextMenuSearchExternal.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.ContextMenuSearchExternal.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.ContextMenuSearchExternal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MenuSearchGoogle,
             this.MenuSearchGoogol,
@@ -676,11 +624,11 @@
             this.LabelFileValueURL.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.LabelFileValueURL.Location = new System.Drawing.Point(22, 230);
             this.LabelFileValueURL.Margin = new System.Windows.Forms.Padding(0, 6, 0, 6);
-            this.LabelFileValueURL.MaximumSize = new System.Drawing.Size(322, 0);
-            this.LabelFileValueURL.MinimumSize = new System.Drawing.Size(324, 0);
+            this.LabelFileValueURL.MaximumSize = new System.Drawing.Size(314, 0);
+            this.LabelFileValueURL.MinimumSize = new System.Drawing.Size(314, 0);
             this.LabelFileValueURL.Name = "LabelFileValueURL";
-            this.LabelFileValueURL.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
-            this.LabelFileValueURL.Size = new System.Drawing.Size(324, 17);
+            this.LabelFileValueURL.Padding = new System.Windows.Forms.Padding(0, 3, 0, 4);
+            this.LabelFileValueURL.Size = new System.Drawing.Size(314, 20);
             this.LabelFileValueURL.TabIndex = 100125;
             this.LabelFileValueURL.Text = "-";
             // 
@@ -690,8 +638,8 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.FlowpanelFileButtons.Controls.Add(this.ButtonFileDownload);
             this.FlowpanelFileButtons.Controls.Add(this.ButtonFileOpenWith);
-            this.FlowpanelFileButtons.Controls.Add(this.ButtonFileBookmark);
-            this.FlowpanelFileButtons.Location = new System.Drawing.Point(13, 329);
+            this.FlowpanelFileButtons.Controls.Add(this.ButtonFileSave);
+            this.FlowpanelFileButtons.Location = new System.Drawing.Point(13, 330);
             this.FlowpanelFileButtons.Name = "FlowpanelFileButtons";
             this.FlowpanelFileButtons.Size = new System.Drawing.Size(337, 28);
             this.FlowpanelFileButtons.TabIndex = 23;
@@ -720,17 +668,17 @@
             this.ButtonFileOpenWith.UseVisualStyleBackColor = true;
             this.ButtonFileOpenWith.Click += new System.EventHandler(this.ButtonFileOpenWith_Click);
             // 
-            // ButtonFileBookmark
+            // ButtonFileSave
             // 
-            this.ButtonFileBookmark.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.ButtonFileBookmark.Location = new System.Drawing.Point(228, 0);
-            this.ButtonFileBookmark.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.ButtonFileBookmark.Name = "ButtonFileBookmark";
-            this.ButtonFileBookmark.Size = new System.Drawing.Size(86, 28);
-            this.ButtonFileBookmark.TabIndex = 100129;
-            this.ButtonFileBookmark.Text = "Bookmark";
-            this.ButtonFileBookmark.UseVisualStyleBackColor = true;
-            this.ButtonFileBookmark.Click += new System.EventHandler(this.ButtonFileBookmark_Click);
+            this.ButtonFileSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.ButtonFileSave.Location = new System.Drawing.Point(228, 0);
+            this.ButtonFileSave.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.ButtonFileSave.Name = "ButtonFileSave";
+            this.ButtonFileSave.Size = new System.Drawing.Size(62, 28);
+            this.ButtonFileSave.TabIndex = 100129;
+            this.ButtonFileSave.Text = "Save";
+            this.ButtonFileSave.UseVisualStyleBackColor = true;
+            this.ButtonFileSave.Click += new System.EventHandler(this.ButtonFileSave_Click);
             // 
             // LabelFileUrlBG
             // 
@@ -738,13 +686,13 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.LabelFileUrlBG.BackColor = System.Drawing.Color.Transparent;
             this.LabelFileUrlBG.BorderColor = System.Drawing.Color.LightGray;
-            cBlendItems2.iColor = new System.Drawing.Color[] {
+            cBlendItems1.iColor = new System.Drawing.Color[] {
         System.Drawing.Color.White,
         System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))))};
-            cBlendItems2.iPoint = new float[] {
+            cBlendItems1.iPoint = new float[] {
         0F,
         1F};
-            this.LabelFileUrlBG.ColorFillBlend = cBlendItems2;
+            this.LabelFileUrlBG.ColorFillBlend = cBlendItems1;
             this.LabelFileUrlBG.ColorFillSolid = System.Drawing.Color.LightGray;
             this.LabelFileUrlBG.Corners.All = 2;
             this.LabelFileUrlBG.Corners.LowerLeft = 2;
@@ -1017,6 +965,7 @@
             // 
             // ContextFileOpenWith
             // 
+            this.ContextFileOpenWith.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.ContextFileOpenWith.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.NitroReaderToolStripMenuItem,
             this.VLCToolStripMenuItem,
@@ -1029,13 +978,13 @@
             this.FDMToolStripMenuItem});
             this.ContextFileOpenWith.Name = "contextMenuStrip1";
             this.ContextFileOpenWith.ShowItemToolTips = false;
-            this.ContextFileOpenWith.Size = new System.Drawing.Size(236, 202);
+            this.ContextFileOpenWith.Size = new System.Drawing.Size(240, 238);
             // 
             // NitroReaderToolStripMenuItem
             // 
             this.NitroReaderToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("NitroReaderToolStripMenuItem.Image")));
             this.NitroReaderToolStripMenuItem.Name = "NitroReaderToolStripMenuItem";
-            this.NitroReaderToolStripMenuItem.Size = new System.Drawing.Size(235, 22);
+            this.NitroReaderToolStripMenuItem.Size = new System.Drawing.Size(239, 26);
             this.NitroReaderToolStripMenuItem.Text = "Nitro Reader";
             this.NitroReaderToolStripMenuItem.Visible = false;
             // 
@@ -1044,7 +993,7 @@
             this.VLCToolStripMenuItem.Image = global::FileMasta.Properties.Resources.vlc;
             this.VLCToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Transparent;
             this.VLCToolStripMenuItem.Name = "VLCToolStripMenuItem";
-            this.VLCToolStripMenuItem.Size = new System.Drawing.Size(235, 22);
+            this.VLCToolStripMenuItem.Size = new System.Drawing.Size(239, 26);
             this.VLCToolStripMenuItem.Text = "VLC Player";
             this.VLCToolStripMenuItem.Visible = false;
             // 
@@ -1053,7 +1002,7 @@
             this.WMPToolStripMenuItem.Image = global::FileMasta.Properties.Resources.windows;
             this.WMPToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Transparent;
             this.WMPToolStripMenuItem.Name = "WMPToolStripMenuItem";
-            this.WMPToolStripMenuItem.Size = new System.Drawing.Size(235, 22);
+            this.WMPToolStripMenuItem.Size = new System.Drawing.Size(239, 26);
             this.WMPToolStripMenuItem.Text = "Windows Media Player";
             this.WMPToolStripMenuItem.Visible = false;
             // 
@@ -1062,7 +1011,7 @@
             this.MPCToolStripMenuItem.Image = global::FileMasta.Properties.Resources.play_circle;
             this.MPCToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Transparent;
             this.MPCToolStripMenuItem.Name = "MPCToolStripMenuItem";
-            this.MPCToolStripMenuItem.Size = new System.Drawing.Size(235, 22);
+            this.MPCToolStripMenuItem.Size = new System.Drawing.Size(239, 26);
             this.MPCToolStripMenuItem.Text = "Media Player Classic";
             this.MPCToolStripMenuItem.Visible = false;
             // 
@@ -1070,7 +1019,7 @@
             // 
             this.KMPlayerToolStripMenuItem.Image = global::FileMasta.Properties.Resources.play_circle;
             this.KMPlayerToolStripMenuItem.Name = "KMPlayerToolStripMenuItem";
-            this.KMPlayerToolStripMenuItem.Size = new System.Drawing.Size(235, 22);
+            this.KMPlayerToolStripMenuItem.Size = new System.Drawing.Size(239, 26);
             this.KMPlayerToolStripMenuItem.Text = "KMPlayer";
             this.KMPlayerToolStripMenuItem.Visible = false;
             // 
@@ -1078,7 +1027,7 @@
             // 
             this.PotPlayerToolStripMenuItem.Image = global::FileMasta.Properties.Resources.play_circle;
             this.PotPlayerToolStripMenuItem.Name = "PotPlayerToolStripMenuItem";
-            this.PotPlayerToolStripMenuItem.Size = new System.Drawing.Size(235, 22);
+            this.PotPlayerToolStripMenuItem.Size = new System.Drawing.Size(239, 26);
             this.PotPlayerToolStripMenuItem.Text = "PotPlayer";
             this.PotPlayerToolStripMenuItem.Visible = false;
             // 
@@ -1086,7 +1035,7 @@
             // 
             this.IDMToolStripMenuItem.Image = global::FileMasta.Properties.Resources.download;
             this.IDMToolStripMenuItem.Name = "IDMToolStripMenuItem";
-            this.IDMToolStripMenuItem.Size = new System.Drawing.Size(235, 22);
+            this.IDMToolStripMenuItem.Size = new System.Drawing.Size(239, 26);
             this.IDMToolStripMenuItem.Text = "Internet Download Manager";
             this.IDMToolStripMenuItem.Visible = false;
             // 
@@ -1094,7 +1043,7 @@
             // 
             this.IDAToolStripMenuItem.Image = global::FileMasta.Properties.Resources.download;
             this.IDAToolStripMenuItem.Name = "IDAToolStripMenuItem";
-            this.IDAToolStripMenuItem.Size = new System.Drawing.Size(235, 22);
+            this.IDAToolStripMenuItem.Size = new System.Drawing.Size(239, 26);
             this.IDAToolStripMenuItem.Text = "Internet Download Accelerator";
             this.IDAToolStripMenuItem.Visible = false;
             // 
@@ -1102,7 +1051,7 @@
             // 
             this.FDMToolStripMenuItem.Image = global::FileMasta.Properties.Resources.download;
             this.FDMToolStripMenuItem.Name = "FDMToolStripMenuItem";
-            this.FDMToolStripMenuItem.Size = new System.Drawing.Size(235, 22);
+            this.FDMToolStripMenuItem.Size = new System.Drawing.Size(239, 26);
             this.FDMToolStripMenuItem.Text = "Free Download Manager";
             this.FDMToolStripMenuItem.Visible = false;
             // 
@@ -1115,7 +1064,7 @@
             this.TextboxSearchName.Name = "TextboxSearchName";
             this.TextboxSearchName.Size = new System.Drawing.Size(671, 21);
             this.TextboxSearchName.TabIndex = 0;
-            this.TextboxSearchName.WaterMark = "Search for anything...";
+            this.TextboxSearchName.WaterMark = "Search the web for anything...";
             this.TextboxSearchName.WaterMarkActiveForeColor = System.Drawing.Color.White;
             this.TextboxSearchName.WaterMarkFont = new System.Drawing.Font("Verdana", 8.25F);
             this.TextboxSearchName.WaterMarkForeColor = System.Drawing.SystemColors.WindowFrame;
@@ -1352,7 +1301,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(246)))));
             this.ClientSize = new System.Drawing.Size(1084, 561);
-            this.Controls.Add(this.DatagridFileItems);
+            this.Controls.Add(this.DataGridFiles);
             this.Controls.Add(this.PanelFileDetails);
             this.Controls.Add(this.StatusStripFooter);
             this.Controls.Add(this.PanelSearchControls);
@@ -1371,7 +1320,7 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.SizeChanged += new System.EventHandler(this.MainForm_SizeChanged);
-            ((System.ComponentModel.ISupportInitialize)(this.DatagridFileItems)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridFiles)).EndInit();
             this.ContextMenuFile.ResumeLayout(false);
             this.MenuStrip.ResumeLayout(false);
             this.MenuStrip.PerformLayout();
@@ -1394,7 +1343,7 @@
         }
 
         #endregion
-        public System.Windows.Forms.DataGridView DatagridFileItems;
+        public System.Windows.Forms.DataGridView DataGridFiles;
         private System.Windows.Forms.MenuStrip MenuStrip;
         private System.Windows.Forms.ToolStripMenuItem MenuStripFile;
         private System.Windows.Forms.ToolStripMenuItem MenuStripTools;
@@ -1404,7 +1353,6 @@
         private System.Windows.Forms.ToolStripStatusLabel StatusStripDatabaseInfo;
         private System.Windows.Forms.ToolStripStatusLabel StatusStripSpring;
         private System.Windows.Forms.ToolStripMenuItem MenuFileExit;
-        private System.Windows.Forms.ToolStripMenuItem MenuToolsRequestServer;
         private System.Windows.Forms.ToolStripMenuItem MenuHelpAbout;
         private System.Windows.Forms.ToolStripMenuItem MenuHelpReportIssue;
         private System.Windows.Forms.ContextMenuStrip ContextMenuFile;
@@ -1417,7 +1365,6 @@
         private System.Windows.Forms.ToolStripMenuItem MenuFileMinimizeToTray;
         private System.Windows.Forms.NotifyIcon NotifyTrayIcon;
         private System.Windows.Forms.ToolStripSeparator MenuStripHelpSeperator0;
-        private System.Windows.Forms.ToolStripSeparator MenuStripToolsSeperator0;
         private System.Windows.Forms.ToolStripMenuItem MenuToolsOptions;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ContextMenuStrip ContextMenuSearchExternal;
@@ -1425,7 +1372,6 @@
         private System.Windows.Forms.ToolStripMenuItem MenuSearchGoogol;
         private System.Windows.Forms.ToolStripMenuItem MenuSearchStartPage;
         private System.Windows.Forms.ToolStripMenuItem MenuSearchSearx;
-        private System.Windows.Forms.ToolStripMenuItem MenuHelpFAQ;
         private System.Windows.Forms.ToolStripMenuItem MenuHelpCheckForUpdate;
         private System.Windows.Forms.ToolStripSeparator MenuStripHelpSeperator1;
         private System.Windows.Forms.Panel PanelFileDetails;
@@ -1444,7 +1390,7 @@
         public System.Windows.Forms.Label LabelFileValueSize;
         public CButtonLib.CButton InfoSplitter1;
         public CButtonLib.CButton LabelFileUrlBG;
-        private System.Windows.Forms.Button ButtonFileBookmark;
+        private System.Windows.Forms.Button ButtonFileSave;
         private System.Windows.Forms.Button ButtonFileDownload;
         private System.Windows.Forms.Button ButtonFileOpenWith;
         public System.Windows.Forms.ContextMenuStrip ContextFileOpenWith;
@@ -1481,10 +1427,8 @@
         private System.Windows.Forms.ToolStripMenuItem MenuStripBookmarkedClearAll;
         private System.Windows.Forms.ToolStripMenuItem MenuFileEmail;
         private System.Windows.Forms.ToolStripMenuItem MenuStripBookmarkedShowHide;
-        private System.Windows.Forms.ToolStripMenuItem MenuToolsServerList;
         private System.Windows.Forms.ToolStripMenuItem MenuFileBookmark;
         private System.Windows.Forms.ToolStripMenuItem MenuHelpChangelog;
-        private System.Windows.Forms.ToolStripMenuItem MenuHelpTermsOfUse;
         public CButtonLib.CButton cButton1;
         public System.Windows.Forms.Label LabelFileAge;
         public System.Windows.Forms.Label LabelFileValueAge;
@@ -1492,7 +1436,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFileName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFileSize;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFileLastModified;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFileDomain;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFilesURL;
     }
 }

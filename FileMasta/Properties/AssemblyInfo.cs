@@ -1,5 +1,4 @@
 ﻿using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following 
@@ -8,7 +7,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("FileMasta")]
 [assembly: AssemblyDescription("A search application to explore, discover and share online files")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("HerbL27")]
+[assembly: AssemblyCompany("mostlyash")]
 [assembly: AssemblyProduct("FileMasta")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]

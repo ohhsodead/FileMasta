@@ -10,11 +10,16 @@ namespace FileMasta.Data
     {
         private static string AppDataPath { get; } = $@"{Application.UserAppDataPath}\";
         public static string DatabaseFilePath { get; } = $@"{AppDataPath}{AppExtensions.DatabaseFilename}";
-        public static string BookmarkedFilePath { get; } = $@"{AppDataPath}{AppExtensions.BookmarkedFilename}";
+        public static string SavedFilePath { get; } = $@"{AppDataPath}{AppExtensions.SavedFilename}";
         
-        public static WebFile CreateWebFile(string fileUrl)
+        public static WebFile CreateFile(string fileUrl)
         {
             return new WebFile(Path.GetFileName(fileUrl), FtpExtensions.GetFileSize(fileUrl), FtpExtensions.GetFileLastModified(fileUrl), fileUrl);
+        }
+
+        public static void RemoveSavedFile()
+        {
+            if (File.Exists(SavedFilePath)) File.Delete(SavedFilePath);
         }
 
         /// <summary>

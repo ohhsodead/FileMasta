@@ -1,12 +1,17 @@
-﻿using System;
-
-namespace FileMasta.Models
+﻿namespace FileMasta.Models
 {
     /// <summary>
     /// Represents the database information
     /// </summary>
-    public partial class Metadata
+    public class Metadata
     {
-        public DateTime Updated { get; set; } = DateTime.MinValue;
+        public readonly long TotalNoFiles;
+        public readonly long TotalFilesSize;
+
+        public Metadata(long totalNoFiles, long totalFilesSize)
+        {
+            TotalNoFiles = totalNoFiles;
+            TotalFilesSize = totalFilesSize;
+        }
     }
 }

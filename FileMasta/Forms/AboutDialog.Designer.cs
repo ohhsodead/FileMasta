@@ -115,7 +115,7 @@
             this.LinkProjectURL.Size = new System.Drawing.Size(218, 13);
             this.LinkProjectURL.TabIndex = 2;
             this.LinkProjectURL.TabStop = true;
-            this.LinkProjectURL.Text = "https://github.com/herbl27/filemasta";
+            this.LinkProjectURL.Text = "https://github.com/mostlyash/filemasta";
             this.LinkProjectURL.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkProjectURL_LinkClicked);
             // 
             // AboutWindow
