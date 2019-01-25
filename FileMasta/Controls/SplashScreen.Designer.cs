@@ -28,10 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.LabelLoading = new System.Windows.Forms.Label();
-            this.LabelRestart = new System.Windows.Forms.Label();
-            this.TimerCount = new System.Windows.Forms.Timer(this.components);
             this.ImageLogo = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.ImageLogo)).BeginInit();
             this.SuspendLayout();
@@ -48,29 +45,6 @@
             this.LabelLoading.Text = "Initializing FileMasta, Please Wait...";
             this.LabelLoading.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // LabelRestart
-            // 
-            this.LabelRestart.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.LabelRestart.BackColor = System.Drawing.Color.Transparent;
-            this.LabelRestart.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LabelRestart.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelRestart.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelRestart.Location = new System.Drawing.Point(4, 441);
-            this.LabelRestart.Name = "LabelRestart";
-            this.LabelRestart.Size = new System.Drawing.Size(810, 25);
-            this.LabelRestart.TabIndex = 2;
-            this.LabelRestart.Text = "Loading stuck? Click here!";
-            this.LabelRestart.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.LabelRestart.Visible = false;
-            this.LabelRestart.Click += new System.EventHandler(this.labelRestart_Click);
-            // 
-            // TimerCount
-            // 
-            this.TimerCount.Enabled = true;
-            this.TimerCount.Interval = 60000;
-            this.TimerCount.Tick += new System.EventHandler(this.timerCount_Tick);
-            // 
             // ImageLogo
             // 
             this.ImageLogo.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -84,11 +58,10 @@
             // 
             // SplashScreen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.Controls.Add(this.ImageLogo);
-            this.Controls.Add(this.LabelRestart);
             this.Controls.Add(this.LabelLoading);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -102,8 +75,6 @@
         #endregion
 
         public System.Windows.Forms.Label LabelLoading;
-        public System.Windows.Forms.Label LabelRestart;
-        private System.Windows.Forms.Timer TimerCount;
         private System.Windows.Forms.PictureBox ImageLogo;
     }
 }

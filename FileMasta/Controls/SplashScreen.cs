@@ -8,15 +8,5 @@ namespace FileMasta.Controls
         {
             InitializeComponent();
         }
-
-        private void timerCount_Tick(object sender, System.EventArgs e)
-        {
-            LabelRestart.Visible = true;
-        }
-
-        private void labelRestart_Click(object sender, System.EventArgs e)
-        {
-            Application.Restart();
-        }
     }
 }
