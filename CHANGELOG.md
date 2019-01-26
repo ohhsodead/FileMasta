@@ -1,6 +1,14 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [0.4.4] 2019-01-25
+* Data is now retrieved from od-database
+* Improved backend performance (#130)
+* Improved initial data processes
+* Improved saving files
+* Improved user interface
+* Removed remove data on close from settings
+
 ## [0.4.3] 2019-01-13
 * Improved local data storage stability 
 * Improved efficiency by refactoring search (#128)
