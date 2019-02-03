@@ -10,7 +10,7 @@ A federated search application for discovering interesting files that are being 
 Download and run the latest version of the installer from the [releases](https://github.com/mostlyash/FileMasta/releases/latest) page.
 
 ## Issues & Contributions
-If you find a bug or have a feature request, please [create an issue](https://github.com/mostlyash/FileMasta/releases/new).
+If you find a bug or have a feature request, please [create an issue](https://github.com/mostlyash/FileMasta/issues/new).
 
 Contributions are highly welcome, however, except for very small changes, kindly file an issue and let's have a discussion before you open a pull request.
 
