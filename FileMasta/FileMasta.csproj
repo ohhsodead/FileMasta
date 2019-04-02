@@ -92,13 +92,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data\Bookmark.cs" />
-    <Compile Include="Data\Database.cs" />
+    <Compile Include="Data\DataCache.cs" />
     <Compile Include="Data\DataHelper.cs" />
-    <Compile Include="Data\Sort.cs" />
     <Compile Include="Extensions\FtpExtensions.cs" />
     <Compile Include="Extensions\HttpExtensions.cs" />
-    <Compile Include="Utils\Engines.cs" />
+    <Compile Include="Utilities\Engines.cs" />
     <Compile Include="Forms\AboutDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,7 +143,7 @@
     <Compile Include="Extensions\LocalExtensions.cs" />
     <Compile Include="Extensions\AppExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
-    <Compile Include="Utils\Update.cs" />
+    <Compile Include="Utilities\Update.cs" />
     <EmbeddedResource Include="Forms\AboutDialog.resx">
       <DependentUpon>AboutDialog.cs</DependentUpon>
     </EmbeddedResource>

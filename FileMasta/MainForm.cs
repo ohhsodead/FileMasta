@@ -17,14 +17,14 @@ namespace FileMasta
     public partial class MainForm : Form
     {
         /// <summary>
-        /// Create an instance of the splash screen
+        /// Application splash screen
         /// </summary>
         private static readonly SplashScreen FormSplashScreen = new SplashScreen();
         
         /// <summary>
-        /// Used to store the instance of the database
+        /// Applcation database instannce
         /// </summary>
-        private Database _dataCache;
+        private DataCache _dataCache;
 
         public MainForm()
         {
@@ -55,7 +55,7 @@ namespace FileMasta
         {
             Program.Log.Info("Load events started");
             Utils.Update.CheckUpdate();
-            WorkerExtensions.RunWorkAsync(() => _dataCache = new Database(), InitializeFinished);
+            WorkerExtensions.RunWorkAsync(() => _dataCache = new DataCache(), InitializeFinished);
         }
 
         private void InitializeFinished(object sender, RunWorkerCompletedEventArgs e)
@@ -72,7 +72,7 @@ namespace FileMasta
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            _dataCache.UpdateSavedFile();
+            _dataCache?.CreateSavedFile();
             Program.Log.Info("Updated saved file");
         }
 
@@ -123,7 +123,7 @@ namespace FileMasta
 
         private void MenuStripSavedClear_Click(object sender, EventArgs e)
         {
-            _dataCache.ClearSaved();
+            _dataCache.WipeSaved();
         }
 
         // Tools
@@ -156,7 +156,7 @@ namespace FileMasta
         }
         
         /*************************************************************************/
-        /* Search Files                                                          */
+        /* Searching Files                                                       */
         /*************************************************************************/
 
         /// <summary>
@@ -172,7 +172,7 @@ namespace FileMasta
         /// <summary>
         /// Search preference: Sort
         /// </summary>
-        private Sort SearchSortBy { get; set; } = Sort.Name;
+        private DataCache.Sort SearchSortBy { get; set; } = DataCache.Sort.Name;
 
         private void TextBoxSearchQuery_KeyDown(object sender, KeyEventArgs e)
         {
@@ -259,13 +259,13 @@ namespace FileMasta
             switch (DropdownSearchSort.SelectedIndex)
             {
                 case 0:
-                    SearchSortBy = Sort.Name;
+                    SearchSortBy = DataCache.Sort.Name;
                     break;
                 case 1:
-                    SearchSortBy = Sort.Size;
+                    SearchSortBy = DataCache.Sort.Size;
                     break;
                 case 2:
-                    SearchSortBy = Sort.Date;
+                    SearchSortBy = DataCache.Sort.Date;
                     break;
             }
         }
@@ -435,12 +435,12 @@ namespace FileMasta
         {
             if (_dataCache.IsFileSaved(SelectedGridFile.Url))
             {
-                _dataCache.RemoveFromSaved(SelectedGridFile.Url);
+                _dataCache.UnsaveFile(SelectedGridFile.Url);
                 ControlExtensions.SetControlTextWidth(ButtonFileSave, "Save");
             }
             else
             {
-                _dataCache.AddToSaved(SelectedGridFile.Url);
+                _dataCache.SaveFile(SelectedGridFile.Url);
                 ControlExtensions.SetControlTextWidth(ButtonFileSave, "Unsave");
             }
         }
@@ -466,12 +466,12 @@ namespace FileMasta
         {
             if (_dataCache.IsFileSaved(SelectedGridFile.Url))
             {
-                _dataCache.RemoveFromSaved(SelectedGridFile.Url);
+                _dataCache.UnsaveFile(SelectedGridFile.Url);
                 ControlExtensions.SetControlTextWidth(ButtonFileSave, "Save");
             }
             else
             {
-                _dataCache.AddToSaved(SelectedGridFile.Url);
+                _dataCache.SaveFile(SelectedGridFile.Url);
                 ControlExtensions.SetControlTextWidth(ButtonFileSave, "Unsave");
             }
         }       

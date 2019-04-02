@@ -17,11 +17,6 @@ namespace FileMasta.Data
             return new WebFile(Path.GetFileName(fileUrl), FtpExtensions.GetFileSize(fileUrl), FtpExtensions.GetFileLastModified(fileUrl), fileUrl);
         }
 
-        public static void RemoveSavedFile()
-        {
-            if (File.Exists(SavedFilePath)) File.Delete(SavedFilePath);
-        }
-
         /// <summary>
         /// Retrieve list of keywords from database
         /// </summary>

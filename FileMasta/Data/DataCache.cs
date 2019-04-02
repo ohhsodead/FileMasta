@@ -7,15 +7,15 @@ using FileMasta.Models;
 
 namespace FileMasta.Data
 {
-    public class Database
+    public class DataCache
     {
         /// <summary>
-        /// Contains the web file elements in the database
+        /// Contains the array of files in the database
         /// </summary>
         private readonly List<WebFile> _dbFiles = new List<WebFile>();
         
         /// <summary>
-        /// Contains the users saved files url
+        /// Contains the users saved files
         /// </summary>
         private readonly List<string> _savedFiles = new List<string>();
 
@@ -27,7 +27,7 @@ namespace FileMasta.Data
         /// <summary>
         /// Initialize the database instance
         /// </summary>
-        public Database()
+        public DataCache()
         {
             if (!HttpExtensions.IsFileSizeEqual(DataHelper.DatabaseFilePath, AppExtensions.DatabaseUrl))
                 HttpExtensions.DownloadFile(AppExtensions.DatabaseUrl, DataHelper.DatabaseFilePath);
@@ -96,14 +96,16 @@ namespace FileMasta.Data
             return _metadata.TotalNoFiles;
         }
 
+        private static readonly object Searching = new object();
+
         /// <summary>
-        /// Get the first file object that equals to the specified url
+        /// Find the first file object that matches the specified url
         /// </summary>
         /// <param name="fileUrl"></param>
         /// <returns></returns>
         public WebFile GetFile(string fileUrl)
         {
-            lock (SearchLock)
+            lock (Searching)
             {
                 return (from webFile in _dbFiles
                     where webFile.Url.Equals(fileUrl)
@@ -111,7 +113,12 @@ namespace FileMasta.Data
             }
         }
 
-        private static readonly object SearchLock = new object();
+        public enum Sort
+        {
+            Name,
+            Size,
+            Date
+        }
 
         /// <summary>
         /// Search files from the database
@@ -125,9 +132,9 @@ namespace FileMasta.Data
         /// <returns>Returns a list of matching files with the specified parameters</returns>
         public List<WebFile> Search(Sort sort, string name, string[] type, long minSize, DateTime minDateModified, DateTime maxDateModified)
         {
-            lock (SearchLock)
+            lock (Searching)
             {
-                Sort(sort);
+                SortFiles(sort);
                 return (from webFile in _dbFiles
                     where StringExtensions.ContainsAll(Uri.UnescapeDataString(webFile.Url.ToLower()),
                               StringExtensions.GetWords(name.ToLower())) &&
@@ -144,7 +151,7 @@ namespace FileMasta.Data
         /// </summary>
         /// <param name="sortBy">Sort Name, Date or Size</param>
         /// <param name="sortReverse">Reverse the sort order</param>
-        private void Sort(Sort sortBy, bool sortReverse = false)
+        private void SortFiles(Sort sortBy, bool sortReverse = false)
         {
             if (!sortReverse)
             {
@@ -152,11 +159,11 @@ namespace FileMasta.Data
                 {
                     switch (sortBy)
                     {
-                        case Data.Sort.Name:
+                        case Sort.Name:
                             return string.Compare(x.Name, y.Name, StringComparison.Ordinal);
-                        case Data.Sort.Date:
+                        case Sort.Date:
                             return x.LastModified.CompareTo(y.LastModified);
-                        case Data.Sort.Size:
+                        case Sort.Size:
                             return x.Size.CompareTo(y.Size);
                         default:
                             return string.Compare(x.Name, y.Name, StringComparison.Ordinal);
@@ -169,11 +176,11 @@ namespace FileMasta.Data
                 {
                     switch (sortBy)
                     {
-                        case Data.Sort.Name:
+                        case Sort.Name:
                             return string.Compare(y.Name, x.Name, StringComparison.Ordinal);
-                        case Data.Sort.Date:
+                        case Sort.Date:
                             return y.LastModified.CompareTo(x.LastModified);
-                        case Data.Sort.Size:
+                        case Sort.Size:
                             return y.Size.CompareTo(x.Size);
                         default:
                             return string.Compare(y.Name, x.Name, StringComparison.Ordinal);
@@ -188,7 +195,7 @@ namespace FileMasta.Data
         /// <returns>Returns a list of matching files with the specified parameters</returns>
         public List<WebFile> SavedFiles()
         {
-            lock (SearchLock)
+            lock (Searching)
             {
                 return (from webFile in _savedFiles
                     let file = GetFile(webFile)
@@ -199,30 +206,30 @@ namespace FileMasta.Data
         /// <summary>
         /// Save the specified file to users the saved list
         /// </summary>
-        /// <param name="fileUrl">URL to add</param>
-        public void AddToSaved(string fileUrl)
+        /// <param name="url">URL to add</param>
+        public void SaveFile(string url)
         {
-            _savedFiles.Add(fileUrl);
+            _savedFiles.Add(url);
         }
 
         /// <summary>
         /// Remove the specified file from the users saved list
         /// </summary>
-        /// <param name="fileUrl">URL to remove</param>
-        public void RemoveFromSaved(string fileUrl)
+        /// <param name="url">URL to remove</param>
+        public void UnsaveFile(string url)
         {
-            _savedFiles.Remove(fileUrl);
+            _savedFiles.Remove(url);
         }
 
         /// <summary>
         /// Check if user has saved the specified file
         /// </summary>
-        /// <param name="fileUrl">URL of the File</param>
+        /// <param name="url">URL of the File</param>
         /// <returns>True if exists</returns>
-        public bool IsFileSaved(string fileUrl)
+        public bool IsFileSaved(string url)
         {
             foreach (var file in _savedFiles)
-                if (file == fileUrl)
+                if (file == url)
                     return true;
             return false;
         }
@@ -230,22 +237,27 @@ namespace FileMasta.Data
         /// <summary>
         /// Remove all saved file urls
         /// </summary>
-        public void ClearSaved()
+        public void WipeSaved()
         {
             _savedFiles.Clear();
         }
 
         /// <summary>
-        /// Save/update saved files to a local file
+        /// Save/update users saved files to a local file
         /// </summary>
-        public void UpdateSavedFile()
+        public void CreateSavedFile()
         {
-            if (_savedFiles.Count == 0) { DataHelper.RemoveSavedFile(); return; }
+            if (_savedFiles.Count == 0) { DeleteSavedFile(); return; }
             using (var fs = File.OpenWrite(DataHelper.SavedFilePath))
             using (var bs = new BufferedStream(fs))
             using (var sw = new StreamWriter(bs))
                 foreach (var fileUrl in _savedFiles)
                     sw.WriteLine(fileUrl);
+        }
+        
+        public void DeleteSavedFile()
+        {
+            if (File.Exists(DataHelper.SavedFilePath)) File.Delete(DataHelper.SavedFilePath);
         }
     }
 }

@@ -30,11 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             CButtonLib.cBlendItems cBlendItems1 = new CButtonLib.cBlendItems();
             this.DataGridFiles = new System.Windows.Forms.DataGridView();
@@ -180,12 +180,12 @@
             this.DataGridFiles.ReadOnly = true;
             this.DataGridFiles.RowHeadersVisible = false;
             this.DataGridFiles.RowHeadersWidth = 40;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(246)))));
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.White;
-            this.DataGridFiles.RowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(246)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            this.DataGridFiles.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.DataGridFiles.RowTemplate.ContextMenuStrip = this.ContextMenuFile;
             this.DataGridFiles.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(246)))));
             this.DataGridFiles.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Verdana", 8.25F);
@@ -199,7 +199,7 @@
             this.DataGridFiles.ShowCellErrors = false;
             this.DataGridFiles.ShowEditingIcon = false;
             this.DataGridFiles.ShowRowErrors = false;
-            this.DataGridFiles.Size = new System.Drawing.Size(722, 373);
+            this.DataGridFiles.Size = new System.Drawing.Size(694, 373);
             this.DataGridFiles.TabIndex = 7;
             this.DataGridFiles.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridFileItems_CellDoubleClick);
             this.DataGridFiles.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.DataGridFileItems_CellPainting);
@@ -209,8 +209,8 @@
             // ColumnFileName
             // 
             this.ColumnFileName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.ColumnFileName.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.ColumnFileName.DefaultCellStyle = dataGridViewCellStyle2;
             this.ColumnFileName.HeaderText = "Name";
             this.ColumnFileName.Name = "ColumnFileName";
             this.ColumnFileName.ReadOnly = true;
@@ -219,8 +219,8 @@
             // ColumnFileSize
             // 
             this.ColumnFileSize.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.ColumnFileSize.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.ColumnFileSize.DefaultCellStyle = dataGridViewCellStyle3;
             this.ColumnFileSize.HeaderText = "Size";
             this.ColumnFileSize.Name = "ColumnFileSize";
             this.ColumnFileSize.ReadOnly = true;
@@ -230,8 +230,8 @@
             // ColumnFileLastModified
             // 
             this.ColumnFileLastModified.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.ColumnFileLastModified.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.ColumnFileLastModified.DefaultCellStyle = dataGridViewCellStyle4;
             this.ColumnFileLastModified.HeaderText = "Last Modified";
             this.ColumnFileLastModified.Name = "ColumnFileLastModified";
             this.ColumnFileLastModified.ReadOnly = true;
@@ -240,8 +240,8 @@
             // 
             // ColumnFilesURL
             // 
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.ColumnFilesURL.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.ColumnFilesURL.DefaultCellStyle = dataGridViewCellStyle5;
             this.ColumnFilesURL.HeaderText = "URL";
             this.ColumnFilesURL.Name = "ColumnFilesURL";
             this.ColumnFilesURL.ReadOnly = true;
@@ -319,7 +319,7 @@
             this.MenuStrip.Location = new System.Drawing.Point(0, 0);
             this.MenuStrip.Name = "MenuStrip";
             this.MenuStrip.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
-            this.MenuStrip.Size = new System.Drawing.Size(1084, 24);
+            this.MenuStrip.Size = new System.Drawing.Size(1056, 24);
             this.MenuStrip.TabIndex = 3;
             // 
             // MenuStripFile
@@ -365,7 +365,7 @@
             // 
             this.MenuStripBookmarkedShowHide.CheckOnClick = true;
             this.MenuStripBookmarkedShowHide.Name = "MenuStripBookmarkedShowHide";
-            this.MenuStripBookmarkedShowHide.Size = new System.Drawing.Size(180, 22);
+            this.MenuStripBookmarkedShowHide.Size = new System.Drawing.Size(135, 22);
             this.MenuStripBookmarkedShowHide.Text = "Show/Hide";
             this.MenuStripBookmarkedShowHide.Click += new System.EventHandler(this.MenuStripBookmarkedShowHide_Click);
             // 
@@ -458,7 +458,7 @@
             this.StatusStripFooter.Location = new System.Drawing.Point(0, 539);
             this.StatusStripFooter.Name = "StatusStripFooter";
             this.StatusStripFooter.Padding = new System.Windows.Forms.Padding(1, 0, 16, 0);
-            this.StatusStripFooter.Size = new System.Drawing.Size(1084, 22);
+            this.StatusStripFooter.Size = new System.Drawing.Size(1056, 22);
             this.StatusStripFooter.TabIndex = 0;
             // 
             // StatusStripStatus
@@ -472,7 +472,7 @@
             // 
             this.StatusStripSpring.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.StatusStripSpring.Name = "StatusStripSpring";
-            this.StatusStripSpring.Size = new System.Drawing.Size(873, 17);
+            this.StatusStripSpring.Size = new System.Drawing.Size(845, 17);
             this.StatusStripSpring.Spring = true;
             // 
             // StatusStripDatabaseInfo
@@ -557,7 +557,7 @@
             this.PanelFileDetails.Controls.Add(this.LabelFileValueName);
             this.PanelFileDetails.Dock = System.Windows.Forms.DockStyle.Right;
             this.PanelFileDetails.Enabled = false;
-            this.PanelFileDetails.Location = new System.Drawing.Point(722, 166);
+            this.PanelFileDetails.Location = new System.Drawing.Point(694, 166);
             this.PanelFileDetails.Name = "PanelFileDetails";
             this.PanelFileDetails.Size = new System.Drawing.Size(362, 373);
             this.PanelFileDetails.TabIndex = 1114;
@@ -1062,7 +1062,7 @@
             this.TextboxSearchName.BackColor = System.Drawing.SystemColors.Window;
             this.TextboxSearchName.Location = new System.Drawing.Point(58, 10);
             this.TextboxSearchName.Name = "TextboxSearchName";
-            this.TextboxSearchName.Size = new System.Drawing.Size(671, 21);
+            this.TextboxSearchName.Size = new System.Drawing.Size(643, 21);
             this.TextboxSearchName.TabIndex = 0;
             this.TextboxSearchName.WaterMark = "Search the web for anything...";
             this.TextboxSearchName.WaterMarkActiveForeColor = System.Drawing.Color.White;
@@ -1075,7 +1075,7 @@
             this.LabelSearchType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.LabelSearchType.AutoSize = true;
             this.LabelSearchType.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelSearchType.Location = new System.Drawing.Point(738, 14);
+            this.LabelSearchType.Location = new System.Drawing.Point(710, 14);
             this.LabelSearchType.Margin = new System.Windows.Forms.Padding(6, 0, 0, 0);
             this.LabelSearchType.Name = "LabelSearchType";
             this.LabelSearchType.Size = new System.Drawing.Size(39, 13);
@@ -1110,7 +1110,7 @@
             // ButtonSearch
             // 
             this.ButtonSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonSearch.Location = new System.Drawing.Point(981, 10);
+            this.ButtonSearch.Location = new System.Drawing.Point(953, 10);
             this.ButtonSearch.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
             this.ButtonSearch.Name = "ButtonSearch";
             this.ButtonSearch.Size = new System.Drawing.Size(71, 26);
@@ -1129,7 +1129,7 @@
             this.FlowpanelKeywords.Location = new System.Drawing.Point(10, 73);
             this.FlowpanelKeywords.Name = "FlowpanelKeywords";
             this.FlowpanelKeywords.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.FlowpanelKeywords.Size = new System.Drawing.Size(1064, 58);
+            this.FlowpanelKeywords.Size = new System.Drawing.Size(1036, 58);
             this.FlowpanelKeywords.TabIndex = 6;
             this.FlowpanelKeywords.TabStop = true;
             // 
@@ -1149,7 +1149,7 @@
             // 
             this.ButtonSearchExternal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ButtonSearchExternal.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonSearchExternal.Location = new System.Drawing.Point(1052, 10);
+            this.ButtonSearchExternal.Location = new System.Drawing.Point(1024, 10);
             this.ButtonSearchExternal.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.ButtonSearchExternal.Name = "ButtonSearchExternal";
             this.ButtonSearchExternal.Size = new System.Drawing.Size(20, 26);
@@ -1181,7 +1181,7 @@
             "Executable",
             "Picture",
             "Video"});
-            this.ListboxSearchType.Location = new System.Drawing.Point(780, 10);
+            this.ListboxSearchType.Location = new System.Drawing.Point(752, 10);
             this.ListboxSearchType.Name = "ListboxSearchType";
             this.ListboxSearchType.Size = new System.Drawing.Size(192, 56);
             this.ListboxSearchType.TabIndex = 11;
@@ -1291,7 +1291,7 @@
             this.PanelSearchControls.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelSearchControls.Location = new System.Drawing.Point(0, 24);
             this.PanelSearchControls.Name = "PanelSearchControls";
-            this.PanelSearchControls.Size = new System.Drawing.Size(1084, 142);
+            this.PanelSearchControls.Size = new System.Drawing.Size(1056, 142);
             this.PanelSearchControls.TabIndex = 1;
             // 
             // MainForm
@@ -1300,7 +1300,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(246)))));
-            this.ClientSize = new System.Drawing.Size(1084, 561);
+            this.ClientSize = new System.Drawing.Size(1056, 561);
             this.Controls.Add(this.DataGridFiles);
             this.Controls.Add(this.PanelFileDetails);
             this.Controls.Add(this.StatusStripFooter);
