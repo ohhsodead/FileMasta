@@ -19,7 +19,7 @@ namespace FileMasta
         [STAThread]
         private static void Main()
         {
-            _mutexInstance = new Mutex(true, "FileMasta", createdNew: out var createdNew);
+            _mutexInstance = new Mutex(true, "FileMasta", createdNew: out bool createdNew);
 
             if (!createdNew)
             {

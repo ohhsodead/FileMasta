@@ -4,9 +4,9 @@ using System.Windows.Forms;
 
 namespace FileMasta.Forms
 {
-    public partial class AboutDialog : Form
+    public partial class AboutWindow : Form
     {
-        public AboutDialog()
+        public AboutWindow()
         {
             InitializeComponent();
         }

@@ -66,8 +66,8 @@ namespace FileMasta.Extensions
         private static string GetPath(KnownFolder knownFolder, KnownFolderFlags flags,
             bool defaultUser)
         {
-            var result = SHGetKnownFolderPath(new Guid(KnownFoldersGuid[(int)knownFolder]),
-                (uint)flags, new IntPtr(defaultUser ? -1 : 0), out var outPath);
+            int result = SHGetKnownFolderPath(new Guid(KnownFoldersGuid[(int)knownFolder]),
+                (uint)flags, new IntPtr(defaultUser ? -1 : 0), out IntPtr outPath);
             if (result >= 0)
             {
                 return Marshal.PtrToStringUni(outPath);

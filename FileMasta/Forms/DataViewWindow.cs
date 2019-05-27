@@ -2,9 +2,9 @@
 
 namespace FileMasta.Forms
 {
-    public partial class DataViewDialog : Form
+    public partial class DataViewWindow : Form
     {
-        public DataViewDialog()
+        public DataViewWindow()
         {
             InitializeComponent();
         }

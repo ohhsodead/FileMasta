@@ -16,11 +16,11 @@ namespace FileMasta.Extensions
         /// <param name="url">URL to fetch string data from</param>
         public static void ShowDataWindow(Form owner, string title, string url)
         {
-            var frmInfo = new DataViewDialog { Text = title };
+            DataViewWindow frmInfo = new DataViewWindow { Text = title };
 
             //using (var client = Program._webClient)
-            using (var stream = Program.WebClient.OpenRead(url))
-            using (var reader = new StreamReader(stream ?? throw new InvalidOperationException("Unable to read data")))
+            using (Stream stream = Program.WebClient.OpenRead(url))
+            using (StreamReader reader = new StreamReader(stream ?? throw new InvalidOperationException("Unable to read data")))
                 frmInfo.labelData.Text = reader.ReadToEnd();
 
             frmInfo.MaximumSize = new Size(frmInfo.MaximumSize.Width, owner.Height - 100);
@@ -35,8 +35,8 @@ namespace FileMasta.Extensions
         public static void SetControlTextWidth(Button ctrl, string text)
         {
             ctrl.Text = text;
-            var myFont = new Font(ctrl.Font.FontFamily, ctrl.Font.Size);
-            var mySize = ctrl.CreateGraphics().MeasureString(ctrl.Text, myFont);
+            Font myFont = new Font(ctrl.Font.FontFamily, ctrl.Font.Size);
+            SizeF mySize = ctrl.CreateGraphics().MeasureString(ctrl.Text, myFont);
             ctrl.Width = (int)Math.Round(mySize.Width, 0) + 22;
             ctrl.Refresh();
         }
@@ -49,7 +49,7 @@ namespace FileMasta.Extensions
         /// <returns></returns>
         public static Label KeywordLabel(string text, EventHandler clickEvent)
         {
-            var a = new Label
+            Label a = new Label
             {
                 Text = text,
                 TextAlign = ContentAlignment.MiddleCenter,

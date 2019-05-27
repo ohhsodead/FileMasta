@@ -1,6 +1,6 @@
 ﻿namespace FileMasta.Forms
 {
-    partial class OptionsDialog
+    partial class OptionsWindow
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OptionsDialog));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OptionsWindow));
             this.textBoxConnectionPassword = new ChreneLib.Controls.TextBoxes.CTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.textBoxConnectionUsername = new ChreneLib.Controls.TextBoxes.CTextBox();

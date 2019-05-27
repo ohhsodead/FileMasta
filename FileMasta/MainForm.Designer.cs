@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            CButtonLib.cBlendItems cBlendItems1 = new CButtonLib.cBlendItems();
+            CButtonLib.cBlendItems cBlendItems2 = new CButtonLib.cBlendItems();
             this.DataGridFiles = new System.Windows.Forms.DataGridView();
             this.ColumnFileName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnFileSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,10 +55,7 @@
             this.MenuFileMinimizeToTray = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.MenuFileExit = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuStripBookmarked = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuStripBookmarkedShowHide = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuStripBookmarksSeperator0 = new System.Windows.Forms.ToolStripSeparator();
-            this.MenuStripBookmarkedClearAll = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuStripBookmarks = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuStripTools = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuToolsOptions = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuStripHelp = new System.Windows.Forms.ToolStripMenuItem();
@@ -84,12 +81,12 @@
             this.LabelFileValueAge = new System.Windows.Forms.Label();
             this.LabelFileValueURL = new System.Windows.Forms.Label();
             this.FlowpanelFileButtons = new System.Windows.Forms.FlowLayoutPanel();
-            this.ButtonFileDownload = new System.Windows.Forms.Button();
-            this.ButtonFileOpenWith = new System.Windows.Forms.Button();
-            this.ButtonFileSave = new System.Windows.Forms.Button();
+            this.ButtonDownloadFile = new System.Windows.Forms.Button();
+            this.ButtonOpenWith = new System.Windows.Forms.Button();
+            this.ButtonBookmark = new System.Windows.Forms.Button();
             this.LabelFileUrlBG = new CButtonLib.CButton();
             this.InfoSplitter1 = new CButtonLib.CButton();
-            this.ButtonFileRequestSize = new System.Windows.Forms.Button();
+            this.ButtonRequestFileSize = new System.Windows.Forms.Button();
             this.labelTitleExtension = new System.Windows.Forms.Label();
             this.LabelFileValueExtension = new System.Windows.Forms.Label();
             this.InfoSplitter5 = new CButtonLib.CButton();
@@ -118,19 +115,18 @@
             this.LabelSort = new System.Windows.Forms.Label();
             this.ButtonSearch = new System.Windows.Forms.Button();
             this.FlowpanelKeywords = new System.Windows.Forms.FlowLayoutPanel();
-            this.LabelKeywords = new System.Windows.Forms.Label();
             this.ButtonSearchExternal = new System.Windows.Forms.Button();
             this.LabelName = new System.Windows.Forms.Label();
             this.ListboxSearchType = new System.Windows.Forms.ListBox();
-            this.LabelSearchSizeMoreThan = new System.Windows.Forms.Label();
+            this.LabelSearchSizeMoreOrEqualTo = new System.Windows.Forms.Label();
             this.NumericSearchGreaterThan = new System.Windows.Forms.NumericUpDown();
             this.LabelSearchLastModified = new System.Windows.Forms.Label();
-            this.DatetimeSearchLastModifiedMin = new System.Windows.Forms.DateTimePicker();
-            this.DatetimeSearchLastModifiedMax = new System.Windows.Forms.DateTimePicker();
+            this.DateTimeMinMTime = new System.Windows.Forms.DateTimePicker();
+            this.DateTimeMaxMTime = new System.Windows.Forms.DateTimePicker();
             this.LabelSearchModifiedTo = new System.Windows.Forms.Label();
             this.DropdownSearchSizePrefix = new System.Windows.Forms.ComboBox();
             this.PanelSearchControls = new System.Windows.Forms.Panel();
-            this.metadataBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.LabelSearchKeywords = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridFiles)).BeginInit();
             this.ContextMenuFile.SuspendLayout();
             this.MenuStrip.SuspendLayout();
@@ -142,7 +138,6 @@
             this.FlowpanelKeywords.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NumericSearchGreaterThan)).BeginInit();
             this.PanelSearchControls.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.metadataBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // DataGridFiles
@@ -152,17 +147,18 @@
             this.DataGridFiles.AllowUserToResizeColumns = false;
             this.DataGridFiles.AllowUserToResizeRows = false;
             this.DataGridFiles.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(246)))));
+            this.DataGridFiles.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.DataGridFiles.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.DataGridFiles.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(246)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(5, 2, 2, 2);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DataGridFiles.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(246)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(5, 2, 2, 2);
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DataGridFiles.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.DataGridFiles.ColumnHeadersHeight = 26;
             this.DataGridFiles.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnFileName,
@@ -180,12 +176,12 @@
             this.DataGridFiles.ReadOnly = true;
             this.DataGridFiles.RowHeadersVisible = false;
             this.DataGridFiles.RowHeadersWidth = 40;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(246)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            this.DataGridFiles.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle28.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(246)))));
+            dataGridViewCellStyle28.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle28.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle28.SelectionForeColor = System.Drawing.Color.White;
+            this.DataGridFiles.RowsDefaultCellStyle = dataGridViewCellStyle28;
             this.DataGridFiles.RowTemplate.ContextMenuStrip = this.ContextMenuFile;
             this.DataGridFiles.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(246)))));
             this.DataGridFiles.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Verdana", 8.25F);
@@ -209,8 +205,8 @@
             // ColumnFileName
             // 
             this.ColumnFileName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.ColumnFileName.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.ColumnFileName.DefaultCellStyle = dataGridViewCellStyle20;
             this.ColumnFileName.HeaderText = "Name";
             this.ColumnFileName.Name = "ColumnFileName";
             this.ColumnFileName.ReadOnly = true;
@@ -219,8 +215,8 @@
             // ColumnFileSize
             // 
             this.ColumnFileSize.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.ColumnFileSize.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle25.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.ColumnFileSize.DefaultCellStyle = dataGridViewCellStyle25;
             this.ColumnFileSize.HeaderText = "Size";
             this.ColumnFileSize.Name = "ColumnFileSize";
             this.ColumnFileSize.ReadOnly = true;
@@ -230,8 +226,8 @@
             // ColumnFileLastModified
             // 
             this.ColumnFileLastModified.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.ColumnFileLastModified.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle26.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.ColumnFileLastModified.DefaultCellStyle = dataGridViewCellStyle26;
             this.ColumnFileLastModified.HeaderText = "Last Modified";
             this.ColumnFileLastModified.Name = "ColumnFileLastModified";
             this.ColumnFileLastModified.ReadOnly = true;
@@ -240,8 +236,8 @@
             // 
             // ColumnFilesURL
             // 
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.ColumnFilesURL.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle27.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.ColumnFilesURL.DefaultCellStyle = dataGridViewCellStyle27;
             this.ColumnFilesURL.HeaderText = "URL";
             this.ColumnFilesURL.Name = "ColumnFilesURL";
             this.ColumnFilesURL.ReadOnly = true;
@@ -273,8 +269,8 @@
             // 
             this.MenuFileBookmark.Name = "MenuFileBookmark";
             this.MenuFileBookmark.Size = new System.Drawing.Size(137, 22);
-            this.MenuFileBookmark.Text = "Save";
-            this.MenuFileBookmark.Click += new System.EventHandler(this.MenuFileSaved_Click);
+            this.MenuFileBookmark.Text = "Bookmark";
+            this.MenuFileBookmark.Click += new System.EventHandler(this.MenuFileBookmark_Click);
             // 
             // MenuFileSeperator0
             // 
@@ -313,7 +309,7 @@
             this.MenuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.MenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MenuStripFile,
-            this.MenuStripBookmarked,
+            this.MenuStripBookmarks,
             this.MenuStripTools,
             this.MenuStripHelp});
             this.MenuStrip.Location = new System.Drawing.Point(0, 0);
@@ -351,35 +347,12 @@
             this.MenuFileExit.Text = "Exit";
             this.MenuFileExit.Click += new System.EventHandler(this.MenuFileExit_Click);
             // 
-            // MenuStripBookmarked
+            // MenuStripBookmarks
             // 
-            this.MenuStripBookmarked.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MenuStripBookmarkedShowHide,
-            this.MenuStripBookmarksSeperator0,
-            this.MenuStripBookmarkedClearAll});
-            this.MenuStripBookmarked.Name = "MenuStripBookmarked";
-            this.MenuStripBookmarked.Size = new System.Drawing.Size(55, 20);
-            this.MenuStripBookmarked.Text = "Saved";
-            // 
-            // MenuStripBookmarkedShowHide
-            // 
-            this.MenuStripBookmarkedShowHide.CheckOnClick = true;
-            this.MenuStripBookmarkedShowHide.Name = "MenuStripBookmarkedShowHide";
-            this.MenuStripBookmarkedShowHide.Size = new System.Drawing.Size(135, 22);
-            this.MenuStripBookmarkedShowHide.Text = "Show/Hide";
-            this.MenuStripBookmarkedShowHide.Click += new System.EventHandler(this.MenuStripBookmarkedShowHide_Click);
-            // 
-            // MenuStripBookmarksSeperator0
-            // 
-            this.MenuStripBookmarksSeperator0.Name = "MenuStripBookmarksSeperator0";
-            this.MenuStripBookmarksSeperator0.Size = new System.Drawing.Size(132, 6);
-            // 
-            // MenuStripBookmarkedClearAll
-            // 
-            this.MenuStripBookmarkedClearAll.Name = "MenuStripBookmarkedClearAll";
-            this.MenuStripBookmarkedClearAll.Size = new System.Drawing.Size(135, 22);
-            this.MenuStripBookmarkedClearAll.Text = "Clear All";
-            this.MenuStripBookmarkedClearAll.Click += new System.EventHandler(this.MenuStripSavedClear_Click);
+            this.MenuStripBookmarks.Name = "MenuStripBookmarks";
+            this.MenuStripBookmarks.Size = new System.Drawing.Size(84, 20);
+            this.MenuStripBookmarks.Text = "Bookmarks";
+            this.MenuStripBookmarks.Click += new System.EventHandler(this.MenuStripBookmarks_Click);
             // 
             // MenuStripTools
             // 
@@ -479,8 +452,8 @@
             // 
             this.StatusStripDatabaseInfo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.StatusStripDatabaseInfo.Name = "StatusStripDatabaseInfo";
-            this.StatusStripDatabaseInfo.Size = new System.Drawing.Size(135, 17);
-            this.StatusStripDatabaseInfo.Text = "{0} Files Totalling ~{1}";
+            this.StatusStripDatabaseInfo.Size = new System.Drawing.Size(53, 17);
+            this.StatusStripDatabaseInfo.Text = "{0} Files";
             // 
             // NotifyTrayIcon
             // 
@@ -542,7 +515,7 @@
             this.PanelFileDetails.Controls.Add(this.FlowpanelFileButtons);
             this.PanelFileDetails.Controls.Add(this.LabelFileUrlBG);
             this.PanelFileDetails.Controls.Add(this.InfoSplitter1);
-            this.PanelFileDetails.Controls.Add(this.ButtonFileRequestSize);
+            this.PanelFileDetails.Controls.Add(this.ButtonRequestFileSize);
             this.PanelFileDetails.Controls.Add(this.labelTitleExtension);
             this.PanelFileDetails.Controls.Add(this.LabelFileValueExtension);
             this.PanelFileDetails.Controls.Add(this.InfoSplitter5);
@@ -636,49 +609,49 @@
             // 
             this.FlowpanelFileButtons.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.FlowpanelFileButtons.Controls.Add(this.ButtonFileDownload);
-            this.FlowpanelFileButtons.Controls.Add(this.ButtonFileOpenWith);
-            this.FlowpanelFileButtons.Controls.Add(this.ButtonFileSave);
+            this.FlowpanelFileButtons.Controls.Add(this.ButtonDownloadFile);
+            this.FlowpanelFileButtons.Controls.Add(this.ButtonOpenWith);
+            this.FlowpanelFileButtons.Controls.Add(this.ButtonBookmark);
             this.FlowpanelFileButtons.Location = new System.Drawing.Point(13, 330);
             this.FlowpanelFileButtons.Name = "FlowpanelFileButtons";
             this.FlowpanelFileButtons.Size = new System.Drawing.Size(337, 28);
             this.FlowpanelFileButtons.TabIndex = 23;
             // 
-            // ButtonFileDownload
+            // ButtonDownloadFile
             // 
-            this.ButtonFileDownload.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.ButtonFileDownload.Location = new System.Drawing.Point(0, 0);
-            this.ButtonFileDownload.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
-            this.ButtonFileDownload.Name = "ButtonFileDownload";
-            this.ButtonFileDownload.Size = new System.Drawing.Size(120, 28);
-            this.ButtonFileDownload.TabIndex = 100128;
-            this.ButtonFileDownload.Text = "Direct Download";
-            this.ButtonFileDownload.UseVisualStyleBackColor = true;
-            this.ButtonFileDownload.Click += new System.EventHandler(this.ButtonFileDownload_Click);
+            this.ButtonDownloadFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.ButtonDownloadFile.Location = new System.Drawing.Point(0, 0);
+            this.ButtonDownloadFile.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
+            this.ButtonDownloadFile.Name = "ButtonDownloadFile";
+            this.ButtonDownloadFile.Size = new System.Drawing.Size(120, 28);
+            this.ButtonDownloadFile.TabIndex = 100128;
+            this.ButtonDownloadFile.Text = "Direct Download";
+            this.ButtonDownloadFile.UseVisualStyleBackColor = true;
+            this.ButtonDownloadFile.Click += new System.EventHandler(this.ButtonFileDownload_Click);
             // 
-            // ButtonFileOpenWith
+            // ButtonOpenWith
             // 
-            this.ButtonFileOpenWith.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.ButtonFileOpenWith.Location = new System.Drawing.Point(126, 0);
-            this.ButtonFileOpenWith.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.ButtonFileOpenWith.Name = "ButtonFileOpenWith";
-            this.ButtonFileOpenWith.Size = new System.Drawing.Size(96, 28);
-            this.ButtonFileOpenWith.TabIndex = 100130;
-            this.ButtonFileOpenWith.Text = "Open with...";
-            this.ButtonFileOpenWith.UseVisualStyleBackColor = true;
-            this.ButtonFileOpenWith.Click += new System.EventHandler(this.ButtonFileOpenWith_Click);
+            this.ButtonOpenWith.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.ButtonOpenWith.Location = new System.Drawing.Point(126, 0);
+            this.ButtonOpenWith.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.ButtonOpenWith.Name = "ButtonOpenWith";
+            this.ButtonOpenWith.Size = new System.Drawing.Size(96, 28);
+            this.ButtonOpenWith.TabIndex = 100130;
+            this.ButtonOpenWith.Text = "Open with...";
+            this.ButtonOpenWith.UseVisualStyleBackColor = true;
+            this.ButtonOpenWith.Click += new System.EventHandler(this.ButtonFileOpenWith_Click);
             // 
-            // ButtonFileSave
+            // ButtonBookmark
             // 
-            this.ButtonFileSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.ButtonFileSave.Location = new System.Drawing.Point(228, 0);
-            this.ButtonFileSave.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.ButtonFileSave.Name = "ButtonFileSave";
-            this.ButtonFileSave.Size = new System.Drawing.Size(62, 28);
-            this.ButtonFileSave.TabIndex = 100129;
-            this.ButtonFileSave.Text = "Save";
-            this.ButtonFileSave.UseVisualStyleBackColor = true;
-            this.ButtonFileSave.Click += new System.EventHandler(this.ButtonFileSave_Click);
+            this.ButtonBookmark.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.ButtonBookmark.Location = new System.Drawing.Point(228, 0);
+            this.ButtonBookmark.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.ButtonBookmark.Name = "ButtonBookmark";
+            this.ButtonBookmark.Size = new System.Drawing.Size(88, 28);
+            this.ButtonBookmark.TabIndex = 100129;
+            this.ButtonBookmark.Text = "Bookmark";
+            this.ButtonBookmark.UseVisualStyleBackColor = true;
+            this.ButtonBookmark.Click += new System.EventHandler(this.ButtonFileSave_Click);
             // 
             // LabelFileUrlBG
             // 
@@ -686,13 +659,13 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.LabelFileUrlBG.BackColor = System.Drawing.Color.Transparent;
             this.LabelFileUrlBG.BorderColor = System.Drawing.Color.LightGray;
-            cBlendItems1.iColor = new System.Drawing.Color[] {
+            cBlendItems2.iColor = new System.Drawing.Color[] {
         System.Drawing.Color.White,
         System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))))};
-            cBlendItems1.iPoint = new float[] {
+            cBlendItems2.iPoint = new float[] {
         0F,
         1F};
-            this.LabelFileUrlBG.ColorFillBlend = cBlendItems1;
+            this.LabelFileUrlBG.ColorFillBlend = cBlendItems2;
             this.LabelFileUrlBG.ColorFillSolid = System.Drawing.Color.LightGray;
             this.LabelFileUrlBG.Corners.All = 2;
             this.LabelFileUrlBG.Corners.LowerLeft = 2;
@@ -750,15 +723,15 @@
             this.InfoSplitter1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.InfoSplitter1.TextShadowShow = false;
             // 
-            // ButtonFileRequestSize
+            // ButtonRequestFileSize
             // 
-            this.ButtonFileRequestSize.Location = new System.Drawing.Point(146, 44);
-            this.ButtonFileRequestSize.Name = "ButtonFileRequestSize";
-            this.ButtonFileRequestSize.Size = new System.Drawing.Size(100, 26);
-            this.ButtonFileRequestSize.TabIndex = 100122;
-            this.ButtonFileRequestSize.Text = "Request Size";
-            this.ButtonFileRequestSize.UseVisualStyleBackColor = true;
-            this.ButtonFileRequestSize.Click += new System.EventHandler(this.ButtonFileRequestSize_Click);
+            this.ButtonRequestFileSize.Location = new System.Drawing.Point(146, 44);
+            this.ButtonRequestFileSize.Name = "ButtonRequestFileSize";
+            this.ButtonRequestFileSize.Size = new System.Drawing.Size(100, 26);
+            this.ButtonRequestFileSize.TabIndex = 100122;
+            this.ButtonRequestFileSize.Text = "Request Size";
+            this.ButtonRequestFileSize.UseVisualStyleBackColor = true;
+            this.ButtonRequestFileSize.Click += new System.EventHandler(this.ButtonFileRequestSize_Click);
             // 
             // labelTitleExtension
             // 
@@ -987,6 +960,7 @@
             this.NitroReaderToolStripMenuItem.Size = new System.Drawing.Size(239, 26);
             this.NitroReaderToolStripMenuItem.Text = "Nitro Reader";
             this.NitroReaderToolStripMenuItem.Visible = false;
+            this.NitroReaderToolStripMenuItem.Click += new System.EventHandler(this.NitroReaderToolStripMenuItem_Click);
             // 
             // VLCToolStripMenuItem
             // 
@@ -996,6 +970,7 @@
             this.VLCToolStripMenuItem.Size = new System.Drawing.Size(239, 26);
             this.VLCToolStripMenuItem.Text = "VLC Player";
             this.VLCToolStripMenuItem.Visible = false;
+            this.VLCToolStripMenuItem.Click += new System.EventHandler(this.VLCToolStripMenuItem_Click);
             // 
             // WMPToolStripMenuItem
             // 
@@ -1005,6 +980,7 @@
             this.WMPToolStripMenuItem.Size = new System.Drawing.Size(239, 26);
             this.WMPToolStripMenuItem.Text = "Windows Media Player";
             this.WMPToolStripMenuItem.Visible = false;
+            this.WMPToolStripMenuItem.Click += new System.EventHandler(this.WMPToolStripMenuItem_Click);
             // 
             // MPCToolStripMenuItem
             // 
@@ -1014,6 +990,7 @@
             this.MPCToolStripMenuItem.Size = new System.Drawing.Size(239, 26);
             this.MPCToolStripMenuItem.Text = "Media Player Classic";
             this.MPCToolStripMenuItem.Visible = false;
+            this.MPCToolStripMenuItem.Click += new System.EventHandler(this.MPCToolStripMenuItem_Click);
             // 
             // KMPlayerToolStripMenuItem
             // 
@@ -1022,6 +999,7 @@
             this.KMPlayerToolStripMenuItem.Size = new System.Drawing.Size(239, 26);
             this.KMPlayerToolStripMenuItem.Text = "KMPlayer";
             this.KMPlayerToolStripMenuItem.Visible = false;
+            this.KMPlayerToolStripMenuItem.Click += new System.EventHandler(this.KMPlayerToolStripMenuItem_Click);
             // 
             // PotPlayerToolStripMenuItem
             // 
@@ -1030,6 +1008,7 @@
             this.PotPlayerToolStripMenuItem.Size = new System.Drawing.Size(239, 26);
             this.PotPlayerToolStripMenuItem.Text = "PotPlayer";
             this.PotPlayerToolStripMenuItem.Visible = false;
+            this.PotPlayerToolStripMenuItem.Click += new System.EventHandler(this.PotPlayerToolStripMenuItem_Click);
             // 
             // IDMToolStripMenuItem
             // 
@@ -1038,6 +1017,7 @@
             this.IDMToolStripMenuItem.Size = new System.Drawing.Size(239, 26);
             this.IDMToolStripMenuItem.Text = "Internet Download Manager";
             this.IDMToolStripMenuItem.Visible = false;
+            this.IDMToolStripMenuItem.Click += new System.EventHandler(this.IDMToolStripMenuItem_Click);
             // 
             // IDAToolStripMenuItem
             // 
@@ -1046,6 +1026,7 @@
             this.IDAToolStripMenuItem.Size = new System.Drawing.Size(239, 26);
             this.IDAToolStripMenuItem.Text = "Internet Download Accelerator";
             this.IDAToolStripMenuItem.Visible = false;
+            this.IDAToolStripMenuItem.Click += new System.EventHandler(this.IDAToolStripMenuItem_Click);
             // 
             // FDMToolStripMenuItem
             // 
@@ -1054,15 +1035,16 @@
             this.FDMToolStripMenuItem.Size = new System.Drawing.Size(239, 26);
             this.FDMToolStripMenuItem.Text = "Free Download Manager";
             this.FDMToolStripMenuItem.Visible = false;
+            this.FDMToolStripMenuItem.Click += new System.EventHandler(this.FDMToolStripMenuItem_Click);
             // 
             // TextboxSearchName
             // 
             this.TextboxSearchName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TextboxSearchName.BackColor = System.Drawing.SystemColors.Window;
-            this.TextboxSearchName.Location = new System.Drawing.Point(58, 10);
+            this.TextboxSearchName.Location = new System.Drawing.Point(62, 10);
             this.TextboxSearchName.Name = "TextboxSearchName";
-            this.TextboxSearchName.Size = new System.Drawing.Size(643, 21);
+            this.TextboxSearchName.Size = new System.Drawing.Size(639, 21);
             this.TextboxSearchName.TabIndex = 0;
             this.TextboxSearchName.WaterMark = "Search the web for anything...";
             this.TextboxSearchName.WaterMarkActiveForeColor = System.Drawing.Color.White;
@@ -1090,9 +1072,9 @@
             "Name",
             "Size",
             "Modified"});
-            this.DropdownSearchSort.Location = new System.Drawing.Point(628, 42);
+            this.DropdownSearchSort.Location = new System.Drawing.Point(564, 40);
             this.DropdownSearchSort.Name = "DropdownSearchSort";
-            this.DropdownSearchSort.Size = new System.Drawing.Size(72, 21);
+            this.DropdownSearchSort.Size = new System.Drawing.Size(64, 21);
             this.DropdownSearchSort.TabIndex = 2;
             this.DropdownSearchSort.SelectedIndexChanged += new System.EventHandler(this.ComboBoxSort_SelectedIndexChanged);
             // 
@@ -1100,12 +1082,13 @@
             // 
             this.LabelSort.AutoSize = true;
             this.LabelSort.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelSort.Location = new System.Drawing.Point(589, 46);
+            this.LabelSort.Location = new System.Drawing.Point(525, 45);
             this.LabelSort.Margin = new System.Windows.Forms.Padding(6, 0, 0, 0);
             this.LabelSort.Name = "LabelSort";
             this.LabelSort.Size = new System.Drawing.Size(36, 13);
             this.LabelSort.TabIndex = 5;
             this.LabelSort.Text = "Sort:";
+            this.LabelSort.Click += new System.EventHandler(this.LabelSort_Click);
             // 
             // ButtonSearch
             // 
@@ -1125,25 +1108,13 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.FlowpanelKeywords.BackColor = System.Drawing.Color.Transparent;
-            this.FlowpanelKeywords.Controls.Add(this.LabelKeywords);
-            this.FlowpanelKeywords.Location = new System.Drawing.Point(10, 73);
+            this.FlowpanelKeywords.Controls.Add(this.LabelSearchKeywords);
+            this.FlowpanelKeywords.Location = new System.Drawing.Point(10, 74);
             this.FlowpanelKeywords.Name = "FlowpanelKeywords";
             this.FlowpanelKeywords.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.FlowpanelKeywords.Size = new System.Drawing.Size(1036, 58);
             this.FlowpanelKeywords.TabIndex = 6;
             this.FlowpanelKeywords.TabStop = true;
-            // 
-            // LabelKeywords
-            // 
-            this.LabelKeywords.AutoSize = true;
-            this.LabelKeywords.BackColor = System.Drawing.Color.Transparent;
-            this.LabelKeywords.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelKeywords.Location = new System.Drawing.Point(0, 0);
-            this.LabelKeywords.Margin = new System.Windows.Forms.Padding(0);
-            this.LabelKeywords.Name = "LabelKeywords";
-            this.LabelKeywords.Size = new System.Drawing.Size(68, 13);
-            this.LabelKeywords.TabIndex = 9;
-            this.LabelKeywords.Text = "Keywords:";
             // 
             // ButtonSearchExternal
             // 
@@ -1187,16 +1158,16 @@
             this.ListboxSearchType.TabIndex = 11;
             this.ListboxSearchType.SelectedIndexChanged += new System.EventHandler(this.ListboxType_SelectedIndexChanged);
             // 
-            // LabelSearchSizeMoreThan
+            // LabelSearchSizeMoreOrEqualTo
             // 
-            this.LabelSearchSizeMoreThan.AutoSize = true;
-            this.LabelSearchSizeMoreThan.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelSearchSizeMoreThan.Location = new System.Drawing.Point(10, 46);
-            this.LabelSearchSizeMoreThan.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.LabelSearchSizeMoreThan.Name = "LabelSearchSizeMoreThan";
-            this.LabelSearchSizeMoreThan.Size = new System.Drawing.Size(49, 13);
-            this.LabelSearchSizeMoreThan.TabIndex = 12;
-            this.LabelSearchSizeMoreThan.Text = "Size ≥:";
+            this.LabelSearchSizeMoreOrEqualTo.AutoSize = true;
+            this.LabelSearchSizeMoreOrEqualTo.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelSearchSizeMoreOrEqualTo.Location = new System.Drawing.Point(10, 46);
+            this.LabelSearchSizeMoreOrEqualTo.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.LabelSearchSizeMoreOrEqualTo.Name = "LabelSearchSizeMoreOrEqualTo";
+            this.LabelSearchSizeMoreOrEqualTo.Size = new System.Drawing.Size(49, 13);
+            this.LabelSearchSizeMoreOrEqualTo.TabIndex = 12;
+            this.LabelSearchSizeMoreOrEqualTo.Text = "Size ≥:";
             // 
             // NumericSearchGreaterThan
             // 
@@ -1207,49 +1178,53 @@
             0,
             0});
             this.NumericSearchGreaterThan.Name = "NumericSearchGreaterThan";
-            this.NumericSearchGreaterThan.Size = new System.Drawing.Size(88, 21);
+            this.NumericSearchGreaterThan.Size = new System.Drawing.Size(74, 21);
             this.NumericSearchGreaterThan.TabIndex = 14;
             // 
             // LabelSearchLastModified
             // 
             this.LabelSearchLastModified.AutoSize = true;
             this.LabelSearchLastModified.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelSearchLastModified.Location = new System.Drawing.Point(223, 46);
+            this.LabelSearchLastModified.Location = new System.Drawing.Point(202, 46);
             this.LabelSearchLastModified.Margin = new System.Windows.Forms.Padding(6, 0, 0, 0);
             this.LabelSearchLastModified.Name = "LabelSearchLastModified";
-            this.LabelSearchLastModified.Size = new System.Drawing.Size(86, 13);
+            this.LabelSearchLastModified.Size = new System.Drawing.Size(59, 13);
             this.LabelSearchLastModified.TabIndex = 17;
-            this.LabelSearchLastModified.Text = "Last Modified:";
+            this.LabelSearchLastModified.Text = "Modified:";
+            this.LabelSearchLastModified.Click += new System.EventHandler(this.LabelSearchLastModified_Click);
             // 
-            // DatetimeSearchLastModifiedMin
+            // DateTimeMinMTime
             // 
-            this.DatetimeSearchLastModifiedMin.CustomFormat = "MMMd, yyyy";
-            this.DatetimeSearchLastModifiedMin.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DatetimeSearchLastModifiedMin.Location = new System.Drawing.Point(315, 42);
-            this.DatetimeSearchLastModifiedMin.Name = "DatetimeSearchLastModifiedMin";
-            this.DatetimeSearchLastModifiedMin.Size = new System.Drawing.Size(120, 21);
-            this.DatetimeSearchLastModifiedMin.TabIndex = 19;
-            this.DatetimeSearchLastModifiedMin.Value = new System.DateTime(1998, 1, 1, 0, 0, 0, 0);
+            this.DateTimeMinMTime.CustomFormat = "MMMd, yyyy";
+            this.DateTimeMinMTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.DateTimeMinMTime.Location = new System.Drawing.Point(264, 41);
+            this.DateTimeMinMTime.Name = "DateTimeMinMTime";
+            this.DateTimeMinMTime.Size = new System.Drawing.Size(114, 21);
+            this.DateTimeMinMTime.TabIndex = 19;
+            this.DateTimeMinMTime.Value = new System.DateTime(1998, 1, 1, 0, 0, 0, 0);
+            this.DateTimeMinMTime.ValueChanged += new System.EventHandler(this.DateTimeMinMTime_ValueChanged);
             // 
-            // DatetimeSearchLastModifiedMax
+            // DateTimeMaxMTime
             // 
-            this.DatetimeSearchLastModifiedMax.CustomFormat = "MMMd, yyyy";
-            this.DatetimeSearchLastModifiedMax.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DatetimeSearchLastModifiedMax.Location = new System.Drawing.Point(460, 42);
-            this.DatetimeSearchLastModifiedMax.Name = "DatetimeSearchLastModifiedMax";
-            this.DatetimeSearchLastModifiedMax.Size = new System.Drawing.Size(120, 21);
-            this.DatetimeSearchLastModifiedMax.TabIndex = 20;
-            this.DatetimeSearchLastModifiedMax.Value = new System.DateTime(2019, 1, 8, 0, 0, 0, 0);
+            this.DateTimeMaxMTime.CustomFormat = "MMMd, yyyy";
+            this.DateTimeMaxMTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.DateTimeMaxMTime.Location = new System.Drawing.Point(404, 41);
+            this.DateTimeMaxMTime.Name = "DateTimeMaxMTime";
+            this.DateTimeMaxMTime.Size = new System.Drawing.Size(114, 21);
+            this.DateTimeMaxMTime.TabIndex = 20;
+            this.DateTimeMaxMTime.Value = new System.DateTime(2019, 1, 8, 0, 0, 0, 0);
+            this.DateTimeMaxMTime.ValueChanged += new System.EventHandler(this.DateTimeMaxMTime_ValueChanged);
             // 
             // LabelSearchModifiedTo
             // 
             this.LabelSearchModifiedTo.AutoSize = true;
             this.LabelSearchModifiedTo.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelSearchModifiedTo.Location = new System.Drawing.Point(439, 46);
+            this.LabelSearchModifiedTo.Location = new System.Drawing.Point(383, 45);
             this.LabelSearchModifiedTo.Name = "LabelSearchModifiedTo";
             this.LabelSearchModifiedTo.Size = new System.Drawing.Size(18, 13);
             this.LabelSearchModifiedTo.TabIndex = 21;
             this.LabelSearchModifiedTo.Text = "to";
+            this.LabelSearchModifiedTo.Click += new System.EventHandler(this.LabelSearchModifiedTo_Click);
             // 
             // DropdownSearchSizePrefix
             // 
@@ -1262,10 +1237,10 @@
             "GB",
             "TB",
             "PB"});
-            this.DropdownSearchSizePrefix.Location = new System.Drawing.Point(153, 42);
+            this.DropdownSearchSizePrefix.Location = new System.Drawing.Point(139, 42);
             this.DropdownSearchSizePrefix.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.DropdownSearchSizePrefix.Name = "DropdownSearchSizePrefix";
-            this.DropdownSearchSizePrefix.Size = new System.Drawing.Size(61, 21);
+            this.DropdownSearchSizePrefix.Size = new System.Drawing.Size(56, 21);
             this.DropdownSearchSizePrefix.TabIndex = 22;
             this.DropdownSearchSizePrefix.SelectedIndexChanged += new System.EventHandler(this.DropdownSearchSizePrefix_SelectedIndexChanged);
             // 
@@ -1274,11 +1249,11 @@
             this.PanelSearchControls.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(246)))));
             this.PanelSearchControls.Controls.Add(this.DropdownSearchSizePrefix);
             this.PanelSearchControls.Controls.Add(this.LabelSearchModifiedTo);
-            this.PanelSearchControls.Controls.Add(this.DatetimeSearchLastModifiedMax);
-            this.PanelSearchControls.Controls.Add(this.DatetimeSearchLastModifiedMin);
+            this.PanelSearchControls.Controls.Add(this.DateTimeMaxMTime);
+            this.PanelSearchControls.Controls.Add(this.DateTimeMinMTime);
             this.PanelSearchControls.Controls.Add(this.LabelSearchLastModified);
             this.PanelSearchControls.Controls.Add(this.NumericSearchGreaterThan);
-            this.PanelSearchControls.Controls.Add(this.LabelSearchSizeMoreThan);
+            this.PanelSearchControls.Controls.Add(this.LabelSearchSizeMoreOrEqualTo);
             this.PanelSearchControls.Controls.Add(this.ListboxSearchType);
             this.PanelSearchControls.Controls.Add(this.LabelName);
             this.PanelSearchControls.Controls.Add(this.ButtonSearchExternal);
@@ -1293,6 +1268,17 @@
             this.PanelSearchControls.Name = "PanelSearchControls";
             this.PanelSearchControls.Size = new System.Drawing.Size(1056, 142);
             this.PanelSearchControls.TabIndex = 1;
+            // 
+            // LabelSearchKeywords
+            // 
+            this.LabelSearchKeywords.AutoSize = true;
+            this.LabelSearchKeywords.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelSearchKeywords.Location = new System.Drawing.Point(0, 0);
+            this.LabelSearchKeywords.Margin = new System.Windows.Forms.Padding(0);
+            this.LabelSearchKeywords.Name = "LabelSearchKeywords";
+            this.LabelSearchKeywords.Size = new System.Drawing.Size(68, 13);
+            this.LabelSearchKeywords.TabIndex = 13;
+            this.LabelSearchKeywords.Text = "Keywords:";
             // 
             // MainForm
             // 
@@ -1336,7 +1322,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.NumericSearchGreaterThan)).EndInit();
             this.PanelSearchControls.ResumeLayout(false);
             this.PanelSearchControls.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.metadataBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1361,7 +1346,7 @@
         private System.Windows.Forms.ToolStripMenuItem MenuFileViewDetails;
         private System.Windows.Forms.ToolStripSeparator MenuFileSeperator1;
         private System.Windows.Forms.ToolStripMenuItem MenuFileCopyURL;
-        private System.Windows.Forms.ToolStripMenuItem MenuStripBookmarked;
+        private System.Windows.Forms.ToolStripMenuItem MenuStripBookmarks;
         private System.Windows.Forms.ToolStripMenuItem MenuFileMinimizeToTray;
         private System.Windows.Forms.NotifyIcon NotifyTrayIcon;
         private System.Windows.Forms.ToolStripSeparator MenuStripHelpSeperator0;
@@ -1376,7 +1361,7 @@
         private System.Windows.Forms.ToolStripSeparator MenuStripHelpSeperator1;
         private System.Windows.Forms.Panel PanelFileDetails;
         public System.Windows.Forms.Label LabelFileValueName;
-        private System.Windows.Forms.Button ButtonFileRequestSize;
+        private System.Windows.Forms.Button ButtonRequestFileSize;
         public System.Windows.Forms.Label labelTitleExtension;
         public System.Windows.Forms.Label LabelFileValueExtension;
         public CButtonLib.CButton InfoSplitter5;
@@ -1390,9 +1375,9 @@
         public System.Windows.Forms.Label LabelFileValueSize;
         public CButtonLib.CButton InfoSplitter1;
         public CButtonLib.CButton LabelFileUrlBG;
-        private System.Windows.Forms.Button ButtonFileSave;
-        private System.Windows.Forms.Button ButtonFileDownload;
-        private System.Windows.Forms.Button ButtonFileOpenWith;
+        private System.Windows.Forms.Button ButtonBookmark;
+        private System.Windows.Forms.Button ButtonDownloadFile;
+        private System.Windows.Forms.Button ButtonOpenWith;
         public System.Windows.Forms.ContextMenuStrip ContextFileOpenWith;
         private System.Windows.Forms.ToolStripMenuItem NitroReaderToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem VLCToolStripMenuItem;
@@ -1409,34 +1394,30 @@
         private System.Windows.Forms.Label LabelSort;
         public System.Windows.Forms.Button ButtonSearch;
         private System.Windows.Forms.FlowLayoutPanel FlowpanelKeywords;
-        internal System.Windows.Forms.Label LabelKeywords;
         public System.Windows.Forms.Button ButtonSearchExternal;
         private System.Windows.Forms.Label LabelName;
         private System.Windows.Forms.ListBox ListboxSearchType;
-        private System.Windows.Forms.Label LabelSearchSizeMoreThan;
+        private System.Windows.Forms.Label LabelSearchSizeMoreOrEqualTo;
         private System.Windows.Forms.NumericUpDown NumericSearchGreaterThan;
         private System.Windows.Forms.Label LabelSearchLastModified;
-        private System.Windows.Forms.DateTimePicker DatetimeSearchLastModifiedMin;
-        private System.Windows.Forms.DateTimePicker DatetimeSearchLastModifiedMax;
+        private System.Windows.Forms.DateTimePicker DateTimeMinMTime;
+        private System.Windows.Forms.DateTimePicker DateTimeMaxMTime;
         private System.Windows.Forms.Label LabelSearchModifiedTo;
         private System.Windows.Forms.ComboBox DropdownSearchSizePrefix;
         private System.Windows.Forms.Panel PanelSearchControls;
         private System.Windows.Forms.FlowLayoutPanel FlowpanelFileButtons;
         public System.Windows.Forms.Label LabelFileValueURL;
-        private System.Windows.Forms.ToolStripSeparator MenuStripBookmarksSeperator0;
-        private System.Windows.Forms.ToolStripMenuItem MenuStripBookmarkedClearAll;
         private System.Windows.Forms.ToolStripMenuItem MenuFileEmail;
-        private System.Windows.Forms.ToolStripMenuItem MenuStripBookmarkedShowHide;
         private System.Windows.Forms.ToolStripMenuItem MenuFileBookmark;
         private System.Windows.Forms.ToolStripMenuItem MenuHelpChangelog;
         public CButtonLib.CButton cButton1;
         public System.Windows.Forms.Label LabelFileAge;
         public System.Windows.Forms.Label LabelFileValueAge;
-        private System.Windows.Forms.BindingSource metadataBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFileName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFileSize;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFileLastModified;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFilesURL;
+        private System.Windows.Forms.Label LabelSearchKeywords;
     }
 }
 

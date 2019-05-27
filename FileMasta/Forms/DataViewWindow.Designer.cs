@@ -1,6 +1,6 @@
 ﻿namespace FileMasta.Forms
 {
-    partial class DataViewDialog
+    partial class DataViewWindow
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DataViewDialog));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DataViewWindow));
             this.panelItems = new System.Windows.Forms.FlowLayoutPanel();
             this.labelData = new System.Windows.Forms.Label();
             this.panelItems.SuspendLayout();

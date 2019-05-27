@@ -1,6 +1,6 @@
 ﻿namespace FileMasta.Forms
 {
-    partial class AboutDialog
+    partial class AboutWindow
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutDialog));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutWindow));
             this.LabelDescription = new System.Windows.Forms.Label();
             this.LabelVersion = new System.Windows.Forms.Label();
             this.LabelCopyrightCredit = new System.Windows.Forms.Label();

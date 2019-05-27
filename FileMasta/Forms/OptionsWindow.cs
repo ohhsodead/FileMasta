@@ -5,9 +5,9 @@ using System.Windows.Forms;
 
 namespace FileMasta.Forms
 {
-    public partial class OptionsDialog : Form
+    public partial class OptionsWindow : Form
     {
-        public OptionsDialog()
+        public OptionsWindow()
         {
             InitializeComponent();
         }
@@ -53,7 +53,7 @@ namespace FileMasta.Forms
             // Set Proxy Settings
             if (Properties.Settings.Default.proxyUseCustom)
             {
-                if (Uri.TryCreate(Properties.Settings.Default.proxyAddress + ":" + Properties.Settings.Default.proxyPort, UriKind.RelativeOrAbsolute, out var result))
+                if (Uri.TryCreate(Properties.Settings.Default.proxyAddress + ":" + Properties.Settings.Default.proxyPort, UriKind.RelativeOrAbsolute, out Uri result))
                 {
                     Program.WebClient.Proxy = new WebProxy(result);
 

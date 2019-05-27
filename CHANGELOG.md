@@ -1,6 +1,20 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [0.4.6] 2019-05-27
+* Created an od-database library
+* Added application configuration settings
+* Added FileHelpers to parse database
+* Added bookmarks extension (stored to csv file) 
+* Added boomarked window
+* Added DateTime, Local and File Extensions
+* Search functions are asynchronous
+* Overall cleanup and optimization of project code
+
+## [0.4.5] 2019-04-02
+* Hoping to fix most issues with loading data
+* Minor improvements to help efficiency
+
 ## [0.4.4] 2019-01-25
 * Data is now retrieved from od-database
 * Improved backend performance (#130)
