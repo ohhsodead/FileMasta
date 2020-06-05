@@ -6,6 +6,8 @@ A federated search application for discovering interesting files that are being 
 
 >We host no content, we provide only access to already available files in the same way Google and other search engines do.
 
+>I'm currently looking for someone to help this project, like speeding up the loading and getting faster search results. Please email [me](emailto:bettercodes1@gmail.com) if you think you'd like to work on this with me.
+
 ## Installation
 Download and run the latest version of the installer from the [releases](https://github.com/mostlyash/FileMasta/releases/latest) page.
 
