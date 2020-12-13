@@ -1,5 +1,7 @@
 # FileMasta
 
+[![GitHub Latest Release](https://img.shields.io/github/release/ohhsodead/FileMasta.svg)](https://github.com/ohhsodead/FileMasta/releases/) [![GitHub Downloads](https://img.shields.io/github/downloads/ohhsodead/FileMasta/total.svg)](https://github.com/ohhsodead/FileMasta/releases/) [![GitHub Open Issues](https://img.shields.io/github/issues/ohhsodead/FileMasta.svg)](https://gitHub.com/ohhsodead/FileMasta/issues/) [![GitHub Closed Issues](https://img.shields.io/github/issues-closed/ohhsodead/FileMasta.svg)](https://github.com/ohhsodead/FileMasta/issues?q=is%3Aissue+is%3Aclosed) [![GitHub Stargazers](https://img.shields.io/github/stars/ohhsodead/FileMasta.svg?style=social&label=Star&maxAge=2592000)](https://github.com/ohhsodead/FileMasta/stargazers/)
+
 A federated search application for discovering interesting files that are being shared online, such as video, music, books, software, games, subtitles and much more. All data is crawled by [od-database](https://github.com/simon987/od-database) which collects information about the contents of servers worldwide. We don't search file contents.
 
 ![FileMasta](https://github.com/HerbL27/FileMasta/blob/master/screenshot1.png?raw=true)
